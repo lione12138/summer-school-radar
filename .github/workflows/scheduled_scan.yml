@@ -21,12 +21,12 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
       - name: Install
         run: pip install -e ".[dev]"
       - name: Run tests
@@ -40,8 +40,8 @@ jobs:
           git add README.md reports data/seen.sqlite
           git diff --cached --quiet || git commit -m "Update research school radar report"
           git push
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: site
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
