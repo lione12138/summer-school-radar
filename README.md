@@ -1,10 +1,37 @@
 # Research Seasonal School Radar
 
+[![Tests](https://github.com/lione12138/research-school-radar/actions/workflows/tests.yml/badge.svg)](https://github.com/lione12138/research-school-radar/actions/workflows/tests.yml)
+[![Daily scan](https://github.com/lione12138/research-school-radar/actions/workflows/scheduled_scan.yml/badge.svg)](https://github.com/lione12138/research-school-radar/actions/workflows/scheduled_scan.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 An open-source radar for research seasonal training opportunities in water, climate, hydrology, geoscience, remote sensing, AI, and scientific machine learning.
 
-It monitors trusted academic sources, extracts deadline/funding/fee/duration evidence, separates fully qualified opportunities from near-matches, and publishes a static website that can update daily for free on GitHub Pages.
+It monitors trusted academic sources, extracts deadline/funding/fee/duration evidence, separates fully qualified opportunities from near-matches, and publishes a static website that updates daily for free on GitHub Pages.
+
+**Live site:** <https://lione12138.github.io/research-school-radar/>
 
 [Technical README](docs/TECHNICAL.md) | [中文技术说明](docs/TECHNICAL.zh-CN.md) | [MIT License](LICENSE)
+
+## Latest Scan Results
+
+This section is refreshed automatically by the daily scan workflow.
+
+<!-- radar:results:start -->
+_Last scan: 2026-06-12 · 0 fully qualified · 5 still-open near-matches shown_
+
+**No fully qualified opportunities in the latest scan.** The hard filters are strict by design; near-matches below show what almost qualified.
+
+**Closest Still-Open Near-Matches**
+
+| title | type | organizer | location | duration | deadline | funding / fee | topic |
+|---|---|---|---|---|---|---|---|
+| [EGU - Meetings - Training schools](https://www.egu.eu/meetings/training-schools/) | summer school | EGU Training Schools | Europe | uncertain | uncertain | travel grant, financial support · amount not stated · Apply on official page | climate extremes, geoscience, disaster risk |
+| [Glacial Lake Outburst Flood Risk Assessment Field Workshop](https://www.icimod.org/event/cryosphere-and-water/glacial-lake-outburst-flood-risk-assessment-field-workshop/) | workshop | ICIMOD | Drang Drung Glacier, Zanskar, India | 15 days | uncertain | Funding or fee not stated | water resources, disaster risk |
+| [INTERNATIONAL ASSOCIATION OF HYDROLOGICAL SCIENCES](https://iahs.info/) | workshop | IAHS | Ningbo, China | uncertain | uncertain | Funding or fee not stated | hydrology, water resources, remote sensing |
+| [51st biannual research and training workshop](https://www.icimod.org/event/regional-action/51st-biannual-research-and-training-workshop/) | capacity building | ICIMOD | Kathmandu, Nepal | 6 days | uncertain | Funding or fee not stated | water resources, disaster risk |
+| [Events \| European Laboratory for Learning and Intelligent Systems](https://ellis.eu/events) | summer school | ELLIS | Europe | uncertain | uncertain | Funding or fee not stated | AI |
+
+<!-- radar:results:end -->
 
 ## Upcoming Research Training Opportunities
 

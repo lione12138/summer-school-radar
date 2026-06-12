@@ -9,7 +9,7 @@ from .filter import apply_hard_filters
 from .models import Source
 from .parse import candidate_links, looks_like_opportunity
 from .rank import rank_candidates
-from .report import write_report
+from .report import update_readme, write_report
 from .search import run_discovery_queries
 from .site import write_site
 from .storage import update_seen
@@ -98,6 +98,8 @@ def run_scan(
     ranked = rank_candidates(filtered)
     update_seen(data_dir / "seen.sqlite", ranked)
     report_path = write_report(ranked, reports_dir, errors)
+    if not offline_sample and update_readme(ROOT / "README.md", ranked):
+        print("Updated README latest-scan section")
     if generate_site:
         all_sources = _load_all_sources(config_dir / "sources.yaml")
         site_path = write_site(ranked, errors, site_dir, site_config, curated, all_sources)

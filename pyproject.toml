@@ -31,6 +31,11 @@ dependencies = [
   "requests>=2.31",
 ]
 
+[project.urls]
+Homepage = "https://lione12138.github.io/research-school-radar/"
+Repository = "https://github.com/lione12138/research-school-radar"
+Issues = "https://github.com/lione12138/research-school-radar/issues"
+
 [project.optional-dependencies]
 dev = [
   "pytest>=8.0",

@@ -9,7 +9,7 @@ from research_school_radar.filter import apply_hard_filters
 from research_school_radar.models import Page, Source
 from research_school_radar.parse import candidate_links, looks_like_opportunity
 from research_school_radar.rank import rank_candidates
-from research_school_radar.report import render_report
+from research_school_radar.report import render_report, update_readme
 from research_school_radar.site import write_site
 
 
@@ -187,6 +187,34 @@ def test_report_does_not_present_near_match_as_qualified() -> None:
     assert "Closest Still-Open Near-Matches" in markdown
     assert "failed hard condition" not in markdown
     assert "application deadline is uncertain" not in markdown
+
+
+def test_update_readme_replaces_marker_section(tmp_path) -> None:
+    readme = tmp_path / "README.md"
+    readme.write_text(
+        "# Title\n\n<!-- radar:results:start -->\nold\n<!-- radar:results:end -->\n\nFooter\n",
+        encoding="utf-8",
+    )
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    ranked = rank_candidates([candidate])
+    assert update_readme(readme, ranked)
+    content = readme.read_text(encoding="utf-8")
+    assert "old" not in content
+    assert "Example Hydrology Winter School" in content
+    assert "1 fully qualified" in content
+    assert content.startswith("# Title")
+    assert content.rstrip().endswith("Footer")
+    # A second run must stay idempotent and keep the markers intact.
+    assert update_readme(readme, ranked)
+    assert content == readme.read_text(encoding="utf-8")
+
+
+def test_update_readme_skips_file_without_markers(tmp_path) -> None:
+    readme = tmp_path / "README.md"
+    readme.write_text("# Title\n", encoding="utf-8")
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    assert not update_readme(readme, rank_candidates([candidate]))
+    assert readme.read_text(encoding="utf-8") == "# Title\n"
 
 
 def test_candidate_links_find_opportunity_pages() -> None:
