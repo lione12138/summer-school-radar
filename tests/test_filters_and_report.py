@@ -762,6 +762,23 @@ def test_curated_past_deadline_is_marked_closed(tmp_path) -> None:
     assert 'data-status="curated" data-region="unclassified" data-funding="unresolved" data-deadline="closed"' in html
 
 
+def test_new_badge_and_freshness_filter(tmp_path) -> None:
+    fresh = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    fresh.first_seen = date.today()
+    old = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    old.first_seen = date(2020, 1, 1)
+    old.source_url = "https://example.org/old-school"
+    old.title = "Old Hydrology School"
+    ranked = rank_candidates([fresh, old])
+    html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
+    assert fresh.is_new and not old.is_new
+    assert '<span class="badge-new">NEW</span>' in html
+    assert 'id="filter-new"' in html
+    # The fresh row carries data-new="true"; the old one data-new="false".
+    assert 'data-new="true"' in html
+    assert 'data-new="false"' in html
+
+
 def test_duration_shows_date_range_and_days(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])

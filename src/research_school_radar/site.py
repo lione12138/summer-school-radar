@@ -278,9 +278,21 @@ def render_site(
       box-shadow: var(--shadow);
     }}
     .notes ul {{ margin: 8px 0 0; padding-left: 20px; }}
+    .badge-new {{
+      display: inline-block;
+      margin-left: 6px;
+      padding: 1px 7px;
+      border-radius: 999px;
+      background: var(--good);
+      color: #fff;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      vertical-align: middle;
+    }}
     .filters {{
       display: grid;
-      grid-template-columns: repeat(6, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 12px;
       margin: 18px 0 4px;
       padding: 16px;
@@ -512,7 +524,7 @@ def _qualified_row(index: int, candidate: Candidate) -> str:
     return (
         f"<tr {_row_attrs(candidate)}>"
         f"<td>{index}</td>"
-        f"<td>{_link(candidate)}</td>"
+        f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
         f"<td>{escape(candidate.organizer)}</td>"
         f"<td>{escape(_public_location(candidate.location))}</td>"
         f"<td>{escape(_duration(candidate))}</td>"
@@ -546,7 +558,7 @@ def _curated_row(item: dict[str, Any]) -> str:
 def _near_row(candidate: Candidate) -> str:
     return (
         f"<tr {_row_attrs(candidate)}>"
-        f"<td>{_link(candidate)}</td>"
+        f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
         f"<td>{escape(candidate.organizer)}</td>"
         f"<td>{escape(_public_location(candidate.location))}</td>"
         f"<td>{escape(_duration(candidate))}</td>"
@@ -559,6 +571,10 @@ def _near_row(candidate: Candidate) -> str:
 
 def _link(candidate: Candidate) -> str:
     return f'<a href="{escape(candidate.source_url, quote=True)}">{escape(candidate.title)}</a>'
+
+
+def _new_badge(candidate: Candidate) -> str:
+    return ' <span class="badge-new">NEW</span>' if candidate.is_new else ""
 
 
 def _curated_financial_summary(item: dict[str, Any], funding: dict[str, Any]) -> str:
@@ -657,9 +673,10 @@ def _parse_iso_date(value: Any) -> date | None:
 
 def _candidate_dict(candidate: Candidate) -> dict[str, Any]:
     raw = asdict(candidate)
-    for key in ["start_date", "end_date", "deadline"]:
+    for key in ["start_date", "end_date", "deadline", "first_seen"]:
         value = raw[key]
         raw[key] = value.isoformat() if value else None
+    raw["is_new"] = candidate.is_new
     return raw
 
 
@@ -709,6 +726,13 @@ def _filters(candidates: list[Candidate], curated: list[dict[str, Any]]) -> str:
           <option value="closed">Closed</option>
         </select>
       </div>
+      <div class="filter-group">
+        <label for="filter-new">Freshness</label>
+        <select id="filter-new">
+          <option value="">All</option>
+          <option value="true">New this week</option>
+        </select>
+      </div>
       <div class="count" id="filter-count" aria-live="polite"></div>
     </section>
 """
@@ -733,6 +757,7 @@ def _row_attrs(candidate: Candidate) -> str:
         "data-funding": funding,
         "data-deadline": candidate.deadline_status,
         "data-topics": topics,
+        "data-new": "true" if candidate.is_new else "false",
         "data-search": searchable,
     }
     return " ".join(f'{key}="{escape(value, quote=True)}"' for key, value in attrs.items())
@@ -770,6 +795,7 @@ def _curated_row_attrs(item: dict[str, Any]) -> str:
         "data-funding": funding_value,
         "data-deadline": deadline,
         "data-topics": "|".join(topics),
+        "data-new": "false",
         "data-search": searchable,
     }
     return " ".join(f'{key}="{escape(value, quote=True)}"' for key, value in attrs.items())
@@ -829,6 +855,7 @@ def _filter_script() -> str:
       topic: document.getElementById("filter-topic"),
       funding: document.getElementById("filter-funding"),
       deadline: document.getElementById("filter-deadline"),
+      fresh: document.getElementById("filter-new"),
       count: document.getElementById("filter-count")
     };
     const rows = Array.from(document.querySelectorAll("tbody tr[data-status]"));
@@ -839,6 +866,7 @@ def _filter_script() -> str:
       if (controls.status.value && row.dataset.status !== controls.status.value) return false;
       if (controls.funding.value && row.dataset.funding !== controls.funding.value) return false;
       if (controls.deadline.value && row.dataset.deadline !== controls.deadline.value) return false;
+      if (controls.fresh.value && row.dataset.new !== controls.fresh.value) return false;
       if (controls.topic.value) {
         const topics = row.dataset.topics.split("|");
         if (!topics.includes(controls.topic.value.toLowerCase())) return false;

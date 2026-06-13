@@ -50,6 +50,7 @@ class SeenStore:
         ).fetchone()
         first_seen = existing[0] if existing else today
         already_reported = existing[1] if existing else 0
+        candidate.first_seen = date.fromisoformat(first_seen)
         self.connection.execute(
             """
             INSERT OR REPLACE INTO seen_opportunities

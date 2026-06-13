@@ -60,6 +60,12 @@ class Candidate:
     failed_hard_conditions: list[str] = field(default_factory=list)
     score: float = 0.0
     score_explanation: list[str] = field(default_factory=list)
+    first_seen: date | None = None
+
+    @property
+    def is_new(self) -> bool:
+        """First observed within the last 7 days (a fresh opportunity)."""
+        return self.first_seen is not None and 0 <= (date.today() - self.first_seen).days <= 7
 
     @property
     def fully_qualified(self) -> bool:
