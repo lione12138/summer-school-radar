@@ -247,6 +247,46 @@ def test_listing_page_with_only_generic_title_is_dropped() -> None:
     assert extract_candidate(page, PROFILE) is None
 
 
+def test_jsonld_event_provides_authoritative_fields() -> None:
+    jsonld = (
+        '{"@context":"https://schema.org","@type":"Event",'
+        '"name":"Hydrology Field School 2027",'
+        '"startDate":"2027-07-01T09:00:00+02:00","endDate":"2027-07-12T17:00:00+02:00",'
+        '"location":{"@type":"Place","name":"Delft","address":'
+        '{"addressLocality":"Delft","addressCountry":"Netherlands"}}}'
+    )
+    page = _page(
+        "Hydrology summer school. In-person training. Application deadline: 1 March 2027. "
+        "Travel grants available. Topics include hydrology.",
+        html=f'<html><head><script type="application/ld+json">{jsonld}</script>'
+        "<title>Home</title></head><body><h1>Home</h1></body></html>",
+        title="Home",
+    )
+    candidate = extract_candidate(page, PROFILE)
+    assert candidate is not None
+    assert candidate.start_date == date(2027, 7, 1)
+    assert candidate.end_date == date(2027, 7, 12)
+    assert candidate.duration_days == 12
+    assert candidate.location == "Delft, Delft, Netherlands"
+    # JSON-LD name rescues a page whose HTML title is generic ("Home").
+    assert candidate.title == "Hydrology Field School 2027"
+
+
+def test_jsonld_multiple_events_is_treated_as_listing() -> None:
+    jsonld = (
+        '[{"@type":"Event","name":"A","startDate":"2027-07-01"},'
+        '{"@type":"Event","name":"B","startDate":"2027-08-01"},'
+        '{"@type":"Event","name":"C","startDate":"2027-09-01"}]'
+    )
+    page = _page(
+        "Events calendar. Hydrology schools. Topics include hydrology.",
+        html=f'<html><head><script type="application/ld+json">{jsonld}</script>'
+        "<title>Events</title></head><body><h1>Events</h1></body></html>",
+        title="Events",
+    )
+    assert extract_candidate(page, PROFILE) is None
+
+
 def test_calendar_page_with_many_ranges_is_dropped() -> None:
     # Several event date ranges and no governing deadline marks a calendar.
     page = _page(

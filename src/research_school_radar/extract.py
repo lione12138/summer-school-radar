@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import re
 from datetime import date
 
@@ -68,6 +69,19 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     text = page.text
     overrides = adapter_for(page.url)(page) if adapter_for(page.url) else {}
 
+    # schema.org JSON-LD is authoritative when the page describes exactly one
+    # event; several event nodes mean a calendar/listing page. A per-site adapter
+    # still wins over JSON-LD where one exists.
+    jsonld = _jsonld_events(page.html)
+    if len(jsonld) == 1:
+        event = jsonld[0]
+        overrides.setdefault("start_date", event["start_date"])
+        overrides.setdefault("end_date", event["end_date"])
+        if event["location"]:
+            overrides.setdefault("location", event["location"])
+        if event["name"]:
+            overrides.setdefault("jsonld_name", event["name"])
+
     ranges = _date_ranges(text)
     adapter_dates = overrides.get("start_date") is not None
     start = overrides.get("start_date") or (ranges[0][0] if ranges else None)
@@ -77,8 +91,8 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     # Drop listing, calendar, and navigation pages. A single opportunity has one
     # clear date range or a governing deadline. No time signal at all, or several
     # event ranges with no deadline (a calendar), means it is not one opportunity.
-    range_count = 1 if adapter_dates else len(ranges)
-    if deadline is None and range_count != 1:
+    event_count = 1 if adapter_dates else max(len(ranges), len(jsonld))
+    if deadline is None and event_count != 1:
         return None
 
     preferred_topics = profile.get("preferred_topics", [])
@@ -93,9 +107,9 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     funding_available = overrides.get("funding_available", True if funding_types else None)
     funding_evidence = evidence_window(text, r"scholarship|travel grant|tuition waiver|stipend|financial support|funding")
     mode = _extract_mode(text)
-    title = _extract_title(page)
-    # A page whose only available titles are generic ("Home", "Events", ...) is a
-    # listing or landing page, not a single opportunity, so drop it.
+    # Fall back to the JSON-LD event name when the page's HTML titles are all
+    # generic ("Home", "Events", ...).
+    title = _extract_title(page) or _clean_title(str(overrides.get("jsonld_name", "")))
     if not title:
         return None
     eligibility = first_match(
@@ -362,6 +376,106 @@ def _date_ranges(text: str) -> list[tuple[date, date]]:
 def _extract_dates(text: str) -> tuple[date | None, date | None]:
     ranges = _date_ranges(text)
     return ranges[0] if ranges else (None, None)
+
+
+_JSONLD_EVENT_TYPES = {
+    "event",
+    "educationevent",
+    "businessevent",
+    "socialevent",
+    "festival",
+    "course",
+    "courseinstance",
+}
+
+
+def _iter_jsonld_nodes(data: object):
+    if isinstance(data, list):
+        for item in data:
+            yield from _iter_jsonld_nodes(item)
+    elif isinstance(data, dict):
+        graph = data.get("@graph")
+        if isinstance(graph, list):
+            for item in graph:
+                yield from _iter_jsonld_nodes(item)
+        else:
+            yield data
+
+
+def _jsonld_date(value: object) -> date | None:
+    # JSON-LD dates are ISO 8601 (year first), so they must not be parsed with
+    # the day-first assumption used for free-text European dates.
+    if isinstance(value, list):
+        value = value[0] if value else None
+    if not isinstance(value, str):
+        return None
+    match = re.match(r"(\d{4}-\d{2}-\d{2})", value)
+    if match:
+        try:
+            return date.fromisoformat(match.group(1))
+        except ValueError:
+            return None
+    try:
+        return date_parser.parse(value).date()
+    except (ValueError, OverflowError):
+        return None
+
+
+def _jsonld_location(value: object) -> str:
+    if isinstance(value, list):
+        value = value[0] if value else None
+    if isinstance(value, str):
+        return clean_space(value)
+    if isinstance(value, dict):
+        name = clean_space(str(value.get("name", "")))
+        address = value.get("address", "")
+        if isinstance(address, dict):
+            parts = [
+                str(address.get("addressLocality", "")),
+                str(address.get("addressRegion", "")),
+                str(address.get("addressCountry", "")),
+            ]
+            address = ", ".join(clean_space(part) for part in parts if clean_space(part))
+        else:
+            address = clean_space(str(address))
+        return ", ".join(part for part in [name, address] if part)
+    return ""
+
+
+def _jsonld_events(html: str) -> list[dict]:
+    """schema.org Event/Course records embedded in the page source. This is the
+    most reliable signal when a site publishes it (machine-readable dates)."""
+    if not html:
+        return []
+    from bs4 import BeautifulSoup
+
+    soup = BeautifulSoup(html, "html.parser")
+    events: list[dict] = []
+    for tag in soup.find_all("script", attrs={"type": re.compile("ld\\+json", re.IGNORECASE)}):
+        raw = tag.string or tag.get_text() or ""
+        try:
+            data = json.loads(raw)
+        except (ValueError, TypeError):
+            continue
+        for node in _iter_jsonld_nodes(data):
+            if not isinstance(node, dict):
+                continue
+            node_type = node.get("@type", "")
+            types = node_type if isinstance(node_type, list) else [node_type]
+            if not any(str(value).lower() in _JSONLD_EVENT_TYPES for value in types):
+                continue
+            start = _jsonld_date(node.get("startDate"))
+            if start is None:
+                continue
+            events.append(
+                {
+                    "start_date": start,
+                    "end_date": _jsonld_date(node.get("endDate")) or start,
+                    "location": _jsonld_location(node.get("location")),
+                    "name": clean_space(str(node.get("name", ""))),
+                }
+            )
+    return events
 
 
 def _extract_deadline(text: str) -> date | None:
