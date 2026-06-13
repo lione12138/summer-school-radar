@@ -167,6 +167,105 @@ def test_unlabelled_money_is_not_treated_as_fee() -> None:
     assert candidate.fee_eur is None
 
 
+def _page(text: str, *, html: str = "", title: str = "Test School") -> Page:
+    source = Source(
+        name="Example Source",
+        url="https://example.org/school",
+        layer="1",
+        region="continental Europe",
+        source_type="research_institute",
+    )
+    return Page(url=source.url, title=title, text=text, html=html, source=source, fetched_at=date.today())
+
+
+def test_listing_page_without_dates_is_dropped() -> None:
+    # A navigation/listing page mentions programme and application terms but has
+    # no concrete date range or deadline, so it must not become a candidate.
+    page = _page(
+        "Training schools. Browse our events, application information, funding and "
+        "scholarship pages. Hydrology and climate training schools are listed here."
+    )
+    assert extract_candidate(page, PROFILE) is None
+
+
+def test_listing_page_with_only_generic_title_is_dropped() -> None:
+    # The page has a date range (a calendar) but every available title is generic,
+    # which marks it as an events listing rather than one opportunity.
+    page = _page(
+        "Events. Hydrology training school 1 July 2027 to 12 July 2027. "
+        "Application deadline 1 March 2027. Funding available.",
+        html=(
+            "<html><head><title>Events - Example University</title></head>"
+            "<body><h1>Events</h1></body></html>"
+        ),
+        title="Events - Example University",
+    )
+    assert extract_candidate(page, PROFILE) is None
+
+
+def test_negated_funding_is_not_treated_as_available() -> None:
+    page = _page(
+        "Hydrology summer school. In-person residential training. "
+        "Dates: 1 July 2027 to 12 July 2027. Application deadline: 1 March 2027. "
+        "Participants cover their own travel and accommodation expenses. "
+        "No financial support is foreseen for the workshop. Topics include hydrology."
+    )
+    candidate = extract_candidate(page, PROFILE)
+    assert candidate is not None
+    assert candidate.funding_available is not True
+    assert candidate.funding_type == []
+
+
+def test_deadline_with_filler_words_is_extracted() -> None:
+    page = _page(
+        "Remote sensing summer school. In-person training. "
+        "Dates: 1 July 2027 to 12 July 2027. "
+        "Deadline was extended until 08 March 2027 for late applicants. "
+        "Topics include remote sensing."
+    )
+    candidate = extract_candidate(page, PROFILE)
+    assert candidate is not None
+    assert candidate.deadline == date(2027, 3, 8)
+
+
+def test_no_participation_fees_plural_is_free() -> None:
+    page = _page(
+        "Climate summer school. In-person residential training. "
+        "Dates: 1 July 2027 to 12 July 2027. Application deadline: 1 March 2027. "
+        "No participation fees will be charged. Topics include climate."
+    )
+    candidate = extract_candidate(page, PROFILE)
+    assert candidate is not None
+    assert candidate.fee_eur == 0.0
+
+
+def test_coffee_is_not_parsed_as_a_fee() -> None:
+    page = _page(
+        "Water resources summer school. In-person residential training. "
+        "Dates: 1 July 2027 to 12 July 2027. Application deadline: 1 March 2027. "
+        "Lunch and coffee breaks are provided. Topics include water resources."
+    )
+    candidate = extract_candidate(page, PROFILE)
+    assert candidate is not None
+    assert candidate.fee == ""
+
+
+def test_title_prefers_heading_over_generic_html_title() -> None:
+    page = _page(
+        "Mediterranean Machine Learning Summer School. In-person residential training. "
+        "Dates: 1 July 2027 to 12 July 2027. Application deadline: 1 March 2027. "
+        "Topics include machine learning and AI.",
+        html=(
+            "<html><head><title>Home</title></head><body>"
+            "<h1>Mediterranean Machine Learning Summer School</h1></body></html>"
+        ),
+        title="Home",
+    )
+    candidate = extract_candidate(page, PROFILE)
+    assert candidate is not None
+    assert candidate.title == "Mediterranean Machine Learning Summer School"
+
+
 def test_uncertain_deadline_becomes_near_match() -> None:
     candidate = sample_candidate(PROFILE)
     candidate.deadline = None
@@ -277,6 +376,22 @@ def test_generic_workshop_is_not_an_opportunity() -> None:
         "The workshop is a two-hour conference session."
     )
     assert not looks_like_opportunity(text)
+
+
+def test_language_course_with_cefr_levels_is_excluded() -> None:
+    text = (
+        "English Advanced Course 1 (B2 to C1). Summer school. "
+        "Application deadline: 1 March 2027. Topics include language."
+    )
+    assert not looks_like_opportunity(text)
+
+
+def test_research_course_taught_in_english_is_not_excluded() -> None:
+    text = (
+        "Hydrology summer school taught in English. Application deadline: 1 March 2027. "
+        "Travel grants are available. Dates: 1 July 2027 to 12 July 2027."
+    )
+    assert looks_like_opportunity(text)
 
 
 def test_hands_on_training_workshop_remains_opportunity() -> None:
@@ -585,7 +700,7 @@ def test_location_does_not_match_plain_venue_phrase() -> None:
         title="IAHS Academy",
         text=(
             "Save the venue and dates for the first edition of the IAHS Academy, "
-            "a newly established advanced training school. Application deadline is uncertain. "
+            "a newly established advanced training school. Application deadline: 1 March 2027. "
             "Funding is available for early-career researchers. Topics include hydrology and water resources."
         ),
         html="<html><body>Save the venue and dates for the first edition of the IAHS Academy.</body></html>",

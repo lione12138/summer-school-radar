@@ -354,10 +354,10 @@ Useful outputs:
 The current implementation is useful but still early.
 
 - Extraction is rule-based, so unusual page layouts can produce uncertain fields.
-- Dates and deadlines are only parsed from common English date formats.
-- Funding detection can confuse acknowledgement text with actual participant support.
+- Dates and deadlines are only parsed from common English date formats. Deadlines tolerate filler words between the keyword and the date (e.g. "deadline was extended until 8 March 2026").
+- Funding detection now suppresses negated statements (e.g. "no financial support is foreseen") to avoid false positives, but unusual phrasing can still slip through.
 - Fixed exchange rates require occasional maintenance and intentionally trade precision for a free, deterministic workflow.
-- Some source pages are broad index pages, so near-matches can be weak.
+- Listing, navigation, and landing pages are filtered out: a candidate must expose a concrete date or deadline and a non-generic title, and pure language courses (CEFR level transitions) and degree recruitment are excluded. Genuine opportunities with no machine-readable date can therefore be missed until their details are published.
 - No curator UI exists yet; `data/opportunities.yml` is edited manually.
 - No RSS feed or email digest is generated yet.
 - No automatic PR creation exists for promising new candidates.

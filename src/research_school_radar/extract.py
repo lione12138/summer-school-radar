@@ -6,7 +6,7 @@ from datetime import date
 from dateutil import parser as date_parser
 
 from .models import Candidate, Page, Source
-from .parse import OPPORTUNITY_TERMS, has_programme_signal
+from .parse import OPPORTUNITY_TERMS, has_programme_signal, is_excluded_programme
 from .utils import clean_space, evidence_window, first_match
 
 
@@ -17,6 +17,23 @@ FUNDING_PATTERNS = {
     "stipend": r"stipend[s]?",
     "accommodation support": r"accommodation support|covered accommodation|accommodation is covered",
     "financial support": r"financial support|funding available|support is available",
+}
+
+# Words that, immediately before a funding term, signal the opposite of an
+# offer, e.g. "No financial support is foreseen" or "participants are self-funded".
+NEGATION_BEFORE = re.compile(
+    r"\b(?:no|not|without|cannot|can't|won't)\b|self[- ]funded|own (?:expense|cost)",
+    flags=re.IGNORECASE,
+)
+
+# Generic page titles that carry no opportunity identity and should be skipped
+# in favour of an <h1> or og:title.
+GENERIC_TITLES = {
+    "home", "homepage", "welcome", "events", "event", "training", "trainings",
+    "training schools", "training school", "course funding", "courses", "course",
+    "search this site", "news", "calendar", "untitled", "overview", "summer schools",
+    "top menu", "main menu", "menu", "navigation", "application", "applications",
+    "apply", "register", "registration", "read more", "skip to main content",
 }
 
 ONLINE_ONLY_PATTERNS = [r"online-only", r"fully online", r"online course", r"webinar"]
@@ -40,19 +57,32 @@ SUPPORTED_FEE_CURRENCIES = {
 def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     if not _has_opportunity_signal(page.text):
         return None
+    if is_excluded_programme(page.text):
+        return None
 
     text = page.text
+    start, end = _extract_dates(text)
+    deadline = _extract_deadline(text)
+    # An individual opportunity must expose at least one concrete time signal.
+    # Listing, navigation, and funding-scheme index pages have neither a date
+    # range nor a deadline, and could never satisfy the duration or open-deadline
+    # hard conditions, so they are dropped here instead of polluting the results.
+    if deadline is None and start is None:
+        return None
+
     preferred_topics = profile.get("preferred_topics", [])
     topics = [topic for topic in preferred_topics if _topic_in_text(topic, text)]
     programme_type = _programme_type(text)
-    start, end = _extract_dates(text)
-    deadline = _extract_deadline(text)
     funding_types = [
-        label for label, pattern in FUNDING_PATTERNS.items() if re.search(pattern, text, flags=re.IGNORECASE)
+        label for label, pattern in FUNDING_PATTERNS.items() if _funding_is_offered(text, pattern)
     ]
     funding_evidence = evidence_window(text, r"scholarship|travel grant|tuition waiver|stipend|financial support|funding")
     mode = _extract_mode(text)
-    title = _extract_title(page, programme_type)
+    title = _extract_title(page)
+    # A page whose only available titles are generic ("Home", "Events", ...) is a
+    # listing or landing page, not a single opportunity, so drop it.
+    if not title:
+        return None
     eligibility = first_match(
         text,
         [
@@ -126,8 +156,9 @@ def _extract_fee(text: str) -> str:
         text,
         [
             r"\b(free of charge)\b",
-            r"\b(no (?:registration|participation|tuition) fee)\b",
+            r"\b(no (?:registration|participation|tuition|course) fees?)\b",
             r"\b(participation is free)\b",
+            r"\b(there (?:is|are) no (?:registration|participation|tuition|course) fees?)\b",
         ],
     )
     if free:
@@ -135,8 +166,8 @@ def _extract_fee(text: str) -> str:
     return first_match(
         text,
         [
-            r"(?:registration fee|participation fee|tuition fee|course fee|fee|cost)[:\s-]+([^.;\n]{1,100})",
-            r"((?:(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD)|[€$£])\s?\d[\d ,.]*\d\s+(?:registration|participation|tuition|course)?\s*(?:fee|cost))",
+            r"\b(?:registration fees?|participation fees?|tuition fees?|course fees?|fees?|costs?)\b[:\s-]+([^.;\n]{1,100})",
+            r"((?:(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD)|[€$£])\s?\d[\d ,.]*\d\s+(?:registration|participation|tuition|course)?\s*(?:fees?|costs?))",
         ],
     )
 
@@ -144,7 +175,7 @@ def _extract_fee(text: str) -> str:
 def _fee_to_eur(fee: str, profile: dict) -> float | None:
     if not fee:
         return None
-    if re.search(r"\bfree of charge\b|\bno (?:registration|participation|tuition) fee\b|\bparticipation is free\b", fee, re.IGNORECASE):
+    if re.search(r"\bfree of charge\b|\bno (?:registration|participation|tuition|course) fees?\b|\bparticipation is free\b", fee, re.IGNORECASE):
         return 0.0
 
     currency = _fee_currency(fee)
@@ -196,6 +227,17 @@ def _parse_amount(value: str) -> float | None:
         return None
 
 
+def _funding_is_offered(text: str, pattern: str) -> bool:
+    """True only if the funding term appears without a negation just before it."""
+    offered = False
+    for match in re.finditer(pattern, text, flags=re.IGNORECASE):
+        context = text[max(0, match.start() - 30):match.start()]
+        if NEGATION_BEFORE.search(context):
+            continue
+        offered = True
+    return offered
+
+
 def _has_opportunity_signal(text: str) -> bool:
     return has_programme_signal(text)
 
@@ -208,11 +250,37 @@ def _programme_type(text: str) -> str:
     return "research training"
 
 
-def _extract_title(page: Page, programme_type: str) -> str:
-    title = page.title
-    if len(title) > 140:
-        title = title[:137].rstrip() + "..."
-    return title or programme_type.title()
+def _extract_title(page: Page) -> str:
+    """Best opportunity title, or "" if the page only offers generic labels."""
+    raw_candidates: list[str] = []
+    if page.html:
+        from bs4 import BeautifulSoup
+
+        soup = BeautifulSoup(page.html, "html.parser")
+        heading = soup.find(["h1", "h2"])
+        if heading:
+            raw_candidates.append(clean_space(heading.get_text(" ")))
+        meta = soup.find("meta", property="og:title")
+        if meta and meta.get("content"):
+            raw_candidates.append(clean_space(str(meta["content"])))
+    raw_candidates.append(page.title or "")
+    for raw in raw_candidates:
+        title = _clean_title(raw)
+        if title and title.lower() not in GENERIC_TITLES and len(title) >= 6:
+            return title
+    return ""
+
+
+def _clean_title(value: str) -> str:
+    value = clean_space(value)
+    # Drop a trailing " | Site Name" or " - Site Name" boilerplate segment.
+    # The spaced en dash ("–") is left intact because it often joins a real title.
+    for separator in (" | ", " - "):
+        if separator in value:
+            value = value.split(separator, 1)[0].strip()
+    if len(value) > 140:
+        value = value[:137].rstrip() + "..."
+    return value
 
 
 def _extract_dates(text: str) -> tuple[date | None, date | None]:
@@ -234,7 +302,10 @@ def _extract_dates(text: str) -> tuple[date | None, date | None]:
 
 def _extract_deadline(text: str) -> date | None:
     match = re.search(
-        r"(?:application deadline|deadline|apply by|applications close)[:\s]*(\d{1,2}\s+[A-Z][a-z]+\s+20\d{2}|[A-Z][a-z]+\s+\d{1,2},?\s+20\d{2}|20\d{2}-\d{2}-\d{2})",
+        r"(?:application deadline|registration deadline|submission deadline|abstract deadline"
+        r"|deadline|apply by|applications?\s+close[sd]?|closing date)"
+        r"[^.\n]{0,40}?"
+        r"(\d{1,2}\s+[A-Z][a-z]+\s+20\d{2}|[A-Z][a-z]+\s+\d{1,2},?\s+20\d{2}|20\d{2}-\d{2}-\d{2})",
         text,
         flags=re.IGNORECASE,
     )

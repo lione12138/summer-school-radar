@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from urllib.parse import urljoin, urlparse
 
 from bs4 import BeautifulSoup
@@ -57,9 +58,38 @@ DEGREE_RECRUITMENT_TERMS = [
 ]
 
 
-def looks_like_opportunity(text: str) -> bool:
+LANGUAGE_COURSE_TERMS = [
+    "language course",
+    "language training",
+    "language school",
+    "english language course",
+    "foreign language course",
+]
+
+# A CEFR level transition such as "B2 → C1" or "(B2+ -> C1)" is a strong,
+# specific marker of a foreign-language course rather than research training.
+_CEFR_TRANSITION = re.compile(
+    r"\b[abc][12]\+?\s*(?:→|->|–|—|-|to)\s*[abc][12]\+?",
+    flags=re.IGNORECASE,
+)
+
+
+def is_excluded_programme(text: str) -> bool:
+    """True for programme types the radar never reports (degree recruitment,
+    pure language courses)."""
     lowered = text.lower()
     if any(term in lowered for term in DEGREE_RECRUITMENT_TERMS):
+        return True
+    if any(term in lowered for term in LANGUAGE_COURSE_TERMS):
+        return True
+    if _CEFR_TRANSITION.search(text):
+        return True
+    return False
+
+
+def looks_like_opportunity(text: str) -> bool:
+    lowered = text.lower()
+    if is_excluded_programme(text):
         return False
     has_programme = has_programme_signal(lowered)
     has_application_signal = any(term in lowered for term in APPLICATION_TERMS)
