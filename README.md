@@ -17,7 +17,7 @@ It monitors trusted academic sources, extracts deadline/funding/fee/duration evi
 This section is refreshed automatically by the daily scan workflow.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-12 · 0 fully qualified · 5 still-open near-matches shown_
+_Last scan: 2026-06-13 · 0 fully qualified · 5 still-open near-matches shown_
 
 **No fully qualified opportunities in the latest scan.** The hard filters are strict by design; near-matches below show what almost qualified.
 
