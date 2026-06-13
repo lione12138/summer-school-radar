@@ -4,6 +4,7 @@ from datetime import date
 from pathlib import Path
 
 from .models import Candidate
+from .utils import topics_label
 
 
 README_START = "<!-- radar:results:start -->"
@@ -100,7 +101,7 @@ def _qualified_table(candidates: list[Candidate]) -> list[str]:
                     _cell(_duration(candidate)),
                     _cell(candidate.deadline.isoformat() if candidate.deadline else "uncertain"),
                     _cell(candidate.financial_summary),
-                    _cell(", ".join(candidate.topic_keywords)),
+                    _cell(topics_label(candidate.topic_keywords)),
                     _cell(candidate.eligibility or candidate.target_level),
                     _cell(candidate.recommendation_reason),
                 ]
@@ -127,7 +128,7 @@ def _near_table(candidates: list[Candidate]) -> list[str]:
                     _cell(_duration(candidate)),
                     _cell(candidate.deadline.isoformat() if candidate.deadline else "uncertain"),
                     _cell(candidate.financial_summary),
-                    _cell(", ".join(candidate.topic_keywords) or "uncertain"),
+                    _cell(topics_label(candidate.topic_keywords) or "uncertain"),
                 ]
             )
             + " |"

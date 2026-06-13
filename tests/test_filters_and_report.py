@@ -508,6 +508,20 @@ def test_curated_past_deadline_is_marked_closed(tmp_path) -> None:
     assert 'data-status="curated" data-region="unclassified" data-funding="unresolved" data-deadline="closed"' in html
 
 
+def test_topic_display_is_capped_at_four_terms(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    candidate.topic_keywords = ["one", "two", "three", "four", "five", "six"]
+    ranked = rank_candidates([candidate])
+    html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
+    assert "<td>one, two, three, four</td>" in html
+    assert "five" not in html.split("<td>one, two, three, four</td>")[0][-200:]
+    # The filter attribute keeps every topic so filtering still works.
+    assert "five|six" in html
+    markdown = render_report(ranked, [])
+    assert "one, two, three, four" in markdown
+    assert "five" not in markdown
+
+
 def test_public_location_uses_europe_label(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     candidate.location = "continental Europe"

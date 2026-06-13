@@ -17,7 +17,7 @@ def score_candidate(candidate: Candidate) -> tuple[float, list[str]]:
     topic_score = min(len(candidate.topic_keywords) * 6, 30)
     score += topic_score
     if topic_score:
-        reasons.append(f"topic match: {', '.join(candidate.topic_keywords[:5])}")
+        reasons.append(f"topic match: {', '.join(candidate.topic_keywords[:4])}")
 
     if candidate.funding_available:
         funding_score = 20

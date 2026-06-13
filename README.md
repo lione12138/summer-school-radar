@@ -17,7 +17,7 @@ It monitors trusted academic sources, extracts deadline/funding/fee/duration evi
 This section is refreshed automatically by the daily scan workflow.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-13 · 0 fully qualified · 5 still-open near-matches shown_
+_Last scan: 2026-06-14 · 0 fully qualified · 5 still-open near-matches shown_
 
 **No fully qualified opportunities in the latest scan.** The hard filters are strict by design; near-matches below show what almost qualified.
 
@@ -25,11 +25,11 @@ _Last scan: 2026-06-13 · 0 fully qualified · 5 still-open near-matches shown_
 
 | title | type | organizer | location | duration | deadline | funding / fee | topic |
 |---|---|---|---|---|---|---|---|
-| [EGU - Meetings - Training schools](https://www.egu.eu/meetings/training-schools/) | summer school | EGU Training Schools | Europe | uncertain | uncertain | travel grant, financial support · amount not stated · Apply on official page | water, climate, climate extremes, geoscience, geology, geophysics, seismology, atmospheric science, glaciology, biodiversity, energy, disaster risk, mathematics, physics, chemistry, evolution, education |
+| [EGU - Meetings - Training schools](https://www.egu.eu/meetings/training-schools/) | summer school | EGU Training Schools | Europe | uncertain | uncertain | travel grant, financial support · amount not stated · Apply on official page | water, climate, climate extremes, geoscience |
 | [Course Funding - Helmholtz Information & Data Science Academy](https://www.helmholtz-hida.de/en/training/course-funding/) | summer school | HIDA Events | Europe | uncertain | uncertain | financial support · amount not stated · Apply on official page | AI, data science, finance, education |
-| ["Advances in the Science and Applications of SAR Interferometry” – Fringe 2026 - eo science for society](https://eo4society.esa.int/event/fringe-2026-advances-in-the-science-and-applications-of-sar-interferometry-and-sentinel-1-insar/) | summer school | ESA EO4Society Training | Jagiellonian University of Kraków, ul. Krupnicza 33, 31-123 Kraków | uncertain | uncertain | financial support · amount not stated · Apply on official page | hydrology, water, climate, remote sensing, earth observation, atmospheric science, disaster risk, agriculture, forestry, AI, machine learning, finance, education |
-| [Glacial Lake Outburst Flood Risk Assessment Field Workshop](https://www.icimod.org/event/cryosphere-and-water/glacial-lake-outburst-flood-risk-assessment-field-workshop/) | workshop | ICIMOD | Drang Drung Glacier, Zanskar, India | 15 days | uncertain | Funding or fee not stated | water resources, water, climate, biodiversity, energy, renewable energy, disaster risk, economics, history |
-| [Home](https://www.m2lschool.org/) | summer school | Mediterranean ML Summer School | Europe | uncertain | uncertain | scholarship · amount not stated · Apply on official page | AI, machine learning, deep learning, robotics, computer vision, natural language processing, neuroscience, evolution, education |
+| ["Advances in the Science and Applications of SAR Interferometry” – Fringe 2026 - eo science for society](https://eo4society.esa.int/event/fringe-2026-advances-in-the-science-and-applications-of-sar-interferometry-and-sentinel-1-insar/) | summer school | ESA EO4Society Training | Jagiellonian University of Kraków, ul. Krupnicza 33, 31-123 Kraków | uncertain | uncertain | financial support · amount not stated · Apply on official page | hydrology, water, climate, remote sensing |
+| [Glacial Lake Outburst Flood Risk Assessment Field Workshop](https://www.icimod.org/event/cryosphere-and-water/glacial-lake-outburst-flood-risk-assessment-field-workshop/) | workshop | ICIMOD | Drang Drung Glacier, Zanskar, India | 15 days | uncertain | Funding or fee not stated | water resources, water, climate, biodiversity |
+| [Home](https://www.m2lschool.org/) | summer school | Mediterranean ML Summer School | Europe | uncertain | uncertain | scholarship · amount not stated · Apply on official page | AI, machine learning, deep learning, robotics |
 
 <!-- radar:results:end -->
 

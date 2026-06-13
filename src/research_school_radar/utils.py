@@ -34,6 +34,11 @@ def evidence_window(text: str, pattern: str, radius: int = 120) -> str:
     return clean_space(text[start:end])
 
 
+def topics_label(keywords: list[str], limit: int = 4) -> str:
+    """Join topic keywords for table display, capped to at most `limit` terms."""
+    return ", ".join(keywords[:limit])
+
+
 def first_match(text: str, patterns: list[str]) -> str:
     for pattern in patterns:
         match = re.search(pattern, text, flags=re.IGNORECASE)

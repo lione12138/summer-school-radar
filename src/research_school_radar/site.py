@@ -9,6 +9,7 @@ from typing import Any
 from urllib.parse import quote
 
 from .models import Candidate
+from .utils import topics_label
 
 
 # Shared base styles for all generated pages. Interpolated into f-string
@@ -517,7 +518,7 @@ def _qualified_row(index: int, candidate: Candidate) -> str:
         f"<td>{escape(_duration(candidate))}</td>"
         f"<td>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
         f"<td>{escape(candidate.financial_summary)}</td>"
-        f"<td>{escape(', '.join(candidate.topic_keywords))}</td>"
+        f"<td>{escape(topics_label(candidate.topic_keywords))}</td>"
         f"<td>{escape(candidate.recommendation_reason)}</td>"
         "</tr>"
     )
@@ -536,7 +537,7 @@ def _curated_row(item: dict[str, Any]) -> str:
         f"<td>{escape(_curated_duration(item))}</td>"
         f"<td>{_deadline_cell(_parse_iso_date(item.get('application_deadline')), str(item.get('title', 'Untitled opportunity')), str(item.get('url', '')))}</td>"
         f"<td>{escape(_curated_financial_summary(item, funding))}</td>"
-        f"<td>{escape(', '.join(topics) or 'uncertain')}</td>"
+        f"<td>{escape(topics_label(topics) or 'uncertain')}</td>"
         f"<td>{escape(str(item.get('notes') or item.get('status') or 'confirmed'))}</td>"
         "</tr>"
     )
@@ -551,7 +552,7 @@ def _near_row(candidate: Candidate) -> str:
         f"<td>{escape(_duration(candidate))}</td>"
         f"<td>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
         f"<td>{escape(candidate.financial_summary)}</td>"
-        f"<td>{escape(', '.join(candidate.topic_keywords) or 'uncertain')}</td>"
+        f"<td>{escape(topics_label(candidate.topic_keywords) or 'uncertain')}</td>"
         "</tr>"
     )
 
