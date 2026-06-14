@@ -307,6 +307,13 @@
     "status": "near_match",
     "title": "7th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics"
   },
+  "https://lxmls.github.io/2026/": {
+    "deadline": "2026-05-08",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "The 16th Lisbon Machine Learning School LxMLS 2026"
+  },
   "https://ncarprojects.ucar.edu/S2S-predictability/2026-s2s-land-atmosphere-interactions-workshop": {
     "deadline": null,
     "first_seen": "2026-06-13",

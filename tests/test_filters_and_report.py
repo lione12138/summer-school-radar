@@ -771,6 +771,29 @@ def test_dedupe_keeps_distinct_events_with_similar_titles() -> None:
     assert len(ranked) == 2
 
 
+def test_meta_refresh_landing_page_is_followed() -> None:
+    import responses as responses_lib
+
+    from research_school_radar.collect import fetch_source
+
+    landing = (
+        '<html><head><meta http-equiv="refresh" content="0; url=https://example.org/2026/">'
+        "</head><body>redirecting</body></html>"
+    )
+    real = "<html><head><title>ML Summer School 2026</title></head><body>The school runs in July.</body></html>"
+    source = Source(name="MetaSchool", url="https://example.org/", layer="2", region="global", source_type="x")
+
+    @responses_lib.activate
+    def run():
+        responses_lib.add(responses_lib.GET, "https://example.org/", body=landing, status=200)
+        responses_lib.add(responses_lib.GET, "https://example.org/2026/", body=real, status=200)
+        return fetch_source(source)
+
+    page = run()
+    assert page.url == "https://example.org/2026/"
+    assert "ML Summer School 2026" in page.title
+
+
 def test_failing_source_does_not_abort_collection() -> None:
     from research_school_radar import collect as collect_module
 

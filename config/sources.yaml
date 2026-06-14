@@ -383,7 +383,7 @@ sources:
     scan_frequency: every_run
     enabled: false
     check_manually: true
-    notes: Climate Change AI runs a well-known AI-for-climate summer school, exactly on-domain, but the events page is client-side rendered (no opportunity signal for scripted fetches). Check it directly.
+    notes: Climate Change AI is on-domain (AI for climate), but its events page is a client-side-rendered listing and its flagship summer school is virtual (excluded by the in-person rule). Check it directly for any in-person events.
   - name: Summer Schools in Europe
     url: https://www.summerschoolsineurope.eu/
     layer: 2
@@ -426,6 +426,4 @@ sources:
     source_type: summer_school
     keywords: [machine learning, natural language processing, summer school]
     scan_frequency: every_run
-    enabled: false
-    check_manually: true
-    notes: Lisbon Machine Learning School. Connection times out for scripted requests; check it directly.
+    notes: Lisbon Machine Learning School. The root is a meta-refresh landing page that points to the current edition; the scanner now follows it.
