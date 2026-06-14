@@ -17,11 +17,11 @@ It is a fixed trusted-source scanner with rule-based extraction, a maintainer-cu
 This section is refreshed automatically by the daily scan workflow.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-14 · 0 fully qualified · 5 still-open near-matches shown_
+_Last scan: 2026-06-14 · 0 fully qualified · 5 high-quality opportunities shown_
 
-**No fully qualified opportunities in the latest scan.** The hard filters are strict by design; near-matches below show what almost qualified.
+**No fully qualified opportunities in the latest scan.** The high-quality opportunities below are open and in scope, but missing a fully confirmed condition.
 
-**Closest Still-Open Near-Matches**
+**High-Quality Opportunities**
 
 | title | type | organizer | location | duration | deadline | funding / fee | topic |
 |---|---|---|---|---|---|---|---|
@@ -39,7 +39,7 @@ The generated website shows maintainer-reviewed opportunities first, followed by
 
 - **Curated Opportunities**: high-confidence records reviewed by maintainers.
 - **Fully Qualified Opportunities**: scanner results that satisfy every hard condition.
-- **Closest Still-Open Near-Matches**: relevant opportunities with explicit failed conditions.
+- **High-Quality Opportunities**: still-open, in-domain opportunities that are relevant but missing a fully confirmed hard condition.
 - **Sources & Coverage**: the configured trusted source registry, including disabled sources and notes.
 
 The site includes filters for keyword, status, topic, financial access, and deadline status. Rows with a known application deadline include an **Add to calendar** link that downloads a standard `.ics` event.

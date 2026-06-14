@@ -34,10 +34,10 @@ def render_report(candidates: list[Candidate], errors: list[str]) -> str:
     else:
         lines.extend(["**No fully qualified opportunities found.**", ""])
         if near:
-            lines.extend(["## Closest Still-Open Near-Matches", ""])
+            lines.extend(["## High-Quality Opportunities", ""])
             lines.extend(_near_table(near))
         else:
-            lines.append("No still-open near-matches were found.")
+            lines.append("No open opportunities were found in the latest scan.")
 
     lines.append("")
     return "\n".join(lines)
@@ -66,7 +66,7 @@ def render_readme_section(candidates: list[Candidate]) -> str:
     near = [item for item in candidates if not item.fully_qualified and not item.is_past][:5]
     lines = [
         f"_Last scan: {date.today().isoformat()} · "
-        f"{len(full)} fully qualified · {len(near)} still-open near-match{'es' if len(near) != 1 else ''} shown_",
+        f"{len(full)} fully qualified · {len(near)} high-quality opportunit{'ies' if len(near) != 1 else 'y'} shown_",
         "",
     ]
     if full:
@@ -75,10 +75,10 @@ def render_readme_section(candidates: list[Candidate]) -> str:
     else:
         lines.append(
             "**No fully qualified opportunities in the latest scan.** "
-            "The hard filters are strict by design; near-matches below show what almost qualified."
+            "The high-quality opportunities below are open and in scope, but missing a fully confirmed condition."
         )
     if near:
-        lines.extend(["", "**Closest Still-Open Near-Matches**", ""])
+        lines.extend(["", "**High-Quality Opportunities**", ""])
         lines.extend(_near_table(near))
     return "\n".join(lines).rstrip() + "\n"
 

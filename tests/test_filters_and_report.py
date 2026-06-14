@@ -401,13 +401,15 @@ def test_confidence_drops_when_fields_are_missing() -> None:
     assert candidate.deadline_evidence and candidate.duration_evidence
 
 
-def test_site_shows_confidence_and_evidence_tooltip(tmp_path) -> None:
+def test_site_shows_evidence_tooltip_and_confidence_data(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
-    assert 'class="conf"' in html
-    assert "Extraction confidence:" in html
+    # The visible per-row confidence percentage was removed as noise...
+    assert 'class="conf"' not in html
+    # ...but the confidence is still available in the row data and JSON.
     assert "data-confidence=" in html
+    assert '<td title=' in html  # evidence hover tooltip
 
 
 def test_compact_same_month_date_range_is_parsed() -> None:
@@ -572,7 +574,7 @@ def test_report_does_not_present_near_match_as_qualified() -> None:
     ranked = rank_candidates([candidate])
     markdown = render_report(ranked, [])
     assert "No fully qualified opportunities found." in markdown
-    assert "Closest Still-Open Near-Matches" in markdown
+    assert "High-Quality Opportunities" in markdown
     assert "failed hard condition" not in markdown
     assert "application deadline is uncertain" not in markdown
 

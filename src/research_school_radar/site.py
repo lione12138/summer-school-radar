@@ -260,7 +260,7 @@ def render_site(
     near_block = (
         _near_section(near_rows)
         if near
-        else '<p class="muted">No still-open near-matches were found.</p>'
+        else '<p class="muted">No open opportunities were found in the latest scan.</p>'
     )
     return f"""<!doctype html>
 <html lang="en">
@@ -390,14 +390,6 @@ def render_site(
       letter-spacing: .04em;
       vertical-align: middle;
     }}
-    .conf {{
-      margin-left: 6px;
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--muted);
-      cursor: help;
-      vertical-align: middle;
-    }}
     td[title], th[title] {{ cursor: help; }}
     .filters {{
       display: grid;
@@ -469,7 +461,7 @@ def render_site(
     <div class="stats">
       <div class="stat"><div class="num">{len(curated)}</div><div class="lbl">Curated</div></div>
       <div class="stat"><div class="num">{len(full)}</div><div class="lbl">Fully qualified</div></div>
-      <div class="stat"><div class="num">{len(near)}</div><div class="lbl">Still-open near-matches</div></div>
+      <div class="stat"><div class="num">{len(near)}</div><div class="lbl">High-quality open</div></div>
       <div class="stat"><div class="num sm">{updated}</div><div class="lbl">Last updated</div></div>
     </div>
     <p class="status{' empty' if not full else ''}">{escape(status)}</p>
@@ -647,7 +639,7 @@ def _empty_curated_section() -> str:
 def _near_section(rows: str) -> str:
     return f"""
     <section>
-      <h2>Closest Still-Open Near-Matches</h2>
+      <h2>High-Quality Opportunities</h2>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th></tr></thead>
@@ -671,7 +663,7 @@ def _qualified_row(index: int, candidate: Candidate) -> str:
     return (
         f"<tr {_row_attrs(candidate)}>"
         f"<td>{index}</td>"
-        f"<td>{_link(candidate)}{_new_badge(candidate)}{_confidence_badge(candidate)}</td>"
+        f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
         f"<td>{escape(candidate.organizer)}</td>"
         f"<td>{escape(_public_location(candidate.location))}</td>"
         f"<td{_evidence_attr(candidate.duration_evidence)}>{escape(_duration(candidate))}</td>"
@@ -705,7 +697,7 @@ def _curated_row(item: dict[str, Any]) -> str:
 def _near_row(candidate: Candidate) -> str:
     return (
         f"<tr {_row_attrs(candidate)}>"
-        f"<td>{_link(candidate)}{_new_badge(candidate)}{_confidence_badge(candidate)}</td>"
+        f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
         f"<td>{escape(candidate.organizer)}</td>"
         f"<td>{escape(_public_location(candidate.location))}</td>"
         f"<td{_evidence_attr(candidate.duration_evidence)}>{escape(_duration(candidate))}</td>"
@@ -734,16 +726,6 @@ def _evidence_attr(evidence: str) -> str:
     if len(text) > 300:
         text = text[:297].rstrip() + "..."
     return f' title="{escape(text, quote=True)}"'
-
-
-def _confidence_badge(candidate: Candidate) -> str:
-    pct = round(candidate.extraction_confidence * 100)
-    resolved = round(candidate.extraction_confidence * 4)
-    tip = (
-        f"Extraction confidence: {resolved} of 4 core fields "
-        "(deadline, duration, funding/fee, mode) resolved from the source page."
-    )
-    return f' <span class="conf" title="{escape(tip, quote=True)}">{pct}%</span>'
 
 
 def _curated_financial_summary(item: dict[str, Any], funding: dict[str, Any]) -> str:
@@ -867,7 +849,7 @@ def _filters(candidates: list[Candidate], curated: list[dict[str, Any]]) -> str:
           <option value="">All</option>
           <option value="curated">Curated</option>
           <option value="qualified">Fully qualified</option>
-          <option value="near-match">Near-match</option>
+          <option value="near-match">High-quality</option>
         </select>
       </div>
       <div class="filter-group">
