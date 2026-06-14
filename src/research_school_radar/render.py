@@ -43,7 +43,11 @@ def fetch_rendered(
         try:
             context = browser.new_context(user_agent=user_agent)
             page = context.new_page()
-            page.goto(source.url, wait_until="networkidle", timeout=timeout_ms)
+            # "domcontentloaded" is far more reliable than "networkidle", which
+            # never settles on pages with analytics or polling. Give client-side
+            # rendering a brief moment after the DOM is ready.
+            page.goto(source.url, wait_until="domcontentloaded", timeout=timeout_ms)
+            page.wait_for_timeout(2000)
             html = page.content()
             final_url = page.url
         finally:

@@ -45,6 +45,6 @@ def collect_sources(sources: list[Source]) -> tuple[list[Page], list[str]]:
     for source in sources:
         try:
             pages.append(fetch_source(source))
-        except requests.RequestException as exc:
+        except Exception as exc:  # noqa: BLE001 - one failing source must never abort the scan.
             errors.append(f"{source.name}: {exc}")
     return pages, errors

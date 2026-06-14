@@ -696,6 +696,24 @@ def test_ranking_deduplicates_same_title_and_organizer() -> None:
     assert len(ranked) == 1
 
 
+def test_failing_source_does_not_abort_collection() -> None:
+    from research_school_radar import collect as collect_module
+
+    def boom(source):
+        raise RuntimeError("render timeout")
+
+    original = collect_module.fetch_source
+    collect_module.fetch_source = boom
+    try:
+        source = Source(name="Flaky", url="https://example.org/x", layer="1", region="global", source_type="x")
+        pages, errors = collect_module.collect_sources([source])
+    finally:
+        collect_module.fetch_source = original
+    assert pages == []
+    assert len(errors) == 1
+    assert "Flaky" in errors[0] and "render timeout" in errors[0]
+
+
 def test_render_flag_is_loaded_from_sources() -> None:
     sources = _load_sources(Path("config/sources.yaml"))
     cern = next((s for s in sources if s.name == "CERN Academic Training"), None)
