@@ -145,7 +145,7 @@ def render_site(
 ) -> str:
     curated = curated or []
     full = [item for item in candidates if item.fully_qualified][:10]
-    near = [item for item in candidates if not item.fully_qualified and item.deadline_status != "closed"][:8]
+    near = [item for item in candidates if not item.fully_qualified and not item.is_past][:8]
     updated = date.today().isoformat()
     curated_rows = "".join(_curated_row(item) for item in curated)
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))

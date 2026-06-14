@@ -20,7 +20,7 @@ def write_report(candidates: list[Candidate], output_dir: Path, errors: list[str
 
 def render_report(candidates: list[Candidate], errors: list[str]) -> str:
     full = [item for item in candidates if item.fully_qualified][:10]
-    near = [item for item in candidates if not item.fully_qualified and item.deadline_status != "closed"][:5]
+    near = [item for item in candidates if not item.fully_qualified and not item.is_past][:5]
     lines = [f"# Research Seasonal School Radar Report - {date.today().isoformat()}", ""]
 
     if errors:
@@ -63,7 +63,7 @@ def update_readme(readme_path: Path, candidates: list[Candidate]) -> bool:
 
 def render_readme_section(candidates: list[Candidate]) -> str:
     full = [item for item in candidates if item.fully_qualified][:10]
-    near = [item for item in candidates if not item.fully_qualified and item.deadline_status != "closed"][:5]
+    near = [item for item in candidates if not item.fully_qualified and not item.is_past][:5]
     lines = [
         f"_Last scan: {date.today().isoformat()} · "
         f"{len(full)} fully qualified · {len(near)} still-open near-match{'es' if len(near) != 1 else ''} shown_",

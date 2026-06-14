@@ -71,7 +71,7 @@ An opportunity is treated as fully qualified only when all hard conditions are s
 - in-person or substantially on-site, not online-only
 - topic is relevant to the configured research profile
 
-If no opportunity fully qualifies, the system says so clearly and lists only still-open near-matches. Near-matches are never presented as qualified opportunities. Their failed hard conditions remain available in `site/candidates.json` for maintainers rather than occupying a public table column.
+If no opportunity fully qualifies, the system says so clearly and lists only still-open near-matches. An opportunity is treated as past — and excluded from the still-open list — when its deadline has passed, or, when no deadline could be extracted, when the event itself has already started. Near-matches are never presented as qualified opportunities. Their failed hard conditions remain available in `site/candidates.json` for maintainers rather than occupying a public table column.
 
 The scanner retains `training school` because research organizations commonly use that label for short, intensive summer-school-style programmes. The generic word `workshop` is not sufficient by itself: workshop pages must also contain a training signal such as hands-on, field, practical, training, or capacity building. Duration and the remaining hard filters still apply.
 

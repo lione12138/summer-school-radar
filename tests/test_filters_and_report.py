@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 from research_school_radar.cli import _load_curated_opportunities, _load_sources, collect_linked_opportunity_pages
@@ -445,6 +445,37 @@ def test_title_prefers_heading_over_generic_html_title() -> None:
     candidate = extract_candidate(page, PROFILE)
     assert candidate is not None
     assert candidate.title == "Mediterranean Machine Learning Summer School"
+
+
+def test_started_event_without_deadline_is_not_still_open(tmp_path) -> None:
+    # An event that has already started, with no known deadline, is past: you
+    # cannot apply, so it must not appear among still-open near-matches.
+    started = sample_candidate(PROFILE)
+    started.deadline = None
+    started.deadline_status = "uncertain"
+    started.start_date = date.today() - timedelta(days=3)
+    started.end_date = date.today() + timedelta(days=3)
+    started.title = "Already Started School"
+    started.source_url = "https://example.org/started"
+    started = apply_hard_filters(started, PROFILE)
+
+    upcoming = sample_candidate(PROFILE)
+    upcoming.deadline = None
+    upcoming.deadline_status = "uncertain"
+    upcoming.start_date = date.today() + timedelta(days=30)
+    upcoming.end_date = date.today() + timedelta(days=40)
+    upcoming.title = "Upcoming School"
+    upcoming.source_url = "https://example.org/upcoming"
+    upcoming = apply_hard_filters(upcoming, PROFILE)
+
+    assert started.is_past and not upcoming.is_past
+    ranked = rank_candidates([started, upcoming])
+    html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
+    assert "Upcoming School" in html
+    assert "Already Started School" not in html
+    markdown = render_report(ranked, [])
+    assert "Upcoming School" in markdown
+    assert "Already Started School" not in markdown
 
 
 def test_uncertain_deadline_becomes_near_match() -> None:
