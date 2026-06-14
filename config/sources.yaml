@@ -54,7 +54,8 @@ sources:
     source_type: research_network
     keywords: [AI, machine learning, summer school]
     scan_frequency: every_run
-    notes: AI and scientific ML events.
+    enabled: false
+    notes: AI and scientific ML events. The site is a single-page app whose detail pages are empty shells, but its server-rendered listing carries each event's dates and location inline, so it is parsed by a dedicated listing collector (see src/research_school_radar/api_sources.py).
   - name: IHE Delft
     url: https://www.un-ihe.org/short-courses
     layer: 1
@@ -72,7 +73,7 @@ sources:
     keywords: [climate, systems, summer school]
     scan_frequency: every_run
     enabled: false
-    notes: Strong-relevance research institute, but the site currently returns Cloudflare 403 for scripted requests including robots.txt and sitemap.xml. Re-enable when a stable public feed or non-blocked page is available.
+    notes: Strong-relevance research institute, but the site sits behind Cloudflare bot management (a "Just a moment" challenge) that returns 403 to scripted requests and blocks even a real headless browser. Left disabled rather than circumvented; re-enable if a public feed or non-blocked page appears.
   - name: GFZ Potsdam
     url: https://www.gfz-potsdam.de/en/events
     layer: 1.5

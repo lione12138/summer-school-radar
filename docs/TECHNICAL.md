@@ -333,11 +333,21 @@ python -m playwright install chromium
 
 When Playwright is not installed, a `render: true` source falls back to a plain request automatically, so the default workflow stays lightweight. The daily GitHub Actions workflow installs the browser (cached between runs) so rendered sources work in CI.
 
-## JSON API Sources
+## Direct Collectors (JSON APIs and structured listings)
 
-A site that renders its listing client-side (a single-page app) returns an empty HTML shell to `requests`. This is ordinary client-side rendering, not anti-scraping. When such a site loads its data from its own public JSON API, calling that API directly is cleaner and more reliable than rendering the page — it returns structured records (exact dates, deadline, price) and needs no browser.
+A site that renders its listing client-side (a single-page app) returns an empty HTML shell to `requests`. This is ordinary client-side rendering, not anti-scraping. The page-by-page pipeline cannot read it, but two things often can:
 
-`src/research_school_radar/api_sources.py` holds these collectors. The first targets IHE Delft, whose course catalogue is served from `https://www.un-ihe.org/api/v1/...`; each upcoming course edition maps to a candidate with full confidence. A collector returns `(candidates, errors)` and never raises, so a failing API cannot abort the scan. The corresponding HTML source is disabled in `config/sources.yaml` with a note pointing to the API collector.
+- **its own JSON API** — when the app fetches data from a public endpoint, calling that endpoint directly returns clean structured records (exact dates, deadline, price) with no browser; or
+- **its server-rendered listing** — when the listing page itself carries each event's dates and location inline (only the detail pages are empty), the listing is parsed directly.
+
+`src/research_school_radar/api_sources.py` holds these collectors:
+
+- **IHE Delft** — course catalogue from `https://www.un-ihe.org/api/v1/...`; each upcoming edition maps to a candidate at full confidence (exact dates, deadline, fee).
+- **ELLIS** — the events listing is server-rendered with each card's date range and location, so the listing is parsed into candidates even though the detail pages are an empty shell.
+
+A collector returns `(candidates, errors)` and never raises, so a failing source cannot abort the scan. The corresponding HTML sources are disabled in `config/sources.yaml` with notes pointing to the collector.
+
+Not every JS-rendered site can be reached this way. Some expose no usable data endpoint and load content only after interaction (e.g. CUAHSI). A few sit behind active bot management such as Cloudflare's challenge (e.g. IIASA), which blocks even a real headless browser; these are left disabled rather than circumvented.
 
 ## Local Development
 
