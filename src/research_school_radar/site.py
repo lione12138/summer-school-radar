@@ -12,7 +12,7 @@ from email.utils import format_datetime
 from datetime import datetime, timezone
 
 from .models import Candidate
-from .utils import format_duration, topics_label
+from .utils import format_duration, is_too_short, topics_label
 
 
 _SITE_URL = "https://lione12138.github.io/summer-school-radar/"
@@ -150,13 +150,15 @@ def render_feed(
     site_config: dict[str, Any] | None = None,
 ) -> str:
     """An RSS 2.0 feed so people can subscribe instead of visiting the page."""
-    curated = curated or []
     site_url = str((site_config or {}).get("site_url") or _SITE_URL).rstrip("/") + "/"
     feed_url = site_url + "feed.xml"
-    items = [_curated_feed_item(item) for item in curated]
     qualified = [item for item in candidates if item.fully_qualified]
-    near = [item for item in candidates if not item.fully_qualified and not item.is_past]
-    items.extend(_candidate_feed_item(item) for item in (qualified + near)[:40])
+    near = [
+        item
+        for item in candidates
+        if not item.fully_qualified and not item.is_past and not is_too_short(item.duration_days)
+    ]
+    items = [_candidate_feed_item(item) for item in (qualified + near)[:40]]
     item_xml = "".join(_feed_item_xml(item, site_url) for item in items)
     built = format_datetime(datetime.now(timezone.utc))
     return (
@@ -242,15 +244,17 @@ def render_site(
     site_config: dict[str, Any] | None = None,
     curated: list[dict[str, Any]] | None = None,
 ) -> str:
-    curated = curated or []
     full = [item for item in candidates if item.fully_qualified][:10]
-    near = [item for item in candidates if not item.fully_qualified and not item.is_past][:8]
+    near = [
+        item
+        for item in candidates
+        if not item.fully_qualified and not item.is_past and not is_too_short(item.duration_days)
+    ][:12]
     updated = date.today().isoformat()
-    curated_rows = "".join(_curated_row(item) for item in curated)
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
     near_rows = "".join(_near_row(candidate) for candidate in near)
     notes = "".join(f"<li>{escape(error)}</li>" for error in errors[:12])
-    filters = _filters(candidates, curated)
+    filters = _filters(candidates)
     analytics = _analytics_snippet(site_config or {})
     status = (
         f"{len(full)} fully qualified opportunit{'ies' if len(full) != 1 else 'y'} found"
@@ -315,7 +319,7 @@ def render_site(
     }}
     .stats {{
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 14px;
       margin-top: -48px;
     }}
@@ -461,7 +465,6 @@ def render_site(
         <span class="pill">Fixed-source scan</span>
         <span class="pill">No paid search API</span>
         <a class="pill" href="candidates.json">JSON data</a>
-        <a class="pill" href="curated.json">Curated data</a>
         <a class="pill" href="sources.html">Sources &amp; Coverage</a>
         <a class="pill" href="feed.xml">RSS feed</a>
         <a class="pill" href="https://github.com/lione12138/summer-school-radar">GitHub</a>
@@ -470,14 +473,12 @@ def render_site(
   </header>
   <main class="wrap">
     <div class="stats">
-      <div class="stat"><div class="num">{len(curated)}</div><div class="lbl">Curated</div></div>
       <div class="stat"><div class="num">{len(full)}</div><div class="lbl">Fully qualified</div></div>
       <div class="stat"><div class="num">{len(near)}</div><div class="lbl">High-quality open</div></div>
       <div class="stat"><div class="num sm">{updated}</div><div class="lbl">Last updated</div></div>
     </div>
     <p class="status{' empty' if not full else ''}">{escape(status)}</p>
     {filters}
-    {_curated_section(curated_rows) if curated else _empty_curated_section()}
     {_qualified_section(full_rows) if full else ""}
     {near_block}
     {_notes_section(notes) if notes else ""}
@@ -880,11 +881,8 @@ def _candidate_dict(candidate: Candidate) -> dict[str, Any]:
     return raw
 
 
-def _filters(candidates: list[Candidate], curated: list[dict[str, Any]]) -> str:
-    topics = sorted(
-        {topic for candidate in candidates for topic in candidate.topic_keywords}
-        | {topic for item in curated for topic in _list_value(item.get("topics"))}
-    )
+def _filters(candidates: list[Candidate]) -> str:
+    topics = sorted({topic for candidate in candidates for topic in candidate.topic_keywords})
     topic_options = "".join(f'<option value="{escape(topic, quote=True)}">{escape(topic)}</option>' for topic in topics)
     return f"""
     <section class="filters" aria-label="Opportunity filters">
@@ -896,7 +894,6 @@ def _filters(candidates: list[Candidate], curated: list[dict[str, Any]]) -> str:
         <label for="filter-status">Status</label>
         <select id="filter-status">
           <option value="">All</option>
-          <option value="curated">Curated</option>
           <option value="qualified">Fully qualified</option>
           <option value="near-match">High-quality</option>
         </select>

@@ -32,6 +32,7 @@ from .extract import (
     _topic_in_text,
 )
 from .models import Candidate
+from .parse import is_workshop_title
 from .render import render_texts
 from .utils import clean_space
 
@@ -278,6 +279,8 @@ def _ellis_location(card: Any) -> str:
 def _ellis_candidate(
     title: str, href: str, location: str, text: str, match: "re.Match[str]", preferred: list[str], profile: dict
 ) -> Candidate | None:
+    if is_workshop_title(title):
+        return None
     try:
         start = date(2000 + int(match.group(3)), int(match.group(2)), int(match.group(1)))
         end = date(2000 + int(match.group(6)), int(match.group(5)), int(match.group(4)))

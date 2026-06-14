@@ -684,6 +684,54 @@ def test_school_types_remain_opportunities() -> None:
         assert looks_like_opportunity(text), kind
 
 
+def test_workshop_titled_page_is_dropped_even_with_course_text() -> None:
+    page = _page(
+        "Fiber optic sensing short course details. In-person training. "
+        "Dates: 1 September 2026 to 12 September 2026. Application deadline: 21 July 2026. "
+        "Topics include geoscience.",
+        title="6th EAGE Workshop on Fiber Optic Sensing for Energy Applications",
+    )
+    assert extract_candidate(page, PROFILE) is None
+
+
+def test_summer_school_mentioning_a_workshop_is_kept() -> None:
+    page = _page(
+        "Learning Theory Summer School. In-person training. "
+        "Dates: 1 July 2027 to 12 July 2027. Application deadline: 1 March 2027. "
+        "Followed by a two-day workshop. Topics include machine learning.",
+        title="ELLIS Unit: Learning Theory Summer School",
+    )
+    assert extract_candidate(page, PROFILE) is not None
+
+
+def test_latest_deadline_wins_over_early_bird() -> None:
+    from research_school_radar.extract import _all_deadlines, _extract_deadline
+
+    text = "Early Registration Deadline 30 June 2026. Regular Registration Deadline 31 July 2026."
+    assert _extract_deadline(text) == date(2026, 7, 31)
+    assert len(_all_deadlines(text)) == 2
+
+
+def test_too_short_events_are_dropped_from_display(tmp_path) -> None:
+    def near_match(title: str, url: str, days: int, span: int):
+        c = sample_candidate(PROFILE)
+        c.deadline = None
+        c.deadline_status = "uncertain"
+        c.start_date = date.today() + timedelta(days=30)
+        c.end_date = date.today() + timedelta(days=30 + span)
+        c.duration_days = days
+        c.title = title
+        c.source_url = url
+        return apply_hard_filters(c, PROFILE)
+
+    short = near_match("Three Day Mini Event", "https://example.org/short", 3, 2)
+    longer = near_match("Ten Day Summer School", "https://example.org/long", 10, 9)
+    ranked = rank_candidates([short, longer])
+    html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
+    assert "Ten Day Summer School" in html
+    assert "Three Day Mini Event" not in html
+
+
 def test_language_course_with_cefr_levels_is_excluded() -> None:
     text = (
         "English Advanced Course 1 (B2 to C1). Summer school. "
@@ -915,7 +963,8 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert "Example Hydrology Winter School" in html
     assert "filter-topic" in html
     assert 'data-status="qualified"' in html
-    assert "No maintainer-reviewed opportunities have been added yet" in html
+    # The curated section was removed; the page no longer mentions it.
+    assert "Curated Opportunities" not in html
     assert "Add to calendar" in html
     assert "data:text/calendar" in html  # Apple / .ics option
     assert "Application%20deadline" in html  # encoded summary in the .ics
@@ -981,42 +1030,6 @@ def test_sources_page_lists_check_manually_separately(tmp_path) -> None:
     assert "1 enabled" in html
 
 
-def test_site_generation_renders_curated_opportunities(tmp_path) -> None:
-    curated = [
-        {
-            "title": "Curated Hydrology School",
-            "type": "summer school",
-            "organizer": "Trusted Institute",
-            "url": "https://example.org/curated",
-            "location": "Delft, Netherlands",
-            "region": "continental Europe",
-            "start_date": "2027-07-01",
-            "end_date": "2027-07-12",
-            "duration_days": 12,
-            "application_deadline": "2027-03-01",
-            "funding": {
-                "available": True,
-                "type": ["travel grant"],
-                "evidence": "Travel grants are available.",
-            },
-            "topics": ["hydrology", "water resources"],
-            "status": "confirmed",
-            "notes": "Maintainer reviewed.",
-        }
-    ]
-    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
-    ranked = rank_candidates([candidate])
-    index = write_site(ranked, [], tmp_path, curated=curated)
-    html = index.read_text(encoding="utf-8")
-    curated_json = (tmp_path / "curated.json").read_text(encoding="utf-8")
-    assert "Curated Opportunities" in html
-    assert "Curated Hydrology School" in html
-    assert 'data-status="curated"' in html
-    assert '<option value="curated">Curated</option>' in html
-    assert "curated-hydrology-school-deadline.ics" in html
-    assert "Curated Hydrology School" in curated_json
-
-
 def test_site_generation_can_inject_goatcounter(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
@@ -1067,22 +1080,6 @@ def test_status_line_uses_correct_singular_and_plural(tmp_path) -> None:
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
     assert "1 fully qualified opportunity found" in html
     assert "opportunityies" not in html
-
-
-def test_curated_past_deadline_is_marked_closed(tmp_path) -> None:
-    curated = [
-        {
-            "title": "Past Deadline School",
-            "organizer": "Trusted Institute",
-            "url": "https://example.org/past",
-            "application_deadline": "2020-01-01",
-            "topics": ["hydrology"],
-        }
-    ]
-    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
-    ranked = rank_candidates([candidate])
-    html = write_site(ranked, [], tmp_path, curated=curated).read_text(encoding="utf-8")
-    assert 'data-status="curated" data-region="unclassified" data-funding="unresolved" data-deadline="closed"' in html
 
 
 def test_seen_state_is_json_and_preserves_first_seen(tmp_path) -> None:
@@ -1181,15 +1178,15 @@ def test_location_label_stops_before_date_and_contact() -> None:
     )
     page = Page(
         url=source.url,
-        title="Glacial Lake Outburst Flood Risk Assessment Field Workshop",
+        title="Glacial Lake Outburst Flood Risk Assessment Field School",
         text=(
-            "Glacial Lake Outburst Flood Risk Assessment Field Workshop. Field school. "
+            "Glacial Lake Outburst Flood Risk Assessment Field School. Field school. "
             "Venue Drang Drung Glacier, Zanskar, India Date & Time 01 June 2027 to 15 June 2027 Contact Example Person. "
             "Funding support is available. Topics include water resources and disaster risk."
         ),
         html="""
         <html><body>
-          <h1>Glacial Lake Outburst Flood Risk Assessment Field Workshop</h1>
+          <h1>Glacial Lake Outburst Flood Risk Assessment Field School</h1>
           <div>Venue</div>
           <div>Drang Drung Glacier, Zanskar, India</div>
           <div>Date &amp; Time</div>

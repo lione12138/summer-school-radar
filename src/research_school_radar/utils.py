@@ -35,6 +35,15 @@ def evidence_window(text: str, pattern: str, radius: int = 120) -> str:
     return clean_space(text[start:end])
 
 
+# Opportunities shorter than this many days are too brief to surface publicly,
+# even as high-quality near-matches (a few-day event is closer to a workshop).
+DISPLAY_MIN_DURATION_DAYS = 5
+
+
+def is_too_short(duration_days: int | None) -> bool:
+    return duration_days is not None and duration_days < DISPLAY_MIN_DURATION_DAYS
+
+
 def topics_label(keywords: list[str], limit: int = 4) -> str:
     """Join topic keywords for table display, capped to at most `limit` terms."""
     return ", ".join(keywords[:limit])

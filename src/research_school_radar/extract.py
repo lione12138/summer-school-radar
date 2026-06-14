@@ -8,7 +8,7 @@ from dateutil import parser as date_parser
 
 from .adapters import resolve_overrides
 from .models import Candidate, Page, Source
-from .parse import OPPORTUNITY_TERMS, has_programme_signal, is_excluded_programme
+from .parse import OPPORTUNITY_TERMS, has_programme_signal, is_excluded_programme, is_workshop_title
 from .utils import clean_space, evidence_window, first_match
 
 
@@ -116,9 +116,14 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     start = overrides.get("start_date") or (ranges[0][0] if ranges else None)
     end = overrides.get("end_date") or (ranges[0][1] if ranges else None)
     duration_evidence = ranges[0][2] if ranges else str(overrides.get("duration_evidence", ""))
-    deadline_match = _find_deadline(text)
-    deadline = overrides.get("deadline") or (_safe_parse_date(deadline_match.group(1)) if deadline_match else None)
-    deadline_evidence = clean_space(deadline_match.group(0)) if deadline_match else ""
+    deadlines = _all_deadlines(text)
+    deadline = overrides.get("deadline") or (deadlines[-1][0] if deadlines else None)
+    if deadlines:
+        deadline_evidence = deadlines[-1][1]
+        if len(deadlines) > 1:
+            deadline_evidence += f" (earlier deadline also listed: {deadlines[0][0].isoformat()})"
+    else:
+        deadline_evidence = ""
 
     # Drop listing, calendar, and navigation pages. A single opportunity has one
     # clear date range or a governing deadline. Three or more event ranges is a
@@ -143,7 +148,7 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     # Fall back to the JSON-LD event name when the page's HTML titles are all
     # generic ("Home", "Events", ...).
     title = _extract_title(page) or _clean_title(str(overrides.get("jsonld_name", "")))
-    if not title:
+    if not title or is_workshop_title(title):
         return None
     eligibility = first_match(
         text,
@@ -563,13 +568,25 @@ _DEADLINE_PATTERN = (
 )
 
 
-def _find_deadline(text: str) -> "re.Match[str] | None":
-    return re.search(_DEADLINE_PATTERN, text, flags=re.IGNORECASE)
+def _all_deadlines(text: str) -> list[tuple[date, str]]:
+    """All (date, evidence) deadlines on the page, earliest first. A page can
+    list an early-bird and a regular deadline; the regular one is the latest."""
+    found: list[tuple[date, str]] = []
+    seen: set[date] = set()
+    for match in re.finditer(_DEADLINE_PATTERN, text, flags=re.IGNORECASE):
+        parsed = _safe_parse_date(match.group(1))
+        if parsed and parsed not in seen:
+            seen.add(parsed)
+            found.append((parsed, clean_space(match.group(0))))
+    found.sort(key=lambda item: item[0])
+    return found
 
 
 def _extract_deadline(text: str) -> date | None:
-    match = _find_deadline(text)
-    return _safe_parse_date(match.group(1)) if match else None
+    # The final (regular) deadline is what matters; early-bird deadlines are
+    # earlier, so take the latest.
+    deadlines = _all_deadlines(text)
+    return deadlines[-1][0] if deadlines else None
 
 
 def _mode_evidence(text: str) -> str:

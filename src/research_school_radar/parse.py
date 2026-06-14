@@ -80,6 +80,15 @@ def is_excluded_programme(text: str) -> bool:
     return False
 
 
+def is_workshop_title(title: str) -> bool:
+    """True when the title names a workshop and not a school or course, so a
+    workshop page is dropped even if its body mentions a course elsewhere."""
+    lowered = title.lower()
+    if "workshop" not in lowered:
+        return False
+    return not any(term in lowered for term in OPPORTUNITY_TERMS)
+
+
 def looks_like_opportunity(text: str) -> bool:
     lowered = text.lower()
     if is_excluded_programme(text):
