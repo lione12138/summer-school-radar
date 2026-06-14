@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from .api_sources import collect_api_candidates
 from .collect import collect_sources, fetch_source
 from .extract import extract_candidate, sample_candidate
 from .filter import apply_hard_filters
@@ -69,6 +70,10 @@ def run_scan(
         candidate_pages = [page for page in pages if looks_like_opportunity(page.text)]
         candidate_pages.extend(linked_pages)
         candidates = [candidate for page in candidate_pages if (candidate := extract_candidate(page, profile))]
+
+        api_candidates, api_errors = collect_api_candidates(profile)
+        candidates.extend(api_candidates)
+        errors.extend(api_errors)
 
         if include_discovery:
             query_config = load_yaml(config_dir / "queries.yaml")

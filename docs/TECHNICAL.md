@@ -333,6 +333,12 @@ python -m playwright install chromium
 
 When Playwright is not installed, a `render: true` source falls back to a plain request automatically, so the default workflow stays lightweight. The daily GitHub Actions workflow installs the browser (cached between runs) so rendered sources work in CI.
 
+## JSON API Sources
+
+A site that renders its listing client-side (a single-page app) returns an empty HTML shell to `requests`. This is ordinary client-side rendering, not anti-scraping. When such a site loads its data from its own public JSON API, calling that API directly is cleaner and more reliable than rendering the page — it returns structured records (exact dates, deadline, price) and needs no browser.
+
+`src/research_school_radar/api_sources.py` holds these collectors. The first targets IHE Delft, whose course catalogue is served from `https://www.un-ihe.org/api/v1/...`; each upcoming course edition maps to a candidate with full confidence. A collector returns `(candidates, errors)` and never raises, so a failing API cannot abort the scan. The corresponding HTML source is disabled in `config/sources.yaml` with a note pointing to the API collector.
+
 ## Local Development
 
 Install and run:

@@ -17,7 +17,7 @@ It is a fixed trusted-source scanner with rule-based extraction, a maintainer-cu
 This section is refreshed automatically by the daily scan workflow.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-14 · 0 fully qualified · 3 still-open near-matches shown_
+_Last scan: 2026-06-14 · 0 fully qualified · 5 still-open near-matches shown_
 
 **No fully qualified opportunities in the latest scan.** The hard filters are strict by design; near-matches below show what almost qualified.
 
@@ -25,9 +25,11 @@ _Last scan: 2026-06-14 · 0 fully qualified · 3 still-open near-matches shown_
 
 | title | type | organizer | location | duration | deadline | funding / fee | topic |
 |---|---|---|---|---|---|---|---|
-| [2026 S2S Land-atmosphere Interactions Workshop](https://ncarprojects.ucar.edu/S2S-predictability/2026-s2s-land-atmosphere-interactions-workshop) | workshop | GEWEX | global | 4 Aug – 6 Aug 2026 · 3 days | uncertain | Funding or fee not stated | water resources, meteorology, artificial intelligence, uncertainty quantification |
-| [IEEE GRSS Summer School on UAS-Based GNSS-R Remote Sensing](https://www.grss-ieee.org/event/ieee-grss-summer-school-on-uas-based-gnss-r-remote-sensing/) | summer school | IEEE GRSS | University of Michigan, Ann Arbor, USA | 14 Jul – 16 Jul 2026 · 3 days | uncertain | Funding or fee not stated | climate, geoscience, remote sensing, earth observation |
-| [Eastern European Machine Learning Summer School](https://www.eeml.eu/) | summer school | EEML | EEML2022 | 27 Jul – 1 Aug 2026 · 6 days | uncertain | Funding or fee not stated | AI, artificial intelligence, machine learning |
+| [River Basin Modelling](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | groundwater, water resources, water quality, GIS |
+| [Organizing Water](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | water management |
+| [Water Quality Assessment and Monitoring](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 5 Oct – 23 Oct 2026 · 19 days | 2026-09-05 | Fee about EUR 5505 · Apply on official page | groundwater, water quality |
+| [Surface Water Treatment](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 30 Nov – 18 Dec 2026 · 19 days | 2026-10-30 | Fee about EUR 2600 · Apply on official page | water quality |
+| [On-site Sanitation and Treatment](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | water management |
 
 <!-- radar:results:end -->
 

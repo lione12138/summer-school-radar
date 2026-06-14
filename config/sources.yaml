@@ -62,7 +62,8 @@ sources:
     source_type: university_institute
     keywords: [water, hydrology, short course, scholarship]
     scan_frequency: every_run
-    notes: Water education source.
+    enabled: false
+    notes: Premier water education source. The listing is client-side rendered (empty HTML), so it is collected directly from its public JSON API instead (see src/research_school_radar/api_sources.py), which gives exact dates, deadline, and fee.
   - name: IIASA
     url: https://iiasa.ac.at/events
     layer: 1.5
