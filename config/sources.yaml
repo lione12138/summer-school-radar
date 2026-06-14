@@ -30,7 +30,9 @@ sources:
     source_type: research_network
     keywords: [hydrology, water, short course]
     scan_frequency: every_run
-    notes: Hydrology workshops and training. Previous /education URL returned 404.
+    enabled: false
+    check_manually: true
+    notes: Hydrology workshops and training. The workshops page is a single-page app that loads its list only after interaction, so scripted requests see no content. Check it directly.
   - name: NASA ARSET
     url: https://appliedsciences.nasa.gov/what-we-do/capacity-building/arset
     layer: 1
@@ -73,7 +75,8 @@ sources:
     keywords: [climate, systems, summer school]
     scan_frequency: every_run
     enabled: false
-    notes: Strong-relevance research institute, but the site sits behind Cloudflare bot management (a "Just a moment" challenge) that returns 403 to scripted requests and blocks even a real headless browser. Left disabled rather than circumvented; re-enable if a public feed or non-blocked page appears.
+    check_manually: true
+    notes: Strong-relevance research institute, but the site sits behind Cloudflare bot management (a "Just a moment" challenge) that returns 403 to scripted requests and blocks even a real headless browser. Left disabled rather than circumvented; check it directly.
   - name: GFZ Potsdam
     url: https://www.gfz-potsdam.de/en/events
     layer: 1.5
@@ -347,6 +350,30 @@ sources:
     keywords: [meteorology, climate, remote sensing, earth observation, training]
     scan_frequency: every_run
     notes: EUMETSAT training portal for satellite meteorology and climate.
+  - name: ICOS
+    url: https://www.icos-cp.eu/news-and-events/events
+    layer: 1.5
+    region: continental Europe
+    source_type: research_infrastructure
+    keywords: [carbon, climate, greenhouse gas, observation, training]
+    scan_frequency: every_run
+    notes: Integrated Carbon Observation System events and training.
+  - name: ICTP-SAIFR
+    url: https://www.ictp-saifr.org/
+    layer: 2
+    region: Latin America
+    source_type: research_institute
+    keywords: [physics, data science, machine learning, climate, school]
+    scan_frequency: every_run
+    notes: South American Institute for Fundamental Research (ICTP partner); runs data science, ML, and climate schools.
+  - name: Lamont-Doherty
+    url: https://lamont.columbia.edu/events
+    layer: 1.5
+    region: North America
+    source_type: research_institute
+    keywords: [climate, oceanography, seismology, geoscience, earth observation]
+    scan_frequency: every_run
+    notes: Lamont-Doherty Earth Observatory (Columbia University) events.
   - name: Climate Change AI
     url: https://www.climatechange.ai/events
     layer: 1.5
@@ -355,7 +382,8 @@ sources:
     keywords: [AI, machine learning, climate, scientific machine learning, summer school]
     scan_frequency: every_run
     enabled: false
-    notes: Climate Change AI runs a well-known AI-for-climate summer school, exactly on-domain, but the events page is partly client-side rendered (no opportunity signal for scripted fetches). Revisit with rendering or a data endpoint.
+    check_manually: true
+    notes: Climate Change AI runs a well-known AI-for-climate summer school, exactly on-domain, but the events page is client-side rendered (no opportunity signal for scripted fetches). Check it directly.
   - name: Summer Schools in Europe
     url: https://www.summerschoolsineurope.eu/
     layer: 2
@@ -399,4 +427,5 @@ sources:
     keywords: [machine learning, natural language processing, summer school]
     scan_frequency: every_run
     enabled: false
-    notes: Lisbon Machine Learning School. Connection times out for scripted requests; re-enable when reachable.
+    check_manually: true
+    notes: Lisbon Machine Learning School. Connection times out for scripted requests; check it directly.

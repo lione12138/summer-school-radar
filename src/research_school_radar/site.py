@@ -387,9 +387,12 @@ def render_site(
 
 
 def render_sources_page(sources: list[dict[str, Any]]) -> str:
-    enabled_count = sum(1 for source in sources if source.get("enabled", True))
-    disabled_count = len(sources) - enabled_count
-    rows = "".join(_source_row(source) for source in sources)
+    manual = [source for source in sources if source.get("check_manually")]
+    registry = [source for source in sources if not source.get("check_manually")]
+    enabled_count = sum(1 for source in registry if source.get("enabled", True))
+    disabled_count = len(registry) - enabled_count
+    rows = "".join(_source_row(source) for source in registry)
+    manual_section = _manual_sources_section(manual) if manual else ""
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -437,10 +440,42 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
         <tbody>{rows}</tbody>
       </table>
     </div>
+    {manual_section}
   </main>
 </body>
 </html>
 """
+
+
+def _manual_sources_section(manual: list[dict[str, Any]]) -> str:
+    rows = "".join(_manual_source_row(source) for source in manual)
+    return f"""
+    <section>
+      <h2>Sources to Check Directly</h2>
+      <p class="muted">We can't fetch these automatically yet &mdash; they block scripted access, render only with JavaScript, or expose no public listing. Until that changes, please open them yourself to look for opportunities; their pages are linked below.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Source</th><th>Region</th><th>Keywords</th><th>Why it isn&#39;t fetched automatically</th></tr></thead>
+          <tbody>{rows}</tbody>
+        </table>
+      </div>
+    </section>
+"""
+
+
+def _manual_source_row(source: dict[str, Any]) -> str:
+    url = str(source.get("url", "")).strip()
+    name = escape(str(source.get("name", "Unnamed source")))
+    link = f'<a href="{escape(url, quote=True)}">{name}</a>' if url else name
+    keywords = ", ".join(_list_value(source.get("keywords")))
+    return (
+        "<tr>"
+        f"<td>{link}</td>"
+        f"<td>{escape(str(source.get('region', '')))}</td>"
+        f"<td>{escape(keywords)}</td>"
+        f"<td>{escape(str(source.get('notes', '')))}</td>"
+        "</tr>"
+    )
 
 
 def _qualified_section(rows: str) -> str:

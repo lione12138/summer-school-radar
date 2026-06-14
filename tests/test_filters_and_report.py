@@ -866,6 +866,30 @@ def test_site_generation_renders_sources_page(tmp_path) -> None:
     assert "Disabled Source" in source_json
 
 
+def test_sources_page_lists_check_manually_separately(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    ranked = rank_candidates([candidate])
+    sources = [
+        {"name": "Working Source", "url": "https://example.org/ok", "region": "UK", "keywords": ["water"]},
+        {
+            "name": "Blocked Source",
+            "url": "https://example.org/blocked",
+            "region": "global",
+            "keywords": ["climate"],
+            "enabled": False,
+            "check_manually": True,
+            "notes": "Sits behind a bot wall; check it directly.",
+        },
+    ]
+    write_site(ranked, [], tmp_path, sources=sources)
+    html = (tmp_path / "sources.html").read_text(encoding="utf-8")
+    assert "Sources to Check Directly" in html
+    assert "Blocked Source" in html
+    assert "check it directly" in html
+    # The manual source is not counted among the configured registry pills.
+    assert "1 enabled" in html
+
+
 def test_site_generation_renders_curated_opportunities(tmp_path) -> None:
     curated = [
         {
