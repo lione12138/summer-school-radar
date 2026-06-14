@@ -461,10 +461,10 @@ sources:
     scan_frequency: every_run
     notes: Abdus Salam ICTP runs many funded schools in geophysics, climate, and scientific ML. The /scientific-calendar path 404s; /home/scientific-calendar works for scripted requests.
   - name: LxMLS
-    url: https://lxmls.it.pt/
+    url: https://lxmls.github.io/2026/
     layer: 2
     region: continental Europe
     source_type: summer_school
     keywords: [machine learning, natural language processing, summer school]
     scan_frequency: every_run
-    notes: Lisbon Machine Learning School. The root is a meta-refresh landing page that points to the current edition; the scanner now follows it.
+    notes: Lisbon Machine Learning School. The canonical lxmls.it.pt domain times out from the CI runner, so this points at the current edition on GitHub Pages directly. Bump the year when a new edition is published.
