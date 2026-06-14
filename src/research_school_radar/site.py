@@ -6,7 +6,7 @@ from datetime import date, timedelta
 from html import escape
 from pathlib import Path
 from typing import Any
-from urllib.parse import quote
+from urllib.parse import quote, urlencode
 
 from email.utils import format_datetime
 from datetime import datetime, timezone
@@ -357,18 +357,29 @@ def render_site(
       border-left-color: var(--warn);
       background: var(--warn-soft);
     }}
-    .calendar-link {{
-      display: inline-block;
-      margin-top: 6px;
+    .cal {{ display: inline-block; margin-top: 6px; }}
+    .cal > summary {{
+      cursor: pointer;
       font-size: 12px;
+      color: var(--accent-ink);
+      list-style: none;
       white-space: nowrap;
       border: 1px solid var(--line);
       border-radius: 999px;
       padding: 2px 10px;
       background: var(--panel-2);
-      text-decoration: none;
+      display: inline-block;
     }}
-    .calendar-link:hover {{ border-color: var(--accent); }}
+    .cal > summary::-webkit-details-marker {{ display: none; }}
+    .cal > summary::marker {{ content: ""; }}
+    .cal > summary:hover {{ border-color: var(--accent); }}
+    .cal[open] > summary {{ font-weight: 600; border-color: var(--accent); }}
+    .cal a {{
+      display: block;
+      font-size: 12px;
+      padding: 3px 2px;
+      white-space: nowrap;
+    }}
     .muted {{ color: var(--muted); }}
     .notes {{
       background: var(--panel);
@@ -751,13 +762,51 @@ def _duration(candidate: Candidate) -> str:
 def _deadline_cell(deadline: date | None, title: str, url: str) -> str:
     if deadline is None:
         return "uncertain"
-    calendar_url = _calendar_data_url(deadline, title, url)
-    filename = _calendar_filename(title)
+    google = escape(_google_calendar_url(deadline, title, url), quote=True)
+    outlook = escape(_outlook_calendar_url(deadline, title, url), quote=True)
+    ics = _calendar_data_url(deadline, title, url)
+    filename = escape(_calendar_filename(title), quote=True)
     return (
         f"{escape(deadline.isoformat())}"
-        f'<br><a class="calendar-link" href="{calendar_url}" download="{escape(filename, quote=True)}">'
-        "Add to calendar</a>"
+        '<details class="cal"><summary>Add to calendar</summary>'
+        f'<a href="{google}" target="_blank" rel="noopener">Google Calendar</a>'
+        f'<a href="{outlook}" target="_blank" rel="noopener">Outlook</a>'
+        f'<a href="{ics}" download="{filename}">Apple / .ics</a>'
+        "</details>"
     )
+
+
+def _calendar_event(deadline: date, title: str, url: str) -> tuple[str, str]:
+    summary = f"Application deadline: {title}"
+    description = f"Apply by {deadline.isoformat()}." + (f" Source: {url}" if url else "")
+    return summary, description
+
+
+def _google_calendar_url(deadline: date, title: str, url: str) -> str:
+    summary, description = _calendar_event(deadline, title, url)
+    start = deadline.strftime("%Y%m%d")
+    end = (deadline + timedelta(days=1)).strftime("%Y%m%d")
+    params = {
+        "action": "TEMPLATE",
+        "text": summary,
+        "dates": f"{start}/{end}",
+        "details": description,
+    }
+    return "https://calendar.google.com/calendar/render?" + urlencode(params)
+
+
+def _outlook_calendar_url(deadline: date, title: str, url: str) -> str:
+    summary, description = _calendar_event(deadline, title, url)
+    params = {
+        "path": "/calendar/action/compose",
+        "rru": "addevent",
+        "subject": summary,
+        "startdt": deadline.isoformat(),
+        "enddt": (deadline + timedelta(days=1)).isoformat(),
+        "allday": "true",
+        "body": description,
+    }
+    return "https://outlook.live.com/calendar/0/deeplink/compose?" + urlencode(params)
 
 
 def _calendar_data_url(deadline: date, title: str, url: str) -> str:

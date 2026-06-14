@@ -917,8 +917,10 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert 'data-status="qualified"' in html
     assert "No maintainer-reviewed opportunities have been added yet" in html
     assert "Add to calendar" in html
-    assert "data:text/calendar" in html
-    assert "Application%20deadline" in html
+    assert "data:text/calendar" in html  # Apple / .ics option
+    assert "Application%20deadline" in html  # encoded summary in the .ics
+    assert "calendar.google.com/calendar/render" in html  # Google option
+    assert "outlook.live.com/calendar" in html  # Outlook option
 
 
 def test_site_generation_renders_sources_page(tmp_path) -> None:
