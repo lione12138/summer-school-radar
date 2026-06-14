@@ -64,7 +64,14 @@ def run_scan(
     else:
         sources = _load_sources(config_dir / "sources.yaml")
         pages, collection_errors = collect_sources(sources)
-        errors.extend(collection_errors)
+        # Transient network errors (timeouts, connection failures) vary run to run
+        # on the shared CI runner and are not useful in the public notes; log them
+        # but only surface persistent problems. The Sources page lists coverage.
+        for error in collection_errors:
+            if _is_transient_error(error):
+                print(f"(transient) {error}")
+            else:
+                errors.append(error)
         # A followed link that fails to load is noise, not a source problem, so
         # those errors are not surfaced in the public collection notes.
         linked_pages, _linked_errors = collect_linked_opportunity_pages(pages, max_links_per_source)
@@ -112,6 +119,23 @@ def run_scan(
         print(f"Wrote site: {site_path}")
     print(f"Wrote report: {report_path}")
     return report_path
+
+
+_TRANSIENT_MARKERS = (
+    "timed out",
+    "timeout",
+    "max retries",
+    "connection",
+    "unreachable",
+    "refused",
+    "nameresolution",
+    "temporary failure",
+)
+
+
+def _is_transient_error(error: str) -> bool:
+    lowered = error.lower()
+    return any(marker in lowered for marker in _TRANSIENT_MARKERS)
 
 
 def _load_sources(path: Path) -> list[Source]:

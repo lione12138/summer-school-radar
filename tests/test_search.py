@@ -90,6 +90,15 @@ def test_ellis_listing_collector_parses_cards(monkeypatch) -> None:
     assert course.application_link.endswith("/events/ml-school")
 
 
+def test_transient_errors_are_classified() -> None:
+    from research_school_radar.cli import _is_transient_error
+
+    assert _is_transient_error("APECS: ... Connection to www.apecs.is timed out.")
+    assert _is_transient_error("X: Max retries exceeded ... Connection refused")
+    assert not _is_transient_error("IAHS: 403 Client Error: Forbidden")
+    assert not _is_transient_error("Y: 404 Client Error: Not Found")
+
+
 def test_deadline_without_year_is_inferred_from_event() -> None:
     from datetime import date as _date
 
