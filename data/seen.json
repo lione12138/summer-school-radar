@@ -405,6 +405,20 @@
     "status": "near_match",
     "title": "Meetings & Events"
   },
+  "https://www.apecs.is/news/polar-and-alpine-community-news/5460-griso-summer-school-2026-a-collaborative-future-strengthening-science-and-connections-in-greenland.html": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "GRISO Summer School 2026 – A Collaborative Future: Strengthening Science and Connections in Greenland"
+  },
+  "https://www.clivar.org/events/7th-ictp-summer-school-theory-mechanisms-and-hierarchical-modelling-climate-dynamics": {
+    "deadline": "2026-04-30",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "7th ICTP Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics"
+  },
   "https://www.cuahsi.org/workshops/past-workshops": {
     "deadline": "2023-10-18",
     "first_seen": "2026-06-11",
@@ -663,5 +677,12 @@
     "last_seen": "2026-06-14",
     "status": "near_match",
     "title": "River Basin Modelling"
+  },
+  "https://www.wcrp-climate.org/ictp2014-about": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "WCRP-ICTP 2014 Summer school on Attribution and Prediction of Extremes Events"
   }
 }

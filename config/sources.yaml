@@ -374,6 +374,38 @@ sources:
     keywords: [climate, oceanography, seismology, geoscience, earth observation]
     scan_frequency: every_run
     notes: Lamont-Doherty Earth Observatory (Columbia University) events.
+  - name: IPAM
+    url: https://www.ipam.ucla.edu/programs/summer-schools/
+    layer: 1.5
+    region: North America
+    source_type: research_institute
+    keywords: [machine learning, data science, applied mathematics, summer school]
+    scan_frequency: every_run
+    notes: UCLA Institute for Pure and Applied Mathematics; graduate summer schools in data science, ML, and computational science, usually with travel support.
+  - name: CLIVAR
+    url: https://www.clivar.org/events
+    layer: 1
+    region: global
+    source_type: research_network
+    keywords: [climate, climate variability, oceanography, summer school]
+    scan_frequency: every_run
+    notes: World Climate Research Programme's CLIVAR project; climate variability and predictability schools and events.
+  - name: APECS
+    url: https://www.apecs.is/
+    layer: 2
+    region: global
+    source_type: research_network
+    keywords: [polar, cryosphere, climate, early-career]
+    scan_frequency: every_run
+    notes: Association of Polar Early Career Scientists; polar and cryosphere training schools and webinars.
+  - name: Barcelona Supercomputing Center
+    url: https://www.bsc.es/education/training
+    layer: 2
+    region: continental Europe
+    source_type: research_institute
+    keywords: [machine learning, high performance computing, data science, training]
+    scan_frequency: every_run
+    notes: BSC training in high-performance and data-driven computational science, including ML for science.
   - name: Climate Change AI
     url: https://www.climatechange.ai/events
     layer: 1.5

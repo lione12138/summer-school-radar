@@ -360,9 +360,20 @@ def _extract_title(page: Page) -> str:
         title = _clean_title(raw)
         lowered = title.lower()
         is_section = any(word in lowered for word in _SECTION_TITLE_WORDS)
+        if _looks_like_url(lowered):
+            continue
         if title and lowered not in GENERIC_TITLES and not is_section and len(title) >= 6:
             return title
     return ""
+
+
+def _looks_like_url(title: str) -> str | None:
+    """A title that is just a bare URL or domain (e.g. "www.clivar.org") is a
+    stray link, not an opportunity name."""
+    lowered = title.strip().lower()
+    if lowered.startswith(("http://", "https://", "www.")):
+        return True
+    return " " not in lowered and re.search(r"\.[a-z]{2,}$", lowered) is not None
 
 
 def _clean_title(value: str) -> str:

@@ -350,6 +350,16 @@ def test_calendar_with_deadline_is_still_dropped() -> None:
     assert extract_candidate(page, PROFILE) is None
 
 
+def test_bare_url_title_is_dropped() -> None:
+    page = _page(
+        "Summer school. In-person training. Dates: 1 July 2027 to 12 July 2027. "
+        "Application deadline: 1 March 2027. Topics include climate.",
+        html="<html><head><title>www.clivar.org</title></head><body><h1>www.clivar.org</h1></body></html>",
+        title="www.clivar.org",
+    )
+    assert extract_candidate(page, PROFILE) is None
+
+
 def test_navigation_title_is_dropped() -> None:
     page = _page(
         "Main navigation. Hydrology training school 1 July 2027 to 12 July 2027. "
