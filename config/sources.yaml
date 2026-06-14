@@ -14,7 +14,9 @@ sources:
     source_type: scientific_society
     keywords: [hydrology, water resources, training]
     scan_frequency: every_run
-    notes: International Association of Hydrological Sciences.
+    enabled: false
+    check_manually: true
+    notes: International Association of Hydrological Sciences. Cloudflare blocks the GitHub Actions runner's IP with a 403 (it loads fine from a normal browser). Check it directly.
   - name: IAH
     url: https://iah.org/
     layer: 1
@@ -34,13 +36,15 @@ sources:
     check_manually: true
     notes: Hydrology workshops and training. The workshops page is a single-page app that loads its list only after interaction, so scripted requests see no content. Check it directly.
   - name: NASA ARSET
-    url: https://appliedsciences.nasa.gov/what-we-do/capacity-building/arset
+    url: https://www.earthdata.nasa.gov/data/projects/arset
     layer: 1
     region: global
     source_type: agency
     keywords: [remote sensing, water, climate, training]
     scan_frequency: every_run
-    notes: Often online, so many records will be near-matches only.
+    enabled: false
+    check_manually: true
+    notes: NASA Applied Remote Sensing Training. The site is unreachable / returns 403 from the GitHub Actions runner's network, and most ARSET trainings are online anyway. Check it directly.
   - name: DAAD Short Courses
     url: https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/
     layer: 1
@@ -302,7 +306,9 @@ sources:
     source_type: scientific_society
     keywords: [remote sensing, geoscience, earth observation, summer school]
     scan_frequency: every_run
-    notes: IEEE Geoscience and Remote Sensing Society events calendar.
+    enabled: false
+    check_manually: true
+    notes: IEEE Geoscience and Remote Sensing Society events calendar. Cloudflare blocks the GitHub Actions runner's IP with a 403 (it loads from a normal browser). Check it directly.
   - name: ISPRS
     url: https://www.isprs.org/
     layer: 1
