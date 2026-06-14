@@ -33,7 +33,7 @@ from .models import Candidate
 from .utils import clean_space
 
 
-_HEADERS = {"User-Agent": "research-school-radar/0.1", "Accept": "application/json"}
+_HEADERS = {"User-Agent": "summer-school-radar/0.1", "Accept": "application/json"}
 _BROWSER_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/124.0 Safari/537.36",

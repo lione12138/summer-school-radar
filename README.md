@@ -1,14 +1,14 @@
-﻿# Research Seasonal School Radar
+# Summer School Radar
 
-[![Tests](https://github.com/lione12138/research-school-radar/actions/workflows/tests.yml/badge.svg)](https://github.com/lione12138/research-school-radar/actions/workflows/tests.yml)
-[![Daily scan](https://github.com/lione12138/research-school-radar/actions/workflows/scheduled_scan.yml/badge.svg)](https://github.com/lione12138/research-school-radar/actions/workflows/scheduled_scan.yml)
+[![Tests](https://github.com/lione12138/summer-school-radar/actions/workflows/tests.yml/badge.svg)](https://github.com/lione12138/summer-school-radar/actions/workflows/tests.yml)
+[![Daily scan](https://github.com/lione12138/summer-school-radar/actions/workflows/scheduled_scan.yml/badge.svg)](https://github.com/lione12138/summer-school-radar/actions/workflows/scheduled_scan.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — in **water, climate, geoscience, remote sensing, and scientific machine learning**.
 
 It is a fixed trusted-source scanner with rule-based extraction, a maintainer-curated layer, and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources, extracts deadline / funding / fee / duration evidence together with the supporting text, separates fully qualified opportunities from near-matches, and publishes a static website that updates daily for free on GitHub Pages.
 
-**Live site:** <https://lione12138.github.io/research-school-radar/>
+**Live site:** <https://lione12138.github.io/summer-school-radar/>
 
 [Technical README](docs/TECHNICAL.md) | [中文技术说明](docs/TECHNICAL.zh-CN.md) | [MIT License](LICENSE)
 
@@ -70,7 +70,7 @@ Near-matches are never presented as qualified results.
 
 Foreign-currency fees are converted with configurable fixed reference rates so the default workflow remains free and API-key-free. The rates are deliberately conservative, not real-time. Unknown currencies or ambiguous fees remain near-matches.
 
-`Training school` is retained because many research networks use it for the same kind of short, intensive programme as a summer school. A generic conference workshop is excluded; workshops are considered only when they clearly describe hands-on, field, practical, or capacity-building training and still satisfy the duration and other hard conditions.
+The radar targets seasonal schools and short courses — summer schools, winter schools, spring/autumn schools, training schools, doctoral schools, field schools, research schools, and short/advanced courses. `Training school` is included because many research networks use it for the same kind of short, intensive programme as a summer school. Generic conference workshops are not included.
 
 ## Why Not Another Summer School List?
 

@@ -1,6 +1,6 @@
-﻿# Research Seasonal School Radar 技术说明
+# Summer School Radar 技术说明
 
-这是一个面向科研季节性训练机会的开源 radar。它关注 summer school、winter school、training school、field school、doctoral school、short course、advanced course 和结构化 research workshop，主题聚焦 water、hydrology、hydrogeology、climate、environmental modelling、remote sensing、geoscience、disaster risk、AI 和 scientific machine learning。
+这是一个面向科研季节性学校与短期课程的开源 radar。它关注 summer school、winter school、spring/autumn school、training school、field school、doctoral school、research school、short/advanced course，**不收普通会议 workshop**;主题聚焦 water、hydrology、climate、geoscience、remote sensing 和 scientific machine learning。
 
 项目目标不是全网乱爬，也不是做一个万能 agent。目标是维护可信来源列表，定期扫描，结构化抽取 deadline、funding、fee、duration、mode、eligibility 等高风险字段，严格筛选，并发布透明的静态报告和网页。
 
@@ -97,7 +97,7 @@ rank.py     ->  打分和去重
 
 任何字段不确定时，默认不进入 fully qualified，而是进入 near-match。失败条件保留在 `site/candidates.json` 中，不再占用公开表格列。
 
-项目保留 `training school`，因为很多科研组织用这个名称表示与 summer school 类似的短期密集训练。普通 conference workshop 不会因为标题中有 `workshop` 就被收录；只有同时出现 hands-on、field、practical、training 或 capacity building 等训练信号，并满足时长及其他硬条件的 workshop 才会进入结果。
+项目收录 `training school`，因为很多科研组织用这个名称表示与 summer school 类似的短期密集训练。普通 conference workshop 整体被排除（它们很少是有资助的多日学校）；其余硬条件再作用于保留下来的学校与课程类型。
 
 ## 资金可及性规则
 

@@ -1,6 +1,6 @@
-﻿# Technical README
+# Technical README
 
-Technical notes for Research Seasonal School Radar, an open-source radar for research seasonal training opportunities: summer schools, winter schools, training schools, field schools, doctoral schools, short courses, advanced courses, and structured research workshops.
+Technical notes for Summer School Radar, an open-source radar for funded research seasonal schools and short courses: summer schools, winter schools, spring/autumn schools, training schools, field schools, doctoral schools, research schools, and short/advanced courses. Generic conference workshops are not included.
 
 The project is inspired by curated vertical opportunity platforms such as Josh's Water Jobs, but it is aimed at research training rather than jobs. The goal is not to crawl the whole web. The goal is to maintain a trusted source registry, scan it regularly, extract structured evidence, apply strict filters, and publish a transparent public report.
 
@@ -74,7 +74,7 @@ An opportunity is treated as fully qualified only when all hard conditions are s
 
 If no opportunity fully qualifies, the system says so clearly and lists only still-open near-matches. An opportunity is treated as past — and excluded from the still-open list — when its deadline has passed, or, when no deadline could be extracted, when the event itself has already started. Near-matches are never presented as qualified opportunities. Their failed hard conditions remain available in `site/candidates.json` for maintainers rather than occupying a public table column.
 
-The scanner retains `training school` because research organizations commonly use that label for short, intensive summer-school-style programmes. The generic word `workshop` is not sufficient by itself: workshop pages must also contain a training signal such as hands-on, field, practical, training, or capacity building. Duration and the remaining hard filters still apply.
+The scanner includes `training school` because research organizations commonly use that label for short, intensive summer-school-style programmes. Generic conference workshops are excluded entirely, since they are rarely funded multi-day schools; the remaining hard filters then apply to the school and course types that are kept.
 
 ## Architecture
 

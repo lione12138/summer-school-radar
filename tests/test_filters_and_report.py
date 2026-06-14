@@ -661,12 +661,27 @@ def test_short_doctoral_training_school_remains_opportunity() -> None:
     assert looks_like_opportunity(text)
 
 
-def test_generic_workshop_is_not_an_opportunity() -> None:
-    text = (
+def test_workshops_are_not_opportunities() -> None:
+    # The radar targets schools and short courses, not workshops.
+    generic = (
         "Annual conference workshop on hydrology. Registration and application details are available. "
         "The workshop is a two-hour conference session."
     )
-    assert not looks_like_opportunity(text)
+    hands_on = (
+        "Hands-on field workshop and practical training on hydrology. "
+        "Applications close on 1 March 2027. Travel grants are available."
+    )
+    assert not looks_like_opportunity(generic)
+    assert not looks_like_opportunity(hands_on)
+
+
+def test_school_types_remain_opportunities() -> None:
+    for kind in ["summer school", "winter school", "training school", "field school", "short course"]:
+        text = (
+            f"Hydrology {kind} on water resources. Application deadline: 1 March 2027. "
+            "Travel grants are available."
+        )
+        assert looks_like_opportunity(text), kind
 
 
 def test_language_course_with_cefr_levels_is_excluded() -> None:
@@ -685,12 +700,6 @@ def test_research_course_taught_in_english_is_not_excluded() -> None:
     assert looks_like_opportunity(text)
 
 
-def test_hands_on_training_workshop_remains_opportunity() -> None:
-    text = (
-        "Hands-on field workshop and practical training on hydrology. "
-        "Applications close on 1 March 2027. Travel grants are available."
-    )
-    assert looks_like_opportunity(text)
 
 
 def test_collect_linked_pages_follows_only_opportunity_pages(monkeypatch) -> None:
@@ -902,7 +911,7 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert (tmp_path / "sources.json").exists()
     assert (tmp_path / "sources.html").exists()
     html = index.read_text(encoding="utf-8")
-    assert "Research Seasonal School Radar" in html
+    assert "Summer School Radar" in html
     assert "Example Hydrology Winter School" in html
     assert "filter-topic" in html
     assert 'data-status="qualified"' in html

@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for your interest in improving Research Seasonal School Radar.
+Thanks for your interest in improving Summer School Radar.
 
 ## Ways to Contribute
 

@@ -33,7 +33,7 @@ def render_available() -> bool:
 
 def fetch_rendered(
     source: Source,
-    user_agent: str = "research-school-radar/0.1",
+    user_agent: str = "summer-school-radar/0.1",
     timeout_ms: int = DEFAULT_TIMEOUT_MS,
 ) -> Page:
     from playwright.sync_api import sync_playwright

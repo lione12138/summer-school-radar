@@ -18,7 +18,7 @@ from .utils import ROOT, load_yaml
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Research seasonal school radar")
+    parser = argparse.ArgumentParser(description="Summer School Radar")
     subparsers = parser.add_subparsers(dest="command", required=True)
     scan = subparsers.add_parser("scan", help="Run a scan and write a Markdown report")
     scan.add_argument("--config-dir", type=Path, default=ROOT / "config")

@@ -9,17 +9,20 @@ from .models import Page
 from .utils import clean_space
 
 
+# The radar targets seasonal schools and short courses. Generic conference
+# workshops are intentionally excluded (see is_excluded_programme).
 OPPORTUNITY_TERMS = [
     "summer school",
     "winter school",
+    "spring school",
+    "autumn school",
     "seasonal school",
     "training school",
     "doctoral school",
     "field school",
+    "research school",
     "short course",
     "advanced course",
-    "capacity building",
-    "workshop",
 ]
 
 APPLICATION_TERMS = [
@@ -30,16 +33,6 @@ APPLICATION_TERMS = [
     "tuition waiver",
     "funding",
     "stipend",
-]
-
-WORKSHOP_TRAINING_TERMS = [
-    "hands-on",
-    "hands on",
-    "training",
-    "field workshop",
-    "capacity building",
-    "practical course",
-    "research school",
 ]
 
 DEGREE_RECRUITMENT_TERMS = [
@@ -98,10 +91,7 @@ def looks_like_opportunity(text: str) -> bool:
 
 def has_programme_signal(text: str) -> bool:
     lowered = text.lower()
-    non_workshop_terms = [term for term in OPPORTUNITY_TERMS if term != "workshop"]
-    if any(term in lowered for term in non_workshop_terms):
-        return True
-    return "workshop" in lowered and any(term in lowered for term in WORKSHOP_TRAINING_TERMS)
+    return any(term in lowered for term in OPPORTUNITY_TERMS)
 
 
 def candidate_links(page: Page, limit: int = 25, blocked_domains: list[str] | None = None) -> list[str]:

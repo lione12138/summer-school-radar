@@ -21,7 +21,7 @@ def write_report(candidates: list[Candidate], output_dir: Path, errors: list[str
 def render_report(candidates: list[Candidate], errors: list[str]) -> str:
     full = [item for item in candidates if item.fully_qualified][:10]
     near = [item for item in candidates if not item.fully_qualified and not item.is_past][:5]
-    lines = [f"# Research Seasonal School Radar Report - {date.today().isoformat()}", ""]
+    lines = [f"# Summer School Radar Report - {date.today().isoformat()}", ""]
 
     if errors:
         lines.extend(["## Collection Notes", ""])

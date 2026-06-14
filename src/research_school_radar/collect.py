@@ -29,7 +29,7 @@ def _meta_refresh_target(html: str, base_url: str) -> str | None:
     return urljoin(base_url, match.group(1).strip().strip("'\""))
 
 
-def fetch_source(source: Source, user_agent: str = "research-school-radar/0.1") -> Page:
+def fetch_source(source: Source, user_agent: str = "summer-school-radar/0.1") -> Page:
     if getattr(source, "render", False):
         from .render import fetch_rendered, render_available
 

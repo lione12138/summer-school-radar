@@ -15,7 +15,7 @@ from .models import Candidate
 from .utils import format_duration, topics_label
 
 
-_SITE_URL = "https://lione12138.github.io/research-school-radar/"
+_SITE_URL = "https://lione12138.github.io/summer-school-radar/"
 
 
 # Shared base styles for all generated pages. Interpolated into f-string
@@ -163,7 +163,7 @@ def render_feed(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
         "  <channel>\n"
-        "    <title>Research Seasonal School Radar</title>\n"
+        "    <title>Summer School Radar</title>\n"
         f"    <link>{escape(site_url)}</link>\n"
         f'    <atom:link href="{escape(feed_url)}" rel="self" type="application/rss+xml"/>\n'
         "    <description>Funded research summer schools, winter schools, and training "
@@ -267,12 +267,12 @@ def render_site(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Research Seasonal School Radar</title>
+  <title>Summer School Radar</title>
   <meta name="description" content="A free daily scanner of trusted academic sources for funded research summer schools, winter schools, and training schools in water, climate, geoscience, remote sensing, and scientific machine learning, with strict filters and transparent evidence.">
-  <meta property="og:title" content="Research Seasonal School Radar">
+  <meta property="og:title" content="Summer School Radar">
   <meta property="og:description" content="Daily scan of trusted academic sources for funded research training schools in water, climate, geoscience, remote sensing, and ML, with hard filters and visible evidence.">
   <meta property="og:type" content="website">
-  <link rel="alternate" type="application/rss+xml" title="Research Seasonal School Radar" href="feed.xml">
+  <link rel="alternate" type="application/rss+xml" title="Summer School Radar" href="feed.xml">
   <style>
 {_THEME_CSS}
     header.hero {{
@@ -443,7 +443,7 @@ def render_site(
   <header class="hero">
     <div class="wrap">
       <p class="kicker">&#128225; Updated daily &middot; Free &amp; open source</p>
-      <h1>Research Seasonal School Radar</h1>
+      <h1>Summer School Radar</h1>
       <p class="subtitle">A free daily scan of trusted academic sources for research summer schools, winter schools, training schools, field schools, and short courses in water, climate, geoscience, remote sensing, and scientific machine learning. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.</p>
       <div class="meta">
         <span class="pill">Updated {updated}</span>
@@ -453,7 +453,7 @@ def render_site(
         <a class="pill" href="curated.json">Curated data</a>
         <a class="pill" href="sources.html">Sources &amp; Coverage</a>
         <a class="pill" href="feed.xml">RSS feed</a>
-        <a class="pill" href="https://github.com/lione12138/research-school-radar">GitHub</a>
+        <a class="pill" href="https://github.com/lione12138/summer-school-radar">GitHub</a>
       </div>
     </div>
   </header>
@@ -471,7 +471,7 @@ def render_site(
     {near_block}
     {_notes_section(notes) if notes else ""}
   </main>
-  <footer class="wrap">Near-matches are not treated as qualified opportunities. Detailed screening data remains available in <a href="candidates.json">candidates.json</a>. Maintained openly on <a href="https://github.com/lione12138/research-school-radar">GitHub</a>.</footer>
+  <footer class="wrap">Near-matches are not treated as qualified opportunities. Detailed screening data remains available in <a href="candidates.json">candidates.json</a>. Maintained openly on <a href="https://github.com/lione12138/summer-school-radar">GitHub</a>.</footer>
   {_filter_script()}
   {analytics}
 </body>
@@ -491,7 +491,7 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sources & Coverage - Research Seasonal School Radar</title>
+  <title>Sources & Coverage - Summer School Radar</title>
   <style>
 {_THEME_CSS}
     header.hero {{
@@ -771,7 +771,7 @@ def _calendar_data_url(deadline: date, title: str, url: str) -> str:
         [
             "BEGIN:VCALENDAR",
             "VERSION:2.0",
-            "PRODID:-//Research Seasonal School Radar//EN",
+            "PRODID:-//Summer School Radar//EN",
             "CALSCALE:GREGORIAN",
             "METHOD:PUBLISH",
             "BEGIN:VEVENT",

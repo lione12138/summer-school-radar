@@ -3,12 +3,12 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "research-school-radar"
+name = "summer-school-radar"
 version = "0.1.0"
-description = "A lightweight radar for research seasonal schools and training opportunities."
+description = "A radar for funded research summer schools, winter schools, and training schools."
 readme = "README.md"
 license = { text = "MIT" }
-authors = [{ name = "Research Seasonal School Radar contributors" }]
+authors = [{ name = "Summer School Radar contributors" }]
 keywords = ["summer-school", "training-school", "research-training", "hydrology", "climate", "radar"]
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -32,9 +32,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://lione12138.github.io/research-school-radar/"
-Repository = "https://github.com/lione12138/research-school-radar"
-Issues = "https://github.com/lione12138/research-school-radar/issues"
+Homepage = "https://lione12138.github.io/summer-school-radar/"
+Repository = "https://github.com/lione12138/summer-school-radar"
+Issues = "https://github.com/lione12138/summer-school-radar/issues"
 
 [project.optional-dependencies]
 dev = [
