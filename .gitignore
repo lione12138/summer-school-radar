@@ -20,6 +20,9 @@ site/
 # Local tooling
 .claude/
 
+# Local daily-scan logs
+logs/
+
 # OS
 .DS_Store
 Thumbs.db

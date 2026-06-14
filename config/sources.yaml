@@ -14,9 +14,7 @@ sources:
     source_type: scientific_society
     keywords: [hydrology, water resources, training]
     scan_frequency: every_run
-    enabled: false
-    check_manually: true
-    notes: International Association of Hydrological Sciences. Cloudflare blocks the GitHub Actions runner's IP with a 403 (it loads fine from a normal browser). Check it directly.
+    notes: International Association of Hydrological Sciences. Cloudflare blocks datacenter IPs; the daily scan runs from a residential connection, where it loads fine.
   - name: IAH
     url: https://iah.org/
     layer: 1
@@ -42,9 +40,7 @@ sources:
     source_type: agency
     keywords: [remote sensing, water, climate, training]
     scan_frequency: every_run
-    enabled: false
-    check_manually: true
-    notes: NASA Applied Remote Sensing Training. The site is unreachable / returns 403 from the GitHub Actions runner's network, and most ARSET trainings are online anyway. Check it directly.
+    notes: NASA Applied Remote Sensing Training. Unreachable from the GitHub runner but loads from a residential connection; most ARSET trainings are online so expect mostly near-matches.
   - name: DAAD Short Courses
     url: https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/
     layer: 1
@@ -380,9 +376,7 @@ sources:
     source_type: research_institute
     keywords: [climate, oceanography, seismology, geoscience, earth observation]
     scan_frequency: every_run
-    enabled: false
-    check_manually: true
-    notes: Lamont-Doherty Earth Observatory (Columbia University). The events page returns 403 to scripted requests even with a browser User-Agent (bot protection). Check it directly.
+    notes: Lamont-Doherty Earth Observatory (Columbia University). Blocks datacenter IPs; loads from a residential connection, where the daily scan runs.
   - name: IPAM
     url: https://www.ipam.ucla.edu/programs/summer-schools/
     layer: 1.5
