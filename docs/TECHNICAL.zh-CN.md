@@ -1,4 +1,4 @@
-# Research Seasonal School Radar 技术说明
+﻿# Research Seasonal School Radar 技术说明
 
 这是一个面向科研季节性训练机会的开源 radar。它关注 summer school、winter school、training school、field school、doctoral school、short course、advanced course 和结构化 research workshop，主题聚焦 water、hydrology、hydrogeology、climate、environmental modelling、remote sensing、geoscience、disaster risk、AI 和 scientific machine learning。
 
@@ -17,7 +17,7 @@
 - `data/opportunities.yml` 人工确认机会库
 - `site/curated.json` 和 `site/candidates.json`
 - `site/sources.html` 和 `site/sources.json`
-- SQLite seen tracking
+- JSON seen-state tracking
 - GitHub Actions 每日自动扫描和部署
 - GitHub issue 投稿模板
 - Cloudflare Web Analytics / GoatCounter 可选统计脚本
@@ -51,7 +51,7 @@ rank.py     ->  打分和去重
         |
         +--> site.py    -> site/index.html + JSON 数据
         |
-        +--> storage.py -> data/seen.sqlite
+        +--> storage.py -> data/seen.json
 ```
 
 ## 关键文件
@@ -64,7 +64,7 @@ rank.py     ->  打分和去重
 - `rank.py`：解释性打分和去重
 - `report.py`：生成 Markdown 报告
 - `site.py`：生成静态网站、筛选器、JSON、日历链接和 analytics 脚本
-- `storage.py`：SQLite seen database
+- `storage.py`：JSON seen-state file
 
 ## 配置文件
 
@@ -145,7 +145,7 @@ scanner output
 1. checkout repo
 2. 安装 Python 包
 3. 运行 `python -m research_school_radar.cli scan`
-4. commit `reports/`、`data/seen.sqlite`、`data/opportunities.yml`
+4. commit `reports/`、`data/seen.json`、`data/opportunities.yml`
 5. 上传 `site/` 到 GitHub Pages artifact
 6. 部署 GitHub Pages
 

@@ -1,4 +1,4 @@
-# Research Seasonal School Radar
+﻿# Research Seasonal School Radar
 
 [![Tests](https://github.com/lione12138/research-school-radar/actions/workflows/tests.yml/badge.svg)](https://github.com/lione12138/research-school-radar/actions/workflows/tests.yml)
 [![Daily scan](https://github.com/lione12138/research-school-radar/actions/workflows/scheduled_scan.yml/badge.svg)](https://github.com/lione12138/research-school-radar/actions/workflows/scheduled_scan.yml)
@@ -156,7 +156,7 @@ collect -> parse -> extract -> filter -> rank
         +--> reports/YYYY-MM-DD.md
         +--> site/index.html
         +--> site/candidates.json
-        +--> data/seen.sqlite
+        +--> data/seen.json
 ```
 
 See [docs/TECHNICAL.md](docs/TECHNICAL.md) for implementation details, current limitations, and the improvement roadmap.

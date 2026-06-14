@@ -1027,6 +1027,32 @@ def test_curated_past_deadline_is_marked_closed(tmp_path) -> None:
     assert 'data-status="curated" data-region="unclassified" data-funding="unresolved" data-deadline="closed"' in html
 
 
+def test_seen_state_is_json_and_preserves_first_seen(tmp_path) -> None:
+    import json
+
+    from research_school_radar.storage import update_seen
+
+    path = tmp_path / "seen.json"
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    update_seen(path, [candidate])
+    assert path.exists()
+    state = json.loads(path.read_text(encoding="utf-8"))
+    assert candidate.source_url in state
+    original_first_seen = state[candidate.source_url]["first_seen"]
+    assert candidate.first_seen is not None
+
+    # A later run keeps the original first_seen and refreshes last_seen.
+    state[candidate.source_url]["first_seen"] = "2020-01-01"
+    state[candidate.source_url]["last_seen"] = "2020-01-01"
+    path.write_text(json.dumps(state), encoding="utf-8")
+    again = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    update_seen(path, [again])
+    reloaded = json.loads(path.read_text(encoding="utf-8"))
+    assert reloaded[again.source_url]["first_seen"] == "2020-01-01"
+    assert again.first_seen == date(2020, 1, 1)
+    assert reloaded[again.source_url]["last_seen"] == date.today().isoformat()
+
+
 def test_new_badge_and_freshness_filter(tmp_path) -> None:
     fresh = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     fresh.first_seen = date.today()

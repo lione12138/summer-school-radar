@@ -101,7 +101,7 @@ def run_scan(
 
     filtered = [apply_hard_filters(candidate, profile) for candidate in candidates]
     ranked = rank_candidates(filtered)
-    update_seen(data_dir / "seen.sqlite", ranked)
+    update_seen(data_dir / "seen.json", ranked)
     report_path = write_report(ranked, reports_dir, errors)
     if not offline_sample and update_readme(ROOT / "README.md", ranked):
         print("Updated README latest-scan section")

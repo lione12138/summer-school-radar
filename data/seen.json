@@ -1,0 +1,653 @@
+{
+  "https://ait.ac.th/events/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Events - Asian Institute of Technology"
+  },
+  "https://aspect.geodynamics.org/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ASPECT : A dvanced S olver for P lanetary E volution, C onvection, and T ectonics"
+  },
+  "https://deeplearningindaba.com/": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Home - Deep Learning Indaba"
+  },
+  "https://eage.eventsair.com/6th-eage-workshop-on-fiber-optic-sensing-for-energy-applications": {
+    "deadline": "2026-06-21",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "6th EAGE Workshop on Fiber Optic Sensing for Energy Applications"
+  },
+  "https://eage.eventsair.com/6th-eage-workshop-on-fiber-optic-sensing-for-energy-applications/abstract-submission-and-instructions": {
+    "deadline": "2026-06-21",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "6th EAGE Workshop on Fiber Optic Sensing for Energy Applications"
+  },
+  "https://eage.eventsair.com/fifth-eage-marine-acquisition-workshop/": {
+    "deadline": "2026-07-20",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Fifth EAGE Marine Acquisition Workshop"
+  },
+  "https://eage.eventsair.com/short-course-structural-geology-must-knows/": {
+    "deadline": "2026-06-30",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Short Course: Structural Geology Must-Knows"
+  },
+  "https://ellis.eu/events": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Upcoming Events"
+  },
+  "https://ellis.eu/events/cambridge-ellis-unit-summer-school-on-probabilistic-machine-learning-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Cambridge ELLIS Unit Summer School on Probabilistic Machine Learning 2026"
+  },
+  "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School"
+  },
+  "https://ellis.eu/events/ellis-doctoral-symposium-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Doctoral Symposium 2026"
+  },
+  "https://ellis.eu/events/ellis-sites-icml-fest-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Sites ICML Fest 2026: Celebrate, Connect, Collaborate"
+  },
+  "https://ellis.eu/events/ellis-summer-school-at-institute-finland-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Summer School at Institute Finland"
+  },
+  "https://ellis.eu/events/ellis-summer-school-at-unit-barcelona-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Summer School at Unit Barcelona"
+  },
+  "https://ellis.eu/events/ellis-summer-school-at-unit-manchester-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Summer School at Unit Manchester"
+  },
+  "https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Summer School at Unit Munich"
+  },
+  "https://ellis.eu/events/ellis-summer-school-at-unit-munich-in-dortmund-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Summer School at Unit NRW"
+  },
+  "https://ellis.eu/events/ellis-summer-school-at-unit-paris-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Summer School at Unit Paris"
+  },
+  "https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Summer School at Unit Saarbrücken"
+  },
+  "https://ellis.eu/events/ellis-unit-copenhagen-learning-theory-workshop": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Unit Copenhagen: Learning Theory Workshop"
+  },
+  "https://ellis.eu/events/ellis-unit-copenhagen-learning-theory-workshop-1": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Unit Copenhagen: Learning Theory Summer School"
+  },
+  "https://ellis.eu/events/ellis-unit-lisbon-machine-learning-summer-school-lxmls-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Lisbon Machine Learning Summer School (LxMLS)"
+  },
+  "https://ellis.eu/events/ellis-unit-london-advances-in-adaptive-experimentation-workshop": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Unit London: Advances in Adaptive Experimentation Workshop"
+  },
+  "https://ellis.eu/events/ellis-unit-madrid-18th-machine-learning-advanced-statistics-summer-school": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ELLIS Unit Madrid: 18th Machine Learning & Advanced Statistics Summer School"
+  },
+  "https://ellis.eu/events/ellis-unit-madrid-graph-signal-processing-workshop-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-11",
+    "status": "near_match",
+    "title": "ELLIS Unit Madrid: Graph Signal Processing Workshop | European Laboratory for Learning and Intelligent Systems"
+  },
+  "https://ellis.eu/events/ellis-unit-milan-reinforcement-learning-summer-school-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-12",
+    "status": "near_match",
+    "title": "ELLIS Unit Milan: Reinforcement Learning Summer School | European Laboratory for Learning and Intelligent Systems"
+  },
+  "https://ellis.eu/events/frontiers-of-neuromorphic-computing-workshop": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-12",
+    "status": "near_match",
+    "title": "Frontiers of Neuromorphic Computing Workshop | European Laboratory for Learning and Intelligent Systems"
+  },
+  "https://ellis.eu/events/machine-learning-summer-school-on-reliability-safety-mlss-rs": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Machine Learning Summer School on Reliability & Safety"
+  },
+  "https://ellis.eu/events/malga-machine-learning-crash-course-2026": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "MaLGa Machine Learning Crash Course 2026"
+  },
+  "https://eo4society.esa.int/2025/07/10/replay-the-eo-africa-rd-facility-webinars/": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Replay the EO AFRICA R&D Facility Webinars - eo science for society"
+  },
+  "https://eo4society.esa.int/about/pioneer/": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Pioneer - eo science for society"
+  },
+  "https://eo4society.esa.int/category/special-initiatives/eo-africa/capacity-building/": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Category: Capacity building"
+  },
+  "https://eo4society.esa.int/event/beyond-the-visible-summer-school/": {
+    "deadline": "2026-04-08",
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Beyond the Visible summer school"
+  },
+  "https://eo4society.esa.int/event/fringe-2026-advances-in-the-science-and-applications-of-sar-interferometry-and-sentinel-1-insar/": {
+    "deadline": "2026-03-08",
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "“Advances in the Science and Applications of SAR Interferometry” – Fringe 2026"
+  },
+  "https://eo4society.esa.int/events/category/workshops/": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Workshops Archives"
+  },
+  "https://eo4society.esa.int/training-education/": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "EO training & education - eo science for society"
+  },
+  "https://eo4society.esa.int/training-education/scientists-advanced-training-by-theme-ocean-land-atmosphere/": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Scientists: advanced training by THEME (ocean, land, atmosphere, cryosphere), by TECHNIQUE and MULTI-THEMATIC SUMMER SCHOOLS - eo science..."
+  },
+  "https://etrp.wmo.int/course/index.php?categoryid=81": {
+    "deadline": null,
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Regional Workshops"
+  },
+  "https://example.org/hydrology-winter-school": {
+    "deadline": "2027-10-15",
+    "first_seen": "2026-06-10",
+    "last_seen": "2026-06-14",
+    "status": "qualified",
+    "title": "Example Hydrology Winter School"
+  },
+  "https://geodynamics.org/events/details/372": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Geodynamics"
+  },
+  "https://iahs.info/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "INTERNATIONAL ASSOCIATION OF HYDROLOGICAL SCIENCES"
+  },
+  "https://indico.ictp.it/event/11122": {
+    "deadline": "2026-04-04",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "IV Joint ICTP-SAIFR/ICTP-Trieste Summer School on Particle Physics"
+  },
+  "https://indico.ictp.it/event/11149": {
+    "deadline": "2026-04-23",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Summer School on Cosmology"
+  },
+  "https://indico.ictp.it/event/11150": {
+    "deadline": "2026-05-15",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "7th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics"
+  },
+  "https://ncarprojects.ucar.edu/S2S-predictability/2026-s2s-land-atmosphere-interactions-workshop": {
+    "deadline": null,
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "2026 S2S Land-atmosphere Interactions Workshop"
+  },
+  "https://people.disim.univaq.it/~antonio.cicone/2025/MaSAG25/MaSAG25_homepage.html": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "MaSAG25 Summer School and Conference"
+  },
+  "https://ral.ucar.edu/": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "RAL Home | Research Applications Laboratory"
+  },
+  "https://rammb2.cira.colostate.edu/training/ai-applications-using-environmental-satellite-remote-sensing-data/": {
+    "deadline": null,
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Regional and Mesoscale Meteorology Branch AI Applications Using Environmental Satellite Remote Sensing Data"
+  },
+  "https://utrechtsummerschool.nl/about/utrecht-summer-school": {
+    "deadline": null,
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Utrecht Summer School | Utrecht Summer School"
+  },
+  "https://utrechtsummerschool.nl/cart": {
+    "deadline": null,
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Application | Utrecht Summer School"
+  },
+  "https://utrechtsummerschool.nl/courses": {
+    "deadline": null,
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "All Courses | Utrecht Summer School"
+  },
+  "https://utrechtsummerschool.nl/courses/language/english-advanced-course-1-b2-b2": {
+    "deadline": "2026-06-28",
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "English Advanced Course 1 (B2 → B2+)"
+  },
+  "https://utrechtsummerschool.nl/courses/language/english-advanced-course-12-b2-c1": {
+    "deadline": "2026-07-08",
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "English Advanced Course 1+2 (B2 → C1)"
+  },
+  "https://utrechtsummerschool.nl/courses/language/english-advanced-course-2-b2-c1": {
+    "deadline": "2026-07-12",
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "English Advanced Course 2 (B2+ → C1)"
+  },
+  "https://utrechtsummerschool.nl/courses/social-sciences/ufs-futuring-summer-school-futuring-for-democracy": {
+    "deadline": "2026-05-01",
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "UFS Futuring Summer School: Futuring for Democracy"
+  },
+  "https://www.ametsoc.org/ams/meetings-events/": {
+    "deadline": null,
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Meetings & Events"
+  },
+  "https://www.cuahsi.org/workshops/past-workshops": {
+    "deadline": "2023-10-18",
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Past Workshops"
+  },
+  "https://www.cuahsi.org/workshops/propose-a-workshop": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-12",
+    "status": "near_match",
+    "title": "Propose a Workshop | Cuahsi.org"
+  },
+  "https://www.earthscope.org/event/2026-technical-short-course-insar-processing-and-theory-using-gmtsar/": {
+    "deadline": "2026-06-12",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "2026 Technical Short Course: InSAR Processing and Theory using GMTSAR"
+  },
+  "https://www.ecmwf.int/en/learning/training": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Training | ECMWF"
+  },
+  "https://www.ecmwf.int/en/learning/training/guidelines-training-course-applications": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Guidelines for training course applications | ECMWF"
+  },
+  "https://www.eeml.eu/": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Eastern European Machine Learning Summer School"
+  },
+  "https://www.eeml.eu/previous-editions/eeml2025/application": {
+    "deadline": "2025-03-31",
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Application"
+  },
+  "https://www.egu.eu/education/gift/field-schools-for-teachers/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Education Field schools for teachers"
+  },
+  "https://www.egu.eu/education/gift/workshops/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Geosciences Information for Teachers (GIFT) GIFT workshops"
+  },
+  "https://www.egu.eu/meetings/support-requests/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-11",
+    "status": "near_match",
+    "title": "EGU - Meetings - Training schools"
+  },
+  "https://www.egu.eu/meetings/training-schools/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "EGU - Meetings - Training schools"
+  },
+  "https://www.egu.eu/outreach/scws/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "EGU - Science communication workshop series"
+  },
+  "https://www.fzp.czu.cz/en/r-9408-study/r-20135-summer-winter-school/r-20137-winter-school/r-20138-polar-winter-school": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-11",
+    "status": "near_match",
+    "title": "Polar Winter School - Faculty of Environmental Sciences CZU Prague"
+  },
+  "https://www.gewex.org/event/": {
+    "deadline": null,
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Mini-Workshop on “Climate Forcing, Response, and Recovery in a State-Dependent System”"
+  },
+  "https://www.gfz.de/en/events": {
+    "deadline": "2026-03-31",
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Events: GFZ"
+  },
+  "https://www.grss-ieee.org/event/ieee-grss-summer-school-on-uas-based-gnss-r-remote-sensing/": {
+    "deadline": null,
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "IEEE GRSS Summer School on UAS-Based GNSS-R Remote Sensing"
+  },
+  "https://www.helmholtz-hida.de/en/training/course-funding/": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Course Funding - Helmholtz Information & Data Science Academy"
+  },
+  "https://www.icimod.org/event/cryosphere-and-water/glacial-lake-outburst-flood-risk-assessment-field-workshop/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Glacial Lake Outburst Flood Risk Assessment: Applied Field Workshop and Monitoring at Drang Drung Glacier"
+  },
+  "https://www.icimod.org/event/economies/hi-cas-storytelling-workshop-nepal/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Strengthening local voices: storytelling training for journalists"
+  },
+  "https://www.icimod.org/event/economies/renewable-energy-for-green-economies-in-the-indian-himalayan-region-ihr-a-scoping-workshop/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Renewable energy for green economies in the Indian Himalayan Region (IHR): A scoping workshop"
+  },
+  "https://www.icimod.org/event/regional-action/51st-biannual-research-and-training-workshop/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "51st biannual research and training workshop"
+  },
+  "https://www.icimod.org/event/regional/second-mountains-connect-interregional-workshop/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-12",
+    "status": "near_match",
+    "title": "Second Mountains Connect Interregional Workshop"
+  },
+  "https://www.icimod.org/get-informed/events/": {
+    "deadline": null,
+    "first_seen": "2026-06-11",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Events - ICIMOD"
+  },
+  "https://www.icos-cp.eu/about/opportunities/summer-school": {
+    "deadline": "2026-07-31",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ICOS Summer/Winter School January 2027, application is now open"
+  },
+  "https://www.ictp-saifr.org/hpmpg2026/": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Workshop on High-Pressure Mineral Physics and Geophysics Applications"
+  },
+  "https://www.ictp-saifr.org/wfaspcn2026/": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Workshop on Foundations and Applications of Spreading Phenomena on Complex Networks"
+  },
+  "https://www.isprs.org/members/application_forms.aspx": {
+    "deadline": null,
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Application Forms for Members"
+  },
+  "https://www.isprs.org/resources/templates/summer-school-application-form/": {
+    "deadline": null,
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Useful Links"
+  },
+  "https://www.isprs.org/society/awards/torlegard.aspx": {
+    "deadline": null,
+    "first_seen": "2026-06-13",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Deed of Award"
+  },
+  "https://www.m2lschool.org/": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Home"
+  },
+  "https://www.pik-potsdam.de/en/institute/about/it-services/systems-and-applications": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Systems and Applications — Potsdam Institute for Climate Impact Research"
+  },
+  "https://www.pik-potsdam.de/en/institute/about/it-services/systems-and-applications/software-provisioning": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Campus-wide Scientific Software Licenses — Potsdam Institute for Climate Impact Research"
+  },
+  "https://www.pik-potsdam.de/en/institute/departments/activities/copan/activities/events": {
+    "deadline": "2020-06-12",
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "copan - Workshops & Events"
+  },
+  "https://www.pik-potsdam.de/en/institute/departments/activities/epicc/research-areas/capacity-building-and-climate-services": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Capacity Building and Knowledge Transfer — Potsdam Institute for Climate Impact Research"
+  },
+  "https://www.pik-potsdam.de/login?came_from=/en/news/events": {
+    "deadline": null,
+    "first_seen": "2026-06-12",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "Potsdam Institute for Climate Impact Research"
+  },
+  "https://www.summerschoolsineurope.eu/destination/algebra-international-summer-school/": {
+    "deadline": null,
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "International Summer School by Algebra Bernays University"
+  },
+  "https://www.un-ihe.org/short-courses": {
+    "deadline": "2026-12-11",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "River Basin Modelling"
+  }
+}

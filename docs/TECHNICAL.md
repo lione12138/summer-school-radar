@@ -52,7 +52,7 @@ This repository now contains a working MVP:
 - interpretable ranking
 - Markdown report generation
 - static website generation with browser-side filters
-- SQLite tracking of seen opportunities
+- JSON state file tracking seen opportunities (diff-friendly, auto-committed)
 - GitHub Actions workflow for daily free scans
 - GitHub Pages deployment
 - GitHub issue template for external submissions
@@ -105,7 +105,7 @@ rank.py     ->  interpretable scoring and deduplication
         |
         +--> site.py    -> site/index.html + site/candidates.json
         |
-        +--> storage.py -> data/seen.sqlite
+        +--> storage.py -> data/seen.json
 ```
 
 ### Key Files
@@ -118,7 +118,7 @@ rank.py     ->  interpretable scoring and deduplication
 - `src/research_school_radar/rank.py` scores and deduplicates candidates. Deduplication runs on every scan: it canonicalizes URLs (dropping tracking parameters, fragments, and trailing slashes), then merges the same event reported under different titles or by different sources when a title-similarity match is confirmed by a shared date, while keeping distinct editions that have different start dates.
 - `src/research_school_radar/report.py` writes Markdown reports.
 - `src/research_school_radar/site.py` writes the static public website.
-- `src/research_school_radar/storage.py` updates the SQLite seen database.
+- `src/research_school_radar/storage.py` updates the JSON seen-state file (data/seen.json).
 
 ## Configuration
 
@@ -165,7 +165,7 @@ The workflow:
 1. checks out the repository
 2. installs the Python package
 3. runs `python -m research_school_radar.cli scan`
-4. commits `reports/`, `data/seen.sqlite`, and `data/opportunities.yml`
+4. commits `reports/`, `data/seen.json`, and `data/opportunities.yml`
 5. uploads `site/` as a GitHub Pages artifact
 6. deploys the public website with GitHub Pages
 
@@ -377,7 +377,7 @@ Useful outputs:
 - `reports/YYYY-MM-DD.md`: Markdown report
 - `site/index.html`: public static website
 - `site/candidates.json`: structured candidate data
-- `data/seen.sqlite`: seen-opportunity tracking database
+- `data/seen.json`: seen-opportunity JSON state
 
 ## Current Limitations
 
