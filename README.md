@@ -1,7 +1,6 @@
 # Summer School Radar
 
 [![Tests](https://github.com/lione12138/summer-school-radar/actions/workflows/tests.yml/badge.svg)](https://github.com/lione12138/summer-school-radar/actions/workflows/tests.yml)
-[![Daily scan](https://github.com/lione12138/summer-school-radar/actions/workflows/scheduled_scan.yml/badge.svg)](https://github.com/lione12138/summer-school-radar/actions/workflows/scheduled_scan.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — in **water, climate, geoscience, remote sensing, and scientific machine learning**.
@@ -14,7 +13,7 @@ It is a fixed trusted-source scanner with rule-based extraction, a maintainer-cu
 
 ## Latest Scan Results
 
-This section is refreshed automatically by the daily scan workflow.
+This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
 _Last scan: 2026-06-15 · 0 fully qualified · 5 high-quality opportunities shown_
@@ -81,7 +80,7 @@ Most summer school lists are plain link collections. This project is different:
 - hard filters with visible failed conditions
 - maintainer-reviewed curated layer
 - static public website plus Markdown and JSON outputs
-- daily free automation with GitHub Actions and GitHub Pages
+- daily free automation that publishes to GitHub Pages
 - source coverage transparency through a generated Sources & Coverage page
 
 ## Doctoral Schools Scope
@@ -114,14 +113,29 @@ python -m research_school_radar.cli scan
 
 ## Daily Free Publishing
 
-The included GitHub Actions workflow can:
+The scan runs **locally**, from a residential machine, because Cloudflare blocks
+the datacenter IP ranges that GitHub Actions (and other cloud hosts) run on — so
+a cloud-hosted daily scan would be served bot-challenge pages for many sources.
+Running from a home/mobile connection avoids that entirely.
 
-1. run the scanner every day
-2. commit the Markdown report and seen database
-3. build `site/index.html`
-4. deploy the static site to GitHub Pages
+`scripts/scan_and_publish.ps1`, scheduled once a day by Windows Task Scheduler:
 
-For a public repository, the default workflow does not require a paid search API key.
+1. runs the scanner
+2. commits the Markdown report and seen database to `main`
+3. builds `site/index.html`
+4. deploys the static site to the `gh-pages` branch, which GitHub Pages serves
+
+It includes a connectivity precheck so it skips cleanly when the machine is
+offline or on a captive network, and writes a log under `logs/` each run. Set it
+up with:
+
+```powershell
+# one-time: register the 10:00 daily task
+powershell -ExecutionPolicy Bypass -File scripts/register_task.ps1
+```
+
+GitHub Actions still runs the test suite on every push (see `.github/workflows/tests.yml`).
+No paid search API key is required.
 
 ## Development
 

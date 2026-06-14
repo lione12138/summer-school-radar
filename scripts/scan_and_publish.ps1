@@ -6,10 +6,12 @@
 # Task Scheduler once a day; it is safe to run by hand too.
 #
 # It is resilient to outdoor / away conditions: it skips cleanly when there is
-# no usable internet, logs everything, and never leaves the repo in a half
-# state.
+# no usable internet, logs everything, and never leaves the repo half-updated.
 
-$ErrorActionPreference = "Stop"
+# Native tools (git, python) write normal status to stderr; keep going and check
+# exit codes explicitly so that does not look like a failure.
+$ErrorActionPreference = "Continue"
+
 $repo = Split-Path -Parent $PSScriptRoot
 Set-Location $repo
 
@@ -20,6 +22,24 @@ function Log([string]$msg) {
     "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')  $msg" | Tee-Object -FilePath $logFile -Append | Out-Null
 }
 
+# Run a native command, log its output, and throw on a non-zero exit code
+# (unless -AllowFail, e.g. "git commit" with nothing to commit). Output is
+# captured (not streamed) so git's normal stderr status lines do not surface as
+# red PowerShell errors in the log.
+function Run([scriptblock]$block, [switch]$AllowFail) {
+    $output = & $block 2>&1
+    $code = $LASTEXITCODE
+    foreach ($line in $output) { Log ("    " + $line.ToString()) }
+    if (-not $AllowFail -and $code -ne 0) {
+        throw "command failed (exit $code)"
+    }
+}
+
+function Clean-SiteGit {
+    $siteGit = Join-Path $repo "site\.git"
+    if (Test-Path $siteGit) { Remove-Item -Recurse -Force $siteGit }
+}
+
 $repoUrl = "https://github.com/lione12138/summer-school-radar.git"
 $env:PYTHONPATH = "src"
 
@@ -28,44 +48,39 @@ Log "=== run start ==="
 # Connectivity precheck: skip cleanly when offline or on a captive/blocked
 # network (cafe, hotspot with a login page, etc.). A later run recovers.
 try {
-    Invoke-WebRequest -Uri "https://github.com" -Method Head -TimeoutSec 15 -UseBasicParsing | Out-Null
+    Invoke-WebRequest -Uri "https://github.com" -Method Head -TimeoutSec 15 -UseBasicParsing -ErrorAction Stop | Out-Null
 } catch {
     Log "No usable internet connection. Skipping this run."
     exit 0
 }
 
-function Clean-SiteGit {
-    $siteGit = Join-Path $repo "site\.git"
-    if (Test-Path $siteGit) { Remove-Item -Recurse -Force $siteGit }
-}
-
 try {
     Log "Syncing with remote (git pull --rebase)"
-    git pull --rebase --autostash 2>&1 | Tee-Object -FilePath $logFile -Append
+    Run { git pull --rebase --autostash }
 
     Log "Scanning from the local residential connection"
-    python -m research_school_radar.cli scan 2>&1 | Tee-Object -FilePath $logFile -Append
-    if ($LASTEXITCODE -ne 0) { throw "scan failed (exit code $LASTEXITCODE)" }
+    Run { python -m research_school_radar.cli scan }
 
     Log "Committing data (reports, seen state, README)"
-    git add reports data/seen.json README.md
-    git -c core.safecrlf=false commit -m "Daily local scan $(Get-Date -Format yyyy-MM-dd)" 2>&1 |
-        Tee-Object -FilePath $logFile -Append
-    # An empty commit (no changes) is fine; git just reports nothing to commit.
+    Run { git add reports data/seen.json README.md }
+    Run -AllowFail { git -c core.safecrlf=false commit -m "Daily local scan $(Get-Date -Format yyyy-MM-dd)" }
 
     Log "Pushing data to main"
-    git push 2>&1 | Tee-Object -FilePath $logFile -Append
+    Run { git push }
 
     Log "Deploying site/ to the gh-pages branch"
     Clean-SiteGit
-    Push-Location (Join-Path $repo "site")
+    $sitePath = Join-Path $repo "site"
+    # site/ files may have been written by a different user/SID (e.g. a sandboxed
+    # process); safe.directory=* lets git operate on them without complaint.
+    $safe = "safe.directory=*"
+    Push-Location $sitePath
     try {
-        git init -q
-        git checkout -q -B gh-pages
-        git add -A
-        git -c user.email="local-scan@summer-school-radar" -c user.name="local-scan" `
-            -c core.safecrlf=false commit -q -m "Deploy $(Get-Date -Format yyyy-MM-dd)"
-        git push -q -f $repoUrl gh-pages 2>&1 | Tee-Object -FilePath $logFile -Append
+        Run { git -c $safe init -q }
+        Run { git -c $safe checkout -q -B gh-pages }
+        Run { git -c $safe add -A }
+        Run { git -c $safe -c user.email="local-scan@summer-school-radar" -c user.name="local-scan" -c core.safecrlf=false commit -q -m "Deploy $(Get-Date -Format yyyy-MM-dd)" }
+        Run { git -c $safe push -q -f $repoUrl gh-pages }
     } finally {
         Pop-Location
         Clean-SiteGit
