@@ -70,14 +70,14 @@
     "title": "Cambridge ELLIS Unit Summer School on Probabilistic Machine Learning 2026"
   },
   "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school": {
-    "deadline": null,
+    "deadline": "2026-08-28",
     "first_seen": "2026-06-14",
     "last_seen": "2026-06-14",
     "status": "near_match",
     "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School"
   },
   "https://ellis.eu/events/ellis-doctoral-symposium-2026": {
-    "deadline": null,
+    "deadline": "2026-04-26",
     "first_seen": "2026-06-14",
     "last_seen": "2026-06-14",
     "status": "near_match",
@@ -140,14 +140,14 @@
     "title": "ELLIS Summer School at Unit Saarbrücken"
   },
   "https://ellis.eu/events/ellis-unit-copenhagen-learning-theory-workshop": {
-    "deadline": null,
+    "deadline": "2026-05-10",
     "first_seen": "2026-06-11",
     "last_seen": "2026-06-14",
     "status": "near_match",
     "title": "ELLIS Unit Copenhagen: Learning Theory Workshop"
   },
   "https://ellis.eu/events/ellis-unit-copenhagen-learning-theory-workshop-1": {
-    "deadline": null,
+    "deadline": "2026-05-24",
     "first_seen": "2026-06-11",
     "last_seen": "2026-06-14",
     "status": "near_match",

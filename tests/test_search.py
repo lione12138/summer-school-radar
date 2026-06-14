@@ -57,8 +57,12 @@ def test_ihe_delft_api_maps_courses_to_candidates() -> None:
 
 
 @responses.activate
-def test_ellis_listing_collector_parses_cards() -> None:
+def test_ellis_listing_collector_parses_cards(monkeypatch) -> None:
+    import research_school_radar.api_sources as api_sources
     from research_school_radar.api_sources import _ELLIS_URL, _ellis
+
+    # Detail-page rendering is exercised separately; keep this test offline.
+    monkeypatch.setattr(api_sources, "render_texts", lambda urls, **kwargs: {})
 
     start = date.today() + timedelta(days=20)
     end = date.today() + timedelta(days=26)
@@ -84,6 +88,23 @@ def test_ellis_listing_collector_parses_cards() -> None:
     assert course.start_date == start and course.end_date == end
     assert course.mode == "in-person"
     assert course.application_link.endswith("/events/ml-school")
+
+
+def test_deadline_without_year_is_inferred_from_event() -> None:
+    from datetime import date as _date
+
+    from research_school_radar.api_sources import _deadline_with_year
+
+    event_start = _date(2026, 6, 22)
+    # "Registration deadline: May 24" with no year -> May 2026 (before the event).
+    text = "Over four days... Registration deadline: May 24. Organised together with the workshop."
+    assert _deadline_with_year(text, event_start) == _date(2026, 5, 24)
+    # A no-year deadline that would fall after the event belongs to the prior year.
+    text2 = "Apply by December 1 for the June school."
+    assert _deadline_with_year(text2, event_start) == _date(2025, 12, 1)
+    # A full date with a year is parsed directly.
+    text3 = "Application deadline: 1 March 2026."
+    assert _deadline_with_year(text3, event_start) == _date(2026, 3, 1)
 
 
 @responses.activate

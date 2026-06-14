@@ -21,15 +21,18 @@ from urllib.parse import urljoin
 
 import requests
 from bs4 import BeautifulSoup
+from dateutil import parser as date_parser
 
 from .extract import (
     _deadline_status,
     _duration_days,
+    _extract_deadline,
     _region_priority,
     _target_level,
     _topic_in_text,
 )
 from .models import Candidate
+from .render import render_texts
 from .utils import clean_space
 
 
@@ -201,7 +204,65 @@ def _ellis(profile: dict) -> tuple[list[Candidate], list[str]]:
         candidate = _ellis_candidate(title, href, _ellis_location(card), text, match, preferred, profile)
         if candidate is not None:
             candidates.append(candidate)
+    _enrich_ellis_deadlines(candidates)
     return candidates, []
+
+
+_DEADLINE_NO_YEAR = re.compile(
+    r"(?:registration deadline|application deadline|apply by|apply before|deadline|closing date)"
+    r"[:\s]*([A-Z][a-z]+\s+\d{1,2})(?:st|nd|rd|th)?\b(?!\s*,?\s*20\d{2})",
+    flags=re.IGNORECASE,
+)
+
+
+def _deadline_with_year(text: str, event_start: date | None) -> date | None:
+    """The deadline from a detail page. ELLIS writes deadlines without a year
+    (e.g. "Registration deadline: May 24"); infer the year from the event."""
+    full = _extract_deadline(text)
+    if full is not None:
+        return full
+    if event_start is None:
+        return None
+    match = _DEADLINE_NO_YEAR.search(text)
+    if not match:
+        return None
+    try:
+        parsed = date_parser.parse(f"{match.group(1)} {event_start.year}").date()
+    except (ValueError, OverflowError):
+        return None
+    # A registration deadline falls on or before the event; if the inferred date
+    # lands after it, the deadline belongs to the previous year.
+    if parsed > event_start:
+        try:
+            parsed = parsed.replace(year=event_start.year - 1)
+        except ValueError:
+            return None
+    return parsed
+
+
+def _enrich_ellis_deadlines(candidates: list[Candidate]) -> None:
+    """Render the detail pages of upcoming ELLIS events to read their deadline,
+    which the listing does not carry. No-op without Playwright."""
+    today = date.today()
+    upcoming = [c for c in candidates if c.start_date is not None and c.start_date >= today][:15]
+    rendered = render_texts([c.application_link for c in upcoming])
+    for candidate in upcoming:
+        text = rendered.get(candidate.application_link, "")
+        deadline = _deadline_with_year(text, candidate.start_date)
+        if deadline is None:
+            continue
+        candidate.deadline = deadline
+        candidate.deadline_status = _deadline_status(deadline)
+        candidate.deadline_evidence = f"ELLIS detail page: registration deadline {deadline.isoformat()}"
+        resolved = sum(
+            [
+                True,
+                candidate.duration_days is not None,
+                candidate.funding_available is True or candidate.fee_eur is not None,
+                candidate.mode in {"in-person", "hybrid", "online"},
+            ]
+        )
+        candidate.extraction_confidence = round(resolved / 4, 2)
 
 
 def _ellis_location(card: Any) -> str:

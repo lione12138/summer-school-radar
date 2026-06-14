@@ -66,3 +66,35 @@ def fetch_rendered(
         source=source,
         fetched_at=date.today(),
     )
+
+
+def render_texts(
+    urls: list[str],
+    user_agent: str = "summer-school-radar/0.1",
+    timeout_ms: int = 15000,
+) -> dict[str, str]:
+    """Rendered visible text for several URLs using one shared browser.
+
+    Returns ``{url: text}`` for the pages that loaded; missing or failed URLs
+    are simply absent. Returns ``{}`` when Playwright is not installed."""
+    if not render_available() or not urls:
+        return {}
+    from playwright.sync_api import sync_playwright
+
+    results: dict[str, str] = {}
+    with sync_playwright() as playwright:
+        browser = playwright.chromium.launch(headless=True)
+        try:
+            context = browser.new_context(user_agent=user_agent)
+            for url in urls:
+                try:
+                    page = context.new_page()
+                    page.goto(url, wait_until="domcontentloaded", timeout=timeout_ms)
+                    page.wait_for_timeout(1500)
+                    results[url] = clean_space(page.inner_text("body"))
+                    page.close()
+                except Exception:  # noqa: BLE001 - skip a page that won't load.
+                    continue
+        finally:
+            browser.close()
+    return results
