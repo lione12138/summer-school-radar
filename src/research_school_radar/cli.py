@@ -65,8 +65,9 @@ def run_scan(
         sources = _load_sources(config_dir / "sources.yaml")
         pages, collection_errors = collect_sources(sources)
         errors.extend(collection_errors)
-        linked_pages, linked_errors = collect_linked_opportunity_pages(pages, max_links_per_source)
-        errors.extend(linked_errors)
+        # A followed link that fails to load is noise, not a source problem, so
+        # those errors are not surfaced in the public collection notes.
+        linked_pages, _linked_errors = collect_linked_opportunity_pages(pages, max_links_per_source)
         candidate_pages = [page for page in pages if looks_like_opportunity(page.text)]
         candidate_pages.extend(linked_pages)
         candidates = [candidate for page in candidate_pages if (candidate := extract_candidate(page, profile))]

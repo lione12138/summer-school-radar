@@ -300,6 +300,13 @@
     "status": "near_match",
     "title": "IV Joint ICTP-SAIFR/ICTP-Trieste Summer School on Particle Physics"
   },
+  "https://indico.ictp.it/event/11148": {
+    "deadline": "2026-05-01",
+    "first_seen": "2026-06-14",
+    "last_seen": "2026-06-14",
+    "status": "near_match",
+    "title": "ICTP-INdAM-SLMath Summer Graduate School for Machine Learning"
+  },
   "https://indico.ictp.it/event/11149": {
     "deadline": "2026-04-23",
     "first_seen": "2026-06-14",

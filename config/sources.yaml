@@ -269,7 +269,8 @@ sources:
     source_type: summer_school
     keywords: [paleoclimatology, climate, summer school]
     scan_frequency: every_run
-    notes: Urbino Summer School in Paleoclimatology.
+    enabled: false
+    notes: Urbino Summer School in Paleoclimatology. The urbinossp.it domain is currently parked/for sale, so it serves no content. Re-enable when the school publishes a working site.
   - name: CIDER
     url: https://www.deep-earth.org/
     layer: 2
@@ -373,7 +374,9 @@ sources:
     source_type: research_institute
     keywords: [climate, oceanography, seismology, geoscience, earth observation]
     scan_frequency: every_run
-    notes: Lamont-Doherty Earth Observatory (Columbia University) events.
+    enabled: false
+    check_manually: true
+    notes: Lamont-Doherty Earth Observatory (Columbia University). The events page returns 403 to scripted requests even with a browser User-Agent (bot protection). Check it directly.
   - name: IPAM
     url: https://www.ipam.ucla.edu/programs/summer-schools/
     layer: 1.5
