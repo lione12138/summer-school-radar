@@ -17,7 +17,7 @@ It is a fixed trusted-source scanner with rule-based extraction, a maintainer-cu
 This section is refreshed automatically by the daily scan workflow.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-14 · 0 fully qualified · 5 high-quality opportunities shown_
+_Last scan: 2026-06-15 · 0 fully qualified · 5 high-quality opportunities shown_
 
 **No fully qualified opportunities in the latest scan.** The high-quality opportunities below are open and in scope, but missing a fully confirmed condition.
 
