@@ -194,6 +194,8 @@ Rows with a known application deadline include an `Add to calendar` link in the 
 
 The generator also writes `site/sources.html` and `site/sources.json` from `config/sources.yaml`. This Sources & Coverage page shows enabled and disabled sources, source layer, region, source type, keywords, blocked linked domains, and notes.
 
+It also writes `site/feed.xml`, an RSS 2.0 feed of curated, fully qualified, and still-open near-match opportunities, advertised from the homepage for autodiscovery so users and aggregators can subscribe instead of visiting the page.
+
 ## Financial Access Rule
 
 The financial hard condition passes when either:
@@ -430,5 +432,6 @@ This would move the project from a daily scanner toward a credible vertical oppo
 - A simple reliable scanner is better than an opaque autonomous browsing system.
 - LLMs may help with extraction later, but should not become uncontrolled web browsers.
 - Curated quality matters more than raw volume.
+
 
 

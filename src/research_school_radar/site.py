@@ -8,8 +8,14 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import quote
 
+from email.utils import format_datetime
+from datetime import datetime, timezone
+
 from .models import Candidate
 from .utils import format_duration, topics_label
+
+
+_SITE_URL = "https://lione12138.github.io/research-school-radar/"
 
 
 # Shared base styles for all generated pages. Interpolated into f-string
@@ -132,9 +138,102 @@ def write_site(
     (output_dir / "curated.json").write_text(json.dumps(curated, indent=2, default=str), encoding="utf-8")
     (output_dir / "sources.json").write_text(json.dumps(sources, indent=2, default=str), encoding="utf-8")
     (output_dir / "sources.html").write_text(render_sources_page(sources), encoding="utf-8")
+    (output_dir / "feed.xml").write_text(render_feed(candidates, curated, site_config or {}), encoding="utf-8")
     path = output_dir / "index.html"
     path.write_text(render_site(candidates, errors, site_config or {}, curated), encoding="utf-8")
     return path
+
+
+def render_feed(
+    candidates: list[Candidate],
+    curated: list[dict[str, Any]] | None,
+    site_config: dict[str, Any] | None = None,
+) -> str:
+    """An RSS 2.0 feed so people can subscribe instead of visiting the page."""
+    curated = curated or []
+    site_url = str((site_config or {}).get("site_url") or _SITE_URL).rstrip("/") + "/"
+    feed_url = site_url + "feed.xml"
+    items = [_curated_feed_item(item) for item in curated]
+    qualified = [item for item in candidates if item.fully_qualified]
+    near = [item for item in candidates if not item.fully_qualified and not item.is_past]
+    items.extend(_candidate_feed_item(item) for item in (qualified + near)[:40])
+    item_xml = "".join(_feed_item_xml(item, site_url) for item in items)
+    built = format_datetime(datetime.now(timezone.utc))
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
+        "  <channel>\n"
+        "    <title>Research Seasonal School Radar</title>\n"
+        f"    <link>{escape(site_url)}</link>\n"
+        f'    <atom:link href="{escape(feed_url)}" rel="self" type="application/rss+xml"/>\n'
+        "    <description>Funded research summer schools, winter schools, and training "
+        "schools in water, climate, geoscience, remote sensing, and scientific machine "
+        "learning.</description>\n"
+        "    <language>en</language>\n"
+        f"    <lastBuildDate>{built}</lastBuildDate>\n"
+        f"{item_xml}"
+        "  </channel>\n"
+        "</rss>\n"
+    )
+
+
+def _candidate_feed_item(candidate: Candidate) -> dict[str, Any]:
+    parts = [f"Dates: {_duration(candidate)}"]
+    if candidate.location:
+        parts.append(f"Location: {_public_location(candidate.location)}")
+    parts.append(f"Deadline: {candidate.deadline.isoformat() if candidate.deadline else 'uncertain'}")
+    parts.append(candidate.financial_summary)
+    if candidate.topic_keywords:
+        parts.append(f"Topics: {topics_label(candidate.topic_keywords)}")
+    return {
+        "title": f"{candidate.title} — {candidate.organizer}",
+        "link": candidate.application_link or candidate.source_url,
+        "guid": candidate.source_url,
+        "tag": "Fully qualified" if candidate.fully_qualified else "Near-match",
+        "date": candidate.first_seen or date.today(),
+        "summary": ". ".join(part for part in parts if part),
+    }
+
+
+def _curated_feed_item(item: dict[str, Any]) -> dict[str, Any]:
+    funding = item.get("funding", {})
+    if not isinstance(funding, dict):
+        funding = {}
+    url = str(item.get("url", "")).strip()
+    title = str(item.get("title", "Untitled opportunity"))
+    parts = [f"Dates: {_curated_duration(item)}"]
+    location = str(item.get("location", "")).strip()
+    if location:
+        parts.append(f"Location: {_public_location(location)}")
+    deadline = _parse_iso_date(item.get("application_deadline"))
+    parts.append(f"Deadline: {deadline.isoformat() if deadline else 'uncertain'}")
+    parts.append(_curated_financial_summary(item, funding))
+    return {
+        "title": f"{title} — {item.get('organizer', 'uncertain')} (curated)",
+        "link": url,
+        "guid": url or title,
+        "tag": "Curated",
+        "date": date.today(),
+        "summary": ". ".join(part for part in parts if part),
+    }
+
+
+def _feed_item_xml(item: dict[str, Any], site_url: str) -> str:
+    published = item["date"]
+    pub_date = format_datetime(
+        datetime(published.year, published.month, published.day, tzinfo=timezone.utc)
+    )
+    guid = item["guid"] or item["link"] or item["title"]
+    return (
+        "    <item>\n"
+        f"      <title>{escape(item['title'])}</title>\n"
+        f"      <link>{escape(item['link'] or site_url)}</link>\n"
+        f'      <guid isPermaLink="false">{escape(guid)}</guid>\n'
+        f"      <category>{escape(item['tag'])}</category>\n"
+        f"      <pubDate>{pub_date}</pubDate>\n"
+        f"      <description>{escape(item['summary'])}</description>\n"
+        "    </item>\n"
+    )
 
 
 def render_site(
@@ -173,6 +272,7 @@ def render_site(
   <meta property="og:title" content="Research Seasonal School Radar">
   <meta property="og:description" content="Daily scan of trusted academic sources for funded research training schools in water, climate, geoscience, remote sensing, and ML, with hard filters and visible evidence.">
   <meta property="og:type" content="website">
+  <link rel="alternate" type="application/rss+xml" title="Research Seasonal School Radar" href="feed.xml">
   <style>
 {_THEME_CSS}
     header.hero {{
@@ -360,6 +460,7 @@ def render_site(
         <a class="pill" href="candidates.json">JSON data</a>
         <a class="pill" href="curated.json">Curated data</a>
         <a class="pill" href="sources.html">Sources &amp; Coverage</a>
+        <a class="pill" href="feed.xml">RSS feed</a>
         <a class="pill" href="https://github.com/lione12138/research-school-radar">GitHub</a>
       </div>
     </div>

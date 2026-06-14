@@ -50,6 +50,7 @@ site/candidates.json
 site/curated.json
 site/sources.html
 site/sources.json
+site/feed.xml
 reports/YYYY-MM-DD.md
 ```
 
@@ -160,3 +161,4 @@ collect -> parse -> extract -> filter -> rank
 ```
 
 See [docs/TECHNICAL.md](docs/TECHNICAL.md) for implementation details, current limitations, and the improvement roadmap.
+

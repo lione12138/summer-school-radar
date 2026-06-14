@@ -845,6 +845,28 @@ def test_curated_opportunities_loader_reads_yaml(tmp_path) -> None:
     assert opportunities == [{"title": "Curated Hydrology School", "organizer": "Trusted Institute"}]
 
 
+def test_site_generation_writes_valid_rss_feed(tmp_path) -> None:
+    import xml.etree.ElementTree as ET
+
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    ranked = rank_candidates([candidate])
+    write_site(ranked, [], tmp_path)
+    feed_path = tmp_path / "feed.xml"
+    assert feed_path.exists()
+    tree = ET.fromstring(feed_path.read_text(encoding="utf-8"))
+    channel = tree.find("channel")
+    assert channel is not None
+    items = channel.findall("item")
+    assert len(items) == 1
+    assert "Example Hydrology Winter School" in items[0].findtext("title")
+    assert items[0].findtext("link")
+    assert items[0].findtext("pubDate")
+    # The page advertises the feed for autodiscovery.
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert 'type="application/rss+xml"' in html
+    assert 'href="feed.xml"' in html
+
+
 def test_site_generation_writes_html_and_json(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
