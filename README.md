@@ -26,10 +26,10 @@ _Last scan: 2026-06-14 · 0 fully qualified · 5 still-open near-matches shown_
 | title | type | organizer | location | duration | deadline | funding / fee | topic |
 |---|---|---|---|---|---|---|---|
 | [River Basin Modelling](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | groundwater, water resources, water quality, GIS |
-| [Organizing Water](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | water management |
-| [Water Quality Assessment and Monitoring](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 5 Oct – 23 Oct 2026 · 19 days | 2026-09-05 | Fee about EUR 5505 · Apply on official page | groundwater, water quality |
-| [Surface Water Treatment](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 30 Nov – 18 Dec 2026 · 19 days | 2026-10-30 | Fee about EUR 2600 · Apply on official page | water quality |
-| [On-site Sanitation and Treatment](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | water management |
+| [ICOS Summer/Winter School January 2027, application is now open](https://www.icos-cp.eu/about/opportunities/summer-school) | summer school | ICOS | Europe | 18 Jan – 28 Jan 2027 · 11 days | 2026-07-31 | Funding or fee not stated | climate, climate change, remote sensing |
+| [Short Course: Structural Geology Must-Knows](https://eage.eventsair.com/short-course-structural-geology-must-knows/) | short course | EAGE | Venue Preview Webinar | 1 Sep – 3 Sep 2026 · 3 days | 2026-06-30 | Funding or fee not stated | geoscience, geology |
+| [ELLIS Sites ICML Fest 2026: Celebrate, Connect, Collaborate](https://ellis.eu/events/ellis-sites-icml-fest-2026) | summer school | ELLIS | Multiple Locations | 16 Jun – 24 Jul 2026 · 39 days | uncertain | Funding or fee not stated | AI, machine learning |
+| [6th EAGE Workshop on Fiber Optic Sensing for Energy Applications](https://eage.eventsair.com/6th-eage-workshop-on-fiber-optic-sensing-for-energy-applications/abstract-submission-and-instructions) | short course | EAGE | Location | uncertain | 2026-06-21 | Funding or fee not stated | geoscience, AI |
 
 <!-- radar:results:end -->
 

@@ -1,5 +1,9 @@
 from __future__ import annotations
 
+import re
+from difflib import SequenceMatcher
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+
 from .models import Candidate
 
 
@@ -72,13 +76,72 @@ def score_candidate(candidate: Candidate) -> tuple[float, list[str]]:
 
 
 def _dedupe_candidates(candidates: list[Candidate]) -> list[Candidate]:
-    best_by_key: dict[tuple[str, str], Candidate] = {}
+    """Remove duplicates that arrive via different URLs, sources, or title
+    variants. Runs on every scan, keeping the highest-scoring representative."""
+    # Stage 1: collapse identical opportunities reached through different URLs
+    # (tracking parameters, fragments, trailing slashes).
+    best_by_url: dict[str, Candidate] = {}
     for candidate in candidates:
-        key = (_normalise(candidate.organizer), _normalise(candidate.title))
-        current = best_by_key.get(key)
+        key = _canonical_url(candidate.source_url)
+        current = best_by_url.get(key)
         if current is None or candidate.score > current.score:
-            best_by_key[key] = candidate
-    return list(best_by_key.values())
+            best_by_url[key] = candidate
+
+    # Stage 2: collapse the same event reported under different titles or by
+    # different sources, confirmed by matching dates. Highest score wins.
+    kept: list[Candidate] = []
+    for candidate in sorted(best_by_url.values(), key=lambda item: item.score, reverse=True):
+        if not any(_same_opportunity(candidate, other) for other in kept):
+            kept.append(candidate)
+    return kept
+
+
+def _canonical_url(url: str) -> str:
+    if not url:
+        return ""
+    parts = urlsplit(url.strip())
+    host = parts.hostname or ""
+    if host.startswith("www."):
+        host = host[4:]
+    path = parts.path.rstrip("/") or "/"
+    tracking = {"fbclid", "gclid", "msclkid", "mc_cid", "mc_eid", "ref", "source"}
+    query = urlencode(
+        sorted(
+            (key, value)
+            for key, value in parse_qsl(parts.query)
+            if not key.lower().startswith("utm_") and key.lower() not in tracking
+        )
+    )
+    return urlunsplit((parts.scheme.lower() or "https", host.lower(), path, query, ""))
+
+
+def _same_opportunity(a: Candidate, b: Candidate) -> bool:
+    similarity = _title_similarity(a.title, b.title)
+    if similarity < 0.85:
+        return False
+    # Different start dates mean different editions or sibling events, even if a
+    # shared series deadline coincides — never merge those.
+    if a.start_date is not None and b.start_date is not None and a.start_date != b.start_date:
+        return False
+    same_start = a.start_date is not None and a.start_date == b.start_date
+    same_deadline = a.deadline is not None and a.deadline == b.deadline
+    if same_start or same_deadline:
+        return True
+    # Without any shared date, only merge near-identical titles from the same
+    # organizer (e.g. the same page reached two ways).
+    return similarity >= 0.92 and _normalise(a.organizer) == _normalise(b.organizer)
+
+
+def _title_similarity(a: str, b: str) -> float:
+    title_a, title_b = _normalise_title(a), _normalise_title(b)
+    if not title_a or not title_b:
+        return 0.0
+    return SequenceMatcher(None, title_a, title_b).ratio()
+
+
+def _normalise_title(value: str) -> str:
+    lowered = re.sub(r"\b\d{4}\b", "", value.lower())
+    return " ".join(re.sub(r"[^a-z0-9]+", " ", lowered).split())
 
 
 def _normalise(value: str) -> str:

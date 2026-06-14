@@ -736,6 +736,39 @@ def test_ranking_deduplicates_same_title_and_organizer() -> None:
     assert len(ranked) == 1
 
 
+def test_dedupe_collapses_tracking_url_variants() -> None:
+    first = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    second = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    # Same page reached with tracking params, a fragment, and a trailing slash.
+    first.source_url = "https://example.org/school"
+    second.source_url = "https://www.example.org/school/?utm_source=x&ref=y#apply"
+    second.title = "A Different Title Entirely To Avoid Title Match"
+    ranked = rank_candidates([first, second])
+    assert len(ranked) == 1
+
+
+def test_dedupe_merges_same_event_across_sources() -> None:
+    first = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    second = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    # Same school, different source/organizer and a title variant, same dates.
+    second.source_url = "https://other.org/listing/hydrology-winter-school"
+    second.organizer = "Aggregator Listing"
+    second.title = first.title + ": 2027 Edition"
+    ranked = rank_candidates([first, second])
+    assert len(ranked) == 1
+
+
+def test_dedupe_keeps_distinct_events_with_similar_titles() -> None:
+    first = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    second = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    # Same series, different editions: similar title but different start dates.
+    second.source_url = "https://example.org/unit-graz"
+    second.title = first.title.replace("Winter", "Winter Unit Graz")
+    second.start_date = date(second.start_date.year, second.start_date.month, second.start_date.day + 1)
+    ranked = rank_candidates([first, second])
+    assert len(ranked) == 2
+
+
 def test_failing_source_does_not_abort_collection() -> None:
     from research_school_radar import collect as collect_module
 

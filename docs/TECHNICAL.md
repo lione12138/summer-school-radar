@@ -115,7 +115,7 @@ rank.py     ->  interpretable scoring and deduplication
 - `src/research_school_radar/parse.py` identifies likely opportunity links and skips unsuitable files or blocked domains.
 - `src/research_school_radar/extract.py` performs rule-based structured extraction.
 - `src/research_school_radar/filter.py` applies hard filters.
-- `src/research_school_radar/rank.py` scores and deduplicates candidates.
+- `src/research_school_radar/rank.py` scores and deduplicates candidates. Deduplication runs on every scan: it canonicalizes URLs (dropping tracking parameters, fragments, and trailing slashes), then merges the same event reported under different titles or by different sources when a title-similarity match is confirmed by a shared date, while keeping distinct editions that have different start dates.
 - `src/research_school_radar/report.py` writes Markdown reports.
 - `src/research_school_radar/site.py` writes the static public website.
 - `src/research_school_radar/storage.py` updates the SQLite seen database.
