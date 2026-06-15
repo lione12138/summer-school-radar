@@ -755,6 +755,13 @@
     "status": "near_match",
     "title": "Karthaus summerschool"
   },
+  "https://www.solas-int.org/events/solas-events/summer-school-2026.html": {
+    "deadline": null,
+    "first_seen": "2026-06-16",
+    "last_seen": "2026-06-16",
+    "status": "near_match",
+    "title": "Summer School 2026"
+  },
   "https://www.summerschoolsineurope.eu/destination/algebra-international-summer-school/": {
     "deadline": null,
     "first_seen": "2026-06-14",
