@@ -17,13 +17,9 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-16 · 1 fully qualified · 5 high-quality opportunities shown_
+_Last scan: 2026-06-16 · 0 fully qualified · 5 high-quality opportunities shown_
 
-**Fully Qualified Opportunities**
-
-| # | title | type | organizer | location | duration | deadline | funding / fee | topic | eligibility | reason |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | [ICVSS 2026](https://icvss.dmi.unict.it/icvss2026/) | summer school | ICVSS | Europe | 5 May – 31 May 2026 · 27 days | 2026-06-20 | scholarship · amount not stated · Apply on official page | AI, machine learning, computer vision, robotics | Master Students, Ph | topic match: AI, machine learning, computer vision, robotics; funding evidence: scholarship; deadline appears open; 27 days |
+**No fully qualified opportunities in the latest scan.** The high-quality opportunities below are open and in scope, but missing a fully confirmed condition.
 
 **High-Quality Opportunities**
 

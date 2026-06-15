@@ -308,10 +308,10 @@
     "title": "INTERNATIONAL ASSOCIATION OF HYDROLOGICAL SCIENCES"
   },
   "https://icvss.dmi.unict.it/icvss2026/": {
-    "deadline": "2026-06-20",
+    "deadline": "2026-04-01",
     "first_seen": "2026-06-16",
     "last_seen": "2026-06-16",
-    "status": "qualified",
+    "status": "near_match",
     "title": "ICVSS 2026"
   },
   "https://icvss.dmi.unict.it/icvss2026/Application": {
