@@ -630,3 +630,59 @@ sources:
     keywords: [cybersecurity, security, privacy, network security]
     scan_frequency: every_run
     notes: Austrian research centre for information security; security training, schools, and events.
+  - name: Santa Fe Institute
+    url: https://www.santafe.edu/engage/learn/schools
+    layer: 1.5
+    region: North America
+    source_type: research_institute
+    keywords: [complex systems, data science, machine learning, networks, summer school]
+    scan_frequency: every_run
+    notes: Santa Fe Institute Complex Systems Summer School (CSSS) and related schools; funded interdisciplinary training in complex systems, networks, and data science.
+  - name: DeepLearn
+    url: https://deeplearn.irdta.eu/2026/
+    layer: 2
+    region: continental Europe
+    source_type: summer_school
+    keywords: [deep learning, machine learning, AI, data science, summer school]
+    scan_frequency: every_run
+    notes: International School on Deep Learning (IRDTA). Points at the current edition; bump the year when a new one is published.
+  - name: EurAI ACAI
+    url: https://www.eurai.org/activities/ACAI_schools
+    layer: 1.5
+    region: continental Europe
+    source_type: scientific_society
+    keywords: [artificial intelligence, machine learning, AI, advanced course]
+    scan_frequency: every_run
+    notes: EurAI Advanced Course on Artificial Intelligence (ACAI); the European AI society's advanced school.
+  - name: Friday Harbor Laboratories
+    url: https://fhl.uw.edu/
+    layer: 2
+    region: North America
+    source_type: university_institute
+    keywords: [marine biology, oceanography, ecology, field course]
+    scan_frequency: every_run
+    notes: University of Washington Friday Harbor Labs; funded marine science field courses and summer programmes.
+  - name: SOLAS
+    url: https://www.solas-int.org/
+    layer: 1.5
+    region: global
+    source_type: research_network
+    keywords: [ocean, climate, biogeochemistry, atmosphere, summer school]
+    scan_frequency: every_run
+    notes: Surface Ocean Lower Atmosphere Study; ocean-atmosphere and climate summer schools.
+  - name: CSCS Summer School
+    url: https://www.cscs.ch/
+    layer: 2
+    region: continental Europe
+    source_type: research_institute
+    keywords: [high performance computing, data science, scientific computing, summer school]
+    scan_frequency: every_run
+    notes: Swiss National Supercomputing Centre (CSCS); summer school on HPC and effective scientific computing.
+  - name: Argonne ATPESC
+    url: https://extremecomputingtraining.anl.gov/
+    layer: 2
+    region: North America
+    source_type: agency
+    keywords: [high performance computing, extreme-scale computing, scientific computing, training]
+    scan_frequency: every_run
+    notes: Argonne Training Program on Extreme-Scale Computing (ATPESC); funded intensive HPC training.
