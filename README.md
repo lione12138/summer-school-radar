@@ -26,8 +26,8 @@ _Last scan: 2026-06-15 · 0 fully qualified · 5 high-quality opportunities show
 |---|---|---|---|---|---|---|---|
 | [River Basin Modelling](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | groundwater, water resources, water quality, GIS |
 | [ICOS Summer/Winter School January 2027, application is now open](https://www.icos-cp.eu/about/opportunities/summer-school) | summer school | ICOS | Europe | 18 Jan – 28 Jan 2027 · 11 days | 2026-07-31 | financial support · amount not stated · Apply on official page | climate, climate change, remote sensing |
-| [Climate Change AI Virtual Summer School 2026](https://www.climatechange.ai/events/summer_school2026) | summer school | Climate Change AI | Virtual Schedule: | 19 Jul – 22 Aug 2026 · 35 days | uncertain | fee waiver · amount not stated · Apply on official page | hydrology, water resources, climate, climate change |
-| [Short Course: Structural Geology Must-Knows](https://eage.eventsair.com/short-course-structural-geology-must-knows/) | short course | EAGE | Venue Preview Webinar | 1 Sep – 3 Sep 2026 · 3 days | 2026-07-31 | Funding or fee not stated | geoscience, geology |
+| [Climate Change AI Virtual Summer School 2026](https://www.climatechange.ai/events/summer_school2026) | summer school | Climate Change AI | Online | 19 Jul – 22 Aug 2026 · 35 days | uncertain | fee waiver · amount not stated · Apply on official page | hydrology, water resources, climate, climate change |
+| [Short Course: Structural Geology Must-Knows](https://eage.eventsair.com/short-course-structural-geology-must-knows/) | short course | EAGE | Europe | 1 Sep – 3 Sep 2026 · 3 days | 2026-07-31 | Funding or fee not stated | geoscience, geology |
 | [ELLIS Sites ICML Fest 2026: Celebrate, Connect, Collaborate](https://ellis.eu/events/ellis-sites-icml-fest-2026) | summer school | ELLIS | Multiple Locations | 16 Jun – 24 Jul 2026 · 39 days | uncertain | Funding or fee not stated | AI, machine learning |
 
 <!-- radar:results:end -->
