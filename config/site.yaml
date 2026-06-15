@@ -25,6 +25,24 @@ analytics:
   # visitor numbers private.
   goatcounter_code: ""
 
+subscribe:
+  # Email alerts when new opportunities appear, powered by an RSS-to-email
+  # service that watches feed.xml. Pick one provider and fill its field; until
+  # then the site shows an RSS link instead of an email form.
+  # Options: none, buttondown, followit
+  provider: none
+
+  # Buttondown (recommended — free tier, privacy-friendly):
+  #   1. Sign up at https://buttondown.email and set your username below.
+  #   2. In Buttondown, add an RSS automation / "RSS-to-email" pointing at
+  #      https://lione12138.github.io/summer-school-radar/feed.xml
+  #      so new items are emailed to subscribers automatically.
+  buttondown_username: ""
+
+  # Follow.it alternative: register the feed at https://follow.it, then paste the
+  # "action" URL from the embed form it gives you.
+  followit_form_action: ""
+
 seo:
   # Google Search Console verification (optional but recommended for indexing):
   #   1. Go to https://search.google.com/search-console and add a property of

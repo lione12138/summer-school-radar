@@ -1154,6 +1154,23 @@ def test_status_line_uses_correct_singular_and_plural(tmp_path) -> None:
     assert "opportunityies" not in html
 
 
+def test_subscribe_section_renders_email_form_when_configured() -> None:
+    from research_school_radar.site import render_site
+
+    # Not configured: the section falls back to an RSS link, no email form.
+    plain = render_site([], [], {}, [])
+    assert 'id="subscribe"' in plain
+    assert "buttondown.email" not in plain
+    assert "Subscribe via RSS" in plain  # hero CTA stays RSS
+
+    # Configured: an email subscribe form, and the hero CTA switches to email.
+    config = {"subscribe": {"provider": "buttondown", "buttondown_username": "ssr"}}
+    configured = render_site([], [], config, [])
+    assert "buttondown.email/api/emails/embed-subscribe/ssr" in configured
+    assert "Get email alerts" in configured
+    assert 'href="feed.xml"' in configured  # RSS still offered as an alternative
+
+
 def test_empty_state_stays_informative(tmp_path) -> None:
     sources = [
         {"name": "A", "url": "https://a", "enabled": True},

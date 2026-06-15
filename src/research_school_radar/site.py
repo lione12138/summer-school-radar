@@ -298,6 +298,66 @@ def _status_banner(full_count: int, near_count: int, tracked_total: int, tracked
     return f'<p class="status info">{escape(message)}</p>'
 
 
+def _subscribe_form_html(site_config: dict[str, Any]) -> str:
+    """An email subscribe form when a provider is configured, else "".
+
+    Powered by an RSS-to-email service watching feed.xml, so no backend is
+    needed on the static site."""
+    config = site_config.get("subscribe", {})
+    if not isinstance(config, dict):
+        return ""
+    provider = str(config.get("provider", "none")).lower()
+    if provider == "buttondown":
+        username = str(config.get("buttondown_username", "")).strip()
+        if not username:
+            return ""
+        user = escape(username, quote=True)
+        return (
+            f'<form class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/{user}" '
+            f'method="post" target="popupwindow" '
+            f"onsubmit=\"window.open('https://buttondown.email/{user}', 'popupwindow')\">"
+            '<input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required>'
+            '<button type="submit">Get email alerts</button>'
+            "</form>"
+        )
+    if provider == "followit":
+        action = str(config.get("followit_form_action", "")).strip()
+        if not action:
+            return ""
+        return (
+            f'<form class="subscribe-form" action="{escape(action, quote=True)}" method="post" target="_blank">'
+            '<input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required>'
+            '<button type="submit">Get email alerts</button>'
+            "</form>"
+        )
+    return ""
+
+
+def _subscribe_section(site_config: dict[str, Any]) -> str:
+    """A 'stay updated' section: an email form when configured, RSS otherwise."""
+    form = _subscribe_form_html(site_config)
+    if form:
+        body = (
+            '<p class="lead">Get an email when new funded schools open — no spam, unsubscribe anytime.</p>'
+            f"{form}"
+            '<p class="muted" style="margin-top:10px;font-size:13px">Prefer a reader? Use the '
+            '<a href="feed.xml">RSS feed</a>.</p>'
+        )
+    else:
+        body = (
+            '<p class="lead">Subscribe to get new opportunities as they are found, instead of '
+            "checking back.</p>"
+            '<p style="margin-top:10px"><a class="pill" href="feed.xml">RSS feed</a></p>'
+        )
+    return f"""
+    <section id="subscribe" class="anchor">
+      <div class="section-head">
+        <h2>Stay updated</h2>
+      </div>
+      <div class="panel">{body}</div>
+    </section>"""
+
+
 def _empty_opportunities_block(tracked_total: int, tracked_sources: int) -> str:
     """Shown in place of the results table when nothing is open — keeps the page
     feeling active off-season rather than blank."""
@@ -477,6 +537,11 @@ def render_site(
     notes = "".join(f"<li>{escape(error)}</li>" for error in errors[:12])
     filters = _filters(candidates)
     analytics = _analytics_snippet(site_config or {})
+    subscribe_cta = (
+        '<a class="btn outline" href="#subscribe">Get email alerts</a>'
+        if _subscribe_form_html(site_config or {})
+        else '<a class="btn outline" href="feed.xml">Subscribe via RSS</a>'
+    )
     status_banner = _status_banner(len(full), len(near), tracked_total, tracked_sources)
     if near:
         near_block = _near_section(near_rows)
@@ -718,6 +783,20 @@ def render_site(
     .faq summary::-webkit-details-marker {{ display: none; }}
     .faq details[open] summary {{ color: var(--accent-ink); }}
     .faq details p {{ margin: 0 0 14px; color: var(--muted); }}
+    /* email subscribe */
+    .subscribe-form {{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; max-width: 540px; }}
+    .subscribe-form input[type="email"] {{
+      flex: 1 1 240px; min-height: 44px; border: 1px solid var(--line); border-radius: 10px;
+      background: var(--panel-2); color: var(--ink); padding: 8px 14px; font: inherit;
+    }}
+    .subscribe-form input[type="email"]:focus {{
+      outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent);
+    }}
+    .subscribe-form button {{
+      border: 0; border-radius: 10px; padding: 0 22px; min-height: 44px; cursor: pointer;
+      background: var(--accent); color: #fff; font-weight: 650; font-size: 14.5px;
+    }}
+    .subscribe-form button:hover {{ background: var(--accent-ink); }}
     /* site footer */
     footer.site {{ border-top: 1px solid var(--line); background: var(--panel); margin-top: 48px; }}
     footer.site .cols {{ display: flex; flex-wrap: wrap; gap: 26px 56px; padding: 34px 0 8px; }}
@@ -750,7 +829,7 @@ def render_site(
       <p class="subtitle">A free daily scan of trusted academic sources for research summer schools, winter schools, training schools, field schools, and short courses in water, climate, geoscience, remote sensing, and scientific machine learning. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.</p>
       <div class="cta">
         <a class="btn primary" href="#opportunities">Browse opportunities</a>
-        <a class="btn outline" href="feed.xml">Subscribe via RSS</a>
+        {subscribe_cta}
       </div>
       <div class="meta">
         <span class="pill">Updated {updated}</span>
@@ -777,6 +856,7 @@ def render_site(
       {near_block}
     </section>
     {_notes_section(notes) if notes else ""}
+    {_subscribe_section(site_config or {})}
     {_how_it_works_section()}
     {_about_section()}
     {_faq_section()}
@@ -904,6 +984,7 @@ def _footer_section(updated: str) -> str:
         <div class="col">
           <h4>Explore</h4>
           <a href="#opportunities">Opportunities</a>
+          <a href="#subscribe">Email alerts</a>
           <a href="sources.html">Sources &amp; coverage</a>
           <a href="candidates.json">Raw JSON</a>
           <a href="feed.xml">RSS feed</a>
