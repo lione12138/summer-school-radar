@@ -151,11 +151,13 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     end = overrides.get("end_date") or (ranges[0][1] if ranges else None)
     duration_evidence = ranges[0][2] if ranges else str(overrides.get("duration_evidence", ""))
     deadlines = _all_deadlines(text)
-    deadline = overrides.get("deadline") or (deadlines[-1][0] if deadlines else None)
-    if deadlines:
-        deadline_evidence = deadlines[-1][1]
-        if len(deadlines) > 1:
-            deadline_evidence += f" (earlier deadline also listed: {deadlines[0][0].isoformat()})"
+    chosen = _select_deadline(deadlines)
+    deadline = overrides.get("deadline") or (chosen[0] if chosen else None)
+    if chosen:
+        deadline_evidence = chosen[1]
+        others = [d.isoformat() for d, _ in deadlines if d != chosen[0]]
+        if others:
+            deadline_evidence += f" (other dates listed: {', '.join(others[:3])})"
     else:
         deadline_evidence = ""
 
@@ -490,23 +492,41 @@ _COMPACT_RANGE_PATTERNS = [
 ]
 
 
+# A date range introduced by these words is a logistics window (hotel booking,
+# payment, reservation), not the event itself — so it must not be taken as the
+# school's duration.
+_NON_EVENT_RANGE_CONTEXT = re.compile(
+    r"accommodation|hotel|lodging|reservation|booking|payment", re.IGNORECASE
+)
+
+
 def _date_ranges(text: str) -> list[tuple[date, date, str]]:
-    """Distinct (start, end, evidence) ranges, in pattern-priority order."""
+    """Distinct (start, end, evidence) ranges, in pattern-priority order.
+
+    Ranges immediately preceded by logistics words (accommodation, hotel,
+    reservation, ...) are skipped, since those are booking windows rather than
+    the school's dates."""
     ranges: list[tuple[date, date, str]] = []
     seen: set[tuple[date, date]] = set()
+
+    def add(match: re.Match, start: date | None, end: date | None) -> None:
+        if not (start and end) or not (0 <= (end - start).days <= 120):
+            return
+        if (start, end) in seen:
+            return
+        context = text[max(0, match.start() - 60):match.start()]
+        if _NON_EVENT_RANGE_CONTEXT.search(context):
+            return
+        seen.add((start, end))
+        ranges.append((start, end, clean_space(match.group(0))))
+
     for pattern in _EXPLICIT_RANGE_PATTERNS:
         for match in re.finditer(pattern, text):
-            start, end = _safe_parse_date(match.group(1)), _safe_parse_date(match.group(2))
-            if start and end and 0 <= (end - start).days <= 120 and (start, end) not in seen:
-                seen.add((start, end))
-                ranges.append((start, end, clean_space(match.group(0))))
+            add(match, _safe_parse_date(match.group(1)), _safe_parse_date(match.group(2)))
     for pattern, build in _COMPACT_RANGE_PATTERNS:
         for match in re.finditer(pattern, text):
             start_str, end_str = build(match)
-            start, end = _safe_parse_date(start_str), _safe_parse_date(end_str)
-            if start and end and 0 <= (end - start).days <= 120 and (start, end) not in seen:
-                seen.add((start, end))
-                ranges.append((start, end, clean_space(match.group(0))))
+            add(match, _safe_parse_date(start_str), _safe_parse_date(end_str))
     return ranges
 
 
@@ -649,11 +669,32 @@ def _all_deadlines(text: str) -> list[tuple[date, str]]:
     return found
 
 
+def _deadline_category(evidence: str) -> int:
+    """0 = apply-by (application), 1 = registration, 2 = other (submission of a
+    poster/essay, notification, accommodation, ...). Lower is more relevant."""
+    low = evidence.lower()
+    if "application" in low or "apply" in low:
+        return 0
+    if "registration" in low or "register" in low:
+        return 1
+    return 2
+
+
+def _select_deadline(deadlines: list[tuple[date, str]]) -> tuple[date, str] | None:
+    """The apply-by deadline. Prefer an application deadline, then a registration
+    deadline, else a generic one — so an unrelated late date (e.g. an essay
+    submission or poster deadline) never masks the real application deadline.
+    Within the chosen category the latest date wins (regular over early-bird)."""
+    if not deadlines:
+        return None
+    best_category = min(_deadline_category(ev) for _, ev in deadlines)
+    in_category = [item for item in deadlines if _deadline_category(item[1]) == best_category]
+    return max(in_category, key=lambda item: item[0])
+
+
 def _extract_deadline(text: str) -> date | None:
-    # The final (regular) deadline is what matters; early-bird deadlines are
-    # earlier, so take the latest.
-    deadlines = _all_deadlines(text)
-    return deadlines[-1][0] if deadlines else None
+    chosen = _select_deadline(_all_deadlines(text))
+    return chosen[0] if chosen else None
 
 
 def _mode_evidence(text: str) -> str:

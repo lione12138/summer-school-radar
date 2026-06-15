@@ -1081,6 +1081,34 @@ def test_sanitize_location_drops_junk_fragments() -> None:
     assert sanitize_location("", fallback="Europe") == "Europe"
 
 
+def test_application_deadline_preferred_over_unrelated_dates() -> None:
+    from research_school_radar.extract import _all_deadlines, _select_deadline
+
+    # A date-dense page: the real apply-by date plus a later essay-submission
+    # deadline. The application deadline must win, not the latest date.
+    text = (
+        "SCHOOL DEADLINES Student Application: 1 April 2026. "
+        "Notification Acceptance: 15 April 2026. "
+        "Deadline for submission is: 20 June 2026."
+    )
+    chosen = _select_deadline(_all_deadlines(text))
+    assert chosen is not None
+    assert chosen[0] == date(2026, 4, 1)
+
+
+def test_accommodation_window_not_used_as_event_dates() -> None:
+    from research_school_radar.extract import _date_ranges
+
+    text = (
+        "The school takes place 12 July 2026 to 18 July 2026 in Sicily. "
+        "Accommodation Reservation at Hotel Baia: from 5 May 2026 to 31 May 2026."
+    )
+    ranges = _date_ranges(text)
+    spans = {(a.isoformat(), b.isoformat()) for a, b, _ in ranges}
+    assert ("2026-07-12", "2026-07-18") in spans  # the school dates are kept
+    assert ("2026-05-05", "2026-05-31") not in spans  # the hotel window is dropped
+
+
 def test_allcaps_banner_titles_fall_back_to_page_title() -> None:
     from research_school_radar.extract import _extract_title
     from research_school_radar.models import Page, Source
