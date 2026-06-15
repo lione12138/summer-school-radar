@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+import unicodedata
 from difflib import SequenceMatcher
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
@@ -88,12 +89,37 @@ def _dedupe_candidates(candidates: list[Candidate]) -> list[Candidate]:
             best_by_url[key] = candidate
 
     # Stage 2: collapse the same event reported under different titles or by
-    # different sources, confirmed by matching dates. Highest score wins.
+    # different sources, confirmed by matching dates. Highest score wins, but the
+    # surviving record is enriched with any fields the duplicate had and it
+    # lacked (e.g. an official site that lists the deadline an aggregator omits).
     kept: list[Candidate] = []
     for candidate in sorted(best_by_url.values(), key=lambda item: item.score, reverse=True):
-        if not any(_same_opportunity(candidate, other) for other in kept):
+        match = next((other for other in kept if _same_opportunity(candidate, other)), None)
+        if match is None:
             kept.append(candidate)
+        else:
+            _merge_into(match, candidate)
     return kept
+
+
+def _merge_into(primary: Candidate, other: Candidate) -> None:
+    """Fill fields the primary (higher-scoring) record is missing from a merged
+    duplicate, so cross-source records combine into the most complete one."""
+    if primary.deadline is None and other.deadline is not None:
+        primary.deadline = other.deadline
+        primary.deadline_evidence = primary.deadline_evidence or other.deadline_evidence
+        if other.deadline_status:
+            primary.deadline_status = other.deadline_status
+    if primary.start_date is None and other.start_date is not None:
+        primary.start_date = other.start_date
+        primary.end_date = primary.end_date or other.end_date
+        primary.duration_days = primary.duration_days or other.duration_days
+    if not primary.location and other.location:
+        primary.location = other.location
+    if primary.funding_available is not True and other.funding_available is True:
+        primary.funding_available = True
+        primary.funding_type = other.funding_type or primary.funding_type
+        primary.funding_evidence = primary.funding_evidence or other.funding_evidence
 
 
 def _canonical_url(url: str) -> str:
@@ -117,19 +143,54 @@ def _canonical_url(url: str) -> str:
 
 def _same_opportunity(a: Candidate, b: Candidate) -> bool:
     similarity = _title_similarity(a.title, b.title)
-    if similarity < 0.85:
-        return False
     # Different start dates mean different editions or sibling events, even if a
     # shared series deadline coincides — never merge those.
     if a.start_date is not None and b.start_date is not None and a.start_date != b.start_date:
         return False
+    # Two known, incompatible locations mean different events — e.g. sibling
+    # summer schools of the same series held in different cities, which can
+    # otherwise score high on title similarity and share a week.
+    if not _locations_compatible(a.location, b.location):
+        return False
     same_start = a.start_date is not None and a.start_date == b.start_date
+    same_end = a.end_date is not None and a.end_date == b.end_date
     same_deadline = a.deadline is not None and a.deadline == b.deadline
+    # An identical date span is a strong signal of the same event even when two
+    # sources title it differently (an official site vs an aggregator listing).
+    if same_start and same_end and similarity >= 0.75:
+        return True
+    if similarity < 0.85:
+        return False
     if same_start or same_deadline:
         return True
     # Without any shared date, only merge near-identical titles from the same
     # organizer (e.g. the same page reached two ways).
     return similarity >= 0.92 and _normalise(a.organizer) == _normalise(b.organizer)
+
+
+# Coarse region placeholders used as a location fallback. They are not real
+# venues, so they must not be treated as a conflicting place during dedup.
+_COARSE_LOCATIONS = {
+    "europe", "continental europe", "global", "worldwide", "online", "various",
+    "multiple locations", "north america", "south america", "latin america",
+    "asia", "east asia", "southeast asia", "south asia", "africa", "middle east",
+    "uk", "united kingdom", "australia and new zealand",
+}
+
+
+def _locations_compatible(a: str, b: str) -> bool:
+    """True when two locations could be the same place. Unknown (empty) or a
+    coarse region placeholder on either side counts as compatible; otherwise one
+    must contain the other."""
+    fa, fb = _fold(a), _fold(b)
+    if not fa or not fb or fa in _COARSE_LOCATIONS or fb in _COARSE_LOCATIONS:
+        return True
+    return fa == fb or fa in fb or fb in fa
+
+
+def _fold(value: str) -> str:
+    decomposed = unicodedata.normalize("NFKD", value)
+    return "".join(ch for ch in decomposed if not unicodedata.combining(ch)).lower().strip()
 
 
 def _title_similarity(a: str, b: str) -> float:

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import re
+import unicodedata
 from datetime import date
 from pathlib import Path
 from typing import Any
@@ -92,7 +93,30 @@ def sanitize_location(value: str, fallback: str = "") -> str:
     # place (e.g. "EEML2022"); real one-word cities don't carry numbers.
     if " " not in text and any(ch.isdigit() for ch in text):
         return fallback
-    return text
+    return _dedupe_location_parts(text)
+
+
+def _fold(value: str) -> str:
+    """Lowercase and strip accents, for comparing location fragments."""
+    decomposed = unicodedata.normalize("NFKD", value)
+    return "".join(ch for ch in decomposed if not unicodedata.combining(ch)).lower().strip()
+
+
+def _dedupe_location_parts(value: str) -> str:
+    """Drop repeated comma-separated fragments from a location string, e.g.
+    "Uni, ul. Krupnicza 33, Kraków, ul. Krupnicza 33, Kraków, Poland" where a
+    page repeats the address. Accent/case-insensitive comparison."""
+    if "," not in value:
+        return value
+    seen: set[str] = set()
+    parts: list[str] = []
+    for part in value.split(","):
+        cleaned = part.strip()
+        key = _fold(cleaned)
+        if key and key not in seen:
+            seen.add(key)
+            parts.append(cleaned)
+    return ", ".join(parts)
 
 
 def _format_day(value: date, with_year: bool = True) -> str:

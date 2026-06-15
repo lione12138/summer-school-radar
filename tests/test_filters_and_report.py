@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from dataclasses import replace
 from datetime import date, timedelta
 from pathlib import Path
 
@@ -307,7 +308,8 @@ def test_jsonld_event_provides_authoritative_fields() -> None:
     assert candidate.start_date == date(2027, 7, 1)
     assert candidate.end_date == date(2027, 7, 12)
     assert candidate.duration_days == 12
-    assert candidate.location == "Delft, Delft, Netherlands"
+    # The repeated "Delft" from name + address is collapsed by sanitisation.
+    assert candidate.location == "Delft, Netherlands"
     # JSON-LD name rescues a page whose HTML title is generic ("Home").
     assert candidate.title == "Hydrology Field School 2027"
 
@@ -982,6 +984,49 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert "Application%20deadline" in html  # encoded summary in the .ics
     assert "calendar.google.com/calendar/render" in html  # Google option
     assert "outlook.live.com/calendar" in html  # Outlook option
+
+
+def test_cross_source_duplicate_merges_and_enriches_deadline() -> None:
+    from research_school_radar.rank import _dedupe_candidates
+
+    base = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    # Two records of the same event from different sources: identical dates and
+    # same city, titled differently — one has the deadline, the other does not.
+    listing = replace(
+        base,
+        title="Lisbon Machine Learning Summer School (LxMLS)",
+        location="Lisbon",
+        deadline=None,
+        source_url="https://ellis.eu/events/lxmls-2026",
+        application_link="https://ellis.eu/events/lxmls-2026",
+        score=10.0,
+    )
+    official = replace(
+        base,
+        title="The 16th Lisbon Machine Learning School LxMLS 2026",
+        location="Lisbon, Portugal",
+        deadline=date(base.start_date.year, 5, 8) if base.start_date else date(2026, 5, 8),
+        source_url="https://lxmls.github.io/2026/",
+        application_link="https://lxmls.github.io/2026/",
+        score=5.0,
+    )
+    deduped = _dedupe_candidates([listing, official])
+    assert len(deduped) == 1
+    # The higher-scoring listing survives but is enriched with the deadline.
+    assert deduped[0].title == "Lisbon Machine Learning Summer School (LxMLS)"
+    assert deduped[0].deadline == official.deadline
+
+
+def test_different_series_events_are_not_merged() -> None:
+    from research_school_radar.rank import _dedupe_candidates
+
+    base = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    vienna = replace(base, title="ELLIS Summer School at Unit Vienna", location="Vienna",
+                     source_url="https://ellis.eu/events/vienna")
+    munich = replace(base, title="ELLIS Summer School at Unit Munich", location="Munich",
+                     source_url="https://ellis.eu/events/munich")
+    # Same dates but different cities: distinct events, must stay separate.
+    assert len(_dedupe_candidates([vienna, munich])) == 2
 
 
 def test_sanitize_location_drops_junk_fragments() -> None:

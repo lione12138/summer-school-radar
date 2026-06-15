@@ -161,7 +161,10 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     )
     fee = _extract_fee(text)
     fee_eur = _fee_to_eur(fee, profile)
-    location = overrides.get("location") or _extract_location(page.html, text, page.source.region)
+    # _extract_location already sanitizes, but an override (e.g. a JSON-LD
+    # location) bypasses it, so clean the final value here too.
+    raw_location = overrides.get("location") or _extract_location(page.html, text, page.source.region)
+    location = sanitize_location(raw_location, fallback=raw_location)
     duration_days = _duration_days(start, end)
 
     # Transparent confidence: the fraction of the four high-risk fields that were
