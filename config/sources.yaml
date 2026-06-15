@@ -686,3 +686,43 @@ sources:
     keywords: [high performance computing, extreme-scale computing, scientific computing, training]
     scan_frequency: every_run
     notes: Argonne Training Program on Extreme-Scale Computing (ATPESC); funded intensive HPC training.
+  - name: CESM Tutorial
+    url: https://www.cesm.ucar.edu/events/tutorials
+    layer: 1.5
+    region: North America
+    source_type: research_institute
+    keywords: [climate, climate modelling, earth system model, training]
+    scan_frequency: every_run
+    notes: NCAR Community Earth System Model (CESM) tutorial; hands-on climate-model training, usually funded for participants.
+  - name: GEOMAR
+    url: https://www.geomar.de/en/
+    layer: 1.5
+    region: continental Europe
+    source_type: research_institute
+    keywords: [oceanography, marine science, climate, summer school]
+    scan_frequency: every_run
+    notes: GEOMAR Helmholtz Centre for Ocean Research Kiel; ocean and climate research schools and events.
+  - name: CINECA HPC
+    url: https://eventi.cineca.it/
+    layer: 2
+    region: continental Europe
+    source_type: research_institute
+    keywords: [high performance computing, scientific computing, data science, training]
+    scan_frequency: every_run
+    notes: CINECA (Italian national supercomputing centre) training events and HPC schools.
+  - name: Oxford Robotics Institute
+    url: https://ori.ox.ac.uk/
+    layer: 2
+    region: UK
+    source_type: university_institute
+    keywords: [robotics, machine learning, autonomous systems, computer vision]
+    scan_frequency: every_run
+    notes: Oxford Robotics Institute; robotics and machine-learning research, schools, and events.
+  - name: Mila
+    url: https://mila.quebec/en/
+    layer: 2
+    region: North America
+    source_type: research_institute
+    keywords: [machine learning, deep learning, AI, summer school]
+    scan_frequency: every_run
+    notes: Mila - Quebec AI Institute (Montreal); hosts ML summer schools and training programmes.
