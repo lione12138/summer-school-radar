@@ -179,6 +179,7 @@ def write_site(
     (output_dir / "robots.txt").write_text(_robots_txt(), encoding="utf-8")
     (output_dir / "sitemap.xml").write_text(_sitemap_xml(), encoding="utf-8")
     _copy_og_image(output_dir)
+    _copy_verification_files(output_dir)
     path = output_dir / "index.html"
     path.write_text(render_site(candidates, errors, site_config or {}, curated), encoding="utf-8")
     return path
@@ -189,6 +190,16 @@ def _copy_og_image(output_dir: Path) -> None:
     source = ROOT / "assets" / "og-image.png"
     if source.exists():
         shutil.copyfile(source, output_dir / "og-image.png")
+
+
+def _copy_verification_files(output_dir: Path) -> None:
+    """Copy search-engine ownership files (e.g. Google's googleXXXX.html) into
+    the site root so file-based verification works on the GitHub Pages subpath."""
+    assets = ROOT / "assets"
+    if not assets.exists():
+        return
+    for verification in assets.glob("google*.html"):
+        shutil.copyfile(verification, output_dir / verification.name)
 
 
 def _robots_txt() -> str:
