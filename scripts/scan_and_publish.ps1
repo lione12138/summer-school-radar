@@ -19,17 +19,30 @@ $logDir = Join-Path $repo "logs"
 New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 $logFile = Join-Path $logDir ("scan-" + (Get-Date -Format "yyyy-MM-dd") + ".log")
 function Log([string]$msg) {
-    "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')  $msg" | Tee-Object -FilePath $logFile -Append | Out-Null
+    $line = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')  $msg"
+    # Appending can transiently fail if an indexer/antivirus has the log open;
+    # retry a few times and, failing that, give up silently rather than letting
+    # a log hiccup abort the whole publish.
+    for ($i = 0; $i -lt 6; $i++) {
+        try {
+            Add-Content -LiteralPath $logFile -Value $line -ErrorAction Stop
+            return
+        } catch {
+            Start-Sleep -Milliseconds 100
+        }
+    }
 }
 
-# Run a native command, log its output, and throw on a non-zero exit code
-# (unless -AllowFail, e.g. "git commit" with nothing to commit). Output is
-# captured (not streamed) so git's normal stderr status lines do not surface as
-# red PowerShell errors in the log.
+# Run a native command, log its output in one write, and throw on a non-zero
+# exit code (unless -AllowFail, e.g. "git commit" with nothing to commit).
+# Output is captured (not streamed) so git's normal stderr status lines do not
+# surface as red PowerShell errors.
 function Run([scriptblock]$block, [switch]$AllowFail) {
     $output = & $block 2>&1
     $code = $LASTEXITCODE
-    foreach ($line in $output) { Log ("    " + $line.ToString()) }
+    if ($output) {
+        Log (($output | ForEach-Object { "    " + $_.ToString() }) -join [Environment]::NewLine)
+    }
     if (-not $AllowFail -and $code -ne 0) {
         throw "command failed (exit $code)"
     }
