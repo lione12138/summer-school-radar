@@ -1123,6 +1123,29 @@ def test_site_generation_writes_seo_artifacts(tmp_path) -> None:
     assert any(node.get("@type") == "WebSite" for node in graph)
 
 
+def test_site_generation_writes_attribution_and_bot_controls(tmp_path) -> None:
+    import json
+
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    ranked = rank_candidates([candidate])
+    write_site(ranked, [], tmp_path)
+    # robots.txt blocks AI crawlers but leaves search crawlers (the "*" allow).
+    robots = (tmp_path / "robots.txt").read_text(encoding="utf-8")
+    assert "User-agent: GPTBot\nDisallow: /" in robots
+    assert "User-agent: Google-Extended\nDisallow: /" in robots
+    assert "User-agent: *\nAllow: /" in robots
+    # The data carries its CC BY licence and a canary marker.
+    data = json.loads((tmp_path / "candidates.json").read_text(encoding="utf-8"))
+    assert data["_license"] == "CC BY 4.0"
+    assert data["_canary"]
+    assert isinstance(data["opportunities"], list)
+    assert (tmp_path / "DATA-LICENSE.txt").exists()
+    # A hidden canonical-source watermark is embedded in the page.
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert data["_canary"] in html
+    assert "CC BY 4.0" in html
+
+
 def test_site_generation_renders_sources_page(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])

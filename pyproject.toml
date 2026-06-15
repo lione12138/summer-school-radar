@@ -7,13 +7,13 @@ name = "summer-school-radar"
 version = "0.1.0"
 description = "A radar for funded research summer schools, winter schools, and training schools."
 readme = "README.md"
-license = { text = "MIT" }
+license = { text = "AGPL-3.0-or-later" }
 authors = [{ name = "Summer School Radar contributors" }]
 keywords = ["summer-school", "training-school", "research-training", "hydrology", "climate", "radar"]
 classifiers = [
   "Development Status :: 4 - Beta",
   "Intended Audience :: Science/Research",
-  "License :: OSI Approved :: MIT License",
+  "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
   "Operating System :: OS Independent",
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 3.10",

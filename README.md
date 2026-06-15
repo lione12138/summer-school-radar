@@ -1,7 +1,8 @@
 # Summer School Radar
 
 [![Tests](https://github.com/lione12138/summer-school-radar/actions/workflows/tests.yml/badge.svg)](https://github.com/lione12138/summer-school-radar/actions/workflows/tests.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: AGPL v3](https://img.shields.io/badge/Code-AGPL--3.0-blue.svg)](LICENSE)
+[![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-green.svg)](#license--reuse)
 
 An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — in **water, climate, geoscience, remote sensing, and scientific machine learning**.
 
@@ -9,7 +10,7 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 
 **Live site:** <https://lione12138.github.io/summer-school-radar/>
 
-[Technical README](docs/TECHNICAL.md) | [中文技术说明](docs/TECHNICAL.zh-CN.md) | [MIT License](LICENSE)
+[Technical README](docs/TECHNICAL.md) | [中文技术说明](docs/TECHNICAL.zh-CN.md) | [License & reuse](#license--reuse)
 
 ## Latest Scan Results
 
@@ -173,4 +174,13 @@ collect -> parse -> extract -> filter -> rank
 ```
 
 See [docs/TECHNICAL.md](docs/TECHNICAL.md) for implementation details, current limitations, and the improvement roadmap.
+
+## License & Reuse
+
+This project uses two licenses:
+
+- **Code** — [GNU AGPL-3.0-or-later](LICENSE). You may use, modify, and redistribute the code, but any modified version you run as a network service must also offer its complete source under the AGPL. This keeps derivatives open.
+- **Data & compiled listings** (the generated `candidates.json`, the site tables, and the RSS feed) — [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/). You may reuse the data, including commercially, **as long as you give credit and link back** to <https://lione12138.github.io/summer-school-radar/>.
+
+The underlying opportunity details are public facts gathered from the organisers' own pages; always confirm dates, deadlines, and funding on the official page before applying. If you republish the listings, attribution and a link back are required under CC BY 4.0, and a visible canonical-source marker is embedded in the generated output.
 

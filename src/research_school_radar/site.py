@@ -18,6 +18,20 @@ from .utils import ROOT, format_duration, is_too_short, sanitize_location, topic
 
 _SITE_URL = "https://lione12138.github.io/summer-school-radar/"
 _OG_IMAGE = _SITE_URL + "og-image.png"
+_DATA_LICENSE = "CC BY 4.0"
+_DATA_LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
+# A stable, distinctive marker baked into every generated artifact. Searching the
+# web for it surfaces sites that have copied this content wholesale.
+_CANARY = "SSR-CANON-7q3v9x2k8m4w"
+# AI training / scraping crawlers blocked in robots.txt. Search crawlers
+# (Googlebot, Bingbot) are intentionally left allowed for SEO; Google-Extended
+# opts out of Google's AI training without affecting search indexing.
+_BLOCKED_BOTS = (
+    "GPTBot", "ChatGPT-User", "OAI-SearchBot", "CCBot", "Google-Extended",
+    "anthropic-ai", "ClaudeBot", "Claude-Web", "PerplexityBot", "Bytespider",
+    "Amazonbot", "Applebot-Extended", "cohere-ai", "Diffbot", "Omgilibot",
+    "ImagesiftBot", "FacebookBot", "meta-externalagent",
+)
 _SITE_DESCRIPTION = (
     "A free daily scanner of trusted academic sources for funded research summer "
     "schools, winter schools, and training schools in water, climate, geoscience, "
@@ -153,6 +167,7 @@ _NAV_CSS = """    html { scroll-behavior: smooth; }
     }
     nav.topbar .links a:hover { color: var(--ink); background: var(--panel-2); }
     @media (max-width: 720px) { nav.topbar .links a.hide-sm { display: none; } }
+    .src-credit { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
 """
 
 
@@ -169,9 +184,21 @@ def write_site(
     sources = sources or []
     (output_dir / ".nojekyll").write_text("", encoding="utf-8")
     (output_dir / "candidates.json").write_text(
-        json.dumps([_candidate_dict(candidate) for candidate in candidates], indent=2),
+        json.dumps(
+            {
+                "_license": _DATA_LICENSE,
+                "_license_url": _DATA_LICENSE_URL,
+                "_attribution": "Summer School Radar",
+                "_canonical": _SITE_URL,
+                "_canary": _CANARY,
+                "generated": date.today().isoformat(),
+                "opportunities": [_candidate_dict(candidate) for candidate in candidates],
+            },
+            indent=2,
+        ),
         encoding="utf-8",
     )
+    (output_dir / "DATA-LICENSE.txt").write_text(_data_license_text(), encoding="utf-8")
     (output_dir / "curated.json").write_text(json.dumps(curated, indent=2, default=str), encoding="utf-8")
     (output_dir / "sources.json").write_text(json.dumps(sources, indent=2, default=str), encoding="utf-8")
     (output_dir / "sources.html").write_text(render_sources_page(sources), encoding="utf-8")
@@ -209,7 +236,23 @@ def _copy_verification_files(output_dir: Path) -> None:
 
 
 def _robots_txt() -> str:
-    return f"User-agent: *\nAllow: /\nSitemap: {_SITE_URL}sitemap.xml\n"
+    blocked = "".join(f"User-agent: {bot}\nDisallow: /\n\n" for bot in _BLOCKED_BOTS)
+    return f"{blocked}User-agent: *\nAllow: /\nSitemap: {_SITE_URL}sitemap.xml\n"
+
+
+def _data_license_text() -> str:
+    return (
+        "Summer School Radar — data license\n"
+        "==================================\n\n"
+        f"Canonical source: {_SITE_URL}\n\n"
+        "The compiled listings on this site (the opportunity tables, candidates.json,\n"
+        "and the RSS feed) are licensed under Creative Commons Attribution 4.0\n"
+        f"(CC BY 4.0): {_DATA_LICENSE_URL}\n\n"
+        "You may reuse them, including commercially, provided you give credit to\n"
+        f"Summer School Radar and link back to {_SITE_URL}.\n\n"
+        "The project's source code is licensed separately under the GNU AGPL-3.0.\n\n"
+        f"Marker: {_CANARY}\n"
+    )
 
 
 def _sitemap_xml() -> str:
@@ -451,6 +494,9 @@ def render_feed(
         "schools in water, climate, geoscience, remote sensing, and scientific machine "
         "learning.</description>\n"
         "    <language>en</language>\n"
+        f"    <copyright>Data CC BY 4.0 — reuse with attribution and a link back to {escape(site_url)}</copyright>\n"
+        "    <generator>Summer School Radar</generator>\n"
+        f"    <!-- {_CANARY} -->\n"
         f"    <lastBuildDate>{built}</lastBuildDate>\n"
         f"{item_xml}"
         "  </channel>\n"
@@ -1003,9 +1049,21 @@ def _footer_section(updated: str) -> str:
           <a href="{_GITHUB_URL}/stargazers">Star on GitHub</a>
         </div>
       </div>
-      <div class="legal">Last updated {updated} &middot; Near-matches are not treated as qualified opportunities &middot; MIT licensed &middot; Built and maintained openly on GitHub.</div>
+      <div class="legal">Last updated {updated} &middot; Near-matches are not treated as qualified opportunities &middot; Code <a href="{_GITHUB_URL}/blob/main/LICENSE">AGPL-3.0</a>; data <a href="DATA-LICENSE.txt">CC BY 4.0</a> (reuse with attribution &amp; a link back) &middot; Built and maintained openly on GitHub.</div>
     </div>
-  </footer>"""
+  </footer>{_watermark()}"""
+
+
+def _watermark() -> str:
+    """A hidden canonical-source marker. It travels with anyone who copies the
+    page HTML, so wholesale copies are identifiable; searching the web for the
+    canary string surfaces them."""
+    return (
+        f"\n  <!-- Summer School Radar | canonical: {_SITE_URL} | "
+        f"data CC BY 4.0, attribution and link back required | {_CANARY} -->\n"
+        f'  <span class="src-credit" aria-hidden="true">Data from Summer School Radar '
+        f"&mdash; {_SITE_URL} &mdash; reuse under CC BY 4.0 with attribution. {_CANARY}</span>"
+    )
 
 
 def render_sources_page(sources: list[dict[str, Any]]) -> str:
@@ -1067,6 +1125,7 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
     </div>
     {manual_section}
   </main>
+  {_watermark()}
 </body>
 </html>
 """
