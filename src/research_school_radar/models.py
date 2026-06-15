@@ -76,9 +76,11 @@ class Candidate:
 
     @property
     def is_past(self) -> bool:
-        """No longer applicable: the deadline has passed, or (when no deadline is
-        known) the event itself has already started."""
+        """No longer applicable: applications are closed, the deadline has passed,
+        or (when no deadline is known) the event itself has already started."""
         today = date.today()
+        if self.deadline_status == "closed":
+            return True
         if self.deadline is not None:
             return self.deadline < today
         event_start = self.start_date or self.end_date

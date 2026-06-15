@@ -986,6 +986,40 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert "outlook.live.com/calendar" in html  # Outlook option
 
 
+def test_closed_applications_phrase_marks_opportunity_past() -> None:
+    from datetime import timedelta
+
+    start = date.today() + timedelta(days=40)
+    end = start + timedelta(days=6)
+    html = (
+        "<html><head><title>Summer School</title></head><body>"
+        "<h1>Eastern European Machine Learning Summer School</h1>"
+        f"<p>{start.strftime('%d %B %Y')} to {end.strftime('%d %B %Y')}, Cetinje, Montenegro. "
+        "This is a funded machine learning summer school with travel grants.</p>"
+        "<p>The deadline for applications has passed. The selection notifications "
+        "have been released.</p>"
+        "</body></html>"
+    )
+    deadline = start - timedelta(days=20)
+    text = (
+        "Eastern European Machine Learning Summer School. "
+        f"Application deadline: {deadline.strftime('%d %B %Y')}. "
+        f"The school runs {start.strftime('%d %B %Y')} in Cetinje, Montenegro. "
+        "This is a funded machine learning summer school with travel grants. "
+        "The deadline for applications has passed. The selection notifications have been released."
+    )
+    source = Source(name="EEML", url="https://www.eeml.eu/", layer="2", region="continental Europe",
+                    source_type="summer_school", keywords=["machine learning"])
+    page = Page(url=source.url, title="Summer School", text=text, html=html,
+                source=source, fetched_at=date.today())
+    candidate = extract_candidate(page, PROFILE)
+    assert candidate is not None
+    # Even though the event start is in the future, the closed-application phrase
+    # marks it past so it is hidden from the site and feed.
+    assert candidate.deadline_status == "closed"
+    assert candidate.is_past is True
+
+
 def test_cross_source_duplicate_merges_and_enriches_deadline() -> None:
     from research_school_radar.rank import _dedupe_candidates
 

@@ -74,6 +74,38 @@ _SECTION_TITLE_WORDS = (
 )
 
 ONLINE_ONLY_PATTERNS = [r"online-only", r"fully online", r"online course", r"webinar"]
+
+# Phrases that say applications are over even when the page no longer shows a
+# deadline date, so a past edition is never presented as still open.
+# Strong signals close unconditionally; weak ones yield to an explicit
+# "applications open" signal (e.g. an early-bird deadline passing while regular
+# registration is still open).
+_STRONG_CLOSED_PATTERNS = [
+    r"no\s+longer\s+accepting\s+applications",
+    r"selection\s+(?:notifications?|results?)[^.]{0,30}(?:released|sent|announced|out)",
+    r"application(?:s)?\s+(?:period|window)[^.]{0,20}(?:closed|ended|over)",
+]
+_WEAK_CLOSED_PATTERNS = [
+    r"deadline[^.]{0,40}has\s+passed",
+    r"applications?[^.]{0,25}(?:are|have|is|now)[^.]{0,15}closed",
+    r"applications?\s+(?:are\s+|have\s+|has\s+)?closed",
+    r"registration[^.]{0,25}(?:is\s+)?closed",
+]
+_APPLICATIONS_OPEN_PATTERNS = [
+    r"applications?[^.]{0,15}(?:are|is)[^.]{0,10}open",
+    r"apply\s+now",
+    r"now\s+accepting\s+applications",
+    r"registration[^.]{0,15}(?:is\s+)?open",
+    r"applications?\s+open",
+]
+
+
+def _applications_closed(text: str) -> bool:
+    if any(re.search(p, text, flags=re.IGNORECASE) for p in _STRONG_CLOSED_PATTERNS):
+        return True
+    if any(re.search(p, text, flags=re.IGNORECASE) for p in _WEAK_CLOSED_PATTERNS):
+        return not any(re.search(p, text, flags=re.IGNORECASE) for p in _APPLICATIONS_OPEN_PATTERNS)
+    return False
 IN_PERSON_PATTERNS = [r"in[- ]person", r"on[- ]site", r"residential", r"field school", r"venue", r"hosted in"]
 SUPPORTED_FEE_CURRENCIES = {
     "EUR",
@@ -191,7 +223,7 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
         end_date=end,
         duration_days=duration_days,
         deadline=deadline,
-        deadline_status=_deadline_status(deadline),
+        deadline_status="closed" if _applications_closed(text) else _deadline_status(deadline),
         funding_available=funding_available,
         funding_type=funding_types,
         funding_evidence=funding_evidence,
