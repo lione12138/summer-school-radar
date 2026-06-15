@@ -1150,8 +1150,23 @@ def test_status_line_uses_correct_singular_and_plural(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
-    assert "1 fully qualified opportunity found" in html
+    assert "1 fully qualified opportunity in the latest scan" in html
     assert "opportunityies" not in html
+
+
+def test_empty_state_stays_informative(tmp_path) -> None:
+    sources = [
+        {"name": "A", "url": "https://a", "enabled": True},
+        {"name": "B", "url": "https://b", "enabled": True},
+        {"name": "Manual", "url": "https://m", "enabled": True, "check_manually": True},
+    ]
+    write_site([], [], tmp_path, sources=sources)
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    # A coverage stat and a positive, seasonal empty-state instead of a blank page.
+    assert "Trusted sources" in html
+    assert "across 2 trusted sources" in html  # manual sources are not counted as scanned
+    assert "the radar is watching" in html
+    assert "Subscribe via RSS" in html
 
 
 def test_seen_state_is_json_and_preserves_first_seen(tmp_path) -> None:

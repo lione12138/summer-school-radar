@@ -180,8 +180,14 @@ def write_site(
     (output_dir / "sitemap.xml").write_text(_sitemap_xml(), encoding="utf-8")
     _copy_og_image(output_dir)
     _copy_verification_files(output_dir)
+    tracked_sources = sum(
+        1 for source in sources if source.get("enabled", True) and not source.get("check_manually")
+    )
     path = output_dir / "index.html"
-    path.write_text(render_site(candidates, errors, site_config or {}, curated), encoding="utf-8")
+    path.write_text(
+        render_site(candidates, errors, site_config or {}, curated, tracked_sources=tracked_sources),
+        encoding="utf-8",
+    )
     return path
 
 
@@ -267,6 +273,41 @@ def _seo_location_ok(location: str) -> bool:
     if not value or len(value) > 70:
         return False
     return not any(word in value for word in _SEO_LOCATION_STOPWORDS)
+
+
+def _status_banner(full_count: int, near_count: int, tracked_total: int, tracked_sources: int) -> str:
+    """The headline status line. Even with zero qualified results it stays
+    informative — emphasising coverage and the seasonal nature of deadlines so
+    the page never reads as empty or broken."""
+    opportunities = f"{tracked_total} opportunit{'ies' if tracked_total != 1 else 'y'}"
+    coverage = f"Tracking {opportunities} across {tracked_sources} trusted sources."
+    if full_count:
+        label = f"{full_count} fully qualified opportunit{'ies' if full_count != 1 else 'y'} in the latest scan."
+        return f'<p class="status">{escape(label)} {escape(coverage)}</p>'
+    if near_count:
+        message = (
+            "No fully qualified matches in the latest scan — application deadlines for these "
+            f"schools cluster between December and April. {coverage} The strongest open "
+            "opportunities are below."
+        )
+        return f'<p class="status info">{escape(message)}</p>'
+    message = (
+        "No open opportunities matched every rule in the latest scan. "
+        f"{coverage} New schools surface as their deadlines open, typically December to April."
+    )
+    return f'<p class="status info">{escape(message)}</p>'
+
+
+def _empty_opportunities_block(tracked_total: int, tracked_sources: int) -> str:
+    """Shown in place of the results table when nothing is open — keeps the page
+    feeling active off-season rather than blank."""
+    count = f"{tracked_total} opportunit{'ies' if tracked_total != 1 else 'y'}"
+    return f"""
+    <div class="panel">
+      <h3>Nothing open right now &mdash; but the radar is watching</h3>
+      <p>No opportunities matched every rule in the latest scan. That is normal off-season: most summer-school application deadlines open between December and April. The radar scans {tracked_sources} trusted sources every day, with {count} currently tracked &mdash; new schools appear here automatically as they open.</p>
+      <p style="margin-top:12px"><a class="pill" href="feed.xml">Subscribe via RSS</a> &nbsp; <a class="pill" href="sources.html">See what we track</a></p>
+    </div>"""
 
 
 def _jsonld_block(candidates: list[Candidate]) -> str:
@@ -421,6 +462,7 @@ def render_site(
     errors: list[str],
     site_config: dict[str, Any] | None = None,
     curated: list[dict[str, Any]] | None = None,
+    tracked_sources: int = 0,
 ) -> str:
     full = [item for item in candidates if item.fully_qualified][:10]
     near = [
@@ -428,22 +470,21 @@ def render_site(
         for item in candidates
         if not item.fully_qualified and not item.is_past and not is_too_short(item.duration_days)
     ][:12]
+    tracked_total = sum(1 for item in candidates if not item.is_past)
     updated = date.today().isoformat()
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
     near_rows = "".join(_near_row(candidate) for candidate in near)
     notes = "".join(f"<li>{escape(error)}</li>" for error in errors[:12])
     filters = _filters(candidates)
     analytics = _analytics_snippet(site_config or {})
-    status = (
-        f"{len(full)} fully qualified opportunit{'ies' if len(full) != 1 else 'y'} found"
-        if full
-        else "No fully qualified opportunities found"
-    )
-    near_block = (
-        _near_section(near_rows)
-        if near
-        else '<p class="muted">No open opportunities were found in the latest scan.</p>'
-    )
+    status_banner = _status_banner(len(full), len(near), tracked_total, tracked_sources)
+    if near:
+        near_block = _near_section(near_rows)
+    elif full:
+        # Qualified results are shown above; no empty-state needed.
+        near_block = ""
+    else:
+        near_block = _empty_opportunities_block(tracked_total, tracked_sources)
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -495,7 +536,7 @@ def render_site(
     }}
     .stats {{
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 14px;
       margin-top: -48px;
     }}
@@ -536,6 +577,11 @@ def render_site(
     .status.empty {{
       border-left-color: var(--warn);
       background: var(--warn-soft);
+    }}
+    .status.info {{
+      border-left-color: var(--accent);
+      background: var(--accent-soft);
+      font-weight: 600;
     }}
     .cal {{ display: inline-block; margin-top: 6px; }}
     .cal > summary {{
@@ -721,9 +767,10 @@ def render_site(
     <div class="stats">
       <div class="stat"><div class="num">{len(full)}</div><div class="lbl">Fully qualified</div></div>
       <div class="stat"><div class="num">{len(near)}</div><div class="lbl">High-quality open</div></div>
+      <div class="stat"><div class="num">{tracked_sources}</div><div class="lbl">Trusted sources</div></div>
       <div class="stat"><div class="num sm">{updated}</div><div class="lbl">Last updated</div></div>
     </div>
-    <p class="status{' empty' if not full else ''}">{escape(status)}</p>
+    {status_banner}
     <section id="opportunities" class="anchor">
       {filters}
       {_qualified_section(full_rows) if full else ""}

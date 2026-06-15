@@ -5,7 +5,7 @@
 
 An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — in **water, climate, geoscience, remote sensing, and scientific machine learning**.
 
-It is a fixed trusted-source scanner with rule-based extraction, a maintainer-curated layer, and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources, extracts deadline / funding / fee / duration evidence together with the supporting text, separates fully qualified opportunities from near-matches, and publishes a static website that updates daily for free on GitHub Pages.
+It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources, extracts deadline / funding / fee / duration evidence together with the supporting text, separates fully qualified opportunities from near-matches, and publishes a static website that updates daily for free on GitHub Pages.
 
 **Live site:** <https://lione12138.github.io/summer-school-radar/>
 
@@ -34,22 +34,21 @@ _Last scan: 2026-06-15 · 0 fully qualified · 5 high-quality opportunities show
 
 ## Upcoming Research Training Opportunities
 
-The generated website shows maintainer-reviewed opportunities first, followed by scanner results.
+The generated website lists fully qualified scanner results first, then high-quality near-matches.
 
-- **Curated Opportunities**: high-confidence records reviewed by maintainers.
 - **Fully Qualified Opportunities**: scanner results that satisfy every hard condition.
 - **High-Quality Opportunities**: still-open, in-domain opportunities that are relevant but missing a fully confirmed hard condition.
 - **Sources & Coverage**: the configured trusted source registry, including disabled sources and notes.
 
-The site includes filters for keyword, status, topic, financial access, and deadline status. Rows with a known application deadline include an **Add to calendar** link that downloads a standard `.ics` event.
+The site includes filters for keyword, status, topic, financial access, and deadline status. Rows with a known application deadline include an **Add to calendar** menu (Google Calendar, Outlook, or a downloadable `.ics` file).
 
 ```text
 site/index.html
 site/candidates.json
-site/curated.json
 site/sources.html
 site/sources.json
 site/feed.xml
+site/sitemap.xml
 reports/YYYY-MM-DD.md
 ```
 
@@ -78,7 +77,6 @@ Most summer school lists are plain link collections. This project is different:
 - trusted source registry instead of random web crawling
 - structured extraction for deadline, funding, duration, mode, eligibility, and location
 - hard filters with visible failed conditions
-- maintainer-reviewed curated layer
 - static public website plus Markdown and JSON outputs
 - daily free automation that publishes to GitHub Pages
 - source coverage transparency through a generated Sources & Coverage page
