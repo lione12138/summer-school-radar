@@ -13,7 +13,7 @@ from email.utils import format_datetime
 from datetime import datetime, timezone
 
 from .models import Candidate
-from .utils import ROOT, format_duration, is_too_short, topics_label
+from .utils import ROOT, format_duration, is_too_short, sanitize_location, topics_label
 
 
 _SITE_URL = "https://lione12138.github.io/summer-school-radar/"
@@ -1134,7 +1134,11 @@ def _curated_financial_summary(item: dict[str, Any], funding: dict[str, Any]) ->
 
 
 def _public_location(value: str) -> str:
-    return "Europe" if value.strip().lower() == "continental europe" else value
+    # Safety net: clean any junk that slipped through extraction before display.
+    cleaned = sanitize_location(value, fallback="")
+    if cleaned.strip().lower() == "continental europe":
+        return "Europe"
+    return cleaned
 
 
 def _duration(candidate: Candidate) -> str:

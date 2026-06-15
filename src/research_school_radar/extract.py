@@ -9,7 +9,7 @@ from dateutil import parser as date_parser
 from .adapters import resolve_overrides
 from .models import Candidate, Page, Source
 from .parse import OPPORTUNITY_TERMS, has_programme_signal, is_excluded_programme, is_workshop_title
-from .utils import clean_space, evidence_window, first_match
+from .utils import clean_space, evidence_window, first_match, sanitize_location
 
 
 FUNDING_PATTERNS = {
@@ -57,6 +57,8 @@ GENERIC_TITLES = {
     "search this site", "news", "calendar", "untitled", "overview", "summer schools",
     "top menu", "main menu", "menu", "navigation", "application", "applications",
     "apply", "register", "registration", "read more", "skip to main content",
+    "student support", "opportunities", "vacancies", "about", "about us",
+    "contact", "contact us", "events archive", "upcoming events", "our events",
 }
 
 # Substrings that mark a title as a section, archive, or navigation label
@@ -360,9 +362,18 @@ def _extract_title(page: Page) -> str:
         title = _clean_title(raw)
         lowered = title.lower()
         is_section = any(word in lowered for word in _SECTION_TITLE_WORDS)
+        # A "label: org" title (e.g. "Events: GFZ") is a page heading, not an
+        # opportunity name.
+        is_label_prefix = lowered.split(":", 1)[0].strip() in {"events", "event", "news"}
         if _looks_like_url(lowered):
             continue
-        if title and lowered not in GENERIC_TITLES and not is_section and len(title) >= 6:
+        if (
+            title
+            and lowered not in GENERIC_TITLES
+            and not is_section
+            and not is_label_prefix
+            and len(title) >= 6
+        ):
             return title
     return ""
 
@@ -645,6 +656,7 @@ def _extract_location(html: str, text: str, fallback_region: str) -> str:
     location = _clean_label_value(location)
     if location and location.split()[0].lower() in {"a", "an", "the", "that", "which"}:
         location = ""
+    location = sanitize_location(location, fallback="")
     return _public_region_name(location or fallback_region)
 
 

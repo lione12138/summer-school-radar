@@ -49,6 +49,52 @@ def topics_label(keywords: list[str], limit: int = 4) -> str:
     return ", ".join(keywords[:limit])
 
 
+# Words that, when present in an extracted location, mean we captured a label or
+# call-to-action fragment ("Venue Preview Webinar") rather than a real place.
+_LOCATION_JUNK_FRAGMENTS = (
+    "webinar",
+    "preview",
+    "schedule",
+    "register",
+    "read more",
+    "overview",
+    "agenda",
+    "click here",
+    "learn more",
+    "apply now",
+    "find out",
+)
+
+
+def sanitize_location(value: str, fallback: str = "") -> str:
+    """Clean an extracted location, returning ``fallback`` for obvious junk.
+
+    The generic extractor sometimes grabs a markup or label fragment instead of
+    a place (e.g. ", guide ]", ": Mila ...", "Venue Preview Webinar",
+    "EEML2022"). This normalises virtual events to "Online", strips surrounding
+    label punctuation, and drops values that are clearly not locations."""
+    if not value:
+        return fallback
+    text = value.strip()
+    # Brackets / pipes mean a list or markup fragment leaked in, not a place.
+    if any(ch in text for ch in "[]{}|"):
+        return fallback
+    # Trim surrounding label punctuation: ": Mila, Montreal" -> "Mila, Montreal".
+    text = text.strip(" :;,.–—-").strip()
+    if not text:
+        return fallback
+    low = text.lower()
+    if "virtual" in low or "online" in low:
+        return "Online"
+    if any(fragment in low for fragment in _LOCATION_JUNK_FRAGMENTS):
+        return fallback
+    # A single token containing a digit is almost always an event code, not a
+    # place (e.g. "EEML2022"); real one-word cities don't carry numbers.
+    if " " not in text and any(ch.isdigit() for ch in text):
+        return fallback
+    return text
+
+
 def _format_day(value: date, with_year: bool = True) -> str:
     # Built manually to stay cross-platform (Windows strftime lacks %-d).
     text = f"{value.day} {value.strftime('%b')}"

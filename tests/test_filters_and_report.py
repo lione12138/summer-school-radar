@@ -984,6 +984,40 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert "outlook.live.com/calendar" in html  # Outlook option
 
 
+def test_sanitize_location_drops_junk_fragments() -> None:
+    from research_school_radar.utils import sanitize_location
+
+    # Markup / label fragments and event codes are dropped.
+    assert sanitize_location(", guide ]") == ""
+    assert sanitize_location("Venue Preview Webinar") == ""
+    assert sanitize_location("EEML2022") == ""
+    # Virtual / online normalised.
+    assert sanitize_location("Virtual Schedule:") == "Online"
+    assert sanitize_location("Virtual") == "Online"
+    # Leading label punctuation trimmed, real places preserved.
+    assert sanitize_location(": Mila, Montreal, Canada") == "Mila, Montreal, Canada"
+    assert sanitize_location("Delft, Netherlands") == "Delft, Netherlands"
+    assert sanitize_location("Multiple Locations") == "Multiple Locations"
+    # Empty falls back.
+    assert sanitize_location("", fallback="Europe") == "Europe"
+
+
+def test_label_prefix_titles_are_rejected() -> None:
+    from research_school_radar.extract import _extract_title
+    from research_school_radar.models import Page, Source
+
+    source = Source(name="GFZ", url="https://example.org", layer="1", region="x", source_type="y")
+    page = Page(
+        url="https://example.org",
+        title="Events: GFZ",
+        text="Events: GFZ",
+        html="<h1>Events: GFZ</h1>",
+        source=source,
+        fetched_at=date.today(),
+    )
+    assert _extract_title(page) == ""
+
+
 def test_site_generation_writes_seo_artifacts(tmp_path) -> None:
     import json
     import re
