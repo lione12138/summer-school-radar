@@ -20,6 +20,13 @@
     "status": "near_match",
     "title": "ASPECT : A dvanced S olver for P lanetary E volution, C onvection, and T ectonics"
   },
+  "https://cispa.de/en": {
+    "deadline": null,
+    "first_seen": "2026-06-16",
+    "last_seen": "2026-06-16",
+    "status": "near_match",
+    "title": "WELCOME TO CISPA"
+  },
   "https://deeplearningindaba.com/": {
     "deadline": null,
     "first_seen": "2026-06-12",
@@ -300,6 +307,27 @@
     "status": "near_match",
     "title": "INTERNATIONAL ASSOCIATION OF HYDROLOGICAL SCIENCES"
   },
+  "https://icvss.dmi.unict.it/icvss2026/": {
+    "deadline": "2026-06-20",
+    "first_seen": "2026-06-16",
+    "last_seen": "2026-06-16",
+    "status": "qualified",
+    "title": "ICVSS 2026"
+  },
+  "https://icvss.dmi.unict.it/icvss2026/Application": {
+    "deadline": "2026-04-01",
+    "first_seen": "2026-06-16",
+    "last_seen": "2026-06-16",
+    "status": "near_match",
+    "title": "SCHOOL APPLICATION"
+  },
+  "https://icvss.dmi.unict.it/icvss2026/Deadlines": {
+    "deadline": "2026-04-01",
+    "first_seen": "2026-06-16",
+    "last_seen": "2026-06-16",
+    "status": "near_match",
+    "title": "SCHOOL DEADLINES"
+  },
   "https://indico.ictp.it/event/11122": {
     "deadline": "2026-04-04",
     "first_seen": "2026-06-14",
@@ -461,6 +489,13 @@
     "status": "near_match",
     "title": "7th ICTP Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics"
   },
+  "https://www.cs.uoregon.edu/research/summerschool/summer26/": {
+    "deadline": null,
+    "first_seen": "2026-06-16",
+    "last_seen": "2026-06-16",
+    "status": "near_match",
+    "title": "Types, Proofs, and Program Logics"
+  },
   "https://www.cuahsi.org/workshops/past-workshops": {
     "deadline": "2023-10-18",
     "first_seen": "2026-06-11",
@@ -474,6 +509,13 @@
     "last_seen": "2026-06-12",
     "status": "near_match",
     "title": "Propose a Workshop | Cuahsi.org"
+  },
+  "https://www.ds3-datascience-polytechnique.fr/key-dates-application/": {
+    "deadline": "2020-10-21",
+    "first_seen": "2026-06-16",
+    "last_seen": "2026-06-16",
+    "status": "near_match",
+    "title": "Key Dates & Application"
   },
   "https://www.earthscope.org/event/2026-technical-short-course-insar-processing-and-theory-using-gmtsar/": {
     "deadline": "2026-06-12",
