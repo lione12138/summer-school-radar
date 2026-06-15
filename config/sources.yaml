@@ -574,3 +574,59 @@ sources:
     keywords: [computational linguistics, natural language processing, semantics, language technology]
     scan_frequency: every_run
     notes: Centre for Linguistic Theory and Studies in Probability (University of Gothenburg); computational linguistics and language-technology events and schools.
+  - name: ICVSS
+    url: https://iplab.dmi.unict.it/icvss/
+    layer: 1
+    region: continental Europe
+    source_type: summer_school
+    keywords: [computer vision, machine learning, image processing, summer school]
+    scan_frequency: every_run
+    notes: International Computer Vision Summer School (Sicily); a flagship, competitive computer-vision school.
+  - name: DS3 Data Science Summer School
+    url: https://www.ds3-datascience-polytechnique.fr/
+    layer: 1.5
+    region: continental Europe
+    source_type: summer_school
+    keywords: [data science, machine learning, data analysis, statistics, summer school]
+    scan_frequency: every_run
+    notes: École Polytechnique Data Science Summer School (DS3); data science and machine learning.
+  - name: Heidelberg Laureate Forum
+    url: https://www.heidelberg-laureate-forum.org/
+    layer: 1.5
+    region: continental Europe
+    source_type: research_network
+    keywords: [computer science, mathematics, data science, early-career]
+    scan_frequency: every_run
+    notes: HLF brings young researchers together with Turing/Abel/Fields laureates; fully funded for selected applicants.
+  - name: OPLSS
+    url: https://www.cs.uoregon.edu/research/summerschool/
+    layer: 2
+    region: North America
+    source_type: summer_school
+    keywords: [programming languages, formal methods, software, summer school]
+    scan_frequency: every_run
+    notes: Oregon Programming Languages Summer School; programming languages, type theory, and formal methods.
+  - name: LASER Software Engineering School
+    url: https://laser.inf.ethz.ch/
+    layer: 2
+    region: continental Europe
+    source_type: summer_school
+    keywords: [software engineering, programming, software, summer school]
+    scan_frequency: every_run
+    notes: LASER summer school on software engineering (Elba, Italy), organised by ETH Zurich. Times out from some connections; skipped silently when unreachable.
+  - name: CISPA
+    url: https://cispa.de/en
+    layer: 2
+    region: continental Europe
+    source_type: research_institute
+    keywords: [cybersecurity, security, privacy, cryptography]
+    scan_frequency: every_run
+    notes: CISPA Helmholtz Center for Information Security (Saarbrücken); runs a funded cybersecurity summer school and research events.
+  - name: SBA Research
+    url: https://www.sba-research.org/
+    layer: 2
+    region: continental Europe
+    source_type: research_institute
+    keywords: [cybersecurity, security, privacy, network security]
+    scan_frequency: every_run
+    notes: Austrian research centre for information security; security training, schools, and events.

@@ -400,6 +400,14 @@ def _extract_title(page: Page) -> str:
         # A "label: org" title (e.g. "Events: GFZ") is a page heading, not an
         # opportunity name.
         is_label_prefix = lowered.split(":", 1)[0].strip() in {"events", "event", "news"}
+        # An ALL-CAPS multi-word heading is almost always a section banner
+        # ("MOTIVATION AND DESCRIPTION", "WELCOME TO CISPA", "SCHOOL DEADLINES"),
+        # not the event name. Require two real words so acronym titles like
+        # "ICVSS 2026" are kept and the proper <title> is used for the banners.
+        shout_words = [w for w in title.split() if w.isalpha() and len(w) >= 3]
+        is_shout = title.isupper() and len(shout_words) >= 2
+        # A homepage title ("Home CISPA Helmholtz ...") is not an opportunity.
+        is_home = lowered.split(" ", 1)[0] == "home"
         if _looks_like_url(lowered):
             continue
         if (
@@ -407,6 +415,8 @@ def _extract_title(page: Page) -> str:
             and lowered not in GENERIC_TITLES
             and not is_section
             and not is_label_prefix
+            and not is_shout
+            and not is_home
             and len(title) >= 6
         ):
             return title

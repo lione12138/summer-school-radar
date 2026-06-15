@@ -66,6 +66,23 @@ preferred_topics:
   - corpus linguistics
   - psycholinguistics
   - language documentation
+  # Computing and data science (broader CS subfields)
+  - computer vision
+  - image processing
+  - software engineering
+  - programming languages
+  - formal methods
+  - cybersecurity
+  - network security
+  - cryptography
+  - data analysis
+  - data analytics
+  - databases
+  - distributed systems
+  - high performance computing
+  - human-computer interaction
+  - computer graphics
+  - robotics
 
 hard_filters:
   minimum_duration_days: 8

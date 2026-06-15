@@ -1081,6 +1081,41 @@ def test_sanitize_location_drops_junk_fragments() -> None:
     assert sanitize_location("", fallback="Europe") == "Europe"
 
 
+def test_allcaps_banner_titles_fall_back_to_page_title() -> None:
+    from research_school_radar.extract import _extract_title
+    from research_school_radar.models import Page, Source
+
+    source = Source(name="ICVSS", url="https://x", layer="1", region="x", source_type="y")
+    # An ALL-CAPS section banner as h1, with the real name in <title>.
+    page = Page(
+        url="https://icvss.example/2026",
+        title="ICVSS 2026 - International Computer Vision Summer School 2026",
+        text="",
+        html="<html><head><title>ICVSS 2026</title></head><body><h1>MOTIVATION AND DESCRIPTION</h1></body></html>",
+        source=source,
+        fetched_at=date.today(),
+    )
+    title = _extract_title(page)
+    assert title != "MOTIVATION AND DESCRIPTION"
+    assert "ICVSS" in title  # acronym title is kept, not rejected as a banner
+
+
+def test_homepage_title_is_rejected() -> None:
+    from research_school_radar.extract import _extract_title
+    from research_school_radar.models import Page, Source
+
+    source = Source(name="CISPA", url="https://x", layer="1", region="x", source_type="y")
+    page = Page(
+        url="https://cispa.example/",
+        title="Home CISPA Helmholtz Center for Information Security",
+        text="",
+        html="<html><body><h1>WELCOME TO CISPA</h1></body></html>",
+        source=source,
+        fetched_at=date.today(),
+    )
+    assert _extract_title(page) == ""
+
+
 def test_label_prefix_titles_are_rejected() -> None:
     from research_school_radar.extract import _extract_title
     from research_school_radar.models import Page, Source

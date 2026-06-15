@@ -4,7 +4,7 @@
 [![License: AGPL v3](https://img.shields.io/badge/Code-AGPL--3.0-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-green.svg)](#license--reuse)
 
-An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — in **water, climate, geoscience, remote sensing, scientific machine learning, and computational linguistics**.
+An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — in **water, climate, geoscience, remote sensing, and computing & data science** (machine learning, computer vision, software engineering, cybersecurity, data science, and computational linguistics).
 
 It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources, extracts deadline / funding / fee / duration evidence together with the supporting text, separates fully qualified opportunities from near-matches, and publishes a static website that updates daily for free on GitHub Pages.
 
@@ -17,19 +17,23 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-16 · 0 fully qualified · 5 high-quality opportunities shown_
+_Last scan: 2026-06-16 · 1 fully qualified · 5 high-quality opportunities shown_
 
-**No fully qualified opportunities in the latest scan.** The high-quality opportunities below are open and in scope, but missing a fully confirmed condition.
+**Fully Qualified Opportunities**
+
+| # | title | type | organizer | location | duration | deadline | funding / fee | topic | eligibility | reason |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | [ICVSS 2026](https://icvss.dmi.unict.it/icvss2026/) | summer school | ICVSS | Europe | 5 May – 31 May 2026 · 27 days | 2026-06-20 | scholarship · amount not stated · Apply on official page | AI, machine learning, computer vision, robotics | Master Students, Ph | topic match: AI, machine learning, computer vision, robotics; funding evidence: scholarship; deadline appears open; 27 days |
 
 **High-Quality Opportunities**
 
 | title | type | organizer | location | duration | deadline | funding / fee | topic |
 |---|---|---|---|---|---|---|---|
 | [River Basin Modelling](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | groundwater, water resources, water quality, GIS |
+| [ICOS Summer/Winter School January 2027, application is now open](https://www.icos-cp.eu/about/opportunities/summer-school) | summer school | ICOS | Europe | 18 Jan – 28 Jan 2027 · 11 days | 2026-07-31 | financial support · amount not stated · Apply on official page | climate, climate change, remote sensing |
 | [Climate Change AI Virtual Summer School 2026](https://www.climatechange.ai/events/summer_school2026) | summer school | Climate Change AI | Online | 19 Jul – 22 Aug 2026 · 35 days | uncertain | fee waiver · amount not stated · Apply on official page | hydrology, water resources, climate, climate change |
 | [Short Course: Structural Geology Must-Knows](https://eage.eventsair.com/short-course-structural-geology-must-knows/) | short course | EAGE | Europe | 1 Sep – 3 Sep 2026 · 3 days | 2026-07-31 | Funding or fee not stated | geoscience, geology |
 | [ELLIS Sites ICML Fest 2026: Celebrate, Connect, Collaborate](https://ellis.eu/events/ellis-sites-icml-fest-2026) | summer school | ELLIS | Multiple Locations | 16 Jun – 24 Jul 2026 · 39 days | uncertain | Funding or fee not stated | AI, machine learning |
-| [Karthaus summerschool](https://www.projects.science.uu.nl/iceclimate/karthaus/) | summer school | Karthaus Summer School | Europe | 18 May – 27 May 2027 · 10 days | uncertain | Funding or fee not stated | climate, meteorology, glaciology, cryosphere |
 
 <!-- radar:results:end -->
 
@@ -63,7 +67,7 @@ An opportunity must satisfy all hard conditions:
 | Duration | At least 8 days |
 | Financial access | Explicit funding is available, or the confirmed total fee is no more than approximately EUR 400 |
 | Mode | In-person or substantially on-site, not online-only |
-| Topic | Relevant to water, hydrology, climate, geoscience, remote sensing, environmental modelling, disaster risk, scientific machine learning, or language and computational linguistics |
+| Topic | Relevant to environmental & earth science (water, hydrology, climate, geoscience, remote sensing, environmental modelling, disaster risk) or computing & data science (machine learning, computer vision, software engineering, cybersecurity, data analysis, and computational linguistics) |
 
 Near-matches are never presented as qualified results.
 
