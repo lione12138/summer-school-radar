@@ -4,7 +4,7 @@
 [![License: AGPL v3](https://img.shields.io/badge/Code-AGPL--3.0-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-green.svg)](#license--reuse)
 
-An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — in **water, climate, geoscience, remote sensing, and scientific machine learning**.
+An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — in **water, climate, geoscience, remote sensing, scientific machine learning, and computational linguistics**.
 
 It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources, extracts deadline / funding / fee / duration evidence together with the supporting text, separates fully qualified opportunities from near-matches, and publishes a static website that updates daily for free on GitHub Pages.
 
@@ -17,7 +17,7 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-15 · 0 fully qualified · 5 high-quality opportunities shown_
+_Last scan: 2026-06-16 · 0 fully qualified · 5 high-quality opportunities shown_
 
 **No fully qualified opportunities in the latest scan.** The high-quality opportunities below are open and in scope, but missing a fully confirmed condition.
 
@@ -63,7 +63,7 @@ An opportunity must satisfy all hard conditions:
 | Duration | At least 8 days |
 | Financial access | Explicit funding is available, or the confirmed total fee is no more than approximately EUR 400 |
 | Mode | In-person or substantially on-site, not online-only |
-| Topic | Relevant to water, hydrology, climate, geoscience, remote sensing, environmental modelling, disaster risk, or scientific machine learning |
+| Topic | Relevant to water, hydrology, climate, geoscience, remote sensing, environmental modelling, disaster risk, scientific machine learning, or language and computational linguistics |
 
 Near-matches are never presented as qualified results.
 

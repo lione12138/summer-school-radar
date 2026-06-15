@@ -51,6 +51,21 @@ preferred_topics:
   - scientific machine learning
   - data science
   - uncertainty quantification
+  # Language and computational linguistics (the academic study of language,
+  # not language-teaching courses — "pure language course" stays excluded).
+  - linguistics
+  - computational linguistics
+  - natural language processing
+  - language technology
+  - speech processing
+  - phonetics
+  - phonology
+  - syntax
+  - semantics
+  - morphology
+  - corpus linguistics
+  - psycholinguistics
+  - language documentation
 
 hard_filters:
   minimum_duration_days: 8

@@ -525,3 +525,52 @@ sources:
     keywords: [physics, climate, data science, machine learning, school]
     scan_frequency: every_run
     notes: Les Houches School of Physics; among its sessions are climate-physics and scientific machine-learning schools. Off-domain physics sessions are dropped by the filters.
+  - name: ESSLLI
+    url: https://www.esslli.eu/
+    layer: 1
+    region: continental Europe
+    source_type: summer_school
+    keywords: [logic, language, computation, computational linguistics, summer school]
+    scan_frequency: every_run
+    render: true
+    notes: European Summer School in Logic, Language and Information — the flagship logic/language/computation school. The landing page is client-side rendered, so it uses the optional headless browser.
+  - name: LSA Linguistic Institute
+    url: https://www.linguisticsociety.org/content/institute
+    layer: 1
+    region: North America
+    source_type: scientific_society
+    keywords: [linguistics, computational linguistics, language, summer institute]
+    scan_frequency: every_run
+    notes: The Linguistic Society of America's biennial summer Linguistic Institute, a major funded linguistics training school.
+  - name: LOT School
+    url: https://lotschool.nl/
+    layer: 1.5
+    region: continental Europe
+    source_type: research_network
+    keywords: [linguistics, phonology, syntax, semantics, summer school]
+    scan_frequency: every_run
+    notes: The Dutch national graduate school in linguistics (LOT); runs funded summer and winter schools across linguistics subfields.
+  - name: EGG School
+    url: https://eggschool.org/
+    layer: 2
+    region: continental Europe
+    source_type: summer_school
+    keywords: [linguistics, generative grammar, syntax, semantics, summer school]
+    scan_frequency: every_run
+    notes: Eastern Generative Grammar summer school in theoretical linguistics, held in Central/Eastern Europe with low fees.
+  - name: Leiden Linguistics Summer School
+    url: https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools
+    layer: 2
+    region: continental Europe
+    source_type: university
+    keywords: [linguistics, languages, philology, summer school]
+    scan_frequency: every_run
+    notes: Leiden Summer School in Languages and Linguistics; academic linguistics (not language-teaching) courses.
+  - name: CLASP Gothenburg
+    url: https://www.gu.se/en/clasp
+    layer: 2
+    region: continental Europe
+    source_type: research_institute
+    keywords: [computational linguistics, natural language processing, semantics, language technology]
+    scan_frequency: every_run
+    notes: Centre for Linguistic Theory and Studies in Probability (University of Gothenburg); computational linguistics and language-technology events and schools.

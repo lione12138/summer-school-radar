@@ -35,8 +35,8 @@ _BLOCKED_BOTS = (
 _SITE_DESCRIPTION = (
     "A free daily scanner of trusted academic sources for funded research summer "
     "schools, winter schools, and training schools in water, climate, geoscience, "
-    "remote sensing, and scientific machine learning, with strict filters and "
-    "transparent evidence."
+    "remote sensing, scientific machine learning, and computational linguistics, "
+    "with strict filters and transparent evidence."
 )
 
 
@@ -491,8 +491,8 @@ def render_feed(
         f"    <link>{escape(site_url)}</link>\n"
         f'    <atom:link href="{escape(feed_url)}" rel="self" type="application/rss+xml"/>\n'
         "    <description>Funded research summer schools, winter schools, and training "
-        "schools in water, climate, geoscience, remote sensing, and scientific machine "
-        "learning.</description>\n"
+        "schools in water, climate, geoscience, remote sensing, scientific machine "
+        "learning, and computational linguistics.</description>\n"
         "    <language>en</language>\n"
         f"    <copyright>Data CC BY 4.0 — reuse with attribution and a link back to {escape(site_url)}</copyright>\n"
         "    <generator>Summer School Radar</generator>\n"
@@ -872,7 +872,7 @@ def render_site(
     <div class="wrap">
       <p class="kicker">&#128225; Updated daily &middot; Free &amp; open source</p>
       <h1>Summer School Radar</h1>
-      <p class="subtitle">A free daily scan of trusted academic sources for research summer schools, winter schools, training schools, field schools, and short courses in water, climate, geoscience, remote sensing, and scientific machine learning. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.</p>
+      <p class="subtitle">A free daily scan of trusted academic sources for research summer schools, winter schools, training schools, field schools, and short courses in water, climate, geoscience, remote sensing, scientific machine learning, and computational linguistics. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.</p>
       <div class="cta">
         <a class="btn primary" href="#opportunities">Browse opportunities</a>
         {subscribe_cta}
@@ -980,7 +980,7 @@ def _about_section() -> str:
         <h3>What it is</h3>
         <p>Summer School Radar is an open-source, fixed-source scanner with rule-based extraction and transparent per-field evidence &mdash; not a fully automatic, all-web radar. It focuses on a clear domain so the signal stays high.</p>
         <h3>Domains covered</h3>
-        <p>Water and hydrology, climate, geoscience, remote sensing and earth observation, and scientific machine learning.</p>
+        <p>Water and hydrology, climate, geoscience, remote sensing and earth observation, scientific machine learning, and language and computational linguistics.</p>
         <h3>What qualifies</h3>
         <ul class="criteria">
           <li>Funded, or low / no fee &mdash; not an expensive paid course.</li>
@@ -1025,7 +1025,7 @@ def _footer_section(updated: str) -> str:
       <div class="cols">
         <div class="col brandcol">
           <a class="brand" href="#top">{_RADAR_ICON} Summer School Radar</a>
-          <p>A free, open-source scanner for funded research summer schools, winter schools, and training schools in water, climate, geoscience, remote sensing, and scientific machine learning. Updated daily.</p>
+          <p>A free, open-source scanner for funded research summer schools, winter schools, and training schools in water, climate, geoscience, remote sensing, scientific machine learning, and computational linguistics. Updated daily.</p>
         </div>
         <div class="col">
           <h4>Explore</h4>
