@@ -16,7 +16,7 @@ analytics:
   #      '{"token":"XXXX...."}'. Copy that token string into cloudflare_token.
   #   4. The next daily scan (or a manual scan) bakes it into the site.
   # Until a token is set, no analytics script is emitted.
-  cloudflare_token: ""
+  cloudflare_token: "f65282c4900d476e9e4d19495c33f6ab"
 
   # GoatCounter alternative:
   # If your dashboard is https://example.goatcounter.com, set goatcounter_code to
@@ -24,3 +24,14 @@ analytics:
   # default — turn off "Allow viewing without login" in its settings to keep your
   # visitor numbers private.
   goatcounter_code: ""
+
+seo:
+  # Google Search Console verification (optional but recommended for indexing):
+  #   1. Go to https://search.google.com/search-console and add a property of
+  #      type "URL prefix": https://lione12138.github.io/summer-school-radar/
+  #   2. Choose the "HTML tag" verification method. Google shows a meta tag like
+  #      <meta name="google-site-verification" content="ABC123..."> — paste only
+  #      the content value below.
+  #   3. After the next scan/publish, click Verify in Search Console, then submit
+  #      the sitemap: sitemap.xml
+  google_site_verification: ""

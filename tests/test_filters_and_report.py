@@ -984,6 +984,32 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert "outlook.live.com/calendar" in html  # Outlook option
 
 
+def test_site_generation_writes_seo_artifacts(tmp_path) -> None:
+    import json
+    import re
+
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    ranked = rank_candidates([candidate])
+    write_site(ranked, [], tmp_path)
+    # Crawl directives and sitemap.
+    robots = (tmp_path / "robots.txt").read_text(encoding="utf-8")
+    assert "Sitemap: https://lione12138.github.io/summer-school-radar/sitemap.xml" in robots
+    sitemap = (tmp_path / "sitemap.xml").read_text(encoding="utf-8")
+    assert "summer-school-radar/</loc>" in sitemap
+    assert "sources.html</loc>" in sitemap
+    # Head-level discovery tags.
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert 'rel="canonical"' in html
+    assert 'property="og:image"' in html
+    assert 'name="twitter:card"' in html
+    # Structured data is valid JSON and includes the WebSite node.
+    match = re.search(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)
+    assert match is not None
+    payload = match.group(1).replace("\\u003c", "<").replace("\\u003e", ">").replace("\\u0026", "&")
+    graph = json.loads(payload)
+    assert any(node.get("@type") == "WebSite" for node in graph)
+
+
 def test_site_generation_renders_sources_page(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])

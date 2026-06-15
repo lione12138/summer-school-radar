@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from dataclasses import asdict
 from datetime import date, timedelta
 from html import escape
@@ -12,10 +13,17 @@ from email.utils import format_datetime
 from datetime import datetime, timezone
 
 from .models import Candidate
-from .utils import format_duration, is_too_short, topics_label
+from .utils import ROOT, format_duration, is_too_short, topics_label
 
 
 _SITE_URL = "https://lione12138.github.io/summer-school-radar/"
+_OG_IMAGE = _SITE_URL + "og-image.png"
+_SITE_DESCRIPTION = (
+    "A free daily scanner of trusted academic sources for funded research summer "
+    "schools, winter schools, and training schools in water, climate, geoscience, "
+    "remote sensing, and scientific machine learning, with strict filters and "
+    "transparent evidence."
+)
 
 
 # Shared base styles for all generated pages. Interpolated into f-string
@@ -168,9 +176,139 @@ def write_site(
     (output_dir / "sources.json").write_text(json.dumps(sources, indent=2, default=str), encoding="utf-8")
     (output_dir / "sources.html").write_text(render_sources_page(sources), encoding="utf-8")
     (output_dir / "feed.xml").write_text(render_feed(candidates, curated, site_config or {}), encoding="utf-8")
+    (output_dir / "robots.txt").write_text(_robots_txt(), encoding="utf-8")
+    (output_dir / "sitemap.xml").write_text(_sitemap_xml(), encoding="utf-8")
+    _copy_og_image(output_dir)
     path = output_dir / "index.html"
     path.write_text(render_site(candidates, errors, site_config or {}, curated), encoding="utf-8")
     return path
+
+
+def _copy_og_image(output_dir: Path) -> None:
+    """Copy the committed social-share image into the built site, if present."""
+    source = ROOT / "assets" / "og-image.png"
+    if source.exists():
+        shutil.copyfile(source, output_dir / "og-image.png")
+
+
+def _robots_txt() -> str:
+    return f"User-agent: *\nAllow: /\nSitemap: {_SITE_URL}sitemap.xml\n"
+
+
+def _sitemap_xml() -> str:
+    today = date.today().isoformat()
+    pages = ["", "sources.html"]
+    urls = "".join(
+        f"  <url><loc>{_SITE_URL}{page}</loc><lastmod>{today}</lastmod></url>\n" for page in pages
+    )
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        f"{urls}"
+        "</urlset>\n"
+    )
+
+
+def _seo_head(canonical: str, description: str, site_config: dict[str, Any]) -> str:
+    """Canonical link, Open Graph, Twitter card, and verification tags."""
+    desc = escape(description, quote=True)
+    seo = site_config.get("seo", {}) if isinstance(site_config.get("seo"), dict) else {}
+    verification = str(seo.get("google_site_verification", "")).strip()
+    verify_tag = (
+        f'\n  <meta name="google-site-verification" content="{escape(verification, quote=True)}">'
+        if verification
+        else ""
+    )
+    return f"""  <link rel="canonical" href="{escape(canonical, quote=True)}">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0e7490">
+  <meta name="description" content="{desc}">
+  <meta property="og:title" content="Summer School Radar">
+  <meta property="og:description" content="{desc}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{escape(canonical, quote=True)}">
+  <meta property="og:site_name" content="Summer School Radar">
+  <meta property="og:image" content="{_OG_IMAGE}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Summer School Radar">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Summer School Radar">
+  <meta name="twitter:description" content="{desc}">
+  <meta name="twitter:image" content="{_OG_IMAGE}">{verify_tag}"""
+
+
+_SEO_LOCATION_STOPWORDS = (
+    "virtual",
+    "online",
+    "webinar",
+    "multiple",
+    "preview",
+    "schedule",
+    "various",
+    "tbd",
+    "uncertain",
+)
+
+
+def _seo_location_ok(location: str) -> bool:
+    value = location.strip().lower()
+    if not value or len(value) > 70:
+        return False
+    return not any(word in value for word in _SEO_LOCATION_STOPWORDS)
+
+
+def _jsonld_block(candidates: list[Candidate]) -> str:
+    """schema.org JSON-LD: a WebSite node plus an ItemList of clean events.
+
+    Only opportunities with concrete dates and a plausible physical location are
+    emitted as EducationEvent, so the structured data stays accurate (bad event
+    markup can hurt rather than help search visibility)."""
+    graph: list[dict[str, Any]] = [
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Summer School Radar",
+            "url": _SITE_URL,
+            "inLanguage": "en",
+            "description": _SITE_DESCRIPTION,
+        }
+    ]
+    elements = []
+    position = 1
+    for candidate in candidates:
+        if not (candidate.start_date and candidate.end_date):
+            continue
+        location = _public_location(candidate.location).strip()
+        if not _seo_location_ok(location):
+            continue
+        event: dict[str, Any] = {
+            "@type": "EducationEvent",
+            "name": candidate.title,
+            "startDate": candidate.start_date.isoformat(),
+            "endDate": candidate.end_date.isoformat(),
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "location": {"@type": "Place", "name": location},
+        }
+        url = candidate.application_link or candidate.source_url
+        if url:
+            event["url"] = url
+        if candidate.organizer and candidate.organizer.lower() != "uncertain":
+            event["organizer"] = {"@type": "Organization", "name": candidate.organizer}
+        elements.append({"@type": "ListItem", "position": position, "item": event})
+        position += 1
+    if elements:
+        graph.append(
+            {
+                "@context": "https://schema.org",
+                "@type": "ItemList",
+                "name": "Open research school opportunities",
+                "itemListElement": elements,
+            }
+        )
+    payload = json.dumps(graph, ensure_ascii=False, indent=2)
+    payload = payload.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
+    return f'<script type="application/ld+json">\n{payload}\n</script>'
 
 
 def render_feed(
@@ -301,11 +439,9 @@ def render_site(
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Summer School Radar</title>
-  <meta name="description" content="A free daily scanner of trusted academic sources for funded research summer schools, winter schools, and training schools in water, climate, geoscience, remote sensing, and scientific machine learning, with strict filters and transparent evidence.">
-  <meta property="og:title" content="Summer School Radar">
-  <meta property="og:description" content="Daily scan of trusted academic sources for funded research training schools in water, climate, geoscience, remote sensing, and ML, with hard filters and visible evidence.">
-  <meta property="og:type" content="website">
+{_seo_head(_SITE_URL, _SITE_DESCRIPTION, site_config or {})}
   <link rel="alternate" type="application/rss+xml" title="Summer School Radar" href="feed.xml">
+  {_jsonld_block(full + near)}
   <style>
 {_THEME_CSS}
     header.hero {{
@@ -746,6 +882,7 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sources & Coverage - Summer School Radar</title>
+{_seo_head(_SITE_URL + "sources.html", "The trusted source registry behind Summer School Radar, including coverage notes and sources that must be checked manually.", {})}
   <style>
 {_THEME_CSS}
 {_NAV_CSS}
