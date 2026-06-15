@@ -1,12 +1,26 @@
 analytics:
   # Options: none, cloudflare, goatcounter
-  provider: none
+  #
+  # Recommended: cloudflare. Cloudflare Web Analytics is free, privacy-friendly
+  # (no cookies, nothing personal collected) and — importantly — the visitor
+  # dashboard is PRIVATE: only you, signed in to your Cloudflare account, can see
+  # the numbers. The token below is the only thing that appears in the public
+  # page source; it does not let anyone read your stats.
+  provider: cloudflare
 
-  # Cloudflare Web Analytics:
-  # 1. Add this GitHub Pages hostname in Cloudflare Web Analytics.
-  # 2. Copy the token from the Cloudflare JS snippet into cloudflare_token.
+  # Cloudflare Web Analytics setup (one time, ~2 minutes):
+  #   1. Go to https://dash.cloudflare.com/ -> Analytics & Logs -> Web Analytics.
+  #   2. "Add a site" and enter hostname: lione12138.github.io
+  #      (no DNS / nameserver change is needed for a GitHub Pages site).
+  #   3. Cloudflare shows a <script> snippet containing data-cf-beacon
+  #      '{"token":"XXXX...."}'. Copy that token string into cloudflare_token.
+  #   4. The next daily scan (or a manual scan) bakes it into the site.
+  # Until a token is set, no analytics script is emitted.
   cloudflare_token: ""
 
-  # GoatCounter:
-  # If your dashboard is https://example.goatcounter.com, set goatcounter_code to example.
+  # GoatCounter alternative:
+  # If your dashboard is https://example.goatcounter.com, set goatcounter_code to
+  # "example". Note: GoatCounter's free hosted dashboard is publicly viewable by
+  # default — turn off "Allow viewing without login" in its settings to keep your
+  # visitor numbers private.
   goatcounter_code: ""

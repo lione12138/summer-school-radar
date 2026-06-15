@@ -416,9 +416,8 @@ sources:
     source_type: research_network
     keywords: [AI, machine learning, climate, scientific machine learning, summer school]
     scan_frequency: every_run
-    enabled: false
-    check_manually: true
-    notes: Climate Change AI is on-domain (AI for climate), but its events page is a client-side-rendered listing and its flagship summer school is virtual (excluded by the in-person rule). Check it directly for any in-person events.
+    render: true
+    notes: AI for climate. Its events page is client-side rendered, so it uses the optional Playwright headless browser (which loads it fine from the local daily scan). Its flagship summer school is virtual, so expect mostly near-matches.
   - name: Summer Schools in Europe
     url: https://www.summerschoolsineurope.eu/
     layer: 2
@@ -462,3 +461,67 @@ sources:
     keywords: [machine learning, natural language processing, summer school]
     scan_frequency: every_run
     notes: Lisbon Machine Learning School. The canonical lxmls.it.pt domain times out from the CI runner, so this points at the current edition on GitHub Pages directly. Bump the year when a new edition is published.
+  - name: Karthaus Summer School
+    url: https://www.projects.science.uu.nl/iceclimate/karthaus/
+    layer: 1.5
+    region: continental Europe
+    source_type: summer_school
+    keywords: [glaciology, ice sheets, cryosphere, climate, summer school]
+    scan_frequency: every_run
+    notes: Utrecht University's Karthaus course on ice sheets and climate; a flagship funded cryosphere school.
+  - name: WHOI GFD Program
+    url: https://gfd.whoi.edu/
+    layer: 1.5
+    region: North America
+    source_type: research_institute
+    keywords: [geophysical fluid dynamics, oceanography, climate, summer school]
+    scan_frequency: every_run
+    notes: Woods Hole Geophysical Fluid Dynamics summer program; a classic funded ten-week school in ocean and climate fluid dynamics.
+  - name: NCEO
+    url: https://www.nceo.ac.uk/training/
+    layer: 1.5
+    region: UK
+    source_type: research_centre
+    keywords: [earth observation, remote sensing, climate, training]
+    scan_frequency: every_run
+    notes: UK National Centre for Earth Observation training, including its annual Earth observation summer school.
+  - name: POGO
+    url: https://pogo-ocean.org/capacity-development/
+    layer: 1.5
+    region: global
+    source_type: research_network
+    keywords: [ocean observation, oceanography, climate, capacity development]
+    scan_frequency: every_run
+    notes: Partnership for Observation of the Global Ocean; funded ocean-observation training and fellowships.
+  - name: Cyprus Institute
+    url: https://www.cyi.ac.cy/index.php/education/graduate-school/summer-schools.html
+    layer: 2
+    region: continental Europe
+    source_type: research_institute
+    keywords: [climate, data science, machine learning, high performance computing, summer school]
+    scan_frequency: every_run
+    notes: The Cyprus Institute graduate school runs summer schools in climate, computational science, and machine learning.
+  - name: AGU
+    url: https://www.agu.org/
+    layer: 1
+    region: North America
+    source_type: scientific_society
+    keywords: [geoscience, climate, hydrology, ocean, atmospheric science, short course]
+    scan_frequency: every_run
+    notes: American Geophysical Union. Direct event paths 404 for scripted requests; the homepage links current meetings and courses.
+  - name: NCAS
+    url: https://ncas.ac.uk/
+    layer: 1.5
+    region: UK
+    source_type: research_centre
+    keywords: [atmospheric science, climate, weather, training]
+    scan_frequency: every_run
+    notes: UK National Centre for Atmospheric Science; runs funded atmospheric and climate science training courses and summer schools.
+  - name: Les Houches Physics School
+    url: https://www.houches-school-physics.com/
+    layer: 2
+    region: continental Europe
+    source_type: summer_school
+    keywords: [physics, climate, data science, machine learning, school]
+    scan_frequency: every_run
+    notes: Les Houches School of Physics; among its sessions are climate-physics and scientific machine-learning schools. Off-domain physics sessions are dropped by the filters.

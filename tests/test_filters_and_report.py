@@ -885,7 +885,9 @@ def test_render_flag_is_loaded_from_sources() -> None:
     assert cern is not None
     assert cern.render is True
     # Sources without the flag default to plain requests.
-    assert all(s.render is False for s in sources if s.name != "CERN Academic Training")
+    plain = next((s for s in sources if s.name == "EGU Training Schools"), None)
+    assert plain is not None
+    assert plain.render is False
 
 
 def test_render_fetch_falls_back_when_playwright_missing(monkeypatch) -> None:

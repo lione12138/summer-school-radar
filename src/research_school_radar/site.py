@@ -119,6 +119,35 @@ _THEME_CSS = """    :root {
 """
 
 
+# Navigation + branding styles, shared by every generated page. Plain string
+# (single CSS braces), interpolated as a value into the f-string templates.
+_NAV_CSS = """    html { scroll-behavior: smooth; }
+    .anchor { scroll-margin-top: 74px; }
+    nav.topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: saturate(150%) blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav.topbar .bar { display: flex; align-items: center; gap: 16px; height: 56px; }
+    .brand {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-weight: 750; letter-spacing: -0.01em;
+      color: var(--ink); text-decoration: none; font-size: 15px;
+    }
+    .brand .dot { width: 22px; height: 22px; color: var(--accent); }
+    nav.topbar .links { margin-left: auto; display: flex; gap: 2px; flex-wrap: wrap; }
+    nav.topbar .links a {
+      color: var(--muted); text-decoration: none; font-size: 13.5px;
+      padding: 7px 11px; border-radius: 8px;
+    }
+    nav.topbar .links a:hover { color: var(--ink); background: var(--panel-2); }
+    @media (max-width: 720px) { nav.topbar .links a.hide-sm { display: none; } }
+"""
+
+
 def write_site(
     candidates: list[Candidate],
     errors: list[str],
@@ -446,20 +475,90 @@ def render_site(
       font-size: 13px;
       padding-bottom: 8px;
     }}
-    footer {{ color: var(--muted); font-size: 13px; padding: 22px 0 40px; }}
+{_NAV_CSS}
+    /* hero call-to-action buttons */
+    .cta {{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }}
+    .btn {{
+      display: inline-flex; align-items: center; gap: 8px;
+      border-radius: 10px; padding: 10px 17px; font-weight: 650; font-size: 14.5px;
+      text-decoration: none; border: 1px solid transparent; cursor: pointer;
+    }}
+    .btn.primary {{ background: #ffffff; color: var(--hero-1); }}
+    .btn.primary:hover {{ background: #eaf6fa; }}
+    .btn.outline {{ border-color: rgba(255, 255, 255, .45); color: #f3f9fc; }}
+    .btn.outline:hover {{ background: rgba(255, 255, 255, .14); }}
+    /* section heading + lead paragraph */
+    .section-head {{ margin-top: 42px; }}
+    .section-head h2 {{ margin: 0 0 4px; }}
+    .lead {{ color: var(--muted); margin: 0; max-width: 760px; }}
+    /* how it works */
+    .steps {{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 16px; }}
+    .step {{
+      background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+      padding: 18px; box-shadow: var(--shadow);
+    }}
+    .step .n {{
+      display: inline-grid; place-items: center; width: 30px; height: 30px;
+      border-radius: 9px; background: var(--accent-soft); color: var(--accent-ink);
+      font-weight: 750; font-size: 15px;
+    }}
+    .step h3 {{ margin: 12px 0 5px; font-size: 15.5px; }}
+    .step p {{ margin: 0; color: var(--muted); font-size: 13.5px; }}
+    /* about / methodology panel */
+    .panel {{
+      background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+      padding: 22px 24px; box-shadow: var(--shadow); margin-top: 16px;
+    }}
+    .panel h3 {{ margin: 18px 0 8px; font-size: 16px; }}
+    .panel h3:first-of-type {{ margin-top: 0; }}
+    .panel p {{ color: var(--muted); margin: 0 0 6px; }}
+    .criteria {{ list-style: none; margin: 6px 0 0; padding: 0; display: grid; gap: 8px; }}
+    .criteria li {{ padding-left: 26px; position: relative; }}
+    .criteria li::before {{ content: "\\2713"; position: absolute; left: 0; color: var(--good); font-weight: 800; }}
+    /* faq */
+    .faq {{ margin-top: 16px; display: grid; gap: 10px; }}
+    .faq details {{
+      background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+      padding: 2px 18px; box-shadow: var(--shadow);
+    }}
+    .faq summary {{ cursor: pointer; font-weight: 650; padding: 13px 0; list-style: none; }}
+    .faq summary::-webkit-details-marker {{ display: none; }}
+    .faq details[open] summary {{ color: var(--accent-ink); }}
+    .faq details p {{ margin: 0 0 14px; color: var(--muted); }}
+    /* site footer */
+    footer.site {{ border-top: 1px solid var(--line); background: var(--panel); margin-top: 48px; }}
+    footer.site .cols {{ display: flex; flex-wrap: wrap; gap: 26px 56px; padding: 34px 0 8px; }}
+    footer.site .brandcol {{ max-width: 330px; }}
+    footer.site .brandcol p {{ color: var(--muted); font-size: 13.5px; margin: 10px 0 0; }}
+    footer.site .col h4 {{
+      margin: 0 0 9px; font-size: 12px; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--muted);
+    }}
+    footer.site .col a {{ display: block; color: var(--ink); text-decoration: none; font-size: 14px; padding: 3px 0; }}
+    footer.site .col a:hover {{ color: var(--accent); }}
+    footer.site .legal {{
+      color: var(--muted); font-size: 12.5px; padding: 16px 0 30px;
+      border-top: 1px solid var(--line); margin-top: 16px;
+    }}
     @media (max-width: 860px) {{
       .stats {{ grid-template-columns: 1fr 1fr; }}
       .filters {{ grid-template-columns: 1fr 1fr; }}
+      .steps {{ grid-template-columns: 1fr 1fr; }}
       table {{ font-size: 13px; }}
     }}
   </style>
 </head>
 <body>
-  <header class="hero">
+  {_site_nav()}
+  <header class="hero" id="top">
     <div class="wrap">
       <p class="kicker">&#128225; Updated daily &middot; Free &amp; open source</p>
       <h1>Summer School Radar</h1>
       <p class="subtitle">A free daily scan of trusted academic sources for research summer schools, winter schools, training schools, field schools, and short courses in water, climate, geoscience, remote sensing, and scientific machine learning. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.</p>
+      <div class="cta">
+        <a class="btn primary" href="#opportunities">Browse opportunities</a>
+        <a class="btn outline" href="feed.xml">Subscribe via RSS</a>
+      </div>
       <div class="meta">
         <span class="pill">Updated {updated}</span>
         <span class="pill">Fixed-source scan</span>
@@ -478,17 +577,160 @@ def render_site(
       <div class="stat"><div class="num sm">{updated}</div><div class="lbl">Last updated</div></div>
     </div>
     <p class="status{' empty' if not full else ''}">{escape(status)}</p>
-    {filters}
-    {_qualified_section(full_rows) if full else ""}
-    {near_block}
+    <section id="opportunities" class="anchor">
+      {filters}
+      {_qualified_section(full_rows) if full else ""}
+      {near_block}
+    </section>
     {_notes_section(notes) if notes else ""}
+    {_how_it_works_section()}
+    {_about_section()}
+    {_faq_section()}
   </main>
-  <footer class="wrap">Near-matches are not treated as qualified opportunities. Detailed screening data remains available in <a href="candidates.json">candidates.json</a>. Maintained openly on <a href="https://github.com/lione12138/summer-school-radar">GitHub</a>.</footer>
+  {_footer_section(updated)}
   {_filter_script()}
   {analytics}
 </body>
 </html>
 """
+
+
+_GITHUB_URL = "https://github.com/lione12138/summer-school-radar"
+
+_RADAR_ICON = (
+    '<svg class="dot" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+    'stroke-width="1.7" stroke-linecap="round" aria-hidden="true">'
+    '<circle cx="12" cy="12" r="9"/>'
+    '<circle cx="12" cy="12" r="5.5" opacity=".55"/>'
+    '<path d="M12 12 L20 7"/>'
+    '<circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/>'
+    "</svg>"
+)
+
+
+def _site_nav(home: str = "") -> str:
+    # ``home`` is "" on the index page and "index.html" on subpages, so the
+    # in-page anchors still resolve when viewed from another page.
+    brand = f"{home}#top" if home else "#top"
+    return f"""
+  <nav class="topbar">
+    <div class="wrap bar">
+      <a class="brand" href="{brand}">{_RADAR_ICON} Summer School Radar</a>
+      <div class="links">
+        <a href="{home}#opportunities">Opportunities</a>
+        <a class="hide-sm" href="{home}#how">How it works</a>
+        <a class="hide-sm" href="{home}#about">About</a>
+        <a href="sources.html">Sources</a>
+        <a href="feed.xml">RSS</a>
+        <a href="{_GITHUB_URL}">GitHub</a>
+      </div>
+    </div>
+  </nav>"""
+
+
+def _how_it_works_section() -> str:
+    steps = [
+        ("1", "Scan trusted sources", "Each day the radar fetches a fixed registry of vetted academic sources &mdash; scientific societies, research institutes, and established schools &mdash; instead of crawling the open web."),
+        ("2", "Extract evidence", "Rule-based extraction pulls out dates, deadline, funding, fee, location, and mode, and keeps the exact source text behind every field so you can verify it."),
+        ("3", "Apply strict filters", "Only funded or low-fee, in-person opportunities with an open deadline in the target domains survive. Everything else is set aside as a near-match or dropped."),
+        ("4", "Publish daily", "The results are committed and published to this static site &mdash; free, fast, and with an RSS feed and raw JSON for anyone to reuse."),
+    ]
+    cards = "".join(
+        f'<div class="step"><span class="n">{n}</span><h3>{title}</h3><p>{body}</p></div>'
+        for n, title, body in steps
+    )
+    return f"""
+    <section id="how" class="anchor">
+      <div class="section-head">
+        <h2>How it works</h2>
+        <p class="lead">A transparent pipeline you can audit &mdash; not a black box.</p>
+      </div>
+      <div class="steps">{cards}</div>
+    </section>"""
+
+
+def _about_section() -> str:
+    return f"""
+    <section id="about" class="anchor">
+      <div class="section-head">
+        <h2>About &amp; methodology</h2>
+        <p class="lead">What this is, what it covers, and where the line is drawn.</p>
+      </div>
+      <div class="panel">
+        <h3>What it is</h3>
+        <p>Summer School Radar is an open-source, fixed-source scanner with rule-based extraction and transparent per-field evidence &mdash; not a fully automatic, all-web radar. It focuses on a clear domain so the signal stays high.</p>
+        <h3>Domains covered</h3>
+        <p>Water and hydrology, climate, geoscience, remote sensing and earth observation, and scientific machine learning.</p>
+        <h3>What qualifies</h3>
+        <ul class="criteria">
+          <li>Funded, or low / no fee &mdash; not an expensive paid course.</li>
+          <li>In-person &mdash; virtual-only events are set aside.</li>
+          <li>An application deadline that is still open.</li>
+          <li>A real research school, training school, field school, or short course &mdash; not a conference or a full degree programme.</li>
+          <li>On-domain in the topics above.</li>
+        </ul>
+        <h3>Evidence and honesty</h3>
+        <p>Every extracted field carries the source text that produced it &mdash; hover a cell to see it. Near-matches are shown separately and never counted as qualified. Coverage, including sources that can&rsquo;t be fetched automatically, is listed openly on the <a href="sources.html">Sources &amp; Coverage</a> page.</p>
+      </div>
+    </section>"""
+
+
+def _faq_section() -> str:
+    qa = [
+        ("Is it free?", "Yes &mdash; entirely free and open source. There is no paywall, no account, and no paid search API in the default pipeline."),
+        ("How often is it updated?", "Once a day. The scan runs automatically and republishes this site, so the &ldquo;Last updated&rdquo; date reflects the most recent run."),
+        ("Why are some events only &ldquo;near-matches&rdquo;?", "They are relevant but fail at least one strict rule &mdash; for example the deadline is uncertain, the fee is high or unresolved, or the event is virtual. They are kept visible for transparency but not treated as qualified."),
+        ("How do you avoid spam and low-quality listings?", "The radar only reads a curated registry of trusted academic sources. It never crawls the open web, so marketing pages and unrelated courses don&rsquo;t enter the pipeline."),
+        ("Can I suggest a source?", f'Yes, please do. Open an issue on <a href="{_GITHUB_URL}/issues/new">GitHub</a> with the source and its events page, and it can be added to the registry.'),
+        ("Can I subscribe instead of checking the site?", 'Yes &mdash; use the <a href="feed.xml">RSS feed</a>, or grab the raw <a href="candidates.json">JSON</a> to build your own alerts.'),
+    ]
+    items = "".join(
+        f"<details><summary>{question}</summary><p>{answer}</p></details>"
+        for question, answer in qa
+    )
+    return f"""
+    <section id="faq" class="anchor">
+      <div class="section-head">
+        <h2>Frequently asked</h2>
+        <p class="lead">Quick answers about scope, updates, and contributing.</p>
+      </div>
+      <div class="faq">{items}</div>
+    </section>"""
+
+
+def _footer_section(updated: str) -> str:
+    return f"""
+  <footer class="site">
+    <div class="wrap">
+      <div class="cols">
+        <div class="col brandcol">
+          <a class="brand" href="#top">{_RADAR_ICON} Summer School Radar</a>
+          <p>A free, open-source scanner for funded research summer schools, winter schools, and training schools in water, climate, geoscience, remote sensing, and scientific machine learning. Updated daily.</p>
+        </div>
+        <div class="col">
+          <h4>Explore</h4>
+          <a href="#opportunities">Opportunities</a>
+          <a href="sources.html">Sources &amp; coverage</a>
+          <a href="candidates.json">Raw JSON</a>
+          <a href="feed.xml">RSS feed</a>
+        </div>
+        <div class="col">
+          <h4>Project</h4>
+          <a href="#how">How it works</a>
+          <a href="#about">About &amp; methodology</a>
+          <a href="#faq">FAQ</a>
+          <a href="{_GITHUB_URL}">GitHub</a>
+        </div>
+        <div class="col">
+          <h4>Contribute</h4>
+          <a href="{_GITHUB_URL}/issues/new">Suggest a source</a>
+          <a href="{_GITHUB_URL}/issues">Report an issue</a>
+          <a href="{_GITHUB_URL}/stargazers">Star on GitHub</a>
+        </div>
+      </div>
+      <div class="legal">Last updated {updated} &middot; Near-matches are not treated as qualified opportunities &middot; MIT licensed &middot; Built and maintained openly on GitHub.</div>
+    </div>
+  </footer>"""
 
 
 def render_sources_page(sources: list[dict[str, Any]]) -> str:
@@ -506,6 +748,7 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
   <title>Sources & Coverage - Summer School Radar</title>
   <style>
 {_THEME_CSS}
+{_NAV_CSS}
     header.hero {{
       background: linear-gradient(135deg, var(--hero-1), var(--hero-2) 55%, var(--hero-3));
       color: #f3f9fc;
@@ -527,6 +770,7 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
   </style>
 </head>
 <body>
+  {_site_nav(home="index.html")}
   <header class="hero">
     <div class="wrap">
       <h1>Sources &amp; Coverage</h1>
