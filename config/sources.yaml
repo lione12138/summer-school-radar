@@ -726,3 +726,59 @@ sources:
     keywords: [machine learning, deep learning, AI, summer school]
     scan_frequency: every_run
     notes: Mila - Quebec AI Institute (Montreal); hosts ML summer schools and training programmes.
+  - name: OIST OCNC
+    url: https://groups.oist.jp/ocnc
+    layer: 1.5
+    region: East Asia
+    source_type: summer_school
+    keywords: [computational neuroscience, neural computation, neuroscience, summer course]
+    scan_frequency: every_run
+    notes: Okinawa Computational Neuroscience Course (OCNC); a flagship funded comp-neuro summer course.
+  - name: MBL Courses
+    url: https://www.mbl.edu/education/courses
+    layer: 1.5
+    region: North America
+    source_type: research_institute
+    keywords: [computational neuroscience, neuroscience, quantitative biology, summer course]
+    scan_frequency: every_run
+    notes: Marine Biological Laboratory advanced research training courses, including Methods in Computational Neuroscience.
+  - name: CSHL Courses
+    url: https://meetings.cshl.edu/courseshome.aspx
+    layer: 1.5
+    region: North America
+    source_type: research_institute
+    keywords: [computational neuroscience, neuroscience, quantitative biology, summer course]
+    scan_frequency: every_run
+    notes: Cold Spring Harbor Laboratory courses, including computational neuroscience and quantitative biology schools.
+  - name: CAJAL Training
+    url: https://cajal-training.org/
+    layer: 2
+    region: continental Europe
+    source_type: research_network
+    keywords: [neuroscience, computational neuroscience, neural circuits, training]
+    scan_frequency: every_run
+    notes: CAJAL Advanced Neuroscience Training Programme; intensive European neuroscience courses, including computational neuroscience.
+  - name: Bernstein Network
+    url: https://www.bernstein-network.de/en/
+    layer: 2
+    region: continental Europe
+    source_type: research_network
+    keywords: [computational neuroscience, neural computation, neuroscience, summer school]
+    scan_frequency: every_run
+    notes: Bernstein Network Computational Neuroscience (Germany); schools and courses in computational neuroscience.
+  - name: CIFAR DLRL Summer School
+    url: https://dlrlsummerschool.ca/
+    layer: 2
+    region: North America
+    source_type: summer_school
+    keywords: [deep learning, reinforcement learning, machine learning, summer school]
+    scan_frequency: every_run
+    notes: CIFAR Deep Learning and Reinforcement Learning (DLRL) Summer School (Canada); funded for selected students.
+  - name: IBRO
+    url: https://ibro.org/
+    layer: 2
+    region: global
+    source_type: scientific_society
+    keywords: [neuroscience, computational neuroscience, brain, training]
+    scan_frequency: every_run
+    notes: International Brain Research Organization; runs neuroscience schools worldwide, including computational neuroscience.

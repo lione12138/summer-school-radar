@@ -980,7 +980,7 @@ def _about_section() -> str:
         <h3>What it is</h3>
         <p>Summer School Radar is an open-source, fixed-source scanner with rule-based extraction and transparent per-field evidence &mdash; not a fully automatic, all-web radar. It focuses on a clear domain so the signal stays high.</p>
         <h3>Domains covered</h3>
-        <p>Two broad areas: <strong>environmental &amp; earth science</strong> (water and hydrology, climate, geoscience, remote sensing and earth observation) and <strong>computing &amp; data science</strong> (machine learning, computer vision, software engineering, cybersecurity, data science, and computational linguistics).</p>
+        <p>Two broad areas: <strong>environmental &amp; earth science</strong> (water and hydrology, climate, geoscience, remote sensing and earth observation) and <strong>computing &amp; data science</strong> (machine learning, computer vision, software engineering, cybersecurity, data science, computational neuroscience, and computational linguistics).</p>
         <h3>What qualifies</h3>
         <ul class="criteria">
           <li>Funded, or low / no fee &mdash; not an expensive paid course.</li>

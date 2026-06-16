@@ -63,7 +63,7 @@ An opportunity must satisfy all hard conditions:
 | Duration | At least 8 days |
 | Financial access | Explicit funding is available, or the confirmed total fee is no more than approximately EUR 400 |
 | Mode | In-person or substantially on-site, not online-only |
-| Topic | Relevant to environmental & earth science (water, hydrology, climate, geoscience, remote sensing, environmental modelling, disaster risk) or computing & data science (machine learning, computer vision, software engineering, cybersecurity, data analysis, and computational linguistics) |
+| Topic | Relevant to environmental & earth science (water, hydrology, climate, geoscience, remote sensing, environmental modelling, disaster risk) or computing & data science (machine learning, computer vision, software engineering, cybersecurity, data analysis, computational neuroscience, and computational linguistics) |
 
 Near-matches are never presented as qualified results.
 

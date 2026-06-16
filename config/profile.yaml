@@ -83,6 +83,13 @@ preferred_topics:
   - human-computer interaction
   - computer graphics
   - robotics
+  # AI x neuroscience (the computational / data side of brain science)
+  - computational neuroscience
+  - neuroscience
+  - neural computation
+  - systems neuroscience
+  - theoretical neuroscience
+  - neuroAI
 
 hard_filters:
   minimum_duration_days: 8
