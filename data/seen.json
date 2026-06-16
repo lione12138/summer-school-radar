@@ -69,6 +69,13 @@
     "status": "near_match",
     "title": "Scholarships & Awards"
   },
+  "https://ecpr.eu/MethodsSchool": {
+    "deadline": null,
+    "first_seen": "2026-06-16",
+    "last_seen": "2026-06-16",
+    "status": "near_match",
+    "title": "Useful Information"
+  },
   "https://ellis.eu/events": {
     "deadline": null,
     "first_seen": "2026-06-11",
@@ -492,7 +499,7 @@
   "https://www.clivar.org/events/7th-ictp-summer-school-theory-mechanisms-and-hierarchical-modelling-climate-dynamics": {
     "deadline": "2026-04-30",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-15",
+    "last_seen": "2026-06-16",
     "status": "near_match",
     "title": "7th ICTP Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics"
   },
