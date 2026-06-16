@@ -902,3 +902,51 @@ sources:
     keywords: [economics, econometrics, social science, summer school]
     scan_frequency: every_run
     notes: Tinbergen Institute (Amsterdam/Rotterdam); economics and econometrics summer schools.
+  - name: CECAM
+    url: https://www.cecam.org/
+    layer: 1.5
+    region: continental Europe
+    source_type: research_network
+    keywords: [computational chemistry, materials science, molecular simulation, machine learning]
+    scan_frequency: every_run
+    notes: Centre Européen de Calcul Atomique et Moléculaire; schools and workshops in computational chemistry, materials, and ML for molecular science.
+  - name: Boulder School
+    url: https://boulderschool.yale.edu/
+    layer: 2
+    region: North America
+    source_type: summer_school
+    keywords: [condensed matter, physics, statistical physics, summer school]
+    scan_frequency: every_run
+    notes: Boulder School for Condensed Matter and Materials Physics; a funded graduate summer school.
+  - name: Aspen Center for Physics
+    url: https://aspenphys.org/
+    layer: 2
+    region: North America
+    source_type: research_institute
+    keywords: [physics, astrophysics, condensed matter, summer program]
+    scan_frequency: every_run
+    notes: Aspen Center for Physics; summer workshops and programmes across physics and astrophysics.
+  - name: KITP
+    url: https://www.kitp.ucsb.edu/activities/upcoming-programs
+    layer: 1.5
+    region: North America
+    source_type: research_institute
+    keywords: [theoretical physics, condensed matter, astrophysics, biophysics]
+    scan_frequency: every_run
+    notes: Kavli Institute for Theoretical Physics (UC Santa Barbara); programmes and schools across theoretical physics.
+  - name: DESY Summer Student
+    url: https://summerstudents.desy.de/
+    layer: 2
+    region: continental Europe
+    source_type: research_institute
+    keywords: [particle physics, photon science, physics, summer programme]
+    scan_frequency: every_run
+    notes: DESY Summer Student Programme; funded research training in particle and photon physics.
+  - name: CIMPA
+    url: https://www.cimpa.info/en
+    layer: 2
+    region: global
+    source_type: research_network
+    keywords: [mathematics, applied mathematics, statistics, summer school]
+    scan_frequency: every_run
+    notes: CIMPA (Centre International de Mathématiques Pures et Appliquées); funded mathematics research schools, often in the Global South.

@@ -85,6 +85,37 @@ preferred_topics:
   - robotics
   - bioinformatics
   - computational biology
+  # Physics, astronomy, and quantum
+  - physics
+  - astrophysics
+  - astronomy
+  - cosmology
+  - condensed matter
+  - particle physics
+  - statistical physics
+  - quantum computing
+  - quantum information
+  # Mathematics and statistics
+  - mathematics
+  - applied mathematics
+  - statistics
+  - probability
+  - optimization
+  - dynamical systems
+  # Chemistry, materials, and engineering
+  - chemistry
+  - computational chemistry
+  - materials science
+  - nanoscience
+  - engineering
+  - mechanics
+  - fluid dynamics
+  - control theory
+  # Health and cognition
+  - epidemiology
+  - public health
+  - biostatistics
+  - cognitive science
   # AI x neuroscience (the computational / data side of brain science)
   - computational neuroscience
   - neuroscience
