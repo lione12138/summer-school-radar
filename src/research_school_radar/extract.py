@@ -436,9 +436,10 @@ def _looks_like_url(title: str) -> str | None:
 
 def _clean_title(value: str) -> str:
     value = clean_space(value)
-    # Drop a trailing " | Site Name" or " - Site Name" boilerplate segment.
-    # The spaced en dash ("–") is left intact because it often joins a real title.
-    for separator in (" | ", " - "):
+    # Drop a trailing " | Site Name" / " - Site Name" / " • Site Name" boilerplate
+    # segment. The spaced en dash ("–") is left intact because it often joins a
+    # real title.
+    for separator in (" | ", " - ", " • ", " · ", " :: "):
         if separator in value:
             value = value.split(separator, 1)[0].strip()
     if len(value) > 140:

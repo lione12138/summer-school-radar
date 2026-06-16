@@ -1063,6 +1063,13 @@ def test_different_series_events_are_not_merged() -> None:
     assert len(_dedupe_candidates([vienna, munich])) == 2
 
 
+def test_clean_title_strips_bullet_site_suffix() -> None:
+    from research_school_radar.extract import _clean_title
+
+    assert _clean_title("Advanced Course on Damage Mechanics • CISM") == "Advanced Course on Damage Mechanics"
+    assert _clean_title("ML Summer School · University X") == "ML Summer School"
+
+
 def test_location_label_does_not_absorb_sibling_fields() -> None:
     from research_school_radar.extract import _html_label_value
 

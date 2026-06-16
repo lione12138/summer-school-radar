@@ -838,3 +838,67 @@ sources:
     keywords: [history, humanities, historical research, training]
     scan_frequency: every_run
     notes: Institute of Historical Research (London); historical-research training and events.
+  - name: Khipu
+    url: https://khipu.ai/
+    layer: 2
+    region: Latin America
+    source_type: summer_school
+    keywords: [machine learning, deep learning, AI, summer school]
+    scan_frequency: every_run
+    notes: Khipu Latin American Meeting in Artificial Intelligence; a funded AI summer school.
+  - name: Helmholtz AI
+    url: https://www.helmholtz.ai/
+    layer: 1.5
+    region: continental Europe
+    source_type: research_network
+    keywords: [machine learning, AI, scientific machine learning, data science]
+    scan_frequency: every_run
+    notes: Helmholtz AI; AI-for-science training, schools, and conferences across the Helmholtz association.
+  - name: Wellcome Connecting Science
+    url: https://coursesandconferences.wellcomeconnectingscience.org/our-events/
+    layer: 1.5
+    region: UK
+    source_type: research_institute
+    keywords: [bioinformatics, computational biology, genomics, data analysis]
+    scan_frequency: every_run
+    notes: Wellcome Connecting Science advanced courses and conferences; genomics and computational biology training, many with bursaries.
+  - name: Physalia Courses
+    url: https://www.physalia-courses.org/
+    layer: 2
+    region: continental Europe
+    source_type: research_network
+    keywords: [bioinformatics, data analysis, computational biology, statistics]
+    scan_frequency: every_run
+    notes: Physalia-Courses; intensive bioinformatics and data-analysis courses for the life sciences.
+  - name: CISM
+    url: https://cism.it/en/activities/courses/
+    layer: 2
+    region: continental Europe
+    source_type: research_institute
+    keywords: [computational science, mechanics, applied mathematics, machine learning]
+    scan_frequency: every_run
+    notes: International Centre for Mechanical Sciences (Udine); advanced schools in computational and applied science, including ML for engineering.
+  - name: EARSeL
+    url: https://www.earsel.org/
+    layer: 1.5
+    region: continental Europe
+    source_type: research_network
+    keywords: [remote sensing, earth observation, geospatial, summer school]
+    scan_frequency: every_run
+    notes: European Association of Remote Sensing Laboratories; remote-sensing summer schools and training.
+  - name: Alan Turing Institute
+    url: https://www.turing.ac.uk/events
+    layer: 1.5
+    region: UK
+    source_type: research_institute
+    keywords: [data science, machine learning, AI, statistics]
+    scan_frequency: every_run
+    notes: The Alan Turing Institute (UK national institute for data science and AI); training events, schools, and workshops.
+  - name: Tinbergen Institute
+    url: https://www.tinbergen.nl/
+    layer: 2
+    region: continental Europe
+    source_type: research_institute
+    keywords: [economics, econometrics, social science, summer school]
+    scan_frequency: every_run
+    notes: Tinbergen Institute (Amsterdam/Rotterdam); economics and econometrics summer schools.
