@@ -116,6 +116,20 @@ preferred_topics:
   - public health
   - biostatistics
   - cognitive science
+  # Law, education, and the built environment
+  - law
+  - international law
+  - education research
+  - marine biology
+  - urban studies
+  - urban planning
+  - geography
+  - architecture
+  - design
+  - history of science
+  - philosophy of science
+  - agriculture
+  - food science
   # AI x neuroscience (the computational / data side of brain science)
   - computational neuroscience
   - neuroscience

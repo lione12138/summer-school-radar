@@ -950,3 +950,51 @@ sources:
     keywords: [mathematics, applied mathematics, statistics, summer school]
     scan_frequency: every_run
     notes: CIMPA (Centre International de Mathématiques Pures et Appliquées); funded mathematics research schools, often in the Global South.
+  - name: Hague Academy of International Law
+    url: https://www.hagueacademy.nl/
+    layer: 1.5
+    region: continental Europe
+    source_type: research_institute
+    keywords: [international law, law, public international law, summer course]
+    scan_frequency: every_run
+    notes: The Hague Academy of International Law; summer courses in public and private international law, with scholarships.
+  - name: Asser Institute
+    url: https://www.asser.nl/
+    layer: 2
+    region: continental Europe
+    source_type: research_institute
+    keywords: [international law, law, human rights, training]
+    scan_frequency: every_run
+    notes: T.M.C. Asser Instituut (The Hague); international and European law summer programmes and training.
+  - name: EARLI
+    url: https://www.earli.org/
+    layer: 2
+    region: continental Europe
+    source_type: scientific_society
+    keywords: [education research, learning sciences, education, summer school]
+    scan_frequency: every_run
+    notes: European Association for Research on Learning and Instruction; the JURE summer school and research training in education.
+  - name: Stazione Zoologica
+    url: https://www.szn.it/
+    layer: 2
+    region: continental Europe
+    source_type: research_institute
+    keywords: [marine biology, oceanography, ecology, summer course]
+    scan_frequency: every_run
+    notes: Stazione Zoologica Anton Dohrn (Naples); marine biology and ocean science research training.
+  - name: LSE Cities
+    url: https://www.lse.ac.uk/cities
+    layer: 2
+    region: UK
+    source_type: research_institute
+    keywords: [urban studies, cities, geography, social science]
+    scan_frequency: every_run
+    notes: LSE Cities; urban studies research and summer programmes.
+  - name: The Berlage
+    url: https://theberlage.nl/
+    layer: 2
+    region: continental Europe
+    source_type: university_institute
+    keywords: [architecture, urban design, design, summer school]
+    scan_frequency: every_run
+    notes: The Berlage Center for Advanced Studies in Architecture and Urban Design (TU Delft); architecture and urbanism programmes.
