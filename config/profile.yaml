@@ -90,6 +90,24 @@ preferred_topics:
   - systems neuroscience
   - theoretical neuroscience
   - neuroAI
+  # Social sciences and humanities
+  - social science
+  - social science methods
+  - political science
+  - economics
+  - sociology
+  - anthropology
+  - psychology
+  - history
+  - philosophy
+  - archaeology
+  - literature
+  - cultural studies
+  - area studies
+  - demography
+  - social policy
+  - digital humanities
+  - education research
 
 hard_filters:
   minimum_duration_days: 8

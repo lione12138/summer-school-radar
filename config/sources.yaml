@@ -782,3 +782,59 @@ sources:
     keywords: [neuroscience, computational neuroscience, brain, training]
     scan_frequency: every_run
     notes: International Brain Research Organization; runs neuroscience schools worldwide, including computational neuroscience.
+  - name: ECPR Methods School
+    url: https://ecpr.eu/MethodsSchool
+    layer: 1.5
+    region: continental Europe
+    source_type: research_network
+    keywords: [political science, social science methods, social science, summer school]
+    scan_frequency: every_run
+    notes: European Consortium for Political Research Methods Schools; social-science research-methods training.
+  - name: ICPSR Summer Program
+    url: https://www.icpsr.umich.edu/web/pages/sumprog/
+    layer: 1.5
+    region: North America
+    source_type: university_institute
+    keywords: [social science methods, quantitative methods, statistics, data analysis]
+    scan_frequency: every_run
+    notes: University of Michigan ICPSR Summer Program in Quantitative Methods of Social Research; a flagship social-science methods school.
+  - name: Essex Summer School
+    url: https://www.essex.ac.uk/summer-schools/social-science-data-analysis
+    layer: 2
+    region: UK
+    source_type: university
+    keywords: [social science, data analysis, quantitative methods, summer school]
+    scan_frequency: every_run
+    notes: Essex Summer School in Social Science Data Analysis; long-running quantitative social-science methods school.
+  - name: CEU Summer University
+    url: https://summeruniversity.ceu.edu/
+    layer: 2
+    region: continental Europe
+    source_type: university
+    keywords: [social science, humanities, political science, summer school]
+    scan_frequency: every_run
+    notes: Central European University Summer University; social science and humanities courses, often with funding for selected participants.
+  - name: EUI
+    url: https://www.eui.eu/
+    layer: 1.5
+    region: continental Europe
+    source_type: university_institute
+    keywords: [history, economics, political science, law, summer school]
+    scan_frequency: every_run
+    notes: European University Institute (Florence); summer schools in history, economics, political and social science, and law.
+  - name: DHSI
+    url: https://dhsi.org/
+    layer: 2
+    region: North America
+    source_type: summer_school
+    keywords: [digital humanities, humanities, computing, training]
+    scan_frequency: every_run
+    notes: Digital Humanities Summer Institute (Victoria); training at the intersection of humanities and computing.
+  - name: IHR History
+    url: https://www.history.ac.uk/
+    layer: 2
+    region: UK
+    source_type: research_institute
+    keywords: [history, humanities, historical research, training]
+    scan_frequency: every_run
+    notes: Institute of Historical Research (London); historical-research training and events.

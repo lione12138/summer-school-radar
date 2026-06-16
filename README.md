@@ -4,7 +4,7 @@
 [![License: AGPL v3](https://img.shields.io/badge/Code-AGPL--3.0-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-green.svg)](#license--reuse)
 
-An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — in **water, climate, geoscience, remote sensing, and computing & data science** (machine learning, computer vision, software engineering, cybersecurity, data science, and computational linguistics).
+An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — **across many academic fields**: environmental & earth science, computing & data science, the social sciences, and the humanities.
 
 It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources, extracts deadline / funding / fee / duration evidence together with the supporting text, separates fully qualified opportunities from near-matches, and publishes a static website that updates daily for free on GitHub Pages.
 
@@ -28,8 +28,8 @@ _Last scan: 2026-06-16 · 0 fully qualified · 5 high-quality opportunities show
 | [River Basin Modelling](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | groundwater, water resources, water quality, GIS |
 | [ICOS Summer/Winter School January 2027, application is now open](https://www.icos-cp.eu/about/opportunities/summer-school) | summer school | ICOS | Europe | 18 Jan – 28 Jan 2027 · 11 days | 2026-07-31 | financial support · amount not stated · Apply on official page | climate, climate change, remote sensing |
 | [Climate Change AI Virtual Summer School 2026](https://www.climatechange.ai/events/summer_school2026) | summer school | Climate Change AI | Online | 19 Jul – 22 Aug 2026 · 35 days | uncertain | fee waiver · amount not stated · Apply on official page | hydrology, water resources, climate, climate change |
-| [Short Course: Structural Geology Must-Knows](https://eage.eventsair.com/short-course-structural-geology-must-knows/) | short course | EAGE | Europe | 1 Sep – 3 Sep 2026 · 3 days | 2026-07-31 | Funding or fee not stated | geoscience, geology |
-| [ELLIS Sites ICML Fest 2026: Celebrate, Connect, Collaborate](https://ellis.eu/events/ellis-sites-icml-fest-2026) | summer school | ELLIS | Multiple Locations | 16 Jun – 24 Jul 2026 · 39 days | uncertain | Funding or fee not stated | AI, machine learning |
+| [Short Course: Structural Geology Must-Knows](https://eage.eventsair.com/short-course-structural-geology-must-knows/) | short course | EAGE | Europe | 1 Sep – 3 Sep 2026 · 3 days | 2026-07-31 | Funding or fee not stated | geoscience, geology, history |
+| [Summer School Science Communication](https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-science-communication) | summer school | Leiden Linguistics Summer School | Leiden Course fee | 6 Jul – 10 Jul 2026 · 5 days | uncertain | Fee about EUR 575 · Apply on official page | social science, archaeology, literature, education research |
 
 <!-- radar:results:end -->
 
@@ -63,7 +63,7 @@ An opportunity must satisfy all hard conditions:
 | Duration | At least 8 days |
 | Financial access | Explicit funding is available, or the confirmed total fee is no more than approximately EUR 400 |
 | Mode | In-person or substantially on-site, not online-only |
-| Topic | Relevant to environmental & earth science (water, hydrology, climate, geoscience, remote sensing, environmental modelling, disaster risk) or computing & data science (machine learning, computer vision, software engineering, cybersecurity, data analysis, computational neuroscience, and computational linguistics) |
+| Topic | Relevant to one of the covered fields: environmental & earth science (water, climate, geoscience, remote sensing), computing & data science (machine learning, computer vision, software engineering, cybersecurity, computational neuroscience, linguistics), or the social sciences & humanities (social-science methods, economics, political science, history, digital humanities) |
 
 Near-matches are never presented as qualified results.
 
