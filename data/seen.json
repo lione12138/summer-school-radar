@@ -20,6 +20,34 @@
     "status": "near_match",
     "title": "ASPECT : A dvanced S olver for P lanetary E volution, C onvection, and T ectonics"
   },
+  "https://cism.it/en/activities/courses/C2602/": {
+    "deadline": "2026-04-22",
+    "first_seen": "2026-06-16",
+    "last_seen": "2026-06-16",
+    "status": "near_match",
+    "title": "11th CISM-ECCOMAS Advanced course on \"Parameter Identification Using Full-Field Measurements\""
+  },
+  "https://cism.it/en/activities/courses/C2603/": {
+    "deadline": "2026-04-29",
+    "first_seen": "2026-06-16",
+    "last_seen": "2026-06-16",
+    "status": "near_match",
+    "title": "CISM-EUROMECH Advanced Course on \"Fluid Mixing: Fundamentals and Practices\""
+  },
+  "https://cism.it/en/activities/courses/C2612/": {
+    "deadline": "2026-08-26",
+    "first_seen": "2026-06-16",
+    "last_seen": "2026-06-16",
+    "status": "near_match",
+    "title": "CISM-EUROMECH Advanced Course on \"Damage and Fracture Mechanics of Fluid-Infiltrated Geomaterials"
+  },
+  "https://cism.it/en/activities/courses/C2615/": {
+    "deadline": "2026-09-30",
+    "first_seen": "2026-06-16",
+    "last_seen": "2026-06-16",
+    "status": "near_match",
+    "title": "12th CISM–AIMETA Advanced Course on \"Modeling the Biomechanics of Soft Tissues: Experimental Methods, Theoretical Bases and Computational..."
+  },
   "https://cispa.de/en": {
     "deadline": null,
     "first_seen": "2026-06-16",
