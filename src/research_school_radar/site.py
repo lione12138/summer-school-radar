@@ -1510,7 +1510,7 @@ def _filters(candidates: list[Candidate]) -> str:
         <label for="filter-new">Freshness</label>
         <select id="filter-new">
           <option value="">All</option>
-          <option value="true">New this week</option>
+          <option value="true">New today</option>
         </select>
       </div>
       <div class="count" id="filter-count" aria-live="polite"></div>

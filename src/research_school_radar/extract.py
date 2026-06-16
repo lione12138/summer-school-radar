@@ -777,6 +777,24 @@ def _html_label_value(html: str, labels: list[str]) -> str:
         "fee",
         "fees",
         "funding",
+        # Sibling fields in an info block — never part of the location value.
+        "course fee",
+        "course fees",
+        "cost",
+        "costs",
+        "price",
+        "tuition",
+        "credits",
+        "ects",
+        "level",
+        "language",
+        "format",
+        "duration",
+        "registration",
+        "type",
+        "study load",
+        "more information",
+        "read more",
     }
     for index, line in enumerate(lines):
         lowered = line.rstrip(":").lower()

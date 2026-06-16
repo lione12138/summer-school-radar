@@ -1063,6 +1063,29 @@ def test_different_series_events_are_not_merged() -> None:
     assert len(_dedupe_candidates([vienna, munich])) == 2
 
 
+def test_location_label_does_not_absorb_sibling_fields() -> None:
+    from research_school_radar.extract import _html_label_value
+
+    # An info block where "Course fee" is a sibling field, not part of location.
+    html = (
+        "<html><body><dl>"
+        "<dt>Location</dt><dd>Leiden</dd>"
+        "<dt>Course fee</dt><dd>EUR 575</dd>"
+        "</dl></body></html>"
+    )
+    assert _html_label_value(html, ["Location", "Venue", "Place"]) == "Leiden"
+
+
+def test_is_new_is_today_only() -> None:
+    from datetime import timedelta
+
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    candidate.first_seen = date.today()
+    assert candidate.is_new is True
+    candidate.first_seen = date.today() - timedelta(days=1)
+    assert candidate.is_new is False  # seen yesterday -> no longer "new"
+
+
 def test_sanitize_location_drops_junk_fragments() -> None:
     from research_school_radar.utils import sanitize_location
 

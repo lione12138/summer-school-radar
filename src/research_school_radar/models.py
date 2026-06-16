@@ -71,8 +71,8 @@ class Candidate:
 
     @property
     def is_new(self) -> bool:
-        """First observed within the last 7 days (a fresh opportunity)."""
-        return self.first_seen is not None and 0 <= (date.today() - self.first_seen).days <= 7
+        """First observed in the latest (today's) scan — not on any earlier day."""
+        return self.first_seen == date.today()
 
     @property
     def is_past(self) -> bool:
