@@ -474,11 +474,11 @@ def render_feed(
     """An RSS 2.0 feed so people can subscribe instead of visiting the page."""
     site_url = str((site_config or {}).get("site_url") or _SITE_URL).rstrip("/") + "/"
     feed_url = site_url + "feed.xml"
-    qualified = [item for item in candidates if item.fully_qualified]
+    qualified = [item for item in candidates if item.fully_qualified and not _is_online_only(item)]
     near = [
         item
         for item in candidates
-        if not item.fully_qualified and not item.is_past and not is_too_short(item.duration_days)
+        if not item.fully_qualified and not item.is_past and not is_too_short(item.duration_days) and not _is_online_only(item)
     ]
     items = [_candidate_feed_item(item) for item in (qualified + near)[:40]]
     item_xml = "".join(_feed_item_xml(item, site_url) for item in items)
@@ -570,11 +570,11 @@ def render_site(
     curated: list[dict[str, Any]] | None = None,
     tracked_sources: int = 0,
 ) -> str:
-    full = [item for item in candidates if item.fully_qualified][:10]
+    full = [item for item in candidates if item.fully_qualified and not _is_online_only(item)][:10]
     near = [
         item
         for item in candidates
-        if not item.fully_qualified and not item.is_past and not is_too_short(item.duration_days)
+        if not item.fully_qualified and not item.is_past and not is_too_short(item.duration_days) and not _is_online_only(item)
     ][:12]
     tracked_total = sum(1 for item in candidates if not item.is_past)
     updated = date.today().isoformat()
@@ -1329,6 +1329,10 @@ def _curated_financial_summary(item: dict[str, Any], funding: dict[str, Any]) ->
     if fee_eur is not None:
         return f"Fee about EUR {float(fee_eur):.0f} · Apply on official page"
     return fee or "Funding or fee not stated"
+
+
+def _is_online_only(candidate: Candidate) -> bool:
+    return candidate.is_online_only
 
 
 def _public_location(value: str) -> str:

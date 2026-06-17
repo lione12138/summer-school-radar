@@ -1063,6 +1063,24 @@ def test_different_series_events_are_not_merged() -> None:
     assert len(_dedupe_candidates([vienna, munich])) == 2
 
 
+def test_online_only_events_are_not_displayed(tmp_path) -> None:
+    base = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    online = replace(
+        base,
+        title="Climate AI Virtual Summer School",
+        location="Online",
+        mode="online",
+        source_url="https://example.org/virtual",
+        application_link="https://example.org/virtual",
+        failed_hard_conditions=["online only"],  # online -> never fully qualified
+    )
+    ranked = rank_candidates([online])
+    html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
+    assert "Climate AI Virtual Summer School" not in html  # online-only is excluded entirely
+    feed = (tmp_path / "feed.xml").read_text(encoding="utf-8")
+    assert "Climate AI Virtual Summer School" not in feed
+
+
 def test_clean_title_strips_bullet_site_suffix() -> None:
     from research_school_radar.extract import _clean_title
 

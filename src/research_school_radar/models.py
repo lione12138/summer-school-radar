@@ -93,6 +93,13 @@ class Candidate:
         return not self.failed_hard_conditions
 
     @property
+    def is_online_only(self) -> bool:
+        """Fully virtual — never surfaced, since the radar is for in-person events."""
+        if self.mode == "online":
+            return True
+        return self.location.strip().lower() in {"online", "virtual"}
+
+    @property
     def financial_summary(self) -> str:
         if self.funding_available is True:
             funding_label = ", ".join(self.funding_type) or "Funding available"

@@ -4,7 +4,19 @@ from datetime import date
 from pathlib import Path
 
 from .models import Candidate
-from .utils import format_duration, topics_label
+from .utils import format_duration, is_too_short, topics_label
+
+
+def _near_matches(candidates: list[Candidate]) -> list[Candidate]:
+    """Still-open, in-person, long-enough near-matches — matching the website."""
+    return [
+        item
+        for item in candidates
+        if not item.fully_qualified
+        and not item.is_past
+        and not item.is_online_only
+        and not is_too_short(item.duration_days)
+    ]
 
 
 README_START = "<!-- radar:results:start -->"
@@ -20,7 +32,7 @@ def write_report(candidates: list[Candidate], output_dir: Path, errors: list[str
 
 def render_report(candidates: list[Candidate], errors: list[str]) -> str:
     full = [item for item in candidates if item.fully_qualified][:10]
-    near = [item for item in candidates if not item.fully_qualified and not item.is_past][:5]
+    near = _near_matches(candidates)[:5]
     lines = [f"# Summer School Radar Report - {date.today().isoformat()}", ""]
 
     if errors:
@@ -63,7 +75,7 @@ def update_readme(readme_path: Path, candidates: list[Candidate]) -> bool:
 
 def render_readme_section(candidates: list[Candidate]) -> str:
     full = [item for item in candidates if item.fully_qualified][:10]
-    near = [item for item in candidates if not item.fully_qualified and not item.is_past][:5]
+    near = _near_matches(candidates)[:5]
     lines = [
         f"_Last scan: {date.today().isoformat()} · "
         f"{len(full)} fully qualified · {len(near)} high-quality opportunit{'ies' if len(near) != 1 else 'y'} shown_",
