@@ -105,7 +105,10 @@ def _dedupe_candidates(candidates: list[Candidate]) -> list[Candidate]:
 def _merge_into(primary: Candidate, other: Candidate) -> None:
     """Fill fields the primary (higher-scoring) record is missing from a merged
     duplicate, so cross-source records combine into the most complete one."""
-    if primary.deadline is None and other.deadline is not None:
+    # A "closed" status (applications-closed text) is a hard signal and must
+    # never be overwritten by a duplicate's open/uncertain status — otherwise a
+    # closed event could be resurrected as open.
+    if primary.deadline is None and other.deadline is not None and primary.deadline_status != "closed":
         primary.deadline = other.deadline
         primary.deadline_evidence = primary.deadline_evidence or other.deadline_evidence
         if other.deadline_status:

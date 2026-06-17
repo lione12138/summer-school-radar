@@ -1020,6 +1020,34 @@ def test_closed_applications_phrase_marks_opportunity_past() -> None:
     assert candidate.is_past is True
 
 
+def test_merge_does_not_resurrect_a_closed_event() -> None:
+    from datetime import timedelta
+
+    from research_school_radar.rank import _dedupe_candidates
+
+    base = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    # Same event, two sources: one says applications are closed (no date), the
+    # other lists a future deadline. The closed status must survive the merge.
+    closed = replace(base, title="X Summer School", location="Berlin", deadline=None,
+                     deadline_status="closed", source_url="https://a", application_link="https://a", score=10.0)
+    openish = replace(base, title="X Summer School", location="Berlin",
+                      deadline=date.today() + timedelta(days=30), deadline_status="open",
+                      source_url="https://b", application_link="https://b", score=5.0)
+    deduped = _dedupe_candidates([closed, openish])
+    assert len(deduped) == 1
+    assert deduped[0].deadline_status == "closed"
+    assert deduped[0].is_past is True  # stays hidden, not resurrected as open
+
+
+def test_early_bird_deadline_passed_does_not_close_school() -> None:
+    from research_school_radar.extract import _applications_closed
+
+    # A passed abstract/early-bird deadline must not close a still-open school.
+    assert _applications_closed("The abstract deadline has passed. Register before 1 August.") is False
+    # But a passed application deadline does close it.
+    assert _applications_closed("The deadline for applications has passed.") is True
+
+
 def test_cross_source_duplicate_merges_and_enriches_deadline() -> None:
     from research_school_radar.rank import _dedupe_candidates
 
@@ -1085,7 +1113,8 @@ def test_clean_title_strips_bullet_site_suffix() -> None:
     from research_school_radar.extract import _clean_title
 
     assert _clean_title("Advanced Course on Damage Mechanics • CISM") == "Advanced Course on Damage Mechanics"
-    assert _clean_title("ML Summer School · University X") == "ML Summer School"
+    # A spaced middot is commonly an internal title separator, so it is preserved.
+    assert _clean_title("ML School · Theory · 2026") == "ML School · Theory · 2026"
 
 
 def test_location_label_does_not_absorb_sibling_fields() -> None:

@@ -86,15 +86,19 @@ _STRONG_CLOSED_PATTERNS = [
     r"application(?:s)?\s+(?:period|window)[^.]{0,20}(?:closed|ended|over)",
 ]
 _WEAK_CLOSED_PATTERNS = [
-    r"deadline[^.]{0,40}has\s+passed",
+    # Require an application/registration context: a bare "deadline has passed"
+    # may be an early-bird or abstract deadline while the school is still open.
+    r"(?:applications?|registration)[^.]{0,30}has\s+passed",
     r"applications?[^.]{0,25}(?:are|have|is|now)[^.]{0,15}closed",
     r"applications?\s+(?:are\s+|have\s+|has\s+)?closed",
     r"registration[^.]{0,25}(?:is\s+)?closed",
 ]
 _APPLICATIONS_OPEN_PATTERNS = [
     r"applications?[^.]{0,15}(?:are|is)[^.]{0,10}open",
-    r"apply\s+now",
+    r"apply\s+(?:now|here|online|today|by)",
     r"now\s+accepting\s+applications",
+    r"applications?\s+(?:are\s+)?(?:invited|welcome)",
+    r"call\s+for\s+applications",
     r"registration[^.]{0,15}(?:is\s+)?open",
     r"applications?\s+open",
 ]
@@ -152,13 +156,20 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     duration_evidence = ranges[0][2] if ranges else str(overrides.get("duration_evidence", ""))
     deadlines = _all_deadlines(text)
     chosen = _select_deadline(deadlines)
-    deadline = overrides.get("deadline") or (chosen[0] if chosen else None)
-    if chosen:
+    override_deadline = overrides.get("deadline")
+    if override_deadline is not None:
+        # An adapter/JSON-LD deadline wins; its own evidence describes it, so the
+        # text-extracted evidence must not be attached to a different date.
+        deadline = override_deadline
+        deadline_evidence = str(overrides.get("deadline_evidence", ""))
+    elif chosen:
+        deadline = chosen[0]
         deadline_evidence = chosen[1]
         others = [d.isoformat() for d, _ in deadlines if d != chosen[0]]
         if others:
             deadline_evidence += f" (other dates listed: {', '.join(others[:3])})"
     else:
+        deadline = None
         deadline_evidence = ""
 
     # Drop listing, calendar, and navigation pages. A single opportunity has one
@@ -439,7 +450,7 @@ def _clean_title(value: str) -> str:
     # Drop a trailing " | Site Name" / " - Site Name" / " • Site Name" boilerplate
     # segment. The spaced en dash ("–") is left intact because it often joins a
     # real title.
-    for separator in (" | ", " - ", " • ", " · ", " :: "):
+    for separator in (" | ", " - ", " • ", " :: "):
         if separator in value:
             value = value.split(separator, 1)[0].strip()
     if len(value) > 140:

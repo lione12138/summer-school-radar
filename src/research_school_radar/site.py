@@ -576,7 +576,13 @@ def render_site(
         for item in candidates
         if not item.fully_qualified and not item.is_past and not is_too_short(item.duration_days) and not _is_online_only(item)
     ][:12]
-    tracked_total = sum(1 for item in candidates if not item.is_past)
+    # Count only opportunities that could actually be surfaced (in-person,
+    # long enough, still open), so the "tracking N" figure matches the page.
+    tracked_total = sum(
+        1
+        for item in candidates
+        if not item.is_past and not item.is_online_only and not is_too_short(item.duration_days)
+    )
     updated = date.today().isoformat()
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
     near_rows = "".join(_near_row(candidate) for candidate in near)
