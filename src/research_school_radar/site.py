@@ -43,45 +43,46 @@ _SITE_DESCRIPTION = (
 # Shared base styles for all generated pages. Interpolated into f-string
 # templates as a value, so it uses normal CSS braces.
 _THEME_CSS = """    :root {
-      color-scheme: light dark;
-      --bg: #f2f5f7;
+      color-scheme: light;
+      --bg: #f5f5ef;
       --panel: #ffffff;
-      --panel-2: #f8fafb;
-      --ink: #16202b;
-      --muted: #5b6b7b;
-      --line: #dde5ec;
-      --accent: #0e7490;
-      --accent-ink: #0b5c73;
-      --accent-soft: #eef7fa;
-      --good: #15803d;
-      --good-soft: #e3f6e9;
-      --warn: #92590a;
-      --warn-soft: #fdf2d0;
-      --shadow: 0 1px 2px rgba(22, 32, 43, .05), 0 6px 24px rgba(22, 32, 43, .07);
-      --hero-1: #0b3550;
-      --hero-2: #0e7490;
-      --hero-3: #0f766e;
+      --panel-2: #faf9f3;
+      --ink: #19201a;
+      --muted: #5f6b60;
+      --line: #e6e4d7;
+      --accent: #1f6b4a;
+      --accent-ink: #17533a;
+      --accent-soft: #e8f1ea;
+      --highlight: #cfe84a;
+      --good: #1f6b4a;
+      --good-soft: #e4f2e8;
+      --warn: #8a5a12;
+      --warn-soft: #f7eecb;
+      --shadow: 0 1px 2px rgba(26, 32, 27, .05), 0 8px 28px rgba(26, 32, 27, .07);
+      --hero-1: #123524;
+      --hero-2: #1f6b4a;
+      --hero-3: #2f7d52;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0e1620;
-        --panel: #16212e;
-        --panel-2: #1a2735;
-        --ink: #e4ecf4;
-        --muted: #93a5b8;
-        --line: #28394c;
-        --accent: #38bdf8;
-        --accent-ink: #7dd3fc;
-        --accent-soft: #142d3c;
-        --good: #4ade80;
-        --good-soft: #15301f;
-        --warn: #fbbf24;
-        --warn-soft: #383018;
-        --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 8px 28px rgba(0, 0, 0, .35);
-        --hero-1: #0a2230;
-        --hero-2: #0c4a5e;
-        --hero-3: #0b3d3a;
-      }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #10140f;
+      --panel: #181d16;
+      --panel-2: #1d231a;
+      --ink: #e8ece4;
+      --muted: #9aa896;
+      --line: #2b3327;
+      --accent: #7fd6a0;
+      --accent-ink: #a7e6bf;
+      --accent-soft: #17271c;
+      --highlight: #cfe84a;
+      --good: #7fd6a0;
+      --good-soft: #17271c;
+      --warn: #e2b65a;
+      --warn-soft: #322a16;
+      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 30px rgba(0, 0, 0, .4);
+      --hero-1: #0c1f15;
+      --hero-2: #173d29;
+      --hero-3: #1f5236;
     }
     * { box-sizing: border-box; }
     body {
@@ -167,8 +168,72 @@ _NAV_CSS = """    html { scroll-behavior: smooth; }
     }
     nav.topbar .links a:hover { color: var(--ink); background: var(--panel-2); }
     @media (max-width: 720px) { nav.topbar .links a.hide-sm { display: none; } }
+    nav.topbar .toggle {
+      border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+      border-radius: 999px; min-width: 34px; height: 32px; padding: 0 11px;
+      font: inherit; font-size: 13px; cursor: pointer; line-height: 30px;
+    }
+    nav.topbar .toggle:hover { border-color: var(--accent); color: var(--accent); }
     .src-credit { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
 """
+
+
+# Runs in <head> before first paint, so the saved theme and language apply with
+# no flash. Plain string (real JS braces), interpolated as a value.
+_BOOT_SCRIPT = (
+    "<script>(function(){try{"
+    "var t=localStorage.getItem('summa-theme');"
+    "if(t!=='light'&&t!=='dark'){t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}"
+    "document.documentElement.setAttribute('data-theme',t);"
+    "var l=localStorage.getItem('summa-lang');"
+    "if(l!=='zh'&&l!=='en'){l=((navigator.language||'en').toLowerCase().indexOf('zh')===0)?'zh':'en';}"
+    "document.documentElement.setAttribute('lang',l);"
+    "}catch(e){}})();</script>"
+)
+
+
+# Applies translations to [data-i18n] elements and wires the two toggle buttons.
+# Runs at the end of <body>. Plain string (real JS braces).
+_UI_SCRIPT = """
+  <script>
+  (function(){
+    var I18N = {
+      "nav.opportunities": {en:"Opportunities", zh:"机会"},
+      "nav.how": {en:"How it works", zh:"工作原理"},
+      "nav.about": {en:"About", zh:"关于"},
+      "nav.sources": {en:"Sources", zh:"来源"},
+      "nav.rss": {en:"RSS", zh:"RSS"},
+      "hero.kicker": {en:"\\uD83D\\uDCE1 Updated daily \\u00B7 Free & open source", zh:"\\uD83D\\uDCE1 每天更新 \\u00B7 免费开源"},
+      "hero.subtitle": {en:"A free daily scan of trusted academic sources for funded research summer schools across many academic fields. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.", zh:"每天自动扫描可信学术来源,汇总各学科有资助的科研暑校。严格筛选,只留有资助/低收费、线下、且仍在报名的项目。"},
+      "cta.browse": {en:"Browse opportunities", zh:"浏览机会"},
+      "cta.rss": {en:"Subscribe via RSS", zh:"RSS 订阅"},
+      "cta.email": {en:"Get email alerts", zh:"邮件订阅"},
+      "stat.qualified": {en:"Fully qualified", zh:"完全符合"},
+      "stat.near": {en:"High-quality open", zh:"高质量开放"},
+      "stat.sources": {en:"Trusted sources", zh:"可信来源"},
+      "stat.updated": {en:"Last updated", zh:"最近更新"},
+      "foot.explore": {en:"Explore", zh:"浏览"},
+      "foot.project": {en:"Project", zh:"项目"},
+      "foot.contribute": {en:"Contribute", zh:"参与"}
+    };
+    function txt(el, lang){ var d=I18N[el.getAttribute('data-i18n')]; if(d&&d[lang]!=null) el.textContent=d[lang]; }
+    function applyLang(lang){
+      document.documentElement.setAttribute('lang', lang);
+      var els=document.querySelectorAll('[data-i18n]'); for(var i=0;i<els.length;i++) txt(els[i], lang);
+      var b=document.getElementById('lang-toggle'); if(b) b.textContent = (lang==='zh')?'EN':'中';
+      try{localStorage.setItem('summa-lang', lang);}catch(e){}
+    }
+    function applyTheme(t){
+      document.documentElement.setAttribute('data-theme', t);
+      var b=document.getElementById('theme-toggle'); if(b) b.textContent = (t==='dark')?'\\u2600':'\\u263E';
+      try{localStorage.setItem('summa-theme', t);}catch(e){}
+    }
+    applyLang(document.documentElement.getAttribute('lang')||'en');
+    applyTheme(document.documentElement.getAttribute('data-theme')||'light');
+    var lb=document.getElementById('lang-toggle'); if(lb) lb.addEventListener('click', function(){ applyLang(document.documentElement.getAttribute('lang')==='zh'?'en':'zh'); });
+    var tb=document.getElementById('theme-toggle'); if(tb) tb.addEventListener('click', function(){ applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'); });
+  })();
+  </script>"""
 
 
 def write_site(
@@ -188,7 +253,7 @@ def write_site(
             {
                 "_license": _DATA_LICENSE,
                 "_license_url": _DATA_LICENSE_URL,
-                "_attribution": "Summer School Radar",
+                "_attribution": "Summa",
                 "_canonical": _SITE_URL,
                 "_canary": _CANARY,
                 "generated": date.today().isoformat(),
@@ -242,14 +307,14 @@ def _robots_txt() -> str:
 
 def _data_license_text() -> str:
     return (
-        "Summer School Radar — data license\n"
+        "Summa — data license\n"
         "==================================\n\n"
         f"Canonical source: {_SITE_URL}\n\n"
         "The compiled listings on this site (the opportunity tables, candidates.json,\n"
         "and the RSS feed) are licensed under Creative Commons Attribution 4.0\n"
         f"(CC BY 4.0): {_DATA_LICENSE_URL}\n\n"
         "You may reuse them, including commercially, provided you give credit to\n"
-        f"Summer School Radar and link back to {_SITE_URL}.\n\n"
+        f"Summa and link back to {_SITE_URL}.\n\n"
         "The project's source code is licensed separately under the GNU AGPL-3.0.\n\n"
         f"Marker: {_CANARY}\n"
     )
@@ -283,17 +348,17 @@ def _seo_head(canonical: str, description: str, site_config: dict[str, Any]) -> 
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0e7490">
   <meta name="description" content="{desc}">
-  <meta property="og:title" content="Summer School Radar">
+  <meta property="og:title" content="Summa">
   <meta property="og:description" content="{desc}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{escape(canonical, quote=True)}">
-  <meta property="og:site_name" content="Summer School Radar">
+  <meta property="og:site_name" content="Summa">
   <meta property="og:image" content="{_OG_IMAGE}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Summer School Radar">
+  <meta property="og:image:alt" content="Summa">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Summer School Radar">
+  <meta name="twitter:title" content="Summa">
   <meta name="twitter:description" content="{desc}">
   <meta name="twitter:image" content="{_OG_IMAGE}">{verify_tag}"""
 
@@ -423,7 +488,7 @@ def _jsonld_block(candidates: list[Candidate]) -> str:
         {
             "@context": "https://schema.org",
             "@type": "WebSite",
-            "name": "Summer School Radar",
+            "name": "Summa",
             "url": _SITE_URL,
             "inLanguage": "en",
             "description": _SITE_DESCRIPTION,
@@ -487,7 +552,7 @@ def render_feed(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
         "  <channel>\n"
-        "    <title>Summer School Radar</title>\n"
+        "    <title>Summa · Funded research summer schools</title>\n"
         f"    <link>{escape(site_url)}</link>\n"
         f'    <atom:link href="{escape(feed_url)}" rel="self" type="application/rss+xml"/>\n'
         "    <description>Funded research summer schools, winter schools, and training "
@@ -495,7 +560,7 @@ def render_feed(
         "computing &amp; data science, social sciences, and humanities.</description>\n"
         "    <language>en</language>\n"
         f"    <copyright>Data CC BY 4.0 — reuse with attribution and a link back to {escape(site_url)}</copyright>\n"
-        "    <generator>Summer School Radar</generator>\n"
+        "    <generator>Summa</generator>\n"
         f"    <!-- {_CANARY} -->\n"
         f"    <lastBuildDate>{built}</lastBuildDate>\n"
         f"{item_xml}"
@@ -590,9 +655,9 @@ def render_site(
     filters = _filters(candidates)
     analytics = _analytics_snippet(site_config or {})
     subscribe_cta = (
-        '<a class="btn outline" href="#subscribe">Get email alerts</a>'
+        '<a class="btn outline" href="#subscribe" data-i18n="cta.email">Get email alerts</a>'
         if _subscribe_form_html(site_config or {})
-        else '<a class="btn outline" href="feed.xml">Subscribe via RSS</a>'
+        else '<a class="btn outline" href="feed.xml" data-i18n="cta.rss">Subscribe via RSS</a>'
     )
     status_banner = _status_banner(len(full), len(near), tracked_total, tracked_sources)
     if near:
@@ -607,9 +672,10 @@ def render_site(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Summer School Radar</title>
+  <title>Summa · Funded research summer schools</title>
 {_seo_head(_SITE_URL, _SITE_DESCRIPTION, site_config or {})}
-  <link rel="alternate" type="application/rss+xml" title="Summer School Radar" href="feed.xml">
+  {_BOOT_SCRIPT}
+  <link rel="alternate" type="application/rss+xml" title="Summa" href="feed.xml">
   {_jsonld_block(full + near)}
   <style>
 {_THEME_CSS}
@@ -876,11 +942,11 @@ def render_site(
   {_site_nav()}
   <header class="hero" id="top">
     <div class="wrap">
-      <p class="kicker">&#128225; Updated daily &middot; Free &amp; open source</p>
-      <h1>Summer School Radar</h1>
-      <p class="subtitle">A free daily scan of trusted academic sources for research summer schools, winter schools, training schools, field schools, and short courses across many academic fields &mdash; environmental &amp; earth science, computing &amp; data science, the social sciences, and the humanities. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.</p>
+      <p class="kicker" data-i18n="hero.kicker">&#128225; Updated daily &middot; Free &amp; open source</p>
+      <h1>Summa</h1>
+      <p class="subtitle" data-i18n="hero.subtitle">A free daily scan of trusted academic sources for funded research summer schools across many academic fields. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.</p>
       <div class="cta">
-        <a class="btn primary" href="#opportunities">Browse opportunities</a>
+        <a class="btn primary" href="#opportunities" data-i18n="cta.browse">Browse opportunities</a>
         {subscribe_cta}
       </div>
       <div class="meta">
@@ -896,10 +962,10 @@ def render_site(
   </header>
   <main class="wrap">
     <div class="stats">
-      <div class="stat"><div class="num">{len(full)}</div><div class="lbl">Fully qualified</div></div>
-      <div class="stat"><div class="num">{len(near)}</div><div class="lbl">High-quality open</div></div>
-      <div class="stat"><div class="num">{tracked_sources}</div><div class="lbl">Trusted sources</div></div>
-      <div class="stat"><div class="num sm">{updated}</div><div class="lbl">Last updated</div></div>
+      <div class="stat"><div class="num">{len(full)}</div><div class="lbl" data-i18n="stat.qualified">Fully qualified</div></div>
+      <div class="stat"><div class="num">{len(near)}</div><div class="lbl" data-i18n="stat.near">High-quality open</div></div>
+      <div class="stat"><div class="num">{tracked_sources}</div><div class="lbl" data-i18n="stat.sources">Trusted sources</div></div>
+      <div class="stat"><div class="num sm">{updated}</div><div class="lbl" data-i18n="stat.updated">Last updated</div></div>
     </div>
     {status_banner}
     <section id="opportunities" class="anchor">
@@ -915,6 +981,7 @@ def render_site(
   </main>
   {_footer_section(updated)}
   {_filter_script()}
+  {_UI_SCRIPT}
   {analytics}
 </body>
 </html>
@@ -941,14 +1008,16 @@ def _site_nav(home: str = "") -> str:
     return f"""
   <nav class="topbar">
     <div class="wrap bar">
-      <a class="brand" href="{brand}">{_RADAR_ICON} Summer School Radar</a>
+      <a class="brand" href="{brand}">{_RADAR_ICON} Summa</a>
       <div class="links">
-        <a href="{home}#opportunities">Opportunities</a>
-        <a class="hide-sm" href="{home}#how">How it works</a>
-        <a class="hide-sm" href="{home}#about">About</a>
-        <a href="sources.html">Sources</a>
-        <a href="feed.xml">RSS</a>
+        <a href="{home}#opportunities" data-i18n="nav.opportunities">Opportunities</a>
+        <a class="hide-sm" href="{home}#how" data-i18n="nav.how">How it works</a>
+        <a class="hide-sm" href="{home}#about" data-i18n="nav.about">About</a>
+        <a href="sources.html" data-i18n="nav.sources">Sources</a>
+        <a href="feed.xml" data-i18n="nav.rss">RSS</a>
         <a href="{_GITHUB_URL}">GitHub</a>
+        <button id="lang-toggle" class="toggle" type="button" aria-label="Language">中</button>
+        <button id="theme-toggle" class="toggle" type="button" aria-label="Theme">&#9790;</button>
       </div>
     </div>
   </nav>"""
@@ -984,7 +1053,7 @@ def _about_section() -> str:
       </div>
       <div class="panel">
         <h3>What it is</h3>
-        <p>Summer School Radar is an open-source, fixed-source scanner with rule-based extraction and transparent per-field evidence &mdash; not a fully automatic, all-web radar. It focuses on a clear domain so the signal stays high.</p>
+        <p>Summa is an open-source, fixed-source scanner with rule-based extraction and transparent per-field evidence &mdash; not a fully automatic, all-web radar. It focuses on a clear domain so the signal stays high.</p>
         <h3>Domains covered</h3>
         <p>Many academic fields, grouped roughly as: <strong>environmental &amp; earth science</strong> (water and hydrology, climate, geoscience, remote sensing and earth observation); <strong>computing &amp; data science</strong> (machine learning, computer vision, software engineering, cybersecurity, data science, computational neuroscience, and computational linguistics); and the <strong>social sciences &amp; humanities</strong> (social-science methods, economics, political science, sociology, history, philosophy, and digital humanities). The strict quality filters are identical across every field.</p>
         <h3>What qualifies</h3>
@@ -1030,11 +1099,11 @@ def _footer_section(updated: str) -> str:
     <div class="wrap">
       <div class="cols">
         <div class="col brandcol">
-          <a class="brand" href="#top">{_RADAR_ICON} Summer School Radar</a>
+          <a class="brand" href="#top">{_RADAR_ICON} Summa</a>
           <p>A free, open-source scanner for funded research summer schools, winter schools, and training schools across many academic fields &mdash; science, computing &amp; data, the social sciences, and the humanities. Updated daily.</p>
         </div>
         <div class="col">
-          <h4>Explore</h4>
+          <h4 data-i18n="foot.explore">Explore</h4>
           <a href="#opportunities">Opportunities</a>
           <a href="#subscribe">Email alerts</a>
           <a href="sources.html">Sources &amp; coverage</a>
@@ -1042,14 +1111,14 @@ def _footer_section(updated: str) -> str:
           <a href="feed.xml">RSS feed</a>
         </div>
         <div class="col">
-          <h4>Project</h4>
+          <h4 data-i18n="foot.project">Project</h4>
           <a href="#how">How it works</a>
           <a href="#about">About &amp; methodology</a>
           <a href="#faq">FAQ</a>
           <a href="{_GITHUB_URL}">GitHub</a>
         </div>
         <div class="col">
-          <h4>Contribute</h4>
+          <h4 data-i18n="foot.contribute">Contribute</h4>
           <a href="{_GITHUB_URL}/issues/new">Suggest a source</a>
           <a href="{_GITHUB_URL}/issues">Report an issue</a>
           <a href="{_GITHUB_URL}/stargazers">Star on GitHub</a>
@@ -1065,9 +1134,9 @@ def _watermark() -> str:
     page HTML, so wholesale copies are identifiable; searching the web for the
     canary string surfaces them."""
     return (
-        f"\n  <!-- Summer School Radar | canonical: {_SITE_URL} | "
+        f"\n  <!-- Summa | canonical: {_SITE_URL} | "
         f"data CC BY 4.0, attribution and link back required | {_CANARY} -->\n"
-        f'  <span class="src-credit" aria-hidden="true">Data from Summer School Radar '
+        f'  <span class="src-credit" aria-hidden="true">Data from Summa '
         f"&mdash; {_SITE_URL} &mdash; reuse under CC BY 4.0 with attribution. {_CANARY}</span>"
     )
 
@@ -1084,8 +1153,9 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sources & Coverage - Summer School Radar</title>
-{_seo_head(_SITE_URL + "sources.html", "The trusted source registry behind Summer School Radar, including coverage notes and sources that must be checked manually.", {})}
+  <title>Sources &amp; Coverage · Summa</title>
+{_seo_head(_SITE_URL + "sources.html", "The trusted source registry behind Summa, including coverage notes and sources that must be checked manually.", {})}
+  {_BOOT_SCRIPT}
   <style>
 {_THEME_CSS}
 {_NAV_CSS}
@@ -1132,6 +1202,7 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
     {manual_section}
   </main>
   {_watermark()}
+  {_UI_SCRIPT}
 </body>
 </html>
 """
@@ -1414,7 +1485,7 @@ def _calendar_data_url(deadline: date, title: str, url: str) -> str:
         [
             "BEGIN:VCALENDAR",
             "VERSION:2.0",
-            "PRODID:-//Summer School Radar//EN",
+            "PRODID:-//Summa//EN",
             "CALSCALE:GREGORIAN",
             "METHOD:PUBLISH",
             "BEGIN:VEVENT",

@@ -973,7 +973,8 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert (tmp_path / "sources.json").exists()
     assert (tmp_path / "sources.html").exists()
     html = index.read_text(encoding="utf-8")
-    assert "Summer School Radar" in html
+    assert "Summa" in html
+    assert 'id="lang-toggle"' in html and 'id="theme-toggle"' in html  # CN/EN + dark/light toggles
     assert "Example Hydrology Winter School" in html
     assert "filter-topic" in html
     assert 'data-status="qualified"' in html
