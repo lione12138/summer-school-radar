@@ -112,7 +112,7 @@
     "title": "Upcoming Events"
   },
   "https://ellis.eu/events/cambridge-ellis-unit-summer-school-on-probabilistic-machine-learning-2026": {
-    "deadline": null,
+    "deadline": "2026-05-17",
     "first_seen": "2026-06-14",
     "last_seen": "2026-06-18",
     "status": "near_match",
@@ -140,7 +140,7 @@
     "title": "ELLIS Sites ICML Fest 2026: Celebrate, Connect, Collaborate"
   },
   "https://ellis.eu/events/ellis-summer-school-at-institute-finland-2026": {
-    "deadline": null,
+    "deadline": "2026-05-20",
     "first_seen": "2026-06-14",
     "last_seen": "2026-06-18",
     "status": "near_match",
@@ -378,7 +378,7 @@
     "title": "IV Joint ICTP-SAIFR/ICTP-Trieste Summer School on Particle Physics"
   },
   "https://indico.ictp.it/event/11148": {
-    "deadline": "2026-05-01",
+    "deadline": "2026-05-20",
     "first_seen": "2026-06-14",
     "last_seen": "2026-06-18",
     "status": "near_match",
