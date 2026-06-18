@@ -83,7 +83,6 @@
       "fee_eur": 0.0,
       "topics": [
         "sustainability",
-        "AI",
         "data science",
         "data analysis",
         "mathematics",
@@ -177,46 +176,6 @@
         "deadline": "",
         "duration": "",
         "funding": "scholarships, housing, etc) of the summer school. All participants will receive a certificate of attendance upon completion of the",
-        "mode": ""
-      }
-    },
-    {
-      "title": "Karthaus summerschool",
-      "url": "https://www.projects.science.uu.nl/iceclimate/karthaus/",
-      "organizer": "EGU Training Schools",
-      "source_layer": "1",
-      "location": "Europe",
-      "dates": {
-        "start": "2027-05-18",
-        "end": "2027-05-27",
-        "duration_days": 10
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "climate",
-        "meteorology",
-        "glaciology",
-        "cryosphere",
-        "geoscience",
-        "physics",
-        "chemistry",
-        "mechanics",
-        "history"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
-        "in-person status is uncertain"
-      ],
-      "confidence": 0.25,
-      "evidence": {
-        "deadline": "",
-        "duration": "18 May to 27 May 2027",
-        "funding": "",
         "mode": ""
       }
     },

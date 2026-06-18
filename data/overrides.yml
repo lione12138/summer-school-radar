@@ -15,4 +15,11 @@
 #       fee: 300 EUR
 #       fee_eur: 300
 #       deadline_evidence: Application deadline is 15 October 2026.
-overrides: []
+overrides:
+  - title_contains: Karthaus summerschool
+    status: update
+    note: Official application page says applications for the 2027 course are not yet open.
+    fields:
+      deadline: null
+      deadline_status: not_open
+      deadline_evidence: Application for 2027 course is not yet open.
