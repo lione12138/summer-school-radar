@@ -1314,6 +1314,44 @@ def test_leiden_science_communication_deadline_and_fee_are_extracted() -> None:
     assert candidate.fee_eur == 575
 
 
+def test_leiden_languages_registration_closed_and_fee_table_are_extracted() -> None:
+    source = Source(
+        name="Leiden Linguistics Summer School",
+        url="https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-in-languages-and-linguistics",
+        layer="2",
+        region="continental Europe",
+        source_type="summer_school",
+    )
+    text = (
+        "Summer School in Languages and Linguistics. The Summer School takes place "
+        "from Monday 6 July to Friday 17 July 2026; registration is open until 11 May! "
+        "Most courses will be hybrid; a few courses are on campus only. "
+        "Course fees Courses Leiden students Non-Leiden students Non-students "
+        "1 € 210,00 € 275,00 € 350,00 "
+        "2 € 360,00 € 450,00 € 583,00 "
+        "3 € 475,00 € 610,00 € 780,00 "
+        "4 € 590,00 € 755,00 € 973,00 "
+        "Application Registration is closed. "
+        "Facts & Figures Start date 6-7-2026 Duration 2 weeks Apply before 11-05-2026 "
+        "Location Leiden Area of interest Languages & Linguistics. "
+        "Topics include linguistics and language documentation."
+    )
+    page = Page(
+        url=source.url,
+        title="Summer School in Languages and Linguistics - Leiden University",
+        text=text,
+        html="<html><body><h1>Summer School in Languages and Linguistics</h1></body></html>",
+        source=source,
+        fetched_at=date.today(),
+    )
+    candidate = extract_candidate(page, PROFILE)
+    assert candidate is not None
+    assert candidate.deadline == date(2026, 5, 11)
+    assert candidate.deadline_status == "closed"
+    assert candidate.fee == "€ 210,00"
+    assert candidate.fee_eur == 210
+
+
 def test_accommodation_window_not_used_as_event_dates() -> None:
     from research_school_radar.extract import _date_ranges
 

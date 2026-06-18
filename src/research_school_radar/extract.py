@@ -84,6 +84,7 @@ _STRONG_CLOSED_PATTERNS = [
     r"no\s+longer\s+accepting\s+applications",
     r"selection\s+(?:notifications?|results?)[^.]{0,30}(?:released|sent|announced|out)",
     r"application(?:s)?\s+(?:period|window)[^.]{0,20}(?:closed|ended|over)",
+    r"(?<!early\s)registration\s+is\s+closed",
 ]
 _WEAK_CLOSED_PATTERNS = [
     # Require an application/registration context: a bare "deadline has passed"
@@ -319,6 +320,9 @@ def _extract_fee(text: str) -> str:
     )
     if contribution:
         return contribution
+    course_table_fee = _course_fee_table_fee(text)
+    if course_table_fee:
+        return course_table_fee
     participant_fee = _participant_fee(text)
     if participant_fee:
         return participant_fee
@@ -338,6 +342,32 @@ def _extract_fee(text: str) -> str:
     return paid
 
 
+def _course_fee_table_fee(text: str) -> str:
+    block_match = re.search(
+        r"\bcourse fees?\b(.{0,900}?)(?:\bapplication\b|\bcontact information\b|\bfacts\s*&\s*figures\b|$)",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if not block_match:
+        return ""
+    block = block_match.group(1)
+    tokens = re.findall(
+        r"(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£)\s?\d[\d ,.]*\d?",
+        block,
+        flags=re.IGNORECASE,
+    )
+    fees: list[tuple[float, str]] = []
+    identity_rates = {"financial_access": {"approximate_currency_to_eur": {currency: 1 for currency in SUPPORTED_FEE_CURRENCIES}}}
+    for token in tokens:
+        fee = clean_space(token)
+        amount = _fee_to_eur(fee, identity_rates)
+        if amount is not None and amount >= 20:
+            fees.append((amount, fee))
+    if not fees:
+        return ""
+    return min(fees, key=lambda item: item[0])[1]
+
+
 def _participant_fee(text: str) -> str:
     """Lowest clearly participant-facing academic/student fee, ignoring housing."""
     patterns = [
@@ -352,7 +382,10 @@ def _participant_fee(text: str) -> str:
                 continue
             fee = clean_space(match.group(1))
             amount = _fee_to_eur(fee, {"financial_access": {"approximate_currency_to_eur": {currency: 1 for currency in SUPPORTED_FEE_CURRENCIES}}})
-            if amount is not None:
+            # Fee tables often have a first column like "1 course"; a regex can
+            # accidentally capture "1 €" from "1 € 210,00". That is a row label,
+            # not a participant fee.
+            if amount is not None and amount >= 20:
                 fees.append((amount, fee))
     if not fees:
         return ""
@@ -693,14 +726,14 @@ def _jsonld_events(html: str) -> list[dict]:
 
 
 # A single date in any common form: "8 March 2026", "1st March 2026",
-# "March 8, 2026", "15 Jan 2026", "2026-03-08", "8/3/2026", "08.03.2026".
+# "March 8, 2026", "15 Jan 2026", "2026-03-08", "8/3/2026", "08.03.2026", "11-05-2026".
 _MONTH_NAME = r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?"
 _DAY_NUM = r"\d{1,2}(?:st|nd|rd|th)?"
 _SINGLE_DATE = (
     rf"(?:{_DAY_NUM}\s+{_MONTH_NAME}\s+20\d{{2}}"
     rf"|{_MONTH_NAME}\s+{_DAY_NUM},?\s+20\d{{2}}"
     rf"|20\d{{2}}-\d{{2}}-\d{{2}}"
-    rf"|\d{{1,2}}[./]\d{{1,2}}[./]20\d{{2}})"
+    rf"|\d{{1,2}}[./-]\d{{1,2}}[./-]20\d{{2}})"
 )
 _NO_YEAR_DATE = rf"(?:{_MONTH_NAME}\s+{_DAY_NUM}|{_DAY_NUM}\s+{_MONTH_NAME})"
 
