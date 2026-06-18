@@ -17,7 +17,7 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-18 · 0 fully qualified · 2 high-quality · 5 found shown_
+_Last scan: 2026-06-18 · 0 fully qualified · 2 high-quality · 3 found shown_
 
 **No fully qualified opportunities in the latest scan.** High-quality and found opportunities below are leads for manual checking.
 
@@ -34,8 +34,6 @@ _Last scan: 2026-06-18 · 0 fully qualified · 2 high-quality · 5 found shown_
 |---|---|---|---|---|---|---|---|
 | [River Basin Modelling](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | groundwater, water resources, water quality, GIS |
 | [Social Science Data Analysis](https://www.essex.ac.uk/short-courses/social-science-data-analysis) | summer school | Essex Summer School | UK | uncertain | uncertain | scholarship, bursary · amount not stated · Apply on official page | sustainability, data science, data analysis, mathematics |
-| [Summer School in Languages and Linguistics](https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-in-languages-and-linguistics) | summer school | Leiden Linguistics Summer School | Leiden Area of interest | uncertain | uncertain | Fee about EUR 1 · Apply on official page | linguistics, language documentation, statistics, law |
-| [Summer School: Frontiers of Modern Physics](https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/frontiers-of-modern-physics) | summer school | Leiden Linguistics Summer School | Leiden | uncertain | uncertain | scholarship · amount not stated · Apply on official page | physics, cosmology, statistics, law |
 | [ELLIS Summer School at Unit Munich](https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026) | summer school | ELLIS | TUM Garching Campus | 14 Sep – 18 Sep 2026 · 5 days | uncertain | Funding or fee not stated | machine learning, computer vision |
 
 <!-- radar:results:end -->
