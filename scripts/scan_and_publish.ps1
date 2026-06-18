@@ -75,7 +75,7 @@ try {
     Run { python -m research_school_radar.cli scan }
 
     Log "Committing data (reports, seen state, README)"
-    Run { git add reports data/seen.json README.md }
+    Run { git add reports data/seen.json data/review_queue.json data/overrides.yml README.md }
     Run -AllowFail { git -c core.safecrlf=false commit -m "Daily local scan $(Get-Date -Format yyyy-MM-dd)" }
 
     Log "Pushing data to main"

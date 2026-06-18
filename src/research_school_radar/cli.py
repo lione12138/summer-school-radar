@@ -12,6 +12,7 @@ from .models import Source
 from .parse import candidate_links, looks_like_opportunity
 from .rank import rank_candidates
 from .report import update_readme, write_report
+from .review import apply_overrides, load_overrides, write_review_queue
 from .search import run_discovery_queries
 from .site import write_site
 from .storage import update_seen
@@ -61,6 +62,7 @@ def run_scan(
     profile = load_yaml(config_dir / "profile.yaml")
     site_config = _load_optional_yaml(config_dir / "site.yaml")
     curated = _load_curated_opportunities(data_dir / "opportunities.yml")
+    overrides = load_overrides(data_dir / "overrides.yml")
     errors: list[str] = []
 
     if offline_sample:
@@ -115,9 +117,11 @@ def run_scan(
                 candidate for page in discovery_pages if (candidate := extract_candidate(page, profile))
             )
 
+    candidates = apply_overrides(candidates, overrides)
     filtered = [apply_hard_filters(candidate, profile) for candidate in candidates]
     ranked = rank_candidates(filtered)
     update_seen(data_dir / "seen.json", ranked)
+    write_review_queue(data_dir / "review_queue.json", ranked)
     report_path = write_report(ranked, reports_dir, errors)
     if not offline_sample and update_readme(ROOT / "README.md", ranked):
         print("Updated README latest-scan section")

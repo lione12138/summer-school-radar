@@ -13,6 +13,7 @@ from email.utils import format_datetime
 from datetime import datetime, timezone
 
 from .models import Candidate
+from .review import build_review_queue
 from .utils import ROOT, format_duration, is_too_short, sanitize_location, topics_label
 
 
@@ -333,6 +334,18 @@ def write_site(
     )
     (output_dir / "DATA-LICENSE.txt").write_text(_data_license_text(), encoding="utf-8")
     (output_dir / "curated.json").write_text(json.dumps(curated, indent=2, default=str), encoding="utf-8")
+    (output_dir / "review_queue.json").write_text(
+        json.dumps(
+            {
+                "generated": date.today().isoformat(),
+                "review_queue": build_review_queue(candidates),
+            },
+            indent=2,
+            ensure_ascii=False,
+            default=str,
+        ),
+        encoding="utf-8",
+    )
     (output_dir / "sources.json").write_text(json.dumps(sources, indent=2, default=str), encoding="utf-8")
     (output_dir / "sources.html").write_text(render_sources_page(sources), encoding="utf-8")
     (output_dir / "feed.xml").write_text(render_feed(candidates, curated, site_config or {}), encoding="utf-8")
@@ -755,6 +768,7 @@ def render_site(
     curated: list[dict[str, Any]] | None = None,
     tracked_sources: int = 0,
 ) -> str:
+    curated = curated or []
     full = [item for item in candidates if item.fully_qualified and not _is_online_only(item)][:10]
     near = [
         item
@@ -776,8 +790,11 @@ def render_site(
         and not is_too_short(item.duration_days)
     )
     updated = date.today().isoformat()
+    curated_rows = "".join(_curated_row(item) for item in curated)
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
     near_rows = "".join(_near_row(candidate) for candidate in near)
+    review_items = build_review_queue(candidates, limit=20)
+    review_rows = "".join(_review_row(item) for item in review_items)
     public_notes = _public_collection_notes(errors)
     notes = "".join(f"<li>{escape(error)}</li>" for error in public_notes[:12])
     filters = _filters(candidates)
@@ -1087,8 +1104,10 @@ def render_site(
     {status_banner}
     <section id="opportunities" class="anchor">
       {filters}
+      {_curated_section(curated_rows) if curated else ""}
       {_qualified_section(full_rows) if full else ""}
       {near_block}
+      {_review_section(review_rows) if review_rows else ""}
     </section>
     {_notes_section(notes) if notes else ""}
     {_subscribe_section(site_config or {})}
@@ -1431,6 +1450,21 @@ def _near_section(rows: str) -> str:
 """
 
 
+def _review_section(rows: str) -> str:
+    return f"""
+    <section>
+      <h2>Needs Manual Review</h2>
+      <p class="muted">These scanner candidates are in scope but missing one or more fields. They are not counted as qualified until a maintainer confirms the missing data or adds an override.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Needs review</th></tr></thead>
+          <tbody>{rows}</tbody>
+        </table>
+      </div>
+    </section>
+"""
+
+
 def _notes_section(notes: str) -> str:
     return f"""
     <section class="notes">
@@ -1485,6 +1519,47 @@ def _near_row(candidate: Candidate) -> str:
         f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
         f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(candidate.financial_summary)}</td>"
         f"<td>{escape(topics_label(candidate.topic_keywords) or 'uncertain')}</td>"
+        "</tr>"
+    )
+
+
+def _review_row(item: dict[str, Any]) -> str:
+    dates = item.get("dates", {})
+    if not isinstance(dates, dict):
+        dates = {}
+    start = _parse_iso_date(dates.get("start"))
+    end = _parse_iso_date(dates.get("end"))
+    days = dates.get("duration_days")
+    duration = format_duration(start, end, int(days) if isinstance(days, (int, float)) else None)
+    deadline = _parse_iso_date(item.get("deadline"))
+    title = str(item.get("title", "Untitled opportunity"))
+    url = str(item.get("url", ""))
+    topics = _list_value(item.get("topics"))
+    needs = "; ".join(_list_value(item.get("needs_review")))
+    fee = str(item.get("fee") or "").strip()
+    fee_eur = item.get("fee_eur")
+    if fee_eur is not None:
+        financial = f"Fee about EUR {float(fee_eur):.0f}"
+    elif fee:
+        financial = fee
+    else:
+        financial = "Funding or fee not stated"
+    link = f'<a href="{escape(url, quote=True)}">{escape(title)}</a>' if url else escape(title)
+    return (
+        "<tr data-status=\"review\" "
+        f'data-funding="{escape(str(item.get("financial_access_status", "unresolved")), quote=True)}" '
+        f'data-deadline="{escape(str(item.get("deadline_status", "uncertain")), quote=True)}" '
+        f'data-topics="{escape("|".join(topic.lower() for topic in topics), quote=True)}" '
+        'data-new="false" '
+        f'data-search="{escape(" ".join([title, str(item.get("organizer", "")), str(item.get("location", "")), " ".join(topics)]).lower(), quote=True)}">'
+        f"<td>{link}</td>"
+        f"<td>{escape(str(item.get('organizer', 'uncertain')))}</td>"
+        f"<td>{escape(_public_location(str(item.get('location', ''))))}</td>"
+        f"<td>{escape(duration)}</td>"
+        f"<td>{_deadline_cell(deadline, title, url)}</td>"
+        f"<td>{escape(financial)}</td>"
+        f"<td>{escape(topics_label(topics) or 'uncertain')}</td>"
+        f"<td>{escape(needs or 'missing evidence')}</td>"
         "</tr>"
     )
 

@@ -1,0 +1,18 @@
+# Maintainer overrides for scanner output.
+#
+# Use this file for stable corrections when the official page is clear but the
+# automatic extractor is too conservative. Keep high-confidence, user-facing
+# records in data/opportunities.yml instead.
+#
+# Schema:
+# overrides:
+#   - url: https://example.org/official-school
+#     status: update        # update | exclude
+#     note: Official page confirms the application deadline.
+#     fields:
+#       deadline: 2026-10-15
+#       deadline_status: open
+#       fee: 300 EUR
+#       fee_eur: 300
+#       deadline_evidence: Application deadline is 15 October 2026.
+overrides: []

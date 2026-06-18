@@ -1,0 +1,216 @@
+{
+  "generated": "2026-06-18",
+  "review_queue": [
+    {
+      "title": "ICOS Summer/Winter School January 2027, application is now open",
+      "url": "https://www.icos-cp.eu/about/opportunities/summer-school",
+      "organizer": "ICOS",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-01-18",
+        "end": "2027-01-28",
+        "duration_days": 11
+      },
+      "deadline": "2026-07-31",
+      "deadline_status": "open",
+      "financial_access_status": "funded",
+      "fee": "€ 100,",
+      "fee_eur": 100.0,
+      "topics": [
+        "climate",
+        "climate change",
+        "remote sensing",
+        "statistics"
+      ],
+      "needs_review": [
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "Submission deadline is 31 July 2026",
+        "duration": "18-28 January 2027",
+        "funding": "",
+        "mode": ""
+      }
+    },
+    {
+      "title": "ELLIS Summer School at Unit Saarbrücken",
+      "url": "https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026",
+      "organizer": "ELLIS",
+      "source_layer": "1",
+      "location": "Saarland University",
+      "dates": {
+        "start": "2026-08-24",
+        "end": "2026-08-28",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "low-fee",
+      "fee": "Student/PhD EUR 250",
+      "fee_eur": 250.0,
+      "topics": [
+        "AI"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is below 8 days"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "ELLIS events listing: 2026-08-24 to 2026-08-28",
+        "funding": "",
+        "mode": "ELLIS listing location: Saarland University"
+      }
+    },
+    {
+      "title": "Social Science Data Analysis",
+      "url": "https://www.essex.ac.uk/short-courses/social-science-data-analysis",
+      "organizer": "Essex Summer School",
+      "source_layer": "2",
+      "location": "UK",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "free of charge",
+      "fee_eur": 0.0,
+      "topics": [
+        "sustainability",
+        "data science",
+        "data analysis",
+        "mathematics",
+        "design",
+        "social science",
+        "social science methods",
+        "history"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "funding": "funding Fees and funding Fees and funding overview Scholarships and bursaries Support with the cost of living International stu",
+        "mode": "in-person and online courses. The Essex Summer School in So"
+      }
+    },
+    {
+      "title": "Summer School in Languages and Linguistics",
+      "url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-in-languages-and-linguistics",
+      "organizer": "Leiden Linguistics Summer School",
+      "source_layer": "2",
+      "location": "Leiden Area of interest",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "low-fee",
+      "fee": "1 €",
+      "fee_eur": 1.0,
+      "topics": [
+        "linguistics",
+        "language documentation",
+        "statistics",
+        "law",
+        "education research",
+        "archaeology",
+        "literature",
+        "education research"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "funding": "",
+        "mode": "hybrid; they will be simultaneously be taught on campus"
+      }
+    },
+    {
+      "title": "Summer School: Frontiers of Modern Physics",
+      "url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/frontiers-of-modern-physics",
+      "organizer": "Leiden Linguistics Summer School",
+      "source_layer": "2",
+      "location": "Leiden",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "390 EUR (scholarships available) Area of interest Science Contact For more information or any questi",
+      "fee_eur": 390.0,
+      "topics": [
+        "physics",
+        "cosmology",
+        "statistics",
+        "law",
+        "education research",
+        "archaeology",
+        "education research"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is uncertain",
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.25,
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "funding": "scholarships, housing, etc) of the summer school. All participants will receive a certificate of attendance upon completion of the",
+        "mode": ""
+      }
+    },
+    {
+      "title": "ELLIS Summer School at Unit Munich",
+      "url": "https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026",
+      "organizer": "ELLIS",
+      "source_layer": "1",
+      "location": "TUM Garching Campus",
+      "dates": {
+        "start": "2026-09-14",
+        "end": "2026-09-18",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "machine learning",
+        "computer vision"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is below 8 days",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "ELLIS events listing: 2026-09-14 to 2026-09-18",
+        "funding": "",
+        "mode": "ELLIS listing location: TUM Garching Campus"
+      }
+    }
+  ]
+}

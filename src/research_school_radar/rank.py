@@ -150,6 +150,11 @@ def _canonical_url(url: str) -> str:
     return urlunsplit((parts.scheme.lower() or "https", host.lower(), path, query, ""))
 
 
+def canonical_url(url: str) -> str:
+    """Public wrapper for matching records across scanner, overrides, and review data."""
+    return _canonical_url(url)
+
+
 def _same_opportunity(a: Candidate, b: Candidate) -> bool:
     similarity = _title_similarity(a.title, b.title)
     # Different start dates mean different editions or sibling events, even if a

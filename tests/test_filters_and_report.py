@@ -1427,6 +1427,66 @@ def test_site_generation_writes_attribution_and_bot_controls(tmp_path) -> None:
     assert "CC BY 4.0" in html
 
 
+def test_overrides_can_update_and_exclude_candidates() -> None:
+    from research_school_radar.review import apply_overrides
+
+    update = sample_candidate(PROFILE)
+    update.source_url = "https://example.org/update?utm_source=x"
+    update.deadline = None
+    update.deadline_status = "uncertain"
+    excluded = sample_candidate(PROFILE)
+    excluded.source_url = "https://example.org/excluded"
+
+    candidates = apply_overrides(
+        [update, excluded],
+        [
+            {
+                "url": "https://example.org/update",
+                "fields": {
+                    "deadline": "2027-03-01",
+                    "deadline_status": "open",
+                    "fee": "EUR 100",
+                    "fee_eur": 100,
+                },
+            },
+            {"url": "https://example.org/excluded", "status": "exclude"},
+        ],
+    )
+
+    assert candidates == [update]
+    assert update.deadline == date(2027, 3, 1)
+    assert update.deadline_status == "open"
+    assert update.fee_eur == 100
+
+
+def test_review_queue_captures_fixable_non_qualified_candidates(tmp_path) -> None:
+    import json
+
+    from research_school_radar.review import build_review_queue, write_review_queue
+
+    candidate = sample_candidate(PROFILE)
+    candidate.title = "Economics Summer School"
+    candidate.topic_keywords = ["economics", "statistics"]
+    candidate.deadline = None
+    candidate.deadline_status = "uncertain"
+    candidate.funding_available = None
+    candidate.funding_type = []
+    candidate.funding_evidence = ""
+    candidate.fee = ""
+    candidate.fee_eur = None
+    candidate = apply_hard_filters(candidate, PROFILE)
+
+    queue = build_review_queue([candidate])
+    assert queue
+    assert queue[0]["title"] == "Economics Summer School"
+    assert "application deadline is uncertain" in queue[0]["needs_review"]
+
+    path = tmp_path / "review_queue.json"
+    write_review_queue(path, [candidate])
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    assert payload["review_queue"][0]["topics"] == ["economics", "statistics"]
+
+
 def test_site_hero_omits_cta_json_and_rss_links(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
@@ -1450,6 +1510,42 @@ def test_site_hero_disclaimer_is_rendered(tmp_path) -> None:
     assert "Use this as a starting point, not the only source" in hero
     assert "请把这里当作基础信息入口" in html
     assert "祝大家都能录到心仪的项目" in html
+
+
+def test_site_renders_curated_and_review_queue(tmp_path) -> None:
+    reviewed = {
+        "title": "Reviewed Social Science School",
+        "organizer": "Example University",
+        "url": "https://example.org/reviewed",
+        "location": "Netherlands",
+        "region": "continental Europe",
+        "start_date": "2027-07-01",
+        "end_date": "2027-07-12",
+        "duration_days": 12,
+        "application_deadline": "2027-03-01",
+        "fee": "EUR 100",
+        "fee_eur": 100,
+        "topics": ["social science", "statistics"],
+        "notes": "Maintainer verified.",
+    }
+    candidate = sample_candidate(PROFILE)
+    candidate.title = "Unreviewed Law Summer School"
+    candidate.topic_keywords = ["law"]
+    candidate.deadline = None
+    candidate.deadline_status = "uncertain"
+    candidate = apply_hard_filters(candidate, PROFILE)
+    ranked = rank_candidates([candidate])
+
+    write_site(ranked, [], tmp_path, curated=[reviewed])
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    review_json = (tmp_path / "review_queue.json").read_text(encoding="utf-8")
+
+    assert "Curated Opportunities" in html
+    assert "Reviewed Social Science School" in html
+    assert "Needs Manual Review" in html
+    assert "Unreviewed Law Summer School" in html
+    assert "application deadline is uncertain" in html
+    assert "Unreviewed Law Summer School" in review_json
 
 
 def test_site_generation_writes_favicon(tmp_path) -> None:
