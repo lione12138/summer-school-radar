@@ -166,30 +166,98 @@ def test_ellis_enrichment_follows_registration_page(monkeypatch) -> None:
     )
     monkeypatch.setattr(
         api_sources,
-        "render_page_data",
+        "_page_data_for_urls",
         lambda urls: {
             candidate.application_link: {
                 "text": "MLSS-RS registration information is on the registration page.",
                 "links": [{"href": "https://mlss2026.mlinpl.org/registration", "text": "Registration"}],
-            }
-        },
-    )
-    monkeypatch.setattr(
-        api_sources,
-        "render_texts",
-        lambda urls: {
+            },
             "https://mlss2026.mlinpl.org/registration": (
-                "Timeline Early bird registration deadline - 8 March Regular registration deadline - 19 April "
-                "Late Bird registration open until 10 May or until the tickets are available "
-                "Costs Participation fee Registration fees vary by deadline and participant type: "
-                "Early Bird 350 EUR 700 EUR Regular 400 EUR 800 EUR Late Bird 450 EUR 900 EUR"
-            )
+                {
+                    "text": (
+                        "Timeline Early bird registration deadline - 8 March Regular registration deadline - 19 April "
+                        "Late Bird registration open until 10 May or until the tickets are available "
+                        "Costs Participation fee Registration fees vary by deadline and participant type: "
+                        "Early Bird 350 EUR 700 EUR Regular 400 EUR 800 EUR Late Bird 450 EUR 900 EUR"
+                    ),
+                    "links": [],
+                }
+            ),
         },
     )
     api_sources._enrich_ellis_deadlines([candidate])
     assert candidate.deadline == _date(2026, 5, 10)
     assert candidate.deadline_status == "closed"
     assert candidate.fee == "Academia EUR 350-450; non-academia up to EUR 900"
+    assert candidate.fee_eur == 450
+
+
+@responses.activate
+def test_ellis_enrichment_uses_http_fallback_for_external_registration(monkeypatch) -> None:
+    from datetime import date as _date
+
+    import research_school_radar.api_sources as api_sources
+    from research_school_radar.models import Candidate
+
+    monkeypatch.setattr(api_sources, "render_page_data", lambda urls: {})
+    event_url = "https://ellis.eu/events/machine-learning-summer-school-on-reliability-safety-mlss-rs"
+    homepage = "https://mlss2026.mlinpl.org/"
+    registration = "https://mlss2026.mlinpl.org/registration"
+    responses.add(
+        responses.GET,
+        event_url,
+        body=f'<html><body><a href="{homepage}">{homepage}</a></body></html>',
+        status=200,
+        content_type="text/html",
+    )
+    responses.add(
+        responses.GET,
+        homepage,
+        body='<html><body><a href="/registration">Registration</a></body></html>',
+        status=200,
+        content_type="text/html",
+    )
+    responses.add(
+        responses.GET,
+        registration,
+        body=(
+            "<html><body>Timeline Early bird registration deadline - 8 March "
+            "Regular registration deadline - 19 April Late Bird registration open until 10 May "
+            "Costs Participation fee Early Bird 350 EUR 700 EUR Regular 400 EUR 800 EUR "
+            "Late Bird 450 EUR 900 EUR</body></html>"
+        ),
+        status=200,
+        content_type="text/html",
+    )
+    candidate = Candidate(
+        title="Machine Learning Summer School on Reliability & Safety",
+        type="summer school",
+        organizer="ELLIS",
+        source_layer="1",
+        region_priority="priority",
+        location="Krakow",
+        mode="in-person",
+        start_date=_date(2026, 6, 29),
+        end_date=_date(2026, 7, 3),
+        duration_days=5,
+        deadline=None,
+        deadline_status="uncertain",
+        funding_available=None,
+        funding_type=[],
+        funding_evidence="",
+        topic_keywords=["machine learning"],
+        eligibility="",
+        target_level="uncertain",
+        fee="",
+        fee_eur=None,
+        application_link=event_url,
+        source_url=event_url,
+        summary="",
+        recommendation_reason="",
+        risk_points="",
+    )
+    api_sources._enrich_ellis_deadlines([candidate])
+    assert candidate.deadline == _date(2026, 5, 10)
     assert candidate.fee_eur == 450
 
 

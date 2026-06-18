@@ -17,7 +17,7 @@ from __future__ import annotations
 import re
 from datetime import date
 from typing import Any, Callable
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -270,13 +270,20 @@ def _enrich_ellis_deadlines(candidates: list[Candidate]) -> None:
     which the listing does not carry. No-op without Playwright."""
     today = date.today()
     upcoming = [c for c in candidates if c.start_date is not None and c.start_date >= today][:15]
-    rendered = render_page_data([c.application_link for c in upcoming])
+    rendered = _page_data_for_urls([c.application_link for c in upcoming])
     follow_up_urls = _ellis_follow_up_urls(rendered)
-    follow_up_texts = render_texts(follow_up_urls)
+    follow_up_data = _page_data_for_urls(follow_up_urls)
+    registration_data = _page_data_for_urls(_ellis_registration_urls(follow_up_data))
     for candidate in upcoming:
         page_data = rendered.get(candidate.application_link, {})
         texts = [str(page_data.get("text", ""))]
-        texts.extend(follow_up_texts[url] for url in _candidate_follow_up_urls(page_data) if url in follow_up_texts)
+        for url in _candidate_follow_up_urls(page_data):
+            first_hop = follow_up_data.get(url, {})
+            if first_hop:
+                texts.append(str(first_hop.get("text", "")))
+            for registration_url in _candidate_registration_urls(first_hop):
+                if registration_url in registration_data:
+                    texts.append(str(registration_data[registration_url].get("text", "")))
         text = " ".join(texts)
         deadline = _deadline_with_year(text, candidate.start_date)
         if deadline is not None:
@@ -298,11 +305,50 @@ def _enrich_ellis_deadlines(candidates: list[Candidate]) -> None:
         candidate.extraction_confidence = round(resolved / 4, 2)
 
 
+def _page_data_for_urls(urls: list[str]) -> dict[str, dict[str, Any]]:
+    rendered = render_page_data(urls)
+    missing = [url for url in urls if url not in rendered]
+    if not missing:
+        return rendered
+    fetched = _fetch_page_data(missing)
+    return {**rendered, **fetched}
+
+
+def _fetch_page_data(urls: list[str]) -> dict[str, dict[str, Any]]:
+    results: dict[str, dict[str, Any]] = {}
+    for url in urls:
+        try:
+            response = requests.get(url, headers=_BROWSER_HEADERS, timeout=20)
+            response.raise_for_status()
+        except requests.RequestException:
+            continue
+        soup = BeautifulSoup(response.text, "html.parser")
+        for element in soup(["script", "style", "noscript"]):
+            element.decompose()
+        links = [
+            {"href": urljoin(response.url, str(anchor.get("href", ""))), "text": clean_space(anchor.get_text(" "))}
+            for anchor in soup.find_all("a", href=True)
+        ]
+        results[url] = {"text": clean_space(soup.get_text(" ")), "links": links}
+    return results
+
+
 def _ellis_follow_up_urls(rendered: dict[str, dict[str, Any]]) -> list[str]:
     urls: list[str] = []
     seen: set[str] = set()
     for page_data in rendered.values():
         for url in _candidate_follow_up_urls(page_data):
+            if url not in seen:
+                seen.add(url)
+                urls.append(url)
+    return urls
+
+
+def _ellis_registration_urls(rendered: dict[str, dict[str, Any]]) -> list[str]:
+    urls: list[str] = []
+    seen: set[str] = set()
+    for page_data in rendered.values():
+        for url in _candidate_registration_urls(page_data):
             if url not in seen:
                 seen.add(url)
                 urls.append(url)
@@ -317,9 +363,35 @@ def _candidate_follow_up_urls(page_data: dict[str, Any]) -> list[str]:
         href = str(link.get("href", ""))
         label = str(link.get("text", "")).lower()
         lowered = href.lower()
-        if "registration" in label or "register" in label or "registration" in lowered:
+        if _is_registration_url(label, lowered) or _is_external_event_homepage(href):
             urls.append(href)
     return urls[:3]
+
+
+def _candidate_registration_urls(page_data: dict[str, Any]) -> list[str]:
+    urls: list[str] = []
+    for link in page_data.get("links", []):
+        if not isinstance(link, dict):
+            continue
+        href = str(link.get("href", ""))
+        label = str(link.get("text", "")).lower()
+        lowered = href.lower()
+        if _is_registration_url(label, lowered):
+            urls.append(href)
+    return urls[:3]
+
+
+def _is_registration_url(label: str, lowered_href: str) -> bool:
+    return "registration" in label or "register" in label or "registration" in lowered_href
+
+
+def _is_external_event_homepage(href: str) -> bool:
+    parsed = urlparse(href)
+    host = (parsed.hostname or "").lower()
+    if not host or host.endswith("ellis.eu"):
+        return False
+    blocked = ("facebook.com", "twitter.com", "x.com", "linkedin.com", "youtube.com", "instagram.com")
+    return not any(host == domain or host.endswith("." + domain) for domain in blocked)
 
 
 def _ellis_fee_from_text(text: str) -> tuple[str, float | None]:
