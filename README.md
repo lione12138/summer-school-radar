@@ -17,7 +17,7 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-18 · 0 fully qualified · 5 high-quality opportunities shown_
+_Last scan: 2026-06-18 · 0 fully qualified · 4 high-quality opportunities shown_
 
 **No fully qualified opportunities in the latest scan.** The high-quality opportunities below are open and in scope, but missing a fully confirmed condition.
 
@@ -27,9 +27,8 @@ _Last scan: 2026-06-18 · 0 fully qualified · 5 high-quality opportunities show
 |---|---|---|---|---|---|---|---|
 | [River Basin Modelling](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | groundwater, water resources, water quality, GIS |
 | [ICOS Summer/Winter School January 2027, application is now open](https://www.icos-cp.eu/about/opportunities/summer-school) | summer school | ICOS | Europe | 18 Jan – 28 Jan 2027 · 11 days | 2026-07-31 | financial support · amount not stated · Apply on official page | climate, climate change, remote sensing, statistics |
-| [Summer School in Languages and Linguistics](https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-in-languages-and-linguistics) | summer school | Leiden Linguistics Summer School | Leiden Area of interest | uncertain | uncertain | Fee about EUR 1 · Apply on official page | linguistics, language documentation, statistics, law |
-| [Summer School: Frontiers of Modern Physics](https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/frontiers-of-modern-physics) | summer school | Leiden Linguistics Summer School | Leiden | uncertain | uncertain | scholarship · amount not stated · Apply on official page | physics, cosmology, statistics, law |
-| [Tuition fees, scholarships and financial support](https://tinbergen.nl/tuition-fees-scholarships-and-financial-support) | summer school | Tinbergen Institute | Housing Student Council | uncertain | uncertain | scholarship, fee waiver, stipend, financial support · amount not stated · Apply on official page | climate, climate change, machine learning, deep learning |
+| [ELLIS Summer School at Unit Saarbrücken](https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026) | summer school | ELLIS | Saarland University | 24 Aug – 28 Aug 2026 · 5 days | uncertain | Fee about EUR 250 · Apply on official page | AI |
+| [ELLIS Summer School at Unit Munich](https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026) | summer school | ELLIS | TUM Garching Campus | 14 Sep – 18 Sep 2026 · 5 days | uncertain | Funding or fee not stated | machine learning, computer vision |
 
 <!-- radar:results:end -->
 
