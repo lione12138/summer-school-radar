@@ -93,6 +93,11 @@ _WEAK_CLOSED_PATTERNS = [
     r"applications?\s+(?:are\s+|have\s+|has\s+)?closed",
     r"registration[^.]{0,25}(?:is\s+)?closed",
 ]
+_NOT_OPEN_PATTERNS = [
+    r"applications?[^.\n]{0,40}(?:not yet|not currently)\s+open",
+    r"registration[^.\n]{0,40}(?:not yet|not currently)\s+open",
+    r"(?:applications?|registration)[^.\n]{0,40}(?:will|is expected to)\s+open",
+]
 _APPLICATIONS_OPEN_PATTERNS = [
     r"applications?[^.]{0,15}(?:are|is)[^.]{0,10}open",
     r"apply\s+(?:now|here|online|today|by)",
@@ -110,6 +115,12 @@ def _applications_closed(text: str) -> bool:
     if any(re.search(p, text, flags=re.IGNORECASE) for p in _WEAK_CLOSED_PATTERNS):
         return not any(re.search(p, text, flags=re.IGNORECASE) for p in _APPLICATIONS_OPEN_PATTERNS)
     return False
+
+
+def _applications_not_open(text: str) -> bool:
+    return any(re.search(pattern, text, flags=re.IGNORECASE) for pattern in _NOT_OPEN_PATTERNS)
+
+
 IN_PERSON_PATTERNS = [r"in[- ]person", r"on[- ]site", r"residential", r"field school", r"venue", r"hosted in"]
 SUPPORTED_FEE_CURRENCIES = {
     "EUR",
@@ -154,7 +165,7 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     start = overrides.get("start_date") or (ranges[0][0] if ranges else None)
     end = overrides.get("end_date") or (ranges[0][1] if ranges else None)
     duration_evidence = ranges[0][2] if ranges else str(overrides.get("duration_evidence", ""))
-    deadlines = _all_deadlines(text)
+    deadlines = _all_deadlines(text, event_start=start)
     chosen = _select_deadline(deadlines)
     override_deadline = overrides.get("deadline")
     if override_deadline is not None:
@@ -236,7 +247,7 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
         end_date=end,
         duration_days=duration_days,
         deadline=deadline,
-        deadline_status="closed" if _applications_closed(text) else _deadline_status(deadline),
+        deadline_status=_deadline_status_from_text(text, deadline),
         funding_available=funding_available,
         funding_type=funding_types,
         funding_evidence=funding_evidence,
@@ -299,11 +310,15 @@ def _extract_fee(text: str) -> str:
     )
     if free:
         return free
+    participant_fee = _participant_fee(text)
+    if participant_fee:
+        return participant_fee
     paid = first_match(
         text,
         [
             r"\b(?:registration fees?|participation fees?|tuition fees?|course fees?|fees?|costs?)\b[:\s-]+([^.;\n]{1,100})",
             r"((?:(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD)|[€$£])\s?\d[\d ,.]*\d\s+(?:registration|participation|tuition|course)?\s*(?:fees?|costs?))",
+            r"(\d[\d ,.]*\d?\s?(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£)\s+(?:registration|participation|tuition|course)?\s*(?:fees?|costs?))",
         ],
     )
     # A real participant fee always carries an amount. A digitless match such as
@@ -312,6 +327,27 @@ def _extract_fee(text: str) -> str:
     if paid and not re.search(r"\d", paid):
         return ""
     return paid
+
+
+def _participant_fee(text: str) -> str:
+    """Lowest clearly participant-facing academic/student fee, ignoring housing."""
+    patterns = [
+        r"(?:student|students|master'?s?|msc|phd|doctoral)[^.\n]{0,60}?((?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£)\s?\d[\d ,.]*\d?|\d[\d ,.]*\d?\s?(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£))",
+        r"(?:student|post-?doc|academic)[ -]+registration[^.\n]{0,40}?((?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£)\s?\d[\d ,.]*\d?|\d[\d ,.]*\d?\s?(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£))",
+    ]
+    fees: list[tuple[float, str]] = []
+    for pattern in patterns:
+        for match in re.finditer(pattern, text, flags=re.IGNORECASE):
+            context = text[max(0, match.start() - 80): match.end() + 40].lower()
+            if any(word in context for word in ("room", "board", "housing", "accommodation", "hotel")):
+                continue
+            fee = clean_space(match.group(1))
+            amount = _fee_to_eur(fee, {"financial_access": {"approximate_currency_to_eur": {currency: 1 for currency in SUPPORTED_FEE_CURRENCIES}}})
+            if amount is not None:
+                fees.append((amount, fee))
+    if not fees:
+        return ""
+    return min(fees, key=lambda item: item[0])[1]
 
 
 def _fee_to_eur(fee: str, profile: dict) -> float | None:
@@ -657,6 +693,7 @@ _SINGLE_DATE = (
     rf"|20\d{{2}}-\d{{2}}-\d{{2}}"
     rf"|\d{{1,2}}[./]\d{{1,2}}[./]20\d{{2}})"
 )
+_NO_YEAR_DATE = rf"(?:{_MONTH_NAME}\s+{_DAY_NUM}|{_DAY_NUM}\s+{_MONTH_NAME})"
 
 
 _DEADLINE_PATTERN = (
@@ -665,9 +702,28 @@ _DEADLINE_PATTERN = (
     r"|closing date|last date|\bregister\b(?:\s+\w+){0,5}\s+(?:latest|no later than)\s+on)"
     rf"[^.\n]{{0,40}}?({_SINGLE_DATE})"
 )
+_DEADLINE_NO_YEAR_PATTERN = (
+    r"(?:application deadline|registration deadline|submission deadline|abstract deadline"
+    r"|deadline for applications?|applications?\s+deadline|deadline|apply by|apply before"
+    r"|applications?\s+(?:close[sd]?|are due|due)|closing date|last date"
+    r"|\bregister\b(?:\s+\w+){0,5}\s+(?:latest|no later than)\s+on)"
+    rf"[^.\n]{{0,40}}?({_NO_YEAR_DATE})(?!\s*,?\s*20\d{{2}})"
+)
+_REGISTRATION_OPEN_RANGE_NO_YEAR = re.compile(
+    rf"({_NO_YEAR_DATE})\s*(?:-|–|—|to|until|through)\s*({_NO_YEAR_DATE})\s*:\s*(?:registration|applications?)\s+open",
+    flags=re.IGNORECASE,
+)
+_REGISTRATION_OPEN_UNTIL_NO_YEAR = re.compile(
+    rf"(?:registration|applications?)\s+(?:opens?\s+)?until\s+({_NO_YEAR_DATE})\b(?!\s*,?\s*20\d{{2}})",
+    flags=re.IGNORECASE,
+)
+_PAYMENT_DEADLINE_NO_YEAR = re.compile(
+    rf"(?:must be paid|payment[^.\n]{{0,20}}(?:due|before))[^.\n]{{0,30}}(?:before|by)?\s*({_NO_YEAR_DATE})\b(?!\s*,?\s*20\d{{2}})",
+    flags=re.IGNORECASE,
+)
 
 
-def _all_deadlines(text: str) -> list[tuple[date, str]]:
+def _all_deadlines(text: str, event_start: date | None = None) -> list[tuple[date, str]]:
     """All (date, evidence) deadlines on the page, earliest first. A page can
     list an early-bird and a regular deadline; the regular one is the latest."""
     found: list[tuple[date, str]] = []
@@ -677,8 +733,40 @@ def _all_deadlines(text: str) -> list[tuple[date, str]]:
         if parsed and parsed not in seen:
             seen.add(parsed)
             found.append((parsed, clean_space(match.group(0))))
+    if event_start is not None:
+        for parsed, evidence in _no_year_deadlines(text, event_start):
+            if parsed and parsed not in seen:
+                seen.add(parsed)
+                found.append((parsed, evidence))
     found.sort(key=lambda item: item[0])
     return found
+
+
+def _no_year_deadlines(text: str, event_start: date) -> list[tuple[date, str]]:
+    found: list[tuple[date, str]] = []
+    for match in re.finditer(_DEADLINE_NO_YEAR_PATTERN, text, flags=re.IGNORECASE):
+        parsed = _infer_no_year_date(match.group(1), event_start)
+        if parsed:
+            found.append((parsed, clean_space(match.group(0))))
+    for pattern in (_REGISTRATION_OPEN_RANGE_NO_YEAR, _REGISTRATION_OPEN_UNTIL_NO_YEAR, _PAYMENT_DEADLINE_NO_YEAR):
+        for match in pattern.finditer(text):
+            parsed = _infer_no_year_date(match.group(match.lastindex or 1), event_start)
+            if parsed:
+                found.append((parsed, clean_space(match.group(0))))
+    return found
+
+
+def _infer_no_year_date(value: str, event_start: date) -> date | None:
+    try:
+        parsed = date_parser.parse(f"{value} {event_start.year}", dayfirst=True).date()
+    except (ValueError, OverflowError):
+        return None
+    if parsed > event_start:
+        try:
+            parsed = parsed.replace(year=event_start.year - 1)
+        except ValueError:
+            return None
+    return parsed
 
 
 def _deadline_category(evidence: str) -> int:
@@ -721,6 +809,14 @@ def _deadline_status(deadline: date | None) -> str:
     if deadline is None:
         return "uncertain"
     return "open" if deadline >= date.today() else "closed"
+
+
+def _deadline_status_from_text(text: str, deadline: date | None) -> str:
+    if _applications_closed(text):
+        return "closed"
+    if _applications_not_open(text):
+        return "not_open"
+    return _deadline_status(deadline)
 
 
 def _duration_days(start: date | None, end: date | None) -> int | None:

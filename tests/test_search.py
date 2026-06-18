@@ -131,6 +131,28 @@ def test_ellis_timeline_uses_latest_registration_deadline() -> None:
     assert _deadline_with_year(text, event_start) == _date(2026, 5, 10)
 
 
+def test_ellis_deadline_for_applications_without_year() -> None:
+    from datetime import date as _date
+
+    from research_school_radar.api_sources import _deadline_with_year
+
+    text = "Applications are now being accepted. Deadline for applications: 17 May."
+    assert _deadline_with_year(text, _date(2026, 7, 13)) == _date(2026, 5, 17)
+
+
+def test_ellis_registration_open_range_and_euro_suffix_fee() -> None:
+    from datetime import date as _date
+
+    from research_school_radar.api_sources import _deadline_with_year, _ellis_fee_from_text
+
+    text = (
+        "Important Dates April 15 – May 20: Registration open. "
+        "Registration fees Master's / PhD students 350€ Postdocs and other academics 500€ Non-academics 800€."
+    )
+    assert _deadline_with_year(text, _date(2026, 8, 17)) == _date(2026, 5, 20)
+    assert _ellis_fee_from_text(text) == ("Student/PhD EUR 350", 350)
+
+
 def test_ellis_enrichment_follows_registration_page(monkeypatch) -> None:
     from datetime import date as _date
 

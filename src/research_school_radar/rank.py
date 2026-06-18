@@ -123,6 +123,9 @@ def _merge_into(primary: Candidate, other: Candidate) -> None:
         primary.funding_available = True
         primary.funding_type = other.funding_type or primary.funding_type
         primary.funding_evidence = primary.funding_evidence or other.funding_evidence
+    if primary.fee_eur is None and other.fee_eur is not None:
+        primary.fee = primary.fee or other.fee
+        primary.fee_eur = other.fee_eur
 
 
 def _canonical_url(url: str) -> str:

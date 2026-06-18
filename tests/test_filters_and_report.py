@@ -1174,6 +1174,64 @@ def test_application_deadline_preferred_over_unrelated_dates() -> None:
     assert chosen[0] == date(2026, 4, 1)
 
 
+def test_deadline_without_year_uses_event_start_year() -> None:
+    from research_school_radar.extract import _all_deadlines, _select_deadline
+
+    text = "Applications are now being accepted. Deadline for applications: 17 May."
+    chosen = _select_deadline(_all_deadlines(text, event_start=date(2026, 7, 13)))
+    assert chosen is not None
+    assert chosen[0] == date(2026, 5, 17)
+
+
+def test_registration_open_range_uses_end_as_deadline() -> None:
+    from research_school_radar.extract import _all_deadlines, _select_deadline
+
+    text = (
+        "Important Dates April 15 – May 20: Registration open. "
+        "May 10 – May 20: Travel grant application open."
+    )
+    chosen = _select_deadline(_all_deadlines(text, event_start=date(2026, 8, 17)))
+    assert chosen is not None
+    assert chosen[0] == date(2026, 5, 20)
+
+
+def test_participant_fee_tables_prefer_student_registration_fee() -> None:
+    from research_school_radar.extract import _extract_fee, _fee_to_eur
+
+    oplss = (
+        "Rates Student Registration $350 Post-Doc Registration $550 "
+        "Professor Registration $800 Industry Registration $1050 Room and Board $1736."
+    )
+    finland = "Registration fees Master's / PhD students 350€ Postdocs and other academics 500€ Non-academics 800€."
+    assert _fee_to_eur(_extract_fee(oplss), PROFILE) == 332.5
+    assert _fee_to_eur(_extract_fee(finland), PROFILE) == 350
+
+
+def test_uncertain_deadline_starting_within_15_days_is_closed() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.deadline = None
+    candidate.deadline_status = "uncertain"
+    candidate.start_date = date.today() + timedelta(days=10)
+    candidate.end_date = candidate.start_date + timedelta(days=8)
+    candidate = apply_hard_filters(candidate, PROFILE)
+    assert candidate.deadline_status == "closed"
+    assert candidate.is_past is True
+
+
+def test_dedupe_merges_fee_from_linked_page() -> None:
+    from dataclasses import replace
+
+    base = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    base.source_url = "https://example.org/school"
+    base.application_link = base.source_url
+    base.fee = ""
+    base.fee_eur = None
+    fee_page = replace(base, source_url="https://example.org/school/rates.php", fee="$350", fee_eur=332.5)
+    ranked = rank_candidates([base, fee_page])
+    assert len(ranked) == 1
+    assert ranked[0].fee_eur == 332.5
+
+
 def test_registration_latest_on_deadline_is_parsed() -> None:
     from research_school_radar.extract import _all_deadlines, _extract_deadline
 

@@ -214,8 +214,13 @@ _NO_YEAR_DATE = (
     r"(?:[A-Z][a-z]+\s+\d{1,2}(?:st|nd|rd|th)?|\d{1,2}(?:st|nd|rd|th)?\s+[A-Z][a-z]+)"
 )
 _DEADLINE_NO_YEAR = re.compile(
-    r"(?:registration deadline|application deadline|apply by|apply before|deadline|closing date)"
+    r"(?:registration deadline|application deadline|deadline for applications?|applications?\s+deadline"
+    r"|apply by|apply before|deadline|closing date)"
     rf"\s*[-:\s]\s*({_NO_YEAR_DATE})\b(?!\s*,?\s*20\d{{2}})",
+    flags=re.IGNORECASE,
+)
+_REGISTRATION_OPEN_RANGE_NO_YEAR = re.compile(
+    rf"({_NO_YEAR_DATE})\s*(?:-|–|—|to|until|through)\s*({_NO_YEAR_DATE})\s*:\s*(?:registration|applications?)\s+open",
     flags=re.IGNORECASE,
 )
 _REGISTRATION_UNTIL_NO_YEAR = re.compile(
@@ -241,9 +246,9 @@ def _deadline_with_year(text: str, event_start: date | None) -> date | None:
 def _deadlines_without_year(text: str, event_start: date) -> list[tuple[date, str]]:
     found: list[tuple[date, str]] = []
     seen: set[date] = set()
-    for pattern in (_DEADLINE_NO_YEAR, _REGISTRATION_UNTIL_NO_YEAR):
+    for pattern in (_DEADLINE_NO_YEAR, _REGISTRATION_OPEN_RANGE_NO_YEAR, _REGISTRATION_UNTIL_NO_YEAR):
         for match in pattern.finditer(text):
-            parsed = _infer_no_year_date(match.group(1), event_start)
+            parsed = _infer_no_year_date(match.group(match.lastindex or 1), event_start)
             if parsed and parsed not in seen:
                 seen.add(parsed)
                 found.append((parsed, clean_space(match.group(0))))
@@ -414,7 +419,19 @@ def _ellis_fee_from_text(text: str) -> tuple[str, float | None]:
             else:
                 fee = f"Academia EUR {low:.0f}-{high:.0f}"
             return fee, high
-    amounts = [_parse_number(value) for value in re.findall(r"\b(\d+(?:[.,]\d+)?)\s*EUR\b", text)]
+    student_amounts = [
+        _parse_number(match.group(1))
+        for match in re.finditer(
+            r"(?:student|students|master'?s?|phd|doctoral)[^.\n]{0,60}?(\d+(?:[.,]\d+)?)\s*(?:EUR|€)",
+            text,
+            flags=re.IGNORECASE,
+        )
+    ]
+    student_values = [value for value in student_amounts if value is not None]
+    if student_values:
+        value = min(student_values)
+        return f"Student/PhD EUR {value:.0f}", value
+    amounts = [_parse_number(value) for value in re.findall(r"\b(\d+(?:[.,]\d+)?)\s*(?:EUR|€)", text)]
     valid = [value for value in amounts if value is not None]
     if not valid:
         return "", None

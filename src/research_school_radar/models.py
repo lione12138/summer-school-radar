@@ -79,7 +79,7 @@ class Candidate:
         """No longer applicable: applications are closed, the deadline has passed,
         or (when no deadline is known) the event itself has already started."""
         today = date.today()
-        if self.deadline_status == "closed":
+        if self.deadline_status in {"closed", "not_open"}:
             return True
         if self.deadline is not None:
             return self.deadline < today

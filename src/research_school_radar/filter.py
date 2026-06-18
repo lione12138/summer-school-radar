@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from datetime import date, timedelta
+
 from .models import Candidate
 
 
@@ -8,8 +10,12 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
     failed: list[str] = []
 
     if hard.get("require_open_deadline", True):
+        if candidate.deadline_status == "uncertain" and candidate.deadline is None and _starts_too_soon(candidate):
+            candidate.deadline_status = "closed"
         if candidate.deadline_status == "closed":
             failed.append("application deadline has passed")
+        elif candidate.deadline_status == "not_open":
+            failed.append("applications are not open yet")
         elif candidate.deadline_status == "uncertain":
             failed.append("application deadline is uncertain")
 
@@ -49,6 +55,10 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
     candidate.failed_hard_conditions = failed
     candidate.risk_points = "; ".join(failed) if failed else _risk_points(candidate)
     return candidate
+
+
+def _starts_too_soon(candidate: Candidate) -> bool:
+    return candidate.start_date is not None and candidate.start_date <= date.today() + timedelta(days=15)
 
 
 def _risk_points(candidate: Candidate) -> str:
