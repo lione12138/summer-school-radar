@@ -6,7 +6,7 @@
 
 An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — **across many academic fields**: environmental & earth science, computing & data science, the social sciences, and the humanities.
 
-It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources, extracts deadline / funding / fee / duration evidence together with the supporting text, separates fully qualified opportunities from near-matches, and publishes a static website that updates daily for free on GitHub Pages.
+It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources, extracts deadline / funding / fee / duration evidence together with the supporting text, separates fully qualified, high-quality, and found opportunities, and publishes a static website that updates daily for free on GitHub Pages.
 
 **Live site:** <https://lione12138.github.io/summer-school-radar/>
 
@@ -42,10 +42,11 @@ _Last scan: 2026-06-18 · 0 fully qualified · 2 high-quality · 5 found shown_
 
 ## Upcoming Research Training Opportunities
 
-The generated website lists fully qualified scanner results first, then high-quality near-matches.
+The generated website lists scanner results in three public tiers:
 
 - **Fully Qualified Opportunities**: scanner results that satisfy every hard condition.
-- **High-Quality Opportunities**: still-open, in-domain opportunities that are relevant but missing a fully confirmed hard condition.
+- **High-Quality Opportunities**: not closed, not online-only, at least 5 days long, and either funded or no more than about EUR 70 per day.
+- **Found Opportunities**: relevant records that remain worth checking but are missing too much evidence, are more expensive, or otherwise do not meet the high-quality bar.
 - **Sources & Coverage**: the configured trusted source registry, including disabled sources and notes.
 
 The site includes filters for keyword, status, topic, financial access, and deadline status. Rows with a known application deadline include an **Add to calendar** menu (Google Calendar, Outlook, or a downloadable `.ics` file).

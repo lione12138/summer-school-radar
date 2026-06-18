@@ -21,6 +21,17 @@ _SITE_URL = "https://lione12138.github.io/summer-school-radar/"
 _OG_IMAGE = _SITE_URL + "og-image.png"
 _DATA_LICENSE = "CC BY 4.0"
 _DATA_LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
+HIGH_QUALITY_MAX_FEE_EUR_PER_DAY = 70
+GENERIC_FOUND_TITLES = {
+    "application process",
+    "application",
+    "apply",
+    "useful information",
+    "tuition fees, scholarships and financial support",
+    "tuition fees",
+    "scholarships & awards",
+    "key dates & application",
+}
 # A stable, distinctive marker baked into every generated artifact. Searching the
 # web for it surfaces sites that have copied this content wholesale.
 _CANARY = "SSR-CANON-7q3v9x2k8m4w"
@@ -212,7 +223,7 @@ _UI_SCRIPT = """
       "meta.free": {en:"No paid search API", zh:"无需付费搜索 API"},
       "meta.sources": {en:"Sources & Coverage", zh:"来源与覆盖"},
       "stat.qualified": {en:"Fully qualified", zh:"完全符合"},
-      "stat.near": {en:"High-quality open", zh:"高质量开放"},
+      "stat.near": {en:"High quality", zh:"高质量"},
       "stat.sources": {en:"Trusted sources", zh:"可信来源"},
       "stat.updated": {en:"Last updated", zh:"最近更新"},
       "filter.search": {en:"Search", zh:"搜索"},
@@ -505,9 +516,8 @@ def _status_banner(full_count: int, near_count: int, tracked_total: int, tracked
         return f'<p class="status">{escape(label)} {escape(coverage)}</p>'
     if near_count:
         message = (
-            "No fully qualified matches in the latest scan — application deadlines for these "
-            f"schools cluster between December and April. {coverage} The strongest open "
-            "opportunities are below."
+            "No fully qualified matches in the latest scan. "
+            f"{coverage} High-quality and found opportunities are shown below for manual checking."
         )
         return f'<p class="status info">{escape(message)}</p>'
     message = (
@@ -669,15 +679,7 @@ def render_feed(
     site_url = str((site_config or {}).get("site_url") or _SITE_URL).rstrip("/") + "/"
     feed_url = site_url + "feed.xml"
     qualified = [item for item in candidates if item.fully_qualified and not _is_online_only(item)]
-    near = [
-        item
-        for item in candidates
-        if not item.fully_qualified
-        and not item.is_past
-        and item.duration_days is not None
-        and not is_too_short(item.duration_days)
-        and not _is_online_only(item)
-    ]
+    near = [item for item in candidates if _is_high_quality(item)]
     items = [_candidate_feed_item(item) for item in (qualified + near)[:40]]
     item_xml = "".join(_feed_item_xml(item, site_url) for item in items)
     built = format_datetime(datetime.now(timezone.utc))
@@ -714,7 +716,7 @@ def _candidate_feed_item(candidate: Candidate) -> dict[str, Any]:
         "title": f"{candidate.title} — {candidate.organizer}",
         "link": candidate.application_link or candidate.source_url,
         "guid": candidate.source_url,
-        "tag": "Fully qualified" if candidate.fully_qualified else "Near-match",
+        "tag": "Fully qualified" if candidate.fully_qualified else "High quality",
         "date": candidate.first_seen or date.today(),
         "summary": ". ".join(part for part in parts if part),
     }
@@ -770,31 +772,20 @@ def render_site(
 ) -> str:
     curated = curated or []
     full = [item for item in candidates if item.fully_qualified and not _is_online_only(item)][:10]
-    near = [
-        item
-        for item in candidates
-        if not item.fully_qualified
-        and not item.is_past
-        and item.duration_days is not None
-        and not is_too_short(item.duration_days)
-        and not _is_online_only(item)
-    ][:12]
-    # Count only opportunities that could actually be surfaced (in-person,
-    # long enough, still open), so the "tracking N" figure matches the page.
+    near = [item for item in candidates if _is_high_quality(item)][:16]
+    found = [item for item in candidates if _is_found_opportunity(item)][:30]
+    # Count only opportunities that could actually be surfaced, so the
+    # "tracking N" figure matches the page.
     tracked_total = sum(
         1
         for item in candidates
-        if not item.is_past
-        and item.duration_days is not None
-        and not item.is_online_only
-        and not is_too_short(item.duration_days)
+        if _is_public_candidate(item)
     )
     updated = date.today().isoformat()
     curated_rows = "".join(_curated_row(item) for item in curated)
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
     near_rows = "".join(_near_row(candidate) for candidate in near)
-    review_items = build_review_queue(candidates, limit=20)
-    review_rows = "".join(_review_row(item) for item in review_items)
+    found_rows = "".join(_found_row(candidate) for candidate in found)
     public_notes = _public_collection_notes(errors)
     notes = "".join(f"<li>{escape(error)}</li>" for error in public_notes[:12])
     filters = _filters(candidates)
@@ -802,8 +793,8 @@ def render_site(
     status_banner = _status_banner(len(full), len(near), tracked_total, tracked_sources)
     if near:
         near_block = _near_section(near_rows)
-    elif full:
-        # Qualified results are shown above; no empty-state needed.
+    elif full or found:
+        # Other sections are shown; no empty-state needed.
         near_block = ""
     else:
         near_block = _empty_opportunities_block(tracked_total, tracked_sources)
@@ -816,7 +807,7 @@ def render_site(
 {_seo_head(_SITE_URL, _SITE_DESCRIPTION, site_config or {})}
   {_BOOT_SCRIPT}
   <link rel="alternate" type="application/rss+xml" title="Summa" href="feed.xml">
-  {_jsonld_block(full + near)}
+  {_jsonld_block(full + near + found[:10])}
   <style>
 {_THEME_CSS}
     header.hero {{
@@ -1097,7 +1088,7 @@ def render_site(
   <main class="wrap">
     <div class="stats">
       <div class="stat"><div class="num">{len(full)}</div><div class="lbl" data-i18n="stat.qualified">Fully qualified</div></div>
-      <div class="stat"><div class="num">{len(near)}</div><div class="lbl" data-i18n="stat.near">High-quality open</div></div>
+      <div class="stat"><div class="num">{len(near)}</div><div class="lbl" data-i18n="stat.near">High quality</div></div>
       <div class="stat"><div class="num">{tracked_sources}</div><div class="lbl" data-i18n="stat.sources">Trusted sources</div></div>
       <div class="stat"><div class="num sm">{updated}</div><div class="lbl" data-i18n="stat.updated">Last updated</div></div>
     </div>
@@ -1107,7 +1098,7 @@ def render_site(
       {_curated_section(curated_rows) if curated else ""}
       {_qualified_section(full_rows) if full else ""}
       {near_block}
-      {_review_section(review_rows) if review_rows else ""}
+      {_found_section(found_rows) if found_rows else ""}
     </section>
     {_notes_section(notes) if notes else ""}
     {_subscribe_section(site_config or {})}
@@ -1440,9 +1431,10 @@ def _near_section(rows: str) -> str:
     return f"""
     <section>
       <h2>High-Quality Opportunities</h2>
+      <p class="muted">Funded opportunities, or programmes costing at most EUR {HIGH_QUALITY_MAX_FEE_EUR_PER_DAY} per day, with duration of at least 5 days. These still need official-page verification before applying.</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th></tr></thead>
+          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Why high quality</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1450,14 +1442,14 @@ def _near_section(rows: str) -> str:
 """
 
 
-def _review_section(rows: str) -> str:
+def _found_section(rows: str) -> str:
     return f"""
     <section>
-      <h2>Needs Manual Review</h2>
-      <p class="muted">These scanner candidates are in scope but missing one or more fields. They are not counted as qualified until a maintainer confirms the missing data or adds an override.</p>
+      <h2>Found Opportunities</h2>
+      <p class="muted">Other currently relevant records found by the scanner. Many are missing deadline, fee, duration, mode, or funding evidence, so use them as leads rather than recommendations.</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Needs review</th></tr></thead>
+          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Notes</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1511,7 +1503,7 @@ def _curated_row(item: dict[str, Any]) -> str:
 
 def _near_row(candidate: Candidate) -> str:
     return (
-        f"<tr {_row_attrs(candidate)}>"
+        f"<tr {_row_attrs(candidate, 'high-quality')}>"
         f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
         f"<td>{escape(candidate.organizer)}</td>"
         f"<td>{escape(_public_location(candidate.location))}</td>"
@@ -1519,8 +1511,33 @@ def _near_row(candidate: Candidate) -> str:
         f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
         f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(candidate.financial_summary)}</td>"
         f"<td>{escape(topics_label(candidate.topic_keywords) or 'uncertain')}</td>"
+        f"<td>{escape(_high_quality_reason(candidate))}</td>"
         "</tr>"
     )
+
+
+def _found_row(candidate: Candidate) -> str:
+    return (
+        f"<tr {_row_attrs(candidate, 'found')}>"
+        f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
+        f"<td>{escape(candidate.organizer)}</td>"
+        f"<td>{escape(_public_location(candidate.location))}</td>"
+        f"<td{_evidence_attr(candidate.duration_evidence)}>{escape(_duration(candidate))}</td>"
+        f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
+        f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(candidate.financial_summary)}</td>"
+        f"<td>{escape(topics_label(candidate.topic_keywords) or 'uncertain')}</td>"
+        f"<td>{escape(candidate.risk_points or 'Needs official-page verification')}</td>"
+        "</tr>"
+    )
+
+
+def _high_quality_reason(candidate: Candidate) -> str:
+    if candidate.funding_available is True:
+        return "funding evidence found"
+    daily = _fee_per_day(candidate)
+    if daily != float("inf"):
+        return f"about EUR {daily:.0f}/day"
+    return "financially promising"
 
 
 def _review_row(item: dict[str, Any]) -> str:
@@ -1594,6 +1611,36 @@ def _curated_financial_summary(item: dict[str, Any], funding: dict[str, Any]) ->
     if fee_eur is not None:
         return f"Fee about EUR {float(fee_eur):.0f} · Apply on official page"
     return fee or "Funding or fee not stated"
+
+
+def _is_public_candidate(candidate: Candidate) -> bool:
+    if candidate.is_past or candidate.is_online_only:
+        return False
+    if candidate.title.strip().lower() in GENERIC_FOUND_TITLES:
+        return False
+    if candidate.duration_days is not None and is_too_short(candidate.duration_days):
+        return False
+    return True
+
+
+def _is_high_quality(candidate: Candidate) -> bool:
+    if candidate.fully_qualified or not _is_public_candidate(candidate):
+        return False
+    if candidate.duration_days is None or candidate.duration_days < 5:
+        return False
+    if candidate.funding_available is True:
+        return True
+    return _fee_per_day(candidate) <= HIGH_QUALITY_MAX_FEE_EUR_PER_DAY
+
+
+def _is_found_opportunity(candidate: Candidate) -> bool:
+    return not candidate.fully_qualified and not _is_high_quality(candidate) and _is_public_candidate(candidate)
+
+
+def _fee_per_day(candidate: Candidate) -> float:
+    if candidate.fee_eur is None or not candidate.duration_days:
+        return float("inf")
+    return candidate.fee_eur / candidate.duration_days
 
 
 def _is_online_only(candidate: Candidate) -> bool:
@@ -1747,7 +1794,8 @@ def _filters(candidates: list[Candidate]) -> str:
         <select id="filter-status">
           <option value="">All</option>
           <option value="qualified">Fully qualified</option>
-          <option value="near-match">High-quality</option>
+          <option value="high-quality">High quality</option>
+          <option value="found">Found</option>
         </select>
       </div>
       <div class="filter-group">
@@ -1787,8 +1835,8 @@ def _filters(candidates: list[Candidate]) -> str:
 """
 
 
-def _row_attrs(candidate: Candidate) -> str:
-    status = "qualified" if candidate.fully_qualified else "near-match"
+def _row_attrs(candidate: Candidate, status: str | None = None) -> str:
+    status = status or ("qualified" if candidate.fully_qualified else "found")
     funding = candidate.financial_access_status
     topics = "|".join(topic.lower() for topic in candidate.topic_keywords)
     searchable = " ".join(

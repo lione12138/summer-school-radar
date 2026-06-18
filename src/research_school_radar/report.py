@@ -7,17 +7,59 @@ from .models import Candidate
 from .utils import format_duration, is_too_short, topics_label
 
 
-def _near_matches(candidates: list[Candidate]) -> list[Candidate]:
-    """Still-open, in-person, long-enough near-matches — matching the website."""
+HIGH_QUALITY_MAX_FEE_EUR_PER_DAY = 70
+GENERIC_FOUND_TITLES = {
+    "application process",
+    "application",
+    "apply",
+    "useful information",
+    "tuition fees, scholarships and financial support",
+    "tuition fees",
+    "scholarships & awards",
+    "key dates & application",
+}
+
+
+def _high_quality(candidates: list[Candidate]) -> list[Candidate]:
     return [
         item
         for item in candidates
-        if not item.fully_qualified
-        and not item.is_past
-        and item.duration_days is not None
-        and not item.is_online_only
-        and not is_too_short(item.duration_days)
+        if _is_high_quality(item)
     ]
+
+
+def _found(candidates: list[Candidate]) -> list[Candidate]:
+    return [item for item in candidates if _is_found_opportunity(item)]
+
+
+def _is_public_candidate(candidate: Candidate) -> bool:
+    if candidate.is_past or candidate.is_online_only:
+        return False
+    if candidate.title.strip().lower() in GENERIC_FOUND_TITLES:
+        return False
+    if candidate.duration_days is not None and is_too_short(candidate.duration_days):
+        return False
+    return True
+
+
+def _is_high_quality(candidate: Candidate) -> bool:
+    if candidate.fully_qualified or not _is_public_candidate(candidate):
+        return False
+    if candidate.duration_days is None or candidate.duration_days < 5:
+        return False
+    if candidate.funding_available is True:
+        return True
+    return _fee_per_day(candidate) <= HIGH_QUALITY_MAX_FEE_EUR_PER_DAY
+
+
+def _is_found_opportunity(candidate: Candidate) -> bool:
+    return not candidate.fully_qualified and not _is_high_quality(candidate) and _is_public_candidate(candidate)
+
+
+def _fee_per_day(candidate: Candidate) -> float:
+    if candidate.fee_eur is None or not candidate.duration_days:
+        return float("inf")
+    return candidate.fee_eur / candidate.duration_days
 
 
 README_START = "<!-- radar:results:start -->"
@@ -33,7 +75,8 @@ def write_report(candidates: list[Candidate], output_dir: Path, errors: list[str
 
 def render_report(candidates: list[Candidate], errors: list[str]) -> str:
     full = [item for item in candidates if item.fully_qualified][:10]
-    near = _near_matches(candidates)[:5]
+    high = _high_quality(candidates)[:10]
+    found = _found(candidates)[:10]
     lines = [f"# Summer School Radar Report - {date.today().isoformat()}", ""]
 
     if errors:
@@ -46,10 +89,13 @@ def render_report(candidates: list[Candidate], errors: list[str]) -> str:
         lines.extend(_qualified_table(full))
     else:
         lines.extend(["**No fully qualified opportunities found.**", ""])
-        if near:
+        if high:
             lines.extend(["## High-Quality Opportunities", ""])
-            lines.extend(_near_table(near))
-        else:
+            lines.extend(_near_table(high))
+        if found:
+            lines.extend(["", "## Found Opportunities", ""])
+            lines.extend(_near_table(found))
+        if not high and not found:
             lines.append("No open opportunities were found in the latest scan.")
 
     lines.append("")
@@ -76,10 +122,11 @@ def update_readme(readme_path: Path, candidates: list[Candidate]) -> bool:
 
 def render_readme_section(candidates: list[Candidate]) -> str:
     full = [item for item in candidates if item.fully_qualified][:10]
-    near = _near_matches(candidates)[:5]
+    high = _high_quality(candidates)[:8]
+    found = _found(candidates)[:8]
     lines = [
         f"_Last scan: {date.today().isoformat()} · "
-        f"{len(full)} fully qualified · {len(near)} high-quality opportunit{'ies' if len(near) != 1 else 'y'} shown_",
+        f"{len(full)} fully qualified · {len(high)} high-quality · {len(found)} found shown_",
         "",
     ]
     if full:
@@ -88,11 +135,14 @@ def render_readme_section(candidates: list[Candidate]) -> str:
     else:
         lines.append(
             "**No fully qualified opportunities in the latest scan.** "
-            "The high-quality opportunities below are open and in scope, but missing a fully confirmed condition."
+            "High-quality and found opportunities below are leads for manual checking."
         )
-    if near:
+    if high:
         lines.extend(["", "**High-Quality Opportunities**", ""])
-        lines.extend(_near_table(near))
+        lines.extend(_near_table(high))
+    if found:
+        lines.extend(["", "**Found Opportunities**", ""])
+        lines.extend(_near_table(found))
     return "\n".join(lines).rstrip() + "\n"
 
 

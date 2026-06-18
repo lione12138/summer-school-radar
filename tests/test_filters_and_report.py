@@ -1512,7 +1512,7 @@ def test_site_hero_disclaimer_is_rendered(tmp_path) -> None:
     assert "祝大家都能录到心仪的项目" in html
 
 
-def test_site_renders_curated_and_review_queue(tmp_path) -> None:
+def test_site_renders_curated_found_opportunities_and_review_queue_json(tmp_path) -> None:
     reviewed = {
         "title": "Reviewed Social Science School",
         "organizer": "Example University",
@@ -1533,6 +1533,11 @@ def test_site_renders_curated_and_review_queue(tmp_path) -> None:
     candidate.topic_keywords = ["law"]
     candidate.deadline = None
     candidate.deadline_status = "uncertain"
+    candidate.funding_available = None
+    candidate.funding_type = []
+    candidate.funding_evidence = ""
+    candidate.fee = ""
+    candidate.fee_eur = None
     candidate = apply_hard_filters(candidate, PROFILE)
     ranked = rank_candidates([candidate])
 
@@ -1542,7 +1547,7 @@ def test_site_renders_curated_and_review_queue(tmp_path) -> None:
 
     assert "Curated Opportunities" in html
     assert "Reviewed Social Science School" in html
-    assert "Needs Manual Review" in html
+    assert "Found Opportunities" in html
     assert "Unreviewed Law Summer School" in html
     assert "application deadline is uncertain" in html
     assert "Unreviewed Law Summer School" in review_json
@@ -1679,7 +1684,7 @@ def test_site_generation_can_inject_cloudflare(tmp_path) -> None:
     assert "abc123" in html
 
 
-def test_near_match_site_table_omits_why_monitor(tmp_path) -> None:
+def test_high_quality_site_table_omits_why_monitor(tmp_path) -> None:
     candidate = sample_candidate(PROFILE)
     candidate.deadline = None
     candidate.deadline_status = "uncertain"
@@ -1688,12 +1693,54 @@ def test_near_match_site_table_omits_why_monitor(tmp_path) -> None:
     index_html = write_site(ranked, [], tmp_path)
     html = index_html.read_text(encoding="utf-8")
     assert "Why Monitor" not in html
-    assert 'data-status="near-match"' in html
+    assert 'data-status="high-quality"' in html
     assert "Failed Condition" not in html
     assert "Region Priority" not in html
     assert "Topic Match" not in html
     assert "<th>Duration</th>" in html
     assert "Add to calendar" not in html
+
+
+def test_high_quality_uses_fee_per_day_threshold(tmp_path) -> None:
+    affordable = sample_candidate(PROFILE)
+    affordable.title = "Affordable Ten Day School"
+    affordable.source_url = "https://example.org/affordable"
+    affordable.location = "Delft, Netherlands"
+    affordable.funding_available = None
+    affordable.funding_type = []
+    affordable.funding_evidence = ""
+    affordable.fee = "EUR 650"
+    affordable.fee_eur = 650
+    affordable.duration_days = 10
+    affordable.deadline = None
+    affordable.deadline_status = "uncertain"
+
+    expensive = sample_candidate(PROFILE)
+    expensive.title = "Expensive Ten Day School"
+    expensive.source_url = "https://example.org/expensive"
+    expensive.location = "Cambridge, UK"
+    expensive.funding_available = None
+    expensive.funding_type = []
+    expensive.funding_evidence = ""
+    expensive.fee = "EUR 900"
+    expensive.fee_eur = 900
+    expensive.duration_days = 10
+    expensive.deadline = None
+    expensive.deadline_status = "uncertain"
+
+    ranked = rank_candidates([
+        apply_hard_filters(affordable, PROFILE),
+        apply_hard_filters(expensive, PROFILE),
+    ])
+    html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
+    high_section = html.split("<h2>High-Quality Opportunities</h2>", 1)[1].split("<h2>Found Opportunities</h2>", 1)[0]
+    found_section = html.split("<h2>Found Opportunities</h2>", 1)[1]
+
+    assert "Affordable Ten Day School" in high_section
+    assert 'data-status="high-quality"' in high_section
+    assert "about EUR 65/day" in high_section
+    assert "Expensive Ten Day School" in found_section
+    assert 'data-status="found"' in found_section
 
 
 def test_status_line_uses_correct_singular_and_plural(tmp_path) -> None:
