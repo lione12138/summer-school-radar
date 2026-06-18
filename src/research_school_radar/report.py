@@ -14,6 +14,7 @@ def _near_matches(candidates: list[Candidate]) -> list[Candidate]:
         for item in candidates
         if not item.fully_qualified
         and not item.is_past
+        and item.duration_days is not None
         and not item.is_online_only
         and not is_too_short(item.duration_days)
     ]

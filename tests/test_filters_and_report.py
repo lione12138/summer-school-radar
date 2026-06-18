@@ -1642,6 +1642,24 @@ def test_empty_state_stays_informative(tmp_path) -> None:
     assert "Subscribe via RSS" not in html
 
 
+def test_near_matches_hide_durationless_supplemental_pages(tmp_path) -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.title = "Application Process"
+    candidate.start_date = None
+    candidate.end_date = None
+    candidate.duration_days = None
+    candidate.deadline = None
+    candidate.deadline_status = "uncertain"
+    candidate.fee = "EUR 350"
+    candidate.fee_eur = 350
+    candidate = apply_hard_filters(candidate, PROFILE)
+    ranked = rank_candidates([candidate])
+    html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
+    markdown = render_report(ranked, [])
+    assert "Application Process" not in html
+    assert "Application Process" not in markdown
+
+
 def test_seen_state_is_json_and_preserves_first_seen(tmp_path) -> None:
     import json
 

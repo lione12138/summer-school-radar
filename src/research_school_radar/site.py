@@ -659,7 +659,11 @@ def render_feed(
     near = [
         item
         for item in candidates
-        if not item.fully_qualified and not item.is_past and not is_too_short(item.duration_days) and not _is_online_only(item)
+        if not item.fully_qualified
+        and not item.is_past
+        and item.duration_days is not None
+        and not is_too_short(item.duration_days)
+        and not _is_online_only(item)
     ]
     items = [_candidate_feed_item(item) for item in (qualified + near)[:40]]
     item_xml = "".join(_feed_item_xml(item, site_url) for item in items)
@@ -755,14 +759,21 @@ def render_site(
     near = [
         item
         for item in candidates
-        if not item.fully_qualified and not item.is_past and not is_too_short(item.duration_days) and not _is_online_only(item)
+        if not item.fully_qualified
+        and not item.is_past
+        and item.duration_days is not None
+        and not is_too_short(item.duration_days)
+        and not _is_online_only(item)
     ][:12]
     # Count only opportunities that could actually be surfaced (in-person,
     # long enough, still open), so the "tracking N" figure matches the page.
     tracked_total = sum(
         1
         for item in candidates
-        if not item.is_past and not item.is_online_only and not is_too_short(item.duration_days)
+        if not item.is_past
+        and item.duration_days is not None
+        and not item.is_online_only
+        and not is_too_short(item.duration_days)
     )
     updated = date.today().isoformat()
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
