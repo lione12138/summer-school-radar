@@ -45,8 +45,6 @@ DEGREE_RECRUITMENT_TERMS = [
     "doctoral admissions",
     "doctoral programme",
     "doctoral program",
-    "degree programme",
-    "degree program",
     "graduate school enrollment",
     "apply for a phd",
 ]
@@ -74,6 +72,8 @@ def is_excluded_programme(text: str) -> bool:
     lowered = text.lower()
     if any(term in lowered for term in DEGREE_RECRUITMENT_TERMS):
         return True
+    if re.search(r"\b(?:full[- ]time\s+)?degree programmes?\b|\b(?:full[- ]time\s+)?degree programs?\b", lowered):
+        return not any(term in lowered for term in OPPORTUNITY_TERMS)
     if any(term in lowered for term in LANGUAGE_COURSE_TERMS):
         return True
     if _CEFR_TRANSITION.search(text):

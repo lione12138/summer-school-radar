@@ -806,6 +806,14 @@ sources:
     keywords: [social science, data analysis, quantitative methods, summer school]
     scan_frequency: every_run
     notes: Essex Summer School in Social Science Data Analysis; long-running quantitative social-science methods school.
+  - name: Essex Summer School
+    url: https://essexsummerschool.com/new-application/
+    layer: 2
+    region: UK
+    source_type: university
+    keywords: [social science, data analysis, quantitative methods, summer school, application]
+    scan_frequency: every_run
+    notes: Official ESS application page; carries session-specific application closing dates and programme dates.
   - name: CEU Summer University
     url: https://summeruniversity.ceu.edu/
     layer: 2

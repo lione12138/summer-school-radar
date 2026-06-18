@@ -207,7 +207,7 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     mode = _extract_mode(text)
     # Fall back to the JSON-LD event name when the page's HTML titles are all
     # generic ("Home", "Events", ...).
-    title = _extract_title(page) or _clean_title(str(overrides.get("jsonld_name", "")))
+    title = str(overrides.get("title") or "") or _extract_title(page) or _clean_title(str(overrides.get("jsonld_name", "")))
     if not title or is_workshop_title(title):
         return None
     eligibility = first_match(
@@ -217,8 +217,12 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
             r"((?:PhD|doctoral|MSc|master|postdoc|early-career)[^.;\n]{0,160})",
         ],
     )
-    fee = _extract_fee(text)
-    fee_eur = _fee_to_eur(fee, profile)
+    if "fee" in overrides:
+        fee = str(overrides.get("fee", ""))
+        fee_eur = overrides.get("fee_eur")
+    else:
+        fee = _extract_fee(text)
+        fee_eur = _fee_to_eur(fee, profile)
     # _extract_location already sanitizes, but an override (e.g. a JSON-LD
     # location) bypasses it, so clean the final value here too.
     raw_location = overrides.get("location") or _extract_location(page.html, text, page.source.region)

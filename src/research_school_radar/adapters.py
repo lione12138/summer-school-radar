@@ -21,7 +21,7 @@ from __future__ import annotations
 import re
 from datetime import date
 from typing import Any, Callable
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 from dateutil import parser as date_parser
 
@@ -56,6 +56,9 @@ def _parse_date(value: str) -> date | None:
 
 
 _DATE = r"\d{1,2}\s+[A-Za-z]+\s+20\d{2}"
+_WEEKDAY = r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)"
+_WEEKDAY_DATE = rf"{_WEEKDAY}\s+\d{{1,2}}\s+[A-Za-z]+\s+20\d{{2}}"
+_WEEKDAY_DATE_NO_YEAR = rf"{_WEEKDAY}\s+\d{{1,2}}\s+[A-Za-z]+"
 _GENERIC_VENUES = {"icimod", "icimod lml", "online", "virtual", "hybrid", "tbc", "tba"}
 
 
@@ -152,6 +155,81 @@ def _events_calendar(page: Page) -> dict[str, Any]:
     return overrides
 
 
+def _essex_summer_school(page: Page) -> dict[str, Any]:
+    text = page.text
+    if "essex summer school" not in text.lower() or "social science data analysis" not in text.lower():
+        return {}
+
+    overrides: dict[str, Any] = {
+        "title": "Social Science Data Analysis",
+        "jsonld_name": "Social Science Data Analysis",
+        "fee": "",
+        "fee_eur": None,
+    }
+    application_url = _first_url(page.html, page.url, ["new-application", "application"])
+    if application_url:
+        overrides["application_link"] = application_url
+
+    # The application form lists session-specific closing dates. Use the latest
+    # closing date because applicants can still apply for later sessions.
+    closing_block = re.search(
+        r"application closing dates(.{0,700}?)(?:2026 programme dates|estimated cost|general information|$)",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if closing_block:
+        dates = [_parse_date(value) for value in re.findall(_DATE, closing_block.group(1), flags=re.IGNORECASE)]
+        valid = [value for value in dates if value]
+        if valid:
+            deadline = max(valid)
+            overrides["deadline"] = deadline
+            overrides["deadline_evidence"] = clean_space(closing_block.group(0))
+
+    ranges: list[tuple[date, date]] = []
+    for match in re.finditer(
+        rf"({_WEEKDAY_DATE})\s*(?:-|–|—|to)\s*({_WEEKDAY_DATE})",
+        text,
+        flags=re.IGNORECASE,
+    ):
+        start = _parse_date(match.group(1))
+        end = _parse_date(match.group(2))
+        if start and end and 0 <= (end - start).days <= 21:
+            ranges.append((start, end))
+    for match in re.finditer(
+        rf"({_WEEKDAY_DATE_NO_YEAR})\s*(?:-|–|—|to)\s*({_WEEKDAY_DATE})",
+        text,
+        flags=re.IGNORECASE,
+    ):
+        end = _parse_date(match.group(2))
+        start = _parse_date(f"{match.group(1)} {end.year}") if end else None
+        if start and end and 0 <= (end - start).days <= 21:
+            ranges.append((start, end))
+    if ranges:
+        start = min(item[0] for item in ranges)
+        end = max(item[1] for item in ranges)
+        overrides["start_date"] = start
+        overrides["end_date"] = end
+        overrides["duration_evidence"] = f"Essex programme dates: {start.isoformat()} to {end.isoformat()}"
+
+    if re.search(r"\bin[- ]person\b|colchester campus|hybrid", text, flags=re.IGNORECASE):
+        overrides["location"] = "Colchester, UK"
+    return overrides
+
+
+def _first_url(html: str, base_url: str, fragments: list[str]) -> str:
+    if not html:
+        return ""
+    from bs4 import BeautifulSoup
+
+    soup = BeautifulSoup(html, "html.parser")
+    for anchor in soup.find_all("a", href=True):
+        href = str(anchor["href"])
+        lowered = href.lower()
+        if any(fragment in lowered for fragment in fragments):
+            return urljoin(base_url, href)
+    return ""
+
+
 def _iso_or_none(value: Any) -> date | None:
     if not isinstance(value, str):
         return None
@@ -166,6 +244,8 @@ def _iso_or_none(value: Any) -> date | None:
 
 _ADAPTERS: dict[str, Callable[[Page], dict[str, Any]]] = {
     "icimod.org": _icimod,
+    "essex.ac.uk": _essex_summer_school,
+    "essexsummerschool.com": _essex_summer_school,
 }
 
 _STRUCTURAL_ADAPTERS: list[Callable[[Page], dict[str, Any]]] = [

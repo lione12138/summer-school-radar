@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 import unicodedata
+from datetime import date
 from difflib import SequenceMatcher
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
@@ -113,7 +114,16 @@ def _merge_into(primary: Candidate, other: Candidate) -> None:
         primary.deadline_evidence = primary.deadline_evidence or other.deadline_evidence
         if other.deadline_status:
             primary.deadline_status = other.deadline_status
-    if primary.deadline_status not in {"closed", "not_open"} and other.deadline_status in {"closed", "not_open"}:
+    primary_has_future_open_deadline = (
+        primary.deadline_status == "open"
+        and primary.deadline is not None
+        and primary.deadline >= date.today()
+    )
+    if (
+        primary.deadline_status not in {"closed", "not_open"}
+        and other.deadline_status in {"closed", "not_open"}
+        and not primary_has_future_open_deadline
+    ):
         primary.deadline_status = other.deadline_status
         primary.deadline_evidence = primary.deadline_evidence or other.deadline_evidence
     if primary.start_date is None and other.start_date is not None:

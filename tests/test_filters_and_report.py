@@ -1273,6 +1273,83 @@ def test_application_page_without_dates_can_close_parent_candidate() -> None:
     assert ranked[0].is_past is True
 
 
+def test_essex_application_page_enriches_social_science_data_analysis() -> None:
+    source = Source(
+        name="Essex Summer School",
+        url="https://www.essex.ac.uk/summer-schools/social-science-data-analysis",
+        layer="2",
+        region="UK",
+        source_type="university",
+    )
+    parent = Page(
+        url=source.url,
+        title="Social Science Data Analysis | University of Essex",
+        text=(
+            "Social Science Data Analysis. Essex Summer School in Social Science Data Analysis. "
+            "Our 59th annual summer school will offer a combination of in-person and online courses. "
+            "The core Summer School consists of three two-week sessions. "
+            "Pre Sessional 1: Monday 29 June - Friday 3 July 2026. "
+            "Session One: Monday 6 July - Friday 17 July 2026. "
+            "Session Two: Monday 20 July - Friday 31 July 2026. "
+            "Session Three: Monday 3 August - Friday 14 August 2026. "
+            "In person courses will be held at our Colchester campus. "
+            "Mathematics for Social Scientists is provided free of charge for participants. "
+            "Fees differ by length of course. Topics include social science data analysis and statistics."
+        ),
+        html=(
+            '<html><body><h1>Social Science Data Analysis</h1>'
+            '<a href="https://essexsummerschool.com/new-application/">Applications are now Open!</a>'
+            "</body></html>"
+        ),
+        source=source,
+        fetched_at=date.today(),
+    )
+    application = Page(
+        url="https://essexsummerschool.com/new-application/",
+        title="Application",
+        text=(
+            "Application. Essex Summer School in Social Science Data Analysis. "
+            "2026 APPLICATIONS ARE NOW OPEN. APPLICATION CLOSING DATES "
+            "Pre-sessional 1 and session one: 19 June 2026 "
+            "Pre-sessional 2 and Session two: 3 July 2026 "
+            "Session three: 17 July 2026. "
+            "2026 Programme Dates Pre-sessional 1: Monday 29 June - Friday 3 July 2026 "
+            "Session 1: Monday 6 July – Friday 17 July 2026 "
+            "Pre-sessional 2: Monday 13 July - Friday 17 July 2026 "
+            "Session 2: Monday 20 July – Friday 31 July 2026 "
+            "Session 3: Monday 3 August – Friday 14 August 2026. "
+            "Courses are delivered in person, online or hybrid mode. "
+            "In-person courses will be held at our Colchester campus. "
+            "Current Degree Programme Undergraduate Masters PhD Not Currently a Student. "
+            "Topics include social science data analysis and statistics."
+        ),
+        html="<html><body><h1>Application</h1></body></html>",
+        source=source,
+        fetched_at=date.today(),
+    )
+    parent_candidate = extract_candidate(parent, PROFILE)
+    application_candidate = extract_candidate(application, PROFILE)
+    assert parent_candidate is not None
+    assert application_candidate is not None
+
+    ranked = rank_candidates([
+        apply_hard_filters(parent_candidate, PROFILE),
+        apply_hard_filters(application_candidate, PROFILE),
+    ])
+    assert len(ranked) == 1
+    candidate = ranked[0]
+    assert candidate.title == "Social Science Data Analysis"
+    assert candidate.application_link == "https://essexsummerschool.com/new-application/"
+    assert candidate.deadline == date(2026, 7, 17)
+    assert candidate.deadline_status == "open"
+    assert candidate.start_date == date(2026, 6, 29)
+    assert candidate.end_date == date(2026, 8, 14)
+    assert candidate.duration_days == 47
+    assert candidate.location == "Colchester, UK"
+    assert candidate.fee == ""
+    assert candidate.fee_eur is None
+
+
 def test_registration_latest_on_deadline_is_parsed() -> None:
     from research_school_radar.extract import _all_deadlines, _extract_deadline
 
