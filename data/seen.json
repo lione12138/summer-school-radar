@@ -321,6 +321,13 @@
     "status": "near_match",
     "title": "ESS 2026 course list"
   },
+  "https://essexsummerschool.com/summer-school-facts/scholarships/q-step-scholarship/": {
+    "deadline": "2026-04-03",
+    "first_seen": "2026-06-18",
+    "last_seen": "2026-06-18",
+    "status": "near_match",
+    "title": "Q-Step Scholarship"
+  },
   "https://etrp.wmo.int/course/index.php?categoryid=81": {
     "deadline": null,
     "first_seen": "2026-06-13",
