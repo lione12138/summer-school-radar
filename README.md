@@ -17,7 +17,7 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-17 · 0 fully qualified · 5 high-quality opportunities shown_
+_Last scan: 2026-06-18 · 0 fully qualified · 5 high-quality opportunities shown_
 
 **No fully qualified opportunities in the latest scan.** The high-quality opportunities below are open and in scope, but missing a fully confirmed condition.
 
@@ -27,9 +27,9 @@ _Last scan: 2026-06-17 · 0 fully qualified · 5 high-quality opportunities show
 |---|---|---|---|---|---|---|---|
 | [River Basin Modelling](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | groundwater, water resources, water quality, GIS |
 | [ICOS Summer/Winter School January 2027, application is now open](https://www.icos-cp.eu/about/opportunities/summer-school) | summer school | ICOS | Europe | 18 Jan – 28 Jan 2027 · 11 days | 2026-07-31 | financial support · amount not stated · Apply on official page | climate, climate change, remote sensing, statistics |
-| [Summer School Science Communication](https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-science-communication) | summer school | Leiden Linguistics Summer School | Leiden | 6 Jul – 10 Jul 2026 · 5 days | uncertain | Fee about EUR 575 · Apply on official page | statistics, law, education research, design |
-| [Karthaus summerschool](https://www.projects.science.uu.nl/iceclimate/karthaus/) | summer school | Karthaus Summer School | Europe | 18 May – 27 May 2027 · 10 days | uncertain | Funding or fee not stated | climate, meteorology, glaciology, cryosphere |
 | [Machine Learning Summer School on Reliability & Safety](https://ellis.eu/events/machine-learning-summer-school-on-reliability-safety-mlss-rs) | summer school | ELLIS | Kraków | 29 Jun – 3 Jul 2026 · 5 days | uncertain | Funding or fee not stated | AI, machine learning |
+| [ELLIS Summer School at Unit Munich](https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026) | summer school | ELLIS | TUM Garching Campus | 14 Sep – 18 Sep 2026 · 5 days | uncertain | Funding or fee not stated | machine learning, computer vision |
+| [Cambridge ELLIS Unit Summer School on Probabilistic Machine Learning 2026](https://ellis.eu/events/cambridge-ellis-unit-summer-school-on-probabilistic-machine-learning-2026) | summer school | ELLIS | Cambridge | 13 Jul – 17 Jul 2026 · 5 days | uncertain | Funding or fee not stated | machine learning |
 
 <!-- radar:results:end -->
 

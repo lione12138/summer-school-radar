@@ -86,21 +86,21 @@
   "https://eage.eventsair.com/short-course-structural-geology-must-knows/": {
     "deadline": "2026-07-31",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "Short Course: Structural Geology Must-Knows"
   },
   "https://eage.org/students/scholarship-support/": {
     "deadline": "2024-10-11",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "Scholarships & Awards"
   },
   "https://ecpr.eu/MethodsSchool": {
     "deadline": null,
     "first_seen": "2026-06-16",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "Useful Information"
   },
@@ -114,77 +114,77 @@
   "https://ellis.eu/events/cambridge-ellis-unit-summer-school-on-probabilistic-machine-learning-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "Cambridge ELLIS Unit Summer School on Probabilistic Machine Learning 2026"
   },
   "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school": {
-    "deadline": "2026-08-28",
+    "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School"
   },
   "https://ellis.eu/events/ellis-doctoral-symposium-2026": {
-    "deadline": "2026-04-26",
+    "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ELLIS Doctoral Symposium 2026"
   },
   "https://ellis.eu/events/ellis-sites-icml-fest-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ELLIS Sites ICML Fest 2026: Celebrate, Connect, Collaborate"
   },
   "https://ellis.eu/events/ellis-summer-school-at-institute-finland-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ELLIS Summer School at Institute Finland"
   },
   "https://ellis.eu/events/ellis-summer-school-at-unit-barcelona-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ELLIS Summer School at Unit Barcelona"
   },
   "https://ellis.eu/events/ellis-summer-school-at-unit-manchester-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ELLIS Summer School at Unit Manchester"
   },
   "https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ELLIS Summer School at Unit Munich"
   },
   "https://ellis.eu/events/ellis-summer-school-at-unit-munich-in-dortmund-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ELLIS Summer School at Unit NRW"
   },
   "https://ellis.eu/events/ellis-summer-school-at-unit-paris-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ELLIS Summer School at Unit Paris"
   },
   "https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ELLIS Summer School at Unit Saarbrücken"
   },
@@ -196,9 +196,9 @@
     "title": "ELLIS Unit Copenhagen: Learning Theory Workshop"
   },
   "https://ellis.eu/events/ellis-unit-copenhagen-learning-theory-workshop-1": {
-    "deadline": "2026-05-24",
+    "deadline": null,
     "first_seen": "2026-06-11",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ELLIS Unit Copenhagen: Learning Theory Summer School"
   },
@@ -219,7 +219,7 @@
   "https://ellis.eu/events/ellis-unit-madrid-18th-machine-learning-advanced-statistics-summer-school": {
     "deadline": null,
     "first_seen": "2026-06-11",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ELLIS Unit Madrid: 18th Machine Learning & Advanced Statistics Summer School"
   },
@@ -247,14 +247,14 @@
   "https://ellis.eu/events/machine-learning-summer-school-on-reliability-safety-mlss-rs": {
     "deadline": null,
     "first_seen": "2026-06-11",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "Machine Learning Summer School on Reliability & Safety"
   },
   "https://ellis.eu/events/malga-machine-learning-crash-course-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "MaLGa Machine Learning Crash Course 2026"
   },
@@ -324,7 +324,7 @@
   "https://eventi.cineca.it/en/hpc/cineca-summer-school-hpc-ai-2026/bologna-20260629": {
     "deadline": "2026-05-31",
     "first_seen": "2026-06-16",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "CINECA Summer School for HPC + AI 2026"
   },
@@ -352,7 +352,7 @@
   "https://icvss.dmi.unict.it/icvss2026/": {
     "deadline": "2026-04-01",
     "first_seen": "2026-06-16",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ICVSS 2026"
   },
@@ -373,35 +373,35 @@
   "https://indico.ictp.it/event/11122": {
     "deadline": "2026-04-04",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "IV Joint ICTP-SAIFR/ICTP-Trieste Summer School on Particle Physics"
   },
   "https://indico.ictp.it/event/11148": {
     "deadline": "2026-05-01",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ICTP-INdAM-SLMath Summer Graduate School for Machine Learning"
   },
   "https://indico.ictp.it/event/11149": {
     "deadline": "2026-04-23",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "Summer School on Cosmology"
   },
   "https://indico.ictp.it/event/11150": {
     "deadline": "2026-05-15",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "7th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics"
   },
   "https://lxmls.github.io/2026/": {
     "deadline": "2026-05-08",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "The 16th Lisbon Machine Learning School LxMLS 2026"
   },
@@ -415,7 +415,7 @@
   "https://people.disim.univaq.it/~antonio.cicone/2025/MaSAG25/MaSAG25_homepage.html": {
     "deadline": null,
     "first_seen": "2026-06-11",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "MaSAG25 Summer School and Conference"
   },
@@ -492,7 +492,7 @@
   "https://www.apecs.is/news/polar-and-alpine-community-news/5460-griso-summer-school-2026-a-collaborative-future-strengthening-science-and-connections-in-greenland.html": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "GRISO Summer School 2026 – A Collaborative Future: Strengthening Science and Connections in Greenland"
   },
@@ -534,7 +534,7 @@
   "https://www.cs.uoregon.edu/research/summerschool/summer26/": {
     "deadline": null,
     "first_seen": "2026-06-16",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "Types, Proofs, and Program Logics"
   },
@@ -555,14 +555,14 @@
   "https://www.ds3-datascience-polytechnique.fr/key-dates-application/": {
     "deadline": "2020-10-21",
     "first_seen": "2026-06-16",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "Key Dates & Application"
   },
   "https://www.earthscope.org/event/2026-technical-short-course-insar-processing-and-theory-using-gmtsar/": {
     "deadline": "2026-06-12",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "2026 Technical Short Course: InSAR Processing and Theory using GMTSAR"
   },
@@ -583,7 +583,7 @@
   "https://www.eeml.eu/": {
     "deadline": null,
     "first_seen": "2026-06-12",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "Eastern European Machine Learning Summer School"
   },
@@ -709,7 +709,7 @@
   "https://www.icos-cp.eu/about/opportunities/summer-school": {
     "deadline": "2026-07-31",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ICOS Summer/Winter School January 2027, application is now open"
   },
@@ -800,7 +800,7 @@
   "https://www.solas-int.org/events/solas-events/summer-school-2026.html": {
     "deadline": null,
     "first_seen": "2026-06-16",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "Summer School 2026"
   },
@@ -814,21 +814,21 @@
   "https://www.un-ihe.org/short-courses": {
     "deadline": "2026-12-11",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "River Basin Modelling"
   },
   "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-science-communication": {
-    "deadline": null,
+    "deadline": "2026-03-29",
     "first_seen": "2026-06-16",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "Summer School Science Communication"
   },
   "https://www.wcrp-climate.org/ictp2014-about": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-17",
+    "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "WCRP-ICTP 2014 Summer school on Attribution and Prediction of Extremes Events"
   }
