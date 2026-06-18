@@ -17,9 +17,13 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-18 · 0 fully qualified · 2 high-quality · 2 found shown_
+_Last scan: 2026-06-18 · 1 fully qualified · 2 high-quality · 3 found shown_
 
-**No fully qualified opportunities in the latest scan.** High-quality and found opportunities below are leads for manual checking.
+**Fully Qualified Opportunities**
+
+| # | title | type | organizer | location | duration | deadline | funding / fee | topic | eligibility | reason |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | [Social Science Data Analysis](https://essexsummerschool.com/new-application/) | summer school | Essex Summer School | Colchester, UK | 29 Jun – 14 Aug 2026 · 47 days | 2026-07-17 | scholarship · amount not stated · Apply on official page | satellite, geospatial, AI, machine learning | Masters PhD Not Currently a Student Discipline Country of University / Employer * Afghanistan Albania Algeria Andorra Angola Anguilla Antigua and Barbuda Argentina Ar | topic match: satellite, geospatial, AI, machine learning; funding evidence: scholarship; deadline appears open; 47 days |
 
 **High-Quality Opportunities**
 
@@ -32,6 +36,7 @@ _Last scan: 2026-06-18 · 0 fully qualified · 2 high-quality · 2 found shown_
 
 | title | type | organizer | location | duration | deadline | funding / fee | topic |
 |---|---|---|---|---|---|---|---|
+| [Travel Grants](https://bernstein-network.de/en/bernstein-conference/early-career-scientists/travel-grants/) | advanced course | Bernstein Network | Europe | uncertain | 2026-07-01 | travel grant · amount not stated · Apply on official page | satellite, data analysis, statistics, computational neuroscience |
 | [River Basin Modelling](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | groundwater, water resources, water quality, GIS |
 | [ELLIS Summer School at Unit Munich](https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026) | summer school | ELLIS | TUM Garching Campus | 14 Sep – 18 Sep 2026 · 5 days | uncertain | Funding or fee not stated | machine learning, computer vision |
 

@@ -35,6 +35,41 @@
       }
     },
     {
+      "title": "Travel Grants",
+      "url": "https://bernstein-network.de/en/bernstein-conference/early-career-scientists/travel-grants/",
+      "organizer": "Bernstein Network",
+      "source_layer": "2",
+      "location": "Europe",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2026-07-01",
+      "deadline_status": "open",
+      "financial_access_status": "funded",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "satellite",
+        "data analysis",
+        "statistics",
+        "computational neuroscience",
+        "neuroscience",
+        "history"
+      ],
+      "needs_review": [
+        "duration is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "Application deadline: July 1, 2026",
+        "duration": "",
+        "funding": "Travel Grants – Bernstein Network Computational Neuroscience Home Network The Bernstein Network Bernstein Centers Berlin Freiburg Gö",
+        "mode": "on Site (BCOS) Awards and Initiatives Valentin Braitenber"
+      }
+    },
+    {
       "title": "ELLIS Summer School at Unit Saarbrücken",
       "url": "https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026",
       "organizer": "ELLIS",

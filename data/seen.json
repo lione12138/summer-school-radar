@@ -20,6 +20,20 @@
     "status": "near_match",
     "title": "ASPECT : A dvanced S olver for P lanetary E volution, C onvection, and T ectonics"
   },
+  "https://bernstein-network.de/en/bernstein-conference/early-career-scientists/travel-grants/": {
+    "deadline": "2026-07-01",
+    "first_seen": "2026-06-18",
+    "last_seen": "2026-06-18",
+    "status": "near_match",
+    "title": "Travel Grants"
+  },
+  "https://businessdatascience.nl/foundations-of-machine-learning-with-applications-in-python": {
+    "deadline": "2026-06-15",
+    "first_seen": "2026-06-18",
+    "last_seen": "2026-06-18",
+    "status": "near_match",
+    "title": "Foundations of Machine Learning with Applications in Python"
+  },
   "https://cism.it/en/activities/courses/C2602/": {
     "deadline": "2026-04-22",
     "first_seen": "2026-06-16",
@@ -320,6 +334,13 @@
     "last_seen": "2026-06-18",
     "status": "near_match",
     "title": "ESS 2026 course list"
+  },
+  "https://essexsummerschool.com/new-application/": {
+    "deadline": "2026-07-17",
+    "first_seen": "2026-06-18",
+    "last_seen": "2026-06-18",
+    "status": "qualified",
+    "title": "Social Science Data Analysis"
   },
   "https://essexsummerschool.com/summer-school-facts/scholarships/q-step-scholarship/": {
     "deadline": "2026-04-03",
