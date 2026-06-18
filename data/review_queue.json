@@ -66,44 +66,6 @@
       }
     },
     {
-      "title": "Social Science Data Analysis",
-      "url": "https://www.essex.ac.uk/short-courses/social-science-data-analysis",
-      "organizer": "Essex Summer School",
-      "source_layer": "2",
-      "location": "UK",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "funded",
-      "fee": "free of charge",
-      "fee_eur": 0.0,
-      "topics": [
-        "sustainability",
-        "data science",
-        "data analysis",
-        "mathematics",
-        "design",
-        "social science",
-        "social science methods",
-        "history"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "duration is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "",
-        "duration": "",
-        "funding": "funding Fees and funding Fees and funding overview Scholarships and bursaries Support with the cost of living International stu",
-        "mode": "in-person and online courses. The Essex Summer School in So"
-      }
-    },
-    {
       "title": "ELLIS Summer School at Unit Munich",
       "url": "https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026",
       "organizer": "ELLIS",
