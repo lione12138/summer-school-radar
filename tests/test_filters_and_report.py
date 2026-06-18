@@ -1341,6 +1341,18 @@ def test_site_hero_omits_cta_json_and_rss_links(tmp_path) -> None:
     assert "candidates.json" not in hero
 
 
+def test_site_hero_disclaimer_is_rendered(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    ranked = rank_candidates([candidate])
+    write_site(ranked, [], tmp_path)
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    hero = html.split("</header>", 1)[0]
+    assert 'class="hero-disclaimer"' in hero
+    assert "Use this as a starting point, not the only source" in hero
+    assert "请把这里当作基础信息入口" in html
+    assert "祝大家都能录到心仪的项目" in html
+
+
 def test_site_generation_writes_favicon(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
@@ -1364,6 +1376,27 @@ def test_collection_notes_are_public_friendly(tmp_path) -> None:
     assert "source website" in html
     assert "╔" not in html
     assert "playwright install" not in html
+
+
+def test_manual_sources_are_listed_in_collection_notes(tmp_path) -> None:
+    write_site(
+        [],
+        [],
+        tmp_path,
+        sources=[
+            {
+                "name": "Manual Excellent Source",
+                "url": "https://example.org/manual",
+                "check_manually": True,
+                "notes": "Behind a login wall.",
+            }
+        ],
+    )
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert "Collection Notes" in html
+    assert "Manual Excellent Source" in html
+    assert "check manually" in html
+    assert "Behind a login wall" in html
 
 
 def test_site_generation_renders_sources_page(tmp_path) -> None:

@@ -204,6 +204,7 @@ _UI_SCRIPT = """
       "nav.sources": {en:"Sources", zh:"来源"},
       "hero.kicker": {en:"\\uD83D\\uDCE1 Updated daily \\u00B7 Free & open source", zh:"\\uD83D\\uDCE1 每天更新 \\u00B7 免费开源"},
       "hero.subtitle": {en:"A free daily scan of trusted academic sources for funded research summer schools across many academic fields. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.", zh:"每天自动扫描可信学术来源,汇总各学科有资助的科研暑校。严格筛选,只留有资助/低收费、线下、且仍在报名的项目。"},
+      "hero.disclaimer": {en:"Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.", zh:"请把这里当作基础信息入口，而不是唯一信息来源。本站信息来自各大组织和学校官网，但自动收集和解析仍可能因为技术问题出错；申请前请务必到官网核对截止日期、费用、资助和资格要求。少数质量很高但暂时无法自动收集的官网已列在 Collection Notes 里。祝大家都能录到心仪的项目。"},
       "cta.email": {en:"Get email alerts", zh:"邮件订阅"},
       "meta.updated": {en:"Updated", zh:"更新"},
       "meta.fixed": {en:"Fixed-source scan", zh:"固定来源扫描"},
@@ -345,10 +346,28 @@ def write_site(
     )
     path = output_dir / "index.html"
     path.write_text(
-        render_site(candidates, errors, site_config or {}, curated, tracked_sources=tracked_sources),
+        render_site(
+            candidates,
+            errors + _manual_source_notes(sources),
+            site_config or {},
+            curated,
+            tracked_sources=tracked_sources,
+        ),
         encoding="utf-8",
     )
     return path
+
+
+def _manual_source_notes(sources: list[dict[str, Any]]) -> list[str]:
+    notes: list[str] = []
+    for source in sources:
+        if not source.get("check_manually"):
+            continue
+        name = str(source.get("name", "Manual source")).strip()
+        note = str(source.get("notes", "")).strip()
+        suffix = f" {note}" if note else ""
+        notes.append(f"{name}: high-quality official source; check manually because it cannot be collected reliably yet.{suffix}")
+    return notes
 
 
 def _copy_og_image(output_dir: Path) -> None:
@@ -796,6 +815,16 @@ def render_site(
       margin: 0;
       font-size: 16.5px;
     }}
+    .hero-disclaimer {{
+      max-width: 920px;
+      margin: 18px 0 0;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 255, 255, .28);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .1);
+      color: rgba(243, 249, 252, .88);
+      font-size: 13.5px;
+    }}
     .meta {{
       display: flex;
       flex-wrap: wrap;
@@ -1027,6 +1056,7 @@ def render_site(
       <p class="kicker" data-i18n="hero.kicker">&#128225; Updated daily &middot; Free &amp; open source</p>
       <h1>Summa</h1>
       <p class="subtitle" data-i18n="hero.subtitle">A free daily scan of trusted academic sources for funded research summer schools across many academic fields. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.</p>
+      <p class="hero-disclaimer" data-i18n="hero.disclaimer">Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.</p>
       <div class="meta">
         <span class="pill"><span data-i18n="meta.updated">Updated</span> {updated}</span>
         <span class="pill" data-i18n="meta.fixed">Fixed-source scan</span>
