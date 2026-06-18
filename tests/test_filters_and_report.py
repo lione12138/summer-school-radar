@@ -1232,6 +1232,47 @@ def test_dedupe_merges_fee_from_linked_page() -> None:
     assert ranked[0].fee_eur == 332.5
 
 
+def test_application_page_without_dates_can_close_parent_candidate() -> None:
+    source = Source(
+        name="Karthaus Summer School",
+        url="https://example.org/karthaus/application.php",
+        layer="1",
+        region="continental Europe",
+        source_type="test",
+    )
+    page = Page(
+        url=source.url,
+        title="Ice and Climate : Karthaus summerschool",
+        text=(
+            "Karthaus summerschool. How to apply. Costs Students will be required to pay a contribution "
+            "of €1000 (2026) towards board and lodging. We offer one fellowship to cover the required "
+            "contribution. Procedure Application for the 2027 course is not yet open."
+        ),
+        html="<html><body><h1>Ice and Climate : Karthaus summerschool</h1></body></html>",
+        source=source,
+        fetched_at=date.today(),
+    )
+    supplement = extract_candidate(page, PROFILE)
+    assert supplement is not None
+    assert supplement.deadline_status == "not_open"
+    assert supplement.fee_eur == 1000
+
+    parent = sample_candidate(PROFILE)
+    parent.title = "Karthaus summerschool"
+    parent.organizer = "Karthaus Summer School"
+    parent.source_url = "https://example.org/karthaus/"
+    parent.application_link = parent.source_url
+    parent.deadline = None
+    parent.deadline_status = "uncertain"
+    parent.fee = ""
+    parent.fee_eur = None
+    ranked = rank_candidates([apply_hard_filters(parent, PROFILE), apply_hard_filters(supplement, PROFILE)])
+    assert len(ranked) == 1
+    assert ranked[0].deadline_status == "not_open"
+    assert ranked[0].fee_eur == 1000
+    assert ranked[0].is_past is True
+
+
 def test_registration_latest_on_deadline_is_parsed() -> None:
     from research_school_radar.extract import _all_deadlines, _extract_deadline
 

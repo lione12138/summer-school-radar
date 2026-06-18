@@ -188,7 +188,8 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     # calendar even if it also quotes a deadline; and with no deadline at all only
     # an exact single range looks like one opportunity.
     event_count = 1 if adapter_dates else max(len(ranges), len(jsonld))
-    if event_count >= 3 or (deadline is None and event_count != 1):
+    supplemental_application_page = _applications_not_open(text) or bool(_extract_fee(text))
+    if event_count >= 3 or (deadline is None and event_count != 1 and not supplemental_application_page):
         return None
 
     preferred_topics = profile.get("preferred_topics", [])
@@ -310,6 +311,14 @@ def _extract_fee(text: str) -> str:
     )
     if free:
         return free
+    contribution = first_match(
+        text,
+        [
+            r"required to pay a contribution of\s+((?:(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD)|[€$£])\s?\d[\d ,.]*\d?|\d[\d ,.]*\d?\s?(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£))",
+        ],
+    )
+    if contribution:
+        return contribution
     participant_fee = _participant_fee(text)
     if participant_fee:
         return participant_fee

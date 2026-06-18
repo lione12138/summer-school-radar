@@ -13,6 +13,7 @@ from .utils import clean_space
 # workshops are intentionally excluded (see is_excluded_programme).
 OPPORTUNITY_TERMS = [
     "summer school",
+    "summerschool",
     "winter school",
     "spring school",
     "autumn school",

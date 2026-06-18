@@ -113,6 +113,9 @@ def _merge_into(primary: Candidate, other: Candidate) -> None:
         primary.deadline_evidence = primary.deadline_evidence or other.deadline_evidence
         if other.deadline_status:
             primary.deadline_status = other.deadline_status
+    if primary.deadline_status not in {"closed", "not_open"} and other.deadline_status in {"closed", "not_open"}:
+        primary.deadline_status = other.deadline_status
+        primary.deadline_evidence = primary.deadline_evidence or other.deadline_evidence
     if primary.start_date is None and other.start_date is not None:
         primary.start_date = other.start_date
         primary.end_date = primary.end_date or other.end_date
@@ -203,6 +206,8 @@ def _title_similarity(a: str, b: str) -> float:
     title_a, title_b = _normalise_title(a), _normalise_title(b)
     if not title_a or not title_b:
         return 0.0
+    if title_a in title_b or title_b in title_a:
+        return 1.0
     return SequenceMatcher(None, title_a, title_b).ratio()
 
 
