@@ -34,6 +34,7 @@ from .extract import (
 from .models import Candidate
 from .parse import is_workshop_title
 from .render import render_texts
+from .render import render_page_data
 from .utils import clean_space
 
 
@@ -209,9 +210,16 @@ def _ellis(profile: dict) -> tuple[list[Candidate], list[str]]:
     return candidates, []
 
 
+_NO_YEAR_DATE = (
+    r"(?:[A-Z][a-z]+\s+\d{1,2}(?:st|nd|rd|th)?|\d{1,2}(?:st|nd|rd|th)?\s+[A-Z][a-z]+)"
+)
 _DEADLINE_NO_YEAR = re.compile(
     r"(?:registration deadline|application deadline|apply by|apply before|deadline|closing date)"
-    r"[:\s]*([A-Z][a-z]+\s+\d{1,2})(?:st|nd|rd|th)?\b(?!\s*,?\s*20\d{2})",
+    rf"\s*[-:\s]\s*({_NO_YEAR_DATE})\b(?!\s*,?\s*20\d{{2}})",
+    flags=re.IGNORECASE,
+)
+_REGISTRATION_UNTIL_NO_YEAR = re.compile(
+    rf"(?:registration|applications?)\s+(?:opens?\s+)?until\s+({_NO_YEAR_DATE})\b(?!\s*,?\s*20\d{{2}})",
     flags=re.IGNORECASE,
 )
 
@@ -224,11 +232,27 @@ def _deadline_with_year(text: str, event_start: date | None) -> date | None:
         return full
     if event_start is None:
         return None
-    match = _DEADLINE_NO_YEAR.search(text)
-    if not match:
+    deadlines = _deadlines_without_year(text, event_start)
+    if not deadlines:
         return None
+    return max(deadlines, key=lambda item: item[0])[0]
+
+
+def _deadlines_without_year(text: str, event_start: date) -> list[tuple[date, str]]:
+    found: list[tuple[date, str]] = []
+    seen: set[date] = set()
+    for pattern in (_DEADLINE_NO_YEAR, _REGISTRATION_UNTIL_NO_YEAR):
+        for match in pattern.finditer(text):
+            parsed = _infer_no_year_date(match.group(1), event_start)
+            if parsed and parsed not in seen:
+                seen.add(parsed)
+                found.append((parsed, clean_space(match.group(0))))
+    return sorted(found, key=lambda item: item[0])
+
+
+def _infer_no_year_date(value: str, event_start: date) -> date | None:
     try:
-        parsed = date_parser.parse(f"{match.group(1)} {event_start.year}").date()
+        parsed = date_parser.parse(f"{value} {event_start.year}", dayfirst=True).date()
     except (ValueError, OverflowError):
         return None
     # A registration deadline falls on or before the event; if the inferred date
@@ -246,24 +270,90 @@ def _enrich_ellis_deadlines(candidates: list[Candidate]) -> None:
     which the listing does not carry. No-op without Playwright."""
     today = date.today()
     upcoming = [c for c in candidates if c.start_date is not None and c.start_date >= today][:15]
-    rendered = render_texts([c.application_link for c in upcoming])
+    rendered = render_page_data([c.application_link for c in upcoming])
+    follow_up_urls = _ellis_follow_up_urls(rendered)
+    follow_up_texts = render_texts(follow_up_urls)
     for candidate in upcoming:
-        text = rendered.get(candidate.application_link, "")
+        page_data = rendered.get(candidate.application_link, {})
+        texts = [str(page_data.get("text", ""))]
+        texts.extend(follow_up_texts[url] for url in _candidate_follow_up_urls(page_data) if url in follow_up_texts)
+        text = " ".join(texts)
         deadline = _deadline_with_year(text, candidate.start_date)
-        if deadline is None:
-            continue
-        candidate.deadline = deadline
-        candidate.deadline_status = _deadline_status(deadline)
-        candidate.deadline_evidence = f"ELLIS detail page: registration deadline {deadline.isoformat()}"
+        if deadline is not None:
+            candidate.deadline = deadline
+            candidate.deadline_status = _deadline_status(deadline)
+            candidate.deadline_evidence = f"ELLIS detail/registration page: registration deadline {deadline.isoformat()}"
+        fee, fee_eur = _ellis_fee_from_text(text)
+        if fee_eur is not None:
+            candidate.fee = fee
+            candidate.fee_eur = fee_eur
         resolved = sum(
             [
-                True,
+                candidate.deadline is not None,
                 candidate.duration_days is not None,
                 candidate.funding_available is True or candidate.fee_eur is not None,
                 candidate.mode in {"in-person", "hybrid", "online"},
             ]
         )
         candidate.extraction_confidence = round(resolved / 4, 2)
+
+
+def _ellis_follow_up_urls(rendered: dict[str, dict[str, Any]]) -> list[str]:
+    urls: list[str] = []
+    seen: set[str] = set()
+    for page_data in rendered.values():
+        for url in _candidate_follow_up_urls(page_data):
+            if url not in seen:
+                seen.add(url)
+                urls.append(url)
+    return urls
+
+
+def _candidate_follow_up_urls(page_data: dict[str, Any]) -> list[str]:
+    urls: list[str] = []
+    for link in page_data.get("links", []):
+        if not isinstance(link, dict):
+            continue
+        href = str(link.get("href", ""))
+        label = str(link.get("text", "")).lower()
+        lowered = href.lower()
+        if "registration" in label or "register" in label or "registration" in lowered:
+            urls.append(href)
+    return urls[:3]
+
+
+def _ellis_fee_from_text(text: str) -> tuple[str, float | None]:
+    """Read the ELLIS registration-fee table, preferring the academic column."""
+    rows = re.findall(
+        r"(Early Bird|Regular|Late Bird)\s+(\d+(?:[.,]\d+)?)\s*EUR\s+(\d+(?:[.,]\d+)?)\s*EUR",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if rows:
+        academia = [_parse_number(row[1]) for row in rows]
+        non_academia = [_parse_number(row[2]) for row in rows]
+        academia_values = [value for value in academia if value is not None]
+        non_academia_values = [value for value in non_academia if value is not None]
+        if academia_values:
+            low = min(academia_values)
+            high = max(academia_values)
+            if non_academia_values:
+                fee = f"Academia EUR {low:.0f}-{high:.0f}; non-academia up to EUR {max(non_academia_values):.0f}"
+            else:
+                fee = f"Academia EUR {low:.0f}-{high:.0f}"
+            return fee, high
+    amounts = [_parse_number(value) for value in re.findall(r"\b(\d+(?:[.,]\d+)?)\s*EUR\b", text)]
+    valid = [value for value in amounts if value is not None]
+    if not valid:
+        return "", None
+    return f"EUR {min(valid):.0f}-{max(valid):.0f}", max(valid)
+
+
+def _parse_number(value: str) -> float | None:
+    try:
+        return float(value.replace(",", "."))
+    except ValueError:
+        return None
 
 
 def _ellis_location(card: Any) -> str:

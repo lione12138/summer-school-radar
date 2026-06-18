@@ -14,6 +14,7 @@ from pathlib import Path
 from typing import Any
 
 from .models import Candidate
+from .utils import write_text_atomic
 
 
 def _load(path: Path) -> dict[str, dict[str, Any]]:
@@ -27,13 +28,17 @@ def _load(path: Path) -> dict[str, dict[str, Any]]:
 
 
 def update_seen(path: Path, candidates: list[Candidate]) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
     today = date.today().isoformat()
     seen = _load(path)
     for candidate in candidates:
         existing = seen.get(candidate.source_url)
         first_seen = existing.get("first_seen") if isinstance(existing, dict) else None
         first_seen = first_seen or today
+        try:
+            candidate.first_seen = date.fromisoformat(first_seen)
+        except ValueError:
+            first_seen = today
+            candidate.first_seen = date.today()
         seen[candidate.source_url] = {
             "first_seen": first_seen,
             "last_seen": today,
@@ -41,8 +46,7 @@ def update_seen(path: Path, candidates: list[Candidate]) -> None:
             "deadline": candidate.deadline.isoformat() if candidate.deadline else None,
             "status": "qualified" if candidate.fully_qualified else "near_match",
         }
-        candidate.first_seen = date.fromisoformat(first_seen)
-    path.write_text(
+    write_text_atomic(
+        path,
         json.dumps(seen, indent=2, sort_keys=True, ensure_ascii=False) + "\n",
-        encoding="utf-8",
     )

@@ -1,10 +1,11 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from .api_sources import collect_api_candidates
-from .collect import collect_sources, fetch_source
+from .collect import DEFAULT_MAX_WORKERS, collect_sources, fetch_source
 from .extract import extract_candidate, sample_candidate
 from .filter import apply_hard_filters
 from .models import Source
@@ -29,6 +30,7 @@ def main() -> None:
     scan.add_argument("--include-discovery", action="store_true")
     scan.add_argument("--offline-sample", action="store_true")
     scan.add_argument("--max-links-per-source", type=int, default=8)
+    scan.add_argument("--max-workers", type=int, default=DEFAULT_MAX_WORKERS)
     args = parser.parse_args()
 
     if args.command == "scan":
@@ -40,6 +42,7 @@ def main() -> None:
             include_discovery=args.include_discovery,
             offline_sample=args.offline_sample,
             max_links_per_source=args.max_links_per_source,
+            max_workers=args.max_workers,
             generate_site=not args.no_site,
         )
 
@@ -52,6 +55,7 @@ def run_scan(
     include_discovery: bool = False,
     offline_sample: bool = False,
     max_links_per_source: int = 8,
+    max_workers: int = DEFAULT_MAX_WORKERS,
     generate_site: bool = True,
 ) -> Path:
     profile = load_yaml(config_dir / "profile.yaml")
@@ -63,7 +67,7 @@ def run_scan(
         candidates = [sample_candidate(profile)]
     else:
         sources = _load_sources(config_dir / "sources.yaml")
-        pages, collection_errors = collect_sources(sources)
+        pages, collection_errors = collect_sources(sources, max_workers=max_workers)
         # Transient network errors (timeouts, connection failures) vary run to run
         # on the shared CI runner and are not useful in the public notes; log them
         # but only surface persistent problems. The Sources page lists coverage.
@@ -74,7 +78,11 @@ def run_scan(
                 errors.append(error)
         # A followed link that fails to load is noise, not a source problem, so
         # those errors are not surfaced in the public collection notes.
-        linked_pages, _linked_errors = collect_linked_opportunity_pages(pages, max_links_per_source)
+        linked_pages, _linked_errors = collect_linked_opportunity_pages(
+            pages,
+            max_links_per_source,
+            max_workers=max_workers,
+        )
         candidate_pages = [page for page in pages if looks_like_opportunity(page.text)]
         candidate_pages.extend(linked_pages)
         candidates = [candidate for page in candidate_pages if (candidate := extract_candidate(page, profile))]
@@ -202,9 +210,8 @@ def _collect_discovery_sources(sources: list[Source]):
     return pages, errors
 
 
-def collect_linked_opportunity_pages(source_pages, max_links_per_source: int):
-    pages = []
-    errors = []
+def collect_linked_opportunity_pages(source_pages, max_links_per_source: int, max_workers: int = DEFAULT_MAX_WORKERS):
+    linked_sources = []
     seen_urls = {page.url for page in source_pages}
     for page in source_pages:
         for url in candidate_links(
@@ -227,13 +234,48 @@ def collect_linked_opportunity_pages(source_pages, max_links_per_source: int):
                 enabled=True,
                 blocked_link_domains=page.source.blocked_link_domains,
             )
+            linked_sources.append((page.source.name, url, linked_source))
+
+    if not linked_sources:
+        return [], []
+
+    workers = max(1, min(max_workers, len(linked_sources)))
+    if workers == 1:
+        return _collect_linked_sources_serial(linked_sources)
+
+    pages_by_index = {}
+    errors_by_index = {}
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        future_to_link = {
+            executor.submit(fetch_source, linked_source): (index, source_name, url)
+            for index, (source_name, url, linked_source) in enumerate(linked_sources)
+        }
+        for future in as_completed(future_to_link):
+            index, source_name, url = future_to_link[future]
             try:
-                linked_page = fetch_source(linked_source)
+                linked_page = future.result()
             except Exception as exc:  # noqa: BLE001 - keep a single broken link from failing the scan.
-                errors.append(f"{page.source.name} linked page {url}: {exc}")
+                errors_by_index[index] = f"{source_name} linked page {url}: {exc}"
                 continue
             if looks_like_opportunity(linked_page.text):
-                pages.append(linked_page)
+                pages_by_index[index] = linked_page
+    return (
+        [pages_by_index[index] for index in sorted(pages_by_index)],
+        [errors_by_index[index] for index in sorted(errors_by_index)],
+    )
+
+
+def _collect_linked_sources_serial(linked_sources):
+    pages = []
+    errors = []
+    for source_name, url, linked_source in linked_sources:
+        try:
+            linked_page = fetch_source(linked_source)
+        except Exception as exc:  # noqa: BLE001 - keep a single broken link from failing the scan.
+            errors.append(f"{source_name} linked page {url}: {exc}")
+            continue
+        if looks_like_opportunity(linked_page.text):
+            pages.append(linked_page)
     return pages, errors
 
 

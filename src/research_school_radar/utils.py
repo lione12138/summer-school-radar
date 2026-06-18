@@ -19,6 +19,14 @@ def load_yaml(path: Path) -> dict[str, Any]:
     return data
 
 
+def write_text_atomic(path: Path, text: str) -> None:
+    """Write text via a same-directory temporary file, then replace atomically."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temp = path.with_name(f".{path.name}.tmp")
+    temp.write_text(text, encoding="utf-8")
+    temp.replace(path)
+
+
 def clean_space(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 

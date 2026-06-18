@@ -62,6 +62,7 @@ def test_ellis_listing_collector_parses_cards(monkeypatch) -> None:
     from research_school_radar.api_sources import _ELLIS_URL, _ellis
 
     # Detail-page rendering is exercised separately; keep this test offline.
+    monkeypatch.setattr(api_sources, "render_page_data", lambda urls, **kwargs: {})
     monkeypatch.setattr(api_sources, "render_texts", lambda urls, **kwargs: {})
 
     start = date.today() + timedelta(days=20)
@@ -114,6 +115,82 @@ def test_deadline_without_year_is_inferred_from_event() -> None:
     # A full date with a year is parsed directly.
     text3 = "Application deadline: 1 March 2026."
     assert _deadline_with_year(text3, event_start) == _date(2026, 3, 1)
+
+
+def test_ellis_timeline_uses_latest_registration_deadline() -> None:
+    from datetime import date as _date
+
+    from research_school_radar.api_sources import _deadline_with_year
+
+    event_start = _date(2026, 6, 29)
+    text = (
+        "Early bird registration deadline - 8 March (AoE) decision notification - 22 March "
+        "Regular registration deadline - 19 April (AoE) decision notification - 30 April "
+        "Late Bird registration open until 10 May (AoE) or until the tickets are available"
+    )
+    assert _deadline_with_year(text, event_start) == _date(2026, 5, 10)
+
+
+def test_ellis_enrichment_follows_registration_page(monkeypatch) -> None:
+    from datetime import date as _date
+
+    import research_school_radar.api_sources as api_sources
+    from research_school_radar.models import Candidate
+
+    candidate = Candidate(
+        title="Machine Learning Summer School on Reliability & Safety",
+        type="summer school",
+        organizer="ELLIS",
+        source_layer="1",
+        region_priority="priority",
+        location="Krakow",
+        mode="in-person",
+        start_date=_date(2026, 6, 29),
+        end_date=_date(2026, 7, 3),
+        duration_days=5,
+        deadline=None,
+        deadline_status="uncertain",
+        funding_available=None,
+        funding_type=[],
+        funding_evidence="",
+        topic_keywords=["machine learning"],
+        eligibility="",
+        target_level="uncertain",
+        fee="",
+        fee_eur=None,
+        application_link="https://ellis.eu/events/machine-learning-summer-school-on-reliability-safety-mlss-rs",
+        source_url="https://ellis.eu/events/machine-learning-summer-school-on-reliability-safety-mlss-rs",
+        summary="",
+        recommendation_reason="",
+        risk_points="",
+    )
+    monkeypatch.setattr(
+        api_sources,
+        "render_page_data",
+        lambda urls: {
+            candidate.application_link: {
+                "text": "MLSS-RS registration information is on the registration page.",
+                "links": [{"href": "https://mlss2026.mlinpl.org/registration", "text": "Registration"}],
+            }
+        },
+    )
+    monkeypatch.setattr(
+        api_sources,
+        "render_texts",
+        lambda urls: {
+            "https://mlss2026.mlinpl.org/registration": (
+                "Timeline Early bird registration deadline - 8 March Regular registration deadline - 19 April "
+                "Late Bird registration open until 10 May or until the tickets are available "
+                "Costs Participation fee Registration fees vary by deadline and participant type: "
+                "Early Bird 350 EUR 700 EUR Regular 400 EUR 800 EUR Late Bird 450 EUR 900 EUR"
+            )
+        },
+    )
+    api_sources._enrich_ellis_deadlines([candidate])
+    assert candidate.deadline == _date(2026, 5, 10)
+    assert candidate.deadline_status == "closed"
+    assert candidate.fee == "Academia EUR 350-450; non-academia up to EUR 900"
+    assert candidate.fee_eur == 450
 
 
 @responses.activate

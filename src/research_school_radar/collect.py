@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
 from urllib.parse import urljoin
 
@@ -12,6 +13,7 @@ from .utils import clean_space
 
 
 DEFAULT_TIMEOUT = 30
+DEFAULT_MAX_WORKERS = 6
 
 # A realistic browser header set. Many public pages return 403 to a bare bot
 # User-Agent even though the content is open; a normal browser UA fixes that.
@@ -73,7 +75,30 @@ def fetch_source(source: Source, user_agent: str = "summer-school-radar/0.1") ->
     )
 
 
-def collect_sources(sources: list[Source]) -> tuple[list[Page], list[str]]:
+def collect_sources(sources: list[Source], max_workers: int = DEFAULT_MAX_WORKERS) -> tuple[list[Page], list[str]]:
+    if not sources:
+        return [], []
+    workers = max(1, min(max_workers, len(sources)))
+    if workers == 1:
+        return _collect_sources_serial(sources)
+
+    pages_by_index: dict[int, Page] = {}
+    errors_by_index: dict[int, str] = {}
+    with ThreadPoolExecutor(max_workers=workers) as executor:
+        future_to_source = {executor.submit(fetch_source, source): (index, source) for index, source in enumerate(sources)}
+        for future in as_completed(future_to_source):
+            index, source = future_to_source[future]
+            try:
+                pages_by_index[index] = future.result()
+            except Exception as exc:  # noqa: BLE001 - one failing source must never abort the scan.
+                errors_by_index[index] = f"{source.name}: {exc}"
+
+    pages = [pages_by_index[index] for index in sorted(pages_by_index)]
+    errors = [errors_by_index[index] for index in sorted(errors_by_index)]
+    return pages, errors
+
+
+def _collect_sources_serial(sources: list[Source]) -> tuple[list[Page], list[str]]:
     pages: list[Page] = []
     errors: list[str] = []
     for source in sources:

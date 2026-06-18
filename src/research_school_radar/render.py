@@ -13,6 +13,7 @@ back to the plain ``requests`` fetch so the default workflow stays lightweight.
 from __future__ import annotations
 
 from datetime import date
+from typing import Any
 
 from bs4 import BeautifulSoup
 
@@ -83,7 +84,10 @@ def render_texts(
 
     results: dict[str, str] = {}
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=True)
+        try:
+            browser = playwright.chromium.launch(headless=True)
+        except Exception:  # noqa: BLE001 - Playwright may be installed without browsers.
+            return {}
         try:
             context = browser.new_context(user_agent=user_agent)
             for url in urls:
@@ -92,6 +96,48 @@ def render_texts(
                     page.goto(url, wait_until="domcontentloaded", timeout=timeout_ms)
                     page.wait_for_timeout(1500)
                     results[url] = clean_space(page.inner_text("body"))
+                    page.close()
+                except Exception:  # noqa: BLE001 - skip a page that won't load.
+                    continue
+        finally:
+            browser.close()
+    return results
+
+
+def render_page_data(
+    urls: list[str],
+    user_agent: str = "summer-school-radar/0.1",
+    timeout_ms: int = 15000,
+) -> dict[str, dict[str, Any]]:
+    """Rendered text plus absolute links for pages that need one hop follow-up."""
+    if not render_available() or not urls:
+        return {}
+    from playwright.sync_api import sync_playwright
+
+    results: dict[str, dict[str, Any]] = {}
+    with sync_playwright() as playwright:
+        try:
+            browser = playwright.chromium.launch(headless=True)
+        except Exception:  # noqa: BLE001 - Playwright may be installed without browsers.
+            return {}
+        try:
+            context = browser.new_context(user_agent=user_agent)
+            for url in urls:
+                try:
+                    page = context.new_page()
+                    page.goto(url, wait_until="domcontentloaded", timeout=timeout_ms)
+                    page.wait_for_timeout(1500)
+                    links = page.eval_on_selector_all(
+                        "a[href]",
+                        """els => els.map(a => ({
+                            href: new URL(a.getAttribute("href"), document.baseURI).href,
+                            text: (a.innerText || a.textContent || "").trim()
+                        }))""",
+                    )
+                    results[url] = {
+                        "text": clean_space(page.inner_text("body")),
+                        "links": links,
+                    }
                     page.close()
                 except Exception:  # noqa: BLE001 - skip a page that won't load.
                     continue

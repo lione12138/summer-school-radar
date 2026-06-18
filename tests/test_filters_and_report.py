@@ -1174,6 +1174,47 @@ def test_application_deadline_preferred_over_unrelated_dates() -> None:
     assert chosen[0] == date(2026, 4, 1)
 
 
+def test_registration_latest_on_deadline_is_parsed() -> None:
+    from research_school_radar.extract import _all_deadlines, _extract_deadline
+
+    text = (
+        "Registration Because we can only accept a limited number of participants, "
+        "we ask you to include a motivation letter and a CV with your application. "
+        "Please register here latest on March 29, 2026. See our website for more information."
+    )
+    assert _extract_deadline(text) == date(2026, 3, 29)
+    assert _all_deadlines(text)[0][1] == "register here latest on March 29, 2026"
+
+
+def test_leiden_science_communication_deadline_and_fee_are_extracted() -> None:
+    source = Source(
+        name="Leiden University",
+        url="https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-science-communication",
+        layer="1",
+        region="continental Europe",
+        source_type="university",
+    )
+    page = Page(
+        url=source.url,
+        title="Summer School Science Communication",
+        text=(
+            "Summer School Science Communication. In-person summer school in Leiden. "
+            "Dates: 6 July 2026 to 10 July 2026. Topics include education research and design. "
+            "Course fee EUR 575. Registration Because we can only accept a limited number of participants, "
+            "we ask you to include a motivation letter (max. 1 page) and a CV (max. 1 page) with your application. "
+            "Please register here latest on March 29, 2026. See our website for more information."
+        ),
+        html="<html><body><h1>Summer School Science Communication</h1></body></html>",
+        source=source,
+        fetched_at=date.today(),
+    )
+    candidate = extract_candidate(page, PROFILE)
+    assert candidate is not None
+    assert candidate.deadline == date(2026, 3, 29)
+    assert candidate.deadline_status == "closed"
+    assert candidate.fee_eur == 575
+
+
 def test_accommodation_window_not_used_as_event_dates() -> None:
     from research_school_radar.extract import _date_ranges
 
@@ -1285,6 +1326,44 @@ def test_site_generation_writes_attribution_and_bot_controls(tmp_path) -> None:
     html = (tmp_path / "index.html").read_text(encoding="utf-8")
     assert data["_canary"] in html
     assert "CC BY 4.0" in html
+
+
+def test_site_hero_omits_cta_json_and_rss_links(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    ranked = rank_candidates([candidate])
+    write_site(ranked, [], tmp_path)
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    hero = html.split("</header>", 1)[0]
+    assert "Browse opportunities" not in hero
+    assert "Subscribe via RSS" not in html
+    assert "JSON data" not in html
+    assert "RSS feed" not in html
+    assert "candidates.json" not in hero
+
+
+def test_site_generation_writes_favicon(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    ranked = rank_candidates([candidate])
+    write_site(ranked, [], tmp_path)
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert '<link rel="icon" type="image/svg+xml" href="favicon.svg">' in html
+    assert (tmp_path / "favicon.svg").exists()
+
+
+def test_collection_notes_are_public_friendly(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    ranked = rank_candidates([candidate])
+    errors = [
+        r"Climate Change AI: BrowserType.launch: Executable doesn't exist at C:\Users\x\AppData\Local\ms-playwright\chromium_headless_shell-1223\chrome.exe ╔══ Looks like Playwright was just installed or updated. Please run playwright install ╚══",
+        "AGU: 403 Client Error: Forbidden for url: https://www.agu.org/",
+    ]
+    write_site(ranked, errors, tmp_path)
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert "Collection Notes" in html
+    assert "browser rendering unavailable" in html
+    assert "source website" in html
+    assert "╔" not in html
+    assert "playwright install" not in html
 
 
 def test_site_generation_renders_sources_page(tmp_path) -> None:
@@ -1400,18 +1479,19 @@ def test_status_line_uses_correct_singular_and_plural(tmp_path) -> None:
 def test_subscribe_section_renders_email_form_when_configured() -> None:
     from research_school_radar.site import render_site
 
-    # Not configured: the section falls back to an RSS link, no email form.
+    # Not configured: no subscribe section is shown.
     plain = render_site([], [], {}, [])
-    assert 'id="subscribe"' in plain
+    assert 'id="subscribe"' not in plain
     assert "buttondown.email" not in plain
-    assert "Subscribe via RSS" in plain  # hero CTA stays RSS
+    assert "Subscribe via RSS" not in plain
+    assert "RSS feed" not in plain
 
     # Configured: an email subscribe form, and the hero CTA switches to email.
     config = {"subscribe": {"provider": "buttondown", "buttondown_username": "ssr"}}
     configured = render_site([], [], config, [])
     assert "buttondown.email/api/emails/embed-subscribe/ssr" in configured
     assert "Get email alerts" in configured
-    assert 'href="feed.xml"' in configured  # RSS still offered as an alternative
+    assert "RSS feed" not in configured
 
 
 def test_empty_state_stays_informative(tmp_path) -> None:
@@ -1426,7 +1506,8 @@ def test_empty_state_stays_informative(tmp_path) -> None:
     assert "Trusted sources" in html
     assert "across 2 trusted sources" in html  # manual sources are not counted as scanned
     assert "the radar is watching" in html
-    assert "Subscribe via RSS" in html
+    assert "See what we track" in html
+    assert "Subscribe via RSS" not in html
 
 
 def test_seen_state_is_json_and_preserves_first_seen(tmp_path) -> None:
@@ -1573,3 +1654,84 @@ def test_location_does_not_match_plain_venue_phrase() -> None:
     candidate = extract_candidate(page, PROFILE)
     assert candidate is not None
     assert candidate.location == "global"
+
+
+def test_collect_sources_keeps_order_and_reports_errors(monkeypatch) -> None:
+    from research_school_radar import collect
+
+    sources = [
+        Source(name="One", url="https://example.org/one", layer="1", region="global", source_type="test"),
+        Source(name="Two", url="https://example.org/two", layer="1", region="global", source_type="test"),
+        Source(name="Bad", url="https://example.org/bad", layer="1", region="global", source_type="test"),
+    ]
+
+    def fake_fetch(source: Source) -> Page:
+        if source.name == "Bad":
+            raise RuntimeError("boom")
+        return Page(
+            url=source.url,
+            title=source.name,
+            text="Summer school. Application deadline: 1 March 2027.",
+            html="",
+            source=source,
+            fetched_at=date.today(),
+        )
+
+    monkeypatch.setattr(collect, "fetch_source", fake_fetch)
+    pages, errors = collect.collect_sources(sources, max_workers=3)
+    assert [page.title for page in pages] == ["One", "Two"]
+    assert errors == ["Bad: boom"]
+
+
+def test_collect_linked_opportunity_pages_keeps_order_and_filters(monkeypatch) -> None:
+    import research_school_radar.cli as cli
+
+    source = Source(name="Listing", url="https://example.org", layer="1", region="global", source_type="test")
+    listing = Page(
+        url="https://example.org",
+        title="Listing",
+        text="Summer schools. Application information.",
+        html=(
+            '<a href="/a">Hydrology summer school apply</a>'
+            '<a href="/b">Climate training school application</a>'
+            '<a href="/c">Archive</a>'
+        ),
+        source=source,
+        fetched_at=date.today(),
+    )
+
+    def fake_fetch(linked_source: Source) -> Page:
+        text = {
+            "https://example.org/a": "Hydrology summer school. Application deadline: 1 March 2027.",
+            "https://example.org/b": "Plain event listing without apply signal.",
+        }[linked_source.url]
+        return Page(
+            url=linked_source.url,
+            title=linked_source.url.rsplit("/", 1)[-1],
+            text=text,
+            html="",
+            source=linked_source,
+            fetched_at=date.today(),
+        )
+
+    monkeypatch.setattr(cli, "fetch_source", fake_fetch)
+    pages, errors = cli.collect_linked_opportunity_pages([listing], max_links_per_source=5, max_workers=2)
+    assert errors == []
+    assert [page.url for page in pages] == ["https://example.org/a"]
+
+
+def test_seen_state_recovers_from_invalid_first_seen(tmp_path) -> None:
+    import json
+
+    from research_school_radar.storage import update_seen
+
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    seen_path = tmp_path / "seen.json"
+    seen_path.write_text(
+        json.dumps({candidate.source_url: {"first_seen": "not-a-date", "last_seen": "2020-01-01"}}),
+        encoding="utf-8",
+    )
+    update_seen(seen_path, [candidate])
+    state = json.loads(seen_path.read_text(encoding="utf-8"))
+    assert state[candidate.source_url]["first_seen"] == date.today().isoformat()
+    assert candidate.first_seen == date.today()

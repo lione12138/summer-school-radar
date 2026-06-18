@@ -662,7 +662,7 @@ _SINGLE_DATE = (
 _DEADLINE_PATTERN = (
     r"(?:application deadline|registration deadline|submission deadline|abstract deadline"
     r"|deadline|apply by|apply before|applications?\s+(?:close[sd]?|are due|due)"
-    r"|closing date|last date)"
+    r"|closing date|last date|\bregister\b(?:\s+\w+){0,5}\s+(?:latest|no later than)\s+on)"
     rf"[^.\n]{{0,40}}?({_SINGLE_DATE})"
 )
 

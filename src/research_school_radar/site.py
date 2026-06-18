@@ -202,24 +202,91 @@ _UI_SCRIPT = """
       "nav.how": {en:"How it works", zh:"工作原理"},
       "nav.about": {en:"About", zh:"关于"},
       "nav.sources": {en:"Sources", zh:"来源"},
-      "nav.rss": {en:"RSS", zh:"RSS"},
       "hero.kicker": {en:"\\uD83D\\uDCE1 Updated daily \\u00B7 Free & open source", zh:"\\uD83D\\uDCE1 每天更新 \\u00B7 免费开源"},
       "hero.subtitle": {en:"A free daily scan of trusted academic sources for funded research summer schools across many academic fields. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.", zh:"每天自动扫描可信学术来源,汇总各学科有资助的科研暑校。严格筛选,只留有资助/低收费、线下、且仍在报名的项目。"},
-      "cta.browse": {en:"Browse opportunities", zh:"浏览机会"},
-      "cta.rss": {en:"Subscribe via RSS", zh:"RSS 订阅"},
       "cta.email": {en:"Get email alerts", zh:"邮件订阅"},
+      "meta.updated": {en:"Updated", zh:"更新"},
+      "meta.fixed": {en:"Fixed-source scan", zh:"固定来源扫描"},
+      "meta.free": {en:"No paid search API", zh:"无需付费搜索 API"},
+      "meta.sources": {en:"Sources & Coverage", zh:"来源与覆盖"},
       "stat.qualified": {en:"Fully qualified", zh:"完全符合"},
       "stat.near": {en:"High-quality open", zh:"高质量开放"},
       "stat.sources": {en:"Trusted sources", zh:"可信来源"},
       "stat.updated": {en:"Last updated", zh:"最近更新"},
+      "filter.search": {en:"Search", zh:"搜索"},
+      "filter.search.placeholder": {en:"Title, organizer, location", zh:"标题、主办方、地点"},
+      "filter.status": {en:"Status", zh:"状态"},
+      "filter.topic": {en:"Topic", zh:"主题"},
+      "filter.funding": {en:"Financial Access", zh:"费用/资助"},
+      "filter.deadline": {en:"Deadline", zh:"截止日期"},
+      "filter.fresh": {en:"Freshness", zh:"新近程度"},
+      "notes.title": {en:"Collection Notes", zh:"采集说明"},
+      "empty.title": {en:"Nothing open right now — but the radar is watching", zh:"目前没有开放项目，但雷达仍在监测"},
+      "empty.link": {en:"See what we track", zh:"查看监测来源"},
+      "how.title": {en:"How it works", zh:"工作原理"},
+      "how.lead": {en:"A transparent pipeline you can audit — not a black box.", zh:"一条可以审计的透明流程，不是黑箱。"},
+      "how.1.title": {en:"Scan trusted sources", zh:"扫描可信来源"},
+      "how.1.body": {en:"Each day the radar fetches a fixed registry of vetted academic sources: scientific societies, research institutes, and established schools.", zh:"每天从固定的、人工筛选过的学术来源列表抓取信息，包括学会、研究机构和成熟暑校。"},
+      "how.2.title": {en:"Extract evidence", zh:"提取证据"},
+      "how.2.body": {en:"Rule-based extraction pulls out dates, deadline, funding, fee, location, and mode, with source text kept for verification.", zh:"规则提取日期、截止时间、资助、费用、地点和形式，并保留来源文本方便核验。"},
+      "how.3.title": {en:"Apply strict filters", zh:"应用严格筛选"},
+      "how.3.body": {en:"Only funded or low-fee, in-person opportunities with an open deadline in covered domains are treated as qualified.", zh:"只有有资助或低费用、线下、仍在报名且属于覆盖领域的项目才会被标为完全符合。"},
+      "how.4.title": {en:"Publish daily", zh:"每日发布"},
+      "how.4.body": {en:"The results are committed and published to this static site for quick public review.", zh:"结果会提交并发布到这个静态网站，方便公开查看。"},
+      "about.title": {en:"About & methodology", zh:"关于与方法"},
+      "about.lead": {en:"What this is, what it covers, and where the line is drawn.", zh:"说明它是什么、覆盖什么，以及边界在哪里。"},
+      "about.what.title": {en:"What it is", zh:"它是什么"},
+      "about.what.body": {en:"Summa is an open-source, fixed-source scanner with rule-based extraction and transparent per-field evidence. It is not a fully automatic all-web crawler.", zh:"Summa 是一个开源的固定来源扫描器，使用规则提取，并为每个字段保留证据。它不是全网自动爬虫。"},
+      "about.domains.title": {en:"Domains covered", zh:"覆盖领域"},
+      "about.domains.body": {en:"It covers environmental and earth science, computing and data science, and selected social-science and humanities methods fields. The same quality filters apply across fields.", zh:"覆盖环境与地球科学、计算与数据科学，以及部分社会科学和人文学科方法领域。所有领域使用同一套质量筛选标准。"},
+      "about.qualifies.title": {en:"What qualifies", zh:"什么算符合"},
+      "about.q1": {en:"Funded, or low / no fee — not an expensive paid course.", zh:"有资助，或低费用/免费，而不是昂贵付费课程。"},
+      "about.q2": {en:"In-person — virtual-only events are set aside.", zh:"线下参与；纯线上活动会被排除。"},
+      "about.q3": {en:"An application deadline that is still open.", zh:"申请截止日期仍未过去。"},
+      "about.q4": {en:"A real research school, training school, field school, or short course — not a conference or a full degree programme.", zh:"是真正的研究暑校、训练营、田野学校或短课程，而不是会议或完整学位项目。"},
+      "about.q5": {en:"On-domain in the topics above.", zh:"主题属于上面覆盖的学科范围。"},
+      "about.evidence.title": {en:"Evidence and honesty", zh:"证据与透明度"},
+      "about.evidence.body": {en:"Every extracted field carries source evidence where available. Near-matches are shown separately and never counted as qualified.", zh:"每个可提取字段都会尽量保留来源证据。近似匹配会单独展示，不会被当作完全符合。"},
+      "faq.title": {en:"Frequently asked", zh:"常见问题"},
+      "faq.lead": {en:"Quick answers about scope, updates, and contributing.", zh:"关于范围、更新和参与方式的简短回答。"},
+      "faq.1.q": {en:"Is it free?", zh:"它免费吗？"},
+      "faq.1.a": {en:"Yes — entirely free and open source. There is no paywall, no account, and no paid search API in the default pipeline.", zh:"免费，而且开源。默认流程没有付费墙、不需要账号，也不依赖付费搜索 API。"},
+      "faq.2.q": {en:"How often is it updated?", zh:"多久更新一次？"},
+      "faq.2.a": {en:"Once a day. The scan runs automatically and republishes this site, so the Last updated date reflects the most recent run.", zh:"每天一次。扫描会自动运行并重新发布网站，所以“最近更新”日期对应最近一次运行。"},
+      "faq.3.q": {en:"Why are some events only near-matches?", zh:"为什么有些项目只是近似匹配？"},
+      "faq.3.a": {en:"They are relevant but fail at least one strict rule, such as uncertain deadline, high fee, unresolved fee, or virtual-only format.", zh:"它们相关，但至少有一条严格规则没通过，例如截止日期不确定、费用过高、费用未确认，或只有线上形式。"},
+      "faq.4.q": {en:"How do you avoid spam and low-quality listings?", zh:"怎么避免低质量信息？"},
+      "faq.4.a": {en:"The radar only reads a curated registry of trusted academic sources. It does not crawl the open web.", zh:"它只读取人工维护的可信学术来源列表，不做开放网络泛爬。"},
+      "faq.5.q": {en:"Can I suggest a source?", zh:"我可以建议来源吗？"},
+      "faq.5.a": {en:"Yes. Open an issue on GitHub with the source and its events page, and it can be added to the registry.", zh:"可以。在 GitHub issue 里提交来源和活动页面，维护者可以把它加入来源列表。"},
+      "foot.opportunities": {en:"Opportunities", zh:"机会"},
+      "foot.sources": {en:"Sources & coverage", zh:"来源与覆盖"},
+      "foot.how": {en:"How it works", zh:"工作原理"},
+      "foot.about": {en:"About & methodology", zh:"关于与方法"},
+      "foot.faq": {en:"FAQ", zh:"常见问题"},
+      "foot.suggest": {en:"Suggest a source", zh:"建议来源"},
+      "foot.issue": {en:"Report an issue", zh:"报告问题"},
+      "foot.star": {en:"Star on GitHub", zh:"在 GitHub 收藏"},
       "foot.explore": {en:"Explore", zh:"浏览"},
       "foot.project": {en:"Project", zh:"项目"},
-      "foot.contribute": {en:"Contribute", zh:"参与"}
+      "foot.contribute": {en:"Contribute", zh:"参与"},
+      "foot.blurb": {en:"A free, open-source scanner for funded research summer schools, winter schools, and training schools across many academic fields. Updated daily.", zh:"一个免费的开源扫描器，追踪多个学科中有资助的暑校、冬校和训练营项目。每天更新。"},
+      "foot.legal": {en:"Near-matches are not treated as qualified opportunities. Built and maintained openly on GitHub.", zh:"近似匹配不会被当作完全符合的机会。项目在 GitHub 上公开维护。"}
     };
-    function txt(el, lang){ var d=I18N[el.getAttribute('data-i18n')]; if(d&&d[lang]!=null) el.textContent=d[lang]; }
+    function txt(el, lang){
+      var d=I18N[el.getAttribute('data-i18n')];
+      if(!d||d[lang]==null) return;
+      if(el.hasAttribute('data-i18n-html')) el.innerHTML=d[lang]; else el.textContent=d[lang];
+    }
+    function attr(el, lang){
+      var key=el.getAttribute('data-i18n-placeholder');
+      var d=I18N[key];
+      if(d&&d[lang]!=null) el.setAttribute('placeholder', d[lang]);
+    }
     function applyLang(lang){
       document.documentElement.setAttribute('lang', lang);
       var els=document.querySelectorAll('[data-i18n]'); for(var i=0;i<els.length;i++) txt(els[i], lang);
+      var attrs=document.querySelectorAll('[data-i18n-placeholder]'); for(var j=0;j<attrs.length;j++) attr(attrs[j], lang);
       var b=document.getElementById('lang-toggle'); if(b) b.textContent = (lang==='zh')?'EN':'中';
       try{localStorage.setItem('summa-lang', lang);}catch(e){}
     }
@@ -270,6 +337,7 @@ def write_site(
     (output_dir / "feed.xml").write_text(render_feed(candidates, curated, site_config or {}), encoding="utf-8")
     (output_dir / "robots.txt").write_text(_robots_txt(), encoding="utf-8")
     (output_dir / "sitemap.xml").write_text(_sitemap_xml(), encoding="utf-8")
+    (output_dir / "favicon.svg").write_text(_favicon_svg(), encoding="utf-8")
     _copy_og_image(output_dir)
     _copy_verification_files(output_dir)
     tracked_sources = sum(
@@ -334,6 +402,15 @@ def _sitemap_xml() -> str:
     )
 
 
+def _favicon_svg() -> str:
+    return """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#123524"/>
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#cfe84a" stroke-width="4"/>
+  <path d="M32 12v40M12 32h40M18 20c8 5 20 5 28 0M18 44c8-5 20-5 28 0" fill="none" stroke="#7fd6a0" stroke-width="3" stroke-linecap="round"/>
+</svg>
+"""
+
+
 def _seo_head(canonical: str, description: str, site_config: dict[str, Any]) -> str:
     """Canonical link, Open Graph, Twitter card, and verification tags."""
     desc = escape(description, quote=True)
@@ -345,6 +422,8 @@ def _seo_head(canonical: str, description: str, site_config: dict[str, Any]) -> 
         else ""
     )
     return f"""  <link rel="canonical" href="{escape(canonical, quote=True)}">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="apple-touch-icon" href="og-image.png">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0e7490">
   <meta name="description" content="{desc}">
@@ -444,19 +523,12 @@ def _subscribe_form_html(site_config: dict[str, Any]) -> str:
 def _subscribe_section(site_config: dict[str, Any]) -> str:
     """A 'stay updated' section: an email form when configured, RSS otherwise."""
     form = _subscribe_form_html(site_config)
-    if form:
-        body = (
-            '<p class="lead">Get an email when new funded schools open — no spam, unsubscribe anytime.</p>'
-            f"{form}"
-            '<p class="muted" style="margin-top:10px;font-size:13px">Prefer a reader? Use the '
-            '<a href="feed.xml">RSS feed</a>.</p>'
-        )
-    else:
-        body = (
-            '<p class="lead">Subscribe to get new opportunities as they are found, instead of '
-            "checking back.</p>"
-            '<p style="margin-top:10px"><a class="pill" href="feed.xml">RSS feed</a></p>'
-        )
+    if not form:
+        return ""
+    body = (
+        '<p class="lead">Get an email when new funded schools open — no spam, unsubscribe anytime.</p>'
+        f"{form}"
+    )
     return f"""
     <section id="subscribe" class="anchor">
       <div class="section-head">
@@ -466,15 +538,40 @@ def _subscribe_section(site_config: dict[str, Any]) -> str:
     </section>"""
 
 
+def _public_collection_notes(errors: list[str]) -> list[str]:
+    notes: list[str] = []
+    seen: set[str] = set()
+    for error in errors:
+        note = _public_collection_note(error)
+        if note and note not in seen:
+            seen.add(note)
+            notes.append(note)
+    return notes
+
+
+def _public_collection_note(error: str) -> str:
+    source = error.split(":", 1)[0].strip() or "Source"
+    lowered = error.lower()
+    if "browsertype.launch" in lowered or "playwright" in lowered and "executable doesn't exist" in lowered:
+        return f"{source}: browser rendering unavailable; install Playwright browsers or disable rendered scan for this source."
+    if "403 client error" in lowered or "forbidden" in lowered:
+        return f"{source}: access was blocked by the source website during this scan."
+    if "404 client error" in lowered or "not found" in lowered:
+        return f"{source}: configured page was not found during this scan."
+    if len(error) > 180:
+        return error[:177].rstrip() + "..."
+    return error
+
+
 def _empty_opportunities_block(tracked_total: int, tracked_sources: int) -> str:
     """Shown in place of the results table when nothing is open — keeps the page
     feeling active off-season rather than blank."""
     count = f"{tracked_total} opportunit{'ies' if tracked_total != 1 else 'y'}"
     return f"""
     <div class="panel">
-      <h3>Nothing open right now &mdash; but the radar is watching</h3>
+      <h3 data-i18n="empty.title">Nothing open right now — but the radar is watching</h3>
       <p>No opportunities matched every rule in the latest scan. That is normal off-season: most summer-school application deadlines open between December and April. The radar scans {tracked_sources} trusted sources every day, with {count} currently tracked &mdash; new schools appear here automatically as they open.</p>
-      <p style="margin-top:12px"><a class="pill" href="feed.xml">Subscribe via RSS</a> &nbsp; <a class="pill" href="sources.html">See what we track</a></p>
+      <p style="margin-top:12px"><a class="pill" href="sources.html" data-i18n="empty.link">See what we track</a></p>
     </div>"""
 
 
@@ -651,14 +748,10 @@ def render_site(
     updated = date.today().isoformat()
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
     near_rows = "".join(_near_row(candidate) for candidate in near)
-    notes = "".join(f"<li>{escape(error)}</li>" for error in errors[:12])
+    public_notes = _public_collection_notes(errors)
+    notes = "".join(f"<li>{escape(error)}</li>" for error in public_notes[:12])
     filters = _filters(candidates)
     analytics = _analytics_snippet(site_config or {})
-    subscribe_cta = (
-        '<a class="btn outline" href="#subscribe" data-i18n="cta.email">Get email alerts</a>'
-        if _subscribe_form_html(site_config or {})
-        else '<a class="btn outline" href="feed.xml" data-i18n="cta.rss">Subscribe via RSS</a>'
-    )
     status_banner = _status_banner(len(full), len(near), tracked_total, tracked_sources)
     if near:
         near_block = _near_section(near_rows)
@@ -852,17 +945,6 @@ def render_site(
       padding-bottom: 8px;
     }}
 {_NAV_CSS}
-    /* hero call-to-action buttons */
-    .cta {{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }}
-    .btn {{
-      display: inline-flex; align-items: center; gap: 8px;
-      border-radius: 10px; padding: 10px 17px; font-weight: 650; font-size: 14.5px;
-      text-decoration: none; border: 1px solid transparent; cursor: pointer;
-    }}
-    .btn.primary {{ background: #ffffff; color: var(--hero-1); }}
-    .btn.primary:hover {{ background: #eaf6fa; }}
-    .btn.outline {{ border-color: rgba(255, 255, 255, .45); color: #f3f9fc; }}
-    .btn.outline:hover {{ background: rgba(255, 255, 255, .14); }}
     /* section heading + lead paragraph */
     .section-head {{ margin-top: 42px; }}
     .section-head h2 {{ margin: 0 0 4px; }}
@@ -945,17 +1027,11 @@ def render_site(
       <p class="kicker" data-i18n="hero.kicker">&#128225; Updated daily &middot; Free &amp; open source</p>
       <h1>Summa</h1>
       <p class="subtitle" data-i18n="hero.subtitle">A free daily scan of trusted academic sources for funded research summer schools across many academic fields. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.</p>
-      <div class="cta">
-        <a class="btn primary" href="#opportunities" data-i18n="cta.browse">Browse opportunities</a>
-        {subscribe_cta}
-      </div>
       <div class="meta">
-        <span class="pill">Updated {updated}</span>
-        <span class="pill">Fixed-source scan</span>
-        <span class="pill">No paid search API</span>
-        <a class="pill" href="candidates.json">JSON data</a>
-        <a class="pill" href="sources.html">Sources &amp; Coverage</a>
-        <a class="pill" href="feed.xml">RSS feed</a>
+        <span class="pill"><span data-i18n="meta.updated">Updated</span> {updated}</span>
+        <span class="pill" data-i18n="meta.fixed">Fixed-source scan</span>
+        <span class="pill" data-i18n="meta.free">No paid search API</span>
+        <a class="pill" href="sources.html" data-i18n="meta.sources">Sources &amp; Coverage</a>
         <a class="pill" href="https://github.com/lione12138/summer-school-radar">GitHub</a>
       </div>
     </div>
@@ -1014,7 +1090,6 @@ def _site_nav(home: str = "") -> str:
         <a class="hide-sm" href="{home}#how" data-i18n="nav.how">How it works</a>
         <a class="hide-sm" href="{home}#about" data-i18n="nav.about">About</a>
         <a href="sources.html" data-i18n="nav.sources">Sources</a>
-        <a href="feed.xml" data-i18n="nav.rss">RSS</a>
         <a href="{_GITHUB_URL}">GitHub</a>
         <button id="lang-toggle" class="toggle" type="button" aria-label="Language">中</button>
         <button id="theme-toggle" class="toggle" type="button" aria-label="Theme">&#9790;</button>
@@ -1025,20 +1100,21 @@ def _site_nav(home: str = "") -> str:
 
 def _how_it_works_section() -> str:
     steps = [
-        ("1", "Scan trusted sources", "Each day the radar fetches a fixed registry of vetted academic sources &mdash; scientific societies, research institutes, and established schools &mdash; instead of crawling the open web."),
-        ("2", "Extract evidence", "Rule-based extraction pulls out dates, deadline, funding, fee, location, and mode, and keeps the exact source text behind every field so you can verify it."),
-        ("3", "Apply strict filters", "Only funded or low-fee, in-person opportunities with an open deadline in the target domains survive. Everything else is set aside as a near-match or dropped."),
-        ("4", "Publish daily", "The results are committed and published to this static site &mdash; free, fast, and with an RSS feed and raw JSON for anyone to reuse."),
+        ("1", "Scan trusted sources", "Each day the radar fetches a fixed registry of vetted academic sources: scientific societies, research institutes, and established schools.", "how.1.title", "how.1.body"),
+        ("2", "Extract evidence", "Rule-based extraction pulls out dates, deadline, funding, fee, location, and mode, with source text kept for verification.", "how.2.title", "how.2.body"),
+        ("3", "Apply strict filters", "Only funded or low-fee, in-person opportunities with an open deadline in covered domains are treated as qualified.", "how.3.title", "how.3.body"),
+        ("4", "Publish daily", "The results are committed and published to this static site for quick public review.", "how.4.title", "how.4.body"),
     ]
     cards = "".join(
-        f'<div class="step"><span class="n">{n}</span><h3>{title}</h3><p>{body}</p></div>'
-        for n, title, body in steps
+        f'<div class="step"><span class="n">{n}</span><h3 data-i18n="{title_key}">{title}</h3>'
+        f'<p data-i18n="{body_key}">{body}</p></div>'
+        for n, title, body, title_key, body_key in steps
     )
     return f"""
     <section id="how" class="anchor">
       <div class="section-head">
-        <h2>How it works</h2>
-        <p class="lead">A transparent pipeline you can audit &mdash; not a black box.</p>
+        <h2 data-i18n="how.title">How it works</h2>
+        <p class="lead" data-i18n="how.lead">A transparent pipeline you can audit — not a black box.</p>
       </div>
       <div class="steps">{cards}</div>
     </section>"""
@@ -1048,46 +1124,45 @@ def _about_section() -> str:
     return f"""
     <section id="about" class="anchor">
       <div class="section-head">
-        <h2>About &amp; methodology</h2>
-        <p class="lead">What this is, what it covers, and where the line is drawn.</p>
+        <h2 data-i18n="about.title">About &amp; methodology</h2>
+        <p class="lead" data-i18n="about.lead">What this is, what it covers, and where the line is drawn.</p>
       </div>
       <div class="panel">
-        <h3>What it is</h3>
-        <p>Summa is an open-source, fixed-source scanner with rule-based extraction and transparent per-field evidence &mdash; not a fully automatic, all-web radar. It focuses on a clear domain so the signal stays high.</p>
-        <h3>Domains covered</h3>
-        <p>Many academic fields, grouped roughly as: <strong>environmental &amp; earth science</strong> (water and hydrology, climate, geoscience, remote sensing and earth observation); <strong>computing &amp; data science</strong> (machine learning, computer vision, software engineering, cybersecurity, data science, computational neuroscience, and computational linguistics); and the <strong>social sciences &amp; humanities</strong> (social-science methods, economics, political science, sociology, history, philosophy, and digital humanities). The strict quality filters are identical across every field.</p>
-        <h3>What qualifies</h3>
+        <h3 data-i18n="about.what.title">What it is</h3>
+        <p data-i18n="about.what.body">Summa is an open-source, fixed-source scanner with rule-based extraction and transparent per-field evidence. It is not a fully automatic all-web crawler.</p>
+        <h3 data-i18n="about.domains.title">Domains covered</h3>
+        <p data-i18n="about.domains.body">It covers environmental and earth science, computing and data science, and selected social-science and humanities methods fields. The same quality filters apply across fields.</p>
+        <h3 data-i18n="about.qualifies.title">What qualifies</h3>
         <ul class="criteria">
-          <li>Funded, or low / no fee &mdash; not an expensive paid course.</li>
-          <li>In-person &mdash; virtual-only events are set aside.</li>
-          <li>An application deadline that is still open.</li>
-          <li>A real research school, training school, field school, or short course &mdash; not a conference or a full degree programme.</li>
-          <li>On-domain in the topics above.</li>
+          <li data-i18n="about.q1">Funded, or low / no fee — not an expensive paid course.</li>
+          <li data-i18n="about.q2">In-person — virtual-only events are set aside.</li>
+          <li data-i18n="about.q3">An application deadline that is still open.</li>
+          <li data-i18n="about.q4">A real research school, training school, field school, or short course — not a conference or a full degree programme.</li>
+          <li data-i18n="about.q5">On-domain in the topics above.</li>
         </ul>
-        <h3>Evidence and honesty</h3>
-        <p>Every extracted field carries the source text that produced it &mdash; hover a cell to see it. Near-matches are shown separately and never counted as qualified. Coverage, including sources that can&rsquo;t be fetched automatically, is listed openly on the <a href="sources.html">Sources &amp; Coverage</a> page.</p>
+        <h3 data-i18n="about.evidence.title">Evidence and honesty</h3>
+        <p data-i18n="about.evidence.body">Every extracted field carries source evidence where available. Near-matches are shown separately and never counted as qualified.</p>
       </div>
     </section>"""
 
 
 def _faq_section() -> str:
     qa = [
-        ("Is it free?", "Yes &mdash; entirely free and open source. There is no paywall, no account, and no paid search API in the default pipeline."),
-        ("How often is it updated?", "Once a day. The scan runs automatically and republishes this site, so the &ldquo;Last updated&rdquo; date reflects the most recent run."),
-        ("Why are some events only &ldquo;near-matches&rdquo;?", "They are relevant but fail at least one strict rule &mdash; for example the deadline is uncertain, the fee is high or unresolved, or the event is virtual. They are kept visible for transparency but not treated as qualified."),
-        ("How do you avoid spam and low-quality listings?", "The radar only reads a curated registry of trusted academic sources. It never crawls the open web, so marketing pages and unrelated courses don&rsquo;t enter the pipeline."),
-        ("Can I suggest a source?", f'Yes, please do. Open an issue on <a href="{_GITHUB_URL}/issues/new">GitHub</a> with the source and its events page, and it can be added to the registry.'),
-        ("Can I subscribe instead of checking the site?", 'Yes &mdash; use the <a href="feed.xml">RSS feed</a>, or grab the raw <a href="candidates.json">JSON</a> to build your own alerts.'),
+        ("faq.1.q", "faq.1.a", "Is it free?", "Yes — entirely free and open source. There is no paywall, no account, and no paid search API in the default pipeline."),
+        ("faq.2.q", "faq.2.a", "How often is it updated?", "Once a day. The scan runs automatically and republishes this site, so the Last updated date reflects the most recent run."),
+        ("faq.3.q", "faq.3.a", "Why are some events only near-matches?", "They are relevant but fail at least one strict rule, such as uncertain deadline, high fee, unresolved fee, or virtual-only format."),
+        ("faq.4.q", "faq.4.a", "How do you avoid spam and low-quality listings?", "The radar only reads a curated registry of trusted academic sources. It does not crawl the open web."),
+        ("faq.5.q", "faq.5.a", "Can I suggest a source?", "Yes. Open an issue on GitHub with the source and its events page, and it can be added to the registry."),
     ]
     items = "".join(
-        f"<details><summary>{question}</summary><p>{answer}</p></details>"
-        for question, answer in qa
+        f'<details><summary data-i18n="{q_key}">{question}</summary><p data-i18n="{a_key}">{answer}</p></details>'
+        for q_key, a_key, question, answer in qa
     )
     return f"""
     <section id="faq" class="anchor">
       <div class="section-head">
-        <h2>Frequently asked</h2>
-        <p class="lead">Quick answers about scope, updates, and contributing.</p>
+        <h2 data-i18n="faq.title">Frequently asked</h2>
+        <p class="lead" data-i18n="faq.lead">Quick answers about scope, updates, and contributing.</p>
       </div>
       <div class="faq">{items}</div>
     </section>"""
@@ -1100,31 +1175,28 @@ def _footer_section(updated: str) -> str:
       <div class="cols">
         <div class="col brandcol">
           <a class="brand" href="#top">{_RADAR_ICON} Summa</a>
-          <p>A free, open-source scanner for funded research summer schools, winter schools, and training schools across many academic fields &mdash; science, computing &amp; data, the social sciences, and the humanities. Updated daily.</p>
+          <p data-i18n="foot.blurb">A free, open-source scanner for funded research summer schools, winter schools, and training schools across many academic fields. Updated daily.</p>
         </div>
         <div class="col">
           <h4 data-i18n="foot.explore">Explore</h4>
-          <a href="#opportunities">Opportunities</a>
-          <a href="#subscribe">Email alerts</a>
-          <a href="sources.html">Sources &amp; coverage</a>
-          <a href="candidates.json">Raw JSON</a>
-          <a href="feed.xml">RSS feed</a>
+          <a href="#opportunities" data-i18n="foot.opportunities">Opportunities</a>
+          <a href="sources.html" data-i18n="foot.sources">Sources &amp; coverage</a>
         </div>
         <div class="col">
           <h4 data-i18n="foot.project">Project</h4>
-          <a href="#how">How it works</a>
-          <a href="#about">About &amp; methodology</a>
-          <a href="#faq">FAQ</a>
+          <a href="#how" data-i18n="foot.how">How it works</a>
+          <a href="#about" data-i18n="foot.about">About &amp; methodology</a>
+          <a href="#faq" data-i18n="foot.faq">FAQ</a>
           <a href="{_GITHUB_URL}">GitHub</a>
         </div>
         <div class="col">
           <h4 data-i18n="foot.contribute">Contribute</h4>
-          <a href="{_GITHUB_URL}/issues/new">Suggest a source</a>
-          <a href="{_GITHUB_URL}/issues">Report an issue</a>
-          <a href="{_GITHUB_URL}/stargazers">Star on GitHub</a>
+          <a href="{_GITHUB_URL}/issues/new" data-i18n="foot.suggest">Suggest a source</a>
+          <a href="{_GITHUB_URL}/issues" data-i18n="foot.issue">Report an issue</a>
+          <a href="{_GITHUB_URL}/stargazers" data-i18n="foot.star">Star on GitHub</a>
         </div>
       </div>
-      <div class="legal">Last updated {updated} &middot; Near-matches are not treated as qualified opportunities &middot; Code <a href="{_GITHUB_URL}/blob/main/LICENSE">AGPL-3.0</a>; data <a href="DATA-LICENSE.txt">CC BY 4.0</a> (reuse with attribution &amp; a link back) &middot; Built and maintained openly on GitHub.</div>
+      <div class="legal">Last updated {updated} &middot; <span data-i18n="foot.legal">Near-matches are not treated as qualified opportunities. Built and maintained openly on GitHub.</span></div>
     </div>
   </footer>{_watermark()}"""
 
@@ -1321,7 +1393,7 @@ def _near_section(rows: str) -> str:
 def _notes_section(notes: str) -> str:
     return f"""
     <section class="notes">
-      <h2>Collection Notes</h2>
+      <h2 data-i18n="notes.title">Collection Notes</h2>
       <ul>{notes}</ul>
     </section>
 """
@@ -1551,11 +1623,11 @@ def _filters(candidates: list[Candidate]) -> str:
     return f"""
     <section class="filters" aria-label="Opportunity filters">
       <div class="filter-group">
-        <label for="filter-search">Search</label>
-        <input id="filter-search" type="search" placeholder="Title, organizer, location">
+        <label for="filter-search" data-i18n="filter.search">Search</label>
+        <input id="filter-search" type="search" placeholder="Title, organizer, location" data-i18n-placeholder="filter.search.placeholder">
       </div>
       <div class="filter-group">
-        <label for="filter-status">Status</label>
+        <label for="filter-status" data-i18n="filter.status">Status</label>
         <select id="filter-status">
           <option value="">All</option>
           <option value="qualified">Fully qualified</option>
@@ -1563,14 +1635,14 @@ def _filters(candidates: list[Candidate]) -> str:
         </select>
       </div>
       <div class="filter-group">
-        <label for="filter-topic">Topic</label>
+        <label for="filter-topic" data-i18n="filter.topic">Topic</label>
         <select id="filter-topic">
           <option value="">All</option>
           {topic_options}
         </select>
       </div>
       <div class="filter-group">
-        <label for="filter-funding">Financial Access</label>
+        <label for="filter-funding" data-i18n="filter.funding">Financial Access</label>
         <select id="filter-funding">
           <option value="">All</option>
           <option value="funded">Explicit funding</option>
@@ -1579,7 +1651,7 @@ def _filters(candidates: list[Candidate]) -> str:
         </select>
       </div>
       <div class="filter-group">
-        <label for="filter-deadline">Deadline</label>
+        <label for="filter-deadline" data-i18n="filter.deadline">Deadline</label>
         <select id="filter-deadline">
           <option value="">All</option>
           <option value="open">Open</option>
@@ -1588,7 +1660,7 @@ def _filters(candidates: list[Candidate]) -> str:
         </select>
       </div>
       <div class="filter-group">
-        <label for="filter-new">Freshness</label>
+        <label for="filter-new" data-i18n="filter.fresh">Freshness</label>
         <select id="filter-new">
           <option value="">All</option>
           <option value="true">New today</option>
