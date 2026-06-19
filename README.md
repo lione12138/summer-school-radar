@@ -17,7 +17,7 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-18 · 1 fully qualified · 2 high-quality · 3 found shown_
+_Last scan: 2026-06-19 · 1 fully qualified · 2 high-quality · 3 found shown_
 
 **Fully Qualified Opportunities**
 
@@ -60,7 +60,12 @@ site/sources.html
 site/sources.json
 site/feed.xml
 site/sitemap.xml
+site/semantic_chunks.json
+site/ai_extractions.json
+site/ai-review.html
 reports/YYYY-MM-DD.md
+reports/YYYY-MM-DD.semantic.json
+reports/YYYY-MM-DD.ai.json
 ```
 
 ## What Counts As Fully Qualified?
@@ -119,6 +124,93 @@ Run a real fixed-source scan:
 ```powershell
 python -m research_school_radar.cli scan
 ```
+
+## Optional semantic ranking
+
+The default pipeline remains rule-based, lightweight, and API-key-free:
+
+```powershell
+pip install -e ".[dev]"
+python -m research_school_radar.cli scan --offline-sample
+python -m research_school_radar.cli scan
+```
+
+Optional semantic chunk ranking can write a sidecar with the most relevant text
+snippets from scanned pages. It does not change extraction, hard filters,
+ranking, report tables, RSS, or public qualification status. It uses
+`BAAI/bge-small-en-v1.5` via `sentence-transformers`. Semantic ranking is
+cached under `data/ai_cache/` by page URL, page text hash, embedding model,
+query, and chunking config.
+
+```powershell
+pip install -e ".[dev,semantic]"
+python -m research_school_radar.cli scan --enable-semantic
+```
+
+Semantic sidecar output goes to `site/semantic_chunks.json` and
+`reports/YYYY-MM-DD.semantic.json`.
+
+Local LLM extraction is also optional and advisory only. It reads semantic
+chunks, asks a local Ollama OpenAI-compatible endpoint running `qwen3.5:9b` for
+structured evidence, and writes sidecar JSON without changing candidates,
+filters, rankings, RSS, or the public tables. Ollama must be installed manually;
+this project does not install Ollama or download models automatically. In the
+Ollama CLI, `/set nothink` can disable thinking during manual interactive tests.
+
+```powershell
+pip install -e ".[dev,semantic,llm]"
+ollama run qwen3.5:9b
+python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction
+```
+
+LLM sidecar output goes to `site/ai_extractions.json` and
+`reports/YYYY-MM-DD.ai.json`. The generated site also includes
+`site/ai-review.html` when AI extraction has run. LLM extraction is cached under
+`data/ai_cache/` by page URL, selected chunk text hash, model name, and
+extraction schema version. To ignore existing AI cache entries:
+
+```powershell
+python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
+```
+
+These files are not the source of truth for fully qualified opportunities; the
+hard filters remain rule-based.
+
+Check the local Ollama endpoint separately with:
+
+```powershell
+python -m research_school_radar.ai_healthcheck
+```
+
+If the internal disk is limited on Windows, Ollama model storage can be moved by
+setting an external directory before restarting Ollama:
+
+```powershell
+$env:OLLAMA_MODELS = "E:\ollama-models"
+```
+
+## AI-assisted review workflow
+
+Semantic ranking can surface pages that rule-based link and opportunity gates
+missed. Local LLM extraction turns selected semantic chunks into advisory
+structured drafts, and evidence validation checks whether extracted fields are
+grounded in those chunks.
+
+The AI review output is intentionally separate:
+
+- `data/review_queue.json` and `site/review_queue.json` can include an
+  `ai_advisory` block for matching scanner candidates.
+- `site/ai-review.html` lists matched AI records and potential missed pages.
+- `site/ai_extractions.json` keeps the raw advisory extraction sidecar.
+
+AI output does not determine final qualification, ranking, RSS inclusion, or
+recommendation status. Maintainers should use it as a review aid only:
+
+```text
+AI extraction -> maintainer checks official page -> maintainer edits data/opportunities.yml or data/overrides.yml
+```
+
+Final curated records must still be checked against the official source.
 
 ## Daily Free Publishing
 

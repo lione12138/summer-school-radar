@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-18",
+  "generated": "2026-06-19",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -32,6 +32,9 @@
         "duration": "18-28 January 2027",
         "funding": "",
         "mode": ""
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
@@ -67,6 +70,9 @@
         "duration": "",
         "funding": "Travel Grants – Bernstein Network Computational Neuroscience Home Network The Bernstein Network Bernstein Centers Berlin Freiburg Gö",
         "mode": "on Site (BCOS) Awards and Initiatives Valentin Braitenber"
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
@@ -98,6 +104,9 @@
         "duration": "ELLIS events listing: 2026-08-24 to 2026-08-28",
         "funding": "",
         "mode": "ELLIS listing location: Saarland University"
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
@@ -131,6 +140,9 @@
         "duration": "ELLIS events listing: 2026-09-14 to 2026-09-18",
         "funding": "",
         "mode": "ELLIS listing location: TUM Garching Campus"
+      },
+      "ai_advisory": {
+        "available": false
       }
     }
   ]
