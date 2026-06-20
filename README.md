@@ -17,7 +17,7 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-19 · 1 fully qualified · 2 high-quality · 3 found shown_
+_Last scan: 2026-06-20 · 1 fully qualified · 2 high-quality · 3 found shown_
 
 **Fully Qualified Opportunities**
 
@@ -151,17 +151,78 @@ Semantic sidecar output goes to `site/semantic_chunks.json` and
 `reports/YYYY-MM-DD.semantic.json`.
 
 Local LLM extraction is also optional and advisory only. It reads semantic
-chunks, asks a local Ollama OpenAI-compatible endpoint running `qwen3.5:9b` for
-structured evidence, and writes sidecar JSON without changing candidates,
-filters, rankings, RSS, or the public tables. Ollama must be installed manually;
-this project does not install Ollama or download models automatically. In the
+chunks and asks a configured local provider for structured evidence. Supported
+providers are:
+
+- Ollama: native `/api/chat`, default model `qwen3.5:9b`, with `think: false`
+  and `format: "json"`.
+- LM Studio: OpenAI-compatible `/v1/chat/completions`, default model id
+  `qwen2.5-7b-instruct`, with structured JSON schema mode when supported.
+
+It writes sidecar JSON without changing candidates, filters, rankings, RSS, or
+the public tables. Local LLM software and models must be installed manually; the
+project does not install Ollama, LM Studio, or model files automatically. In the
 Ollama CLI, `/set nothink` can disable thinking during manual interactive tests.
+
+The LLM prompt is evidence-first: the scanner converts semantic chunks into
+short numbered snippets such as `E1`, `E2`, and `E3`. The model is asked to cite
+only `evidence_ids`; it should not invent or return free-form `evidence_text`.
+The sidecar resolves those IDs back to short snippet text for review. This keeps
+AI output auditable while avoiding full raw page dumps in public files.
 
 ```powershell
 pip install -e ".[dev,semantic,llm]"
 ollama run qwen3.5:9b
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction
 ```
+
+### Using LM Studio as local LLM provider
+
+LM Studio must be installed manually. Download and load the model inside LM
+Studio, then start the local server from Developer / Local Server. The current
+tested downloaded model is:
+
+```text
+idasummer/Qwen2.5-7B-Instruct-Q5_K_M-GGUF
+```
+
+LM Studio exposes a shorter API model identifier. For the current setup use this
+exact API model id:
+
+```text
+qwen2.5-7b-instruct
+```
+
+Use the API model id in `LLM_MODEL`, not the download repository name. LM Studio
+usually does not reuse Ollama model files, so downloading the same model in both
+tools can duplicate disk usage.
+
+Check the local server model ids:
+
+```powershell
+curl.exe http://localhost:1234/v1/models
+```
+
+Configure LM Studio:
+
+```powershell
+$env:LLM_PROVIDER = "lmstudio"
+$env:LLM_BASE_URL = "http://localhost:1234/v1"
+$env:LLM_MODEL = "qwen2.5-7b-instruct"
+$env:LLM_API_KEY = "lm-studio"
+```
+
+Then run:
+
+```powershell
+python -m research_school_radar.ai_healthcheck --provider lmstudio
+python -m research_school_radar.ai_compare_providers
+python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
+```
+
+LM Studio may be faster on AMD iGPU / Radeon 780M setups when GPU offload is
+enabled. Structured output can improve JSON validity, but it does not remove the
+need for evidence validation. AI results remain advisory only.
 
 LLM sidecar output goes to `site/ai_extractions.json` and
 `reports/YYYY-MM-DD.ai.json`. The generated site also includes
@@ -189,6 +250,57 @@ setting an external directory before restarting Ollama:
 $env:OLLAMA_MODELS = "E:\ollama-models"
 ```
 
+## Real-world AI validation
+
+Passing tests only proves the optional AI branch is wired safely; it does not
+prove extraction quality on real organiser pages. Validate it manually before
+trusting any advisory output:
+
+```powershell
+python -m research_school_radar.ai_healthcheck
+python -m research_school_radar.ai_compare_providers
+$env:HF_HOME = Join-Path $env:TEMP "summer-school-radar-hf-cache"
+python -m research_school_radar.cli scan --enable-semantic --refresh-ai-cache
+python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
+python -m research_school_radar.ai_evaluate
+```
+
+`ai_evaluate.py` reads `site/ai_extractions.json` and writes:
+
+```text
+reports/YYYY-MM-DD.ai-evaluation-template.csv
+```
+
+To compare two real provider runs, save each sidecar first and then run:
+
+```powershell
+python -m research_school_radar.ai_compare_runs --left reports/ollama.ai.json --right reports/lmstudio.ai.json --left-name ollama --right-name lmstudio
+```
+
+This writes:
+
+```text
+reports/YYYY-MM-DD.ai-run-comparison.md
+```
+
+The comparison matches items by `page_url`, summarizes confidence and validation
+warnings, evidence-ID health, and lists field disagreements for deadline, fee,
+funding, location, dates, eligibility, title, and event type.
+
+The CSV has empty `human_*` columns for manual annotation. Maintainers should
+open the official pages, mark whether deadline, fee, funding, location, and
+summary are correct, and only then manually promote reliable records through
+`data/opportunities.yml` or `data/overrides.yml`.
+
+Recommended operation:
+
+- Daily: `python -m research_school_radar.cli scan`
+- Manual or weekly: `python -m research_school_radar.cli scan --enable-semantic`
+- Manual review only: `python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction`
+
+Do not enable LLM extraction in daily automation yet. It is slower, more
+resource-intensive, and still needs human validation.
+
 ## AI-assisted review workflow
 
 Semantic ranking can surface pages that rule-based link and opportunity gates
@@ -201,7 +313,9 @@ The AI review output is intentionally separate:
 - `data/review_queue.json` and `site/review_queue.json` can include an
   `ai_advisory` block for matching scanner candidates.
 - `site/ai-review.html` lists matched AI records and potential missed pages.
-- `site/ai_extractions.json` keeps the raw advisory extraction sidecar.
+- `site/ai_extractions.json` keeps the advisory extraction sidecar, including
+  short `evidence_snippets`, field-level `evidence_ids`, and resolved snippet
+  previews for manual review.
 
 AI output does not determine final qualification, ranking, RSS inclusion, or
 recommendation status. Maintainers should use it as a review aid only:

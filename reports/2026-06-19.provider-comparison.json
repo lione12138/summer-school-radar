@@ -1,0 +1,44 @@
+{
+  "generated": "2026-06-19",
+  "prompt": "Applications close on 15 March 2026. The summer school will take place in Vienna from 10 July 2026 to 15 July 2026. The registration fee is 300 EUR. A limited number of travel grants is available.",
+  "items": [
+    {
+      "provider": "ollama",
+      "base_url": "http://localhost:11434",
+      "model": "qwen3.5:9b",
+      "available": true,
+      "elapsed_seconds": 39.138,
+      "valid_json": true,
+      "error": "",
+      "parsed_fields": {
+        "application_deadline": "2026-03-15",
+        "location": "Vienna",
+        "start_date": "2026-07-10",
+        "end_date": "2026-07-15",
+        "fee": "300",
+        "funding": "limited number of travel grants available"
+      },
+      "warnings": []
+    },
+    {
+      "provider": "lmstudio",
+      "base_url": "http://localhost:1234/v1",
+      "model": "qwen2.5-7b-instruct",
+      "available": true,
+      "elapsed_seconds": 64.314,
+      "valid_json": true,
+      "error": "",
+      "parsed_fields": {
+        "application_deadline": "{'en': '2026-03-15', 'zh': ''}",
+        "location": "{'en': 'Vienna', 'zh': ''}",
+        "start_date": "{'en': '2026-07-10', 'zh': ''}",
+        "end_date": "{'en': '2026-07-15', 'zh': ''}",
+        "fee": "{'en': '300 EUR', 'zh': ''}",
+        "funding": "{'en': 'Limited travel grants available', 'zh': ''}"
+      },
+      "warnings": [
+        "weak deadline"
+      ]
+    }
+  ]
+}

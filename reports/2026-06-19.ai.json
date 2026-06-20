@@ -1,0 +1,24 @@
+{
+  "generated": "2026-06-19",
+  "schema_version": "v6-evidence-ids",
+  "provider": "ollama",
+  "base_url": "http://localhost:11434",
+  "model": "qwen3.5:9b",
+  "fallback_model": "qwen3:8b",
+  "metadata": {
+    "temperature": 0.0,
+    "timeout_seconds": 90,
+    "max_pages_for_llm": 3,
+    "max_chunks_per_page": 1,
+    "max_chars_per_chunk": 1000,
+    "max_total_chars_per_request": 1200,
+    "semantic_chunks_available": 0,
+    "cache_enabled": true,
+    "cache_refresh": false,
+    "cache_directory": "C:\\Users\\17114\\Desktop\\Summer school agent\\data\\ai_cache"
+  },
+  "warnings": [
+    "llm_skipped:semantic_ranking_unavailable"
+  ],
+  "items": []
+}

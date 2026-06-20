@@ -1,0 +1,252 @@
+{
+  "generated": "2026-06-19",
+  "schema_version": "v5",
+  "provider": "lmstudio",
+  "base_url": "http://localhost:1234/v1",
+  "model": "qwen2.5-7b-instruct",
+  "fallback_model": "",
+  "metadata": {
+    "temperature": 0.0,
+    "timeout_seconds": 90,
+    "max_pages_for_llm": 3,
+    "max_chunks_per_page": 1,
+    "max_chars_per_chunk": 1000,
+    "max_total_chars_per_request": 1200,
+    "semantic_chunks_available": 40,
+    "cache_enabled": true,
+    "cache_refresh": true,
+    "cache_directory": "C:\\Users\\17114\\Desktop\\Summer school agent\\data\\ai_cache"
+  },
+  "warnings": [
+    "llm_endpoint_unavailable"
+  ],
+  "items": [
+    {
+      "page_url": "https://gpss.cc/",
+      "page_title": "About | Gaussian Process Summer Schools",
+      "source_name": "Gaussian Process Summer School",
+      "semantic_score_max": 0.673919,
+      "matched_existing_candidate": false,
+      "existing_candidate_title": "",
+      "llm_extraction": {
+        "title": {
+          "value": {
+            "About | Gaussian Process Summer Schools": "Gaussian Process Summer Schools About History Past Meetings Philosophy"
+          },
+          "evidence_text": "About | Gaussian Process Summer Schools Gaussian Process Summer Schools About History Past Meetings Philosophy",
+          "source_url": "https://gpss.cc/"
+        },
+        "event_type": {
+          "value": "unknown",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "location": {
+          "value": "unknown",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "mode": {
+          "value": "unknown",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "start_date": {
+          "value": "unknown",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "end_date": {
+          "value": "unknown",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "application_deadline": {
+          "value": "unknown",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "fee": {
+          "value": "unknown",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "funding": {
+          "value": "unknown",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "eligibility": {
+          "value": "unknown",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "application_url": {
+          "value": "unknown",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "topics": {
+          "value": [],
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "chinese_summary": {
+          "value": {
+            "关于高斯过程夏季学校的历史、过去会议和哲学。": "The first meetings were the Gaussian Process Round Table and Gaussian Processes in Practice meetings (in 2005/06). The formal, annual summer schools were started in June 2013 with the first Gaussian Process Summer School . We also ran the first roadshow meeting, in Kampala, Uganda in August 2013."
+          },
+          "evidence_text": "The first meetings were the Gaussian Process Round Table and Gaussian Processes in Practice meetings (in 2005/06). The formal, annual summer schools were started in June 2013 with the first Gaussian Process Summer School . We also ran the first roadshow meeting, in Kampala, Uganda in August 2013.",
+          "source_url": "https://gpss.cc/"
+        },
+        "confidence": "medium",
+        "warnings": [
+          "history"
+        ]
+      },
+      "validation_warnings": [
+        "llm_chunk_truncated:0",
+        "history"
+      ],
+      "validated_confidence": "medium"
+    },
+    {
+      "page_url": "https://www.egu.eu/meetings/training-schools/",
+      "page_title": "EGU - Meetings - Training schools",
+      "source_name": "EGU Training Schools",
+      "semantic_score_max": 0.645503,
+      "matched_existing_candidate": false,
+      "existing_candidate_title": "",
+      "llm_extraction": {
+        "title": {
+          "value": {
+            "en": "EGU Training Schools",
+            "zh": ""
+          },
+          "evidence_text": "Training schools EGU training schools offer early career scientists specialist training opportunities they do not normally have access to in their home institutions.",
+          "source_url": "https://www.egu.eu/meetings/training-schools/"
+        },
+        "event_type": {
+          "value": {
+            "en": "Training",
+            "zh": ""
+          },
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "location": {
+          "value": {
+            "en": "Varies by theme and need",
+            "zh": ""
+          },
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "mode": {
+          "value": {
+            "en": "In-person",
+            "zh": ""
+          },
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "start_date": {
+          "value": {},
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "end_date": {
+          "value": {},
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "application_deadline": {
+          "value": {},
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "fee": {
+          "value": {
+            "en": "Varies",
+            "zh": ""
+          },
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "funding": {
+          "value": {
+            "en": "EGU provides funding for some participants",
+            "zh": ""
+          },
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "eligibility": {
+          "value": {
+            "en": "Early career scientists",
+            "zh": ""
+          },
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "application_url": {
+          "value": {
+            "en": "Not specified in the given text",
+            "zh": ""
+          },
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "topics": {
+          "value": {
+            "en": "Varies by theme and need",
+            "zh": ""
+          },
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "chinese_summary": {
+          "value": {
+            "en": "EGU training schools provide specialized training for early career scientists in areas they may not have access to at their home institutions.",
+            "zh": ""
+          },
+          "evidence_text": "Training schools EGU training schools offer early career scientists specialist training opportunities they do not normally have access to in their home institutions.",
+          "source_url": ""
+        },
+        "confidence": "low",
+        "warnings": [
+          "weak fee evidence"
+        ]
+      },
+      "validation_warnings": [
+        "llm_chunk_truncated:1",
+        "evidence_not_found:event_type",
+        "evidence_not_found:location",
+        "evidence_not_found:mode",
+        "evidence_not_found:start_date",
+        "evidence_not_found:end_date",
+        "evidence_not_found:application_deadline",
+        "evidence_not_found:fee",
+        "evidence_not_found:funding",
+        "evidence_not_found:eligibility",
+        "evidence_not_found:application_url",
+        "evidence_not_found:topics",
+        "weak fee evidence"
+      ],
+      "validated_confidence": "low"
+    },
+    {
+      "page_url": "http://mlss.cc/",
+      "page_title": "Machine Learning Summer Schools - MLSS",
+      "source_name": "MLSS Index",
+      "semantic_score_max": 0.623871,
+      "matched_existing_candidate": false,
+      "existing_candidate_title": "",
+      "llm_extraction": {},
+      "validation_warnings": [
+        "llm_chunk_truncated:0",
+        "llm_unavailable:LM Studio endpoint unavailable at http://localhost:1234/v1 for model qwen2.5-7b-instruct: HTTPConnectionPool(host='localhost', port=1234): Read timed out. (read timeout=90). Start LM Studio Local Server and use the exact model id from `/v1/models`."
+      ],
+      "validated_confidence": "low"
+    }
+  ]
+}

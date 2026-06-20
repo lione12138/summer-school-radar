@@ -1,0 +1,21 @@
+{
+  "generated": "2026-06-19",
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "query": "summer school or winter school application information, including deadline, application, registration, dates, location, fee, funding, eligibility, topic, target participants, and application procedure",
+  "metadata": {
+    "chunk_size_chars": 1800,
+    "chunk_overlap_chars": 250,
+    "top_k_chunks_per_page": 6,
+    "min_similarity_score": 0.3,
+    "max_pages_for_ai": 30,
+    "pages_considered": 136,
+    "chunks_selected": 0,
+    "cache_enabled": true,
+    "cache_refresh": false,
+    "cache_directory": "C:\\Users\\17114\\Desktop\\Summer school agent\\data\\ai_cache"
+  },
+  "warnings": [
+    "semantic_ranking_skipped:[WinError 5] 拒绝访问。: 'C:\\\\Users\\\\17114\\\\.cache\\\\huggingface\\\\hub'"
+  ],
+  "items": []
+}

@@ -1,0 +1,232 @@
+{
+  "generated": "2026-06-19",
+  "schema_version": "v5",
+  "provider": "ollama",
+  "base_url": "http://localhost:11434",
+  "model": "qwen3.5:9b",
+  "fallback_model": "qwen3:8b",
+  "metadata": {
+    "temperature": 0.0,
+    "timeout_seconds": 90,
+    "max_pages_for_llm": 3,
+    "max_chunks_per_page": 1,
+    "max_chars_per_chunk": 1000,
+    "max_total_chars_per_request": 1200,
+    "semantic_chunks_available": 40,
+    "cache_enabled": true,
+    "cache_refresh": true,
+    "cache_directory": "C:\\Users\\17114\\Desktop\\Summer school agent\\data\\ai_cache"
+  },
+  "warnings": [
+    "llm_json_parse_failed"
+  ],
+  "items": [
+    {
+      "page_url": "https://gpss.cc/",
+      "page_title": "About | Gaussian Process Summer Schools",
+      "source_name": "Gaussian Process Summer School",
+      "semantic_score_max": 0.673919,
+      "matched_existing_candidate": false,
+      "existing_candidate_title": "",
+      "llm_extraction": {},
+      "validation_warnings": [
+        "llm_chunk_truncated:0",
+        "llm_json_parse_failed"
+      ],
+      "validated_confidence": "low"
+    },
+    {
+      "page_url": "https://www.egu.eu/meetings/training-schools/",
+      "page_title": "EGU - Meetings - Training schools",
+      "source_name": "EGU Training Schools",
+      "semantic_score_max": 0.645503,
+      "matched_existing_candidate": false,
+      "existing_candidate_title": "",
+      "llm_extraction": {
+        "title": {
+          "value": "EGU training schools",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "event_type": {
+          "value": "training_schools",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "location": {
+          "value": "",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "mode": {
+          "value": "in_person_or_online_unspecified",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "start_date": {
+          "value": "",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "end_date": {
+          "value": "",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "application_deadline": {
+          "value": "",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "fee": {
+          "value": "",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "funding": {
+          "value": "",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "eligibility": {
+          "value": "early career scientists",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "application_url": {
+          "value": "unknown",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "topics": {
+          "value": [
+            "specialist training opportunities",
+            "expert teachers",
+            "narrowly defined theme technique or approach",
+            "emerging research opportunities",
+            "rapidly evolving fields",
+            "interdisciplinary approaches",
+            "highly specialised skills"
+          ],
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "chinese_summary": {
+          "value": "EGU 培训学校为早期职业科学家提供在其所在机构通常无法获得的专门培训机会，由专家教师围绕特定主题、技术或方法组成小组，在适合具体培训需求的地点进行。这些学校可位于新兴研究机遇附近，涵盖快速发展的领域、跨学科方法或高度专业化的技能，促进早期职业科学家之间的联系并提供交流机会",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "confidence": "medium",
+        "warnings": [
+          "location is not specified in the provided text"
+        ]
+      },
+      "validation_warnings": [
+        "llm_chunk_truncated:1",
+        "evidence_not_found:title",
+        "evidence_not_found:event_type",
+        "evidence_not_found:mode",
+        "evidence_not_found:eligibility",
+        "evidence_not_found:topics",
+        "evidence_not_found:chinese_summary",
+        "location is not specified in the provided text"
+      ],
+      "validated_confidence": "low"
+    },
+    {
+      "page_url": "http://mlss.cc/",
+      "page_title": "Machine Learning Summer Schools - MLSS",
+      "source_name": "MLSS Index",
+      "semantic_score_max": 0.623871,
+      "matched_existing_candidate": false,
+      "existing_candidate_title": "",
+      "llm_extraction": {
+        "title": {
+          "value": "Machine Learning Summer Schools - MLSS",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "event_type": {
+          "value": "series",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "location": {
+          "value": "Onna (Okinawa), Japan; Tübingen, Germany",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "mode": {
+          "value": "in-person",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "start_date": {
+          "value": "2002-01-01",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "end_date": {
+          "value": "2099-12-31",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "application_deadline": {
+          "value": null,
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "fee": {
+          "value": null,
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "funding": {
+          "value": null,
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "eligibility": {
+          "value": null,
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "application_url": {
+          "value": "unknown",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "topics": {
+          "value": [
+            "statistical machine learning",
+            "machine learning inference"
+          ],
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "chinese_summary": {
+          "value": "机器学习暑期学校系列始于 2002 年，旨在推广现代统计机器学习和推理方法。该系列活动涵盖从基础到最先进实践的核心理论与主题，由领域领先专家授课。页面包含过往及未来学校的链接。",
+          "evidence_text": "",
+          "source_url": ""
+        },
+        "confidence": "high",
+        "warnings": [
+          "weak deadline evidence"
+        ]
+      },
+      "validation_warnings": [
+        "llm_chunk_truncated:0",
+        "evidence_not_found:title",
+        "evidence_not_found:event_type",
+        "evidence_not_found:location",
+        "evidence_not_found:mode",
+        "evidence_not_found:start_date",
+        "evidence_not_found:end_date",
+        "evidence_not_found:topics",
+        "evidence_not_found:chinese_summary",
+        "weak deadline evidence"
+      ],
+      "validated_confidence": "medium"
+    }
+  ]
+}
