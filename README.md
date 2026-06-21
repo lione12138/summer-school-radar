@@ -17,7 +17,7 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-20 · 1 fully qualified · 2 high-quality · 3 found shown_
+_Last scan: 2026-06-21 · 1 fully qualified · 2 high-quality · 3 found shown_
 
 **Fully Qualified Opportunities**
 
