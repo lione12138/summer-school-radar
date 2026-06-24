@@ -9,10 +9,12 @@ dist/
 # Test and tooling caches
 .pytest_cache/
 .coverage
+.tmp/
 
 # Generated artifacts (rebuilt on every scan)
 data/raw/*
 data/processed/*
+data/ai_cache/
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 site/

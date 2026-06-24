@@ -1,0 +1,143 @@
+from __future__ import annotations
+
+from datetime import date
+
+from research_school_radar.llm_validate import validate_llm_extraction
+from research_school_radar.semantic import SemanticChunk
+
+
+def _chunk(text: str) -> SemanticChunk:
+    return SemanticChunk(
+        page_url="https://example.org/school",
+        page_title="School",
+        source_name="Example",
+        chunk_index=0,
+        text=text,
+        score=0.9,
+    )
+
+
+def _entry(value: str, evidence_ids: list[str] | None = None) -> dict:
+    return {"value": value, "evidence_ids": evidence_ids or [], "resolved_evidence_texts": []}
+
+
+def _snippet(text: str, evidence_id: str = "E1") -> dict:
+    return {"id": evidence_id, "text": text, "signals": []}
+
+
+def test_evidence_id_found_passes() -> None:
+    extraction = {"fee": _entry("EUR 350", ["E1"]), "confidence": "high"}
+    warnings, confidence = validate_llm_extraction(
+        extraction,
+        [_chunk("Registration fee is EUR 350.")],
+        evidence_snippets=[_snippet("Registration fee is EUR 350.")],
+        today=date(2026, 1, 1),
+    )
+    assert warnings == []
+    assert confidence == "high"
+
+
+def test_missing_evidence_id_warns() -> None:
+    extraction = {"location": _entry("Cambridge"), "confidence": "high"}
+    warnings, confidence = validate_llm_extraction(extraction, [_chunk("The school is in Cambridge.")])
+    assert "missing_evidence_id:location" in warnings
+    assert confidence == "medium"
+
+
+def test_normalized_date_with_valid_evidence_is_accepted() -> None:
+    extraction = {
+        "application_deadline": _entry("2026-03-15", ["E1"]),
+        "confidence": "high",
+    }
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk("Applications close on 15 March 2026.")],
+        evidence_snippets=[_snippet("Applications close on 15 March 2026.")],
+        today=date(2026, 1, 1),
+    )
+    assert "missing_evidence_id:application_deadline" not in warnings
+
+
+def test_unknown_field_with_evidence_id_warns() -> None:
+    extraction = {"fee": _entry("unknown", ["E1"]), "confidence": "medium"}
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk("Registration fee is EUR 350.")],
+        evidence_snippets=[_snippet("Registration fee is EUR 350.")],
+    )
+    assert "unknown_field_has_evidence_id:fee" in warnings
+
+
+def test_evidence_id_not_found_warns() -> None:
+    extraction = {"fee": _entry("EUR 350", ["E9"]), "confidence": "medium"}
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk("Registration fee is EUR 350.")],
+        evidence_snippets=[_snippet("Registration fee is EUR 350.", "E1")],
+    )
+    assert "evidence_id_not_found:fee" in warnings
+
+
+def test_application_deadline_with_weak_context_warns() -> None:
+    extraction = {"application_deadline": _entry("2026-03-15", ["E1"]), "confidence": "high"}
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk("15 March 2026")],
+        evidence_snippets=[_snippet("15 March 2026")],
+        today=date(2026, 1, 1),
+    )
+    assert "deadline_context_weak" in warnings
+
+
+def test_fee_with_weak_context_warns() -> None:
+    extraction = {"fee": _entry("EUR 350", ["E1"]), "confidence": "medium"}
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk("EUR 350")],
+        evidence_snippets=[_snippet("EUR 350")],
+    )
+    assert "fee_context_weak" in warnings
+
+
+def test_past_and_closed_wording_warns() -> None:
+    extraction = {
+        "application_deadline": _entry("2025-03-15", ["E1"]),
+        "start_date": _entry("2025-07-01", ["E2"]),
+        "confidence": "high",
+    }
+    snippets = [
+        _snippet("Applications closed. Application deadline: 15 March 2025.", "E1"),
+        _snippet("The school runs from 1 July 2025.", "E2"),
+    ]
+    warnings, confidence = validate_llm_extraction(
+        extraction,
+        [
+            _chunk(
+                "Applications closed. Application deadline: 15 March 2025. "
+                "The school runs from 1 July 2025."
+            )
+        ],
+        evidence_snippets=snippets,
+        today=date(2026, 1, 1),
+    )
+    assert "possibly_past_or_closed" in warnings
+    assert "deadline_past" in warnings
+    assert "event_past" in warnings
+    assert confidence == "medium"
+
+
+def test_index_page_specific_field_risk_warns() -> None:
+    extraction = {
+        "title": _entry("Past meetings overview", ["E1"]),
+        "location": _entry("Cambridge", ["E2"]),
+        "confidence": "medium",
+    }
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk("Past meetings overview. Venue: Cambridge.")],
+        evidence_snippets=[
+            _snippet("Past meetings overview.", "E1"),
+            _snippet("Venue: Cambridge.", "E2"),
+        ],
+    )
+    assert "index_page_specific_field_risk" in warnings

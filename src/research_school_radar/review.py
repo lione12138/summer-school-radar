@@ -6,6 +6,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any
 
+from .ai_review import ai_advisory_for_candidate
 from .models import Candidate
 from .rank import canonical_url
 from .utils import is_too_short, write_text_atomic
@@ -86,22 +87,26 @@ def apply_overrides(candidates: list[Candidate], overrides: list[dict[str, Any]]
     return kept
 
 
-def build_review_queue(candidates: list[Candidate], limit: int | None = None) -> list[dict[str, Any]]:
+def build_review_queue(
+    candidates: list[Candidate],
+    limit: int | None = None,
+    ai_items: list[dict[str, Any]] | None = None,
+) -> list[dict[str, Any]]:
     reviewable = [
         candidate
         for candidate in candidates
         if _needs_review(candidate)
     ]
     reviewable.sort(key=lambda item: (_review_priority(item), item.score), reverse=True)
-    rows = [_review_item(candidate) for candidate in reviewable]
+    rows = [_review_item(candidate, ai_items) for candidate in reviewable]
     return rows if limit is None else rows[:limit]
 
 
-def write_review_queue(path: Path, candidates: list[Candidate]) -> None:
+def write_review_queue(path: Path, candidates: list[Candidate], ai_items: list[dict[str, Any]] | None = None) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "generated": date.today().isoformat(),
-        "review_queue": build_review_queue(candidates),
+        "review_queue": build_review_queue(candidates, ai_items=ai_items),
     }
     write_text_atomic(path, json.dumps(payload, indent=2, ensure_ascii=False, default=str) + "\n")
 
@@ -187,12 +192,12 @@ def _review_priority(candidate: Candidate) -> int:
     return priority
 
 
-def _review_item(candidate: Candidate) -> dict[str, Any]:
+def _review_item(candidate: Candidate, ai_items: list[dict[str, Any]] | None = None) -> dict[str, Any]:
     raw = asdict(candidate)
     for key in ["start_date", "end_date", "deadline", "first_seen"]:
         value = raw[key]
         raw[key] = value.isoformat() if value else None
-    return {
+    item = {
         "title": candidate.title,
         "url": candidate.source_url,
         "organizer": candidate.organizer,
@@ -218,3 +223,5 @@ def _review_item(candidate: Candidate) -> dict[str, Any]:
             "mode": candidate.mode_evidence,
         },
     }
+    item["ai_advisory"] = ai_advisory_for_candidate(candidate, ai_items)
+    return item

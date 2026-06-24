@@ -41,6 +41,14 @@ dev = [
   "pytest>=8.0",
   "responses>=0.25",
 ]
+semantic = [
+  "sentence-transformers>=3.0",
+  "numpy>=1.26",
+]
+llm = [
+  "openai>=1.0",
+  "python-dotenv>=1.0",
+]
 # Headless-browser rendering for JavaScript-heavy sources (sources with
 # `render: true`). After installing, run: playwright install chromium
 render = [

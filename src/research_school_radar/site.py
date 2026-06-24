@@ -12,6 +12,7 @@ from urllib.parse import quote, urlencode
 from email.utils import format_datetime
 from datetime import datetime, timezone
 
+from .ai_review import potential_missed_pages
 from .models import Candidate
 from .review import build_review_queue
 from .utils import ROOT, format_duration, is_too_short, sanitize_location, topics_label
@@ -323,6 +324,7 @@ def write_site(
     site_config: dict[str, Any] | None = None,
     curated: list[dict[str, Any]] | None = None,
     sources: list[dict[str, Any]] | None = None,
+    ai_items: list[dict[str, Any]] | None = None,
 ) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     curated = curated or []
@@ -349,7 +351,7 @@ def write_site(
         json.dumps(
             {
                 "generated": date.today().isoformat(),
-                "review_queue": build_review_queue(candidates),
+                "review_queue": build_review_queue(candidates, ai_items=ai_items),
             },
             indent=2,
             ensure_ascii=False,
@@ -359,9 +361,12 @@ def write_site(
     )
     (output_dir / "sources.json").write_text(json.dumps(sources, indent=2, default=str), encoding="utf-8")
     (output_dir / "sources.html").write_text(render_sources_page(sources), encoding="utf-8")
+    has_ai_review = ai_items is not None
+    if has_ai_review:
+        (output_dir / "ai-review.html").write_text(render_ai_review_page(ai_items or []), encoding="utf-8")
     (output_dir / "feed.xml").write_text(render_feed(candidates, curated, site_config or {}), encoding="utf-8")
     (output_dir / "robots.txt").write_text(_robots_txt(), encoding="utf-8")
-    (output_dir / "sitemap.xml").write_text(_sitemap_xml(), encoding="utf-8")
+    (output_dir / "sitemap.xml").write_text(_sitemap_xml(has_ai_review=has_ai_review), encoding="utf-8")
     (output_dir / "favicon.svg").write_text(_favicon_svg(), encoding="utf-8")
     _copy_og_image(output_dir)
     _copy_verification_files(output_dir)
@@ -376,6 +381,7 @@ def write_site(
             site_config or {},
             curated,
             tracked_sources=tracked_sources,
+            has_ai_review=has_ai_review,
         ),
         encoding="utf-8",
     )
@@ -431,9 +437,179 @@ def _data_license_text() -> str:
     )
 
 
-def _sitemap_xml() -> str:
+def render_ai_review_page(ai_items: list[dict[str, Any]]) -> str:
+    matched = [item for item in ai_items if bool(item.get("matched_existing_candidate"))]
+    missed = potential_missed_pages(ai_items)
+    matched_rows = "".join(_ai_matched_row(item) for item in matched)
+    missed_rows = "".join(_ai_missed_row(item) for item in missed)
+    updated = date.today().isoformat()
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Review · Summa</title>
+{_seo_head(_SITE_URL + "ai-review.html", "Advisory AI-assisted extraction records for maintainer review. These are not public recommendations.", {})}
+  {_BOOT_SCRIPT}
+  <style>
+{_THEME_CSS}
+{_NAV_CSS}
+    main {{ padding: 34px 0 56px; }}
+    .page-head {{ margin-bottom: 22px; }}
+    .page-head h1 {{ margin: 0 0 8px; font-size: 32px; letter-spacing: -0.02em; }}
+    .advisory {{
+      border-left: 4px solid var(--warn);
+      background: var(--warn-soft);
+      border-radius: 0 10px 10px 0;
+      padding: 12px 16px;
+      margin: 16px 0 24px;
+    }}
+    .ai-evidence {{ color: var(--muted); font-size: 13px; max-width: 460px; }}
+    .warn-list {{ margin: 0; padding-left: 18px; color: var(--warn); }}
+    .score {{ font-variant-numeric: tabular-nums; }}
+  </style>
+</head>
+<body>
+  {_site_nav(home="index.html", has_ai_review=True)}
+  <main class="wrap">
+    <div class="page-head">
+      <h1>AI Review</h1>
+      <p class="muted">AI-assisted extraction, advisory only. Evidence IDs refer to short snippets extracted from the official page.</p>
+      <div class="advisory">These records do not determine qualification, ranking, RSS inclusion, or recommendations. The rule-based scanner remains the source of truth. Always verify cited evidence on the official page.</div>
+      <p class="pill">Updated {updated}</p>
+    </div>
+    <section>
+      <h2>Matched Existing Candidates</h2>
+      <p class="muted">AI records whose page URL exactly matches an existing scanner candidate.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Page</th><th>Source</th><th>Confidence</th><th>Summary</th><th>Deadline / Fee / Funding Evidence</th><th>Warnings</th></tr></thead>
+          <tbody>{matched_rows or '<tr><td colspan="6">No matched AI records.</td></tr>'}</tbody>
+        </table>
+      </div>
+    </section>
+    <section>
+      <h2>Potential Missed Pages</h2>
+      <p class="muted">Unmatched semantic/AI records that may deserve manual checking. They are not candidates and are not qualified opportunities.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Page</th><th>Source</th><th>Score</th><th>AI Title / Type</th><th>Deadline / Dates</th><th>Summary</th><th>Warnings</th></tr></thead>
+          <tbody>{missed_rows or '<tr><td colspan="7">No potential missed pages.</td></tr>'}</tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  {_footer_section(updated, has_ai_review=True)}
+  {_UI_SCRIPT}
+</body>
+</html>
+"""
+
+
+def _ai_matched_row(item: dict[str, Any]) -> str:
+    extraction = item.get("llm_extraction", {}) if isinstance(item.get("llm_extraction"), dict) else {}
+    title = str(item.get("existing_candidate_title") or item.get("page_title") or "AI record")
+    url = str(item.get("page_url", ""))
+    summary = _ai_field_value(extraction, "chinese_summary")
+    confidence = str(item.get("validated_confidence", "low"))
+    evidence = [
+        ("Deadline", _ai_field_evidence_html(extraction, "application_deadline")),
+        ("Fee", _ai_field_evidence_html(extraction, "fee")),
+        ("Funding", _ai_field_evidence_html(extraction, "funding")),
+        ("Eligibility", _ai_field_evidence_html(extraction, "eligibility")),
+    ]
+    evidence_html = "<br>".join(
+        f"<strong>{escape(label)}:</strong> {value}" for label, value in evidence if value
+    )
+    return (
+        "<tr>"
+        f"<td>{_ai_link(title, url)}</td>"
+        f"<td>{escape(str(item.get('source_name', '')))}</td>"
+        f"<td>{escape(confidence)}</td>"
+        f"<td>{escape(_short_html_text(summary))}</td>"
+        f"<td class=\"ai-evidence\">{evidence_html or 'No supported evidence extracted.'}</td>"
+        f"<td>{_warning_list(item.get('validation_warnings'))}</td>"
+        "</tr>"
+    )
+
+
+def _ai_missed_row(item: dict[str, Any]) -> str:
+    page_title = str(item.get("page_title") or item.get("llm_title") or "Potential missed page")
+    url = str(item.get("page_url", ""))
+    ai_title_type = " / ".join(part for part in [str(item.get("llm_title", "")), str(item.get("llm_event_type", ""))] if part)
+    date_text = " / ".join(part for part in [str(item.get("llm_deadline", "")), str(item.get("llm_dates", ""))] if part)
+    return (
+        "<tr>"
+        f"<td>{_ai_link(page_title, url)}</td>"
+        f"<td>{escape(str(item.get('source_name', '')))}</td>"
+        f"<td class=\"score\">{float(item.get('semantic_score_max', 0)):.3f}</td>"
+        f"<td>{escape(_short_html_text(ai_title_type))}</td>"
+        f"<td>{escape(_short_html_text(date_text))}</td>"
+        f"<td>{escape(_short_html_text(str(item.get('chinese_summary', ''))))}</td>"
+        f"<td>{_warning_list(item.get('warnings'))}</td>"
+        "</tr>"
+    )
+
+
+def _ai_link(title: str, url: str) -> str:
+    safe_title = escape(_short_html_text(title))
+    if not url:
+        return safe_title
+    return f'<a href="{escape(url, quote=True)}">{safe_title}</a>'
+
+
+def _ai_field_value(extraction: dict[str, Any], field: str) -> str:
+    value = extraction.get(field, {})
+    if not isinstance(value, dict):
+        return ""
+    raw = value.get("value", "")
+    if isinstance(raw, list):
+        return ", ".join(str(item) for item in raw if str(item).strip())
+    text = str(raw or "").strip()
+    return "" if text.lower() == "unknown" else text
+
+
+def _ai_field_evidence(extraction: dict[str, Any], field: str) -> str:
+    value = extraction.get(field, {})
+    if not isinstance(value, dict):
+        return ""
+    resolved = value.get("resolved_evidence_texts", [])
+    if isinstance(resolved, list) and resolved:
+        return " | ".join(str(item) for item in resolved if str(item).strip())
+    return str(value.get("evidence_text", "") or "")
+
+
+def _ai_field_evidence_html(extraction: dict[str, Any], field: str) -> str:
+    value = extraction.get(field, {})
+    if not isinstance(value, dict):
+        return ""
+    ids = _list_value(value.get("evidence_ids"))
+    texts = _list_value(value.get("resolved_evidence_texts"))
+    if ids or texts:
+        ids_text = f"<span class=\"muted\">{escape(', '.join(ids))}</span> " if ids else ""
+        text = " | ".join(escape(_short_html_text(item)) for item in texts)
+        return ids_text + text
+    evidence = str(value.get("evidence_text", "") or "")
+    return escape(_short_html_text(evidence)) if evidence else ""
+
+
+def _warning_list(warnings: Any) -> str:
+    items = _list_value(warnings)
+    if not items:
+        return ""
+    return '<ul class="warn-list">' + "".join(f"<li>{escape(_short_html_text(item))}</li>" for item in items) + "</ul>"
+
+
+def _short_html_text(value: str, limit: int = 260) -> str:
+    text = " ".join(str(value or "").split())
+    return text[:limit]
+
+
+def _sitemap_xml(has_ai_review: bool = False) -> str:
     today = date.today().isoformat()
     pages = ["", "sources.html"]
+    if has_ai_review:
+        pages.append("ai-review.html")
     urls = "".join(
         f"  <url><loc>{_SITE_URL}{page}</loc><lastmod>{today}</lastmod></url>\n" for page in pages
     )
@@ -769,6 +945,7 @@ def render_site(
     site_config: dict[str, Any] | None = None,
     curated: list[dict[str, Any]] | None = None,
     tracked_sources: int = 0,
+    has_ai_review: bool = False,
 ) -> str:
     curated = curated or []
     full = [item for item in candidates if item.fully_qualified and not _is_online_only(item)][:10]
@@ -1069,7 +1246,7 @@ def render_site(
   </style>
 </head>
 <body>
-  {_site_nav()}
+  {_site_nav(has_ai_review=has_ai_review)}
   <header class="hero" id="top">
     <div class="wrap">
       <p class="kicker" data-i18n="hero.kicker">&#128225; Updated daily &middot; Free &amp; open source</p>
@@ -1081,6 +1258,7 @@ def render_site(
         <span class="pill" data-i18n="meta.fixed">Fixed-source scan</span>
         <span class="pill" data-i18n="meta.free">No paid search API</span>
         <a class="pill" href="sources.html" data-i18n="meta.sources">Sources &amp; Coverage</a>
+        {_ai_review_pill(has_ai_review)}
         <a class="pill" href="https://github.com/lione12138/summer-school-radar">GitHub</a>
       </div>
     </div>
@@ -1106,7 +1284,7 @@ def render_site(
     {_about_section()}
     {_faq_section()}
   </main>
-  {_footer_section(updated)}
+  {_footer_section(updated, has_ai_review=has_ai_review)}
   {_filter_script()}
   {_UI_SCRIPT}
   {analytics}
@@ -1128,7 +1306,7 @@ _RADAR_ICON = (
 )
 
 
-def _site_nav(home: str = "") -> str:
+def _site_nav(home: str = "", has_ai_review: bool = False) -> str:
     # ``home`` is "" on the index page and "index.html" on subpages, so the
     # in-page anchors still resolve when viewed from another page.
     brand = f"{home}#top" if home else "#top"
@@ -1141,12 +1319,21 @@ def _site_nav(home: str = "") -> str:
         <a class="hide-sm" href="{home}#how" data-i18n="nav.how">How it works</a>
         <a class="hide-sm" href="{home}#about" data-i18n="nav.about">About</a>
         <a href="sources.html" data-i18n="nav.sources">Sources</a>
+        {_ai_review_nav_link(has_ai_review)}
         <a href="{_GITHUB_URL}">GitHub</a>
         <button id="lang-toggle" class="toggle" type="button" aria-label="Language">中</button>
         <button id="theme-toggle" class="toggle" type="button" aria-label="Theme">&#9790;</button>
       </div>
     </div>
   </nav>"""
+
+
+def _ai_review_nav_link(has_ai_review: bool) -> str:
+    return '<a href="ai-review.html">AI Review</a>' if has_ai_review else ""
+
+
+def _ai_review_pill(has_ai_review: bool) -> str:
+    return '<a class="pill" href="ai-review.html">AI Review</a>' if has_ai_review else ""
 
 
 def _how_it_works_section() -> str:
@@ -1219,7 +1406,7 @@ def _faq_section() -> str:
     </section>"""
 
 
-def _footer_section(updated: str) -> str:
+def _footer_section(updated: str, has_ai_review: bool = False) -> str:
     return f"""
   <footer class="site">
     <div class="wrap">
@@ -1232,6 +1419,7 @@ def _footer_section(updated: str) -> str:
           <h4 data-i18n="foot.explore">Explore</h4>
           <a href="#opportunities" data-i18n="foot.opportunities">Opportunities</a>
           <a href="sources.html" data-i18n="foot.sources">Sources &amp; coverage</a>
+          {_ai_review_nav_link(has_ai_review)}
         </div>
         <div class="col">
           <h4 data-i18n="foot.project">Project</h4>

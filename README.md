@@ -12,6 +12,23 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 
 [Technical README](docs/TECHNICAL.md) | [中文技术说明](docs/TECHNICAL.zh-CN.md) | [License & reuse](#license--reuse)
 
+## Abstract
+
+Summa combines a conservative fixed-source crawler, rule-based field extraction,
+and transparent evidence preservation to track research training opportunities.
+The public qualification logic remains deterministic: deadlines, duration,
+funding, fee, mode, and topic fit are extracted and filtered by explicit rules.
+To improve recall, the project now also includes an optional semantic analysis
+layer using `BAAI/bge-m3` embeddings. This embedding layer ranks scanned page
+chunks for human review and helps surface relevant application, fee, funding,
+eligibility, and deadline context that string matching may miss.
+
+The semantic layer is still being optimized and is not the source of truth for
+qualification, ranking, RSS inclusion, or public recommendation status. Future
+work may add field-specific research-training ontologies for specialized
+domains and may connect external AI APIs for more accurate advisory analysis
+after evidence, cost, and reliability controls are in place.
+
 ## Latest Scan Results
 
 This section is refreshed automatically by the daily local scan.
@@ -138,9 +155,10 @@ python -m research_school_radar.cli scan
 Optional semantic chunk ranking can write a sidecar with the most relevant text
 snippets from scanned pages. It does not change extraction, hard filters,
 ranking, report tables, RSS, or public qualification status. It uses
-`BAAI/bge-small-en-v1.5` via `sentence-transformers`. Semantic ranking is
+`BAAI/bge-m3` via `sentence-transformers`. Semantic ranking is
 cached under `data/ai_cache/` by page URL, page text hash, embedding model,
-query, and chunking config.
+query, and chunking config. Ranking is applied before the output page limit, and
+a per-source cap keeps one large site from dominating the review sidecar.
 
 ```powershell
 pip install -e ".[dev,semantic]"
