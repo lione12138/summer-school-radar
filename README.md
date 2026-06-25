@@ -34,13 +34,13 @@ after evidence, cost, and reliability controls are in place.
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-24 · 1 fully qualified · 2 high-quality · 3 found shown_
+_Last scan: 2026-06-25 · 1 fully qualified · 2 high-quality · 3 found shown_
 
 **Fully Qualified Opportunities**
 
-| # | title | type | organizer | location | duration | deadline | funding / fee | topic | eligibility | reason |
-|---|---|---|---|---|---|---|---|---|---|---|
-| 1 | [Social Science Data Analysis](https://essexsummerschool.com/new-application/) | summer school | Essex Summer School | Colchester, UK | 29 Jun – 14 Aug 2026 · 47 days | 2026-07-17 | scholarship · amount not stated · Apply on official page | satellite, geospatial, AI, machine learning | Masters PhD Not Currently a Student Discipline Country of University / Employer * Afghanistan Albania Algeria Andorra Angola Anguilla Antigua and Barbuda Argentina Ar | topic match: satellite, geospatial, AI, machine learning; funding evidence: scholarship; deadline appears open; 47 days |
+| # | title | type | organizer | location | duration | deadline | funding / fee | topic |
+|---|---|---|---|---|---|---|---|---|
+| 1 | [Social Science Data Analysis](https://essexsummerschool.com/new-application/) | summer school | Essex Summer School | Colchester, UK | 29 Jun – 14 Aug 2026 · 47 days | 2026-07-17 | scholarship · amount not stated · Apply on official page | satellite, geospatial, AI, machine learning |
 
 **High-Quality Opportunities**
 
@@ -168,19 +168,21 @@ python -m research_school_radar.cli scan --enable-semantic
 Semantic sidecar output goes to `site/semantic_chunks.json` and
 `reports/YYYY-MM-DD.semantic.json`.
 
-Local LLM extraction is also optional and advisory only. It reads semantic
-chunks and asks a configured local provider for structured evidence. Supported
-providers are:
+LLM extraction is also optional and advisory only. It reads semantic chunks and
+asks a configured provider for structured evidence. Supported providers are:
 
 - Ollama: native `/api/chat`, default model `qwen3.5:9b`, with `think: false`
   and `format: "json"`.
 - LM Studio: OpenAI-compatible `/v1/chat/completions`, default model id
   `qwen2.5-7b-instruct`, with structured JSON schema mode when supported.
+- DeepSeek API: OpenAI-compatible `/chat/completions`, default model
+  `deepseek-v4-flash`, with `thinking` disabled and JSON object mode.
 
 It writes sidecar JSON without changing candidates, filters, rankings, RSS, or
-the public tables. Local LLM software and models must be installed manually; the
-project does not install Ollama, LM Studio, or model files automatically. In the
-Ollama CLI, `/set nothink` can disable thinking during manual interactive tests.
+the public tables. Local LLM software and models must be installed manually;
+remote API keys must be supplied by the user. The project does not install
+Ollama, LM Studio, model files, or create API keys automatically. In the Ollama
+CLI, `/set nothink` can disable thinking during manual interactive tests.
 
 The LLM prompt is evidence-first: the scanner converts semantic chunks into
 short numbered snippets such as `E1`, `E2`, and `E3`. The model is asked to cite
@@ -190,9 +192,39 @@ AI output auditable while avoiding full raw page dumps in public files.
 
 ```powershell
 pip install -e ".[dev,semantic,llm]"
-ollama run qwen3.5:9b
+$env:DEEPSEEK_API_KEY = "sk-..."
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction
 ```
+
+### Using DeepSeek as remote LLM provider
+
+DeepSeek is the recommended first remote API trial because `deepseek-v4-flash`
+is low-cost, supports OpenAI-compatible chat completions, supports JSON output,
+and supports disabling thinking mode. Create a DeepSeek API key manually, then
+set it locally:
+
+```powershell
+$env:LLM_PROVIDER = "deepseek"
+$env:DEEPSEEK_API_KEY = "sk-..."
+```
+
+Optional explicit settings:
+
+```powershell
+$env:LLM_BASE_URL = "https://api.deepseek.com"
+$env:LLM_MODEL = "deepseek-v4-flash"
+```
+
+Then run:
+
+```powershell
+python -m research_school_radar.ai_healthcheck --provider deepseek
+python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
+```
+
+DeepSeek output remains advisory only. It writes `site/ai_extractions.json`,
+`reports/YYYY-MM-DD.ai.json`, and `site/ai-review.html`; it does not update the
+main opportunity tables or fully qualified status.
 
 ### Using LM Studio as local LLM provider
 
@@ -282,6 +314,9 @@ python -m research_school_radar.cli scan --enable-semantic --refresh-ai-cache
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
 python -m research_school_radar.ai_evaluate
 ```
+
+`ai_compare_providers.py` runs a small synthetic wiring check for Ollama, LM
+Studio, and DeepSeek when configured. It is not a quality benchmark.
 
 `ai_evaluate.py` reads `site/ai_extractions.json` and writes:
 
