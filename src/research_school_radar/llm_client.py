@@ -163,6 +163,61 @@ class LMStudioOpenAIClient:
         return str(message.get("content", "") if isinstance(message, dict) else "")
 
 
+class DeepSeekOpenAIClient:
+    def __init__(self, config: LLMClientConfig) -> None:
+        self.config = config
+        self.last_model_used = config.model
+        self.warnings: list[str] = []
+
+    def complete(self, prompt: str) -> str:
+        return self.complete_with_metadata(prompt).content
+
+    def complete_with_metadata(self, prompt: str) -> LLMResult:
+        if not self.config.api_key:
+            raise LLMUnavailableError(
+                "DeepSeek API key is not configured. Set DEEPSEEK_API_KEY or LLM_API_KEY before running "
+                "`--enable-llm-extraction` with provider `deepseek`."
+            )
+        errors: list[Exception] = []
+        for model in _candidate_models(self.config):
+            start = time.perf_counter()
+            payload: dict[str, Any] = {
+                "model": model,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": self.config.temperature,
+                "stream": False,
+                "response_format": {"type": "json_object"},
+                "thinking": {"type": "disabled"},
+                "max_tokens": 1200,
+            }
+            try:
+                response = requests.post(
+                    urljoin(_openai_base_url(self.config.base_url), "chat/completions"),
+                    json=payload,
+                    headers={"Authorization": f"Bearer {self.config.api_key}"},
+                    timeout=self.config.timeout_seconds,
+                )
+                response.raise_for_status()
+                data = response.json()
+            except Exception as exc:  # noqa: BLE001 - optional remote API must not abort scan.
+                errors.append(exc)
+                continue
+            self.last_model_used = model
+            choices = data.get("choices", []) if isinstance(data, dict) else []
+            message = choices[0].get("message", {}) if choices and isinstance(choices[0], dict) else {}
+            return LLMResult(
+                content=str(message.get("content", "") if isinstance(message, dict) else ""),
+                elapsed_seconds=time.perf_counter() - start,
+                model=model,
+                warnings=[],
+            )
+        detail = f": {errors[-1]}" if errors else ""
+        raise LLMUnavailableError(
+            f"DeepSeek endpoint unavailable at {self.config.base_url} for model {self.config.model}"
+            f"{detail}. Check DEEPSEEK_API_KEY, model name, and account balance."
+        )
+
+
 class UnsupportedLLMClient:
     def __init__(self, config: LLMClientConfig) -> None:
         self.config = config
@@ -171,7 +226,7 @@ class UnsupportedLLMClient:
 
     def complete(self, prompt: str) -> str:
         raise LLMUnavailableError(
-            f"Unsupported LLM provider `{self.config.provider}`. Use `ollama` or `lmstudio`."
+            f"Unsupported LLM provider `{self.config.provider}`. Use `ollama`, `lmstudio`, or `deepseek`."
         )
 
     def complete_with_metadata(self, prompt: str) -> LLMResult:
@@ -185,6 +240,8 @@ def create_llm_client(config: LLMClientConfig) -> BaseLLMClient:
         return OllamaNativeClient(config)
     if provider == "lmstudio":
         return LMStudioOpenAIClient(config)
+    if provider == "deepseek":
+        return DeepSeekOpenAIClient(config)
     return UnsupportedLLMClient(config)
 
 

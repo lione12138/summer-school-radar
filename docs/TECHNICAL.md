@@ -85,12 +85,15 @@ Default branch:
 sources -> collect -> parse -> extract rules -> filter -> rank -> report/site
 
 Optional AI advisory branch:
-pages -> semantic chunks -> evidence snippets -> local LLM extraction -> evidence-ID validation -> sidecar JSON -> AI review
+pages -> semantic chunks -> evidence snippets -> optional LLM extraction -> evidence-ID validation -> sidecar JSON -> AI review
 ```
 
 The optional branch reads collected page text but never overwrites `Candidate`
 records, hard-filter results, ranking, RSS inclusion, or public qualification
 status.
+
+For product-level reasoning, successful experiments, failed experiments, and
+workflow tradeoffs, see `docs/DEVELOPMENT_LOG.md`.
 
 ## Optional semantic ranking
 
@@ -143,9 +146,9 @@ not make semantic output authoritative. The review sidecar still needs human
 checking, and the rule-based scanner remains the source of truth for public
 qualification.
 
-Local LLM extraction is also optional and advisory only. It turns semantic
-chunks into short numbered evidence snippets, sends those snippets to a
-configured local provider, and writes structured sidecar JSON. It does not
+LLM extraction is also optional and advisory only. It turns semantic chunks into
+short numbered evidence snippets, sends those snippets to a configured provider,
+and writes structured sidecar JSON. It does not
 change `Candidate` records, hard filters, ranking, Markdown report tables, RSS,
 or public site tables.
 
@@ -157,29 +160,41 @@ Supported providers:
   `qwen2.5-7b-instruct`, request uses `response_format` JSON schema when
   supported and falls back to plain JSON prompting with a
   `lmstudio_structured_output_fallback` warning.
+- `deepseek`: remote OpenAI-compatible `/chat/completions`, default model
+  `deepseek-v4-flash`, request uses `response_format: {"type": "json_object"}`
+  and `thinking: {"type": "disabled"}`.
 
 ```powershell
 pip install -e ".[dev,semantic,llm]"
-ollama run qwen3.5:9b
+$env:DEEPSEEK_API_KEY = "sk-..."
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction
 ```
 
-Ollama or LM Studio must be installed manually. This project does not install
-local LLM software or download models automatically. In the Ollama CLI,
-`/set nothink` can disable thinking during manual interactive tests. If the
-configured provider is unavailable, LLM extraction records a warning and the
-scan continues with the existing rule-based outputs. The code strips thinking
-traces from model responses as a fallback, and records `llm_json_parse_failed`
-instead of crashing when output is not clean JSON.
+Ollama or LM Studio must be installed manually. Remote providers such as
+DeepSeek require a user-supplied API key. This project does not install local
+LLM software, download models automatically, create API keys, or store real API
+keys in configuration files. In the Ollama CLI, `/set nothink` can disable
+thinking during manual interactive tests. If the configured provider is
+unavailable, LLM extraction records a warning and the scan continues with the
+existing rule-based outputs. The code strips thinking traces from model
+responses as a fallback, and records `llm_json_parse_failed` instead of
+crashing when output is not clean JSON.
 
 LLM extraction sends only selected semantic chunks, never full webpages. The
 default resource limits are:
 
-- `max_pages_for_ai: 30`
-- `max_pages_for_llm: 5`
-- `max_chunks_per_page: 1`
-- `max_chars_per_chunk: 1000`
-- `max_total_chars_per_request: 1200`
+- `max_pages_for_ai: 150`
+- `max_pages_per_source: 8`
+- `max_pages_for_llm: 150`
+- `max_chunks_per_page: 3`
+- `max_chars_per_chunk: 2200`
+- `max_total_chars_per_request: 7000`
+
+The 150-page values are exploratory upper bounds for measuring real weekly run
+sizes. Actual LLM calls are often fewer because pages must first pass source
+collection, semantic similarity, and the per-source page cap. Once real run
+sizes are known, lower these caps to the smallest values that preserve useful
+recall.
 
 The extraction schema is evidence-first. Each extractable field uses:
 
@@ -212,6 +227,47 @@ consistently improve extraction quality. The current recommendation is to keep
 local LLM extraction disabled for daily use and rely on `BAAI/bge-m3` semantic
 ranking plus rule-based extraction. Future work may revisit external AI APIs
 only with strict evidence grounding, cost controls, and human-review gates.
+
+#### Using DeepSeek API
+
+DeepSeek is the first recommended remote API provider to test. Its API uses an
+OpenAI-compatible base URL, supports `deepseek-v4-flash`, supports JSON output,
+and supports switching thinking mode off. The scanner sends only selected
+`BAAI/bge-m3` semantic snippets to DeepSeek, not full webpages.
+
+Configuration:
+
+```powershell
+$env:LLM_PROVIDER = "deepseek"
+$env:DEEPSEEK_API_KEY = "sk-..."
+```
+
+Optional explicit settings:
+
+```powershell
+$env:LLM_BASE_URL = "https://api.deepseek.com"
+$env:LLM_MODEL = "deepseek-v4-flash"
+```
+
+Then run:
+
+```powershell
+python -m research_school_radar.ai_healthcheck --provider deepseek
+python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
+```
+
+The DeepSeek request body is intentionally non-thinking:
+
+```json
+{
+  "response_format": {"type": "json_object"},
+  "thinking": {"type": "disabled"}
+}
+```
+
+DeepSeek results remain advisory sidecar data. They are useful for reviewing
+missed deadline, fee, funding, location, and eligibility evidence, but they do
+not change `fully_qualified`, hard filters, ranking, RSS, or public tables.
 
 #### Using LM Studio
 
@@ -364,8 +420,17 @@ $env:LLM_API_KEY = "lm-studio"
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
 Copy-Item reports/YYYY-MM-DD.ai.json reports/lmstudio.ai.json
 
+# Run DeepSeek extraction with DeepSeek env vars, then keep a copy.
+$env:LLM_PROVIDER = "deepseek"
+$env:LLM_BASE_URL = "https://api.deepseek.com"
+$env:LLM_MODEL = "deepseek-v4-flash"
+$env:DEEPSEEK_API_KEY = "sk-..."
+python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
+Copy-Item reports/YYYY-MM-DD.ai.json reports/deepseek.ai.json
+
 # Compare real outputs.
 python -m research_school_radar.ai_compare_runs --left reports/ollama.ai.json --right reports/lmstudio.ai.json --left-name ollama --right-name lmstudio
+python -m research_school_radar.ai_compare_runs --left reports/lmstudio.ai.json --right reports/deepseek.ai.json --left-name lmstudio --right-name deepseek
 ```
 
 The command writes:
@@ -379,7 +444,7 @@ confidence distributions, validation warning types, average warning count per
 item, evidence-ID health, missing pages on each side, and disagreements for
 title, event type, location, start/end dates, application deadline, fee,
 funding, and eligibility.
-It uses only the Python standard library and does not call any local LLM.
+It uses only the Python standard library and does not call any LLM provider.
 
 Recommended operation:
 
@@ -387,7 +452,7 @@ Recommended operation:
 - Manual or weekly: `python -m research_school_radar.cli scan --enable-semantic`
 - Manual review only: `python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction`
 
-Do not enable local LLM extraction in daily automation yet. It is slower, more
+Do not enable LLM extraction in daily automation yet. It is slower, more
 resource-intensive, can time out on long prompts, and still requires manual
 validation against official pages.
 
@@ -406,9 +471,9 @@ validation against official pages.
 - `src/research_school_radar/evidence_snippets.py` selects short numbered snippets for evidence-first LLM prompting.
 - `src/research_school_radar/ai_cache.py` implements the lightweight file cache for optional AI work.
 - `src/research_school_radar/llm_client.py`, `llm_extract.py`, and `llm_validate.py` implement optional advisory LLM sidecars.
-- `src/research_school_radar/ai_healthcheck.py` checks the configured local LLM provider.
+- `src/research_school_radar/ai_healthcheck.py` checks the configured LLM provider.
 - `src/research_school_radar/ai_evaluate.py` writes the human annotation CSV for real-world AI quality checks.
-- `src/research_school_radar/ai_compare_providers.py` runs a tiny local Ollama vs LM Studio comparison without a full scan.
+- `src/research_school_radar/ai_compare_providers.py` runs a tiny provider comparison without a full scan.
 
 ## Configuration
 
@@ -416,7 +481,7 @@ validation against official pages.
 - `config/sources.yaml` lists trusted sources. Each source can be enabled or disabled, and can block problematic linked domains.
 - `config/queries.yaml` stores optional controlled discovery queries.
 - `config/site.yaml` controls optional analytics.
-- `config/ai.yaml` controls optional semantic ranking, local LLM advisory extraction, resource limits, and `data/ai_cache/` behavior.
+- `config/ai.yaml` controls optional semantic ranking, LLM advisory extraction, resource limits, and `data/ai_cache/` behavior.
 - `data/opportunities.yml` is the manually curated high-confidence opportunity database.
 
 Example source options:

@@ -148,8 +148,8 @@ def render_readme_section(candidates: list[Candidate]) -> str:
 
 def _qualified_table(candidates: list[Candidate]) -> list[str]:
     lines = [
-        "| # | title | type | organizer | location | duration | deadline | funding / fee | topic | eligibility | reason |",
-        "|---|---|---|---|---|---|---|---|---|---|---|",
+        "| # | title | type | organizer | location | duration | deadline | funding / fee | topic |",
+        "|---|---|---|---|---|---|---|---|---|",
     ]
     for index, candidate in enumerate(candidates, start=1):
         lines.append(
@@ -165,8 +165,6 @@ def _qualified_table(candidates: list[Candidate]) -> list[str]:
                     _cell(candidate.deadline.isoformat() if candidate.deadline else "uncertain"),
                     _cell(candidate.financial_summary),
                     _cell(topics_label(candidate.topic_keywords)),
-                    _cell(candidate.eligibility or candidate.target_level),
-                    _cell(candidate.recommendation_reason),
                 ]
             )
             + " |"

@@ -57,4 +57,4 @@ def test_compare_main_writes_provider_comparison_json(tmp_path, monkeypatch) -> 
     main()
 
     payload = json.loads((tmp_path / "reports" / f"{date.today().isoformat()}.provider-comparison.json").read_text())
-    assert len(payload["items"]) == 2
+    assert len(payload["items"]) == 3

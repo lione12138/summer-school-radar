@@ -66,8 +66,8 @@ def test_scan_offline_sample_enable_semantic_and_llm_writes_empty_ai_sidecar(tmp
 
     assert (reports_dir / f"{date.today().isoformat()}.ai.json").exists()
     ai_json = (site_dir / "ai_extractions.json").read_text(encoding="utf-8")
-    assert '"model": "qwen3.5:9b"' in ai_json
-    assert '"fallback_model": "qwen3:8b"' in ai_json
+    assert '"model": "deepseek-v4-flash"' in ai_json
+    assert '"fallback_model": ""' in ai_json
     assert '"items": []' in ai_json
 
 

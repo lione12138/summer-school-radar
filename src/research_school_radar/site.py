@@ -1556,7 +1556,7 @@ def _qualified_section(rows: str) -> str:
       <h2>Fully Qualified Opportunities</h2>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>#</th><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Reason</th></tr></thead>
+          <thead><tr><th>#</th><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1665,7 +1665,6 @@ def _qualified_row(index: int, candidate: Candidate) -> str:
         f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
         f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(candidate.financial_summary)}</td>"
         f"<td>{escape(topics_label(candidate.topic_keywords))}</td>"
-        f"<td>{escape(candidate.recommendation_reason)}</td>"
         "</tr>"
     )
 

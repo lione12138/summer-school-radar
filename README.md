@@ -227,10 +227,11 @@ DeepSeek output remains advisory only. It writes `site/ai_extractions.json`,
 `reports/YYYY-MM-DD.ai.json`, and `site/ai-review.html`; it does not update the
 main opportunity tables or fully qualified status.
 
-The default weekly advisory settings allow up to 50 semantic pages and up to 50
-LLM pages. This is a cap, not a guaranteed call count; most runs process fewer
-pages because collection, semantic similarity, and per-source limits narrow the
-pool first.
+The current exploratory advisory settings allow up to 150 semantic pages and up
+to 150 LLM pages. This is a cap, not a guaranteed call count; most runs process
+fewer pages because collection, semantic similarity, and per-source limits
+narrow the pool first. After observing real weekly run sizes, lower these caps
+to the smallest values that still preserve useful recall.
 
 ### Using LM Studio as local LLM provider
 
@@ -384,6 +385,13 @@ AI extraction -> maintainer checks official page -> maintainer edits data/opport
 ```
 
 Final curated records must still be checked against the official source.
+
+The AI workflow is not meant to replace ChatGPT Agent or other one-off research
+assistants. The project is a reproducible publishing and verification system:
+AI helps find and draft evidence, while deterministic collection, validation,
+history, and human review keep the public output inspectable. See
+[`docs/DEVELOPMENT_LOG.md`](docs/DEVELOPMENT_LOG.md) for the current product
+reasoning and experiment notes.
 
 ## Daily Free Publishing
 

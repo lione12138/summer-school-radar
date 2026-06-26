@@ -196,8 +196,8 @@ _SEMANTIC_DEFAULTS = {
     "chunk_overlap_chars": 250,
     "top_k_chunks_per_page": 2,
     "min_similarity_score": 0.30,
-    "max_pages_for_ai": 30,
-    "max_pages_per_source": 3,
+    "max_pages_for_ai": 150,
+    "max_pages_per_source": 8,
 }
 
 
@@ -376,10 +376,10 @@ _LLM_DEFAULTS = {
     "api_key": "ollama",
     "temperature": 0,
     "timeout_seconds": 90,
-    "max_pages_for_llm": 5,
-    "max_chunks_per_page": 1,
-    "max_chars_per_chunk": 1000,
-    "max_total_chars_per_request": 1200,
+    "max_pages_for_llm": 150,
+    "max_chunks_per_page": 3,
+    "max_chars_per_chunk": 2200,
+    "max_total_chars_per_request": 7000,
 }
 
 
@@ -395,6 +395,12 @@ _PROVIDER_DEFAULTS = {
         "model": "qwen2.5-7b-instruct",
         "fallback_model": "",
         "api_key": "lm-studio",
+    },
+    "deepseek": {
+        "base_url": "https://api.deepseek.com",
+        "model": "deepseek-v4-flash",
+        "fallback_model": "",
+        "api_key": "",
     },
 }
 
@@ -520,6 +526,15 @@ def _apply_llm_env_overrides(config: dict) -> dict:
     for key, env_name in env_map.items():
         if os.environ.get(env_name):
             config[key] = os.environ[env_name]
+    if str(config.get("provider", "")).lower() == "deepseek":
+        deepseek_env_map = {
+            "base_url": "DEEPSEEK_BASE_URL",
+            "model": "DEEPSEEK_MODEL",
+            "api_key": "DEEPSEEK_API_KEY",
+        }
+        for key, env_name in deepseek_env_map.items():
+            if os.environ.get(env_name):
+                config[key] = os.environ[env_name]
     return config
 
 

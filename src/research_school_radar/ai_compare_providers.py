@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import time
 from datetime import date
 from pathlib import Path
@@ -28,7 +29,7 @@ def main() -> None:
     print(f"Wrote provider comparison: {output_path}")
 
 
-def compare_providers(providers: Sequence[str] = ("ollama", "lmstudio")) -> dict:
+def compare_providers(providers: Sequence[str] = ("ollama", "lmstudio", "deepseek")) -> dict:
     return {
         "generated": date.today().isoformat(),
         "prompt": SYNTHETIC_TEXT,
@@ -38,12 +39,19 @@ def compare_providers(providers: Sequence[str] = ("ollama", "lmstudio")) -> dict
 
 def _compare_provider(provider: str) -> dict:
     defaults = _PROVIDER_DEFAULTS.get(provider, {})
+    base_url = str(defaults.get("base_url", ""))
+    model = str(defaults.get("model", ""))
+    api_key = str(defaults.get("api_key", ""))
+    if provider == "deepseek":
+        base_url = os.getenv("DEEPSEEK_BASE_URL", base_url)
+        model = os.getenv("DEEPSEEK_MODEL", model)
+        api_key = os.getenv("DEEPSEEK_API_KEY") or os.getenv("LLM_API_KEY", api_key)
     config = LLMClientConfig(
         provider=provider,
-        base_url=str(defaults.get("base_url", "")),
-        model=str(defaults.get("model", "")),
+        base_url=base_url,
+        model=model,
         fallback_model=str(defaults.get("fallback_model", "")),
-        api_key=str(defaults.get("api_key", "")),
+        api_key=api_key,
         temperature=0,
         timeout_seconds=90,
     )

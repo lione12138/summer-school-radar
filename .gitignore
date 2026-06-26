@@ -18,6 +18,12 @@ data/ai_cache/
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 site/
+reports/*.ai.json
+reports/*.semantic.json
+reports/*.provider-comparison.json
+reports/*.ai-run-comparison.md
+reports/*.ai-evaluation-template.csv
+reports/*.ai-evaluation-annotated.csv
 
 # Local tooling
 .claude/

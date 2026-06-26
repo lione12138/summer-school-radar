@@ -1,0 +1,115 @@
+# Development Log / 开发日志
+
+This file records product and technical decisions that came from real scan
+experiments. It is intentionally more reflective than `TECHNICAL.md`.
+
+## 2026-06-26: Reframing the Workflow
+
+### Question
+
+If ChatGPT Agent can be asked to scan a fixed source list every day and produce
+a table, why maintain this project at all?
+
+### Current Answer
+
+This project should not try to beat a general-purpose agent at one-off research.
+For a private, occasional search, ChatGPT Agent plus manual checking may be
+enough.
+
+The project is useful when the goal is a public, repeatable, auditable radar:
+
+- stable source list and scan configuration
+- deterministic collection and report generation
+- preserved reports and review queues
+- evidence-aware extraction rather than a one-time answer
+- public README/site/RSS outputs
+- human review before promotion into curated/public records
+
+The project should therefore be treated as a publishing and verification system,
+not as a fully autonomous research agent.
+
+### Recommended Workflow
+
+Use a hybrid workflow:
+
+```text
+fixed sources and controlled discovery
+-> collect source pages and linked pages
+-> deterministic follow-up fetch for application/registration/fees/funding pages
+-> bge-m3 semantic ranking
+-> DeepSeek advisory extraction from selected snippets
+-> evidence validation and review queue
+-> human confirmation
+-> curated records and public tables
+```
+
+AI output remains advisory. It should not directly change `fully_qualified`,
+hard filters, ranking, RSS, or public table status.
+
+### What Worked
+
+- `BAAI/bge-m3` improved semantic recall compared with
+  `BAAI/bge-small-en-v1.5`, at acceptable runtime for weekly/manual use.
+- DeepSeek API integration works through an OpenAI-compatible chat endpoint.
+- DeepSeek with `deepseek-v4-flash`, JSON object mode, and disabled thinking can
+  produce structured advisory extraction.
+- Expanding the exploratory caps to 150 pages showed the actual current pool is
+  smaller than the cap:
+  - 212 pages considered by semantic ranking
+  - 129 semantic chunks selected
+  - 81 unique pages sent to LLM extraction
+  - 81 AI extraction items produced
+- The API found useful evidence that the rule extractor either missed or did
+  not surface cleanly, including some deadline, fee, and funding snippets.
+
+### What Failed Or Remains Weak
+
+- Local small Qwen models through Ollama and LM Studio were not reliable enough
+  for daily extraction. They were useful for validating the architecture, but
+  produced too many omissions or malformed/weak outputs on real pages.
+- DeepSeek is not browsing. It only reads chunks the scanner has already
+  collected and selected. It does not click links, open registration pages, or
+  decide to visit fee pages by itself.
+- The current page selection is too broad. In the 2026-06-26 run, many AI items
+  were listing/index/testimonial pages rather than high-value detail pages.
+- Raising caps alone is not the right long-term fix. It increases recall, but it
+  also sends more weak pages to the LLM.
+- API extraction can help review, but it does not make public qualification
+  trustworthy without deterministic evidence and human checking.
+
+### Next Engineering Priority
+
+The next useful improvement is deterministic follow-up page expansion before
+LLM extraction:
+
+- detect and fetch links whose anchor text or URL contains application,
+  registration, apply, fee, fees, tuition, cost, funding, scholarship, deadline,
+  dates, or practical information
+- deduplicate repeated pages
+- deprioritize testimonials, generic archive pages, broad event listings, and
+  pages with weak evidence
+- group related pages from the same opportunity so the LLM sees overview,
+  application, fee, and funding evidence together
+- keep AI results in sidecars until a maintainer verifies the official source
+
+This is closer to how a human or ChatGPT Agent searches: start with an overview,
+then intentionally open the application/fees/deadline pages. The difference is
+that the project keeps this process reproducible and inspectable.
+
+### Cost Position
+
+DeepSeek API costs appear low enough for weekly advisory runs because the model
+only receives selected snippets, not all raw pages. The practical control should
+be page and chunk selection quality, not simply minimizing the cap too early.
+
+Current exploratory defaults:
+
+- `max_pages_for_ai: 150`
+- `max_pages_per_source: 8`
+- `max_pages_for_llm: 150`
+- `max_chunks_per_page: 3`
+- `max_chars_per_chunk: 2200`
+- `max_total_chars_per_request: 7000`
+
+These are measurement caps. After several real weekly runs, reduce them to the
+smallest values that preserve useful recall.
