@@ -1,0 +1,473 @@
+{
+  "generated": "2026-06-25",
+  "schema_version": "v6-evidence-ids",
+  "provider": "deepseek",
+  "base_url": "https://api.deepseek.com",
+  "model": "deepseek-v4-flash",
+  "fallback_model": "",
+  "metadata": {
+    "temperature": 0.0,
+    "timeout_seconds": 90,
+    "max_pages_for_llm": 3,
+    "max_chunks_per_page": 1,
+    "max_chars_per_chunk": 1000,
+    "max_total_chars_per_request": 1200,
+    "semantic_chunks_available": 55,
+    "cache_enabled": true,
+    "cache_refresh": true,
+    "cache_directory": "C:\\Users\\17114\\Desktop\\Summer school agent\\data\\ai_cache"
+  },
+  "warnings": [],
+  "items": [
+    {
+      "page_url": "https://www.essex.ac.uk/short-courses/social-science-data-analysis",
+      "page_title": "Social Science Data Analysis | University of Essex",
+      "source_name": "Essex Summer School",
+      "semantic_score_max": 0.678863,
+      "matched_existing_candidate": false,
+      "existing_candidate_title": "",
+      "evidence_snippets": [
+        {
+          "id": "E1",
+          "text": "Participants can refresh and enhance their mathematics knowledge in an intensive course, Mathematics for Social Scientists, which is provided free of charge for participants of the Summer School.",
+          "signals": [
+            "fee",
+            "eligibility"
+          ]
+        },
+        {
+          "id": "E2",
+          "text": "For those participating in online courses, participants must have access to their own computing facilities in the form of a laptop or desktop PC.",
+          "signals": [
+            "date",
+            "location",
+            "eligibility"
+          ]
+        },
+        {
+          "id": "E3",
+          "text": "For best learning success, participants should have the background knowledge necessary to follow a course.",
+          "signals": [
+            "date",
+            "eligibility"
+          ]
+        },
+        {
+          "id": "E4",
+          "text": "The instructors’ specifications of the prior knowledge expected of participants appear in the course descriptions for each session.",
+          "signals": [
+            "eligibility"
+          ]
+        },
+        {
+          "id": "E5",
+          "text": "This should include adequate audio and visual equipment in the form of a webcam (built in or detachable), as well as a reliable internet connection to enable full participation in the online sessions over Zoom.",
+          "signals": [
+            "date",
+            "location"
+          ]
+        }
+      ],
+      "llm_extraction": {
+        "title": {
+          "value": "Social Science Data Analysis",
+          "evidence_ids": [
+            "E1",
+            "E2",
+            "E3",
+            "E4",
+            "E5"
+          ],
+          "resolved_evidence_texts": [
+            "Participants can refresh and enhance their mathematics knowledge in an intensive course, Mathematics for Social Scientists, which is provided free of charge for participants of the Summer School.",
+            "For those participating in online courses, participants must have access to their own computing facilities in the form of a laptop or desktop PC.",
+            "For best learning success, participants should have the background knowledge necessary to follow a course.",
+            "The instructors’ specifications of the prior knowledge expected of participants appear in the course descriptions for each session.",
+            "This should include adequate audio and visual equipment in the form of a webcam (built in or detachable), as well as a reliable internet connection to enable full participation in the online sessions over Zoom."
+          ]
+        },
+        "event_type": {
+          "value": "summer school",
+          "evidence_ids": [
+            "E1"
+          ],
+          "resolved_evidence_texts": [
+            "Participants can refresh and enhance their mathematics knowledge in an intensive course, Mathematics for Social Scientists, which is provided free of charge for participants of the Summer School."
+          ]
+        },
+        "location": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "mode": {
+          "value": "online",
+          "evidence_ids": [
+            "E2",
+            "E5"
+          ],
+          "resolved_evidence_texts": [
+            "For those participating in online courses, participants must have access to their own computing facilities in the form of a laptop or desktop PC.",
+            "This should include adequate audio and visual equipment in the form of a webcam (built in or detachable), as well as a reliable internet connection to enable full participation in the online sessions over Zoom."
+          ]
+        },
+        "start_date": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "end_date": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "application_deadline": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "fee": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "funding": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "eligibility": {
+          "value": "Participants must have access to a laptop/desktop PC with webcam and reliable internet; should have background knowledge as specified in course descriptions.",
+          "evidence_ids": [
+            "E2",
+            "E3",
+            "E4"
+          ],
+          "resolved_evidence_texts": [
+            "For those participating in online courses, participants must have access to their own computing facilities in the form of a laptop or desktop PC.",
+            "For best learning success, participants should have the background knowledge necessary to follow a course.",
+            "The instructors’ specifications of the prior knowledge expected of participants appear in the course descriptions for each session."
+          ]
+        },
+        "application_url": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "topics": {
+          "value": [
+            "Mathematics for Social Scientists"
+          ],
+          "evidence_ids": [
+            "E1"
+          ],
+          "resolved_evidence_texts": [
+            "Participants can refresh and enhance their mathematics knowledge in an intensive course, Mathematics for Social Scientists, which is provided free of charge for participants of the Summer School."
+          ]
+        },
+        "chinese_summary": {
+          "value": "未知",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "confidence": {
+          "value": "medium",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "warnings": [
+          "index_or_listing_page"
+        ]
+      },
+      "validation_warnings": [
+        "llm_chunk_truncated:4",
+        "missing_evidence_id:chinese_summary",
+        "index_or_listing_page"
+      ],
+      "validated_confidence": "low"
+    },
+    {
+      "page_url": "https://essexsummerschool.com/summer-school-facts/scholarships/q-step-scholarship/",
+      "page_title": "Q-Step – Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "semantic_score_max": 0.678179,
+      "matched_existing_candidate": false,
+      "existing_candidate_title": "",
+      "evidence_snippets": [
+        {
+          "id": "E1",
+          "text": "More info Apply now!",
+          "signals": [
+            "application"
+          ]
+        },
+        {
+          "id": "E2",
+          "text": "More info Latest News Networking Events Apply now!",
+          "signals": [
+            "application"
+          ]
+        },
+        {
+          "id": "E3",
+          "text": "© 2026 Essex Summer School Website by OM Accessibility disclaimer We use cookies on the Summer School website to improve your browsing experience, monitor how our site is used, and to aid us with advertising our services.",
+          "signals": [
+            "date"
+          ]
+        }
+      ],
+      "llm_extraction": {
+        "title": {
+          "value": "Q-Step – Essex Summer School in Social Science Data Analysis",
+          "evidence_ids": [
+            "E1",
+            "E2",
+            "E3"
+          ],
+          "resolved_evidence_texts": [
+            "More info Apply now!",
+            "More info Latest News Networking Events Apply now!",
+            "© 2026 Essex Summer School Website by OM Accessibility disclaimer We use cookies on the Summer School website to improve your browsing experience, monitor how our site is used, and to aid us with advertising our services."
+          ]
+        },
+        "event_type": {
+          "value": "summer school",
+          "evidence_ids": [
+            "E3"
+          ],
+          "resolved_evidence_texts": [
+            "© 2026 Essex Summer School Website by OM Accessibility disclaimer We use cookies on the Summer School website to improve your browsing experience, monitor how our site is used, and to aid us with advertising our services."
+          ]
+        },
+        "location": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "mode": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "start_date": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "end_date": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "application_deadline": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "fee": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "funding": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "eligibility": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "application_url": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "topics": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "chinese_summary": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "confidence": "low",
+        "warnings": [
+          "index_or_listing_page"
+        ]
+      },
+      "validation_warnings": [
+        "index_or_listing_page"
+      ],
+      "validated_confidence": "low"
+    },
+    {
+      "page_url": "https://www.icos-cp.eu/about/opportunities/summer-school",
+      "page_title": "ICOS Summer/Winter School January 2027, application is now open | ICOS",
+      "source_name": "ICOS",
+      "semantic_score_max": 0.655238,
+      "matched_existing_candidate": true,
+      "existing_candidate_title": "ICOS Summer/Winter School January 2027, application is now open",
+      "evidence_snippets": [
+        {
+          "id": "E1",
+          "text": "Candidates from ICOS member countries or candidate countries are preferred, but we always reserve some places for other students.",
+          "signals": [
+            "date",
+            "eligibility"
+          ]
+        },
+        {
+          "id": "E2",
+          "text": "Application for the 9th ICOS Winter School January 2027 is now open!",
+          "signals": [
+            "application"
+          ]
+        },
+        {
+          "id": "E3",
+          "text": "Through this application form you can register.",
+          "signals": [
+            "application"
+          ]
+        },
+        {
+          "id": "E4",
+          "text": "Submission deadline is 31 July 2026.",
+          "signals": [
+            "deadline"
+          ]
+        },
+        {
+          "id": "E5",
+          "text": "We might have to impose a nominal contribution per student in the order of € 100, depending on the amount of sponsors we may collect.",
+          "signals": [
+            "date"
+          ]
+        },
+        {
+          "id": "E6",
+          "text": "Travel to/from Helsinki you will have to organize yourself and will be at your own (institute's) expense.",
+          "signals": [
+            "date"
+          ]
+        },
+        {
+          "id": "E7",
+          "text": "To get an idea of the program and the organisation you can look at the 2025 Summer School program below.",
+          "signals": [
+            "date"
+          ]
+        },
+        {
+          "id": "E8",
+          "text": "Want to find out about future ICOS Summer Schools?",
+          "signals": [
+            "date"
+          ]
+        }
+      ],
+      "llm_extraction": {
+        "title": {
+          "value": "ICOS Summer/Winter School January 2027, application is now open",
+          "evidence_ids": [
+            "E2"
+          ],
+          "resolved_evidence_texts": [
+            "Application for the 9th ICOS Winter School January 2027 is now open!"
+          ]
+        },
+        "event_type": {
+          "value": "winter school",
+          "evidence_ids": [
+            "E2"
+          ],
+          "resolved_evidence_texts": [
+            "Application for the 9th ICOS Winter School January 2027 is now open!"
+          ]
+        },
+        "location": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "mode": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "start_date": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "end_date": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "application_deadline": {
+          "value": "2026-07-31",
+          "evidence_ids": [
+            "E4"
+          ],
+          "resolved_evidence_texts": [
+            "Submission deadline is 31 July 2026."
+          ]
+        },
+        "fee": {
+          "value": "€ 100",
+          "evidence_ids": [
+            "E5"
+          ],
+          "resolved_evidence_texts": [
+            "We might have to impose a nominal contribution per student in the order of € 100, depending on the amount of sponsors we may collect."
+          ]
+        },
+        "funding": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "eligibility": {
+          "value": "Candidates from ICOS member countries or candidate countries are preferred, but we always reserve some places for other students.",
+          "evidence_ids": [
+            "E1"
+          ],
+          "resolved_evidence_texts": [
+            "Candidates from ICOS member countries or candidate countries are preferred, but we always reserve some places for other students."
+          ]
+        },
+        "application_url": {
+          "value": "https://www.icos-cp.eu/about/opportunities/summer-school",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "topics": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "chinese_summary": {
+          "value": "unknown",
+          "evidence_ids": [],
+          "resolved_evidence_texts": []
+        },
+        "confidence": "medium",
+        "warnings": [
+          "index_or_listing_page"
+        ]
+      },
+      "validation_warnings": [
+        "llm_chunk_truncated:2",
+        "fee_context_weak",
+        "missing_evidence_id:application_url",
+        "index_or_listing_page"
+      ],
+      "validated_confidence": "low"
+    }
+  ]
+}

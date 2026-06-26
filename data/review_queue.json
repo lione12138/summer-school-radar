@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-25",
+  "generated": "2026-06-26",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -32,6 +32,50 @@
         "duration": "18-28 January 2027",
         "funding": "",
         "mode": ""
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Get to know the Bernstein Network!",
+      "url": "https://bernstein-network.de/en/",
+      "organizer": "Bernstein Network",
+      "source_layer": "2",
+      "location": "Europe",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2026-08-27",
+      "deadline_status": "open",
+      "financial_access_status": "funded",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "satellite",
+        "AI",
+        "machine learning",
+        "data analysis",
+        "robotics",
+        "physics",
+        "statistics",
+        "computational neuroscience",
+        "neuroscience",
+        "neural computation",
+        "neuroAI",
+        "history"
+      ],
+      "needs_review": [
+        "duration is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "Deadline: 27.08.2026 (other dates listed: 2026-07-16, 2026-07-31)",
+        "duration": "",
+        "funding": "Travel Grants PhD Symposium Postdoc Meeting General Information Important Dates & FAQ Plan Your Visit Press Code of Conduct PR Media",
+        "mode": "in-person ANDA-NI Retreat for collaborative projects to put"
       },
       "ai_advisory": {
         "available": false
