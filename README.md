@@ -34,7 +34,7 @@ after evidence, cost, and reliability controls are in place.
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-26 · 1 fully qualified · 2 high-quality · 4 found shown_
+_Last scan: 2026-06-27 · 1 fully qualified · 2 high-quality · 4 found shown_
 
 **Fully Qualified Opportunities**
 
@@ -53,7 +53,7 @@ _Last scan: 2026-06-26 · 1 fully qualified · 2 high-quality · 4 found shown_
 
 | title | type | organizer | location | duration | deadline | funding / fee | topic |
 |---|---|---|---|---|---|---|---|
-| [Get to know the Bernstein Network!](https://bernstein-network.de/en/) | summer school | Bernstein Network | Europe | uncertain | 2026-08-27 | travel grant, stipend · amount not stated · Apply on official page | satellite, AI, machine learning, data analysis |
+| [Get to know the Bernstein Network!](https://bernstein-network.de/en/) | advanced course | Bernstein Network | Europe | uncertain | 2026-08-27 | travel grant, stipend · amount not stated · Apply on official page | satellite, AI, machine learning, data analysis |
 | [Travel Grants](https://bernstein-network.de/en/bernstein-conference/early-career-scientists/travel-grants/) | advanced course | Bernstein Network | Europe | uncertain | 2026-07-01 | travel grant · amount not stated · Apply on official page | satellite, data analysis, statistics, computational neuroscience |
 | [River Basin Modelling](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | groundwater, water resources, water quality, GIS |
 | [ELLIS Summer School at Unit Munich](https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026) | summer school | ELLIS | TUM Garching Campus | 14 Sep – 18 Sep 2026 · 5 days | uncertain | Funding or fee not stated | machine learning, computer vision |

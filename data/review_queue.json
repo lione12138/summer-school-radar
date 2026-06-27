@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-26",
+  "generated": "2026-06-27",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -34,21 +34,7 @@
         "mode": ""
       },
       "ai_advisory": {
-        "available": true,
-        "validated_confidence": "medium",
-        "validation_warnings": [
-          "location_context_weak",
-          "fee_context_weak"
-        ],
-        "chinese_summary": "ICOS 2027年1月冬季学校现已开放申请，截止日期为2026年7月31日，地点在赫尔辛基，费用约100欧元，面向硕士生到博士后等人员。",
-        "extracted_deadline": "2026-07-31",
-        "extracted_fee": "€ 100",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "Submission deadline is 31 July 2026.",
-          "fee": "We might have to impose a nominal contribution per student in the order of € 100, depending on the amount of sponsors we may collect.",
-          "funding": ""
-        }
+        "available": false
       }
     },
     {
@@ -78,6 +64,7 @@
         "computational neuroscience",
         "neuroscience",
         "neural computation",
+        "systems neuroscience",
         "neuroAI",
         "history"
       ],
@@ -89,24 +76,10 @@
         "deadline": "Deadline: 27.08.2026 (other dates listed: 2026-07-16, 2026-07-31)",
         "duration": "",
         "funding": "Travel Grants PhD Symposium Postdoc Meeting General Information Important Dates & FAQ Plan Your Visit Press Code of Conduct PR Media",
-        "mode": "in-person ANDA-NI Retreat for collaborative projects to put"
+        "mode": "on Site (BCOS) Awards and Initiatives Valentin Braitenber"
       },
       "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "missing_evidence_id:title",
-          "index_or_listing_page"
-        ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
+        "available": false
       }
     },
     {
