@@ -10,7 +10,7 @@ from typing import Any, Sequence
 from .ai_cache import AICache, llm_cache_key
 from .evidence_snippets import build_evidence_snippets
 from .llm_client import BaseLLMClient, LLMClientConfig
-from .llm_validate import validate_llm_extraction
+from .llm_validate import reconcile_temporal_status, validate_llm_extraction
 from .models import Candidate
 from .semantic import SemanticChunk, semantic_page_matches_candidate
 from .utils import clean_space, write_text_atomic
@@ -93,6 +93,9 @@ def run_llm_extraction(
         if isinstance(cached, dict):
             item = dict(cached)
             cached_extraction = item.get("llm_extraction", {})
+            if isinstance(cached_extraction, dict):
+                cached_extraction = reconcile_temporal_status(cached_extraction)
+                item["llm_extraction"] = cached_extraction
             cached_snippets = item.get("evidence_snippets", [])
             validation_warnings, confidence = validate_llm_extraction(
                 cached_extraction if isinstance(cached_extraction, dict) else {},
@@ -147,6 +150,7 @@ def run_llm_extraction(
                 warnings.append("llm_json_parse_failed")
             else:
                 extraction = _with_schema_defaults(parsed)
+        extraction = reconcile_temporal_status(extraction)
         extraction = resolve_evidence_texts(extraction, evidence_snippets)
         validation_warnings, confidence = validate_llm_extraction(
             extraction, page_chunks, evidence_snippets=evidence_snippets
@@ -440,8 +444,19 @@ def _coerce_evidence_ids(value: Any) -> list[str]:
 def _llm_warnings(extraction: dict[str, Any]) -> list[str]:
     warnings = extraction.get("warnings", []) if isinstance(extraction, dict) else []
     if isinstance(warnings, list):
-        return [str(item) for item in warnings if str(item).strip()]
+        result = [str(item) for item in warnings if str(item).strip()]
+        page_type = _field_string(extraction.get("page_type")).lower()
+        if page_type in {"opportunity", "application", "fees", "funding"}:
+            result = [warning for warning in result if warning != "index_or_listing_page"]
+        return result
     return []
+
+
+def _field_string(entry: Any) -> str:
+    if not isinstance(entry, dict):
+        return ""
+    value = entry.get("value", "")
+    return clean_space(str(value)) if not isinstance(value, (list, dict)) else ""
 
 
 def _cached_operational_warnings(item: dict[str, Any]) -> list[str]:

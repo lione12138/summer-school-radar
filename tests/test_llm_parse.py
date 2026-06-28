@@ -102,3 +102,34 @@ def test_llm_prompt_requests_evidence_ids_not_evidence_text() -> None:
     assert "payment, invoice" in prompt
     assert "Never report only the cheapest fee" in prompt
     assert "registration_status" in prompt
+
+
+def test_model_index_warning_is_dropped_when_page_type_is_opportunity() -> None:
+    class OpportunityClient:
+        def complete(self, prompt: str) -> str:
+            return (
+                '{"page_type":{"value":"opportunity","evidence_ids":["E1"]},'
+                '"title":{"value":"Example Summer School","evidence_ids":["E1"]},'
+                '"confidence":"medium","warnings":["index_or_listing_page"]}'
+            )
+
+    chunks = [
+        SemanticChunk(
+            page_url="https://example.org/index.php",
+            page_title="Example Summer School",
+            source_name="Example",
+            chunk_index=0,
+            text="Example Summer School application deadline information.",
+            score=0.9,
+        )
+    ]
+
+    items = run_llm_extraction(
+        chunks,
+        candidates=[],
+        client=OpportunityClient(),  # type: ignore[arg-type]
+        max_pages_for_llm=1,
+        max_chunks_per_page=1,
+    )
+
+    assert "index_or_listing_page" not in items[0]["validation_warnings"]

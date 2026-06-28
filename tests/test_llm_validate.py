@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from datetime import date
 
-from research_school_radar.llm_validate import validate_llm_extraction
+from research_school_radar.llm_validate import reconcile_temporal_status, validate_llm_extraction
 from research_school_radar.semantic import SemanticChunk
 
 
@@ -283,3 +283,43 @@ def test_index_page_specific_field_risk_warns() -> None:
         ],
     )
     assert "index_page_specific_field_risk" in warnings
+
+
+def test_opportunity_page_is_not_marked_index_only_because_url_is_index_php() -> None:
+    extraction = {
+        "page_type": _entry("opportunity", ["E1"]),
+        "title": _entry("Karthaus Summer School", ["E1"]),
+        "location": _entry("Switzerland", ["E2"]),
+        "confidence": "medium",
+    }
+    chunk = SemanticChunk(
+        page_url="https://example.org/karthaus/index.php",
+        page_title="Karthaus Summer School",
+        source_name="Example",
+        chunk_index=0,
+        text="Summer school overview. Venue: Switzerland.",
+        score=0.9,
+    )
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [chunk],
+        evidence_snippets=[
+            _snippet("Karthaus Summer School.", "E1"),
+            _snippet("Venue: Switzerland.", "E2"),
+        ],
+    )
+    assert "index_page_specific_field_risk" not in warnings
+
+
+def test_past_deadline_reconciles_open_registration_to_closed() -> None:
+    extraction = {
+        "application_deadline": _entry("2026-03-29", ["E1"]),
+        "registration_status": _entry("open", ["E2"]),
+        "warnings": [],
+    }
+
+    reconciled = reconcile_temporal_status(extraction, today=date(2026, 6, 28))
+
+    assert reconciled["registration_status"]["value"] == "closed"
+    assert reconciled["registration_status"]["evidence_ids"] == ["E1"]
+    assert "registration_status_corrected_from_past_deadline" in reconciled["warnings"]

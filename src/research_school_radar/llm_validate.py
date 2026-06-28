@@ -162,13 +162,47 @@ def validate_llm_extraction(
     if start_date is not None and start_date < today and not _has_future_date(combined_snippets or combined_chunks, today):
         warnings.append("event_past")
 
-    title_url_text = _normalize(" ".join([_field_value(extraction.get("title")), combined_snippets, combined_chunks[:300]]))
-    if _INDEX_RE.search(title_url_text):
+    page_type = _field_value(extraction.get("page_type")).lower()
+    page_identity = _normalize(
+        " ".join(
+            [
+                _field_value(extraction.get("title")),
+                chunks[0].page_title if chunks else "",
+            ]
+        )
+    )
+    is_index_page = page_type == "index" or (page_type in {"", "unknown"} and bool(_INDEX_RE.search(page_identity)))
+    if is_index_page:
         risky_fields = ("start_date", "end_date", "location")
         if any(_field_has_known_value(extraction.get(field)) for field in risky_fields):
             warnings.append("index_page_specific_field_risk")
 
     return _dedupe(warnings), _validated_confidence(str(extraction.get("confidence", "low")), warnings)
+
+
+def reconcile_temporal_status(extraction: dict[str, Any], *, today: date | None = None) -> dict[str, Any]:
+    today = today or date.today()
+    deadline_entry = extraction.get("application_deadline")
+    deadline = _parse_iso_date(_field_value(deadline_entry))
+    if deadline is None or deadline >= today:
+        return extraction
+    status_entry = extraction.get("registration_status")
+    current_status = _field_value(status_entry).lower()
+    if current_status == "closed":
+        return extraction
+    deadline_ids = _evidence_ids(deadline_entry)
+    deadline_texts = (
+        list(deadline_entry.get("resolved_evidence_texts", [])) if isinstance(deadline_entry, dict) else []
+    )
+    extraction["registration_status"] = {
+        "value": "closed",
+        "evidence_ids": deadline_ids,
+        "resolved_evidence_texts": deadline_texts,
+    }
+    warnings = extraction.get("warnings", [])
+    warning_list = [str(warning) for warning in warnings] if isinstance(warnings, list) else []
+    extraction["warnings"] = _dedupe([*warning_list, "registration_status_corrected_from_past_deadline"])
+    return extraction
 
 
 def _snippets_from_chunks(chunks: Sequence[SemanticChunk]) -> list[dict[str, str]]:
