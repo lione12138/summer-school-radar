@@ -49,10 +49,8 @@ _CONTEXT_PATTERNS = {
 }
 _CURRENCY = r"EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£"
 _AMOUNT = r"(?:[0-9]{1,3}(?:[ ,.][0-9]{3})+(?:[,.][0-9]{2})?|[0-9]+(?:[,.][0-9]{2})?)"
-_MONEY_RE = re.compile(
-    rf"(?:({_CURRENCY})\s*({_AMOUNT})|({_AMOUNT})\s*({_CURRENCY}))",
-    re.I,
-)
+_MONEY_PREFIX_RE = re.compile(rf"({_CURRENCY})\s*({_AMOUNT})", re.I)
+_MONEY_SUFFIX_RE = re.compile(rf"({_AMOUNT})\s*({_CURRENCY})", re.I)
 _DATE_TEXT_RE = re.compile(
     r"(?:\b\d{4}-\d{1,2}-\d{1,2}\b|\b\d{1,2}[./-]\d{1,2}[./-]20\d{2}\b|"
     r"\b\d{1,2}\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|"
@@ -330,9 +328,16 @@ def _money_values(text: Any) -> set[tuple[str, str]]:
                 values.update(_money_values(nested))
         return values
     values: set[tuple[str, str]] = set()
-    for match in _MONEY_RE.finditer(str(text)):
-        currency = (match.group(1) or match.group(4) or "").upper()
-        amount = match.group(2) or match.group(3) or ""
+    string_value = str(text)
+    for match in _MONEY_PREFIX_RE.finditer(string_value):
+        currency = match.group(1).upper()
+        amount = match.group(2)
+        currency = symbols.get(currency, currency)
+        amount = _normalize_amount(amount)
+        values.add((currency, amount))
+    for match in _MONEY_SUFFIX_RE.finditer(string_value):
+        amount = match.group(1)
+        currency = match.group(2).upper()
         currency = symbols.get(currency, currency)
         amount = _normalize_amount(amount)
         values.add((currency, amount))

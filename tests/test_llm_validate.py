@@ -218,6 +218,29 @@ def test_structured_amount_may_repeat_currency_symbol() -> None:
     assert "fee_tiers_incomplete" in warnings
 
 
+def test_adjacent_fee_table_cells_do_not_consume_next_currency_symbol() -> None:
+    extraction = {
+        "fee": {
+            "value": [
+                {"amount": "€ 210,00", "currency": "EUR"},
+                {"amount": "€ 275,00", "currency": "EUR"},
+                {"amount": "€ 350,00", "currency": "EUR"},
+            ],
+            "evidence_ids": ["E1"],
+        },
+        "confidence": "high",
+    }
+    evidence = "Course fees 1 € 210,00 € 275,00 € 350,00 2 € 360,00 € 450,00 € 583,00."
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk(evidence)],
+        evidence_snippets=[_snippet(evidence)],
+    )
+
+    assert "fee_value_not_in_evidence" not in warnings
+    assert "fee_tiers_incomplete" in warnings
+
+
 def test_past_and_closed_wording_warns() -> None:
     extraction = {
         "application_deadline": _entry("2025-03-15", ["E1"]),
