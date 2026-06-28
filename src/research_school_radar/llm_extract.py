@@ -92,9 +92,22 @@ def run_llm_extraction(
         cached = cache.get("llm", cache_key) if cache is not None else None
         if isinstance(cached, dict):
             item = dict(cached)
-            item["validation_warnings"] = _dedupe(
-                [*limit_warnings, *[str(warning) for warning in item.get("validation_warnings", [])]]
+            cached_extraction = item.get("llm_extraction", {})
+            cached_snippets = item.get("evidence_snippets", [])
+            validation_warnings, confidence = validate_llm_extraction(
+                cached_extraction if isinstance(cached_extraction, dict) else {},
+                page_chunks,
+                evidence_snippets=cached_snippets if isinstance(cached_snippets, list) else None,
             )
+            item["validation_warnings"] = _dedupe(
+                [
+                    *limit_warnings,
+                    *_cached_operational_warnings(item),
+                    *validation_warnings,
+                    *_llm_warnings(cached_extraction if isinstance(cached_extraction, dict) else {}),
+                ]
+            )
+            item["validated_confidence"] = confidence
             items.append(item)
             continue
 
@@ -429,6 +442,23 @@ def _llm_warnings(extraction: dict[str, Any]) -> list[str]:
     if isinstance(warnings, list):
         return [str(item) for item in warnings if str(item).strip()]
     return []
+
+
+def _cached_operational_warnings(item: dict[str, Any]) -> list[str]:
+    prefixes = (
+        "llm_unavailable:",
+        "llm_json_parse_failed",
+        "llm_request_truncated:",
+        "llm_chunk_truncated:",
+        "lmstudio_",
+        "ollama_",
+        "deepseek_",
+    )
+    return [
+        str(warning)
+        for warning in item.get("validation_warnings", [])
+        if str(warning).startswith(prefixes)
+    ]
 
 
 def _dedupe(items: Sequence[str]) -> list[str]:

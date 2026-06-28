@@ -13,7 +13,7 @@ SIGNAL_PATTERNS: dict[str, re.Pattern[str]] = {
         flags=re.IGNORECASE,
     ),
     "fee": re.compile(
-        r"\b(fee|tuition|cost|registration fee|participation fee|charge|free of charge|no fee|waived)\b",
+        r"\b(fees?|tuition|costs?|rates?|registration fees?|participation fees?|charge|free of charge|no fee|waived)\b",
         flags=re.IGNORECASE,
     ),
     "funding": re.compile(

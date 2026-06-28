@@ -11,7 +11,6 @@ from .utils import clean_space
 
 
 _EVIDENCE_FIELDS = (
-    "page_type",
     "title",
     "event_type",
     "location",
@@ -48,9 +47,10 @@ _CONTEXT_PATTERNS = {
         re.I,
     ),
 }
+_CURRENCY = r"EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£"
+_AMOUNT = r"(?:[0-9]{1,3}(?:[ .][0-9]{3})+(?:[,.][0-9]{2})?|[0-9]+(?:[,.][0-9]{2})?)"
 _MONEY_RE = re.compile(
-    r"(?:(EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£)\s*([0-9][0-9 ,.]*[0-9]|[0-9])"
-    r"|([0-9][0-9 ,.]*[0-9]|[0-9])\s*(EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£))",
+    rf"(?:({_CURRENCY})\s*({_AMOUNT})|({_AMOUNT})\s*({_CURRENCY}))",
     re.I,
 )
 _DATE_TEXT_RE = re.compile(
@@ -60,6 +60,18 @@ _DATE_TEXT_RE = re.compile(
     r"\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|"
     r"Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2},?\s+20\d{2}\b)",
     re.I,
+)
+_MONTH = (
+    r"Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|"
+    r"Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?"
+)
+_SHARED_YEAR_DATE_RANGES = (
+    re.compile(rf"\b(\d{{1,2}})\s*(?:-|–|—|to)\s*(\d{{1,2}})\s+({_MONTH})\s+(20\d{{2}})\b", re.I),
+    re.compile(
+        rf"\b(\d{{1,2}})\s+({_MONTH})\s*(?:-|–|—|to)\s*(\d{{1,2}})\s+({_MONTH})\s+(20\d{{2}})\b",
+        re.I,
+    ),
+    re.compile(rf"\b({_MONTH})\s+(\d{{1,2}})\s*(?:-|–|—|to)\s*(\d{{1,2}}),?\s+(20\d{{2}})\b", re.I),
 )
 _PAYMENT_DEADLINE_RE = re.compile(
     r"\b(payment|pay(?:ing|ment)?|invoice|room reservations?|accommodation).{0,50}\b(deadline|before|due|by)\b|"
@@ -122,6 +134,8 @@ def validate_llm_extraction(
     fee_evidence = cited_by_field.get("fee", "")
     if fee_value and fee_value.lower() != "unknown" and fee_evidence and not _fee_supported(fee_value, fee_evidence):
         warnings.append("fee_value_not_in_evidence")
+    elif fee_value and fee_evidence and _fee_tiers_incomplete(fee_value, fee_evidence):
+        warnings.append("fee_tiers_incomplete")
 
     deadline_evidence = cited_by_field.get("application_deadline", "")
     if deadline_evidence and _PAYMENT_DEADLINE_RE.search(deadline_evidence) and not _APPLICATION_DEADLINE_CONTEXT_RE.search(
@@ -234,7 +248,29 @@ def _date_supported(value: str, evidence: str) -> bool:
                 return True
         except (TypeError, ValueError, OverflowError):
             continue
-    return False
+    return target in _shared_year_range_dates(evidence)
+
+
+def _shared_year_range_dates(evidence: str) -> set[date]:
+    dates: set[date] = set()
+    for index, pattern in enumerate(_SHARED_YEAR_DATE_RANGES):
+        for match in pattern.finditer(evidence):
+            groups = match.groups()
+            if index == 0:
+                first_day, second_day, month, year = groups
+                values = ((first_day, month, year), (second_day, month, year))
+            elif index == 1:
+                first_day, first_month, second_day, second_month, year = groups
+                values = ((first_day, first_month, year), (second_day, second_month, year))
+            else:
+                month, first_day, second_day, year = groups
+                values = ((first_day, month, year), (second_day, month, year))
+            for day_value, month_value, year_value in values:
+                try:
+                    dates.add(parse(f"{day_value} {month_value} {year_value}", fuzzy=False).date())
+                except (TypeError, ValueError, OverflowError):
+                    continue
+    return dates
 
 
 def _fee_supported(value: str, evidence: str) -> bool:
@@ -248,6 +284,16 @@ def _fee_supported(value: str, evidence: str) -> bool:
         return lowered in evidence_lowered
     evidence_amounts = _money_values(evidence)
     return value_amounts.issubset(evidence_amounts)
+
+
+def _fee_tiers_incomplete(value: str, evidence: str) -> bool:
+    value_amounts = _money_values(value)
+    evidence_amounts = _money_values(evidence)
+    return (
+        len(value_amounts) >= 2
+        and len(evidence_amounts) > len(value_amounts)
+        and bool(re.search(r"\b(fees?|tuition|rates?)\b", evidence, re.I))
+    )
 
 
 def _money_values(text: str) -> set[tuple[str, str]]:

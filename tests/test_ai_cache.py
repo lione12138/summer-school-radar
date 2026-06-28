@@ -110,7 +110,7 @@ def test_refresh_ai_cache_bypasses_cached_llm_item(tmp_path) -> None:
         cache=cache,
         model_name="qwen3.5:9b",
     )
-    assert items[0]["validation_warnings"] == ["cached"]
+    assert items[0]["validation_warnings"] == []
     assert client.calls == 0
 
     refresh_cache = AICache(enabled=True, directory=tmp_path / "cache", refresh=True)
@@ -125,6 +125,54 @@ def test_refresh_ai_cache_bypasses_cached_llm_item(tmp_path) -> None:
     )
     assert client.calls == 1
     assert items[0]["validation_warnings"] != ["cached"]
+
+
+def test_cached_llm_item_is_revalidated_without_an_api_call(tmp_path) -> None:
+    chunk = _chunk("Registration fee is EUR 300.")
+    cached_item = {
+        "page_url": chunk.page_url,
+        "page_title": chunk.page_title,
+        "source_name": chunk.source_name,
+        "semantic_score_max": chunk.score,
+        "matched_existing_candidate": False,
+        "existing_candidate_title": "",
+        "evidence_snippets": [
+            {"id": "E1", "page_url": chunk.page_url, "text": chunk.text, "signals": ["fee"]}
+        ],
+        "llm_extraction": {
+            "page_type": {"value": "fees", "evidence_ids": []},
+            "fee": {"value": "EUR 300", "evidence_ids": ["E1"]},
+            "confidence": "high",
+            "warnings": [],
+        },
+        "validation_warnings": ["missing_evidence_id:page_type"],
+        "validated_confidence": "low",
+    }
+    cache = AICache(enabled=True, directory=tmp_path / "cache")
+    key = llm_cache_key(
+        page_url=chunk.page_url,
+        chunks=[chunk],
+        model="deepseek-v4-flash",
+        schema_version=AI_EXTRACTION_SCHEMA_VERSION,
+    )
+    cache.set("llm", key, cached_item)
+
+    class NoCallClient:
+        def complete(self, prompt: str) -> str:
+            raise AssertionError("cached extraction should not call the provider")
+
+    items = run_llm_extraction(
+        [chunk],
+        candidates=[],
+        client=NoCallClient(),  # type: ignore[arg-type]
+        max_pages_for_llm=1,
+        max_chunks_per_page=1,
+        cache=cache,
+        model_name="deepseek-v4-flash",
+    )
+
+    assert items[0]["validation_warnings"] == []
+    assert items[0]["validated_confidence"] == "high"
 
 
 def test_cache_failure_does_not_crash(tmp_path) -> None:

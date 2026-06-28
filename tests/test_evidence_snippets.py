@@ -74,3 +74,10 @@ def test_follow_up_source_marker_is_preserved_as_evidence_provenance() -> None:
 
     assert snippets
     assert {snippet["page_url"] for snippet in snippets} == {"https://example.org/school/fees"}
+
+
+def test_plural_fees_and_rates_are_fee_signals() -> None:
+    snippets = build_evidence_snippets([_chunk("Course fees and rates are listed in the table below.")])
+
+    assert snippets
+    assert "fee" in snippets[0]["signals"]

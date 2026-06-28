@@ -58,6 +58,17 @@ def test_normalized_date_with_valid_evidence_is_accepted() -> None:
     assert "missing_evidence_id:application_deadline" not in warnings
 
 
+def test_start_date_is_supported_by_shared_year_date_range() -> None:
+    extraction = {"start_date": _entry("2027-01-18", ["E1"]), "confidence": "high"}
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk("The school runs from 18 to 28 January 2027.")],
+        evidence_snippets=[_snippet("The school runs from 18 to 28 January 2027.")],
+        today=date(2026, 1, 1),
+    )
+    assert "start_date_value_not_in_evidence" not in warnings
+
+
 def test_unknown_field_with_evidence_id_warns() -> None:
     extraction = {"fee": _entry("unknown", ["E1"]), "confidence": "medium"}
     warnings, _confidence = validate_llm_extraction(
@@ -118,6 +129,48 @@ def test_payment_deadline_is_not_accepted_as_application_deadline() -> None:
         today=date(2026, 1, 1),
     )
     assert "non_application_deadline_risk" in warnings
+
+
+def test_structured_fee_tiers_are_supported_by_table_evidence() -> None:
+    extraction = {
+        "fee": {
+            "value": [
+                {"tier": "students", "amount": "EUR 210.00"},
+                {"tier": "non-students", "amount": "EUR 350.00"},
+            ],
+            "evidence_ids": ["E1"],
+        },
+        "confidence": "high",
+    }
+    evidence = "Course fees: students EUR 210.00; non-students EUR 350.00."
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk(evidence)],
+        evidence_snippets=[_snippet(evidence)],
+    )
+
+    assert "fee_value_not_in_evidence" not in warnings
+
+
+def test_incomplete_fee_table_is_flagged_separately() -> None:
+    extraction = {
+        "fee": {
+            "value": [
+                {"tier": "students", "amount": "EUR 210.00"},
+                {"tier": "non-students", "amount": "EUR 350.00"},
+            ],
+            "evidence_ids": ["E1"],
+        },
+        "confidence": "high",
+    }
+    evidence = "Course fees: one course EUR 210.00 and EUR 350.00; two courses EUR 360.00 and EUR 583.00."
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk(evidence)],
+        evidence_snippets=[_snippet(evidence)],
+    )
+
+    assert "fee_tiers_incomplete" in warnings
 
 
 def test_past_and_closed_wording_warns() -> None:
