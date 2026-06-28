@@ -227,6 +227,29 @@ DeepSeek output remains advisory only. It writes `site/ai_extractions.json`,
 `reports/YYYY-MM-DD.ai.json`, and `site/ai-review.html`; it does not update the
 main opportunity tables or fully qualified status.
 
+When LLM extraction is enabled, the advisory pipeline can perform a bounded
+follow-up pass for otherwise promising pages with missing deadline, fee,
+funding, application URL, date, or location fields. It first follows relevant
+links on the same official domain, including application, registration, fees,
+tuition, rates, funding, scholarship, deadline, and practical-information
+pages. Related pages are ranked again with `BAAI/bge-m3` and extracted together
+with the original page. Evidence snippets retain the exact page URL used.
+
+If `BRAVE_SEARCH_API_KEY` is set, unresolved fields can also trigger controlled
+`site:official-domain` searches. Search is optional: without the key, the scan
+keeps the initial evidence-grounded DeepSeek output and records a warning. The
+default limits are two link-following rounds, two queries per opportunity,
+three results per query, four added pages per opportunity, and sixty added
+pages per scan. Configure these under `follow_up` in `config/ai.yaml`.
+
+The follow-up prompt distinguishes application/registration deadlines from
+payment, accommodation, scholarship, travel-grant, and abstract deadlines. It
+also requests explicit open/closed status and complete fee tiers rather than
+only the cheapest amount. Deterministic validation checks cited evidence,
+date/fee support, past dates, closed wording, and non-application deadline
+risk. This is still evidence validation, not a guarantee of factual truth;
+human confirmation remains required before public promotion.
+
 The current exploratory advisory settings allow up to 150 semantic pages and up
 to 150 LLM pages. This is a cap, not a guaranteed call count; most runs process
 fewer pages because collection, semantic similarity, and per-source limits
@@ -417,7 +440,12 @@ powershell -ExecutionPolicy Bypass -File scripts/register_task.ps1
 ```
 
 GitHub Actions still runs the test suite on every push (see `.github/workflows/tests.yml`).
-No paid search API key is required.
+The optional `.github/workflows/ai_scan.yml` workflow runs the bounded
+`bge-m3` + DeepSeek advisory scan weekly, can be started manually, and deploys
+the resulting AI review site to the same `gh-pages` branch. It requires the
+repository secret `DEEPSEEK_API_KEY`. `BRAVE_SEARCH_API_KEY` and `HF_TOKEN` are
+optional. The local daily rule scan remains the primary collector because it
+has better access to official sites than a cloud runner.
 
 ## Development
 

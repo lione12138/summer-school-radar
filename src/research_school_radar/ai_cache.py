@@ -53,6 +53,7 @@ def semantic_cache_key(page: Page, config: dict[str, Any]) -> str:
         "chunk_overlap_chars": int(config["chunk_overlap_chars"]),
         "top_k_chunks_per_page": int(config["top_k_chunks_per_page"]),
         "min_similarity_score": float(config["min_similarity_score"]),
+        "require_programme_signal": bool(config.get("require_programme_signal", True)),
     }
     return content_hash(json.dumps(payload, sort_keys=True, ensure_ascii=False))
 

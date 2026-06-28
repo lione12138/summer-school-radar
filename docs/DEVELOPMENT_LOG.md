@@ -113,3 +113,30 @@ Current exploratory defaults:
 
 These are measurement caps. After several real weekly runs, reduce them to the
 smallest values that preserve useful recall.
+
+## 2026-06-27: Bounded Follow-up Retrieval Implemented
+
+The deterministic follow-up priority above is now implemented in the optional
+AI advisory path. Missing high-value fields trigger limited official-domain
+link following, optional Brave `site:` search, semantic re-ranking, and a second
+evidence-grounded extraction. The model does not receive a general browser and
+cannot exceed the configured opportunity, query, result, page, round, chunk, or
+character budgets.
+
+This iteration also tightened extraction semantics after reviewing the first
+DeepSeek run:
+
+- application/registration deadlines are separated from payment,
+  accommodation, scholarship, travel-grant, and abstract deadlines
+- explicit open, not-yet-open, and closed wording is requested
+- complete fee tiers are requested instead of only the minimum amount
+- evidence snippets preserve the exact related-page URL
+- deterministic validation checks whether cited fee/date values are supported
+  and warns about non-application deadline risk
+- a second extraction replaces the first only when it resolves at least as many
+  critical fields
+
+The remaining evaluation question is empirical: run the same known-page test
+set again and measure whether follow-up retrieval improves deadline, fee, and
+funding accuracy without increasing cross-edition merges. AI results remain
+sidecar-only until that comparison is complete.

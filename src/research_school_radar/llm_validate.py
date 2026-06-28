@@ -4,13 +4,14 @@ import re
 from datetime import date
 from typing import Any, Sequence
 
-from dateutil.parser import isoparse
+from dateutil.parser import isoparse, parse
 
 from .semantic import SemanticChunk
 from .utils import clean_space
 
 
 _EVIDENCE_FIELDS = (
+    "page_type",
     "title",
     "event_type",
     "location",
@@ -18,6 +19,9 @@ _EVIDENCE_FIELDS = (
     "start_date",
     "end_date",
     "application_deadline",
+    "application_deadline_type",
+    "other_deadlines",
+    "registration_status",
     "fee",
     "funding",
     "eligibility",
@@ -44,6 +48,29 @@ _CONTEXT_PATTERNS = {
         re.I,
     ),
 }
+_MONEY_RE = re.compile(
+    r"(?:(EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£)\s*([0-9][0-9 ,.]*[0-9]|[0-9])"
+    r"|([0-9][0-9 ,.]*[0-9]|[0-9])\s*(EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£))",
+    re.I,
+)
+_DATE_TEXT_RE = re.compile(
+    r"(?:\b\d{4}-\d{1,2}-\d{1,2}\b|\b\d{1,2}[./-]\d{1,2}[./-]20\d{2}\b|"
+    r"\b\d{1,2}\s+(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|"
+    r"Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+20\d{2}\b|"
+    r"\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|"
+    r"Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+\d{1,2},?\s+20\d{2}\b)",
+    re.I,
+)
+_PAYMENT_DEADLINE_RE = re.compile(
+    r"\b(payment|pay(?:ing|ment)?|invoice|room reservations?|accommodation).{0,50}\b(deadline|before|due|by)\b|"
+    r"\b(deadline|before|due|by).{0,50}\b(payment|pay(?:ing|ment)?|invoice|room reservations?|accommodation)\b",
+    re.I,
+)
+_APPLICATION_DEADLINE_CONTEXT_RE = re.compile(
+    r"\b(application|applications|apply|registration|register).{0,80}\b(deadline|close|closes|until|due|by)\b|"
+    r"\b(deadline|close|closes|until|due|by).{0,80}\b(application|applications|apply|registration|register)\b",
+    re.I,
+)
 
 
 def validate_llm_extraction(
@@ -59,6 +86,7 @@ def validate_llm_extraction(
     snippet_by_id = {str(snippet.get("id")): str(snippet.get("text", "")) for snippet in snippets}
     combined_snippets = _normalize(" ".join(snippet_by_id.values()))
     combined_chunks = _normalize(" ".join(chunk.text for chunk in chunks))
+    cited_by_field: dict[str, str] = {}
 
     for field in _EVIDENCE_FIELDS:
         entry = extraction.get(field)
@@ -78,10 +106,38 @@ def validate_llm_extraction(
                 warnings.append(f"evidence_id_not_found:{field}")
             else:
                 cited_texts.append(text)
+        cited_by_field[field] = " ".join(cited_texts)
         if field in _CONTEXT_PATTERNS and cited_texts:
             combined_cited = " ".join(cited_texts)
             if not _CONTEXT_PATTERNS[field].search(combined_cited):
                 warnings.append(f"{_context_warning_prefix(field)}_context_weak")
+
+    for field in ("start_date", "end_date", "application_deadline"):
+        value = _field_value(extraction.get(field))
+        evidence = cited_by_field.get(field, "")
+        if value and value.lower() != "unknown" and evidence and not _date_supported(value, evidence):
+            warnings.append(f"{field}_value_not_in_evidence")
+
+    fee_value = _field_value(extraction.get("fee"))
+    fee_evidence = cited_by_field.get("fee", "")
+    if fee_value and fee_value.lower() != "unknown" and fee_evidence and not _fee_supported(fee_value, fee_evidence):
+        warnings.append("fee_value_not_in_evidence")
+
+    deadline_evidence = cited_by_field.get("application_deadline", "")
+    if deadline_evidence and _PAYMENT_DEADLINE_RE.search(deadline_evidence) and not _APPLICATION_DEADLINE_CONTEXT_RE.search(
+        deadline_evidence
+    ):
+        warnings.append("non_application_deadline_risk")
+    deadline_type = _field_value(extraction.get("application_deadline_type")).lower()
+    if deadline_type in {"payment", "scholarship", "travel_grant", "abstract"}:
+        warnings.append("non_application_deadline_risk")
+
+    status = _field_value(extraction.get("registration_status")).lower()
+    status_evidence = cited_by_field.get("registration_status", "").lower()
+    if status == "open" and re.search(r"\b(application|registration).{0,30}\bclosed\b", status_evidence):
+        warnings.append("registration_status_conflict")
+    if status == "closed" and re.search(r"\b(now open|applications? open|registration open|now accepting)\b", status_evidence):
+        warnings.append("registration_status_conflict")
 
     if _PAST_OR_CLOSED_RE.search(combined_snippets or combined_chunks):
         warnings.append("possibly_past_or_closed")
@@ -162,6 +218,63 @@ def _has_future_date(text: str, today: date) -> bool:
         if int(year) > today.year:
             return True
     return False
+
+
+def _date_supported(value: str, evidence: str) -> bool:
+    normalized_value = _normalize(value)
+    normalized_evidence = _normalize(evidence)
+    if normalized_value in normalized_evidence:
+        return True
+    target = _parse_iso_date(value)
+    if target is None:
+        return False
+    for match in _DATE_TEXT_RE.finditer(evidence):
+        try:
+            if parse(match.group(0), dayfirst=True, fuzzy=False).date() == target:
+                return True
+        except (TypeError, ValueError, OverflowError):
+            continue
+    return False
+
+
+def _fee_supported(value: str, evidence: str) -> bool:
+    lowered = _normalize(value)
+    evidence_lowered = _normalize(evidence)
+    no_fee_terms = ("no registration fee", "no participation fee", "free of charge", "participation is free")
+    if any(term in lowered for term in no_fee_terms):
+        return any(term in evidence_lowered for term in no_fee_terms)
+    value_amounts = _money_values(value)
+    if not value_amounts:
+        return lowered in evidence_lowered
+    evidence_amounts = _money_values(evidence)
+    return value_amounts.issubset(evidence_amounts)
+
+
+def _money_values(text: str) -> set[tuple[str, str]]:
+    symbols = {"€": "EUR", "$": "USD", "£": "GBP", "RMB": "CNY"}
+    values: set[tuple[str, str]] = set()
+    for match in _MONEY_RE.finditer(text):
+        currency = (match.group(1) or match.group(4) or "").upper()
+        amount = match.group(2) or match.group(3) or ""
+        currency = symbols.get(currency, currency)
+        amount = _normalize_amount(amount)
+        values.add((currency, amount))
+    return values
+
+
+def _normalize_amount(amount: str) -> str:
+    cleaned = re.sub(r"\s", "", amount)
+    if "," in cleaned and "." not in cleaned:
+        tail = cleaned.rsplit(",", 1)[-1]
+        cleaned = cleaned.replace(",", ".") if len(tail) == 2 else cleaned.replace(",", "")
+    elif "," in cleaned and "." in cleaned:
+        if cleaned.rfind(",") > cleaned.rfind("."):
+            cleaned = cleaned.replace(".", "").replace(",", ".")
+        else:
+            cleaned = cleaned.replace(",", "")
+    if "." in cleaned:
+        cleaned = cleaned.rstrip("0").rstrip(".")
+    return cleaned or "0"
 
 
 def _validated_confidence(confidence: str, warnings: Sequence[str]) -> str:

@@ -301,6 +301,7 @@ def extraction_response_format() -> dict[str, Any]:
     properties = {
         key: field
         for key in (
+            "page_type",
             "title",
             "event_type",
             "location",
@@ -308,6 +309,9 @@ def extraction_response_format() -> dict[str, Any]:
             "start_date",
             "end_date",
             "application_deadline",
+            "application_deadline_type",
+            "other_deadlines",
+            "registration_status",
             "fee",
             "funding",
             "eligibility",

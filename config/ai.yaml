@@ -11,6 +11,7 @@ semantic:
   min_similarity_score: 0.30
   max_pages_for_ai: 150
   max_pages_per_source: 8
+  require_programme_signal: true
 llm:
   enabled: false
   provider: "deepseek"
@@ -24,6 +25,18 @@ llm:
   max_chunks_per_page: 3
   max_chars_per_chunk: 2200
   max_total_chars_per_request: 7000
+follow_up:
+  enabled: true
+  max_rounds: 2
+  max_opportunities: 20
+  max_queries_per_opportunity: 2
+  max_results_per_query: 3
+  max_pages_per_opportunity: 4
+  max_total_followup_pages: 60
+  max_followup_chunks_per_opportunity: 8
+  max_total_chars_per_followup_request: 12000
+  official_domains_only: true
+  external_search_enabled: true
 providers:
   ollama:
     base_url: "http://localhost:11434"

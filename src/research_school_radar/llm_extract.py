@@ -16,9 +16,10 @@ from .semantic import SemanticChunk, semantic_page_matches_candidate
 from .utils import clean_space, write_text_atomic
 
 
-AI_EXTRACTION_SCHEMA_VERSION = "v6-evidence-ids"
+AI_EXTRACTION_SCHEMA_VERSION = "v7-follow-up-evidence"
 
 _SCHEMA = {
+    "page_type": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
     "title": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
     "event_type": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
     "location": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
@@ -26,6 +27,9 @@ _SCHEMA = {
     "start_date": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
     "end_date": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
     "application_deadline": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
+    "application_deadline_type": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
+    "other_deadlines": {"value": [], "evidence_ids": [], "resolved_evidence_texts": []},
+    "registration_status": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
     "fee": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
     "funding": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
     "eligibility": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
@@ -209,24 +213,38 @@ def build_llm_prompt_from_snippets(
         }
         existing_summary = f"\nExisting rule-based candidate summary:\n{json.dumps(summary, ensure_ascii=False)}\n"
     evidence_text = "\n".join(
-        f"{snippet['id']}: {clean_space(str(snippet['text']))} [signals: {', '.join(snippet.get('signals', []))}]"
+        f"{snippet['id']}: [source: {snippet.get('page_url', first.page_url)}] "
+        f"{clean_space(str(snippet['text']))} [signals: {', '.join(snippet.get('signals', []))}]"
         for snippet in evidence_snippets
     )
     return (
         "You are an evidence-grounded information extraction system.\n"
-        "You are given numbered evidence snippets from an official webpage.\n"
+        "You are given numbered evidence snippets from one or more official webpages for a possible opportunity.\n"
         "Extract only facts directly supported by the numbered evidence snippets.\n"
         "Do not use outside knowledge. Do not infer missing dates, deadlines, fees, locations, eligibility, URLs, or funding.\n"
         "For each non-unknown field, cite one or more evidence_ids from the provided snippets.\n"
         "Only use evidence_ids that appear in the input. If no evidence ID supports a field, return value=\"unknown\" and evidence_ids=[].\n"
         "Do not output evidence_text. Do not output thinking, reasoning, or chain-of-thought. Return JSON only.\n"
-        "For index/listing pages, do not synthesize fake event date ranges or locations; add warning index_or_listing_page.\n\n"
+        "First classify page_type as opportunity|application|fees|funding|index|other|unknown.\n"
+        "For index/listing pages, do not synthesize event date ranges or locations; add warning index_or_listing_page.\n"
+        "Evidence from multiple pages may be combined only when the title and edition year clearly identify the same opportunity. "
+        "If pages conflict or refer to different editions, return unknown for the conflicting field and add warning conflicting_evidence.\n"
+        "Set registration_status to open|not_yet_open|closed|unknown. Explicit wording such as 'registration is closed' "
+        "overrides an apparently future date.\n"
+        "application_deadline must be the deadline to apply or register for the opportunity. Do not use payment, invoice, "
+        "abstract, accommodation, scholarship, or travel-grant deadlines as application_deadline. Put those in other_deadlines.\n"
+        "Set application_deadline_type to application|registration|early_bird|regular_registration|late_registration|unknown. "
+        "When several registration deadlines exist, use the latest generally available registration deadline, not only early bird.\n"
+        "Preserve all relevant participant fee tiers and currencies. Never report only the cheapest fee when the evidence lists multiple tiers.\n"
+        "Normalize unambiguous dates to YYYY-MM-DD. Keep unknown when the year is absent and cannot be resolved from the same edition evidence.\n\n"
+        f"Current date: {date.today().isoformat()}\n"
         f"Page title: {first.page_title}\n"
         f"Page URL: {first.page_url}\n"
         f"Source name: {first.source_name}\n"
         f"{existing_summary}\n"
-        "Schema: object fields title,event_type,location,mode,start_date,end_date,application_deadline,fee,funding,"
-        "eligibility,application_url,topics,chinese_summary use {\"value\":...,\"evidence_ids\":[]}.\n"
+        "Schema: object fields page_type,title,event_type,location,mode,start_date,end_date,application_deadline,"
+        "application_deadline_type,other_deadlines,registration_status,fee,funding,eligibility,application_url,topics,"
+        "chinese_summary use {\"value\":...,\"evidence_ids\":[]}.\n"
         "event_type must be summer school|winter school|training school|field school|short course|doctoral school|unknown.\n"
         "mode must be in-person|hybrid|online|unknown. confidence must be high|medium|low. warnings is a string array.\n\n"
         "Evidence snippets:\n"
@@ -390,6 +408,7 @@ def _public_evidence_snippets(snippets: Sequence[dict[str, Any]]) -> list[dict[s
     return [
         {
             "id": str(snippet.get("id", "")),
+            "page_url": str(snippet.get("page_url", "")),
             "text": clean_space(str(snippet.get("text", "")))[:500],
             "signals": [str(signal) for signal in snippet.get("signals", [])],
         }

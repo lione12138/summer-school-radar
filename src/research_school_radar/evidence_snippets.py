@@ -48,6 +48,7 @@ _BOILERPLATE_RE = re.compile(
     flags=re.IGNORECASE,
 )
 _SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?])\s+|\n+")
+_SOURCE_MARKER_RE = re.compile(r"^\[Official source page:\s*(https?://[^\]]+)\]\s*", re.I)
 
 
 def split_into_sentences_or_windows(text: str) -> list[str]:
@@ -67,6 +68,10 @@ def build_evidence_snippets(chunks: list[Any], max_snippets: int = 20, max_chars
         page_url = _chunk_attr(chunk, "page_url", "")
         chunk_index = int(_chunk_attr(chunk, "chunk_index", 0) or 0)
         text = str(_chunk_attr(chunk, "text", "") or "")
+        marker = _SOURCE_MARKER_RE.match(text)
+        evidence_page_url = marker.group(1) if marker else str(page_url)
+        if marker:
+            text = text[marker.end() :]
         for sentence in split_into_sentences_or_windows(text):
             snippet = _shorten(clean_space(sentence), max_chars)
             if not snippet or _is_boilerplate(snippet):
@@ -81,7 +86,7 @@ def build_evidence_snippets(chunks: list[Any], max_snippets: int = 20, max_chars
             candidates.append(
                 {
                     "id": "",
-                    "page_url": str(page_url),
+                    "page_url": evidence_page_url,
                     "chunk_index": chunk_index,
                     "text": snippet,
                     "signals": signals,

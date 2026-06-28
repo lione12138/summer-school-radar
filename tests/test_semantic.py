@@ -109,3 +109,32 @@ def test_semantic_ranker_can_be_stubbed_without_real_embedding_model(monkeypatch
     assert chunks[0].page_url == "https://example.org/school"
     assert chunks[0].score == 0.95
     assert "deadline" in chunks[0].text
+
+
+def test_follow_up_ranker_accepts_fee_page_without_repeated_school_type(monkeypatch) -> None:
+    source = Source("Example", "https://example.org/school", "1", "global", "test")
+    page = Page(
+        url="https://example.org/school/fees",
+        title="Fees and rates",
+        text="Registration fees are EUR 350 for students and EUR 700 for other participants.",
+        html="",
+        source=source,
+        fetched_at=date.today(),
+    )
+    ranker = SemanticRanker(
+        embedding_model="test-model",
+        query="fee funding deadline",
+        chunk_size_chars=200,
+        chunk_overlap_chars=20,
+        top_k_chunks_per_page=2,
+        min_similarity_score=0.30,
+        require_programme_signal=False,
+        model=object(),
+    )
+    monkeypatch.setattr(ranker, "_embed", lambda texts: list(texts))
+    monkeypatch.setattr(ranker, "_cosine_scores", lambda _query, chunks: [0.9 for _chunk in chunks])
+
+    chunks = ranker.rank_pages([page])
+
+    assert len(chunks) == 1
+    assert chunks[0].page_url.endswith("/fees")

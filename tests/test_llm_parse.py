@@ -99,3 +99,6 @@ def test_llm_prompt_requests_evidence_ids_not_evidence_text() -> None:
     assert "evidence_ids" in prompt
     assert "E1:" in prompt
     assert "Do not output evidence_text" in prompt
+    assert "payment, invoice" in prompt
+    assert "Never report only the cheapest fee" in prompt
+    assert "registration_status" in prompt

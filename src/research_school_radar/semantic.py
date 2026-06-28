@@ -95,7 +95,13 @@ _LOW_VALUE_URL_RE = re.compile(
 )
 
 
-def useful_semantic_chunk(text: str, page_title: str = "", page_url: str = "") -> bool:
+def useful_semantic_chunk(
+    text: str,
+    page_title: str = "",
+    page_url: str = "",
+    *,
+    require_programme_signal: bool = True,
+) -> bool:
     cleaned = clean_space(text)
     if not cleaned:
         return False
@@ -115,7 +121,7 @@ def useful_semantic_chunk(text: str, page_title: str = "", page_url: str = "") -
         return False
     if low_value and core_hits < 2:
         return False
-    return type_hits > 0 and core_hits > 0
+    return core_hits > 0 and (type_hits > 0 or not require_programme_signal)
 
 
 def semantic_text_preview(text: str, limit: int = 500) -> str:
@@ -144,6 +150,7 @@ class SemanticRanker:
         chunk_overlap_chars: int,
         top_k_chunks_per_page: int,
         min_similarity_score: float,
+        require_programme_signal: bool = True,
         model: Any | None = None,
     ) -> None:
         self.embedding_model = embedding_model
@@ -152,6 +159,7 @@ class SemanticRanker:
         self.chunk_overlap_chars = chunk_overlap_chars
         self.top_k_chunks_per_page = top_k_chunks_per_page
         self.min_similarity_score = min_similarity_score
+        self.require_programme_signal = require_programme_signal
         self._model = model
 
     def rank_pages(self, pages: Sequence[Page], max_pages: int | None = None) -> list[SemanticChunk]:
@@ -165,7 +173,12 @@ class SemanticRanker:
             chunks = [
                 chunk
                 for chunk in chunk_text(page.text, self.chunk_size_chars, self.chunk_overlap_chars)
-                if useful_semantic_chunk(chunk, page_title=page.title, page_url=page.url)
+                if useful_semantic_chunk(
+                    chunk,
+                    page_title=page.title,
+                    page_url=page.url,
+                    require_programme_signal=self.require_programme_signal,
+                )
             ]
             if not chunks:
                 continue

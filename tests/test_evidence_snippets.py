@@ -60,3 +60,17 @@ def test_build_evidence_snippets_filters_boilerplate() -> None:
     snippets = build_evidence_snippets([_chunk("Cookie privacy policy. Subscribe to newsletter.")])
 
     assert snippets == []
+
+
+def test_follow_up_source_marker_is_preserved_as_evidence_provenance() -> None:
+    snippets = build_evidence_snippets(
+        [
+            _chunk(
+                "[Official source page: https://example.org/school/fees] "
+                "Registration fee is EUR 350. Applications close on 15 March 2027."
+            )
+        ]
+    )
+
+    assert snippets
+    assert {snippet["page_url"] for snippet in snippets} == {"https://example.org/school/fees"}

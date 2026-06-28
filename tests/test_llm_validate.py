@@ -99,6 +99,27 @@ def test_fee_with_weak_context_warns() -> None:
     assert "fee_context_weak" in warnings
 
 
+def test_fee_value_must_be_present_in_cited_evidence() -> None:
+    extraction = {"fee": _entry("EUR 500", ["E1"]), "confidence": "high"}
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk("Registration fee is EUR 350.")],
+        evidence_snippets=[_snippet("Registration fee is EUR 350.")],
+    )
+    assert "fee_value_not_in_evidence" in warnings
+
+
+def test_payment_deadline_is_not_accepted_as_application_deadline() -> None:
+    extraction = {"application_deadline": _entry("2026-05-18", ["E1"]), "confidence": "high"}
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk("Room reservations must be paid before May 18, 2026.")],
+        evidence_snippets=[_snippet("Room reservations must be paid before May 18, 2026.")],
+        today=date(2026, 1, 1),
+    )
+    assert "non_application_deadline_risk" in warnings
+
+
 def test_past_and_closed_wording_warns() -> None:
     extraction = {
         "application_deadline": _entry("2025-03-15", ["E1"]),

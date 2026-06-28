@@ -11,6 +11,13 @@ from .ai_cache import (
     semantic_chunks_from_cache,
     semantic_chunks_to_cache,
 )
+from .ai_followup import (
+    FollowUpCollection,
+    FollowUpConfig,
+    build_follow_up_chunks,
+    collect_follow_up_pages,
+    merge_follow_up_items,
+)
 from .api_sources import collect_api_candidates
 from .collect import DEFAULT_MAX_WORKERS, collect_sources, fetch_source
 from .extract import extract_candidate, sample_candidate
@@ -171,7 +178,16 @@ def run_scan(
             )
             ai_items = []
         else:
-            ai_items = _write_llm_outputs(ai_config_path, semantic_chunks, ranked, site_dir, reports_dir, cache=cache)
+            ai_items = _write_llm_outputs(
+                ai_config_path,
+                semantic_chunks,
+                ranked,
+                semantic_pages,
+                site_dir,
+                reports_dir,
+                cache=cache,
+                max_workers=max_workers,
+            )
     update_seen(data_dir / "seen.json", ranked)
     write_review_queue(data_dir / "review_queue.json", ranked, ai_items=ai_items)
     report_path = write_report(ranked, reports_dir, errors)
@@ -198,6 +214,7 @@ _SEMANTIC_DEFAULTS = {
     "min_similarity_score": 0.30,
     "max_pages_for_ai": 150,
     "max_pages_per_source": 8,
+    "require_programme_signal": True,
 }
 
 
@@ -310,6 +327,7 @@ def _semantic_ranker(config: dict[str, Any]) -> SemanticRanker:
         chunk_overlap_chars=int(config["chunk_overlap_chars"]),
         top_k_chunks_per_page=int(config["top_k_chunks_per_page"]),
         min_similarity_score=float(config["min_similarity_score"]),
+        require_programme_signal=bool(config["require_programme_signal"]),
     )
 
 
@@ -334,6 +352,7 @@ def _semantic_metadata(config: dict[str, Any], *, page_count: int, chunk_count: 
         "min_similarity_score": float(config["min_similarity_score"]),
         "max_pages_for_ai": int(config["max_pages_for_ai"]),
         "max_pages_per_source": int(config["max_pages_per_source"]),
+        "require_programme_signal": bool(config["require_programme_signal"]),
         "pages_considered": page_count,
         "chunks_selected": chunk_count,
     }
@@ -383,6 +402,21 @@ _LLM_DEFAULTS = {
 }
 
 
+_FOLLOW_UP_DEFAULTS = {
+    "enabled": True,
+    "max_rounds": 2,
+    "max_opportunities": 20,
+    "max_queries_per_opportunity": 2,
+    "max_results_per_query": 3,
+    "max_pages_per_opportunity": 4,
+    "max_total_followup_pages": 60,
+    "max_followup_chunks_per_opportunity": 8,
+    "max_total_chars_per_followup_request": 12000,
+    "official_domains_only": True,
+    "external_search_enabled": True,
+}
+
+
 _PROVIDER_DEFAULTS = {
     "ollama": {
         "base_url": "http://localhost:11434",
@@ -409,9 +443,12 @@ def _write_llm_outputs(
     ai_config: Path,
     chunks: list,
     candidates: list[Candidate],
+    pages: list[Page],
     site_dir: Path,
     reports_dir: Path,
+    *,
     cache: AICache | None = None,
+    max_workers: int = DEFAULT_MAX_WORKERS,
 ) -> list[dict[str, Any]]:
     config = _load_llm_config(ai_config)
     client_config = _client_config(config)
@@ -427,24 +464,98 @@ def _write_llm_outputs(
         cache=cache,
         model_name=str(config["model"]),
     )
+    follow_up_config = _load_follow_up_config(ai_config)
+    follow_up_metadata: dict[str, Any] = {
+        "enabled": follow_up_config.enabled,
+        "max_rounds": follow_up_config.max_rounds,
+        "max_opportunities": follow_up_config.max_opportunities,
+        "max_queries_per_opportunity": follow_up_config.max_queries_per_opportunity,
+        "max_results_per_query": follow_up_config.max_results_per_query,
+        "max_pages_per_opportunity": follow_up_config.max_pages_per_opportunity,
+        "max_total_followup_pages": follow_up_config.max_total_followup_pages,
+        "max_total_chars_per_followup_request": follow_up_config.max_total_chars_per_followup_request,
+        "official_domains_only": follow_up_config.official_domains_only,
+        "external_search_enabled": follow_up_config.external_search_enabled,
+        "pages_fetched": 0,
+        "opportunities_reprocessed": 0,
+        "search_queries": 0,
+    }
+    follow_up_warnings: list[str] = []
+    if items and pages and follow_up_config.enabled:
+        collection, collection_warning = _collect_follow_up_safely(
+            items,
+            pages,
+            follow_up_config,
+            max_workers=max_workers,
+        )
+        if collection_warning:
+            follow_up_warnings.append(collection_warning)
+            print(f"Warning: AI follow-up collection skipped: {collection_warning}")
+        if collection is None:
+            collection = FollowUpCollection()
+        follow_up_warnings.extend(collection.warnings)
+        follow_up_metadata.update(
+            {
+                "pages_fetched": collection.fetched_page_count,
+                "opportunities_considered": len(collection.missing_fields_by_parent),
+                "search_queries": len(collection.search_queries),
+            }
+        )
+        if collection.pages:
+            semantic_config = _load_semantic_config(ai_config)
+            semantic_config["max_pages_for_ai"] = max(len(collection.pages), 1)
+            semantic_config["max_pages_per_source"] = 0
+            semantic_config["require_programme_signal"] = False
+            try:
+                follow_up_semantic_chunks = _rank_semantic_pages(semantic_config, collection.pages, cache=cache)
+                merged_chunks = build_follow_up_chunks(
+                    chunks,
+                    follow_up_semantic_chunks,
+                    collection,
+                    max_followup_chunks_per_opportunity=follow_up_config.max_followup_chunks_per_opportunity,
+                )
+                if merged_chunks:
+                    revised_items = run_llm_extraction(
+                        merged_chunks,
+                        candidates=candidates,
+                        client=client,
+                        max_pages_for_llm=len(collection.pages_by_parent),
+                        max_chunks_per_page=(
+                            int(config["max_chunks_per_page"])
+                            + follow_up_config.max_followup_chunks_per_opportunity
+                        ),
+                        max_chars_per_chunk=int(config["max_chars_per_chunk"]),
+                        max_total_chars_per_llm_request=follow_up_config.max_total_chars_per_followup_request,
+                        cache=cache,
+                        model_name=str(config["model"]),
+                    )
+                    items = merge_follow_up_items(items, revised_items, collection)
+                    follow_up_metadata["opportunities_reprocessed"] = len(revised_items)
+            except Exception as exc:  # noqa: BLE001 - optional follow-up must never discard the first extraction.
+                follow_up_warnings.append(f"follow_up_ranking_or_extraction_failed:{exc}")
+                print(f"Warning: AI follow-up skipped after initial extraction: {exc}")
     warnings: list[str] = list(cache.warnings if cache is not None else [])
+    warnings.extend(follow_up_warnings)
+    reported_warnings: set[str] = set()
     for item in items:
         for warning in item.get("validation_warnings", []):
             warning_text = str(warning)
-            if warning_text.startswith("llm_unavailable:"):
+            if warning_text.startswith("llm_unavailable:") and "llm_endpoint_unavailable" not in reported_warnings:
                 print(f"Warning: {warning_text.removeprefix('llm_unavailable:')}")
                 warnings.append("llm_endpoint_unavailable")
-            elif warning_text == "llm_json_parse_failed":
+                reported_warnings.add("llm_endpoint_unavailable")
+            elif warning_text == "llm_json_parse_failed" and warning_text not in reported_warnings:
                 print("Warning: LLM extraction returned invalid JSON; wrote warning to AI sidecar.")
                 warnings.append("llm_json_parse_failed")
-        if warnings:
-            break
+                reported_warnings.add(warning_text)
     site_path, report_path = write_llm_sidecars(
         items,
         site_dir=site_dir,
         reports_dir=reports_dir,
         config=client_config,
-        metadata=_with_cache_metadata(_llm_metadata(config, chunk_count=len(chunks)), cache),
+        metadata=_with_cache_metadata(
+            _llm_metadata(config, chunk_count=len(chunks), follow_up=follow_up_metadata), cache
+        ),
         warnings=warnings,
     )
     print(f"Wrote AI extraction sidecar: {site_path}")
@@ -502,6 +613,40 @@ def _load_llm_config(path: Path) -> dict:
     return _apply_provider_defaults(_apply_llm_env_overrides(_apply_provider_defaults(config, providers)), providers)
 
 
+def _load_follow_up_config(path: Path) -> FollowUpConfig:
+    config = dict(_FOLLOW_UP_DEFAULTS)
+    if path.exists():
+        raw = _load_optional_yaml(path).get("follow_up", {})
+        if isinstance(raw, dict):
+            config.update(raw)
+    return FollowUpConfig(
+        enabled=bool(config["enabled"]),
+        max_rounds=max(0, int(config["max_rounds"])),
+        max_opportunities=max(0, int(config["max_opportunities"])),
+        max_queries_per_opportunity=max(0, int(config["max_queries_per_opportunity"])),
+        max_results_per_query=max(0, int(config["max_results_per_query"])),
+        max_pages_per_opportunity=max(0, int(config["max_pages_per_opportunity"])),
+        max_total_followup_pages=max(0, int(config["max_total_followup_pages"])),
+        max_followup_chunks_per_opportunity=max(0, int(config["max_followup_chunks_per_opportunity"])),
+        max_total_chars_per_followup_request=max(1000, int(config["max_total_chars_per_followup_request"])),
+        official_domains_only=bool(config["official_domains_only"]),
+        external_search_enabled=bool(config["external_search_enabled"]),
+    )
+
+
+def _collect_follow_up_safely(
+    items: list[dict[str, Any]],
+    pages: list[Page],
+    config: FollowUpConfig,
+    *,
+    max_workers: int,
+) -> tuple[FollowUpCollection | None, str]:
+    try:
+        return collect_follow_up_pages(items, pages, config, max_workers=max_workers), ""
+    except Exception as exc:  # noqa: BLE001 - advisory retrieval must not abort the scan.
+        return None, f"follow_up_collection_failed:{exc}"
+
+
 def _apply_provider_defaults(config: dict, providers: dict[str, dict]) -> dict:
     provider = str(config.get("provider", "ollama"))
     provider_defaults = providers.get(provider, {})
@@ -550,8 +695,10 @@ def _client_config(config: dict[str, Any]) -> LLMClientConfig:
     )
 
 
-def _llm_metadata(config: dict[str, Any], *, chunk_count: int) -> dict[str, Any]:
-    return {
+def _llm_metadata(
+    config: dict[str, Any], *, chunk_count: int, follow_up: dict[str, Any] | None = None
+) -> dict[str, Any]:
+    metadata = {
         "temperature": float(config["temperature"]),
         "timeout_seconds": int(config["timeout_seconds"]),
         "max_pages_for_llm": int(config["max_pages_for_llm"]),
@@ -560,6 +707,9 @@ def _llm_metadata(config: dict[str, Any], *, chunk_count: int) -> dict[str, Any]
         "max_total_chars_per_request": int(config["max_total_chars_per_request"]),
         "semantic_chunks_available": chunk_count,
     }
+    if follow_up is not None:
+        metadata["follow_up"] = follow_up
+    return metadata
 
 
 def _with_cache_metadata(metadata: dict[str, Any], cache: AICache | None) -> dict[str, Any]:

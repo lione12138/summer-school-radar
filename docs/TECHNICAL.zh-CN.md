@@ -140,16 +140,9 @@ scanner output
 
 ## GitHub Actions 和 Pages
 
-`.github/workflows/scheduled_scan.yml` 每天运行一次：
+每日规则扫描由维护者电脑上的 `scripts/scan_and_publish.ps1` 运行，使用住宅网络抓取官网并把 `site/` 发布到 `gh-pages`。
 
-1. checkout repo
-2. 安装 Python 包
-3. 运行 `python -m research_school_radar.cli scan`
-4. commit `reports/`、`data/seen.json`、`data/opportunities.yml`
-5. 上传 `site/` 到 GitHub Pages artifact
-6. 部署 GitHub Pages
-
-公共仓库默认可以免费运行，不需要 search API key。
+`.github/workflows/ai_scan.yml` 提供每周一次或手动触发的 AI 辅助扫描。它从 GitHub repository secrets 读取 `DEEPSEEK_API_KEY`，运行 `bge-m3`、受限补页和 DeepSeek 证据抽取，然后把包含 AI Review 的静态网页发布到同一个 `gh-pages` 分支。`BRAVE_SEARCH_API_KEY` 和 `HF_TOKEN` 是可选 secret；缺少 Brave key 时仍会进行官网内部补页。
 
 ## Analytics
 

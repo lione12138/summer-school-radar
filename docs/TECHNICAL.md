@@ -269,6 +269,54 @@ DeepSeek results remain advisory sidecar data. They are useful for reviewing
 missed deadline, fee, funding, location, and eligibility evidence, but they do
 not change `fully_qualified`, hard filters, ranking, RSS, or public tables.
 
+#### Bounded follow-up retrieval
+
+After the first extraction, `ai_followup.py` selects only non-index,
+non-expired items that still lack critical fields. The follow-up stage:
+
+1. scores same-domain links for application, registration, deadline, fee,
+   tuition, rates, funding, scholarship, grant, date, and practical-information
+   signals;
+2. follows links for at most the configured number of rounds and pages;
+3. optionally submits title-aware `site:domain` queries through the existing
+   Brave Search client when `BRAVE_SEARCH_API_KEY` is configured;
+4. rejects search results outside the original official domain;
+5. ranks fetched pages with the configured semantic model;
+6. combines original and related evidence into a second LLM extraction;
+7. retains the first extraction if the revised result resolves fewer critical
+   fields or fails.
+
+Default resource limits in `config/ai.yaml`:
+
+```yaml
+follow_up:
+  enabled: true
+  max_rounds: 2
+  max_opportunities: 20
+  max_queries_per_opportunity: 2
+  max_results_per_query: 3
+  max_pages_per_opportunity: 4
+  max_total_followup_pages: 60
+  max_followup_chunks_per_opportunity: 8
+  max_total_chars_per_followup_request: 12000
+  official_domains_only: true
+  external_search_enabled: true
+```
+
+DeepSeek does not receive unrestricted browser control. The scanner performs
+the HTTP requests and search calls, enforces budgets and domains, and passes
+only selected evidence snippets to the model. Search failure, missing Brave
+credentials, semantic failure, or follow-up extraction failure cannot abort the
+rule-based scan or remove the initial AI extraction.
+
+The extraction prompt now labels page type and registration status, separates
+the primary application/registration deadline from other deadlines, rejects
+cross-edition evidence, and requests complete fee tiers. Validation remains
+deterministic and checks evidence IDs, context, date and fee support, explicit
+closed language, past dates, index-page risk, and payment-deadline confusion.
+It does not constitute independent factual certification; promotion into the
+public tables still requires the rule pipeline or human review.
+
 #### Using LM Studio
 
 LM Studio must be installed manually. Download and load the model inside LM
@@ -507,25 +555,24 @@ Disabled sources stay documented without creating scan noise:
   notes: Site currently returns Cloudflare 403 for scripted requests.
 ```
 
-## Daily Free Workflow
+## Publishing Workflows
 
-The GitHub Actions workflow at `.github/workflows/scheduled_scan.yml` runs once per day:
+The primary daily scan runs on the maintainer's Windows machine through
+`scripts/scan_and_publish.ps1`. A residential connection reaches more official
+sites than a GitHub-hosted runner, and the script commits report/state changes
+to `main` before publishing `site/` to `gh-pages`.
 
-```yaml
-schedule:
-  - cron: "17 6 * * *"
-```
+`.github/workflows/ai_scan.yml` provides a separate weekly or manually triggered
+advisory run. It installs the semantic/LLM extras, restores the Hugging Face and
+AI caches, reads `DEEPSEEK_API_KEY` from repository secrets, runs the bounded
+AI-assisted scan, and publishes the generated site to `gh-pages`. An optional
+`BRAVE_SEARCH_API_KEY` enables controlled same-domain search; an optional
+`HF_TOKEN` raises Hugging Face download limits. Secret values are never written
+to generated output or commits.
 
-The workflow:
-
-1. checks out the repository
-2. installs the Python package
-3. runs `python -m research_school_radar.cli scan`
-4. commits `reports/`, `data/seen.json`, and `data/opportunities.yml`
-5. uploads `site/` as a GitHub Pages artifact
-6. deploys the public website with GitHub Pages
-
-This default workflow is free for a public GitHub repository and does not require a search API key.
+The AI workflow is also triggered when its implementation or AI configuration
+changes on `main`, which makes a release deploy its corresponding review output
+without a separate manual action.
 
 ## Public Website
 
@@ -567,12 +614,10 @@ No backend server is required. The filters operate on HTML `data-*` attributes g
 
 The public table intentionally hides internal ranking fields such as region priority and failed hard conditions. Those fields remain in `site/candidates.json` for maintainers and debugging. Titles link directly to the official opportunity page.
 
-After pushing to GitHub:
-
-1. Open repository settings.
-2. Go to Pages.
-3. Set build and deployment source to GitHub Actions.
-4. Run the `Scheduled research school scan` workflow once, or wait for the daily schedule.
+After pushing to GitHub, configure Pages to serve the `gh-pages` branch. Run
+`Weekly AI-assisted scan` manually when an immediate advisory refresh is needed,
+or wait for its Monday schedule. The local task continues publishing the daily
+rule-based site.
 
 The public site will be available at:
 
