@@ -150,6 +150,7 @@ def test_structured_fee_tiers_are_supported_by_table_evidence() -> None:
     )
 
     assert "fee_value_not_in_evidence" not in warnings
+    assert "fee_context_weak" not in warnings
 
 
 def test_incomplete_fee_table_is_flagged_separately() -> None:
@@ -171,6 +172,28 @@ def test_incomplete_fee_table_is_flagged_separately() -> None:
     )
 
     assert "fee_tiers_incomplete" in warnings
+
+
+def test_amount_and_currency_in_separate_structured_keys_are_supported() -> None:
+    extraction = {
+        "fee": {
+            "value": {
+                "amount": 1000,
+                "currency": "EUR",
+                "description": "contribution towards board and lodging",
+            },
+            "evidence_ids": ["E1"],
+        },
+        "confidence": "high",
+    }
+    evidence = "The contribution towards board and lodging is € 1,000."
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk(evidence)],
+        evidence_snippets=[_snippet(evidence)],
+    )
+
+    assert "fee_value_not_in_evidence" not in warnings
 
 
 def test_past_and_closed_wording_warns() -> None:

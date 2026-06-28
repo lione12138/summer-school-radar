@@ -36,7 +36,7 @@ _PAST_OR_CLOSED_RE = re.compile(
 _INDEX_RE = re.compile(r"\b(index|listing|archive|history|past meetings|past events|overview|all events)\b", re.IGNORECASE)
 _CONTEXT_PATTERNS = {
     "application_deadline": re.compile(r"\b(deadline|application|apply|registration|submit|closing|closes)\b", re.I),
-    "fee": re.compile(r"\b(fee|cost|tuition|registration|free|charge|waived)\b", re.I),
+    "fee": re.compile(r"\b(fees?|costs?|rates?|tuition|registration|free|charge|contribution|waived)\b", re.I),
     "funding": re.compile(
         r"\b(scholarship|bursary|grant|funding|financial support|waiver|stipend|accommodation|travel support)\b",
         re.I,
@@ -48,7 +48,7 @@ _CONTEXT_PATTERNS = {
     ),
 }
 _CURRENCY = r"EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|€|\$|£"
-_AMOUNT = r"(?:[0-9]{1,3}(?:[ .][0-9]{3})+(?:[,.][0-9]{2})?|[0-9]+(?:[,.][0-9]{2})?)"
+_AMOUNT = r"(?:[0-9]{1,3}(?:[ ,.][0-9]{3})+(?:[,.][0-9]{2})?|[0-9]+(?:[,.][0-9]{2})?)"
 _MONEY_RE = re.compile(
     rf"(?:({_CURRENCY})\s*({_AMOUNT})|({_AMOUNT})\s*({_CURRENCY}))",
     re.I,
@@ -130,11 +130,11 @@ def validate_llm_extraction(
         if value and value.lower() != "unknown" and evidence and not _date_supported(value, evidence):
             warnings.append(f"{field}_value_not_in_evidence")
 
-    fee_value = _field_value(extraction.get("fee"))
+    fee_value = _field_raw_value(extraction.get("fee"))
     fee_evidence = cited_by_field.get("fee", "")
-    if fee_value and fee_value.lower() != "unknown" and fee_evidence and not _fee_supported(fee_value, fee_evidence):
+    if _known_raw_value(fee_value) and fee_evidence and not _fee_supported(fee_value, fee_evidence):
         warnings.append("fee_value_not_in_evidence")
-    elif fee_value and fee_evidence and _fee_tiers_incomplete(fee_value, fee_evidence):
+    elif _known_raw_value(fee_value) and fee_evidence and _fee_tiers_incomplete(fee_value, fee_evidence):
         warnings.append("fee_tiers_incomplete")
 
     deadline_evidence = cited_by_field.get("application_deadline", "")
@@ -197,6 +197,18 @@ def _field_value(entry: Any) -> str:
     if isinstance(value, dict):
         return str(value.get("en") or value.get("value") or value)
     return str(value).strip()
+
+
+def _field_raw_value(entry: Any) -> Any:
+    return entry.get("value") if isinstance(entry, dict) else None
+
+
+def _known_raw_value(value: Any) -> bool:
+    if value is None:
+        return False
+    if isinstance(value, (list, dict)):
+        return bool(value)
+    return str(value).strip().lower() not in {"", "unknown"}
 
 
 def _evidence_ids(entry: Any) -> list[str]:
@@ -273,8 +285,8 @@ def _shared_year_range_dates(evidence: str) -> set[date]:
     return dates
 
 
-def _fee_supported(value: str, evidence: str) -> bool:
-    lowered = _normalize(value)
+def _fee_supported(value: Any, evidence: str) -> bool:
+    lowered = _normalize(str(value))
     evidence_lowered = _normalize(evidence)
     no_fee_terms = ("no registration fee", "no participation fee", "free of charge", "participation is free")
     if any(term in lowered for term in no_fee_terms):
@@ -286,7 +298,7 @@ def _fee_supported(value: str, evidence: str) -> bool:
     return value_amounts.issubset(evidence_amounts)
 
 
-def _fee_tiers_incomplete(value: str, evidence: str) -> bool:
+def _fee_tiers_incomplete(value: Any, evidence: str) -> bool:
     value_amounts = _money_values(value)
     evidence_amounts = _money_values(evidence)
     return (
@@ -296,10 +308,25 @@ def _fee_tiers_incomplete(value: str, evidence: str) -> bool:
     )
 
 
-def _money_values(text: str) -> set[tuple[str, str]]:
+def _money_values(text: Any) -> set[tuple[str, str]]:
     symbols = {"€": "EUR", "$": "USD", "£": "GBP", "RMB": "CNY"}
+    if isinstance(text, list):
+        return set().union(*(_money_values(item) for item in text)) if text else set()
+    if isinstance(text, dict):
+        values: set[tuple[str, str]] = set()
+        amount = text.get("amount") or text.get("max_amount")
+        currency = text.get("currency")
+        if amount not in {None, ""} and currency not in {None, ""}:
+            normalized_currency = symbols.get(str(currency).upper(), str(currency).upper())
+            values.add((normalized_currency, _normalize_amount(str(amount))))
+        elif amount not in {None, ""}:
+            values.update(_money_values(str(amount)))
+        for key, nested in text.items():
+            if key not in {"amount", "max_amount", "currency"}:
+                values.update(_money_values(nested))
+        return values
     values: set[tuple[str, str]] = set()
-    for match in _MONEY_RE.finditer(text):
+    for match in _MONEY_RE.finditer(str(text)):
         currency = (match.group(1) or match.group(4) or "").upper()
         amount = match.group(2) or match.group(3) or ""
         currency = symbols.get(currency, currency)
