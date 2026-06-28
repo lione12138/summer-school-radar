@@ -317,8 +317,12 @@ def _money_values(text: Any) -> set[tuple[str, str]]:
         amount = text.get("amount") or text.get("max_amount")
         currency = text.get("currency")
         if amount not in {None, ""} and currency not in {None, ""}:
-            normalized_currency = symbols.get(str(currency).upper(), str(currency).upper())
-            values.add((normalized_currency, _normalize_amount(str(amount))))
+            embedded = _money_values(str(amount))
+            if embedded:
+                values.update(embedded)
+            else:
+                normalized_currency = symbols.get(str(currency).upper(), str(currency).upper())
+                values.add((normalized_currency, _normalize_amount(str(amount))))
         elif amount not in {None, ""}:
             values.update(_money_values(str(amount)))
         for key, nested in text.items():
