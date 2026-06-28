@@ -140,3 +140,29 @@ The remaining evaluation question is empirical: run the same known-page test
 set again and measure whether follow-up retrieval improves deadline, fee, and
 funding accuracy without increasing cross-edition merges. AI results remain
 sidecar-only until that comparison is complete.
+
+## 2026-06-28: Evidence-Gated Homepage Integration
+
+The separate public AI Review page made users compare two parallel products and
+did not present the best available record in the main tables. The AI-enabled
+build now merges validated extraction into deep copies of homepage candidates.
+
+The safety boundary is field-level rather than page-level:
+
+- exact URL matches fill only unresolved fields
+- missing or invalid evidence IDs block the affected value
+- deadline, fee, funding, location, and eligibility context warnings block only
+  their corresponding fields
+- unmatched pages require an explicit `opportunity` or `application` page type
+- legacy outputs without page type can enrich exact matches but cannot create
+  standalone opportunities
+- merged records pass through the existing hard filters and ranking
+- original scan candidates, Markdown reports, RSS, state, and curated data are
+  unchanged
+
+A local audit against the existing 81-item AI sidecar initially exposed three
+false standalone leads from a scholarship page, a fee page, and an index page.
+Requiring an explicit page type removed all three. The same audit correctly
+filled ICOS's deadline and moved it from High-Quality to Fully Qualified through
+the normal rule filters. The public `AI Review` page and navigation entry were
+removed; `site/ai_extractions.json` remains the evidence and warning trail.

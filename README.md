@@ -80,7 +80,6 @@ site/feed.xml
 site/sitemap.xml
 site/semantic_chunks.json
 site/ai_extractions.json
-site/ai-review.html
 reports/YYYY-MM-DD.md
 reports/YYYY-MM-DD.semantic.json
 reports/YYYY-MM-DD.ai.json
@@ -169,8 +168,8 @@ python -m research_school_radar.cli scan --enable-semantic
 Semantic sidecar output goes to `site/semantic_chunks.json` and
 `reports/YYYY-MM-DD.semantic.json`.
 
-LLM extraction is also optional and advisory only. It reads semantic chunks and
-asks a configured provider for structured evidence. Supported providers are:
+LLM extraction is optional. It reads semantic chunks and asks a configured
+provider for structured, cited evidence. Supported providers are:
 
 - Ollama: native `/api/chat`, default model `qwen3.5:9b`, with `think: false`
   and `format: "json"`.
@@ -179,8 +178,12 @@ asks a configured provider for structured evidence. Supported providers are:
 - DeepSeek API: OpenAI-compatible `/chat/completions`, default model
   `deepseek-v4-flash`, with `thinking` disabled and JSON object mode.
 
-It writes sidecar JSON without changing candidates, filters, rankings, RSS, or
-the public tables. Local LLM software and models must be installed manually;
+It always writes auditable sidecar JSON. During an AI-enabled site build,
+evidence-validated values may fill unresolved fields in a copy of an existing
+candidate before the same rule-based hard filters are run again. Explicitly
+classified new opportunity/application pages may also become homepage leads.
+The scanner's stored candidates, Markdown reports, and RSS remain unchanged.
+Local LLM software and models must be installed manually;
 remote API keys must be supplied by the user. The project does not install
 Ollama, LM Studio, model files, or create API keys automatically. In the Ollama
 CLI, `/set nothink` can disable thinking during manual interactive tests.
@@ -223,9 +226,11 @@ python -m research_school_radar.ai_healthcheck --provider deepseek
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
 ```
 
-DeepSeek output remains advisory only. It writes `site/ai_extractions.json`,
-`reports/YYYY-MM-DD.ai.json`, and `site/ai-review.html`; it does not update the
-main opportunity tables or fully qualified status.
+DeepSeek writes `site/ai_extractions.json` and
+`reports/YYYY-MM-DD.ai.json`. Validated output is rendered directly in the
+existing homepage tables; there is no separate public AI Review page.
+Field-specific validation warnings block the affected value from changing
+homepage qualification.
 
 When LLM extraction is enabled, the advisory pipeline can perform a bounded
 follow-up pass for otherwise promising pages with missing deadline, fee,
@@ -302,11 +307,10 @@ python -m research_school_radar.cli scan --enable-semantic --enable-llm-extracti
 
 LM Studio may be faster on AMD iGPU / Radeon 780M setups when GPU offload is
 enabled. Structured output can improve JSON validity, but it does not remove the
-need for evidence validation. AI results remain advisory only.
+need for evidence validation. AI results remain evidence-gated.
 
 LLM sidecar output goes to `site/ai_extractions.json` and
-`reports/YYYY-MM-DD.ai.json`. The generated site also includes
-`site/ai-review.html` when AI extraction has run. LLM extraction is cached under
+`reports/YYYY-MM-DD.ai.json`. LLM extraction is cached under
 `data/ai_cache/` by page URL, selected chunk text hash, model name, and
 extraction schema version. To ignore existing AI cache entries:
 
@@ -314,8 +318,9 @@ extraction schema version. To ignore existing AI cache entries:
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
 ```
 
-These files are not the source of truth for fully qualified opportunities; the
-hard filters remain rule-based.
+These files preserve the AI evidence and warnings. Homepage qualification still
+uses the existing rule-based hard filters after trusted missing fields have been
+filled; AI output never bypasses those filters.
 
 Check the local Ollama endpoint separately with:
 
@@ -384,24 +389,29 @@ Recommended operation:
 Do not enable LLM extraction in daily automation yet. It is slower, more
 resource-intensive, and still needs human validation.
 
-## AI-assisted review workflow
+## AI-assisted homepage workflow
 
 Semantic ranking can surface pages that rule-based link and opportunity gates
-missed. Local LLM extraction turns selected semantic chunks into advisory
-structured drafts, and evidence validation checks whether extracted fields are
-grounded in those chunks.
+missed. LLM extraction turns selected semantic chunks into structured drafts,
+and evidence validation checks whether extracted fields are grounded in those
+chunks.
 
-The AI review output is intentionally separate:
+The public integration is deliberately narrow:
 
 - `data/review_queue.json` and `site/review_queue.json` can include an
   `ai_advisory` block for matching scanner candidates.
-- `site/ai-review.html` lists matched AI records and potential missed pages.
 - `site/ai_extractions.json` keeps the advisory extraction sidecar, including
   short `evidence_snippets`, field-level `evidence_ids`, and resolved snippet
   previews for manual review.
+- Exact-URL matches can fill unresolved homepage fields when the cited evidence
+  passes field-specific validation.
+- Unmatched pages are added only when the current schema explicitly classifies
+  them as an opportunity or application page.
 
-AI output does not determine final qualification, ranking, RSS inclusion, or
-recommendation status. Maintainers should use it as a review aid only:
+The merged homepage copy is passed through the same hard filters and ranking as
+rule-extracted candidates. AI output does not alter stored scanner candidates,
+Markdown reports, RSS, or curated data. Maintainers should still verify the
+official page before applying or curating a record.
 
 ```text
 AI extraction -> maintainer checks official page -> maintainer edits data/opportunities.yml or data/overrides.yml
@@ -441,8 +451,8 @@ powershell -ExecutionPolicy Bypass -File scripts/register_task.ps1
 
 GitHub Actions still runs the test suite on every push (see `.github/workflows/tests.yml`).
 The optional `.github/workflows/ai_scan.yml` workflow runs the bounded
-`bge-m3` + DeepSeek advisory scan weekly, can be started manually, and deploys
-the resulting AI review site to the same `gh-pages` branch. It requires the
+`bge-m3` + DeepSeek scan weekly, can be started manually, and deploys
+the AI-enriched homepage to the same `gh-pages` branch. It requires the
 repository secret `DEEPSEEK_API_KEY`. `BRAVE_SEARCH_API_KEY` and `HF_TOKEN` are
 optional. The local daily rule scan remains the primary collector because it
 has better access to official sites than a cloud runner.

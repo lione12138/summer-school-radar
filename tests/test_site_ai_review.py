@@ -29,12 +29,12 @@ def _ai_item() -> dict:
     }
 
 
-def test_ai_review_html_renders_when_ai_output_exists(tmp_path) -> None:
+def test_ai_review_is_not_published_as_a_separate_page(tmp_path) -> None:
     write_site([], [], tmp_path, ai_items=[_ai_item()])
 
-    assert (tmp_path / "ai-review.html").exists()
+    assert not (tmp_path / "ai-review.html").exists()
     html = (tmp_path / "index.html").read_text(encoding="utf-8")
-    assert "ai-review.html" in html
+    assert "ai-review.html" not in html
 
 
 def test_ai_review_does_not_expose_huge_raw_text() -> None:

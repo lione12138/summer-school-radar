@@ -195,7 +195,16 @@ def run_scan(
         print("Updated README latest-scan section")
     if generate_site:
         all_sources = _load_all_sources(config_dir / "sources.yaml")
-        site_path = write_site(ranked, errors, site_dir, site_config, curated, all_sources, ai_items=ai_items)
+        site_path = write_site(
+            ranked,
+            errors,
+            site_dir,
+            site_config,
+            curated,
+            all_sources,
+            ai_items=ai_items,
+            profile=profile,
+        )
         print(f"Wrote site: {site_path}")
     print(f"Wrote report: {report_path}")
     return report_path

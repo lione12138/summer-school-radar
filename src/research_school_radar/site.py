@@ -12,6 +12,7 @@ from urllib.parse import quote, urlencode
 from email.utils import format_datetime
 from datetime import datetime, timezone
 
+from .ai_home import merge_ai_for_homepage
 from .ai_review import potential_missed_pages
 from .models import Candidate
 from .review import build_review_queue
@@ -325,6 +326,7 @@ def write_site(
     curated: list[dict[str, Any]] | None = None,
     sources: list[dict[str, Any]] | None = None,
     ai_items: list[dict[str, Any]] | None = None,
+    profile: dict[str, Any] | None = None,
 ) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     curated = curated or []
@@ -361,12 +363,13 @@ def write_site(
     )
     (output_dir / "sources.json").write_text(json.dumps(sources, indent=2, default=str), encoding="utf-8")
     (output_dir / "sources.html").write_text(render_sources_page(sources), encoding="utf-8")
-    has_ai_review = ai_items is not None
-    if has_ai_review:
-        (output_dir / "ai-review.html").write_text(render_ai_review_page(ai_items or []), encoding="utf-8")
+    # AI output now enriches the existing homepage tables instead of creating a
+    # parallel review UI. Remove stale generated copies from older builds.
+    (output_dir / "ai-review.html").unlink(missing_ok=True)
+    homepage_candidates = merge_ai_for_homepage(candidates, ai_items, profile)
     (output_dir / "feed.xml").write_text(render_feed(candidates, curated, site_config or {}), encoding="utf-8")
     (output_dir / "robots.txt").write_text(_robots_txt(), encoding="utf-8")
-    (output_dir / "sitemap.xml").write_text(_sitemap_xml(has_ai_review=has_ai_review), encoding="utf-8")
+    (output_dir / "sitemap.xml").write_text(_sitemap_xml(has_ai_review=False), encoding="utf-8")
     (output_dir / "favicon.svg").write_text(_favicon_svg(), encoding="utf-8")
     _copy_og_image(output_dir)
     _copy_verification_files(output_dir)
@@ -376,12 +379,12 @@ def write_site(
     path = output_dir / "index.html"
     path.write_text(
         render_site(
-            candidates,
+            homepage_candidates,
             errors + _manual_source_notes(sources),
             site_config or {},
             curated,
             tracked_sources=tracked_sources,
-            has_ai_review=has_ai_review,
+            has_ai_review=False,
         ),
         encoding="utf-8",
     )

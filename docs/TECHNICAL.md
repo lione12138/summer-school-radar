@@ -84,13 +84,14 @@ The pipeline is intentionally simple Python rather than a multi-agent framework.
 Default branch:
 sources -> collect -> parse -> extract rules -> filter -> rank -> report/site
 
-Optional AI advisory branch:
-pages -> semantic chunks -> evidence snippets -> optional LLM extraction -> evidence-ID validation -> sidecar JSON -> AI review
+Optional AI branch:
+pages -> semantic chunks -> evidence snippets -> optional LLM extraction -> evidence-ID validation -> homepage candidate copies + sidecar JSON
 ```
 
-The optional branch reads collected page text but never overwrites `Candidate`
-records, hard-filter results, ranking, RSS inclusion, or public qualification
-status.
+The optional branch never overwrites scanner `Candidate` records. For the
+generated homepage only, it may fill unresolved fields in deep-copied candidates
+and then reruns the same hard filters and ranking. Markdown reports, RSS, state,
+and curated data continue to use rule-based candidates.
 
 For product-level reasoning, successful experiments, failed experiments, and
 workflow tradeoffs, see `docs/DEVELOPMENT_LOG.md`.
@@ -141,16 +142,15 @@ chunking, per-page, and per-source limits:
 | `BAAI/bge-small-en-v1.5` | 53.19s | 51 | 17 | 34 | Faster, lighter, but lower recall on known opportunities. |
 | `BAAI/bge-m3` | 212.33s | 55 | 24 | 31 | Better recall, acceptable runtime for manual or weekly semantic review. |
 
-The project therefore defaults to `BAAI/bge-m3` for semantic review. This does
-not make semantic output authoritative. The review sidecar still needs human
-checking, and the rule-based scanner remains the source of truth for public
-qualification.
+The project therefore defaults to `BAAI/bge-m3` for semantic review. Semantic
+ranking alone does not change any opportunity data; it only selects evidence for
+the optional LLM stage.
 
-LLM extraction is also optional and advisory only. It turns semantic chunks into
+LLM extraction is also optional. It turns semantic chunks into
 short numbered evidence snippets, sends those snippets to a configured provider,
-and writes structured sidecar JSON. It does not
-change `Candidate` records, hard filters, ranking, Markdown report tables, RSS,
-or public site tables.
+and writes structured sidecar JSON. Evidence-validated fields may enrich
+homepage candidate copies, but cannot bypass hard filters. It does not change
+stored `Candidate` records, Markdown report tables, RSS, or curated data.
 
 Supported providers:
 
@@ -265,9 +265,9 @@ The DeepSeek request body is intentionally non-thinking:
 }
 ```
 
-DeepSeek results remain advisory sidecar data. They are useful for reviewing
-missed deadline, fee, funding, location, and eligibility evidence, but they do
-not change `fully_qualified`, hard filters, ranking, RSS, or public tables.
+DeepSeek results remain fully auditable in sidecar data. Trusted fields can fill
+homepage gaps and the normal hard filters are then recomputed; warned fields are
+ignored for this merge. RSS and Markdown reports remain rule-based.
 
 #### Bounded follow-up retrieval
 
@@ -314,8 +314,9 @@ the primary application/registration deadline from other deadlines, rejects
 cross-edition evidence, and requests complete fee tiers. Validation remains
 deterministic and checks evidence IDs, context, date and fee support, explicit
 closed language, past dates, index-page risk, and payment-deadline confusion.
-It does not constitute independent factual certification; promotion into the
-public tables still requires the rule pipeline or human review.
+It does not constitute independent factual certification. Homepage inclusion
+still requires the evidence-gated merge and the normal rule pipeline; curated
+publication still requires human review.
 
 #### Using LM Studio
 
@@ -376,7 +377,6 @@ LLM sidecar output goes to:
 
 - `site/ai_extractions.json`
 - `reports/YYYY-MM-DD.ai.json`
-- `site/ai-review.html` when AI extraction has run
 
 The endpoint can be checked separately without running a scan:
 
@@ -395,33 +395,39 @@ Tests do not download `BAAI/bge-m3`, require API keys, or require
 model files. Semantic and LLM tests use stubs and empty offline page pools to
 keep CI deterministic.
 
-### AI-assisted review workflow
+### AI-assisted homepage workflow
 
 Semantic ranking is meant to surface pages that the rule-based
 `looks_like_opportunity` gate may miss. Local LLM extraction creates advisory
 structured drafts from numbered snippets, and `llm_validate.py` checks whether
 non-unknown fields cite existing evidence IDs with suitable context.
 
-AI output is integrated only into review surfaces:
+AI output is integrated through `ai_home.py`:
 
 - `data/review_queue.json` and `site/review_queue.json` include an
   `ai_advisory` block for candidates whose source or application URL exactly
   matches an AI extraction page URL.
-- `site/ai-review.html` lists matched AI records and a `Potential Missed Pages`
-  section for unmatched semantic/AI pages that deserve manual checking.
 - `site/ai_extractions.json` remains the advisory sidecar. Items include
   `evidence_snippets`, field-level `evidence_ids`, resolved short evidence
   previews, validation warnings, and confidence.
+- Exact URL matches fill only missing or uncertain fields, and field-specific
+  validation warnings block the affected field.
+- Unmatched pages can become candidates only when `page_type` is explicitly
+  `opportunity` or `application`; legacy unclassified outputs, fee pages,
+  funding pages, and indexes cannot create standalone opportunities.
+- The merged copies are run through `apply_hard_filters` and `rank_candidates`
+  before rendering the existing three homepage tables.
 
-AI output never mutates `Candidate` fields and never affects hard filters,
-`fully_qualified`, ranking, RSS inclusion, or public recommendation status.
-The manual promotion path is:
+AI output never mutates the scanner's original `Candidate` objects and does not
+affect Markdown reports, RSS inclusion, scan state, or curated data. The public
+homepage can reflect AI-filled evidence, but qualification remains a result of
+the same deterministic hard filters. The manual curation path is:
 
 ```text
 AI extraction -> maintainer checks official page -> maintainer edits data/opportunities.yml or data/overrides.yml
 ```
 
-There is deliberately no automatic promotion from AI output into curated data.
+There is deliberately no automatic promotion into curated data.
 
 ### Real-world AI validation
 
@@ -563,7 +569,7 @@ sites than a GitHub-hosted runner, and the script commits report/state changes
 to `main` before publishing `site/` to `gh-pages`.
 
 `.github/workflows/ai_scan.yml` provides a separate weekly or manually triggered
-advisory run. It installs the semantic/LLM extras, restores the Hugging Face and
+AI-assisted run. It installs the semantic/LLM extras, restores the Hugging Face and
 AI caches, reads `DEEPSEEK_API_KEY` from repository secrets, runs the bounded
 AI-assisted scan, and publishes the generated site to `gh-pages`. An optional
 `BRAVE_SEARCH_API_KEY` enables controlled same-domain search; an optional
@@ -571,7 +577,7 @@ AI-assisted scan, and publishes the generated site to `gh-pages`. An optional
 to generated output or commits.
 
 The AI workflow is also triggered when its implementation or AI configuration
-changes on `main`, which makes a release deploy its corresponding review output
+changes on `main`, which makes a release deploy its corresponding enriched homepage
 without a separate manual action.
 
 ## Public Website

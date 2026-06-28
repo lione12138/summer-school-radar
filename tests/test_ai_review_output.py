@@ -99,11 +99,12 @@ def test_ai_output_with_warnings_is_advisory_not_qualified(tmp_path) -> None:
     write_site([candidate], [], tmp_path, ai_items=[_ai_item("https://example.org/matched")])
 
     review_json = (tmp_path / "review_queue.json").read_text(encoding="utf-8")
-    html = (tmp_path / "ai-review.html").read_text(encoding="utf-8")
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
 
     assert '"ai_advisory"' in review_json
-    assert "deadline_context_weak" in html
-    assert "not qualified opportunities" in html
+    assert "deadline_context_weak" in review_json
+    assert "ai-review.html" not in html
+    assert "AI Matched Review School" in html
 
 
 def test_missing_ai_extractions_does_not_break_site_generation(tmp_path) -> None:

@@ -142,7 +142,7 @@ scanner output
 
 每日规则扫描由维护者电脑上的 `scripts/scan_and_publish.ps1` 运行，使用住宅网络抓取官网并把 `site/` 发布到 `gh-pages`。
 
-`.github/workflows/ai_scan.yml` 提供每周一次或手动触发的 AI 辅助扫描。它从 GitHub repository secrets 读取 `DEEPSEEK_API_KEY`，运行 `bge-m3`、受限补页和 DeepSeek 证据抽取，然后把包含 AI Review 的静态网页发布到同一个 `gh-pages` 分支。`BRAVE_SEARCH_API_KEY` 和 `HF_TOKEN` 是可选 secret；缺少 Brave key 时仍会进行官网内部补页。
+`.github/workflows/ai_scan.yml` 提供每周一次或手动触发的 AI 辅助扫描。它从 GitHub repository secrets 读取 `DEEPSEEK_API_KEY`，运行 `bge-m3`、受限补页和 DeepSeek 证据抽取，再把经过证据验证、并重新执行原有硬筛选后的结果直接写入首页三张表，发布到同一个 `gh-pages` 分支。项目不再生成单独的公开 AI Review 页面；`site/ai_extractions.json` 继续保留证据和验证警告。`BRAVE_SEARCH_API_KEY` 和 `HF_TOKEN` 是可选 secret；缺少 Brave key 时仍会进行官网内部补页。
 
 ## Analytics
 
