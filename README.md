@@ -34,7 +34,7 @@ after evidence, cost, and reliability controls are in place.
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-28 · 1 fully qualified · 2 high-quality · 4 found shown_
+_Last scan: 2026-06-29 · 1 fully qualified · 2 high-quality · 4 found shown_
 
 **Fully Qualified Opportunities**
 
