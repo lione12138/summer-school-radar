@@ -1625,7 +1625,7 @@ def _near_section(rows: str) -> str:
       <p class="muted">Funded opportunities, or programmes costing at most EUR {HIGH_QUALITY_MAX_FEE_EUR_PER_DAY} per day, with duration of at least 5 days. These still need official-page verification before applying.</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Why high quality</th></tr></thead>
+          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1640,7 +1640,7 @@ def _found_section(rows: str) -> str:
       <p class="muted">Other currently relevant records found by the scanner. Many are missing deadline, fee, duration, mode, or funding evidence, so use them as leads rather than recommendations.</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Notes</th></tr></thead>
+          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1701,7 +1701,6 @@ def _near_row(candidate: Candidate) -> str:
         f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
         f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(candidate.financial_summary)}</td>"
         f"<td>{escape(topics_label(candidate.topic_keywords) or 'uncertain')}</td>"
-        f"<td>{escape(_high_quality_reason(candidate))}</td>"
         "</tr>"
     )
 
@@ -1716,18 +1715,8 @@ def _found_row(candidate: Candidate) -> str:
         f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
         f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(candidate.financial_summary)}</td>"
         f"<td>{escape(topics_label(candidate.topic_keywords) or 'uncertain')}</td>"
-        f"<td>{escape(candidate.risk_points or 'Needs official-page verification')}</td>"
         "</tr>"
     )
-
-
-def _high_quality_reason(candidate: Candidate) -> str:
-    if candidate.funding_available is True:
-        return "funding evidence found"
-    daily = _fee_per_day(candidate)
-    if daily != float("inf"):
-        return f"about EUR {daily:.0f}/day"
-    return "financially promising"
 
 
 def _review_row(item: dict[str, Any]) -> str:

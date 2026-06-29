@@ -1664,7 +1664,8 @@ def test_site_renders_curated_found_opportunities_and_review_queue_json(tmp_path
     assert "Reviewed Social Science School" in html
     assert "Found Opportunities" in html
     assert "Unreviewed Law Summer School" in html
-    assert "application deadline is uncertain" in html
+    assert "application deadline is uncertain" not in html
+    assert "application deadline is uncertain" in review_json
     assert "Unreviewed Law Summer School" in review_json
 
 
@@ -1853,9 +1854,10 @@ def test_high_quality_uses_fee_per_day_threshold(tmp_path) -> None:
 
     assert "Affordable Ten Day School" in high_section
     assert 'data-status="high-quality"' in high_section
-    assert "about EUR 65/day" in high_section
+    assert "Why high quality" not in high_section
     assert "Expensive Ten Day School" in found_section
     assert 'data-status="found"' in found_section
+    assert "<th>Notes</th>" not in found_section
 
 
 def test_status_line_uses_correct_singular_and_plural(tmp_path) -> None:
