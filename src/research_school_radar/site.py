@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import shutil
 from dataclasses import asdict
 from datetime import date, timedelta
@@ -103,7 +104,7 @@ _THEME_CSS = """    :root {
       margin: 0;
       background: var(--bg);
       color: var(--ink);
-      font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", system-ui, -apple-system, sans-serif;
       line-height: 1.55;
     }
     .wrap {
@@ -192,6 +193,178 @@ _NAV_CSS = """    html { scroll-behavior: smooth; }
 """
 
 
+# Figma-derived Discover screen. The generated table markup remains semantic
+# and filterable, while CSS presents each record as a compact responsive card.
+_DISCOVER_CSS = """
+    nav.topbar { background: color-mix(in srgb, var(--panel) 92%, transparent); }
+    nav.topbar .bar { height: 60px; }
+    nav.topbar .toggle { min-width: 44px; height: 44px; line-height: 42px; }
+    header.hero { padding: 50px 0 48px; background: var(--hero-1); }
+    header.hero h1 { max-width: 840px; margin-bottom: 12px; font-size: clamp(32px, 4vw, 42px); line-height: 1.18; }
+    header.hero .subtitle { max-width: 900px; font-size: 17px; }
+    .hero-disclaimer { display: none; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+    .button {
+      display: inline-flex; min-height: 44px; align-items: center; justify-content: center;
+      padding: 10px 16px; border-radius: 10px; border: 1px solid transparent;
+      font-size: 13px; font-weight: 650; text-decoration: none; white-space: nowrap;
+    }
+    .button.primary { background: var(--accent); color: #fff; }
+    .button.primary:hover { background: var(--accent-ink); color: #fff; }
+    .button.tonal { background: var(--accent-soft); color: var(--accent-ink); }
+    .button.tonal:hover { border-color: var(--accent); color: var(--accent-ink); }
+    .hero-scan-meta { margin-top: 16px; color: rgba(243,249,252,.72); font-size: 12px; }
+    .stats { margin-top: 24px; }
+    .stat { min-height: 96px; padding: 18px 20px; }
+    .stat:nth-child(-n+2) { background: var(--good-soft); }
+    .stat .lbl { text-transform: none; letter-spacing: 0; }
+    main { padding-bottom: 28px; }
+    .status:not(.empty) { display: none; }
+    .opportunity-list-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin: 34px 0 10px; }
+    .opportunity-list-head h2 { margin: 0; font-size: 24px; }
+    .opportunity-list-head p { margin: 0; color: var(--muted); font-size: 13px; }
+    .filters {
+      grid-template-columns: minmax(260px, 2fr) repeat(5, minmax(130px, 1fr));
+      gap: 12px; margin: 16px 0 18px; padding: 0; border: 0; box-shadow: none; background: transparent;
+    }
+    .filter-group { gap: 0; }
+    .filter-group label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    select, input[type="search"] { min-height: 44px; border-radius: 10px; background: var(--panel); padding: 9px 12px; }
+    .filters .count { grid-column: 1 / -1; padding: 0; text-align: right; }
+    .opportunity-tier { margin: 0 0 12px; }
+    .sr-only-tier { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .opportunity-table-wrap { overflow: visible; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+    table.opportunity-table { display: block; width: 100%; min-width: 0; font-size: 13px; }
+    table.opportunity-table thead { display: none; }
+    table.opportunity-table tbody { display: grid; gap: 12px; }
+    table.opportunity-table tr {
+      position: relative; display: grid;
+      grid-template-columns: auto minmax(0, 1fr) minmax(260px, .72fr) auto;
+      grid-template-areas:
+        "status title title actions"
+        ". organizer location actions"
+        ". duration deadline actions"
+        ". funding topics actions";
+      column-gap: 14px; row-gap: 4px; padding: 16px 16px;
+      border: 1px solid var(--line); border-radius: 14px; background: var(--panel); box-shadow: var(--shadow);
+    }
+    table.opportunity-table tr:hover { background: var(--panel); border-color: color-mix(in srgb, var(--accent) 38%, var(--line)); }
+    table.opportunity-table tbody tr::before {
+      grid-area: status; align-self: start; content: "Found"; padding: 4px 9px;
+      border-radius: 999px; background: var(--warn-soft); color: var(--warn); font-size: 11px; font-weight: 650; white-space: nowrap;
+    }
+    table.opportunity-table tbody tr[data-status="qualified"]::before { content: "Fully qualified"; background: var(--good-soft); color: var(--good); }
+    table.opportunity-table tbody tr[data-status="high-quality"]::before { content: "High quality"; background: var(--accent-soft); color: var(--accent-ink); }
+    table.opportunity-table tbody tr[data-status="curated"]::before { content: "Curated"; background: var(--accent-soft); color: var(--accent-ink); }
+    table.opportunity-table td { display: block; padding: 0; border: 0; min-width: 0; }
+    table.opportunity-table td a { font-weight: 650; text-decoration: none; }
+    table.opportunity-table td[title] { cursor: help; }
+    .qualified-table td:nth-child(1) { display: none; }
+    .qualified-table td:nth-child(2), .standard-table td:nth-child(1), .curated-table td:nth-child(1) { grid-area: title; align-self: center; font-size: 19px; line-height: 1.35; }
+    .qualified-table td:nth-child(2) a, .standard-table td:nth-child(1) a, .curated-table td:nth-child(1) a { color: var(--ink); }
+    .qualified-table td:nth-child(2) a:hover, .standard-table td:nth-child(1) a:hover, .curated-table td:nth-child(1) a:hover { color: var(--accent-ink); }
+    .qualified-table td:nth-child(3), .standard-table td:nth-child(2), .curated-table td:nth-child(2) { grid-area: organizer; color: var(--muted); }
+    .qualified-table td:nth-child(4), .standard-table td:nth-child(3), .curated-table td:nth-child(3) { grid-area: location; color: var(--muted); }
+    .qualified-table td:nth-child(5), .standard-table td:nth-child(4), .curated-table td:nth-child(4) { grid-area: duration; }
+    .qualified-table td:nth-child(6), .standard-table td:nth-child(5), .curated-table td:nth-child(5) { grid-area: deadline; font-weight: 600; }
+    .qualified-table td:nth-child(7), .standard-table td:nth-child(6), .curated-table td:nth-child(6) { grid-area: funding; color: var(--accent-ink); }
+    .qualified-table td:nth-child(8), .standard-table td:nth-child(7), .curated-table td:nth-child(7) { grid-area: topics; color: var(--muted); font-size: 12px; }
+    .curated-table td:nth-child(8) { display: none; }
+    .qualified-table td:nth-child(9), .standard-table td:nth-child(8), .curated-table td:nth-child(9) { grid-area: actions; }
+    .card-actions { display: flex !important; flex-direction: column; justify-content: center; gap: 8px; min-width: 122px !important; }
+    .card-actions .button { width: 100%; }
+    .cal { margin-top: 0; }
+    .cal > summary { min-height: 28px; display: inline-flex; align-items: center; }
+    footer.site { margin-top: 36px; }
+    @media (max-width: 980px) {
+      .filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .filters .filter-group:first-child { grid-column: span 2; }
+      table.opportunity-table tr { grid-template-columns: auto minmax(0,1fr) auto; grid-template-areas: "status title actions" ". organizer actions" ". location actions" ". duration actions" ". deadline actions" ". funding actions" ". topics actions"; }
+    }
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 32px, 1180px); }
+      nav.topbar .bar { height: 60px; }
+      nav.topbar .links > a { display: none; }
+      header.hero { padding: 24px 0 26px; }
+      header.hero h1 { font-size: 28px; line-height: 1.3; }
+      header.hero .subtitle { font-size: 14px; line-height: 1.6; }
+      .hero-actions { display: none; }
+      .hero-scan-meta { margin-top: 10px; }
+      .stats { grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+      .stat { min-height: 88px; padding: 14px 16px; }
+      .stat:nth-child(n+3) { display: none; }
+      .opportunity-list-head { margin-top: 20px; }
+      .opportunity-list-head h2 { font-size: 22px; }
+      .filters { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .filters .filter-group:first-child { grid-column: 1 / -1; }
+      .filters .filter-group:nth-child(n+4) { display: none; }
+      table.opportunity-table tr {
+        grid-template-columns: auto minmax(0, 1fr);
+        grid-template-areas: "status title" "organizer organizer" "location location" "duration duration" "deadline deadline" "funding funding" "actions actions";
+        row-gap: 7px; padding: 16px;
+      }
+      .qualified-table td:nth-child(8), .standard-table td:nth-child(7), .curated-table td:nth-child(7) { display: none; }
+      .card-actions { flex-direction: row; justify-content: flex-start; padding-top: 3px !important; }
+      .card-actions .button { width: auto; }
+      .card-actions .button.tonal { display: none; }
+      footer.site .cols { padding-top: 24px; }
+    }
+"""
+
+
+_DETAIL_CSS = """
+    .detail-header { background: var(--panel-2); padding: 32px 0; border-bottom: 1px solid var(--line); }
+    .detail-back { display: inline-block; margin-bottom: 14px; color: var(--accent-ink); font-size: 13px; font-weight: 650; text-decoration: none; }
+    .status-badge { display: inline-flex; padding: 4px 9px; border-radius: 999px; font-size: 11px; font-weight: 650; background: var(--good-soft); color: var(--good); }
+    .status-badge.high-quality { background: var(--accent-soft); color: var(--accent-ink); }
+    .status-badge.found { background: var(--warn-soft); color: var(--warn); }
+    .detail-header h1 { margin: 12px 0 6px; font-size: clamp(30px, 4vw, 40px); line-height: 1.22; letter-spacing: -.02em; }
+    .detail-org { margin: 0; color: var(--muted); font-size: 16px; }
+    .detail-facts { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 14px; font-size: 13px; font-weight: 600; }
+    .detail-main { padding: 40px 0 64px; }
+    .detail-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 32px; align-items: start; }
+    .detail-stack { display: grid; gap: 24px; }
+    .detail-panel, .decision-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
+    .detail-panel h2, .decision-card h2 { margin: 0 0 10px; font-size: 24px; }
+    .detail-panel p { margin: 0; color: var(--muted); }
+    .detail-panel ul { margin: 8px 0 0; padding-left: 20px; color: var(--muted); }
+    .detail-panel.qualified { background: var(--good-soft); }
+    .detail-panel .source-link { display: inline-block; margin-top: 12px; font-weight: 650; text-decoration: none; }
+    .decision-card { position: sticky; top: 80px; box-shadow: var(--shadow); display: grid; gap: 12px; }
+    .decision-card .eyebrow { color: var(--muted); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+    .decision-card .decision-value { margin: -4px 0 2px; color: var(--accent-ink); font-size: 20px; font-weight: 650; }
+    .decision-card .deadline-value { margin: -4px 0 2px; font-size: 20px; font-weight: 650; }
+    .decision-card .detail-actions { display: grid; gap: 10px; margin-top: 4px; }
+    .decision-card .note { color: var(--muted); font-size: 11px; }
+    .mobile-actions { display: none; }
+    footer.site { border-top: 1px solid var(--line); background: var(--panel); margin-top: 0; }
+    footer.site .cols { display: flex; flex-wrap: wrap; gap: 26px 56px; padding: 34px 0 8px; }
+    footer.site .brandcol { max-width: 330px; }
+    footer.site .brandcol p { color: var(--muted); font-size: 13px; }
+    footer.site .col h4 { margin: 0 0 9px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+    footer.site .col a { display: block; padding: 3px 0; color: var(--ink); font-size: 14px; text-decoration: none; }
+    footer.site .legal { margin-top: 16px; padding: 16px 0 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    @media (max-width: 800px) {
+      body.detail-page { padding-bottom: 76px; }
+      .detail-header { padding: 18px 0 20px; }
+      .detail-header h1 { font-size: 30px; }
+      .detail-facts { gap: 7px 16px; }
+      .detail-main { padding: 16px 0 24px; }
+      .detail-grid { grid-template-columns: 1fr; gap: 14px; }
+      .decision-card { position: static; grid-row: 1; padding: 16px; box-shadow: none; }
+      .decision-card .detail-actions, .decision-card .note { display: none; }
+      .detail-stack { gap: 12px; }
+      .detail-panel { padding: 16px; }
+      .detail-panel h2, .decision-card h2 { font-size: 20px; }
+      .mobile-actions {
+        position: fixed; z-index: 60; left: 0; right: 0; bottom: 0; display: flex; gap: 12px;
+        padding: 16px; border-top: 1px solid var(--line); background: var(--panel);
+      }
+      .mobile-actions .button.primary { flex: 1; }
+    }
+"""
+
+
 # Runs in <head> before first paint, so the saved theme and language apply with
 # no flash. Plain string (real JS braces), interpolated as a value.
 _BOOT_SCRIPT = (
@@ -216,8 +389,8 @@ _UI_SCRIPT = """
       "nav.how": {en:"How it works", zh:"工作原理"},
       "nav.about": {en:"About", zh:"关于"},
       "nav.sources": {en:"Sources", zh:"来源"},
-      "hero.kicker": {en:"\\uD83D\\uDCE1 Updated daily \\u00B7 Free & open source", zh:"\\uD83D\\uDCE1 每天更新 \\u00B7 免费开源"},
-      "hero.subtitle": {en:"A free daily scan of trusted academic sources for funded research summer schools across many academic fields. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.", zh:"每天自动扫描可信学术来源,汇总各学科有资助的科研暑校。严格筛选,只留有资助/低收费、线下、且仍在报名的项目。"},
+      "hero.kicker": {en:"Updated daily \\u00B7 Free & open source", zh:"每天更新 \\u00B7 免费开源"},
+      "hero.subtitle": {en:"Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.", zh:"从可信学术来源汇总有资助或低费用的科研训练机会。每条截止日期和资助信息都可追溯到官网。"},
       "hero.disclaimer": {en:"Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.", zh:"请把这里当作基础信息入口，而不是唯一信息来源。本站信息来自各大组织和学校官网，但自动收集和解析仍可能因为技术问题出错；申请前请务必到官网核对截止日期、费用、资助和资格要求。少数质量很高但暂时无法自动收集的官网已列在 Collection Notes 里。祝大家都能录到心仪的项目。"},
       "cta.email": {en:"Get email alerts", zh:"邮件订阅"},
       "meta.updated": {en:"Updated", zh:"更新"},
@@ -367,9 +540,22 @@ def write_site(
     # parallel review UI. Remove stale generated copies from older builds.
     (output_dir / "ai-review.html").unlink(missing_ok=True)
     homepage_candidates = merge_ai_for_homepage(candidates, ai_items, profile)
+    detail_candidates = [candidate for candidate in homepage_candidates if _is_public_candidate(candidate)]
+    detail_dir = output_dir / "opportunities"
+    detail_dir.mkdir(parents=True, exist_ok=True)
+    for stale in detail_dir.glob("*.html"):
+        stale.unlink()
+    for candidate in detail_candidates:
+        (detail_dir / _candidate_detail_filename(candidate)).write_text(
+            render_opportunity_detail(candidate, site_config or {}),
+            encoding="utf-8",
+        )
     (output_dir / "feed.xml").write_text(render_feed(candidates, curated, site_config or {}), encoding="utf-8")
     (output_dir / "robots.txt").write_text(_robots_txt(), encoding="utf-8")
-    (output_dir / "sitemap.xml").write_text(_sitemap_xml(has_ai_review=False), encoding="utf-8")
+    (output_dir / "sitemap.xml").write_text(
+        _sitemap_xml(has_ai_review=False, candidates=detail_candidates),
+        encoding="utf-8",
+    )
     (output_dir / "favicon.svg").write_text(_favicon_svg(), encoding="utf-8")
     _copy_og_image(output_dir)
     _copy_verification_files(output_dir)
@@ -608,11 +794,15 @@ def _short_html_text(value: str, limit: int = 260) -> str:
     return text[:limit]
 
 
-def _sitemap_xml(has_ai_review: bool = False) -> str:
+def _sitemap_xml(
+    has_ai_review: bool = False,
+    candidates: list[Candidate] | None = None,
+) -> str:
     today = date.today().isoformat()
     pages = ["", "sources.html"]
     if has_ai_review:
         pages.append("ai-review.html")
+    pages.extend(_candidate_detail_href(candidate) for candidate in (candidates or []))
     urls = "".join(
         f"  <url><loc>{_SITE_URL}{page}</loc><lastmod>{today}</lastmod></url>\n" for page in pages
     )
@@ -1246,24 +1436,22 @@ def render_site(
       .steps {{ grid-template-columns: 1fr 1fr; }}
       table {{ font-size: 13px; }}
     }}
+{_DISCOVER_CSS}
   </style>
 </head>
 <body>
   {_site_nav(has_ai_review=has_ai_review)}
   <header class="hero" id="top">
     <div class="wrap">
-      <p class="kicker" data-i18n="hero.kicker">&#128225; Updated daily &middot; Free &amp; open source</p>
-      <h1>Summa</h1>
-      <p class="subtitle" data-i18n="hero.subtitle">A free daily scan of trusted academic sources for funded research summer schools across many academic fields. Strict filters keep only funded or low-fee, in-person opportunities with an open deadline.</p>
+      <p class="kicker" data-i18n="hero.kicker">Updated daily &middot; Free &amp; open source</p>
+      <h1>Find research training worth applying for</h1>
+      <p class="subtitle" data-i18n="hero.subtitle">Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.</p>
       <p class="hero-disclaimer" data-i18n="hero.disclaimer">Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.</p>
-      <div class="meta">
-        <span class="pill"><span data-i18n="meta.updated">Updated</span> {updated}</span>
-        <span class="pill" data-i18n="meta.fixed">Fixed-source scan</span>
-        <span class="pill" data-i18n="meta.free">No paid search API</span>
-        <a class="pill" href="sources.html" data-i18n="meta.sources">Sources &amp; Coverage</a>
-        {_ai_review_pill(has_ai_review)}
-        <a class="pill" href="https://github.com/lione12138/summer-school-radar">GitHub</a>
+      <div class="hero-actions">
+        <a class="button primary" href="#opportunities">Explore opportunities</a>
+        <a class="button tonal" href="#how">How qualification works</a>
       </div>
+      <div class="hero-scan-meta">{len(full)} fully qualified &nbsp;&middot;&nbsp; {len(near)} high quality &nbsp;&middot;&nbsp; {tracked_sources}+ trusted sources</div>
     </div>
   </header>
   <main class="wrap">
@@ -1275,6 +1463,7 @@ def render_site(
     </div>
     {status_banner}
     <section id="opportunities" class="anchor">
+      <div class="opportunity-list-head"><h2>Open opportunities</h2><p>{len(full) + len(near) + len(found)} shown &nbsp;&middot;&nbsp; Updated {updated}</p></div>
       {filters}
       {_curated_section(curated_rows) if curated else ""}
       {_qualified_section(full_rows) if full else ""}
@@ -1296,6 +1485,111 @@ def render_site(
 """
 
 
+def render_opportunity_detail(
+    candidate: Candidate,
+    site_config: dict[str, Any] | None = None,
+) -> str:
+    official = candidate.application_link or candidate.source_url
+    status_label, status_class = _candidate_status(candidate)
+    deadline = candidate.deadline.strftime("%d %b %Y") if candidate.deadline else "Deadline uncertain"
+    duration = _duration(candidate)
+    location = _public_location(candidate.location) or "Location uncertain"
+    topics = topics_label(candidate.topic_keywords) or "Topics not resolved"
+    summary = candidate.summary.strip() or candidate.recommendation_reason.strip()
+    if not summary:
+        summary = f"A {candidate.type or 'research training opportunity'} from {candidate.organizer}."
+    eligibility = candidate.eligibility.strip() or "Check the official programme page for eligibility and application requirements."
+    qualification = candidate.recommendation_reason.strip()
+    if not qualification:
+        qualification = (
+            "Official dates, funding or fee information, organizer, and programme location are shown with source evidence where available."
+        )
+    evidence_parts = [
+        value.strip()
+        for value in (candidate.deadline_evidence, candidate.duration_evidence, candidate.funding_evidence)
+        if value.strip()
+    ]
+    evidence = " ".join(evidence_parts[:3]) or "Source evidence is retained in the public candidate data."
+    calendar = _deadline_cell(candidate.deadline, candidate.title, official) if candidate.deadline else ""
+    canonical = _SITE_URL + _candidate_detail_href(candidate)
+    updated = date.today().isoformat()
+    return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{escape(candidate.title)} · Summa</title>
+{_seo_head(canonical, summary, site_config or {})}
+  {_BOOT_SCRIPT}
+  <style>
+{_THEME_CSS}
+{_NAV_CSS}
+{_DISCOVER_CSS}
+{_DETAIL_CSS}
+  </style>
+</head>
+<body class="detail-page">
+  {_site_nav(home="../index.html", root="../")}
+  <header class="detail-header">
+    <div class="wrap">
+      <a class="detail-back" href="../index.html#opportunities">&larr; Back to opportunities</a><br>
+      <span class="status-badge {status_class}">{status_label}</span>
+      <h1>{escape(candidate.title)}</h1>
+      <p class="detail-org">{escape(candidate.organizer)} &nbsp;&middot;&nbsp; {escape(location)}</p>
+      <div class="detail-facts">
+        <span>{escape(duration)}</span>
+        <span>{escape(deadline)}</span>
+        <span>{escape(candidate.mode or "Mode uncertain")}</span>
+      </div>
+    </div>
+  </header>
+  <main class="detail-main">
+    <div class="wrap detail-grid">
+      <div class="detail-stack">
+        <section class="detail-panel">
+          <h2>Overview</h2>
+          <p>{escape(summary)}</p>
+        </section>
+        <section class="detail-panel">
+          <h2>Who should apply</h2>
+          <p>{escape(eligibility)}</p>
+        </section>
+        <section class="detail-panel qualified">
+          <h2>Why this status</h2>
+          <p>{escape(qualification)}</p>
+        </section>
+        <section class="detail-panel">
+          <h2>Official source</h2>
+          <p>{escape(evidence)}</p>
+          <a class="source-link" href="{escape(official, quote=True)}" target="_blank" rel="noopener">Open official programme page &nearr;</a>
+        </section>
+      </div>
+      <aside class="decision-card">
+        <h2>Application snapshot</h2>
+        <span class="eyebrow">Funding / fee</span>
+        <p class="decision-value">{escape(_financial_summary_short(candidate))}</p>
+        <span class="eyebrow">Application deadline</span>
+        <p class="deadline-value">{escape(deadline)}</p>
+        <p class="muted">{escape(candidate.mode or "Mode uncertain")} &middot; {escape(location)}<br>{escape(topics)}</p>
+        <div class="detail-actions">
+          <a class="button primary" href="{escape(official, quote=True)}" target="_blank" rel="noopener">Open official page</a>
+          {calendar}
+        </div>
+        <span class="note">Always verify eligibility, fees, funding, and dates on the official page.</span>
+      </aside>
+    </div>
+  </main>
+  <div class="mobile-actions">
+    <a class="button primary" href="{escape(official, quote=True)}" target="_blank" rel="noopener">Open official page</a>
+    {calendar}
+  </div>
+  {_footer_section(updated, root="../")}
+  {_UI_SCRIPT}
+</body>
+</html>
+"""
+
+
 _GITHUB_URL = "https://github.com/lione12138/summer-school-radar"
 
 _RADAR_ICON = (
@@ -1309,7 +1603,7 @@ _RADAR_ICON = (
 )
 
 
-def _site_nav(home: str = "", has_ai_review: bool = False) -> str:
+def _site_nav(home: str = "", has_ai_review: bool = False, root: str = "") -> str:
     # ``home`` is "" on the index page and "index.html" on subpages, so the
     # in-page anchors still resolve when viewed from another page.
     brand = f"{home}#top" if home else "#top"
@@ -1321,7 +1615,7 @@ def _site_nav(home: str = "", has_ai_review: bool = False) -> str:
         <a href="{home}#opportunities" data-i18n="nav.opportunities">Opportunities</a>
         <a class="hide-sm" href="{home}#how" data-i18n="nav.how">How it works</a>
         <a class="hide-sm" href="{home}#about" data-i18n="nav.about">About</a>
-        <a href="sources.html" data-i18n="nav.sources">Sources</a>
+        <a href="{root}sources.html" data-i18n="nav.sources">Sources</a>
         {_ai_review_nav_link(has_ai_review)}
         <a href="{_GITHUB_URL}">GitHub</a>
         <button id="lang-toggle" class="toggle" type="button" aria-label="Language">中</button>
@@ -1409,26 +1703,26 @@ def _faq_section() -> str:
     </section>"""
 
 
-def _footer_section(updated: str, has_ai_review: bool = False) -> str:
+def _footer_section(updated: str, has_ai_review: bool = False, root: str = "") -> str:
     return f"""
   <footer class="site">
     <div class="wrap">
       <div class="cols">
         <div class="col brandcol">
-          <a class="brand" href="#top">{_RADAR_ICON} Summa</a>
+          <a class="brand" href="{root}index.html#top">{_RADAR_ICON} Summa</a>
           <p data-i18n="foot.blurb">A free, open-source scanner for funded research summer schools, winter schools, and training schools across many academic fields. Updated daily.</p>
         </div>
         <div class="col">
           <h4 data-i18n="foot.explore">Explore</h4>
-          <a href="#opportunities" data-i18n="foot.opportunities">Opportunities</a>
-          <a href="sources.html" data-i18n="foot.sources">Sources &amp; coverage</a>
+          <a href="{root}index.html#opportunities" data-i18n="foot.opportunities">Opportunities</a>
+          <a href="{root}sources.html" data-i18n="foot.sources">Sources &amp; coverage</a>
           {_ai_review_nav_link(has_ai_review)}
         </div>
         <div class="col">
           <h4 data-i18n="foot.project">Project</h4>
-          <a href="#how" data-i18n="foot.how">How it works</a>
-          <a href="#about" data-i18n="foot.about">About &amp; methodology</a>
-          <a href="#faq" data-i18n="foot.faq">FAQ</a>
+          <a href="{root}index.html#how" data-i18n="foot.how">How it works</a>
+          <a href="{root}index.html#about" data-i18n="foot.about">About &amp; methodology</a>
+          <a href="{root}index.html#faq" data-i18n="foot.faq">FAQ</a>
           <a href="{_GITHUB_URL}">GitHub</a>
         </div>
         <div class="col">
@@ -1555,11 +1849,11 @@ def _manual_source_row(source: dict[str, Any]) -> str:
 
 def _qualified_section(rows: str) -> str:
     return f"""
-    <section>
-      <h2>Fully Qualified Opportunities</h2>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>#</th><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th></tr></thead>
+    <section class="opportunity-tier">
+      <div class="sr-only-tier"><h2>Fully Qualified Opportunities</h2></div>
+      <div class="table-wrap opportunity-table-wrap">
+        <table class="opportunity-table qualified-table">
+          <thead><tr><th>#</th><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Actions</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1596,12 +1890,11 @@ def _source_row(source: dict[str, Any]) -> str:
 
 def _curated_section(rows: str) -> str:
     return f"""
-    <section>
-      <h2>Curated Opportunities</h2>
-      <p class="muted">Maintainer-reviewed records with source evidence. These are separate from automatic scanner candidates.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Notes</th></tr></thead>
+    <section class="opportunity-tier">
+      <div class="sr-only-tier"><h2>Curated Opportunities</h2><p>Maintainer-reviewed records with source evidence.</p></div>
+      <div class="table-wrap opportunity-table-wrap">
+        <table class="opportunity-table curated-table">
+          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Notes</th><th>Actions</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1620,12 +1913,11 @@ def _empty_curated_section() -> str:
 
 def _near_section(rows: str) -> str:
     return f"""
-    <section>
-      <h2>High-Quality Opportunities</h2>
-      <p class="muted">Funded opportunities, or programmes costing at most EUR {HIGH_QUALITY_MAX_FEE_EUR_PER_DAY} per day, with duration of at least 5 days. These still need official-page verification before applying.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th></tr></thead>
+    <section class="opportunity-tier">
+      <div class="sr-only-tier"><h2>High-Quality Opportunities</h2><p>Relevant funded or low-fee opportunities that still need official-page verification.</p></div>
+      <div class="table-wrap opportunity-table-wrap">
+        <table class="opportunity-table standard-table">
+          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Actions</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1635,12 +1927,11 @@ def _near_section(rows: str) -> str:
 
 def _found_section(rows: str) -> str:
     return f"""
-    <section>
-      <h2>Found Opportunities</h2>
-      <p class="muted">Other currently relevant records found by the scanner. Many are missing deadline, fee, duration, mode, or funding evidence, so use them as leads rather than recommendations.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th></tr></thead>
+    <section class="opportunity-tier">
+      <div class="sr-only-tier"><h2>Found Opportunities</h2><p>Relevant leads with unresolved evidence.</p></div>
+      <div class="table-wrap opportunity-table-wrap">
+        <table class="opportunity-table standard-table">
+          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Actions</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1666,8 +1957,9 @@ def _qualified_row(index: int, candidate: Candidate) -> str:
         f"<td>{escape(_public_location(candidate.location))}</td>"
         f"<td{_evidence_attr(candidate.duration_evidence)}>{escape(_duration(candidate))}</td>"
         f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
-        f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(candidate.financial_summary)}</td>"
+        f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(_financial_summary_short(candidate))}</td>"
         f"<td>{escape(topics_label(candidate.topic_keywords))}</td>"
+        f"<td class=\"card-actions\">{_candidate_actions(candidate)}</td>"
         "</tr>"
     )
 
@@ -1687,6 +1979,7 @@ def _curated_row(item: dict[str, Any]) -> str:
         f"<td>{escape(_curated_financial_summary(item, funding))}</td>"
         f"<td>{escape(topics_label(topics) or 'uncertain')}</td>"
         f"<td>{escape(str(item.get('notes') or item.get('status') or 'confirmed'))}</td>"
+        f"<td class=\"card-actions\">{_curated_actions(item)}</td>"
         "</tr>"
     )
 
@@ -1699,8 +1992,9 @@ def _near_row(candidate: Candidate) -> str:
         f"<td>{escape(_public_location(candidate.location))}</td>"
         f"<td{_evidence_attr(candidate.duration_evidence)}>{escape(_duration(candidate))}</td>"
         f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
-        f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(candidate.financial_summary)}</td>"
+        f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(_financial_summary_short(candidate))}</td>"
         f"<td>{escape(topics_label(candidate.topic_keywords) or 'uncertain')}</td>"
+        f"<td class=\"card-actions\">{_candidate_actions(candidate)}</td>"
         "</tr>"
     )
 
@@ -1713,8 +2007,9 @@ def _found_row(candidate: Candidate) -> str:
         f"<td>{escape(_public_location(candidate.location))}</td>"
         f"<td{_evidence_attr(candidate.duration_evidence)}>{escape(_duration(candidate))}</td>"
         f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
-        f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(candidate.financial_summary)}</td>"
+        f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(_financial_summary_short(candidate))}</td>"
         f"<td>{escape(topics_label(candidate.topic_keywords) or 'uncertain')}</td>"
+        f"<td class=\"card-actions\">{_candidate_actions(candidate)}</td>"
         "</tr>"
     )
 
@@ -1761,9 +2056,22 @@ def _review_row(item: dict[str, Any]) -> str:
 
 
 def _link(candidate: Candidate) -> str:
-    # Prefer the official application page (set by adapters) over the source page.
-    href = candidate.application_link or candidate.source_url
-    return f'<a href="{escape(href, quote=True)}">{escape(candidate.title)}</a>'
+    return f'<a href="{escape(_candidate_detail_href(candidate), quote=True)}">{escape(candidate.title)}</a>'
+
+
+def _candidate_actions(candidate: Candidate) -> str:
+    official = candidate.application_link or candidate.source_url
+    return (
+        f'<a class="button primary" href="{escape(_candidate_detail_href(candidate), quote=True)}">View details</a>'
+        f'<a class="button tonal" href="{escape(official, quote=True)}">Official page</a>'
+    )
+
+
+def _curated_actions(item: dict[str, Any]) -> str:
+    url = str(item.get("url", "")).strip()
+    if not url:
+        return ""
+    return f'<a class="button primary" href="{escape(url, quote=True)}">Official page</a>'
 
 
 def _new_badge(candidate: Candidate) -> str:
@@ -1937,6 +2245,28 @@ def _slug(value: str) -> str:
     chars = [char if char.isalnum() else "-" for char in lowered]
     slug = "-".join(part for part in "".join(chars).split("-") if part)
     return slug[:70]
+
+
+def _candidate_detail_filename(candidate: Candidate) -> str:
+    base = _slug(candidate.title) or "opportunity"
+    digest = hashlib.sha1(candidate.source_url.encode("utf-8")).hexdigest()[:8]
+    return f"{base}-{digest}.html"
+
+
+def _candidate_detail_href(candidate: Candidate) -> str:
+    return f"opportunities/{_candidate_detail_filename(candidate)}"
+
+
+def _candidate_status(candidate: Candidate) -> tuple[str, str]:
+    if candidate.fully_qualified:
+        return "Fully qualified", "qualified"
+    if _is_high_quality(candidate):
+        return "High quality", "high-quality"
+    return "Found", "found"
+
+
+def _financial_summary_short(candidate: Candidate) -> str:
+    return candidate.financial_summary.replace(" · Apply on official page", "")
 
 
 def _parse_iso_date(value: Any) -> date | None:

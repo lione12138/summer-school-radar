@@ -1977,6 +1977,26 @@ def test_duration_shows_date_range_and_days(tmp_path) -> None:
     assert expected in markdown
 
 
+def test_site_renders_figma_card_layout_and_detail_pages(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    ranked = rank_candidates([candidate])
+
+    index_path = write_site(ranked, [], tmp_path)
+    index_html = index_path.read_text(encoding="utf-8")
+    detail_files = list((tmp_path / "opportunities").glob("*.html"))
+
+    assert 'class="opportunity-table qualified-table"' in index_html
+    assert 'class="card-actions"' in index_html
+    assert len(detail_files) == 1
+
+    detail_html = detail_files[0].read_text(encoding="utf-8")
+    assert candidate.title in detail_html
+    assert "Application snapshot" in detail_html
+    assert "Who should apply" in detail_html
+    assert "Open official page" in detail_html
+    assert f"opportunities/{detail_files[0].name}" in (tmp_path / "sitemap.xml").read_text(encoding="utf-8")
+
+
 def test_topic_display_is_capped_at_four_terms(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     candidate.topic_keywords = ["one", "two", "three", "four", "five", "six"]
