@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import sys
 from datetime import date
 
@@ -36,6 +37,8 @@ def test_scan_offline_sample_still_works_unchanged_with_llm_code_present(tmp_pat
     assert (site_dir / "feed.xml").exists()
     assert (data_dir / "review_queue.json").exists()
     assert not (site_dir / "ai_extractions.json").exists()
+    translation_status = json.loads((site_dir / "translation-status.json").read_text(encoding="utf-8"))
+    assert translation_status["enabled"] is False
 
 
 def test_scan_offline_sample_enable_semantic_and_llm_writes_empty_ai_sidecar(tmp_path, monkeypatch) -> None:

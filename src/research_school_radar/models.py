@@ -68,6 +68,14 @@ class Candidate:
     duration_evidence: str = ""
     mode_evidence: str = ""
     extraction_confidence: float = 0.0
+    # Build-time Chinese translations. The English source fields remain the
+    # canonical evidence; these fields are presentation-only and may be filled
+    # from the translation cache or an optional translation provider.
+    title_zh: str = ""
+    summary_zh: str = ""
+    eligibility_zh: str = ""
+    recommendation_reason_zh: str = ""
+    risk_points_zh: str = ""
 
     @property
     def is_new(self) -> bool:

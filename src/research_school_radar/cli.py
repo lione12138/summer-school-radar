@@ -33,6 +33,7 @@ from .search import run_discovery_queries
 from .semantic import SemanticRanker, unique_pages, write_semantic_sidecars
 from .site import write_site
 from .storage import update_seen
+from .translation import load_translation_config
 from .utils import ROOT, clean_space, load_yaml
 
 
@@ -195,6 +196,11 @@ def run_scan(
         print("Updated README latest-scan section")
     if generate_site:
         all_sources = _load_all_sources(config_dir / "sources.yaml")
+        translation_config = load_translation_config(ai_config_path, data_dir=data_dir)
+        # Offline samples are deterministic smoke tests and must never send
+        # fixture text or the source registry to a remote translation API.
+        if offline_sample:
+            translation_config.enabled = False
         site_path = write_site(
             ranked,
             errors,
@@ -204,6 +210,7 @@ def run_scan(
             all_sources,
             ai_items=ai_items,
             profile=profile,
+            translation_config=translation_config,
         )
         print(f"Wrote site: {site_path}")
     print(f"Wrote report: {report_path}")

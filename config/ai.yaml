@@ -25,6 +25,23 @@ llm:
   max_chunks_per_page: 3
   max_chars_per_chunk: 2200
   max_total_chars_per_request: 7000
+translation:
+  # Translation runs only while generating the static site. Existing cache
+  # entries are always reused; new API calls require DEEPSEEK_API_KEY.
+  enabled: true
+  provider: "deepseek"
+  base_url: "https://api.deepseek.com"
+  model: "deepseek-v4-flash"
+  fallback_model: ""
+  api_key: ""
+  temperature: 0
+  timeout_seconds: 90
+  max_tokens: 3000
+  max_attempts: 2
+  cache_enabled: true
+  cache_directory: "translation_cache"
+  refresh_cache: false
+  prompt_version: "candidate-zh-v1"
 follow_up:
   enabled: true
   max_rounds: 2

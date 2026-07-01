@@ -21,6 +21,7 @@ class LLMClientConfig:
     api_key: str = "ollama"
     temperature: float = 0
     timeout_seconds: int = 90
+    max_tokens: int = 1200
 
 
 @dataclass(slots=True)
@@ -64,7 +65,7 @@ class OllamaNativeClient:
                 "format": "json",
                 "options": {
                     "temperature": self.config.temperature,
-                    "num_predict": 1200,
+                    "num_predict": self.config.max_tokens,
                 },
             }
             start = time.perf_counter()
@@ -188,7 +189,7 @@ class DeepSeekOpenAIClient:
                 "stream": False,
                 "response_format": {"type": "json_object"},
                 "thinking": {"type": "disabled"},
-                "max_tokens": 1200,
+                "max_tokens": self.config.max_tokens,
             }
             try:
                 response = requests.post(

@@ -979,7 +979,7 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert "filter-topic" in html
     assert 'data-status="qualified"' in html
     # The curated section was removed; the page no longer mentions it.
-    assert "Curated Opportunities" not in html
+    assert 'class="opportunity-table curated-table"' not in html
     assert "Add to calendar" in html
     assert "data:text/calendar" in html  # Apple / .ics option
     assert "Application%20deadline" in html  # encoded summary in the .ics
@@ -1813,8 +1813,8 @@ def test_high_quality_site_table_omits_why_monitor(tmp_path) -> None:
     assert "Failed Condition" not in html
     assert "Region Priority" not in html
     assert "Topic Match" not in html
-    assert "<th>Duration</th>" in html
-    assert "Add to calendar" not in html
+    assert '<th data-i18n="table.duration">Duration</th>' in html
+    assert '<details class="cal">' not in html
 
 
 def test_high_quality_uses_fee_per_day_threshold(tmp_path) -> None:
@@ -1849,8 +1849,10 @@ def test_high_quality_uses_fee_per_day_threshold(tmp_path) -> None:
         apply_hard_filters(expensive, PROFILE),
     ])
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
-    high_section = html.split("<h2>High-Quality Opportunities</h2>", 1)[1].split("<h2>Found Opportunities</h2>", 1)[0]
-    found_section = html.split("<h2>Found Opportunities</h2>", 1)[1]
+    high_section = html.split('<h2 data-i18n="tier.high">High-Quality Opportunities</h2>', 1)[1].split(
+        '<h2 data-i18n="tier.found">Found Opportunities</h2>', 1
+    )[0]
+    found_section = html.split('<h2 data-i18n="tier.found">Found Opportunities</h2>', 1)[1]
 
     assert "Affordable Ten Day School" in high_section
     assert 'data-status="high-quality"' in high_section
@@ -1956,7 +1958,7 @@ def test_new_badge_and_freshness_filter(tmp_path) -> None:
     ranked = rank_candidates([fresh, old])
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
     assert fresh.is_new and not old.is_new
-    assert '<span class="badge-new">NEW</span>' in html
+    assert '<span class="badge-new" data-i18n="badge.new">NEW</span>' in html
     assert 'id="filter-new"' in html
     # The fresh row carries data-new="true"; the old one data-new="false".
     assert 'data-new="true"' in html
@@ -2002,7 +2004,7 @@ def test_topic_display_is_capped_at_four_terms(tmp_path) -> None:
     candidate.topic_keywords = ["one", "two", "three", "four", "five", "six"]
     ranked = rank_candidates([candidate])
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
-    assert "<td>one, two, three, four</td>" in html
+    assert '<span class="lang-en" lang="en">one, two, three, four</span>' in html
     assert "five" not in html.split("<td>one, two, three, four</td>")[0][-200:]
     # The filter attribute keeps every topic so filtering still works.
     assert "five|six" in html

@@ -15,6 +15,7 @@ dist/
 data/raw/*
 data/processed/*
 data/ai_cache/
+data/translation_cache/
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 site/
@@ -27,6 +28,8 @@ reports/*.ai-evaluation-annotated.csv
 
 # Local tooling
 .claude/
+.env
+.env.local
 
 # Local daily-scan logs
 logs/

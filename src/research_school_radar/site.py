@@ -15,8 +15,22 @@ from datetime import datetime, timezone
 
 from .ai_home import merge_ai_for_homepage
 from .ai_review import potential_missed_pages
+from .localization import (
+    date_zh,
+    duration_zh,
+    financial_summary_zh,
+    mode_zh,
+    region_zh,
+    source_type_zh,
+    status_zh,
+    topic_zh,
+    topics_label_zh,
+)
+from .llm_client import BaseLLMClient
+from .localization_audit import assert_localization_complete
 from .models import Candidate
 from .review import build_review_queue
+from .translation import TranslationConfig, translate_candidates, translate_source_metadata
 from .utils import ROOT, format_duration, is_too_short, sanitize_location, topics_label
 
 
@@ -99,6 +113,7 @@ _THEME_CSS = """    :root {
       --hero-2: #173d29;
       --hero-3: #1f5236;
     }
+    html[lang="en"] .lang-zh, html[lang="zh"] .lang-en { display: none !important; }
     * { box-sizing: border-box; }
     body {
       margin: 0;
@@ -250,12 +265,13 @@ _DISCOVER_CSS = """
     }
     table.opportunity-table tr:hover { background: var(--panel); border-color: color-mix(in srgb, var(--accent) 38%, var(--line)); }
     table.opportunity-table tbody tr::before {
-      grid-area: status; align-self: start; content: "Found"; padding: 4px 9px;
+      grid-area: status; align-self: start; content: attr(data-status-label-en); padding: 4px 9px;
       border-radius: 999px; background: var(--warn-soft); color: var(--warn); font-size: 11px; font-weight: 650; white-space: nowrap;
     }
-    table.opportunity-table tbody tr[data-status="qualified"]::before { content: "Fully qualified"; background: var(--good-soft); color: var(--good); }
-    table.opportunity-table tbody tr[data-status="high-quality"]::before { content: "High quality"; background: var(--accent-soft); color: var(--accent-ink); }
-    table.opportunity-table tbody tr[data-status="curated"]::before { content: "Curated"; background: var(--accent-soft); color: var(--accent-ink); }
+    html[lang="zh"] table.opportunity-table tbody tr::before { content: attr(data-status-label-zh); }
+    table.opportunity-table tbody tr[data-status="qualified"]::before { background: var(--good-soft); color: var(--good); }
+    table.opportunity-table tbody tr[data-status="high-quality"]::before { background: var(--accent-soft); color: var(--accent-ink); }
+    table.opportunity-table tbody tr[data-status="curated"]::before { background: var(--accent-soft); color: var(--accent-ink); }
     table.opportunity-table td { display: block; padding: 0; border: 0; min-width: 0; }
     table.opportunity-table td a { font-weight: 650; text-decoration: none; }
     table.opportunity-table td[title] { cursor: help; }
@@ -390,9 +406,19 @@ _UI_SCRIPT = """
       "nav.about": {en:"About", zh:"关于"},
       "nav.sources": {en:"Sources", zh:"来源"},
       "hero.kicker": {en:"Updated daily \\u00B7 Free & open source", zh:"每天更新 \\u00B7 免费开源"},
+      "hero.title": {en:"Find research training worth applying for", zh:"寻找真正值得申请的科研训练机会"},
       "hero.subtitle": {en:"Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.", zh:"从可信学术来源汇总有资助或低费用的科研训练机会。每条截止日期和资助信息都可追溯到官网。"},
       "hero.disclaimer": {en:"Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.", zh:"请把这里当作基础信息入口，而不是唯一信息来源。本站信息来自各大组织和学校官网，但自动收集和解析仍可能因为技术问题出错；申请前请务必到官网核对截止日期、费用、资助和资格要求。少数质量很高但暂时无法自动收集的官网已列在 Collection Notes 里。祝大家都能录到心仪的项目。"},
       "cta.email": {en:"Get email alerts", zh:"邮件订阅"},
+      "cta.explore": {en:"Explore opportunities", zh:"浏览开放项目"},
+      "cta.qualification": {en:"How qualification works", zh:"了解筛选标准"},
+      "opportunities.title": {en:"Open opportunities", zh:"开放申请的项目"},
+      "action.details": {en:"View details", zh:"查看详情"},
+      "action.official": {en:"Official page", zh:"官方网站"},
+      "action.official.open": {en:"Open official page", zh:"打开官方网站"},
+      "action.official.programme": {en:"Open official programme page ↗", zh:"打开项目官网 ↗"},
+      "calendar.add": {en:"Add to calendar", zh:"添加到日历"},
+      "badge.new": {en:"NEW", zh:"新增"},
       "meta.updated": {en:"Updated", zh:"更新"},
       "meta.fixed": {en:"Fixed-source scan", zh:"固定来源扫描"},
       "meta.free": {en:"No paid search API", zh:"无需付费搜索 API"},
@@ -408,6 +434,60 @@ _UI_SCRIPT = """
       "filter.funding": {en:"Financial Access", zh:"费用/资助"},
       "filter.deadline": {en:"Deadline", zh:"截止日期"},
       "filter.fresh": {en:"Freshness", zh:"新近程度"},
+      "filter.all": {en:"All", zh:"全部"},
+      "filter.status.qualified": {en:"Fully qualified", zh:"完全符合"},
+      "filter.status.high": {en:"High quality", zh:"高质量"},
+      "filter.status.found": {en:"Found", zh:"待核实"},
+      "filter.funding.explicit": {en:"Explicit funding", zh:"明确提供资助"},
+      "filter.funding.low": {en:"Low / no fee", zh:"低费用或免费"},
+      "filter.funding.unresolved": {en:"Unresolved / high fee", zh:"费用未确认或较高"},
+      "filter.deadline.open": {en:"Open", zh:"开放申请"},
+      "filter.deadline.uncertain": {en:"Uncertain", zh:"待确认"},
+      "filter.deadline.closed": {en:"Closed", zh:"已截止"},
+      "filter.new.today": {en:"New today", zh:"今日新增"},
+      "table.title": {en:"Title", zh:"项目名称"},
+      "table.organizer": {en:"Organizer", zh:"主办方"},
+      "table.location": {en:"Location", zh:"地点"},
+      "table.duration": {en:"Duration", zh:"时长"},
+      "table.deadline": {en:"Deadline", zh:"截止日期"},
+      "table.funding": {en:"Funding / Fee", zh:"资助 / 费用"},
+      "table.topic": {en:"Topic", zh:"主题"},
+      "table.notes": {en:"Notes", zh:"备注"},
+      "table.actions": {en:"Actions", zh:"操作"},
+      "tier.qualified": {en:"Fully Qualified Opportunities", zh:"完全符合的项目"},
+      "tier.high": {en:"High-Quality Opportunities", zh:"高质量项目"},
+      "tier.found": {en:"Found Opportunities", zh:"待核实项目"},
+      "tier.curated": {en:"Curated Opportunities", zh:"人工精选项目"},
+      "tier.high.lead": {en:"Relevant funded or low-fee opportunities that still need official-page verification.", zh:"有资助或费用较低、但仍需到官网核实的相关项目。"},
+      "tier.found.lead": {en:"Relevant leads with unresolved evidence.", zh:"证据尚未完整核实的相关线索。"},
+      "tier.curated.lead": {en:"Maintainer-reviewed records with source evidence.", zh:"由维护者审核并保留来源证据的项目。"},
+      "detail.back": {en:"← Back to opportunities", zh:"← 返回项目列表"},
+      "detail.overview": {en:"Overview", zh:"项目概览"},
+      "detail.eligibility": {en:"Who should apply", zh:"适合谁申请"},
+      "detail.why": {en:"Why this status", zh:"为何获得此状态"},
+      "detail.source": {en:"Official source", zh:"官方来源"},
+      "detail.source.original": {en:"Original source evidence is retained below for verification.", zh:"以下保留官方原文证据，便于核对。"},
+      "detail.snapshot": {en:"Application snapshot", zh:"申请信息速览"},
+      "detail.funding": {en:"Funding / fee", zh:"资助 / 费用"},
+      "detail.deadline": {en:"Application deadline", zh:"申请截止日期"},
+      "detail.verify": {en:"Always verify eligibility, fees, funding, and dates on the official page.", zh:"申请前请务必在官方网站核对资格、费用、资助和日期。"},
+      "sources.title": {en:"Sources & Coverage", zh:"来源与覆盖范围"},
+      "sources.lead": {en:"The radar scans a trusted source registry rather than crawling the open web. This page lists the configured sources, including disabled sources kept for transparency.", zh:"雷达只扫描人工维护的可信来源，不进行开放网络泛爬。本页列出所有配置来源，包括为保持透明而保留的停用来源。"},
+      "sources.back": {en:"Back to radar", zh:"返回雷达"},
+      "sources.json": {en:"Source JSON", zh:"来源 JSON"},
+      "sources.configured": {en:"Configured Sources", zh:"已配置来源"},
+      "sources.direct": {en:"Sources to Check Directly", zh:"需要直接查看的来源"},
+      "sources.direct.lead": {en:"We cannot fetch these automatically yet. Please open them directly to look for opportunities.", zh:"这些来源目前无法稳定自动抓取，请直接打开官网查看机会。"},
+      "sources.source": {en:"Source", zh:"来源"},
+      "sources.status": {en:"Status", zh:"状态"},
+      "sources.layer": {en:"Layer", zh:"层级"},
+      "sources.region": {en:"Region", zh:"地区"},
+      "sources.type": {en:"Type", zh:"类型"},
+      "sources.keywords": {en:"Keywords", zh:"关键词"},
+      "sources.notes": {en:"Notes (original registry text)", zh:"备注（保留原始配置文本）"},
+      "sources.reason": {en:"Why it is not fetched automatically", zh:"无法自动抓取的原因"},
+      "sources.enabled": {en:"enabled", zh:"已启用"},
+      "sources.disabled": {en:"disabled", zh:"已停用"},
       "notes.title": {en:"Collection Notes", zh:"采集说明"},
       "empty.title": {en:"Nothing open right now — but the radar is watching", zh:"目前没有开放项目，但雷达仍在监测"},
       "empty.link": {en:"See what we track", zh:"查看监测来源"},
@@ -475,8 +555,13 @@ _UI_SCRIPT = """
       document.documentElement.setAttribute('lang', lang);
       var els=document.querySelectorAll('[data-i18n]'); for(var i=0;i<els.length;i++) txt(els[i], lang);
       var attrs=document.querySelectorAll('[data-i18n-placeholder]'); for(var j=0;j<attrs.length;j++) attr(attrs[j], lang);
+      var labels=document.querySelectorAll('[data-label-en][data-label-zh]');
+      for(var k=0;k<labels.length;k++) labels[k].textContent=labels[k].getAttribute('data-label-'+lang);
+      var titleKey='pageTitle'+(lang==='zh'?'Zh':'En');
+      if(document.body&&document.body.dataset[titleKey]) document.title=document.body.dataset[titleKey];
       var b=document.getElementById('lang-toggle'); if(b) b.textContent = (lang==='zh')?'EN':'中';
       try{localStorage.setItem('summa-lang', lang);}catch(e){}
+      try{document.dispatchEvent(new CustomEvent('summa:languagechange',{detail:{lang:lang}}));}catch(e){}
     }
     function applyTheme(t){
       document.documentElement.setAttribute('data-theme', t);
@@ -500,26 +585,21 @@ def write_site(
     sources: list[dict[str, Any]] | None = None,
     ai_items: list[dict[str, Any]] | None = None,
     profile: dict[str, Any] | None = None,
+    translation_config: TranslationConfig | None = None,
+    translation_client: BaseLLMClient | None = None,
 ) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     curated = curated or []
     sources = sources or []
+    source_translation_result = None
+    if translation_config is not None:
+        source_translation_result = translate_source_metadata(
+            sources,
+            translation_config,
+            client=translation_client,
+        )
+        sources = source_translation_result.records
     (output_dir / ".nojekyll").write_text("", encoding="utf-8")
-    (output_dir / "candidates.json").write_text(
-        json.dumps(
-            {
-                "_license": _DATA_LICENSE,
-                "_license_url": _DATA_LICENSE_URL,
-                "_attribution": "Summa",
-                "_canonical": _SITE_URL,
-                "_canary": _CANARY,
-                "generated": date.today().isoformat(),
-                "opportunities": [_candidate_dict(candidate) for candidate in candidates],
-            },
-            indent=2,
-        ),
-        encoding="utf-8",
-    )
     (output_dir / "DATA-LICENSE.txt").write_text(_data_license_text(), encoding="utf-8")
     (output_dir / "curated.json").write_text(json.dumps(curated, indent=2, default=str), encoding="utf-8")
     (output_dir / "review_queue.json").write_text(
@@ -535,22 +615,74 @@ def write_site(
         encoding="utf-8",
     )
     (output_dir / "sources.json").write_text(json.dumps(sources, indent=2, default=str), encoding="utf-8")
-    (output_dir / "sources.html").write_text(render_sources_page(sources), encoding="utf-8")
+    sources_html = render_sources_page(sources)
+    assert_localization_complete(sources_html, "sources.html")
+    (output_dir / "sources.html").write_text(sources_html, encoding="utf-8")
     # AI output now enriches the existing homepage tables instead of creating a
     # parallel review UI. Remove stale generated copies from older builds.
     (output_dir / "ai-review.html").unlink(missing_ok=True)
     homepage_candidates = merge_ai_for_homepage(candidates, ai_items, profile)
+    if translation_config is not None:
+        translation_result = translate_candidates(
+            homepage_candidates,
+            translation_config,
+            client=translation_client,
+        )
+        homepage_candidates = translation_result.candidates
+        (output_dir / "translation-status.json").write_text(
+            json.dumps(
+                {
+                    "generated": date.today().isoformat(),
+                    "enabled": translation_config.enabled,
+                    "provider": translation_config.provider,
+                    "model": translation_config.model,
+                    "translated": translation_result.translated,
+                    "cache_hits": translation_result.cache_hits,
+                    "skipped": translation_result.skipped,
+                    "source_notes_translated": source_translation_result.translated if source_translation_result else 0,
+                    "source_note_cache_hits": source_translation_result.cache_hits if source_translation_result else 0,
+                    "source_notes_skipped": source_translation_result.skipped if source_translation_result else 0,
+                    "warnings": [
+                        *translation_result.warnings,
+                        *(source_translation_result.warnings if source_translation_result else []),
+                    ],
+                },
+                indent=2,
+                ensure_ascii=False,
+            ),
+            encoding="utf-8",
+        )
+    else:
+        (output_dir / "translation-status.json").unlink(missing_ok=True)
+    (output_dir / "candidates.json").write_text(
+        json.dumps(
+            {
+                "_license": _DATA_LICENSE,
+                "_license_url": _DATA_LICENSE_URL,
+                "_attribution": "Summa",
+                "_canonical": _SITE_URL,
+                "_canary": _CANARY,
+                "generated": date.today().isoformat(),
+                "opportunities": [_candidate_dict(candidate) for candidate in homepage_candidates],
+            },
+            indent=2,
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
     detail_candidates = [candidate for candidate in homepage_candidates if _is_public_candidate(candidate)]
     detail_dir = output_dir / "opportunities"
     detail_dir.mkdir(parents=True, exist_ok=True)
     for stale in detail_dir.glob("*.html"):
         stale.unlink()
     for candidate in detail_candidates:
+        detail_html = render_opportunity_detail(candidate, site_config or {})
+        assert_localization_complete(detail_html, _candidate_detail_filename(candidate))
         (detail_dir / _candidate_detail_filename(candidate)).write_text(
-            render_opportunity_detail(candidate, site_config or {}),
+            detail_html,
             encoding="utf-8",
         )
-    (output_dir / "feed.xml").write_text(render_feed(candidates, curated, site_config or {}), encoding="utf-8")
+    (output_dir / "feed.xml").write_text(render_feed(homepage_candidates, curated, site_config or {}), encoding="utf-8")
     (output_dir / "robots.txt").write_text(_robots_txt(), encoding="utf-8")
     (output_dir / "sitemap.xml").write_text(
         _sitemap_xml(has_ai_review=False, candidates=detail_candidates),
@@ -563,17 +695,16 @@ def write_site(
         1 for source in sources if source.get("enabled", True) and not source.get("check_manually")
     )
     path = output_dir / "index.html"
-    path.write_text(
-        render_site(
+    index_html = render_site(
             homepage_candidates,
             errors + _manual_source_notes(sources),
             site_config or {},
             curated,
             tracked_sources=tracked_sources,
             has_ai_review=False,
-        ),
-        encoding="utf-8",
-    )
+        )
+    assert_localization_complete(index_html, "index.html")
+    path.write_text(index_html, encoding="utf-8")
     return path
 
 
@@ -587,6 +718,20 @@ def _manual_source_notes(sources: list[dict[str, Any]]) -> list[str]:
         suffix = f" {note}" if note else ""
         notes.append(f"{name}: high-quality official source; check manually because it cannot be collected reliably yet.{suffix}")
     return notes
+
+
+def _collection_note_zh(note: str) -> str:
+    name, separator, detail = note.partition(":")
+    if not separator:
+        return ""
+    lowered = detail.lower()
+    if "access was blocked" in lowered:
+        return f"{name}：该来源网站阻止了本次自动访问。"
+    if "browser rendering unavailable" in lowered:
+        return f"{name}：当前无法使用浏览器渲染，请暂时直接查看官网。"
+    if "high-quality official source; check manually" in lowered:
+        return f"{name}：高质量官方来源，目前无法稳定自动采集，请直接查看官网。"
+    return ""
 
 
 def _copy_og_image(output_dir: Path) -> None:
@@ -882,18 +1027,21 @@ def _status_banner(full_count: int, near_count: int, tracked_total: int, tracked
     coverage = f"Tracking {opportunities} across {tracked_sources} trusted sources."
     if full_count:
         label = f"{full_count} fully qualified opportunit{'ies' if full_count != 1 else 'y'} in the latest scan."
-        return f'<p class="status">{escape(label)} {escape(coverage)}</p>'
+        zh = f"最近一次扫描发现 {full_count} 个完全符合的项目；当前共追踪 {tracked_total} 个项目和 {tracked_sources} 个可信来源。"
+        return f'<p class="status">{_bilingual(f"{label} {coverage}", zh)}</p>'
     if near_count:
         message = (
             "No fully qualified matches in the latest scan. "
             f"{coverage} High-quality and found opportunities are shown below for manual checking."
         )
-        return f'<p class="status info">{escape(message)}</p>'
+        zh = f"最近一次扫描没有完全符合的项目。当前共追踪 {tracked_total} 个项目和 {tracked_sources} 个可信来源；下方列出高质量和待核实项目。"
+        return f'<p class="status info">{_bilingual(message, zh)}</p>'
     message = (
         "No open opportunities matched every rule in the latest scan. "
         f"{coverage} New schools surface as their deadlines open, typically December to April."
     )
-    return f'<p class="status info">{escape(message)}</p>'
+    zh = f"最近一次扫描没有符合全部规则且开放申请的项目。雷达仍在追踪 {tracked_sources} 个可信来源，新项目通常会在每年 12 月至次年 4 月陆续开放。"
+    return f'<p class="status info">{_bilingual(message, zh)}</p>'
 
 
 def _subscribe_form_html(site_config: dict[str, Any]) -> str:
@@ -1157,7 +1305,7 @@ def render_site(
     near_rows = "".join(_near_row(candidate) for candidate in near)
     found_rows = "".join(_found_row(candidate) for candidate in found)
     public_notes = _public_collection_notes(errors)
-    notes = "".join(f"<li>{escape(error)}</li>" for error in public_notes[:12])
+    notes = "".join(f"<li>{_bilingual(error, _collection_note_zh(error))}</li>" for error in public_notes[:12])
     filters = _filters(candidates)
     analytics = _analytics_snippet(site_config or {})
     status_banner = _status_banner(len(full), len(near), tracked_total, tracked_sources)
@@ -1439,19 +1587,19 @@ def render_site(
 {_DISCOVER_CSS}
   </style>
 </head>
-<body>
+<body data-page-title-en="Summa · Funded research summer schools" data-page-title-zh="Summa · 科研暑校与训练机会">
   {_site_nav(has_ai_review=has_ai_review)}
   <header class="hero" id="top">
     <div class="wrap">
       <p class="kicker" data-i18n="hero.kicker">Updated daily &middot; Free &amp; open source</p>
-      <h1>Find research training worth applying for</h1>
+      <h1 data-i18n="hero.title">Find research training worth applying for</h1>
       <p class="subtitle" data-i18n="hero.subtitle">Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.</p>
       <p class="hero-disclaimer" data-i18n="hero.disclaimer">Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.</p>
       <div class="hero-actions">
-        <a class="button primary" href="#opportunities">Explore opportunities</a>
-        <a class="button tonal" href="#how">How qualification works</a>
+        <a class="button primary" href="#opportunities" data-i18n="cta.explore">Explore opportunities</a>
+        <a class="button tonal" href="#how" data-i18n="cta.qualification">How qualification works</a>
       </div>
-      <div class="hero-scan-meta">{len(full)} fully qualified &nbsp;&middot;&nbsp; {len(near)} high quality &nbsp;&middot;&nbsp; {tracked_sources}+ trusted sources</div>
+      <div class="hero-scan-meta">{_bilingual(f"{len(full)} fully qualified · {len(near)} high quality · {tracked_sources}+ trusted sources", f"{len(full)} 个完全符合 · {len(near)} 个高质量 · {tracked_sources}+ 个可信来源")}</div>
     </div>
   </header>
   <main class="wrap">
@@ -1463,7 +1611,7 @@ def render_site(
     </div>
     {status_banner}
     <section id="opportunities" class="anchor">
-      <div class="opportunity-list-head"><h2>Open opportunities</h2><p>{len(full) + len(near) + len(found)} shown &nbsp;&middot;&nbsp; Updated {updated}</p></div>
+      <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p>{_bilingual(f"{len(full) + len(near) + len(found)} shown · Updated {updated}", f"显示 {len(full) + len(near) + len(found)} 条 · 更新于 {updated}")}</p></div>
       {filters}
       {_curated_section(curated_rows) if curated else ""}
       {_qualified_section(full_rows) if full else ""}
@@ -1492,9 +1640,12 @@ def render_opportunity_detail(
     official = candidate.application_link or candidate.source_url
     status_label, status_class = _candidate_status(candidate)
     deadline = candidate.deadline.strftime("%d %b %Y") if candidate.deadline else "Deadline uncertain"
+    deadline_cn = date_zh(candidate.deadline, uncertain="截止日期待确认")
     duration = _duration(candidate)
+    duration_cn = duration_zh(candidate)
     location = _public_location(candidate.location) or "Location uncertain"
     topics = topics_label(candidate.topic_keywords) or "Topics not resolved"
+    topics_cn = topics_label_zh(candidate.topic_keywords) or "主题待确认"
     summary = candidate.summary.strip() or candidate.recommendation_reason.strip()
     if not summary:
         summary = f"A {candidate.type or 'research training opportunity'} from {candidate.organizer}."
@@ -1528,18 +1679,18 @@ def render_opportunity_detail(
 {_DETAIL_CSS}
   </style>
 </head>
-<body class="detail-page">
+<body class="detail-page" data-page-title-en="{escape(candidate.title, quote=True)} · Summa" data-page-title-zh="{escape((candidate.title_zh or candidate.title) + ' · Summa', quote=True)}">
   {_site_nav(home="../index.html", root="../")}
   <header class="detail-header">
     <div class="wrap">
-      <a class="detail-back" href="../index.html#opportunities">&larr; Back to opportunities</a><br>
-      <span class="status-badge {status_class}">{status_label}</span>
-      <h1>{escape(candidate.title)}</h1>
+      <a class="detail-back" href="../index.html#opportunities" data-i18n="detail.back">&larr; Back to opportunities</a><br>
+      <span class="status-badge {status_class}">{_bilingual(status_label, status_zh(status_label))}</span>
+      <h1>{_bilingual(candidate.title, candidate.title_zh)}</h1>
       <p class="detail-org">{escape(candidate.organizer)} &nbsp;&middot;&nbsp; {escape(location)}</p>
       <div class="detail-facts">
-        <span>{escape(duration)}</span>
-        <span>{escape(deadline)}</span>
-        <span>{escape(candidate.mode or "Mode uncertain")}</span>
+        <span>{_bilingual(duration, duration_cn)}</span>
+        <span>{_bilingual(deadline, deadline_cn)}</span>
+        <span>{_bilingual(candidate.mode or "Mode uncertain", mode_zh(candidate.mode))}</span>
       </div>
     </div>
   </header>
@@ -1547,40 +1698,41 @@ def render_opportunity_detail(
     <div class="wrap detail-grid">
       <div class="detail-stack">
         <section class="detail-panel">
-          <h2>Overview</h2>
-          <p>{escape(summary)}</p>
+          <h2 data-i18n="detail.overview">Overview</h2>
+          <p>{_bilingual(summary, candidate.summary_zh)}</p>
         </section>
         <section class="detail-panel">
-          <h2>Who should apply</h2>
-          <p>{escape(eligibility)}</p>
+          <h2 data-i18n="detail.eligibility">Who should apply</h2>
+          <p>{_bilingual(eligibility, candidate.eligibility_zh)}</p>
         </section>
         <section class="detail-panel qualified">
-          <h2>Why this status</h2>
-          <p>{escape(qualification)}</p>
+          <h2 data-i18n="detail.why">Why this status</h2>
+          <p>{_bilingual(qualification, candidate.recommendation_reason_zh)}</p>
         </section>
         <section class="detail-panel">
-          <h2>Official source</h2>
+          <h2 data-i18n="detail.source">Official source</h2>
+          <p class="muted" data-i18n="detail.source.original">Original source evidence is retained below for verification.</p>
           <p>{escape(evidence)}</p>
-          <a class="source-link" href="{escape(official, quote=True)}" target="_blank" rel="noopener">Open official programme page &nearr;</a>
+          <a class="source-link" href="{escape(official, quote=True)}" target="_blank" rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>
         </section>
       </div>
       <aside class="decision-card">
-        <h2>Application snapshot</h2>
-        <span class="eyebrow">Funding / fee</span>
-        <p class="decision-value">{escape(_financial_summary_short(candidate))}</p>
-        <span class="eyebrow">Application deadline</span>
-        <p class="deadline-value">{escape(deadline)}</p>
-        <p class="muted">{escape(candidate.mode or "Mode uncertain")} &middot; {escape(location)}<br>{escape(topics)}</p>
+        <h2 data-i18n="detail.snapshot">Application snapshot</h2>
+        <span class="eyebrow" data-i18n="detail.funding">Funding / fee</span>
+        <p class="decision-value">{_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate))}</p>
+        <span class="eyebrow" data-i18n="detail.deadline">Application deadline</span>
+        <p class="deadline-value">{_bilingual(deadline, deadline_cn)}</p>
+        <p class="muted">{_bilingual(candidate.mode or "Mode uncertain", mode_zh(candidate.mode))} &middot; {escape(location)}<br>{_bilingual(topics, topics_cn)}</p>
         <div class="detail-actions">
-          <a class="button primary" href="{escape(official, quote=True)}" target="_blank" rel="noopener">Open official page</a>
+          <a class="button primary" href="{escape(official, quote=True)}" target="_blank" rel="noopener" data-i18n="action.official.open">Open official page</a>
           {calendar}
         </div>
-        <span class="note">Always verify eligibility, fees, funding, and dates on the official page.</span>
+        <span class="note" data-i18n="detail.verify">Always verify eligibility, fees, funding, and dates on the official page.</span>
       </aside>
     </div>
   </main>
   <div class="mobile-actions">
-    <a class="button primary" href="{escape(official, quote=True)}" target="_blank" rel="noopener">Open official page</a>
+    <a class="button primary" href="{escape(official, quote=True)}" target="_blank" rel="noopener" data-i18n="action.official.open">Open official page</a>
     {calendar}
   </div>
   {_footer_section(updated, root="../")}
@@ -1787,23 +1939,23 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
     .status-disabled {{ color: var(--warn); font-weight: 700; }}
   </style>
 </head>
-<body>
+<body data-page-title-en="Sources &amp; Coverage · Summa" data-page-title-zh="来源与覆盖范围 · Summa">
   {_site_nav(home="index.html")}
   <header class="hero">
     <div class="wrap">
-      <h1>Sources &amp; Coverage</h1>
-      <p>The radar scans a trusted source registry rather than crawling the open web. This page lists the configured sources, including disabled sources kept for transparency.</p>
-      <a class="pill" href="index.html">Back to radar</a>
-      <a class="pill" href="sources.json">Source JSON</a>
-      <span class="pill">{enabled_count} enabled</span>
-      <span class="pill">{disabled_count} disabled</span>
+      <h1 data-i18n="sources.title">Sources &amp; Coverage</h1>
+      <p data-i18n="sources.lead">The radar scans a trusted source registry rather than crawling the open web. This page lists the configured sources, including disabled sources kept for transparency.</p>
+      <a class="pill" href="index.html" data-i18n="sources.back">Back to radar</a>
+      <a class="pill" href="sources.json" data-i18n="sources.json">Source JSON</a>
+      <span class="pill">{_bilingual(f"{enabled_count} enabled", f"{enabled_count} 个已启用")}</span>
+      <span class="pill">{_bilingual(f"{disabled_count} disabled", f"{disabled_count} 个已停用")}</span>
     </div>
   </header>
   <main class="wrap">
-    <h2>Configured Sources</h2>
+    <h2 data-i18n="sources.configured">Configured Sources</h2>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Source</th><th>Status</th><th>Layer</th><th>Region</th><th>Type</th><th>Keywords</th><th>Notes</th></tr></thead>
+        <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.status">Status</th><th data-i18n="sources.layer">Layer</th><th data-i18n="sources.region">Region</th><th data-i18n="sources.type">Type</th><th data-i18n="sources.keywords">Keywords</th><th data-i18n="sources.notes">Notes (original registry text)</th></tr></thead>
         <tbody>{rows}</tbody>
       </table>
     </div>
@@ -1820,11 +1972,11 @@ def _manual_sources_section(manual: list[dict[str, Any]]) -> str:
     rows = "".join(_manual_source_row(source) for source in manual)
     return f"""
     <section>
-      <h2>Sources to Check Directly</h2>
-      <p class="muted">We can't fetch these automatically yet &mdash; they block scripted access, render only with JavaScript, or expose no public listing. Until that changes, please open them yourself to look for opportunities; their pages are linked below.</p>
+      <h2 data-i18n="sources.direct">Sources to Check Directly</h2>
+      <p class="muted" data-i18n="sources.direct.lead">We cannot fetch these automatically yet. Please open them directly to look for opportunities.</p>
       <div class="table-wrap">
         <table>
-          <thead><tr><th>Source</th><th>Region</th><th>Keywords</th><th>Why it isn&#39;t fetched automatically</th></tr></thead>
+          <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.region">Region</th><th data-i18n="sources.keywords">Keywords</th><th data-i18n="sources.reason">Why it isn&#39;t fetched automatically</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1836,13 +1988,17 @@ def _manual_source_row(source: dict[str, Any]) -> str:
     url = str(source.get("url", "")).strip()
     name = escape(str(source.get("name", "Unnamed source")))
     link = f'<a href="{escape(url, quote=True)}">{name}</a>' if url else name
-    keywords = ", ".join(_list_value(source.get("keywords")))
+    keyword_values = _list_value(source.get("keywords"))
+    keywords = ", ".join(keyword_values)
+    keywords_cn = "、".join(topic_zh(value) for value in keyword_values)
+    notes = str(source.get("notes", ""))
+    notes_cn = str(source.get("notes_zh", ""))
     return (
         "<tr>"
         f"<td>{link}</td>"
-        f"<td>{escape(str(source.get('region', '')))}</td>"
-        f"<td>{escape(keywords)}</td>"
-        f"<td>{escape(str(source.get('notes', '')))}</td>"
+        f"<td>{_bilingual(str(source.get('region', '')), region_zh(str(source.get('region', ''))))}</td>"
+        f"<td>{_bilingual(keywords, keywords_cn)}</td>"
+        f"<td>{_bilingual(notes, notes_cn)}</td>"
         "</tr>"
     )
 
@@ -1850,10 +2006,10 @@ def _manual_source_row(source: dict[str, Any]) -> str:
 def _qualified_section(rows: str) -> str:
     return f"""
     <section class="opportunity-tier">
-      <div class="sr-only-tier"><h2>Fully Qualified Opportunities</h2></div>
+      <div class="sr-only-tier"><h2 data-i18n="tier.qualified">Fully Qualified Opportunities</h2></div>
       <div class="table-wrap opportunity-table-wrap">
         <table class="opportunity-table qualified-table">
-          <thead><tr><th>#</th><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Actions</th></tr></thead>
+          <thead><tr><th>#</th><th data-i18n="table.title">Title</th><th data-i18n="table.organizer">Organizer</th><th data-i18n="table.location">Location</th><th data-i18n="table.duration">Duration</th><th data-i18n="table.deadline">Deadline</th><th data-i18n="table.funding">Funding / Fee</th><th data-i18n="table.topic">Topic</th><th data-i18n="table.actions">Actions</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1868,22 +2024,27 @@ def _source_row(source: dict[str, Any]) -> str:
     url = str(source.get("url", "")).strip()
     name = escape(str(source.get("name", "Unnamed source")))
     source_link = f'<a href="{escape(url, quote=True)}">{name}</a>' if url else name
-    keywords = ", ".join(_list_value(source.get("keywords")))
+    keyword_values = _list_value(source.get("keywords"))
+    keywords = ", ".join(keyword_values)
+    keywords_cn = "、".join(topic_zh(value) for value in keyword_values)
     notes = str(source.get("notes", ""))
+    notes_cn = str(source.get("notes_zh", ""))
     blocked_domains = _list_value(source.get("blocked_link_domains"))
     if blocked_domains:
         notes = f"{notes} Blocked linked domains: {', '.join(blocked_domains)}".strip()
+        notes_cn = f"{notes_cn} 已阻止的链接域名：{'、'.join(blocked_domains)}".strip()
     if source.get("render"):
         notes = f"{notes} Rendered with a headless browser.".strip()
+        notes_cn = f"{notes_cn} 使用无头浏览器渲染。".strip()
     return (
         "<tr>"
         f"<td>{source_link}</td>"
-        f'<td><span class="{status_class}">{status}</span></td>'
+        f'<td><span class="{status_class}">{_bilingual(status, "已启用" if enabled else "已停用")}</span></td>'
         f"<td>{escape(str(source.get('layer', '')))}</td>"
-        f"<td>{escape(str(source.get('region', '')))}</td>"
-        f"<td>{escape(str(source.get('source_type', '')))}</td>"
-        f"<td>{escape(keywords)}</td>"
-        f"<td>{escape(notes)}</td>"
+        f"<td>{_bilingual(str(source.get('region', '')), region_zh(str(source.get('region', ''))))}</td>"
+        f"<td>{_bilingual(str(source.get('source_type', '')), source_type_zh(str(source.get('source_type', ''))))}</td>"
+        f"<td>{_bilingual(keywords, keywords_cn)}</td>"
+        f"<td>{_bilingual(notes, notes_cn)}</td>"
         "</tr>"
     )
 
@@ -1891,10 +2052,10 @@ def _source_row(source: dict[str, Any]) -> str:
 def _curated_section(rows: str) -> str:
     return f"""
     <section class="opportunity-tier">
-      <div class="sr-only-tier"><h2>Curated Opportunities</h2><p>Maintainer-reviewed records with source evidence.</p></div>
+      <div class="sr-only-tier"><h2 data-i18n="tier.curated">Curated Opportunities</h2><p data-i18n="tier.curated.lead">Maintainer-reviewed records with source evidence.</p></div>
       <div class="table-wrap opportunity-table-wrap">
         <table class="opportunity-table curated-table">
-          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Notes</th><th>Actions</th></tr></thead>
+          <thead><tr><th data-i18n="table.title">Title</th><th data-i18n="table.organizer">Organizer</th><th data-i18n="table.location">Location</th><th data-i18n="table.duration">Duration</th><th data-i18n="table.deadline">Deadline</th><th data-i18n="table.funding">Funding / Fee</th><th data-i18n="table.topic">Topic</th><th data-i18n="table.notes">Notes</th><th data-i18n="table.actions">Actions</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1914,10 +2075,10 @@ def _empty_curated_section() -> str:
 def _near_section(rows: str) -> str:
     return f"""
     <section class="opportunity-tier">
-      <div class="sr-only-tier"><h2>High-Quality Opportunities</h2><p>Relevant funded or low-fee opportunities that still need official-page verification.</p></div>
+      <div class="sr-only-tier"><h2 data-i18n="tier.high">High-Quality Opportunities</h2><p data-i18n="tier.high.lead">Relevant funded or low-fee opportunities that still need official-page verification.</p></div>
       <div class="table-wrap opportunity-table-wrap">
         <table class="opportunity-table standard-table">
-          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Actions</th></tr></thead>
+          <thead><tr><th data-i18n="table.title">Title</th><th data-i18n="table.organizer">Organizer</th><th data-i18n="table.location">Location</th><th data-i18n="table.duration">Duration</th><th data-i18n="table.deadline">Deadline</th><th data-i18n="table.funding">Funding / Fee</th><th data-i18n="table.topic">Topic</th><th data-i18n="table.actions">Actions</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1928,10 +2089,10 @@ def _near_section(rows: str) -> str:
 def _found_section(rows: str) -> str:
     return f"""
     <section class="opportunity-tier">
-      <div class="sr-only-tier"><h2>Found Opportunities</h2><p>Relevant leads with unresolved evidence.</p></div>
+      <div class="sr-only-tier"><h2 data-i18n="tier.found">Found Opportunities</h2><p data-i18n="tier.found.lead">Relevant leads with unresolved evidence.</p></div>
       <div class="table-wrap opportunity-table-wrap">
         <table class="opportunity-table standard-table">
-          <thead><tr><th>Title</th><th>Organizer</th><th>Location</th><th>Duration</th><th>Deadline</th><th>Funding / Fee</th><th>Topic</th><th>Actions</th></tr></thead>
+          <thead><tr><th data-i18n="table.title">Title</th><th data-i18n="table.organizer">Organizer</th><th data-i18n="table.location">Location</th><th data-i18n="table.duration">Duration</th><th data-i18n="table.deadline">Deadline</th><th data-i18n="table.funding">Funding / Fee</th><th data-i18n="table.topic">Topic</th><th data-i18n="table.actions">Actions</th></tr></thead>
           <tbody>{rows}</tbody>
         </table>
       </div>
@@ -1955,10 +2116,10 @@ def _qualified_row(index: int, candidate: Candidate) -> str:
         f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
         f"<td>{escape(candidate.organizer)}</td>"
         f"<td>{escape(_public_location(candidate.location))}</td>"
-        f"<td{_evidence_attr(candidate.duration_evidence)}>{escape(_duration(candidate))}</td>"
+        f"<td{_evidence_attr(candidate.duration_evidence)}>{_bilingual(_duration(candidate), duration_zh(candidate))}</td>"
         f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
-        f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(_financial_summary_short(candidate))}</td>"
-        f"<td>{escape(topics_label(candidate.topic_keywords))}</td>"
+        f"<td{_evidence_attr(candidate.funding_evidence)}>{_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate))}</td>"
+        f"<td>{_bilingual(topics_label(candidate.topic_keywords), topics_label_zh(candidate.topic_keywords))}</td>"
         f"<td class=\"card-actions\">{_candidate_actions(candidate)}</td>"
         "</tr>"
     )
@@ -1990,10 +2151,10 @@ def _near_row(candidate: Candidate) -> str:
         f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
         f"<td>{escape(candidate.organizer)}</td>"
         f"<td>{escape(_public_location(candidate.location))}</td>"
-        f"<td{_evidence_attr(candidate.duration_evidence)}>{escape(_duration(candidate))}</td>"
+        f"<td{_evidence_attr(candidate.duration_evidence)}>{_bilingual(_duration(candidate), duration_zh(candidate))}</td>"
         f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
-        f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(_financial_summary_short(candidate))}</td>"
-        f"<td>{escape(topics_label(candidate.topic_keywords) or 'uncertain')}</td>"
+        f"<td{_evidence_attr(candidate.funding_evidence)}>{_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate))}</td>"
+        f"<td>{_bilingual(topics_label(candidate.topic_keywords) or 'uncertain', topics_label_zh(candidate.topic_keywords) or '待确认')}</td>"
         f"<td class=\"card-actions\">{_candidate_actions(candidate)}</td>"
         "</tr>"
     )
@@ -2005,10 +2166,10 @@ def _found_row(candidate: Candidate) -> str:
         f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
         f"<td>{escape(candidate.organizer)}</td>"
         f"<td>{escape(_public_location(candidate.location))}</td>"
-        f"<td{_evidence_attr(candidate.duration_evidence)}>{escape(_duration(candidate))}</td>"
+        f"<td{_evidence_attr(candidate.duration_evidence)}>{_bilingual(_duration(candidate), duration_zh(candidate))}</td>"
         f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
-        f"<td{_evidence_attr(candidate.funding_evidence)}>{escape(_financial_summary_short(candidate))}</td>"
-        f"<td>{escape(topics_label(candidate.topic_keywords) or 'uncertain')}</td>"
+        f"<td{_evidence_attr(candidate.funding_evidence)}>{_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate))}</td>"
+        f"<td>{_bilingual(topics_label(candidate.topic_keywords) or 'uncertain', topics_label_zh(candidate.topic_keywords) or '待确认')}</td>"
         f"<td class=\"card-actions\">{_candidate_actions(candidate)}</td>"
         "</tr>"
     )
@@ -2037,7 +2198,7 @@ def _review_row(item: dict[str, Any]) -> str:
         financial = "Funding or fee not stated"
     link = f'<a href="{escape(url, quote=True)}">{escape(title)}</a>' if url else escape(title)
     return (
-        "<tr data-status=\"review\" "
+        "<tr data-status=\"review\" data-status-label-en=\"Needs review\" data-status-label-zh=\"待审核\" "
         f'data-funding="{escape(str(item.get("financial_access_status", "unresolved")), quote=True)}" '
         f'data-deadline="{escape(str(item.get("deadline_status", "uncertain")), quote=True)}" '
         f'data-topics="{escape("|".join(topic.lower() for topic in topics), quote=True)}" '
@@ -2055,15 +2216,27 @@ def _review_row(item: dict[str, Any]) -> str:
     )
 
 
+def _bilingual(en: str, zh: str) -> str:
+    en_text = escape(en)
+    zh_text = escape(zh.strip() or en)
+    return (
+        f'<span class="lang-en" lang="en">{en_text}</span>'
+        f'<span class="lang-zh" lang="zh">{zh_text}</span>'
+    )
+
+
 def _link(candidate: Candidate) -> str:
-    return f'<a href="{escape(_candidate_detail_href(candidate), quote=True)}">{escape(candidate.title)}</a>'
+    return (
+        f'<a href="{escape(_candidate_detail_href(candidate), quote=True)}">'
+        f'{_bilingual(candidate.title, candidate.title_zh)}</a>'
+    )
 
 
 def _candidate_actions(candidate: Candidate) -> str:
     official = candidate.application_link or candidate.source_url
     return (
-        f'<a class="button primary" href="{escape(_candidate_detail_href(candidate), quote=True)}">View details</a>'
-        f'<a class="button tonal" href="{escape(official, quote=True)}">Official page</a>'
+        f'<a class="button primary" href="{escape(_candidate_detail_href(candidate), quote=True)}" data-i18n="action.details">View details</a>'
+        f'<a class="button tonal" href="{escape(official, quote=True)}" data-i18n="action.official">Official page</a>'
     )
 
 
@@ -2071,11 +2244,11 @@ def _curated_actions(item: dict[str, Any]) -> str:
     url = str(item.get("url", "")).strip()
     if not url:
         return ""
-    return f'<a class="button primary" href="{escape(url, quote=True)}">Official page</a>'
+    return f'<a class="button primary" href="{escape(url, quote=True)}" data-i18n="action.official">Official page</a>'
 
 
 def _new_badge(candidate: Candidate) -> str:
-    return ' <span class="badge-new">NEW</span>' if candidate.is_new else ""
+    return ' <span class="badge-new" data-i18n="badge.new">NEW</span>' if candidate.is_new else ""
 
 
 def _evidence_attr(evidence: str) -> str:
@@ -2148,14 +2321,14 @@ def _duration(candidate: Candidate) -> str:
 
 def _deadline_cell(deadline: date | None, title: str, url: str) -> str:
     if deadline is None:
-        return "uncertain"
+        return _bilingual("uncertain", "待确认")
     google = escape(_google_calendar_url(deadline, title, url), quote=True)
     outlook = escape(_outlook_calendar_url(deadline, title, url), quote=True)
     ics = _calendar_data_url(deadline, title, url)
     filename = escape(_calendar_filename(title), quote=True)
     return (
-        f"{escape(deadline.isoformat())}"
-        '<details class="cal"><summary>Add to calendar</summary>'
+        f"{_bilingual(deadline.isoformat(), date_zh(deadline))}"
+        '<details class="cal"><summary data-i18n="calendar.add">Add to calendar</summary>'
         f'<a href="{google}" target="_blank" rel="noopener">Google Calendar</a>'
         f'<a href="{outlook}" target="_blank" rel="noopener">Outlook</a>'
         f'<a href="{ics}" download="{filename}">Apple / .ics</a>'
@@ -2291,7 +2464,11 @@ def _candidate_dict(candidate: Candidate) -> dict[str, Any]:
 
 def _filters(candidates: list[Candidate]) -> str:
     topics = sorted({topic for candidate in candidates for topic in candidate.topic_keywords})
-    topic_options = "".join(f'<option value="{escape(topic, quote=True)}">{escape(topic)}</option>' for topic in topics)
+    topic_options = "".join(
+        f'<option value="{escape(topic, quote=True)}" data-label-en="{escape(topic, quote=True)}" '
+        f'data-label-zh="{escape(topic_zh(topic), quote=True)}">{escape(topic)}</option>'
+        for topic in topics
+    )
     return f"""
     <section class="filters" aria-label="Opportunity filters">
       <div class="filter-group">
@@ -2301,42 +2478,42 @@ def _filters(candidates: list[Candidate]) -> str:
       <div class="filter-group">
         <label for="filter-status" data-i18n="filter.status">Status</label>
         <select id="filter-status">
-          <option value="">All</option>
-          <option value="qualified">Fully qualified</option>
-          <option value="high-quality">High quality</option>
-          <option value="found">Found</option>
+          <option value="" data-i18n="filter.all">All</option>
+          <option value="qualified" data-i18n="filter.status.qualified">Fully qualified</option>
+          <option value="high-quality" data-i18n="filter.status.high">High quality</option>
+          <option value="found" data-i18n="filter.status.found">Found</option>
         </select>
       </div>
       <div class="filter-group">
         <label for="filter-topic" data-i18n="filter.topic">Topic</label>
         <select id="filter-topic">
-          <option value="">All</option>
+          <option value="" data-i18n="filter.all">All</option>
           {topic_options}
         </select>
       </div>
       <div class="filter-group">
         <label for="filter-funding" data-i18n="filter.funding">Financial Access</label>
         <select id="filter-funding">
-          <option value="">All</option>
-          <option value="funded">Explicit funding</option>
-          <option value="low-fee">Low / no fee</option>
-          <option value="unresolved">Unresolved / high fee</option>
+          <option value="" data-i18n="filter.all">All</option>
+          <option value="funded" data-i18n="filter.funding.explicit">Explicit funding</option>
+          <option value="low-fee" data-i18n="filter.funding.low">Low / no fee</option>
+          <option value="unresolved" data-i18n="filter.funding.unresolved">Unresolved / high fee</option>
         </select>
       </div>
       <div class="filter-group">
         <label for="filter-deadline" data-i18n="filter.deadline">Deadline</label>
         <select id="filter-deadline">
-          <option value="">All</option>
-          <option value="open">Open</option>
-          <option value="uncertain">Uncertain</option>
-          <option value="closed">Closed</option>
+          <option value="" data-i18n="filter.all">All</option>
+          <option value="open" data-i18n="filter.deadline.open">Open</option>
+          <option value="uncertain" data-i18n="filter.deadline.uncertain">Uncertain</option>
+          <option value="closed" data-i18n="filter.deadline.closed">Closed</option>
         </select>
       </div>
       <div class="filter-group">
         <label for="filter-new" data-i18n="filter.fresh">Freshness</label>
         <select id="filter-new">
-          <option value="">All</option>
-          <option value="true">New today</option>
+          <option value="" data-i18n="filter.all">All</option>
+          <option value="true" data-i18n="filter.new.today">New today</option>
         </select>
       </div>
       <div class="count" id="filter-count" aria-live="polite"></div>
@@ -2346,6 +2523,12 @@ def _filters(candidates: list[Candidate]) -> str:
 
 def _row_attrs(candidate: Candidate, status: str | None = None) -> str:
     status = status or ("qualified" if candidate.fully_qualified else "found")
+    status_labels = {
+        "qualified": ("Fully qualified", "完全符合"),
+        "high-quality": ("High quality", "高质量"),
+        "found": ("Found", "待核实"),
+    }
+    status_en, status_cn = status_labels.get(status, (status, status))
     funding = candidate.financial_access_status
     topics = "|".join(topic.lower() for topic in candidate.topic_keywords)
     searchable = " ".join(
@@ -2359,6 +2542,8 @@ def _row_attrs(candidate: Candidate, status: str | None = None) -> str:
     ).lower()
     attrs = {
         "data-status": status,
+        "data-status-label-en": status_en,
+        "data-status-label-zh": status_cn,
         "data-region": candidate.region_priority,
         "data-funding": funding,
         "data-deadline": candidate.deadline_status,
@@ -2398,6 +2583,8 @@ def _curated_row_attrs(item: dict[str, Any]) -> str:
     ).lower()
     attrs = {
         "data-status": "curated",
+        "data-status-label-en": "Curated",
+        "data-status-label-zh": "人工精选",
         "data-region": _region_priority_from_region(str(item.get("region", ""))),
         "data-funding": funding_value,
         "data-deadline": deadline,
@@ -2488,7 +2675,8 @@ def _filter_script() -> str:
         row.hidden = !show;
         if (show) visible += 1;
       }
-      controls.count.textContent = `${visible} shown`;
+      const lang = document.documentElement.getAttribute("lang") || "en";
+      controls.count.textContent = lang === "zh" ? `显示 ${visible} 条` : `${visible} shown`;
     }
 
     for (const control of Object.values(controls)) {
@@ -2496,6 +2684,7 @@ def _filter_script() -> str:
         control.addEventListener("input", applyFilters);
       }
     }
+    document.addEventListener("summa:languagechange", applyFilters);
     applyFilters();
   </script>
 """
