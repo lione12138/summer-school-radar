@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Summa · Funded research summer schools</title>
+    <link>https://lione12138.github.io/summer-school-radar/</link>
+    <atom:link href="https://lione12138.github.io/summer-school-radar/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Funded research summer schools, winter schools, and training schools across many academic fields — environmental &amp; earth science, computing &amp; data science, social sciences, and humanities.</description>
+    <language>en</language>
+    <copyright>Data CC BY 4.0 — reuse with attribution and a link back to https://lione12138.github.io/summer-school-radar/</copyright>
+    <generator>Summa</generator>
+    <!-- SSR-CANON-7q3v9x2k8m4w -->
+    <lastBuildDate>Wed, 01 Jul 2026 08:01:48 +0000</lastBuildDate>
+    <item>
+      <title>Social Science Data Analysis — Essex Summer School</title>
+      <link>https://essexsummerschool.com/new-application/</link>
+      <guid isPermaLink="false">https://essexsummerschool.com/new-application/</guid>
+      <category>Fully qualified</category>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Dates: 29 Jun – 14 Aug 2026 · 47 days. Location: Colchester, UK. Deadline: 2026-07-17. scholarship · amount not stated · Apply on official page. Topics: satellite, geospatial, AI, machine learning</description>
+    </item>
+    <item>
+      <title>ICOS Summer/Winter School January 2027, application is now open — ICOS</title>
+      <link>https://www.icos-cp.eu/about/opportunities/summer-school</link>
+      <guid isPermaLink="false">https://www.icos-cp.eu/about/opportunities/summer-school</guid>
+      <category>High quality</category>
+      <pubDate>Sun, 14 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Dates: 18 Jan – 28 Jan 2027 · 11 days. Location: Europe. Deadline: 2026-07-31. financial support · amount not stated · Apply on official page. Topics: climate, climate change, remote sensing, statistics</description>
+    </item>
+    <item>
+      <title>ELLIS Summer School at Unit Saarbrücken — ELLIS</title>
+      <link>https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026</link>
+      <guid isPermaLink="false">https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026</guid>
+      <category>High quality</category>
+      <pubDate>Sun, 14 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Dates: 24 Aug – 28 Aug 2026 · 5 days. Location: Saarland University. Deadline: 2026-07-19. Fee about EUR 250 · Apply on official page. Topics: AI</description>
+    </item>
+  </channel>
+</rss>
