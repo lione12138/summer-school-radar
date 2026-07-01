@@ -3,11 +3,11 @@
   "enabled": true,
   "provider": "deepseek",
   "model": "deepseek-v4-flash",
-  "translated": 3,
-  "cache_hits": 44,
+  "translated": 54,
+  "cache_hits": 0,
   "skipped": 0,
-  "source_notes_translated": 0,
-  "source_note_cache_hits": 124,
+  "source_notes_translated": 124,
+  "source_note_cache_hits": 0,
   "source_notes_skipped": 0,
   "warnings": []
 }

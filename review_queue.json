@@ -34,7 +34,20 @@
         "mode": ""
       },
       "ai_advisory": {
-        "available": false
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "location_context_weak"
+        ],
+        "chinese_summary": "ICOS 2027年1月冬季学校现已开放申请，截止日期为2026年7月31日，地点在芬兰Hyytiälä，费用约100欧元。",
+        "extracted_deadline": "2026-07-31",
+        "extracted_fee": "€ 100",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "Submission deadline is 31 July 2026.",
+          "fee": "We might have to impose a nominal contribution per student in the order of € 100, depending on the amount of sponsors we may collect.",
+          "funding": ""
+        }
       }
     },
     {
