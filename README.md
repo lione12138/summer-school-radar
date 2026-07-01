@@ -34,7 +34,7 @@ after evidence, cost, and reliability controls are in place.
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-06-30 · 1 fully qualified · 2 high-quality · 5 found shown_
+_Last scan: 2026-07-01 · 1 fully qualified · 2 high-quality · 5 found shown_
 
 **Fully Qualified Opportunities**
 
@@ -47,13 +47,13 @@ _Last scan: 2026-06-30 · 1 fully qualified · 2 high-quality · 5 found shown_
 | title | type | organizer | location | duration | deadline | funding / fee | topic |
 |---|---|---|---|---|---|---|---|
 | [ICOS Summer/Winter School January 2027, application is now open](https://www.icos-cp.eu/about/opportunities/summer-school) | summer school | ICOS | Europe | 18 Jan – 28 Jan 2027 · 11 days | 2026-07-31 | financial support · amount not stated · Apply on official page | climate, climate change, remote sensing, statistics |
-| [ELLIS Summer School at Unit Saarbrücken](https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026) | summer school | ELLIS | Saarland University | 24 Aug – 28 Aug 2026 · 5 days | uncertain | Fee about EUR 250 · Apply on official page | AI |
+| [ELLIS Summer School at Unit Saarbrücken](https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026) | summer school | ELLIS | Saarland University | 24 Aug – 28 Aug 2026 · 5 days | 2026-07-19 | Fee about EUR 250 · Apply on official page | AI |
 
 **Found Opportunities**
 
 | title | type | organizer | location | duration | deadline | funding / fee | topic |
 |---|---|---|---|---|---|---|---|
-| [Get to know the Bernstein Network!](https://bernstein-network.de/en/) | advanced course | Bernstein Network | Europe | uncertain | 2026-08-27 | travel grant, stipend · amount not stated · Apply on official page | satellite, AI, machine learning, data analysis |
+| [Get to know the Bernstein Network!](https://bernstein-network.de/en/) | advanced course | Bernstein Network | Europe | uncertain | 2026-08-27 | travel grant, stipend · amount not stated · Apply on official page | satellite, AI, data analysis, physics |
 | [Travel Grants](https://bernstein-network.de/en/bernstein-conference/early-career-scientists/travel-grants/) | advanced course | Bernstein Network | Europe | uncertain | 2026-07-01 | travel grant · amount not stated · Apply on official page | satellite, data analysis, statistics, computational neuroscience |
 | [River Basin Modelling](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | groundwater, water resources, water quality, GIS |
 | [ELLIS Summer School at Institute Tübingen](https://ellis.eu/events/ellis-summer-school-at-institute-tuebingen-2026) | summer school | ELLIS | Max Planck Institute for Intelligent Systems | 31 Aug – 11 Sep 2026 · 12 days | 2026-07-10 | Funding or fee not stated | machine learning |
@@ -200,6 +200,46 @@ pip install -e ".[dev,semantic,llm]"
 $env:DEEPSEEK_API_KEY = "sk-..."
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction
 ```
+
+### Build-time Chinese translation
+
+The public site has two translation layers:
+
+- Interface text, status labels, dates, modes, funding types, and topic names
+  use committed deterministic translations.
+- Opportunity titles, summaries, eligibility, recommendation reasons, risk
+  notes, and source-registry notes are translated during the static-site build.
+
+Build-time translation is enabled under `translation` in `config/ai.yaml`. It
+never calls an API from the visitor's browser. New or changed English content
+is hashed and translated once; unchanged content is loaded from the ignored
+`data/translation_cache/` directory. The build writes counts and non-sensitive
+warnings to `site/translation-status.json`.
+
+Set the key in the environment or in a local ignored `.env` file. A normal scan
+then fills missing cached translations even when semantic ranking and LLM
+extraction are disabled:
+
+```powershell
+$env:DEEPSEEK_API_KEY = "sk-..."
+python -m research_school_radar.cli scan
+```
+
+For the daily scheduled scan, the local file is simpler and remains available
+to new processes:
+
+```powershell
+Copy-Item .env.example .env
+# Edit .env and set DEEPSEEK_API_KEY without quotes.
+python -m research_school_radar.cli scan
+```
+
+Without the key, builds remain deterministic and reuse existing translations,
+but newly discovered prose falls back to the English source text until a later
+build can translate it. The API response must preserve URLs, ISO dates, and
+currency amounts or it is rejected. A localization audit also fails the build
+when newly added headings, buttons, filters, table headers, or other interface
+text lack a Chinese translation contract.
 
 ### Using DeepSeek as remote LLM provider
 

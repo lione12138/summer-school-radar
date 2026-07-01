@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-30",
+  "generated": "2026-07-01",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -56,9 +56,7 @@
       "topics": [
         "satellite",
         "AI",
-        "machine learning",
         "data analysis",
-        "robotics",
         "physics",
         "statistics",
         "computational neuroscience",
@@ -147,40 +145,6 @@
         "duration": "ELLIS events listing: 2026-08-31 to 2026-09-11",
         "funding": "",
         "mode": "ELLIS listing location: Max Planck Institute for Intelligent Systems"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "ELLIS Summer School at Unit Saarbrücken",
-      "url": "https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "location": "Saarland University",
-      "dates": {
-        "start": "2026-08-24",
-        "end": "2026-08-28",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "low-fee",
-      "fee": "Student/PhD EUR 250",
-      "fee_eur": 250.0,
-      "topics": [
-        "AI"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "duration is below 8 days"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "",
-        "duration": "ELLIS events listing: 2026-08-24 to 2026-08-28",
-        "funding": "",
-        "mode": "ELLIS listing location: Saarland University"
       },
       "ai_advisory": {
         "available": false
