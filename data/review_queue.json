@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-01",
+  "generated": "2026-07-02",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -59,11 +59,14 @@
         "data analysis",
         "physics",
         "statistics",
+        "materials science",
+        "engineering",
         "computational neuroscience",
         "neuroscience",
         "neural computation",
         "neuroAI",
-        "history"
+        "history",
+        "philosophy"
       ],
       "needs_review": [
         "duration is uncertain"
@@ -73,44 +76,6 @@
         "deadline": "Deadline: 27.08.2026 (other dates listed: 2026-07-16, 2026-07-31)",
         "duration": "",
         "funding": "Travel Grants PhD Symposium Postdoc Meeting General Information Important Dates & FAQ Plan Your Visit Press Code of Conduct PR Media",
-        "mode": "on Site (BCOS) Awards and Initiatives Valentin Braitenber"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "Travel Grants",
-      "url": "https://bernstein-network.de/en/bernstein-conference/early-career-scientists/travel-grants/",
-      "organizer": "Bernstein Network",
-      "source_layer": "2",
-      "location": "Europe",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": "2026-07-01",
-      "deadline_status": "open",
-      "financial_access_status": "funded",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "satellite",
-        "data analysis",
-        "statistics",
-        "computational neuroscience",
-        "neuroscience",
-        "history"
-      ],
-      "needs_review": [
-        "duration is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "Application deadline: July 1, 2026",
-        "duration": "",
-        "funding": "Travel Grants – Bernstein Network Computational Neuroscience Home Network The Bernstein Network Bernstein Centers Berlin Freiburg Gö",
         "mode": "on Site (BCOS) Awards and Initiatives Valentin Braitenber"
       },
       "ai_advisory": {
