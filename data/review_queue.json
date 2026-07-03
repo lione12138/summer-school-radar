@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-02",
+  "generated": "2026-07-03",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -59,14 +59,11 @@
         "data analysis",
         "physics",
         "statistics",
-        "materials science",
-        "engineering",
         "computational neuroscience",
         "neuroscience",
         "neural computation",
         "neuroAI",
-        "history",
-        "philosophy"
+        "history"
       ],
       "needs_review": [
         "duration is uncertain"
