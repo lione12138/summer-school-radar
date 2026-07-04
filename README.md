@@ -23,18 +23,18 @@ layer using `BAAI/bge-m3` embeddings. This embedding layer ranks scanned page
 chunks for human review and helps surface relevant application, fee, funding,
 eligibility, and deadline context that string matching may miss.
 
-The semantic layer is still being optimized and is not the source of truth for
-qualification, ranking, RSS inclusion, or public recommendation status. Future
-work may add field-specific research-training ontologies for specialized
-domains and may connect external AI APIs for more accurate advisory analysis
-after evidence, cost, and reliability controls are in place.
+The semantic and DeepSeek layers are advisory and evidence-gated; they are not
+the source of truth for qualification, ranking, RSS inclusion, or public
+recommendation status. Future work may add field-specific research-training
+ontologies for specialized domains, but public output should remain auditable
+through official-source evidence and deterministic validation.
 
 ## Latest Scan Results
 
 This section is refreshed automatically by the daily local scan.
 
 <!-- radar:results:start -->
-_Last scan: 2026-07-03 · 1 fully qualified · 2 high-quality · 4 found shown_
+_Last scan: 2026-07-04 · 1 fully qualified · 2 high-quality · 4 found shown_
 
 **Fully Qualified Opportunities**
 
@@ -123,8 +123,8 @@ It does **not** target PhD admissions, PhD positions, full-time doctoral degree 
 ## Quick Start
 
 ```powershell
-git clone <this-repository>
-cd <this-repository>
+git clone https://github.com/lione12138/summer-school-radar.git
+cd summer-school-radar
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -e ".[dev]"
@@ -141,6 +141,11 @@ Run a real fixed-source scan:
 ```powershell
 python -m research_school_radar.cli scan
 ```
+
+HTTP source pages are conditionally cached under ignored `data/http_cache/`.
+When a source returns `ETag` or `Last-Modified`, later scans send
+`If-None-Match` / `If-Modified-Since` and reuse the cached body on `304 Not
+Modified`. Use `--refresh-http-cache` to force a fresh download.
 
 ## Optional semantic ranking
 
@@ -168,25 +173,18 @@ python -m research_school_radar.cli scan --enable-semantic
 Semantic sidecar output goes to `site/semantic_chunks.json` and
 `reports/YYYY-MM-DD.semantic.json`.
 
-LLM extraction is optional. It reads semantic chunks and asks a configured
-provider for structured, cited evidence. Supported providers are:
-
-- Ollama: native `/api/chat`, default model `qwen3.5:9b`, with `think: false`
-  and `format: "json"`.
-- LM Studio: OpenAI-compatible `/v1/chat/completions`, default model id
-  `qwen2.5-7b-instruct`, with structured JSON schema mode when supported.
-- DeepSeek API: OpenAI-compatible `/chat/completions`, default model
-  `deepseek-v4-flash`, with `thinking` disabled and JSON object mode.
+LLM extraction is optional. It reads semantic chunks and asks DeepSeek for
+structured, cited evidence. The DeepSeek API uses the OpenAI-compatible
+`/chat/completions` endpoint, default model `deepseek-v4-flash`, `thinking`
+disabled, and JSON object mode.
 
 It always writes auditable sidecar JSON. During an AI-enabled site build,
 evidence-validated values may fill unresolved fields in a copy of an existing
 candidate before the same rule-based hard filters are run again. Explicitly
 classified new opportunity/application pages may also become homepage leads.
 The scanner's stored candidates, Markdown reports, and RSS remain unchanged.
-Local LLM software and models must be installed manually;
-remote API keys must be supplied by the user. The project does not install
-Ollama, LM Studio, model files, or create API keys automatically. In the Ollama
-CLI, `/set nothink` can disable thinking during manual interactive tests.
+Remote API keys must be supplied by the user. The project does not create API
+keys automatically or store real keys in configuration files.
 
 The LLM prompt is evidence-first: the scanner converts semantic chunks into
 short numbered snippets such as `E1`, `E2`, and `E3`. The model is asked to cite
@@ -240,7 +238,7 @@ currency amounts or it is rejected. A localization audit also fails the build
 when newly added headings, buttons, filters, table headers, or other interface
 text lack a Chinese translation contract.
 
-### Using DeepSeek as remote LLM provider
+### Using DeepSeek as LLM provider
 
 DeepSeek is the recommended first remote API trial because `deepseek-v4-flash`
 is low-cost, supports OpenAI-compatible chat completions, supports JSON output,
@@ -301,54 +299,6 @@ fewer pages because collection, semantic similarity, and per-source limits
 narrow the pool first. After observing real weekly run sizes, lower these caps
 to the smallest values that still preserve useful recall.
 
-### Using LM Studio as local LLM provider
-
-LM Studio must be installed manually. Download and load the model inside LM
-Studio, then start the local server from Developer / Local Server. The current
-tested downloaded model is:
-
-```text
-idasummer/Qwen2.5-7B-Instruct-Q5_K_M-GGUF
-```
-
-LM Studio exposes a shorter API model identifier. For the current setup use this
-exact API model id:
-
-```text
-qwen2.5-7b-instruct
-```
-
-Use the API model id in `LLM_MODEL`, not the download repository name. LM Studio
-usually does not reuse Ollama model files, so downloading the same model in both
-tools can duplicate disk usage.
-
-Check the local server model ids:
-
-```powershell
-curl.exe http://localhost:1234/v1/models
-```
-
-Configure LM Studio:
-
-```powershell
-$env:LLM_PROVIDER = "lmstudio"
-$env:LLM_BASE_URL = "http://localhost:1234/v1"
-$env:LLM_MODEL = "qwen2.5-7b-instruct"
-$env:LLM_API_KEY = "lm-studio"
-```
-
-Then run:
-
-```powershell
-python -m research_school_radar.ai_healthcheck --provider lmstudio
-python -m research_school_radar.ai_compare_providers
-python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
-```
-
-LM Studio may be faster on AMD iGPU / Radeon 780M setups when GPU offload is
-enabled. Structured output can improve JSON validity, but it does not remove the
-need for evidence validation. AI results remain evidence-gated.
-
 LLM sidecar output goes to `site/ai_extractions.json` and
 `reports/YYYY-MM-DD.ai.json`. LLM extraction is cached under
 `data/ai_cache/` by page URL, selected chunk text hash, model name, and
@@ -362,19 +312,6 @@ These files preserve the AI evidence and warnings. Homepage qualification still
 uses the existing rule-based hard filters after trusted missing fields have been
 filled; AI output never bypasses those filters.
 
-Check the local Ollama endpoint separately with:
-
-```powershell
-python -m research_school_radar.ai_healthcheck
-```
-
-If the internal disk is limited on Windows, Ollama model storage can be moved by
-setting an external directory before restarting Ollama:
-
-```powershell
-$env:OLLAMA_MODELS = "E:\ollama-models"
-```
-
 ## Real-world AI validation
 
 Passing tests only proves the optional AI branch is wired safely; it does not
@@ -383,15 +320,11 @@ trusting any advisory output:
 
 ```powershell
 python -m research_school_radar.ai_healthcheck
-python -m research_school_radar.ai_compare_providers
 $env:HF_HOME = Join-Path $env:TEMP "summer-school-radar-hf-cache"
 python -m research_school_radar.cli scan --enable-semantic --refresh-ai-cache
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
 python -m research_school_radar.ai_evaluate
 ```
-
-`ai_compare_providers.py` runs a small synthetic wiring check for Ollama, LM
-Studio, and DeepSeek when configured. It is not a quality benchmark.
 
 `ai_evaluate.py` reads `site/ai_extractions.json` and writes:
 
@@ -399,10 +332,10 @@ Studio, and DeepSeek when configured. It is not a quality benchmark.
 reports/YYYY-MM-DD.ai-evaluation-template.csv
 ```
 
-To compare two real provider runs, save each sidecar first and then run:
+To compare two real extraction runs, save each sidecar first and then run:
 
 ```powershell
-python -m research_school_radar.ai_compare_runs --left reports/ollama.ai.json --right reports/lmstudio.ai.json --left-name ollama --right-name lmstudio
+python -m research_school_radar.ai_compare_runs --left reports/before.ai.json --right reports/after.ai.json --left-name before --right-name after
 ```
 
 This writes:
