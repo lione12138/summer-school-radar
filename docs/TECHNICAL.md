@@ -1,14 +1,14 @@
-# Technical README
+# Summa Technical Notes
 
-Technical notes for Summer School Radar, an open-source radar for funded research seasonal schools and short courses: summer schools, winter schools, spring/autumn schools, training schools, field schools, doctoral schools, research schools, and short/advanced courses. Generic conference workshops are not included.
+Technical notes for Summa, an open-source scanner for funded research training opportunities across many academic fields: environmental & earth science, computing & data science, social sciences, and humanities. It covers seasonal schools and short courses such as summer schools, winter schools, spring/autumn schools, training schools, field schools, doctoral schools, research schools, and short/advanced courses. Generic conference workshops are not included.
 
 The project is inspired by curated vertical opportunity platforms such as Josh's Water Jobs, but it is aimed at research training rather than jobs. The goal is not to crawl the whole web. The goal is to maintain a trusted source registry, scan it regularly, extract structured evidence, apply strict filters, and publish a transparent public report.
 
 ## Three-Minute Start
 
 ```powershell
-git clone <this-repository>
-cd <this-repository>
+git clone https://github.com/lione12138/summer-school-radar.git
+cd summer-school-radar
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -e ".[dev]"
@@ -28,9 +28,15 @@ Run a real fixed-source scan with:
 python -m research_school_radar.cli scan
 ```
 
-## Why Not Another Summer School List?
+Plain HTTP source pages are cached under ignored `data/http_cache/` with their
+`ETag` and `Last-Modified` validators. Later scans send conditional request
+headers and reuse the cached body on `304 Not Modified`, which reduces repeated
+downloads for pages that change only every few weeks. Pass
+`--refresh-http-cache` to bypass validators and overwrite the cache.
 
-Most summer school lists are plain link collections. This project is different:
+## Why Not Another Research-Training List?
+
+Most opportunity lists are plain link collections. Summa is different:
 
 - it targets research training opportunities, not generic study-abroad marketing
 - it stores source evidence for high-risk fields such as deadline and funding
@@ -42,7 +48,7 @@ Most summer school lists are plain link collections. This project is different:
 
 ## Current Status
 
-This repository now contains a working MVP:
+This repository now contains the current Summa pipeline:
 
 - fixed-source scanner for trusted academic and research organizations
 - second-level candidate link following from source pages
@@ -53,16 +59,16 @@ This repository now contains a working MVP:
 - Markdown report generation
 - static website generation with browser-side filters
 - JSON state file tracking seen opportunities (diff-friendly, auto-committed)
-- GitHub Actions workflow for daily free scans
+- local daily scan + GitHub Pages publishing workflow
 - GitHub Pages deployment
 - GitHub issue template for external submissions
 - optional analytics injection for Cloudflare Web Analytics or GoatCounter
-- curated opportunity section generated from `data/opportunities.yml`
-- test coverage for filtering, reporting, linked-page collection, location extraction, site generation, source disabling, and analytics injection
+- curated opportunity records generated from `data/opportunities.yml`
+- test coverage split by module (`test_extract.py`, `test_site.py`, `test_rank.py`, `test_collect.py`, `test_report.py`, `test_review.py`, `test_storage.py`, etc.)
 
 ## What It Looks For
 
-The default profile targets MSc, PhD, postdoc, and early-career research opportunities in the project's core domain: water and hydrology, climate and atmosphere, geoscience and earth observation, remote sensing, and scientific machine learning. The `preferred_topics` list in `config/profile.yaml` is the relevance gate; widening or narrowing the domain is a matter of editing that list, but the focused scope keeps the gate strong and the source registry tractable.
+The default profile targets MSc, PhD, postdoc, and early-career research training across multiple fields: environmental & earth science, computing & data science, social sciences, and humanities methods. The `preferred_topics` list in `config/profile.yaml` is the relevance gate; widening or narrowing the domain is a matter of editing that list, but the focused source registry keeps the gate tractable.
 
 An opportunity is treated as fully qualified only when all hard conditions are satisfied:
 
@@ -85,7 +91,7 @@ Default branch:
 sources -> collect -> parse -> extract rules -> filter -> rank -> report/site
 
 Optional AI branch:
-pages -> semantic chunks -> evidence snippets -> optional LLM extraction -> evidence-ID validation -> homepage candidate copies + sidecar JSON
+pages -> semantic chunks -> evidence snippets -> DeepSeek extraction -> evidence-ID validation -> homepage candidate copies + sidecar JSON
 ```
 
 The optional branch never overwrites scanner `Candidate` records. For the
@@ -147,22 +153,15 @@ ranking alone does not change any opportunity data; it only selects evidence for
 the optional LLM stage.
 
 LLM extraction is also optional. It turns semantic chunks into
-short numbered evidence snippets, sends those snippets to a configured provider,
-and writes structured sidecar JSON. Evidence-validated fields may enrich
-homepage candidate copies, but cannot bypass hard filters. It does not change
-stored `Candidate` records, Markdown report tables, RSS, or curated data.
+short numbered evidence snippets, sends those snippets to DeepSeek, and writes
+structured sidecar JSON. Evidence-validated fields may enrich homepage
+candidate copies, but cannot bypass hard filters. It does not change stored
+`Candidate` records, Markdown report tables, RSS, or curated data.
 
-Supported providers:
-
-- `ollama`: native `/api/chat`, default model `qwen3.5:9b`, request includes
-  `think: false` and `format: "json"`.
-- `lmstudio`: OpenAI-compatible `/v1/chat/completions`, default model id
-  `qwen2.5-7b-instruct`, request uses `response_format` JSON schema when
-  supported and falls back to plain JSON prompting with a
-  `lmstudio_structured_output_fallback` warning.
-- `deepseek`: remote OpenAI-compatible `/chat/completions`, default model
-  `deepseek-v4-flash`, request uses `response_format: {"type": "json_object"}`
-  and `thinking: {"type": "disabled"}`.
+The only supported LLM provider in the current codebase is DeepSeek:
+OpenAI-compatible `/chat/completions`, default model `deepseek-v4-flash`,
+`response_format: {"type": "json_object"}`, and
+`thinking: {"type": "disabled"}`.
 
 ```powershell
 pip install -e ".[dev,semantic,llm]"
@@ -170,11 +169,8 @@ $env:DEEPSEEK_API_KEY = "sk-..."
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction
 ```
 
-Ollama or LM Studio must be installed manually. Remote providers such as
-DeepSeek require a user-supplied API key. This project does not install local
-LLM software, download models automatically, create API keys, or store real API
-keys in configuration files. In the Ollama CLI, `/set nothink` can disable
-thinking during manual interactive tests. If the configured provider is
+DeepSeek requires a user-supplied API key. This project does not create API keys
+or store real API keys in configuration files. If the configured provider is
 unavailable, LLM extraction records a warning and the scan continues with the
 existing rule-based outputs. The code strips thinking traces from model
 responses as a fallback, and records `llm_json_parse_failed` instead of
@@ -208,25 +204,6 @@ responds. `llm_validate.py` warns when a non-unknown value has no evidence ID,
 an ID does not exist, or the cited snippet lacks field-specific context such as
 deadline, fee, funding, location, or eligibility wording. Public sidecars keep
 short snippet previews and do not dump full raw page text.
-
-### Local LLM trial notes
-
-Local LLM extraction has been tested with small Qwen-family models through both
-Ollama and LM Studio:
-
-- Ollama native `/api/chat` with `qwen3.5:9b`, `think: false`, and JSON mode.
-- LM Studio OpenAI-compatible `/v1/chat/completions` with
-  `qwen2.5-7b-instruct`.
-
-These trials were useful for validating the advisory architecture but were not
-reliable enough to promote into the main pipeline. Early Ollama runs produced
-truncated JSON until `num_predict` was increased; after that, extraction still
-misread or omitted high-risk fields on real pages such as deadline, fee, and
-funding. LM Studio runs depended on a manually started local server and did not
-consistently improve extraction quality. The current recommendation is to keep
-local LLM extraction disabled for daily use and rely on `BAAI/bge-m3` semantic
-ranking plus rule-based extraction. Future work may revisit external AI APIs
-only with strict evidence grounding, cost controls, and human-review gates.
 
 #### Using DeepSeek API
 
@@ -318,53 +295,6 @@ It does not constitute independent factual certification. Homepage inclusion
 still requires the evidence-gated merge and the normal rule pipeline; curated
 publication still requires human review.
 
-#### Using LM Studio
-
-LM Studio must be installed manually. Download and load the model inside LM
-Studio, then start Developer / Local Server. The current tested downloaded model
-is:
-
-```text
-idasummer/Qwen2.5-7B-Instruct-Q5_K_M-GGUF
-```
-
-The API model identifier exposed by LM Studio is shorter:
-
-```text
-qwen2.5-7b-instruct
-```
-
-Use that API model id in `LLM_MODEL`, not the repository/download name. LM
-Studio usually does not reuse Ollama model files, so installing the same family
-of models in both tools can duplicate disk usage.
-
-Check model ids:
-
-```powershell
-curl.exe http://localhost:1234/v1/models
-```
-
-Configuration:
-
-```powershell
-$env:LLM_PROVIDER = "lmstudio"
-$env:LLM_BASE_URL = "http://localhost:1234/v1"
-$env:LLM_MODEL = "qwen2.5-7b-instruct"
-$env:LLM_API_KEY = "lm-studio"
-```
-
-Then run:
-
-```powershell
-python -m research_school_radar.ai_healthcheck --provider lmstudio
-python -m research_school_radar.ai_compare_providers
-python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
-```
-
-LM Studio may be faster on AMD iGPU / Radeon 780M setups when partial GPU
-offload is enabled. Structured output may improve JSON validity, but evidence
-validation and manual review are still required.
-
 LLM extraction is cached under `data/ai_cache/` using page URL, selected chunk
 text hash, model name, and `AI_EXTRACTION_SCHEMA_VERSION`. Use
 `--refresh-ai-cache` to ignore cached semantic and LLM entries:
@@ -378,17 +308,10 @@ LLM sidecar output goes to:
 - `site/ai_extractions.json`
 - `reports/YYYY-MM-DD.ai.json`
 
-The endpoint can be checked separately without running a scan:
+The DeepSeek endpoint can be checked separately without running a scan:
 
 ```powershell
 python -m research_school_radar.ai_healthcheck
-```
-
-If the internal disk is limited on Windows, Ollama model storage can be moved by
-setting an external directory and restarting Ollama:
-
-```powershell
-$env:OLLAMA_MODELS = "E:\ollama-models"
 ```
 
 Tests do not download `BAAI/bge-m3`, require API keys, or require
@@ -398,7 +321,7 @@ keep CI deterministic.
 ### AI-assisted homepage workflow
 
 Semantic ranking is meant to surface pages that the rule-based
-`looks_like_opportunity` gate may miss. Local LLM extraction creates advisory
+`looks_like_opportunity` gate may miss. LLM extraction creates advisory
 structured drafts from numbered snippets, and `llm_validate.py` checks whether
 non-unknown fields cite existing evidence IDs with suitable context.
 
@@ -437,7 +360,6 @@ sequence when checking the advisory branch:
 
 ```powershell
 python -m research_school_radar.ai_healthcheck
-python -m research_school_radar.ai_compare_providers
 $env:HF_HOME = Join-Path $env:TEMP "summer-school-radar-hf-cache"
 python -m research_school_radar.cli scan --enable-semantic --refresh-ai-cache
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
@@ -458,33 +380,23 @@ uses the standard library `csv` module and does not require pandas.
 
 #### Comparing real AI extraction runs
 
-Synthetic provider comparison checks wiring and latency, but provider quality
-should be judged on real page sidecars. A typical workflow is:
+Quality should be judged on real page sidecars. A typical workflow is:
 
 ```powershell
-# Run Ollama extraction, then keep a copy of the sidecar.
-python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
-Copy-Item reports/YYYY-MM-DD.ai.json reports/ollama.ai.json
-
-# Run LM Studio extraction with LM Studio env vars, then keep a copy.
-$env:LLM_PROVIDER = "lmstudio"
-$env:LLM_BASE_URL = "http://localhost:1234/v1"
-$env:LLM_MODEL = "qwen2.5-7b-instruct"
-$env:LLM_API_KEY = "lm-studio"
-python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
-Copy-Item reports/YYYY-MM-DD.ai.json reports/lmstudio.ai.json
-
-# Run DeepSeek extraction with DeepSeek env vars, then keep a copy.
+# Run DeepSeek extraction and keep a copy of the sidecar.
 $env:LLM_PROVIDER = "deepseek"
 $env:LLM_BASE_URL = "https://api.deepseek.com"
 $env:LLM_MODEL = "deepseek-v4-flash"
 $env:DEEPSEEK_API_KEY = "sk-..."
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
-Copy-Item reports/YYYY-MM-DD.ai.json reports/deepseek.ai.json
+Copy-Item reports/YYYY-MM-DD.ai.json reports/before.ai.json
+
+# Change prompts, validation, or source configuration, then run again.
+python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --refresh-ai-cache
+Copy-Item reports/YYYY-MM-DD.ai.json reports/after.ai.json
 
 # Compare real outputs.
-python -m research_school_radar.ai_compare_runs --left reports/ollama.ai.json --right reports/lmstudio.ai.json --left-name ollama --right-name lmstudio
-python -m research_school_radar.ai_compare_runs --left reports/lmstudio.ai.json --right reports/deepseek.ai.json --left-name lmstudio --right-name deepseek
+python -m research_school_radar.ai_compare_runs --left reports/before.ai.json --right reports/after.ai.json --left-name before --right-name after
 ```
 
 The command writes:
@@ -513,13 +425,15 @@ validation against official pages.
 ### Key Files
 
 - `src/research_school_radar/cli.py` is the command entry point.
-- `src/research_school_radar/collect.py` fetches source and linked pages with `requests` and `BeautifulSoup`.
+- `src/research_school_radar/collect.py` fetches source and linked pages with `requests` and `BeautifulSoup`, using conditional HTTP caching for normal requests.
+- `src/research_school_radar/http_cache.py` stores page bodies plus `ETag` / `Last-Modified` validators under ignored `data/http_cache/`.
 - `src/research_school_radar/parse.py` identifies likely opportunity links and skips unsuitable files or blocked domains.
 - `src/research_school_radar/extract.py` performs rule-based structured extraction.
 - `src/research_school_radar/filter.py` applies hard filters.
 - `src/research_school_radar/rank.py` scores and deduplicates candidates. Deduplication runs on every scan: it canonicalizes URLs (dropping tracking parameters, fragments, and trailing slashes), then merges the same event reported under different titles or by different sources when a title-similarity match is confirmed by a shared date, while keeping distinct editions that have different start dates.
 - `src/research_school_radar/report.py` writes Markdown reports.
-- `src/research_school_radar/site.py` writes the static public website.
+- `src/research_school_radar/site.py` coordinates static website generation.
+- `src/research_school_radar/site_styles.py`, `site_i18n.py`, `site_seo.py`, and `site_feed.py` hold CSS constants, language scripts, SEO/sitemap/robots/watermark helpers, and RSS rendering.
 - `src/research_school_radar/storage.py` updates the JSON seen-state file (data/seen.json).
 - `src/research_school_radar/semantic.py` writes optional semantic chunk sidecars.
 - `src/research_school_radar/evidence_snippets.py` selects short numbered snippets for evidence-first LLM prompting.
@@ -527,7 +441,6 @@ validation against official pages.
 - `src/research_school_radar/llm_client.py`, `llm_extract.py`, and `llm_validate.py` implement optional advisory LLM sidecars.
 - `src/research_school_radar/ai_healthcheck.py` checks the configured LLM provider.
 - `src/research_school_radar/ai_evaluate.py` writes the human annotation CSV for real-world AI quality checks.
-- `src/research_school_radar/ai_compare_providers.py` runs a tiny provider comparison without a full scan.
 
 ## Configuration
 
@@ -535,7 +448,7 @@ validation against official pages.
 - `config/sources.yaml` lists trusted sources. Each source can be enabled or disabled, and can block problematic linked domains.
 - `config/queries.yaml` stores optional controlled discovery queries.
 - `config/site.yaml` controls optional analytics.
-- `config/ai.yaml` controls optional semantic ranking, LLM advisory extraction, resource limits, and `data/ai_cache/` behavior.
+- `config/ai.yaml` controls optional semantic ranking, DeepSeek advisory extraction, resource limits, and `data/ai_cache/` behavior.
 - `data/opportunities.yml` is the manually curated high-confidence opportunity database.
 
 Example source options:
@@ -740,7 +653,7 @@ pip install -e ".[render]"
 python -m playwright install chromium
 ```
 
-When Playwright is not installed, a `render: true` source falls back to a plain request automatically, so the default workflow stays lightweight. The daily GitHub Actions workflow installs the browser (cached between runs) so rendered sources work in CI.
+When Playwright is not installed, a `render: true` source falls back to a plain request automatically, so the default workflow stays lightweight. The optional AI workflow can install and cache the browser so rendered sources work in CI when that path is enabled.
 
 ## Direct Collectors (JSON APIs and structured listings)
 
@@ -798,25 +711,24 @@ The current implementation is useful but still early.
 - Fixed exchange rates require occasional maintenance and intentionally trade precision for a free, deterministic workflow.
 - Listing, calendar, navigation, and landing pages are filtered out: a candidate must have either a deadline or exactly one event date range (several ranges without a deadline indicates a calendar) and a non-generic, non-section title; pure language courses (CEFR level transitions) and degree recruitment are also excluded. Genuine opportunities with no machine-readable date can therefore be missed until their details are published.
 - No curator UI exists yet; `data/opportunities.yml` is edited manually.
-- No RSS feed or email digest is generated yet.
-- No automatic PR creation exists for promising new candidates.
-- No confidence score is stored per extracted field.
+- No email digest is generated yet.
+- No automatic PR or issue creation exists for promising new candidates.
+- Field-level evidence exists for many extracted fields, but a richer per-field confidence model and public evidence UI are still incomplete.
 - JavaScript filtering works on the static page, but there is no persistent user preference state.
 
 ## Suggested Improvements
 
 High-impact next steps:
 
-1. Add field-level confidence scores and evidence snippets for deadline, funding, duration, and mode.
-2. Add source-specific parsers for high-value sites such as EGU, ICIMOD, ELLIS, IHE Delft, and CUAHSI.
-3. Generate an RSS feed for fully qualified and curated opportunities.
-4. Add a review command that promotes a candidate from `site/candidates.json` into `data/opportunities.yml`.
-5. Add GitHub Action logic to open an issue when a strong new candidate appears.
-6. Add weekly email or Telegram digest support.
-7. Improve date extraction with richer patterns and page-specific adapters.
-8. Add an archive page so historical daily reports are browsable from the website.
-9. Add custom domain support and optional Cloudflare Web Analytics setup notes.
-10. Add screenshots or an example report section for the README.
+1. Add richer field-level confidence scores and public evidence snippets for deadline, funding, duration, and mode.
+2. Continue adding source-specific parsers or direct collectors for high-value sources.
+3. Add a review command that promotes a candidate from `site/candidates.json` into `data/opportunities.yml`.
+4. Add GitHub Action logic to open an issue or PR when a strong new candidate appears.
+5. Add weekly email, Telegram, or newsletter digest support.
+6. Improve date extraction with richer patterns and page-specific adapters.
+7. Add an archive page so historical daily reports are browsable from the website.
+8. Add custom domain support and optional Cloudflare Web Analytics setup notes.
+9. Add screenshots or an example report section for the README.
 
 Medium-term direction:
 

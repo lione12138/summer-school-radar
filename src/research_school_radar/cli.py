@@ -22,6 +22,7 @@ from .api_sources import collect_api_candidates
 from .collect import DEFAULT_MAX_WORKERS, collect_sources, fetch_source
 from .extract import extract_candidate, sample_candidate
 from .filter import apply_hard_filters
+from .http_cache import HttpCache
 from .llm_client import LLMClientConfig, create_llm_client
 from .llm_extract import run_llm_extraction, write_llm_sidecars
 from .models import Candidate, Page, Source
@@ -52,6 +53,7 @@ def main() -> None:
     scan.add_argument("--enable-llm-extraction", action="store_true")
     scan.add_argument("--ai-config", type=Path, default=None)
     scan.add_argument("--refresh-ai-cache", action="store_true")
+    scan.add_argument("--refresh-http-cache", action="store_true")
     scan.add_argument("--max-links-per-source", type=int, default=8)
     scan.add_argument("--max-workers", type=int, default=DEFAULT_MAX_WORKERS)
     args = parser.parse_args()
@@ -71,6 +73,7 @@ def main() -> None:
             enable_llm_extraction=args.enable_llm_extraction,
             ai_config=args.ai_config,
             refresh_ai_cache=args.refresh_ai_cache,
+            refresh_http_cache=args.refresh_http_cache,
         )
 
 
@@ -88,6 +91,7 @@ def run_scan(
     enable_llm_extraction: bool = False,
     ai_config: Path | None = None,
     refresh_ai_cache: bool = False,
+    refresh_http_cache: bool = False,
 ) -> Path:
     if enable_llm_extraction and not enable_semantic:
         print("LLM extraction requires semantic chunks; enabling semantic ranking.")
@@ -98,12 +102,16 @@ def run_scan(
     overrides = load_overrides(data_dir / "overrides.yml")
     errors: list[str] = []
     semantic_pages: list[Page] = []
+    http_cache = HttpCache(data_dir / "http_cache", refresh=refresh_http_cache)
 
     if offline_sample:
         candidates = [sample_candidate(profile)]
     else:
         sources = _load_sources(config_dir / "sources.yaml")
-        pages, collection_errors = collect_sources(sources, max_workers=max_workers)
+        pruned = http_cache.prune()
+        if pruned:
+            print(f"Pruned {pruned} stale http-cache entr{'ies' if pruned != 1 else 'y'}")
+        pages, collection_errors = collect_sources(sources, max_workers=max_workers, http_cache=http_cache)
         # Transient network errors (timeouts, connection failures) vary run to run
         # on the shared CI runner and are not useful in the public notes; log them
         # but only surface persistent problems. The Sources page lists coverage.
@@ -118,6 +126,7 @@ def run_scan(
             pages,
             max_links_per_source,
             max_workers=max_workers,
+            http_cache=http_cache,
         )
         semantic_pages = unique_pages([*pages, *linked_pages])
         candidate_pages = [page for page in pages if looks_like_opportunity(page.text)]
@@ -146,7 +155,7 @@ def run_scan(
                 for result in search_results
                 if result.url
             ]
-            discovery_pages, discovery_errors = _collect_discovery_sources(discovery_sources)
+            discovery_pages, discovery_errors = _collect_discovery_sources(discovery_sources, http_cache=http_cache)
             errors.extend(discovery_errors)
             semantic_pages = unique_pages([*semantic_pages, *discovery_pages])
             candidates.extend(
@@ -404,11 +413,11 @@ def _load_ai_cache(path: Path, *, data_dir: Path, refresh: bool = False) -> AICa
 
 
 _LLM_DEFAULTS = {
-    "provider": "ollama",
-    "base_url": "http://localhost:11434",
-    "model": "qwen3.5:9b",
-    "fallback_model": "qwen3:8b",
-    "api_key": "ollama",
+    "provider": "deepseek",
+    "base_url": "https://api.deepseek.com",
+    "model": "deepseek-v4-flash",
+    "fallback_model": "",
+    "api_key": "",
     "temperature": 0,
     "timeout_seconds": 90,
     "max_pages_for_llm": 150,
@@ -434,18 +443,6 @@ _FOLLOW_UP_DEFAULTS = {
 
 
 _PROVIDER_DEFAULTS = {
-    "ollama": {
-        "base_url": "http://localhost:11434",
-        "model": "qwen3.5:9b",
-        "fallback_model": "qwen3:8b",
-        "api_key": "ollama",
-    },
-    "lmstudio": {
-        "base_url": "http://localhost:1234/v1",
-        "model": "qwen2.5-7b-instruct",
-        "fallback_model": "",
-        "api_key": "lm-studio",
-    },
     "deepseek": {
         "base_url": "https://api.deepseek.com",
         "model": "deepseek-v4-flash",
@@ -664,7 +661,7 @@ def _collect_follow_up_safely(
 
 
 def _apply_provider_defaults(config: dict, providers: dict[str, dict]) -> dict:
-    provider = str(config.get("provider", "ollama"))
+    provider = str(config.get("provider", "deepseek"))
     provider_defaults = providers.get(provider, {})
     merged = dict(config)
     for key in ("base_url", "model", "fallback_model", "api_key"):
@@ -809,18 +806,24 @@ def _load_curated_opportunities(path: Path) -> list[dict]:
     return [item for item in opportunities if isinstance(item, dict)]
 
 
-def _collect_discovery_sources(sources: list[Source]):
+def _collect_discovery_sources(sources: list[Source], *, http_cache: HttpCache | None = None):
     pages = []
     errors = []
     for source in sources:
         try:
-            pages.append(fetch_source(source))
+            pages.append(_fetch_source_with_optional_cache(source, http_cache))
         except Exception as exc:  # noqa: BLE001 - keep scan resilient to arbitrary result pages.
             errors.append(f"{source.name}: {exc}")
     return pages, errors
 
 
-def collect_linked_opportunity_pages(source_pages, max_links_per_source: int, max_workers: int = DEFAULT_MAX_WORKERS):
+def collect_linked_opportunity_pages(
+    source_pages,
+    max_links_per_source: int,
+    max_workers: int = DEFAULT_MAX_WORKERS,
+    *,
+    http_cache: HttpCache | None = None,
+):
     linked_sources = []
     seen_urls = {page.url for page in source_pages}
     for page in source_pages:
@@ -851,13 +854,13 @@ def collect_linked_opportunity_pages(source_pages, max_links_per_source: int, ma
 
     workers = max(1, min(max_workers, len(linked_sources)))
     if workers == 1:
-        return _collect_linked_sources_serial(linked_sources)
+        return _collect_linked_sources_serial(linked_sources, http_cache=http_cache)
 
     pages_by_index = {}
     errors_by_index = {}
     with ThreadPoolExecutor(max_workers=workers) as executor:
         future_to_link = {
-            executor.submit(fetch_source, linked_source): (index, source_name, url)
+            executor.submit(_fetch_source_with_optional_cache, linked_source, http_cache): (index, source_name, url)
             for index, (source_name, url, linked_source) in enumerate(linked_sources)
         }
         for future in as_completed(future_to_link):
@@ -875,18 +878,24 @@ def collect_linked_opportunity_pages(source_pages, max_links_per_source: int, ma
     )
 
 
-def _collect_linked_sources_serial(linked_sources):
+def _collect_linked_sources_serial(linked_sources, *, http_cache: HttpCache | None = None):
     pages = []
     errors = []
     for source_name, url, linked_source in linked_sources:
         try:
-            linked_page = fetch_source(linked_source)
+            linked_page = _fetch_source_with_optional_cache(linked_source, http_cache)
         except Exception as exc:  # noqa: BLE001 - keep a single broken link from failing the scan.
             errors.append(f"{source_name} linked page {url}: {exc}")
             continue
         if looks_like_opportunity(linked_page.text):
             pages.append(linked_page)
     return pages, errors
+
+
+def _fetch_source_with_optional_cache(source: Source, http_cache: HttpCache | None) -> Page:
+    if http_cache is None:
+        return fetch_source(source)
+    return fetch_source(source, http_cache=http_cache)
 
 
 if __name__ == "__main__":

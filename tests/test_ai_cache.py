@@ -59,13 +59,13 @@ def test_llm_cache_key_includes_schema_version_and_chunk_text() -> None:
     key_a = llm_cache_key(
         page_url="https://example.org/school",
         chunks=[_chunk("first")],
-        model="qwen3.5:9b",
+        model="deepseek-v4-flash",
         schema_version=AI_EXTRACTION_SCHEMA_VERSION,
     )
     key_b = llm_cache_key(
         page_url="https://example.org/school",
         chunks=[_chunk("second")],
-        model="qwen3.5:9b",
+        model="deepseek-v4-flash",
         schema_version=AI_EXTRACTION_SCHEMA_VERSION,
     )
     assert key_a != key_b
@@ -87,7 +87,7 @@ def test_refresh_ai_cache_bypasses_cached_llm_item(tmp_path) -> None:
     key = llm_cache_key(
         page_url="https://example.org/school",
         chunks=[_chunk()],
-        model="qwen3.5:9b",
+        model="deepseek-v4-flash",
         schema_version=AI_EXTRACTION_SCHEMA_VERSION,
     )
     cache.set("llm", key, cached_item)
@@ -108,7 +108,7 @@ def test_refresh_ai_cache_bypasses_cached_llm_item(tmp_path) -> None:
         max_pages_for_llm=1,
         max_chunks_per_page=1,
         cache=cache,
-        model_name="qwen3.5:9b",
+        model_name="deepseek-v4-flash",
     )
     assert items[0]["validation_warnings"] == []
     assert client.calls == 0
@@ -121,7 +121,7 @@ def test_refresh_ai_cache_bypasses_cached_llm_item(tmp_path) -> None:
         max_pages_for_llm=1,
         max_chunks_per_page=1,
         cache=refresh_cache,
-        model_name="qwen3.5:9b",
+        model_name="deepseek-v4-flash",
     )
     assert client.calls == 1
     assert items[0]["validation_warnings"] != ["cached"]

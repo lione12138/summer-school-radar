@@ -465,8 +465,6 @@ def _cached_operational_warnings(item: dict[str, Any]) -> list[str]:
         "llm_json_parse_failed",
         "llm_request_truncated:",
         "llm_chunk_truncated:",
-        "lmstudio_",
-        "ollama_",
         "deepseek_",
     )
     return [

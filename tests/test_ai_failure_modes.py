@@ -21,10 +21,10 @@ def test_missing_ai_config_uses_defaults(tmp_path) -> None:
     llm = _load_llm_config(tmp_path / "missing.yaml")
 
     assert semantic["embedding_model"] == "BAAI/bge-m3"
-    assert llm["model"] == "qwen3.5:9b"
+    assert llm["model"] == "deepseek-v4-flash"
 
 
-def test_ollama_unavailable_does_not_crash() -> None:
+def test_llm_unavailable_does_not_crash() -> None:
     class UnavailableClient:
         def complete(self, prompt: str) -> str:
             raise RuntimeError("connection refused")

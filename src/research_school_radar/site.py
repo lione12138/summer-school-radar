@@ -10,9 +10,6 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import quote, urlencode
 
-from email.utils import format_datetime
-from datetime import datetime, timezone
-
 from .ai_home import merge_ai_for_homepage
 from .ai_review import potential_missed_pages
 from .localization import (
@@ -27,17 +24,28 @@ from .localization import (
     topics_label_zh,
 )
 from .llm_client import BaseLLMClient
-from .localization_audit import assert_localization_complete
+from .localization_audit import warn_localization_issues
 from .models import Candidate
 from .review import build_review_queue
+from .site_feed import render_feed
 from .translation import TranslationConfig, translate_candidates, translate_source_metadata
 from .utils import ROOT, format_duration, is_too_short, sanitize_location, topics_label
+from .site_seo import (
+    CANARY as _CANARY,
+    DATA_LICENSE as _DATA_LICENSE,
+    DATA_LICENSE_URL as _DATA_LICENSE_URL,
+    SITE_DESCRIPTION as _SITE_DESCRIPTION,
+    SITE_URL as _SITE_URL,
+    data_license_text,
+    favicon_svg,
+    jsonld_block,
+    robots_txt,
+    seo_head,
+    sitemap_xml,
+    watermark,
+)
 
 
-_SITE_URL = "https://lione12138.github.io/summer-school-radar/"
-_OG_IMAGE = _SITE_URL + "og-image.png"
-_DATA_LICENSE = "CC BY 4.0"
-_DATA_LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 HIGH_QUALITY_MAX_FEE_EUR_PER_DAY = 70
 GENERIC_FOUND_TITLES = {
     "application process",
@@ -49,532 +57,8 @@ GENERIC_FOUND_TITLES = {
     "scholarships & awards",
     "key dates & application",
 }
-# A stable, distinctive marker baked into every generated artifact. Searching the
-# web for it surfaces sites that have copied this content wholesale.
-_CANARY = "SSR-CANON-7q3v9x2k8m4w"
-# AI training / scraping crawlers blocked in robots.txt. Search crawlers
-# (Googlebot, Bingbot) are intentionally left allowed for SEO; Google-Extended
-# opts out of Google's AI training without affecting search indexing.
-_BLOCKED_BOTS = (
-    "GPTBot", "ChatGPT-User", "OAI-SearchBot", "CCBot", "Google-Extended",
-    "anthropic-ai", "ClaudeBot", "Claude-Web", "PerplexityBot", "Bytespider",
-    "Amazonbot", "Applebot-Extended", "cohere-ai", "Diffbot", "Omgilibot",
-    "ImagesiftBot", "FacebookBot", "meta-externalagent",
-)
-_SITE_DESCRIPTION = (
-    "A free daily scanner of trusted academic sources for funded research summer "
-    "schools, winter schools, and training schools across many academic fields — "
-    "environmental & earth science, computing & data science, social sciences, "
-    "and humanities — with strict filters and transparent evidence."
-)
-
-
-# Shared base styles for all generated pages. Interpolated into f-string
-# templates as a value, so it uses normal CSS braces.
-_THEME_CSS = """    :root {
-      color-scheme: light;
-      --bg: #f5f5ef;
-      --panel: #ffffff;
-      --panel-2: #faf9f3;
-      --ink: #19201a;
-      --muted: #5f6b60;
-      --line: #e6e4d7;
-      --accent: #1f6b4a;
-      --accent-ink: #17533a;
-      --accent-soft: #e8f1ea;
-      --highlight: #cfe84a;
-      --good: #1f6b4a;
-      --good-soft: #e4f2e8;
-      --warn: #8a5a12;
-      --warn-soft: #f7eecb;
-      --shadow: 0 1px 2px rgba(26, 32, 27, .05), 0 8px 28px rgba(26, 32, 27, .07);
-      --hero-1: #123524;
-      --hero-2: #1f6b4a;
-      --hero-3: #2f7d52;
-    }
-    :root[data-theme="dark"] {
-      color-scheme: dark;
-      --bg: #10140f;
-      --panel: #181d16;
-      --panel-2: #1d231a;
-      --ink: #e8ece4;
-      --muted: #9aa896;
-      --line: #2b3327;
-      --accent: #7fd6a0;
-      --accent-ink: #a7e6bf;
-      --accent-soft: #17271c;
-      --highlight: #cfe84a;
-      --good: #7fd6a0;
-      --good-soft: #17271c;
-      --warn: #e2b65a;
-      --warn-soft: #322a16;
-      --shadow: 0 1px 2px rgba(0, 0, 0, .4), 0 10px 30px rgba(0, 0, 0, .4);
-      --hero-1: #0c1f15;
-      --hero-2: #173d29;
-      --hero-3: #1f5236;
-    }
-    html[lang="en"] .lang-zh, html[lang="zh"] .lang-en { display: none !important; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", system-ui, -apple-system, sans-serif;
-      line-height: 1.55;
-    }
-    .wrap {
-      width: min(1180px, calc(100vw - 32px));
-      margin: 0 auto;
-    }
-    a { color: var(--accent-ink); text-underline-offset: 2px; }
-    a:hover { color: var(--accent); }
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 6px 13px;
-      background: var(--panel);
-      color: var(--muted);
-      font-size: 13px;
-      white-space: nowrap;
-      text-decoration: none;
-    }
-    .table-wrap {
-      overflow-x: auto;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      box-shadow: var(--shadow);
-    }
-    table {
-      width: 100%;
-      min-width: 980px;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-    th, td {
-      border-bottom: 1px solid var(--line);
-      padding: 11px 12px;
-      text-align: left;
-      vertical-align: top;
-    }
-    th {
-      background: var(--panel-2);
-      font-size: 11.5px;
-      text-transform: uppercase;
-      letter-spacing: .07em;
-      color: var(--muted);
-    }
-    tbody tr:hover { background: var(--accent-soft); }
-    tr:last-child td { border-bottom: 0; }
-"""
-
-
-# Navigation + branding styles, shared by every generated page. Plain string
-# (single CSS braces), interpolated as a value into the f-string templates.
-_NAV_CSS = """    html { scroll-behavior: smooth; }
-    .anchor { scroll-margin-top: 74px; }
-    nav.topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: color-mix(in srgb, var(--bg) 85%, transparent);
-      backdrop-filter: saturate(150%) blur(8px);
-      border-bottom: 1px solid var(--line);
-    }
-    nav.topbar .bar { display: flex; align-items: center; gap: 16px; height: 56px; }
-    .brand {
-      display: inline-flex; align-items: center; gap: 9px;
-      font-weight: 750; letter-spacing: -0.01em;
-      color: var(--ink); text-decoration: none; font-size: 15px;
-    }
-    .brand .dot { width: 22px; height: 22px; color: var(--accent); }
-    nav.topbar .links { margin-left: auto; display: flex; gap: 2px; flex-wrap: wrap; }
-    nav.topbar .links a {
-      color: var(--muted); text-decoration: none; font-size: 13.5px;
-      padding: 7px 11px; border-radius: 8px;
-    }
-    nav.topbar .links a:hover { color: var(--ink); background: var(--panel-2); }
-    @media (max-width: 720px) { nav.topbar .links a.hide-sm { display: none; } }
-    nav.topbar .toggle {
-      border: 1px solid var(--line); background: var(--panel); color: var(--ink);
-      border-radius: 999px; min-width: 34px; height: 32px; padding: 0 11px;
-      font: inherit; font-size: 13px; cursor: pointer; line-height: 30px;
-    }
-    nav.topbar .toggle:hover { border-color: var(--accent); color: var(--accent); }
-    .src-credit { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
-"""
-
-
-# Figma-derived Discover screen. The generated table markup remains semantic
-# and filterable, while CSS presents each record as a compact responsive card.
-_DISCOVER_CSS = """
-    nav.topbar { background: color-mix(in srgb, var(--panel) 92%, transparent); }
-    nav.topbar .bar { height: 60px; }
-    nav.topbar .toggle { min-width: 44px; height: 44px; line-height: 42px; }
-    header.hero { padding: 50px 0 48px; background: var(--hero-1); }
-    header.hero h1 { max-width: 840px; margin-bottom: 12px; font-size: clamp(32px, 4vw, 42px); line-height: 1.18; }
-    header.hero .subtitle { max-width: 900px; font-size: 17px; }
-    .hero-disclaimer { display: none; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
-    .button {
-      display: inline-flex; min-height: 44px; align-items: center; justify-content: center;
-      padding: 10px 16px; border-radius: 10px; border: 1px solid transparent;
-      font-size: 13px; font-weight: 650; text-decoration: none; white-space: nowrap;
-    }
-    .button.primary { background: var(--accent); color: #fff; }
-    .button.primary:hover { background: var(--accent-ink); color: #fff; }
-    .button.tonal { background: var(--accent-soft); color: var(--accent-ink); }
-    .button.tonal:hover { border-color: var(--accent); color: var(--accent-ink); }
-    .hero-scan-meta { margin-top: 16px; color: rgba(243,249,252,.72); font-size: 12px; }
-    .stats { margin-top: 24px; }
-    .stat { min-height: 96px; padding: 18px 20px; }
-    .stat:nth-child(-n+2) { background: var(--good-soft); }
-    .stat .lbl { text-transform: none; letter-spacing: 0; }
-    main { padding-bottom: 28px; }
-    .status:not(.empty) { display: none; }
-    .opportunity-list-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin: 34px 0 10px; }
-    .opportunity-list-head h2 { margin: 0; font-size: 24px; }
-    .opportunity-list-head p { margin: 0; color: var(--muted); font-size: 13px; }
-    .filters {
-      grid-template-columns: minmax(260px, 2fr) repeat(5, minmax(130px, 1fr));
-      gap: 12px; margin: 16px 0 18px; padding: 0; border: 0; box-shadow: none; background: transparent;
-    }
-    .filter-group { gap: 0; }
-    .filter-group label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-    select, input[type="search"] { min-height: 44px; border-radius: 10px; background: var(--panel); padding: 9px 12px; }
-    .filters .count { grid-column: 1 / -1; padding: 0; text-align: right; }
-    .opportunity-tier { margin: 0 0 12px; }
-    .sr-only-tier { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-    .opportunity-table-wrap { overflow: visible; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
-    table.opportunity-table { display: block; width: 100%; min-width: 0; font-size: 13px; }
-    table.opportunity-table thead { display: none; }
-    table.opportunity-table tbody { display: grid; gap: 12px; }
-    table.opportunity-table tr {
-      position: relative; display: grid;
-      grid-template-columns: auto minmax(0, 1fr) minmax(260px, .72fr) auto;
-      grid-template-areas:
-        "status title title actions"
-        ". organizer location actions"
-        ". duration deadline actions"
-        ". funding topics actions";
-      column-gap: 14px; row-gap: 4px; padding: 16px 16px;
-      border: 1px solid var(--line); border-radius: 14px; background: var(--panel); box-shadow: var(--shadow);
-    }
-    table.opportunity-table tr:hover { background: var(--panel); border-color: color-mix(in srgb, var(--accent) 38%, var(--line)); }
-    table.opportunity-table tbody tr::before {
-      grid-area: status; align-self: start; content: attr(data-status-label-en); padding: 4px 9px;
-      border-radius: 999px; background: var(--warn-soft); color: var(--warn); font-size: 11px; font-weight: 650; white-space: nowrap;
-    }
-    html[lang="zh"] table.opportunity-table tbody tr::before { content: attr(data-status-label-zh); }
-    table.opportunity-table tbody tr[data-status="qualified"]::before { background: var(--good-soft); color: var(--good); }
-    table.opportunity-table tbody tr[data-status="high-quality"]::before { background: var(--accent-soft); color: var(--accent-ink); }
-    table.opportunity-table tbody tr[data-status="curated"]::before { background: var(--accent-soft); color: var(--accent-ink); }
-    table.opportunity-table td { display: block; padding: 0; border: 0; min-width: 0; }
-    table.opportunity-table td a { font-weight: 650; text-decoration: none; }
-    table.opportunity-table td[title] { cursor: help; }
-    .qualified-table td:nth-child(1) { display: none; }
-    .qualified-table td:nth-child(2), .standard-table td:nth-child(1), .curated-table td:nth-child(1) { grid-area: title; align-self: center; font-size: 19px; line-height: 1.35; }
-    .qualified-table td:nth-child(2) a, .standard-table td:nth-child(1) a, .curated-table td:nth-child(1) a { color: var(--ink); }
-    .qualified-table td:nth-child(2) a:hover, .standard-table td:nth-child(1) a:hover, .curated-table td:nth-child(1) a:hover { color: var(--accent-ink); }
-    .qualified-table td:nth-child(3), .standard-table td:nth-child(2), .curated-table td:nth-child(2) { grid-area: organizer; color: var(--muted); }
-    .qualified-table td:nth-child(4), .standard-table td:nth-child(3), .curated-table td:nth-child(3) { grid-area: location; color: var(--muted); }
-    .qualified-table td:nth-child(5), .standard-table td:nth-child(4), .curated-table td:nth-child(4) { grid-area: duration; }
-    .qualified-table td:nth-child(6), .standard-table td:nth-child(5), .curated-table td:nth-child(5) { grid-area: deadline; font-weight: 600; }
-    .qualified-table td:nth-child(7), .standard-table td:nth-child(6), .curated-table td:nth-child(6) { grid-area: funding; color: var(--accent-ink); }
-    .qualified-table td:nth-child(8), .standard-table td:nth-child(7), .curated-table td:nth-child(7) { grid-area: topics; color: var(--muted); font-size: 12px; }
-    .curated-table td:nth-child(8) { display: none; }
-    .qualified-table td:nth-child(9), .standard-table td:nth-child(8), .curated-table td:nth-child(9) { grid-area: actions; }
-    .card-actions { display: flex !important; flex-direction: column; justify-content: center; gap: 8px; min-width: 122px !important; }
-    .card-actions .button { width: 100%; }
-    .cal { margin-top: 0; }
-    .cal > summary { min-height: 28px; display: inline-flex; align-items: center; }
-    footer.site { margin-top: 36px; }
-    @media (max-width: 980px) {
-      .filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .filters .filter-group:first-child { grid-column: span 2; }
-      table.opportunity-table tr { grid-template-columns: auto minmax(0,1fr) auto; grid-template-areas: "status title actions" ". organizer actions" ". location actions" ". duration actions" ". deadline actions" ". funding actions" ". topics actions"; }
-    }
-    @media (max-width: 720px) {
-      .wrap { width: min(100% - 32px, 1180px); }
-      nav.topbar .bar { height: 60px; }
-      nav.topbar .links > a { display: none; }
-      header.hero { padding: 24px 0 26px; }
-      header.hero h1 { font-size: 28px; line-height: 1.3; }
-      header.hero .subtitle { font-size: 14px; line-height: 1.6; }
-      .hero-actions { display: none; }
-      .hero-scan-meta { margin-top: 10px; }
-      .stats { grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
-      .stat { min-height: 88px; padding: 14px 16px; }
-      .stat:nth-child(n+3) { display: none; }
-      .opportunity-list-head { margin-top: 20px; }
-      .opportunity-list-head h2 { font-size: 22px; }
-      .filters { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .filters .filter-group:first-child { grid-column: 1 / -1; }
-      .filters .filter-group:nth-child(n+4) { display: none; }
-      table.opportunity-table tr {
-        grid-template-columns: auto minmax(0, 1fr);
-        grid-template-areas: "status title" "organizer organizer" "location location" "duration duration" "deadline deadline" "funding funding" "actions actions";
-        row-gap: 7px; padding: 16px;
-      }
-      .qualified-table td:nth-child(8), .standard-table td:nth-child(7), .curated-table td:nth-child(7) { display: none; }
-      .card-actions { flex-direction: row; justify-content: flex-start; padding-top: 3px !important; }
-      .card-actions .button { width: auto; }
-      .card-actions .button.tonal { display: none; }
-      footer.site .cols { padding-top: 24px; }
-    }
-"""
-
-
-_DETAIL_CSS = """
-    .detail-header { background: var(--panel-2); padding: 32px 0; border-bottom: 1px solid var(--line); }
-    .detail-back { display: inline-block; margin-bottom: 14px; color: var(--accent-ink); font-size: 13px; font-weight: 650; text-decoration: none; }
-    .status-badge { display: inline-flex; padding: 4px 9px; border-radius: 999px; font-size: 11px; font-weight: 650; background: var(--good-soft); color: var(--good); }
-    .status-badge.high-quality { background: var(--accent-soft); color: var(--accent-ink); }
-    .status-badge.found { background: var(--warn-soft); color: var(--warn); }
-    .detail-header h1 { margin: 12px 0 6px; font-size: clamp(30px, 4vw, 40px); line-height: 1.22; letter-spacing: -.02em; }
-    .detail-org { margin: 0; color: var(--muted); font-size: 16px; }
-    .detail-facts { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 14px; font-size: 13px; font-weight: 600; }
-    .detail-main { padding: 40px 0 64px; }
-    .detail-grid { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 32px; align-items: start; }
-    .detail-stack { display: grid; gap: 24px; }
-    .detail-panel, .decision-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 24px; }
-    .detail-panel h2, .decision-card h2 { margin: 0 0 10px; font-size: 24px; }
-    .detail-panel p { margin: 0; color: var(--muted); }
-    .detail-panel ul { margin: 8px 0 0; padding-left: 20px; color: var(--muted); }
-    .detail-panel.qualified { background: var(--good-soft); }
-    .detail-panel .source-link { display: inline-block; margin-top: 12px; font-weight: 650; text-decoration: none; }
-    .decision-card { position: sticky; top: 80px; box-shadow: var(--shadow); display: grid; gap: 12px; }
-    .decision-card .eyebrow { color: var(--muted); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
-    .decision-card .decision-value { margin: -4px 0 2px; color: var(--accent-ink); font-size: 20px; font-weight: 650; }
-    .decision-card .deadline-value { margin: -4px 0 2px; font-size: 20px; font-weight: 650; }
-    .decision-card .detail-actions { display: grid; gap: 10px; margin-top: 4px; }
-    .decision-card .note { color: var(--muted); font-size: 11px; }
-    .mobile-actions { display: none; }
-    footer.site { border-top: 1px solid var(--line); background: var(--panel); margin-top: 0; }
-    footer.site .cols { display: flex; flex-wrap: wrap; gap: 26px 56px; padding: 34px 0 8px; }
-    footer.site .brandcol { max-width: 330px; }
-    footer.site .brandcol p { color: var(--muted); font-size: 13px; }
-    footer.site .col h4 { margin: 0 0 9px; color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
-    footer.site .col a { display: block; padding: 3px 0; color: var(--ink); font-size: 14px; text-decoration: none; }
-    footer.site .legal { margin-top: 16px; padding: 16px 0 30px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
-    @media (max-width: 800px) {
-      body.detail-page { padding-bottom: 76px; }
-      .detail-header { padding: 18px 0 20px; }
-      .detail-header h1 { font-size: 30px; }
-      .detail-facts { gap: 7px 16px; }
-      .detail-main { padding: 16px 0 24px; }
-      .detail-grid { grid-template-columns: 1fr; gap: 14px; }
-      .decision-card { position: static; grid-row: 1; padding: 16px; box-shadow: none; }
-      .decision-card .detail-actions, .decision-card .note { display: none; }
-      .detail-stack { gap: 12px; }
-      .detail-panel { padding: 16px; }
-      .detail-panel h2, .decision-card h2 { font-size: 20px; }
-      .mobile-actions {
-        position: fixed; z-index: 60; left: 0; right: 0; bottom: 0; display: flex; gap: 12px;
-        padding: 16px; border-top: 1px solid var(--line); background: var(--panel);
-      }
-      .mobile-actions .button.primary { flex: 1; }
-    }
-"""
-
-
-# Runs in <head> before first paint, so the saved theme and language apply with
-# no flash. Plain string (real JS braces), interpolated as a value.
-_BOOT_SCRIPT = (
-    "<script>(function(){try{"
-    "var t=localStorage.getItem('summa-theme');"
-    "if(t!=='light'&&t!=='dark'){t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}"
-    "document.documentElement.setAttribute('data-theme',t);"
-    "var l=localStorage.getItem('summa-lang');"
-    "if(l!=='zh'&&l!=='en'){l=((navigator.language||'en').toLowerCase().indexOf('zh')===0)?'zh':'en';}"
-    "document.documentElement.setAttribute('lang',l);"
-    "}catch(e){}})();</script>"
-)
-
-
-# Applies translations to [data-i18n] elements and wires the two toggle buttons.
-# Runs at the end of <body>. Plain string (real JS braces).
-_UI_SCRIPT = """
-  <script>
-  (function(){
-    var I18N = {
-      "nav.opportunities": {en:"Opportunities", zh:"机会"},
-      "nav.how": {en:"How it works", zh:"工作原理"},
-      "nav.about": {en:"About", zh:"关于"},
-      "nav.sources": {en:"Sources", zh:"来源"},
-      "hero.kicker": {en:"Updated daily \\u00B7 Free & open source", zh:"每天更新 \\u00B7 免费开源"},
-      "hero.title": {en:"Find research training worth applying for", zh:"寻找真正值得申请的科研训练机会"},
-      "hero.subtitle": {en:"Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.", zh:"从可信学术来源汇总有资助或低费用的科研训练机会。每条截止日期和资助信息都可追溯到官网。"},
-      "hero.disclaimer": {en:"Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.", zh:"请把这里当作基础信息入口，而不是唯一信息来源。本站信息来自各大组织和学校官网，但自动收集和解析仍可能因为技术问题出错；申请前请务必到官网核对截止日期、费用、资助和资格要求。少数质量很高但暂时无法自动收集的官网已列在 Collection Notes 里。祝大家都能录到心仪的项目。"},
-      "cta.email": {en:"Get email alerts", zh:"邮件订阅"},
-      "cta.explore": {en:"Explore opportunities", zh:"浏览开放项目"},
-      "cta.qualification": {en:"How qualification works", zh:"了解筛选标准"},
-      "opportunities.title": {en:"Open opportunities", zh:"开放申请的项目"},
-      "action.details": {en:"View details", zh:"查看详情"},
-      "action.official": {en:"Official page", zh:"官方网站"},
-      "action.official.open": {en:"Open official page", zh:"打开官方网站"},
-      "action.official.programme": {en:"Open official programme page ↗", zh:"打开项目官网 ↗"},
-      "calendar.add": {en:"Add to calendar", zh:"添加到日历"},
-      "badge.new": {en:"NEW", zh:"新增"},
-      "meta.updated": {en:"Updated", zh:"更新"},
-      "meta.fixed": {en:"Fixed-source scan", zh:"固定来源扫描"},
-      "meta.free": {en:"No paid search API", zh:"无需付费搜索 API"},
-      "meta.sources": {en:"Sources & Coverage", zh:"来源与覆盖"},
-      "stat.qualified": {en:"Fully qualified", zh:"完全符合"},
-      "stat.near": {en:"High quality", zh:"高质量"},
-      "stat.sources": {en:"Trusted sources", zh:"可信来源"},
-      "stat.updated": {en:"Last updated", zh:"最近更新"},
-      "filter.search": {en:"Search", zh:"搜索"},
-      "filter.search.placeholder": {en:"Title, organizer, location", zh:"标题、主办方、地点"},
-      "filter.status": {en:"Status", zh:"状态"},
-      "filter.topic": {en:"Topic", zh:"主题"},
-      "filter.funding": {en:"Financial Access", zh:"费用/资助"},
-      "filter.deadline": {en:"Deadline", zh:"截止日期"},
-      "filter.fresh": {en:"Freshness", zh:"新近程度"},
-      "filter.all": {en:"All", zh:"全部"},
-      "filter.status.qualified": {en:"Fully qualified", zh:"完全符合"},
-      "filter.status.high": {en:"High quality", zh:"高质量"},
-      "filter.status.found": {en:"Found", zh:"待核实"},
-      "filter.funding.explicit": {en:"Explicit funding", zh:"明确提供资助"},
-      "filter.funding.low": {en:"Low / no fee", zh:"低费用或免费"},
-      "filter.funding.unresolved": {en:"Unresolved / high fee", zh:"费用未确认或较高"},
-      "filter.deadline.open": {en:"Open", zh:"开放申请"},
-      "filter.deadline.uncertain": {en:"Uncertain", zh:"待确认"},
-      "filter.deadline.closed": {en:"Closed", zh:"已截止"},
-      "filter.new.today": {en:"New today", zh:"今日新增"},
-      "table.title": {en:"Title", zh:"项目名称"},
-      "table.organizer": {en:"Organizer", zh:"主办方"},
-      "table.location": {en:"Location", zh:"地点"},
-      "table.duration": {en:"Duration", zh:"时长"},
-      "table.deadline": {en:"Deadline", zh:"截止日期"},
-      "table.funding": {en:"Funding / Fee", zh:"资助 / 费用"},
-      "table.topic": {en:"Topic", zh:"主题"},
-      "table.notes": {en:"Notes", zh:"备注"},
-      "table.actions": {en:"Actions", zh:"操作"},
-      "tier.qualified": {en:"Fully Qualified Opportunities", zh:"完全符合的项目"},
-      "tier.high": {en:"High-Quality Opportunities", zh:"高质量项目"},
-      "tier.found": {en:"Found Opportunities", zh:"待核实项目"},
-      "tier.curated": {en:"Curated Opportunities", zh:"人工精选项目"},
-      "tier.high.lead": {en:"Relevant funded or low-fee opportunities that still need official-page verification.", zh:"有资助或费用较低、但仍需到官网核实的相关项目。"},
-      "tier.found.lead": {en:"Relevant leads with unresolved evidence.", zh:"证据尚未完整核实的相关线索。"},
-      "tier.curated.lead": {en:"Maintainer-reviewed records with source evidence.", zh:"由维护者审核并保留来源证据的项目。"},
-      "detail.back": {en:"← Back to opportunities", zh:"← 返回项目列表"},
-      "detail.overview": {en:"Overview", zh:"项目概览"},
-      "detail.eligibility": {en:"Who should apply", zh:"适合谁申请"},
-      "detail.why": {en:"Why this status", zh:"为何获得此状态"},
-      "detail.source": {en:"Official source", zh:"官方来源"},
-      "detail.source.original": {en:"Original source evidence is retained below for verification.", zh:"以下保留官方原文证据，便于核对。"},
-      "detail.snapshot": {en:"Application snapshot", zh:"申请信息速览"},
-      "detail.funding": {en:"Funding / fee", zh:"资助 / 费用"},
-      "detail.deadline": {en:"Application deadline", zh:"申请截止日期"},
-      "detail.verify": {en:"Always verify eligibility, fees, funding, and dates on the official page.", zh:"申请前请务必在官方网站核对资格、费用、资助和日期。"},
-      "sources.title": {en:"Sources & Coverage", zh:"来源与覆盖范围"},
-      "sources.lead": {en:"The radar scans a trusted source registry rather than crawling the open web. This page lists the configured sources, including disabled sources kept for transparency.", zh:"雷达只扫描人工维护的可信来源，不进行开放网络泛爬。本页列出所有配置来源，包括为保持透明而保留的停用来源。"},
-      "sources.back": {en:"Back to radar", zh:"返回雷达"},
-      "sources.json": {en:"Source JSON", zh:"来源 JSON"},
-      "sources.configured": {en:"Configured Sources", zh:"已配置来源"},
-      "sources.direct": {en:"Sources to Check Directly", zh:"需要直接查看的来源"},
-      "sources.direct.lead": {en:"We cannot fetch these automatically yet. Please open them directly to look for opportunities.", zh:"这些来源目前无法稳定自动抓取，请直接打开官网查看机会。"},
-      "sources.source": {en:"Source", zh:"来源"},
-      "sources.status": {en:"Status", zh:"状态"},
-      "sources.layer": {en:"Layer", zh:"层级"},
-      "sources.region": {en:"Region", zh:"地区"},
-      "sources.type": {en:"Type", zh:"类型"},
-      "sources.keywords": {en:"Keywords", zh:"关键词"},
-      "sources.notes": {en:"Notes (original registry text)", zh:"备注（保留原始配置文本）"},
-      "sources.reason": {en:"Why it is not fetched automatically", zh:"无法自动抓取的原因"},
-      "sources.enabled": {en:"enabled", zh:"已启用"},
-      "sources.disabled": {en:"disabled", zh:"已停用"},
-      "notes.title": {en:"Collection Notes", zh:"采集说明"},
-      "empty.title": {en:"Nothing open right now — but the radar is watching", zh:"目前没有开放项目，但雷达仍在监测"},
-      "empty.link": {en:"See what we track", zh:"查看监测来源"},
-      "how.title": {en:"How it works", zh:"工作原理"},
-      "how.lead": {en:"A transparent pipeline you can audit — not a black box.", zh:"一条可以审计的透明流程，不是黑箱。"},
-      "how.1.title": {en:"Scan trusted sources", zh:"扫描可信来源"},
-      "how.1.body": {en:"Each day the radar fetches a fixed registry of vetted academic sources: scientific societies, research institutes, and established schools.", zh:"每天从固定的、人工筛选过的学术来源列表抓取信息，包括学会、研究机构和成熟暑校。"},
-      "how.2.title": {en:"Extract evidence", zh:"提取证据"},
-      "how.2.body": {en:"Rule-based extraction pulls out dates, deadline, funding, fee, location, and mode, with source text kept for verification.", zh:"规则提取日期、截止时间、资助、费用、地点和形式，并保留来源文本方便核验。"},
-      "how.3.title": {en:"Apply strict filters", zh:"应用严格筛选"},
-      "how.3.body": {en:"Only funded or low-fee, in-person opportunities with an open deadline in covered domains are treated as qualified.", zh:"只有有资助或低费用、线下、仍在报名且属于覆盖领域的项目才会被标为完全符合。"},
-      "how.4.title": {en:"Publish daily", zh:"每日发布"},
-      "how.4.body": {en:"The results are committed and published to this static site for quick public review.", zh:"结果会提交并发布到这个静态网站，方便公开查看。"},
-      "about.title": {en:"About & methodology", zh:"关于与方法"},
-      "about.lead": {en:"What this is, what it covers, and where the line is drawn.", zh:"说明它是什么、覆盖什么，以及边界在哪里。"},
-      "about.what.title": {en:"What it is", zh:"它是什么"},
-      "about.what.body": {en:"Summa is an open-source, fixed-source scanner with rule-based extraction and transparent per-field evidence. It is not a fully automatic all-web crawler.", zh:"Summa 是一个开源的固定来源扫描器，使用规则提取，并为每个字段保留证据。它不是全网自动爬虫。"},
-      "about.domains.title": {en:"Domains covered", zh:"覆盖领域"},
-      "about.domains.body": {en:"It covers environmental and earth science, computing and data science, and selected social-science and humanities methods fields. The same quality filters apply across fields.", zh:"覆盖环境与地球科学、计算与数据科学，以及部分社会科学和人文学科方法领域。所有领域使用同一套质量筛选标准。"},
-      "about.qualifies.title": {en:"What qualifies", zh:"什么算符合"},
-      "about.q1": {en:"Funded, or low / no fee — not an expensive paid course.", zh:"有资助，或低费用/免费，而不是昂贵付费课程。"},
-      "about.q2": {en:"In-person — virtual-only events are set aside.", zh:"线下参与；纯线上活动会被排除。"},
-      "about.q3": {en:"An application deadline that is still open.", zh:"申请截止日期仍未过去。"},
-      "about.q4": {en:"A real research school, training school, field school, or short course — not a conference or a full degree programme.", zh:"是真正的研究暑校、训练营、田野学校或短课程，而不是会议或完整学位项目。"},
-      "about.q5": {en:"On-domain in the topics above.", zh:"主题属于上面覆盖的学科范围。"},
-      "about.evidence.title": {en:"Evidence and honesty", zh:"证据与透明度"},
-      "about.evidence.body": {en:"Every extracted field carries source evidence where available. Near-matches are shown separately and never counted as qualified.", zh:"每个可提取字段都会尽量保留来源证据。近似匹配会单独展示，不会被当作完全符合。"},
-      "faq.title": {en:"Frequently asked", zh:"常见问题"},
-      "faq.lead": {en:"Quick answers about scope, updates, and contributing.", zh:"关于范围、更新和参与方式的简短回答。"},
-      "faq.1.q": {en:"Is it free?", zh:"它免费吗？"},
-      "faq.1.a": {en:"Yes — entirely free and open source. There is no paywall, no account, and no paid search API in the default pipeline.", zh:"免费，而且开源。默认流程没有付费墙、不需要账号，也不依赖付费搜索 API。"},
-      "faq.2.q": {en:"How often is it updated?", zh:"多久更新一次？"},
-      "faq.2.a": {en:"Once a day. The scan runs automatically and republishes this site, so the Last updated date reflects the most recent run.", zh:"每天一次。扫描会自动运行并重新发布网站，所以“最近更新”日期对应最近一次运行。"},
-      "faq.3.q": {en:"Why are some events only near-matches?", zh:"为什么有些项目只是近似匹配？"},
-      "faq.3.a": {en:"They are relevant but fail at least one strict rule, such as uncertain deadline, high fee, unresolved fee, or virtual-only format.", zh:"它们相关，但至少有一条严格规则没通过，例如截止日期不确定、费用过高、费用未确认，或只有线上形式。"},
-      "faq.4.q": {en:"How do you avoid spam and low-quality listings?", zh:"怎么避免低质量信息？"},
-      "faq.4.a": {en:"The radar only reads a curated registry of trusted academic sources. It does not crawl the open web.", zh:"它只读取人工维护的可信学术来源列表，不做开放网络泛爬。"},
-      "faq.5.q": {en:"Can I suggest a source?", zh:"我可以建议来源吗？"},
-      "faq.5.a": {en:"Yes. Open an issue on GitHub with the source and its events page, and it can be added to the registry.", zh:"可以。在 GitHub issue 里提交来源和活动页面，维护者可以把它加入来源列表。"},
-      "foot.opportunities": {en:"Opportunities", zh:"机会"},
-      "foot.sources": {en:"Sources & coverage", zh:"来源与覆盖"},
-      "foot.how": {en:"How it works", zh:"工作原理"},
-      "foot.about": {en:"About & methodology", zh:"关于与方法"},
-      "foot.faq": {en:"FAQ", zh:"常见问题"},
-      "foot.suggest": {en:"Suggest a source", zh:"建议来源"},
-      "foot.issue": {en:"Report an issue", zh:"报告问题"},
-      "foot.star": {en:"Star on GitHub", zh:"在 GitHub 收藏"},
-      "foot.explore": {en:"Explore", zh:"浏览"},
-      "foot.project": {en:"Project", zh:"项目"},
-      "foot.contribute": {en:"Contribute", zh:"参与"},
-      "foot.blurb": {en:"A free, open-source scanner for funded research summer schools, winter schools, and training schools across many academic fields. Updated daily.", zh:"一个免费的开源扫描器，追踪多个学科中有资助的暑校、冬校和训练营项目。每天更新。"},
-      "foot.legal": {en:"Near-matches are not treated as qualified opportunities. Built and maintained openly on GitHub.", zh:"近似匹配不会被当作完全符合的机会。项目在 GitHub 上公开维护。"}
-    };
-    function txt(el, lang){
-      var d=I18N[el.getAttribute('data-i18n')];
-      if(!d||d[lang]==null) return;
-      if(el.hasAttribute('data-i18n-html')) el.innerHTML=d[lang]; else el.textContent=d[lang];
-    }
-    function attr(el, lang){
-      var key=el.getAttribute('data-i18n-placeholder');
-      var d=I18N[key];
-      if(d&&d[lang]!=null) el.setAttribute('placeholder', d[lang]);
-    }
-    function applyLang(lang){
-      document.documentElement.setAttribute('lang', lang);
-      var els=document.querySelectorAll('[data-i18n]'); for(var i=0;i<els.length;i++) txt(els[i], lang);
-      var attrs=document.querySelectorAll('[data-i18n-placeholder]'); for(var j=0;j<attrs.length;j++) attr(attrs[j], lang);
-      var labels=document.querySelectorAll('[data-label-en][data-label-zh]');
-      for(var k=0;k<labels.length;k++) labels[k].textContent=labels[k].getAttribute('data-label-'+lang);
-      var titleKey='pageTitle'+(lang==='zh'?'Zh':'En');
-      if(document.body&&document.body.dataset[titleKey]) document.title=document.body.dataset[titleKey];
-      var b=document.getElementById('lang-toggle'); if(b) b.textContent = (lang==='zh')?'EN':'中';
-      try{localStorage.setItem('summa-lang', lang);}catch(e){}
-      try{document.dispatchEvent(new CustomEvent('summa:languagechange',{detail:{lang:lang}}));}catch(e){}
-    }
-    function applyTheme(t){
-      document.documentElement.setAttribute('data-theme', t);
-      var b=document.getElementById('theme-toggle'); if(b) b.textContent = (t==='dark')?'\\u2600':'\\u263E';
-      try{localStorage.setItem('summa-theme', t);}catch(e){}
-    }
-    applyLang(document.documentElement.getAttribute('lang')||'en');
-    applyTheme(document.documentElement.getAttribute('data-theme')||'light');
-    var lb=document.getElementById('lang-toggle'); if(lb) lb.addEventListener('click', function(){ applyLang(document.documentElement.getAttribute('lang')==='zh'?'en':'zh'); });
-    var tb=document.getElementById('theme-toggle'); if(tb) tb.addEventListener('click', function(){ applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'); });
-  })();
-  </script>"""
-
+from .site_i18n import _BOOT_SCRIPT, _UI_SCRIPT
+from .site_styles import _DETAIL_CSS, _DISCOVER_CSS, _NAV_CSS, _THEME_CSS
 
 def write_site(
     candidates: list[Candidate],
@@ -600,7 +84,7 @@ def write_site(
         )
         sources = source_translation_result.records
     (output_dir / ".nojekyll").write_text("", encoding="utf-8")
-    (output_dir / "DATA-LICENSE.txt").write_text(_data_license_text(), encoding="utf-8")
+    (output_dir / "DATA-LICENSE.txt").write_text(data_license_text(), encoding="utf-8")
     (output_dir / "curated.json").write_text(json.dumps(curated, indent=2, default=str), encoding="utf-8")
     (output_dir / "review_queue.json").write_text(
         json.dumps(
@@ -616,7 +100,7 @@ def write_site(
     )
     (output_dir / "sources.json").write_text(json.dumps(sources, indent=2, default=str), encoding="utf-8")
     sources_html = render_sources_page(sources)
-    assert_localization_complete(sources_html, "sources.html")
+    warn_localization_issues(sources_html, "sources.html")
     (output_dir / "sources.html").write_text(sources_html, encoding="utf-8")
     # AI output now enriches the existing homepage tables instead of creating a
     # parallel review UI. Remove stale generated copies from older builds.
@@ -677,18 +161,33 @@ def write_site(
         stale.unlink()
     for candidate in detail_candidates:
         detail_html = render_opportunity_detail(candidate, site_config or {})
-        assert_localization_complete(detail_html, _candidate_detail_filename(candidate))
+        warn_localization_issues(detail_html, _candidate_detail_filename(candidate))
         (detail_dir / _candidate_detail_filename(candidate)).write_text(
             detail_html,
             encoding="utf-8",
         )
-    (output_dir / "feed.xml").write_text(render_feed(homepage_candidates, curated, site_config or {}), encoding="utf-8")
-    (output_dir / "robots.txt").write_text(_robots_txt(), encoding="utf-8")
-    (output_dir / "sitemap.xml").write_text(
-        _sitemap_xml(has_ai_review=False, candidates=detail_candidates),
+    (output_dir / "feed.xml").write_text(
+        render_feed(
+            homepage_candidates,
+            curated,
+            site_config or {},
+            is_online_only=_is_online_only,
+            is_high_quality=_is_high_quality,
+            duration=_duration,
+            public_location=_public_location,
+            curated_duration=_curated_duration,
+            parse_iso_date=_parse_iso_date,
+            curated_financial_summary=_curated_financial_summary,
+            topics_label=topics_label,
+        ),
         encoding="utf-8",
     )
-    (output_dir / "favicon.svg").write_text(_favicon_svg(), encoding="utf-8")
+    (output_dir / "robots.txt").write_text(robots_txt(), encoding="utf-8")
+    (output_dir / "sitemap.xml").write_text(
+        sitemap_xml(["", "sources.html", *[_candidate_detail_href(candidate) for candidate in detail_candidates]]),
+        encoding="utf-8",
+    )
+    (output_dir / "favicon.svg").write_text(favicon_svg(), encoding="utf-8")
     _copy_og_image(output_dir)
     _copy_verification_files(output_dir)
     tracked_sources = sum(
@@ -703,7 +202,7 @@ def write_site(
             tracked_sources=tracked_sources,
             has_ai_review=False,
         )
-    assert_localization_complete(index_html, "index.html")
+    warn_localization_issues(index_html, "index.html")
     path.write_text(index_html, encoding="utf-8")
     return path
 
@@ -751,26 +250,6 @@ def _copy_verification_files(output_dir: Path) -> None:
         shutil.copyfile(verification, output_dir / verification.name)
 
 
-def _robots_txt() -> str:
-    blocked = "".join(f"User-agent: {bot}\nDisallow: /\n\n" for bot in _BLOCKED_BOTS)
-    return f"{blocked}User-agent: *\nAllow: /\nSitemap: {_SITE_URL}sitemap.xml\n"
-
-
-def _data_license_text() -> str:
-    return (
-        "Summa — data license\n"
-        "==================================\n\n"
-        f"Canonical source: {_SITE_URL}\n\n"
-        "The compiled listings on this site (the opportunity tables, candidates.json,\n"
-        "and the RSS feed) are licensed under Creative Commons Attribution 4.0\n"
-        f"(CC BY 4.0): {_DATA_LICENSE_URL}\n\n"
-        "You may reuse them, including commercially, provided you give credit to\n"
-        f"Summa and link back to {_SITE_URL}.\n\n"
-        "The project's source code is licensed separately under the GNU AGPL-3.0.\n\n"
-        f"Marker: {_CANARY}\n"
-    )
-
-
 def render_ai_review_page(ai_items: list[dict[str, Any]]) -> str:
     matched = [item for item in ai_items if bool(item.get("matched_existing_candidate"))]
     missed = potential_missed_pages(ai_items)
@@ -783,7 +262,7 @@ def render_ai_review_page(ai_items: list[dict[str, Any]]) -> str:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Review · Summa</title>
-{_seo_head(_SITE_URL + "ai-review.html", "Advisory AI-assisted extraction records for maintainer review. These are not public recommendations.", {})}
+{seo_head(_SITE_URL + "ai-review.html", "Advisory AI-assisted extraction records for maintainer review. These are not public recommendations.", {})}
   {_BOOT_SCRIPT}
   <style>
 {_THEME_CSS}
@@ -939,86 +418,6 @@ def _short_html_text(value: str, limit: int = 260) -> str:
     return text[:limit]
 
 
-def _sitemap_xml(
-    has_ai_review: bool = False,
-    candidates: list[Candidate] | None = None,
-) -> str:
-    today = date.today().isoformat()
-    pages = ["", "sources.html"]
-    if has_ai_review:
-        pages.append("ai-review.html")
-    pages.extend(_candidate_detail_href(candidate) for candidate in (candidates or []))
-    urls = "".join(
-        f"  <url><loc>{_SITE_URL}{page}</loc><lastmod>{today}</lastmod></url>\n" for page in pages
-    )
-    return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-        f"{urls}"
-        "</urlset>\n"
-    )
-
-
-def _favicon_svg() -> str:
-    return """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#123524"/>
-  <circle cx="32" cy="32" r="20" fill="none" stroke="#cfe84a" stroke-width="4"/>
-  <path d="M32 12v40M12 32h40M18 20c8 5 20 5 28 0M18 44c8-5 20-5 28 0" fill="none" stroke="#7fd6a0" stroke-width="3" stroke-linecap="round"/>
-</svg>
-"""
-
-
-def _seo_head(canonical: str, description: str, site_config: dict[str, Any]) -> str:
-    """Canonical link, Open Graph, Twitter card, and verification tags."""
-    desc = escape(description, quote=True)
-    seo = site_config.get("seo", {}) if isinstance(site_config.get("seo"), dict) else {}
-    verification = str(seo.get("google_site_verification", "")).strip()
-    verify_tag = (
-        f'\n  <meta name="google-site-verification" content="{escape(verification, quote=True)}">'
-        if verification
-        else ""
-    )
-    return f"""  <link rel="canonical" href="{escape(canonical, quote=True)}">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="apple-touch-icon" href="og-image.png">
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0e7490">
-  <meta name="description" content="{desc}">
-  <meta property="og:title" content="Summa">
-  <meta property="og:description" content="{desc}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{escape(canonical, quote=True)}">
-  <meta property="og:site_name" content="Summa">
-  <meta property="og:image" content="{_OG_IMAGE}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Summa">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Summa">
-  <meta name="twitter:description" content="{desc}">
-  <meta name="twitter:image" content="{_OG_IMAGE}">{verify_tag}"""
-
-
-_SEO_LOCATION_STOPWORDS = (
-    "virtual",
-    "online",
-    "webinar",
-    "multiple",
-    "preview",
-    "schedule",
-    "various",
-    "tbd",
-    "uncertain",
-)
-
-
-def _seo_location_ok(location: str) -> bool:
-    value = location.strip().lower()
-    if not value or len(value) > 70:
-        return False
-    return not any(word in value for word in _SEO_LOCATION_STOPWORDS)
-
-
 def _status_banner(full_count: int, near_count: int, tracked_total: int, tracked_sources: int) -> str:
     """The headline status line. Even with zero qualified results it stays
     informative — emphasising coverage and the seasonal nature of deadlines so
@@ -1134,152 +533,6 @@ def _empty_opportunities_block(tracked_total: int, tracked_sources: int) -> str:
     </div>"""
 
 
-def _jsonld_block(candidates: list[Candidate]) -> str:
-    """schema.org JSON-LD: a WebSite node plus an ItemList of clean events.
-
-    Only opportunities with concrete dates and a plausible physical location are
-    emitted as EducationEvent, so the structured data stays accurate (bad event
-    markup can hurt rather than help search visibility)."""
-    graph: list[dict[str, Any]] = [
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Summa",
-            "url": _SITE_URL,
-            "inLanguage": "en",
-            "description": _SITE_DESCRIPTION,
-        }
-    ]
-    elements = []
-    position = 1
-    for candidate in candidates:
-        if not (candidate.start_date and candidate.end_date):
-            continue
-        location = _public_location(candidate.location).strip()
-        if not _seo_location_ok(location):
-            continue
-        event: dict[str, Any] = {
-            "@type": "EducationEvent",
-            "name": candidate.title,
-            "startDate": candidate.start_date.isoformat(),
-            "endDate": candidate.end_date.isoformat(),
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "location": {"@type": "Place", "name": location},
-        }
-        url = candidate.application_link or candidate.source_url
-        if url:
-            event["url"] = url
-        if candidate.organizer and candidate.organizer.lower() != "uncertain":
-            event["organizer"] = {"@type": "Organization", "name": candidate.organizer}
-        elements.append({"@type": "ListItem", "position": position, "item": event})
-        position += 1
-    if elements:
-        graph.append(
-            {
-                "@context": "https://schema.org",
-                "@type": "ItemList",
-                "name": "Open research school opportunities",
-                "itemListElement": elements,
-            }
-        )
-    payload = json.dumps(graph, ensure_ascii=False, indent=2)
-    payload = payload.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
-    return f'<script type="application/ld+json">\n{payload}\n</script>'
-
-
-def render_feed(
-    candidates: list[Candidate],
-    curated: list[dict[str, Any]] | None,
-    site_config: dict[str, Any] | None = None,
-) -> str:
-    """An RSS 2.0 feed so people can subscribe instead of visiting the page."""
-    site_url = str((site_config or {}).get("site_url") or _SITE_URL).rstrip("/") + "/"
-    feed_url = site_url + "feed.xml"
-    qualified = [item for item in candidates if item.fully_qualified and not _is_online_only(item)]
-    near = [item for item in candidates if _is_high_quality(item)]
-    items = [_candidate_feed_item(item) for item in (qualified + near)[:40]]
-    item_xml = "".join(_feed_item_xml(item, site_url) for item in items)
-    built = format_datetime(datetime.now(timezone.utc))
-    return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n'
-        '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
-        "  <channel>\n"
-        "    <title>Summa · Funded research summer schools</title>\n"
-        f"    <link>{escape(site_url)}</link>\n"
-        f'    <atom:link href="{escape(feed_url)}" rel="self" type="application/rss+xml"/>\n'
-        "    <description>Funded research summer schools, winter schools, and training "
-        "schools across many academic fields — environmental &amp; earth science, "
-        "computing &amp; data science, social sciences, and humanities.</description>\n"
-        "    <language>en</language>\n"
-        f"    <copyright>Data CC BY 4.0 — reuse with attribution and a link back to {escape(site_url)}</copyright>\n"
-        "    <generator>Summa</generator>\n"
-        f"    <!-- {_CANARY} -->\n"
-        f"    <lastBuildDate>{built}</lastBuildDate>\n"
-        f"{item_xml}"
-        "  </channel>\n"
-        "</rss>\n"
-    )
-
-
-def _candidate_feed_item(candidate: Candidate) -> dict[str, Any]:
-    parts = [f"Dates: {_duration(candidate)}"]
-    if candidate.location:
-        parts.append(f"Location: {_public_location(candidate.location)}")
-    parts.append(f"Deadline: {candidate.deadline.isoformat() if candidate.deadline else 'uncertain'}")
-    parts.append(candidate.financial_summary)
-    if candidate.topic_keywords:
-        parts.append(f"Topics: {topics_label(candidate.topic_keywords)}")
-    return {
-        "title": f"{candidate.title} — {candidate.organizer}",
-        "link": candidate.application_link or candidate.source_url,
-        "guid": candidate.source_url,
-        "tag": "Fully qualified" if candidate.fully_qualified else "High quality",
-        "date": candidate.first_seen or date.today(),
-        "summary": ". ".join(part for part in parts if part),
-    }
-
-
-def _curated_feed_item(item: dict[str, Any]) -> dict[str, Any]:
-    funding = item.get("funding", {})
-    if not isinstance(funding, dict):
-        funding = {}
-    url = str(item.get("url", "")).strip()
-    title = str(item.get("title", "Untitled opportunity"))
-    parts = [f"Dates: {_curated_duration(item)}"]
-    location = str(item.get("location", "")).strip()
-    if location:
-        parts.append(f"Location: {_public_location(location)}")
-    deadline = _parse_iso_date(item.get("application_deadline"))
-    parts.append(f"Deadline: {deadline.isoformat() if deadline else 'uncertain'}")
-    parts.append(_curated_financial_summary(item, funding))
-    return {
-        "title": f"{title} — {item.get('organizer', 'uncertain')} (curated)",
-        "link": url,
-        "guid": url or title,
-        "tag": "Curated",
-        "date": date.today(),
-        "summary": ". ".join(part for part in parts if part),
-    }
-
-
-def _feed_item_xml(item: dict[str, Any], site_url: str) -> str:
-    published = item["date"]
-    pub_date = format_datetime(
-        datetime(published.year, published.month, published.day, tzinfo=timezone.utc)
-    )
-    guid = item["guid"] or item["link"] or item["title"]
-    return (
-        "    <item>\n"
-        f"      <title>{escape(item['title'])}</title>\n"
-        f"      <link>{escape(item['link'] or site_url)}</link>\n"
-        f'      <guid isPermaLink="false">{escape(guid)}</guid>\n'
-        f"      <category>{escape(item['tag'])}</category>\n"
-        f"      <pubDate>{pub_date}</pubDate>\n"
-        f"      <description>{escape(item['summary'])}</description>\n"
-        "    </item>\n"
-    )
-
-
 def render_site(
     candidates: list[Candidate],
     errors: list[str],
@@ -1322,10 +575,10 @@ def render_site(
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Summa · Funded research summer schools</title>
-{_seo_head(_SITE_URL, _SITE_DESCRIPTION, site_config or {})}
+{seo_head(_SITE_URL, _SITE_DESCRIPTION, site_config or {})}
   {_BOOT_SCRIPT}
   <link rel="alternate" type="application/rss+xml" title="Summa" href="feed.xml">
-  {_jsonld_block(full + near + found[:10])}
+  {jsonld_block(full + near + found[:10], public_location=_public_location)}
   <style>
 {_THEME_CSS}
     header.hero {{
@@ -1670,7 +923,7 @@ def render_opportunity_detail(
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{escape(candidate.title)} · Summa</title>
-{_seo_head(canonical, summary, site_config or {})}
+{seo_head(canonical, summary, site_config or {})}
   {_BOOT_SCRIPT}
   <style>
 {_THEME_CSS}
@@ -1886,19 +1139,7 @@ def _footer_section(updated: str, has_ai_review: bool = False, root: str = "") -
       </div>
       <div class="legal">Last updated {updated} &middot; <span data-i18n="foot.legal">Near-matches are not treated as qualified opportunities. Built and maintained openly on GitHub.</span></div>
     </div>
-  </footer>{_watermark()}"""
-
-
-def _watermark() -> str:
-    """A hidden canonical-source marker. It travels with anyone who copies the
-    page HTML, so wholesale copies are identifiable; searching the web for the
-    canary string surfaces them."""
-    return (
-        f"\n  <!-- Summa | canonical: {_SITE_URL} | "
-        f"data CC BY 4.0, attribution and link back required | {_CANARY} -->\n"
-        f'  <span class="src-credit" aria-hidden="true">Data from Summa '
-        f"&mdash; {_SITE_URL} &mdash; reuse under CC BY 4.0 with attribution. {_CANARY}</span>"
-    )
+  </footer>{watermark()}"""
 
 
 def render_sources_page(sources: list[dict[str, Any]]) -> str:
@@ -1914,7 +1155,7 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sources &amp; Coverage · Summa</title>
-{_seo_head(_SITE_URL + "sources.html", "The trusted source registry behind Summa, including coverage notes and sources that must be checked manually.", {})}
+{seo_head(_SITE_URL + "sources.html", "The trusted source registry behind Summa, including coverage notes and sources that must be checked manually.", {})}
   {_BOOT_SCRIPT}
   <style>
 {_THEME_CSS}
@@ -1961,7 +1202,7 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
     </div>
     {manual_section}
   </main>
-  {_watermark()}
+  {watermark()}
   {_UI_SCRIPT}
 </body>
 </html>

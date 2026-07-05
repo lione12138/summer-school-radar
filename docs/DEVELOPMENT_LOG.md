@@ -64,9 +64,10 @@ hard filters, ranking, RSS, or public table status.
 
 ### What Failed Or Remains Weak
 
-- Local small Qwen models through Ollama and LM Studio were not reliable enough
-  for daily extraction. They were useful for validating the architecture, but
-  produced too many omissions or malformed/weak outputs on real pages.
+- Legacy local-model provider trials were not reliable enough for daily
+  extraction. They were useful for validating the architecture, but produced
+  too many omissions or malformed/weak outputs on real pages; that code has
+  since been removed from the production branch.
 - DeepSeek is not browsing. It only reads chunks the scanner has already
   collected and selected. It does not click links, open registration pages, or
   decide to visit fee pages by itself.

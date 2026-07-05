@@ -48,7 +48,20 @@ def localization_issues(html: str) -> list[str]:
 
 
 def assert_localization_complete(html: str, page: str) -> None:
+    """Hard gate for tests/CI: raise on any missing translation contract."""
     issues = localization_issues(html)
     if issues:
         joined = "; ".join(issues[:12])
         raise ValueError(f"localization audit failed for {page}: {joined}")
+
+
+def warn_localization_issues(html: str, page: str) -> list[str]:
+    """Soft gate for production builds: report issues without aborting.
+
+    Page content includes scraped external text, so a new unlocalized string
+    must degrade the audit, not kill the daily scan and publish. The strict
+    contract is enforced by the test suite instead."""
+    issues = localization_issues(html)
+    for issue in issues:
+        print(f"(localization) {page}: {issue}")
+    return issues

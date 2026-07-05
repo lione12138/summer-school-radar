@@ -55,17 +55,17 @@ def test_compare_two_small_ai_extraction_payloads_counts_disagreements() -> None
             ),
             _item("https://example.org/left-only"),
         ],
-        provider="ollama",
+        provider="before",
     )
     right = _payload(
         [
             _item("https://example.org/a", deadline="2026-03-15", fee="EUR 350", warnings=["fee_context_weak"]),
             _item("https://example.org/right-only"),
         ],
-        provider="lmstudio",
+        provider="after",
     )
 
-    result = compare_payloads(left, right, left_name="ollama", right_name="lmstudio")
+    result = compare_payloads(left, right, left_name="before", right_name="after")
 
     assert result["left"]["item_count"] == 2
     assert result["right"]["item_count"] == 2
@@ -97,9 +97,9 @@ def test_compare_run_files_writes_markdown_output(tmp_path, monkeypatch) -> None
             "--right",
             str(right_path),
             "--left-name",
-            "ollama",
+            "before",
             "--right-name",
-            "lmstudio",
+            "after",
             "--output",
             str(tmp_path / "comparison.md"),
         ],
@@ -108,8 +108,8 @@ def test_compare_run_files_writes_markdown_output(tmp_path, monkeypatch) -> None
     main()
 
     markdown = (tmp_path / "comparison.md").read_text(encoding="utf-8")
-    assert "AI Run Comparison: ollama vs lmstudio" in markdown
-    assert "lmstudio value only" in markdown
+    assert "AI Run Comparison: before vs after" in markdown
+    assert "after value only" in markdown
     assert "application_deadline" in markdown
 
 

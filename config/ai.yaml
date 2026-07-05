@@ -55,14 +55,6 @@ follow_up:
   official_domains_only: true
   external_search_enabled: true
 providers:
-  ollama:
-    base_url: "http://localhost:11434"
-    model: "qwen3.5:9b"
-    api_key: "ollama"
-  lmstudio:
-    base_url: "http://localhost:1234/v1"
-    model: "qwen2.5-7b-instruct"
-    api_key: "lm-studio"
   deepseek:
     base_url: "https://api.deepseek.com"
     model: "deepseek-v4-flash"

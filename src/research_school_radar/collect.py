@@ -8,6 +8,7 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
+from .http_cache import HttpCache, get_with_cache
 from .models import Page, Source
 from .utils import clean_space
 
@@ -43,7 +44,12 @@ def _meta_refresh_target(html: str, base_url: str) -> str | None:
     return urljoin(base_url, match.group(1).strip().strip("'\""))
 
 
-def fetch_source(source: Source, user_agent: str = "summer-school-radar/0.1") -> Page:
+def fetch_source(
+    source: Source,
+    user_agent: str = "summer-school-radar/0.1",
+    *,
+    http_cache: HttpCache | None = None,
+) -> Page:
     if getattr(source, "render", False):
         from .render import fetch_rendered, render_available
 
@@ -52,13 +58,23 @@ def fetch_source(source: Source, user_agent: str = "summer-school-radar/0.1") ->
         # Playwright is not installed: fall back to a plain request. JS-rendered
         # pages will yield little, but the scan still runs.
     headers = dict(_HEADERS)
-    response = requests.get(source.url, headers=headers, timeout=DEFAULT_TIMEOUT)
-    response.raise_for_status()
+    response = get_with_cache(
+        source.url,
+        headers=headers,
+        timeout=DEFAULT_TIMEOUT,
+        cache=http_cache,
+        request_get=requests.get,
+    )
     html = response.text
     refresh_url = _meta_refresh_target(html, response.url)
     if refresh_url and refresh_url != response.url:
-        response = requests.get(refresh_url, headers=headers, timeout=DEFAULT_TIMEOUT)
-        response.raise_for_status()
+        response = get_with_cache(
+            refresh_url,
+            headers=headers,
+            timeout=DEFAULT_TIMEOUT,
+            cache=http_cache,
+            request_get=requests.get,
+        )
         html = response.text
     soup = BeautifulSoup(html, "html.parser")
     for element in soup(["script", "style", "noscript"]):
@@ -75,17 +91,25 @@ def fetch_source(source: Source, user_agent: str = "summer-school-radar/0.1") ->
     )
 
 
-def collect_sources(sources: list[Source], max_workers: int = DEFAULT_MAX_WORKERS) -> tuple[list[Page], list[str]]:
+def collect_sources(
+    sources: list[Source],
+    max_workers: int = DEFAULT_MAX_WORKERS,
+    *,
+    http_cache: HttpCache | None = None,
+) -> tuple[list[Page], list[str]]:
     if not sources:
         return [], []
     workers = max(1, min(max_workers, len(sources)))
     if workers == 1:
-        return _collect_sources_serial(sources)
+        return _collect_sources_serial(sources, http_cache=http_cache)
 
     pages_by_index: dict[int, Page] = {}
     errors_by_index: dict[int, str] = {}
     with ThreadPoolExecutor(max_workers=workers) as executor:
-        future_to_source = {executor.submit(fetch_source, source): (index, source) for index, source in enumerate(sources)}
+        future_to_source = {
+            executor.submit(_fetch_with_optional_cache, source, http_cache): (index, source)
+            for index, source in enumerate(sources)
+        }
         for future in as_completed(future_to_source):
             index, source = future_to_source[future]
             try:
@@ -98,12 +122,22 @@ def collect_sources(sources: list[Source], max_workers: int = DEFAULT_MAX_WORKER
     return pages, errors
 
 
-def _collect_sources_serial(sources: list[Source]) -> tuple[list[Page], list[str]]:
+def _collect_sources_serial(
+    sources: list[Source],
+    *,
+    http_cache: HttpCache | None = None,
+) -> tuple[list[Page], list[str]]:
     pages: list[Page] = []
     errors: list[str] = []
     for source in sources:
         try:
-            pages.append(fetch_source(source))
+            pages.append(_fetch_with_optional_cache(source, http_cache))
         except Exception as exc:  # noqa: BLE001 - one failing source must never abort the scan.
             errors.append(f"{source.name}: {exc}")
     return pages, errors
+
+
+def _fetch_with_optional_cache(source: Source, http_cache: HttpCache | None) -> Page:
+    if http_cache is None:
+        return fetch_source(source)
+    return fetch_source(source, http_cache=http_cache)
