@@ -62,6 +62,7 @@
         "computational neuroscience",
         "neuroscience",
         "neural computation",
+        "systems neuroscience",
         "neuroAI",
         "history"
       ],
@@ -123,8 +124,8 @@
         "end": "2026-09-18",
         "duration_days": 5
       },
-      "deadline": null,
-      "deadline_status": "uncertain",
+      "deadline": "2026-07-15",
+      "deadline_status": "open",
       "financial_access_status": "unresolved",
       "fee": "",
       "fee_eur": null,
@@ -133,13 +134,12 @@
         "computer vision"
       ],
       "needs_review": [
-        "application deadline is uncertain",
         "duration is below 8 days",
         "funding is not explicit and fee is uncertain"
       ],
-      "confidence": 0.5,
+      "confidence": 0.75,
       "evidence": {
-        "deadline": "",
+        "deadline": "ELLIS detail/registration page: registration deadline 2026-07-15",
         "duration": "ELLIS events listing: 2026-09-14 to 2026-09-18",
         "funding": "",
         "mode": "ELLIS listing location: TUM Garching Campus"
