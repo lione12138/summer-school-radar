@@ -153,12 +153,36 @@ def test_ellis_registration_open_range_and_euro_suffix_fee() -> None:
     assert _ellis_fee_from_text(text) == ("Student/PhD EUR 350", 350)
 
 
-def test_ellis_enrichment_follows_registration_page(monkeypatch) -> None:
-    from datetime import date as _date
+def _future_ellis_fixture():
+    """Relative dates so these tests do not rot as real time passes: the
+    enrichment only touches events whose start date is still in the future, and
+    year-less deadlines are inferred relative to the event start."""
+    from datetime import date as _date, timedelta
 
+    start = _date.today() + timedelta(days=60)
+    end = start + timedelta(days=4)
+    early = start - timedelta(days=50)
+    regular = start - timedelta(days=40)
+    late = start - timedelta(days=30)
+
+    def day_month(d):
+        return f"{d.day} {d.strftime('%B')}"
+
+    text = (
+        f"Timeline Early bird registration deadline - {day_month(early)} "
+        f"Regular registration deadline - {day_month(regular)} "
+        f"Late Bird registration open until {day_month(late)} or until the tickets are available "
+        "Costs Participation fee Registration fees vary by deadline and participant type: "
+        "Early Bird 350 EUR 700 EUR Regular 400 EUR 800 EUR Late Bird 450 EUR 900 EUR"
+    )
+    return start, end, late, text
+
+
+def test_ellis_enrichment_follows_registration_page(monkeypatch) -> None:
     import research_school_radar.api_sources as api_sources
     from research_school_radar.models import Candidate
 
+    start, end, late, registration_text = _future_ellis_fixture()
     candidate = Candidate(
         title="Machine Learning Summer School on Reliability & Safety",
         type="summer school",
@@ -167,8 +191,8 @@ def test_ellis_enrichment_follows_registration_page(monkeypatch) -> None:
         region_priority="priority",
         location="Krakow",
         mode="in-person",
-        start_date=_date(2026, 6, 29),
-        end_date=_date(2026, 7, 3),
+        start_date=start,
+        end_date=end,
         duration_days=5,
         deadline=None,
         deadline_status="uncertain",
@@ -196,31 +220,25 @@ def test_ellis_enrichment_follows_registration_page(monkeypatch) -> None:
             },
             "https://mlss2026.mlinpl.org/registration": (
                 {
-                    "text": (
-                        "Timeline Early bird registration deadline - 8 March Regular registration deadline - 19 April "
-                        "Late Bird registration open until 10 May or until the tickets are available "
-                        "Costs Participation fee Registration fees vary by deadline and participant type: "
-                        "Early Bird 350 EUR 700 EUR Regular 400 EUR 800 EUR Late Bird 450 EUR 900 EUR"
-                    ),
+                    "text": registration_text,
                     "links": [],
                 }
             ),
         },
     )
     api_sources._enrich_ellis_deadlines([candidate])
-    assert candidate.deadline == _date(2026, 5, 10)
-    assert candidate.deadline_status == "closed"
+    assert candidate.deadline == late
+    assert candidate.deadline_status == "open"  # late-bird date is in the future
     assert candidate.fee == "Academia EUR 350-450; non-academia up to EUR 900"
     assert candidate.fee_eur == 450
 
 
 @responses.activate
 def test_ellis_enrichment_uses_http_fallback_for_external_registration(monkeypatch) -> None:
-    from datetime import date as _date
-
     import research_school_radar.api_sources as api_sources
     from research_school_radar.models import Candidate
 
+    start, end, late, registration_text = _future_ellis_fixture()
     monkeypatch.setattr(api_sources, "render_page_data", lambda urls: {})
     event_url = "https://ellis.eu/events/machine-learning-summer-school-on-reliability-safety-mlss-rs"
     homepage = "https://mlss2026.mlinpl.org/"
@@ -242,12 +260,7 @@ def test_ellis_enrichment_uses_http_fallback_for_external_registration(monkeypat
     responses.add(
         responses.GET,
         registration,
-        body=(
-            "<html><body>Timeline Early bird registration deadline - 8 March "
-            "Regular registration deadline - 19 April Late Bird registration open until 10 May "
-            "Costs Participation fee Early Bird 350 EUR 700 EUR Regular 400 EUR 800 EUR "
-            "Late Bird 450 EUR 900 EUR</body></html>"
-        ),
+        body=f"<html><body>{registration_text}</body></html>",
         status=200,
         content_type="text/html",
     )
@@ -259,8 +272,8 @@ def test_ellis_enrichment_uses_http_fallback_for_external_registration(monkeypat
         region_priority="priority",
         location="Krakow",
         mode="in-person",
-        start_date=_date(2026, 6, 29),
-        end_date=_date(2026, 7, 3),
+        start_date=start,
+        end_date=end,
         duration_days=5,
         deadline=None,
         deadline_status="uncertain",
@@ -279,7 +292,7 @@ def test_ellis_enrichment_uses_http_fallback_for_external_registration(monkeypat
         risk_points="",
     )
     api_sources._enrich_ellis_deadlines([candidate])
-    assert candidate.deadline == _date(2026, 5, 10)
+    assert candidate.deadline == late
     assert candidate.fee_eur == 450
 
 

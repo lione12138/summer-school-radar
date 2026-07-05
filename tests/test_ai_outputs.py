@@ -61,14 +61,14 @@ def test_ai_extractions_sidecar_schema_is_stable(tmp_path) -> None:
         [item],
         site_dir=tmp_path / "site",
         reports_dir=tmp_path / "reports",
-        config=LLMClientConfig(model="qwen3.5:9b"),
+        config=LLMClientConfig(model="deepseek-v4-flash"),
         metadata={"max_pages_for_llm": 1},
         warnings=["warning"],
     )
     payload = json.loads((tmp_path / "site" / "ai_extractions.json").read_text(encoding="utf-8"))
 
     assert payload["schema_version"] == AI_EXTRACTION_SCHEMA_VERSION
-    assert payload["model"] == "qwen3.5:9b"
+    assert payload["model"] == "deepseek-v4-flash"
     assert payload["metadata"]["max_pages_for_llm"] == 1
     assert payload["warnings"] == ["warning"]
     assert payload["items"] == [item]
@@ -83,8 +83,10 @@ def test_ai_review_page_escapes_html_and_truncates_evidence() -> None:
                 "page_title": "<School>",
                 "source_name": "Example",
                 "semantic_score_max": 0.9,
-                "matched_existing_candidate": False,
-                "existing_candidate_title": "",
+                # Evidence IDs/texts are rendered on the Matched table; the
+                # Missed table intentionally shows a reduced record without them.
+                "matched_existing_candidate": True,
+                "existing_candidate_title": "<School>",
                 "validated_confidence": "low",
                 "validation_warnings": ["<script>alert(1)</script>"],
                 "llm_extraction": {
