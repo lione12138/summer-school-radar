@@ -1,0 +1,1182 @@
+{
+  "generated": "2026-06-26",
+  "embedding_model": "BAAI/bge-m3",
+  "query": "summer school or winter school application information, including deadline, application, registration, dates, location, fee, funding, eligibility, topic, target participants, and application procedure",
+  "metadata": {
+    "chunk_size_chars": 1800,
+    "chunk_overlap_chars": 250,
+    "top_k_chunks_per_page": 2,
+    "min_similarity_score": 0.3,
+    "max_pages_for_ai": 150,
+    "max_pages_per_source": 8,
+    "pages_considered": 212,
+    "chunks_selected": 129,
+    "cache_enabled": true,
+    "cache_refresh": true,
+    "cache_directory": "C:\\Users\\17114\\Desktop\\Summer school agent\\data\\ai_cache"
+  },
+  "warnings": [],
+  "items": [
+    {
+      "page_url": "https://essexsummerschool.com/summer-school-facts/scholarships/q-step-scholarship/",
+      "page_title": "Q-Step – Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "chunk_index": 3,
+      "score": 0.678179,
+      "text_preview": "ld. More info Apply now! 2026 applications are now open! More info Latest News Networking Events Apply now! Find us online! © 2026 Essex Summer School Website by OM Accessibility disclaimer We use cookies on the Summer School website to improve your browsing experience, monitor how our site is used, and to aid us with advertising our services. By continuing to use our site, you're agreeing to us placing cookies outlined in our privacy policy on your device. Accept Read more",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.essex.ac.uk/short-courses/social-science-data-analysis",
+      "page_title": "Social Science Data Analysis | University of Essex",
+      "source_name": "Essex Summer School",
+      "chunk_index": 4,
+      "score": 0.677221,
+      "text_preview": "th other materials, as part of your course fees. For those participating in online courses, participants must have access to their own computing facilities in the form of a laptop or desktop PC. This should include adequate audio and visual equipment in the form of a webcam (built in or detachable), as well as a reliable internet connection to enable full participation in the online sessions over Zoom. For best learning success, participants should have the background knowledge necessary to foll",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.icos-cp.eu/about/opportunities/summer-school",
+      "page_title": "ICOS Summer/Winter School January 2027, application is now open | ICOS",
+      "source_name": "ICOS",
+      "chunk_index": 2,
+      "score": 0.655238,
+      "text_preview": "...the 2025 Summer School program below. Application for the 9th ICOS Winter School January 2027 is now open! Through this application form you can register. Submission deadline is 31 July 2026. You will hear about the selection around mid September 2026. Want to find out about future ICOS Summer Schools? Subscribe to the ICOS newsletter here . Contact person: Alex Vermeulen ICOS Carbon Portal Director alex.vermeulen@icos-ri.eu Contact info@icos-ri.eu Resources Contact Data Licence Services stat",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://lxmls.github.io/2026/",
+      "page_title": "LxMLS 2026 - The 16th Lisbon Machine Learning Summer School",
+      "source_name": "LxMLS",
+      "chunk_index": 4,
+      "score": 0.648641,
+      "text_preview": "c field in the application form for this. Be sure to remind us that you did not get in last time. We check, so please don’t use this option if you did not apply before. IS IT EASY TO GET ACCEPTED IN THE SCHOOL? We get a lot of applications each year and the number has been increasing steadily. The number of students is usually slightly above 30% of the number of applications. ARE THERE SCHOLARSHIPS AVAILABLE? Yes. In partnership with our sponsoring companies, we provide a limited number of schol",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-science-communication",
+      "page_title": "Summer School Science Communication - Leiden University",
+      "source_name": "Leiden Linguistics Summer School",
+      "chunk_index": 2,
+      "score": 0.643442,
+      "text_preview": "...xperience in science communication (no prior experience is required, we simply want to understand the background of our participants). We look forward to your application! Please register here latest on March 29, 2026 . See our website for more information. Summer School Science Communication 6 – 10 July 2026 Registration is open until March 28 Register now Facts & Figures Start date 6-7-2026 Duration 6-10 July 2026 Apply before 29-03-2026 Location Leiden Course fee 575 Euro Area of interest ",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://watersummerschool.wordpress.com/",
+      "page_title": "W.A.T.E.R. Workshop on Advanced measurement Techniques and Experimental Research – International Summer School on Hydraulics Measurement Techniques | Stuttgart, Germany | August 31 – September 4 2026",
+      "source_name": "IAHR",
+      "chunk_index": 1,
+      "score": 0.642553,
+      "text_preview": "m and details about the registration will come soon. We are looking forward to meeting you in Stuttgart. The local course organizers are: Prof. Dr.-Ing. Silke Wieprecht Dr.-Ing. Ingo Schnauder Dr.-Ing. Robin Leister W.A.T.E.R. Summer School Published on June 23, 2025 August 19, 2025 by watersummerschool Leave a comment The W.A.T.E.R. Summer School is possible thanks to the support of our partners: Ubertone Eurotek Aquatec Applications are open until 11 July 2025. Applications open until July 11t",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://cispa.de/en/summer-school",
+      "page_title": "CISPA Summer School",
+      "source_name": "CISPA",
+      "chunk_index": 2,
+      "score": 0.633919,
+      "text_preview": "criteria for selecting participants for our Summer Schools. We give priority to those who either have a background in the Summer School’s topic or are currently studying it. A foundational knowledge in the field is required, and participants should have reached a certain academic level. For instance, individuals in the early stages of a Bachelor's program may not qualify. This is important because the Summer School is interactive, and having prior knowledge is crucial for active participation. H",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.ds3-datascience-polytechnique.fr/key-dates-application/",
+      "page_title": "Key Dates & Application | Data Science Summer School",
+      "source_name": "DS3 Data Science Summer School",
+      "chunk_index": 0,
+      "score": 0.630282,
+      "text_preview": "...ino En Ligne France Casino Non Aams Italia Non Gamstop Casino Casinos Not On Gamstop Casinos Not On Gamstop Select Page FEES & APPLICATION PLENARY TALKS Students* (MSc2, PhD), PostDocs: 50€ Academics & Members of public institutions : 100€ Professionals: 100€ TUTORIALS (the prices shown are per tutorial session) Students* (MSc2, PhD), PostDocs: 150€ Academics & Members of public institutions : 200€ Professionals: 200€ Application deadline: October 21, 2020 Notification of acceptance by Novemb",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.unesco-floods.eu/unesco-floods-summer-school/",
+      "page_title": "HydRoData 2026: Summer school about Hydrology and Data | UNESCO Chair on Water-related Disaster Risk Reduction",
+      "source_name": "IAHR",
+      "chunk_index": 1,
+      "score": 0.62791,
+      "text_preview": ".... Who can attend? Summer school is primarily dedicated to PhD students. Post-docs and MSc students are also welcome to apply. The maximum number of participants is 20. Language English Registration Registration 1,2 is open. To apply, please fill out the following form: HydRoData Summer School 2026 application form . 1 If the number of applicants exceeds 20, we will carry out a selection process. 2 In the case of less than 10 applications, summer school will not be held. In that case, we will ",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://lotschool.nl/leiden-summer-school/",
+      "page_title": "Leiden Summer School in Languages and Linguistics – LOT",
+      "source_name": "LOT School",
+      "chunk_index": 1,
+      "score": 0.627425,
+      "text_preview": "may participate in LLL within this scheme; VII. PhD candidates are not eligible for this scheme. VIII. If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). For travel and accommodation costs, the same rules apply as for the LOT Summer and Winter Schools. If you have questions about the status of your registr",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://essexsummerschool.com/new-application/",
+      "page_title": "Application – Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "chunk_index": 0,
+      "score": 0.626442,
+      "text_preview": "...ist MA info Social Programme Accommodation FAQ ESS Data Skills Mathematical Foundations Professional Development How to apply Application Fee Structure Scholarships Q-Step Global South Women in Political Science Home / Application Application Share **2026 APPLICATIONS ARE NOW OPEN** APPLICATIONS FOR PRE SESSIONAL AND SESSION ONE NOW CLOSED Once received, we aim to process your application within five-seven working days. If you need to update your application, please email us – please do not r",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.essex.ac.uk/short-courses/social-science-data-analysis",
+      "page_title": "Social Science Data Analysis | University of Essex",
+      "source_name": "Essex Summer School",
+      "chunk_index": 5,
+      "score": 0.626407,
+      "text_preview": "es . Applicants wishing to apply should complete the online application form. We will continue to take applications until notice of application closure is posted. We strongly recommend early applications as courses can fill up quickly and many will become unavailable by May. All applicants also need to check our website for up-to-date information on course availability. On receipt of the application, the Summer School office will send applicants an invoice for the amount due. Full payment must t",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.lse.ac.uk/study-at-lse/summer-schools/summer-school",
+      "page_title": "🌞🏫LSE Summer School 👨‍🎓👩‍🎓 | LSE Summer School",
+      "source_name": "LSE Cities",
+      "chunk_index": 0,
+      "score": 0.625582,
+      "text_preview": "🌞🏫LSE Summer School 👨‍🎓👩‍🎓 | LSE Summer School Skip to main content Search Menu Summer School 2026 - Applications open Applications for LSE Summer School 2026 are open. Sessions start on 13 July and 3 August. Find out more Join our mailing list Identify the course that suits you Start date Start date Subject area Subject area Search courses Play Your Summer | Your Future Discover what your future holds at LSE Summer School The learning experience Find out more about how and what you’ll learn Our",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.isprs.org/resources/templates/summer-school-application-form/",
+      "page_title": "Summer School Application Form",
+      "source_name": "ISPRS",
+      "chunk_index": 0,
+      "score": 0.623138,
+      "text_preview": "Summer School Application Form June 26, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commission Presidents Financial Commission Reg. Representatives Editors WG Officers Finances Committees & SC Committees & SC ISAC IPAC I²AC CIPA ICORSE White Elephant Club Student Consortium Awards Awards Awards Policy Nominations H",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.icos-cp.eu/about/opportunities/summer-school",
+      "page_title": "ICOS Summer/Winter School January 2027, application is now open | ICOS",
+      "source_name": "ICOS",
+      "chunk_index": 1,
+      "score": 0.622949,
+      "text_preview": "...Ingeborg Levin Early Career Scientist Award Home About & Contacts Opportunities ICOS Summer/Winter School January 2027, application is now open Learn more Education related to ICOS ICOS data & services Other sources News (2025) Science and sauna – 8th ICOS Summer School held successfully News (2024) WMO and NUBICOS hold successful Summer School Blog post (2017): The 4th ICOS Summer School, by Renato Braghiere The ICOS Summer School on greenhouse gases gathers MSc students, PhD candidates, pos",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.universiteitleiden.nl/en/education/other-modes-of-study/summer-schools",
+      "page_title": "Summer Schools - Leiden University",
+      "source_name": "Leiden Linguistics Summer School",
+      "chunk_index": 0,
+      "score": 0.622602,
+      "text_preview": "...er Schools Other modes of study Contract and non-examination courses Non-examination study Contract teaching Humanities Registration Study materials Admission requirements Examination Faculty of Science Leiden Law School À la carte education - Faculty of Humanities About à la carte education Registration Study materials Taking courses as a guest student Education for refugees Language Foundation Programme Leiden - The Hague IncLUsion Honours education Online education Free large scale online ",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.ipam.ucla.edu/programs/summer-schools/",
+      "page_title": "Summer Schools - IPAM",
+      "source_name": "IPAM",
+      "chunk_index": 1,
+      "score": 0.621914,
+      "text_preview": "...lectures given by leaders in the field. Some summer schools offer a “hands-on” component. The program announcement and application are posted in December each year. Graduate students and recent PhDs are welcome to apply. Participants are generally offered on-campus accommodations. IPAM records most of the Summer School lectures and posts the videos online; you will find them in the video archive . No Summer Schools Scheduled We don't have any Summer Schools scheduled right now. Please check b",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://cispa.de/en/summer-school",
+      "page_title": "CISPA Summer School",
+      "source_name": "CISPA",
+      "chunk_index": 1,
+      "score": 0.61671,
+      "text_preview": "...ents in relevant areas of cybersecurity. The event typically features talks, workshops, discussions, poster sessions by participants as well as a social program. Each Summer School has a specific thematic focus and features one or several CISPA Faculty who are experts in the chosen area as the event’s scientific lead. In addition, we also invite outstanding guest speakers for talks, discussions and workshops. Upcoming Summer SChool CISPA ZINE 7 : THE CISPA SUMMER SCHOOL The seventh issue of o",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://icvss.dmi.unict.it/icvss2026/Application",
+      "page_title": "ICVSS 2026 - International Computer Vision Summer School 2026",
+      "source_name": "ICVSS",
+      "chunk_index": 0,
+      "score": 0.609638,
+      "text_preview": "...ion for Spatial and Physical Intelligence Home Committee Courses Reading Group Industrial Session Deadlines Application Registration Location and Accommodation Sponsors Call for Posters Poster Submission Presentation Prize Scholarship Essay Competition Local Arrangements Previous Editions Books ICVSS: 552 Applications in 2025 SCHOOL APPLICATION The school will be open to about 100 qualified, motivated and pre-selected candidates. Master Students, Ph. D. students, Post-Docs, young researchers ",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://icvss.dmi.unict.it/icvss2026/Application#ApplicationModule",
+      "page_title": "ICVSS 2026 - International Computer Vision Summer School 2026",
+      "source_name": "ICVSS",
+      "chunk_index": 0,
+      "score": 0.609638,
+      "text_preview": "...ion for Spatial and Physical Intelligence Home Committee Courses Reading Group Industrial Session Deadlines Application Registration Location and Accommodation Sponsors Call for Posters Poster Submission Presentation Prize Scholarship Essay Competition Local Arrangements Previous Editions Books ICVSS: 552 Applications in 2025 SCHOOL APPLICATION The school will be open to about 100 qualified, motivated and pre-selected candidates. Master Students, Ph. D. students, Post-Docs, young researchers ",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://tinbergen.nl/summer-school/",
+      "page_title": "Summer School - tinbergen.nl",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 0,
+      "score": 0.605902,
+      "text_preview": "...am Structure Study Schedule Matching Transfer to PhD Job Market Admissions Admission requirements Application procedure Tuition fees, scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat with us Facilities Students offices Location Housing Student Council All Placement Records PhD Vacancies Research Master Business Data Science Education for external participants Summer School Tinbergen Institute Lectures PhD Vacanci",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://businessdatascience.nl/foundations-of-machine-learning-with-applications-in-python",
+      "page_title": "Summer School 2026 Foundations of Machine Learning with Applications in Python",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 0,
+      "score": 0.605567,
+      "text_preview": "...Research Master Program Outline Study Schedule Matching Alumni Admissions Admission Requirements Application Procedure Tuition Fees, Scholarships and Financial Support FAQ Facts and Figures Your pre-research master trajectory Refresh and Test your knowledge Programming Skills Research On-campus or virtual visit Join information session Chat with us Facilities Student Offices Location Housing Student Council Browse our Courses Information Sessions and Campus Visits PhD Vacancies PhD Placements",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://mila.quebec/en/continuing-education/summer-school-in-responsible-ai-and-human-rights",
+      "page_title": "Summer School in Responsible AI and Human Rights | Mila",
+      "source_name": "Mila",
+      "chunk_index": 10,
+      "score": 0.605107,
+      "text_preview": "...university credits, in accordance with the terms and conditions laid down by their institution. What is included in the cost of the summer school? Read more Close The cost of the summer school covers the entire program, lunches for the duration of the program, as well as the opening and closing events. The summer school does not cover transportation (local and international) or your accommodation in Mexico. Do I have to pay for accommodation, meals and transportation? Read more Close As far a",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.ipam.ucla.edu/programs/summer-schools/",
+      "page_title": "Summer Schools - IPAM",
+      "source_name": "IPAM",
+      "chunk_index": 0,
+      "score": 0.603816,
+      "text_preview": "...papers Interviews Press Releases IPAM Newsletter People Directors Staff Science Advisory Board Board of Trustees Simons Participants Associate Director Search Your Visit Community Agreement Policies Directions Hotels Housing Resources Resident’s Guide Transportation Technology Child Care Resources About IPAM Today at IPAM About UCLA A Welcoming Environment for All NSF and Other IPAM Funding Contact Us Programs Long Programs Workshops Special Events and Conferences Student Research Programs Su",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://businessdatascience.nl/foundations-of-machine-learning-with-applications-in-python",
+      "page_title": "Summer School 2026 Foundations of Machine Learning with Applications in Python",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 4,
+      "score": 0.603561,
+      "text_preview": "...to have prior experience working with specific machine-learning techniques. However, the course is experienced by some participants as challenging in terms of the relevant mathematics, statistics, and programming skills. Therefore, if you wonder if the course is suitable for you, the teachers encourage you take this self-test . Admission requirements Basic knowledge of Python and Jupyter Notebooks, and intermediate knowledge of matrix algebra, probability theory, and statistics. Item Informat",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://businessdatascience.nl/summer-school/",
+      "page_title": "Summer School – Businessdatascience.nl",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 0,
+      "score": 0.599113,
+      "text_preview": "...Research Master Program Outline Study Schedule Matching Alumni Admissions Admission Requirements Application Procedure Tuition Fees, Scholarships and Financial Support FAQ Facts and Figures Your pre-research master trajectory Refresh and Test your knowledge Programming Skills Research On-campus or virtual visit Join information session Chat with us Facilities Student Offices Location Housing Student Council Browse our Courses Information Sessions and Campus Visits PhD Vacancies PhD Placements",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://icvss.dmi.unict.it/icvss2026/Deadlines",
+      "page_title": "ICVSS 2026 - International Computer Vision Summer School 2026",
+      "source_name": "ICVSS",
+      "chunk_index": 0,
+      "score": 0.599112,
+      "text_preview": "...ion for Spatial and Physical Intelligence Home Committee Courses Reading Group Industrial Session Deadlines Application Registration Location and Accommodation Sponsors Call for Posters Poster Submission Presentation Prize Scholarship Essay Competition Local Arrangements Previous Editions Books SCHOOL DEADLINES Student Application: 1 April 2026 Notification Acceptance: 15 April 2026 Online Registration: 15 May 2026 Early Registration Payment: 15 May 2026 Late Registration (with extra payment ",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://essexsummerschool.com/category/testimonials/",
+      "page_title": "Testimonials – Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "chunk_index": 1,
+      "score": 0.594186,
+      "text_preview": "...des not only world leading social science research methods training, but also opportunity to socialise with your fellow participants from all around the world. More info Apply now! 2026 applications are now open! More info Latest News Networking Events Apply now! Find us online! © 2026 Essex Summer School Website by OM Accessibility disclaimer We use cookies on the Summer School website to improve your browsing experience, monitor how our site is used, and to aid us with advertising our servi",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://mila.quebec/en/continuing-education/summer-school-in-responsible-ai-and-human-rights",
+      "page_title": "Summer School in Responsible AI and Human Rights | Mila",
+      "source_name": "Mila",
+      "chunk_index": 5,
+      "score": 0.592249,
+      "text_preview": "...to attract people from various backgrounds and to include their voices, we provide a limited number of scholarships to participants with a proven need for financial support. The scholarships are designed to support participants who would not otherwise be able to cover any or all of the costs of Summer School. The bursary can help the recipient cover various expenses related to his/her participation in the Summer School, such as the cost of the summer school ticket, accommodation, travel. Elig",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://essexsummerschool.com/",
+      "page_title": "Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "chunk_index": 0,
+      "score": 0.591735,
+      "text_preview": "...ist MA info Social Programme Accommodation FAQ ESS Data Skills Mathematical Foundations Professional Development How to apply Application Fee Structure Scholarships Q-Step Global South Women in Political Science 2026 Course List The 59th Essex Summer School will take place from Monday 29 June 2026 – Friday 14 August 2026 2026 Instructors Meet our 2026 instructors 2026 Social Programme Social Programme Coming Soon Applications are now open! We offer a combination of in-person, online and hybri",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://lxmls.github.io/2026/",
+      "page_title": "LxMLS 2026 - The 16th Lisbon Machine Learning Summer School",
+      "source_name": "LxMLS",
+      "chunk_index": 7,
+      "score": 0.589752,
+      "text_preview": "g visa processing. WHAT IS THE REIMBURSEMENT POLICY? The following conditions apply: • To be eligible for a registration reimbursement, participants must submit a written request to the LxMLS office at least 7 days before the start of the program. • The only reasons for requesting a registration reimbursement are rejected VISA or documented medical emergencies. Participants must provide evidence of their VISA refusal or medical condition along with their request. • The amount of reimbursement is",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://essexsummerschool.com/summer-school-facts/scholarships/q-step-scholarship/",
+      "page_title": "Q-Step – Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "chunk_index": 2,
+      "score": 0.58658,
+      "text_preview": "allocated among those applications. Key dates Application deadline: 3 April 2026, 5pm (BST) Notification of decisions: 5 May 2026 (*) Acceptance of scholarship and ESS complete application: 15 May 2026 (*) Due to a high volume of applications, scholarship outcome notifications will be delayed. We appreciate your patience and understanding. Given the volume of applications we receive, we are unable to notify non-recipients or to provide feedback on applications. Points to note Successful applican",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://essexsummerschool.com/summer-school-facts/fee-structure/",
+      "page_title": "Tuition Fee Structure – Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "chunk_index": 0,
+      "score": 0.586108,
+      "text_preview": "Tuition Fee Structure – Essex Summer School in Social Science Data Analysis Applications for Essex Summer School 2026 are now open! Keep up to date with our newsletter. SIGN UP About ESS Newsletters Testimonials Partners Instructors Contact Summer Courses Course list MA info Social Programme Accommodation FAQ ESS Data Skills Mathematical Foundations Professional Development How to apply Application Fee Structure Scholarships Q-Step Global South Women in Political Science Home / General informati",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://tinbergen.nl/summer-school/",
+      "page_title": "Summer School - tinbergen.nl",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 2,
+      "score": 0.585086,
+      "text_preview": "...in Business Data Science with the prospect of PhD opportunities under the supervision of our research fellows. External participants have the opportunity to enroll in a broad range of courses. Comprehensive information on eligibility criteria, along with application forms, is available at Browse our Courses – Tinbergen.nl . Applied Public Policy Evaluation August 24-August 28, 2026 in Amsterdam. Faculty: Bas van der Klaauw and Pierre Koning. This course discusses methods dealing with these co",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://essexsummerschool.com/summer-school-facts/scholarships/vera-e-troeger-scholarship-2/",
+      "page_title": "Women in Political Methodology Scholarship – Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "chunk_index": 1,
+      "score": 0.583387,
+      "text_preview": "-week sessions in the Essex Summer School in Social Science Data Analysis (ESS). How to apply Please submit the following materials to essexsummerschoolssdascholarship@essex.ac.uk indicating the email subject “Vera E. Troeger Scholarship”. A cover letter stating: Your research area and how your experience at the ESS will assist you in completing your degree programme. Please indicate: 1) which course you intend to take 2) how this course would strengthen your dissertation work 3) please check th",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://essexsummerschool.com/summer-school-facts/scholarships/global-south-scholarship/",
+      "page_title": "Global South – Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "chunk_index": 2,
+      "score": 0.58165,
+      "text_preview": "applications, scholarship outcome notifications will be delayed. We appreciate your patience and understanding. Given the volume of applications we receive, we are unfortunately unable to notify non-recipients or to provide feedback on applications. Selection criteria: Scholarships will be awarded in a two-stage process. First, complete applications that meet the criteria ( [1] current enrolment in a PhD/doctorate in political science [2] in an institution in the Global South, [3] applying to a",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://tinbergen.nl/application-procedure",
+      "page_title": "Application Procedure – Tinbergen.nl",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 0,
+      "score": 0.580872,
+      "text_preview": "...am Structure Study Schedule Matching Transfer to PhD Job Market Admissions Admission requirements Application procedure Tuition fees, scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat with us Facilities Students offices Location Housing Student Council All Placement Records PhD Vacancies Research Master Business Data Science Education for external participants Summer School Tinbergen Institute Lectures PhD Vacanci",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://lotschool.nl/events/leiden-summer-school-in-languages-and-linguistics-2026/",
+      "page_title": "Leiden Summer School in Languages and Linguistics 2026 | LOT – Netherlands Graduate School of Linguistics",
+      "source_name": "LOT School",
+      "chunk_index": 1,
+      "score": 0.579602,
+      "text_preview": "...completed ; There is a maximum number of students who may participate in LLL within this scheme; PhD candidates are not eligible for this scheme. If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). The fee for the participation LLL by LOT RM students within this scheme is covered by LOT. For travel and a",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-science-communication",
+      "page_title": "Summer School Science Communication - Leiden University",
+      "source_name": "Leiden Linguistics Summer School",
+      "chunk_index": 1,
+      "score": 0.577662,
+      "text_preview": "ill explore theoretical perspectives on science communication, practice science communication skills and apply your knowledge by creating your own science communication product. Experienced guest speakers will share their insights in the field and best practices, while our team of Science Communication scientists from Leiden University will guide you through this exciting week by offering workshops, assignments and literature. Programme The programme will include: Introduction to science communi",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://eventi.cineca.it/en/hpc/cineca-summer-school-hpc-ai-2026/bologna-20260629",
+      "page_title": "CINECA Summer School for HPC + AI 2026 | Cineca Events",
+      "source_name": "CINECA HPC",
+      "chunk_index": 0,
+      "score": 0.575228,
+      "text_preview": "...logna), Italy. No remote participation or streaming options will be available. All activities will be held in English . Participant selection will be based on the information provided in the application form. Particular attention is given to the motivation letter; therefore, detailed and carefully considered responses are strongly recommended. Important Dates Application deadline: Sunday, May 31, 2026 Notification of acceptance: Monday, June 8, 2026 The CINECA Summer School on heterogeneous c",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://watersummerschool.wordpress.com/",
+      "page_title": "W.A.T.E.R. Workshop on Advanced measurement Techniques and Experimental Research – International Summer School on Hydraulics Measurement Techniques | Stuttgart, Germany | August 31 – September 4 2026",
+      "source_name": "IAHR",
+      "chunk_index": 3,
+      "score": 0.573544,
+      "text_preview": "...: Prof. Anne Pallarès (University of Strasbourg/ ICube ) Eng. Marie Burckbuchler ( Ubertone ) Still some places left. – Apply before April 30th Published on April 27, 2023 April 27, 2023 by watersummerschool Leave a comment W.A.T.E.R. @ TUM apply here Posts navigation Older posts Search for: Recent Posts Applications are now open! Announcement of 10th W.A.T.E.R. Summer School 2026 W.A.T.E.R. Summer School Applications open until July 11th! Applications are now open! Recent Comments watersumme",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://essexsummerschool.com/summer-school-facts/scholarships/global-south-scholarship/",
+      "page_title": "Global South – Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "chunk_index": 3,
+      "score": 0.573461,
+      "text_preview": "...mer School website to confirm that their selected course is offered in a hybrid or online format before applying. Can I apply for the Global South scholarship to take any ESS course? No. The course you are applying for must be classified as ‘intermediate’ or ‘advanced,’ as Global South scholarships do not cover introductory courses. However, applicants are welcome to enrol in introductory courses at their own expense. I had planned to use the Global South Scholarship for in-person participati",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.projects.science.uu.nl/iceclimate/karthaus/",
+      "page_title": "Ice and Climate : Karthaus summerschool",
+      "source_name": "Karthaus Summer School",
+      "chunk_index": 0,
+      "score": 0.573125,
+      "text_preview": "...ate : Karthaus summerschool Karthaus summerschool Ice and Climate Karthaus Course Information Course Information How to apply Practical information History Historical background Karthaus book Previous courses Summerschool on Ice Sheets and Glaciers in the Climate System The course provides a basic introduction to the dynamics of glaciers and ice sheets with a focus on ice-climate interactions. Topics include: continuum mechanics, sliding and hydraulics, numerical modelling, polar meteorology,",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.projects.science.uu.nl/iceclimate/karthaus/index.php",
+      "page_title": "Ice and Climate : Karthaus summerschool",
+      "source_name": "Karthaus Summer School",
+      "chunk_index": 0,
+      "score": 0.573125,
+      "text_preview": "...ate : Karthaus summerschool Karthaus summerschool Ice and Climate Karthaus Course Information Course Information How to apply Practical information History Historical background Karthaus book Previous courses Summerschool on Ice Sheets and Glaciers in the Climate System The course provides a basic introduction to the dynamics of glaciers and ice sheets with a focus on ice-climate interactions. Topics include: continuum mechanics, sliding and hydraulics, numerical modelling, polar meteorology,",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://essexsummerschool.com/new-application/",
+      "page_title": "Application – Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "chunk_index": 6,
+      "score": 0.571822,
+      "text_preview": "...re I agree. Regulations - I agree to comply with and meet any and all conditions set out in the Regulations relating to Registration , the Code of Student Conduct , IT Acceptable Use Policy and Library Regulations from the date of my first period of registration as a student on the summer school to the date I complete the course or withdraw permanently, as recorded by the University. - I understand that this period may include a series of individual registration periods. - I understand that i",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-in-languages-and-linguistics",
+      "page_title": "Summer School in Languages and Linguistics - Leiden University",
+      "source_name": "Leiden Linguistics Summer School",
+      "chunk_index": 1,
+      "score": 0.570444,
+      "text_preview": "...receive an additional 3 ECTS credits per course. LOT students can find more information on the conditions, credits and fees at the LOT website . Program You can find the program here . Course fees Courses Leiden students Non-Leiden students Non-students 1 € 210,00 € 275,00 € 350,00 2 € 360,00 € 450,00 € 583,00 3 € 475,00 € 610,00 € 780,00 4 € 590,00 € 755,00 € 973,00 Unfortunately no refunds are possible after payment has been completed. Please note: unfortunately the discounted fee for Leide",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.wcrp-climate.org/ictp2014-about",
+      "page_title": "WCRP-ICTP 2014 Summer school on Attribution and Prediction of Extremes Events",
+      "source_name": "CLIVAR",
+      "chunk_index": 1,
+      "score": 0.570161,
+      "text_preview": "embers of the United Nations, UNESCO or IAEA may attend the workshop. As it will be conducted in English, participants should have an adequate working knowledge of this language. Although the main purpose of the Centre is to help research workers from developing countries through a programme of training activities within a framework of international cooperation, students and post-doctoral scientists from advanced institutes are also welcome to attend. RESULTING PAPERS This summer school resulted",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.solas-int.org/events/solas-events/summer-school-2026.html",
+      "page_title": "Summer School 2026 - SOLAS INT",
+      "source_name": "SOLAS",
+      "chunk_index": 1,
+      "score": 0.568901,
+      "text_preview": "ool aims to provide a holistic understanding of ocean-atmosphere sciences, equipping participants with the transdisciplinary skills needed to address pressing climate and environmental challenges. Our goal is to empower you to translate fundamental knowledge into solutions across the science-policy nexus and thrive in a collaborative, international and diverse research environment. Participants The SOLAS Summer School is open to an international cohort of about 60 early career researchers. We ar",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://icvss.dmi.unict.it/icvss2026/Application",
+      "page_title": "ICVSS 2026 - International Computer Vision Summer School 2026",
+      "source_name": "ICVSS",
+      "chunk_index": 3,
+      "score": 0.563608,
+      "text_preview": "able to know about you participation and they will have the chance to direct contact and meet you during the ICVSS to talk with you and show opportunities) (all red data are required for application procedure!) APPLICATIONS ARE CLOSED For more information, send an email to: secretary@icvss.it",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://icvss.dmi.unict.it/icvss2026/Application#ApplicationModule",
+      "page_title": "ICVSS 2026 - International Computer Vision Summer School 2026",
+      "source_name": "ICVSS",
+      "chunk_index": 3,
+      "score": 0.563608,
+      "text_preview": "able to know about you participation and they will have the chance to direct contact and meet you during the ICVSS to talk with you and show opportunities) (all red data are required for application procedure!) APPLICATIONS ARE CLOSED For more information, send an email to: secretary@icvss.it",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://icvss.dmi.unict.it/icvss2026/",
+      "page_title": "ICVSS 2026 - International Computer Vision Summer School 2026",
+      "source_name": "ICVSS",
+      "chunk_index": 2,
+      "score": 0.563607,
+      "text_preview": "...d industrial), senior researchers (both academic and industrial) or academic/industrial professionals are encouraged to apply (a confirmation email will be sent to you). Each student is strongly encouraged to submit also a reference letter ( Reference letter Module ) by email ( secretary@icvss.it ) to the attention of Prof. Giovanni Maria Farinella. The expected school fee will be in the order of €625 for Master and Phd students granted by academia, €850 for other academic positions and €1050",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://tinbergen.nl/home",
+      "page_title": "Tinbergen Institute",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 0,
+      "score": 0.562816,
+      "text_preview": "...am Structure Study Schedule Matching Transfer to PhD Job Market Admissions Admission requirements Application procedure Tuition fees, scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat with us Facilities Students offices Location Housing Student Council All Placement Records PhD Vacancies Research Master Business Data Science Education for external participants Summer School Tinbergen Institute Lectures PhD Vacanci",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.gfz.de/en/events",
+      "page_title": "Events: GFZ",
+      "source_name": "GFZ Potsdam",
+      "chunk_index": 0,
+      "score": 0.561557,
+      "text_preview": "...am Summer School 2026 The 12th Potsdam Summer School takes again place from 27. September to 2 October 2026 in Potsdam. Application deadline is 31 March 2026. When: 27. Oktober (10:00) - 2. Oktober 2026 (16:00) Where: read more About us GFZ Profile Organisation Organisation chart Global Network Directions and Locations Research Our Research Program 2021-2027 Departments Research Institute for Sustainability at GFZ GFZ-Publications Scientific Infrastructure Research Infrastructures Research Da",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/frontiers-of-modern-physics",
+      "page_title": "Summer School: Frontiers of Modern Physics - Leiden University",
+      "source_name": "Leiden Linguistics Summer School",
+      "chunk_index": 0,
+      "score": 0.561328,
+      "text_preview": "...Summer School invites second- and third-year Bachelor students from Europe and beyond to join this week of inspiration. Apply Are you interested in joining? Read more about the application procedure and practical details (scholarships, housing, etc) of the summer school. All participants will receive a certificate of attendance upon completion of the course. Spend your summer in Leiden! Quantum matter: from black hole physics to superconductors Cosmology and elementary particles Quantum compu",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-in-languages-and-linguistics",
+      "page_title": "Summer School in Languages and Linguistics - Leiden University",
+      "source_name": "Leiden Linguistics Summer School",
+      "chunk_index": 0,
+      "score": 0.56094,
+      "text_preview": "...Russian Literature, Semitic, and Sino-Tibetan. The Summer School takes place from Monday 6 July to Friday 17 July 2026; registration is open until 11 May! During these two weeks of intensive learning, you will be able to deepen and broaden your knowledge of rarely taught languages, and at the same time you can enjoy the company of linguistics students and language enthusiasts from all over the world in the beautiful university town of Leiden. Course information All courses are taught in Engli",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.lse.ac.uk/study-at-lse/Undergraduate/fees-and-funding",
+      "page_title": "Fees and funding",
+      "source_name": "LSE Cities",
+      "chunk_index": 0,
+      "score": 0.560253,
+      "text_preview": "Fees and funding Skip to content London School of Economics and Political Science Search Menu Study at LSE Toggle navigation Undergraduate Graduate Executive Education Study Abroad Summer School Global and Online Degrees International students Meet, visit and discover LSE Trending at LSE Find a programme or course How to apply to undergraduate programmes How to apply to graduate programmes How to apply to Summer School Apply Study at LSE Undergraduate Graduate Executive Education Executive maste",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/frontiers-of-modern-physics",
+      "page_title": "Summer School: Frontiers of Modern Physics - Leiden University",
+      "source_name": "Leiden Linguistics Summer School",
+      "chunk_index": 1,
+      "score": 0.55867,
+      "text_preview": "...d how the Leiden Master’s programme takes your curiosity to the next level. Mail the editor Frontiers of Modern Physics Apply now! Facts & Figures Start date 26-7-2026 Duration 7 days Level Bachelor Apply before 01-03-2026 Location Leiden Course fee 390 EUR (scholarships available) Area of interest Science Contact For more information or any questions you might have, please contact the organisation: Maria Krebbers summerschool@physics.leidenuniv.nl Study programmes Bachelor's programmes Maste",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://lotschool.nl/leiden-summer-school/",
+      "page_title": "Leiden Summer School in Languages and Linguistics – LOT",
+      "source_name": "LOT School",
+      "chunk_index": 0,
+      "score": 0.557457,
+      "text_preview": "...OT credits by participating in the LLL, which are accounted for by means of a LOT certificate. The following conditions apply: I. LOT will pay for a maximum of one LLL course per LOT-affiliated RM student (2 EC); II. The student participates in the course on campus, even if the course is offered in a hybrid form; III. After the end of the two-week course, the student must complete an additional assignment for the course (3 EC); IV. The student receives one certificate for the 5 LOT EC, provid",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.ds3-datascience-polytechnique.fr/key-dates-application/",
+      "page_title": "Key Dates & Application | Data Science Summer School",
+      "source_name": "DS3 Data Science Summer School",
+      "chunk_index": 1,
+      "score": 0.556538,
+      "text_preview": "...ot get it, please check your spam folder. Upon acceptance the email will include a personal link and ID to confirm your registration and proceed with the payment. In case of cancellation of registration by a participant, the registration fee will be refunded as follows: - cancellation before December 1st, 2020: full refund, - cancellation between December 1 and December 14 2020 included: partial refund of 50% of the amount paid, - cancellation after December 14 2020: no refund. * MSc2: last y",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://earsel.org/call-for-applications-for-the-offices-of-the-earsel-bureau-term-2025-2027/",
+      "page_title": "CALL FOR APPLICATIONS for the offices of the EARSeL Bureau | Term 2025 – 2027 - EARSeL, European Association of Remote Sensing Laboratories",
+      "source_name": "EARSeL",
+      "chunk_index": 0,
+      "score": 0.556219,
+      "text_preview": "...erm 2025 – 2027 - EARSeL, European Association of Remote Sensing Laboratories Home EARSeL About EARSeL Documents Annual fees Cooperation with other organisations Why become a member? Cooperation and Projects News Special Interest Groups Association Bureau National representatives SIG Representatives Honorary members Laboratory members General Assembly History of EARSeL Bureau Members Contact Us Conferences Symposium & Workshops Summer Schools Publications European Journal of Remote Sensing Eu",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://essexsummerschool.com/summer-school-facts/scholarships/vera-e-troeger-scholarship-2/",
+      "page_title": "Women in Political Methodology Scholarship – Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "chunk_index": 2,
+      "score": 0.554739,
+      "text_preview": "application form within 2 weeks of receiving notice of the award. If the application form is not received within this timeframe, ESS maintains the right to withdraw the award and offer it to another candidate. By accepting the scholarship, you are agreeing to be included in ESS promotional material, including photography that could be used on the ESS website. FAQs What does the VET scholarship cover? It covers the tuition for one two-week in-person course offered in the summer 2026. It does not",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://tinbergen.nl/tuition-fees-scholarships-and-financial-support",
+      "page_title": "Tuition fees, scholarships and financial support – Tinbergen.nl",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 0,
+      "score": 0.55448,
+      "text_preview": "Tuition fees, scholarships and financial support – Tinbergen.nl Find a person About us Job Market Contact Intranet Graduate Programs Research Browse our Courses Events News Summer School Alumni Graduate Programs Tinbergen Institute Research Master in Economics Why Tinbergen Institute? Research Master Program Structure Study Schedule Matching Transfer to PhD Job Market Admissions Admission requirements Application procedure Tuition fees, scholarships and financial support FAQ Facts and figures Re",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.cs.uoregon.edu/research/summerschool/summer26/",
+      "page_title": "OPLSS 2026 | University of Oregon",
+      "source_name": "OPLSS",
+      "chunk_index": 0,
+      "score": 0.551402,
+      "text_preview": "﻿ OPLSS 2026 | University of Oregon One Stop Apply Visit Give June 22-July 4, 2026 Types, Proofs, and Program Logics Topics Schedule Rates Registration Logistics Archives Policies Sponsors For 24 years, the Oregon Programming Languages Summer School (OPLSS) has focused on teaching the principles of programming languages to students and professionals. Although the topics change from year to year, a common theme is the significance of fundamental theory in the design and implementation of programm",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.cs.uoregon.edu/research/summerschool/summer26/#sponsors",
+      "page_title": "OPLSS 2026 | University of Oregon",
+      "source_name": "OPLSS",
+      "chunk_index": 0,
+      "score": 0.551402,
+      "text_preview": "﻿ OPLSS 2026 | University of Oregon One Stop Apply Visit Give June 22-July 4, 2026 Types, Proofs, and Program Logics Topics Schedule Rates Registration Logistics Archives Policies Sponsors For 24 years, the Oregon Programming Languages Summer School (OPLSS) has focused on teaching the principles of programming languages to students and professionals. Although the topics change from year to year, a common theme is the significance of fundamental theory in the design and implementation of programm",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.wcrp-climate.org/ictp2014-about",
+      "page_title": "WCRP-ICTP 2014 Summer school on Attribution and Prediction of Extremes Events",
+      "source_name": "CLIVAR",
+      "chunk_index": 0,
+      "score": 0.5514,
+      "text_preview": "...es which are members of the United Nations, UNESCO or IAEA may attend the workshop. As it will be conducted in English, participants should have an adequate working knowledge of this language. Although the main purpose of the Centre is to help research workers fro",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://essexsummerschool.com/category/testimonials/",
+      "page_title": "Testimonials – Essex Summer School in Social Science Data Analysis",
+      "source_name": "Essex Summer School",
+      "chunk_index": 0,
+      "score": 0.550485,
+      "text_preview": "...ist MA info Social Programme Accommodation FAQ ESS Data Skills Mathematical Foundations Professional Development How to apply Application Fee Structure Scholarships Q-Step Global South Women in Political Science Home / Testimonials Testimonials Share General information ESS 2026 course list Social Programme Accommodation Tuition Fee Structure Application Course Credits Master’s Degree in Social Science Data Analysis ESS Data Skills FAQ ESS 2025 January 6, 2026 I would like to once again thank",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://businessdatascience.nl/summer-school/",
+      "page_title": "Summer School – Businessdatascience.nl",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 1,
+      "score": 0.550211,
+      "text_preview": "Payment Sustainable Finance Meet the Lecturers in Sustainable Finance Tuition Fees and Payment Tuition Fees and Payment Tinbergen Institute Summer School Program Annual Tinbergen Institute Conference archive Summer School Deep Learning Meet the Lecturer Tuition Fees and Payment Economics of Blockchain and Digital Currencies Meet the Lecturer Tuition Fees and Payment Foundations of Machine Learning with Applications in Python Meet the Lecturer Tuition Fees and Payment Marketing Research with Purp",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.unesco-floods.eu/unesco-floods-summer-school/",
+      "page_title": "HydRoData 2026: Summer school about Hydrology and Data | UNESCO Chair on Water-related Disaster Risk Reduction",
+      "source_name": "IAHR",
+      "chunk_index": 0,
+      "score": 0.54905,
+      "text_preview": "...visualization, modelling, etc.). Focus will be on R programming language. After successful completion of summer school, participants will be awarded with a 2 ECTS certificate. Date and venue Summer school will take place from 31st August to 4th September 2026 in Ljubljana, Slovenia . Participants are encouraged to arrive in Ljubljana a day earlier, as the summer school schedule starts on Monday morning (31st August). Lectures in the scope of the summer school will take place at the Faculty of",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://lotschool.nl/events/leiden-summer-school-in-languages-and-linguistics-2026/",
+      "page_title": "Leiden Summer School in Languages and Linguistics 2026 | LOT – Netherlands Graduate School of Linguistics",
+      "source_name": "LOT School",
+      "chunk_index": 0,
+      "score": 0.548166,
+      "text_preview": "...OT credits by participating in the LLL, which are accounted for by means of a LOT certificate. The following conditions apply: LOT will pay for a maximum of one LLL course per LOT-affiliated RM student; The student participates in the course on campus, even if the course is offered in a hybrid form; After the end of the two-week course, the student completes an additional assignment for the course. It is important that the student contacts the teacher in advance to check whether the course of",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools",
+      "page_title": "Summer Schools - Leiden University",
+      "source_name": "Leiden Linguistics Summer School",
+      "chunk_index": 0,
+      "score": 0.548066,
+      "text_preview": "se Start date 29-06-2026 Duration 5 days Level Adv. Law | Professionals Apply before 15-05-2026 Location The Hague Course fee €1200 Frontiers of Children’s Rights Start date 29-06-2026 Duration 5 days Level Adv. Law | Professionals Apply before 30-04-2026 Location Leiden, The Hague Course fee €1.250 Regular fee till 1 June 2026 International Humanitarian Law in Theory and Practice Start date 02-07-2026 Duration 5 Learning Days - Excluding Weekends Level Students | Professionals Apply before 15-0",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://earsel.org/call-for-applications-earsel-sig-chairperson-election-term-2025-2029/",
+      "page_title": "CALL FOR APPLICATIONS | EARSeL SIG CHAIRPERSON ELECTION TERM 2025 - 2029 - EARSeL, European Association of Remote Sensing Laboratories",
+      "source_name": "EARSeL",
+      "chunk_index": 0,
+      "score": 0.546365,
+      "text_preview": "...ERM 2025 - 2029 - EARSeL, European Association of Remote Sensing Laboratories Home EARSeL About EARSeL Documents Annual fees Cooperation with other organisations Why become a member? Cooperation and Projects News Special Interest Groups Association Bureau National representatives SIG Representatives Honorary members Laboratory members General Assembly History of EARSeL Bureau Members Contact Us Conferences Symposium & Workshops Summer Schools Publications European Journal of Remote Sensing Eu",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://tinbergen.nl/event/2026/06/29/13259/the-economics-of-crime",
+      "page_title": "The Economics of Crime – Tinbergen.nl",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 0,
+      "score": 0.54517,
+      "text_preview": "...am Structure Study Schedule Matching Transfer to PhD Job Market Admissions Admission requirements Application procedure Tuition fees, scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat with us Facilities Students offices Location Housing Student Council All Placement Records PhD Vacancies Research Master Business Data Science Education for external participants Summer School Tinbergen Institute Lectures PhD Vacanci",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://icvss.dmi.unict.it/icvss2026/Scholarship",
+      "page_title": "ICVSS 2026 - International Computer Vision Summer School 2026",
+      "source_name": "ICVSS",
+      "chunk_index": 0,
+      "score": 0.544608,
+      "text_preview": "...ion for Spatial and Physical Intelligence Home Committee Courses Reading Group Industrial Session Deadlines Application Registration Location and Accommodation Sponsors Call for Posters Poster Submission Presentation Prize Scholarship Essay Competition Local Arrangements Previous Editions Books Posters Submitted to ICVSS 2026 SCHOLARSHIP A scholarship of €625 will be awarded to the best PhD student attending the school. The decision will be made by the school committee at the time of the scho",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://icvss.dmi.unict.it/icvss2026/",
+      "page_title": "ICVSS 2026 - International Computer Vision Summer School 2026",
+      "source_name": "ICVSS",
+      "chunk_index": 4,
+      "score": 0.542965,
+      "text_preview": "...eptance to the school. SCHOOL DEADLINES Student Application: 1 April 2026 Notification Acceptance: 15 April 2026 Online Registration: 15 May 2026 Early Registration Payment: 15 May 2026 Late Registration (with extra payment of 200€): 22 May 2026 (last date for registration) Accommodation Reservation at Hotel Village Baia Samuele: from 5 May 2026 to 31 May 2026 Poster Submission: 17 June 2026 Local Arrangements Information: 15 June 2026 Essay Competition Registration: 31 May 2026 Submission fo",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.isprs.org/resources/templates/summer-school-application-form/",
+      "page_title": "Summer School Application Form",
+      "source_name": "ISPRS",
+      "chunk_index": 1,
+      "score": 0.542253,
+      "text_preview": "...ords Textbook Tutorial Slides Software/Hardware Free download Software Source Code Open Access Platform Templates Event Application Form Summer School Appl. Form Member Application Forms Promotion Material ISPRS Logo ISPRS Introduction Slides ISPRS Introduction Video Related Links Related Journals Standards Acronyms Organizations Calendar ISPRS Calendar 2026 2027 past events Locations Other Calendar Links ISPRS Links TCs and WGs Members Homepages Related Orgs The ISPRS Foundation News ISPRS N",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.clivar.org/events/7th-ictp-summer-school-theory-mechanisms-and-hierarchical-modelling-climate-dynamics",
+      "page_title": "7th ICTP Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics | www.clivar.org",
+      "source_name": "CLIVAR",
+      "chunk_index": 0,
+      "score": 0.54104,
+      "text_preview": "...grammes Observing System Data Access Glossary Links Early Career Scientists CLIVAR Social Media Guidelines CLIVAR Logos Funding Opportunities Publications All Publications Exchanges Guidelines for the Submission to CLIVAR Exchanges National Reports CLIVAR Bulletin Other Publications Get Involved Blog You are here Home » 7th ICTP Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics 7th ICTP Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate ",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://tinbergen.nl/event/2026/06/29/13257/development-economics",
+      "page_title": "Development Economics – Tinbergen.nl",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 0,
+      "score": 0.539819,
+      "text_preview": "...am Structure Study Schedule Matching Transfer to PhD Job Market Admissions Admission requirements Application procedure Tuition fees, scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat with us Facilities Students offices Location Housing Student Council All Placement Records PhD Vacancies Research Master Business Data Science Education for external participants Summer School Tinbergen Institute Lectures PhD Vacanci",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.solas-int.org/events/solas-events/summer-school-2026.html",
+      "page_title": "Summer School 2026 - SOLAS INT",
+      "source_name": "SOLAS",
+      "chunk_index": 0,
+      "score": 0.53905,
+      "text_preview": "...the SOLAS Summer School provides a unique opportunity to learn from world-leading experts in ocean-atmosphere sciences. Participants will explore the complex interactions between the ocean, atmosphere, and climate through a dynamic blend of lectures, hands-on practicals, collaborative student-led projects, all aligned with the \"SOLAS Science Towards Solutions\" SOLAS 3.0 framework. Objectives The SOLAS Summer School aims to provide a holistic understanding of ocean-atmosphere sciences, equippi",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.lse.ac.uk/study-at-lse/summer-schools/summer-school",
+      "page_title": "🌞🏫LSE Summer School 👨‍🎓👩‍🎓 | LSE Summer School",
+      "source_name": "LSE Cities",
+      "chunk_index": 1,
+      "score": 0.537679,
+      "text_preview": "course, but I have now found my real study interests here. Rinko Matsunobu, Japan Musashi University, Japan Download the 2026 brochure Discover why 99% of students would recommend LSE Summer School Get the brochure London School of Economics and Political Science Houghton Street London WC2A 2AE UK +44 (0)20 7405 7686 LSE is a private company limited by guarantee, registration number 70527. Campus map Contact us Cookie settings © LSE 2026 YouTube icon",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://lotschool.nl/last-chance-to-register-lot-summer-school-2026-university-of-groningen/",
+      "page_title": "Last chance to register | LOT Summer School 2026 | University of Groningen | LOT – Netherlands Graduate School of Linguistics",
+      "source_name": "LOT School",
+      "chunk_index": 0,
+      "score": 0.53506,
+      "text_preview": "Last chance to register | LOT Summer School 2026 | University of Groningen | LOT – Netherlands Graduate School of Linguistics News & Events Education Graduate Programme in Linguistics in the Netherlands LOT Summer and Winter Schools Experimental Methods in Language Acquisition Research (EMLAR) The Leiden Summer School in Languages and Linguistics LOT Lab Rotations RM Mobility Programme Research Dissertations Outreach About LOT LOT Evaluation and Annual Reports Contact Click to open the search in",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://indico.ictp.it/event/11150",
+      "page_title": "7th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics - Estimating Ocean Transports: Single Sections, Box Models and Reanalysis Products | (smr 4224) (29 June 2026 - 10 July 2026)",
+      "source_name": "ICTP",
+      "chunk_index": 0,
+      "score": 0.53456,
+      "text_preview": "...lish Administration Search Search in Conferences: Overview Scientific Programme Programme Contribution List Author List Apply here Support smr4224@ictp.it Home 7th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics - Estimating Ocean Transports: Single Sections, Box Models and Reanalysis Products | (smr 4224) Starts 29 Jun 2026 Ends 10 Jul 2026 Central European Time ICTP Kastler Lecture Hall (AGH) Strada Costiera, 11 I - 34151 Trieste (Italy) The call for appli",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.cs.uoregon.edu/research/summerschool/summer26/rates.php",
+      "page_title": "OPLSS 2026 Rates | University of Oregon",
+      "source_name": "OPLSS",
+      "chunk_index": 0,
+      "score": 0.533588,
+      "text_preview": "OPLSS 2026 Rates | University of Oregon One Stop Apply Visit Give Oregon Programming Languages Summer School Types, Proofs, and Program Logics June 22-July 4, 2026 Types, Proofs, and Program Logics June 22-July 4, 2026 Topics Schedule Rates Registration Logistics Archives Policies Sponsors Rates Student Registration $350 Post-Doc Registration $550 Professor Registration $800 Industry Registration $1050 Room and Board $1736 Room packages are for check-in after 2PM on Sunday, June 21, 2026, and ch",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://tinbergen.nl/application-procedure",
+      "page_title": "Application Procedure – Tinbergen.nl",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 2,
+      "score": 0.533364,
+      "text_preview": "...am Structure Study Schedule Matching Transfer to PhD Job Market Admissions Admission requirements Application procedure Tuition fees, scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat with us Facilities Students offices Location Housing Student Council All Placement Records PhD Vacancies Research Master Business Data Science Education for external participants Summer School Tinbergen Institute Lectures PhD Vacanci",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.eeml.eu/",
+      "page_title": "Home",
+      "source_name": "EEML",
+      "chunk_index": 0,
+      "score": 0.532674,
+      "text_preview": "20 Program Speakers Registration Application EEML2019 Program Application Registration Venue Resources Advisory board FAQ Blog Resources FAQ About Code of Conduct More Home Venue/Accommodation Registration Previous editions EEML2025 Program Venue/Accommodation Registration Sponsors Diamond - Google DeepMind Diamond - UiPath Platinum - Bitdefender Platinum - Jane Street Platinum - IVI Application EEML2024 Program Venue/Accommodation Sponsors Diamond - Google DeepMind Diamond - Bitdefender Diamond",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.isprs.org/members/application_forms.aspx",
+      "page_title": "Application Forms for Members",
+      "source_name": "ISPRS",
+      "chunk_index": 0,
+      "score": 0.52916,
+      "text_preview": "...ords Textbook Tutorial Slides Software/Hardware Free download Software Source Code Open Access Platform Templates Event Application Form Summer School Appl. Form Member Application Forms Promotion Material ISPRS Logo ISPRS Introduction Slides ISPRS Introduction Video Related Links Related Journals Standards Acronyms Organizations Calendar ISPRS Calendar 2026 2027 past events Locations Other Calendar Links ISPRS Links TCs and WGs Members Homepages Related Orgs The ISPRS Foundation News ISPRS N",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://eage.eventsair.com/6th-eage-workshop-on-fiber-optic-sensing-for-energy-applications/abstract-submission-and-instructions",
+      "page_title": "6th EAGE Workshop on Fiber Optic Sensing for Energy Applications",
+      "source_name": "EAGE",
+      "chunk_index": 0,
+      "score": 0.526557,
+      "text_preview": "...uted Fibre Optic Sensors and Applications Short Course 2: CO2 Storage Project Design and Optimization (Saline Aquifers) Registration Registration Visa Information Strategic Programme Panel 1: Seabed Fiber | The New Frontier of Subsea Monitoring Panel 2: Downhole Fiber | Maximizing Well Intelligence Sponsoring Our Sponsors Become A Sponsor Sponsoring Opportunities Contact us (UTC+08:00) Perth Abstract Submission The Call for Abstracts for 6th EAGE Workshop on Fiber Optic Sensing for Energy App",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://people.disim.univaq.it/~antonio.cicone/2025/MaSAG25/MaSAG25_homepage.html",
+      "page_title": "MaSAG25 Summer School and Conference",
+      "source_name": "EGU Training Schools",
+      "chunk_index": 0,
+      "score": 0.52615,
+      "text_preview": "...hool and Conference Università degli Studi dell'Aquila, June 9-14, 2025 Home Aim and scope Invited Lecturers & Speakers Registration Program Participants Practical Information Welcome to the webpage of the third Summer School and Conference in Mathematics for Signal Processing and Applications in Geophysics and other fields (MaSAG) Applications for the Summer School and Conference are now open Please find detail in the Registration tab. The Summer School will take place at the Conference Cent",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.egu.eu/meetings/training-schools/",
+      "page_title": "EGU - Meetings - Training schools",
+      "source_name": "EGU Training Schools",
+      "chunk_index": 0,
+      "score": 0.523827,
+      "text_preview": "...r field. The EGU financial support must be used to facilitate the participation of early career scientists with limited funding through travel grants and/or to support the quality of the school by organising field trips or by inviting exceptional lecturers. For more information and to apply, go to the requesting support page. Need help? If you have any questions regarding co-sponsoring of training schools please do not hesitate to contact: Stephen Mojzsis Topical Events Committee Chair Email ",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.egu.eu/meetings/support-requests/",
+      "page_title": "EGU - Meetings - Training schools",
+      "source_name": "EGU Training Schools",
+      "chunk_index": 0,
+      "score": 0.523827,
+      "text_preview": "...r field. The EGU financial support must be used to facilitate the participation of early career scientists with limited funding through travel grants and/or to support the quality of the school by organising field trips or by inviting exceptional lecturers. For more information and to apply, go to the requesting support page. Need help? If you have any questions regarding co-sponsoring of training schools please do not hesitate to contact: Stephen Mojzsis Topical Events Committee Chair Email ",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://indico.ictp.it/event/11149",
+      "page_title": "Summer School on Cosmology | (smr 4223) (29 June 2026 - 10 July 2026)",
+      "source_name": "ICTP",
+      "chunk_index": 1,
+      "score": 0.523353,
+      "text_preview": "tration fee. Abstract Templates Poster **DEADLINE: 23/04/2026** Organizers Sheth Ravi K. (University of Pennsylvania), Creminelli Paolo (ICTP), Local Organiser: Mehrdad Mirbabayi (ICTP) Co-sponsors GO TO SCIENTIFIC CALENDAR Facebook Twitter Youtube Instagram Linkedin Flickr Governing members ICTP is governed by UNESCO, IAEA, and Italy, and is a UNESCO Category 1 Institute E-News from ICTP Stay up-to-date with ICTP's latest news, activities and events by subscribing to our monthly e-newsletter. S",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://indico.ictp.it/event/11149",
+      "page_title": "Summer School on Cosmology | (smr 4223) (29 June 2026 - 10 July 2026)",
+      "source_name": "ICTP",
+      "chunk_index": 0,
+      "score": 0.522264,
+      "text_preview": "...lish Administration Search Search in Conferences: Overview Scientific Programme Programme Contribution List Author List Apply here Support smr4223@ictp.it Home Summer School on Cosmology | (smr 4223) Starts 29 Jun 2026 Ends 10 Jul 2026 Central European Time ICTP Budinich Lecture Hall (LB) Strada Costiera, 11 I - 34151 Trieste (Italy) The call for applications is now closed. This school provides an introduction to the current state of research in cosmology and astroparticle physics. It is inte",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://tinbergen.nl/event/2026/06/29/13257/development-economics",
+      "page_title": "Development Economics – Tinbergen.nl",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 1,
+      "score": 0.521789,
+      "text_preview": "The Economic Theory of Decision-Making Meet the Lecturer Tuition Fees and Payment Inequalities in Health and Healthcare Meet the Lecturers for Inequalities in Health and Healthcare Tuition Fees and Payment Marketing Research with Purpose Markets with Frictions Meet the Lecturers for Markets with Frictions Tuition Fees and Payment Modern Toolbox for Spatial and Functional Data Sustainable Finance Meet the Lecturers Tuition Fees and Payment Tuition Fees and Payment Business Data Science Summer Sch",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://lotschool.nl/",
+      "page_title": "LOT – Netherlands Graduate School of Linguistics",
+      "source_name": "LOT School",
+      "chunk_index": 0,
+      "score": 0.520814,
+      "text_preview": "...5:41:03 2026-05-21 15:41:03 Language, Culture and the Politics of Knowledge Rick van Houten via Unsplash Last chance to register | LOT Summer School 2026 | University of Groningen May 18, 2026 Registration is open until Monday 25 May, 23:59 CEST. Read more https://lotschool.nl/wp-content/uploads/2026/03/Untitled-design-1.png 609 1600 Tessa https://lotschool.nl/wp-content/uploads/2018/10/lot.png Tessa 2026-05-18 16:05:43 2026-05-18 16:06:01 Last chance to register | LOT Summer School 2026 | Un",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.ictp.it/home/scientific-calendar",
+      "page_title": "Scientific calendar | ICTP",
+      "source_name": "ICTP",
+      "chunk_index": 1,
+      "score": 0.519597,
+      "text_preview": "dates July 05 hecap 05 Jul 2026 19 Jul 2026 Application Closed school smr4194 The 9th Biennial African School of Fundamental Physics and Applications (ASP2026) | (smr 4194) Nairobi - Kenya High Energy, Cosmology and Astroparticle Physics smr4194 July 13 esp 13 Jul 2026 24 Jul 2026 Application Closed scientific activity smr4225 Energy Modelling Platform - Global | (smr 4225) ICTP Kastler Lecture Hall (AGH) Earth System Physics smr4225 cmsp 13 Jul 2026 24 Jul 2026 Application Closed school smr4195",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "http://mlss.cc/",
+      "page_title": "Machine Learning Summer Schools - MLSS",
+      "source_name": "MLSS Index",
+      "chunk_index": 0,
+      "score": 0.517997,
+      "text_preview": "...tion that while many students are keen to learn about machine learning, and an increasing number of researchers want to apply machine learning methods to their research problems, only few machine learning courses are taught at universities. Machine learning summer schools present topics which are at the core of modern Machine Learning, from fundamentals to state-of-the-art practice. The speakers are leading experts in their field who talk with enthusiasm about their subjects. This page contai",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://earsel.org/",
+      "page_title": "EARSeL",
+      "source_name": "EARSeL",
+      "chunk_index": 0,
+      "score": 0.516565,
+      "text_preview": "EARSeL Home EARSeL About EARSeL Documents Annual fees Cooperation with other organisations Why become a member? Cooperation and Projects News Special Interest Groups Association Bureau National representatives SIG Representatives Honorary members Laboratory members General Assembly History of EARSeL Bureau Members Contact Us Conferences Symposium & Workshops Summer Schools Publications European Journal of Remote Sensing European Journal of Remote Sensing – Special Issues and Supplements SIG repo",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.cs.uoregon.edu/research/summerschool/summer26/topics.php",
+      "page_title": "OPLSS 2026 Topics | University of Oregon",
+      "source_name": "OPLSS",
+      "chunk_index": 0,
+      "score": 0.512405,
+      "text_preview": "OPLSS 2026 Topics | University of Oregon One Stop Apply Visit Give Oregon Programming Languages Summer School Types, Proofs, and Program Logics June 22-July 4, 2026 Types, Proofs, and Program Logics June 22-July 4, 2026 Topics Schedule Rates Registration Logistics Archives Policies Sponsors The program consists of 80-minute lectures. Arthur Azevedo de Amorim — Rochester Institute of Technology Introduction to Rocq The Rocq website contains instructions on how to install all the required packages",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.colorado.edu/conference/bss/",
+      "page_title": "Home | Boulder School for Condensed Matter and Materials Physics | University of Colorado Boulder",
+      "source_name": "Boulder School",
+      "chunk_index": 0,
+      "score": 0.512161,
+      "text_preview": "...dance. Please review the information on Student Expenses and Financial Aid . Please also note that the terms of our NSF grant require that students at universities outside the United States need to supply their own airfare. General information Boulder is 20 miles from Denver and is served by the Denver International Airport (DIA). There is regular bus service available (AB bus once or twice per hour depending on time of day) that runs from the airport into Boulder. For further details on the ",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.isprs.org/",
+      "page_title": "International Society for Photogrammetry and Remote Sensing",
+      "source_name": "ISPRS",
+      "chunk_index": 0,
+      "score": 0.511919,
+      "text_preview": "...ords Textbook Tutorial Slides Software/Hardware Free download Software Source Code Open Access Platform Templates Event Application Form Summer School Appl. Form Member Application Forms Promotion Material ISPRS Logo ISPRS Introduction Slides ISPRS Introduction Video Related Links Related Journals Standards Acronyms Organizations Calendar ISPRS Calendar 2026 2027 past events Locations Other Calendar Links ISPRS Links TCs and WGs Members Homepages Related Orgs The ISPRS Foundation News ISPRS N",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://tinbergen.nl/event/2026/06/29/13259/the-economics-of-crime",
+      "page_title": "The Economics of Crime – Tinbergen.nl",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 1,
+      "score": 0.505725,
+      "text_preview": ": The Economic Theory of Decision-Making Meet the Lecturer Tuition Fees and Payment Inequalities in Health and Healthcare Meet the Lecturers for Inequalities in Health and Healthcare Tuition Fees and Payment Marketing Research with Purpose Markets with Frictions Meet the Lecturers for Markets with Frictions Tuition Fees and Payment Modern Toolbox for Spatial and Functional Data Sustainable Finance Meet the Lecturers Tuition Fees and Payment Tuition Fees and Payment Business Data Science Summer S",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://tinbergen.nl/home",
+      "page_title": "Tinbergen Institute",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 1,
+      "score": 0.504946,
+      "text_preview": "ory of Decision-Making Meet the Lecturer Tuition Fees and Payment Inequalities in Health and Healthcare Meet the Lecturers for Inequalities in Health and Healthcare Tuition Fees and Payment Marketing Research with Purpose Markets with Frictions Meet the Lecturers for Markets with Frictions Tuition Fees and Payment Modern Toolbox for Spatial and Functional Data Sustainable Finance Meet the Lecturers Tuition Fees and Payment Tuition Fees and Payment Business Data Science Summer School Program Tinb",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://earsel.org/call-for-applications-earsel-sig-chairperson-election-term-2025-2029/",
+      "page_title": "CALL FOR APPLICATIONS | EARSeL SIG CHAIRPERSON ELECTION TERM 2025 - 2029 - EARSeL, European Association of Remote Sensing Laboratories",
+      "source_name": "EARSeL",
+      "chunk_index": 1,
+      "score": 0.504723,
+      "text_preview": "...b CALL FOR APPLICATIONS | EARSeL SIG CHAIRPERSON ELECTION TERM 2025 – 2029 Every 4 years, EARSeL invites its members to apply for the position of SIG chairperson(s). In 2021 the current SIG chairpersons were elected for a 4 years term and it’s time to renew these positions. You can find the list of existing SIGs here http://www.earsel.org/ . This call is also an opportunity for the EARSeL members to submit a new SIG. The management of a SIG by two Co-Chairpersons is also encouraged. For more ",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://eage.org/education/short-course-catalogue/",
+      "page_title": "Short Course Catalogue - eage.org",
+      "source_name": "EAGE",
+      "chunk_index": 13,
+      "score": 0.504347,
+      "text_preview": "...ion analysis techniques, and inparticular to those working in petroleum, mining or environmentalgeoscience applications.Participants should have knowledge of basic probability and statistics,and mathematical calculus. Although it is not essential, it helpsto know basic multivariate analysis and decision analysis or optimization.The participant must be willing learn statistical topics and earthscience applications, and appreciate the multidisciplinary approachto solving quantitative challenges",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://earsel.org/",
+      "page_title": "EARSeL",
+      "source_name": "EARSeL",
+      "chunk_index": 1,
+      "score": 0.502143,
+      "text_preview": "...– 2 Oct 2026 – Where: Department of Geography, Harokopio University of Athens, Greece – Contact: earsel-athens26@hua.gr Important dates: – Session & Workshops Proposal Deadline: 31 October 2025 – Call for Abstracts Open: 28 November 2025 – Abstract Submission Deadline: 30 January 2026 – Notification of Acceptance: 31 March 2026 – Registration Opens: 30 April 2026 – Publication of preliminary programme: 30 April 2026 – Early Bird Registration Deadline: 30 June 2026 – Deadline for registration ",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://eage.org/education/interactive-online-short-courses/",
+      "page_title": "Interactive Online Short Courses - eage.org",
+      "source_name": "EAGE",
+      "chunk_index": 0,
+      "score": 0.501613,
+      "text_preview": "...rt Courses The EAGE Interactive Online Short Courses bring carefully selected courses from our catalogue online to give participants the possibility to follow the latest education in geoscience and engineering remotely. The courses include some of the most popular EAGE Education Tours (EET) and are designed to be easily digested over the course of two or three days. Participants will have the possibility to interact live with the instructor and ask questions. Education packages To help you sa",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.ds3-datascience-polytechnique.fr/",
+      "page_title": "Data Science Summer School (DS³) – École Polytechnique",
+      "source_name": "DS3 Data Science Summer School",
+      "chunk_index": 1,
+      "score": 0.499003,
+      "text_preview": "...nisia United Arab Emirates United Kingdom United States of America Sharing the summer school: Twitter #XDS3 Facebook 1. Participants are encouraged to present a poster during the event. YOU CAN CONTACT US THROUGH THIS CONTACT FORM Online recommendations Migliori Siti Casino Online Best Betting Apps UK Casino Sites Not On Gamstop Paris Sportif Crypto Casino Sites Not On Gamstop Online Casinos UK UK Betting Sites Not On Gamstop Sites Not On Gamstop Non Gamstop Casino UK Non Gamstop Casino Sites",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.earthscope.org/event/2026-technical-short-course-insar-processing-and-theory-using-gmtsar/",
+      "page_title": "2026 Technical Short Course: InSAR Processing and Theory using GMTSAR | EarthScope Consortium",
+      "source_name": "EarthScope",
+      "chunk_index": 0,
+      "score": 0.498882,
+      "text_preview": "...26 Technical Short Course: InSAR Processing and Theory using GMTSAR Date(s): July 20-22, and August 7 Location: Virtual Deadline: June 12, 2026 APPLICATIONS ARE NOW CLOSED Course Description: This course covers the theory and application of repeat-pass synthetic aperture radar interferometry (InSAR) using the GMTSAR software",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.isprs.org/society/awards/torlegard.aspx",
+      "page_title": "ISPRS WEC Kennert Torlegård Travel Grant",
+      "source_name": "ISPRS",
+      "chunk_index": 0,
+      "score": 0.496378,
+      "text_preview": "...ords Textbook Tutorial Slides Software/Hardware Free download Software Source Code Open Access Platform Templates Event Application Form Summer School Appl. Form Member Application Forms Promotion Material ISPRS Logo ISPRS Introduction Slides ISPRS Introduction Video Related Links Related Journals Standards Acronyms Organizations Calendar ISPRS Calendar 2026 2027 past events Locations Other Calendar Links ISPRS Links TCs and WGs Members Homepages Related Orgs The ISPRS Foundation News ISPRS N",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.ds3-datascience-polytechnique.fr/",
+      "page_title": "Data Science Summer School (DS³) – École Polytechnique",
+      "source_name": "DS3 Data Science Summer School",
+      "chunk_index": 0,
+      "score": 0.494806,
+      "text_preview": "...booths. in-depth tutorials with practical sessions during 3 days in smaller groups. Statistics of the event 2019 : 500 participants 307 students (MSc, PhD) & postdocs 105 professionals 35 experts (speakers, guests) 34 countries (click on the flags) 6 continents 13 in-depth tutorials 220 institutions 70 companies 7 sponsors 152 posters 28% women’s participation Algeria Australia Austra Be",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.clivar.org/events",
+      "page_title": "Upcoming Events | www.clivar.org",
+      "source_name": "CLIVAR",
+      "chunk_index": 0,
+      "score": 0.493896,
+      "text_preview": "...üggemann https://meet.goto.com/938253565 2026-07-01 Online PROS4SORP by Dr. Kaitlin Naughten http://vuw.zoom.us/meeting/register/M_VAqnZCTFaO_eAR2UPUuQ 2026-08-03 to 2026-08-05 Boulder USA US CLIVAR Workshop: Quantum Computing for Weather and Climate Applications https://usclivar.org/meetings/quantum-computing 2026-08-05 PRP ENSO Webinar No. 4 by Dr Nicola Maher https://meet.goto.com/InternationalCLIVAR/prpensowebinar4 2026-08-08 to 2026-08-19 Oslo Norway 12th SCAR Open Science Conference & M",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://tinbergen.nl/tuition-fees-scholarships-and-financial-support",
+      "page_title": "Tuition fees, scholarships and financial support – Tinbergen.nl",
+      "source_name": "Tinbergen Institute",
+      "chunk_index": 1,
+      "score": 0.490218,
+      "text_preview": "From Preference to Choice: The Economic Theory of Decision-Making Meet the Lecturer Tuition Fees and Payment Inequalities in Health and Healthcare Meet the Lecturers for Inequalities in Health and Healthcare Tuition Fees and Payment Marketing Research with Purpose Markets with Frictions Meet the Lecturers for Markets with Frictions Tuition Fees and Payment Modern Toolbox for Spatial and Functional Data Sustainable Finance Meet the Lecturers Tuition Fees and Payment Tuition Fees and Payment Busin",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://bernstein-network.de/en/",
+      "page_title": "Home – Bernstein Network Computational Neuroscience",
+      "source_name": "Bernstein Network",
+      "chunk_index": 0,
+      "score": 0.489833,
+      "text_preview": "...ourses (ANDA and NI). more more events  Bernstein Conference Abstract Submission more Satellite Workshops Program more Register Now more Become a Member The Bernstein Network Computational Neuroscience supports science, research and education in computational neuroscience, and disseminates research themes and findings to the public. Everyone who is active in the field of computational neuroscience or related subjects can become a member of the Bernstein Network Computational Neuroscience. mo",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://eage.org/education/short-course-catalogue/",
+      "page_title": "Short Course Catalogue - eage.org",
+      "source_name": "EAGE",
+      "chunk_index": 65,
+      "score": 0.486824,
+      "text_preview": "...ert Education Committee and compose an international and multidisciplinary team. Academic and industry professional can apply to become EAGE instructors by submitting one or more short course proposals (download here our Short Course Proposal Form). Approved courses are scheduled based on instructors’ availability and demand for specific topics. Instructors receive a teaching fee per day and reimbursement for travel, accommodation and meals expenses. For more information or to submit a short ",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.lse.ac.uk/cities",
+      "page_title": "LSE Cities | the London School of Economics and Political Science - LSE",
+      "source_name": "LSE Cities",
+      "chunk_index": 0,
+      "score": 0.484711,
+      "text_preview": "...visit and discover LSE Trending Find a programme or course Information for international students Undergraduate degree fees and funding The 10 most in-demand tech careers of 2026 Campus tour video Centre for Language Studies Research Research at LSE Find LSE experts Business & employers LSE Blogs LSE iQ Podcast Research for the World online magazine LSE Press: publishing the social sciences Research centres Departments & institutes Engagement and impact support for LSE researchers Trending Fu",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://eage.eventsair.com/6th-eage-workshop-on-fiber-optic-sensing-for-energy-applications",
+      "page_title": "6th EAGE Workshop on Fiber Optic Sensing for Energy Applications",
+      "source_name": "EAGE",
+      "chunk_index": 0,
+      "score": 0.484027,
+      "text_preview": "...uted Fibre Optic Sensors and Applications Short Course 2: CO2 Storage Project Design and Optimization (Saline Aquifers) Registration Registration Visa Information Strategic Programme Panel 1: Seabed Fiber | The New Frontier of Subsea Monitoring Panel 2: Downhole Fiber | Maximizing Well Intelligence Sponsoring Our Sponsors Become A Sponsor Sponsoring Opportunities Contact us (UTC+08:00) Perth 6th EAGE Workshop on Fiber Optic Sensing for Energy Applications 21 - 22 October 2026, Perth, Australi",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://eage.eventsair.com/short-course-structural-geology-must-knows/",
+      "page_title": "Short Course: Structural Geology Must-Knows",
+      "source_name": "EAGE",
+      "chunk_index": 3,
+      "score": 0.482645,
+      "text_preview": "ntly Pascal is working as an independent structural geology expert delivering courses and technical consultancy projects. He is currently focussing on developing collaborative virtual reality field trip. Important Dates Early Registration Deadline 30 June 2026 Regular Registration Deadline 31 July 2026 Short Course Dates 1-3 September 2026 Contact Us Join Us © EAGE 2025 (version 1.0.5.0) Privacy FAQ Agenda × Clear Apply × Close",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.clivar.org/events/7th-ictp-summer-school-theory-mechanisms-and-hierarchical-modelling-climate-dynamics",
+      "page_title": "7th ICTP Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics | www.clivar.org",
+      "source_name": "CLIVAR",
+      "chunk_index": 1,
+      "score": 0.479437,
+      "text_preview": "...ing Ocean Transports: Single Sections, Box Models and Reanalysis Products ICTP, Trieste, Italy. 29 June - 10 July, 2026 Applications are open The School will introduce participants, with an emphasis on attendees from the Global South, to the GO-SHIP program, inverse models, international programs for observing systems, reanalysis products, and will stimulate their scientific involvement within existing programs. The School will provide participants with the necessary theoretical and practical",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://eage.org/events/calendar-of-events/",
+      "page_title": "Calendar of Events - eage.org",
+      "source_name": "EAGE",
+      "chunk_index": 1,
+      "score": 0.471708,
+      "text_preview": "ndland and Labrador, Canada EAGE Closed Register Now eage conference on offshore energy resources latin america exploration hot spots Canada North America eage-true student-true Conference 2026 July 00005 28–29 Jul 2026 EAGE Workshop on Exploration and Opportunities in the Paleogene Play Jakarta, Indonesia EAGE Closed Register Now geology eage workshop on exploration in the paleogene play geology Indonesia Asia Pacific eage-true Workshop 2026 September 00006 1–2 Sep 2026 EAGE Exploration Worksho",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://www.ictp.it/home/scientific-calendar",
+      "page_title": "Scientific calendar | ICTP",
+      "source_name": "ICTP",
+      "chunk_index": 0,
+      "score": 0.471175,
+      "text_preview": "...LS Lecture Series - From Molecular Motors to Collective Phenomena in Active Matter June 15 math 15 Jun 2026 26 Jun 2026 Application Closed school smr4222 ICTP-INdAM-SLMath Summer Graduate School for Machine Learning | (smr 4222) ICTP Budinich Lecture Hall (LB) Mathematics smr4222 May 2026 May 04 04 May 2026 05 Jul 2026 Application Closed scientific activity PWF Bangladesh: Course on Operators on Hilbert Space Online Upcoming Events Visit the events archive There are currently no such activiti",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://eage.org/events/calendar-of-events/",
+      "page_title": "Calendar of Events - eage.org",
+      "source_name": "EAGE",
+      "chunk_index": 3,
+      "score": 0.471118,
+      "text_preview": "...Dec 2026 Second EAGE Workshop on Techniques for Monitoring CO2 Storage Calgary, Alberta, Canada EAGE Call for Abstracts Register Now eage workshop on geophysical techniques for monitoring co2 storage energy transition Canada North America eage-true Workshop 2026 December 00038 1–2 Dec 2026 2nd EAGE Workshop on Enhancing Subsurface Practices using AI/ML Daejeon, South Korea EAGE Call for Abstracts eage workshop on subsurface intelligence data science machine learning South Korea Asia Pacific e",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://indico.ictp.it/event/11150",
+      "page_title": "7th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics - Estimating Ocean Transports: Single Sections, Box Models and Reanalysis Products | (smr 4224) (29 June 2026 - 10 July 2026)",
+      "source_name": "ICTP",
+      "chunk_index": 1,
+      "score": 0.470489,
+      "text_preview": "...ty of California San Diego, USA P. Velez Belchí, IEO‑CSIC, Spain C. Yang, CNR - ISMAR, Italy Research abstracts: In the application form, all applicants are requested to submit a brief research abstract for a poster presentation and/or contributed talk. Please use ICTP templates available for download here and below under 'Material'. Grants: A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countrie",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.lse.ac.uk/cities",
+      "page_title": "LSE Cities | the London School of Economics and Political Science - LSE",
+      "source_name": "LSE Cities",
+      "chunk_index": 1,
+      "score": 0.4658,
+      "text_preview": "...nd Sexual Misconduct Information for Current students Staff Alumni & friends Trending Find a programme or course How to apply to undergraduate programmes How to apply to postgraduate programmes Public events at LSE What are you looking for? Search Trending Find a programme or course How to apply to undergraduate programmes How to apply to postg",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.earthscope.org/event/2026-technical-short-course-insar-processing-and-theory-using-gmtsar/",
+      "page_title": "2026 Technical Short Course: InSAR Processing and Theory using GMTSAR | EarthScope Consortium",
+      "source_name": "EarthScope",
+      "chunk_index": 1,
+      "score": 0.464753,
+      "text_preview": "July 20-22, and August 7 Location: Virtual Deadline: June 12, 2026 APPLICATIONS ARE NOW CLOSED Course Description: This course covers the theory and application of repeat-pass synthetic aperture radar interferometry (InSAR) using the GMTSAR software package. Participants will learn foundational SAR/InSAR concepts and work hands-on to generate interferograms from test datasets (including recently available NISAR data) and (optionally) construct deformation time series. Primary Audience: Graduate",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://eage.org/education/interactive-online-short-courses/",
+      "page_title": "Interactive Online Short Courses - eage.org",
+      "source_name": "EAGE",
+      "chunk_index": 5,
+      "score": 0.461704,
+      "text_preview": "...ies inherent to the decarbonization and energy transition. The purpose of the course is to set up activities that allow participants to reflect and",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://eventi.cineca.it/en/hpc/cineca-summer-school-hpc-ai-2026/bologna-20260629",
+      "page_title": "CINECA Summer School for HPC + AI 2026 | Cineca Events",
+      "source_name": "CINECA HPC",
+      "chunk_index": 1,
+      "score": 0.4563,
+      "text_preview": "g from single-GPU environments to distributed systems. Participants engage with core topics such as parallel programming models, hardware-aware optimization strategies, scalable software design, and efficient deep learning training techniques. The course combines theoretical lectures with hands-on laboratory sessions and interactive discussions, enabling direct application of the concepts introduced. The overall objective is to provide a solid foundation for leveraging heterogeneous computing an",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.cscs.ch/",
+      "page_title": "CSCS Swiss National Supercomputing Centre",
+      "source_name": "CSCS Summer School",
+      "chunk_index": 0,
+      "score": 0.455253,
+      "text_preview": "...y 2026 – Meet the Swiss National Supercomputing Centre Campus Luzern Bahnhof Vacancies available From CHF 0.00 Overview Register now 16.09.2026 Visita guidata del CSCS CSCS Vacancies available Free Overview Register now All events Social all news events instagram 3 hours ago What an incredible event! 🎉 ISC26 was a great success, and we couldn’t be more grateful. A huge thank you to everyone ... twitter 5 days ago 4 likes A collaboration that began in summer 2025 has already produced a new #AI",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://cispa.de/en/funding-increase",
+      "page_title": "Major funding decision: CISPA set to grow by around 45 million euros annually",
+      "source_name": "CISPA",
+      "chunk_index": 0,
+      "score": 0.449077,
+      "text_preview": "...nt Development CISPA Summer School Shop Overview Contact Overview ⬤ EN (current) DE Home News & Events CISPA News Major funding decision: CISPA set to grow by around 45 million euros annually ©Tobias Ebelshäuser 2026-06-02 Sebastian Klöckner Major funding decision: CISPA set to grow by around 45 million euros annually The CISPA Helmholtz Center for Information Security is set to receive a permanent funding increase of approximately €45 million. The additional funds will become available from ",
+      "matched_existing_candidate": false
+    },
+    {
+      "page_url": "https://eage.eventsair.com/short-course-structural-geology-must-knows/",
+      "page_title": "Short Course: Structural Geology Must-Knows",
+      "source_name": "EAGE",
+      "chunk_index": 1,
+      "score": 0.445905,
+      "text_preview": "...case studies will be used throughout the course to ensure a business context to the learnings. The course will help the participant to create robust and appropriate map and 3D model linked to the maturity of their project and their business objectives. Course Outline Day 1: Classroom - Course introduction. Why are we here today? - Structural geology foundation concepts recap. - Understand how rock break and the impact on fault geometry (Mohr circle introduction, stress and strain exercises). ",
+      "matched_existing_candidate": true
+    },
+    {
+      "page_url": "https://www.hagueacademy.nl/scholarship-sponsors/",
+      "page_title": "Scholarship Sponsors | The Hague Academy of International Law",
+      "source_name": "Hague Academy of International Law",
+      "chunk_index": 0,
+      "score": 0.365409,
+      "text_preview": "...taly) CERIC – Aix-Marseille University (France) City of The Hague (Netherlands) Canadian Council on International Law – Scholarship in memory of Prof. Armand de Mestral Department of International and European Law of the Doctoral School of Law of the Sorbonne (Paris 1 University Panthéon-Sorbonne) (France) Lutfia Rabbani Foundation (Netherlands) – Scholarships in memory of Pieter Vreede OIF – Organisation internationale de la francophonie Pedone – Éditions Pedone (France) Rotary Club The Hagu",
+      "matched_existing_candidate": false
+    }
+  ]
+}
