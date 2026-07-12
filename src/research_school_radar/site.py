@@ -1,25 +1,19 @@
 from __future__ import annotations
 
-import hashlib
 import json
 import shutil
-from datetime import date, timedelta
+from datetime import date
 from html import escape
 from pathlib import Path
 from typing import Any
-from urllib.parse import quote, urlencode
+from urllib.parse import quote
 
 from .ai_home import merge_ai_for_homepage
 from .atomic_io import write_text_atomic
 from .candidate_io import CANDIDATE_SNAPSHOT_SCHEMA_VERSION, candidate_to_dict
 from .localization import (
-    date_zh,
-    duration_zh,
     financial_summary_zh,
-    mode_zh,
     region_zh,
-    source_type_zh,
-    status_zh,
     topic_zh,
     topics_label_zh,
 )
@@ -27,15 +21,26 @@ from .llm_client import BaseLLMClient
 from .localization_audit import warn_localization_issues
 from .models import Candidate
 from .publication import is_found_opportunity, is_high_quality, is_public_candidate
-from .programme_sessions import (
-    programme_duration_label,
-    programme_duration_label_zh,
-    session_line_label,
-    session_line_label_zh,
-)
 from .review import build_review_queue
+from .site_components import (
+    bilingual as _bilingual,
+    candidate_deadline_cell as _candidate_deadline_cell,
+    deadline_cell as _deadline_cell,
+    duration_cell as _duration_cell,
+    duration_label as _duration,
+    evidence_attr as _evidence_attr,
+    financial_summary_short as _financial_summary_short,
+    is_online_only as _is_online_only,
+    public_location as _public_location,
+    public_location_zh as _public_location_zh,
+)
+from .site_detail import render_opportunity_detail
 from .site_feed import render_feed
+from .site_filters import filter_script, render_filters
 from .site_i18n import _BOOT_SCRIPT, _UI_SCRIPT
+from .site_layout import footer_section as _footer_section, site_nav as _site_nav
+from .site_paths import candidate_detail_filename, candidate_detail_href
+from .site_sources_page import render_sources_page
 from .site_seo import (
     CANARY as _CANARY,
     DATA_LICENSE as _DATA_LICENSE,
@@ -48,12 +53,11 @@ from .site_seo import (
     robots_txt,
     seo_head,
     sitemap_xml,
-    watermark,
 )
-from .site_styles import _DETAIL_CSS, _DISCOVER_CSS, _NAV_CSS, _THEME_CSS
+from .site_styles import _DISCOVER_CSS, _NAV_CSS, _THEME_CSS
 from .translation import TranslationConfig, translate_candidates, translate_source_metadata
 from .urls import safe_external_url
-from .utils import ROOT, format_duration, sanitize_location, topics_label
+from .utils import ROOT, format_duration, topics_label
 
 
 def write_site(
@@ -163,8 +167,8 @@ def write_site(
         stale.unlink()
     for candidate in detail_candidates:
         detail_html = render_opportunity_detail(candidate, site_config or {})
-        warn_localization_issues(detail_html, _candidate_detail_filename(candidate))
-        write_text_atomic(detail_dir / _candidate_detail_filename(candidate), detail_html)
+        warn_localization_issues(detail_html, candidate_detail_filename(candidate))
+        write_text_atomic(detail_dir / candidate_detail_filename(candidate), detail_html)
     write_text_atomic(
         output_dir / "feed.xml",
         render_feed(
@@ -184,7 +188,7 @@ def write_site(
     write_text_atomic(output_dir / "robots.txt", robots_txt())
     write_text_atomic(
         output_dir / "sitemap.xml",
-        sitemap_xml(["", "sources.html", *[_candidate_detail_href(candidate) for candidate in detail_candidates]]),
+        sitemap_xml(["", "sources.html", *[candidate_detail_href(candidate) for candidate in detail_candidates]]),
     )
     write_text_atomic(output_dir / "favicon.svg", favicon_svg())
     _copy_og_image(output_dir)
@@ -403,7 +407,7 @@ def render_site(
     found_rows = "".join(_found_row(candidate) for candidate in found)
     public_notes = _public_collection_notes(errors)
     notes = "".join(f"<li>{_bilingual(error, _collection_note_zh(error))}</li>" for error in public_notes[:12])
-    filters = _filters([*full, *near, *found], curated)
+    filters = render_filters([*full, *near, *found], curated)
     analytics = _analytics_snippet(site_config or {})
     status_banner = _status_banner(len(full), len(near), tracked_total, tracked_sources)
     if near:
@@ -722,174 +726,12 @@ def render_site(
     {_faq_section()}
   </main>
   {_footer_section(updated)}
-  {_filter_script()}
+  {filter_script()}
   {_UI_SCRIPT}
   {analytics}
 </body>
 </html>
 """
-
-
-def render_opportunity_detail(
-    candidate: Candidate,
-    site_config: dict[str, Any] | None = None,
-) -> str:
-    official = safe_external_url(candidate.application_link or candidate.source_url)
-    status_label, status_class = _candidate_status(candidate)
-    has_session_deadlines = any(session.application_deadline for session in candidate.sessions)
-    deadline = candidate.deadline.strftime("%d %b %Y") if candidate.deadline else "Deadline uncertain"
-    deadline_cn = date_zh(candidate.deadline, uncertain="截止日期待确认")
-    if has_session_deadlines and candidate.deadline is not None:
-        deadline = f"Latest session deadline: {deadline}"
-        deadline_cn = f"最晚时段截止：{deadline_cn}"
-    duration = _duration(candidate)
-    duration_cn = _duration_zh(candidate)
-    session_schedule = _session_details(candidate) if candidate.sessions else ""
-    location = _public_location(candidate.location) or "Location uncertain"
-    location_cn = candidate.location_zh.strip() or _public_location_zh(candidate.location)
-    topics = topics_label(candidate.topic_keywords) or "Topics not resolved"
-    topics_cn = topics_label_zh(candidate.topic_keywords) or "主题待确认"
-    summary = candidate.summary.strip() or candidate.recommendation_reason.strip()
-    if not summary:
-        summary = f"A {candidate.type or 'research training opportunity'} from {candidate.organizer}."
-    eligibility = candidate.eligibility.strip() or "Check the official programme page for eligibility and application requirements."
-    qualification = candidate.recommendation_reason.strip()
-    if not qualification:
-        qualification = (
-            "Official dates, funding or fee information, organizer, and programme location are shown with source evidence where available."
-        )
-    evidence_parts = [
-        value.strip()
-        for value in (candidate.deadline_evidence, candidate.duration_evidence, candidate.funding_evidence)
-        if value.strip()
-    ]
-    evidence = " ".join(evidence_parts[:3]) or "Source evidence is retained in the public candidate data."
-    calendar = _deadline_cell(candidate.deadline, candidate.title, official) if candidate.deadline else ""
-    official_source_link = (
-        f'<a class="source-link" href="{escape(official, quote=True)}" target="_blank" '
-        'rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>'
-        if official
-        else '<p class="muted" data-i18n="detail.source.unavailable">No safe official URL is available for this record.</p>'
-    )
-    official_button = (
-        f'<a class="button primary" href="{escape(official, quote=True)}" target="_blank" '
-        'rel="noopener" data-i18n="action.official.open">Open official page</a>'
-        if official
-        else ""
-    )
-    canonical = _SITE_URL + _candidate_detail_href(candidate)
-    updated = date.today().isoformat()
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{escape(candidate.title)} · Summa</title>
-{seo_head(canonical, summary, site_config or {}, title=candidate.title, asset_prefix="../")}
-  {_BOOT_SCRIPT}
-  <style>
-{_THEME_CSS}
-{_NAV_CSS}
-{_DISCOVER_CSS}
-{_DETAIL_CSS}
-  </style>
-</head>
-<body class="detail-page" data-page-title-en="{escape(candidate.title, quote=True)} · Summa" data-page-title-zh="{escape((candidate.title_zh or candidate.title) + ' · Summa', quote=True)}">
-  {_site_nav(home="../index.html", root="../")}
-  <header class="detail-header">
-    <div class="wrap">
-      <a class="detail-back" href="../index.html#opportunities" data-i18n="detail.back">&larr; Back to opportunities</a><br>
-      <span class="status-badge {status_class}">{_bilingual(status_label, status_zh(status_label))}</span>
-      <h1>{_bilingual(candidate.title, candidate.title_zh)}</h1>
-      <p class="detail-org">{_bilingual(f'{candidate.organizer} · {location}', f'{candidate.organizer_zh or candidate.organizer} · {location_cn}')}</p>
-      <div class="detail-facts">
-        <span>{_bilingual(duration, duration_cn)}</span>
-        <span>{_bilingual(deadline, deadline_cn)}</span>
-        <span>{_bilingual(candidate.mode or "Mode uncertain", mode_zh(candidate.mode))}</span>
-      </div>
-    </div>
-  </header>
-  <main class="detail-main">
-    <div class="wrap detail-grid">
-      <div class="detail-stack">
-        <section class="detail-panel">
-          <h2 data-i18n="detail.overview">Overview</h2>
-          <p>{_bilingual(summary, candidate.summary_zh)}</p>
-        </section>
-        <section class="detail-panel">
-          <h2 data-i18n="detail.eligibility">Who should apply</h2>
-          <p>{_bilingual(eligibility, candidate.eligibility_zh)}</p>
-        </section>
-        <section class="detail-panel qualified">
-          <h2 data-i18n="detail.why">Why this status</h2>
-          <p>{_bilingual(qualification, candidate.recommendation_reason_zh)}</p>
-        </section>
-        <section class="detail-panel">
-          <h2 data-i18n="detail.source">Official source</h2>
-          <p class="muted" data-i18n="detail.source.original">Original source evidence is retained below for verification.</p>
-          <p>{_bilingual(evidence, f'以下为官网原文证据，保留原文便于核对：{evidence}')}</p>
-          {official_source_link}
-        </section>
-      </div>
-      <aside class="decision-card">
-        <h2 data-i18n="detail.snapshot">Application snapshot</h2>
-        <span class="eyebrow" data-i18n="detail.funding">Funding / fee</span>
-        <p class="decision-value">{_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate))}</p>
-        <span class="eyebrow" data-i18n="detail.deadline">Application deadline</span>
-        <p class="deadline-value">{_bilingual(deadline, deadline_cn)}</p>
-        {session_schedule}
-        <p class="muted">{_bilingual(candidate.mode or "Mode uncertain", mode_zh(candidate.mode))} &middot; {_bilingual(location, location_cn)}<br>{_bilingual(topics, topics_cn)}</p>
-        <div class="detail-actions">
-          {official_button}
-          {calendar}
-        </div>
-        <span class="note" data-i18n="detail.verify">Always verify eligibility, fees, funding, and dates on the official page.</span>
-      </aside>
-    </div>
-  </main>
-  <div class="mobile-actions">
-    {official_button}
-    {calendar}
-  </div>
-  {_footer_section(updated, root="../")}
-  {_UI_SCRIPT}
-</body>
-</html>
-"""
-
-
-_GITHUB_URL = "https://github.com/lione12138/summer-school-radar"
-
-_RADAR_ICON = (
-    '<svg class="dot" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
-    'stroke-width="1.7" stroke-linecap="round" aria-hidden="true">'
-    '<circle cx="12" cy="12" r="9"/>'
-    '<circle cx="12" cy="12" r="5.5" opacity=".55"/>'
-    '<path d="M12 12 L20 7"/>'
-    '<circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"/>'
-    "</svg>"
-)
-
-
-def _site_nav(home: str = "", root: str = "") -> str:
-    # ``home`` is "" on the index page and "index.html" on subpages, so the
-    # in-page anchors still resolve when viewed from another page.
-    brand = f"{home}#top" if home else "#top"
-    return f"""
-  <nav class="topbar">
-    <div class="wrap bar">
-      <a class="brand" href="{brand}">{_RADAR_ICON} Summa</a>
-      <div class="links">
-        <a href="{home}#opportunities" data-i18n="nav.opportunities">Opportunities</a>
-        <a class="hide-sm" href="{home}#how" data-i18n="nav.how">How it works</a>
-        <a class="hide-sm" href="{home}#about" data-i18n="nav.about">About</a>
-        <a href="{root}sources.html" data-i18n="nav.sources">Sources</a>
-        <a href="{_GITHUB_URL}">GitHub</a>
-        <button id="lang-toggle" class="toggle" type="button" aria-label="Language">中</button>
-        <button id="theme-toggle" class="toggle" type="button" aria-label="Theme">&#9790;</button>
-      </div>
-    </div>
-  </nav>"""
 
 
 def _how_it_works_section() -> str:
@@ -962,141 +804,6 @@ def _faq_section() -> str:
     </section>"""
 
 
-def _footer_section(updated: str, root: str = "") -> str:
-    return f"""
-  <footer class="site">
-    <div class="wrap">
-      <div class="cols">
-        <div class="col brandcol">
-          <a class="brand" href="{root}index.html#top">{_RADAR_ICON} Summa</a>
-          <p data-i18n="foot.blurb">A free, open-source scanner for funded research summer schools, winter schools, and training schools across many academic fields. Updated daily.</p>
-        </div>
-        <div class="col">
-          <h4 data-i18n="foot.explore">Explore</h4>
-          <a href="{root}index.html#opportunities" data-i18n="foot.opportunities">Opportunities</a>
-          <a href="{root}sources.html" data-i18n="foot.sources">Sources &amp; coverage</a>
-        </div>
-        <div class="col">
-          <h4 data-i18n="foot.project">Project</h4>
-          <a href="{root}index.html#how" data-i18n="foot.how">How it works</a>
-          <a href="{root}index.html#about" data-i18n="foot.about">About &amp; methodology</a>
-          <a href="{root}index.html#faq" data-i18n="foot.faq">FAQ</a>
-          <a href="{_GITHUB_URL}">GitHub</a>
-        </div>
-        <div class="col">
-          <h4 data-i18n="foot.contribute">Contribute</h4>
-          <a href="{_GITHUB_URL}/issues/new" data-i18n="foot.suggest">Suggest a source</a>
-          <a href="{_GITHUB_URL}/issues" data-i18n="foot.issue">Report an issue</a>
-          <a href="{_GITHUB_URL}/stargazers" data-i18n="foot.star">Star on GitHub</a>
-        </div>
-      </div>
-      <div class="legal">Last updated {updated} &middot; <span data-i18n="foot.legal">Near-matches are not treated as qualified opportunities. Built and maintained openly on GitHub.</span></div>
-    </div>
-  </footer>{watermark()}"""
-
-
-def render_sources_page(sources: list[dict[str, Any]]) -> str:
-    manual = [source for source in sources if source.get("check_manually")]
-    registry = [source for source in sources if not source.get("check_manually")]
-    enabled_count = sum(1 for source in registry if source.get("enabled", True))
-    disabled_count = len(registry) - enabled_count
-    rows = "".join(_source_row(source) for source in registry)
-    manual_section = _manual_sources_section(manual) if manual else ""
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sources &amp; Coverage · Summa</title>
-{seo_head(_SITE_URL + "sources.html", "The trusted source registry behind Summa, including coverage notes and sources that must be checked manually.", {})}
-  {_BOOT_SCRIPT}
-  <style>
-{_THEME_CSS}
-{_NAV_CSS}
-    header.hero {{
-      background: linear-gradient(135deg, var(--hero-1), var(--hero-2) 55%, var(--hero-3));
-      color: #f3f9fc;
-      padding: 36px 0 40px;
-    }}
-    h1 {{ margin: 0 0 8px; font-size: clamp(26px, 4vw, 34px); letter-spacing: -0.02em; }}
-    h2 {{ margin: 30px 0 10px; font-size: 21px; letter-spacing: -0.01em; }}
-    header.hero p {{ max-width: 860px; color: rgba(243, 249, 252, .85); margin: 0 0 6px; }}
-    header.hero .pill {{
-      border-color: rgba(255, 255, 255, .3);
-      background: rgba(255, 255, 255, .1);
-      color: #eaf6fa;
-      margin: 8px 8px 0 0;
-    }}
-    header.hero a.pill:hover {{ background: rgba(255, 255, 255, .24); }}
-    main {{ padding: 0 0 48px; }}
-    .status-enabled {{ color: var(--good); font-weight: 700; }}
-    .status-disabled {{ color: var(--warn); font-weight: 700; }}
-  </style>
-</head>
-<body data-page-title-en="Sources &amp; Coverage · Summa" data-page-title-zh="来源与覆盖范围 · Summa">
-  {_site_nav(home="index.html")}
-  <header class="hero">
-    <div class="wrap">
-      <h1 data-i18n="sources.title">Sources &amp; Coverage</h1>
-      <p data-i18n="sources.lead">The radar scans a trusted source registry rather than crawling the open web. This page lists the configured sources, including disabled sources kept for transparency.</p>
-      <a class="pill" href="index.html" data-i18n="sources.back">Back to radar</a>
-      <a class="pill" href="sources.json" data-i18n="sources.json">Source JSON</a>
-      <span class="pill">{_bilingual(f"{enabled_count} enabled", f"{enabled_count} 个已启用")}</span>
-      <span class="pill">{_bilingual(f"{disabled_count} disabled", f"{disabled_count} 个已停用")}</span>
-    </div>
-  </header>
-  <main class="wrap">
-    <h2 data-i18n="sources.configured">Configured Sources</h2>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.status">Status</th><th data-i18n="sources.layer">Layer</th><th data-i18n="sources.region">Region</th><th data-i18n="sources.type">Type</th><th data-i18n="sources.keywords">Keywords</th><th data-i18n="sources.notes">Notes (original registry text)</th></tr></thead>
-        <tbody>{rows}</tbody>
-      </table>
-    </div>
-    {manual_section}
-  </main>
-  {watermark()}
-  {_UI_SCRIPT}
-</body>
-</html>
-"""
-
-
-def _manual_sources_section(manual: list[dict[str, Any]]) -> str:
-    rows = "".join(_manual_source_row(source) for source in manual)
-    return f"""
-    <section>
-      <h2 data-i18n="sources.direct">Sources to Check Directly</h2>
-      <p class="muted" data-i18n="sources.direct.lead">We cannot fetch these automatically yet. Please open them directly to look for opportunities.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.region">Region</th><th data-i18n="sources.keywords">Keywords</th><th data-i18n="sources.reason">Why it isn&#39;t fetched automatically</th></tr></thead>
-          <tbody>{rows}</tbody>
-        </table>
-      </div>
-    </section>
-"""
-
-
-def _manual_source_row(source: dict[str, Any]) -> str:
-    url = safe_external_url(source.get("url"))
-    name = escape(str(source.get("name", "Unnamed source")))
-    link = f'<a href="{escape(url, quote=True)}" target="_blank" rel="noopener">{name}</a>' if url else name
-    keyword_values = _list_value(source.get("keywords"))
-    keywords = ", ".join(keyword_values)
-    keywords_cn = "、".join(topic_zh(value) for value in keyword_values)
-    notes = str(source.get("notes", ""))
-    notes_cn = str(source.get("notes_zh", ""))
-    return (
-        "<tr>"
-        f"<td>{link}</td>"
-        f"<td>{_bilingual(str(source.get('region', '')), region_zh(str(source.get('region', ''))))}</td>"
-        f"<td>{_bilingual(keywords, keywords_cn)}</td>"
-        f"<td>{_bilingual(notes, notes_cn)}</td>"
-        "</tr>"
-    )
-
-
 def _qualified_section(rows: str) -> str:
     return f"""
     <section class="opportunity-tier">
@@ -1109,38 +816,6 @@ def _qualified_section(rows: str) -> str:
       </div>
     </section>
 """
-
-
-def _source_row(source: dict[str, Any]) -> str:
-    enabled = bool(source.get("enabled", True))
-    status = "enabled" if enabled else "disabled"
-    status_class = "status-enabled" if enabled else "status-disabled"
-    url = safe_external_url(source.get("url"))
-    name = escape(str(source.get("name", "Unnamed source")))
-    source_link = f'<a href="{escape(url, quote=True)}" target="_blank" rel="noopener">{name}</a>' if url else name
-    keyword_values = _list_value(source.get("keywords"))
-    keywords = ", ".join(keyword_values)
-    keywords_cn = "、".join(topic_zh(value) for value in keyword_values)
-    notes = str(source.get("notes", ""))
-    notes_cn = str(source.get("notes_zh", ""))
-    blocked_domains = _list_value(source.get("blocked_link_domains"))
-    if blocked_domains:
-        notes = f"{notes} Blocked linked domains: {', '.join(blocked_domains)}".strip()
-        notes_cn = f"{notes_cn} 已阻止的链接域名：{'、'.join(blocked_domains)}".strip()
-    if source.get("render"):
-        notes = f"{notes} Rendered with a headless browser.".strip()
-        notes_cn = f"{notes_cn} 使用无头浏览器渲染。".strip()
-    return (
-        "<tr>"
-        f"<td>{source_link}</td>"
-        f'<td><span class="{status_class}">{_bilingual(status, "已启用" if enabled else "已停用")}</span></td>'
-        f"<td>{escape(str(source.get('layer', '')))}</td>"
-        f"<td>{_bilingual(str(source.get('region', '')), region_zh(str(source.get('region', ''))))}</td>"
-        f"<td>{_bilingual(str(source.get('source_type', '')), source_type_zh(str(source.get('source_type', ''))))}</td>"
-        f"<td>{_bilingual(keywords, keywords_cn)}</td>"
-        f"<td>{_bilingual(notes, notes_cn)}</td>"
-        "</tr>"
-    )
 
 
 def _curated_section(rows: str) -> str:
@@ -1263,18 +938,9 @@ def _found_row(candidate: Candidate) -> str:
     )
 
 
-def _bilingual(en: str, zh: str) -> str:
-    en_text = escape(en)
-    zh_text = escape(zh.strip() or en)
-    return (
-        f'<span class="lang-en" lang="en">{en_text}</span>'
-        f'<span class="lang-zh" lang="zh">{zh_text}</span>'
-    )
-
-
 def _link(candidate: Candidate) -> str:
     return (
-        f'<a href="{escape(_candidate_detail_href(candidate), quote=True)}">'
+        f'<a href="{escape(candidate_detail_href(candidate), quote=True)}">'
         f'{_bilingual(candidate.title, candidate.title_zh)}</a>'
     )
 
@@ -1288,7 +954,7 @@ def _candidate_actions(candidate: Candidate) -> str:
         else ""
     )
     return (
-        f'<a class="button primary" href="{escape(_candidate_detail_href(candidate), quote=True)}" data-i18n="action.details">View details</a>'
+        f'<a class="button primary" href="{escape(candidate_detail_href(candidate), quote=True)}" data-i18n="action.details">View details</a>'
         f"{official_link}"
     )
 
@@ -1302,16 +968,6 @@ def _curated_actions(item: dict[str, Any]) -> str:
 
 def _new_badge(candidate: Candidate) -> str:
     return ' <span class="badge-new" data-i18n="badge.new">NEW</span>' if candidate.is_new else ""
-
-
-def _evidence_attr(evidence: str) -> str:
-    """A hover tooltip carrying the source text that produced a field."""
-    text = evidence.strip()
-    if not text:
-        return ""
-    if len(text) > 300:
-        text = text[:297].rstrip() + "..."
-    return f' title="{escape(text, quote=True)}"'
 
 
 def _curated_financial_summary(item: dict[str, Any], funding: dict[str, Any]) -> str:
@@ -1337,217 +993,6 @@ def _curated_financial_summary_zh(item: dict[str, Any], funding: dict[str, Any])
     return f"费用：{fee}" if fee else "资助或费用未说明"
 
 
-def _is_online_only(candidate: Candidate) -> bool:
-    return candidate.is_online_only
-
-
-def _public_location(value: str) -> str:
-    # Safety net: clean any junk that slipped through extraction before display.
-    cleaned = sanitize_location(value, fallback="")
-    if cleaned.strip().lower() == "continental europe":
-        return "Europe"
-    return cleaned
-
-
-def _public_location_zh(value: str) -> str:
-    """Translate a public location without losing its pre-normalized region.
-
-    ``_public_location`` intentionally shortens ``continental Europe`` to the
-    English display label ``Europe``.  Translate the sanitized original first
-    so that this normalization does not discard the existing Chinese mapping.
-    Proper place names fall back to their source spelling.
-    """
-    cleaned = sanitize_location(value, fallback="")
-    if not cleaned:
-        return "地点待确认"
-    translated = region_zh(cleaned)
-    if translated != cleaned:
-        return translated
-    public = _public_location(cleaned)
-    return region_zh(public) if public else "地点待确认"
-
-
-def _duration(candidate: Candidate) -> str:
-    return programme_duration_label(candidate) or format_duration(
-        candidate.start_date,
-        candidate.end_date,
-        candidate.duration_days,
-    )
-
-
-def _duration_zh(candidate: Candidate) -> str:
-    return programme_duration_label_zh(candidate) or duration_zh(candidate)
-
-
-def _duration_cell(candidate: Candidate) -> str:
-    if not candidate.sessions:
-        return _bilingual(_duration(candidate), _duration_zh(candidate))
-    return _session_details(candidate)
-
-
-def _session_details(candidate: Candidate) -> str:
-    rows = "".join(
-        "<li>"
-        f"{_bilingual(session_line_label(session), session_line_label_zh(session))}"
-        "</li>"
-        for session in candidate.sessions
-    )
-    return (
-        '<details class="session-list">'
-        f"<summary>{_bilingual(_duration(candidate), _duration_zh(candidate))}</summary>"
-        f"<ul>{rows}</ul>"
-        "</details>"
-    )
-
-
-def _candidate_deadline_cell(candidate: Candidate) -> str:
-    return _deadline_cell(
-        candidate.deadline,
-        candidate.title,
-        candidate.source_url,
-        latest_session=any(session.application_deadline for session in candidate.sessions),
-    )
-
-
-def _deadline_cell(
-    deadline: date | None,
-    title: str,
-    url: str,
-    *,
-    latest_session: bool = False,
-) -> str:
-    if deadline is None:
-        return _bilingual("uncertain", "待确认")
-    safe_url = safe_external_url(url)
-    google = escape(_google_calendar_url(deadline, title, safe_url), quote=True)
-    outlook = escape(_outlook_calendar_url(deadline, title, safe_url), quote=True)
-    ics = _calendar_data_url(deadline, title, safe_url)
-    filename = escape(_calendar_filename(title), quote=True)
-    deadline_en = f"Latest: {deadline.isoformat()}" if latest_session else deadline.isoformat()
-    deadline_cn = (
-        f"最晚时段截止：{date_zh(deadline)}"
-        if latest_session
-        else date_zh(deadline)
-    )
-    return (
-        f"{_bilingual(deadline_en, deadline_cn)}"
-        '<details class="cal"><summary data-i18n="calendar.add">Add to calendar</summary>'
-        f'<a href="{google}" target="_blank" rel="noopener">Google Calendar</a>'
-        f'<a href="{outlook}" target="_blank" rel="noopener">Outlook</a>'
-        f'<a href="{ics}" download="{filename}">Apple / .ics</a>'
-        "</details>"
-    )
-
-
-def _calendar_event(deadline: date, title: str, url: str) -> tuple[str, str]:
-    summary = f"Application deadline: {title}"
-    description = f"Apply by {deadline.isoformat()}." + (f" Source: {url}" if url else "")
-    return summary, description
-
-
-def _google_calendar_url(deadline: date, title: str, url: str) -> str:
-    summary, description = _calendar_event(deadline, title, url)
-    start = deadline.strftime("%Y%m%d")
-    end = (deadline + timedelta(days=1)).strftime("%Y%m%d")
-    params = {
-        "action": "TEMPLATE",
-        "text": summary,
-        "dates": f"{start}/{end}",
-        "details": description,
-    }
-    return "https://calendar.google.com/calendar/render?" + urlencode(params)
-
-
-def _outlook_calendar_url(deadline: date, title: str, url: str) -> str:
-    summary, description = _calendar_event(deadline, title, url)
-    params = {
-        "path": "/calendar/action/compose",
-        "rru": "addevent",
-        "subject": summary,
-        "startdt": deadline.isoformat(),
-        "enddt": (deadline + timedelta(days=1)).isoformat(),
-        "allday": "true",
-        "body": description,
-    }
-    return "https://outlook.live.com/calendar/0/deeplink/compose?" + urlencode(params)
-
-
-def _calendar_data_url(deadline: date, title: str, url: str) -> str:
-    start = deadline.strftime("%Y%m%d")
-    end = (deadline + timedelta(days=1)).strftime("%Y%m%d")
-    stamp = date.today().strftime("%Y%m%d")
-    uid = f"{start}-{_slug(title)}@research-seasonal-school-radar"
-    summary = _ics_text(f"Application deadline: {title}")
-    description = _ics_text(f"Apply by {deadline.isoformat()}. Source: {url}" if url else f"Apply by {deadline.isoformat()}.")
-    ics = "\r\n".join(
-        [
-            "BEGIN:VCALENDAR",
-            "VERSION:2.0",
-            "PRODID:-//Summa//EN",
-            "CALSCALE:GREGORIAN",
-            "METHOD:PUBLISH",
-            "BEGIN:VEVENT",
-            f"UID:{uid}",
-            f"DTSTAMP:{stamp}T000000Z",
-            f"DTSTART;VALUE=DATE:{start}",
-            f"DTEND;VALUE=DATE:{end}",
-            f"SUMMARY:{summary}",
-            f"DESCRIPTION:{description}",
-            "END:VEVENT",
-            "END:VCALENDAR",
-            "",
-        ]
-    )
-    return "data:text/calendar;charset=utf-8," + quote(ics)
-
-
-def _ics_text(value: str) -> str:
-    return (
-        value.replace("\\", "\\\\")
-        .replace("\n", "\\n")
-        .replace("\r", "")
-        .replace(",", "\\,")
-        .replace(";", "\\;")
-    )
-
-
-def _calendar_filename(title: str) -> str:
-    slug = _slug(title) or "deadline"
-    return f"{slug}-deadline.ics"
-
-
-def _slug(value: str) -> str:
-    lowered = value.lower()
-    chars = [char if char.isalnum() else "-" for char in lowered]
-    slug = "-".join(part for part in "".join(chars).split("-") if part)
-    return slug[:70]
-
-
-def _candidate_detail_filename(candidate: Candidate) -> str:
-    identity = candidate.identity_key.strip()
-    stable_value = identity or candidate.source_url or candidate.title
-    base = _slug(identity) if identity else _slug(candidate.title)
-    base = base or "opportunity"
-    digest = hashlib.sha1(stable_value.encode("utf-8")).hexdigest()[:8]
-    return f"{base}-{digest}.html"
-
-
-def _candidate_detail_href(candidate: Candidate) -> str:
-    return f"opportunities/{_candidate_detail_filename(candidate)}"
-
-
-def _candidate_status(candidate: Candidate) -> tuple[str, str]:
-    if candidate.fully_qualified:
-        return "Fully qualified", "qualified"
-    if is_high_quality(candidate):
-        return "High quality", "high-quality"
-    return "Found", "found"
-
-
-def _financial_summary_short(candidate: Candidate) -> str:
-    return candidate.financial_summary.replace(" · Apply on official page", "")
-
-
 def _parse_iso_date(value: Any) -> date | None:
     if isinstance(value, date):
         return value
@@ -1557,80 +1002,6 @@ def _parse_iso_date(value: Any) -> date | None:
         return date.fromisoformat(str(value))
     except ValueError:
         return None
-
-
-def _filters(
-    candidates: list[Candidate],
-    curated: list[dict[str, Any]] | None = None,
-) -> str:
-    topics = sorted(
-        {
-            topic
-            for values in [
-                *(candidate.topic_keywords for candidate in candidates),
-                *(_list_value(item.get("topics")) for item in (curated or [])),
-            ]
-            for topic in values
-            if topic.strip()
-        },
-        key=str.casefold,
-    )
-    topic_options = "".join(
-        f'<option value="{escape(topic.lower(), quote=True)}" data-label-en="{escape(topic, quote=True)}" '
-        f'data-label-zh="{escape(topic_zh(topic), quote=True)}">{escape(topic)}</option>'
-        for topic in topics
-    )
-    return f"""
-    <section class="filters" aria-label="Opportunity filters">
-      <div class="filter-group">
-        <label for="filter-search" data-i18n="filter.search">Search</label>
-        <input id="filter-search" type="search" placeholder="Title, organizer, location" data-i18n-placeholder="filter.search.placeholder">
-      </div>
-      <div class="filter-group">
-        <label for="filter-status" data-i18n="filter.status">Status</label>
-        <select id="filter-status">
-          <option value="" data-i18n="filter.all">All</option>
-          <option value="qualified" data-i18n="filter.status.qualified">Fully qualified</option>
-          <option value="high-quality" data-i18n="filter.status.high">High quality</option>
-          <option value="found" data-i18n="filter.status.found">Found</option>
-          <option value="curated" data-i18n="filter.status.curated">Curated</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="filter-topic" data-i18n="filter.topic">Topic</label>
-        <select id="filter-topic">
-          <option value="" data-i18n="filter.all">All</option>
-          {topic_options}
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="filter-funding" data-i18n="filter.funding">Financial Access</label>
-        <select id="filter-funding">
-          <option value="" data-i18n="filter.all">All</option>
-          <option value="funded" data-i18n="filter.funding.explicit">Explicit funding</option>
-          <option value="low-fee" data-i18n="filter.funding.low">Low / no fee</option>
-          <option value="unresolved" data-i18n="filter.funding.unresolved">Unresolved / high fee</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="filter-deadline" data-i18n="filter.deadline">Deadline</label>
-        <select id="filter-deadline">
-          <option value="" data-i18n="filter.all">All</option>
-          <option value="open" data-i18n="filter.deadline.open">Open</option>
-          <option value="uncertain" data-i18n="filter.deadline.uncertain">Uncertain</option>
-          <option value="closed" data-i18n="filter.deadline.closed">Closed</option>
-        </select>
-      </div>
-      <div class="filter-group">
-        <label for="filter-new" data-i18n="filter.fresh">Freshness</label>
-        <select id="filter-new">
-          <option value="" data-i18n="filter.all">All</option>
-          <option value="true" data-i18n="filter.new.today">New today</option>
-        </select>
-      </div>
-      <div class="count" id="filter-count" aria-live="polite"></div>
-    </section>
-"""
 
 
 def _row_attrs(candidate: Candidate, status: str | None = None) -> str:
@@ -1774,56 +1145,6 @@ def _region_priority_from_region(region: str) -> str:
     if lowered == "global":
         return "global"
     return "unclassified"
-
-
-def _filter_script() -> str:
-    return """
-  <script>
-    const controls = {
-      search: document.getElementById("filter-search"),
-      status: document.getElementById("filter-status"),
-      topic: document.getElementById("filter-topic"),
-      funding: document.getElementById("filter-funding"),
-      deadline: document.getElementById("filter-deadline"),
-      fresh: document.getElementById("filter-new"),
-      count: document.getElementById("filter-count")
-    };
-    const rows = Array.from(document.querySelectorAll("tbody tr[data-status]"));
-
-    function matches(row) {
-      const search = controls.search.value.trim().toLowerCase();
-      if (search && !row.dataset.search.includes(search)) return false;
-      if (controls.status.value && row.dataset.status !== controls.status.value) return false;
-      if (controls.funding.value && row.dataset.funding !== controls.funding.value) return false;
-      if (controls.deadline.value && row.dataset.deadline !== controls.deadline.value) return false;
-      if (controls.fresh.value && row.dataset.new !== controls.fresh.value) return false;
-      if (controls.topic.value) {
-        const topics = row.dataset.topics.split("|");
-        if (!topics.includes(controls.topic.value.toLowerCase())) return false;
-      }
-      return true;
-    }
-
-    function applyFilters() {
-      let visible = 0;
-      for (const row of rows) {
-        const show = matches(row);
-        row.hidden = !show;
-        if (show) visible += 1;
-      }
-      const lang = document.documentElement.getAttribute("lang") || "en";
-      controls.count.textContent = lang === "zh" ? `显示 ${visible} 条` : `${visible} shown`;
-    }
-
-    for (const control of Object.values(controls)) {
-      if (control && control !== controls.count) {
-        control.addEventListener("input", applyFilters);
-      }
-    }
-    document.addEventListener("summa:languagechange", applyFilters);
-    applyFilters();
-  </script>
-"""
 
 
 def _analytics_snippet(site_config: dict[str, Any]) -> str:

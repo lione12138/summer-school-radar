@@ -51,6 +51,13 @@ Key modules:
 - `src/research_school_radar/rank.py` — scoring and deduplication.
 - `src/research_school_radar/report.py` — Markdown report output.
 - `src/research_school_radar/site.py` — coordinates static site generation.
+- `src/research_school_radar/site_detail.py` — opportunity detail-page rendering.
+- `src/research_school_radar/site_sources_page.py` — source-registry page rendering.
+- `src/research_school_radar/site_components.py` — shared bilingual, duration, deadline, and evidence components.
+- `src/research_school_radar/site_calendar.py` — Google, Outlook, and ICS deadline links.
+- `src/research_school_radar/site_filters.py` — opportunity filters and browser-side filtering script.
+- `src/research_school_radar/site_layout.py` — shared navigation and footer layout.
+- `src/research_school_radar/site_paths.py` — stable detail-page paths.
 - `src/research_school_radar/site_styles.py` — CSS constants.
 - `src/research_school_radar/site_i18n.py` — language dictionaries and browser-side i18n script.
 - `src/research_school_radar/site_seo.py` — sitemap, robots, JSON-LD, canary, watermark helpers.

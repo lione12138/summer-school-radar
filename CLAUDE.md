@@ -80,6 +80,8 @@ AI branch constraints:
 - `src/research_school_radar/candidate_io.py` — shared `Candidate` JSON serialization/deserialization.
 - `src/research_school_radar/session_extraction.py` — source-independent extraction of explicitly labelled multi-session schedules.
 - `src/research_school_radar/programme_sessions.py` — multi-session duration/date presentation shared by reports, RSS, and HTML.
+- `src/research_school_radar/site_components.py`, `site_calendar.py`, `site_filters.py`, `site_layout.py`, and `site_paths.py` — reusable site presentation primitives.
+- `src/research_school_radar/site_detail.py` and `site_sources_page.py` — dedicated detail and source-page renderers; `site.py` remains the build coordinator.
 - `src/research_school_radar/urls.py` — validates public external URLs before rendering links.
 - `src/research_school_radar/atomic_io.py` — atomically writes generated text artifacts with transient lock retries.
 - `src/research_school_radar/scan_health.py` — non-empty-source and 70% combined page/direct-collector coverage gate plus scan manifests.
