@@ -1003,6 +1003,64 @@ def test_accommodation_window_not_used_as_event_dates() -> None:
     assert ("2026-05-05", "2026-05-31") not in spans  # the hotel window is dropped
 
 
+def test_generic_multi_session_programme_is_structured_without_site_adapter() -> None:
+    page = _page(
+        """
+        Applied Methods Summer School offers scholarships and takes place in person.
+        Session 1: 6 July 2027 to 17 July 2027.
+        Session 2: 20 July 2027 to 31 July 2027.
+        Session 3: 3 August 2027 to 14 August 2027.
+        Session 1 application deadline: 1 June 2027.
+        Session 2 application deadline: 15 June 2027.
+        Session 3 application deadline: 1 July 2027.
+        Topics include hydrology and remote sensing. Location: Utrecht, Netherlands.
+        """,
+        title="Applied Methods Summer School",
+    )
+
+    candidate = extract_candidate(page, PROFILE, as_of=date(2027, 5, 1))
+
+    assert candidate is not None
+    assert candidate.start_date == date(2027, 7, 6)
+    assert candidate.end_date == date(2027, 8, 14)
+    assert candidate.duration_days == 12
+    assert [session.name for session in candidate.sessions] == ["Session 1", "Session 2", "Session 3"]
+    assert [session.application_deadline for session in candidate.sessions] == [
+        date(2027, 6, 1),
+        date(2027, 6, 15),
+        date(2027, 7, 1),
+    ]
+
+
+def test_generic_sessions_accept_weekdays_and_shared_end_year() -> None:
+    from research_school_radar.session_extraction import extract_programme_sessions
+
+    sessions = extract_programme_sessions(
+        "Block 1: Monday 29 June to Friday 3 July 2026. "
+        "Block 2: Monday 6 July to Friday 17 July 2026."
+    )
+
+    assert [(item.name, item.start_date, item.end_date) for item in sessions] == [
+        ("Block 1", date(2026, 6, 29), date(2026, 7, 3)),
+        ("Block 2", date(2026, 7, 6), date(2026, 7, 17)),
+    ]
+
+
+def test_unlabelled_event_calendar_is_not_promoted_to_multi_session_programme() -> None:
+    page = _page(
+        """
+        Research Summer School event calendar with scholarships.
+        Opening lecture: 6 July 2027 to 7 July 2027.
+        Methods workshop: 20 July 2027 to 21 July 2027.
+        Closing symposium: 3 August 2027 to 4 August 2027.
+        Application deadline: 1 June 2027.
+        """,
+        title="Research Summer School event calendar",
+    )
+
+    assert extract_candidate(page, PROFILE, as_of=date(2027, 5, 1)) is None
+
+
 def test_allcaps_banner_titles_fall_back_to_page_title() -> None:
     from research_school_radar.extract import _extract_title
     from research_school_radar.models import Page, Source

@@ -9,6 +9,7 @@ from dateutil import parser as date_parser
 from .adapters import resolve_overrides
 from .models import Candidate, Page, Source
 from .parse import OPPORTUNITY_TERMS, has_programme_signal, is_excluded_programme, is_workshop_title
+from .session_extraction import extract_programme_sessions
 from .utils import clean_space, evidence_window, first_match, sanitize_location
 
 
@@ -162,10 +163,19 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
             overrides.setdefault("jsonld_name", event["name"])
 
     ranges = _date_ranges(text)
-    adapter_dates = overrides.get("start_date") is not None
-    start = overrides.get("start_date") or (ranges[0][0] if ranges else None)
-    end = overrides.get("end_date") or (ranges[0][1] if ranges else None)
-    duration_evidence = ranges[0][2] if ranges else str(overrides.get("duration_evidence", ""))
+    sessions = list(overrides.get("sessions", [])) or extract_programme_sessions(text)
+    structured_dates = overrides.get("start_date") is not None or bool(sessions)
+    session_start = min((session.start_date for session in sessions), default=None)
+    session_end = max((session.end_date for session in sessions), default=None)
+    start = overrides.get("start_date") or session_start or (ranges[0][0] if ranges else None)
+    end = overrides.get("end_date") or session_end or (ranges[0][1] if ranges else None)
+    if sessions:
+        duration_evidence = str(overrides.get("duration_evidence", "")) or "; ".join(
+            f"{session.name}: {session.start_date.isoformat()} to {session.end_date.isoformat()}"
+            for session in sessions
+        )
+    else:
+        duration_evidence = ranges[0][2] if ranges else str(overrides.get("duration_evidence", ""))
     deadlines = _all_deadlines(text, event_start=start)
     chosen = _select_deadline(deadlines)
     override_deadline = overrides.get("deadline")
@@ -188,7 +198,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     # clear date range or a governing deadline. Three or more event ranges is a
     # calendar even if it also quotes a deadline; and with no deadline at all only
     # an exact single range looks like one opportunity.
-    event_count = 1 if adapter_dates else max(len(ranges), len(jsonld))
+    event_count = 1 if structured_dates else max(len(ranges), len(jsonld))
     supplemental_application_page = _applications_not_open(text) or bool(_extract_fee(text))
     if event_count >= 3 or (deadline is None and event_count != 1 and not supplemental_application_page):
         return None
@@ -227,7 +237,6 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     # location) bypasses it, so clean the final value here too.
     raw_location = overrides.get("location") or _extract_location(page.html, text, page.source.region)
     location = sanitize_location(raw_location, fallback=raw_location)
-    sessions = list(overrides.get("sessions", []))
     duration_days = (
         max((session.duration_days for session in sessions), default=None)
         if sessions

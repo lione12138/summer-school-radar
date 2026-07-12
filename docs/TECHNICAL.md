@@ -464,6 +464,7 @@ maintainer review against official pages is still required for curation.
 - `src/research_school_radar/ai_healthcheck.py` checks the configured LLM provider.
 - `src/research_school_radar/scan_health.py` rejects zero-source real scans, enforces 70% success across page and direct-collector attempts, and writes scan manifests.
 - `src/research_school_radar/snapshot_validation.py` requires schema-v2 display/scanner lists and rejects an unexplained scanner-record drop below 35% of a sufficiently large previous snapshot.
+- `src/research_school_radar/session_extraction.py` conservatively detects explicitly labelled sessions and their deadlines on any source page; it requires at least two distinct labelled ranges so ordinary event calendars are not promoted.
 - `src/research_school_radar/programme_sessions.py` formats structured session dates and per-session deadlines consistently across HTML, reports, and RSS.
 - `src/research_school_radar/ai_pipeline.py` owns semantic ranking, DeepSeek configuration, follow-up orchestration, and AI sidecar generation so `cli.py` remains an entry-point coordinator.
 - `src/research_school_radar/ai_output_validation.py` protects production snapshots from empty semantic/DeepSeek output or failed build-time Chinese translation.

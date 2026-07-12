@@ -111,7 +111,7 @@ Most summer school lists are plain link collections. This project is different:
 - trusted source registry instead of random web crawling
 - one `config/sources.yaml` registry for both page sources and structured direct collectors
 - structured extraction for deadline, funding, duration, mode, eligibility, and location
-- explicit multi-session schedules, so an outer programme window is never presented as one continuous course
+- automatic, explicitly labelled multi-session schedules, so an outer programme window is never presented as one continuous course
 - hard filters with visible failed conditions
 - static public website plus Markdown and JSON outputs
 - residential-network collection on Monday/Wednesday/Friday, daily deadline-status refreshes, and one GitHub Actions writer for GitHub Pages

@@ -63,6 +63,7 @@ Key modules:
 - `src/research_school_radar/storage.py` — seen-state JSON handling.
 - `src/research_school_radar/publication.py` — shared public/high-quality/found display classification.
 - `src/research_school_radar/candidate_io.py` — shared `Candidate` JSON serialization/deserialization.
+- `src/research_school_radar/session_extraction.py` — conservative, source-independent extraction of explicitly labelled multi-session schedules and per-session deadlines.
 - `src/research_school_radar/programme_sessions.py` — shared multi-session duration/date labels for reports, RSS, and the site.
 - `src/research_school_radar/urls.py` — validates public external URLs before rendering links.
 - `src/research_school_radar/atomic_io.py` — atomically writes generated text artifacts with transient lock retries.
