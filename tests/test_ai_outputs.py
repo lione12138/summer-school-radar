@@ -6,7 +6,6 @@ from datetime import date
 from research_school_radar.llm_client import LLMClientConfig
 from research_school_radar.llm_extract import AI_EXTRACTION_SCHEMA_VERSION, write_llm_sidecars
 from research_school_radar.semantic import SemanticChunk, build_semantic_payload
-from research_school_radar.site import render_ai_review_page
 
 
 def test_semantic_sidecar_schema_is_stable_and_preview_only() -> None:
@@ -73,36 +72,3 @@ def test_ai_extractions_sidecar_schema_is_stable(tmp_path) -> None:
     assert payload["warnings"] == ["warning"]
     assert payload["items"] == [item]
     assert "raw page text" not in json.dumps(payload)
-
-
-def test_ai_review_page_escapes_html_and_truncates_evidence() -> None:
-    html = render_ai_review_page(
-        [
-            {
-                "page_url": "https://example.org/school?x=<tag>",
-                "page_title": "<School>",
-                "source_name": "Example",
-                "semantic_score_max": 0.9,
-                # Evidence IDs/texts are rendered on the Matched table; the
-                # Missed table intentionally shows a reduced record without them.
-                "matched_existing_candidate": True,
-                "existing_candidate_title": "<School>",
-                "validated_confidence": "low",
-                "validation_warnings": ["<script>alert(1)</script>"],
-                "llm_extraction": {
-                    "fee": {
-                        "value": "EUR 300",
-                        "evidence_ids": ["E1"],
-                        "resolved_evidence_texts": ["very long text " * 80],
-                    },
-                    "chinese_summary": {"value": "人工复核线索", "evidence_ids": [], "resolved_evidence_texts": []},
-                },
-            }
-        ]
-    )
-
-    assert "<script>alert(1)</script>" not in html
-    assert "&lt;script&gt;alert(1)&lt;/script&gt;" in html
-    assert "x=&lt;tag&gt;" in html
-    assert "very long text " * 40 not in html
-    assert "E1" in html

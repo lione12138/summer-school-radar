@@ -399,7 +399,6 @@ def _linked_source(page: Page, url: str, *, note: str = "AI follow-up link") -> 
         region=source.region,
         source_type=source.source_type,
         keywords=list(source.keywords),
-        scan_frequency=source.scan_frequency,
         notes=f"{note} from {page.url}",
         enabled=True,
         blocked_link_domains=list(source.blocked_link_domains),

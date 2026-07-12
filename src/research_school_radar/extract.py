@@ -139,7 +139,7 @@ SUPPORTED_FEE_CURRENCIES = {
 }
 
 
-def extract_candidate(page: Page, profile: dict) -> Candidate | None:
+def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -> Candidate | None:
     if not _has_opportunity_signal(page.text):
         return None
     if is_excluded_programme(page.text):
@@ -227,7 +227,12 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
     # location) bypasses it, so clean the final value here too.
     raw_location = overrides.get("location") or _extract_location(page.html, text, page.source.region)
     location = sanitize_location(raw_location, fallback=raw_location)
-    duration_days = _duration_days(start, end)
+    sessions = list(overrides.get("sessions", []))
+    duration_days = (
+        max((session.duration_days for session in sessions), default=None)
+        if sessions
+        else _duration_days(start, end)
+    )
 
     # Transparent confidence: the fraction of the four high-risk fields that were
     # resolved. It measures how sure we are of the extraction, not how good the
@@ -253,7 +258,7 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
         end_date=end,
         duration_days=duration_days,
         deadline=deadline,
-        deadline_status=_deadline_status_from_text(text, deadline),
+        deadline_status=_deadline_status_from_text(text, deadline, as_of=as_of),
         funding_available=funding_available,
         funding_type=funding_types,
         funding_evidence=funding_evidence,
@@ -267,6 +272,7 @@ def extract_candidate(page: Page, profile: dict) -> Candidate | None:
         summary=_summary(text),
         recommendation_reason="",
         risk_points="",
+        sessions=sessions,
         deadline_evidence=deadline_evidence,
         duration_evidence=duration_evidence,
         mode_evidence=_mode_evidence(text),
@@ -851,18 +857,23 @@ def _mode_evidence(text: str) -> str:
     return ""
 
 
-def _deadline_status(deadline: date | None) -> str:
+def _deadline_status(deadline: date | None, *, as_of: date | None = None) -> str:
     if deadline is None:
         return "uncertain"
-    return "open" if deadline >= date.today() else "closed"
+    return "open" if deadline >= (as_of or date.today()) else "closed"
 
 
-def _deadline_status_from_text(text: str, deadline: date | None) -> str:
+def _deadline_status_from_text(
+    text: str,
+    deadline: date | None,
+    *,
+    as_of: date | None = None,
+) -> str:
     if _applications_closed(text):
         return "closed"
     if _applications_not_open(text):
         return "not_open"
-    return _deadline_status(deadline)
+    return _deadline_status(deadline, as_of=as_of)
 
 
 def _duration_days(start: date | None, end: date | None) -> int | None:

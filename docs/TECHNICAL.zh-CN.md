@@ -19,7 +19,7 @@ python -m research_school_radar.cli scan --offline-sample
 
 - `reports/YYYY-MM-DD.md`：Markdown 报告
 - `site/index.html`：静态网页
-- `site/candidates.json`：扫描器候选结果
+- `site/candidates.json`：schema v2 候选快照；`opportunities` 保存首页展示副本，`scanner_opportunities` 隔离保存 RSS 使用的确定性扫描记录
 - `site/curated.json`：人工维护的高可信记录
 - `site/feed.xml`：RSS feed
 
@@ -39,7 +39,7 @@ python -m research_school_radar.cli scan --refresh-http-cache
 
 - 多学科可信来源扫描
 - 来源页二级候选链接跟进
-- 直接 JSON/API collector，例如 IHE Delft、ELLIS
+- 直接 JSON/API collector，例如 IHE Delft、ELLIS；是否启用统一由 `config/sources.yaml` 的 `collector` 字段控制
 - 规则抽取 title、location、dates、deadline、funding、mode、fee、eligibility 等字段
 - 高风险字段 evidence 保留和抽取置信度
 - 硬筛选：fully qualified 与 near-match 分离
@@ -55,6 +55,8 @@ python -m research_school_radar.cli scan --refresh-http-cache
 - 可选 Cloudflare Web Analytics / GoatCounter
 - 可选 semantic ranking：`BAAI/bge-m3`
 - 可选 DeepSeek 证据抽取与中文展示文案生成
+- 条件 HTTP 缓存、14 天 stale-if-error 回退、综合来源覆盖门槛和快照数量保持校验
+- 本机采集、快照提交与 GitHub Actions 单写入者发布相分离
 - 模块化测试文件：`test_extract.py`、`test_site.py`、`test_rank.py`、`test_collect.py`、`test_report.py`、`test_review.py`、`test_storage.py` 等
 
 ## 核心工作流
@@ -97,33 +99,44 @@ pages
 
 AI 分支不会覆盖扫描器原始 `Candidate` 对象。它只会在生成首页时对候选副本填补缺失字段，然后重新运行同一套硬筛选和排序。Markdown 报告、RSS、seen-state 和 curated 数据仍以规则候选为准。
 
+结构化 collector 生成的记录使用 `Candidate.identity_key` 作为稳定身份。去重时它优先于 URL、标题和日期相似度，并贯穿 candidate JSON、seen-state、RSS GUID 和详情页文件名。
+
+`config/sources.yaml` 同时控制普通页面来源与直接 collector。只有启用且声明了 `collector` 的来源才会调用对应的 `api_sources.py` 收集器，不存在另一套隐藏的硬编码启用列表。
+
 ## 关键文件
 
 - `src/research_school_radar/cli.py`：命令入口
 - `src/research_school_radar/collect.py`：抓取来源页和详情页，普通请求使用条件 HTTP 缓存
-- `src/research_school_radar/http_cache.py`：保存正文、最终 URL、`ETag`、`Last-Modified`
+- `src/research_school_radar/http_cache.py`：保存正文、最终 URL、`ETag`、`Last-Modified`；请求异常、HTTP 429 或 5xx 时可回退到不超过 14 天的缓存，404 和过旧缓存不会回退
 - `src/research_school_radar/parse.py`：识别候选链接，跳过 PDF、图片、Office 文件和被屏蔽域名
 - `src/research_school_radar/extract.py`：规则抽取结构化字段
 - `src/research_school_radar/filter.py`：硬筛，失败项进入 `failed_hard_conditions`
-- `src/research_school_radar/rank.py`：解释性打分和去重
+- `src/research_school_radar/rank.py`：解释性打分和去重；优先使用采集器提供的稳定身份，在事实合并后重新硬筛和评分
 - `src/research_school_radar/report.py`：生成 Markdown 报告
 - `src/research_school_radar/site.py`：协调静态网站生成
 - `src/research_school_radar/site_styles.py`：CSS 常量
 - `src/research_school_radar/site_i18n.py`：中英文词典、前端语言切换脚本、翻译缓存辅助
 - `src/research_school_radar/site_seo.py`：sitemap、robots、JSON-LD、canary、watermark
 - `src/research_school_radar/site_feed.py`：RSS feed 渲染
+- `src/research_school_radar/urls.py`：外链进入 HTML、JSON-LD 或 RSS 前的安全校验
+- `src/research_school_radar/atomic_io.py`：原子替换生成文本，并重试 Windows 短暂文件锁
 - `src/research_school_radar/storage.py`：维护 `data/seen.json`
 - `src/research_school_radar/semantic.py`：可选语义 chunk sidecar
 - `src/research_school_radar/evidence_snippets.py`：为 LLM 提供短证据片段
 - `src/research_school_radar/ai_cache.py`：可选 AI 分支缓存
 - `src/research_school_radar/llm_client.py`、`llm_extract.py`、`llm_validate.py`：DeepSeek 调用、抽取和验证
 - `src/research_school_radar/ai_healthcheck.py`：检查 DeepSeek 配置是否可用
+- `src/research_school_radar/scan_health.py`：拒绝未尝试任何来源的真实扫描，要求普通页面与直连 collector 合计至少 70% 成功，并生成扫描 manifest
+- `src/research_school_radar/snapshot_validation.py`：要求 schema v2 的展示/扫描记录均非空，并在旧快照规模足够大时阻止扫描记录无解释地跌到 35% 以下
+- `src/research_school_radar/programme_sessions.py`：统一生成网页、报告和 RSS 使用的多时段日期及分时段截止日期文案
+- `src/research_school_radar/ai_pipeline.py`：集中管理 semantic 排序、DeepSeek 配置、补页编排与 AI sidecar 生成，使 `cli.py` 保持为入口协调器
+- `src/research_school_radar/ai_output_validation.py`：AI 快照替换上一个可用快照前，检查 semantic、DeepSeek 抽取与构建时中文翻译是否可用
 - `src/research_school_radar/ai_evaluate.py`：生成真人标注 CSV 模板
 
 ## 配置文件
 
 - `config/profile.yaml`：主题、硬筛条件、资金可及性阈值、参考汇率、地区优先级和排除项目类型
-- `config/sources.yaml`：可信来源列表，可设置 `enabled: false`、`render: true` 和 `blocked_link_domains`
+- `config/sources.yaml`：可信来源列表，可设置 `enabled: false`、`render: true`、`blocked_link_domains` 和结构化直连收集器 `collector`
 - `config/queries.yaml`：可选 controlled discovery 查询
 - `config/site.yaml`：可选 analytics 配置
 - `config/ai.yaml`：semantic ranking、DeepSeek 抽取、资源上限和 AI cache 配置
@@ -195,6 +208,9 @@ python -m research_school_radar.cli scan --enable-semantic --enable-llm-extracti
 
 DeepSeek 收到的是筛选后的短证据片段，不是完整网页，也没有浏览器控制权。模型输出必须引用 evidence IDs；`llm_validate.py` 会检查 ID 是否存在、字段是否有对应上下文、日期/费用/closed 语言是否有明显冲突。带 validation warning 的字段不会用于首页 merge。
 
+生产自动化还有第二层构建级门槛：
+`python -m research_school_radar.ai_output_validation --site-dir site` 必须确认存在可用 semantic chunks 和至少一条通过证据校验的 DeepSeek 抽取，AI 运行才可以替换 last-known-good 快照。
+
 AI 结果保存在：
 
 - `site/ai_extractions.json`
@@ -211,7 +227,7 @@ AI 结果保存在：
 
 这个页面列出所有 configured sources，包括 enabled 和 disabled 来源、layer、region、source_type、keywords、notes，以及 blocked linked domains。它的目的不是展示“我们爬了全网”，而是明确项目维护的是 trusted source registry。
 
-公开机会表格不展示 `region priority` 和 `failed hard condition` 这类内部字段。它们仍保留在 `site/candidates.json` 中供维护者检查和调试。Title 本身直接链接到官方页面。
+公开机会表格不展示 `region priority` 和 `failed hard condition` 这类内部字段。它们仍保留在 `site/candidates.json` 中供维护者检查和调试。扫描结果标题链接到站内详情页；只有通过 HTTP(S) 安全校验的外链才会显示官网操作按钮。
 
 ## Curated Workflow
 
@@ -230,9 +246,25 @@ scanner output
 
 ## 发布工作流
 
-每日规则扫描由维护者电脑上的 `scripts/scan_and_publish.ps1` 运行。使用住宅网络能避开一部分 GitHub-hosted runner 无法访问的官方站点。脚本会把 report/state 变更提交到 `main`，并把 `site/` 发布到 `gh-pages`。
+采集与发布已经拆开。维护者电脑每天运行 `scripts/scan_and_publish.ps1`，利用住宅网络访问 GitHub-hosted runner 容易受限的官方站点。周一、周三、周五执行 semantic + DeepSeek 辅助完整扫描；只有严格 DeepSeek healthcheck、`scan_health.py` 的综合来源覆盖门槛、`ai_output_validation.py` 以及 `snapshot_validation.py` 的 schema/数量保持校验都通过，才会替换 last-known-good 快照。
 
-`.github/workflows/ai_scan.yml` 提供每周一次或手动触发的 AI 辅助扫描。它读取 GitHub repository secrets 中的 `DEEPSEEK_API_KEY`，运行 `bge-m3`、受限补页和 DeepSeek 证据抽取，再把经过验证、并重新执行硬筛选后的首页发布到同一个 `gh-pages` 分支。
+其他日期执行：
+
+```powershell
+python -m research_school_radar.cli refresh-status --candidates-json data/latest_candidates.json
+```
+
+这个过程只重新计算 deadline/open/closed 等日期状态，不访问来源页面，也不覆盖来源扫描快照；GitHub Pages 的每日任务会执行同样的无抓取重建并发布。三份版本化输入快照是：
+
+- `data/latest_candidates.json`
+- `data/latest_sources.json`
+- `data/latest_scan_manifest.json`
+
+完整本机扫描的同一次提交还可以包含更新后的 `seen.json`、review queue 和带日期的 Markdown 报告，用于保留扫描历史与审计记录；它们不是另一条 Pages 发布通道。
+
+本机任务不写 `gh-pages`。`.github/workflows/ai_scan.yml` 是 `gh-pages` 的唯一写入者，并使用单一 publisher concurrency group 防止并发发布。它每天从已提交快照执行无抓取的 `refresh-status`，再把生成的 `site/` 发布到 Pages。
+
+云端 AI 扫描只支持手动触发。手动选择 `ai` mode 时，workflow 才读取 GitHub repository secrets 中的 `DEEPSEEK_API_KEY`，运行 `bge-m3`、受限补页和 DeepSeek 证据抽取，通过 `ai_output_validation.py` 与 `snapshot_validation.py` 后保存快照，并由同一个单写入者流程发布。
 
 可选 secret：
 

@@ -13,11 +13,11 @@ class Source:
     region: str
     source_type: str
     keywords: list[str] = field(default_factory=list)
-    scan_frequency: str = "every_run"
     notes: str = ""
     enabled: bool = True
     blocked_link_domains: list[str] = field(default_factory=list)
     render: bool = False
+    collector: str = ""
 
 
 @dataclass(slots=True)
@@ -28,6 +28,20 @@ class Page:
     html: str
     source: Source
     fetched_at: date
+
+
+@dataclass(frozen=True, slots=True)
+class ProgrammeSession:
+    """One selectable teaching block inside a multi-session programme."""
+
+    name: str
+    start_date: date
+    end_date: date
+    application_deadline: date | None = None
+
+    @property
+    def duration_days(self) -> int:
+        return (self.end_date - self.start_date).days + 1
 
 
 @dataclass(slots=True)
@@ -57,6 +71,11 @@ class Candidate:
     summary: str
     recommendation_reason: str
     risk_points: str
+    sessions: list[ProgrammeSession] = field(default_factory=list)
+    # Stable opportunity identity supplied by structured collectors. This is
+    # deliberately separate from source/application URLs: one catalogue page
+    # can describe many distinct opportunities.
+    identity_key: str = ""
     financial_access_status: str = "unresolved"
     failed_hard_conditions: list[str] = field(default_factory=list)
     score: float = 0.0
@@ -72,6 +91,8 @@ class Candidate:
     # canonical evidence; these fields are presentation-only and may be filled
     # from the translation cache or an optional translation provider.
     title_zh: str = ""
+    organizer_zh: str = ""
+    location_zh: str = ""
     summary_zh: str = ""
     eligibility_zh: str = ""
     recommendation_reason_zh: str = ""
@@ -91,10 +112,22 @@ class Candidate:
             return True
         if self.deadline is not None:
             return self.deadline < today
-        event_start = self.start_date or self.end_date
+        event_start = self.status_reference_start
         if event_start is not None:
             return event_start < today
         return False
+
+    @property
+    def status_reference_start(self) -> date | None:
+        """Start used when no explicit deadline exists.
+
+        A multi-session programme remains relevant while at least one selectable
+        session has not started; using the outer programme start would close it
+        as soon as the first optional block begins.
+        """
+        if self.sessions:
+            return max(session.start_date for session in self.sessions)
+        return self.start_date or self.end_date
 
     @property
     def fully_qualified(self) -> bool:

@@ -13,7 +13,8 @@ from .llm_client import BaseLLMClient, LLMClientConfig
 from .llm_validate import reconcile_temporal_status, validate_llm_extraction
 from .models import Candidate
 from .semantic import SemanticChunk, semantic_page_matches_candidate
-from .utils import clean_space, write_text_atomic
+from .atomic_io import write_text_atomic
+from .utils import clean_space
 
 
 AI_EXTRACTION_SCHEMA_VERSION = "v7-follow-up-evidence"

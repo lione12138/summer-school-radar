@@ -7,7 +7,8 @@ from typing import Any, Sequence
 
 from .models import Page
 from .semantic import SemanticChunk
-from .utils import clean_space, content_hash, write_text_atomic
+from .atomic_io import write_text_atomic
+from .utils import clean_space, content_hash
 
 
 @dataclass(slots=True)

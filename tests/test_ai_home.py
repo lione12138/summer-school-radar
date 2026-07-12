@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+
 from research_school_radar.ai_home import merge_ai_for_homepage
 from research_school_radar.extract import sample_candidate
 from research_school_radar.filter import apply_hard_filters
@@ -80,6 +82,27 @@ def test_matched_ai_fields_fill_candidate_and_recompute_qualification() -> None:
     assert candidate.deadline is None
 
 
+def test_write_site_persists_ai_enrichment_only_in_display_records(tmp_path) -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.source_url = "https://example.org/school"
+    candidate.application_link = candidate.source_url
+    candidate.deadline = None
+    candidate.deadline_status = "uncertain"
+    candidate.funding_available = None
+    candidate.funding_type = []
+    candidate.funding_evidence = ""
+    candidate.fee = ""
+    candidate.fee_eur = None
+    candidate = apply_hard_filters(candidate, PROFILE)
+
+    write_site([candidate], [], tmp_path, ai_items=[_item(candidate.source_url)], profile=PROFILE)
+
+    payload = json.loads((tmp_path / "candidates.json").read_text(encoding="utf-8"))
+    assert payload["opportunities"][0]["deadline"] == "2027-04-15"
+    assert payload["scanner_opportunities"][0]["deadline"] is None
+    assert "2027-04-15" not in (tmp_path / "feed.xml").read_text(encoding="utf-8")
+
+
 def test_field_warning_prevents_ai_deadline_from_qualifying_candidate() -> None:
     candidate = sample_candidate(PROFILE)
     candidate.source_url = "https://example.org/warned"
@@ -120,3 +143,8 @@ def test_write_site_renders_ai_result_in_existing_tables(tmp_path) -> None:
     assert "2027-04-15" in html
     assert "ai-review.html" not in html
     assert not (tmp_path / "ai-review.html").exists()
+    payload = json.loads((tmp_path / "candidates.json").read_text(encoding="utf-8"))
+    assert [item["title"] for item in payload["opportunities"]] == ["AI Research Summer School"]
+    assert payload["scanner_opportunities"] == []
+    # Homepage copies may be AI-enriched, but RSS remains scanner/curated only.
+    assert "AI Research Summer School" not in (tmp_path / "feed.xml").read_text(encoding="utf-8")

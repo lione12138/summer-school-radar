@@ -9,15 +9,20 @@ maps each record straight to a :class:`Candidate` — often better data than
 page scraping (exact dates, deadline, price) and no browser.
 
 Each collector returns ``(candidates, errors)`` and never raises, so a failing
-source can never abort the scan.
+source can never abort the scan. Snapshot publishers can additionally request
+per-collector outcomes without changing that long-standing two-value return
+contract.
 """
 
 from __future__ import annotations
 
+import json
 import re
+from dataclasses import dataclass
 from datetime import date
-from typing import Any, Callable
-from urllib.parse import urljoin, urlparse
+from hashlib import sha256
+from typing import Any, Callable, Sequence
+from urllib.parse import urlencode, urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -31,9 +36,9 @@ from .extract import (
     _target_level,
     _topic_in_text,
 )
+from .http_cache import HttpCache, get_with_cache
 from .models import Candidate
 from .parse import is_workshop_title
-from .render import render_texts
 from .render import render_page_data
 from .utils import clean_space
 
@@ -49,18 +54,54 @@ _IHE_DELFT_URL = "https://www.un-ihe.org/api/v1/dev/educator/overview/products"
 _IHE_DELFT_LISTING = "https://www.un-ihe.org/short-courses"
 
 
-def collect_api_candidates(profile: dict) -> tuple[list[Candidate], list[str]]:
+@dataclass(frozen=True, slots=True)
+class CollectorOutcome:
+    """Health result for one configured direct-collector attempt."""
+
+    name: str
+    succeeded: bool
+    candidate_count: int
+    errors: tuple[str, ...] = ()
+
+
+def collect_api_candidates(
+    profile: dict,
+    collector_names: Sequence[str] | None = None,
+    *,
+    http_cache: HttpCache | None = None,
+    outcomes: list[CollectorOutcome] | None = None,
+) -> tuple[list[Candidate], list[str]]:
     candidates: list[Candidate] = []
     errors: list[str] = []
-    for collector in _COLLECTORS:
+    names = list(collector_names) if collector_names is not None else list(_COLLECTORS)
+    for name in dict.fromkeys(names):
+        collector = _COLLECTORS.get(name)
+        if collector is None:
+            error = f"unknown_api_collector:{name}"
+            errors.append(error)
+            if outcomes is not None:
+                outcomes.append(CollectorOutcome(name=name, succeeded=False, candidate_count=0, errors=(error,)))
+            continue
         try:
-            found, collector_errors = collector(profile)
+            found, collector_errors = collector(profile, http_cache)
         except Exception as exc:  # noqa: BLE001 - an API source must not abort the scan.
             candidates_name = getattr(collector, "__name__", "api source")
-            errors.append(f"{candidates_name}: {exc}")
+            error = f"{candidates_name}: {exc}"
+            errors.append(error)
+            if outcomes is not None:
+                outcomes.append(CollectorOutcome(name=name, succeeded=False, candidate_count=0, errors=(error,)))
             continue
         candidates.extend(found)
         errors.extend(collector_errors)
+        if outcomes is not None:
+            outcomes.append(
+                CollectorOutcome(
+                    name=name,
+                    succeeded=not collector_errors,
+                    candidate_count=len(found),
+                    errors=tuple(str(error) for error in collector_errors),
+                )
+            )
     return candidates, errors
 
 
@@ -89,16 +130,17 @@ def _pick_edition(editions: list[dict]) -> dict | None:
     return upcoming[0][1] if upcoming else None
 
 
-def _ihe_delft(profile: dict) -> tuple[list[Candidate], list[str]]:
+def _ihe_delft(profile: dict, http_cache: HttpCache | None = None) -> tuple[list[Candidate], list[str]]:
+    request_url = f"{_IHE_DELFT_URL}?{urlencode({'Type': 'on-campus', 'Page': 0, 'Size': 100})}"
     try:
-        response = requests.get(
-            _IHE_DELFT_URL,
-            params={"Type": "on-campus", "Page": 0, "Size": 100},
+        response = get_with_cache(
+            request_url,
             headers=_HEADERS,
             timeout=20,
+            cache=http_cache,
         )
-        response.raise_for_status()
-        products = response.json().get("products", [])
+        payload = json.loads(response.text)
+        products = payload.get("products", []) if isinstance(payload, dict) else []
     except (requests.RequestException, ValueError) as exc:
         return [], [f"IHE Delft API: {exc}"]
 
@@ -159,6 +201,7 @@ def _ihe_candidate(product: dict, preferred: list[str], profile: dict) -> Candid
         summary=clean_space(str(product.get("introduction", "")))[:280],
         recommendation_reason="",
         risk_points="",
+        identity_key=_ihe_identity_key(product, edition, name, start, end),
         deadline_evidence=f"IHE Delft course catalogue API: applications close {deadline.isoformat()}"
         if deadline
         else "",
@@ -170,17 +213,69 @@ def _ihe_candidate(product: dict, preferred: list[str], profile: dict) -> Candid
     )
 
 
+def _ihe_identity_key(
+    product: dict,
+    edition: dict,
+    name: str,
+    start: date | None,
+    end: date | None,
+) -> str:
+    """Return a stable identity for one IHE catalogue product.
+
+    A planned-edition identifier is strongest. Otherwise the recurring product
+    identifier is paired with its start date so a new year's edition is new.
+    Some historical API payloads expose neither, so a deterministic digest of
+    stable product/edition fields keeps sibling courses distinct without using
+    Python's randomized ``hash()`` implementation.
+    """
+    for key in (
+        "id",
+        "plannedproductid",
+        "planned_product_id",
+        "plannedProductId",
+        "editionid",
+        "edition_id",
+        "editionId",
+    ):
+        raw_value = edition.get(key)
+        if raw_value is None:
+            continue
+        value = clean_space(str(raw_value))
+        if value:
+            return f"ihe-delft:edition:{value}"
+    for key in ("id", "productid", "product_id", "productId", "code", "productcode"):
+        raw_value = product.get(key)
+        if raw_value is None:
+            continue
+        value = clean_space(str(raw_value))
+        if value and start is not None:
+            return f"ihe-delft:product:{value}:{start.isoformat()}"
+    stable_fields = "|".join(
+        [
+            clean_space(name).casefold(),
+            start.isoformat() if start else "",
+            end.isoformat() if end else "",
+        ]
+    )
+    digest = sha256(stable_fields.encode("utf-8")).hexdigest()[:20]
+    return f"ihe-delft:derived:{digest}"
+
+
 _ELLIS_URL = "https://ellis.eu/events"
 _ELLIS_DATE = re.compile(r"(\d{2})/(\d{2})/(\d{2})\s*-\s*(\d{2})/(\d{2})/(\d{2})")
 
 
-def _ellis(profile: dict) -> tuple[list[Candidate], list[str]]:
+def _ellis(profile: dict, http_cache: HttpCache | None = None) -> tuple[list[Candidate], list[str]]:
     """Parse the ELLIS events listing. The page is a single-page app, but its
     server-rendered listing carries each event's dates, location, and title
     inline (the detail pages are empty shells), so the listing is the source."""
     try:
-        response = requests.get(_ELLIS_URL, headers=_BROWSER_HEADERS, timeout=20)
-        response.raise_for_status()
+        response = get_with_cache(
+            _ELLIS_URL,
+            headers=_BROWSER_HEADERS,
+            timeout=20,
+            cache=http_cache,
+        )
     except requests.RequestException as exc:
         return [], [f"ELLIS listing: {exc}"]
 
@@ -206,7 +301,7 @@ def _ellis(profile: dict) -> tuple[list[Candidate], list[str]]:
         candidate = _ellis_candidate(title, href, _ellis_location(card), text, match, preferred, profile)
         if candidate is not None:
             candidates.append(candidate)
-    _enrich_ellis_deadlines(candidates)
+    _enrich_ellis_deadlines(candidates, http_cache=http_cache)
     return candidates, []
 
 
@@ -270,15 +365,18 @@ def _infer_no_year_date(value: str, event_start: date) -> date | None:
     return parsed
 
 
-def _enrich_ellis_deadlines(candidates: list[Candidate]) -> None:
+def _enrich_ellis_deadlines(candidates: list[Candidate], *, http_cache: HttpCache | None = None) -> None:
     """Render the detail pages of upcoming ELLIS events to read their deadline,
     which the listing does not carry. No-op without Playwright."""
     today = date.today()
     upcoming = [c for c in candidates if c.start_date is not None and c.start_date >= today][:15]
-    rendered = _page_data_for_urls([c.application_link for c in upcoming])
+    rendered = _page_data_for_urls([c.application_link for c in upcoming], http_cache=http_cache)
     follow_up_urls = _ellis_follow_up_urls(rendered)
-    follow_up_data = _page_data_for_urls(follow_up_urls)
-    registration_data = _page_data_for_urls(_ellis_registration_urls(follow_up_data))
+    follow_up_data = _page_data_for_urls(follow_up_urls, http_cache=http_cache)
+    registration_data = _page_data_for_urls(
+        _ellis_registration_urls(follow_up_data),
+        http_cache=http_cache,
+    )
     for candidate in upcoming:
         page_data = rendered.get(candidate.application_link, {})
         texts = [str(page_data.get("text", ""))]
@@ -310,21 +408,33 @@ def _enrich_ellis_deadlines(candidates: list[Candidate]) -> None:
         candidate.extraction_confidence = round(resolved / 4, 2)
 
 
-def _page_data_for_urls(urls: list[str]) -> dict[str, dict[str, Any]]:
+def _page_data_for_urls(
+    urls: list[str],
+    *,
+    http_cache: HttpCache | None = None,
+) -> dict[str, dict[str, Any]]:
     rendered = render_page_data(urls)
     missing = [url for url in urls if url not in rendered]
     if not missing:
         return rendered
-    fetched = _fetch_page_data(missing)
+    fetched = _fetch_page_data(missing, http_cache=http_cache)
     return {**rendered, **fetched}
 
 
-def _fetch_page_data(urls: list[str]) -> dict[str, dict[str, Any]]:
+def _fetch_page_data(
+    urls: list[str],
+    *,
+    http_cache: HttpCache | None = None,
+) -> dict[str, dict[str, Any]]:
     results: dict[str, dict[str, Any]] = {}
     for url in urls:
         try:
-            response = requests.get(url, headers=_BROWSER_HEADERS, timeout=20)
-            response.raise_for_status()
+            response = get_with_cache(
+                url,
+                headers=_BROWSER_HEADERS,
+                timeout=20,
+                cache=http_cache,
+            )
         except requests.RequestException:
             continue
         soup = BeautifulSoup(response.text, "html.parser")
@@ -504,7 +614,10 @@ def _ellis_candidate(
     )
 
 
-_COLLECTORS: list[Callable[[dict], tuple[list[Candidate], list[str]]]] = [
-    _ihe_delft,
-    _ellis,
-]
+_COLLECTORS: dict[
+    str,
+    Callable[[dict, HttpCache | None], tuple[list[Candidate], list[str]]],
+] = {
+    "ihe_delft": _ihe_delft,
+    "ellis": _ellis,
+}

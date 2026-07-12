@@ -5,7 +5,6 @@ sources:
     region: continental Europe
     source_type: scientific_society
     keywords: [geoscience, hydrology, climate, training school]
-    scan_frequency: every_run
     notes: Core geoscience training source.
   - name: IAHS
     url: https://iahs.info/
@@ -13,15 +12,14 @@ sources:
     region: global
     source_type: scientific_society
     keywords: [hydrology, water resources, training]
-    scan_frequency: every_run
-    notes: International Association of Hydrological Sciences. Cloudflare blocks datacenter IPs; the daily scan runs from a residential connection, where it loads fine.
+    notes: International Association of Hydrological Sciences. Cloudflare blocks datacenter IPs; the Monday/Wednesday/Friday source scan runs from a residential connection, where it loads fine.
+    notes_zh: 国际水文科学协会。Cloudflare 会屏蔽数据中心 IP；每周一、周三和周五的来源扫描通过住宅网络连接运行，因此可以正常加载。
   - name: IAH
     url: https://iah.org/
     layer: 1
     region: global
     source_type: scientific_society
     keywords: [hydrogeology, groundwater, training]
-    scan_frequency: every_run
     notes: International Association of Hydrogeologists.
   - name: CUAHSI
     url: https://www.cuahsi.org/workshops
@@ -29,7 +27,6 @@ sources:
     region: North America
     source_type: research_network
     keywords: [hydrology, water, short course]
-    scan_frequency: every_run
     enabled: false
     check_manually: true
     notes: Hydrology workshops and training. The workshops page is a single-page app that loads its list only after interaction, so scripted requests see no content. Check it directly.
@@ -39,7 +36,6 @@ sources:
     region: global
     source_type: agency
     keywords: [remote sensing, water, climate, training]
-    scan_frequency: every_run
     notes: NASA Applied Remote Sensing Training. Unreachable from the GitHub runner but loads from a residential connection; most ARSET trainings are online so expect mostly near-matches.
   - name: DAAD Short Courses
     url: https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/
@@ -47,7 +43,6 @@ sources:
     region: continental Europe
     source_type: funding_body
     keywords: [short course, scholarship, Germany]
-    scan_frequency: every_run
     notes: Funding source; opportunity pages may be linked elsewhere.
   - name: ELLIS
     url: https://ellis.eu/events
@@ -55,8 +50,7 @@ sources:
     region: continental Europe
     source_type: research_network
     keywords: [AI, machine learning, summer school]
-    scan_frequency: every_run
-    enabled: false
+    collector: ellis
     notes: AI and scientific ML events. The site is a single-page app whose detail pages are empty shells, but its server-rendered listing carries each event's dates and location inline, so it is parsed by a dedicated listing collector (see src/research_school_radar/api_sources.py).
   - name: IHE Delft
     url: https://www.un-ihe.org/short-courses
@@ -64,8 +58,7 @@ sources:
     region: continental Europe
     source_type: university_institute
     keywords: [water, hydrology, short course, scholarship]
-    scan_frequency: every_run
-    enabled: false
+    collector: ihe_delft
     notes: Premier water education source. The listing is client-side rendered (empty HTML), so it is collected directly from its public JSON API instead (see src/research_school_radar/api_sources.py), which gives exact dates, deadline, and fee.
   - name: IIASA
     url: https://iiasa.ac.at/events
@@ -73,7 +66,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [climate, systems, summer school]
-    scan_frequency: every_run
     enabled: false
     check_manually: true
     notes: Strong-relevance research institute, but the site sits behind Cloudflare bot management (a "Just a moment" challenge) that returns 403 to scripted requests and blocks even a real headless browser. Left disabled rather than circumvented; check it directly.
@@ -83,7 +75,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [geoscience, training, school]
-    scan_frequency: every_run
     notes: Strong geoscience relevance.
   - name: UKCEH
     url: https://www.ceh.ac.uk/filtered-training-listing
@@ -91,7 +82,6 @@ sources:
     region: UK
     source_type: research_institute
     keywords: [hydrology, ecology, environmental science, training]
-    scan_frequency: every_run
     notes: UK environmental science training listing. Previous /training redirected to a 403 page.
   - name: ICIMOD
     url: https://www.icimod.org/events/
@@ -99,7 +89,6 @@ sources:
     region: South Asia
     source_type: intergovernmental_research
     keywords: [Himalayan, climate, water, capacity building]
-    scan_frequency: every_run
     blocked_link_domains: [servir.icimod.org]
     notes: Strong regional water and climate relevance. SERVIR subdomain is skipped because local TLS certificate validation fails.
   - name: Asian Institute of Technology
@@ -108,7 +97,6 @@ sources:
     region: Southeast Asia
     source_type: university
     keywords: [water, climate, training, short course]
-    scan_frequency: every_run
     notes: Regional university source.
   - name: ECMWF Training
     url: https://www.ecmwf.int/en/learning/training
@@ -116,7 +104,6 @@ sources:
     region: UK
     source_type: agency
     keywords: [climate, weather, machine learning, training]
-    scan_frequency: every_run
     notes: European Centre for Medium-Range Weather Forecasts training catalogue. Many courses are online; in-person ones surface as candidates.
   - name: ESA EO4Society Training
     url: https://eo4society.esa.int/training-education/
@@ -124,7 +111,6 @@ sources:
     region: continental Europe
     source_type: agency
     keywords: [remote sensing, earth observation, training, school]
-    scan_frequency: every_run
     notes: European Space Agency Earth observation training and education.
   - name: NCAR ASP Colloquia
     url: https://asp.ucar.edu/asp-colloquia
@@ -132,7 +118,6 @@ sources:
     region: North America
     source_type: research_institute
     keywords: [climate, atmospheric science, summer colloquium]
-    scan_frequency: every_run
     notes: NCAR Advanced Study Program summer colloquia, usually funded for early-career researchers.
   - name: PIK Potsdam Events
     url: https://www.pik-potsdam.de/en/news/events
@@ -140,7 +125,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [climate, climate impacts, school, workshop]
-    scan_frequency: every_run
     notes: Potsdam Institute for Climate Impact Research events.
   - name: HIDA Events
     url: https://www.helmholtz-hida.de/en/events/
@@ -148,7 +132,6 @@ sources:
     region: continental Europe
     source_type: research_network
     keywords: [data science, AI, machine learning, school]
-    scan_frequency: every_run
     notes: Helmholtz Information and Data Science Academy events, including schools for environmental data science.
   - name: MLSS Index
     url: http://mlss.cc/
@@ -156,7 +139,6 @@ sources:
     region: global
     source_type: community_index
     keywords: [machine learning, summer school]
-    scan_frequency: every_run
     notes: Canonical index of Machine Learning Summer Schools worldwide.
   - name: EEML
     url: https://www.eeml.eu/
@@ -164,7 +146,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [machine learning, AI, summer school]
-    scan_frequency: every_run
     notes: Eastern European Machine Learning Summer School.
   - name: Mediterranean ML Summer School
     url: https://www.m2lschool.org/
@@ -172,7 +153,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [machine learning, AI, summer school]
-    scan_frequency: every_run
     notes: M2L summer school on machine learning.
   - name: Nordic ProbAI
     url: https://probabilistic.ai/
@@ -180,7 +160,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [machine learning, probabilistic AI, summer school]
-    scan_frequency: every_run
     notes: Nordic Probabilistic AI School.
   - name: Gaussian Process Summer School
     url: https://gpss.cc/
@@ -188,7 +167,6 @@ sources:
     region: UK
     source_type: summer_school
     keywords: [machine learning, Gaussian processes, summer school]
-    scan_frequency: every_run
     notes: Sheffield Gaussian Process Summer School, relevant to uncertainty quantification.
   - name: Deep Learning Indaba
     url: https://deeplearningindaba.com/
@@ -196,7 +174,6 @@ sources:
     region: Africa
     source_type: summer_school
     keywords: [machine learning, AI, summer school]
-    scan_frequency: every_run
     notes: Pan-African deep learning summer school with travel support.
   - name: IWA
     url: https://www.iwa-network.org/events/
@@ -204,7 +181,6 @@ sources:
     region: global
     source_type: scientific_society
     keywords: [water, wastewater, water resources, training]
-    scan_frequency: every_run
     notes: International Water Association events and conferences.
   - name: IAHR
     url: https://www.iahr.org/index/events
@@ -212,7 +188,6 @@ sources:
     region: global
     source_type: scientific_society
     keywords: [hydraulics, hydro-environment, water resources, training]
-    scan_frequency: every_run
     notes: International Association for Hydro-Environment Engineering and Research.
   - name: SIWI
     url: https://siwi.org/event
@@ -220,7 +195,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [water, water governance, training]
-    scan_frequency: every_run
     notes: Stockholm International Water Institute events.
   - name: GEWEX
     url: https://www.gewex.org/event/
@@ -228,7 +202,6 @@ sources:
     region: global
     source_type: research_network
     keywords: [climate, water cycle, energy, training]
-    scan_frequency: every_run
     notes: Global Energy and Water Exchanges programme of the World Climate Research Programme.
   - name: AMS Meetings
     url: https://www.ametsoc.org/ams/meetings-events/
@@ -236,7 +209,6 @@ sources:
     region: North America
     source_type: scientific_society
     keywords: [atmospheric science, climate, weather, short course]
-    scan_frequency: every_run
     notes: American Meteorological Society meetings and short courses.
   - name: WCRP
     url: https://www.wcrp-climate.org/
@@ -244,7 +216,6 @@ sources:
     region: global
     source_type: research_network
     keywords: [climate, climate research, training, school]
-    scan_frequency: every_run
     notes: World Climate Research Programme. The /events path 404s; the homepage links current activities.
   - name: WMO ETRP
     url: https://etrp.wmo.int/
@@ -252,7 +223,6 @@ sources:
     region: global
     source_type: agency
     keywords: [meteorology, hydrology, climate, training]
-    scan_frequency: every_run
     notes: World Meteorological Organization Education and Training Programme.
   - name: GFDL Events
     url: https://www.gfdl.noaa.gov/events/
@@ -260,7 +230,6 @@ sources:
     region: North America
     source_type: research_institute
     keywords: [climate modelling, geophysical fluid dynamics, training]
-    scan_frequency: every_run
     notes: NOAA Geophysical Fluid Dynamics Laboratory events.
   - name: Urbino Summer School
     url: https://www.urbinossp.it/
@@ -268,7 +237,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [paleoclimatology, climate, summer school]
-    scan_frequency: every_run
     enabled: false
     notes: Urbino Summer School in Paleoclimatology. The urbinossp.it domain is currently parked/for sale, so it serves no content. Re-enable when the school publishes a working site.
   - name: CIDER
@@ -277,7 +245,6 @@ sources:
     region: North America
     source_type: summer_school
     keywords: [geoscience, deep earth, geophysics, summer school]
-    scan_frequency: every_run
     notes: Cooperative Institute for Dynamic Earth Research summer programme.
   - name: Oxford ML Summer School
     url: https://www.oxfordml.school/
@@ -285,7 +252,6 @@ sources:
     region: UK
     source_type: summer_school
     keywords: [machine learning, AI, health, finance, summer school]
-    scan_frequency: every_run
     notes: OxML summer school on machine learning across application tracks.
   - name: AMMI
     url: https://aimsammi.org/
@@ -293,7 +259,6 @@ sources:
     region: Africa
     source_type: summer_school
     keywords: [machine learning, AI, summer school]
-    scan_frequency: every_run
     notes: African Master of Machine Intelligence, fully funded programme.
   - name: IEEE GRSS
     url: https://www.grss-ieee.org/events-calendar/
@@ -301,7 +266,6 @@ sources:
     region: global
     source_type: scientific_society
     keywords: [remote sensing, geoscience, earth observation, summer school]
-    scan_frequency: every_run
     enabled: false
     check_manually: true
     notes: IEEE Geoscience and Remote Sensing Society events calendar. Cloudflare blocks the GitHub Actions runner's IP with a 403 (it loads from a normal browser). Check it directly.
@@ -311,7 +275,6 @@ sources:
     region: global
     source_type: scientific_society
     keywords: [remote sensing, photogrammetry, geoinformation, summer school]
-    scan_frequency: every_run
     notes: International Society for Photogrammetry and Remote Sensing. Calendar path 404s; homepage links current activities.
   - name: GSA
     url: https://www.geosociety.org/
@@ -319,7 +282,6 @@ sources:
     region: North America
     source_type: scientific_society
     keywords: [geoscience, geology, short course]
-    scan_frequency: every_run
     notes: Geological Society of America. Direct event-list path 404s for scripted requests; homepage links current events.
   - name: EAGE
     url: https://eage.org/events/calendar-of-events/
@@ -327,7 +289,6 @@ sources:
     region: continental Europe
     source_type: scientific_society
     keywords: [geophysics, geoscience, near-surface, short course]
-    scan_frequency: every_run
     notes: European Association of Geoscientists and Engineers; runs many short courses and education days.
   - name: EarthScope
     url: https://www.earthscope.org/event/
@@ -335,7 +296,6 @@ sources:
     region: North America
     source_type: research_consortium
     keywords: [seismology, geodesy, geophysics, short course]
-    scan_frequency: every_run
     notes: EarthScope Consortium (formerly IRIS/UNAVCO); seismology and geodesy short courses and summer workshops.
   - name: CIG Geodynamics
     url: https://geodynamics.org/events
@@ -343,7 +303,6 @@ sources:
     region: North America
     source_type: research_network
     keywords: [geodynamics, computational geoscience, modelling, workshop]
-    scan_frequency: every_run
     notes: Computational Infrastructure for Geodynamics; computational geoscience workshops and training.
   - name: EUMETSAT Training
     url: https://classroom.eumetsat.int/
@@ -351,7 +310,6 @@ sources:
     region: continental Europe
     source_type: agency
     keywords: [meteorology, climate, remote sensing, earth observation, training]
-    scan_frequency: every_run
     notes: EUMETSAT training portal for satellite meteorology and climate.
   - name: ICOS
     url: https://www.icos-cp.eu/news-and-events/events
@@ -359,7 +317,6 @@ sources:
     region: continental Europe
     source_type: research_infrastructure
     keywords: [carbon, climate, greenhouse gas, observation, training]
-    scan_frequency: every_run
     notes: Integrated Carbon Observation System events and training.
   - name: ICTP-SAIFR
     url: https://www.ictp-saifr.org/
@@ -367,7 +324,6 @@ sources:
     region: Latin America
     source_type: research_institute
     keywords: [physics, data science, machine learning, climate, school]
-    scan_frequency: every_run
     notes: South American Institute for Fundamental Research (ICTP partner); runs data science, ML, and climate schools.
   - name: Lamont-Doherty
     url: https://lamont.columbia.edu/events
@@ -375,15 +331,14 @@ sources:
     region: North America
     source_type: research_institute
     keywords: [climate, oceanography, seismology, geoscience, earth observation]
-    scan_frequency: every_run
-    notes: Lamont-Doherty Earth Observatory (Columbia University). Blocks datacenter IPs; loads from a residential connection, where the daily scan runs.
+    notes: Lamont-Doherty Earth Observatory (Columbia University). Blocks datacenter IPs; loads from the residential connection used for Monday/Wednesday/Friday source scans.
+    notes_zh: 哥伦比亚大学拉蒙特-多尔蒂地球观测站。该网站会屏蔽数据中心 IP，但可通过每周一、周三和周五来源扫描使用的住宅网络连接正常加载。
   - name: IPAM
     url: https://www.ipam.ucla.edu/programs/summer-schools/
     layer: 1.5
     region: North America
     source_type: research_institute
     keywords: [machine learning, data science, applied mathematics, summer school]
-    scan_frequency: every_run
     notes: UCLA Institute for Pure and Applied Mathematics; graduate summer schools in data science, ML, and computational science, usually with travel support.
   - name: CLIVAR
     url: https://www.clivar.org/events
@@ -391,7 +346,6 @@ sources:
     region: global
     source_type: research_network
     keywords: [climate, climate variability, oceanography, summer school]
-    scan_frequency: every_run
     notes: World Climate Research Programme's CLIVAR project; climate variability and predictability schools and events.
   - name: APECS
     url: https://www.apecs.is/
@@ -399,7 +353,6 @@ sources:
     region: global
     source_type: research_network
     keywords: [polar, cryosphere, climate, early-career]
-    scan_frequency: every_run
     notes: Association of Polar Early Career Scientists; polar and cryosphere training schools and webinars.
   - name: Barcelona Supercomputing Center
     url: https://www.bsc.es/education/training
@@ -407,7 +360,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [machine learning, high performance computing, data science, training]
-    scan_frequency: every_run
     notes: BSC training in high-performance and data-driven computational science, including ML for science.
   - name: Climate Change AI
     url: https://www.climatechange.ai/events
@@ -415,16 +367,15 @@ sources:
     region: global
     source_type: research_network
     keywords: [AI, machine learning, climate, scientific machine learning, summer school]
-    scan_frequency: every_run
     render: true
-    notes: AI for climate. Its events page is client-side rendered, so it uses the optional Playwright headless browser (which loads it fine from the local daily scan). Its flagship summer school is virtual, so expect mostly near-matches.
+    notes: AI for climate. Its events page is client-side rendered, so it uses the optional Playwright headless browser during local Monday/Wednesday/Friday source scans. Its flagship summer school is virtual, so expect mostly near-matches.
+    notes_zh: 面向气候领域的人工智能项目。其活动页面由客户端渲染，因此本机每周一、周三和周五抓取来源时会使用可选的 Playwright 无头浏览器。其旗舰暑校为线上形式，因此多数结果预计只会归入近似匹配。
   - name: Summer Schools in Europe
     url: https://www.summerschoolsineurope.eu/
     layer: 2
     region: continental Europe
     source_type: aggregator
     keywords: [summer school, multidisciplinary]
-    scan_frequency: every_run
     enabled: false
     notes: Cross-disciplinary aggregator. Disabled when the project refocused on water/climate/geoscience/remote-sensing/ML; it is mostly off-domain and also returns 403 for scripted requests.
   - name: Utrecht Summer School
@@ -433,7 +384,6 @@ sources:
     region: continental Europe
     source_type: university
     keywords: [summer school, multidisciplinary]
-    scan_frequency: every_run
     enabled: false
     notes: Large general summer school programme. Disabled when the project refocused on its core domain; most courses are off-domain and fee-based.
   - name: CERN Academic Training
@@ -442,7 +392,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [physics, computing, data science, lectures]
-    scan_frequency: every_run
     render: true
     notes: Content is rendered client-side, so this source uses the optional Playwright headless browser. Falls back to an empty fetch if Playwright is not installed.
   - name: ICTP
@@ -451,7 +400,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [climate, geophysics, physics, AI, school, workshop]
-    scan_frequency: every_run
     notes: Abdus Salam ICTP runs many funded schools in geophysics, climate, and scientific ML. The /scientific-calendar path 404s; /home/scientific-calendar works for scripted requests.
   - name: LxMLS
     url: https://lxmls.github.io/2026/
@@ -459,7 +407,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [machine learning, natural language processing, summer school]
-    scan_frequency: every_run
     notes: Lisbon Machine Learning School. The canonical lxmls.it.pt domain times out from the CI runner, so this points at the current edition on GitHub Pages directly. Bump the year when a new edition is published.
   - name: Karthaus Summer School
     url: https://www.projects.science.uu.nl/iceclimate/karthaus/
@@ -467,7 +414,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [glaciology, ice sheets, cryosphere, climate, summer school]
-    scan_frequency: every_run
     notes: Utrecht University's Karthaus course on ice sheets and climate; a flagship funded cryosphere school.
   - name: WHOI GFD Program
     url: https://gfd.whoi.edu/
@@ -475,7 +421,6 @@ sources:
     region: North America
     source_type: research_institute
     keywords: [geophysical fluid dynamics, oceanography, climate, summer school]
-    scan_frequency: every_run
     notes: Woods Hole Geophysical Fluid Dynamics summer program; a classic funded ten-week school in ocean and climate fluid dynamics.
   - name: NCEO
     url: https://www.nceo.ac.uk/training/
@@ -483,7 +428,6 @@ sources:
     region: UK
     source_type: research_centre
     keywords: [earth observation, remote sensing, climate, training]
-    scan_frequency: every_run
     notes: UK National Centre for Earth Observation training, including its annual Earth observation summer school.
   - name: POGO
     url: https://pogo-ocean.org/capacity-development/
@@ -491,7 +435,6 @@ sources:
     region: global
     source_type: research_network
     keywords: [ocean observation, oceanography, climate, capacity development]
-    scan_frequency: every_run
     notes: Partnership for Observation of the Global Ocean; funded ocean-observation training and fellowships.
   - name: Cyprus Institute
     url: https://www.cyi.ac.cy/index.php/education/graduate-school/summer-schools.html
@@ -499,7 +442,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [climate, data science, machine learning, high performance computing, summer school]
-    scan_frequency: every_run
     notes: The Cyprus Institute graduate school runs summer schools in climate, computational science, and machine learning.
   - name: AGU
     url: https://www.agu.org/
@@ -507,7 +449,6 @@ sources:
     region: North America
     source_type: scientific_society
     keywords: [geoscience, climate, hydrology, ocean, atmospheric science, short course]
-    scan_frequency: every_run
     notes: American Geophysical Union. Direct event paths 404 for scripted requests; the homepage links current meetings and courses.
   - name: NCAS
     url: https://ncas.ac.uk/
@@ -515,7 +456,6 @@ sources:
     region: UK
     source_type: research_centre
     keywords: [atmospheric science, climate, weather, training]
-    scan_frequency: every_run
     notes: UK National Centre for Atmospheric Science; runs funded atmospheric and climate science training courses and summer schools.
   - name: Les Houches Physics School
     url: https://www.houches-school-physics.com/
@@ -523,7 +463,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [physics, climate, data science, machine learning, school]
-    scan_frequency: every_run
     notes: Les Houches School of Physics; among its sessions are climate-physics and scientific machine-learning schools. Off-domain physics sessions are dropped by the filters.
   - name: ESSLLI
     url: https://www.esslli.eu/
@@ -531,7 +470,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [logic, language, computation, computational linguistics, summer school]
-    scan_frequency: every_run
     render: true
     notes: European Summer School in Logic, Language and Information — the flagship logic/language/computation school. The landing page is client-side rendered, so it uses the optional headless browser.
   - name: LSA Linguistic Institute
@@ -540,7 +478,6 @@ sources:
     region: North America
     source_type: scientific_society
     keywords: [linguistics, computational linguistics, language, summer institute]
-    scan_frequency: every_run
     notes: The Linguistic Society of America's biennial summer Linguistic Institute, a major funded linguistics training school.
   - name: LOT School
     url: https://lotschool.nl/
@@ -548,7 +485,6 @@ sources:
     region: continental Europe
     source_type: research_network
     keywords: [linguistics, phonology, syntax, semantics, summer school]
-    scan_frequency: every_run
     notes: The Dutch national graduate school in linguistics (LOT); runs funded summer and winter schools across linguistics subfields.
   - name: EGG School
     url: https://eggschool.org/
@@ -556,7 +492,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [linguistics, generative grammar, syntax, semantics, summer school]
-    scan_frequency: every_run
     notes: Eastern Generative Grammar summer school in theoretical linguistics, held in Central/Eastern Europe with low fees.
   - name: Leiden Linguistics Summer School
     url: https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools
@@ -564,7 +499,6 @@ sources:
     region: continental Europe
     source_type: university
     keywords: [linguistics, languages, philology, summer school]
-    scan_frequency: every_run
     notes: Leiden Summer School in Languages and Linguistics; academic linguistics (not language-teaching) courses.
   - name: CLASP Gothenburg
     url: https://www.gu.se/en/clasp
@@ -572,7 +506,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [computational linguistics, natural language processing, semantics, language technology]
-    scan_frequency: every_run
     notes: Centre for Linguistic Theory and Studies in Probability (University of Gothenburg); computational linguistics and language-technology events and schools.
   - name: ICVSS
     url: https://iplab.dmi.unict.it/icvss/
@@ -580,7 +513,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [computer vision, machine learning, image processing, summer school]
-    scan_frequency: every_run
     notes: International Computer Vision Summer School (Sicily); a flagship, competitive computer-vision school.
   - name: DS3 Data Science Summer School
     url: https://www.ds3-datascience-polytechnique.fr/
@@ -588,7 +520,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [data science, machine learning, data analysis, statistics, summer school]
-    scan_frequency: every_run
     notes: École Polytechnique Data Science Summer School (DS3); data science and machine learning.
   - name: Heidelberg Laureate Forum
     url: https://www.heidelberg-laureate-forum.org/
@@ -596,7 +527,6 @@ sources:
     region: continental Europe
     source_type: research_network
     keywords: [computer science, mathematics, data science, early-career]
-    scan_frequency: every_run
     notes: HLF brings young researchers together with Turing/Abel/Fields laureates; fully funded for selected applicants.
   - name: OPLSS
     url: https://www.cs.uoregon.edu/research/summerschool/
@@ -604,7 +534,6 @@ sources:
     region: North America
     source_type: summer_school
     keywords: [programming languages, formal methods, software, summer school]
-    scan_frequency: every_run
     notes: Oregon Programming Languages Summer School; programming languages, type theory, and formal methods.
   - name: LASER Software Engineering School
     url: https://laser.inf.ethz.ch/
@@ -612,7 +541,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [software engineering, programming, software, summer school]
-    scan_frequency: every_run
     notes: LASER summer school on software engineering (Elba, Italy), organised by ETH Zurich. Times out from some connections; skipped silently when unreachable.
   - name: CISPA
     url: https://cispa.de/en
@@ -620,7 +548,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [cybersecurity, security, privacy, cryptography]
-    scan_frequency: every_run
     notes: CISPA Helmholtz Center for Information Security (Saarbrücken); runs a funded cybersecurity summer school and research events.
   - name: SBA Research
     url: https://www.sba-research.org/
@@ -628,7 +555,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [cybersecurity, security, privacy, network security]
-    scan_frequency: every_run
     notes: Austrian research centre for information security; security training, schools, and events.
   - name: Santa Fe Institute
     url: https://www.santafe.edu/engage/learn/schools
@@ -636,7 +562,6 @@ sources:
     region: North America
     source_type: research_institute
     keywords: [complex systems, data science, machine learning, networks, summer school]
-    scan_frequency: every_run
     notes: Santa Fe Institute Complex Systems Summer School (CSSS) and related schools; funded interdisciplinary training in complex systems, networks, and data science.
   - name: DeepLearn
     url: https://deeplearn.irdta.eu/2026/
@@ -644,7 +569,6 @@ sources:
     region: continental Europe
     source_type: summer_school
     keywords: [deep learning, machine learning, AI, data science, summer school]
-    scan_frequency: every_run
     notes: International School on Deep Learning (IRDTA). Points at the current edition; bump the year when a new one is published.
   - name: EurAI ACAI
     url: https://www.eurai.org/activities/ACAI_schools
@@ -652,7 +576,6 @@ sources:
     region: continental Europe
     source_type: scientific_society
     keywords: [artificial intelligence, machine learning, AI, advanced course]
-    scan_frequency: every_run
     notes: EurAI Advanced Course on Artificial Intelligence (ACAI); the European AI society's advanced school.
   - name: Friday Harbor Laboratories
     url: https://fhl.uw.edu/
@@ -660,7 +583,6 @@ sources:
     region: North America
     source_type: university_institute
     keywords: [marine biology, oceanography, ecology, field course]
-    scan_frequency: every_run
     notes: University of Washington Friday Harbor Labs; funded marine science field courses and summer programmes.
   - name: SOLAS
     url: https://www.solas-int.org/
@@ -668,7 +590,6 @@ sources:
     region: global
     source_type: research_network
     keywords: [ocean, climate, biogeochemistry, atmosphere, summer school]
-    scan_frequency: every_run
     notes: Surface Ocean Lower Atmosphere Study; ocean-atmosphere and climate summer schools.
   - name: CSCS Summer School
     url: https://www.cscs.ch/
@@ -676,7 +597,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [high performance computing, data science, scientific computing, summer school]
-    scan_frequency: every_run
     notes: Swiss National Supercomputing Centre (CSCS); summer school on HPC and effective scientific computing.
   - name: Argonne ATPESC
     url: https://extremecomputingtraining.anl.gov/
@@ -684,7 +604,6 @@ sources:
     region: North America
     source_type: agency
     keywords: [high performance computing, extreme-scale computing, scientific computing, training]
-    scan_frequency: every_run
     notes: Argonne Training Program on Extreme-Scale Computing (ATPESC); funded intensive HPC training.
   - name: CESM Tutorial
     url: https://www.cesm.ucar.edu/events/tutorials
@@ -692,7 +611,6 @@ sources:
     region: North America
     source_type: research_institute
     keywords: [climate, climate modelling, earth system model, training]
-    scan_frequency: every_run
     notes: NCAR Community Earth System Model (CESM) tutorial; hands-on climate-model training, usually funded for participants.
   - name: GEOMAR
     url: https://www.geomar.de/en/
@@ -700,7 +618,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [oceanography, marine science, climate, summer school]
-    scan_frequency: every_run
     notes: GEOMAR Helmholtz Centre for Ocean Research Kiel; ocean and climate research schools and events.
   - name: CINECA HPC
     url: https://eventi.cineca.it/
@@ -708,7 +625,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [high performance computing, scientific computing, data science, training]
-    scan_frequency: every_run
     notes: CINECA (Italian national supercomputing centre) training events and HPC schools.
   - name: Oxford Robotics Institute
     url: https://ori.ox.ac.uk/
@@ -716,7 +632,6 @@ sources:
     region: UK
     source_type: university_institute
     keywords: [robotics, machine learning, autonomous systems, computer vision]
-    scan_frequency: every_run
     notes: Oxford Robotics Institute; robotics and machine-learning research, schools, and events.
   - name: Mila
     url: https://mila.quebec/en/
@@ -724,7 +639,6 @@ sources:
     region: North America
     source_type: research_institute
     keywords: [machine learning, deep learning, AI, summer school]
-    scan_frequency: every_run
     notes: Mila - Quebec AI Institute (Montreal); hosts ML summer schools and training programmes.
   - name: OIST OCNC
     url: https://groups.oist.jp/ocnc
@@ -732,7 +646,6 @@ sources:
     region: East Asia
     source_type: summer_school
     keywords: [computational neuroscience, neural computation, neuroscience, summer course]
-    scan_frequency: every_run
     notes: Okinawa Computational Neuroscience Course (OCNC); a flagship funded comp-neuro summer course.
   - name: MBL Courses
     url: https://www.mbl.edu/education/courses
@@ -740,7 +653,6 @@ sources:
     region: North America
     source_type: research_institute
     keywords: [computational neuroscience, neuroscience, quantitative biology, summer course]
-    scan_frequency: every_run
     notes: Marine Biological Laboratory advanced research training courses, including Methods in Computational Neuroscience.
   - name: CSHL Courses
     url: https://meetings.cshl.edu/courseshome.aspx
@@ -748,7 +660,6 @@ sources:
     region: North America
     source_type: research_institute
     keywords: [computational neuroscience, neuroscience, quantitative biology, summer course]
-    scan_frequency: every_run
     notes: Cold Spring Harbor Laboratory courses, including computational neuroscience and quantitative biology schools.
   - name: CAJAL Training
     url: https://cajal-training.org/
@@ -756,7 +667,6 @@ sources:
     region: continental Europe
     source_type: research_network
     keywords: [neuroscience, computational neuroscience, neural circuits, training]
-    scan_frequency: every_run
     notes: CAJAL Advanced Neuroscience Training Programme; intensive European neuroscience courses, including computational neuroscience.
   - name: Bernstein Network
     url: https://www.bernstein-network.de/en/
@@ -764,7 +674,6 @@ sources:
     region: continental Europe
     source_type: research_network
     keywords: [computational neuroscience, neural computation, neuroscience, summer school]
-    scan_frequency: every_run
     notes: Bernstein Network Computational Neuroscience (Germany); schools and courses in computational neuroscience.
   - name: CIFAR DLRL Summer School
     url: https://dlrlsummerschool.ca/
@@ -772,7 +681,6 @@ sources:
     region: North America
     source_type: summer_school
     keywords: [deep learning, reinforcement learning, machine learning, summer school]
-    scan_frequency: every_run
     notes: CIFAR Deep Learning and Reinforcement Learning (DLRL) Summer School (Canada); funded for selected students.
   - name: IBRO
     url: https://ibro.org/
@@ -780,7 +688,6 @@ sources:
     region: global
     source_type: scientific_society
     keywords: [neuroscience, computational neuroscience, brain, training]
-    scan_frequency: every_run
     notes: International Brain Research Organization; runs neuroscience schools worldwide, including computational neuroscience.
   - name: ECPR Methods School
     url: https://ecpr.eu/MethodsSchool
@@ -788,7 +695,6 @@ sources:
     region: continental Europe
     source_type: research_network
     keywords: [political science, social science methods, social science, summer school]
-    scan_frequency: every_run
     notes: European Consortium for Political Research Methods Schools; social-science research-methods training.
   - name: ICPSR Summer Program
     url: https://www.icpsr.umich.edu/web/pages/sumprog/
@@ -796,7 +702,6 @@ sources:
     region: North America
     source_type: university_institute
     keywords: [social science methods, quantitative methods, statistics, data analysis]
-    scan_frequency: every_run
     notes: University of Michigan ICPSR Summer Program in Quantitative Methods of Social Research; a flagship social-science methods school.
   - name: Essex Summer School
     url: https://www.essex.ac.uk/summer-schools/social-science-data-analysis
@@ -804,7 +709,6 @@ sources:
     region: UK
     source_type: university
     keywords: [social science, data analysis, quantitative methods, summer school]
-    scan_frequency: every_run
     notes: Essex Summer School in Social Science Data Analysis; long-running quantitative social-science methods school.
   - name: Essex Summer School
     url: https://essexsummerschool.com/new-application/
@@ -812,7 +716,6 @@ sources:
     region: UK
     source_type: university
     keywords: [social science, data analysis, quantitative methods, summer school, application]
-    scan_frequency: every_run
     notes: Official ESS application page; carries session-specific application closing dates and programme dates.
   - name: CEU Summer University
     url: https://summeruniversity.ceu.edu/
@@ -820,7 +723,6 @@ sources:
     region: continental Europe
     source_type: university
     keywords: [social science, humanities, political science, summer school]
-    scan_frequency: every_run
     notes: Central European University Summer University; social science and humanities courses, often with funding for selected participants.
   - name: EUI
     url: https://www.eui.eu/
@@ -828,7 +730,6 @@ sources:
     region: continental Europe
     source_type: university_institute
     keywords: [history, economics, political science, law, summer school]
-    scan_frequency: every_run
     notes: European University Institute (Florence); summer schools in history, economics, political and social science, and law.
   - name: DHSI
     url: https://dhsi.org/
@@ -836,7 +737,6 @@ sources:
     region: North America
     source_type: summer_school
     keywords: [digital humanities, humanities, computing, training]
-    scan_frequency: every_run
     notes: Digital Humanities Summer Institute (Victoria); training at the intersection of humanities and computing.
   - name: IHR History
     url: https://www.history.ac.uk/
@@ -844,7 +744,6 @@ sources:
     region: UK
     source_type: research_institute
     keywords: [history, humanities, historical research, training]
-    scan_frequency: every_run
     notes: Institute of Historical Research (London); historical-research training and events.
   - name: Khipu
     url: https://khipu.ai/
@@ -852,7 +751,6 @@ sources:
     region: Latin America
     source_type: summer_school
     keywords: [machine learning, deep learning, AI, summer school]
-    scan_frequency: every_run
     notes: Khipu Latin American Meeting in Artificial Intelligence; a funded AI summer school.
   - name: Helmholtz AI
     url: https://www.helmholtz.ai/
@@ -860,7 +758,6 @@ sources:
     region: continental Europe
     source_type: research_network
     keywords: [machine learning, AI, scientific machine learning, data science]
-    scan_frequency: every_run
     notes: Helmholtz AI; AI-for-science training, schools, and conferences across the Helmholtz association.
   - name: Wellcome Connecting Science
     url: https://coursesandconferences.wellcomeconnectingscience.org/our-events/
@@ -868,7 +765,6 @@ sources:
     region: UK
     source_type: research_institute
     keywords: [bioinformatics, computational biology, genomics, data analysis]
-    scan_frequency: every_run
     notes: Wellcome Connecting Science advanced courses and conferences; genomics and computational biology training, many with bursaries.
   - name: Physalia Courses
     url: https://www.physalia-courses.org/
@@ -876,7 +772,6 @@ sources:
     region: continental Europe
     source_type: research_network
     keywords: [bioinformatics, data analysis, computational biology, statistics]
-    scan_frequency: every_run
     notes: Physalia-Courses; intensive bioinformatics and data-analysis courses for the life sciences.
   - name: CISM
     url: https://cism.it/en/activities/courses/
@@ -884,7 +779,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [computational science, mechanics, applied mathematics, machine learning]
-    scan_frequency: every_run
     notes: International Centre for Mechanical Sciences (Udine); advanced schools in computational and applied science, including ML for engineering.
   - name: EARSeL
     url: https://www.earsel.org/
@@ -892,7 +786,6 @@ sources:
     region: continental Europe
     source_type: research_network
     keywords: [remote sensing, earth observation, geospatial, summer school]
-    scan_frequency: every_run
     notes: European Association of Remote Sensing Laboratories; remote-sensing summer schools and training.
   - name: Alan Turing Institute
     url: https://www.turing.ac.uk/events
@@ -900,7 +793,6 @@ sources:
     region: UK
     source_type: research_institute
     keywords: [data science, machine learning, AI, statistics]
-    scan_frequency: every_run
     notes: The Alan Turing Institute (UK national institute for data science and AI); training events, schools, and workshops.
   - name: Tinbergen Institute
     url: https://www.tinbergen.nl/
@@ -908,7 +800,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [economics, econometrics, social science, summer school]
-    scan_frequency: every_run
     notes: Tinbergen Institute (Amsterdam/Rotterdam); economics and econometrics summer schools.
   - name: CECAM
     url: https://www.cecam.org/
@@ -916,7 +807,6 @@ sources:
     region: continental Europe
     source_type: research_network
     keywords: [computational chemistry, materials science, molecular simulation, machine learning]
-    scan_frequency: every_run
     notes: Centre Européen de Calcul Atomique et Moléculaire; schools and workshops in computational chemistry, materials, and ML for molecular science.
   - name: Boulder School
     url: https://boulderschool.yale.edu/
@@ -924,7 +814,6 @@ sources:
     region: North America
     source_type: summer_school
     keywords: [condensed matter, physics, statistical physics, summer school]
-    scan_frequency: every_run
     notes: Boulder School for Condensed Matter and Materials Physics; a funded graduate summer school.
   - name: Aspen Center for Physics
     url: https://aspenphys.org/
@@ -932,7 +821,6 @@ sources:
     region: North America
     source_type: research_institute
     keywords: [physics, astrophysics, condensed matter, summer program]
-    scan_frequency: every_run
     notes: Aspen Center for Physics; summer workshops and programmes across physics and astrophysics.
   - name: KITP
     url: https://www.kitp.ucsb.edu/activities/upcoming-programs
@@ -940,7 +828,6 @@ sources:
     region: North America
     source_type: research_institute
     keywords: [theoretical physics, condensed matter, astrophysics, biophysics]
-    scan_frequency: every_run
     notes: Kavli Institute for Theoretical Physics (UC Santa Barbara); programmes and schools across theoretical physics.
   - name: DESY Summer Student
     url: https://summerstudents.desy.de/
@@ -948,7 +835,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [particle physics, photon science, physics, summer programme]
-    scan_frequency: every_run
     notes: DESY Summer Student Programme; funded research training in particle and photon physics.
   - name: CIMPA
     url: https://www.cimpa.info/en
@@ -956,7 +842,6 @@ sources:
     region: global
     source_type: research_network
     keywords: [mathematics, applied mathematics, statistics, summer school]
-    scan_frequency: every_run
     notes: CIMPA (Centre International de Mathématiques Pures et Appliquées); funded mathematics research schools, often in the Global South.
   - name: Hague Academy of International Law
     url: https://www.hagueacademy.nl/
@@ -964,7 +849,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [international law, law, public international law, summer course]
-    scan_frequency: every_run
     notes: The Hague Academy of International Law; summer courses in public and private international law, with scholarships.
   - name: Asser Institute
     url: https://www.asser.nl/
@@ -972,7 +856,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [international law, law, human rights, training]
-    scan_frequency: every_run
     notes: T.M.C. Asser Instituut (The Hague); international and European law summer programmes and training.
   - name: EARLI
     url: https://www.earli.org/
@@ -980,7 +863,6 @@ sources:
     region: continental Europe
     source_type: scientific_society
     keywords: [education research, learning sciences, education, summer school]
-    scan_frequency: every_run
     notes: European Association for Research on Learning and Instruction; the JURE summer school and research training in education.
   - name: Stazione Zoologica
     url: https://www.szn.it/
@@ -988,7 +870,6 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [marine biology, oceanography, ecology, summer course]
-    scan_frequency: every_run
     notes: Stazione Zoologica Anton Dohrn (Naples); marine biology and ocean science research training.
   - name: LSE Cities
     url: https://www.lse.ac.uk/cities
@@ -996,7 +877,6 @@ sources:
     region: UK
     source_type: research_institute
     keywords: [urban studies, cities, geography, social science]
-    scan_frequency: every_run
     notes: LSE Cities; urban studies research and summer programmes.
   - name: The Berlage
     url: https://theberlage.nl/
@@ -1004,5 +884,4 @@ sources:
     region: continental Europe
     source_type: university_institute
     keywords: [architecture, urban design, design, summer school]
-    scan_frequency: every_run
     notes: The Berlage Center for Advanced Studies in Architecture and Urban Design (TU Delft); architecture and urbanism programmes.

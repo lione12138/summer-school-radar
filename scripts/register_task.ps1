@@ -1,7 +1,9 @@
-# Register (or refresh) the Windows scheduled task that runs the daily scan.
+# Register (or refresh) the Windows scheduled task that runs Summa publishing.
 #
-# Runs scan_and_publish.ps1 every day at 10:00. The settings make it robust to
-# the machine being asleep, off, or away from home at 10:00:
+# Runs scan_and_publish.ps1 every day at 10:00. The script itself performs a
+# no-network status refresh every day and an AI-assisted full source scan on Monday,
+# Wednesday, and Friday. The settings make it robust to the machine being
+# asleep, off, or away from home at 10:00:
 #   - StartWhenAvailable: if the machine was off/asleep at 10:00, run as soon as
 #     it is next available instead of skipping the day.
 #   - WakeToRun: wake the machine from sleep to run (works on AC power).
@@ -12,6 +14,8 @@
 
 $ErrorActionPreference = "Stop"
 
+# Legacy task name retained so re-running this script updates the existing
+# scheduled task instead of creating a duplicate.
 $taskName = "SummerSchoolRadar-DailyScan"
 $repo = Split-Path -Parent $PSScriptRoot
 $script = Join-Path $repo "scripts\scan_and_publish.ps1"
@@ -32,7 +36,7 @@ $settings = New-ScheduledTaskSettingsSet `
     -WakeToRun `
     -RunOnlyIfNetworkAvailable `
     -DontStopOnIdleEnd `
-    -ExecutionTimeLimit (New-TimeSpan -Hours 1) `
+    -ExecutionTimeLimit (New-TimeSpan -Hours 3) `
     -MultipleInstances IgnoreNew
 
 # Run as the current user, in their interactive session, so the cached git
@@ -48,8 +52,8 @@ Register-ScheduledTask `
     -Trigger $trigger `
     -Settings $settings `
     -Principal $principal `
-    -Description "Daily scan + publish for Summer School Radar (runs locally to avoid Cloudflare datacenter-IP blocks)." `
+    -Description "Daily Summa status refresh plus Monday/Wednesday/Friday AI-assisted source snapshot." `
     -Force | Out-Null
 
-Write-Host "Registered scheduled task '$taskName' (daily at 10:00)."
+Write-Host "Registered scheduled task '$taskName' (daily at 10:00; full scan Monday/Wednesday/Friday, status refresh otherwise)."
 Get-ScheduledTask -TaskName $taskName | Format-List TaskName, State

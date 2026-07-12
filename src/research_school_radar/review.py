@@ -9,7 +9,8 @@ from typing import Any
 from .ai_review import ai_advisory_for_candidate
 from .models import Candidate
 from .rank import canonical_url
-from .utils import is_too_short, write_text_atomic
+from .atomic_io import write_text_atomic
+from .utils import is_too_short
 
 
 FIELD_NAMES = {

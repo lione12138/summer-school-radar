@@ -8,7 +8,8 @@ from pathlib import Path
 from typing import Any, Iterable, Sequence
 
 from .models import Candidate, Page
-from .utils import clean_space, write_text_atomic
+from .atomic_io import write_text_atomic
+from .utils import clean_space
 
 
 class SemanticDependencyError(RuntimeError):

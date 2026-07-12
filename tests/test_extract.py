@@ -1,17 +1,12 @@
 from __future__ import annotations
 
-from dataclasses import replace
 from datetime import date, timedelta
-from pathlib import Path
 
-from research_school_radar.cli import _load_curated_opportunities, _load_sources, collect_linked_opportunity_pages
 from research_school_radar.extract import extract_candidate, sample_candidate
 from research_school_radar.filter import apply_hard_filters
 from research_school_radar.models import Page, Source
 from research_school_radar.parse import candidate_links, looks_like_opportunity
 from research_school_radar.rank import rank_candidates
-from research_school_radar.report import render_report, update_readme
-from research_school_radar.site import write_site
 
 
 PROFILE = {
@@ -827,6 +822,7 @@ def test_uncertain_deadline_starting_within_15_days_is_closed() -> None:
 
 
 def test_essex_application_page_enriches_social_science_data_analysis() -> None:
+    as_of = date(2026, 7, 12)
     source = Source(
         name="Essex Summer School",
         url="https://www.essex.ac.uk/summer-schools/social-science-data-analysis",
@@ -855,7 +851,7 @@ def test_essex_application_page_enriches_social_science_data_analysis() -> None:
             "</body></html>"
         ),
         source=source,
-        fetched_at=date.today(),
+        fetched_at=as_of,
     )
     application = Page(
         url="https://essexsummerschool.com/new-application/",
@@ -878,10 +874,10 @@ def test_essex_application_page_enriches_social_science_data_analysis() -> None:
         ),
         html="<html><body><h1>Application</h1></body></html>",
         source=source,
-        fetched_at=date.today(),
+        fetched_at=as_of,
     )
-    parent_candidate = extract_candidate(parent, PROFILE)
-    application_candidate = extract_candidate(application, PROFILE)
+    parent_candidate = extract_candidate(parent, PROFILE, as_of=as_of)
+    application_candidate = extract_candidate(application, PROFILE, as_of=as_of)
     assert parent_candidate is not None
     assert application_candidate is not None
 
@@ -897,7 +893,19 @@ def test_essex_application_page_enriches_social_science_data_analysis() -> None:
     assert candidate.deadline_status == "open"
     assert candidate.start_date == date(2026, 6, 29)
     assert candidate.end_date == date(2026, 8, 14)
-    assert candidate.duration_days == 47
+    assert [
+        (session.name, session.start_date, session.end_date, session.application_deadline)
+        for session in candidate.sessions
+    ] == [
+        ("Pre-sessional 1", date(2026, 6, 29), date(2026, 7, 3), date(2026, 6, 19)),
+        ("Session 1", date(2026, 7, 6), date(2026, 7, 17), date(2026, 6, 19)),
+        ("Pre-sessional 2", date(2026, 7, 13), date(2026, 7, 17), date(2026, 7, 3)),
+        ("Session 2", date(2026, 7, 20), date(2026, 7, 31), date(2026, 7, 3)),
+        ("Session 3", date(2026, 8, 3), date(2026, 8, 14), date(2026, 7, 17)),
+    ]
+    # The outer programme window is 47 days, but no individual session lasts
+    # that long. Duration/ranking must use a real selectable session.
+    assert candidate.duration_days == 12
     assert candidate.location == "Colchester, UK"
     assert candidate.fee == ""
     assert candidate.fee_eur is None

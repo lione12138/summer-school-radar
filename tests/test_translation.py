@@ -27,6 +27,8 @@ class FakeTranslationClient:
         self.calls.append(prompt)
         return (
             '{"title":"示例水文学冬季学校",'
+            '"organizer":"示例研究所",'
+            '"location":"德国",'
             '"summary":"面向研究人员的水文学训练项目。",'
             '"eligibility":"硕士生和博士生可以申请。",'
             '"recommendation_reason":"主题匹配，且提供资助。",'
@@ -50,6 +52,8 @@ def test_translation_populates_bilingual_fields_and_reuses_cache(tmp_path) -> No
     first = translate_candidates([_candidate()], config, client=client)
     translated = first.candidates[0]
     assert translated.title_zh == "示例水文学冬季学校"
+    assert translated.organizer_zh == "示例研究所"
+    assert translated.location_zh == "德国"
     assert translated.summary_zh == "面向研究人员的水文学训练项目。"
     assert first.translated == 1
     assert len(client.calls) == 1
@@ -77,6 +81,8 @@ def test_translation_rejects_changed_protected_values(tmp_path) -> None:
         def complete(self, prompt: str) -> str:
             return (
                 '{"title":"示例水文学冬季学校",'
+                '"organizer":"示例研究所",'
+                '"location":"德国",'
                 '"summary":"请在 2027-04-13 前申请。",'
                 '"eligibility":"硕士生和博士生可以申请。",'
                 '"recommendation_reason":"主题匹配，且提供资助。",'
@@ -101,6 +107,8 @@ def test_translation_allows_localized_currency_label_when_amount_is_preserved(tm
         def complete(self, prompt: str) -> str:
             return (
                 '{"title":"示例水文学冬季学校",'
+                '"organizer":"示例研究所",'
+                '"location":"德国",'
                 '"summary":"面向研究人员的水文学训练项目。",'
                 '"eligibility":"硕士生和博士生可以申请。",'
                 '"recommendation_reason":"费用约为 2600 欧元。",'

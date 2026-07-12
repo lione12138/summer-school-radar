@@ -16,12 +16,14 @@ from .utils import ROOT, clean_space, content_hash, load_yaml
 
 TRANSLATION_FIELDS = (
     "title",
+    "organizer",
+    "location",
     "summary",
     "eligibility",
     "recommendation_reason",
     "risk_points",
 )
-TRANSLATION_SCHEMA_VERSION = "candidate-zh-v1"
+TRANSLATION_SCHEMA_VERSION = "candidate-zh-v2"
 _CJK_RE = re.compile(r"[\u3400-\u9fff]")
 _EXACT_PROTECTED_RE = re.compile(
     r"https?://\S+|\b\d{4}-\d{2}-\d{2}\b",

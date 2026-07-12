@@ -1,16 +1,15 @@
 from __future__ import annotations
 
+import json
 from dataclasses import replace
 from datetime import date, timedelta
-from pathlib import Path
 
-from research_school_radar.cli import _load_curated_opportunities, _load_sources, collect_linked_opportunity_pages
-from research_school_radar.extract import extract_candidate, sample_candidate
+from research_school_radar.candidate_io import candidate_from_mapping
+from research_school_radar.extract import sample_candidate
 from research_school_radar.filter import apply_hard_filters
-from research_school_radar.models import Page, Source
-from research_school_radar.parse import candidate_links, looks_like_opportunity
+from research_school_radar.models import Page, ProgrammeSession, Source
 from research_school_radar.rank import rank_candidates
-from research_school_radar.report import render_report, update_readme
+from research_school_radar.report import render_report
 from research_school_radar.site import write_site
 
 
@@ -137,6 +136,33 @@ def test_site_generation_writes_valid_rss_feed(tmp_path) -> None:
     assert 'href="feed.xml"' in html
 
 
+def test_rss_feed_includes_curated_records(tmp_path) -> None:
+    import xml.etree.ElementTree as ET
+
+    curated = [{
+        "title": "Maintainer Reviewed School",
+        "organizer": "Example Institute",
+        "url": "https://example.org/curated-school",
+        "location": "Germany",
+        "start_date": "2027-08-01",
+        "end_date": "2027-08-08",
+        "application_deadline": "2027-04-01",
+        "funding": {"available": True},
+        "topics": ["hydrology"],
+    }]
+
+    write_site([], [], tmp_path, curated=curated)
+
+    feed = ET.fromstring((tmp_path / "feed.xml").read_text(encoding="utf-8"))
+    items = feed.find("channel").findall("item")
+    assert len(items) == 1
+    assert "Maintainer Reviewed School" in items[0].findtext("title")
+    assert items[0].findtext("category") == "Curated"
+    index = (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert "1 shown" in index
+    assert '<h3 data-i18n="empty.title">' not in index
+
+
 def test_site_generation_writes_html_and_json(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
@@ -147,6 +173,10 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert (tmp_path / "sources.json").exists()
     assert (tmp_path / "sources.html").exists()
     html = index.read_text(encoding="utf-8")
+    candidate_payload = json.loads((tmp_path / "candidates.json").read_text(encoding="utf-8"))
+    assert candidate_payload["schema_version"] == 2
+    assert candidate_payload["opportunities"][0]["title"] == candidate.title
+    assert candidate_payload["scanner_opportunities"][0]["title"] == candidate.title
     assert "Summa" in html
     assert 'id="lang-toggle"' in html and 'id="theme-toggle"' in html  # CN/EN + dark/light toggles
     assert "Example Hydrology Winter School" in html
@@ -302,6 +332,11 @@ def test_site_generation_writes_favicon(tmp_path) -> None:
     html = (tmp_path / "index.html").read_text(encoding="utf-8")
     assert '<link rel="icon" type="image/svg+xml" href="favicon.svg">' in html
     assert (tmp_path / "favicon.svg").exists()
+
+    detail = next((tmp_path / "opportunities").glob("*.html")).read_text(encoding="utf-8")
+    assert 'href="../favicon.svg"' in detail
+    assert 'href="../og-image.png"' in detail
+    assert f'<meta property="og:title" content="{candidate.title}">' in detail
 
 
 def test_collection_notes_are_public_friendly(tmp_path) -> None:
@@ -497,6 +532,7 @@ def test_status_line_uses_correct_singular_and_plural(tmp_path) -> None:
 
 
 def test_subscribe_section_renders_email_form_when_configured() -> None:
+    from research_school_radar.localization_audit import localization_issues
     from research_school_radar.site import render_site
 
     # Not configured: no subscribe section is shown.
@@ -511,10 +547,17 @@ def test_subscribe_section_renders_email_form_when_configured() -> None:
     configured = render_site([], [], config, [])
     assert "buttondown.email/api/emails/embed-subscribe/ssr" in configured
     assert "Get email alerts" in configured
+    assert 'data-i18n="subscribe.title"' in configured
+    assert 'data-i18n="subscribe.lead"' in configured
+    assert 'data-i18n-placeholder="subscribe.email.placeholder"' in configured
+    assert 'data-i18n="subscribe.submit"' in configured
     assert "RSS feed" not in configured
+    assert localization_issues(configured) == []
 
 
 def test_empty_state_stays_informative(tmp_path) -> None:
+    from research_school_radar.localization_audit import localization_issues
+
     sources = [
         {"name": "A", "url": "https://a", "enabled": True},
         {"name": "B", "url": "https://b", "enabled": True},
@@ -527,7 +570,57 @@ def test_empty_state_stays_informative(tmp_path) -> None:
     assert "across 2 trusted sources" in html  # manual sources are not counted as scanned
     assert "the radar is watching" in html
     assert "See what we track" in html
+    assert 'class="lang-zh" lang="zh"' in html
+    assert "目前没有项目通过最近一次扫描的全部规则" in html
+    assert "每周一、周三和周五检查" in html
     assert "Subscribe via RSS" not in html
+    assert localization_issues(html) == []
+
+
+def test_filters_only_offer_topics_from_rendered_records() -> None:
+    from research_school_radar.site import render_site
+
+    candidates = []
+    for index in range(11):
+        candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+        candidate.title = f"Visible School {index}"
+        candidate.source_url = f"https://example.org/school-{index}"
+        candidate.application_link = candidate.source_url
+        candidate.topic_keywords = [f"topic-{index}"]
+        candidates.append(candidate)
+
+    html = render_site(candidates, [])
+
+    assert 'value="topic-9"' in html
+    assert 'value="topic-10"' not in html
+
+
+def test_chinese_title_is_in_search_index(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    candidate.title_zh = "示例水文学冬季学校"
+
+    html = write_site([candidate], [], tmp_path).read_text(encoding="utf-8")
+
+    assert "示例水文学冬季学校" in html
+    assert "示例水文学冬季学校" in html.split('data-search="', 1)[1].split('"', 1)[0]
+
+
+def test_untrusted_external_urls_are_not_rendered(tmp_path) -> None:
+    curated = [{
+        "title": "Unsafe Curated School",
+        "url": "javascript:alert(1)",
+        "application_deadline": "2027-04-01",
+    }]
+    sources = [{"name": "Unsafe Source", "url": "data:text/html,bad"}]
+
+    write_site([], [], tmp_path, curated=curated, sources=sources)
+
+    index = (tmp_path / "index.html").read_text(encoding="utf-8")
+    source_page = (tmp_path / "sources.html").read_text(encoding="utf-8")
+    feed = (tmp_path / "feed.xml").read_text(encoding="utf-8")
+    assert "javascript:" not in index
+    assert "data:text/html" not in source_page
+    assert "javascript:" not in feed
 
 
 def test_near_matches_hide_durationless_supplemental_pages(tmp_path) -> None:
@@ -599,6 +692,23 @@ def test_site_renders_figma_card_layout_and_detail_pages(tmp_path) -> None:
     assert f"opportunities/{detail_files[0].name}" in (tmp_path / "sitemap.xml").read_text(encoding="utf-8")
 
 
+def test_identity_key_keeps_shared_listing_records_distinct_in_site_and_feed(tmp_path) -> None:
+    first = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    first.title = "IHE Course One"
+    first.identity_key = "ihe-delft:course-1"
+    first.source_url = "https://example.org/shared-listing"
+    first.application_link = first.source_url
+    second = replace(first, title="IHE Course Two", identity_key="ihe-delft:course-2")
+
+    write_site([first, second], [], tmp_path)
+
+    detail_files = sorted((tmp_path / "opportunities").glob("*.html"))
+    feed = (tmp_path / "feed.xml").read_text(encoding="utf-8")
+    assert len(detail_files) == 2
+    assert "ihe-delft:course-1" in feed
+    assert "ihe-delft:course-2" in feed
+
+
 def test_topic_display_is_capped_at_four_terms(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     candidate.topic_keywords = ["one", "two", "three", "four", "five", "six"]
@@ -621,6 +731,73 @@ def test_public_location_uses_europe_label(tmp_path) -> None:
     assert ">Europe<" in html
     assert ">continental Europe<" not in html
 
+
+def test_multi_session_programme_is_compact_and_expandable(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    candidate.title = "Social Science Data Analysis"
+    candidate.start_date = date(2026, 6, 29)
+    candidate.end_date = date(2026, 8, 14)
+    candidate.duration_days = 12
+    candidate.deadline = date(2026, 7, 17)
+    candidate.deadline_status = "open"
+    candidate.sessions = [
+        ProgrammeSession("Pre-sessional 1", date(2026, 6, 29), date(2026, 7, 3), date(2026, 6, 19)),
+        ProgrammeSession("Session 1", date(2026, 7, 6), date(2026, 7, 17), date(2026, 6, 19)),
+        ProgrammeSession("Pre-sessional 2", date(2026, 7, 13), date(2026, 7, 17), date(2026, 7, 3)),
+        ProgrammeSession("Session 2", date(2026, 7, 20), date(2026, 7, 31), date(2026, 7, 3)),
+        ProgrammeSession("Session 3", date(2026, 8, 3), date(2026, 8, 14), date(2026, 7, 17)),
+    ]
+
+    write_site(rank_candidates([candidate]), [], tmp_path)
+    index = (tmp_path / "index.html").read_text(encoding="utf-8")
+    detail = next((tmp_path / "opportunities").glob("*.html")).read_text(encoding="utf-8")
+    payload = json.loads((tmp_path / "candidates.json").read_text(encoding="utf-8"))
+
+    assert '<details class="session-list">' in index
+    assert "5 sessions · 5–12 days each" in index
+    assert "5 个时段 · 每段 5–12 天" in index
+    assert "Pre-sessional 2: 13 Jul–17 Jul 2026 · apply by 3 Jul 2026" in index
+    assert "预备时段 2：2026年7月13日–7月17日 · 申请截止 2026年7月3日" in index
+    assert "Latest: 2026-07-17" in index
+    assert "最晚时段截止：" in index
+    assert "47 days" not in index
+    assert "47 天" not in index
+    assert "5 sessions · 5–12 days each" in detail
+    assert payload["opportunities"][0]["sessions"][0] == {
+        "name": "Pre-sessional 1",
+        "start_date": "2026-06-29",
+        "end_date": "2026-07-03",
+        "application_deadline": "2026-06-19",
+    }
+    restored = candidate_from_mapping(payload["opportunities"][0])
+    assert restored.sessions == candidate.sessions
+
+
+def test_detail_snapshot_location_is_bilingual(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    candidate.location = "continental Europe"
+    ranked = rank_candidates([candidate])
+
+    write_site(ranked, [], tmp_path)
+    detail = next((tmp_path / "opportunities").glob("*.html")).read_text(encoding="utf-8")
+
+    assert (
+        '<span class="lang-en" lang="en">Europe</span>'
+        '<span class="lang-zh" lang="zh">欧洲大陆</span>'
+    ) in detail
+
+
+def test_detail_header_uses_candidate_organizer_and_location_translations(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    candidate.organizer = "IHE Delft"
+    candidate.organizer_zh = "代尔夫特水教育学院"
+    candidate.location = "Delft, Netherlands"
+    candidate.location_zh = "荷兰代尔夫特"
+
+    write_site(rank_candidates([candidate]), [], tmp_path)
+    detail = next((tmp_path / "opportunities").glob("*.html")).read_text(encoding="utf-8")
+
+    assert "代尔夫特水教育学院 · 荷兰代尔夫特" in detail
 
 
 def test_localization_contract_holds_across_built_pages(tmp_path) -> None:

@@ -2,16 +2,11 @@ from __future__ import annotations
 
 from dataclasses import replace
 from datetime import date, timedelta
-from pathlib import Path
 
-from research_school_radar.cli import _load_curated_opportunities, _load_sources, collect_linked_opportunity_pages
 from research_school_radar.extract import extract_candidate, sample_candidate
 from research_school_radar.filter import apply_hard_filters
-from research_school_radar.models import Page, Source
-from research_school_radar.parse import candidate_links, looks_like_opportunity
-from research_school_radar.rank import rank_candidates
-from research_school_radar.report import render_report, update_readme
-from research_school_radar.site import write_site
+from research_school_radar.models import Candidate, Page, Source
+from research_school_radar.rank import rank_candidates, score_candidate
 
 
 PROFILE = {
@@ -33,24 +28,6 @@ PROFILE = {
     "priority_regions": ["continental Europe"],
     "supplementary_regions": ["North America"],
 }
-
-
-def _page(text: str, *, html: str = "", title: str = "Test School") -> Page:
-    source = Source(
-        name="Example Source",
-        url="https://example.org/school",
-        layer="1",
-        region="continental Europe",
-        source_type="research_institute",
-    )
-    return Page(
-        url=source.url,
-        title=title,
-        text=text,
-        html=html,
-        source=source,
-        fetched_at=date.today(),
-    )
 
 
 def test_ranking_deduplicates_same_title_and_organizer() -> None:
@@ -168,6 +145,116 @@ def test_dedupe_merges_fee_from_linked_page() -> None:
     ranked = rank_candidates([base, fee_page])
     assert len(ranked) == 1
     assert ranked[0].fee_eur == 332.5
+
+
+def test_dedupe_enriches_records_with_the_same_structured_identity() -> None:
+    primary = sample_candidate(PROFILE)
+    primary.identity_key = "catalogue:edition:42"
+    primary.deadline = None
+    primary.deadline_status = "uncertain"
+    supplement = replace(
+        primary,
+        deadline=date.today() + timedelta(days=30),
+        deadline_status="open",
+        topic_keywords=[],
+        mode="online",
+    )
+
+    ranked = rank_candidates([primary, supplement], profile=PROFILE)
+
+    assert len(ranked) == 1
+    assert ranked[0].deadline == supplement.deadline
+    assert ranked[0].deadline_status == "open"
+
+
+def _identity_bridge_candidates(scores: tuple[float, float, float]) -> tuple[Candidate, Candidate, Candidate]:
+    base = sample_candidate(PROFILE)
+    first = replace(
+        base,
+        identity_key="catalogue:edition:first",
+        source_url="https://catalogue.example/first",
+        score=scores[0],
+    )
+    unstructured = replace(
+        base,
+        identity_key="",
+        source_url="https://aggregator.example/listing",
+        score=scores[1],
+    )
+    second = replace(
+        base,
+        identity_key="catalogue:edition:second",
+        source_url="https://catalogue.example/second",
+        score=scores[2],
+    )
+    return first, unstructured, second
+
+
+def _assert_unstructured_record_does_not_bridge_structured_identities(candidates: list[Candidate]) -> None:
+    from research_school_radar.rank import _dedupe_candidates
+
+    deduped = _dedupe_candidates(candidates)
+    assert len(deduped) == 2
+    assert {candidate.identity_key for candidate in deduped} == {
+        "catalogue:edition:first",
+        "catalogue:edition:second",
+    }
+
+
+def test_high_score_unstructured_record_cannot_bridge_two_structured_identities() -> None:
+    first, unstructured, second = _identity_bridge_candidates((10.0, 30.0, 20.0))
+    _assert_unstructured_record_does_not_bridge_structured_identities([first, unstructured, second])
+
+
+def test_first_tied_unstructured_record_cannot_bridge_two_structured_identities() -> None:
+    first, unstructured, second = _identity_bridge_candidates((20.0, 20.0, 20.0))
+    _assert_unstructured_record_does_not_bridge_structured_identities([unstructured, first, second])
+
+
+def test_reordered_structured_records_remain_isolated_behind_unstructured_record() -> None:
+    first, unstructured, second = _identity_bridge_candidates((10.0, 30.0, 10.0))
+    _assert_unstructured_record_does_not_bridge_structured_identities([second, first, unstructured])
+
+
+def test_rank_recomputes_filters_and_score_after_duplicate_enrichment() -> None:
+    primary = sample_candidate(PROFILE)
+    primary.source_url = "https://example.org/course-overview"
+    primary.application_link = primary.source_url
+    primary.funding_available = None
+    primary.funding_type = []
+    primary.funding_evidence = ""
+    primary.fee = ""
+    primary.fee_eur = None
+
+    supplement = replace(
+        primary,
+        source_url="https://partner.example.org/course-funding",
+        application_link="https://partner.example.org/course-funding",
+        funding_available=True,
+        funding_type=["travel grant", "tuition waiver"],
+        funding_evidence="Travel grants and tuition waivers are available.",
+        topic_keywords=[],
+        mode="online",
+    )
+    filtered = [
+        apply_hard_filters(primary, PROFILE),
+        apply_hard_filters(supplement, PROFILE),
+    ]
+    assert "funding is not explicit and fee is uncertain" in primary.failed_hard_conditions
+
+    ranked = rank_candidates(filtered, profile=PROFILE)
+
+    assert len(ranked) == 1
+    merged = ranked[0]
+    assert merged.source_url == primary.source_url
+    assert merged.funding_available is True
+    assert merged.financial_access_status == "funded"
+    assert merged.failed_hard_conditions == []
+    assert merged.risk_points == "No major rule-based risk detected."
+    expected_score, expected_reasons = score_candidate(merged)
+    assert merged.score == expected_score
+    assert merged.score_explanation == expected_reasons
+    assert merged.recommendation_reason == "; ".join(expected_reasons[:4])
 
 
 def test_application_page_without_dates_can_close_parent_candidate() -> None:

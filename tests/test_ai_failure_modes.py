@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from research_school_radar.cli import _load_llm_config, _load_semantic_config
+from research_school_radar.ai_pipeline import _load_llm_config, _load_semantic_config
 from research_school_radar.llm_extract import run_llm_extraction
 from research_school_radar.semantic import SemanticChunk
 

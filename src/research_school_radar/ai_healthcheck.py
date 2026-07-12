@@ -7,7 +7,13 @@ from urllib.parse import urljoin
 
 import requests
 
-from .cli import _PROVIDER_DEFAULTS, _apply_llm_env_overrides, _apply_provider_defaults, _client_config, _load_llm_config
+from .ai_pipeline import (
+    _PROVIDER_DEFAULTS,
+    _apply_llm_env_overrides,
+    _apply_provider_defaults,
+    _client_config,
+    _load_llm_config,
+)
 from .llm_client import LLMClientConfig
 from .llm_extract import parse_llm_json
 from .utils import ROOT
@@ -17,6 +23,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Check optional LLM provider health.")
     parser.add_argument("--provider", choices=["deepseek"], default=None)
     parser.add_argument("--ai-config", type=Path, default=ROOT / "config" / "ai.yaml")
+    parser.add_argument("--strict", action="store_true", help="Exit non-zero unless the endpoint returns valid JSON")
     args = parser.parse_args()
 
     config = _load_llm_config(args.ai_config)
@@ -25,7 +32,13 @@ def main() -> None:
         config = _apply_provider_defaults(config, _PROVIDER_DEFAULTS)
         config = _apply_llm_env_overrides(config)
     client_config = _client_config(config)
-    run_healthcheck(client_config)
+    result = run_healthcheck(client_config)
+    if args.strict and not healthcheck_succeeded(result):
+        raise SystemExit("DeepSeek health check failed; keeping the last successful published snapshot.")
+
+
+def healthcheck_succeeded(result: dict) -> bool:
+    return bool(result.get("reachable") and result.get("tiny_json_ok"))
 
 
 def run_healthcheck(config: LLMClientConfig) -> dict:
@@ -68,7 +81,7 @@ def run_healthcheck(config: LLMClientConfig) -> dict:
     tiny_prompt = f'Return only valid JSON with this schema: {{"ok": true, "provider": "{provider}"}}'
     try:
         content = _tiny_json_test(config, tiny_prompt)
-    except Exception as exc:  # noqa: BLE001 - healthcheck must not crash when local provider is down.
+    except Exception as exc:  # noqa: BLE001 - report an unreachable provider as structured health data.
         print(f"Tiny JSON test failed: {exc}")
         result["warnings"].append(str(exc))
         return result

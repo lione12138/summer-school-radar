@@ -6,14 +6,31 @@ from datetime import date
 from difflib import SequenceMatcher
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
+from .filter import apply_hard_filters
 from .models import Candidate
 
 
-def rank_candidates(candidates: list[Candidate]) -> list[Candidate]:
+def rank_candidates(candidates: list[Candidate], *, profile: dict | None = None) -> list[Candidate]:
+    """Merge duplicate facts, then derive filters and ranking from final facts.
+
+    The preliminary score only chooses the most complete representative during
+    deduplication. Merging can add a deadline, funding, or fee, so every
+    surviving record is scored again; callers with a profile also get all hard
+    filter fields recomputed from those merged facts.
+    """
     for candidate in candidates:
-        candidate.score, candidate.score_explanation = score_candidate(candidate)
-        candidate.recommendation_reason = "; ".join(candidate.score_explanation[:4])
-    return sorted(_dedupe_candidates(candidates), key=lambda item: item.score, reverse=True)
+        _update_score(candidate)
+    merged = _dedupe_candidates(candidates)
+    for candidate in merged:
+        if profile is not None:
+            apply_hard_filters(candidate, profile)
+        _update_score(candidate)
+    return sorted(merged, key=lambda item: item.score, reverse=True)
+
+
+def _update_score(candidate: Candidate) -> None:
+    candidate.score, candidate.score_explanation = score_candidate(candidate)
+    candidate.recommendation_reason = "; ".join(candidate.score_explanation[:4])
 
 
 def score_candidate(candidate: Candidate) -> tuple[float, list[str]]:
@@ -80,21 +97,30 @@ def score_candidate(candidate: Candidate) -> tuple[float, list[str]]:
 def _dedupe_candidates(candidates: list[Candidate]) -> list[Candidate]:
     """Remove duplicates that arrive via different URLs, sources, or title
     variants. Runs on every scan, keeping the highest-scoring representative."""
-    # Stage 1: collapse identical opportunities reached through different URLs
-    # (tracking parameters, fragments, trailing slashes).
-    best_by_url: dict[str, Candidate] = {}
+    # Stage 1: collapse identical structured identities, or URL variants when
+    # the collector has no stronger identity (tracking params/fragments/etc.).
+    best_by_key: dict[str, Candidate] = {}
     for candidate in candidates:
-        key = _canonical_url(candidate.source_url)
-        current = best_by_url.get(key)
-        if current is None or candidate.score > current.score:
-            best_by_url[key] = candidate
+        key = (
+            f"identity:{candidate.identity_key}"
+            if candidate.identity_key
+            else f"url:{_canonical_url(candidate.source_url)}"
+        )
+        current = best_by_key.get(key)
+        if current is None:
+            best_by_key[key] = candidate
+        elif candidate.score > current.score:
+            _merge_into(candidate, current)
+            best_by_key[key] = candidate
+        else:
+            _merge_into(current, candidate)
 
     # Stage 2: collapse the same event reported under different titles or by
     # different sources, confirmed by matching dates. Highest score wins, but the
     # surviving record is enriched with any fields the duplicate had and it
     # lacked (e.g. an official site that lists the deadline an aggregator omits).
     kept: list[Candidate] = []
-    for candidate in sorted(best_by_url.values(), key=lambda item: item.score, reverse=True):
+    for candidate in sorted(best_by_key.values(), key=lambda item: item.score, reverse=True):
         match = next((other for other in kept if _same_opportunity(candidate, other)), None)
         if match is None:
             kept.append(candidate)
@@ -106,6 +132,27 @@ def _dedupe_candidates(candidates: list[Candidate]) -> list[Candidate]:
 def _merge_into(primary: Candidate, other: Candidate) -> None:
     """Fill fields the primary (higher-scoring) record is missing from a merged
     duplicate, so cross-source records combine into the most complete one."""
+    # A record without a structured identity may be the highest-scoring copy of
+    # a catalogue item.  Once it is matched to that item it must inherit the
+    # identity; otherwise it can act as a bridge and later absorb a different
+    # catalogue item with a similar title and the same dates.
+    if not primary.identity_key and other.identity_key:
+        primary.identity_key = other.identity_key
+    if other.sessions:
+        sessions = {}
+        for session in [*primary.sessions, *other.sessions]:
+            key = (session.name, session.start_date, session.end_date)
+            existing = sessions.get(key)
+            if existing is None or (
+                existing.application_deadline is None
+                and session.application_deadline is not None
+            ):
+                sessions[key] = session
+        primary.sessions = sorted(
+            sessions.values(),
+            key=lambda session: (session.start_date, session.end_date, session.name),
+        )
+        primary.duration_days = max(session.duration_days for session in primary.sessions)
     # A "closed" status (applications-closed text) is a hard signal and must
     # never be overwritten by a duplicate's open/uncertain status — otherwise a
     # closed event could be resurrected as open.
@@ -128,8 +175,10 @@ def _merge_into(primary: Candidate, other: Candidate) -> None:
         primary.deadline_evidence = primary.deadline_evidence or other.deadline_evidence
     if primary.start_date is None and other.start_date is not None:
         primary.start_date = other.start_date
-        primary.end_date = primary.end_date or other.end_date
-        primary.duration_days = primary.duration_days or other.duration_days
+    if primary.end_date is None and other.end_date is not None:
+        primary.end_date = other.end_date
+    if primary.duration_days is None and other.duration_days is not None:
+        primary.duration_days = other.duration_days
     if not primary.location and other.location:
         primary.location = other.location
     if primary.funding_available is not True and other.funding_available is True:
@@ -166,6 +215,10 @@ def canonical_url(url: str) -> str:
 
 
 def _same_opportunity(a: Candidate, b: Candidate) -> bool:
+    # Structured-source identities are authoritative. Distinct catalogue IDs
+    # can legitimately have nearly identical names and the same teaching dates.
+    if a.identity_key and b.identity_key and a.identity_key != b.identity_key:
+        return False
     similarity = _title_similarity(a.title, b.title)
     # Different start dates mean different editions or sibling events, even if a
     # shared series deadline coincides — never merge those.

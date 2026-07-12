@@ -6,6 +6,7 @@ from html import escape
 from typing import Any, Callable
 
 from .models import Candidate
+from .urls import safe_external_url
 
 
 SITE_URL = "https://lione12138.github.io/summer-school-radar/"
@@ -13,10 +14,10 @@ OG_IMAGE = SITE_URL + "og-image.png"
 DATA_LICENSE = "CC BY 4.0"
 DATA_LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 SITE_DESCRIPTION = (
-    "A free daily scanner of trusted academic sources for funded research summer "
+    "A free scanner of trusted academic sources for funded research summer "
     "schools, winter schools, and training schools across many academic fields — "
     "environmental & earth science, computing & data science, social sciences, "
-    "and humanities — with strict filters and transparent evidence."
+    "and humanities — with strict filters, transparent evidence, and daily deadline-status updates."
 )
 
 # A stable, distinctive marker baked into every generated artifact. Searching the
@@ -67,9 +68,18 @@ def sitemap_xml(pages: list[str]) -> str:
     )
 
 
-def seo_head(canonical: str, description: str, site_config: dict[str, Any]) -> str:
+def seo_head(
+    canonical: str,
+    description: str,
+    site_config: dict[str, Any],
+    *,
+    title: str = "Summa",
+    asset_prefix: str = "",
+) -> str:
     """Canonical link, Open Graph, Twitter card, and verification tags."""
     desc = escape(description, quote=True)
+    page_title = escape(title, quote=True)
+    asset_prefix = "../" if asset_prefix == "../" else ""
     seo = site_config.get("seo", {}) if isinstance(site_config.get("seo"), dict) else {}
     verification = str(seo.get("google_site_verification", "")).strip()
     verify_tag = (
@@ -78,12 +88,12 @@ def seo_head(canonical: str, description: str, site_config: dict[str, Any]) -> s
         else ""
     )
     return f"""  <link rel="canonical" href="{escape(canonical, quote=True)}">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="apple-touch-icon" href="og-image.png">
+  <link rel="icon" type="image/svg+xml" href="{asset_prefix}favicon.svg">
+  <link rel="apple-touch-icon" href="{asset_prefix}og-image.png">
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0e7490">
   <meta name="description" content="{desc}">
-  <meta property="og:title" content="Summa">
+  <meta property="og:title" content="{page_title}">
   <meta property="og:description" content="{desc}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{escape(canonical, quote=True)}">
@@ -93,7 +103,7 @@ def seo_head(canonical: str, description: str, site_config: dict[str, Any]) -> s
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Summa">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Summa">
+  <meta name="twitter:title" content="{page_title}">
   <meta name="twitter:description" content="{desc}">
   <meta name="twitter:image" content="{OG_IMAGE}">{verify_tag}"""
 
@@ -164,7 +174,7 @@ def jsonld_block(
             "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
             "location": {"@type": "Place", "name": location},
         }
-        url = candidate.application_link or candidate.source_url
+        url = safe_external_url(candidate.application_link or candidate.source_url)
         if url:
             event["url"] = url
         if candidate.organizer and candidate.organizer.lower() != "uncertain":

@@ -1,17 +1,10 @@
 from __future__ import annotations
 
-from dataclasses import replace
-from datetime import date, timedelta
+from datetime import date
 from pathlib import Path
 
 from research_school_radar.cli import _load_curated_opportunities, _load_sources, collect_linked_opportunity_pages
-from research_school_radar.extract import extract_candidate, sample_candidate
-from research_school_radar.filter import apply_hard_filters
 from research_school_radar.models import Page, Source
-from research_school_radar.parse import candidate_links, looks_like_opportunity
-from research_school_radar.rank import rank_candidates
-from research_school_radar.report import render_report, update_readme
-from research_school_radar.site import write_site
 
 
 PROFILE = {
@@ -179,6 +172,13 @@ def test_disabled_sources_are_not_loaded() -> None:
     assert "IIASA" not in names
 
 
+def test_dedicated_collectors_use_the_same_enabled_source_registry() -> None:
+    sources = _load_sources(Path("config/sources.yaml"))
+    collectors = {source.name: source.collector for source in sources if source.collector}
+
+    assert collectors == {"ELLIS": "ellis", "IHE Delft": "ihe_delft"}
+
+
 def test_curated_opportunities_loader_reads_yaml(tmp_path) -> None:
     path = tmp_path / "opportunities.yml"
     path.write_text(
@@ -295,6 +295,7 @@ def test_fetch_source_uses_etag_cache_on_not_modified(tmp_path) -> None:
     assert second.title == "Cached School"
     assert seen_headers["If-None-Match"] == '"v1"'
     assert seen_headers["If-Modified-Since"] == "Wed, 01 Jul 2026 10:00:00 GMT"
+    assert cache.stats == {"requests": 2, "hits_304": 1, "stale_fallbacks": 0, "stores": 1}
 
 
 def test_http_cache_refresh_bypasses_conditional_headers(tmp_path) -> None:
@@ -363,3 +364,150 @@ def test_http_cache_prune_removes_only_stale_entries(tmp_path) -> None:
     cache.touch("https://example.org/fresh")
     assert cache.prune(max_age_days=45) == 0
     assert fresh.exists()
+
+
+def test_http_cache_uses_recent_body_after_connection_error(tmp_path) -> None:
+    import requests
+    import responses as responses_lib
+
+    from research_school_radar.collect import fetch_source
+    from research_school_radar.http_cache import HttpCache
+
+    source = Source(name="Cached", url="https://example.org/flaky", layer="1", region="global", source_type="test")
+    cache = HttpCache(tmp_path / "http_cache", stale_if_error_max_age_days=14)
+
+    @responses_lib.activate
+    def seed_cache() -> None:
+        responses_lib.add(
+            responses_lib.GET,
+            source.url,
+            body="<html><title>Resilient</title><body>last known good body</body></html>",
+            status=200,
+            headers={"ETag": '"good"'},
+        )
+        fetch_source(source, http_cache=cache)
+
+    seed_cache()
+    cache_mtime = cache._path(source.url).stat().st_mtime
+
+    @responses_lib.activate
+    def fetch_during_outage():
+        responses_lib.add(responses_lib.GET, source.url, body=requests.ConnectionError("offline"))
+        return fetch_source(source, http_cache=cache)
+
+    page = fetch_during_outage()
+
+    assert "last known good body" in page.text
+    assert cache.warning_records[-1]["event"] == "http_cache_stale_if_error"
+    assert cache.warning_records[-1]["reason"] == "exception:ConnectionError"
+    assert cache.warning_records[-1]["url"] == source.url
+    assert cache.stats["stale_fallbacks"] == 1
+    assert cache._path(source.url).stat().st_mtime == cache_mtime
+
+
+def test_http_cache_uses_recent_body_for_429_and_5xx(tmp_path) -> None:
+    import responses as responses_lib
+
+    from research_school_radar.collect import fetch_source
+    from research_school_radar.http_cache import HttpCache
+
+    for status in (429, 503):
+        source = Source(
+            name=f"Cached {status}",
+            url=f"https://example.org/flaky-{status}",
+            layer="1",
+            region="global",
+            source_type="test",
+        )
+        cache = HttpCache(tmp_path / f"http_cache_{status}")
+
+        @responses_lib.activate
+        def seed_cache() -> None:
+            responses_lib.add(
+                responses_lib.GET,
+                source.url,
+                body=f"<html><title>Cached {status}</title><body>good {status}</body></html>",
+                status=200,
+            )
+            fetch_source(source, http_cache=cache)
+
+        seed_cache()
+
+        @responses_lib.activate
+        def fetch_transient_failure():
+            responses_lib.add(responses_lib.GET, source.url, body="temporary failure", status=status)
+            return fetch_source(source, http_cache=cache)
+
+        page = fetch_transient_failure()
+
+        assert f"good {status}" in page.text
+        assert cache.warning_records[-1]["reason"] == f"http:{status}"
+
+
+def test_http_cache_does_not_hide_explicit_client_error(tmp_path) -> None:
+    import requests
+    import responses as responses_lib
+
+    from research_school_radar.collect import fetch_source
+    from research_school_radar.http_cache import HttpCache
+
+    source = Source(name="Removed", url="https://example.org/removed", layer="1", region="global", source_type="test")
+    cache = HttpCache(tmp_path / "http_cache")
+
+    @responses_lib.activate
+    def seed_cache() -> None:
+        responses_lib.add(responses_lib.GET, source.url, body="<html><body>old body</body></html>", status=200)
+        fetch_source(source, http_cache=cache)
+
+    seed_cache()
+
+    @responses_lib.activate
+    def fetch_removed() -> None:
+        responses_lib.add(responses_lib.GET, source.url, body="not found", status=404)
+        fetch_source(source, http_cache=cache)
+
+    try:
+        fetch_removed()
+    except requests.HTTPError as exc:
+        assert exc.response is not None
+        assert exc.response.status_code == 404
+    else:
+        raise AssertionError("404 must not fall back to cached content")
+    assert cache.warning_records == []
+
+
+def test_http_cache_rejects_body_older_than_stale_if_error_window(tmp_path) -> None:
+    import os
+    import time
+
+    import requests
+    import responses as responses_lib
+
+    from research_school_radar.collect import fetch_source
+    from research_school_radar.http_cache import HttpCache
+
+    source = Source(name="Expired", url="https://example.org/expired", layer="1", region="global", source_type="test")
+    cache = HttpCache(tmp_path / "http_cache", stale_if_error_max_age_days=7)
+
+    @responses_lib.activate
+    def seed_cache() -> None:
+        responses_lib.add(responses_lib.GET, source.url, body="<html><body>expired body</body></html>", status=200)
+        fetch_source(source, http_cache=cache)
+
+    seed_cache()
+    expired = time.time() - 8 * 86400
+    os.utime(cache._path(source.url), (expired, expired))
+
+    @responses_lib.activate
+    def fetch_during_outage() -> None:
+        responses_lib.add(responses_lib.GET, source.url, body=requests.Timeout("timeout"))
+        fetch_source(source, http_cache=cache)
+
+    try:
+        fetch_during_outage()
+    except requests.Timeout:
+        pass
+    else:
+        raise AssertionError("expired cache entry must not hide the request failure")
+    assert cache.warning_records[-1]["event"] == "http_cache_stale_rejected"
+    assert cache.warning_records[-1]["age_seconds"] > cache.warning_records[-1]["max_age_seconds"]

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from research_school_radar.ai_healthcheck import run_healthcheck
+from research_school_radar.ai_healthcheck import healthcheck_succeeded, run_healthcheck
 from research_school_radar.llm_client import LLMClientConfig
 
 
@@ -34,6 +34,7 @@ def test_deepseek_healthcheck_uses_tiny_json_without_model_list(monkeypatch, cap
     assert result["reachable"] is True
     assert result["model_found"] is None
     assert result["tiny_json_ok"] is True
+    assert healthcheck_succeeded(result) is True
     assert calls[0]["json"]["thinking"] == {"type": "disabled"}
 
 
@@ -44,6 +45,7 @@ def test_deepseek_healthcheck_warns_without_api_key(capsys) -> None:
     assert "DeepSeek API key is not configured" in captured.out
     assert result["reachable"] is False
     assert result["tiny_json_ok"] is False
+    assert healthcheck_succeeded(result) is False
 
 
 def test_healthcheck_rejects_removed_local_provider(capsys) -> None:

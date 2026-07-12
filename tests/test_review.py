@@ -1,17 +1,10 @@
 from __future__ import annotations
 
-from dataclasses import replace
-from datetime import date, timedelta
-from pathlib import Path
+from datetime import date
 
-from research_school_radar.cli import _load_curated_opportunities, _load_sources, collect_linked_opportunity_pages
-from research_school_radar.extract import extract_candidate, sample_candidate
+from research_school_radar.extract import sample_candidate
 from research_school_radar.filter import apply_hard_filters
 from research_school_radar.models import Page, Source
-from research_school_radar.parse import candidate_links, looks_like_opportunity
-from research_school_radar.rank import rank_candidates
-from research_school_radar.report import render_report, update_readme
-from research_school_radar.site import write_site
 
 
 PROFILE = {

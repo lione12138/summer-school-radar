@@ -10,7 +10,7 @@ from typing import Any
 
 import requests
 
-from .utils import write_text_atomic
+from .atomic_io import write_text_atomic
 
 
 @dataclass(slots=True)
@@ -21,6 +21,8 @@ class CachedHttpResponse:
     text: str
     headers: dict[str, str]
     from_cache: bool = False
+    stale_if_error: bool = False
+    cache_age_seconds: int | None = None
 
     def raise_for_status(self) -> None:
         if 400 <= self.status_code:
@@ -36,11 +38,21 @@ class HttpCache:
     today in downstream scan state.
     """
 
-    def __init__(self, directory: Path, *, enabled: bool = True, refresh: bool = False) -> None:
+    def __init__(
+        self,
+        directory: Path,
+        *,
+        enabled: bool = True,
+        refresh: bool = False,
+        stale_if_error_max_age_days: float = 14,
+    ) -> None:
         self.directory = directory
         self.enabled = enabled
         self.refresh = refresh
+        self.stale_if_error_max_age_days = max(0.0, float(stale_if_error_max_age_days))
         self.warnings: list[str] = []
+        self.warning_records: list[dict[str, Any]] = []
+        self.stats = {"requests": 0, "hits_304": 0, "stale_fallbacks": 0, "stores": 0}
         self._lock = threading.Lock()
 
     def conditional_headers(self, url: str) -> dict[str, str]:
@@ -90,6 +102,68 @@ class HttpCache:
             from_cache=True,
         )
 
+    def response_on_error(self, url: str, *, reason: str) -> CachedHttpResponse | None:
+        """Return a recently validated cached response after a transient error.
+
+        File mtime is the validation clock: a successful ``200`` writes the
+        entry and a ``304`` touches it. A stale-if-error hit deliberately does
+        not touch the file, so repeated outages cannot keep old content alive
+        forever.
+        """
+        if not self.enabled or self.refresh or self.stale_if_error_max_age_days <= 0:
+            return None
+        path = self._path(url)
+        try:
+            age_seconds = max(0, int(datetime.now(timezone.utc).timestamp() - path.stat().st_mtime))
+        except FileNotFoundError:
+            return None
+        except OSError as exc:
+            self._record_warning(
+                "http_cache_age_check_failed",
+                url=url,
+                reason=reason,
+                error_type=type(exc).__name__,
+            )
+            return None
+
+        max_age_seconds = int(self.stale_if_error_max_age_days * 86400)
+        if age_seconds > max_age_seconds:
+            self._record_warning(
+                "http_cache_stale_rejected",
+                url=url,
+                reason=reason,
+                age_seconds=age_seconds,
+                max_age_seconds=max_age_seconds,
+            )
+            return None
+
+        cached = self.response_from_cache(url)
+        if cached is None:
+            return None
+        cached.stale_if_error = True
+        cached.cache_age_seconds = age_seconds
+        self._increment_stat("stale_fallbacks")
+        self._record_warning(
+            "http_cache_stale_if_error",
+            url=url,
+            reason=reason,
+            age_seconds=age_seconds,
+            max_age_seconds=max_age_seconds,
+        )
+        return cached
+
+    def _record_warning(self, event: str, **details: Any) -> None:
+        """Record both structured data and a string-compatible warning."""
+        record = {"event": event, **details}
+        encoded = json.dumps(record, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+        with self._lock:
+            self.warning_records.append(record)
+            self.warnings.append(encoded)
+
+    def _increment_stat(self, name: str) -> None:
+        with self._lock:
+            self.stats[name] += 1
+
     def store_response(self, url: str, response: requests.Response) -> None:
         if not self.enabled:
             return
@@ -117,6 +191,7 @@ class HttpCache:
             with self._lock:
                 path.parent.mkdir(parents=True, exist_ok=True)
                 write_text_atomic(path, json.dumps(payload, ensure_ascii=False, indent=2) + "\n")
+                self.stats["stores"] += 1
         except Exception as exc:  # noqa: BLE001 - cache writes must never abort scans.
             self.warnings.append(f"http_cache_write_failed:{path.name}:{exc}")
 
@@ -163,19 +238,33 @@ def get_with_cache(
     headers: dict[str, str],
     timeout: int,
     cache: HttpCache | None = None,
-    request_get=requests.get,
+    request_get=None,
 ) -> CachedHttpResponse:
+    request_get = request_get or requests.get
     request_headers = dict(headers)
     if cache is not None:
+        cache._increment_stat("requests")
         request_headers.update(cache.conditional_headers(url))
-    response = request_get(url, headers=request_headers, timeout=timeout)
+    try:
+        response = request_get(url, headers=request_headers, timeout=timeout)
+    except requests.RequestException as exc:
+        if cache is not None:
+            cached = cache.response_on_error(url, reason=f"exception:{type(exc).__name__}")
+            if cached is not None:
+                return cached
+        raise
     status_code = int(getattr(response, "status_code", 200))
     if status_code == 304 and cache is not None:
         cached = cache.response_from_cache(url)
         if cached is not None:
             cache.touch(url)
+            cache._increment_stat("hits_304")
             return cached
         raise requests.HTTPError(f"304 Not Modified but no usable cache entry for url: {url}")
+    if (status_code == 429 or status_code >= 500) and cache is not None:
+        cached = cache.response_on_error(url, reason=f"http:{status_code}")
+        if cached is not None:
+            return cached
     response.raise_for_status()
     if cache is not None:
         cache.store_response(url, response)

@@ -4,9 +4,10 @@ import json
 import sys
 from datetime import date
 
+import research_school_radar.ai_pipeline as ai_pipeline
 import research_school_radar.cli as cli
-from research_school_radar.models import Page, Source
 from research_school_radar.cli import main
+from research_school_radar.models import Page, Source
 from research_school_radar.semantic import SemanticChunk
 from research_school_radar.utils import ROOT
 
@@ -41,6 +42,22 @@ def test_scan_offline_sample_still_works_unchanged(tmp_path, monkeypatch) -> Non
     assert (site_dir / "feed.xml").exists()
     assert (data_dir / "review_queue.json").exists()
     assert not (site_dir / "semantic_chunks.json").exists()
+    assert (data_dir / "latest_scan_manifest.json").exists()
+    assert (site_dir / "scan-manifest.json").exists()
+
+
+def test_no_readme_update_flag_is_forwarded_to_scan(monkeypatch) -> None:
+    captured = {}
+
+    def fake_run_scan(**kwargs):
+        captured.update(kwargs)
+
+    monkeypatch.setattr(cli, "run_scan", fake_run_scan)
+    monkeypatch.setattr(sys, "argv", ["school-radar", "scan", "--offline-sample", "--no-readme-update"])
+
+    main()
+
+    assert captured["update_readme_latest"] is False
 
 
 def test_scan_offline_sample_enable_semantic_writes_empty_sidecar(tmp_path, monkeypatch) -> None:
@@ -89,7 +106,7 @@ def test_semantic_dependency_failure_writes_warning_sidecar(tmp_path, monkeypatc
     def fail_rank_pages(self, pages, max_pages=None):  # noqa: ANN001, ANN202 - test stub.
         raise RuntimeError("sentence-transformers is not installed")
 
-    monkeypatch.setattr(cli.SemanticRanker, "rank_pages", fail_rank_pages)
+    monkeypatch.setattr(ai_pipeline.SemanticRanker, "rank_pages", fail_rank_pages)
     chunks, ok = cli._write_semantic_outputs(ROOT / "config" / "ai.yaml", [page], [], tmp_path / "site", tmp_path / "reports")
 
     payload = json.loads((tmp_path / "site" / "semantic_chunks.json").read_text(encoding="utf-8"))

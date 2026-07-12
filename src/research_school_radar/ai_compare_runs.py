@@ -7,7 +7,8 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Sequence
 
-from .utils import ROOT, clean_space, write_text_atomic
+from .atomic_io import write_text_atomic
+from .utils import ROOT, clean_space
 
 
 COMPARE_FIELDS = (

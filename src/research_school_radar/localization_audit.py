@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 
 _KEY_RE = re.compile(r'^\s*"([\w.]+)"\s*:\s*\{en:', re.MULTILINE)
 _ASCII_WORD_RE = re.compile(r"[A-Za-z]{2,}")
-_UI_SELECTORS = "h1, h2, h3, h4, label, summary, th, option, .button, .source-link"
+_UI_SELECTORS = "h1, h2, h3, h4, p, label, summary, th, option, button, .button, .source-link"
 _ALLOWED_LITERAL_TEXT = {
     "Summa",
     "GitHub",
@@ -29,6 +29,7 @@ def localization_issues(html: str) -> list[str]:
     defined = set(_KEY_RE.findall(html))
     used = set(re.findall(r'data-i18n="([\w.]+)"', html))
     used.update(re.findall(r'data-i18n-placeholder="([\w.]+)"', html))
+    used.update(re.findall(r'data-i18n-aria-label="([\w.]+)"', html))
     for key in sorted(used - defined):
         issues.append(f"undefined_i18n_key:{key}")
 
@@ -41,10 +42,46 @@ def localization_issues(html: str) -> list[str]:
             continue
         if element.has_attr("data-i18n") or element.has_attr("data-label-zh"):
             continue
+        if element.select_one("[data-i18n], [data-label-zh]") is not None:
+            continue
         if element.select_one(".lang-zh") is not None:
+            mixed_text = _unlocalized_text_outside_language_spans(element)
+            if mixed_text:
+                issues.append(f"partially_unlocalized_ui_text:{element.name}:{mixed_text[:100]}")
             continue
         issues.append(f"unlocalized_ui_text:{element.name}:{text[:100]}")
     return issues
+
+
+def _unlocalized_text_outside_language_spans(element: object) -> str:
+    """Find English text left bare inside an otherwise bilingual UI element.
+
+    A single ``.lang-zh`` descendant used to exempt the whole paragraph.  That
+    allowed constructs such as a translated mode followed by a bare English
+    location to pass the audit.  Only text covered by its own language or i18n
+    contract is exempt here; punctuation-only separators remain harmless.
+    """
+    chunks: list[str] = []
+    for node in element.find_all(string=True):  # type: ignore[attr-defined]
+        text = " ".join(str(node).split())
+        if not text or not _ASCII_WORD_RE.search(text):
+            continue
+        parent = node.parent
+        protected = False
+        while parent is not None and parent is not element:
+            classes = set(parent.get("class", []))
+            if (
+                "lang-en" in classes
+                or "lang-zh" in classes
+                or parent.has_attr("data-i18n")
+                or parent.has_attr("data-label-zh")
+            ):
+                protected = True
+                break
+            parent = parent.parent
+        if not protected:
+            chunks.append(text)
+    return " ".join(chunks)
 
 
 def assert_localization_complete(html: str, page: str) -> None:

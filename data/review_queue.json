@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-06",
+  "generated": "2026-07-12",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -74,39 +74,6 @@
         "duration": "",
         "funding": "Travel Grants PhD Symposium Postdoc Meeting General Information Important Dates & FAQ Plan Your Visit Press Code of Conduct PR Media",
         "mode": "on Site (BCOS) Awards and Initiatives Valentin Braitenber"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "ELLIS Summer School at Institute Tübingen",
-      "url": "https://ellis.eu/events/ellis-summer-school-at-institute-tuebingen-2026",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "location": "Max Planck Institute for Intelligent Systems",
-      "dates": {
-        "start": "2026-08-31",
-        "end": "2026-09-11",
-        "duration_days": 12
-      },
-      "deadline": "2026-07-10",
-      "deadline_status": "open",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "machine learning"
-      ],
-      "needs_review": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "ELLIS detail/registration page: registration deadline 2026-07-10",
-        "duration": "ELLIS events listing: 2026-08-31 to 2026-09-11",
-        "funding": "",
-        "mode": "ELLIS listing location: Max Planck Institute for Intelligent Systems"
       },
       "ai_advisory": {
         "available": false

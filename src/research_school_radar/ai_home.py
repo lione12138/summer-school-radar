@@ -65,7 +65,7 @@ def merge_ai_for_homepage(
 
     for candidate in [*cloned, *new_candidates]:
         apply_hard_filters(candidate, profile)
-    return rank_candidates([*cloned, *new_candidates])
+    return rank_candidates([*cloned, *new_candidates], profile=profile)
 
 
 def _best_items_by_page(items: Sequence[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -105,7 +105,11 @@ def _enrich_candidate(candidate: Candidate, item: dict[str, Any], profile: dict[
     if candidate.end_date is None and end is not None:
         candidate.end_date = end
     if candidate.start_date is not None and candidate.end_date is not None:
-        candidate.duration_days = max((candidate.end_date - candidate.start_date).days + 1, 1)
+        candidate.duration_days = (
+            max(session.duration_days for session in candidate.sessions)
+            if candidate.sessions
+            else max((candidate.end_date - candidate.start_date).days + 1, 1)
+        )
         candidate.duration_evidence = _joined_evidence(item, ("start_date", "end_date"))
 
     deadline = _trusted_date(item, "application_deadline")

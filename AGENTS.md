@@ -1,0 +1,217 @@
+# AGENTS.md
+
+AI agents working on this repository should read this file first. It is the operational brief for Summa.
+
+## Product identity
+
+- Product name: **Summa**.
+- Python package/import path: `research_school_radar`.
+- Distribution/repository name: `summer-school-radar`.
+- Do not rename real package paths, CLI module paths, repository URLs, or generated GitHub Pages URLs just to make them match the product name.
+- Avoid reintroducing the old public name "Summer School Radar" in user-facing copy. Historical package/repo names may still appear where they are technically required.
+
+## What Summa does
+
+Summa scans trusted official sources for funded, in-person or substantially on-site research training opportunities across multiple disciplines. It publishes a static site, Markdown reports, JSON data, and RSS.
+
+It targets short research-training formats such as:
+
+- summer/winter/spring/autumn schools
+- training schools
+- field schools
+- doctoral/research schools
+- short or advanced courses
+
+It does **not** target:
+
+- ordinary conference workshops
+- PhD admissions
+- PhD positions
+- full degree programmes
+- generic study-abroad marketing pages
+
+Precision is more important than recall. Near-matches must not be presented as fully qualified opportunities.
+
+## Current architecture
+
+Main deterministic pipeline:
+
+```text
+sources -> collect -> parse -> extract -> filter -> rank -> report/site
+```
+
+Key modules:
+
+- `src/research_school_radar/cli.py` — CLI entry point.
+- `src/research_school_radar/collect.py` — fetches source and linked pages.
+- `src/research_school_radar/http_cache.py` — conditional HTTP cache using `ETag` / `Last-Modified`, with a 14-day stale-if-error fallback for transient upstream failures.
+- `src/research_school_radar/parse.py` — finds likely candidate links.
+- `src/research_school_radar/extract.py` — rule-based candidate extraction.
+- `src/research_school_radar/filter.py` — hard filters and near-match classification.
+- `src/research_school_radar/rank.py` — scoring and deduplication.
+- `src/research_school_radar/report.py` — Markdown report output.
+- `src/research_school_radar/site.py` — coordinates static site generation.
+- `src/research_school_radar/site_styles.py` — CSS constants.
+- `src/research_school_radar/site_i18n.py` — language dictionaries and browser-side i18n script.
+- `src/research_school_radar/site_seo.py` — sitemap, robots, JSON-LD, canary, watermark helpers.
+- `src/research_school_radar/site_feed.py` — RSS rendering.
+- `src/research_school_radar/api_sources.py` — direct collectors for structured source APIs/listings.
+- `src/research_school_radar/ai_pipeline.py` — semantic ranking, DeepSeek extraction configuration, and advisory-output orchestration used by the CLI.
+- `src/research_school_radar/scan_health.py` — rejects zero-source real scans, enforces 70% success across configured page/direct-collector attempts, and writes scan manifests.
+- `src/research_school_radar/snapshot_validation.py` — validates candidate schema v2, non-empty display/scanner records, and suspicious retention below 35% before snapshot replacement.
+- `src/research_school_radar/ai_output_validation.py` — rejects unusable semantic, DeepSeek extraction, or build-time Chinese translation output before an AI snapshot can replace the last known-good snapshot.
+- `src/research_school_radar/storage.py` — seen-state JSON handling.
+- `src/research_school_radar/publication.py` — shared public/high-quality/found display classification.
+- `src/research_school_radar/candidate_io.py` — shared `Candidate` JSON serialization/deserialization.
+- `src/research_school_radar/programme_sessions.py` — shared multi-session duration/date labels for reports, RSS, and the site.
+- `src/research_school_radar/urls.py` — validates public external URLs before rendering links.
+- `src/research_school_radar/atomic_io.py` — atomically writes generated text artifacts with transient lock retries.
+
+Optional AI branch:
+
+```text
+pages -> semantic chunks -> evidence snippets -> DeepSeek extraction -> validation -> homepage candidate copies
+```
+
+AI output is advisory. It may fill missing fields in copied candidates for homepage generation, then the normal hard filters run again. It must not mutate scanner `Candidate` objects, curated records, RSS source records, or Markdown report source records.
+
+`Candidate.identity_key` is the stable identity for structured collector records and takes precedence over URL/title similarity during deduplication. Preserve it in JSON serialization, RSS GUIDs, detail-page names, and seen-state handling.
+
+Candidate snapshot schema v2 stores AI/translation-ready homepage copies in `opportunities` and deterministic RSS/source records in `scanner_opportunities`. Never reconstruct RSS from the display list when scanner records are present.
+
+Multi-session programmes use `Candidate.sessions` / `ProgrammeSession`. `start_date` and `end_date` describe the outer programme window only; `duration_days` must describe a real selectable session (normally the longest), never the number of calendar days between the first and last optional session. Preserve per-session dates and deadlines and render them in a collapsed schedule.
+
+## LLM and translation policy
+
+- The only supported LLM provider is currently **DeepSeek**.
+- Do not reintroduce Ollama, LM Studio, Qwen local-provider code, provider comparison scripts, or local-model setup instructions unless the user explicitly asks.
+- API keys must come from environment variables or local ignored files. Never commit real keys.
+- `DEEPSEEK_API_KEY` is used for optional LLM extraction and build-time Chinese translation.
+- The model receives selected evidence snippets, not whole webpages and not browser control.
+- Non-unknown model fields must cite valid evidence IDs and pass deterministic validation before being used in homepage copies.
+
+## Important configuration files
+
+- `config/profile.yaml` — relevance topics, hard filters, financial-access rules, exchange-rate references.
+- `config/sources.yaml` — trusted source registry. The optional `collector` field is the single switch for enabling a direct collector; do not hard-code collectors outside this registry.
+- `config/queries.yaml` — optional controlled discovery queries.
+- `config/site.yaml` — optional analytics settings.
+- `config/ai.yaml` — semantic ranking, DeepSeek extraction, translation, cache, and budget settings.
+- `data/opportunities.yml` — manually curated opportunity records.
+
+Generated or local files should generally not be committed unless the task explicitly requires it:
+
+- `site/`
+- `data/http_cache/`
+- `data/ai_cache/`
+- `data/translation_cache/`
+- `logs/`
+- `.env`
+- `.env.local`
+
+The publishing automation is the explicit exception for the three versioned
+last-known-good snapshots: `data/latest_candidates.json`,
+`data/latest_sources.json`, and `data/latest_scan_manifest.json`.
+
+Do not print `.env` or other secret-bearing files.
+
+## Development setup
+
+Use PowerShell commands on this Windows workspace.
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -e ".[dev]"
+```
+
+Run the offline sample:
+
+```powershell
+python -m research_school_radar.cli scan --offline-sample
+```
+
+Run a normal scan:
+
+```powershell
+python -m research_school_radar.cli scan
+```
+
+Rebuild the public site from the latest generated candidates without fetching source pages:
+
+```powershell
+python -m research_school_radar.cli refresh-status --candidates-json data/latest_candidates.json
+```
+
+Force source-page cache refresh:
+
+```powershell
+python -m research_school_radar.cli scan --refresh-http-cache
+```
+
+Optional AI scan:
+
+```powershell
+$env:DEEPSEEK_API_KEY = "sk-..."
+python -m research_school_radar.ai_healthcheck --provider deepseek
+python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction
+```
+
+## Testing expectations
+
+Run targeted tests for the area you changed. Prefer fast focused tests over an unrelated full suite during iterative work.
+
+Common commands:
+
+```powershell
+python -m pytest tests/test_collect.py -q
+python -m pytest tests/test_extract.py -q
+python -m pytest tests/test_site.py -q
+python -m pytest tests/test_translation.py -q
+python -m pytest tests/test_cli_llm_flags.py tests/test_deepseek_client.py -q
+```
+
+Before handing off larger changes, run:
+
+```powershell
+python -m pytest -q
+```
+
+If full-suite failures are unrelated to the current change, state the exact failing tests and why they appear unrelated. Do not hide failing tests.
+
+## Coding rules
+
+- Keep generated public output auditable from official-source evidence.
+- Keep hard filters deterministic.
+- Do not let AI output bypass hard filters.
+- Do not silently promote candidates into `data/opportunities.yml`.
+- Do not add broad web crawling. Source expansion should happen through `config/sources.yaml`, direct collectors, or explicitly scoped discovery.
+- Do not make network-heavy or API-key-dependent tests mandatory.
+- Use fixture/stub tests for LLM, semantic, translation, and HTTP behavior.
+- Prefer small modules over adding more responsibilities to `site.py`.
+- When editing i18n-visible UI text, update Chinese translation contracts and run the relevant localization/translation tests.
+- Do not display a multi-session outer date window as one continuous course duration.
+- Preserve existing user changes in the working tree. Do not reset, checkout, or delete unrelated files without explicit approval.
+
+## Documentation rules
+
+- README is user-facing and should describe Summa at product level.
+- `docs/TECHNICAL.md` and `docs/TECHNICAL.zh-CN.md` should stay aligned with current architecture.
+- `docs/DEVELOPMENT_LOG.md` is for decisions, experiments, failures, and rationale.
+- Do not leave placeholders such as `git clone <this-repository>`.
+- Use "Summa" for product copy. Keep `research_school_radar` only for imports and commands.
+
+## Publishing model
+
+- `scripts/scan_and_publish.ps1` runs daily on the maintainer's Windows machine. On Monday/Wednesday/Friday it performs a residential-network, DeepSeek-assisted full scan; on other days it performs a no-network `refresh-status` rebuild from the latest snapshots.
+- A full local scan must pass `scan_health.py`, `ai_output_validation.py`, and `snapshot_validation.py` before replacing snapshots.
+- Only successful full scans update the three source snapshots on `main`; status refreshes rebuild presentation without overwriting source-scan snapshots. Full scans may also commit generated seen/review/report state. The local task never writes `gh-pages`.
+- `.github/workflows/ai_scan.yml` is the sole `gh-pages` writer. It runs a no-fetch `refresh-status` build from snapshots every day; its cloud AI scan mode is manual only.
+
+## Current design priorities
+
+1. Smaller, maintainable modules.
+2. Higher information density on web and mobile pages.
+3. Evidence-first extraction and translation.
+4. Conditional caching and source-friendly fetching.
+5. Clear separation between scanner output, AI advisory output, and curated records.

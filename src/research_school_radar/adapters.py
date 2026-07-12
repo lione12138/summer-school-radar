@@ -25,7 +25,7 @@ from urllib.parse import urljoin, urlparse
 
 from dateutil import parser as date_parser
 
-from .models import Page
+from .models import Page, ProgrammeSession
 from .utils import clean_space
 
 
@@ -59,6 +59,7 @@ _DATE = r"\d{1,2}\s+[A-Za-z]+\s+20\d{2}"
 _WEEKDAY = r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)"
 _WEEKDAY_DATE = rf"{_WEEKDAY}\s+\d{{1,2}}\s+[A-Za-z]+\s+20\d{{2}}"
 _WEEKDAY_DATE_NO_YEAR = rf"{_WEEKDAY}\s+\d{{1,2}}\s+[A-Za-z]+"
+_SESSION_LABEL = r"(?:Pre[- ]?\s*sessional\s+\d+|Session\s+(?:\d+|One|Two|Three|Four|Five))"
 _GENERIC_VENUES = {"icimod", "icimod lml", "online", "virtual", "hybrid", "tbc", "tba"}
 
 
@@ -172,48 +173,90 @@ def _essex_summer_school(page: Page) -> dict[str, Any]:
 
     # The application form lists session-specific closing dates. Use the latest
     # closing date because applicants can still apply for later sessions.
+    session_deadlines: dict[str, date] = {}
     closing_block = re.search(
         r"application closing dates(.{0,700}?)(?:2026 programme dates|estimated cost|general information|$)",
         text,
         flags=re.IGNORECASE | re.DOTALL,
     )
     if closing_block:
-        dates = [_parse_date(value) for value in re.findall(_DATE, closing_block.group(1), flags=re.IGNORECASE)]
-        valid = [value for value in dates if value]
+        session_deadlines = _essex_session_deadlines(closing_block.group(1))
+        valid = list(session_deadlines.values())
+        if not valid:
+            dates = [_parse_date(value) for value in re.findall(_DATE, closing_block.group(1), flags=re.IGNORECASE)]
+            valid = [value for value in dates if value]
         if valid:
             deadline = max(valid)
             overrides["deadline"] = deadline
             overrides["deadline_evidence"] = clean_space(closing_block.group(0))
 
-    ranges: list[tuple[date, date]] = []
-    for match in re.finditer(
-        rf"({_WEEKDAY_DATE})\s*(?:-|–|—|to)\s*({_WEEKDAY_DATE})",
-        text,
-        flags=re.IGNORECASE,
-    ):
-        start = _parse_date(match.group(1))
-        end = _parse_date(match.group(2))
-        if start and end and 0 <= (end - start).days <= 21:
-            ranges.append((start, end))
-    for match in re.finditer(
-        rf"({_WEEKDAY_DATE_NO_YEAR})\s*(?:-|–|—|to)\s*({_WEEKDAY_DATE})",
-        text,
-        flags=re.IGNORECASE,
-    ):
-        end = _parse_date(match.group(2))
-        start = _parse_date(f"{match.group(1)} {end.year}") if end else None
-        if start and end and 0 <= (end - start).days <= 21:
-            ranges.append((start, end))
-    if ranges:
-        start = min(item[0] for item in ranges)
-        end = max(item[1] for item in ranges)
+    sessions = _essex_sessions(text, session_deadlines)
+    if sessions:
+        start = min(item.start_date for item in sessions)
+        end = max(item.end_date for item in sessions)
         overrides["start_date"] = start
         overrides["end_date"] = end
-        overrides["duration_evidence"] = f"Essex programme dates: {start.isoformat()} to {end.isoformat()}"
+        overrides["sessions"] = sessions
+        overrides["duration_evidence"] = "Essex sessions: " + "; ".join(
+            f"{item.name} {item.start_date.isoformat()} to {item.end_date.isoformat()}"
+            for item in sessions
+        )
 
     if re.search(r"\bin[- ]person\b|colchester campus|hybrid", text, flags=re.IGNORECASE):
         overrides["location"] = "Colchester, UK"
     return overrides
+
+
+def _essex_sessions(
+    text: str,
+    deadlines: dict[str, date] | None = None,
+) -> list[ProgrammeSession]:
+    sessions: list[ProgrammeSession] = []
+    seen: set[tuple[str, date, date]] = set()
+    patterns = (
+        rf"({_SESSION_LABEL})\s*:\s*({_WEEKDAY_DATE})\s*(?:-|–|—|to)\s*({_WEEKDAY_DATE})",
+        rf"({_SESSION_LABEL})\s*:\s*({_WEEKDAY_DATE_NO_YEAR})\s*(?:-|–|—|to)\s*({_WEEKDAY_DATE})",
+    )
+    for pattern in patterns:
+        for match in re.finditer(pattern, text, flags=re.IGNORECASE):
+            end = _parse_date(match.group(3))
+            start_text = match.group(2)
+            start = (
+                _parse_date(start_text)
+                if re.search(r"\b20\d{2}\b", start_text)
+                else _parse_date(f"{start_text} {end.year}") if end is not None else None
+            )
+            if start is None or end is None or not 0 <= (end - start).days <= 21:
+                continue
+            name = _normalise_session_name(match.group(1))
+            key = (name, start, end)
+            if key in seen:
+                continue
+            seen.add(key)
+            sessions.append(ProgrammeSession(name, start, end, (deadlines or {}).get(name)))
+    return sorted(sessions, key=lambda item: (item.start_date, item.end_date, item.name))
+
+
+def _essex_session_deadlines(text: str) -> dict[str, date]:
+    deadlines: dict[str, date] = {}
+    labels_group = rf"({_SESSION_LABEL}(?:\s+and\s+{_SESSION_LABEL})*)\s*:\s*({_DATE})"
+    for match in re.finditer(labels_group, text, flags=re.IGNORECASE):
+        deadline = _parse_date(match.group(2))
+        if deadline is None:
+            continue
+        for label in re.findall(_SESSION_LABEL, match.group(1), flags=re.IGNORECASE):
+            deadlines[_normalise_session_name(label)] = deadline
+    return deadlines
+
+
+def _normalise_session_name(value: str) -> str:
+    cleaned = clean_space(value).replace("Pre Sessional", "Pre-sessional")
+    match = re.search(r"(\d+|one|two|three|four|five)\s*$", cleaned, flags=re.IGNORECASE)
+    number = match.group(1).lower() if match else ""
+    word_numbers = {"one": "1", "two": "2", "three": "3", "four": "4", "five": "5"}
+    number = word_numbers.get(number, number)
+    prefix = "Pre-sessional" if cleaned.lower().startswith("pre") else "Session"
+    return f"{prefix} {number}".strip()
 
 
 def _first_url(html: str, base_url: str, fragments: list[str]) -> str:

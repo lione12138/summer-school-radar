@@ -1,9 +1,8 @@
 from __future__ import annotations
 
-import json
 import hashlib
+import json
 import shutil
-from dataclasses import asdict
 from datetime import date, timedelta
 from html import escape
 from pathlib import Path
@@ -11,7 +10,8 @@ from typing import Any
 from urllib.parse import quote, urlencode
 
 from .ai_home import merge_ai_for_homepage
-from .ai_review import potential_missed_pages
+from .atomic_io import write_text_atomic
+from .candidate_io import CANDIDATE_SNAPSHOT_SCHEMA_VERSION, candidate_to_dict
 from .localization import (
     date_zh,
     duration_zh,
@@ -26,10 +26,16 @@ from .localization import (
 from .llm_client import BaseLLMClient
 from .localization_audit import warn_localization_issues
 from .models import Candidate
+from .publication import is_found_opportunity, is_high_quality, is_public_candidate
+from .programme_sessions import (
+    programme_duration_label,
+    programme_duration_label_zh,
+    session_line_label,
+    session_line_label_zh,
+)
 from .review import build_review_queue
 from .site_feed import render_feed
-from .translation import TranslationConfig, translate_candidates, translate_source_metadata
-from .utils import ROOT, format_duration, is_too_short, sanitize_location, topics_label
+from .site_i18n import _BOOT_SCRIPT, _UI_SCRIPT
 from .site_seo import (
     CANARY as _CANARY,
     DATA_LICENSE as _DATA_LICENSE,
@@ -44,21 +50,11 @@ from .site_seo import (
     sitemap_xml,
     watermark,
 )
-
-
-HIGH_QUALITY_MAX_FEE_EUR_PER_DAY = 70
-GENERIC_FOUND_TITLES = {
-    "application process",
-    "application",
-    "apply",
-    "useful information",
-    "tuition fees, scholarships and financial support",
-    "tuition fees",
-    "scholarships & awards",
-    "key dates & application",
-}
-from .site_i18n import _BOOT_SCRIPT, _UI_SCRIPT
 from .site_styles import _DETAIL_CSS, _DISCOVER_CSS, _NAV_CSS, _THEME_CSS
+from .translation import TranslationConfig, translate_candidates, translate_source_metadata
+from .urls import safe_external_url
+from .utils import ROOT, format_duration, sanitize_location, topics_label
+
 
 def write_site(
     candidates: list[Candidate],
@@ -71,6 +67,8 @@ def write_site(
     profile: dict[str, Any] | None = None,
     translation_config: TranslationConfig | None = None,
     translation_client: BaseLLMClient | None = None,
+    scanner_candidates: list[Candidate] | None = None,
+    review_queue_payload: dict[str, Any] | None = None,
 ) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     curated = curated or []
@@ -83,29 +81,31 @@ def write_site(
             client=translation_client,
         )
         sources = source_translation_result.records
-    (output_dir / ".nojekyll").write_text("", encoding="utf-8")
-    (output_dir / "DATA-LICENSE.txt").write_text(data_license_text(), encoding="utf-8")
-    (output_dir / "curated.json").write_text(json.dumps(curated, indent=2, default=str), encoding="utf-8")
-    (output_dir / "review_queue.json").write_text(
-        json.dumps(
-            {
-                "generated": date.today().isoformat(),
-                "review_queue": build_review_queue(candidates, ai_items=ai_items),
-            },
-            indent=2,
-            ensure_ascii=False,
-            default=str,
-        ),
-        encoding="utf-8",
+    write_text_atomic(output_dir / ".nojekyll", "")
+    write_text_atomic(output_dir / "DATA-LICENSE.txt", data_license_text())
+    write_text_atomic(output_dir / "curated.json", json.dumps(curated, indent=2, default=str))
+    if review_queue_payload is None:
+        review_queue_payload = {
+            "generated": date.today().isoformat(),
+            "review_queue": build_review_queue(candidates, ai_items=ai_items),
+        }
+    write_text_atomic(
+        output_dir / "review_queue.json",
+        json.dumps(review_queue_payload, indent=2, ensure_ascii=False, default=str),
     )
-    (output_dir / "sources.json").write_text(json.dumps(sources, indent=2, default=str), encoding="utf-8")
+    write_text_atomic(output_dir / "sources.json", json.dumps(sources, indent=2, default=str))
     sources_html = render_sources_page(sources)
     warn_localization_issues(sources_html, "sources.html")
-    (output_dir / "sources.html").write_text(sources_html, encoding="utf-8")
+    write_text_atomic(output_dir / "sources.html", sources_html)
     # AI output now enriches the existing homepage tables instead of creating a
     # parallel review UI. Remove stale generated copies from older builds.
     (output_dir / "ai-review.html").unlink(missing_ok=True)
     homepage_candidates = merge_ai_for_homepage(candidates, ai_items, profile)
+    # Scanner records remain the canonical source for RSS and future
+    # no-network refreshes. Homepage copies may contain advisory AI fields or
+    # presentation-only translations and must never silently become scanner
+    # evidence on the following day.
+    scanner_candidates = candidates if scanner_candidates is None else scanner_candidates
     if translation_config is not None:
         translation_result = translate_candidates(
             homepage_candidates,
@@ -113,7 +113,8 @@ def write_site(
             client=translation_client,
         )
         homepage_candidates = translation_result.candidates
-        (output_dir / "translation-status.json").write_text(
+        write_text_atomic(
+            output_dir / "translation-status.json",
             json.dumps(
                 {
                     "generated": date.today().isoformat(),
@@ -134,11 +135,11 @@ def write_site(
                 indent=2,
                 ensure_ascii=False,
             ),
-            encoding="utf-8",
         )
     else:
         (output_dir / "translation-status.json").unlink(missing_ok=True)
-    (output_dir / "candidates.json").write_text(
+    write_text_atomic(
+        output_dir / "candidates.json",
         json.dumps(
             {
                 "_license": _DATA_LICENSE,
@@ -146,15 +147,16 @@ def write_site(
                 "_attribution": "Summa",
                 "_canonical": _SITE_URL,
                 "_canary": _CANARY,
+                "schema_version": CANDIDATE_SNAPSHOT_SCHEMA_VERSION,
                 "generated": date.today().isoformat(),
-                "opportunities": [_candidate_dict(candidate) for candidate in homepage_candidates],
+                "opportunities": [candidate_to_dict(candidate) for candidate in homepage_candidates],
+                "scanner_opportunities": [candidate_to_dict(candidate) for candidate in scanner_candidates],
             },
             indent=2,
             ensure_ascii=False,
         ),
-        encoding="utf-8",
     )
-    detail_candidates = [candidate for candidate in homepage_candidates if _is_public_candidate(candidate)]
+    detail_candidates = [candidate for candidate in homepage_candidates if is_public_candidate(candidate)]
     detail_dir = output_dir / "opportunities"
     detail_dir.mkdir(parents=True, exist_ok=True)
     for stale in detail_dir.glob("*.html"):
@@ -162,17 +164,15 @@ def write_site(
     for candidate in detail_candidates:
         detail_html = render_opportunity_detail(candidate, site_config or {})
         warn_localization_issues(detail_html, _candidate_detail_filename(candidate))
-        (detail_dir / _candidate_detail_filename(candidate)).write_text(
-            detail_html,
-            encoding="utf-8",
-        )
-    (output_dir / "feed.xml").write_text(
+        write_text_atomic(detail_dir / _candidate_detail_filename(candidate), detail_html)
+    write_text_atomic(
+        output_dir / "feed.xml",
         render_feed(
-            homepage_candidates,
+            scanner_candidates,
             curated,
             site_config or {},
             is_online_only=_is_online_only,
-            is_high_quality=_is_high_quality,
+            is_high_quality=is_high_quality,
             duration=_duration,
             public_location=_public_location,
             curated_duration=_curated_duration,
@@ -180,14 +180,13 @@ def write_site(
             curated_financial_summary=_curated_financial_summary,
             topics_label=topics_label,
         ),
-        encoding="utf-8",
     )
-    (output_dir / "robots.txt").write_text(robots_txt(), encoding="utf-8")
-    (output_dir / "sitemap.xml").write_text(
+    write_text_atomic(output_dir / "robots.txt", robots_txt())
+    write_text_atomic(
+        output_dir / "sitemap.xml",
         sitemap_xml(["", "sources.html", *[_candidate_detail_href(candidate) for candidate in detail_candidates]]),
-        encoding="utf-8",
     )
-    (output_dir / "favicon.svg").write_text(favicon_svg(), encoding="utf-8")
+    write_text_atomic(output_dir / "favicon.svg", favicon_svg())
     _copy_og_image(output_dir)
     _copy_verification_files(output_dir)
     tracked_sources = sum(
@@ -195,15 +194,14 @@ def write_site(
     )
     path = output_dir / "index.html"
     index_html = render_site(
-            homepage_candidates,
-            errors + _manual_source_notes(sources),
-            site_config or {},
-            curated,
-            tracked_sources=tracked_sources,
-            has_ai_review=False,
-        )
+        homepage_candidates,
+        errors + _manual_source_notes(sources),
+        site_config or {},
+        curated,
+        tracked_sources=tracked_sources,
+    )
     warn_localization_issues(index_html, "index.html")
-    path.write_text(index_html, encoding="utf-8")
+    write_text_atomic(path, index_html)
     return path
 
 
@@ -250,174 +248,6 @@ def _copy_verification_files(output_dir: Path) -> None:
         shutil.copyfile(verification, output_dir / verification.name)
 
 
-def render_ai_review_page(ai_items: list[dict[str, Any]]) -> str:
-    matched = [item for item in ai_items if bool(item.get("matched_existing_candidate"))]
-    missed = potential_missed_pages(ai_items)
-    matched_rows = "".join(_ai_matched_row(item) for item in matched)
-    missed_rows = "".join(_ai_missed_row(item) for item in missed)
-    updated = date.today().isoformat()
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Review · Summa</title>
-{seo_head(_SITE_URL + "ai-review.html", "Advisory AI-assisted extraction records for maintainer review. These are not public recommendations.", {})}
-  {_BOOT_SCRIPT}
-  <style>
-{_THEME_CSS}
-{_NAV_CSS}
-    main {{ padding: 34px 0 56px; }}
-    .page-head {{ margin-bottom: 22px; }}
-    .page-head h1 {{ margin: 0 0 8px; font-size: 32px; letter-spacing: -0.02em; }}
-    .advisory {{
-      border-left: 4px solid var(--warn);
-      background: var(--warn-soft);
-      border-radius: 0 10px 10px 0;
-      padding: 12px 16px;
-      margin: 16px 0 24px;
-    }}
-    .ai-evidence {{ color: var(--muted); font-size: 13px; max-width: 460px; }}
-    .warn-list {{ margin: 0; padding-left: 18px; color: var(--warn); }}
-    .score {{ font-variant-numeric: tabular-nums; }}
-  </style>
-</head>
-<body>
-  {_site_nav(home="index.html", has_ai_review=True)}
-  <main class="wrap">
-    <div class="page-head">
-      <h1>AI Review</h1>
-      <p class="muted">AI-assisted extraction, advisory only. Evidence IDs refer to short snippets extracted from the official page.</p>
-      <div class="advisory">These records do not determine qualification, ranking, RSS inclusion, or recommendations. The rule-based scanner remains the source of truth. Always verify cited evidence on the official page.</div>
-      <p class="pill">Updated {updated}</p>
-    </div>
-    <section>
-      <h2>Matched Existing Candidates</h2>
-      <p class="muted">AI records whose page URL exactly matches an existing scanner candidate.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Page</th><th>Source</th><th>Confidence</th><th>Summary</th><th>Deadline / Fee / Funding Evidence</th><th>Warnings</th></tr></thead>
-          <tbody>{matched_rows or '<tr><td colspan="6">No matched AI records.</td></tr>'}</tbody>
-        </table>
-      </div>
-    </section>
-    <section>
-      <h2>Potential Missed Pages</h2>
-      <p class="muted">Unmatched semantic/AI records that may deserve manual checking. They are not candidates and are not qualified opportunities.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th>Page</th><th>Source</th><th>Score</th><th>AI Title / Type</th><th>Deadline / Dates</th><th>Summary</th><th>Warnings</th></tr></thead>
-          <tbody>{missed_rows or '<tr><td colspan="7">No potential missed pages.</td></tr>'}</tbody>
-        </table>
-      </div>
-    </section>
-  </main>
-  {_footer_section(updated, has_ai_review=True)}
-  {_UI_SCRIPT}
-</body>
-</html>
-"""
-
-
-def _ai_matched_row(item: dict[str, Any]) -> str:
-    extraction = item.get("llm_extraction", {}) if isinstance(item.get("llm_extraction"), dict) else {}
-    title = str(item.get("existing_candidate_title") or item.get("page_title") or "AI record")
-    url = str(item.get("page_url", ""))
-    summary = _ai_field_value(extraction, "chinese_summary")
-    confidence = str(item.get("validated_confidence", "low"))
-    evidence = [
-        ("Deadline", _ai_field_evidence_html(extraction, "application_deadline")),
-        ("Fee", _ai_field_evidence_html(extraction, "fee")),
-        ("Funding", _ai_field_evidence_html(extraction, "funding")),
-        ("Eligibility", _ai_field_evidence_html(extraction, "eligibility")),
-    ]
-    evidence_html = "<br>".join(
-        f"<strong>{escape(label)}:</strong> {value}" for label, value in evidence if value
-    )
-    return (
-        "<tr>"
-        f"<td>{_ai_link(title, url)}</td>"
-        f"<td>{escape(str(item.get('source_name', '')))}</td>"
-        f"<td>{escape(confidence)}</td>"
-        f"<td>{escape(_short_html_text(summary))}</td>"
-        f"<td class=\"ai-evidence\">{evidence_html or 'No supported evidence extracted.'}</td>"
-        f"<td>{_warning_list(item.get('validation_warnings'))}</td>"
-        "</tr>"
-    )
-
-
-def _ai_missed_row(item: dict[str, Any]) -> str:
-    page_title = str(item.get("page_title") or item.get("llm_title") or "Potential missed page")
-    url = str(item.get("page_url", ""))
-    ai_title_type = " / ".join(part for part in [str(item.get("llm_title", "")), str(item.get("llm_event_type", ""))] if part)
-    date_text = " / ".join(part for part in [str(item.get("llm_deadline", "")), str(item.get("llm_dates", ""))] if part)
-    return (
-        "<tr>"
-        f"<td>{_ai_link(page_title, url)}</td>"
-        f"<td>{escape(str(item.get('source_name', '')))}</td>"
-        f"<td class=\"score\">{float(item.get('semantic_score_max', 0)):.3f}</td>"
-        f"<td>{escape(_short_html_text(ai_title_type))}</td>"
-        f"<td>{escape(_short_html_text(date_text))}</td>"
-        f"<td>{escape(_short_html_text(str(item.get('chinese_summary', ''))))}</td>"
-        f"<td>{_warning_list(item.get('warnings'))}</td>"
-        "</tr>"
-    )
-
-
-def _ai_link(title: str, url: str) -> str:
-    safe_title = escape(_short_html_text(title))
-    if not url:
-        return safe_title
-    return f'<a href="{escape(url, quote=True)}">{safe_title}</a>'
-
-
-def _ai_field_value(extraction: dict[str, Any], field: str) -> str:
-    value = extraction.get(field, {})
-    if not isinstance(value, dict):
-        return ""
-    raw = value.get("value", "")
-    if isinstance(raw, list):
-        return ", ".join(str(item) for item in raw if str(item).strip())
-    text = str(raw or "").strip()
-    return "" if text.lower() == "unknown" else text
-
-
-def _ai_field_evidence(extraction: dict[str, Any], field: str) -> str:
-    value = extraction.get(field, {})
-    if not isinstance(value, dict):
-        return ""
-    resolved = value.get("resolved_evidence_texts", [])
-    if isinstance(resolved, list) and resolved:
-        return " | ".join(str(item) for item in resolved if str(item).strip())
-    return str(value.get("evidence_text", "") or "")
-
-
-def _ai_field_evidence_html(extraction: dict[str, Any], field: str) -> str:
-    value = extraction.get(field, {})
-    if not isinstance(value, dict):
-        return ""
-    ids = _list_value(value.get("evidence_ids"))
-    texts = _list_value(value.get("resolved_evidence_texts"))
-    if ids or texts:
-        ids_text = f"<span class=\"muted\">{escape(', '.join(ids))}</span> " if ids else ""
-        text = " | ".join(escape(_short_html_text(item)) for item in texts)
-        return ids_text + text
-    evidence = str(value.get("evidence_text", "") or "")
-    return escape(_short_html_text(evidence)) if evidence else ""
-
-
-def _warning_list(warnings: Any) -> str:
-    items = _list_value(warnings)
-    if not items:
-        return ""
-    return '<ul class="warn-list">' + "".join(f"<li>{escape(_short_html_text(item))}</li>" for item in items) + "</ul>"
-
-
-def _short_html_text(value: str, limit: int = 260) -> str:
-    text = " ".join(str(value or "").split())
-    return text[:limit]
-
-
 def _status_banner(full_count: int, near_count: int, tracked_total: int, tracked_sources: int) -> str:
     """The headline status line. Even with zero qualified results it stays
     informative — emphasising coverage and the seasonal nature of deadlines so
@@ -456,23 +286,30 @@ def _subscribe_form_html(site_config: dict[str, Any]) -> str:
         username = str(config.get("buttondown_username", "")).strip()
         if not username:
             return ""
-        user = escape(username, quote=True)
+        action = safe_external_url(
+            f"https://buttondown.email/api/emails/embed-subscribe/{quote(username, safe='')}"
+        )
+        if not action:
+            return ""
         return (
-            f'<form class="subscribe-form" action="https://buttondown.email/api/emails/embed-subscribe/{user}" '
-            f'method="post" target="popupwindow" '
-            f"onsubmit=\"window.open('https://buttondown.email/{user}', 'popupwindow')\">"
-            '<input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required>'
-            '<button type="submit">Get email alerts</button>'
+            f'<form class="subscribe-form" action="{escape(action, quote=True)}" '
+            'method="post" target="_blank">'
+            '<input type="email" name="email" placeholder="you@example.com" '
+            'aria-label="Email address" data-i18n-placeholder="subscribe.email.placeholder" '
+            'data-i18n-aria-label="subscribe.email.label" required>'
+            '<button type="submit" data-i18n="subscribe.submit">Get email alerts</button>'
             "</form>"
         )
     if provider == "followit":
-        action = str(config.get("followit_form_action", "")).strip()
+        action = safe_external_url(config.get("followit_form_action"))
         if not action:
             return ""
         return (
             f'<form class="subscribe-form" action="{escape(action, quote=True)}" method="post" target="_blank">'
-            '<input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required>'
-            '<button type="submit">Get email alerts</button>'
+            '<input type="email" name="email" placeholder="you@example.com" '
+            'aria-label="Email address" data-i18n-placeholder="subscribe.email.placeholder" '
+            'data-i18n-aria-label="subscribe.email.label" required>'
+            '<button type="submit" data-i18n="subscribe.submit">Get email alerts</button>'
             "</form>"
         )
     return ""
@@ -483,14 +320,11 @@ def _subscribe_section(site_config: dict[str, Any]) -> str:
     form = _subscribe_form_html(site_config)
     if not form:
         return ""
-    body = (
-        '<p class="lead">Get an email when new funded schools open — no spam, unsubscribe anytime.</p>'
-        f"{form}"
-    )
+    body = '<p class="lead" data-i18n="subscribe.lead">Get an email when new funded schools open — no spam, unsubscribe anytime.</p>' + form
     return f"""
     <section id="subscribe" class="anchor">
       <div class="section-head">
-        <h2>Stay updated</h2>
+        <h2 data-i18n="subscribe.title">Stay updated</h2>
       </div>
       <div class="panel">{body}</div>
     </section>"""
@@ -525,10 +359,21 @@ def _empty_opportunities_block(tracked_total: int, tracked_sources: int) -> str:
     """Shown in place of the results table when nothing is open — keeps the page
     feeling active off-season rather than blank."""
     count = f"{tracked_total} opportunit{'ies' if tracked_total != 1 else 'y'}"
+    message = (
+        "No opportunities matched every rule in the latest scan. That is normal off-season: "
+        "most summer-school application deadlines open between December and April. "
+        f"The radar checks {tracked_sources} trusted sources every Monday, Wednesday, and Friday, "
+        f"with {count} currently tracked; deadline status is refreshed daily."
+    )
+    message_zh = (
+        "目前没有项目通过最近一次扫描的全部规则。这在非申请季很正常：大多数暑校会在每年 "
+        f"12 月至次年 4 月开放申请。雷达每周一、周三和周五检查 {tracked_sources} 个可信来源，"
+        f"目前追踪 {tracked_total} 个项目，并每天刷新截止日期状态。"
+    )
     return f"""
     <div class="panel">
       <h3 data-i18n="empty.title">Nothing open right now — but the radar is watching</h3>
-      <p>No opportunities matched every rule in the latest scan. That is normal off-season: most summer-school application deadlines open between December and April. The radar scans {tracked_sources} trusted sources every day, with {count} currently tracked &mdash; new schools appear here automatically as they open.</p>
+      <p>{_bilingual(message, message_zh)}</p>
       <p style="margin-top:12px"><a class="pill" href="sources.html" data-i18n="empty.link">See what we track</a></p>
     </div>"""
 
@@ -539,18 +384,17 @@ def render_site(
     site_config: dict[str, Any] | None = None,
     curated: list[dict[str, Any]] | None = None,
     tracked_sources: int = 0,
-    has_ai_review: bool = False,
 ) -> str:
     curated = curated or []
     full = [item for item in candidates if item.fully_qualified and not _is_online_only(item)][:10]
-    near = [item for item in candidates if _is_high_quality(item)][:16]
-    found = [item for item in candidates if _is_found_opportunity(item)][:30]
+    near = [item for item in candidates if is_high_quality(item)][:16]
+    found = [item for item in candidates if is_found_opportunity(item)][:30]
     # Count only opportunities that could actually be surfaced, so the
     # "tracking N" figure matches the page.
     tracked_total = sum(
         1
         for item in candidates
-        if _is_public_candidate(item)
+        if is_public_candidate(item)
     )
     updated = date.today().isoformat()
     curated_rows = "".join(_curated_row(item) for item in curated)
@@ -559,12 +403,12 @@ def render_site(
     found_rows = "".join(_found_row(candidate) for candidate in found)
     public_notes = _public_collection_notes(errors)
     notes = "".join(f"<li>{_bilingual(error, _collection_note_zh(error))}</li>" for error in public_notes[:12])
-    filters = _filters(candidates)
+    filters = _filters([*full, *near, *found], curated)
     analytics = _analytics_snippet(site_config or {})
     status_banner = _status_banner(len(full), len(near), tracked_total, tracked_sources)
     if near:
         near_block = _near_section(near_rows)
-    elif full or found:
+    elif full or found or curated:
         # Other sections are shown; no empty-state needed.
         near_block = ""
     else:
@@ -841,7 +685,7 @@ def render_site(
   </style>
 </head>
 <body data-page-title-en="Summa · Funded research summer schools" data-page-title-zh="Summa · 科研暑校与训练机会">
-  {_site_nav(has_ai_review=has_ai_review)}
+  {_site_nav()}
   <header class="hero" id="top">
     <div class="wrap">
       <p class="kicker" data-i18n="hero.kicker">Updated daily &middot; Free &amp; open source</p>
@@ -864,7 +708,7 @@ def render_site(
     </div>
     {status_banner}
     <section id="opportunities" class="anchor">
-      <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p>{_bilingual(f"{len(full) + len(near) + len(found)} shown · Updated {updated}", f"显示 {len(full) + len(near) + len(found)} 条 · 更新于 {updated}")}</p></div>
+      <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p>{_bilingual(f"{len(curated) + len(full) + len(near) + len(found)} shown · Updated {updated}", f"显示 {len(curated) + len(full) + len(near) + len(found)} 条 · 更新于 {updated}")}</p></div>
       {filters}
       {_curated_section(curated_rows) if curated else ""}
       {_qualified_section(full_rows) if full else ""}
@@ -877,7 +721,7 @@ def render_site(
     {_about_section()}
     {_faq_section()}
   </main>
-  {_footer_section(updated, has_ai_review=has_ai_review)}
+  {_footer_section(updated)}
   {_filter_script()}
   {_UI_SCRIPT}
   {analytics}
@@ -890,13 +734,19 @@ def render_opportunity_detail(
     candidate: Candidate,
     site_config: dict[str, Any] | None = None,
 ) -> str:
-    official = candidate.application_link or candidate.source_url
+    official = safe_external_url(candidate.application_link or candidate.source_url)
     status_label, status_class = _candidate_status(candidate)
+    has_session_deadlines = any(session.application_deadline for session in candidate.sessions)
     deadline = candidate.deadline.strftime("%d %b %Y") if candidate.deadline else "Deadline uncertain"
     deadline_cn = date_zh(candidate.deadline, uncertain="截止日期待确认")
+    if has_session_deadlines and candidate.deadline is not None:
+        deadline = f"Latest session deadline: {deadline}"
+        deadline_cn = f"最晚时段截止：{deadline_cn}"
     duration = _duration(candidate)
-    duration_cn = duration_zh(candidate)
+    duration_cn = _duration_zh(candidate)
+    session_schedule = _session_details(candidate) if candidate.sessions else ""
     location = _public_location(candidate.location) or "Location uncertain"
+    location_cn = candidate.location_zh.strip() or _public_location_zh(candidate.location)
     topics = topics_label(candidate.topic_keywords) or "Topics not resolved"
     topics_cn = topics_label_zh(candidate.topic_keywords) or "主题待确认"
     summary = candidate.summary.strip() or candidate.recommendation_reason.strip()
@@ -915,6 +765,18 @@ def render_opportunity_detail(
     ]
     evidence = " ".join(evidence_parts[:3]) or "Source evidence is retained in the public candidate data."
     calendar = _deadline_cell(candidate.deadline, candidate.title, official) if candidate.deadline else ""
+    official_source_link = (
+        f'<a class="source-link" href="{escape(official, quote=True)}" target="_blank" '
+        'rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>'
+        if official
+        else '<p class="muted" data-i18n="detail.source.unavailable">No safe official URL is available for this record.</p>'
+    )
+    official_button = (
+        f'<a class="button primary" href="{escape(official, quote=True)}" target="_blank" '
+        'rel="noopener" data-i18n="action.official.open">Open official page</a>'
+        if official
+        else ""
+    )
     canonical = _SITE_URL + _candidate_detail_href(candidate)
     updated = date.today().isoformat()
     return f"""<!doctype html>
@@ -923,7 +785,7 @@ def render_opportunity_detail(
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{escape(candidate.title)} · Summa</title>
-{seo_head(canonical, summary, site_config or {})}
+{seo_head(canonical, summary, site_config or {}, title=candidate.title, asset_prefix="../")}
   {_BOOT_SCRIPT}
   <style>
 {_THEME_CSS}
@@ -939,7 +801,7 @@ def render_opportunity_detail(
       <a class="detail-back" href="../index.html#opportunities" data-i18n="detail.back">&larr; Back to opportunities</a><br>
       <span class="status-badge {status_class}">{_bilingual(status_label, status_zh(status_label))}</span>
       <h1>{_bilingual(candidate.title, candidate.title_zh)}</h1>
-      <p class="detail-org">{escape(candidate.organizer)} &nbsp;&middot;&nbsp; {escape(location)}</p>
+      <p class="detail-org">{_bilingual(f'{candidate.organizer} · {location}', f'{candidate.organizer_zh or candidate.organizer} · {location_cn}')}</p>
       <div class="detail-facts">
         <span>{_bilingual(duration, duration_cn)}</span>
         <span>{_bilingual(deadline, deadline_cn)}</span>
@@ -965,8 +827,8 @@ def render_opportunity_detail(
         <section class="detail-panel">
           <h2 data-i18n="detail.source">Official source</h2>
           <p class="muted" data-i18n="detail.source.original">Original source evidence is retained below for verification.</p>
-          <p>{escape(evidence)}</p>
-          <a class="source-link" href="{escape(official, quote=True)}" target="_blank" rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>
+          <p>{_bilingual(evidence, f'以下为官网原文证据，保留原文便于核对：{evidence}')}</p>
+          {official_source_link}
         </section>
       </div>
       <aside class="decision-card">
@@ -975,9 +837,10 @@ def render_opportunity_detail(
         <p class="decision-value">{_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate))}</p>
         <span class="eyebrow" data-i18n="detail.deadline">Application deadline</span>
         <p class="deadline-value">{_bilingual(deadline, deadline_cn)}</p>
-        <p class="muted">{_bilingual(candidate.mode or "Mode uncertain", mode_zh(candidate.mode))} &middot; {escape(location)}<br>{_bilingual(topics, topics_cn)}</p>
+        {session_schedule}
+        <p class="muted">{_bilingual(candidate.mode or "Mode uncertain", mode_zh(candidate.mode))} &middot; {_bilingual(location, location_cn)}<br>{_bilingual(topics, topics_cn)}</p>
         <div class="detail-actions">
-          <a class="button primary" href="{escape(official, quote=True)}" target="_blank" rel="noopener" data-i18n="action.official.open">Open official page</a>
+          {official_button}
           {calendar}
         </div>
         <span class="note" data-i18n="detail.verify">Always verify eligibility, fees, funding, and dates on the official page.</span>
@@ -985,7 +848,7 @@ def render_opportunity_detail(
     </div>
   </main>
   <div class="mobile-actions">
-    <a class="button primary" href="{escape(official, quote=True)}" target="_blank" rel="noopener" data-i18n="action.official.open">Open official page</a>
+    {official_button}
     {calendar}
   </div>
   {_footer_section(updated, root="../")}
@@ -1008,7 +871,7 @@ _RADAR_ICON = (
 )
 
 
-def _site_nav(home: str = "", has_ai_review: bool = False, root: str = "") -> str:
+def _site_nav(home: str = "", root: str = "") -> str:
     # ``home`` is "" on the index page and "index.html" on subpages, so the
     # in-page anchors still resolve when viewed from another page.
     brand = f"{home}#top" if home else "#top"
@@ -1021,7 +884,6 @@ def _site_nav(home: str = "", has_ai_review: bool = False, root: str = "") -> st
         <a class="hide-sm" href="{home}#how" data-i18n="nav.how">How it works</a>
         <a class="hide-sm" href="{home}#about" data-i18n="nav.about">About</a>
         <a href="{root}sources.html" data-i18n="nav.sources">Sources</a>
-        {_ai_review_nav_link(has_ai_review)}
         <a href="{_GITHUB_URL}">GitHub</a>
         <button id="lang-toggle" class="toggle" type="button" aria-label="Language">中</button>
         <button id="theme-toggle" class="toggle" type="button" aria-label="Theme">&#9790;</button>
@@ -1030,17 +892,9 @@ def _site_nav(home: str = "", has_ai_review: bool = False, root: str = "") -> st
   </nav>"""
 
 
-def _ai_review_nav_link(has_ai_review: bool) -> str:
-    return '<a href="ai-review.html">AI Review</a>' if has_ai_review else ""
-
-
-def _ai_review_pill(has_ai_review: bool) -> str:
-    return '<a class="pill" href="ai-review.html">AI Review</a>' if has_ai_review else ""
-
-
 def _how_it_works_section() -> str:
     steps = [
-        ("1", "Scan trusted sources", "Each day the radar fetches a fixed registry of vetted academic sources: scientific societies, research institutes, and established schools.", "how.1.title", "how.1.body"),
+        ("1", "Scan trusted sources", "Every Monday, Wednesday, and Friday, the radar fetches a fixed registry of vetted academic sources: scientific societies, research institutes, and established schools.", "how.1.title", "how.1.body"),
         ("2", "Extract evidence", "Rule-based extraction pulls out dates, deadline, funding, fee, location, and mode, with source text kept for verification.", "how.2.title", "how.2.body"),
         ("3", "Apply strict filters", "Only funded or low-fee, in-person opportunities with an open deadline in covered domains are treated as qualified.", "how.3.title", "how.3.body"),
         ("4", "Publish daily", "The results are committed and published to this static site for quick public review.", "how.4.title", "how.4.body"),
@@ -1061,7 +915,7 @@ def _how_it_works_section() -> str:
 
 
 def _about_section() -> str:
-    return f"""
+    return """
     <section id="about" class="anchor">
       <div class="section-head">
         <h2 data-i18n="about.title">About &amp; methodology</h2>
@@ -1089,7 +943,7 @@ def _about_section() -> str:
 def _faq_section() -> str:
     qa = [
         ("faq.1.q", "faq.1.a", "Is it free?", "Yes — entirely free and open source. There is no paywall, no account, and no paid search API in the default pipeline."),
-        ("faq.2.q", "faq.2.a", "How often is it updated?", "Once a day. The scan runs automatically and republishes this site, so the Last updated date reflects the most recent run."),
+        ("faq.2.q", "faq.2.a", "How often is it updated?", "The site is rebuilt daily to refresh deadline status. Source pages are fetched every Monday, Wednesday, and Friday."),
         ("faq.3.q", "faq.3.a", "Why are some events only near-matches?", "They are relevant but fail at least one strict rule, such as uncertain deadline, high fee, unresolved fee, or virtual-only format."),
         ("faq.4.q", "faq.4.a", "How do you avoid spam and low-quality listings?", "The radar only reads a curated registry of trusted academic sources. It does not crawl the open web."),
         ("faq.5.q", "faq.5.a", "Can I suggest a source?", "Yes. Open an issue on GitHub with the source and its events page, and it can be added to the registry."),
@@ -1108,7 +962,7 @@ def _faq_section() -> str:
     </section>"""
 
 
-def _footer_section(updated: str, has_ai_review: bool = False, root: str = "") -> str:
+def _footer_section(updated: str, root: str = "") -> str:
     return f"""
   <footer class="site">
     <div class="wrap">
@@ -1121,7 +975,6 @@ def _footer_section(updated: str, has_ai_review: bool = False, root: str = "") -
           <h4 data-i18n="foot.explore">Explore</h4>
           <a href="{root}index.html#opportunities" data-i18n="foot.opportunities">Opportunities</a>
           <a href="{root}sources.html" data-i18n="foot.sources">Sources &amp; coverage</a>
-          {_ai_review_nav_link(has_ai_review)}
         </div>
         <div class="col">
           <h4 data-i18n="foot.project">Project</h4>
@@ -1226,9 +1079,9 @@ def _manual_sources_section(manual: list[dict[str, Any]]) -> str:
 
 
 def _manual_source_row(source: dict[str, Any]) -> str:
-    url = str(source.get("url", "")).strip()
+    url = safe_external_url(source.get("url"))
     name = escape(str(source.get("name", "Unnamed source")))
-    link = f'<a href="{escape(url, quote=True)}">{name}</a>' if url else name
+    link = f'<a href="{escape(url, quote=True)}" target="_blank" rel="noopener">{name}</a>' if url else name
     keyword_values = _list_value(source.get("keywords"))
     keywords = ", ".join(keyword_values)
     keywords_cn = "、".join(topic_zh(value) for value in keyword_values)
@@ -1262,9 +1115,9 @@ def _source_row(source: dict[str, Any]) -> str:
     enabled = bool(source.get("enabled", True))
     status = "enabled" if enabled else "disabled"
     status_class = "status-enabled" if enabled else "status-disabled"
-    url = str(source.get("url", "")).strip()
+    url = safe_external_url(source.get("url"))
     name = escape(str(source.get("name", "Unnamed source")))
-    source_link = f'<a href="{escape(url, quote=True)}">{name}</a>' if url else name
+    source_link = f'<a href="{escape(url, quote=True)}" target="_blank" rel="noopener">{name}</a>' if url else name
     keyword_values = _list_value(source.get("keywords"))
     keywords = ", ".join(keyword_values)
     keywords_cn = "、".join(topic_zh(value) for value in keyword_values)
@@ -1300,15 +1153,6 @@ def _curated_section(rows: str) -> str:
           <tbody>{rows}</tbody>
         </table>
       </div>
-    </section>
-"""
-
-
-def _empty_curated_section() -> str:
-    return """
-    <section>
-      <h2>Curated Opportunities</h2>
-      <p class="muted">No maintainer-reviewed opportunities have been added yet. Automatic scanner candidates are listed below.</p>
     </section>
 """
 
@@ -1355,10 +1199,10 @@ def _qualified_row(index: int, candidate: Candidate) -> str:
         f"<tr {_row_attrs(candidate)}>"
         f"<td>{index}</td>"
         f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
-        f"<td>{escape(candidate.organizer)}</td>"
-        f"<td>{escape(_public_location(candidate.location))}</td>"
-        f"<td{_evidence_attr(candidate.duration_evidence)}>{_bilingual(_duration(candidate), duration_zh(candidate))}</td>"
-        f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
+        f"<td>{_bilingual(candidate.organizer, candidate.organizer_zh)}</td>"
+        f"<td>{_bilingual(_public_location(candidate.location), candidate.location_zh or _public_location_zh(candidate.location))}</td>"
+        f"<td{_evidence_attr(candidate.duration_evidence)}>{_duration_cell(candidate)}</td>"
+        f"<td{_evidence_attr(candidate.deadline_evidence)}>{_candidate_deadline_cell(candidate)}</td>"
         f"<td{_evidence_attr(candidate.funding_evidence)}>{_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate))}</td>"
         f"<td>{_bilingual(topics_label(candidate.topic_keywords), topics_label_zh(candidate.topic_keywords))}</td>"
         f"<td class=\"card-actions\">{_candidate_actions(candidate)}</td>"
@@ -1371,16 +1215,19 @@ def _curated_row(item: dict[str, Any]) -> str:
     if not isinstance(funding, dict):
         funding = {}
     topics = _list_value(item.get("topics"))
+    organizer = str(item.get("organizer", "uncertain"))
+    location = _public_location(str(item.get("location", "uncertain")))
+    notes = str(item.get("notes") or item.get("status") or "confirmed")
     return (
         f"<tr {_curated_row_attrs(item)}>"
         f"<td>{_curated_link(item)}</td>"
-        f"<td>{escape(str(item.get('organizer', 'uncertain')))}</td>"
-        f"<td>{escape(_public_location(str(item.get('location', 'uncertain'))))}</td>"
-        f"<td>{escape(_curated_duration(item))}</td>"
-        f"<td>{_deadline_cell(_parse_iso_date(item.get('application_deadline')), str(item.get('title', 'Untitled opportunity')), str(item.get('url', '')))}</td>"
-        f"<td>{escape(_curated_financial_summary(item, funding))}</td>"
-        f"<td>{escape(topics_label(topics) or 'uncertain')}</td>"
-        f"<td>{escape(str(item.get('notes') or item.get('status') or 'confirmed'))}</td>"
+        f"<td>{_bilingual(organizer, str(item.get('organizer_zh', '')))}</td>"
+        f"<td>{_bilingual(location, str(item.get('location_zh', '')) or region_zh(location))}</td>"
+        f"<td>{_bilingual(_curated_duration(item), _curated_duration_zh(item))}</td>"
+        f"<td>{_deadline_cell(_parse_iso_date(item.get('application_deadline')), str(item.get('title', 'Untitled opportunity')), safe_external_url(item.get('url')))}</td>"
+        f"<td>{_bilingual(_curated_financial_summary(item, funding), _curated_financial_summary_zh(item, funding))}</td>"
+        f"<td>{_bilingual(topics_label(topics) or 'uncertain', topics_label_zh(topics) or '待确认')}</td>"
+        f"<td>{_bilingual(notes, str(item.get('notes_zh', '')))}</td>"
         f"<td class=\"card-actions\">{_curated_actions(item)}</td>"
         "</tr>"
     )
@@ -1390,10 +1237,10 @@ def _near_row(candidate: Candidate) -> str:
     return (
         f"<tr {_row_attrs(candidate, 'high-quality')}>"
         f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
-        f"<td>{escape(candidate.organizer)}</td>"
-        f"<td>{escape(_public_location(candidate.location))}</td>"
-        f"<td{_evidence_attr(candidate.duration_evidence)}>{_bilingual(_duration(candidate), duration_zh(candidate))}</td>"
-        f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
+        f"<td>{_bilingual(candidate.organizer, candidate.organizer_zh)}</td>"
+        f"<td>{_bilingual(_public_location(candidate.location), candidate.location_zh or _public_location_zh(candidate.location))}</td>"
+        f"<td{_evidence_attr(candidate.duration_evidence)}>{_duration_cell(candidate)}</td>"
+        f"<td{_evidence_attr(candidate.deadline_evidence)}>{_candidate_deadline_cell(candidate)}</td>"
         f"<td{_evidence_attr(candidate.funding_evidence)}>{_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate))}</td>"
         f"<td>{_bilingual(topics_label(candidate.topic_keywords) or 'uncertain', topics_label_zh(candidate.topic_keywords) or '待确认')}</td>"
         f"<td class=\"card-actions\">{_candidate_actions(candidate)}</td>"
@@ -1405,54 +1252,13 @@ def _found_row(candidate: Candidate) -> str:
     return (
         f"<tr {_row_attrs(candidate, 'found')}>"
         f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
-        f"<td>{escape(candidate.organizer)}</td>"
-        f"<td>{escape(_public_location(candidate.location))}</td>"
-        f"<td{_evidence_attr(candidate.duration_evidence)}>{_bilingual(_duration(candidate), duration_zh(candidate))}</td>"
-        f"<td{_evidence_attr(candidate.deadline_evidence)}>{_deadline_cell(candidate.deadline, candidate.title, candidate.source_url)}</td>"
+        f"<td>{_bilingual(candidate.organizer, candidate.organizer_zh)}</td>"
+        f"<td>{_bilingual(_public_location(candidate.location), candidate.location_zh or _public_location_zh(candidate.location))}</td>"
+        f"<td{_evidence_attr(candidate.duration_evidence)}>{_duration_cell(candidate)}</td>"
+        f"<td{_evidence_attr(candidate.deadline_evidence)}>{_candidate_deadline_cell(candidate)}</td>"
         f"<td{_evidence_attr(candidate.funding_evidence)}>{_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate))}</td>"
         f"<td>{_bilingual(topics_label(candidate.topic_keywords) or 'uncertain', topics_label_zh(candidate.topic_keywords) or '待确认')}</td>"
         f"<td class=\"card-actions\">{_candidate_actions(candidate)}</td>"
-        "</tr>"
-    )
-
-
-def _review_row(item: dict[str, Any]) -> str:
-    dates = item.get("dates", {})
-    if not isinstance(dates, dict):
-        dates = {}
-    start = _parse_iso_date(dates.get("start"))
-    end = _parse_iso_date(dates.get("end"))
-    days = dates.get("duration_days")
-    duration = format_duration(start, end, int(days) if isinstance(days, (int, float)) else None)
-    deadline = _parse_iso_date(item.get("deadline"))
-    title = str(item.get("title", "Untitled opportunity"))
-    url = str(item.get("url", ""))
-    topics = _list_value(item.get("topics"))
-    needs = "; ".join(_list_value(item.get("needs_review")))
-    fee = str(item.get("fee") or "").strip()
-    fee_eur = item.get("fee_eur")
-    if fee_eur is not None:
-        financial = f"Fee about EUR {float(fee_eur):.0f}"
-    elif fee:
-        financial = fee
-    else:
-        financial = "Funding or fee not stated"
-    link = f'<a href="{escape(url, quote=True)}">{escape(title)}</a>' if url else escape(title)
-    return (
-        "<tr data-status=\"review\" data-status-label-en=\"Needs review\" data-status-label-zh=\"待审核\" "
-        f'data-funding="{escape(str(item.get("financial_access_status", "unresolved")), quote=True)}" '
-        f'data-deadline="{escape(str(item.get("deadline_status", "uncertain")), quote=True)}" '
-        f'data-topics="{escape("|".join(topic.lower() for topic in topics), quote=True)}" '
-        'data-new="false" '
-        f'data-search="{escape(" ".join([title, str(item.get("organizer", "")), str(item.get("location", "")), " ".join(topics)]).lower(), quote=True)}">'
-        f"<td>{link}</td>"
-        f"<td>{escape(str(item.get('organizer', 'uncertain')))}</td>"
-        f"<td>{escape(_public_location(str(item.get('location', ''))))}</td>"
-        f"<td>{escape(duration)}</td>"
-        f"<td>{_deadline_cell(deadline, title, url)}</td>"
-        f"<td>{escape(financial)}</td>"
-        f"<td>{escape(topics_label(topics) or 'uncertain')}</td>"
-        f"<td>{escape(needs or 'missing evidence')}</td>"
         "</tr>"
     )
 
@@ -1474,18 +1280,24 @@ def _link(candidate: Candidate) -> str:
 
 
 def _candidate_actions(candidate: Candidate) -> str:
-    official = candidate.application_link or candidate.source_url
+    official = safe_external_url(candidate.application_link or candidate.source_url)
+    official_link = (
+        f'<a class="button tonal" href="{escape(official, quote=True)}" target="_blank" '
+        'rel="noopener" data-i18n="action.official">Official page</a>'
+        if official
+        else ""
+    )
     return (
         f'<a class="button primary" href="{escape(_candidate_detail_href(candidate), quote=True)}" data-i18n="action.details">View details</a>'
-        f'<a class="button tonal" href="{escape(official, quote=True)}" data-i18n="action.official">Official page</a>'
+        f"{official_link}"
     )
 
 
 def _curated_actions(item: dict[str, Any]) -> str:
-    url = str(item.get("url", "")).strip()
+    url = safe_external_url(item.get("url"))
     if not url:
         return ""
-    return f'<a class="button primary" href="{escape(url, quote=True)}" data-i18n="action.official">Official page</a>'
+    return f'<a class="button primary" href="{escape(url, quote=True)}" target="_blank" rel="noopener" data-i18n="action.official">Official page</a>'
 
 
 def _new_badge(candidate: Candidate) -> str:
@@ -1514,34 +1326,15 @@ def _curated_financial_summary(item: dict[str, Any], funding: dict[str, Any]) ->
     return fee or "Funding or fee not stated"
 
 
-def _is_public_candidate(candidate: Candidate) -> bool:
-    if candidate.is_past or candidate.is_online_only:
-        return False
-    if candidate.title.strip().lower() in GENERIC_FOUND_TITLES:
-        return False
-    if candidate.duration_days is not None and is_too_short(candidate.duration_days):
-        return False
-    return True
-
-
-def _is_high_quality(candidate: Candidate) -> bool:
-    if candidate.fully_qualified or not _is_public_candidate(candidate):
-        return False
-    if candidate.duration_days is None or candidate.duration_days < 5:
-        return False
-    if candidate.funding_available is True:
-        return True
-    return _fee_per_day(candidate) <= HIGH_QUALITY_MAX_FEE_EUR_PER_DAY
-
-
-def _is_found_opportunity(candidate: Candidate) -> bool:
-    return not candidate.fully_qualified and not _is_high_quality(candidate) and _is_public_candidate(candidate)
-
-
-def _fee_per_day(candidate: Candidate) -> float:
-    if candidate.fee_eur is None or not candidate.duration_days:
-        return float("inf")
-    return candidate.fee_eur / candidate.duration_days
+def _curated_financial_summary_zh(item: dict[str, Any], funding: dict[str, Any]) -> str:
+    if funding.get("available") is True:
+        kinds = "、".join(topic_zh(value) for value in _list_value(funding.get("type")))
+        return f"提供资助：{kinds}" if kinds else "提供资助"
+    fee = str(item.get("fee") or "").strip()
+    fee_eur = item.get("fee_eur")
+    if fee_eur is not None:
+        return f"费用约 {float(fee_eur):.0f} 欧元"
+    return f"费用：{fee}" if fee else "资助或费用未说明"
 
 
 def _is_online_only(candidate: Candidate) -> bool:
@@ -1556,19 +1349,88 @@ def _public_location(value: str) -> str:
     return cleaned
 
 
+def _public_location_zh(value: str) -> str:
+    """Translate a public location without losing its pre-normalized region.
+
+    ``_public_location`` intentionally shortens ``continental Europe`` to the
+    English display label ``Europe``.  Translate the sanitized original first
+    so that this normalization does not discard the existing Chinese mapping.
+    Proper place names fall back to their source spelling.
+    """
+    cleaned = sanitize_location(value, fallback="")
+    if not cleaned:
+        return "地点待确认"
+    translated = region_zh(cleaned)
+    if translated != cleaned:
+        return translated
+    public = _public_location(cleaned)
+    return region_zh(public) if public else "地点待确认"
+
+
 def _duration(candidate: Candidate) -> str:
-    return format_duration(candidate.start_date, candidate.end_date, candidate.duration_days)
+    return programme_duration_label(candidate) or format_duration(
+        candidate.start_date,
+        candidate.end_date,
+        candidate.duration_days,
+    )
 
 
-def _deadline_cell(deadline: date | None, title: str, url: str) -> str:
+def _duration_zh(candidate: Candidate) -> str:
+    return programme_duration_label_zh(candidate) or duration_zh(candidate)
+
+
+def _duration_cell(candidate: Candidate) -> str:
+    if not candidate.sessions:
+        return _bilingual(_duration(candidate), _duration_zh(candidate))
+    return _session_details(candidate)
+
+
+def _session_details(candidate: Candidate) -> str:
+    rows = "".join(
+        "<li>"
+        f"{_bilingual(session_line_label(session), session_line_label_zh(session))}"
+        "</li>"
+        for session in candidate.sessions
+    )
+    return (
+        '<details class="session-list">'
+        f"<summary>{_bilingual(_duration(candidate), _duration_zh(candidate))}</summary>"
+        f"<ul>{rows}</ul>"
+        "</details>"
+    )
+
+
+def _candidate_deadline_cell(candidate: Candidate) -> str:
+    return _deadline_cell(
+        candidate.deadline,
+        candidate.title,
+        candidate.source_url,
+        latest_session=any(session.application_deadline for session in candidate.sessions),
+    )
+
+
+def _deadline_cell(
+    deadline: date | None,
+    title: str,
+    url: str,
+    *,
+    latest_session: bool = False,
+) -> str:
     if deadline is None:
         return _bilingual("uncertain", "待确认")
-    google = escape(_google_calendar_url(deadline, title, url), quote=True)
-    outlook = escape(_outlook_calendar_url(deadline, title, url), quote=True)
-    ics = _calendar_data_url(deadline, title, url)
+    safe_url = safe_external_url(url)
+    google = escape(_google_calendar_url(deadline, title, safe_url), quote=True)
+    outlook = escape(_outlook_calendar_url(deadline, title, safe_url), quote=True)
+    ics = _calendar_data_url(deadline, title, safe_url)
     filename = escape(_calendar_filename(title), quote=True)
+    deadline_en = f"Latest: {deadline.isoformat()}" if latest_session else deadline.isoformat()
+    deadline_cn = (
+        f"最晚时段截止：{date_zh(deadline)}"
+        if latest_session
+        else date_zh(deadline)
+    )
     return (
-        f"{_bilingual(deadline.isoformat(), date_zh(deadline))}"
+        f"{_bilingual(deadline_en, deadline_cn)}"
         '<details class="cal"><summary data-i18n="calendar.add">Add to calendar</summary>'
         f'<a href="{google}" target="_blank" rel="noopener">Google Calendar</a>'
         f'<a href="{outlook}" target="_blank" rel="noopener">Outlook</a>'
@@ -1662,8 +1524,11 @@ def _slug(value: str) -> str:
 
 
 def _candidate_detail_filename(candidate: Candidate) -> str:
-    base = _slug(candidate.title) or "opportunity"
-    digest = hashlib.sha1(candidate.source_url.encode("utf-8")).hexdigest()[:8]
+    identity = candidate.identity_key.strip()
+    stable_value = identity or candidate.source_url or candidate.title
+    base = _slug(identity) if identity else _slug(candidate.title)
+    base = base or "opportunity"
+    digest = hashlib.sha1(stable_value.encode("utf-8")).hexdigest()[:8]
     return f"{base}-{digest}.html"
 
 
@@ -1674,7 +1539,7 @@ def _candidate_detail_href(candidate: Candidate) -> str:
 def _candidate_status(candidate: Candidate) -> tuple[str, str]:
     if candidate.fully_qualified:
         return "Fully qualified", "qualified"
-    if _is_high_quality(candidate):
+    if is_high_quality(candidate):
         return "High quality", "high-quality"
     return "Found", "found"
 
@@ -1694,19 +1559,24 @@ def _parse_iso_date(value: Any) -> date | None:
         return None
 
 
-def _candidate_dict(candidate: Candidate) -> dict[str, Any]:
-    raw = asdict(candidate)
-    for key in ["start_date", "end_date", "deadline", "first_seen"]:
-        value = raw[key]
-        raw[key] = value.isoformat() if value else None
-    raw["is_new"] = candidate.is_new
-    return raw
-
-
-def _filters(candidates: list[Candidate]) -> str:
-    topics = sorted({topic for candidate in candidates for topic in candidate.topic_keywords})
+def _filters(
+    candidates: list[Candidate],
+    curated: list[dict[str, Any]] | None = None,
+) -> str:
+    topics = sorted(
+        {
+            topic
+            for values in [
+                *(candidate.topic_keywords for candidate in candidates),
+                *(_list_value(item.get("topics")) for item in (curated or [])),
+            ]
+            for topic in values
+            if topic.strip()
+        },
+        key=str.casefold,
+    )
     topic_options = "".join(
-        f'<option value="{escape(topic, quote=True)}" data-label-en="{escape(topic, quote=True)}" '
+        f'<option value="{escape(topic.lower(), quote=True)}" data-label-en="{escape(topic, quote=True)}" '
         f'data-label-zh="{escape(topic_zh(topic), quote=True)}">{escape(topic)}</option>'
         for topic in topics
     )
@@ -1723,6 +1593,7 @@ def _filters(candidates: list[Candidate]) -> str:
           <option value="qualified" data-i18n="filter.status.qualified">Fully qualified</option>
           <option value="high-quality" data-i18n="filter.status.high">High quality</option>
           <option value="found" data-i18n="filter.status.found">Found</option>
+          <option value="curated" data-i18n="filter.status.curated">Curated</option>
         </select>
       </div>
       <div class="filter-group">
@@ -1775,10 +1646,14 @@ def _row_attrs(candidate: Candidate, status: str | None = None) -> str:
     searchable = " ".join(
         [
             candidate.title,
+            candidate.title_zh,
             candidate.organizer,
             candidate.location,
             candidate.type,
             ", ".join(candidate.topic_keywords),
+            candidate.summary_zh,
+            candidate.eligibility_zh,
+            candidate.recommendation_reason_zh,
         ]
     ).lower()
     attrs = {
@@ -1816,10 +1691,15 @@ def _curated_row_attrs(item: dict[str, Any]) -> str:
     searchable = " ".join(
         [
             str(item.get("title", "")),
+            str(item.get("title_zh", "")),
             str(item.get("organizer", "")),
+            str(item.get("organizer_zh", "")),
             str(item.get("location", "")),
+            str(item.get("location_zh", "")),
             str(item.get("type", "")),
             ", ".join(_list_value(item.get("topics"))),
+            ", ".join(topic_zh(topic) for topic in _list_value(item.get("topics"))),
+            str(item.get("notes_zh", "")),
         ]
     ).lower()
     attrs = {
@@ -1837,11 +1717,12 @@ def _curated_row_attrs(item: dict[str, Any]) -> str:
 
 
 def _curated_link(item: dict[str, Any]) -> str:
-    title = escape(str(item.get("title", "Untitled opportunity")))
-    url = str(item.get("url", "")).strip()
+    title = str(item.get("title", "Untitled opportunity"))
+    label = _bilingual(title, str(item.get("title_zh", "")))
+    url = safe_external_url(item.get("url"))
     if not url:
-        return title
-    return f'<a href="{escape(url, quote=True)}">{title}</a>'
+        return label
+    return f'<a href="{escape(url, quote=True)}" target="_blank" rel="noopener">{label}</a>'
 
 
 def _curated_duration(item: dict[str, Any]) -> str:
@@ -1851,6 +1732,20 @@ def _curated_duration(item: dict[str, Any]) -> str:
         _parse_iso_date(item.get("end_date")),
         int(days) if isinstance(days, (int, float)) else None,
     )
+
+
+def _curated_duration_zh(item: dict[str, Any]) -> str:
+    start = _parse_iso_date(item.get("start_date"))
+    end = _parse_iso_date(item.get("end_date"))
+    days = item.get("duration_days")
+    if start and end:
+        duration = f"{start.year}年{start.month}月{start.day}日—{end.month}月{end.day}日"
+        if isinstance(days, (int, float)):
+            duration += f" · {int(days)} 天"
+        return duration
+    if isinstance(days, (int, float)):
+        return f"{int(days)} 天"
+    return "日期待确认"
 
 
 def _list_value(value: Any) -> list[str]:

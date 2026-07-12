@@ -148,7 +148,10 @@ _DISCOVER_CSS = """
     header.hero { padding: 50px 0 48px; background: var(--hero-1); }
     header.hero h1 { max-width: 840px; margin-bottom: 12px; font-size: clamp(32px, 4vw, 42px); line-height: 1.18; }
     header.hero .subtitle { max-width: 900px; font-size: 17px; }
-    .hero-disclaimer { display: none; }
+    .hero-disclaimer {
+      display: block; max-width: 900px; margin-top: 14px; padding: 9px 12px;
+      font-size: 12px; line-height: 1.5; opacity: .88;
+    }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
     .button {
       display: inline-flex; min-height: 44px; align-items: center; justify-content: center;
@@ -165,7 +168,7 @@ _DISCOVER_CSS = """
     .stat:nth-child(-n+2) { background: var(--good-soft); }
     .stat .lbl { text-transform: none; letter-spacing: 0; }
     main { padding-bottom: 28px; }
-    .status:not(.empty) { display: none; }
+    .status { margin-top: 18px; padding: 9px 13px; font-size: 13px; font-weight: 600; }
     .opportunity-list-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin: 34px 0 10px; }
     .opportunity-list-head h2 { margin: 0; font-size: 24px; }
     .opportunity-list-head p { margin: 0; color: var(--muted); font-size: 13px; }
@@ -222,6 +225,10 @@ _DISCOVER_CSS = """
     .card-actions .button { width: 100%; }
     .cal { margin-top: 0; }
     .cal > summary { min-height: 28px; display: inline-flex; align-items: center; }
+    .session-list { margin: 0; }
+    .session-list summary { cursor: pointer; color: var(--accent-ink); font-weight: 650; }
+    .session-list ul { display: grid; gap: 4px; margin: 8px 0 0; padding-left: 18px; color: var(--muted); font-size: 12px; }
+    .session-list li { padding-left: 2px; }
     footer.site { margin-top: 36px; }
     @media (max-width: 980px) {
       .filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }

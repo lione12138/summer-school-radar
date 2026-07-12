@@ -27,10 +27,15 @@ _UI_SCRIPT = """
       "hero.kicker": {en:"Updated daily \\u00B7 Free & open source", zh:"每天更新 \\u00B7 免费开源"},
       "hero.title": {en:"Find research training worth applying for", zh:"寻找真正值得申请的科研训练机会"},
       "hero.subtitle": {en:"Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.", zh:"从可信学术来源汇总有资助或低费用的科研训练机会。每条截止日期和资助信息都可追溯到官网。"},
-      "hero.disclaimer": {en:"Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.", zh:"请把这里当作基础信息入口，而不是唯一信息来源。本站信息来自各大组织和学校官网，但自动收集和解析仍可能因为技术问题出错；申请前请务必到官网核对截止日期、费用、资助和资格要求。少数质量很高但暂时无法自动收集的官网已列在 Collection Notes 里。祝大家都能录到心仪的项目。"},
+      "hero.disclaimer": {en:"Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.", zh:"请把这里当作基础信息入口，而不是唯一信息来源。本站信息来自各大组织和学校官网，但自动收集和解析仍可能因为技术问题出错；申请前请务必到官网核对截止日期、费用、资助和资格要求。少数质量很高但暂时无法自动收集的官网已列在采集说明里。祝大家都能录到心仪的项目。"},
       "cta.email": {en:"Get email alerts", zh:"邮件订阅"},
       "cta.explore": {en:"Explore opportunities", zh:"浏览开放项目"},
       "cta.qualification": {en:"How qualification works", zh:"了解筛选标准"},
+      "subscribe.title": {en:"Stay updated", zh:"订阅最新项目"},
+      "subscribe.lead": {en:"Get an email when new funded schools open — no spam, unsubscribe anytime.", zh:"有新的资助项目开放时接收邮件提醒；无垃圾邮件，可随时退订。"},
+      "subscribe.email.placeholder": {en:"you@example.com", zh:"你的邮箱"},
+      "subscribe.email.label": {en:"Email address", zh:"邮箱地址"},
+      "subscribe.submit": {en:"Get email alerts", zh:"订阅邮件提醒"},
       "opportunities.title": {en:"Open opportunities", zh:"开放申请的项目"},
       "action.details": {en:"View details", zh:"查看详情"},
       "action.official": {en:"Official page", zh:"官方网站"},
@@ -57,6 +62,7 @@ _UI_SCRIPT = """
       "filter.status.qualified": {en:"Fully qualified", zh:"完全符合"},
       "filter.status.high": {en:"High quality", zh:"高质量"},
       "filter.status.found": {en:"Found", zh:"待核实"},
+      "filter.status.curated": {en:"Curated", zh:"人工精选"},
       "filter.funding.explicit": {en:"Explicit funding", zh:"明确提供资助"},
       "filter.funding.low": {en:"Low / no fee", zh:"低费用或免费"},
       "filter.funding.unresolved": {en:"Unresolved / high fee", zh:"费用未确认或较高"},
@@ -86,6 +92,7 @@ _UI_SCRIPT = """
       "detail.why": {en:"Why this status", zh:"为何获得此状态"},
       "detail.source": {en:"Official source", zh:"官方来源"},
       "detail.source.original": {en:"Original source evidence is retained below for verification.", zh:"以下保留官方原文证据，便于核对。"},
+      "detail.source.unavailable": {en:"No safe official URL is available for this record.", zh:"这条记录暂时没有可安全访问的官方网址。"},
       "detail.snapshot": {en:"Application snapshot", zh:"申请信息速览"},
       "detail.funding": {en:"Funding / fee", zh:"资助 / 费用"},
       "detail.deadline": {en:"Application deadline", zh:"申请截止日期"},
@@ -113,7 +120,7 @@ _UI_SCRIPT = """
       "how.title": {en:"How it works", zh:"工作原理"},
       "how.lead": {en:"A transparent pipeline you can audit — not a black box.", zh:"一条可以审计的透明流程，不是黑箱。"},
       "how.1.title": {en:"Scan trusted sources", zh:"扫描可信来源"},
-      "how.1.body": {en:"Each day the radar fetches a fixed registry of vetted academic sources: scientific societies, research institutes, and established schools.", zh:"每天从固定的、人工筛选过的学术来源列表抓取信息，包括学会、研究机构和成熟暑校。"},
+      "how.1.body": {en:"Every Monday, Wednesday, and Friday, the radar fetches a fixed registry of vetted academic sources: scientific societies, research institutes, and established schools.", zh:"每周一、周三和周五从固定的、人工筛选过的学术来源列表抓取信息，包括学会、研究机构和成熟暑校。"},
       "how.2.title": {en:"Extract evidence", zh:"提取证据"},
       "how.2.body": {en:"Rule-based extraction pulls out dates, deadline, funding, fee, location, and mode, with source text kept for verification.", zh:"规则提取日期、截止时间、资助、费用、地点和形式，并保留来源文本方便核验。"},
       "how.3.title": {en:"Apply strict filters", zh:"应用严格筛选"},
@@ -139,7 +146,7 @@ _UI_SCRIPT = """
       "faq.1.q": {en:"Is it free?", zh:"它免费吗？"},
       "faq.1.a": {en:"Yes — entirely free and open source. There is no paywall, no account, and no paid search API in the default pipeline.", zh:"免费，而且开源。默认流程没有付费墙、不需要账号，也不依赖付费搜索 API。"},
       "faq.2.q": {en:"How often is it updated?", zh:"多久更新一次？"},
-      "faq.2.a": {en:"Once a day. The scan runs automatically and republishes this site, so the Last updated date reflects the most recent run.", zh:"每天一次。扫描会自动运行并重新发布网站，所以“最近更新”日期对应最近一次运行。"},
+      "faq.2.a": {en:"The site is rebuilt daily to refresh deadline status. Source pages are fetched every Monday, Wednesday, and Friday.", zh:"网站每天重建以刷新截止日期状态；来源页面在每周一、周三和周五重新抓取。"},
       "faq.3.q": {en:"Why are some events only near-matches?", zh:"为什么有些项目只是近似匹配？"},
       "faq.3.a": {en:"They are relevant but fail at least one strict rule, such as uncertain deadline, high fee, unresolved fee, or virtual-only format.", zh:"它们相关，但至少有一条严格规则没通过，例如截止日期不确定、费用过高、费用未确认，或只有线上形式。"},
       "faq.4.q": {en:"How do you avoid spam and low-quality listings?", zh:"怎么避免低质量信息？"},
@@ -169,11 +176,14 @@ _UI_SCRIPT = """
       var key=el.getAttribute('data-i18n-placeholder');
       var d=I18N[key];
       if(d&&d[lang]!=null) el.setAttribute('placeholder', d[lang]);
+      var ariaKey=el.getAttribute('data-i18n-aria-label');
+      var aria=I18N[ariaKey];
+      if(aria&&aria[lang]!=null) el.setAttribute('aria-label', aria[lang]);
     }
     function applyLang(lang){
       document.documentElement.setAttribute('lang', lang);
       var els=document.querySelectorAll('[data-i18n]'); for(var i=0;i<els.length;i++) txt(els[i], lang);
-      var attrs=document.querySelectorAll('[data-i18n-placeholder]'); for(var j=0;j<attrs.length;j++) attr(attrs[j], lang);
+      var attrs=document.querySelectorAll('[data-i18n-placeholder],[data-i18n-aria-label]'); for(var j=0;j<attrs.length;j++) attr(attrs[j], lang);
       var labels=document.querySelectorAll('[data-label-en][data-label-zh]');
       for(var k=0;k<labels.length;k++) labels[k].textContent=labels[k].getAttribute('data-label-'+lang);
       var titleKey='pageTitle'+(lang==='zh'?'Zh':'En');

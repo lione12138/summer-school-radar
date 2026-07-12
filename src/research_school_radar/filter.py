@@ -58,7 +58,8 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
 
 
 def _starts_too_soon(candidate: Candidate) -> bool:
-    return candidate.start_date is not None and candidate.start_date <= date.today() + timedelta(days=15)
+    start = candidate.status_reference_start
+    return start is not None and start <= date.today() + timedelta(days=15)
 
 
 def _risk_points(candidate: Candidate) -> str:

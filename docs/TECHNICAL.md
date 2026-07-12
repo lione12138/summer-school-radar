@@ -19,7 +19,7 @@ Then open:
 
 - `reports/YYYY-MM-DD.md` for the Markdown report
 - `site/index.html` for the static website
-- `site/candidates.json` for scanner output
+- `site/candidates.json` for schema-v2 homepage copies (`opportunities`) and isolated deterministic RSS records (`scanner_opportunities`)
 - `site/curated.json` for maintainer-reviewed records
 
 Run a real fixed-source scan with:
@@ -44,7 +44,7 @@ Most opportunity lists are plain link collections. Summa is different:
 - it makes failed hard conditions visible instead of hiding uncertainty
 - it has a curated layer for maintainer-reviewed records
 - it publishes a static website, Markdown reports, and JSON data
-- it can run daily for free on GitHub Actions and GitHub Pages
+- it can publish daily to GitHub Pages, while limiting full source fetches to scheduled local scan days
 
 ## Current Status
 
@@ -58,9 +58,12 @@ This repository now contains the current Summa pipeline:
 - interpretable ranking
 - Markdown report generation
 - static website generation with browser-side filters
-- JSON state file tracking seen opportunities (diff-friendly, auto-committed)
-- local daily scan + GitHub Pages publishing workflow
-- GitHub Pages deployment
+- JSON state file tracking seen opportunities
+- conditional requests plus a bounded stale-if-error fallback for source-friendly collection
+- a non-empty-source and 70% combined page/direct-collector coverage gate before a full scan may replace the public snapshot
+- a schema-v2/non-empty/35%-retention candidate snapshot gate before last-known-good replacement
+- local Monday/Wednesday/Friday DeepSeek-assisted collection and daily snapshot-based status refreshes
+- single-writer GitHub Pages deployment through GitHub Actions
 - GitHub issue template for external submissions
 - optional analytics injection for Cloudflare Web Analytics or GoatCounter
 - curated opportunity records generated from `data/opportunities.yml`
@@ -93,6 +96,11 @@ sources -> collect -> parse -> extract rules -> filter -> rank -> report/site
 Optional AI branch:
 pages -> semantic chunks -> evidence snippets -> DeepSeek extraction -> evidence-ID validation -> homepage candidate copies + sidecar JSON
 ```
+
+`config/sources.yaml` is also the authority for structured sources: a source's
+optional `collector` value selects the matching direct collector in
+`api_sources.py`. Page sources and direct collectors therefore share one
+enabled/disabled registry rather than following separate hard-coded schedules.
 
 The optional branch never overwrites scanner `Candidate` records. For the
 generated homepage only, it may fill unresolved fields in deep-copied candidates
@@ -146,7 +154,7 @@ chunking, per-page, and per-source limits:
 | Model | Ranking time | Selected chunks | Matched existing candidates | Unmatched chunks | Notes |
 |---|---:|---:|---:|---:|---|
 | `BAAI/bge-small-en-v1.5` | 53.19s | 51 | 17 | 34 | Faster, lighter, but lower recall on known opportunities. |
-| `BAAI/bge-m3` | 212.33s | 55 | 24 | 31 | Better recall, acceptable runtime for manual or weekly semantic review. |
+| `BAAI/bge-m3` | 212.33s | 55 | 24 | 31 | Better recall, acceptable runtime for manual or scheduled semantic review. |
 
 The project therefore defaults to `BAAI/bge-m3` for semantic review. Semantic
 ranking alone does not change any opportunity data; it only selects evidence for
@@ -176,6 +184,11 @@ existing rule-based outputs. The code strips thinking traces from model
 responses as a fallback, and records `llm_json_parse_failed` instead of
 crashing when output is not clean JSON.
 
+That tolerant behavior is useful for ad hoc scans. Production snapshotting is
+stricter: the local scheduler runs `ai_healthcheck --strict` before scanning and
+`ai_output_validation.py` afterwards, so an unusable AI run cannot replace the
+previous snapshot.
+
 LLM extraction sends only selected semantic chunks, never full webpages. The
 default resource limits are:
 
@@ -186,7 +199,7 @@ default resource limits are:
 - `max_chars_per_chunk: 2200`
 - `max_total_chars_per_request: 7000`
 
-The 150-page values are exploratory upper bounds for measuring real weekly run
+The 150-page values are exploratory upper bounds for measuring real scheduled-run
 sizes. Actual LLM calls are often fewer because pages must first pass source
 collection, semantic similarity, and the per-source page cap. Once real run
 sizes are known, lower these caps to the smallest values that preserve useful
@@ -352,6 +365,11 @@ AI extraction -> maintainer checks official page -> maintainer edits data/opport
 
 There is deliberately no automatic promotion into curated data.
 
+Before production automation replaces a last-known-good snapshot,
+`ai_output_validation.py` requires usable semantic chunks and at least one
+usable evidence-validated DeepSeek extraction. This build-level check is in
+addition to field-level validation in `llm_validate.py`.
+
 ### Real-world AI validation
 
 Unit tests keep the optional AI branch safe and deterministic, but they do not
@@ -414,38 +432,47 @@ It uses only the Python standard library and does not call any LLM provider.
 
 Recommended operation:
 
-- Daily: `python -m research_school_radar.cli scan`
-- Manual or weekly: `python -m research_school_radar.cli scan --enable-semantic`
-- Manual review only: `python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction`
+- Manual deterministic scan: `python -m research_school_radar.cli scan`
+- Manual semantic review: `python -m research_school_radar.cli scan --enable-semantic`
+- Production-style AI scan: `python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --no-readme-update`
+- Production AI-output gate: `python -m research_school_radar.ai_output_validation --site-dir site`
 
-Do not enable LLM extraction in daily automation yet. It is slower, more
-resource-intensive, can time out on long prompts, and still requires manual
-validation against official pages.
+The local scheduler enables LLM extraction only on full-scan days. Health,
+coverage, or AI-output validation failures preserve the previous snapshot;
+maintainer review against official pages is still required for curation.
 
 ### Key Files
 
 - `src/research_school_radar/cli.py` is the command entry point.
 - `src/research_school_radar/collect.py` fetches source and linked pages with `requests` and `BeautifulSoup`, using conditional HTTP caching for normal requests.
-- `src/research_school_radar/http_cache.py` stores page bodies plus `ETag` / `Last-Modified` validators under ignored `data/http_cache/`.
+- `src/research_school_radar/http_cache.py` stores page bodies plus `ETag` / `Last-Modified` validators under ignored `data/http_cache/`. A request exception, HTTP 429, or HTTP 5xx may reuse a cached body no older than 14 days; HTTP 404 and older entries do not use this fallback.
 - `src/research_school_radar/parse.py` identifies likely opportunity links and skips unsuitable files or blocked domains.
 - `src/research_school_radar/extract.py` performs rule-based structured extraction.
 - `src/research_school_radar/filter.py` applies hard filters.
-- `src/research_school_radar/rank.py` scores and deduplicates candidates. Deduplication runs on every scan: it canonicalizes URLs (dropping tracking parameters, fragments, and trailing slashes), then merges the same event reported under different titles or by different sources when a title-similarity match is confirmed by a shared date, while keeping distinct editions that have different start dates.
+- `src/research_school_radar/rank.py` scores and deduplicates candidates. Stable collector identities take precedence; URL/title/date similarity is used only when no structured identity is available. Facts are merged before hard filters and scores are recomputed.
+- `Candidate.identity_key` carries that structured identity through JSON, seen-state, RSS GUIDs, and stable detail-page names.
 - `src/research_school_radar/report.py` writes Markdown reports.
 - `src/research_school_radar/site.py` coordinates static website generation.
 - `src/research_school_radar/site_styles.py`, `site_i18n.py`, `site_seo.py`, and `site_feed.py` hold CSS constants, language scripts, SEO/sitemap/robots/watermark helpers, and RSS rendering.
+- `src/research_school_radar/urls.py` validates external links before they enter HTML, JSON-LD, or RSS.
+- `src/research_school_radar/atomic_io.py` atomically replaces generated text artifacts and retries transient Windows file locks.
 - `src/research_school_radar/storage.py` updates the JSON seen-state file (data/seen.json).
 - `src/research_school_radar/semantic.py` writes optional semantic chunk sidecars.
 - `src/research_school_radar/evidence_snippets.py` selects short numbered snippets for evidence-first LLM prompting.
 - `src/research_school_radar/ai_cache.py` implements the lightweight file cache for optional AI work.
 - `src/research_school_radar/llm_client.py`, `llm_extract.py`, and `llm_validate.py` implement optional advisory LLM sidecars.
 - `src/research_school_radar/ai_healthcheck.py` checks the configured LLM provider.
+- `src/research_school_radar/scan_health.py` rejects zero-source real scans, enforces 70% success across page and direct-collector attempts, and writes scan manifests.
+- `src/research_school_radar/snapshot_validation.py` requires schema-v2 display/scanner lists and rejects an unexplained scanner-record drop below 35% of a sufficiently large previous snapshot.
+- `src/research_school_radar/programme_sessions.py` formats structured session dates and per-session deadlines consistently across HTML, reports, and RSS.
+- `src/research_school_radar/ai_pipeline.py` owns semantic ranking, DeepSeek configuration, follow-up orchestration, and AI sidecar generation so `cli.py` remains an entry-point coordinator.
+- `src/research_school_radar/ai_output_validation.py` protects production snapshots from empty semantic/DeepSeek output or failed build-time Chinese translation.
 - `src/research_school_radar/ai_evaluate.py` writes the human annotation CSV for real-world AI quality checks.
 
 ## Configuration
 
 - `config/profile.yaml` controls preferred topics, hard filters, financial-access thresholds and reference exchange rates, priority regions, supplementary regions, and excluded programme types.
-- `config/sources.yaml` lists trusted sources. Each source can be enabled or disabled, and can block problematic linked domains.
+- `config/sources.yaml` lists trusted sources. Each source can be enabled or disabled, can block problematic linked domains, and can select a structured direct collector with `collector`.
 - `config/queries.yaml` stores optional controlled discovery queries.
 - `config/site.yaml` controls optional analytics.
 - `config/ai.yaml` controls optional semantic ranking, DeepSeek advisory extraction, resource limits, and `data/ai_cache/` behavior.
@@ -460,9 +487,18 @@ Example source options:
   region: South Asia
   source_type: intergovernmental_research
   keywords: [Himalayan, climate, water, capacity building]
-  scan_frequency: every_run
   blocked_link_domains: [servir.icimod.org]
   notes: Strong regional water and climate relevance.
+```
+
+Direct collectors use the same registry rather than a separate code-side
+allowlist:
+
+```yaml
+- name: IHE Delft Institute for Water Education
+  url: https://www.un-ihe.org/education/short-courses
+  collector: ihe_delft
+  enabled: true
 ```
 
 Disabled sources stay documented without creating scan noise:
@@ -476,22 +512,48 @@ Disabled sources stay documented without creating scan noise:
 
 ## Publishing Workflows
 
-The primary daily scan runs on the maintainer's Windows machine through
-`scripts/scan_and_publish.ps1`. A residential connection reaches more official
-sites than a GitHub-hosted runner, and the script commits report/state changes
-to `main` before publishing `site/` to `gh-pages`.
+Collection and publication are deliberately separated. The maintainer's Windows
+machine runs `scripts/scan_and_publish.ps1` daily because its residential
+connection reaches more official sites than a GitHub-hosted runner. On Monday,
+Wednesday, and Friday the script performs a semantic + DeepSeek-assisted full
+scan. It requires a strict DeepSeek health check, the combined source-coverage
+gate from `scan_health.py`, `ai_output_validation.py`, and the schema/retention
+gate in `snapshot_validation.py` before replacing the last-known-good publish
+snapshot.
 
-`.github/workflows/ai_scan.yml` provides a separate weekly or manually triggered
-AI-assisted run. It installs the semantic/LLM extras, restores the Hugging Face and
-AI caches, reads `DEEPSEEK_API_KEY` from repository secrets, runs the bounded
-AI-assisted scan, and publishes the generated site to `gh-pages`. An optional
-`BRAVE_SEARCH_API_KEY` enables controlled same-domain search; an optional
-`HF_TOKEN` raises Hugging Face download limits. Secret values are never written
-to generated output or commits.
+On other days the local script runs:
 
-The AI workflow is also triggered when its implementation or AI configuration
-changes on `main`, which makes a release deploy its corresponding enriched homepage
-without a separate manual action.
+```powershell
+python -m research_school_radar.cli refresh-status --candidates-json data/latest_candidates.json
+```
+
+That command recalculates deadline/open/closed status without fetching source
+pages. It does not overwrite the source-scan snapshots; the daily GitHub Pages
+job performs the same no-fetch rebuild for publication. The versioned inputs are:
+
+- `data/latest_candidates.json`
+- `data/latest_sources.json`
+- `data/latest_scan_manifest.json`
+
+After a full local scan, the same commit can also include its generated
+`seen.json`, review queue, and dated Markdown report. Those files preserve scan
+history and auditability; they are not alternate Pages publishers.
+
+The local task never writes `gh-pages`. `.github/workflows/ai_scan.yml` is the
+only Pages writer, protected by a single publisher concurrency group. Its daily
+scheduled mode copies the committed source snapshot, runs `refresh-status` from
+the candidate snapshot, and publishes the resulting `site/` directory to
+`gh-pages`. This keeps date-sensitive presentation current while avoiding daily
+source load and competing branch writers.
+
+Cloud AI scanning is manual only. Selecting the workflow's `ai` mode installs
+the semantic/LLM extras, reads `DEEPSEEK_API_KEY` from repository secrets, runs
+the bounded scan, validates it with `ai_output_validation.py` and
+`snapshot_validation.py`, persists the
+accepted snapshots, and publishes through the same single-writer job. An
+optional `BRAVE_SEARCH_API_KEY` enables controlled same-domain search, and an
+optional `HF_TOKEN` raises Hugging Face download limits. Secret values are never
+written to generated output or commits.
 
 ## Public Website
 
@@ -531,12 +593,13 @@ This design keeps scheduled scans free and avoids an exchange-rate API key. The 
 
 No backend server is required. The filters operate on HTML `data-*` attributes generated for each table row.
 
-The public table intentionally hides internal ranking fields such as region priority and failed hard conditions. Those fields remain in `site/candidates.json` for maintainers and debugging. Titles link directly to the official opportunity page.
+The public table intentionally hides internal ranking fields such as region priority and failed hard conditions. Those fields remain in `site/candidates.json` for maintainers and debugging. Scanner titles link to an internal detail page; official-page actions are rendered only for validated HTTP(S) URLs.
 
-After pushing to GitHub, configure Pages to serve the `gh-pages` branch. Run
-`Weekly AI-assisted scan` manually when an immediate advisory refresh is needed,
-or wait for its Monday schedule. The local task continues publishing the daily
-rule-based site.
+After pushing to GitHub, configure Pages to serve the `gh-pages` branch. The
+daily GitHub Actions refresh publishes the latest committed snapshot. Run the
+workflow manually in `ai` mode only when a cloud-side advisory scan is
+specifically needed; routine full collection remains local on
+Monday/Wednesday/Friday.
 
 The public site will be available at:
 
@@ -667,7 +730,7 @@ A site that renders its listing client-side (a single-page app) returns an empty
 - **IHE Delft** — course catalogue from `https://www.un-ihe.org/api/v1/...`; each upcoming edition maps to a candidate at full confidence (exact dates, deadline, fee).
 - **ELLIS** — the events listing is server-rendered with each card's date range and location, so the listing is parsed into candidates even though the detail pages are an empty shell.
 
-A collector returns `(candidates, errors)` and never raises, so a failing source cannot abort the scan. The corresponding HTML sources are disabled in `config/sources.yaml` with notes pointing to the collector.
+A collector returns `(candidates, errors)` and never raises, so a single failing structured source does not abort collection. The `collector` field on an enabled `config/sources.yaml` record is the only activation path; disabling that record disables both its source entry and direct collector.
 
 Not every JS-rendered site can be reached this way. Some expose no usable data endpoint and load content only after interaction (e.g. CUAHSI). A few sit behind active bot management such as Cloudflare's challenge (e.g. IIASA), which blocks even a real headless browser; these are left disabled rather than circumvented.
 

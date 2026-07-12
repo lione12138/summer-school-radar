@@ -6,7 +6,7 @@
 
 An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — **across many academic fields**: environmental & earth science, computing & data science, the social sciences, and the humanities.
 
-It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources, extracts deadline / funding / fee / duration evidence together with the supporting text, separates fully qualified, high-quality, and found opportunities, and publishes a static website that updates daily for free on GitHub Pages.
+It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources, extracts deadline / funding / fee / duration evidence together with the supporting text, separates fully qualified, high-quality, and found opportunities, and publishes a static website that refreshes daily on GitHub Pages.
 
 **Live site:** <https://lione12138.github.io/summer-school-radar/>
 
@@ -31,10 +31,11 @@ through official-source evidence and deterministic validation.
 
 ## Latest Scan Results
 
-This section is refreshed automatically by the daily local scan.
+This section is refreshed from the latest validated snapshot produced by the
+local scan task.
 
 <!-- radar:results:start -->
-_Last scan: 2026-07-06 · 1 fully qualified · 2 high-quality · 4 found shown_
+_Last scan: 2026-07-07 · 1 fully qualified · 2 high-quality · 4 found shown_
 
 **Fully Qualified Opportunities**
 
@@ -108,11 +109,23 @@ The radar targets seasonal schools and short courses — summer schools, winter 
 Most summer school lists are plain link collections. This project is different:
 
 - trusted source registry instead of random web crawling
+- one `config/sources.yaml` registry for both page sources and structured direct collectors
 - structured extraction for deadline, funding, duration, mode, eligibility, and location
+- explicit multi-session schedules, so an outer programme window is never presented as one continuous course
 - hard filters with visible failed conditions
 - static public website plus Markdown and JSON outputs
-- daily free automation that publishes to GitHub Pages
+- residential-network collection on Monday/Wednesday/Friday, daily deadline-status refreshes, and one GitHub Actions writer for GitHub Pages
 - source coverage transparency through a generated Sources & Coverage page
+
+Full scans must attempt at least one configured source and reach 70% success
+across page sources and direct collectors before replacing the last-known-good
+snapshot. Schema-v2 candidate snapshots must keep non-empty display/scanner
+records and at least 35% of a sufficiently large previous scanner set unless a
+maintainer explicitly approves a large drop. Requests use `ETag` / `Last-Modified`; a transient
+request failure, rate limit, or server error can reuse a cached response no more
+than 14 days old. Stable `identity_key` values keep structured editions distinct,
+validated HTTP(S) links protect generated output, and generated text files use
+atomic replacement so a temporary Windows file lock does not corrupt a build.
 
 ## Doctoral Schools Scope
 
@@ -222,7 +235,7 @@ $env:DEEPSEEK_API_KEY = "sk-..."
 python -m research_school_radar.cli scan
 ```
 
-For the daily scheduled scan, the local file is simpler and remains available
+For the scheduled local scan task, the local file is simpler and remains available
 to new processes:
 
 ```powershell
@@ -296,7 +309,7 @@ human confirmation remains required before public promotion.
 The current exploratory advisory settings allow up to 150 semantic pages and up
 to 150 LLM pages. This is a cap, not a guaranteed call count; most runs process
 fewer pages because collection, semantic similarity, and per-source limits
-narrow the pool first. After observing real weekly run sizes, lower these caps
+narrow the pool first. After observing real scheduled-run sizes, lower these caps
 to the smallest values that still preserve useful recall.
 
 LLM sidecar output goes to `site/ai_extractions.json` and
@@ -355,12 +368,14 @@ summary are correct, and only then manually promote reliable records through
 
 Recommended operation:
 
-- Daily: `python -m research_school_radar.cli scan`
-- Manual or weekly: `python -m research_school_radar.cli scan --enable-semantic`
-- Manual review only: `python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction`
+- Manual deterministic scan: `python -m research_school_radar.cli scan`
+- Manual semantic review: `python -m research_school_radar.cli scan --enable-semantic`
+- Production-style AI scan: `python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --no-readme-update`
+- Validate an AI build before snapshotting it: `python -m research_school_radar.ai_output_validation --site-dir site`
 
-Do not enable LLM extraction in daily automation yet. It is slower, more
-resource-intensive, and still needs human validation.
+The scheduled local task uses LLM extraction only on full-scan days. A failed
+DeepSeek health check, insufficient source coverage, or unusable AI output stops
+the snapshot update, so the last known-good public data remains available.
 
 ## AI-assisted homepage workflow
 
@@ -408,10 +423,11 @@ Running from a home/mobile connection avoids that entirely.
 
 `scripts/scan_and_publish.ps1`, scheduled once a day by Windows Task Scheduler:
 
-1. runs the scanner
-2. commits the Markdown report and seen database to `main`
-3. builds `site/index.html`
-4. deploys the static site to the `gh-pages` branch, which GitHub Pages serves
+1. runs a DeepSeek-assisted full source scan on Monday, Wednesday, and Friday;
+2. requires `ai_output_validation.py` to accept semantic ranking, DeepSeek extraction, and build-time Chinese translation;
+3. runs `refresh-status` from `data/latest_candidates.json` on the other days, without fetching source pages;
+4. lets only a validated full scan replace the three source snapshots on `main` (`data/latest_candidates.json`, `data/latest_sources.json`, and `data/latest_scan_manifest.json`); status refreshes leave them intact;
+5. leaves all `gh-pages` writes to GitHub Actions.
 
 It includes a connectivity precheck so it skips cleanly when the machine is
 offline or on a captive network, and writes a log under `logs/` each run. Set it
@@ -423,12 +439,13 @@ powershell -ExecutionPolicy Bypass -File scripts/register_task.ps1
 ```
 
 GitHub Actions still runs the test suite on every push (see `.github/workflows/tests.yml`).
-The optional `.github/workflows/ai_scan.yml` workflow runs the bounded
-`bge-m3` + DeepSeek scan weekly, can be started manually, and deploys
-the AI-enriched homepage to the same `gh-pages` branch. It requires the
-repository secret `DEEPSEEK_API_KEY`. `BRAVE_SEARCH_API_KEY` and `HF_TOKEN` are
-optional. The local daily rule scan remains the primary collector because it
-has better access to official sites than a cloud runner.
+`.github/workflows/ai_scan.yml` is the only writer to `gh-pages`. Its scheduled
+daily run rebuilds the site from the committed snapshots with `refresh-status`,
+so deadline/open/closed presentation stays current without cloud-side source
+fetching. A cloud `bge-m3` + DeepSeek scan exists only as an explicit manual
+workflow mode; it requires the repository secret `DEEPSEEK_API_KEY`, validates
+the output before replacing snapshots, and then publishes through the same
+single-writer job. `BRAVE_SEARCH_API_KEY` and `HF_TOKEN` remain optional.
 
 ## Development
 

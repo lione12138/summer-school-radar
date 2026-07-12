@@ -1,0 +1,1876 @@
+[
+  {
+    "name": "EGU Training Schools",
+    "url": "https://www.egu.eu/meetings/training-schools/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "scientific_society",
+    "keywords": [
+      "geoscience",
+      "hydrology",
+      "climate",
+      "training school"
+    ],
+    "notes": "Core geoscience training source.",
+    "notes_zh": "\u6838\u5fc3\u5730\u7403\u79d1\u5b66\u57f9\u8bad\u8d44\u6e90\u3002"
+  },
+  {
+    "name": "IAHS",
+    "url": "https://iahs.info/",
+    "layer": 1,
+    "region": "global",
+    "source_type": "scientific_society",
+    "keywords": [
+      "hydrology",
+      "water resources",
+      "training"
+    ],
+    "notes": "International Association of Hydrological Sciences. Cloudflare blocks datacenter IPs; the Monday/Wednesday/Friday source scan runs from a residential connection, where it loads fine.",
+    "notes_zh": "\u56fd\u9645\u6c34\u6587\u79d1\u5b66\u534f\u4f1a\u3002Cloudflare \u4f1a\u5c4f\u853d\u6570\u636e\u4e2d\u5fc3 IP\uff1b\u6bcf\u5468\u4e00\u3001\u5468\u4e09\u548c\u5468\u4e94\u7684\u6765\u6e90\u626b\u63cf\u901a\u8fc7\u4f4f\u5b85\u7f51\u7edc\u8fde\u63a5\u8fd0\u884c\uff0c\u56e0\u6b64\u53ef\u4ee5\u6b63\u5e38\u52a0\u8f7d\u3002"
+  },
+  {
+    "name": "IAH",
+    "url": "https://iah.org/",
+    "layer": 1,
+    "region": "global",
+    "source_type": "scientific_society",
+    "keywords": [
+      "hydrogeology",
+      "groundwater",
+      "training"
+    ],
+    "notes": "International Association of Hydrogeologists.",
+    "notes_zh": "\u56fd\u9645\u6c34\u6587\u5730\u8d28\u5b66\u5bb6\u534f\u4f1a\u3002"
+  },
+  {
+    "name": "CUAHSI",
+    "url": "https://www.cuahsi.org/workshops",
+    "layer": 1,
+    "region": "North America",
+    "source_type": "research_network",
+    "keywords": [
+      "hydrology",
+      "water",
+      "short course"
+    ],
+    "enabled": false,
+    "check_manually": true,
+    "notes": "Hydrology workshops and training. The workshops page is a single-page app that loads its list only after interaction, so scripted requests see no content. Check it directly.",
+    "notes_zh": "\u6c34\u6587\u5b66\u7814\u8ba8\u4f1a\u4e0e\u57f9\u8bad\u3002\u7814\u8ba8\u4f1a\u9875\u9762\u4e3a\u5355\u9875\u5e94\u7528\uff0c\u9700\u4ea4\u4e92\u540e\u624d\u52a0\u8f7d\u5217\u8868\uff0c\u56e0\u6b64\u811a\u672c\u8bf7\u6c42\u65e0\u6cd5\u83b7\u53d6\u5185\u5bb9\u3002\u8bf7\u76f4\u63a5\u67e5\u770b\u3002"
+  },
+  {
+    "name": "NASA ARSET",
+    "url": "https://www.earthdata.nasa.gov/data/projects/arset",
+    "layer": 1,
+    "region": "global",
+    "source_type": "agency",
+    "keywords": [
+      "remote sensing",
+      "water",
+      "climate",
+      "training"
+    ],
+    "notes": "NASA Applied Remote Sensing Training. Unreachable from the GitHub runner but loads from a residential connection; most ARSET trainings are online so expect mostly near-matches.",
+    "notes_zh": "NASA\u5e94\u7528\u9065\u611f\u57f9\u8bad\u3002\u4eceGitHub\u8fd0\u884c\u5668\u65e0\u6cd5\u8bbf\u95ee\uff0c\u4f46\u4ece\u4f4f\u5b85\u8fde\u63a5\u53ef\u52a0\u8f7d\uff1b\u5927\u591a\u6570ARSET\u57f9\u8bad\u4e3a\u5728\u7ebf\u5f62\u5f0f\uff0c\u56e0\u6b64\u9884\u8ba1\u4e3b\u8981\u4e3a\u8fd1\u4f3c\u5339\u914d\u3002"
+  },
+  {
+    "name": "DAAD Short Courses",
+    "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "funding_body",
+    "keywords": [
+      "short course",
+      "scholarship",
+      "Germany"
+    ],
+    "notes": "Funding source; opportunity pages may be linked elsewhere.",
+    "notes_zh": "\u8d44\u91d1\u6765\u6e90\uff1b\u673a\u4f1a\u9875\u9762\u53ef\u80fd\u5728\u5176\u4ed6\u5730\u65b9\u94fe\u63a5\u3002"
+  },
+  {
+    "name": "ELLIS",
+    "url": "https://ellis.eu/events",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "research_network",
+    "keywords": [
+      "AI",
+      "machine learning",
+      "summer school"
+    ],
+    "collector": "ellis",
+    "notes": "AI and scientific ML events. The site is a single-page app whose detail pages are empty shells, but its server-rendered listing carries each event's dates and location inline, so it is parsed by a dedicated listing collector (see src/research_school_radar/api_sources.py).",
+    "notes_zh": "AI\u4e0e\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u6d3b\u52a8\u3002\u8be5\u7f51\u7ad9\u4e3a\u5355\u9875\u5e94\u7528\uff0c\u8be6\u60c5\u9875\u4e3a\u7a7a\u58f3\uff0c\u4f46\u670d\u52a1\u7aef\u6e32\u67d3\u7684\u5217\u8868\u5185\u5d4c\u4e86\u6bcf\u4e2a\u6d3b\u52a8\u7684\u65e5\u671f\u548c\u5730\u70b9\uff0c\u56e0\u6b64\u7531\u4e13\u7528\u5217\u8868\u6536\u96c6\u5668\u89e3\u6790\uff08\u89c1 src/research_school_radar/api_sources.py\uff09\u3002"
+  },
+  {
+    "name": "IHE Delft",
+    "url": "https://www.un-ihe.org/short-courses",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "university_institute",
+    "keywords": [
+      "water",
+      "hydrology",
+      "short course",
+      "scholarship"
+    ],
+    "collector": "ihe_delft",
+    "notes": "Premier water education source. The listing is client-side rendered (empty HTML), so it is collected directly from its public JSON API instead (see src/research_school_radar/api_sources.py), which gives exact dates, deadline, and fee.",
+    "notes_zh": "\u9876\u7ea7\u6c34\u8d44\u6e90\u6559\u80b2\u5e73\u53f0\u3002\u8be5\u5217\u8868\u4e3a\u5ba2\u6237\u7aef\u6e32\u67d3\uff08HTML\u4e3a\u7a7a\uff09\uff0c\u56e0\u6b64\u76f4\u63a5\u4ece\u5176\u516c\u5171JSON API\u83b7\u53d6\uff08\u89c1src/research_school_radar/api_sources.py\uff09\uff0c\u5305\u542b\u786e\u5207\u65e5\u671f\u3001\u622a\u6b62\u65e5\u671f\u548c\u8d39\u7528\u3002"
+  },
+  {
+    "name": "IIASA",
+    "url": "https://iiasa.ac.at/events",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "climate",
+      "systems",
+      "summer school"
+    ],
+    "enabled": false,
+    "check_manually": true,
+    "notes": "Strong-relevance research institute, but the site sits behind Cloudflare bot management (a \"Just a moment\" challenge) that returns 403 to scripted requests and blocks even a real headless browser. Left disabled rather than circumvented; check it directly.",
+    "notes_zh": "\u9ad8\u5ea6\u76f8\u5173\u7684\u7814\u7a76\u673a\u6784\uff0c\u4f46\u7f51\u7ad9\u4f7f\u7528Cloudflare\u673a\u5668\u4eba\u7ba1\u7406\uff08\u201c\u8bf7\u7a0d\u5019\u201d\u9a8c\u8bc1\uff09\uff0c\u811a\u672c\u8bf7\u6c42\u8fd4\u56de403\uff0c\u751a\u81f3\u771f\u5b9e\u65e0\u5934\u6d4f\u89c8\u5668\u4e5f\u88ab\u62e6\u622a\u3002\u672a\u7ed5\u8fc7\u800c\u4fdd\u6301\u7981\u7528\uff1b\u8bf7\u76f4\u63a5\u67e5\u770b\u3002"
+  },
+  {
+    "name": "GFZ Potsdam",
+    "url": "https://www.gfz-potsdam.de/en/events",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "geoscience",
+      "training",
+      "school"
+    ],
+    "notes": "Strong geoscience relevance.",
+    "notes_zh": "\u4e0e\u5730\u7403\u79d1\u5b66\u9ad8\u5ea6\u76f8\u5173\u3002"
+  },
+  {
+    "name": "UKCEH",
+    "url": "https://www.ceh.ac.uk/filtered-training-listing",
+    "layer": 1.5,
+    "region": "UK",
+    "source_type": "research_institute",
+    "keywords": [
+      "hydrology",
+      "ecology",
+      "environmental science",
+      "training"
+    ],
+    "notes": "UK environmental science training listing. Previous /training redirected to a 403 page.",
+    "notes_zh": "\u82f1\u56fd\u73af\u5883\u79d1\u5b66\u57f9\u8bad\u5217\u8868\u3002\u4e4b\u524d\u7684/training\u9875\u9762\u91cd\u5b9a\u5411\u5230403\u9875\u9762\u3002"
+  },
+  {
+    "name": "ICIMOD",
+    "url": "https://www.icimod.org/events/",
+    "layer": 1.5,
+    "region": "South Asia",
+    "source_type": "intergovernmental_research",
+    "keywords": [
+      "Himalayan",
+      "climate",
+      "water",
+      "capacity building"
+    ],
+    "blocked_link_domains": [
+      "servir.icimod.org"
+    ],
+    "notes": "Strong regional water and climate relevance. SERVIR subdomain is skipped because local TLS certificate validation fails.",
+    "notes_zh": "\u4e0e\u533a\u57df\u6c34\u548c\u6c14\u5019\u9ad8\u5ea6\u76f8\u5173\u3002\u56e0\u672c\u5730TLS\u8bc1\u4e66\u9a8c\u8bc1\u5931\u8d25\uff0c\u8df3\u8fc7SERVIR\u5b50\u57df\u3002"
+  },
+  {
+    "name": "Asian Institute of Technology",
+    "url": "https://ait.ac.th/events/",
+    "layer": 2,
+    "region": "Southeast Asia",
+    "source_type": "university",
+    "keywords": [
+      "water",
+      "climate",
+      "training",
+      "short course"
+    ],
+    "notes": "Regional university source.",
+    "notes_zh": "\u533a\u57df\u5927\u5b66\u6765\u6e90\u3002"
+  },
+  {
+    "name": "ECMWF Training",
+    "url": "https://www.ecmwf.int/en/learning/training",
+    "layer": 1,
+    "region": "UK",
+    "source_type": "agency",
+    "keywords": [
+      "climate",
+      "weather",
+      "machine learning",
+      "training"
+    ],
+    "notes": "European Centre for Medium-Range Weather Forecasts training catalogue. Many courses are online; in-person ones surface as candidates.",
+    "notes_zh": "\u6b27\u6d32\u4e2d\u671f\u5929\u6c14\u9884\u62a5\u4e2d\u5fc3\u57f9\u8bad\u76ee\u5f55\u3002\u8bb8\u591a\u8bfe\u7a0b\u4e3a\u5728\u7ebf\u5f62\u5f0f\uff1b\u7ebf\u4e0b\u8bfe\u7a0b\u4f5c\u4e3a\u5019\u9009\u51fa\u73b0\u3002"
+  },
+  {
+    "name": "ESA EO4Society Training",
+    "url": "https://eo4society.esa.int/training-education/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "agency",
+    "keywords": [
+      "remote sensing",
+      "earth observation",
+      "training",
+      "school"
+    ],
+    "notes": "European Space Agency Earth observation training and education.",
+    "notes_zh": "\u6b27\u6d32\u7a7a\u95f4\u5c40\u5730\u7403\u89c2\u6d4b\u57f9\u8bad\u4e0e\u6559\u80b2\u3002"
+  },
+  {
+    "name": "NCAR ASP Colloquia",
+    "url": "https://asp.ucar.edu/asp-colloquia",
+    "layer": 1.5,
+    "region": "North America",
+    "source_type": "research_institute",
+    "keywords": [
+      "climate",
+      "atmospheric science",
+      "summer colloquium"
+    ],
+    "notes": "NCAR Advanced Study Program summer colloquia, usually funded for early-career researchers.",
+    "notes_zh": "NCAR\u9ad8\u7ea7\u7814\u7a76\u9879\u76ee\u6691\u671f\u7814\u8ba8\u4f1a\uff0c\u901a\u5e38\u8d44\u52a9\u65e9\u671f\u804c\u4e1a\u7814\u7a76\u4eba\u5458\u3002"
+  },
+  {
+    "name": "PIK Potsdam Events",
+    "url": "https://www.pik-potsdam.de/en/news/events",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "climate",
+      "climate impacts",
+      "school",
+      "workshop"
+    ],
+    "notes": "Potsdam Institute for Climate Impact Research events.",
+    "notes_zh": "\u6ce2\u8328\u5766\u6c14\u5019\u5f71\u54cd\u7814\u7a76\u6240\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "HIDA Events",
+    "url": "https://www.helmholtz-hida.de/en/events/",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_network",
+    "keywords": [
+      "data science",
+      "AI",
+      "machine learning",
+      "school"
+    ],
+    "notes": "Helmholtz Information and Data Science Academy events, including schools for environmental data science.",
+    "notes_zh": "\u4ea5\u59c6\u970d\u5179\u4fe1\u606f\u4e0e\u6570\u636e\u79d1\u5b66\u5b66\u9662\u6d3b\u52a8\uff0c\u5305\u62ec\u73af\u5883\u6570\u636e\u79d1\u5b66\u5b66\u6821\u3002"
+  },
+  {
+    "name": "MLSS Index",
+    "url": "http://mlss.cc/",
+    "layer": 1,
+    "region": "global",
+    "source_type": "community_index",
+    "keywords": [
+      "machine learning",
+      "summer school"
+    ],
+    "notes": "Canonical index of Machine Learning Summer Schools worldwide.",
+    "notes_zh": "\u5168\u7403\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u7684\u6743\u5a01\u7d22\u5f15\u3002"
+  },
+  {
+    "name": "EEML",
+    "url": "https://www.eeml.eu/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "machine learning",
+      "AI",
+      "summer school"
+    ],
+    "notes": "Eastern European Machine Learning Summer School.",
+    "notes_zh": "\u4e1c\u6b27\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u3002"
+  },
+  {
+    "name": "Mediterranean ML Summer School",
+    "url": "https://www.m2lschool.org/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "machine learning",
+      "AI",
+      "summer school"
+    ],
+    "notes": "M2L summer school on machine learning.",
+    "notes_zh": "M2L\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u3002"
+  },
+  {
+    "name": "Nordic ProbAI",
+    "url": "https://probabilistic.ai/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "machine learning",
+      "probabilistic AI",
+      "summer school"
+    ],
+    "notes": "Nordic Probabilistic AI School.",
+    "notes_zh": "\u5317\u6b27\u6982\u7387\u4eba\u5de5\u667a\u80fd\u5b66\u6821\u3002"
+  },
+  {
+    "name": "Gaussian Process Summer School",
+    "url": "https://gpss.cc/",
+    "layer": 2,
+    "region": "UK",
+    "source_type": "summer_school",
+    "keywords": [
+      "machine learning",
+      "Gaussian processes",
+      "summer school"
+    ],
+    "notes": "Sheffield Gaussian Process Summer School, relevant to uncertainty quantification.",
+    "notes_zh": "\u8c22\u83f2\u5c14\u5fb7\u9ad8\u65af\u8fc7\u7a0b\u6691\u671f\u5b66\u6821\uff0c\u4e0e\u4e0d\u786e\u5b9a\u6027\u91cf\u5316\u76f8\u5173\u3002"
+  },
+  {
+    "name": "Deep Learning Indaba",
+    "url": "https://deeplearningindaba.com/",
+    "layer": 2,
+    "region": "Africa",
+    "source_type": "summer_school",
+    "keywords": [
+      "machine learning",
+      "AI",
+      "summer school"
+    ],
+    "notes": "Pan-African deep learning summer school with travel support.",
+    "notes_zh": "\u6cdb\u975e\u6df1\u5ea6\u5b66\u4e60\u6691\u671f\u5b66\u6821\uff0c\u63d0\u4f9b\u5dee\u65c5\u652f\u6301\u3002"
+  },
+  {
+    "name": "IWA",
+    "url": "https://www.iwa-network.org/events/",
+    "layer": 1,
+    "region": "global",
+    "source_type": "scientific_society",
+    "keywords": [
+      "water",
+      "wastewater",
+      "water resources",
+      "training"
+    ],
+    "notes": "International Water Association events and conferences.",
+    "notes_zh": "\u56fd\u9645\u6c34\u534f\u4f1a\uff08IWA\uff09\u7684\u6d3b\u52a8\u4e0e\u4f1a\u8bae\u3002"
+  },
+  {
+    "name": "IAHR",
+    "url": "https://www.iahr.org/index/events",
+    "layer": 1,
+    "region": "global",
+    "source_type": "scientific_society",
+    "keywords": [
+      "hydraulics",
+      "hydro-environment",
+      "water resources",
+      "training"
+    ],
+    "notes": "International Association for Hydro-Environment Engineering and Research.",
+    "notes_zh": "\u56fd\u9645\u6c34\u5229\u4e0e\u73af\u5883\u5de5\u7a0b\u5b66\u4f1a\uff08IAHR\uff09"
+  },
+  {
+    "name": "SIWI",
+    "url": "https://siwi.org/event",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "water",
+      "water governance",
+      "training"
+    ],
+    "notes": "Stockholm International Water Institute events.",
+    "notes_zh": "\u65af\u5fb7\u54e5\u5c14\u6469\u56fd\u9645\u6c34\u7814\u7a76\u6240\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "GEWEX",
+    "url": "https://www.gewex.org/event/",
+    "layer": 1.5,
+    "region": "global",
+    "source_type": "research_network",
+    "keywords": [
+      "climate",
+      "water cycle",
+      "energy",
+      "training"
+    ],
+    "notes": "Global Energy and Water Exchanges programme of the World Climate Research Programme.",
+    "notes_zh": "\u4e16\u754c\u6c14\u5019\u7814\u7a76\u8ba1\u5212\u7684\u5168\u7403\u80fd\u6e90\u4e0e\u6c34\u4ea4\u6362\u8ba1\u5212\u3002"
+  },
+  {
+    "name": "AMS Meetings",
+    "url": "https://www.ametsoc.org/ams/meetings-events/",
+    "layer": 1,
+    "region": "North America",
+    "source_type": "scientific_society",
+    "keywords": [
+      "atmospheric science",
+      "climate",
+      "weather",
+      "short course"
+    ],
+    "notes": "American Meteorological Society meetings and short courses.",
+    "notes_zh": "\u7f8e\u56fd\u6c14\u8c61\u5b66\u4f1a\u4f1a\u8bae\u4e0e\u77ed\u671f\u8bfe\u7a0b\u3002"
+  },
+  {
+    "name": "WCRP",
+    "url": "https://www.wcrp-climate.org/",
+    "layer": 1,
+    "region": "global",
+    "source_type": "research_network",
+    "keywords": [
+      "climate",
+      "climate research",
+      "training",
+      "school"
+    ],
+    "notes": "World Climate Research Programme. The /events path 404s; the homepage links current activities.",
+    "notes_zh": "\u4e16\u754c\u6c14\u5019\u7814\u7a76\u8ba1\u5212\u3002\u8def\u5f84/events\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u4e86\u5f53\u524d\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "WMO ETRP",
+    "url": "https://etrp.wmo.int/",
+    "layer": 1,
+    "region": "global",
+    "source_type": "agency",
+    "keywords": [
+      "meteorology",
+      "hydrology",
+      "climate",
+      "training"
+    ],
+    "notes": "World Meteorological Organization Education and Training Programme.",
+    "notes_zh": "\u4e16\u754c\u6c14\u8c61\u7ec4\u7ec7\u6559\u80b2\u4e0e\u57f9\u8bad\u8ba1\u5212\u3002"
+  },
+  {
+    "name": "GFDL Events",
+    "url": "https://www.gfdl.noaa.gov/events/",
+    "layer": 2,
+    "region": "North America",
+    "source_type": "research_institute",
+    "keywords": [
+      "climate modelling",
+      "geophysical fluid dynamics",
+      "training"
+    ],
+    "notes": "NOAA Geophysical Fluid Dynamics Laboratory events.",
+    "notes_zh": "NOAA\u5730\u7403\u7269\u7406\u6d41\u4f53\u52a8\u529b\u5b66\u5b9e\u9a8c\u5ba4\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "Urbino Summer School",
+    "url": "https://www.urbinossp.it/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "paleoclimatology",
+      "climate",
+      "summer school"
+    ],
+    "enabled": false,
+    "notes": "Urbino Summer School in Paleoclimatology. The urbinossp.it domain is currently parked/for sale, so it serves no content. Re-enable when the school publishes a working site.",
+    "notes_zh": "\u4e4c\u5c14\u6bd4\u8bfa\u53e4\u6c14\u5019\u5b66\u6691\u671f\u5b66\u6821\u3002\u57df\u540d urbinossp.it \u5f53\u524d\u5904\u4e8e\u505c\u653e/\u5f85\u552e\u72b6\u6001\uff0c\u65e0\u5185\u5bb9\u3002\u5f85\u5b66\u6821\u53d1\u5e03\u6709\u6548\u7f51\u7ad9\u65f6\u91cd\u65b0\u542f\u7528\u3002"
+  },
+  {
+    "name": "CIDER",
+    "url": "https://www.deep-earth.org/",
+    "layer": 2,
+    "region": "North America",
+    "source_type": "summer_school",
+    "keywords": [
+      "geoscience",
+      "deep earth",
+      "geophysics",
+      "summer school"
+    ],
+    "notes": "Cooperative Institute for Dynamic Earth Research summer programme.",
+    "notes_zh": "\u52a8\u6001\u5730\u7403\u7814\u7a76\u5408\u4f5c\u7814\u7a76\u6240\u6691\u671f\u9879\u76ee\u3002"
+  },
+  {
+    "name": "Oxford ML Summer School",
+    "url": "https://www.oxfordml.school/",
+    "layer": 2,
+    "region": "UK",
+    "source_type": "summer_school",
+    "keywords": [
+      "machine learning",
+      "AI",
+      "health",
+      "finance",
+      "summer school"
+    ],
+    "notes": "OxML summer school on machine learning across application tracks.",
+    "notes_zh": "OxML\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\uff0c\u6db5\u76d6\u591a\u4e2a\u5e94\u7528\u65b9\u5411\u3002"
+  },
+  {
+    "name": "AMMI",
+    "url": "https://aimsammi.org/",
+    "layer": 2,
+    "region": "Africa",
+    "source_type": "summer_school",
+    "keywords": [
+      "machine learning",
+      "AI",
+      "summer school"
+    ],
+    "notes": "African Master of Machine Intelligence, fully funded programme.",
+    "notes_zh": "\u975e\u6d32\u673a\u5668\u667a\u80fd\u7855\u58eb\uff0c\u5168\u989d\u8d44\u52a9\u9879\u76ee\u3002"
+  },
+  {
+    "name": "IEEE GRSS",
+    "url": "https://www.grss-ieee.org/events-calendar/",
+    "layer": 1,
+    "region": "global",
+    "source_type": "scientific_society",
+    "keywords": [
+      "remote sensing",
+      "geoscience",
+      "earth observation",
+      "summer school"
+    ],
+    "enabled": false,
+    "check_manually": true,
+    "notes": "IEEE Geoscience and Remote Sensing Society events calendar. Cloudflare blocks the GitHub Actions runner's IP with a 403 (it loads from a normal browser). Check it directly.",
+    "notes_zh": "IEEE\u5730\u7403\u79d1\u5b66\u4e0e\u9065\u611f\u5b66\u4f1a\u6d3b\u52a8\u65e5\u5386\u3002Cloudflare\u4ee5403\u9519\u8bef\u963b\u6b62\u4e86GitHub Actions\u8fd0\u884c\u5668\u7684IP\uff08\u6b63\u5e38\u6d4f\u89c8\u5668\u53ef\u52a0\u8f7d\uff09\u3002\u8bf7\u76f4\u63a5\u67e5\u770b\u3002"
+  },
+  {
+    "name": "ISPRS",
+    "url": "https://www.isprs.org/",
+    "layer": 1,
+    "region": "global",
+    "source_type": "scientific_society",
+    "keywords": [
+      "remote sensing",
+      "photogrammetry",
+      "geoinformation",
+      "summer school"
+    ],
+    "notes": "International Society for Photogrammetry and Remote Sensing. Calendar path 404s; homepage links current activities.",
+    "notes_zh": "\u56fd\u9645\u6444\u5f71\u6d4b\u91cf\u4e0e\u9065\u611f\u5b66\u4f1a\u3002\u65e5\u5386\u8def\u5f84404\u9519\u8bef\uff1b\u4e3b\u9875\u94fe\u63a5\u81f3\u5f53\u524d\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "GSA",
+    "url": "https://www.geosociety.org/",
+    "layer": 1,
+    "region": "North America",
+    "source_type": "scientific_society",
+    "keywords": [
+      "geoscience",
+      "geology",
+      "short course"
+    ],
+    "notes": "Geological Society of America. Direct event-list path 404s for scripted requests; homepage links current events.",
+    "notes_zh": "\u7f8e\u56fd\u5730\u8d28\u5b66\u4f1a\u3002\u811a\u672c\u8bf7\u6c42\u7684\u76f4\u63a5\u4e8b\u4ef6\u5217\u8868\u8def\u5f84\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u5f53\u524d\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "EAGE",
+    "url": "https://eage.org/events/calendar-of-events/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "scientific_society",
+    "keywords": [
+      "geophysics",
+      "geoscience",
+      "near-surface",
+      "short course"
+    ],
+    "notes": "European Association of Geoscientists and Engineers; runs many short courses and education days.",
+    "notes_zh": "\u6b27\u6d32\u5730\u7403\u79d1\u5b66\u5bb6\u4e0e\u5de5\u7a0b\u5e08\u534f\u4f1a\uff1b\u4e3e\u529e\u4f17\u591a\u77ed\u671f\u8bfe\u7a0b\u548c\u6559\u80b2\u65e5\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "EarthScope",
+    "url": "https://www.earthscope.org/event/",
+    "layer": 1.5,
+    "region": "North America",
+    "source_type": "research_consortium",
+    "keywords": [
+      "seismology",
+      "geodesy",
+      "geophysics",
+      "short course"
+    ],
+    "notes": "EarthScope Consortium (formerly IRIS/UNAVCO); seismology and geodesy short courses and summer workshops.",
+    "notes_zh": "EarthScope\u8054\u76df\uff08\u539fIRIS/UNAVCO\uff09\uff1b\u5730\u9707\u5b66\u4e0e\u5927\u5730\u6d4b\u91cf\u5b66\u77ed\u671f\u8bfe\u7a0b\u53ca\u590f\u5b63\u7814\u8ba8\u4f1a\u3002"
+  },
+  {
+    "name": "CIG Geodynamics",
+    "url": "https://geodynamics.org/events",
+    "layer": 2,
+    "region": "North America",
+    "source_type": "research_network",
+    "keywords": [
+      "geodynamics",
+      "computational geoscience",
+      "modelling",
+      "workshop"
+    ],
+    "notes": "Computational Infrastructure for Geodynamics; computational geoscience workshops and training.",
+    "notes_zh": "\u8ba1\u7b97\u5730\u7403\u52a8\u529b\u5b66\u8ba1\u7b97\u57fa\u7840\u8bbe\u65bd\uff1b\u8ba1\u7b97\u5730\u7403\u79d1\u5b66\u7814\u8ba8\u4f1a\u4e0e\u57f9\u8bad\u3002"
+  },
+  {
+    "name": "EUMETSAT Training",
+    "url": "https://classroom.eumetsat.int/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "agency",
+    "keywords": [
+      "meteorology",
+      "climate",
+      "remote sensing",
+      "earth observation",
+      "training"
+    ],
+    "notes": "EUMETSAT training portal for satellite meteorology and climate.",
+    "notes_zh": "EUMETSAT\u536b\u661f\u6c14\u8c61\u4e0e\u6c14\u5019\u57f9\u8bad\u95e8\u6237\u3002"
+  },
+  {
+    "name": "ICOS",
+    "url": "https://www.icos-cp.eu/news-and-events/events",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_infrastructure",
+    "keywords": [
+      "carbon",
+      "climate",
+      "greenhouse gas",
+      "observation",
+      "training"
+    ],
+    "notes": "Integrated Carbon Observation System events and training.",
+    "notes_zh": "\u7efc\u5408\u78b3\u89c2\u6d4b\u7cfb\u7edf\u6d3b\u52a8\u4e0e\u57f9\u8bad\u3002"
+  },
+  {
+    "name": "ICTP-SAIFR",
+    "url": "https://www.ictp-saifr.org/",
+    "layer": 2,
+    "region": "Latin America",
+    "source_type": "research_institute",
+    "keywords": [
+      "physics",
+      "data science",
+      "machine learning",
+      "climate",
+      "school"
+    ],
+    "notes": "South American Institute for Fundamental Research (ICTP partner); runs data science, ML, and climate schools.",
+    "notes_zh": "\u5357\u7f8e\u57fa\u7840\u7814\u7a76\u6240\uff08ICTP\u5408\u4f5c\u4f19\u4f34\uff09\uff1b\u4e3e\u529e\u6570\u636e\u79d1\u5b66\u3001\u673a\u5668\u5b66\u4e60\u548c\u6c14\u5019\u5b66\u6821\u3002"
+  },
+  {
+    "name": "Lamont-Doherty",
+    "url": "https://lamont.columbia.edu/events",
+    "layer": 1.5,
+    "region": "North America",
+    "source_type": "research_institute",
+    "keywords": [
+      "climate",
+      "oceanography",
+      "seismology",
+      "geoscience",
+      "earth observation"
+    ],
+    "notes": "Lamont-Doherty Earth Observatory (Columbia University). Blocks datacenter IPs; loads from the residential connection used for Monday/Wednesday/Friday source scans.",
+    "notes_zh": "\u54e5\u4f26\u6bd4\u4e9a\u5927\u5b66\u62c9\u8499\u7279-\u591a\u5c14\u8482\u5730\u7403\u89c2\u6d4b\u7ad9\u3002\u8be5\u7f51\u7ad9\u4f1a\u5c4f\u853d\u6570\u636e\u4e2d\u5fc3 IP\uff0c\u4f46\u53ef\u901a\u8fc7\u6bcf\u5468\u4e00\u3001\u5468\u4e09\u548c\u5468\u4e94\u6765\u6e90\u626b\u63cf\u4f7f\u7528\u7684\u4f4f\u5b85\u7f51\u7edc\u8fde\u63a5\u6b63\u5e38\u52a0\u8f7d\u3002"
+  },
+  {
+    "name": "IPAM",
+    "url": "https://www.ipam.ucla.edu/programs/summer-schools/",
+    "layer": 1.5,
+    "region": "North America",
+    "source_type": "research_institute",
+    "keywords": [
+      "machine learning",
+      "data science",
+      "applied mathematics",
+      "summer school"
+    ],
+    "notes": "UCLA Institute for Pure and Applied Mathematics; graduate summer schools in data science, ML, and computational science, usually with travel support.",
+    "notes_zh": "UCLA \u7eaf\u6570\u5b66\u4e0e\u5e94\u7528\u6570\u5b66\u7814\u7a76\u6240\uff1b\u6570\u636e\u79d1\u5b66\u3001\u673a\u5668\u5b66\u4e60\u548c\u8ba1\u7b97\u79d1\u5b66\u7814\u7a76\u751f\u6691\u671f\u5b66\u6821\uff0c\u901a\u5e38\u63d0\u4f9b\u5dee\u65c5\u652f\u6301\u3002"
+  },
+  {
+    "name": "CLIVAR",
+    "url": "https://www.clivar.org/events",
+    "layer": 1,
+    "region": "global",
+    "source_type": "research_network",
+    "keywords": [
+      "climate",
+      "climate variability",
+      "oceanography",
+      "summer school"
+    ],
+    "notes": "World Climate Research Programme's CLIVAR project; climate variability and predictability schools and events.",
+    "notes_zh": "\u4e16\u754c\u6c14\u5019\u7814\u7a76\u8ba1\u5212\uff08WCRP\uff09\u7684CLIVAR\u9879\u76ee\uff1b\u6c14\u5019\u53d8\u7387\u4e0e\u53ef\u9884\u6d4b\u6027\u57f9\u8bad\u53ca\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "APECS",
+    "url": "https://www.apecs.is/",
+    "layer": 2,
+    "region": "global",
+    "source_type": "research_network",
+    "keywords": [
+      "polar",
+      "cryosphere",
+      "climate",
+      "early-career"
+    ],
+    "notes": "Association of Polar Early Career Scientists; polar and cryosphere training schools and webinars.",
+    "notes_zh": "\u6781\u5730\u65e9\u671f\u804c\u4e1a\u79d1\u5b66\u5bb6\u534f\u4f1a\uff1b\u6781\u5730\u4e0e\u51b0\u51bb\u5708\u57f9\u8bad\u5b66\u6821\u53ca\u7f51\u7edc\u7814\u8ba8\u4f1a\u3002"
+  },
+  {
+    "name": "Barcelona Supercomputing Center",
+    "url": "https://www.bsc.es/education/training",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "machine learning",
+      "high performance computing",
+      "data science",
+      "training"
+    ],
+    "notes": "BSC training in high-performance and data-driven computational science, including ML for science.",
+    "notes_zh": "\u9ad8\u6027\u80fd\u4e0e\u6570\u636e\u9a71\u52a8\u8ba1\u7b97\u79d1\u5b66\uff08\u542b\u79d1\u5b66\u673a\u5668\u5b66\u4e60\uff09\u7684BSC\u57f9\u8bad"
+  },
+  {
+    "name": "Climate Change AI",
+    "url": "https://www.climatechange.ai/events",
+    "layer": 1.5,
+    "region": "global",
+    "source_type": "research_network",
+    "keywords": [
+      "AI",
+      "machine learning",
+      "climate",
+      "scientific machine learning",
+      "summer school"
+    ],
+    "render": true,
+    "notes": "AI for climate. Its events page is client-side rendered, so it uses the optional Playwright headless browser during local Monday/Wednesday/Friday source scans. Its flagship summer school is virtual, so expect mostly near-matches.",
+    "notes_zh": "\u9762\u5411\u6c14\u5019\u9886\u57df\u7684\u4eba\u5de5\u667a\u80fd\u9879\u76ee\u3002\u5176\u6d3b\u52a8\u9875\u9762\u7531\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u672c\u673a\u6bcf\u5468\u4e00\u3001\u5468\u4e09\u548c\u5468\u4e94\u6293\u53d6\u6765\u6e90\u65f6\u4f1a\u4f7f\u7528\u53ef\u9009\u7684 Playwright \u65e0\u5934\u6d4f\u89c8\u5668\u3002\u5176\u65d7\u8230\u6691\u6821\u4e3a\u7ebf\u4e0a\u5f62\u5f0f\uff0c\u56e0\u6b64\u591a\u6570\u7ed3\u679c\u9884\u8ba1\u53ea\u4f1a\u5f52\u5165\u8fd1\u4f3c\u5339\u914d\u3002"
+  },
+  {
+    "name": "Summer Schools in Europe",
+    "url": "https://www.summerschoolsineurope.eu/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "aggregator",
+    "keywords": [
+      "summer school",
+      "multidisciplinary"
+    ],
+    "enabled": false,
+    "notes": "Cross-disciplinary aggregator. Disabled when the project refocused on water/climate/geoscience/remote-sensing/ML; it is mostly off-domain and also returns 403 for scripted requests.",
+    "notes_zh": "\u8de8\u5b66\u79d1\u805a\u5408\u5668\u3002\u5f53\u9879\u76ee\u91cd\u65b0\u805a\u7126\u4e8e\u6c34/\u6c14\u5019/\u5730\u7403\u79d1\u5b66/\u9065\u611f/\u673a\u5668\u5b66\u4e60\u65f6\u88ab\u7981\u7528\uff1b\u5b83\u5927\u591a\u4e0d\u5728\u9886\u57df\u5185\uff0c\u4e14\u5bf9\u811a\u672c\u8bf7\u6c42\u8fd4\u56de403\u9519\u8bef\u3002"
+  },
+  {
+    "name": "Utrecht Summer School",
+    "url": "https://utrechtsummerschool.nl/courses",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "university",
+    "keywords": [
+      "summer school",
+      "multidisciplinary"
+    ],
+    "enabled": false,
+    "notes": "Large general summer school programme. Disabled when the project refocused on its core domain; most courses are off-domain and fee-based.",
+    "notes_zh": "\u5927\u578b\u7efc\u5408\u6027\u6691\u671f\u5b66\u6821\u9879\u76ee\u3002\u5f53\u9879\u76ee\u91cd\u65b0\u805a\u7126\u6838\u5fc3\u9886\u57df\u540e\u505c\u529e\uff1b\u591a\u6570\u8bfe\u7a0b\u4e3a\u975e\u6838\u5fc3\u9886\u57df\u4e14\u9700\u4ed8\u8d39\u3002"
+  },
+  {
+    "name": "CERN Academic Training",
+    "url": "https://academictraining.cern.ch/",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "physics",
+      "computing",
+      "data science",
+      "lectures"
+    ],
+    "render": true,
+    "notes": "Content is rendered client-side, so this source uses the optional Playwright headless browser. Falls back to an empty fetch if Playwright is not installed.",
+    "notes_zh": "\u5185\u5bb9\u5728\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u6b64\u6765\u6e90\u4f7f\u7528\u53ef\u9009\u7684Playwright\u65e0\u5934\u6d4f\u89c8\u5668\u3002\u5982\u679c\u672a\u5b89\u88c5Playwright\uff0c\u5219\u56de\u9000\u4e3a\u7a7a\u8bf7\u6c42\u3002"
+  },
+  {
+    "name": "ICTP",
+    "url": "https://www.ictp.it/home/scientific-calendar",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "climate",
+      "geophysics",
+      "physics",
+      "AI",
+      "school",
+      "workshop"
+    ],
+    "notes": "Abdus Salam ICTP runs many funded schools in geophysics, climate, and scientific ML. The /scientific-calendar path 404s; /home/scientific-calendar works for scripted requests.",
+    "notes_zh": "Abdus Salam ICTP \u5728\u5730\u7403\u7269\u7406\u5b66\u3001\u6c14\u5019\u548c\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u9886\u57df\u4e3e\u529e\u591a\u9879\u8d44\u52a9\u7684\u57f9\u8bad\u6d3b\u52a8\u3002/scientific-calendar \u8def\u5f84\u8fd4\u56de 404\uff1b/home/scientific-calendar \u53ef\u7528\u4e8e\u811a\u672c\u8bf7\u6c42\u3002"
+  },
+  {
+    "name": "LxMLS",
+    "url": "https://lxmls.github.io/2026/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "machine learning",
+      "natural language processing",
+      "summer school"
+    ],
+    "notes": "Lisbon Machine Learning School. The canonical lxmls.it.pt domain times out from the CI runner, so this points at the current edition on GitHub Pages directly. Bump the year when a new edition is published.",
+    "notes_zh": "\u91cc\u65af\u672c\u673a\u5668\u5b66\u4e60\u5b66\u6821\u3002\u5b98\u65b9\u57df\u540d lxmls.it.pt \u5728 CI \u8fd0\u884c\u5668\u4e2d\u8d85\u65f6\uff0c\u56e0\u6b64\u76f4\u63a5\u6307\u5411 GitHub Pages \u4e0a\u7684\u5f53\u524d\u7248\u672c\u3002\u65b0\u7248\u672c\u53d1\u5e03\u65f6\u66f4\u65b0\u5e74\u4efd\u3002"
+  },
+  {
+    "name": "Karthaus Summer School",
+    "url": "https://www.projects.science.uu.nl/iceclimate/karthaus/",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "glaciology",
+      "ice sheets",
+      "cryosphere",
+      "climate",
+      "summer school"
+    ],
+    "notes": "Utrecht University's Karthaus course on ice sheets and climate; a flagship funded cryosphere school.",
+    "notes_zh": "\u4e4c\u5f97\u52d2\u652f\u5927\u5b66\u5173\u4e8e\u51b0\u76d6\u4e0e\u6c14\u5019\u7684Karthaus\u8bfe\u7a0b\uff1b\u4e00\u9879\u65d7\u8230\u7ea7\u8d44\u52a9\u7684\u51b0\u51bb\u5708\u5b66\u6821\u3002"
+  },
+  {
+    "name": "WHOI GFD Program",
+    "url": "https://gfd.whoi.edu/",
+    "layer": 1.5,
+    "region": "North America",
+    "source_type": "research_institute",
+    "keywords": [
+      "geophysical fluid dynamics",
+      "oceanography",
+      "climate",
+      "summer school"
+    ],
+    "notes": "Woods Hole Geophysical Fluid Dynamics summer program; a classic funded ten-week school in ocean and climate fluid dynamics.",
+    "notes_zh": "\u4f0d\u5179\u970d\u5c14\u5730\u7403\u7269\u7406\u6d41\u4f53\u52a8\u529b\u5b66\u6691\u671f\u9879\u76ee\uff1b\u4e00\u4e2a\u7ecf\u5178\u7684\u3001\u6709\u8d44\u52a9\u7684\u5341\u5468\u6d77\u6d0b\u4e0e\u6c14\u5019\u6d41\u4f53\u52a8\u529b\u5b66\u5b66\u6821\u3002"
+  },
+  {
+    "name": "NCEO",
+    "url": "https://www.nceo.ac.uk/training/",
+    "layer": 1.5,
+    "region": "UK",
+    "source_type": "research_centre",
+    "keywords": [
+      "earth observation",
+      "remote sensing",
+      "climate",
+      "training"
+    ],
+    "notes": "UK National Centre for Earth Observation training, including its annual Earth observation summer school.",
+    "notes_zh": "\u82f1\u56fd\u56fd\u5bb6\u5730\u7403\u89c2\u6d4b\u4e2d\u5fc3\u57f9\u8bad\uff0c\u5305\u62ec\u5176\u5e74\u5ea6\u5730\u7403\u89c2\u6d4b\u6691\u671f\u5b66\u6821\u3002"
+  },
+  {
+    "name": "POGO",
+    "url": "https://pogo-ocean.org/capacity-development/",
+    "layer": 1.5,
+    "region": "global",
+    "source_type": "research_network",
+    "keywords": [
+      "ocean observation",
+      "oceanography",
+      "climate",
+      "capacity development"
+    ],
+    "notes": "Partnership for Observation of the Global Ocean; funded ocean-observation training and fellowships.",
+    "notes_zh": "\u5168\u7403\u6d77\u6d0b\u89c2\u6d4b\u4f19\u4f34\u5173\u7cfb\uff1b\u8d44\u52a9\u7684\u6d77\u6d0b\u89c2\u6d4b\u57f9\u8bad\u4e0e\u5956\u5b66\u91d1\u3002"
+  },
+  {
+    "name": "Cyprus Institute",
+    "url": "https://www.cyi.ac.cy/index.php/education/graduate-school/summer-schools.html",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "climate",
+      "data science",
+      "machine learning",
+      "high performance computing",
+      "summer school"
+    ],
+    "notes": "The Cyprus Institute graduate school runs summer schools in climate, computational science, and machine learning.",
+    "notes_zh": "\u585e\u6d66\u8def\u65af\u7814\u7a76\u6240\u7814\u7a76\u751f\u9662\u4e3e\u529e\u6c14\u5019\u3001\u8ba1\u7b97\u79d1\u5b66\u548c\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u3002"
+  },
+  {
+    "name": "AGU",
+    "url": "https://www.agu.org/",
+    "layer": 1,
+    "region": "North America",
+    "source_type": "scientific_society",
+    "keywords": [
+      "geoscience",
+      "climate",
+      "hydrology",
+      "ocean",
+      "atmospheric science",
+      "short course"
+    ],
+    "notes": "American Geophysical Union. Direct event paths 404 for scripted requests; the homepage links current meetings and courses.",
+    "notes_zh": "\u7f8e\u56fd\u5730\u7403\u7269\u7406\u8054\u5408\u4f1a\u3002\u811a\u672c\u8bf7\u6c42\u7684\u76f4\u63a5\u6d3b\u52a8\u8def\u5f84\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u5f53\u524d\u4f1a\u8bae\u548c\u8bfe\u7a0b\u3002"
+  },
+  {
+    "name": "NCAS",
+    "url": "https://ncas.ac.uk/",
+    "layer": 1.5,
+    "region": "UK",
+    "source_type": "research_centre",
+    "keywords": [
+      "atmospheric science",
+      "climate",
+      "weather",
+      "training"
+    ],
+    "notes": "UK National Centre for Atmospheric Science; runs funded atmospheric and climate science training courses and summer schools.",
+    "notes_zh": "\u82f1\u56fd\u56fd\u5bb6\u5927\u6c14\u79d1\u5b66\u4e2d\u5fc3\uff1b\u8fd0\u8425\u8d44\u52a9\u7684\u5927\u6c14\u4e0e\u6c14\u5019\u79d1\u5b66\u57f9\u8bad\u8bfe\u7a0b\u53ca\u6691\u671f\u5b66\u6821\u3002"
+  },
+  {
+    "name": "Les Houches Physics School",
+    "url": "https://www.houches-school-physics.com/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "physics",
+      "climate",
+      "data science",
+      "machine learning",
+      "school"
+    ],
+    "notes": "Les Houches School of Physics; among its sessions are climate-physics and scientific machine-learning schools. Off-domain physics sessions are dropped by the filters.",
+    "notes_zh": "\u83b1\u82cf\u4ec0\u7269\u7406\u5b66\u9662\uff1b\u5176\u8bfe\u7a0b\u5305\u62ec\u6c14\u5019\u7269\u7406\u548c\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u5b66\u6821\u3002\u975e\u672c\u9886\u57df\u7684\u7269\u7406\u8bfe\u7a0b\u4f1a\u88ab\u7b5b\u9009\u6389\u3002"
+  },
+  {
+    "name": "ESSLLI",
+    "url": "https://www.esslli.eu/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "logic",
+      "language",
+      "computation",
+      "computational linguistics",
+      "summer school"
+    ],
+    "render": true,
+    "notes": "European Summer School in Logic, Language and Information \u2014 the flagship logic/language/computation school. The landing page is client-side rendered, so it uses the optional headless browser.",
+    "notes_zh": "\u6b27\u6d32\u903b\u8f91\u3001\u8bed\u8a00\u4e0e\u4fe1\u606f\u6691\u671f\u5b66\u6821\u2014\u2014\u903b\u8f91/\u8bed\u8a00/\u8ba1\u7b97\u9886\u57df\u7684\u65d7\u8230\u5b66\u6821\u3002\u7740\u9646\u9875\u4e3a\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u4f7f\u7528\u53ef\u9009\u7684\u65e0\u5934\u6d4f\u89c8\u5668\u3002"
+  },
+  {
+    "name": "LSA Linguistic Institute",
+    "url": "https://www.linguisticsociety.org/content/institute",
+    "layer": 1,
+    "region": "North America",
+    "source_type": "scientific_society",
+    "keywords": [
+      "linguistics",
+      "computational linguistics",
+      "language",
+      "summer institute"
+    ],
+    "notes": "The Linguistic Society of America's biennial summer Linguistic Institute, a major funded linguistics training school.",
+    "notes_zh": "\u7f8e\u56fd\u8bed\u8a00\u5b66\u4f1a\u6bcf\u4e24\u5e74\u4e3e\u529e\u7684\u6691\u671f\u8bed\u8a00\u5b66\u9662\uff0c\u662f\u4e00\u4e2a\u5927\u578b\u8d44\u52a9\u6027\u8bed\u8a00\u5b66\u57f9\u8bad\u5b66\u6821\u3002"
+  },
+  {
+    "name": "LOT School",
+    "url": "https://lotschool.nl/",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_network",
+    "keywords": [
+      "linguistics",
+      "phonology",
+      "syntax",
+      "semantics",
+      "summer school"
+    ],
+    "notes": "The Dutch national graduate school in linguistics (LOT); runs funded summer and winter schools across linguistics subfields.",
+    "notes_zh": "\u8377\u5170\u56fd\u5bb6\u8bed\u8a00\u5b66\u7814\u7a76\u751f\u9662\uff08LOT\uff09\uff1b\u5728\u8bed\u8a00\u5b66\u5404\u5b50\u9886\u57df\u4e3e\u529e\u6709\u8d44\u52a9\u7684\u6691\u671f\u548c\u51ac\u5b63\u5b66\u6821\u3002"
+  },
+  {
+    "name": "EGG School",
+    "url": "https://eggschool.org/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "linguistics",
+      "generative grammar",
+      "syntax",
+      "semantics",
+      "summer school"
+    ],
+    "notes": "Eastern Generative Grammar summer school in theoretical linguistics, held in Central/Eastern Europe with low fees.",
+    "notes_zh": "\u7406\u8bba\u8bed\u8a00\u5b66\u4e1c\u6b27\u751f\u6210\u8bed\u6cd5\u6691\u671f\u5b66\u6821\uff0c\u4f4d\u4e8e\u4e2d/\u4e1c\u6b27\uff0c\u8d39\u7528\u4f4e\u5ec9\u3002"
+  },
+  {
+    "name": "Leiden Linguistics Summer School",
+    "url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "university",
+    "keywords": [
+      "linguistics",
+      "languages",
+      "philology",
+      "summer school"
+    ],
+    "notes": "Leiden Summer School in Languages and Linguistics; academic linguistics (not language-teaching) courses.",
+    "notes_zh": "\u83b1\u987f\u6691\u671f\u8bed\u8a00\u4e0e\u8bed\u8a00\u5b66\u5b66\u6821\uff1b\u5b66\u672f\u8bed\u8a00\u5b66\uff08\u975e\u8bed\u8a00\u6559\u5b66\uff09\u8bfe\u7a0b\u3002"
+  },
+  {
+    "name": "CLASP Gothenburg",
+    "url": "https://www.gu.se/en/clasp",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "computational linguistics",
+      "natural language processing",
+      "semantics",
+      "language technology"
+    ],
+    "notes": "Centre for Linguistic Theory and Studies in Probability (University of Gothenburg); computational linguistics and language-technology events and schools.",
+    "notes_zh": "\u8bed\u8a00\u7406\u8bba\u4e0e\u6982\u7387\u7814\u7a76\u4e2d\u5fc3\uff08\u54e5\u5fb7\u5821\u5927\u5b66\uff09\uff1b\u8ba1\u7b97\u8bed\u8a00\u5b66\u4e0e\u8bed\u8a00\u6280\u672f\u76f8\u5173\u6d3b\u52a8\u53ca\u5b66\u6821\u3002"
+  },
+  {
+    "name": "ICVSS",
+    "url": "https://iplab.dmi.unict.it/icvss/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "computer vision",
+      "machine learning",
+      "image processing",
+      "summer school"
+    ],
+    "notes": "International Computer Vision Summer School (Sicily); a flagship, competitive computer-vision school.",
+    "notes_zh": "\u56fd\u9645\u8ba1\u7b97\u673a\u89c6\u89c9\u6691\u671f\u5b66\u6821\uff08\u897f\u897f\u91cc\uff09\uff1b\u65d7\u8230\u7ea7\u3001\u7ade\u4e89\u6027\u8ba1\u7b97\u673a\u89c6\u89c9\u5b66\u6821\u3002"
+  },
+  {
+    "name": "DS3 Data Science Summer School",
+    "url": "https://www.ds3-datascience-polytechnique.fr/",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "data science",
+      "machine learning",
+      "data analysis",
+      "statistics",
+      "summer school"
+    ],
+    "notes": "\u00c9cole Polytechnique Data Science Summer School (DS3); data science and machine learning.",
+    "notes_zh": "\u5df4\u9ece\u7efc\u5408\u7406\u5de5\u5b66\u9662\u6570\u636e\u79d1\u5b66\u6691\u671f\u5b66\u6821\uff08DS3\uff09\uff1b\u6570\u636e\u79d1\u5b66\u4e0e\u673a\u5668\u5b66\u4e60\u3002"
+  },
+  {
+    "name": "Heidelberg Laureate Forum",
+    "url": "https://www.heidelberg-laureate-forum.org/",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_network",
+    "keywords": [
+      "computer science",
+      "mathematics",
+      "data science",
+      "early-career"
+    ],
+    "notes": "HLF brings young researchers together with Turing/Abel/Fields laureates; fully funded for selected applicants.",
+    "notes_zh": "HLF\u6c47\u805a\u9752\u5e74\u7814\u7a76\u4eba\u5458\u4e0e\u56fe\u7075\u5956/\u963f\u8d1d\u5c14\u5956/\u83f2\u5c14\u5179\u5956\u5f97\u4e3b\uff1b\u5165\u9009\u8005\u83b7\u5168\u989d\u8d44\u52a9\u3002"
+  },
+  {
+    "name": "OPLSS",
+    "url": "https://www.cs.uoregon.edu/research/summerschool/",
+    "layer": 2,
+    "region": "North America",
+    "source_type": "summer_school",
+    "keywords": [
+      "programming languages",
+      "formal methods",
+      "software",
+      "summer school"
+    ],
+    "notes": "Oregon Programming Languages Summer School; programming languages, type theory, and formal methods.",
+    "notes_zh": "\u4fc4\u52d2\u5188\u7f16\u7a0b\u8bed\u8a00\u6691\u671f\u5b66\u6821\uff1b\u7f16\u7a0b\u8bed\u8a00\u3001\u7c7b\u578b\u7406\u8bba\u4e0e\u5f62\u5f0f\u5316\u65b9\u6cd5\u3002"
+  },
+  {
+    "name": "LASER Software Engineering School",
+    "url": "https://laser.inf.ethz.ch/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "software engineering",
+      "programming",
+      "software",
+      "summer school"
+    ],
+    "notes": "LASER summer school on software engineering (Elba, Italy), organised by ETH Zurich. Times out from some connections; skipped silently when unreachable.",
+    "notes_zh": "LASER\u8f6f\u4ef6\u5de5\u7a0b\u6691\u671f\u5b66\u6821\uff08\u610f\u5927\u5229\u5384\u5c14\u5df4\u5c9b\uff09\uff0c\u7531\u82cf\u9ece\u4e16\u8054\u90a6\u7406\u5de5\u5b66\u9662\u7ec4\u7ec7\u3002\u90e8\u5206\u8fde\u63a5\u8d85\u65f6\uff1b\u65e0\u6cd5\u8bbf\u95ee\u65f6\u9759\u9ed8\u8df3\u8fc7\u3002"
+  },
+  {
+    "name": "CISPA",
+    "url": "https://cispa.de/en",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "cybersecurity",
+      "security",
+      "privacy",
+      "cryptography"
+    ],
+    "notes": "CISPA Helmholtz Center for Information Security (Saarbr\u00fccken); runs a funded cybersecurity summer school and research events.",
+    "notes_zh": "CISPA\u4ea5\u59c6\u970d\u5179\u4fe1\u606f\u5b89\u5168\u4e2d\u5fc3\uff08\u8428\u5c14\u5e03\u5415\u80af\uff09\uff1b\u4e3e\u529e\u8d44\u52a9\u7684\u7f51\u7edc\u5b89\u5168\u6691\u671f\u5b66\u6821\u548c\u7814\u7a76\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "SBA Research",
+    "url": "https://www.sba-research.org/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "cybersecurity",
+      "security",
+      "privacy",
+      "network security"
+    ],
+    "notes": "Austrian research centre for information security; security training, schools, and events.",
+    "notes_zh": "\u5965\u5730\u5229\u4fe1\u606f\u5b89\u5168\u7814\u7a76\u4e2d\u5fc3\uff1b\u63d0\u4f9b\u5b89\u5168\u57f9\u8bad\u3001\u5b66\u6821\u53ca\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "Santa Fe Institute",
+    "url": "https://www.santafe.edu/engage/learn/schools",
+    "layer": 1.5,
+    "region": "North America",
+    "source_type": "research_institute",
+    "keywords": [
+      "complex systems",
+      "data science",
+      "machine learning",
+      "networks",
+      "summer school"
+    ],
+    "notes": "Santa Fe Institute Complex Systems Summer School (CSSS) and related schools; funded interdisciplinary training in complex systems, networks, and data science.",
+    "notes_zh": "\u5723\u5854\u83f2\u7814\u7a76\u6240\u590d\u6742\u7cfb\u7edf\u6691\u671f\u5b66\u6821\uff08CSSS\uff09\u53ca\u76f8\u5173\u5b66\u6821\uff1b\u8d44\u52a9\u7684\u590d\u6742\u7cfb\u7edf\u3001\u7f51\u7edc\u4e0e\u6570\u636e\u79d1\u5b66\u8de8\u5b66\u79d1\u57f9\u8bad\u3002"
+  },
+  {
+    "name": "DeepLearn",
+    "url": "https://deeplearn.irdta.eu/2026/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "summer_school",
+    "keywords": [
+      "deep learning",
+      "machine learning",
+      "AI",
+      "data science",
+      "summer school"
+    ],
+    "notes": "International School on Deep Learning (IRDTA). Points at the current edition; bump the year when a new one is published.",
+    "notes_zh": "\u56fd\u9645\u6df1\u5ea6\u5b66\u4e60\u5b66\u6821\uff08IRDTA\uff09\u3002\u6307\u5411\u5f53\u524d\u7248\u672c\uff1b\u65b0\u7248\u672c\u53d1\u5e03\u65f6\u66f4\u65b0\u5e74\u4efd\u3002"
+  },
+  {
+    "name": "EurAI ACAI",
+    "url": "https://www.eurai.org/activities/ACAI_schools",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "scientific_society",
+    "keywords": [
+      "artificial intelligence",
+      "machine learning",
+      "AI",
+      "advanced course"
+    ],
+    "notes": "EurAI Advanced Course on Artificial Intelligence (ACAI); the European AI society's advanced school.",
+    "notes_zh": "EurAI \u9ad8\u7ea7\u4eba\u5de5\u667a\u80fd\u8bfe\u7a0b\uff08ACAI\uff09\uff1b\u6b27\u6d32\u4eba\u5de5\u667a\u80fd\u534f\u4f1a\u7684\u9ad8\u7ea7\u5b66\u6821\u3002"
+  },
+  {
+    "name": "Friday Harbor Laboratories",
+    "url": "https://fhl.uw.edu/",
+    "layer": 2,
+    "region": "North America",
+    "source_type": "university_institute",
+    "keywords": [
+      "marine biology",
+      "oceanography",
+      "ecology",
+      "field course"
+    ],
+    "notes": "University of Washington Friday Harbor Labs; funded marine science field courses and summer programmes.",
+    "notes_zh": "\u534e\u76db\u987f\u5927\u5b66\u661f\u671f\u4e94\u6e2f\u5b9e\u9a8c\u5ba4\uff1b\u8d44\u52a9\u7684\u6d77\u6d0b\u79d1\u5b66\u5b9e\u5730\u8bfe\u7a0b\u548c\u6691\u671f\u9879\u76ee\u3002"
+  },
+  {
+    "name": "SOLAS",
+    "url": "https://www.solas-int.org/",
+    "layer": 1.5,
+    "region": "global",
+    "source_type": "research_network",
+    "keywords": [
+      "ocean",
+      "climate",
+      "biogeochemistry",
+      "atmosphere",
+      "summer school"
+    ],
+    "notes": "Surface Ocean Lower Atmosphere Study; ocean-atmosphere and climate summer schools.",
+    "notes_zh": "\u8868\u5c42\u6d77\u6d0b\u4f4e\u5c42\u5927\u6c14\u7814\u7a76\uff1b\u6d77\u6d0b-\u5927\u6c14\u4e0e\u6c14\u5019\u6691\u671f\u5b66\u6821\u3002"
+  },
+  {
+    "name": "CSCS Summer School",
+    "url": "https://www.cscs.ch/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "high performance computing",
+      "data science",
+      "scientific computing",
+      "summer school"
+    ],
+    "notes": "Swiss National Supercomputing Centre (CSCS); summer school on HPC and effective scientific computing.",
+    "notes_zh": "\u745e\u58eb\u56fd\u5bb6\u8d85\u7ea7\u8ba1\u7b97\u4e2d\u5fc3\uff08CSCS\uff09\uff1bHPC\u4e0e\u9ad8\u6548\u79d1\u5b66\u8ba1\u7b97\u6691\u671f\u5b66\u6821\u3002"
+  },
+  {
+    "name": "Argonne ATPESC",
+    "url": "https://extremecomputingtraining.anl.gov/",
+    "layer": 2,
+    "region": "North America",
+    "source_type": "agency",
+    "keywords": [
+      "high performance computing",
+      "extreme-scale computing",
+      "scientific computing",
+      "training"
+    ],
+    "notes": "Argonne Training Program on Extreme-Scale Computing (ATPESC); funded intensive HPC training.",
+    "notes_zh": "\u6781\u5927\u89c4\u6a21\u8ba1\u7b97\u963f\u8d21\u57f9\u8bad\u8ba1\u5212\uff08ATPESC\uff09\uff1b\u8d44\u52a9\u7684\u5bc6\u96c6\u578b\u9ad8\u6027\u80fd\u8ba1\u7b97\u57f9\u8bad\u3002"
+  },
+  {
+    "name": "CESM Tutorial",
+    "url": "https://www.cesm.ucar.edu/events/tutorials",
+    "layer": 1.5,
+    "region": "North America",
+    "source_type": "research_institute",
+    "keywords": [
+      "climate",
+      "climate modelling",
+      "earth system model",
+      "training"
+    ],
+    "notes": "NCAR Community Earth System Model (CESM) tutorial; hands-on climate-model training, usually funded for participants.",
+    "notes_zh": "NCAR\u793e\u533a\u5730\u7403\u7cfb\u7edf\u6a21\u578b\uff08CESM\uff09\u6559\u7a0b\uff1b\u6c14\u5019\u6a21\u578b\u5b9e\u8df5\u57f9\u8bad\uff0c\u901a\u5e38\u4e3a\u53c2\u4e0e\u8005\u63d0\u4f9b\u8d44\u52a9\u3002"
+  },
+  {
+    "name": "GEOMAR",
+    "url": "https://www.geomar.de/en/",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "oceanography",
+      "marine science",
+      "climate",
+      "summer school"
+    ],
+    "notes": "GEOMAR Helmholtz Centre for Ocean Research Kiel; ocean and climate research schools and events.",
+    "notes_zh": "GEOMAR\u4ea5\u59c6\u970d\u5179\u57fa\u5c14\u6d77\u6d0b\u7814\u7a76\u4e2d\u5fc3\uff1b\u6d77\u6d0b\u4e0e\u6c14\u5019\u7814\u7a76\u5b66\u6821\u53ca\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "CINECA HPC",
+    "url": "https://eventi.cineca.it/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "high performance computing",
+      "scientific computing",
+      "data science",
+      "training"
+    ],
+    "notes": "CINECA (Italian national supercomputing centre) training events and HPC schools.",
+    "notes_zh": "CINECA\uff08\u610f\u5927\u5229\u56fd\u5bb6\u8d85\u7ea7\u8ba1\u7b97\u4e2d\u5fc3\uff09\u57f9\u8bad\u6d3b\u52a8\u4e0e\u9ad8\u6027\u80fd\u8ba1\u7b97\u5b66\u6821\u3002"
+  },
+  {
+    "name": "Oxford Robotics Institute",
+    "url": "https://ori.ox.ac.uk/",
+    "layer": 2,
+    "region": "UK",
+    "source_type": "university_institute",
+    "keywords": [
+      "robotics",
+      "machine learning",
+      "autonomous systems",
+      "computer vision"
+    ],
+    "notes": "Oxford Robotics Institute; robotics and machine-learning research, schools, and events.",
+    "notes_zh": "\u725b\u6d25\u673a\u5668\u4eba\u7814\u7a76\u6240\uff1b\u673a\u5668\u4eba\u5b66\u4e0e\u673a\u5668\u5b66\u4e60\u7814\u7a76\u3001\u5b66\u6821\u53ca\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "Mila",
+    "url": "https://mila.quebec/en/",
+    "layer": 2,
+    "region": "North America",
+    "source_type": "research_institute",
+    "keywords": [
+      "machine learning",
+      "deep learning",
+      "AI",
+      "summer school"
+    ],
+    "notes": "Mila - Quebec AI Institute (Montreal); hosts ML summer schools and training programmes.",
+    "notes_zh": "Mila - \u9b41\u5317\u514b\u4eba\u5de5\u667a\u80fd\u7814\u7a76\u6240\uff08\u8499\u7279\u5229\u5c14\uff09\uff1b\u4e3b\u529e\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u4e0e\u57f9\u8bad\u9879\u76ee\u3002"
+  },
+  {
+    "name": "OIST OCNC",
+    "url": "https://groups.oist.jp/ocnc",
+    "layer": 1.5,
+    "region": "East Asia",
+    "source_type": "summer_school",
+    "keywords": [
+      "computational neuroscience",
+      "neural computation",
+      "neuroscience",
+      "summer course"
+    ],
+    "notes": "Okinawa Computational Neuroscience Course (OCNC); a flagship funded comp-neuro summer course.",
+    "notes_zh": "\u51b2\u7ef3\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u8bfe\u7a0b\uff08OCNC\uff09\uff1b\u65d7\u8230\u8d44\u52a9\u7684\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u6691\u671f\u8bfe\u7a0b\u3002"
+  },
+  {
+    "name": "MBL Courses",
+    "url": "https://www.mbl.edu/education/courses",
+    "layer": 1.5,
+    "region": "North America",
+    "source_type": "research_institute",
+    "keywords": [
+      "computational neuroscience",
+      "neuroscience",
+      "quantitative biology",
+      "summer course"
+    ],
+    "notes": "Marine Biological Laboratory advanced research training courses, including Methods in Computational Neuroscience.",
+    "notes_zh": "\u6d77\u6d0b\u751f\u7269\u5b66\u5b9e\u9a8c\u5ba4\u9ad8\u7ea7\u7814\u7a76\u57f9\u8bad\u8bfe\u7a0b\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u65b9\u6cd5\u3002"
+  },
+  {
+    "name": "CSHL Courses",
+    "url": "https://meetings.cshl.edu/courseshome.aspx",
+    "layer": 1.5,
+    "region": "North America",
+    "source_type": "research_institute",
+    "keywords": [
+      "computational neuroscience",
+      "neuroscience",
+      "quantitative biology",
+      "summer course"
+    ],
+    "notes": "Cold Spring Harbor Laboratory courses, including computational neuroscience and quantitative biology schools.",
+    "notes_zh": "\u51b7\u6cc9\u6e2f\u5b9e\u9a8c\u5ba4\u8bfe\u7a0b\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u548c\u5b9a\u91cf\u751f\u7269\u5b66\u5b66\u6821\u3002"
+  },
+  {
+    "name": "CAJAL Training",
+    "url": "https://cajal-training.org/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_network",
+    "keywords": [
+      "neuroscience",
+      "computational neuroscience",
+      "neural circuits",
+      "training"
+    ],
+    "notes": "CAJAL Advanced Neuroscience Training Programme; intensive European neuroscience courses, including computational neuroscience.",
+    "notes_zh": "CAJAL \u9ad8\u7ea7\u795e\u7ecf\u79d1\u5b66\u57f9\u8bad\u9879\u76ee\uff1b\u6b27\u6d32\u5bc6\u96c6\u578b\u795e\u7ecf\u79d1\u5b66\u8bfe\u7a0b\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u3002"
+  },
+  {
+    "name": "Bernstein Network",
+    "url": "https://www.bernstein-network.de/en/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_network",
+    "keywords": [
+      "computational neuroscience",
+      "neural computation",
+      "neuroscience",
+      "summer school"
+    ],
+    "notes": "Bernstein Network Computational Neuroscience (Germany); schools and courses in computational neuroscience.",
+    "notes_zh": "Bernstein\u7f51\u7edc\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\uff08\u5fb7\u56fd\uff09\uff1b\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u9886\u57df\u7684\u5b66\u6821\u4e0e\u8bfe\u7a0b\u3002"
+  },
+  {
+    "name": "CIFAR DLRL Summer School",
+    "url": "https://dlrlsummerschool.ca/",
+    "layer": 2,
+    "region": "North America",
+    "source_type": "summer_school",
+    "keywords": [
+      "deep learning",
+      "reinforcement learning",
+      "machine learning",
+      "summer school"
+    ],
+    "notes": "CIFAR Deep Learning and Reinforcement Learning (DLRL) Summer School (Canada); funded for selected students.",
+    "notes_zh": "CIFAR\u6df1\u5ea6\u5b66\u4e60\u4e0e\u5f3a\u5316\u5b66\u4e60\uff08DLRL\uff09\u6691\u671f\u5b66\u6821\uff08\u52a0\u62ff\u5927\uff09\uff1b\u4e3a\u5165\u9009\u5b66\u751f\u63d0\u4f9b\u8d44\u52a9\u3002"
+  },
+  {
+    "name": "IBRO",
+    "url": "https://ibro.org/",
+    "layer": 2,
+    "region": "global",
+    "source_type": "scientific_society",
+    "keywords": [
+      "neuroscience",
+      "computational neuroscience",
+      "brain",
+      "training"
+    ],
+    "notes": "International Brain Research Organization; runs neuroscience schools worldwide, including computational neuroscience.",
+    "notes_zh": "\u56fd\u9645\u8111\u7814\u7a76\u7ec4\u7ec7\uff1b\u5728\u5168\u7403\u4e3e\u529e\u795e\u7ecf\u79d1\u5b66\u5b66\u6821\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u3002"
+  },
+  {
+    "name": "ECPR Methods School",
+    "url": "https://ecpr.eu/MethodsSchool",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_network",
+    "keywords": [
+      "political science",
+      "social science methods",
+      "social science",
+      "summer school"
+    ],
+    "notes": "European Consortium for Political Research Methods Schools; social-science research-methods training.",
+    "notes_zh": "\u6b27\u6d32\u653f\u6cbb\u7814\u7a76\u8054\u76df\u65b9\u6cd5\u5b66\u6821\uff1b\u793e\u4f1a\u79d1\u5b66\u7814\u7a76\u65b9\u6cd5\u57f9\u8bad\u3002"
+  },
+  {
+    "name": "ICPSR Summer Program",
+    "url": "https://www.icpsr.umich.edu/web/pages/sumprog/",
+    "layer": 1.5,
+    "region": "North America",
+    "source_type": "university_institute",
+    "keywords": [
+      "social science methods",
+      "quantitative methods",
+      "statistics",
+      "data analysis"
+    ],
+    "notes": "University of Michigan ICPSR Summer Program in Quantitative Methods of Social Research; a flagship social-science methods school.",
+    "notes_zh": "\u5bc6\u6b47\u6839\u5927\u5b66ICPSR\u793e\u4f1a\u7814\u7a76\u5b9a\u91cf\u65b9\u6cd5\u6691\u671f\u9879\u76ee\uff1b\u65d7\u8230\u7ea7\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u5b66\u5e9c\u3002"
+  },
+  {
+    "name": "Essex Summer School",
+    "url": "https://www.essex.ac.uk/summer-schools/social-science-data-analysis",
+    "layer": 2,
+    "region": "UK",
+    "source_type": "university",
+    "keywords": [
+      "social science",
+      "data analysis",
+      "quantitative methods",
+      "summer school"
+    ],
+    "notes": "Essex Summer School in Social Science Data Analysis; long-running quantitative social-science methods school.",
+    "notes_zh": "\u57c3\u585e\u514b\u65af\u793e\u4f1a\u79d1\u5b66\u6570\u636e\u5206\u6790\u6691\u671f\u5b66\u6821\uff1b\u5386\u53f2\u60a0\u4e45\u7684\u5b9a\u91cf\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u57f9\u8bad\u9879\u76ee\u3002"
+  },
+  {
+    "name": "Essex Summer School",
+    "url": "https://essexsummerschool.com/new-application/",
+    "layer": 2,
+    "region": "UK",
+    "source_type": "university",
+    "keywords": [
+      "social science",
+      "data analysis",
+      "quantitative methods",
+      "summer school",
+      "application"
+    ],
+    "notes": "Official ESS application page; carries session-specific application closing dates and programme dates.",
+    "notes_zh": "ESS\u5b98\u65b9\u7533\u8bf7\u9875\u9762\uff1b\u5305\u542b\u5404\u671f\u7533\u8bf7\u622a\u6b62\u65e5\u671f\u548c\u9879\u76ee\u65e5\u671f\u3002"
+  },
+  {
+    "name": "CEU Summer University",
+    "url": "https://summeruniversity.ceu.edu/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "university",
+    "keywords": [
+      "social science",
+      "humanities",
+      "political science",
+      "summer school"
+    ],
+    "notes": "Central European University Summer University; social science and humanities courses, often with funding for selected participants.",
+    "notes_zh": "\u4e2d\u6b27\u5927\u5b66\u6691\u671f\u5b66\u6821\uff1b\u793e\u4f1a\u79d1\u5b66\u4e0e\u4eba\u6587\u5b66\u79d1\u8bfe\u7a0b\uff0c\u901a\u5e38\u4e3a\u5165\u9009\u8005\u63d0\u4f9b\u8d44\u52a9\u3002"
+  },
+  {
+    "name": "EUI",
+    "url": "https://www.eui.eu/",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "university_institute",
+    "keywords": [
+      "history",
+      "economics",
+      "political science",
+      "law",
+      "summer school"
+    ],
+    "notes": "European University Institute (Florence); summer schools in history, economics, political and social science, and law.",
+    "notes_zh": "\u6b27\u6d32\u5927\u5b66\u5b66\u9662\uff08\u4f5b\u7f57\u4f26\u8428\uff09\uff1b\u5386\u53f2\u3001\u7ecf\u6d4e\u3001\u653f\u6cbb\u4e0e\u793e\u4f1a\u79d1\u5b66\u53ca\u6cd5\u5f8b\u6691\u671f\u5b66\u6821\u3002"
+  },
+  {
+    "name": "DHSI",
+    "url": "https://dhsi.org/",
+    "layer": 2,
+    "region": "North America",
+    "source_type": "summer_school",
+    "keywords": [
+      "digital humanities",
+      "humanities",
+      "computing",
+      "training"
+    ],
+    "notes": "Digital Humanities Summer Institute (Victoria); training at the intersection of humanities and computing.",
+    "notes_zh": "\u6570\u5b57\u4eba\u6587\u5b66\u6691\u671f\u5b66\u9662\uff08\u7ef4\u591a\u5229\u4e9a\uff09\uff1b\u4eba\u6587\u4e0e\u8ba1\u7b97\u4ea4\u53c9\u9886\u57df\u7684\u57f9\u8bad\u3002"
+  },
+  {
+    "name": "IHR History",
+    "url": "https://www.history.ac.uk/",
+    "layer": 2,
+    "region": "UK",
+    "source_type": "research_institute",
+    "keywords": [
+      "history",
+      "humanities",
+      "historical research",
+      "training"
+    ],
+    "notes": "Institute of Historical Research (London); historical-research training and events.",
+    "notes_zh": "\u5386\u53f2\u7814\u7a76\u6240\uff08\u4f26\u6566\uff09\uff1b\u5386\u53f2\u7814\u7a76\u57f9\u8bad\u4e0e\u6d3b\u52a8\u3002"
+  },
+  {
+    "name": "Khipu",
+    "url": "https://khipu.ai/",
+    "layer": 2,
+    "region": "Latin America",
+    "source_type": "summer_school",
+    "keywords": [
+      "machine learning",
+      "deep learning",
+      "AI",
+      "summer school"
+    ],
+    "notes": "Khipu Latin American Meeting in Artificial Intelligence; a funded AI summer school.",
+    "notes_zh": "Khipu\u62c9\u4e01\u7f8e\u6d32\u4eba\u5de5\u667a\u80fd\u4f1a\u8bae\uff1b\u4e00\u4e2a\u8d44\u52a9\u578bAI\u6691\u671f\u5b66\u6821\u3002"
+  },
+  {
+    "name": "Helmholtz AI",
+    "url": "https://www.helmholtz.ai/",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_network",
+    "keywords": [
+      "machine learning",
+      "AI",
+      "scientific machine learning",
+      "data science"
+    ],
+    "notes": "Helmholtz AI; AI-for-science training, schools, and conferences across the Helmholtz association.",
+    "notes_zh": "\u4ea5\u59c6\u970d\u5179\u4eba\u5de5\u667a\u80fd\uff1b\u4ea5\u59c6\u970d\u5179\u534f\u4f1a\u5185\u7684\u4eba\u5de5\u667a\u80fd\u79d1\u5b66\u57f9\u8bad\u3001\u5b66\u6821\u53ca\u4f1a\u8bae\u3002"
+  },
+  {
+    "name": "Wellcome Connecting Science",
+    "url": "https://coursesandconferences.wellcomeconnectingscience.org/our-events/",
+    "layer": 1.5,
+    "region": "UK",
+    "source_type": "research_institute",
+    "keywords": [
+      "bioinformatics",
+      "computational biology",
+      "genomics",
+      "data analysis"
+    ],
+    "notes": "Wellcome Connecting Science advanced courses and conferences; genomics and computational biology training, many with bursaries.",
+    "notes_zh": "Wellcome Connecting Science \u9ad8\u7ea7\u8bfe\u7a0b\u4e0e\u4f1a\u8bae\uff1b\u57fa\u56e0\u7ec4\u5b66\u4e0e\u8ba1\u7b97\u751f\u7269\u5b66\u57f9\u8bad\uff0c\u8bb8\u591a\u63d0\u4f9b\u52a9\u5b66\u91d1\u3002"
+  },
+  {
+    "name": "Physalia Courses",
+    "url": "https://www.physalia-courses.org/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_network",
+    "keywords": [
+      "bioinformatics",
+      "data analysis",
+      "computational biology",
+      "statistics"
+    ],
+    "notes": "Physalia-Courses; intensive bioinformatics and data-analysis courses for the life sciences.",
+    "notes_zh": "Physalia-Courses\uff1b\u9762\u5411\u751f\u547d\u79d1\u5b66\u9886\u57df\u7684\u751f\u7269\u4fe1\u606f\u5b66\u4e0e\u6570\u636e\u5206\u6790\u5f3a\u5316\u8bfe\u7a0b\u3002"
+  },
+  {
+    "name": "CISM",
+    "url": "https://cism.it/en/activities/courses/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "computational science",
+      "mechanics",
+      "applied mathematics",
+      "machine learning"
+    ],
+    "notes": "International Centre for Mechanical Sciences (Udine); advanced schools in computational and applied science, including ML for engineering.",
+    "notes_zh": "\u56fd\u9645\u673a\u68b0\u79d1\u5b66\u4e2d\u5fc3\uff08\u4e4c\u8fea\u5185\uff09\uff1b\u8ba1\u7b97\u4e0e\u5e94\u7528\u79d1\u5b66\u9ad8\u7ea7\u7814\u4fee\u73ed\uff0c\u5305\u62ec\u5de5\u7a0b\u4e2d\u7684\u673a\u5668\u5b66\u4e60\u3002"
+  },
+  {
+    "name": "EARSeL",
+    "url": "https://www.earsel.org/",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_network",
+    "keywords": [
+      "remote sensing",
+      "earth observation",
+      "geospatial",
+      "summer school"
+    ],
+    "notes": "European Association of Remote Sensing Laboratories; remote-sensing summer schools and training.",
+    "notes_zh": "\u6b27\u6d32\u9065\u611f\u5b9e\u9a8c\u5ba4\u534f\u4f1a\uff1b\u9065\u611f\u6691\u671f\u5b66\u6821\u4e0e\u57f9\u8bad\u3002"
+  },
+  {
+    "name": "Alan Turing Institute",
+    "url": "https://www.turing.ac.uk/events",
+    "layer": 1.5,
+    "region": "UK",
+    "source_type": "research_institute",
+    "keywords": [
+      "data science",
+      "machine learning",
+      "AI",
+      "statistics"
+    ],
+    "notes": "The Alan Turing Institute (UK national institute for data science and AI); training events, schools, and workshops.",
+    "notes_zh": "\u827e\u4f26\u00b7\u56fe\u7075\u7814\u7a76\u6240\uff08\u82f1\u56fd\u56fd\u5bb6\u6570\u636e\u79d1\u5b66\u4e0e\u4eba\u5de5\u667a\u80fd\u7814\u7a76\u6240\uff09\uff1b\u57f9\u8bad\u6d3b\u52a8\u3001\u6691\u671f\u5b66\u6821\u548c\u7814\u8ba8\u4f1a\u3002"
+  },
+  {
+    "name": "Tinbergen Institute",
+    "url": "https://www.tinbergen.nl/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "economics",
+      "econometrics",
+      "social science",
+      "summer school"
+    ],
+    "notes": "Tinbergen Institute (Amsterdam/Rotterdam); economics and econometrics summer schools.",
+    "notes_zh": "\u4e01\u4f2f\u6839\u7814\u7a76\u6240\uff08\u963f\u59c6\u65af\u7279\u4e39/\u9e7f\u7279\u4e39\uff09\uff1b\u7ecf\u6d4e\u5b66\u4e0e\u8ba1\u91cf\u7ecf\u6d4e\u5b66\u6691\u671f\u5b66\u6821\u3002"
+  },
+  {
+    "name": "CECAM",
+    "url": "https://www.cecam.org/",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_network",
+    "keywords": [
+      "computational chemistry",
+      "materials science",
+      "molecular simulation",
+      "machine learning"
+    ],
+    "notes": "Centre Europ\u00e9en de Calcul Atomique et Mol\u00e9culaire; schools and workshops in computational chemistry, materials, and ML for molecular science.",
+    "notes_zh": "\u6b27\u6d32\u539f\u5b50\u4e0e\u5206\u5b50\u8ba1\u7b97\u4e2d\u5fc3\uff1b\u8ba1\u7b97\u5316\u5b66\u3001\u6750\u6599\u53ca\u5206\u5b50\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u9886\u57df\u7684\u5b66\u6821\u4e0e\u7814\u8ba8\u4f1a\u3002"
+  },
+  {
+    "name": "Boulder School",
+    "url": "https://boulderschool.yale.edu/",
+    "layer": 2,
+    "region": "North America",
+    "source_type": "summer_school",
+    "keywords": [
+      "condensed matter",
+      "physics",
+      "statistical physics",
+      "summer school"
+    ],
+    "notes": "Boulder School for Condensed Matter and Materials Physics; a funded graduate summer school.",
+    "notes_zh": "\u535a\u5c14\u5fb7\u51dd\u805a\u6001\u4e0e\u6750\u6599\u7269\u7406\u6691\u671f\u5b66\u6821\uff1b\u6709\u8d44\u52a9\u7684\u7814\u7a76\u751f\u6691\u671f\u5b66\u6821\u3002"
+  },
+  {
+    "name": "Aspen Center for Physics",
+    "url": "https://aspenphys.org/",
+    "layer": 2,
+    "region": "North America",
+    "source_type": "research_institute",
+    "keywords": [
+      "physics",
+      "astrophysics",
+      "condensed matter",
+      "summer program"
+    ],
+    "notes": "Aspen Center for Physics; summer workshops and programmes across physics and astrophysics.",
+    "notes_zh": "\u963f\u65af\u5f6d\u7269\u7406\u4e2d\u5fc3\uff1b\u6db5\u76d6\u7269\u7406\u5b66\u548c\u5929\u4f53\u7269\u7406\u5b66\u7684\u590f\u5b63\u7814\u8ba8\u4f1a\u4e0e\u9879\u76ee\u3002"
+  },
+  {
+    "name": "KITP",
+    "url": "https://www.kitp.ucsb.edu/activities/upcoming-programs",
+    "layer": 1.5,
+    "region": "North America",
+    "source_type": "research_institute",
+    "keywords": [
+      "theoretical physics",
+      "condensed matter",
+      "astrophysics",
+      "biophysics"
+    ],
+    "notes": "Kavli Institute for Theoretical Physics (UC Santa Barbara); programmes and schools across theoretical physics.",
+    "notes_zh": "\u5361\u5f17\u91cc\u7406\u8bba\u7269\u7406\u7814\u7a76\u6240\uff08\u52a0\u5dde\u5927\u5b66\u5723\u5854\u82ad\u82ad\u62c9\u5206\u6821\uff09\uff1b\u6db5\u76d6\u7406\u8bba\u7269\u7406\u9886\u57df\u7684\u9879\u76ee\u4e0e\u5b66\u6821\u3002"
+  },
+  {
+    "name": "DESY Summer Student",
+    "url": "https://summerstudents.desy.de/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "particle physics",
+      "photon science",
+      "physics",
+      "summer programme"
+    ],
+    "notes": "DESY Summer Student Programme; funded research training in particle and photon physics.",
+    "notes_zh": "DESY\u6691\u671f\u5b66\u751f\u9879\u76ee\uff1b\u7c92\u5b50\u4e0e\u5149\u5b50\u7269\u7406\u5b66\u8d44\u52a9\u7814\u7a76\u57f9\u8bad\u3002"
+  },
+  {
+    "name": "CIMPA",
+    "url": "https://www.cimpa.info/en",
+    "layer": 2,
+    "region": "global",
+    "source_type": "research_network",
+    "keywords": [
+      "mathematics",
+      "applied mathematics",
+      "statistics",
+      "summer school"
+    ],
+    "notes": "CIMPA (Centre International de Math\u00e9matiques Pures et Appliqu\u00e9es); funded mathematics research schools, often in the Global South.",
+    "notes_zh": "CIMPA\uff08\u56fd\u9645\u7eaf\u7cb9\u4e0e\u5e94\u7528\u6570\u5b66\u4e2d\u5fc3\uff09\uff1b\u8d44\u52a9\u7684\u6570\u5b66\u7814\u7a76\u5b66\u6821\uff0c\u901a\u5e38\u4f4d\u4e8e\u5168\u7403\u5357\u65b9\u3002"
+  },
+  {
+    "name": "Hague Academy of International Law",
+    "url": "https://www.hagueacademy.nl/",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "international law",
+      "law",
+      "public international law",
+      "summer course"
+    ],
+    "notes": "The Hague Academy of International Law; summer courses in public and private international law, with scholarships.",
+    "notes_zh": "\u6d77\u7259\u56fd\u9645\u6cd5\u5b66\u9662\uff1b\u56fd\u9645\u516c\u6cd5\u4e0e\u56fd\u9645\u79c1\u6cd5\u6691\u671f\u8bfe\u7a0b\uff0c\u63d0\u4f9b\u5956\u5b66\u91d1\u3002"
+  },
+  {
+    "name": "Asser Institute",
+    "url": "https://www.asser.nl/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "international law",
+      "law",
+      "human rights",
+      "training"
+    ],
+    "notes": "T.M.C. Asser Instituut (The Hague); international and European law summer programmes and training.",
+    "notes_zh": "T.M.C. Asser Instituut\uff08\u6d77\u7259\uff09\uff1b\u56fd\u9645\u4e0e\u6b27\u6d32\u6cd5\u6691\u671f\u9879\u76ee\u53ca\u57f9\u8bad\u3002"
+  },
+  {
+    "name": "EARLI",
+    "url": "https://www.earli.org/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "scientific_society",
+    "keywords": [
+      "education research",
+      "learning sciences",
+      "education",
+      "summer school"
+    ],
+    "notes": "European Association for Research on Learning and Instruction; the JURE summer school and research training in education.",
+    "notes_zh": "\u6b27\u6d32\u5b66\u4e60\u4e0e\u6559\u5b66\u7814\u7a76\u534f\u4f1a\uff1bJURE\u6691\u671f\u5b66\u6821\u4e0e\u6559\u80b2\u7814\u7a76\u57f9\u8bad\u3002"
+  },
+  {
+    "name": "Stazione Zoologica",
+    "url": "https://www.szn.it/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "research_institute",
+    "keywords": [
+      "marine biology",
+      "oceanography",
+      "ecology",
+      "summer course"
+    ],
+    "notes": "Stazione Zoologica Anton Dohrn (Naples); marine biology and ocean science research training.",
+    "notes_zh": "\u5b89\u4e1c\u00b7\u591a\u6069\u52a8\u7269\u7814\u7a76\u7ad9\uff08\u90a3\u4e0d\u52d2\u65af\uff09\uff1b\u6d77\u6d0b\u751f\u7269\u5b66\u4e0e\u6d77\u6d0b\u79d1\u5b66\u7814\u7a76\u57f9\u8bad\u3002"
+  },
+  {
+    "name": "LSE Cities",
+    "url": "https://www.lse.ac.uk/cities",
+    "layer": 2,
+    "region": "UK",
+    "source_type": "research_institute",
+    "keywords": [
+      "urban studies",
+      "cities",
+      "geography",
+      "social science"
+    ],
+    "notes": "LSE Cities; urban studies research and summer programmes.",
+    "notes_zh": "LSE Cities\uff1b\u57ce\u5e02\u7814\u7a76\u53ca\u6691\u671f\u9879\u76ee\u3002"
+  },
+  {
+    "name": "The Berlage",
+    "url": "https://theberlage.nl/",
+    "layer": 2,
+    "region": "continental Europe",
+    "source_type": "university_institute",
+    "keywords": [
+      "architecture",
+      "urban design",
+      "design",
+      "summer school"
+    ],
+    "notes": "The Berlage Center for Advanced Studies in Architecture and Urban Design (TU Delft); architecture and urbanism programmes.",
+    "notes_zh": "\u8d1d\u5c14\u62c9\u683c\u5efa\u7b51\u4e0e\u57ce\u5e02\u8bbe\u8ba1\u9ad8\u7ea7\u7814\u7a76\u4e2d\u5fc3\uff08\u4ee3\u5c14\u592b\u7279\u7406\u5de5\u5927\u5b66\uff09\uff1b\u5efa\u7b51\u4e0e\u57ce\u5e02\u4e3b\u4e49\u9879\u76ee\u3002"
+  }
+]

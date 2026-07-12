@@ -5,6 +5,8 @@ from datetime import date, timedelta
 import responses
 
 from research_school_radar.api_sources import _IHE_DELFT_URL, _ihe_delft
+from research_school_radar.http_cache import HttpCache
+from research_school_radar.rank import rank_candidates
 from research_school_radar.search import BRAVE_ENDPOINT, run_discovery_queries
 
 
@@ -25,6 +27,7 @@ def test_ihe_delft_api_maps_courses_to_candidates() -> None:
         json={
             "products": [
                 {
+                    "id": None,
                     "name": "Water Resources Assessment using Remote-Sensing Data",
                     "introduction": "Basics of remote sensing for hydrology.",
                     "forwhom": "Researchers and professionals.",
@@ -54,6 +57,99 @@ def test_ihe_delft_api_maps_courses_to_candidates() -> None:
     assert course.mode == "in-person"
     assert "remote sensing" in course.topic_keywords
     assert course.extraction_confidence == 1.0
+    assert course.identity_key.startswith("ihe-delft:derived:")
+    repeated, repeated_errors = _ihe_delft(_API_PROFILE)
+    assert not repeated_errors
+    assert repeated[0].identity_key == course.identity_key
+
+
+@responses.activate
+def test_ihe_delft_courses_keep_distinct_product_identities_when_ranked() -> None:
+    start = date.today() + timedelta(days=60)
+    deadline = date.today() + timedelta(days=30)
+
+    def product(product_id: int, name: str, offset: int) -> dict:
+        return {
+            "id": product_id,
+            "name": name,
+            "introduction": "Applied water research.",
+            "forwhom": "Researchers and professionals.",
+            "deliverymethod_code": "FTF",
+            "plannedproducts": [
+                {
+                    "executionstartdate": (start + timedelta(days=offset)).isoformat() + "T00:00:00Z",
+                    "executionenddate": (start + timedelta(days=offset + 10)).isoformat() + "T00:00:00Z",
+                    "applicationenddate": deadline.isoformat() + "T00:00:00Z",
+                    "price": 300.0,
+                    "cancelled": None,
+                }
+            ],
+        }
+
+    responses.add(
+        responses.GET,
+        _IHE_DELFT_URL,
+        json={
+            "products": [
+                product(101, "Hydrology Field Methods", 0),
+                product(202, "Advanced Hydrology Field Methods", 0),
+            ]
+        },
+        status=200,
+    )
+
+    candidates, errors = _ihe_delft(_API_PROFILE)
+    ranked = rank_candidates(candidates)
+
+    assert not errors
+    assert len(ranked) == 2
+    start_key = start.isoformat()
+    assert {candidate.identity_key for candidate in ranked} == {
+        f"ihe-delft:product:101:{start_key}",
+        f"ihe-delft:product:202:{start_key}",
+    }
+
+
+@responses.activate
+def test_ihe_delft_prefers_planned_edition_id_for_recurring_products() -> None:
+    start = date.today() + timedelta(days=60)
+    deadline = date.today() + timedelta(days=30)
+
+    def edition(edition_id: str, offset: int) -> dict:
+        return {
+            "id": 101,
+            "name": "Recurring Hydrology Field Course",
+            "introduction": "Applied water research.",
+            "forwhom": "Researchers and professionals.",
+            "deliverymethod_code": "FTF",
+            "plannedproducts": [
+                {
+                    "id": edition_id,
+                    "executionstartdate": (start + timedelta(days=offset)).isoformat() + "T00:00:00Z",
+                    "executionenddate": (start + timedelta(days=offset + 10)).isoformat() + "T00:00:00Z",
+                    "applicationenddate": deadline.isoformat() + "T00:00:00Z",
+                    "price": 300.0,
+                    "cancelled": None,
+                }
+            ],
+        }
+
+    responses.add(
+        responses.GET,
+        _IHE_DELFT_URL,
+        json={"products": [edition("edition-a", 0), edition("edition-b", 20)]},
+        status=200,
+    )
+
+    candidates, errors = _ihe_delft(_API_PROFILE)
+    ranked = rank_candidates(candidates)
+
+    assert not errors
+    assert len(ranked) == 2
+    assert {candidate.identity_key for candidate in ranked} == {
+        "ihe-delft:edition:edition-a",
+        "ihe-delft:edition:edition-b",
+    }
 
 
 @responses.activate
@@ -63,7 +159,6 @@ def test_ellis_listing_collector_parses_cards(monkeypatch) -> None:
 
     # Detail-page rendering is exercised separately; keep this test offline.
     monkeypatch.setattr(api_sources, "render_page_data", lambda urls, **kwargs: {})
-    monkeypatch.setattr(api_sources, "render_texts", lambda urls, **kwargs: {})
 
     start = date.today() + timedelta(days=20)
     end = date.today() + timedelta(days=26)
@@ -213,7 +308,7 @@ def test_ellis_enrichment_follows_registration_page(monkeypatch) -> None:
     monkeypatch.setattr(
         api_sources,
         "_page_data_for_urls",
-        lambda urls: {
+        lambda urls, **kwargs: {
             candidate.application_link: {
                 "text": "MLSS-RS registration information is on the registration page.",
                 "links": [{"href": "https://mlss2026.mlinpl.org/registration", "text": "Registration"}],
@@ -303,6 +398,20 @@ def test_ihe_delft_api_failure_is_not_fatal() -> None:
     assert candidates == []
     assert len(errors) == 1
     assert "IHE Delft" in errors[0]
+
+
+@responses.activate
+def test_ihe_delft_uses_recent_cached_api_payload_on_transient_failure(tmp_path) -> None:
+    cache = HttpCache(tmp_path / "http-cache")
+    responses.add(responses.GET, _IHE_DELFT_URL, json={"products": []}, status=200)
+    responses.add(responses.GET, _IHE_DELFT_URL, status=503)
+
+    first, first_errors = _ihe_delft(_API_PROFILE, cache)
+    fallback, fallback_errors = _ihe_delft(_API_PROFILE, cache)
+
+    assert first == fallback == []
+    assert first_errors == fallback_errors == []
+    assert cache.stats["stale_fallbacks"] == 1
 
 
 def test_discovery_skipped_without_api_key(monkeypatch) -> None:

@@ -1,17 +1,10 @@
 from __future__ import annotations
 
 from dataclasses import replace
-from datetime import date, timedelta
-from pathlib import Path
+from datetime import date
 
-from research_school_radar.cli import _load_curated_opportunities, _load_sources, collect_linked_opportunity_pages
-from research_school_radar.extract import extract_candidate, sample_candidate
+from research_school_radar.extract import sample_candidate
 from research_school_radar.filter import apply_hard_filters
-from research_school_radar.models import Page, Source
-from research_school_radar.parse import candidate_links, looks_like_opportunity
-from research_school_radar.rank import rank_candidates
-from research_school_radar.report import render_report, update_readme
-from research_school_radar.site import write_site
 
 
 PROFILE = {
@@ -35,24 +28,6 @@ PROFILE = {
 }
 
 
-def _page(text: str, *, html: str = "", title: str = "Test School") -> Page:
-    source = Source(
-        name="Example Source",
-        url="https://example.org/school",
-        layer="1",
-        region="continental Europe",
-        source_type="research_institute",
-    )
-    return Page(
-        url=source.url,
-        title=title,
-        text=text,
-        html=html,
-        source=source,
-        fetched_at=date.today(),
-    )
-
-
 def test_seen_state_is_json_and_preserves_first_seen(tmp_path) -> None:
     import json
 
@@ -64,7 +39,6 @@ def test_seen_state_is_json_and_preserves_first_seen(tmp_path) -> None:
     assert path.exists()
     state = json.loads(path.read_text(encoding="utf-8"))
     assert candidate.source_url in state
-    original_first_seen = state[candidate.source_url]["first_seen"]
     assert candidate.first_seen is not None
 
     # A later run keeps the original first_seen and refreshes last_seen.
@@ -94,4 +68,54 @@ def test_seen_state_recovers_from_invalid_first_seen(tmp_path) -> None:
     state = json.loads(seen_path.read_text(encoding="utf-8"))
     assert state[candidate.source_url]["first_seen"] == date.today().isoformat()
     assert candidate.first_seen == date.today()
+
+
+def test_seen_state_keeps_structured_candidates_that_share_a_listing_url(tmp_path) -> None:
+    import json
+
+    from research_school_radar.storage import update_seen
+
+    first = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    first.source_url = "https://example.org/catalogue"
+    first.identity_key = "catalogue:course-101"
+    second = replace(
+        first,
+        title="A different catalogue course",
+        identity_key="catalogue:course-202",
+    )
+
+    path = tmp_path / "seen.json"
+    update_seen(path, [first, second])
+    state = json.loads(path.read_text(encoding="utf-8"))
+
+    assert set(state) == {"catalogue:course-101", "catalogue:course-202"}
+    assert {item["source_url"] for item in state.values()} == {"https://example.org/catalogue"}
+
+
+def test_seen_state_preserves_first_seen_during_identity_migration(tmp_path) -> None:
+    import json
+
+    from research_school_radar.storage import update_seen
+
+    path = tmp_path / "seen.json"
+    path.write_text(
+        json.dumps(
+            {
+                "https://example.org/catalogue": {
+                    "first_seen": "2026-01-15",
+                    "last_seen": "2026-06-01",
+                }
+            }
+        ),
+        encoding="utf-8",
+    )
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    candidate.source_url = "https://example.org/catalogue"
+    candidate.identity_key = "catalogue:edition:2026"
+
+    update_seen(path, [candidate])
+
+    assert candidate.first_seen == date(2026, 1, 15)
+    state = json.loads(path.read_text(encoding="utf-8"))
+    assert state["catalogue:edition:2026"]["first_seen"] == "2026-01-15"
 

@@ -1,30 +1,44 @@
-name: Weekly AI-assisted scan
+name: Build and publish Summa
 
 on:
   workflow_dispatch:
+    inputs:
+      mode:
+        description: Build from the latest snapshot or run a manual AI scan
+        required: true
+        default: refresh
+        type: choice
+        options:
+          - refresh
+          - ai
   schedule:
-    - cron: "17 12 * * 1"
+    # Recompute date-sensitive status daily, after the local 10:00 Asia/Shanghai
+    # scan has had enough time to finish and push a complete snapshot.
+    - cron: "17 6 * * *"
   push:
     branches: [main]
     paths:
-      - ".github/workflows/ai_scan.yml"
+      - "data/latest_candidates.json"
+      - "data/latest_scan_manifest.json"
+      - "data/latest_sources.json"
+      - "data/opportunities.yml"
       - "config/ai.yaml"
+      - "config/profile.yaml"
+      - "config/site.yaml"
       - "config/sources.yaml"
-      - "src/research_school_radar/ai_*.py"
-      - "src/research_school_radar/cli.py"
-      - "src/research_school_radar/evidence_snippets.py"
-      - "src/research_school_radar/llm_*.py"
-      - "src/research_school_radar/semantic.py"
+      - "pyproject.toml"
+      - "src/research_school_radar/**"
+      - ".github/workflows/ai_scan.yml"
 
 permissions:
   contents: write
 
 concurrency:
-  group: ai-scan-pages
+  group: summa-site-publisher
   cancel-in-progress: false
 
 jobs:
-  scan-and-deploy:
+  build-and-publish:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:
@@ -35,31 +49,68 @@ jobs:
     steps:
       - name: Check out source
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Select build mode
+        id: build
+        shell: bash
+        run: |
+          mode=refresh
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            mode="${{ inputs.mode }}"
+          fi
+
+          can_build=true
+          if [ "$mode" = "refresh" ]; then
+            for snapshot in \
+              data/latest_candidates.json \
+              data/latest_sources.json \
+              data/latest_scan_manifest.json; do
+              if [ ! -s "$snapshot" ]; then
+                echo "Missing required snapshot: $snapshot; the next successful local scan will create it."
+                can_build=false
+              fi
+            done
+          fi
+          echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          echo "can_build=$can_build" >> "$GITHUB_OUTPUT"
 
       - name: Set up Python
+        if: steps.build.outputs.can_build == 'true'
         uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
 
       - name: Restore bge-m3 model cache
+        if: steps.build.outputs.mode == 'ai'
         uses: actions/cache@v5
         with:
           path: .cache/huggingface
           key: huggingface-bge-m3-${{ runner.os }}
 
       - name: Restore advisory AI cache
+        if: steps.build.outputs.mode == 'ai'
         uses: actions/cache@v5
         with:
           path: data/ai_cache
-          key: radar-ai-${{ runner.os }}-${{ hashFiles('config/ai.yaml', 'src/research_school_radar/llm_extract.py', 'src/research_school_radar/llm_validate.py') }}
+          key: summa-ai-${{ runner.os }}-${{ hashFiles('config/ai.yaml', 'src/research_school_radar/llm_extract.py', 'src/research_school_radar/llm_validate.py') }}
           restore-keys: |
-            radar-ai-${{ runner.os }}-
+            summa-ai-${{ runner.os }}-
 
-      - name: Install semantic and LLM dependencies
-        run: pip install -e ".[dev,semantic,llm]"
+      - name: Install application
+        if: steps.build.outputs.can_build == 'true'
+        shell: bash
+        run: |
+          if [ "${{ steps.build.outputs.mode }}" = "ai" ]; then
+            pip install -e ".[semantic,llm]"
+          else
+            pip install -e .
+          fi
 
       - name: Check DeepSeek secret
+        if: steps.build.outputs.mode == 'ai'
         shell: bash
         run: |
           if [ -z "${DEEPSEEK_API_KEY}" ]; then
@@ -68,12 +119,72 @@ jobs:
           fi
 
       - name: Check DeepSeek endpoint
-        run: python -m research_school_radar.ai_healthcheck --provider deepseek
+        if: steps.build.outputs.mode == 'ai'
+        run: python -m research_school_radar.ai_healthcheck --provider deepseek --strict
 
       - name: Run bounded AI-assisted scan
-        run: python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction
+        if: steps.build.outputs.mode == 'ai'
+        run: python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --no-readme-update
+
+      - name: Require usable semantic and DeepSeek outputs
+        if: steps.build.outputs.mode == 'ai'
+        run: python -m research_school_radar.ai_output_validation --site-dir site
+
+      - name: Validate candidate snapshot schema and retention
+        if: steps.build.outputs.mode == 'ai'
+        run: >-
+          python -m research_school_radar.snapshot_validation
+          --candidate-json site/candidates.json
+          --previous-json data/latest_candidates.json
+
+      - name: Rebuild from latest snapshot
+        if: steps.build.outputs.mode == 'refresh' && steps.build.outputs.can_build == 'true'
+        shell: bash
+        run: |
+          if [ -s data/latest_sources.json ]; then
+            mkdir -p site
+            cp data/latest_sources.json site/sources.json
+          fi
+          python -m research_school_radar.cli refresh-status \
+            --candidates-json data/latest_candidates.json
+
+      - name: Persist AI-enriched snapshot
+        if: steps.build.outputs.mode == 'ai'
+        shell: bash
+        run: |
+          for artifact in \
+            site/candidates.json \
+            site/sources.json \
+            data/latest_scan_manifest.json; do
+            if [ ! -s "$artifact" ]; then
+              echo "AI scan did not produce required artifact: $artifact" >&2
+              exit 1
+            fi
+          done
+          cp site/candidates.json data/latest_candidates.json
+          cp site/sources.json data/latest_sources.json
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
+            echo "main advanced while the scan was running; refusing to publish a stale snapshot." >&2
+            exit 1
+          fi
+          paths=(
+            data/latest_candidates.json
+            data/latest_sources.json
+            data/latest_scan_manifest.json
+          )
+          git add -- "${paths[@]}"
+          if git diff --cached --quiet; then
+            echo "AI-enriched snapshot is unchanged."
+          else
+            git commit -m "Update AI-enriched candidate snapshot ${GITHUB_RUN_ID}" -- "${paths[@]}"
+            git push origin HEAD:main
+          fi
 
       - name: Check out current Pages branch
+        if: steps.build.outputs.can_build == 'true'
         uses: actions/checkout@v6
         with:
           ref: gh-pages
@@ -81,6 +192,7 @@ jobs:
           fetch-depth: 1
 
       - name: Publish generated site to gh-pages
+        if: steps.build.outputs.can_build == 'true'
         shell: bash
         run: |
           find _pages -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
@@ -93,6 +205,5 @@ jobs:
             echo "Generated site is unchanged."
             exit 0
           fi
-          git commit -m "Deploy AI-assisted scan ${GITHUB_RUN_ID}"
+          git commit -m "Deploy Summa ${GITHUB_RUN_ID}"
           git push origin HEAD:gh-pages
-
