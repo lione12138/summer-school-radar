@@ -1,13 +1,13 @@
 {
-  "generated": "2026-07-06",
-  "enabled": true,
+  "generated": "2026-07-12",
+  "enabled": false,
   "provider": "deepseek",
   "model": "deepseek-v4-flash",
-  "translated": 47,
+  "translated": 0,
   "cache_hits": 0,
-  "skipped": 0,
-  "source_notes_translated": 124,
+  "skipped": 40,
+  "source_notes_translated": 0,
   "source_note_cache_hits": 0,
-  "source_notes_skipped": 0,
+  "source_notes_skipped": 124,
   "warnings": []
 }
