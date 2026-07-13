@@ -69,6 +69,8 @@ Key modules:
 - `src/research_school_radar/site_seo.py` — sitemap, robots, JSON-LD, canary, watermark helpers.
 - `src/research_school_radar/site_feed.py` — RSS rendering.
 - `src/research_school_radar/api_sources.py` — direct collectors for structured source APIs/listings.
+- `src/research_school_radar/collector_ihe.py` — IHE Delft structured-course collector.
+- `src/research_school_radar/collector_ellis.py` — ELLIS listing, follow-up, deadline, and fee collector.
 - `src/research_school_radar/ai_pipeline.py` — semantic ranking, DeepSeek extraction configuration, and advisory-output orchestration used by the CLI.
 - `src/research_school_radar/scan_health.py` — rejects zero-source real scans, enforces 70% success across configured page/direct-collector attempts, and writes scan manifests.
 - `src/research_school_radar/snapshot_validation.py` — validates candidate schema v2, non-empty display/scanner records, and suspicious retention below 35% before snapshot replacement.
