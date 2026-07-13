@@ -47,6 +47,9 @@ Key modules:
 - `src/research_school_radar/http_cache.py` — conditional HTTP cache using `ETag` / `Last-Modified`, with a 14-day stale-if-error fallback for transient upstream failures.
 - `src/research_school_radar/parse.py` — finds likely candidate links.
 - `src/research_school_radar/extract.py` — rule-based candidate extraction.
+- `src/research_school_radar/date_extraction.py` — date ranges, deadlines, and JSON-LD event dates.
+- `src/research_school_radar/fee_extraction.py` — participant fee parsing and EUR normalization.
+- `src/research_school_radar/location_extraction.py` — labelled HTML/text location extraction and cleanup.
 - `src/research_school_radar/filter.py` — hard filters and near-match classification.
 - `src/research_school_radar/rank.py` — scoring and deduplication.
 - `src/research_school_radar/report.py` — Markdown report output.

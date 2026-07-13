@@ -465,6 +465,7 @@ maintainer review against official pages is still required for curation.
 - `src/research_school_radar/scan_health.py` rejects zero-source real scans, enforces 70% success across page and direct-collector attempts, and writes scan manifests.
 - `src/research_school_radar/snapshot_validation.py` requires schema-v2 display/scanner lists and rejects an unexplained scanner-record drop below 35% of a sufficiently large previous snapshot.
 - `src/research_school_radar/session_extraction.py` conservatively detects explicitly labelled sessions and their deadlines on any source page; it requires at least two distinct labelled ranges so ordinary event calendars are not promoted.
+- `src/research_school_radar/date_extraction.py`, `fee_extraction.py`, and `location_extraction.py` isolate deterministic date/deadline, fee, and location parsing from the candidate assembly performed by `extract.py`.
 - `src/research_school_radar/programme_sessions.py` formats structured session dates and per-session deadlines consistently across HTML, reports, and RSS.
 - `src/research_school_radar/site_detail.py` and `site_sources_page.py` own their page templates, while `site_components.py`, `site_calendar.py`, `site_filters.py`, `site_layout.py`, and `site_paths.py` provide reusable presentation primitives. `site.py` coordinates artifact generation.
 - `src/research_school_radar/site_home_page.py`, `site_home.py`, and `site_home_styles.py` own homepage rendering, static explanatory sections, and homepage-only CSS. The coordinator no longer contains page templates.
