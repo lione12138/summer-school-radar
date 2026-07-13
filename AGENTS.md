@@ -73,6 +73,7 @@ Key modules:
 - `src/research_school_radar/collector_ellis.py` — ELLIS listing, follow-up, deadline, and fee collector.
 - `src/research_school_radar/ai_pipeline.py` — semantic ranking, DeepSeek extraction configuration, and advisory-output orchestration used by the CLI.
 - `src/research_school_radar/scan_health.py` — rejects zero-source real scans, enforces 70% success across configured page/direct-collector attempts, and writes scan manifests.
+- Full-scan manifests retain per-source last-attempt, last-success, and consecutive-failure state; status refreshes point directly to the latest full scan instead of recursively nesting refresh manifests.
 - `src/research_school_radar/snapshot_validation.py` — validates candidate schema v2, non-empty display/scanner records, and suspicious retention below 35% before snapshot replacement.
 - `src/research_school_radar/ai_output_validation.py` — rejects unusable semantic, DeepSeek extraction, or build-time Chinese translation output before an AI snapshot can replace the last known-good snapshot.
 - `src/research_school_radar/storage.py` — seen-state JSON handling.

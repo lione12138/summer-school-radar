@@ -7,7 +7,13 @@ import pytest
 from research_school_radar.api_sources import CollectorOutcome
 from research_school_radar.cli import run_scan
 from research_school_radar.models import Source
-from research_school_radar.scan_health import ScanHealthError, SourceCoverage, full_scan_manifest
+from research_school_radar.scan_health import (
+    ScanHealthError,
+    SourceCoverage,
+    build_source_health,
+    full_scan_manifest,
+    status_refresh_manifest,
+)
 
 
 def test_source_coverage_rejects_catastrophic_partial_scan() -> None:
@@ -40,6 +46,60 @@ def test_scan_manifest_contains_only_aggregate_health_data() -> None:
     assert payload["source_coverage"]["success_ratio"] == 0.9
     assert payload["http_cache"]["stale_fallbacks"] == 1
     assert "url" not in str(payload).lower()
+
+
+def test_status_refresh_manifest_keeps_only_latest_full_scan() -> None:
+    full = full_scan_manifest(
+        coverage=SourceCoverage(attempted=2, succeeded=2),
+        http_cache_stats={},
+        extracted_candidates=2,
+        published_candidates=2,
+        semantic_enabled=False,
+        llm_enabled=False,
+    )
+    first = status_refresh_manifest(full)
+    second = status_refresh_manifest(first)
+
+    assert second["source_scan"] == full
+    assert second["source_scan"]["mode"] == "full"
+    assert second["source_scan"].get("source_scan") is None
+
+
+def test_source_health_preserves_last_success_and_failure_streak() -> None:
+    previous = {
+        "mode": "full",
+        "source_health": [
+            {
+                "name": "Source A",
+                "last_success": "2026-07-10",
+                "consecutive_failures": 1,
+            }
+        ],
+    }
+
+    failed = build_source_health(
+        attempted_names=["Source A", "Source B"],
+        succeeded_names={"Source B"},
+        previous=previous,
+        generated="2026-07-13",
+    )
+
+    assert failed == [
+        {
+            "name": "Source A",
+            "status": "failed",
+            "last_attempt": "2026-07-13",
+            "last_success": "2026-07-10",
+            "consecutive_failures": 2,
+        },
+        {
+            "name": "Source B",
+            "status": "healthy",
+            "last_attempt": "2026-07-13",
+            "last_success": "2026-07-13",
+            "consecutive_failures": 0,
+        },
+    ]
 
 
 def _collector_source(name: str) -> Source:

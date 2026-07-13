@@ -81,6 +81,7 @@ AI branch constraints:
 - `src/research_school_radar/session_extraction.py` — source-independent extraction of explicitly labelled multi-session schedules.
 - `src/research_school_radar/date_extraction.py`, `fee_extraction.py`, and `location_extraction.py` — focused deterministic field extractors used by the candidate coordinator.
 - `src/research_school_radar/collector_ihe.py` and `collector_ellis.py` — source-specific direct collectors registered by `api_sources.py` through `config/sources.yaml`.
+- Source health tracks last attempt, last success, and consecutive failures per configured source; status-refresh manifests must not recursively nest older refresh manifests.
 - `src/research_school_radar/programme_sessions.py` — multi-session duration/date presentation shared by reports, RSS, and HTML.
 - `src/research_school_radar/site_components.py`, `site_calendar.py`, `site_filters.py`, `site_layout.py`, and `site_paths.py` — reusable site presentation primitives.
 - `src/research_school_radar/site_detail.py` and `site_sources_page.py` — dedicated detail and source-page renderers; `site.py` remains the build coordinator.

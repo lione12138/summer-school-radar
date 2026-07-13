@@ -69,8 +69,9 @@ def full_scan_manifest(
     published_candidates: int,
     semantic_enabled: bool,
     llm_enabled: bool,
+    source_health: list[Mapping[str, Any]] | None = None,
 ) -> dict[str, Any]:
-    return {
+    payload = {
         "schema_version": SCAN_MANIFEST_SCHEMA_VERSION,
         "generated": date.today().isoformat(),
         "mode": "full",
@@ -86,16 +87,63 @@ def full_scan_manifest(
             "llm_extraction_enabled": bool(llm_enabled),
         },
     }
+    if source_health is not None:
+        payload["source_health"] = [dict(item) for item in source_health]
+    return payload
 
 
 def status_refresh_manifest(previous: object) -> dict[str, Any]:
-    previous_full_scan = previous if isinstance(previous, dict) else None
+    previous_full_scan = _latest_full_scan(previous)
     return {
         "schema_version": SCAN_MANIFEST_SCHEMA_VERSION,
         "generated": date.today().isoformat(),
         "mode": "status-refresh",
         "source_scan": previous_full_scan,
     }
+
+
+def build_source_health(
+    *,
+    attempted_names: list[str],
+    succeeded_names: set[str],
+    previous: object,
+    generated: str | None = None,
+) -> list[dict[str, Any]]:
+    generated = generated or date.today().isoformat()
+    previous_full = _latest_full_scan(previous)
+    previous_items = previous_full.get("source_health", []) if previous_full else []
+    previous_by_name = {
+        str(item.get("name", "")): item
+        for item in previous_items
+        if isinstance(item, dict) and item.get("name")
+    }
+    records: list[dict[str, Any]] = []
+    for name in dict.fromkeys(str(value) for value in attempted_names if str(value).strip()):
+        succeeded = name in succeeded_names
+        prior = previous_by_name.get(name, {})
+        records.append(
+            {
+                "name": name,
+                "status": "healthy" if succeeded else "failed",
+                "last_attempt": generated,
+                "last_success": generated if succeeded else prior.get("last_success"),
+                "consecutive_failures": 0
+                if succeeded
+                else int(prior.get("consecutive_failures", 0)) + 1,
+            }
+        )
+    return records
+
+
+def _latest_full_scan(value: object) -> dict[str, Any] | None:
+    current = value
+    for _ in range(32):
+        if not isinstance(current, dict):
+            return None
+        if current.get("mode") == "full":
+            return current
+        current = current.get("source_scan")
+    return None
 
 
 def load_scan_manifest(path: Path) -> dict[str, Any] | None:

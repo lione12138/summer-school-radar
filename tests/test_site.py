@@ -388,6 +388,12 @@ def test_site_generation_renders_sources_page(tmp_path) -> None:
             "source_type": "scientific_society",
             "keywords": ["hydrology", "training"],
             "notes": "Core source.",
+            "health": {
+                "status": "healthy",
+                "last_attempt": "2026-07-13",
+                "last_success": "2026-07-13",
+                "consecutive_failures": 0,
+            },
         },
         {
             "name": "Disabled Source",
@@ -398,6 +404,12 @@ def test_site_generation_renders_sources_page(tmp_path) -> None:
             "enabled": False,
             "blocked_link_domains": ["blocked.example.org"],
             "notes": "Temporarily blocked.",
+            "health": {
+                "status": "failed",
+                "last_attempt": "2026-07-13",
+                "last_success": "2026-07-10",
+                "consecutive_failures": 2,
+            },
         },
     ]
     write_site(ranked, [], tmp_path, sources=sources)
@@ -407,6 +419,9 @@ def test_site_generation_renders_sources_page(tmp_path) -> None:
     assert "Enabled Source" in html
     assert "Disabled Source" in html
     assert "blocked.example.org" in html
+    assert "Last success: 2026-07-13" in html
+    assert "Failed · 2 consecutive" in html
+    assert "上次成功：2026-07-10" in html
     assert "Disabled Source" in source_json
 
 

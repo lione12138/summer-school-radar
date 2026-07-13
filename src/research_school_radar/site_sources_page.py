@@ -66,7 +66,7 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
     <h2 data-i18n="sources.configured">Configured Sources</h2>
     <div class="table-wrap">
       <table>
-        <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.status">Status</th><th data-i18n="sources.layer">Layer</th><th data-i18n="sources.region">Region</th><th data-i18n="sources.type">Type</th><th data-i18n="sources.keywords">Keywords</th><th data-i18n="sources.notes">Notes (original registry text)</th></tr></thead>
+        <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.status">Status</th><th data-i18n="sources.health">Scan health</th><th data-i18n="sources.layer">Layer</th><th data-i18n="sources.region">Region</th><th data-i18n="sources.type">Type</th><th data-i18n="sources.keywords">Keywords</th><th data-i18n="sources.notes">Notes (original registry text)</th></tr></thead>
         <tbody>{rows}</tbody>
       </table>
     </div>
@@ -137,12 +137,35 @@ def _source_row(source: dict[str, Any]) -> str:
         "<tr>"
         f"<td>{source_link}</td>"
         f'<td><span class="{status_class}">{bilingual(status, "已启用" if enabled else "已停用")}</span></td>'
+        f"<td>{_health_cell(source)}</td>"
         f"<td>{escape(str(source.get('layer', '')))}</td>"
         f"<td>{bilingual(str(source.get('region', '')), region_zh(str(source.get('region', ''))))}</td>"
         f"<td>{bilingual(str(source.get('source_type', '')), source_type_zh(str(source.get('source_type', ''))))}</td>"
         f"<td>{bilingual(keywords, keywords_cn)}</td>"
         f"<td>{bilingual(notes, notes_cn)}</td>"
         "</tr>"
+    )
+
+
+def _health_cell(source: dict[str, Any]) -> str:
+    health = source.get("health")
+    if not isinstance(health, dict):
+        return bilingual("Not scanned yet", "尚未扫描")
+    status = str(health.get("status", "unknown"))
+    last_success = str(health.get("last_success") or "never")
+    failures = int(health.get("consecutive_failures", 0) or 0)
+    if status == "healthy":
+        label_en = "Healthy"
+        label_zh = "正常"
+    elif status == "failed":
+        label_en = f"Failed · {failures} consecutive"
+        label_zh = f"失败 · 连续 {failures} 次"
+    else:
+        label_en = "Unknown"
+        label_zh = "未知"
+    return bilingual(
+        f"{label_en} · Last success: {last_success}",
+        f"{label_zh} · 上次成功：{last_success}",
     )
 
 

@@ -30,6 +30,7 @@ from .review import apply_overrides, load_overrides, write_review_queue
 from .search import run_discovery_queries
 from .scan_health import (
     SourceCoverage,
+    build_source_health,
     full_scan_manifest,
     load_scan_manifest,
     status_refresh_manifest,
@@ -126,6 +127,8 @@ def run_scan(
     semantic_pages: list[Page] = []
     http_cache = HttpCache(data_dir / "http_cache", refresh=refresh_http_cache)
     coverage = SourceCoverage(attempted=0, succeeded=0)
+    previous_manifest = load_scan_manifest(data_dir / "latest_scan_manifest.json")
+    source_health: list[dict[str, Any]] = []
 
     if offline_sample:
         candidates = [sample_candidate(profile)]
@@ -172,6 +175,19 @@ def run_scan(
             succeeded=len(pages) + sum(outcome.succeeded for outcome in collector_outcomes),
         )
         coverage.require_healthy()
+        collector_success = {outcome.name: outcome.succeeded for outcome in collector_outcomes}
+        attempted_names = [source.name for source in sources]
+        succeeded_names = {page.source.name for page in pages}
+        succeeded_names.update(
+            source.name
+            for source in sources
+            if source.collector and collector_success.get(source.collector, False)
+        )
+        source_health = build_source_health(
+            attempted_names=attempted_names,
+            succeeded_names=succeeded_names,
+            previous=previous_manifest,
+        )
 
         if include_discovery:
             query_config = load_yaml(config_dir / "queries.yaml")
@@ -244,6 +260,11 @@ def run_scan(
         print("Updated README latest-scan section")
     if generate_site:
         all_sources = _load_all_sources(config_dir / "sources.yaml")
+        health_by_name = {item["name"]: item for item in source_health}
+        for source in all_sources:
+            health = health_by_name.get(str(source.get("name", "")))
+            if health is not None:
+                source["health"] = health
         translation_config = load_translation_config(ai_config_path, data_dir=data_dir)
         # Offline samples are deterministic smoke tests and must never send
         # fixture text or the source registry to a remote translation API.
@@ -268,6 +289,7 @@ def run_scan(
         published_candidates=len(ranked),
         semantic_enabled=enable_semantic,
         llm_enabled=enable_llm_extraction,
+        source_health=source_health,
     )
     write_scan_manifest(data_dir / "latest_scan_manifest.json", manifest)
     if generate_site:
