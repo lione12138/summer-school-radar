@@ -152,9 +152,11 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
             overrides.setdefault("location", event["location"])
         if event["name"]:
             overrides.setdefault("jsonld_name", event["name"])
+        if event.get("sessions"):
+            overrides.setdefault("sessions", event["sessions"])
 
     ranges = _date_ranges(text)
-    sessions = list(overrides.get("sessions", [])) or extract_programme_sessions(text)
+    sessions = list(overrides.get("sessions", [])) or extract_programme_sessions(text, page.html)
     structured_dates = overrides.get("start_date") is not None or bool(sessions)
     session_start = min((session.start_date for session in sessions), default=None)
     session_end = max((session.end_date for session in sessions), default=None)

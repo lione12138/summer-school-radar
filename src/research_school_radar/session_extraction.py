@@ -18,8 +18,9 @@ _DATE_WITH_YEAR = rf"(?:{_DATE_NO_YEAR},?\s+20\d{{2}}|20\d{{2}}-\d{{2}}-\d{{2}})
 _SEPARATOR = r"(?:to|-|–|—|until|through)"
 _NUMBER = r"(?:\d+|[IVX]+|one|two|three|four|five|six|seven|eight|nine|ten|[A-Z])"
 _LABEL = (
-    rf"(?:pre[- ]?sessional|session|course\s+period|school\s+period|week|block|module|term|phase|part)"
-    rf"\s+{_NUMBER}"
+    rf"(?:(?:pre[- ]?sessional|session|course\s+period|school\s+period|week|block|module|term|phase|part|track|option)"
+    rf"\s+{_NUMBER}|(?:early|late|foundation|core|introductory|advanced)\s+"
+    rf"(?:session|week|block|module|term|phase|track))"
 )
 
 _RANGE_PATTERNS = (
@@ -62,19 +63,21 @@ _WORD_NUMBERS = {
 }
 
 
-def extract_programme_sessions(text: str) -> list[ProgrammeSession]:
+def extract_programme_sessions(text: str, html: str = "") -> list[ProgrammeSession]:
     """Extract explicitly labelled selectable periods from one programme page.
 
     This is deliberately conservative: at least two distinct labelled ranges are
     required. Unlabelled date collections remain subject to the normal calendar
     rejection rules instead of being promoted to a multi-session programme.
     """
-    deadlines = _session_deadlines(text)
+    table_text = _table_session_text(html)
+    searchable = f"{text}\n{table_text}" if table_text else text
+    deadlines = _session_deadlines(searchable)
     sessions: list[ProgrammeSession] = []
     seen: set[tuple[str, date, date]] = set()
 
     for pattern in _RANGE_PATTERNS:
-        for match in pattern.finditer(text):
+        for match in pattern.finditer(searchable):
             end = _parse_date(match.group("end"))
             start_text = match.group("start")
             start = (
@@ -97,6 +100,46 @@ def extract_programme_sessions(text: str) -> list[ProgrammeSession]:
     return sorted(sessions, key=lambda item: (item.start_date, item.end_date, item.name))
 
 
+def _table_session_text(html: str) -> str:
+    if not html:
+        return ""
+    from bs4 import BeautifulSoup
+
+    soup = BeautifulSoup(html, "html.parser")
+    lines: list[str] = []
+    for table in soup.find_all("table"):
+        headers = [clean_space(cell.get_text(" ")) for cell in table.find_all("th")]
+        deadline_index = next(
+            (index for index, value in enumerate(headers) if "deadline" in value.casefold()),
+            None,
+        )
+        for row in table.find_all("tr"):
+            cells = [clean_space(cell.get_text(" ")) for cell in row.find_all("td")]
+            if not cells:
+                continue
+            label = next((value for value in cells if re.fullmatch(_LABEL, value, re.IGNORECASE)), "")
+            date_range = next(
+                (
+                    value
+                    for value in cells
+                    if re.search(
+                        rf"(?:{_DATE_WITH_YEAR}|{_DATE_NO_YEAR})\s*{_SEPARATOR}\s*{_DATE_WITH_YEAR}",
+                        value,
+                        re.IGNORECASE,
+                    )
+                ),
+                "",
+            )
+            if not label or not date_range:
+                continue
+            lines.append(f"{label}: {date_range}")
+            if deadline_index is not None and deadline_index < len(cells):
+                deadline = cells[deadline_index]
+                if re.fullmatch(_DATE_WITH_YEAR, deadline, re.IGNORECASE):
+                    lines.append(f"{label} application deadline: {deadline}")
+    return "\n".join(lines)
+
+
 def _session_deadlines(text: str) -> dict[str, date]:
     deadlines: dict[str, date] = {}
     for pattern in _DEADLINE_PATTERNS:
@@ -110,7 +153,10 @@ def _session_deadlines(text: str) -> dict[str, date]:
 def _normalise_label(value: str) -> str:
     cleaned = clean_space(value).replace("Pre Sessional", "Pre-sessional")
     prefix, _, suffix = cleaned.rpartition(" ")
-    suffix = _WORD_NUMBERS.get(suffix.lower(), suffix.upper() if re.fullmatch(r"[ivx]+", suffix, re.I) else suffix)
+    suffix = _WORD_NUMBERS.get(
+        suffix.lower(),
+        suffix.upper() if re.fullmatch(r"[ivx]+", suffix, re.I) else suffix.capitalize(),
+    )
     prefix = " ".join(word.capitalize() for word in prefix.replace("-", " ").split())
     if prefix.lower() == "pre sessional":
         prefix = "Pre-sessional"

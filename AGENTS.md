@@ -98,6 +98,8 @@ Candidate snapshot schema v2 stores AI/translation-ready homepage copies in `opp
 
 Multi-session programmes use `Candidate.sessions` / `ProgrammeSession`. `start_date` and `end_date` describe the outer programme window only; `duration_days` must describe a real selectable session (normally the longest), never the number of calendar days between the first and last optional session. Preserve per-session dates and deadlines and render them in a collapsed schedule.
 
+Multi-session extraction accepts explicitly labelled prose, table rows, and schema.org `subEvent` records. It may accept clearly named periods without numbers, but it must continue rejecting unlabelled event calendars.
+
 ## LLM and translation policy
 
 - The only supported LLM provider is currently **DeepSeek**.

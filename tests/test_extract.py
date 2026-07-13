@@ -1046,6 +1046,17 @@ def test_generic_sessions_accept_weekdays_and_shared_end_year() -> None:
     ]
 
 
+def test_generic_sessions_accept_explicit_named_periods_without_numbers() -> None:
+    from research_school_radar.session_extraction import extract_programme_sessions
+
+    sessions = extract_programme_sessions(
+        "Foundation week: 6 July 2027 to 10 July 2027. "
+        "Core session: 12 July 2027 to 23 July 2027."
+    )
+
+    assert [item.name for item in sessions] == ["Foundation Week", "Core Session"]
+
+
 def test_unlabelled_event_calendar_is_not_promoted_to_multi_session_programme() -> None:
     page = _page(
         """
@@ -1059,6 +1070,61 @@ def test_unlabelled_event_calendar_is_not_promoted_to_multi_session_programme() 
     )
 
     assert extract_candidate(page, PROFILE, as_of=date(2027, 5, 1)) is None
+
+
+def test_multi_session_table_is_structured() -> None:
+    html = """
+    <table>
+      <thead><tr><th>Period</th><th>Dates</th><th>Application deadline</th></tr></thead>
+      <tbody>
+        <tr><td>Track A</td><td>6 July 2027 to 17 July 2027</td><td>1 June 2027</td></tr>
+        <tr><td>Track B</td><td>20 July 2027 to 31 July 2027</td><td>15 June 2027</td></tr>
+      </tbody>
+    </table>
+    """
+    page = _page(
+        "Research Summer School with scholarships, in person. Track A and Track B. Application is open.",
+        html=html,
+        title="Table-based Research Summer School",
+    )
+
+    candidate = extract_candidate(page, PROFILE, as_of=date(2027, 5, 1))
+
+    assert candidate is not None
+    assert [(item.name, item.application_deadline) for item in candidate.sessions] == [
+        ("Track A", date(2027, 6, 1)),
+        ("Track B", date(2027, 6, 15)),
+    ]
+    assert candidate.duration_days == 12
+
+
+def test_jsonld_subevents_become_programme_sessions() -> None:
+    html = """
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "name": "Structured Methods Summer School",
+      "startDate": "2027-07-06",
+      "endDate": "2027-07-31",
+      "subEvent": [
+        {"@type": "EducationEvent", "name": "Module 1", "startDate": "2027-07-06", "endDate": "2027-07-17"},
+        {"@type": "EducationEvent", "name": "Module 2", "startDate": "2027-07-20", "endDate": "2027-07-31"}
+      ]
+    }
+    </script>
+    """
+    page = _page(
+        "Structured Methods Summer School offers scholarships in person. Application deadline: 1 June 2027.",
+        html=html,
+        title="Structured Methods Summer School",
+    )
+
+    candidate = extract_candidate(page, PROFILE, as_of=date(2027, 5, 1))
+
+    assert candidate is not None
+    assert [item.name for item in candidate.sessions] == ["Module 1", "Module 2"]
+    assert candidate.duration_days == 12
 
 
 def test_allcaps_banner_titles_fall_back_to_page_title() -> None:

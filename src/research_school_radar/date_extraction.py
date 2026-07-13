@@ -6,6 +6,7 @@ from datetime import date
 
 from dateutil import parser as date_parser
 
+from .models import ProgrammeSession
 from .utils import clean_space
 
 
@@ -193,9 +194,26 @@ def _jsonld_events(html: str) -> list[dict]:
                     "end_date": _jsonld_date(node.get("endDate")) or start,
                     "location": _jsonld_location(node.get("location")),
                     "name": clean_space(str(node.get("name", ""))),
+                    "sessions": _jsonld_sessions(node),
                 }
             )
     return events
+
+
+def _jsonld_sessions(node: dict) -> list[ProgrammeSession]:
+    raw = node.get("subEvent", node.get("subEvents", []))
+    values = raw if isinstance(raw, list) else [raw]
+    sessions: list[ProgrammeSession] = []
+    for index, item in enumerate(values, start=1):
+        if not isinstance(item, dict):
+            continue
+        start = _jsonld_date(item.get("startDate"))
+        end = _jsonld_date(item.get("endDate")) or start
+        if start is None or end is None or not 0 <= (end - start).days <= 60:
+            continue
+        name = clean_space(str(item.get("name", ""))) or f"Session {index}"
+        sessions.append(ProgrammeSession(name=name, start_date=start, end_date=end))
+    return sessions if len(sessions) >= 2 else []
 
 
 # A single date in any common form: "8 March 2026", "1st March 2026",
@@ -310,6 +328,5 @@ def _select_deadline(deadlines: list[tuple[date, str]]) -> tuple[date, str] | No
 def _extract_deadline(text: str) -> date | None:
     chosen = _select_deadline(_all_deadlines(text))
     return chosen[0] if chosen else None
-
 
 
