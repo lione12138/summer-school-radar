@@ -51,6 +51,9 @@ Key modules:
 - `src/research_school_radar/rank.py` — scoring and deduplication.
 - `src/research_school_radar/report.py` — Markdown report output.
 - `src/research_school_radar/site.py` — coordinates static site generation.
+- `src/research_school_radar/site_home_page.py` — homepage data preparation and document rendering.
+- `src/research_school_radar/site_home.py` — homepage methodology, about, and FAQ sections.
+- `src/research_school_radar/site_home_styles.py` — homepage-only CSS constants.
 - `src/research_school_radar/site_detail.py` — opportunity detail-page rendering.
 - `src/research_school_radar/site_sources_page.py` — source-registry page rendering.
 - `src/research_school_radar/site_components.py` — shared bilingual, duration, deadline, and evidence components.
