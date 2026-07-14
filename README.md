@@ -455,6 +455,8 @@ the output before replacing snapshots, and then publishes through the same
 single-writer job. `BRAVE_SEARCH_API_KEY` and `HF_TOKEN` remain optional.
 `SERPER_API_KEY` is separately optional and is used only by explicitly enabled
 broad discovery; it is not part of the normal trusted-source scan.
+When manually dispatching the GitHub workflow with `mode=ai`, the `discovery`
+input is enabled by default and may be turned off for a fixed-source-only run.
 
 ## Development
 

@@ -729,6 +729,10 @@ python -m research_school_radar.cli scan --enable-semantic --enable-llm-extracti
 Without either key, the project still runs normally using fixed sources and
 links already present on official pages.
 
+The GitHub Actions manual `ai` mode exposes a `discovery` checkbox. It defaults
+to enabled and reads `SERPER_API_KEY` from repository secrets; scheduled cloud
+runs remain snapshot-only status refreshes.
+
 ## Optional Headless Rendering
 
 Most sources return their content in the served HTML and are fetched with `requests`. A minority render content client-side, so the served HTML is an empty shell. Such a source can set `render: true` in `config/sources.yaml`, and the scanner loads it in headless Chromium via Playwright instead.

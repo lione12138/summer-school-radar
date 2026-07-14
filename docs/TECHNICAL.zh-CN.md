@@ -233,6 +233,9 @@ python -m research_school_radar.cli scan --include-discovery --enable-semantic -
 Serper 与 Brave 也可以分别启用；不传 `--include-discovery` 时，不会进行
 跨站广搜。
 
+GitHub Actions 手动 `ai` 模式提供 `discovery` 开关，默认开启并从仓库
+Secret 读取 `SERPER_API_KEY`。云端定时任务仍只刷新快照状态，不自动广搜。
+
 生产自动化还有第二层构建级门槛：
 `python -m research_school_radar.ai_output_validation --site-dir site` 必须确认存在可用 semantic chunks 和至少一条通过证据校验的 DeepSeek 抽取，AI 运行才可以替换 last-known-good 快照。
 

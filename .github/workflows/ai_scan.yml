@@ -11,6 +11,11 @@ on:
         options:
           - refresh
           - ai
+      discovery:
+        description: Use Serper broad discovery during a manual AI scan
+        required: true
+        default: true
+        type: boolean
   schedule:
     # Recompute date-sensitive status daily, after the local 10:00 Asia/Shanghai
     # scan has had enough time to finish and push a complete snapshot.
@@ -43,6 +48,7 @@ jobs:
     timeout-minutes: 90
     env:
       DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+      SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
       BRAVE_SEARCH_API_KEY: ${{ secrets.BRAVE_SEARCH_API_KEY }}
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
       HF_HOME: ${{ github.workspace }}/.cache/huggingface
@@ -61,6 +67,11 @@ jobs:
             mode="${{ inputs.mode }}"
           fi
 
+          discovery=false
+          if [ "$mode" = "ai" ] && [ "${{ inputs.discovery }}" = "true" ]; then
+            discovery=true
+          fi
+
           can_build=true
           if [ "$mode" = "refresh" ]; then
             for snapshot in \
@@ -74,6 +85,7 @@ jobs:
             done
           fi
           echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          echo "discovery=$discovery" >> "$GITHUB_OUTPUT"
           echo "can_build=$can_build" >> "$GITHUB_OUTPUT"
 
       - name: Set up Python
@@ -118,13 +130,28 @@ jobs:
             exit 1
           fi
 
+      - name: Check Serper secret
+        if: steps.build.outputs.discovery == 'true'
+        shell: bash
+        run: |
+          if [ -z "${SERPER_API_KEY}" ]; then
+            echo "SERPER_API_KEY repository secret is required when discovery is enabled." >&2
+            exit 1
+          fi
+
       - name: Check DeepSeek endpoint
         if: steps.build.outputs.mode == 'ai'
         run: python -m research_school_radar.ai_healthcheck --provider deepseek --strict
 
       - name: Run bounded AI-assisted scan
         if: steps.build.outputs.mode == 'ai'
-        run: python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --no-readme-update
+        shell: bash
+        run: |
+          args=(--enable-semantic --enable-llm-extraction --no-readme-update)
+          if [ "${{ steps.build.outputs.discovery }}" = "true" ]; then
+            args+=(--include-discovery)
+          fi
+          python -m research_school_radar.cli scan "${args[@]}"
 
       - name: Require usable semantic and DeepSeek outputs
         if: steps.build.outputs.mode == 'ai'
