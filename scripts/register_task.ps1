@@ -7,8 +7,10 @@
 #   - StartWhenAvailable: if the machine was off/asleep at 10:00, run as soon as
 #     it is next available instead of skipping the day.
 #   - WakeToRun: wake the machine from sleep to run (works on AC power).
+#   - AllowStartIfOnBatteries / DontStopIfGoingOnBatteries: a disconnected
+#     laptop may still refresh or scan instead of waiting indefinitely for AC.
 #   - RunOnlyIfNetworkAvailable: don't bother starting with no network; the
-#     script also rechecks connectivity and skips cleanly if it is unusable.
+#     script still handles Git-specific connectivity and proxy failures.
 #
 # Re-run this any time to update the task definition.
 
@@ -34,6 +36,8 @@ $trigger = New-ScheduledTaskTrigger -Daily -At 10:00AM
 $settings = New-ScheduledTaskSettingsSet `
     -StartWhenAvailable `
     -WakeToRun `
+    -AllowStartIfOnBatteries `
+    -DontStopIfGoingOnBatteries `
     -RunOnlyIfNetworkAvailable `
     -DontStopOnIdleEnd `
     -ExecutionTimeLimit (New-TimeSpan -Hours 3) `

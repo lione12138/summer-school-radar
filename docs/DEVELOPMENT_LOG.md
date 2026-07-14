@@ -192,3 +192,8 @@ changed any of those generated paths.
 Full local scans now also make one tiny Brave Search request before source work,
 alongside the existing strict DeepSeek health check. Serper remains excluded
 from scheduled scans and is still audit-only.
+
+The live scheduler acceptance check exposed a second operational blocker: the
+task remained queued while the laptop was on battery. The registered settings
+now allow starting and continuing on battery while retaining the network and
+three-hour execution constraints.

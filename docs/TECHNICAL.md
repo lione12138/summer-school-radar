@@ -540,6 +540,10 @@ stale queued output is discarded if newer `main` already changed those paths.
 This keeps API work recoverable without leaving `main` ahead or touching user
 edits.
 
+The registered Windows task uses `StartWhenAvailable`, permits execution on
+battery power, and does not stop when the laptop switches from AC to battery.
+This avoids an indefinitely queued refresh on unplugged maintainer machines.
+
 On other days the local script runs:
 
 ```powershell

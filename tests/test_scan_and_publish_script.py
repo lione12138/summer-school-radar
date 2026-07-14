@@ -9,6 +9,7 @@ import pytest
 
 
 SCRIPT = Path(__file__).parents[1] / "scripts" / "scan_and_publish.ps1"
+REGISTER_SCRIPT = Path(__file__).parents[1] / "scripts" / "register_task.ps1"
 
 
 def test_scheduled_scan_retries_git_and_recovers_pending_publish() -> None:
@@ -22,6 +23,13 @@ def test_scheduled_scan_retries_git_and_recovers_pending_publish() -> None:
     assert "Test-AutomationGeneratedPath" in source
     assert "BRAVE_SEARCH_API_KEY" in source
     assert "search_healthcheck --provider brave --strict" in source
+
+
+def test_scheduled_task_is_allowed_to_run_on_battery() -> None:
+    source = REGISTER_SCRIPT.read_text(encoding="utf-8")
+
+    assert "-AllowStartIfOnBatteries" in source
+    assert "-DontStopIfGoingOnBatteries" in source
 
 
 @pytest.mark.skipif(os.name != "nt", reason="The production automation is a Windows PowerShell script")
