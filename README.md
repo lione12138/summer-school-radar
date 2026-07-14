@@ -298,6 +298,13 @@ default limits are two link-following rounds, two queries per opportunity,
 three results per query, four added pages per opportunity, and sixty added
 pages per scan. Configure these under `follow_up` in `config/ai.yaml`.
 
+Broad cross-site discovery is a separate opt-in stage. When
+`SERPER_API_KEY` is configured and `--include-discovery` is passed, the
+controlled queries in `config/queries.yaml` run through Serper. Those results
+remain labelled as discovery sources; Serper is not used by the normal trusted-
+source scan, and Brave remains responsible only for precise same-domain
+follow-up.
+
 The follow-up prompt distinguishes application/registration deadlines from
 payment, accommodation, scholarship, travel-grant, and abstract deadlines. It
 also requests explicit open/closed status and complete fee tiers rather than
@@ -446,6 +453,8 @@ fetching. A cloud `bge-m3` + DeepSeek scan exists only as an explicit manual
 workflow mode; it requires the repository secret `DEEPSEEK_API_KEY`, validates
 the output before replacing snapshots, and then publishes through the same
 single-writer job. `BRAVE_SEARCH_API_KEY` and `HF_TOKEN` remain optional.
+`SERPER_API_KEY` is separately optional and is used only by explicitly enabled
+broad discovery; it is not part of the normal trusted-source scan.
 
 ## Development
 

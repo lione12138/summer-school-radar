@@ -72,6 +72,7 @@ Key modules:
 - `src/research_school_radar/collector_ihe.py` — IHE Delft structured-course collector.
 - `src/research_school_radar/collector_ellis.py` — ELLIS listing, follow-up, deadline, and fee collector.
 - `src/research_school_radar/ai_pipeline.py` — semantic ranking, DeepSeek extraction configuration, and advisory-output orchestration used by the CLI.
+- `src/research_school_radar/search.py` — optional two-stage search clients: explicit broad Serper discovery and Brave same-domain refinement.
 - `src/research_school_radar/scan_health.py` — rejects zero-source real scans, enforces 70% success across configured page/direct-collector attempts, and writes scan manifests.
 - Full-scan manifests retain per-source last-attempt, last-success, and consecutive-failure state; status refreshes point directly to the latest full scan instead of recursively nesting refresh manifests.
 - `src/research_school_radar/snapshot_validation.py` — validates candidate schema v2, non-empty display/scanner records, and suspicious retention below 35% before snapshot replacement.
@@ -108,6 +109,7 @@ Multi-session extraction accepts explicitly labelled prose, table rows, and sche
 - `DEEPSEEK_API_KEY` is used for optional LLM extraction and build-time Chinese translation.
 - The model receives selected evidence snippets, not whole webpages and not browser control.
 - Non-unknown model fields must cite valid evidence IDs and pass deterministic validation before being used in homepage copies.
+- Search is not performed by DeepSeek. `SERPER_API_KEY` may power explicitly requested broad discovery; `BRAVE_SEARCH_API_KEY` may power same-domain follow-up refinement. Missing search keys must degrade safely.
 
 ## Important configuration files
 

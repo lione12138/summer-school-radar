@@ -1,3 +1,5 @@
+# Broad discovery queries are sent to Serper only when --include-discovery is
+# explicitly enabled. Results remain labelled as discovery sources.
 queries:
   topic:
     - '"summer school" hydrology scholarship application open'

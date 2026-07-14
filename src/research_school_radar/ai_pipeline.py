@@ -293,6 +293,7 @@ def _write_llm_outputs(
         "max_total_chars_per_followup_request": follow_up_config.max_total_chars_per_followup_request,
         "official_domains_only": follow_up_config.official_domains_only,
         "external_search_enabled": follow_up_config.external_search_enabled,
+        "search_provider": "brave",
         "pages_fetched": 0,
         "opportunities_reprocessed": 0,
         "search_queries": 0,

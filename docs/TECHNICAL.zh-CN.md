@@ -215,6 +215,24 @@ python -m research_school_radar.cli scan --enable-semantic --enable-llm-extracti
 
 DeepSeek 收到的是筛选后的短证据片段，不是完整网页，也没有浏览器控制权。模型输出必须引用 evidence IDs；`llm_validate.py` 会检查 ID 是否存在、字段是否有对应上下文、日期/费用/closed 语言是否有明显冲突。带 validation warning 的字段不会用于首页 merge。
 
+搜索采用两阶段分工。显式传入 `--include-discovery` 时，Serper 对
+`config/queries.yaml` 中的受控查询做跨站发现，结果始终标记为
+discovery 来源；正常固定来源扫描不会自动运行这一阶段。对于已经来自
+可信来源的候选，Brave 只执行 `site:官网域名` 精搜，用来补充申请页、
+截止日期、费用和资助信息。随后页面仍由 `bge-m3` 重新召回，DeepSeek
+只读取编号证据。缺少任一搜索 key 都不会中断确定性扫描。
+
+完整两阶段命令如下：
+
+```powershell
+$env:SERPER_API_KEY = "..."
+$env:BRAVE_SEARCH_API_KEY = "..."
+python -m research_school_radar.cli scan --include-discovery --enable-semantic --enable-llm-extraction
+```
+
+Serper 与 Brave 也可以分别启用；不传 `--include-discovery` 时，不会进行
+跨站广搜。
+
 生产自动化还有第二层构建级门槛：
 `python -m research_school_radar.ai_output_validation --site-dir site` 必须确认存在可用 semantic chunks 和至少一条通过证据校验的 DeepSeek 抽取，AI 运行才可以替换 last-known-good 快照。
 
@@ -275,7 +293,8 @@ python -m research_school_radar.cli refresh-status --candidates-json data/latest
 
 可选 secret：
 
-- `BRAVE_SEARCH_API_KEY`：启用受控的同域搜索补页
+- `SERPER_API_KEY`：仅在显式启用 discovery 时做跨站候选发现
+- `BRAVE_SEARCH_API_KEY`：启用受控的同官网域名精细补页
 - `HF_TOKEN`：提高 Hugging Face 模型下载额度
 
 secret 不会写入生成文件或提交。

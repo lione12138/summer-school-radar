@@ -53,6 +53,8 @@ follow_up:
   max_followup_chunks_per_opportunity: 8
   max_total_chars_per_followup_request: 12000
   official_domains_only: true
+  # Precise site:official-domain refinement uses Brave Search. Broad Serper
+  # discovery remains an explicit --include-discovery operation.
   external_search_enabled: true
 providers:
   deepseek:

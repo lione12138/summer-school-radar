@@ -7,7 +7,12 @@ import responses
 from research_school_radar.api_sources import _IHE_DELFT_URL, _ihe_delft
 from research_school_radar.http_cache import HttpCache
 from research_school_radar.rank import rank_candidates
-from research_school_radar.search import BRAVE_ENDPOINT, run_discovery_queries
+from research_school_radar.search import (
+    BRAVE_ENDPOINT,
+    SERPER_ENDPOINT,
+    run_discovery_queries,
+    run_refinement_queries,
+)
 
 
 _API_PROFILE = {
@@ -415,29 +420,27 @@ def test_ihe_delft_uses_recent_cached_api_payload_on_transient_failure(tmp_path)
 
 
 def test_discovery_skipped_without_api_key(monkeypatch) -> None:
-    monkeypatch.delenv("BRAVE_SEARCH_API_KEY", raising=False)
+    monkeypatch.setattr("research_school_radar.search._api_key", lambda name: "")
     results, errors = run_discovery_queries(["hydrology summer school"])
     assert results == []
     assert len(errors) == 1
-    assert "BRAVE_SEARCH_API_KEY is not set" in errors[0]
+    assert "SERPER_API_KEY is not set" in errors[0]
 
 
 @responses.activate
-def test_discovery_parses_brave_results(monkeypatch) -> None:
-    monkeypatch.setenv("BRAVE_SEARCH_API_KEY", "test-key")
+def test_discovery_parses_serper_results(monkeypatch) -> None:
+    monkeypatch.setattr("research_school_radar.search._api_key", lambda name: "test-key")
     responses.add(
-        responses.GET,
-        BRAVE_ENDPOINT,
+        responses.POST,
+        SERPER_ENDPOINT,
         json={
-            "web": {
-                "results": [
-                    {
-                        "title": "Hydrology Summer School",
-                        "url": "https://example.org/school",
-                        "description": "Travel grants available.",
-                    }
-                ]
-            }
+            "organic": [
+                {
+                    "title": "Hydrology Summer School",
+                    "link": "https://example.org/school",
+                    "snippet": "Travel grants available.",
+                }
+            ]
         },
         status=200,
     )
@@ -448,14 +451,51 @@ def test_discovery_parses_brave_results(monkeypatch) -> None:
     assert results[0].url == "https://example.org/school"
     assert results[0].snippet == "Travel grants available."
     assert results[0].query == "hydrology summer school"
+    assert results[0].provider == "serper"
 
 
 @responses.activate
 def test_discovery_reports_failed_queries(monkeypatch) -> None:
-    monkeypatch.setenv("BRAVE_SEARCH_API_KEY", "test-key")
-    responses.add(responses.GET, BRAVE_ENDPOINT, status=429)
+    monkeypatch.setattr("research_school_radar.search._api_key", lambda name: "test-key")
+    responses.add(responses.POST, SERPER_ENDPOINT, status=429)
     results, errors = run_discovery_queries(["hydrology summer school"])
     assert results == []
     assert len(errors) == 1
-    assert "Discovery query failed" in errors[0]
+    assert "Broad discovery query failed" in errors[0]
+
+
+def test_refinement_skipped_without_brave_key(monkeypatch) -> None:
+    monkeypatch.setattr("research_school_radar.search._api_key", lambda name: "")
+    results, errors = run_refinement_queries(["site:example.org summer school fee"])
+    assert results == []
+    assert len(errors) == 1
+    assert "BRAVE_SEARCH_API_KEY is not set" in errors[0]
+
+
+@responses.activate
+def test_refinement_parses_brave_results(monkeypatch) -> None:
+    monkeypatch.setattr("research_school_radar.search._api_key", lambda name: "test-key")
+    responses.add(
+        responses.GET,
+        BRAVE_ENDPOINT,
+        json={
+            "web": {
+                "results": [
+                    {
+                        "title": "Programme fees",
+                        "url": "https://example.org/school/fees",
+                        "description": "The course fee is EUR 300.",
+                    }
+                ]
+            }
+        },
+        status=200,
+    )
+    results, errors = run_refinement_queries(["site:example.org summer school fee"])
+    assert not errors
+    assert results[0].url == "https://example.org/school/fees"
+    assert results[0].provider == "brave"
+    request = responses.calls[0].request
+    assert "extra_snippets=true" in request.url
+    assert "safesearch=strict" in request.url
 

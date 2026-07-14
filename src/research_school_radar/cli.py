@@ -202,7 +202,7 @@ def run_scan(
                     region="global",
                     source_type="search_result",
                     keywords=[],
-                    notes=f"Query: {result.query}",
+                    notes=f"Provider: {result.provider or 'search'}; query: {result.query}",
                 )
                 for result in search_results
                 if result.url
@@ -289,6 +289,7 @@ def run_scan(
         published_candidates=len(ranked),
         semantic_enabled=enable_semantic,
         llm_enabled=enable_llm_extraction,
+        discovery_enabled=include_discovery,
         source_health=source_health,
     )
     write_scan_manifest(data_dir / "latest_scan_manifest.json", manifest)

@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 
 from .collect import DEFAULT_MAX_WORKERS, fetch_source
 from .models import Page, Source
-from .search import SearchResult, run_discovery_queries
+from .search import SearchResult, run_refinement_queries
 from .semantic import SemanticChunk
 from .utils import clean_space
 
@@ -176,7 +176,7 @@ def collect_follow_up_pages(
     *,
     max_workers: int = DEFAULT_MAX_WORKERS,
     fetcher: Callable[[Source], Page] = fetch_source,
-    searcher: Callable[[list[str], int], tuple[list[SearchResult], list[str]]] = run_discovery_queries,
+    searcher: Callable[[list[str], int], tuple[list[SearchResult], list[str]]] = run_refinement_queries,
 ) -> FollowUpCollection:
     if not config.enabled or config.max_total_followup_pages <= 0:
         return FollowUpCollection()

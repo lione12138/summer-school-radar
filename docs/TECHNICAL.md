@@ -297,7 +297,8 @@ DeepSeek does not receive unrestricted browser control. The scanner performs
 the HTTP requests and search calls, enforces budgets and domains, and passes
 only selected evidence snippets to the model. Search failure, missing Brave
 credentials, semantic failure, or follow-up extraction failure cannot abort the
-rule-based scan or remove the initial AI extraction.
+rule-based scan or remove the initial AI extraction. Broad discovery is a
+separate, explicit Serper stage and never replaces this same-domain refinement.
 
 The extraction prompt now labels page type and registration status, separates
 the primary application/registration deadline from other deadlines, rejects
@@ -558,9 +559,10 @@ the semantic/LLM extras, reads `DEEPSEEK_API_KEY` from repository secrets, runs
 the bounded scan, validates it with `ai_output_validation.py` and
 `snapshot_validation.py`, persists the
 accepted snapshots, and publishes through the same single-writer job. An
-optional `BRAVE_SEARCH_API_KEY` enables controlled same-domain search, and an
-optional `HF_TOKEN` raises Hugging Face download limits. Secret values are never
-written to generated output or commits.
+optional `BRAVE_SEARCH_API_KEY` enables controlled same-domain refinement,
+`SERPER_API_KEY` enables explicitly requested broad discovery, and an optional
+`HF_TOKEN` raises Hugging Face download limits. Secret values are never written
+to generated output or commits.
 
 ## Public Website
 
@@ -701,16 +703,31 @@ When analytics is disabled, no tracking script is injected. When enabled, the da
 
 ## Optional Controlled Discovery Search
 
-The default scan does not scrape Google or other search-result pages. Controlled discovery is optional and uses the Brave Search API if `BRAVE_SEARCH_API_KEY` is configured. (Bing Web Search was retired by Microsoft in 2025 and is no longer supported.)
+The default scan does not scrape Google or other search-result pages. Broad
+discovery is optional and uses Serper only when `--include-discovery` is passed.
+Results remain labelled as discovery sources and still pass normal extraction
+and hard filters. Serper discovery is separate from Brave's same-domain field
+refinement in the AI follow-up stage.
+
+```powershell
+$env:SERPER_API_KEY = "..."
+$env:BRAVE_SEARCH_API_KEY = "..."
+python -m research_school_radar.cli scan --include-discovery --enable-semantic --enable-llm-extraction
+```
+
+This combined command runs broad Serper discovery first. Candidates and known
+official-source pages then enter the normal semantic/evidence pipeline; Brave
+may search only within an already known official domain when important fields
+remain unresolved. Either stage can also be enabled independently. For example,
+to use only precise Brave follow-up with the fixed source registry:
 
 ```powershell
 $env:BRAVE_SEARCH_API_KEY = "..."
-python -m research_school_radar.cli scan --include-discovery
+python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction
 ```
 
-The Brave Search free plan is sufficient; the scanner spaces queries about one second apart to respect its rate limit.
-
-Without the key, the project still runs normally using fixed sources.
+Without either key, the project still runs normally using fixed sources and
+links already present on official pages.
 
 ## Optional Headless Rendering
 

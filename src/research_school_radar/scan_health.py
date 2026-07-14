@@ -69,6 +69,7 @@ def full_scan_manifest(
     published_candidates: int,
     semantic_enabled: bool,
     llm_enabled: bool,
+    discovery_enabled: bool = False,
     source_health: list[Mapping[str, Any]] | None = None,
 ) -> dict[str, Any]:
     payload = {
@@ -85,6 +86,9 @@ def full_scan_manifest(
         "ai": {
             "semantic_enabled": bool(semantic_enabled),
             "llm_extraction_enabled": bool(llm_enabled),
+            "broad_discovery_enabled": bool(discovery_enabled),
+            "broad_discovery_provider": "serper",
+            "refinement_provider": "brave",
         },
     }
     if source_health is not None:

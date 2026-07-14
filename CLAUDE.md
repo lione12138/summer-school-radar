@@ -44,6 +44,7 @@ Optional AI branch:
 
 ```text
 pages
+    -> optional Serper discovery / Brave same-domain refinement
     -> semantic.py
     -> evidence_snippets.py
     -> llm_extract.py via DeepSeek
@@ -66,6 +67,7 @@ AI branch constraints:
 - `src/research_school_radar/http_cache.py` — conditional request cache using `ETag` / `Last-Modified`, plus a 14-day stale-if-error fallback for transient failures.
 - `src/research_school_radar/api_sources.py` — direct collectors for structured listings and JSON APIs, enabled only through each source's `collector` field in `config/sources.yaml`.
 - `src/research_school_radar/ai_pipeline.py` — semantic/DeepSeek configuration and advisory-output orchestration, separated from the CLI entry point.
+- `src/research_school_radar/search.py` — Serper broad discovery and Brave same-domain refinement; neither provider may bypass evidence validation or hard filters.
 - `src/research_school_radar/parse.py` — candidate-link discovery.
 - `src/research_school_radar/extract.py` — rule-based field extraction.
 - `src/research_school_radar/filter.py` — hard conditions and near-match classification.
