@@ -168,11 +168,13 @@ Refresh HTTP cache:
 python -m research_school_radar.cli scan --refresh-http-cache
 ```
 
-DeepSeek health check and optional AI scan:
+DeepSeek and Brave Search health checks, followed by an optional AI scan:
 
 ```powershell
 $env:DEEPSEEK_API_KEY = "sk-..."
+$env:BRAVE_SEARCH_API_KEY = "..."
 python -m research_school_radar.ai_healthcheck --provider deepseek
+python -m research_school_radar.search_healthcheck --provider brave
 python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction
 ```
 
@@ -188,7 +190,8 @@ Run focused tests for changed areas:
 - Site/RSS/SEO/i18n rendering: `python -m pytest tests/test_site.py tests/test_translation.py tests/test_localization_audit.py -q`
 - DeepSeek/client flags: `python -m pytest tests/test_cli_llm_flags.py tests/test_deepseek_client.py tests/test_llm_validate.py -q`
 - AI homepage merge: `python -m pytest tests/test_ai_home.py tests/test_ai_outputs.py -q`
-- Search/follow-up: `python -m pytest tests/test_search.py tests/test_ai_followup.py -q`
+- Search/follow-up: `python -m pytest tests/test_search.py tests/test_search_healthcheck.py tests/test_ai_followup.py -q`
+- Windows scheduling/recovery: `python -m pytest tests/test_scan_and_publish_script.py -q`
 
 For larger refactors:
 

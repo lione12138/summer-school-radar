@@ -228,8 +228,9 @@ If full-suite failures are unrelated to the current change, state the exact fail
 ## Publishing model
 
 - `scripts/scan_and_publish.ps1` runs daily on the maintainer's Windows machine. On Monday/Wednesday/Friday it performs a residential-network, DeepSeek-assisted full scan; on other days it performs a no-network `refresh-status` rebuild from the latest snapshots.
-- A full local scan must pass `scan_health.py`, `ai_output_validation.py`, and `snapshot_validation.py` before replacing snapshots.
+- A full local scan must pass strict DeepSeek and Brave Search health checks, `scan_health.py`, `ai_output_validation.py`, and `snapshot_validation.py` before replacing snapshots.
 - Only successful full scans update the three source snapshots on `main`; status refreshes rebuild presentation without overwriting source-scan snapshots. Full scans may also commit generated seen/review/report state. The local task never writes `gh-pages`.
+- Scheduled Git operations may reuse a reachable Windows user proxy through process-scoped Git configuration and retry transient failures. If generation finishes while GitHub is unavailable, the automation records the generated commit under `.git/`, restores the clean pre-run branch, and retries that exact generated output after connectivity returns.
 - `.github/workflows/ai_scan.yml` is the sole `gh-pages` writer. It runs a no-fetch `refresh-status` build from snapshots every day; its cloud AI scan modes are manual only. Manual `audit` runs upload evidence and metrics without committing snapshots or publishing, while manual `ai` runs may publish only after all gates pass.
 
 ## Current design priorities

@@ -167,3 +167,28 @@ Requiring an explicit page type removed all three. The same audit correctly
 filled ICOS's deadline and moved it from High-Quality to Fully Qualified through
 the normal rule filters. The public `AI Review` page and navigation entry were
 removed; `site/ai_extractions.json` remains the evidence and warning trail.
+
+## 2026-07-14: Recoverable Scheduled Publishing
+
+Two consecutive Windows scheduled runs stopped before generation because a
+single `git pull --ff-only` attempt could not reach GitHub. The earlier generic
+HTTP HEAD precheck was not a reliable predictor of Git transport availability.
+The machine also had a reachable per-user Windows proxy that browsers used but
+Git did not, explaining why interactive web access and scheduled Git behaved
+differently.
+
+The local automation now retries `pull`, `fetch`, and `push` with bounded delay.
+When Git has no explicit proxy setting, it first reuses a reachable Windows user
+proxy through process-scoped Git configuration without changing global config.
+If GitHub is unavailable before an otherwise clean run, one local generation may
+still complete. When its generated commit cannot be pushed, the script records
+the commit hash, base revision, message, and allowed generated paths under
+`.git/summa-pending-publish.json`, returns `main` and the working tree to their
+pre-run state, and exits non-zero so monitoring still reports “not published.”
+After connectivity returns, the next run validates the queued commit and pushes
+it before starting new work. It discards queued output if newer `main` already
+changed any of those generated paths.
+
+Full local scans now also make one tiny Brave Search request before source work,
+alongside the existing strict DeepSeek health check. Serper remains excluded
+from scheduled scans and is still audit-only.

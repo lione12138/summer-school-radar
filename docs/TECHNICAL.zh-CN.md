@@ -287,7 +287,9 @@ scanner output
 
 ## 发布工作流
 
-采集与发布已经拆开。维护者电脑每天运行 `scripts/scan_and_publish.ps1`，利用住宅网络访问 GitHub-hosted runner 容易受限的官方站点。周一、周三、周五执行 semantic + DeepSeek 辅助完整扫描；只有严格 DeepSeek healthcheck、`scan_health.py` 的综合来源覆盖门槛、`ai_output_validation.py` 以及 `snapshot_validation.py` 的 schema/数量保持校验都通过，才会替换 last-known-good 快照。
+采集与发布已经拆开。维护者电脑每天运行 `scripts/scan_and_publish.ps1`，利用住宅网络访问 GitHub-hosted runner 容易受限的官方站点。周一、周三、周五执行 semantic + DeepSeek 辅助完整扫描；只有严格 DeepSeek 与 Brave Search healthcheck、`scan_health.py` 的综合来源覆盖门槛、`ai_output_validation.py` 以及 `snapshot_validation.py` 的 schema/数量保持校验都通过，才会替换 last-known-good 快照。
+
+如果 Git 没有显式代理配置，定时任务会复用当前可连接的 Windows 用户代理，并对 Git 同步执行有上限的自动重试；该代理只在本次进程生效，不修改全局 Git 设置。如果 GitHub 仍不可达，干净的本机仓库仍可完成一次生成；生成提交会记录在 `.git/` 下，同时工作分支退回自动化开始前的版本。网络恢复后，后续任务会先确认待发布提交只包含登记过的生成文件，再自动恢复并推送；如果 `main` 已经更新了相同文件，则丢弃过时结果。这样既不浪费已完成的 API 工作，也不会让本机 `main` 长期领先或覆盖用户编辑。
 
 其他日期执行：
 

@@ -524,10 +524,21 @@ Collection and publication are deliberately separated. The maintainer's Windows
 machine runs `scripts/scan_and_publish.ps1` daily because its residential
 connection reaches more official sites than a GitHub-hosted runner. On Monday,
 Wednesday, and Friday the script performs a semantic + DeepSeek-assisted full
-scan. It requires a strict DeepSeek health check, the combined source-coverage
-gate from `scan_health.py`, `ai_output_validation.py`, and the schema/retention
-gate in `snapshot_validation.py` before replacing the last-known-good publish
-snapshot.
+scan. It requires strict DeepSeek and Brave Search health checks, the combined
+source-coverage gate from `scan_health.py`, `ai_output_validation.py`, and the
+schema/retention gate in `snapshot_validation.py` before replacing the
+last-known-good publish snapshot.
+
+Scheduled Git synchronization reuses a reachable Windows user proxy when Git
+has no explicit proxy configuration, then applies bounded retries. The proxy is
+process-scoped and does not change global Git settings. If GitHub remains
+unreachable, a clean machine may still finish one local generation run. Any
+generated commit is recorded under `.git/` and the working branch is returned to
+its pre-automation revision. A later run verifies the queued commit contains
+only the recorded generated paths and publishes it after the remote recovers;
+stale queued output is discarded if newer `main` already changed those paths.
+This keeps API work recoverable without leaving `main` ahead or touching user
+edits.
 
 On other days the local script runs:
 
