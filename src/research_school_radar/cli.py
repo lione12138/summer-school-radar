@@ -129,6 +129,15 @@ def run_scan(
     coverage = SourceCoverage(attempted=0, succeeded=0)
     previous_manifest = load_scan_manifest(data_dir / "latest_scan_manifest.json")
     source_health: list[dict[str, Any]] = []
+    discovery_stats = {
+        "queries": 0,
+        "results": 0,
+        "unique_results": 0,
+        "pages_fetched": 0,
+        "candidates_extracted": 0,
+        "candidates_ranked": 0,
+        "candidates_fully_qualified": 0,
+    }
 
     if offline_sample:
         candidates = [sample_candidate(profile)]
@@ -193,6 +202,9 @@ def run_scan(
             query_config = load_yaml(config_dir / "queries.yaml")
             queries = _flatten_queries(query_config.get("queries", {}))
             search_results, search_errors = run_discovery_queries(queries)
+            discovery_stats["queries"] = len(queries)
+            discovery_stats["results"] = len(search_results)
+            discovery_stats["unique_results"] = len({result.url for result in search_results if result.url})
             errors.extend(search_errors)
             discovery_sources = [
                 Source(
@@ -208,11 +220,14 @@ def run_scan(
                 if result.url
             ]
             discovery_pages, discovery_errors = _collect_discovery_sources(discovery_sources, http_cache=http_cache)
+            discovery_stats["pages_fetched"] = len(discovery_pages)
             errors.extend(discovery_errors)
             semantic_pages = unique_pages([*semantic_pages, *discovery_pages])
-            candidates.extend(
+            discovery_candidates = [
                 candidate for page in discovery_pages if (candidate := extract_candidate(page, profile))
-            )
+            ]
+            discovery_stats["candidates_extracted"] = len(discovery_candidates)
+            candidates.extend(discovery_candidates)
 
         for warning in http_cache.warnings:
             print(f"HTTP cache warning: {warning}")
@@ -220,6 +235,11 @@ def run_scan(
     candidates = apply_overrides(candidates, overrides)
     filtered = [apply_hard_filters(candidate, profile) for candidate in candidates]
     ranked = rank_candidates(filtered, profile=profile)
+    discovery_ranked = [candidate for candidate in ranked if candidate.source_layer == "discovery"]
+    discovery_stats["candidates_ranked"] = len(discovery_ranked)
+    discovery_stats["candidates_fully_qualified"] = sum(
+        candidate.fully_qualified for candidate in discovery_ranked
+    )
     semantic_chunks = []
     semantic_ok = True
     ai_items: list[dict[str, Any]] | None = None
@@ -290,6 +310,7 @@ def run_scan(
         semantic_enabled=enable_semantic,
         llm_enabled=enable_llm_extraction,
         discovery_enabled=include_discovery,
+        discovery_stats=discovery_stats if include_discovery else None,
         source_health=source_health,
     )
     write_scan_manifest(data_dir / "latest_scan_manifest.json", manifest)

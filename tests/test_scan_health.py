@@ -42,6 +42,7 @@ def test_scan_manifest_contains_only_aggregate_health_data() -> None:
         semantic_enabled=True,
         llm_enabled=True,
         discovery_enabled=True,
+        discovery_stats={"queries": 3, "results": 12},
     )
 
     assert payload["source_coverage"]["success_ratio"] == 0.9
@@ -49,6 +50,7 @@ def test_scan_manifest_contains_only_aggregate_health_data() -> None:
     assert payload["ai"]["broad_discovery_enabled"] is True
     assert payload["ai"]["broad_discovery_provider"] == "serper"
     assert payload["ai"]["refinement_provider"] == "brave"
+    assert payload["ai"]["broad_discovery"] == {"queries": 3, "results": 12}
     assert "url" not in str(payload).lower()
 
 

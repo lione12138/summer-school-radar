@@ -4,12 +4,13 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: Build from the latest snapshot or run a manual AI scan
+        description: Refresh, audit without publishing, or run a publishing AI scan
         required: true
         default: refresh
         type: choice
         options:
           - refresh
+          - audit
           - ai
       discovery:
         description: Use Serper broad discovery during a manual AI scan
@@ -68,7 +69,11 @@ jobs:
           fi
 
           discovery=false
-          if [ "$mode" = "ai" ] && [ "${{ inputs.discovery }}" = "true" ]; then
+          scan=false
+          if [ "$mode" = "ai" ] || [ "$mode" = "audit" ]; then
+            scan=true
+          fi
+          if [ "$scan" = "true" ] && [ "${{ inputs.discovery }}" = "true" ]; then
             discovery=true
           fi
 
@@ -85,6 +90,7 @@ jobs:
             done
           fi
           echo "mode=$mode" >> "$GITHUB_OUTPUT"
+          echo "scan=$scan" >> "$GITHUB_OUTPUT"
           echo "discovery=$discovery" >> "$GITHUB_OUTPUT"
           echo "can_build=$can_build" >> "$GITHUB_OUTPUT"
 
@@ -96,14 +102,14 @@ jobs:
           cache: pip
 
       - name: Restore bge-m3 model cache
-        if: steps.build.outputs.mode == 'ai'
+        if: steps.build.outputs.scan == 'true'
         uses: actions/cache@v5
         with:
           path: .cache/huggingface
           key: huggingface-bge-m3-${{ runner.os }}
 
       - name: Restore advisory AI cache
-        if: steps.build.outputs.mode == 'ai'
+        if: steps.build.outputs.scan == 'true'
         uses: actions/cache@v5
         with:
           path: data/ai_cache
@@ -115,14 +121,14 @@ jobs:
         if: steps.build.outputs.can_build == 'true'
         shell: bash
         run: |
-          if [ "${{ steps.build.outputs.mode }}" = "ai" ]; then
+          if [ "${{ steps.build.outputs.scan }}" = "true" ]; then
             pip install -e ".[semantic,llm]"
           else
             pip install -e .
           fi
 
       - name: Check DeepSeek secret
-        if: steps.build.outputs.mode == 'ai'
+        if: steps.build.outputs.scan == 'true'
         shell: bash
         run: |
           if [ -z "${DEEPSEEK_API_KEY}" ]; then
@@ -140,11 +146,11 @@ jobs:
           fi
 
       - name: Check DeepSeek endpoint
-        if: steps.build.outputs.mode == 'ai'
+        if: steps.build.outputs.scan == 'true'
         run: python -m research_school_radar.ai_healthcheck --provider deepseek --strict
 
       - name: Run bounded AI-assisted scan
-        if: steps.build.outputs.mode == 'ai'
+        if: steps.build.outputs.scan == 'true'
         shell: bash
         run: |
           args=(--enable-semantic --enable-llm-extraction --no-readme-update)
@@ -154,11 +160,11 @@ jobs:
           python -m research_school_radar.cli scan "${args[@]}"
 
       - name: Require usable semantic and DeepSeek outputs
-        if: steps.build.outputs.mode == 'ai'
+        if: steps.build.outputs.scan == 'true'
         run: python -m research_school_radar.ai_output_validation --site-dir site
 
       - name: Validate candidate snapshot schema and retention
-        if: steps.build.outputs.mode == 'ai'
+        if: steps.build.outputs.scan == 'true'
         run: >-
           python -m research_school_radar.snapshot_validation
           --candidate-json site/candidates.json
@@ -210,8 +216,36 @@ jobs:
             git push origin HEAD:main
           fi
 
+      - name: Build non-publishing search audit
+        if: always() && steps.build.outputs.mode == 'audit'
+        env:
+          PYTHONPATH: src
+        run: >-
+          python -m research_school_radar.audit_report
+          --site-dir site
+          --previous-json data/latest_candidates.json
+          --output-dir audit
+
+      - name: Upload non-publishing audit artifacts
+        if: always() && steps.build.outputs.mode == 'audit'
+        uses: actions/upload-artifact@v4
+        with:
+          name: summa-search-audit-${{ github.run_id }}
+          retention-days: 14
+          if-no-files-found: warn
+          path: |
+            audit/
+            site/scan-manifest.json
+            site/candidates.json
+            site/semantic_chunks.json
+            site/ai_extractions.json
+            site/translation-status.json
+            reports/*.md
+            reports/*.semantic.json
+            reports/*.ai.json
+
       - name: Check out current Pages branch
-        if: steps.build.outputs.can_build == 'true'
+        if: steps.build.outputs.can_build == 'true' && steps.build.outputs.mode != 'audit'
         uses: actions/checkout@v6
         with:
           ref: gh-pages
@@ -219,7 +253,7 @@ jobs:
           fetch-depth: 1
 
       - name: Publish generated site to gh-pages
-        if: steps.build.outputs.can_build == 'true'
+        if: steps.build.outputs.can_build == 'true' && steps.build.outputs.mode != 'audit'
         shell: bash
         run: |
           find _pages -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +

@@ -457,6 +457,11 @@ single-writer job. `BRAVE_SEARCH_API_KEY` and `HF_TOKEN` remain optional.
 broad discovery; it is not part of the normal trusted-source scan.
 When manually dispatching the GitHub workflow with `mode=ai`, the `discovery`
 input is enabled by default and may be turned off for a fixed-source-only run.
+Use `mode=audit` first when evaluating search or prompt changes. It runs the
+same source, Serper, Brave, semantic, DeepSeek, translation, and validation
+stages, but never commits snapshots or publishes Pages. The workflow uploads a
+14-day `summa-search-audit-*` artifact containing aggregate JSON/Markdown
+metrics and the generated evidence sidecars.
 
 ## Development
 

@@ -77,6 +77,7 @@ Key modules:
 - Full-scan manifests retain per-source last-attempt, last-success, and consecutive-failure state; status refreshes point directly to the latest full scan instead of recursively nesting refresh manifests.
 - `src/research_school_radar/snapshot_validation.py` — validates candidate schema v2, non-empty display/scanner records, and suspicious retention below 35% before snapshot replacement.
 - `src/research_school_radar/ai_output_validation.py` — rejects unusable semantic, DeepSeek extraction, or build-time Chinese translation output before an AI snapshot can replace the last known-good snapshot.
+- `src/research_school_radar/audit_report.py` — summarizes source coverage, Serper discovery, Brave refinement, semantic/DeepSeek output, translation, and candidate retention for non-publishing audit runs.
 - `src/research_school_radar/storage.py` — seen-state JSON handling.
 - `src/research_school_radar/publication.py` — shared public/high-quality/found display classification.
 - `src/research_school_radar/candidate_io.py` — shared `Candidate` JSON serialization/deserialization.
@@ -227,7 +228,7 @@ If full-suite failures are unrelated to the current change, state the exact fail
 - `scripts/scan_and_publish.ps1` runs daily on the maintainer's Windows machine. On Monday/Wednesday/Friday it performs a residential-network, DeepSeek-assisted full scan; on other days it performs a no-network `refresh-status` rebuild from the latest snapshots.
 - A full local scan must pass `scan_health.py`, `ai_output_validation.py`, and `snapshot_validation.py` before replacing snapshots.
 - Only successful full scans update the three source snapshots on `main`; status refreshes rebuild presentation without overwriting source-scan snapshots. Full scans may also commit generated seen/review/report state. The local task never writes `gh-pages`.
-- `.github/workflows/ai_scan.yml` is the sole `gh-pages` writer. It runs a no-fetch `refresh-status` build from snapshots every day; its cloud AI scan mode is manual only.
+- `.github/workflows/ai_scan.yml` is the sole `gh-pages` writer. It runs a no-fetch `refresh-status` build from snapshots every day; its cloud AI scan modes are manual only. Manual `audit` runs upload evidence and metrics without committing snapshots or publishing, while manual `ai` runs may publish only after all gates pass.
 
 ## Current design priorities
 

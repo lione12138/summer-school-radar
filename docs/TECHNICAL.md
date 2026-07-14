@@ -733,6 +733,12 @@ The GitHub Actions manual `ai` mode exposes a `discovery` checkbox. It defaults
 to enabled and reads `SERPER_API_KEY` from repository secrets; scheduled cloud
 runs remain snapshot-only status refreshes.
 
+For production evaluation, select manual `audit` mode. It executes the same
+bounded AI scan and validation gates, writes `audit/search-audit.json` and
+`audit/search-audit.md`, and uploads the audit plus generated evidence sidecars
+as a 14-day workflow artifact. Audit mode never commits `data/latest_*` and
+never writes `gh-pages`, even when every validation gate passes.
+
 ## Optional Headless Rendering
 
 Most sources return their content in the served HTML and are fetched with `requests`. A minority render content client-side, so the served HTML is an empty shell. Such a source can set `render: true` in `config/sources.yaml`, and the scanner loads it in headless Chromium via Playwright instead.

@@ -70,6 +70,7 @@ def full_scan_manifest(
     semantic_enabled: bool,
     llm_enabled: bool,
     discovery_enabled: bool = False,
+    discovery_stats: Mapping[str, int] | None = None,
     source_health: list[Mapping[str, Any]] | None = None,
 ) -> dict[str, Any]:
     payload = {
@@ -91,6 +92,10 @@ def full_scan_manifest(
             "refinement_provider": "brave",
         },
     }
+    if discovery_stats is not None:
+        payload["ai"]["broad_discovery"] = {
+            str(key): max(0, int(value)) for key, value in discovery_stats.items()
+        }
     if source_health is not None:
         payload["source_health"] = [dict(item) for item in source_health]
     return payload
