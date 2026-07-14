@@ -168,6 +168,8 @@
       display: block; max-width: 900px; margin-top: 14px; padding: 9px 12px;
       font-size: 12px; line-height: 1.5; opacity: .88;
     }
+    .hero-disclaimer summary { cursor: pointer; font-weight: 700; list-style-position: inside; }
+    .hero-disclaimer p { margin: 8px 0 0; color: inherit; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
     .button {
       display: inline-flex; min-height: 44px; align-items: center; justify-content: center;
@@ -178,7 +180,6 @@
     .button.primary:hover { background: var(--accent-ink); color: #fff; }
     .button.tonal { background: var(--accent-soft); color: var(--accent-ink); }
     .button.tonal:hover { border-color: var(--accent); color: var(--accent-ink); }
-    .hero-scan-meta { margin-top: 16px; color: rgba(243,249,252,.72); font-size: 12px; }
     .stats { margin-top: 24px; }
     .stat { min-height: 96px; padding: 18px 20px; }
     .stat:nth-child(-n+2) { background: var(--good-soft); }
@@ -258,11 +259,16 @@
       header.hero { padding: 24px 0 26px; }
       header.hero h1 { font-size: 28px; line-height: 1.3; }
       header.hero .subtitle { font-size: 14px; line-height: 1.6; }
-      .hero-actions { display: none; }
-      .hero-scan-meta { margin-top: 10px; }
+      .hero-disclaimer { margin-top: 12px; padding: 8px 10px; }
+      .hero-disclaimer p { font-size: 12px; }
+      .hero-actions { display: flex; margin-top: 14px; }
+      .hero-actions .button { min-height: 40px; padding: 8px 13px; }
+      .hero-actions .button.tonal { display: none; }
       .stats { grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
-      .stat { min-height: 88px; padding: 14px 16px; }
+      .stat { min-height: 68px; padding: 10px 14px; }
+      .stat .num { font-size: 22px; }
       .stat:nth-child(n+3) { display: none; }
+      .status:not(.empty) { display: none; }
       .opportunity-list-head { margin-top: 20px; }
       .opportunity-list-head h2 { font-size: 22px; }
       .filters { grid-template-columns: 1fr 1fr; gap: 8px; }
@@ -270,8 +276,12 @@
       .filters .filter-group:nth-child(n+4) { display: none; }
       table.opportunity-table tr {
         grid-template-columns: auto minmax(0, 1fr);
-        grid-template-areas: "status title" "organizer organizer" "location location" "duration duration" "deadline deadline" "funding funding" "actions actions";
-        row-gap: 7px; padding: 16px;
+        grid-template-areas: "status title" "organizer location" "duration duration" "deadline deadline" "funding funding" "actions actions";
+        row-gap: 5px; padding: 14px;
+      }
+      .qualified-table td:nth-child(2), .standard-table td:nth-child(1), .curated-table td:nth-child(1) { font-size: 18px; }
+      .qualified-table td:nth-child(4), .standard-table td:nth-child(3), .curated-table td:nth-child(3) {
+        overflow: hidden; text-align: right; text-overflow: ellipsis; white-space: nowrap;
       }
       .qualified-table td:nth-child(8), .standard-table td:nth-child(7), .curated-table td:nth-child(7) { display: none; }
       .card-actions { flex-direction: row; justify-content: flex-start; padding-top: 3px !important; }
@@ -383,12 +393,12 @@
         <p class="deadline-value"><span class="lang-en" lang="en">19 Jul 2026</span><span class="lang-zh" lang="zh">2026年7月19日</span></p>
         
         <p class="muted"><span class="lang-en" lang="en">in-person</span><span class="lang-zh" lang="zh">线下</span> &middot; <span class="lang-en" lang="en">Saarland University</span><span class="lang-zh" lang="zh">Saarland University</span><br><span class="lang-en" lang="en">AI</span><span class="lang-zh" lang="zh">人工智能</span></p>
-        <div class="detail-actions"><a class="button primary" href="https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026" target="_blank" rel="noopener" data-i18n="action.official.open">Open official page</a><span class="lang-en" lang="en">2026-07-19</span><span class="lang-zh" lang="zh">2026年7月19日</span><details class="cal"><summary data-i18n="calendar.add">Add to calendar</summary><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Application+deadline%3A+ELLIS+Summer+School+at+Unit+Saarbr%C3%BCcken&amp;dates=20260719%2F20260720&amp;details=Apply+by+2026-07-19.+Source%3A+https%3A%2F%2Fellis.eu%2Fevents%2Fellis-summer-school-at-unit-saarbruecken-2026" target="_blank" rel="noopener">Google Calendar</a><a href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=Application+deadline%3A+ELLIS+Summer+School+at+Unit+Saarbr%C3%BCcken&amp;startdt=2026-07-19&amp;enddt=2026-07-20&amp;allday=true&amp;body=Apply+by+2026-07-19.+Source%3A+https%3A%2F%2Fellis.eu%2Fevents%2Fellis-summer-school-at-unit-saarbruecken-2026" target="_blank" rel="noopener">Outlook</a><a href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-//Summa//EN%0D%0ACALSCALE%3AGREGORIAN%0D%0AMETHOD%3APUBLISH%0D%0ABEGIN%3AVEVENT%0D%0AUID%3A20260719-ellis-summer-school-at-unit-saarbr%C3%BCcken%40research-seasonal-school-radar%0D%0ADTSTAMP%3A20260713T000000Z%0D%0ADTSTART%3BVALUE%3DDATE%3A20260719%0D%0ADTEND%3BVALUE%3DDATE%3A20260720%0D%0ASUMMARY%3AApplication%20deadline%3A%20ELLIS%20Summer%20School%20at%20Unit%20Saarbr%C3%BCcken%0D%0ADESCRIPTION%3AApply%20by%202026-07-19.%20Source%3A%20https%3A//ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR%0D%0A" download="ellis-summer-school-at-unit-saarbrücken-deadline.ics">Apple / .ics</a></details></div>
+        <div class="detail-actions"><a class="button primary" href="https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026" target="_blank" rel="noopener" data-i18n="action.official.open">Open official page</a><span class="lang-en" lang="en">2026-07-19</span><span class="lang-zh" lang="zh">2026年7月19日</span><details class="cal"><summary data-i18n="calendar.add">Add to calendar</summary><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Application+deadline%3A+ELLIS+Summer+School+at+Unit+Saarbr%C3%BCcken&amp;dates=20260719%2F20260720&amp;details=Apply+by+2026-07-19.+Source%3A+https%3A%2F%2Fellis.eu%2Fevents%2Fellis-summer-school-at-unit-saarbruecken-2026" target="_blank" rel="noopener">Google Calendar</a><a href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=Application+deadline%3A+ELLIS+Summer+School+at+Unit+Saarbr%C3%BCcken&amp;startdt=2026-07-19&amp;enddt=2026-07-20&amp;allday=true&amp;body=Apply+by+2026-07-19.+Source%3A+https%3A%2F%2Fellis.eu%2Fevents%2Fellis-summer-school-at-unit-saarbruecken-2026" target="_blank" rel="noopener">Outlook</a><a href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-//Summa//EN%0D%0ACALSCALE%3AGREGORIAN%0D%0AMETHOD%3APUBLISH%0D%0ABEGIN%3AVEVENT%0D%0AUID%3A20260719-ellis-summer-school-at-unit-saarbr%C3%BCcken%40research-seasonal-school-radar%0D%0ADTSTAMP%3A20260714T000000Z%0D%0ADTSTART%3BVALUE%3DDATE%3A20260719%0D%0ADTEND%3BVALUE%3DDATE%3A20260720%0D%0ASUMMARY%3AApplication%20deadline%3A%20ELLIS%20Summer%20School%20at%20Unit%20Saarbr%C3%BCcken%0D%0ADESCRIPTION%3AApply%20by%202026-07-19.%20Source%3A%20https%3A//ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR%0D%0A" download="ellis-summer-school-at-unit-saarbrücken-deadline.ics">Apple / .ics</a></details></div>
         <span class="note" data-i18n="detail.verify">Always verify eligibility, fees, funding, and dates on the official page.</span>
       </aside>
     </div>
   </main>
-  <div class="mobile-actions"><a class="button primary" href="https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026" target="_blank" rel="noopener" data-i18n="action.official.open">Open official page</a><span class="lang-en" lang="en">2026-07-19</span><span class="lang-zh" lang="zh">2026年7月19日</span><details class="cal"><summary data-i18n="calendar.add">Add to calendar</summary><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Application+deadline%3A+ELLIS+Summer+School+at+Unit+Saarbr%C3%BCcken&amp;dates=20260719%2F20260720&amp;details=Apply+by+2026-07-19.+Source%3A+https%3A%2F%2Fellis.eu%2Fevents%2Fellis-summer-school-at-unit-saarbruecken-2026" target="_blank" rel="noopener">Google Calendar</a><a href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=Application+deadline%3A+ELLIS+Summer+School+at+Unit+Saarbr%C3%BCcken&amp;startdt=2026-07-19&amp;enddt=2026-07-20&amp;allday=true&amp;body=Apply+by+2026-07-19.+Source%3A+https%3A%2F%2Fellis.eu%2Fevents%2Fellis-summer-school-at-unit-saarbruecken-2026" target="_blank" rel="noopener">Outlook</a><a href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-//Summa//EN%0D%0ACALSCALE%3AGREGORIAN%0D%0AMETHOD%3APUBLISH%0D%0ABEGIN%3AVEVENT%0D%0AUID%3A20260719-ellis-summer-school-at-unit-saarbr%C3%BCcken%40research-seasonal-school-radar%0D%0ADTSTAMP%3A20260713T000000Z%0D%0ADTSTART%3BVALUE%3DDATE%3A20260719%0D%0ADTEND%3BVALUE%3DDATE%3A20260720%0D%0ASUMMARY%3AApplication%20deadline%3A%20ELLIS%20Summer%20School%20at%20Unit%20Saarbr%C3%BCcken%0D%0ADESCRIPTION%3AApply%20by%202026-07-19.%20Source%3A%20https%3A//ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR%0D%0A" download="ellis-summer-school-at-unit-saarbrücken-deadline.ics">Apple / .ics</a></details></div>
+  <div class="mobile-actions"><a class="button primary" href="https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026" target="_blank" rel="noopener" data-i18n="action.official.open">Open official page</a><span class="lang-en" lang="en">2026-07-19</span><span class="lang-zh" lang="zh">2026年7月19日</span><details class="cal"><summary data-i18n="calendar.add">Add to calendar</summary><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Application+deadline%3A+ELLIS+Summer+School+at+Unit+Saarbr%C3%BCcken&amp;dates=20260719%2F20260720&amp;details=Apply+by+2026-07-19.+Source%3A+https%3A%2F%2Fellis.eu%2Fevents%2Fellis-summer-school-at-unit-saarbruecken-2026" target="_blank" rel="noopener">Google Calendar</a><a href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=Application+deadline%3A+ELLIS+Summer+School+at+Unit+Saarbr%C3%BCcken&amp;startdt=2026-07-19&amp;enddt=2026-07-20&amp;allday=true&amp;body=Apply+by+2026-07-19.+Source%3A+https%3A%2F%2Fellis.eu%2Fevents%2Fellis-summer-school-at-unit-saarbruecken-2026" target="_blank" rel="noopener">Outlook</a><a href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-//Summa//EN%0D%0ACALSCALE%3AGREGORIAN%0D%0AMETHOD%3APUBLISH%0D%0ABEGIN%3AVEVENT%0D%0AUID%3A20260719-ellis-summer-school-at-unit-saarbr%C3%BCcken%40research-seasonal-school-radar%0D%0ADTSTAMP%3A20260714T000000Z%0D%0ADTSTART%3BVALUE%3DDATE%3A20260719%0D%0ADTEND%3BVALUE%3DDATE%3A20260720%0D%0ASUMMARY%3AApplication%20deadline%3A%20ELLIS%20Summer%20School%20at%20Unit%20Saarbr%C3%BCcken%0D%0ADESCRIPTION%3AApply%20by%202026-07-19.%20Source%3A%20https%3A//ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR%0D%0A" download="ellis-summer-school-at-unit-saarbrücken-deadline.ics">Apple / .ics</a></details></div>
   
   <footer class="site">
     <div class="wrap">
@@ -416,7 +426,7 @@
           <a href="https://github.com/lione12138/summer-school-radar/stargazers" data-i18n="foot.star">Star on GitHub</a>
         </div>
       </div>
-      <div class="legal">Last updated 2026-07-13 &middot; <span data-i18n="foot.legal">Near-matches are not treated as qualified opportunities. Built and maintained openly on GitHub.</span></div>
+      <div class="legal">Last updated 2026-07-14 &middot; <span data-i18n="foot.legal">Near-matches are not treated as qualified opportunities. Built and maintained openly on GitHub.</span></div>
     </div>
   </footer>
   <!-- Summa | canonical: https://lione12138.github.io/summer-school-radar/ | data CC BY 4.0, attribution and link back required | SSR-CANON-7q3v9x2k8m4w -->
@@ -432,6 +442,7 @@
       "hero.kicker": {en:"Updated daily \u00B7 Free & open source", zh:"每天更新 \u00B7 免费开源"},
       "hero.title": {en:"Find research training worth applying for", zh:"寻找真正值得申请的科研训练机会"},
       "hero.subtitle": {en:"Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.", zh:"从可信学术来源汇总有资助或低费用的科研训练机会。每条截止日期和资助信息都可追溯到官网。"},
+      "hero.disclaimer.summary": {en:"Before applying: verify the official page", zh:"申请前请注意：务必到官网核验"},
       "hero.disclaimer": {en:"Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.", zh:"请把这里当作基础信息入口，而不是唯一信息来源。本站信息来自各大组织和学校官网，但自动收集和解析仍可能因为技术问题出错；申请前请务必到官网核对截止日期、费用、资助和资格要求。少数质量很高但暂时无法自动收集的官网已列在采集说明里。祝大家都能录到心仪的项目。"},
       "cta.email": {en:"Get email alerts", zh:"邮件订阅"},
       "cta.explore": {en:"Explore opportunities", zh:"浏览开放项目"},
@@ -464,6 +475,11 @@
       "filter.deadline": {en:"Deadline", zh:"截止日期"},
       "filter.fresh": {en:"Freshness", zh:"新近程度"},
       "filter.all": {en:"All", zh:"全部"},
+      "filter.all.status": {en:"All statuses", zh:"所有状态"},
+      "filter.all.topic": {en:"All topics", zh:"所有主题"},
+      "filter.all.funding": {en:"All funding", zh:"所有费用/资助"},
+      "filter.all.deadline": {en:"All deadlines", zh:"所有截止状态"},
+      "filter.all.fresh": {en:"Any time", zh:"全部时间"},
       "filter.status.qualified": {en:"Fully qualified", zh:"完全符合"},
       "filter.status.high": {en:"High quality", zh:"高质量"},
       "filter.status.found": {en:"Found", zh:"待核实"},
