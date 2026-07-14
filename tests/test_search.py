@@ -455,6 +455,20 @@ def test_discovery_parses_serper_results(monkeypatch) -> None:
 
 
 @responses.activate
+def test_discovery_accepts_serper_search_key_alias(monkeypatch) -> None:
+    monkeypatch.setattr(
+        "research_school_radar.search._api_key",
+        lambda name: "alias-key" if name == "SERPER_SEARCH_API_KEY" else "",
+    )
+    responses.add(responses.POST, SERPER_ENDPOINT, json={"organic": []}, status=200)
+
+    results, errors = run_discovery_queries(["research summer school"])
+
+    assert results == []
+    assert errors == []
+
+
+@responses.activate
 def test_discovery_reports_failed_queries(monkeypatch) -> None:
     monkeypatch.setattr("research_school_radar.search._api_key", lambda name: "test-key")
     responses.add(responses.POST, SERPER_ENDPOINT, status=429)

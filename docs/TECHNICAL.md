@@ -731,7 +731,8 @@ links already present on official pages.
 
 The GitHub Actions manual `ai` mode exposes a `discovery` checkbox. It defaults
 to enabled and reads `SERPER_API_KEY` from repository secrets; scheduled cloud
-runs remain snapshot-only status refreshes.
+runs remain snapshot-only status refreshes. The workflow also accepts the
+compatibility secret name `SERPER_SEARCH_API_KEY`.
 
 For production evaluation, select manual `audit` mode. It executes the same
 bounded AI scan and validation gates, writes `audit/search-audit.json` and
