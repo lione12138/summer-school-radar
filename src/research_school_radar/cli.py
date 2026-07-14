@@ -19,6 +19,7 @@ from .ai_pipeline import (
 from .api_sources import CollectorOutcome, collect_api_candidates
 from .candidate_io import candidate_from_mapping, coerce_date
 from .collect import DEFAULT_MAX_WORKERS, collect_sources, fetch_source
+from .discovery_filter import filter_discovery_results
 from .extract import extract_candidate, sample_candidate
 from .filter import apply_hard_filters
 from .http_cache import HttpCache
@@ -133,6 +134,8 @@ def run_scan(
         "queries": 0,
         "results": 0,
         "unique_results": 0,
+        "results_accepted": 0,
+        "results_rejected": 0,
         "pages_fetched": 0,
         "candidates_extracted": 0,
         "candidates_ranked": 0,
@@ -205,6 +208,16 @@ def run_scan(
             discovery_stats["queries"] = len(queries)
             discovery_stats["results"] = len(search_results)
             discovery_stats["unique_results"] = len({result.url for result in search_results if result.url})
+            filtered_discovery = filter_discovery_results(search_results)
+            search_results = filtered_discovery.accepted
+            discovery_stats["results_accepted"] = len(search_results)
+            discovery_stats["results_rejected"] = sum(filtered_discovery.rejected.values())
+            discovery_stats.update(
+                {
+                    f"rejected_{reason}": count
+                    for reason, count in filtered_discovery.rejected.items()
+                }
+            )
             errors.extend(search_errors)
             discovery_sources = [
                 Source(

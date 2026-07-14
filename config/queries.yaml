@@ -1,5 +1,6 @@
 # Broad discovery queries are sent to Serper only when --include-discovery is
-# explicitly enabled. Results remain labelled as discovery sources.
+# explicitly enabled in a non-publishing audit. Results must pass deterministic
+# pre-fetch quality gates and remain labelled as discovery sources.
 queries:
   topic:
     - '"summer school" hydrology scholarship application open'

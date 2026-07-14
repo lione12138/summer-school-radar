@@ -560,9 +560,9 @@ the bounded scan, validates it with `ai_output_validation.py` and
 `snapshot_validation.py`, persists the
 accepted snapshots, and publishes through the same single-writer job. An
 optional `BRAVE_SEARCH_API_KEY` enables controlled same-domain refinement,
-`SERPER_API_KEY` enables explicitly requested broad discovery, and an optional
-`HF_TOKEN` raises Hugging Face download limits. Secret values are never written
-to generated output or commits.
+`SERPER_API_KEY` enables explicitly requested broad discovery only in manual
+non-publishing audits, and an optional `HF_TOKEN` raises Hugging Face download
+limits. Secret values are never written to generated output or commits.
 
 ## Public Website
 
@@ -705,9 +705,11 @@ When analytics is disabled, no tracking script is injected. When enabled, the da
 
 The default scan does not scrape Google or other search-result pages. Broad
 discovery is optional and uses Serper only when `--include-discovery` is passed.
-Results remain labelled as discovery sources and still pass normal extraction
-and hard filters. Serper discovery is separate from Brave's same-domain field
-refinement in the AI follow-up stage.
+Before fetching, results from social/aggregator domains, excluded programme
+types, explicit past years, missing programme signals, or missing official
+signals are rejected. Accepted results remain labelled as discovery sources
+and still pass normal extraction and hard filters. Serper discovery is separate
+from Brave's same-domain field refinement in the AI follow-up stage.
 
 ```powershell
 $env:SERPER_API_KEY = "..."
@@ -729,10 +731,16 @@ python -m research_school_radar.cli scan --enable-semantic --enable-llm-extracti
 Without either key, the project still runs normally using fixed sources and
 links already present on official pages.
 
-The GitHub Actions manual `ai` mode exposes a `discovery` checkbox. It defaults
-to enabled and reads `SERPER_API_KEY` from repository secrets; scheduled cloud
-runs remain snapshot-only status refreshes. The workflow also accepts the
-compatibility secret name `SERPER_SEARCH_API_KEY`.
+The GitHub Actions `discovery` checkbox applies only to manual `audit` mode and
+reads `SERPER_API_KEY` from repository secrets. Publishing `ai` runs, scheduled
+cloud refreshes, and local scheduled scans never enable Serper. The workflow
+also accepts the compatibility secret name `SERPER_SEARCH_API_KEY`.
+
+Semantic ranking may retain up to 150 pages for evidence analysis. Before the
+DeepSeek request, a second deterministic gate rejects listing/generic pages,
+pages with only explicit past years, already-past candidates, weak programme
+signals, and weak detail signals. DeepSeek receives at most 80 surviving pages.
+The filter counts are written to `ai_extractions.json` and the audit report.
 
 For production evaluation, select manual `audit` mode. It executes the same
 bounded AI scan and validation gates, writes `audit/search-audit.json` and

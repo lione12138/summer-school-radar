@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+from .ai_page_filter import filter_llm_pages
 from .ai_cache import (
     AICache,
     semantic_cache_key,
@@ -224,7 +225,7 @@ _LLM_DEFAULTS = {
     "api_key": "",
     "temperature": 0,
     "timeout_seconds": 90,
-    "max_pages_for_llm": 150,
+    "max_pages_for_llm": 80,
     "max_chunks_per_page": 3,
     "max_chars_per_chunk": 2200,
     "max_total_chars_per_request": 7000,
@@ -270,8 +271,10 @@ def _write_llm_outputs(
     config = _load_llm_config(ai_config)
     client_config = _client_config(config)
     client = create_llm_client(client_config)
+    page_filter = filter_llm_pages(chunks, candidates)
+    llm_chunks = page_filter.chunks
     items = run_llm_extraction(
-        chunks,
+        llm_chunks,
         candidates=candidates,
         client=client,
         max_pages_for_llm=int(config["max_pages_for_llm"]),
@@ -327,7 +330,7 @@ def _write_llm_outputs(
             try:
                 follow_up_semantic_chunks = _rank_semantic_pages(semantic_config, collection.pages, cache=cache)
                 merged_chunks = build_follow_up_chunks(
-                    chunks,
+                    llm_chunks,
                     follow_up_semantic_chunks,
                     collection,
                     max_followup_chunks_per_opportunity=follow_up_config.max_followup_chunks_per_opportunity,
@@ -372,7 +375,13 @@ def _write_llm_outputs(
         reports_dir=reports_dir,
         config=client_config,
         metadata=_with_cache_metadata(
-            _llm_metadata(config, chunk_count=len(chunks), follow_up=follow_up_metadata), cache
+            _llm_metadata(
+                config,
+                chunk_count=len(llm_chunks),
+                follow_up=follow_up_metadata,
+                page_prefilter=page_filter.stats,
+            ),
+            cache,
         ),
         warnings=warnings,
     )
@@ -514,7 +523,11 @@ def _client_config(config: dict[str, Any]) -> LLMClientConfig:
 
 
 def _llm_metadata(
-    config: dict[str, Any], *, chunk_count: int, follow_up: dict[str, Any] | None = None
+    config: dict[str, Any],
+    *,
+    chunk_count: int,
+    follow_up: dict[str, Any] | None = None,
+    page_prefilter: dict[str, object] | None = None,
 ) -> dict[str, Any]:
     metadata = {
         "temperature": float(config["temperature"]),
@@ -527,6 +540,8 @@ def _llm_metadata(
     }
     if follow_up is not None:
         metadata["follow_up"] = follow_up
+    if page_prefilter is not None:
+        metadata["page_prefilter"] = page_prefilter
     return metadata
 
 

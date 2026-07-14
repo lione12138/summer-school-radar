@@ -52,6 +52,7 @@ def test_build_audit_report_summarizes_search_and_ai_outputs(tmp_path) -> None:
             "model": "deepseek-v4-flash",
             "warnings": [],
             "metadata": {
+                "page_prefilter": {"pages_before": 3, "pages_after": 1, "pages_rejected": 2},
                 "follow_up": {
                     "enabled": True,
                     "search_provider": "brave",
@@ -91,6 +92,7 @@ def test_build_audit_report_summarizes_search_and_ai_outputs(tmp_path) -> None:
     assert report["deepseek"]["critical_field_completion"]["application_deadline"] == 1
     assert report["deepseek"]["critical_field_completion"]["fee"] == 0
     assert report["deepseek"]["validation_warnings"] == {"uncertain_location": 1}
+    assert report["deepseek"]["page_prefilter"]["pages_rejected"] == 2
     assert report["refinement"]["queries"] == 2
     assert report["refinement"]["fields_gained"] == 1
     assert report["refinement"]["field_gains"]["application_deadline"] == 1

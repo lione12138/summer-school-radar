@@ -21,7 +21,7 @@ llm:
   api_key: ""
   temperature: 0
   timeout_seconds: 90
-  max_pages_for_llm: 150
+  max_pages_for_llm: 80
   max_chunks_per_page: 3
   max_chars_per_chunk: 2200
   max_total_chars_per_request: 7000

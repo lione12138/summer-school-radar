@@ -68,6 +68,7 @@ def build_audit_report(site_dir: Path, *, previous_json: Path | None = None) -> 
         manifest.get("source_coverage", {}) if isinstance(manifest.get("source_coverage"), dict) else {}
     )
     follow_up = _nested_mapping(extractions, "metadata", "follow_up")
+    page_prefilter = _nested_mapping(extractions, "metadata", "page_prefilter")
     field_gains = _follow_up_field_gains(ai_items)
     retention_ratio = (
         round(len(scanner_items) / len(previous_scanner), 4) if previous_scanner else None
@@ -116,6 +117,7 @@ def build_audit_report(site_dir: Path, *, previous_json: Path | None = None) -> 
             "validation_warnings": dict(sorted(validation_warnings.items())),
             "confidence": dict(sorted(confidence.items())),
             "critical_field_completion": field_completion,
+            "page_prefilter": page_prefilter,
         },
         "refinement": {
             "provider": follow_up.get("search_provider", "brave"),
@@ -176,11 +178,13 @@ def render_markdown(report: Mapping[str, Any]) -> str:
         f"| Sources | Success | {coverage.get('succeeded', 0)}/{coverage.get('attempted', 0)} |",
         f"| Serper | Queries | {discovery.get('queries', 0)} |",
         f"| Serper | Results / unique | {discovery.get('results', 0)} / {discovery.get('unique_results', 0)} |",
+        f"| Serper | Accepted / rejected before fetch | {discovery.get('results_accepted', 0)} / {discovery.get('results_rejected', 0)} |",
         f"| Serper | Pages fetched | {discovery.get('pages_fetched', 0)} |",
         f"| Serper | Extracted / qualified | {discovery.get('candidates_extracted', 0)} / {discovery.get('candidates_fully_qualified', 0)} |",
         f"| Candidates | Scanner / previous | {candidates.get('scanner', 0)} / {candidates.get('previous_scanner', 0)} |",
         f"| Semantic | Pages / chunks | {semantic.get('pages', 0)} / {semantic.get('chunks', 0)} |",
         f"| DeepSeek | Items | {deepseek.get('items', 0)} |",
+        f"| DeepSeek | Pages before / after prefilter | {_mapping(deepseek.get('page_prefilter')).get('pages_before', 0)} / {_mapping(deepseek.get('page_prefilter')).get('pages_after', 0)} |",
         f"| Brave | Queries / pages | {refinement.get('queries', 0)} / {refinement.get('pages_fetched', 0)} |",
         f"| Brave | Reprocessed opportunities | {refinement.get('opportunities_reprocessed', 0)} |",
         f"| Brave | Previously missing fields resolved | {refinement.get('fields_gained', 0)} |",
@@ -190,6 +194,24 @@ def render_markdown(report: Mapping[str, Any]) -> str:
         "",
     ]
     lines.extend(f"- {key}: {'PASS' if value else 'FAIL'}" for key, value in signals.items())
+    lines.extend(["", "## Serper Prefilter Rejections", ""])
+    discovery_rejections = {
+        key.removeprefix("rejected_"): value
+        for key, value in discovery.items()
+        if key.startswith("rejected_")
+    }
+    lines.extend(
+        (f"- {key}: {value}" for key, value in discovery_rejections.items())
+        if discovery_rejections
+        else ["- None"]
+    )
+    lines.extend(["", "## DeepSeek Page Prefilter Rejections", ""])
+    page_rejections = _mapping(_mapping(deepseek.get("page_prefilter")).get("rejected"))
+    lines.extend(
+        (f"- {key}: {value}" for key, value in page_rejections.items())
+        if page_rejections
+        else ["- None"]
+    )
     lines.extend(["", "## DeepSeek Critical Field Completion", "", "| Field | Resolved |", "|---|---:|"])
     for field, count in _mapping(deepseek.get("critical_field_completion")).items():
         lines.append(f"| {field} | {count} |")

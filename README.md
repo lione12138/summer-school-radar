@@ -301,9 +301,12 @@ pages per scan. Configure these under `follow_up` in `config/ai.yaml`.
 Broad cross-site discovery is a separate opt-in stage. When
 `SERPER_API_KEY` is configured and `--include-discovery` is passed, the
 controlled queries in `config/queries.yaml` run through Serper. Those results
-remain labelled as discovery sources; Serper is not used by the normal trusted-
-source scan, and Brave remains responsible only for precise same-domain
-follow-up.
+first pass deterministic social-domain, aggregator, programme-type, date, and
+official-signal filters before any result page is fetched. Accepted results
+remain labelled as discovery sources. Project automation does not use Serper
+in normal or publishing runs; the GitHub workflow permits it only in
+non-publishing manual `audit` mode. Brave remains responsible for precise
+same-domain follow-up.
 
 The follow-up prompt distinguishes application/registration deadlines from
 payment, accommodation, scholarship, travel-grant, and abstract deadlines. It
@@ -313,11 +316,11 @@ date/fee support, past dates, closed wording, and non-application deadline
 risk. This is still evidence validation, not a guarantee of factual truth;
 human confirmation remains required before public promotion.
 
-The current exploratory advisory settings allow up to 150 semantic pages and up
-to 150 LLM pages. This is a cap, not a guaranteed call count; most runs process
-fewer pages because collection, semantic similarity, and per-source limits
-narrow the pool first. After observing real scheduled-run sizes, lower these caps
-to the smallest values that still preserve useful recall.
+The current advisory settings allow up to 150 semantic pages, then reject
+listing/generic pages, explicit past years, past candidates, and weak programme
+or detail signals before DeepSeek. At most 80 surviving pages enter DeepSeek.
+These are caps, not guaranteed call counts; collection, semantic similarity,
+page-quality gates, and per-source limits normally narrow the pool first.
 
 LLM sidecar output goes to `site/ai_extractions.json` and
 `reports/YYYY-MM-DD.ai.json`. LLM extraction is cached under
@@ -456,9 +459,9 @@ single-writer job. `BRAVE_SEARCH_API_KEY` and `HF_TOKEN` remain optional.
 `SERPER_API_KEY` is separately optional and is used only by explicitly enabled
 broad discovery; it is not part of the normal trusted-source scan.
 `SERPER_SEARCH_API_KEY` is accepted as a compatibility alias.
-When manually dispatching the GitHub workflow with `mode=ai`, the `discovery`
-input is enabled by default and may be turned off for a fixed-source-only run.
-Use `mode=audit` first when evaluating search or prompt changes. It runs the
+The `discovery` input is honored only when manually dispatching `mode=audit`;
+publishing `mode=ai` always remains fixed-source plus Brave refinement. Use
+`mode=audit` first when evaluating search or prompt changes. It runs the
 same source, Serper, Brave, semantic, DeepSeek, translation, and validation
 stages, but never commits snapshots or publishes Pages. The workflow uploads a
 14-day `summa-search-audit-*` artifact containing aggregate JSON/Markdown

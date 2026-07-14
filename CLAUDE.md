@@ -69,6 +69,7 @@ AI branch constraints:
 - `src/research_school_radar/ai_pipeline.py` — semantic/DeepSeek configuration and advisory-output orchestration, separated from the CLI entry point.
 - `src/research_school_radar/audit_report.py` — non-publishing search/AI audit summaries for safe production evaluation.
 - `src/research_school_radar/search.py` — Serper broad discovery and Brave same-domain refinement; neither provider may bypass evidence validation or hard filters.
+- `src/research_school_radar/discovery_filter.py` / `ai_page_filter.py` — deterministic quality gates before discovery fetches and DeepSeek requests.
 - `src/research_school_radar/parse.py` — candidate-link discovery.
 - `src/research_school_radar/extract.py` — rule-based field extraction.
 - `src/research_school_radar/filter.py` — hard conditions and near-match classification.

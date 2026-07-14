@@ -13,7 +13,7 @@ on:
           - audit
           - ai
       discovery:
-        description: Use Serper broad discovery during a manual AI scan
+        description: Use Serper broad discovery during a non-publishing audit
         required: true
         default: true
         type: boolean
@@ -73,7 +73,7 @@ jobs:
           if [ "$mode" = "ai" ] || [ "$mode" = "audit" ]; then
             scan=true
           fi
-          if [ "$scan" = "true" ] && [ "${{ inputs.discovery }}" = "true" ]; then
+          if [ "$mode" = "audit" ] && [ "${{ inputs.discovery }}" = "true" ]; then
             discovery=true
           fi
 
