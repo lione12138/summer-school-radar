@@ -184,7 +184,7 @@ _HOME_HERO_CSS = """
       font-size: 13px;
       padding-bottom: 8px;
     }
-+"""
+"""
 
 
 _HOME_SECTION_CSS = """
@@ -261,4 +261,4 @@ _HOME_SECTION_CSS = """
       .steps { grid-template-columns: 1fr 1fr; }
       table { font-size: 13px; }
     }
-+"""
+"""

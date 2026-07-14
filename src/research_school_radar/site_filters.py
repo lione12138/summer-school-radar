@@ -34,7 +34,7 @@ def render_filters(candidates: list[Candidate], curated: list[dict[str, Any]] | 
       <div class="filter-group">
         <label for="filter-status" data-i18n="filter.status">Status</label>
         <select id="filter-status">
-          <option value="" data-i18n="filter.all">All</option>
+          <option value="" data-i18n="filter.all.status">All statuses</option>
           <option value="qualified" data-i18n="filter.status.qualified">Fully qualified</option>
           <option value="high-quality" data-i18n="filter.status.high">High quality</option>
           <option value="found" data-i18n="filter.status.found">Found</option>
@@ -44,14 +44,14 @@ def render_filters(candidates: list[Candidate], curated: list[dict[str, Any]] | 
       <div class="filter-group">
         <label for="filter-topic" data-i18n="filter.topic">Topic</label>
         <select id="filter-topic">
-          <option value="" data-i18n="filter.all">All</option>
+          <option value="" data-i18n="filter.all.topic">All topics</option>
           {topic_options}
         </select>
       </div>
       <div class="filter-group">
         <label for="filter-funding" data-i18n="filter.funding">Financial Access</label>
         <select id="filter-funding">
-          <option value="" data-i18n="filter.all">All</option>
+          <option value="" data-i18n="filter.all.funding">All funding</option>
           <option value="funded" data-i18n="filter.funding.explicit">Explicit funding</option>
           <option value="low-fee" data-i18n="filter.funding.low">Low / no fee</option>
           <option value="unresolved" data-i18n="filter.funding.unresolved">Unresolved / high fee</option>
@@ -60,7 +60,7 @@ def render_filters(candidates: list[Candidate], curated: list[dict[str, Any]] | 
       <div class="filter-group">
         <label for="filter-deadline" data-i18n="filter.deadline">Deadline</label>
         <select id="filter-deadline">
-          <option value="" data-i18n="filter.all">All</option>
+          <option value="" data-i18n="filter.all.deadline">All deadlines</option>
           <option value="open" data-i18n="filter.deadline.open">Open</option>
           <option value="uncertain" data-i18n="filter.deadline.uncertain">Uncertain</option>
           <option value="closed" data-i18n="filter.deadline.closed">Closed</option>
@@ -69,7 +69,7 @@ def render_filters(candidates: list[Candidate], curated: list[dict[str, Any]] | 
       <div class="filter-group">
         <label for="filter-new" data-i18n="filter.fresh">Freshness</label>
         <select id="filter-new">
-          <option value="" data-i18n="filter.all">All</option>
+          <option value="" data-i18n="filter.all.fresh">Any time</option>
           <option value="true" data-i18n="filter.new.today">New today</option>
         </select>
       </div>

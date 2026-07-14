@@ -152,6 +152,8 @@ _DISCOVER_CSS = """
       display: block; max-width: 900px; margin-top: 14px; padding: 9px 12px;
       font-size: 12px; line-height: 1.5; opacity: .88;
     }
+    .hero-disclaimer summary { cursor: pointer; font-weight: 700; list-style-position: inside; }
+    .hero-disclaimer p { margin: 8px 0 0; color: inherit; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
     .button {
       display: inline-flex; min-height: 44px; align-items: center; justify-content: center;
@@ -162,7 +164,6 @@ _DISCOVER_CSS = """
     .button.primary:hover { background: var(--accent-ink); color: #fff; }
     .button.tonal { background: var(--accent-soft); color: var(--accent-ink); }
     .button.tonal:hover { border-color: var(--accent); color: var(--accent-ink); }
-    .hero-scan-meta { margin-top: 16px; color: rgba(243,249,252,.72); font-size: 12px; }
     .stats { margin-top: 24px; }
     .stat { min-height: 96px; padding: 18px 20px; }
     .stat:nth-child(-n+2) { background: var(--good-soft); }
@@ -242,11 +243,16 @@ _DISCOVER_CSS = """
       header.hero { padding: 24px 0 26px; }
       header.hero h1 { font-size: 28px; line-height: 1.3; }
       header.hero .subtitle { font-size: 14px; line-height: 1.6; }
-      .hero-actions { display: none; }
-      .hero-scan-meta { margin-top: 10px; }
+      .hero-disclaimer { margin-top: 12px; padding: 8px 10px; }
+      .hero-disclaimer p { font-size: 12px; }
+      .hero-actions { display: flex; margin-top: 14px; }
+      .hero-actions .button { min-height: 40px; padding: 8px 13px; }
+      .hero-actions .button.tonal { display: none; }
       .stats { grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
-      .stat { min-height: 88px; padding: 14px 16px; }
+      .stat { min-height: 68px; padding: 10px 14px; }
+      .stat .num { font-size: 22px; }
       .stat:nth-child(n+3) { display: none; }
+      .status:not(.empty) { display: none; }
       .opportunity-list-head { margin-top: 20px; }
       .opportunity-list-head h2 { font-size: 22px; }
       .filters { grid-template-columns: 1fr 1fr; gap: 8px; }
@@ -254,8 +260,12 @@ _DISCOVER_CSS = """
       .filters .filter-group:nth-child(n+4) { display: none; }
       table.opportunity-table tr {
         grid-template-columns: auto minmax(0, 1fr);
-        grid-template-areas: "status title" "organizer organizer" "location location" "duration duration" "deadline deadline" "funding funding" "actions actions";
-        row-gap: 7px; padding: 16px;
+        grid-template-areas: "status title" "organizer location" "duration duration" "deadline deadline" "funding funding" "actions actions";
+        row-gap: 5px; padding: 14px;
+      }
+      .qualified-table td:nth-child(2), .standard-table td:nth-child(1), .curated-table td:nth-child(1) { font-size: 18px; }
+      .qualified-table td:nth-child(4), .standard-table td:nth-child(3), .curated-table td:nth-child(3) {
+        overflow: hidden; text-align: right; text-overflow: ellipsis; white-space: nowrap;
       }
       .qualified-table td:nth-child(8), .standard-table td:nth-child(7), .curated-table td:nth-child(7) { display: none; }
       .card-actions { flex-direction: row; justify-content: flex-start; padding-top: 3px !important; }

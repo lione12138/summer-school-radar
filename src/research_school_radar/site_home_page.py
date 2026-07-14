@@ -239,12 +239,14 @@ def render_site(
       <p class="kicker" data-i18n="hero.kicker">Updated daily &middot; Free &amp; open source</p>
       <h1 data-i18n="hero.title">Find research training worth applying for</h1>
       <p class="subtitle" data-i18n="hero.subtitle">Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.</p>
-      <p class="hero-disclaimer" data-i18n="hero.disclaimer">Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.</p>
+      <details class="hero-disclaimer">
+        <summary data-i18n="hero.disclaimer.summary">Before applying: verify the official page</summary>
+        <p data-i18n="hero.disclaimer">Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.</p>
+      </details>
       <div class="hero-actions">
         <a class="button primary" href="#opportunities" data-i18n="cta.explore">Explore opportunities</a>
         <a class="button tonal" href="#how" data-i18n="cta.qualification">How qualification works</a>
       </div>
-      <div class="hero-scan-meta">{_bilingual(f"{len(full)} fully qualified · {len(near)} high quality · {tracked_sources}+ trusted sources", f"{len(full)} 个完全符合 · {len(near)} 个高质量 · {tracked_sources}+ 个可信来源")}</div>
     </div>
   </header>
   <main class="wrap">

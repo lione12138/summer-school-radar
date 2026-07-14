@@ -278,9 +278,24 @@ def test_site_hero_disclaimer_is_rendered(tmp_path) -> None:
     html = (tmp_path / "index.html").read_text(encoding="utf-8")
     hero = html.split("</header>", 1)[0]
     assert 'class="hero-disclaimer"' in hero
+    assert "<details" in hero
+    assert 'data-i18n="hero.disclaimer.summary"' in hero
     assert "Use this as a starting point, not the only source" in hero
     assert "请把这里当作基础信息入口" in html
     assert "祝大家都能录到心仪的项目" in html
+
+
+def test_filter_defaults_describe_each_dimension(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    write_site(rank_candidates([candidate]), [], tmp_path)
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+
+    assert 'data-i18n="filter.all.status">All statuses</option>' in html
+    assert 'data-i18n="filter.all.topic">All topics</option>' in html
+    assert 'data-i18n="filter.all.funding">All funding</option>' in html
+    assert 'data-i18n="filter.all.deadline">All deadlines</option>' in html
+    assert 'data-i18n="filter.all.fresh">Any time</option>' in html
+    assert '"filter.all.status": {en:"All statuses", zh:"所有状态"}' in html
 
 
 def test_site_renders_curated_found_opportunities_and_review_queue_json(tmp_path) -> None:
