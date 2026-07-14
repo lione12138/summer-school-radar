@@ -240,9 +240,6 @@ jobs:
             site/semantic_chunks.json
             site/ai_extractions.json
             site/translation-status.json
-            reports/*.md
-            reports/*.semantic.json
-            reports/*.ai.json
 
       - name: Check out current Pages branch
         if: steps.build.outputs.can_build == 'true' && steps.build.outputs.mode != 'audit'

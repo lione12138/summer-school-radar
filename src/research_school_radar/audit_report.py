@@ -68,6 +68,7 @@ def build_audit_report(site_dir: Path, *, previous_json: Path | None = None) -> 
         manifest.get("source_coverage", {}) if isinstance(manifest.get("source_coverage"), dict) else {}
     )
     follow_up = _nested_mapping(extractions, "metadata", "follow_up")
+    field_gains = _follow_up_field_gains(ai_items)
     retention_ratio = (
         round(len(scanner_items) / len(previous_scanner), 4) if previous_scanner else None
     )
@@ -123,6 +124,8 @@ def build_audit_report(site_dir: Path, *, previous_json: Path | None = None) -> 
             "pages_fetched": int(follow_up.get("pages_fetched") or 0),
             "opportunities_considered": int(follow_up.get("opportunities_considered") or 0),
             "opportunities_reprocessed": int(follow_up.get("opportunities_reprocessed") or 0),
+            "fields_gained": sum(field_gains.values()),
+            "field_gains": field_gains,
         },
         "translation": {
             "enabled": bool(translation.get("enabled")),
@@ -180,6 +183,7 @@ def render_markdown(report: Mapping[str, Any]) -> str:
         f"| DeepSeek | Items | {deepseek.get('items', 0)} |",
         f"| Brave | Queries / pages | {refinement.get('queries', 0)} / {refinement.get('pages_fetched', 0)} |",
         f"| Brave | Reprocessed opportunities | {refinement.get('opportunities_reprocessed', 0)} |",
+        f"| Brave | Previously missing fields resolved | {refinement.get('fields_gained', 0)} |",
         f"| Translation | New / cache hits / warnings | {translation.get('translated', 0)} / {translation.get('cache_hits', 0)} / {translation.get('warnings', 0)} |",
         "",
         "## Review Signals",
@@ -188,6 +192,9 @@ def render_markdown(report: Mapping[str, Any]) -> str:
     lines.extend(f"- {key}: {'PASS' if value else 'FAIL'}" for key, value in signals.items())
     lines.extend(["", "## DeepSeek Critical Field Completion", "", "| Field | Resolved |", "|---|---:|"])
     for field, count in _mapping(deepseek.get("critical_field_completion")).items():
+        lines.append(f"| {field} | {count} |")
+    lines.extend(["", "## Brave Field Gains", "", "| Field | Newly resolved |", "|---|---:|"])
+    for field, count in _mapping(refinement.get("field_gains")).items():
         lines.append(f"| {field} | {count} |")
     lines.extend(["", "## Validation Warnings", ""])
     warnings = _mapping(deepseek.get("validation_warnings"))
@@ -254,3 +261,21 @@ def _known_field(value: Any) -> bool:
     if isinstance(value, (list, dict)):
         return bool(value)
     return str(value).strip().lower() not in UNKNOWN_VALUES
+
+
+def _follow_up_field_gains(items: list[dict[str, Any]]) -> dict[str, int]:
+    gains = {field: 0 for field in CRITICAL_FIELDS}
+    for item in items:
+        follow_up = _mapping(item.get("follow_up"))
+        if not follow_up.get("re_extracted"):
+            continue
+        missing_before = {str(value) for value in _as_list(follow_up.get("missing_fields_before"))}
+        extraction = _extraction(item)
+        for field in CRITICAL_FIELDS:
+            if field in missing_before and _known_field(extraction.get(field)):
+                gains[field] += 1
+    return gains
+
+
+if __name__ == "__main__":
+    main()

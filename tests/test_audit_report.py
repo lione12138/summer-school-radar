@@ -65,6 +65,10 @@ def test_build_audit_report_summarizes_search_and_ai_outputs(tmp_path) -> None:
                 {
                     "validated_confidence": "high",
                     "validation_warnings": ["uncertain_location"],
+                    "follow_up": {
+                        "missing_fields_before": ["application_deadline", "fee"],
+                        "re_extracted": True,
+                    },
                     "llm_extraction": {
                         "application_deadline": {"value": "2026-08-01"},
                         "fee": {"value": "unknown"},
@@ -88,6 +92,8 @@ def test_build_audit_report_summarizes_search_and_ai_outputs(tmp_path) -> None:
     assert report["deepseek"]["critical_field_completion"]["fee"] == 0
     assert report["deepseek"]["validation_warnings"] == {"uncertain_location": 1}
     assert report["refinement"]["queries"] == 2
+    assert report["refinement"]["fields_gained"] == 1
+    assert report["refinement"]["field_gains"]["application_deadline"] == 1
     assert all(report["review_signals"].values())
     assert "Serper" in render_markdown(report)
 
