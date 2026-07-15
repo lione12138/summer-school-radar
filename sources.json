@@ -271,6 +271,127 @@
     "notes_zh": "\u4ea5\u59c6\u970d\u5179\u4fe1\u606f\u4e0e\u6570\u636e\u79d1\u5b66\u5b66\u9662\u6d3b\u52a8\uff0c\u5305\u62ec\u73af\u5883\u6570\u636e\u79d1\u5b66\u5b66\u6821\u3002"
   },
   {
+    "name": "GESIS Summer School",
+    "url": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "research_training_provider",
+    "keywords": [
+      "data analysis",
+      "survey methodology",
+      "causal inference",
+      "statistics",
+      "data science"
+    ],
+    "notes": "Official recurring survey methodology and data-analysis summer school; the scanner follows its current course catalogue."
+  },
+  {
+    "name": "Data Science Africa Summer Schools",
+    "url": "https://datascienceafrica.org/summer-schools",
+    "layer": 1,
+    "region": "global",
+    "source_type": "research_network",
+    "keywords": [
+      "data science",
+      "data analysis",
+      "machine learning",
+      "artificial intelligence",
+      "Africa"
+    ],
+    "notes": "Official annual Data Science Africa summer-school archive and current programme listing."
+  },
+  {
+    "name": "CERN School of Computing",
+    "url": "https://csc.web.cern.ch/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "research_training_provider",
+    "keywords": [
+      "scientific computing",
+      "data technologies",
+      "software engineering",
+      "machine learning",
+      "security"
+    ],
+    "notes": "Official recurring main and thematic schools for scientific computing and data-intensive research."
+  },
+  {
+    "name": "EMBL-EBI Training",
+    "url": "https://www.ebi.ac.uk/about/events/",
+    "layer": 1,
+    "region": "United Kingdom",
+    "source_type": "research_training_provider",
+    "keywords": [
+      "bioinformatics",
+      "data science",
+      "omics",
+      "data integration",
+      "data analysis"
+    ],
+    "notes": "Official EMBL-EBI catalogue of researcher-facing bioinformatics and biological data courses."
+  },
+  {
+    "name": "SIB Training",
+    "url": "https://www.sib.swiss/training/upcoming-training-courses",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "research_training_provider",
+    "collector": "sib_training",
+    "keywords": [
+      "bioinformatics",
+      "statistics",
+      "programming",
+      "data management",
+      "omics data analysis"
+    ],
+    "notes": "Official SIB Bioschemas catalogue parsed directly from embedded Course and CourseInstance records."
+  },
+  {
+    "name": "ESS Data and Computing Schools",
+    "url": "https://ess.eu/events",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "research_infrastructure",
+    "keywords": [
+      "scientific data",
+      "data reduction",
+      "data analysis",
+      "FAIR data",
+      "scientific computing"
+    ],
+    "notes": "European Spallation Source events, including its Data Management and Scientific Computing summer school."
+  },
+  {
+    "name": "Data Science and AI Summer School",
+    "url": "https://datascience.ase.ro/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "research_training_provider",
+    "keywords": [
+      "data science",
+      "statistics",
+      "machine learning",
+      "data processing",
+      "artificial intelligence"
+    ],
+    "notes": "Recurring research-oriented Data Science and AI Summer School organised by Bucharest University of Economic Studies and partners."
+  },
+  {
+    "name": "CODATA-RDA Data Schools",
+    "url": "https://codata.org/initiatives/data-skills/research-data-science-summer-schools/",
+    "layer": 1,
+    "region": "global",
+    "source_type": "research_network",
+    "keywords": [
+      "research data science",
+      "data management",
+      "open science",
+      "statistics",
+      "visualisation"
+    ],
+    "notes": "Official CODATA-RDA research data science school series and links to upcoming editions."
+  },
+  {
     "name": "IEEE RAS Technical Education Programs",
     "url": "https://www.ieee-ras.org/educational-resources-outreach/technical-education-programs/",
     "layer": 1,
