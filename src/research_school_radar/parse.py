@@ -24,6 +24,9 @@ OPPORTUNITY_TERMS = [
     "research school",
     "short course",
     "advanced course",
+    "practical course",
+    "school of computing",
+    "thematic school",
 ]
 
 APPLICATION_TERMS = [
@@ -116,11 +119,39 @@ def candidate_links(page: Page, limit: int = 25, blocked_domains: list[str] | No
         lowered = f"{label} {href}".lower()
         score = sum(2 for term in OPPORTUNITY_TERMS if term in lowered)
         score += sum(1 for term in APPLICATION_TERMS if term in lowered)
+        if page.source.source_type == "research_training_provider":
+            score += _training_provider_link_score(page, anchor, label, href)
         if score > 0:
             seen.add(href)
             scored.append((score, href))
     scored.sort(key=lambda item: item[0], reverse=True)
     return [href for _, href in scored[:limit]]
+
+
+def _training_provider_link_score(page: Page, anchor, label: str, href: str) -> int:
+    """Follow controlled course listings without making ``course`` a global
+    opportunity term.
+
+    Official training providers frequently title cards with only the subject
+    (for example "Structural bioinformatics") and put "Course" in the card
+    metadata.  This source type is an explicit registry opt-in, so inspecting
+    that nearby metadata stays much narrower than broadening every source.
+    """
+    label_lower = label.casefold()
+    if label_lower in {"courses", "course listing", "programme", "program"} and has_programme_signal(page.text):
+        return 4
+    if re.search(r"\b20\d{2}\b", label) and has_programme_signal(page.text):
+        return 3
+    card = anchor.find_parent(["article", "li"])
+    card_text = clean_space(card.get_text(" ")) if card is not None else ""
+    if re.search(r"\bcourse\b", card_text, flags=re.IGNORECASE):
+        return 4
+    # Some compact listings expose only event links in the initial HTML. The
+    # detail-page extractor still requires an explicit course overview, so
+    # conference pages reached here are deterministically discarded.
+    if "/events/" in href.lower():
+        return 1
+    return 0
 
 
 def _is_fetchable_page(url: str, blocked_domains: list[str]) -> bool:

@@ -176,7 +176,11 @@ def test_dedicated_collectors_use_the_same_enabled_source_registry() -> None:
     sources = _load_sources(Path("config/sources.yaml"))
     collectors = {source.name: source.collector for source in sources if source.collector}
 
-    assert collectors == {"ELLIS": "ellis", "IHE Delft": "ihe_delft"}
+    assert collectors == {
+        "ELLIS": "ellis",
+        "IHE Delft": "ihe_delft",
+        "SIB Training": "sib_training",
+    }
 
 
 def test_computing_and_ai_source_expansion_is_enabled() -> None:

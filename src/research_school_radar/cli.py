@@ -169,7 +169,12 @@ def run_scan(
             http_cache=http_cache,
         )
         semantic_pages = unique_pages([*pages, *linked_pages])
-        candidate_pages = [page for page in pages if looks_like_opportunity(page.text)]
+        candidate_pages = [
+            page
+            for page in pages
+            if looks_like_opportunity(page.text)
+            or page.source.source_type == "research_training_provider"
+        ]
         candidate_pages.extend(linked_pages)
         candidates = [candidate for page in candidate_pages if (candidate := extract_candidate(page, profile))]
 

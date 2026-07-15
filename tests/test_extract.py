@@ -613,6 +613,86 @@ def test_candidate_links_skip_blocked_domains() -> None:
     assert candidate_links(page, blocked_domains=["blocked.example.org"]) == []
 
 
+def test_training_provider_course_cards_are_followed_without_global_course_matching() -> None:
+    source = Source(
+        name="Official Training Provider",
+        url="https://provider.example/events/",
+        layer="1",
+        region="continental Europe",
+        source_type="research_training_provider",
+    )
+    page = Page(
+        url=source.url,
+        title="Events",
+        text="Upcoming researcher training",
+        html=(
+            '<article><h3><a href="/events/data-integration-2027/">Data integration</a></h3>'
+            '<span>Course</span><time>14 June 2027</time></article>'
+        ),
+        source=source,
+        fetched_at=date.today(),
+    )
+
+    assert candidate_links(page) == ["https://provider.example/events/data-integration-2027/"]
+
+
+def test_training_provider_course_overview_is_a_narrow_opportunity_signal() -> None:
+    source = Source(
+        name="Official Training Provider",
+        url="https://provider.example/events/data-science-2027/",
+        layer="1",
+        region="continental Europe",
+        source_type="research_training_provider",
+    )
+    page = Page(
+        url=source.url,
+        title="Data science for researchers",
+        text=(
+            "Course overview. How to apply. This onsite course runs 14 - 18 June 2027. "
+            "Travel grants are available to PhD and early-career researchers. "
+            "Topics include data science, statistics and machine learning."
+        ),
+        html="<h1>Data science for researchers</h1>",
+        source=source,
+        fetched_at=date.today(),
+    )
+
+    candidate = extract_candidate(page, PROFILE)
+
+    assert candidate is not None
+    assert candidate.title == "Data science for researchers"
+    assert candidate.duration_days == 5
+    assert candidate.mode == "in-person"
+
+
+def test_opportunity_heading_wins_over_site_brand_heading() -> None:
+    source = Source(
+        name="Computing School",
+        url="https://provider.example/csc-2027/",
+        layer="1",
+        region="continental Europe",
+        source_type="research_training_provider",
+    )
+    page = Page(
+        url=source.url,
+        title="CSC 2027",
+        text=(
+            "The 49th School of Computing will take place in Geneva from 23 August to 5 September 2027. "
+            "Applications are open and financial support may be available for postgraduate researchers. "
+            "Topics include data science, software engineering and machine learning."
+        ),
+        html="<h1>Institute brand</h1><h2>49th School of Computing</h2>",
+        source=source,
+        fetched_at=date.today(),
+    )
+
+    candidate = extract_candidate(page, PROFILE)
+
+    assert candidate is not None
+    assert candidate.title == "49th School of Computing"
+    assert candidate.mode == "in-person"
+
+
 def test_phd_admissions_are_not_opportunities() -> None:
     text = (
         "PhD admissions are open for a full-time doctoral programme. "
@@ -1081,6 +1161,25 @@ def test_generic_sessions_accept_explicit_named_periods_without_numbers() -> Non
     )
 
     assert [item.name for item in sessions] == ["Foundation Week", "Core Session"]
+
+
+def test_named_course_catalogue_rows_become_sessions_and_skip_cancelled_courses() -> None:
+    from research_school_radar.session_extraction import extract_programme_sessions
+
+    sessions = extract_programme_sessions(
+        "Course 1: Factorial Survey Design 27.07.2026 - 31.07.2026 - Lecturer. "
+        "Course 4: Data Science Techniques for Survey Researchers 03.08.2026 - 07.08.2026 - Lecturer. "
+        "Course 6: Advanced Survey Design - CANCELED 03.08.2026 - 07.08.2026 - Lecturer."
+    )
+
+    assert [(item.name, item.start_date, item.end_date) for item in sessions] == [
+        ("Course 1: Factorial Survey Design", date(2026, 7, 27), date(2026, 7, 31)),
+        (
+            "Course 4: Data Science Techniques for Survey Researchers",
+            date(2026, 8, 3),
+            date(2026, 8, 7),
+        ),
+    ]
 
 
 def test_unlabelled_event_calendar_is_not_promoted_to_multi_session_programme() -> None:

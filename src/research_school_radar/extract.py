@@ -131,9 +131,19 @@ def _applications_not_open(text: str) -> bool:
     return any(re.search(pattern, text, flags=re.IGNORECASE) for pattern in _NOT_OPEN_PATTERNS)
 
 
-IN_PERSON_PATTERNS = [r"in[- ]person", r"on[- ]site", r"residential", r"field school", r"venue", r"hosted in"]
+IN_PERSON_PATTERNS = [
+    r"in[- ]person",
+    r"on[- ]?site",
+    r"residential",
+    r"field school",
+    r"venue",
+    r"hosted in",
+    r"will be hosted at",
+    r"will (?:take place|be held) in (?!an? (?:online|virtual))",
+    r"course at (?:EMBL|the European Bioinformatics Institute)",
+]
 def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -> Candidate | None:
-    if not _has_opportunity_signal(page.text):
+    if not _has_opportunity_signal(page.text) and not _has_provider_course_signal(page):
         return None
     if is_excluded_programme(page.text):
         return None
@@ -231,6 +241,8 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     # location) bypasses it, so clean the final value here too.
     raw_location = overrides.get("location") or _extract_location(page.html, text, page.source.region)
     location = sanitize_location(raw_location, fallback=raw_location)
+    if mode == "uncertain" and _is_specific_physical_location(location, page.source.region):
+        mode = "in-person"
     duration_days = (
         max((session.duration_days for session in sessions), default=None)
         if sessions
@@ -328,6 +340,28 @@ def _has_opportunity_signal(text: str) -> bool:
     return has_programme_signal(text)
 
 
+def _has_provider_course_signal(page: Page) -> bool:
+    """A narrow opt-in for official research-training catalogues.
+
+    Generic uses of the word "course" remain rejected everywhere else. Detail
+    pages from a configured provider must identify themselves as a course and
+    expose the normal overview/application structure used by research training.
+    """
+    if page.source.source_type != "research_training_provider":
+        return False
+    lowered = page.text.casefold()
+    return "course overview" in lowered or (
+        re.search(r"\b(?:advanced|practical|intensive)\s+course\b", lowered) is not None
+        and any(term in lowered for term in ("apply", "application", "registration"))
+    )
+
+
+def _is_specific_physical_location(location: str, fallback_region: str) -> bool:
+    value = clean_space(location).casefold()
+    fallback = clean_space(fallback_region).casefold()
+    return bool(value and value not in {fallback, "global", "europe", "continental europe", "uk and nearby"})
+
+
 def _programme_type(text: str) -> str:
     lowered = text.lower()
     for term in OPPORTUNITY_TERMS:
@@ -343,9 +377,13 @@ def _extract_title(page: Page) -> str:
         from bs4 import BeautifulSoup
 
         soup = BeautifulSoup(page.html, "html.parser")
-        heading = soup.find(["h1", "h2"])
-        if heading:
-            raw_candidates.append(clean_space(heading.get_text(" ")))
+        headings = [_heading_title(item) for item in soup.find_all(["h1", "h2"], limit=8)]
+        raw_candidates.extend(
+            sorted(
+                headings,
+                key=lambda value: not any(term in value.casefold() for term in OPPORTUNITY_TERMS),
+            )
+        )
         meta = soup.find("meta", property="og:title")
         if meta and meta.get("content"):
             raw_candidates.append(clean_space(str(meta["content"])))
@@ -378,6 +416,25 @@ def _extract_title(page: Page) -> str:
         ):
             return title
     return ""
+
+
+def _heading_title(element) -> str:
+    """Keep a heading's title while dropping date/location lines below ``br``.
+
+    Event sites often place all three inside one H2. The first line can itself
+    be split by markup such as ``48<sup>th</sup>``, so join lines until the first
+    one containing a full date.
+    """
+    parts = [clean_space(part) for part in element.get_text("\n").splitlines()]
+    title_parts: list[str] = []
+    for part in parts:
+        if not part:
+            continue
+        if re.search(r"\b20\d{2}\b", part) and re.search(r"\b\d{1,2}\b", part):
+            break
+        title_parts.append(part)
+    title = clean_space(" ".join(title_parts)) or clean_space(element.get_text(" "))
+    return re.sub(r"\b(\d+)\s+(st|nd|rd|th)\b", r"\1\2", title, flags=re.IGNORECASE)
 
 
 def _looks_like_url(title: str) -> str | None:

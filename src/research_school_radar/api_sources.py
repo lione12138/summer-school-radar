@@ -26,6 +26,7 @@ from .collector_ellis import (
     _ellis_fee_from_text as _ellis_fee_from_text,
 )
 from .collector_ihe import _IHE_DELFT_URL as _IHE_DELFT_URL, _ihe_delft
+from .collector_sib import _SIB_TRAINING_URL as _SIB_TRAINING_URL, _sib_training
 from .http_cache import HttpCache
 from .models import Candidate
 from .render import render_page_data
@@ -107,4 +108,5 @@ _COLLECTORS: dict[
 ] = {
     "ihe_delft": _ihe_delft,
     "ellis": _ellis,
+    "sib_training": _sib_training,
 }

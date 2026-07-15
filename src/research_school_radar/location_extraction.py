@@ -8,11 +8,14 @@ from .utils import clean_space, first_match, sanitize_location
 def _extract_location(html: str, text: str, fallback_region: str) -> str:
     location = _html_label_value(html, ["Location", "Venue", "Place"])
     if not location:
+        location = _html_heading_location(html)
+    if not location:
         location = first_match(
             text,
             [
                 r"(?:location|venue|place)\s*:\s*([^.;\n]{2,100})",
                 r"hosted in\s+([^.;\n]{2,80})",
+                r"(?:will\s+)?(?:take place|be held)\s+in\s+(.{2,80}?)(?=,?\s+from\b|[.;])",
             ],
         )
     location = _clean_label_value(location)
@@ -20,6 +23,32 @@ def _extract_location(html: str, text: str, fallback_region: str) -> str:
         location = ""
     location = sanitize_location(location, fallback="")
     return _public_region_name(location or fallback_region)
+
+
+def _html_heading_location(html: str) -> str:
+    """Location lines embedded below an event date in the same heading."""
+    if not html:
+        return ""
+    from bs4 import BeautifulSoup
+
+    soup = BeautifulSoup(html, "html.parser")
+    for heading in soup.find_all(["h1", "h2"]):
+        lines = [clean_space(line) for line in heading.get_text("\n").splitlines()]
+        lines = [line for line in lines if line]
+        date_index = next(
+            (
+                index
+                for index, line in enumerate(lines)
+                if re.search(r"\b20\d{2}\b", line) and re.search(r"\b\d{1,2}\b", line)
+            ),
+            None,
+        )
+        if date_index is None:
+            continue
+        values = [line for line in lines[date_index + 1 : date_index + 3] if len(line) <= 100]
+        if values:
+            return ", ".join(values)
+    return ""
 
 
 def _public_region_name(value: str) -> str:
@@ -106,6 +135,5 @@ def _clean_label_value(value: str) -> str:
         if match:
             value = value[: match.start()]
     return clean_space(value).rstrip(" ,;&")
-
 
 

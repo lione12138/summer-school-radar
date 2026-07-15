@@ -14,13 +14,21 @@ _MONTH = (
 )
 _WEEKDAY = r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)"
 _DATE_NO_YEAR = rf"(?:{_WEEKDAY}\s+)?(?:\d{{1,2}}\s+(?:{_MONTH})|(?:{_MONTH})\s+\d{{1,2}})"
-_DATE_WITH_YEAR = rf"(?:{_DATE_NO_YEAR},?\s+20\d{{2}}|20\d{{2}}-\d{{2}}-\d{{2}})"
+_NUMERIC_DATE = r"\d{1,2}[./]\d{1,2}[./]20\d{2}"
+_DATE_WITH_YEAR = rf"(?:{_DATE_NO_YEAR},?\s+20\d{{2}}|20\d{{2}}-\d{{2}}-\d{{2}}|{_NUMERIC_DATE})"
 _SEPARATOR = r"(?:to|-|–|—|until|through)"
 _NUMBER = r"(?:\d+|[IVX]+|one|two|three|four|five|six|seven|eight|nine|ten|[A-Z])"
 _LABEL = (
     rf"(?:(?:pre[- ]?sessional|session|course\s+period|school\s+period|week|block|module|term|phase|part|track|option)"
     rf"\s+{_NUMBER}|(?:early|late|foundation|core|introductory|advanced)\s+"
     rf"(?:session|week|block|module|term|phase|track))"
+)
+
+_NAMED_COURSE_RANGE = re.compile(
+    rf"(?P<label>(?:short\s+)?course\s+{_NUMBER})\s*:\s*"
+    rf"(?P<title>.{{1,180}}?)\s+(?P<start>{_DATE_WITH_YEAR})\s*{_SEPARATOR}\s*"
+    rf"(?P<end>{_DATE_WITH_YEAR})",
+    re.IGNORECASE,
 )
 
 _RANGE_PATTERNS = (
@@ -93,6 +101,22 @@ def extract_programme_sessions(text: str, html: str = "") -> list[ProgrammeSessi
                 continue
             seen.add(key)
             sessions.append(ProgrammeSession(name, start, end, deadlines.get(_label_key(name))))
+
+    for match in _NAMED_COURSE_RANGE.finditer(searchable):
+        title = clean_space(match.group("title")).strip(" -–—:")
+        if re.search(r"\bcancel(?:led|ed)\b", title, flags=re.IGNORECASE):
+            continue
+        start = _parse_date(match.group("start"))
+        end = _parse_date(match.group("end"))
+        if start is None or end is None or not 0 <= (end - start).days <= 60:
+            continue
+        label = _normalise_label(match.group("label"))
+        name = f"{label}: {title}"
+        key = (name, start, end)
+        if key in seen:
+            continue
+        seen.add(key)
+        sessions.append(ProgrammeSession(name, start, end, deadlines.get(_label_key(label))))
 
     distinct_names = {_label_key(session.name) for session in sessions}
     if len(sessions) < 2 or len(distinct_names) < 2:

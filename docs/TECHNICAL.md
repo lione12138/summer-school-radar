@@ -467,7 +467,7 @@ maintainer review against official pages is still required for curation.
 - `src/research_school_radar/snapshot_validation.py` requires schema-v2 display/scanner lists and rejects an unexplained scanner-record drop below 35% of a sufficiently large previous snapshot.
 - `src/research_school_radar/session_extraction.py` conservatively detects explicitly labelled sessions and their deadlines on any source page; it requires at least two distinct labelled ranges so ordinary event calendars are not promoted.
 - `src/research_school_radar/date_extraction.py`, `fee_extraction.py`, and `location_extraction.py` isolate deterministic date/deadline, fee, and location parsing from the candidate assembly performed by `extract.py`.
-- `src/research_school_radar/collector_ihe.py` and `collector_ellis.py` contain source-specific direct-collector implementations. `api_sources.py` now only dispatches collector names configured in `config/sources.yaml` and records health outcomes.
+- `src/research_school_radar/collector_ihe.py`, `collector_ellis.py`, and `collector_sib.py` contain source-specific direct-collector implementations. The SIB collector reads the official catalogue's embedded Bioschemas `Course` / `CourseInstance` records, so no browser is needed. `api_sources.py` only dispatches collector names configured in `config/sources.yaml` and records health outcomes.
 - Full scans attach per-source health (`status`, `last_attempt`, `last_success`, and `consecutive_failures`) to the manifest and source-registry output. Status-refresh manifests collapse to one reference to the latest full scan, avoiding recursive growth.
 - Multi-session extraction handles labelled prose, labelled table rows with optional deadline columns, and schema.org `subEvent` data. Clearly named periods such as “Foundation week” are accepted without numbering, while unlabelled calendars are still rejected.
 - `src/research_school_radar/programme_sessions.py` formats structured session dates and per-session deadlines consistently across HTML, reports, and RSS.
@@ -481,6 +481,7 @@ maintainer review against official pages is still required for curation.
 
 - `config/profile.yaml` controls preferred topics, hard filters, financial-access thresholds and reference exchange rates, priority regions, supplementary regions, and excluded programme types.
 - `config/sources.yaml` lists trusted sources. Each source can be enabled or disabled, can block problematic linked domains, and can select a structured direct collector with `collector`.
+- Sources explicitly registered as `research_training_provider` may expose subject-only course-card titles. The link parser follows cards whose nearby official metadata says `Course`; the detail extractor still requires a course overview and rejects conference pages deterministically.
 - `config/queries.yaml` stores optional controlled discovery queries.
 - `config/site.yaml` controls optional analytics.
 - `config/ai.yaml` controls optional semantic ranking, DeepSeek advisory extraction, resource limits, and `data/ai_cache/` behavior.
