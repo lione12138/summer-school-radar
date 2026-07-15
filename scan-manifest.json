@@ -9,19 +9,19 @@
     "healthy": true,
     "source_coverage": {
       "attempted": 126,
-      "succeeded": 114,
-      "failed": 12,
-      "success_ratio": 0.9048
+      "succeeded": 116,
+      "failed": 10,
+      "success_ratio": 0.9206
     },
     "http_cache": {
-      "requests": 375,
-      "hits_304": 35,
-      "stale_fallbacks": 4,
-      "stores": 317
+      "requests": 388,
+      "hits_304": 71,
+      "stale_fallbacks": 2,
+      "stores": 291
     },
     "candidates": {
-      "extracted": 87,
-      "published_snapshot": 73
+      "extracted": 86,
+      "published_snapshot": 72
     },
     "ai": {
       "semantic_enabled": true,
@@ -64,7 +64,7 @@
         "status": "failed",
         "last_attempt": "2026-07-15",
         "last_success": "2026-07-15",
-        "consecutive_failures": 1
+        "consecutive_failures": 2
       },
       {
         "name": "ELLIS",
@@ -274,7 +274,7 @@
         "status": "failed",
         "last_attempt": "2026-07-15",
         "last_success": null,
-        "consecutive_failures": 2
+        "consecutive_failures": 3
       },
       {
         "name": "WCRP",
@@ -376,10 +376,10 @@
       },
       {
         "name": "Lamont-Doherty",
-        "status": "failed",
+        "status": "healthy",
         "last_attempt": "2026-07-15",
-        "last_success": null,
-        "consecutive_failures": 2
+        "last_success": "2026-07-15",
+        "consecutive_failures": 0
       },
       {
         "name": "IPAM",
@@ -414,14 +414,14 @@
         "status": "failed",
         "last_attempt": "2026-07-15",
         "last_success": null,
-        "consecutive_failures": 2
+        "consecutive_failures": 3
       },
       {
         "name": "CERN Academic Training",
         "status": "failed",
         "last_attempt": "2026-07-15",
         "last_success": null,
-        "consecutive_failures": 2
+        "consecutive_failures": 3
       },
       {
         "name": "ICTP",
@@ -477,7 +477,7 @@
         "status": "failed",
         "last_attempt": "2026-07-15",
         "last_success": null,
-        "consecutive_failures": 2
+        "consecutive_failures": 3
       },
       {
         "name": "NCAS",
@@ -498,7 +498,7 @@
         "status": "failed",
         "last_attempt": "2026-07-15",
         "last_success": null,
-        "consecutive_failures": 2
+        "consecutive_failures": 3
       },
       {
         "name": "LSA Linguistic Institute",
@@ -568,7 +568,7 @@
         "status": "failed",
         "last_attempt": "2026-07-15",
         "last_success": null,
-        "consecutive_failures": 2
+        "consecutive_failures": 3
       },
       {
         "name": "CISPA",
@@ -631,7 +631,7 @@
         "status": "failed",
         "last_attempt": "2026-07-15",
         "last_success": null,
-        "consecutive_failures": 2
+        "consecutive_failures": 3
       },
       {
         "name": "CESM Tutorial",
@@ -652,7 +652,7 @@
         "status": "failed",
         "last_attempt": "2026-07-15",
         "last_success": null,
-        "consecutive_failures": 2
+        "consecutive_failures": 3
       },
       {
         "name": "Oxford Robotics Institute",
@@ -761,10 +761,10 @@
       },
       {
         "name": "IHR History",
-        "status": "failed",
+        "status": "healthy",
         "last_attempt": "2026-07-15",
-        "last_success": null,
-        "consecutive_failures": 2
+        "last_success": "2026-07-15",
+        "consecutive_failures": 0
       },
       {
         "name": "Khipu",
@@ -890,7 +890,7 @@
         "status": "failed",
         "last_attempt": "2026-07-15",
         "last_success": null,
-        "consecutive_failures": 2
+        "consecutive_failures": 3
       },
       {
         "name": "LSE Cities",
