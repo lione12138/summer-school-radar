@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-12",
+  "generated": "2026-07-15",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -34,46 +34,83 @@
         "mode": ""
       },
       "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "location_context_weak",
+          "funding_context_weak"
+        ],
+        "chinese_summary": "ICOS 2027年1月冬季学校现已开放申请，截止日期为2026年7月31日，地点在赫尔辛基，费用约100欧元，大部分费用由项目承担。",
+        "extracted_deadline": "2026-07-31",
+        "extracted_fee": "€ 100",
+        "extracted_funding": "Almost all costs will be covered by the supporting projects NUBICOS, ICOS Carbon Portal and Helsinki University. Travel to/from Helsinki is at own expense.",
+        "evidence_fields": {
+          "deadline": "Submission deadline is 31 July 2026.",
+          "fee": "We might have to impose a nominal contribution per student in the order of € 100, depending on the amount of sponsors we may collect.",
+          "funding": "Almost all costs will be covered by the supporting projects NUBICOS, ICOS Carbon Portal and Helsinki University. | Travel to/from Helsinki you will have to organize yourself and will be at your own (institute's) expense."
+        }
+      }
+    },
+    {
+      "title": "City-Wide Inclusive Sanitation",
+      "url": "https://www.un-ihe.org/short-courses",
+      "organizer": "IHE Delft",
+      "source_layer": "1",
+      "location": "Delft, Netherlands",
+      "dates": {
+        "start": "2026-11-30",
+        "end": "2026-12-18",
+        "duration_days": 19
+      },
+      "deadline": "2026-10-31",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "EUR 2500",
+      "fee_eur": 2500.0,
+      "topics": [],
+      "needs_review": [
+        "fee exceeds EUR 400 without explicit funding",
+        "topic relevance is uncertain"
+      ],
+      "confidence": 1.0,
+      "evidence": {
+        "deadline": "IHE Delft course catalogue API: applications close 2026-10-31",
+        "duration": "IHE Delft course catalogue API: 2026-11-30 to 2026-12-18",
+        "funding": "",
+        "mode": "IHE Delft delivery method: FTF"
+      },
+      "ai_advisory": {
         "available": false
       }
     },
     {
-      "title": "Get to know the Bernstein Network!",
-      "url": "https://bernstein-network.de/en/",
-      "organizer": "Bernstein Network",
-      "source_layer": "2",
-      "location": "Europe",
+      "title": "ELLIS Summer School at Institute Tübingen",
+      "url": "https://ellis.eu/events/ellis-summer-school-at-institute-tuebingen-2026",
+      "organizer": "ELLIS",
+      "source_layer": "1",
+      "location": "Max Planck Institute for Intelligent Systems",
       "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
+        "start": "2026-08-31",
+        "end": "2026-09-11",
+        "duration_days": 12
       },
-      "deadline": "2026-08-27",
+      "deadline": "2026-07-26",
       "deadline_status": "open",
-      "financial_access_status": "funded",
+      "financial_access_status": "unresolved",
       "fee": "",
       "fee_eur": null,
       "topics": [
-        "satellite",
-        "AI",
-        "data analysis",
-        "physics",
-        "statistics",
-        "computational neuroscience",
-        "neuroscience",
-        "neural computation",
-        "neuroAI",
-        "history"
+        "machine learning"
       ],
       "needs_review": [
-        "duration is uncertain"
+        "funding is not explicit and fee is uncertain"
       ],
       "confidence": 0.75,
       "evidence": {
-        "deadline": "Deadline: 27.08.2026 (other dates listed: 2026-07-16, 2026-07-31)",
-        "duration": "",
-        "funding": "Travel Grants PhD Symposium Postdoc Meeting General Information Important Dates & FAQ Plan Your Visit Press Code of Conduct PR Media",
-        "mode": "on Site (BCOS) Awards and Initiatives Valentin Braitenber"
+        "deadline": "ELLIS detail/registration page: registration deadline 2026-07-26",
+        "duration": "ELLIS events listing: 2026-08-31 to 2026-09-11",
+        "funding": "",
+        "mode": "ELLIS listing location: Max Planck Institute for Intelligent Systems"
       },
       "ai_advisory": {
         "available": false
