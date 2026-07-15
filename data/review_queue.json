@@ -84,6 +84,52 @@
       }
     },
     {
+      "title": "Get to know the Bernstein Network!",
+      "url": "https://bernstein-network.de/en/",
+      "organizer": "Bernstein Network",
+      "source_layer": "2",
+      "location": "Europe",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2026-08-27",
+      "deadline_status": "open",
+      "financial_access_status": "funded",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "climate",
+        "satellite",
+        "artificial intelligence",
+        "machine learning",
+        "data analysis",
+        "robotics",
+        "physics",
+        "statistics",
+        "computational neuroscience",
+        "neuroscience",
+        "neural computation",
+        "systems neuroscience",
+        "theoretical neuroscience",
+        "history"
+      ],
+      "needs_review": [
+        "duration is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "Deadline: 27.08.2026 (other dates listed: 2026-07-16, 2026-07-31)",
+        "duration": "",
+        "funding": "Travel Grants PhD Symposium Postdoc Meeting General Information Important Dates & FAQ Plan Your Visit Press Code of Conduct PR Media",
+        "mode": "on Site (BCOS) Awards and Initiatives Valentin Braitenber"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "ELLIS Summer School at Institute Tübingen",
       "url": "https://ellis.eu/events/ellis-summer-school-at-institute-tuebingen-2026",
       "organizer": "ELLIS",
@@ -117,6 +163,169 @@
       }
     },
     {
+      "title": "Applied Public Policy Evaluation",
+      "url": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
+      "organizer": "Tinbergen Institute",
+      "source_layer": "2",
+      "location": "Housing Student Council",
+      "dates": {
+        "start": "2026-08-24",
+        "end": "2026-08-28",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "climate",
+        "climate change",
+        "machine learning",
+        "deep learning",
+        "data science",
+        "economics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "August 24 - Friday 28 2026",
+        "funding": "scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat w",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "missing_evidence_id:chinese_summary",
+          "start_date_value_not_in_evidence",
+          "end_date_value_not_in_evidence",
+          "possibly_past_or_closed"
+        ],
+        "chinese_summary": "未知",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
+      "title": "Economics of Climate Change",
+      "url": "https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change",
+      "organizer": "Tinbergen Institute",
+      "source_layer": "2",
+      "location": "Housing Student Council",
+      "dates": {
+        "start": "2026-08-24",
+        "end": "2026-08-28",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "climate",
+        "climate change",
+        "machine learning",
+        "deep learning",
+        "data science",
+        "economics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "August 24 - Friday 28 2026",
+        "funding": "scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat w",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "start_date_value_not_in_evidence",
+          "end_date_value_not_in_evidence",
+          "possibly_past_or_closed"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
+      "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
+      "url": "https://events.vtools.ieee.org/m/564683",
+      "organizer": "IEEE RAS Cognitive Robotics Summer School",
+      "source_layer": "1.5",
+      "location": "Hosts",
+      "dates": {
+        "start": "2026-09-07",
+        "end": "2026-09-11",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "climate",
+        "AI",
+        "artificial intelligence",
+        "machine learning",
+        "computer vision",
+        "programming languages",
+        "robotics",
+        "engineering",
+        "design"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain",
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.25,
+      "evidence": {
+        "deadline": "",
+        "duration": "September 7–11, 2026",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "high",
+        "validation_warnings": [],
+        "chinese_summary": "IEEE RAS德国分会将于2026年9月7日至11日在德国基姆湖的弗劳恩沃特修道院举办认知机器人暑期学校，面向学生、早期研究人员和专业人士，主题涵盖人工智能与机器人交叉领域。",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
       "title": "ELLIS Summer School at Unit Munich",
       "url": "https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026",
       "organizer": "ELLIS",
@@ -138,7 +347,6 @@
       ],
       "needs_review": [
         "application deadline is uncertain",
-        "duration is below 8 days",
         "funding is not explicit and fee is uncertain"
       ],
       "confidence": 0.5,
