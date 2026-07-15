@@ -636,6 +636,29 @@ def test_training_provider_course_cards_are_followed_without_global_course_match
     assert candidate_links(page) == ["https://provider.example/events/data-integration-2027/"]
 
 
+def test_training_provider_prefers_data_courses_within_follow_up_limit() -> None:
+    source = Source(
+        name="Official Training Provider",
+        url="https://provider.example/events/",
+        layer="1",
+        region="continental Europe",
+        source_type="research_training_provider",
+    )
+    page = Page(
+        url=source.url,
+        title="Events",
+        text="Upcoming researcher training",
+        html=(
+            '<article><a href="/events/general/">General laboratory methods</a><span>Course</span></article>'
+            '<article><a href="/events/data/">Data science for researchers</a><span>Course</span></article>'
+        ),
+        source=source,
+        fetched_at=date.today(),
+    )
+
+    assert candidate_links(page, limit=1) == ["https://provider.example/events/data/"]
+
+
 def test_training_provider_course_overview_is_a_narrow_opportunity_signal() -> None:
     source = Source(
         name="Official Training Provider",

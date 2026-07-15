@@ -52,6 +52,20 @@ DEGREE_RECRUITMENT_TERMS = [
     "apply for a phd",
 ]
 
+DATA_TRAINING_TERMS = [
+    "data science",
+    "data analysis",
+    "data integration",
+    "data management",
+    "data processing",
+    "bioinformatics",
+    "statistics",
+    "machine learning",
+    "scientific computing",
+    "rna-seq",
+    "omics",
+]
+
 
 LANGUAGE_COURSE_TERMS = [
     "language course",
@@ -121,6 +135,7 @@ def candidate_links(page: Page, limit: int = 25, blocked_domains: list[str] | No
         score += sum(1 for term in APPLICATION_TERMS if term in lowered)
         if page.source.source_type == "research_training_provider":
             score += _training_provider_link_score(page, anchor, label, href)
+            score += sum(3 for term in DATA_TRAINING_TERMS if term in lowered)
         if score > 0:
             seen.add(href)
             scored.append((score, href))
