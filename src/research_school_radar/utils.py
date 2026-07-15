@@ -84,6 +84,8 @@ def sanitize_location(value: str, fallback: str = "") -> str:
     if not text:
         return fallback
     low = text.lower()
+    if low in {"host", "hosts", "location", "venue", "place"}:
+        return fallback
     if "virtual" in low or "online" in low:
         return "Online"
     if any(fragment in low for fragment in _LOCATION_JUNK_FRAGMENTS):

@@ -16,6 +16,16 @@
 #       fee_eur: 300
 #       deadline_evidence: Application deadline is 15 October 2026.
 overrides:
+  - url: https://events.vtools.ieee.org/m/564683
+    status: update
+    note: The official IEEE event announcement identifies the residential venue in Chiemsee, Germany.
+    fields:
+      location: Abtei Frauenwörth, Chiemsee, Germany
+      mode: in-person
+      mode_evidence: Official IEEE event announcement gives an on-site venue at Abtei Frauenwörth, Chiemsee, Germany.
+  - title_contains: Get to know the Bernstein Network
+    status: exclude
+    note: This is the research network homepage, not a seasonal school or short research-training programme.
   - title_contains: Karthaus summerschool
     status: update
     note: Official application page says applications for the 2027 course are not yet open.

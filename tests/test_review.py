@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import date
+from pathlib import Path
 
 from research_school_radar.extract import sample_candidate
 from research_school_radar.filter import apply_hard_filters
@@ -76,6 +77,32 @@ def test_overrides_can_update_and_exclude_candidates() -> None:
     assert update.deadline == date(2027, 3, 1)
     assert update.deadline_status == "open"
     assert update.fee_eur == 100
+
+
+def test_project_overrides_fix_ieee_location_and_exclude_network_homepage() -> None:
+    from research_school_radar.review import apply_overrides, load_overrides
+
+    ieee = sample_candidate(PROFILE)
+    ieee.source_url = "https://events.vtools.ieee.org/m/564683"
+    ieee.location = "Hosts"
+    ieee.mode = "uncertain"
+    homepage = sample_candidate(PROFILE)
+    homepage.title = "Get to know the Bernstein Network!"
+
+    candidates = apply_overrides(
+        [ieee, homepage],
+        load_overrides(Path("data/overrides.yml")),
+    )
+
+    assert candidates == [ieee]
+    assert ieee.location == "Abtei Frauenwörth, Chiemsee, Germany"
+    assert ieee.mode == "in-person"
+
+
+def test_location_sanitizer_rejects_field_labels() -> None:
+    from research_school_radar.utils import sanitize_location
+
+    assert sanitize_location("Hosts", fallback="Europe") == "Europe"
 
 
 def test_review_queue_captures_fixable_non_qualified_candidates(tmp_path) -> None:
