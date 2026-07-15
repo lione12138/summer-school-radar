@@ -596,6 +596,13 @@ The website is static and can be served by GitHub Pages. It includes browser-sid
 - financial access: explicit funding, low/no fee, or unresolved/high fee
 - deadline status
 
+The homepage paginates the combined matching result set at 15 records per page.
+Desktop layouts keep search and filters in a sticky left sidebar. On mobile,
+search remains visible while the other controls collapse behind a button. The
+internal `found` classification remains available as a filter/data attribute,
+but its cards do not display a warning-style status badge; the public label is
+the neutral `Listed` tier.
+
 Curated opportunities from `data/opportunities.yml` are rendered first as a separate section. Automatic scanner results appear below them as fully qualified opportunities or near-matches.
 
 Rows with a known application deadline include an `Add to calendar` link in the deadline column. The link downloads a standard `.ics` all-day calendar event for the application deadline, so users can import it into Apple Calendar, Google Calendar, Outlook, or another calendar client.

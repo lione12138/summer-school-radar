@@ -159,7 +159,7 @@ def test_rss_feed_includes_curated_records(tmp_path) -> None:
     assert "Maintainer Reviewed School" in items[0].findtext("title")
     assert items[0].findtext("category") == "Curated"
     index = (tmp_path / "index.html").read_text(encoding="utf-8")
-    assert "1 shown" in index
+    assert "1 total · 15 per page" in index
     assert '<h3 data-i18n="empty.title">' not in index
 
 
@@ -298,6 +298,18 @@ def test_filter_defaults_describe_each_dimension(tmp_path) -> None:
     assert '"filter.all.status": {en:"All statuses", zh:"所有状态"}' in html
 
 
+def test_opportunity_browser_uses_sidebar_and_fifteen_item_pages(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    write_site(rank_candidates([candidate]), [], tmp_path)
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+
+    assert 'class="opportunity-browser"' in html
+    assert 'class="filter-sidebar"' in html
+    assert 'class="opportunity-results"' in html
+    assert 'id="opportunity-pagination"' in html
+    assert "const pageSize = 15;" in html
+
+
 def test_site_renders_curated_found_opportunities_and_review_queue_json(tmp_path) -> None:
     reviewed = {
         "title": "Reviewed Social Science School",
@@ -333,11 +345,15 @@ def test_site_renders_curated_found_opportunities_and_review_queue_json(tmp_path
 
     assert "Curated Opportunities" in html
     assert "Reviewed Social Science School" in html
-    assert "Found Opportunities" in html
+    assert "Listed Opportunities" in html
     assert "Unreviewed Law Summer School" in html
+    assert "待核实" not in html
     assert "application deadline is uncertain" not in html
     assert "application deadline is uncertain" in review_json
     assert "Unreviewed Law Summer School" in review_json
+
+    detail = next((tmp_path / "opportunities").glob("*.html")).read_text(encoding="utf-8")
+    assert "待核实" not in detail
 
 
 def test_site_generation_writes_favicon(tmp_path) -> None:
@@ -541,9 +557,9 @@ def test_high_quality_uses_fee_per_day_threshold(tmp_path) -> None:
     ])
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
     high_section = html.split('<h2 data-i18n="tier.high">High-Quality Opportunities</h2>', 1)[1].split(
-        '<h2 data-i18n="tier.found">Found Opportunities</h2>', 1
+        '<h2 data-i18n="tier.found">Listed Opportunities</h2>', 1
     )[0]
-    found_section = html.split('<h2 data-i18n="tier.found">Found Opportunities</h2>', 1)[1]
+    found_section = html.split('<h2 data-i18n="tier.found">Listed Opportunities</h2>', 1)[1]
 
     assert "Affordable Ten Day School" in high_section
     assert 'data-status="high-quality"' in high_section
@@ -622,7 +638,7 @@ def test_filters_only_offer_topics_from_rendered_records() -> None:
     html = render_site(candidates, [])
 
     assert 'value="topic-9"' in html
-    assert 'value="topic-10"' not in html
+    assert 'value="topic-10"' in html
 
 
 def test_chinese_title_is_in_search_index(tmp_path) -> None:

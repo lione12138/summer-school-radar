@@ -61,7 +61,7 @@ Key modules:
 - `src/research_school_radar/site_sources_page.py` — source-registry page rendering.
 - `src/research_school_radar/site_components.py` — shared bilingual, duration, deadline, and evidence components.
 - `src/research_school_radar/site_calendar.py` — Google, Outlook, and ICS deadline links.
-- `src/research_school_radar/site_filters.py` — opportunity filters and browser-side filtering script.
+- `src/research_school_radar/site_filters.py` — opportunity filters, 15-item pagination, and responsive sidebar/browser script.
 - `src/research_school_radar/site_layout.py` — shared navigation and footer layout.
 - `src/research_school_radar/site_paths.py` — stable detail-page paths.
 - `src/research_school_radar/site_styles.py` — CSS constants.

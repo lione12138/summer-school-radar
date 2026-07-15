@@ -142,6 +142,8 @@ _NAV_CSS = """    html { scroll-behavior: smooth; }
 # Figma-derived Discover screen. The generated table markup remains semantic
 # and filterable, while CSS presents each record as a compact responsive card.
 _DISCOVER_CSS = """
+    [hidden] { display: none !important; }
+    .home-page .wrap { width: min(1380px, calc(100vw - 40px)); }
     nav.topbar { background: color-mix(in srgb, var(--panel) 92%, transparent); }
     nav.topbar .bar { height: 60px; }
     nav.topbar .toggle { min-width: 44px; height: 44px; line-height: 42px; }
@@ -173,14 +175,52 @@ _DISCOVER_CSS = """
     .opportunity-list-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; margin: 34px 0 10px; }
     .opportunity-list-head h2 { margin: 0; font-size: 24px; }
     .opportunity-list-head p { margin: 0; color: var(--muted); font-size: 13px; }
-    .filters {
-      grid-template-columns: minmax(260px, 2fr) repeat(5, minmax(130px, 1fr));
-      gap: 12px; margin: 16px 0 18px; padding: 0; border: 0; box-shadow: none; background: transparent;
+    .opportunity-browser {
+      display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 22px; align-items: start;
     }
-    .filter-group { gap: 0; }
-    .filter-group label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+    .opportunity-results { min-width: 0; }
+    .filter-sidebar {
+      position: sticky; top: 76px; max-height: calc(100vh - 92px); overflow-y: auto;
+      padding: 16px; border: 1px solid var(--line); border-radius: 14px;
+      background: var(--panel); box-shadow: var(--shadow);
+    }
+    .filter-sidebar-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+    .filter-sidebar-head h3 { margin: 0; font-size: 16px; }
+    .filter-mobile-toggle { display: none; }
+    .filters {
+      display: grid; grid-template-columns: 1fr; gap: 12px;
+      margin: 0; padding: 0; border: 0; box-shadow: none; background: transparent;
+    }
+    .filter-group { gap: 5px; }
+    .filter-group label {
+      position: static; width: auto; height: auto; overflow: visible; clip: auto;
+      color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .04em;
+    }
     select, input[type="search"] { min-height: 44px; border-radius: 10px; background: var(--panel); padding: 9px 12px; }
-    .filters .count { grid-column: 1 / -1; padding: 0; text-align: right; }
+    .filter-reset, .filter-mobile-toggle {
+      min-height: 36px; border: 1px solid var(--line); border-radius: 9px;
+      background: var(--panel-2); color: var(--accent-ink); padding: 7px 10px;
+      font: inherit; font-size: 12px; font-weight: 650; cursor: pointer;
+    }
+    .filter-reset:hover, .filter-mobile-toggle:hover { border-color: var(--accent); }
+    .filters .count { padding: 2px 0 0; text-align: left; font-variant-numeric: tabular-nums; }
+    .pagination {
+      display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
+      gap: 7px; margin: 22px 0 6px;
+    }
+    .pagination-pages { display: flex; align-items: center; gap: 6px; }
+    .pagination button {
+      min-width: 38px; min-height: 38px; border: 1px solid var(--line); border-radius: 9px;
+      background: var(--panel); color: var(--ink); font: inherit; font-size: 13px; cursor: pointer;
+    }
+    .pagination .pagination-step { padding: 7px 12px; }
+    .pagination button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent-ink); }
+    .pagination button.is-current { border-color: var(--accent); background: var(--accent); color: #fff; font-weight: 700; }
+    .pagination button:disabled { cursor: default; opacity: .45; }
+    .filter-empty {
+      margin: 0; padding: 24px; border: 1px dashed var(--line); border-radius: 14px;
+      background: var(--panel); color: var(--muted); text-align: center;
+    }
     .opportunity-tier { margin: 0 0 12px; }
     .sr-only-tier { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
     .opportunity-table-wrap { overflow: visible; background: transparent; border: 0; border-radius: 0; box-shadow: none; }
@@ -207,6 +247,15 @@ _DISCOVER_CSS = """
     table.opportunity-table tbody tr[data-status="qualified"]::before { background: var(--good-soft); color: var(--good); }
     table.opportunity-table tbody tr[data-status="high-quality"]::before { background: var(--accent-soft); color: var(--accent-ink); }
     table.opportunity-table tbody tr[data-status="curated"]::before { background: var(--accent-soft); color: var(--accent-ink); }
+    table.opportunity-table tbody tr[data-status="found"] {
+      grid-template-columns: minmax(0, 1fr) minmax(260px, .72fr) auto;
+      grid-template-areas:
+        "title title actions"
+        "organizer location actions"
+        "duration deadline actions"
+        "funding topics actions";
+    }
+    table.opportunity-table tbody tr[data-status="found"]::before { display: none; }
     table.opportunity-table td { display: block; padding: 0; border: 0; min-width: 0; }
     table.opportunity-table td a { font-weight: 650; text-decoration: none; }
     table.opportunity-table td[title] { cursor: help; }
@@ -232,12 +281,20 @@ _DISCOVER_CSS = """
     .session-list li { padding-left: 2px; }
     footer.site { margin-top: 36px; }
     @media (max-width: 980px) {
+      .opportunity-browser { grid-template-columns: 1fr; }
+      .filter-sidebar { position: static; max-height: none; overflow: visible; }
       .filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .filters .filter-group:first-child { grid-column: span 2; }
+      .filter-reset { align-self: end; min-height: 44px; }
       table.opportunity-table tr { grid-template-columns: auto minmax(0,1fr) auto; grid-template-areas: "status title actions" ". organizer actions" ". location actions" ". duration actions" ". deadline actions" ". funding actions" ". topics actions"; }
+      table.opportunity-table tbody tr[data-status="found"] {
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas: "title actions" "organizer actions" "location actions" "duration actions" "deadline actions" "funding actions" "topics actions";
+      }
     }
     @media (max-width: 720px) {
       .wrap { width: min(100% - 32px, 1180px); }
+      .home-page .wrap { width: min(100% - 24px, 1180px); }
       nav.topbar .bar { height: 60px; }
       nav.topbar .links > a { display: none; }
       header.hero { padding: 24px 0 26px; }
@@ -255,13 +312,23 @@ _DISCOVER_CSS = """
       .status:not(.empty) { display: none; }
       .opportunity-list-head { margin-top: 20px; }
       .opportunity-list-head h2 { font-size: 22px; }
-      .filters { grid-template-columns: 1fr 1fr; gap: 8px; }
-      .filters .filter-group:first-child { grid-column: 1 / -1; }
-      .filters .filter-group:nth-child(n+4) { display: none; }
+      .opportunity-browser { gap: 12px; }
+      .filter-sidebar { padding: 12px; }
+      .filter-sidebar-head { margin-bottom: 10px; }
+      .filter-mobile-toggle { display: inline-flex; align-items: center; min-height: 34px; }
+      .filters { grid-template-columns: 1fr; gap: 8px; }
+      .filters .filter-group:first-child { grid-column: auto; }
+      .filter-sidebar:not(.is-open) .filters .filter-group:not(:first-child),
+      .filter-sidebar:not(.is-open) .filter-reset { display: none; }
+      .filter-sidebar:not(.is-open) .filters .count { grid-row: 2; }
       table.opportunity-table tr {
         grid-template-columns: auto minmax(0, 1fr);
         grid-template-areas: "status title" "organizer location" "duration duration" "deadline deadline" "funding funding" "actions actions";
         row-gap: 5px; padding: 14px;
+      }
+      table.opportunity-table tbody tr[data-status="found"] {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        grid-template-areas: "title title" "organizer location" "duration duration" "deadline deadline" "funding funding" "actions actions";
       }
       .qualified-table td:nth-child(2), .standard-table td:nth-child(1), .curated-table td:nth-child(1) { font-size: 18px; }
       .qualified-table td:nth-child(4), .standard-table td:nth-child(3), .curated-table td:nth-child(3) {
@@ -271,6 +338,9 @@ _DISCOVER_CSS = """
       .card-actions { flex-direction: row; justify-content: flex-start; padding-top: 3px !important; }
       .card-actions .button { width: auto; }
       .card-actions .button.tonal { display: none; }
+      .pagination { margin-top: 16px; }
+      .pagination button { min-width: 36px; min-height: 36px; }
+      .pagination .pagination-step { padding: 6px 9px; }
       footer.site .cols { padding-top: 24px; }
     }
 """

@@ -126,7 +126,7 @@ def candidate_status(candidate: Candidate) -> tuple[str, str]:
         return "Fully qualified", "qualified"
     if is_high_quality(candidate):
         return "High quality", "high-quality"
-    return "Found", "found"
+    return "Listed", "found"
 
 
 __all__ = [

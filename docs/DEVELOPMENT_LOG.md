@@ -197,3 +197,16 @@ The live scheduler acceptance check exposed a second operational blocker: the
 task remained queued while the laptop was on battery. The registered settings
 now allow starting and continuing on battery while retaining the network and
 three-hour execution constraints.
+
+## 2026-07-15: Denser Opportunity Browsing
+
+The homepage now renders the full public result set and applies browser-side
+pagination after filtering, with 15 records per page. Desktop layouts use a
+sticky left filter sidebar so search and facets remain available while scanning
+cards; mobile keeps search visible and collapses the lower-priority facets.
+
+The scanner's internal `found` classification is unchanged, so deterministic
+quality boundaries and audit data remain intact. Public cards no longer render
+the warning-style `Found / 待核实` badge. The neutral `Listed / 已收录` wording is
+used where a label is required, while official-source links, evidence, and the
+general “verify before applying” guidance remain visible.

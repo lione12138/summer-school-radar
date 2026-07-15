@@ -341,6 +341,8 @@ secret 不会写入生成文件或提交。
 - financial access
 - deadline status
 
+首页把所有匹配结果合并后按每页 15 条分页。桌面端将搜索与筛选固定在左侧栏；手机端始终显示搜索，其他筛选通过按钮展开。内部 `found` 分类仍保留在筛选值和数据属性中，但卡片不再显示警示式状态徽标，公开名称改为中性的“更多项目/已收录”。
+
 已知 deadline 的行会生成 `Add to calendar` `.ics` 下载链接，方便导入 Apple Calendar、Google Calendar、Outlook 等日历。
 
 ## 可选 Headless Rendering

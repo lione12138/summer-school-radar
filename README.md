@@ -67,10 +67,10 @@ The generated website lists scanner results in three public tiers:
 
 - **Fully Qualified Opportunities**: scanner results that satisfy every hard condition.
 - **High-Quality Opportunities**: not closed, not online-only, at least 5 days long, and either funded or no more than about EUR 70 per day.
-- **Found Opportunities**: relevant records that remain worth checking but are missing too much evidence, are more expensive, or otherwise do not meet the high-quality bar.
+- **Listed Opportunities**: additional relevant records collected from official sources that do not meet the two higher display tiers.
 - **Sources & Coverage**: the configured trusted source registry, including disabled sources and notes.
 
-The site includes filters for keyword, status, topic, financial access, and deadline status. Rows with a known application deadline include an **Add to calendar** menu (Google Calendar, Outlook, or a downloadable `.ics` file).
+The site includes filters for keyword, status, topic, financial access, and deadline status. On desktop they stay in a left sidebar; on mobile search remains visible and the additional filters collapse behind a compact control. Matching records are paginated at 15 per page. Rows with a known application deadline include an **Add to calendar** menu (Google Calendar, Outlook, or a downloadable `.ics` file).
 
 ```text
 site/index.html

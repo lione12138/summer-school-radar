@@ -19,7 +19,7 @@ from .site_components import (
     public_location as _public_location,
     public_location_zh as _public_location_zh,
 )
-from .site_filters import filter_script, render_filters
+from .site_filters import filter_script, render_filters, render_pagination
 from .site_home import (
     about_section as _about_section,
     faq_section as _faq_section,
@@ -62,9 +62,9 @@ def _status_banner(full_count: int, near_count: int, tracked_total: int, tracked
     if near_count:
         message = (
             "No fully qualified matches in the latest scan. "
-            f"{coverage} High-quality and found opportunities are shown below for manual checking."
+            f"{coverage} Additional opportunities from official sources are shown below."
         )
-        zh = f"最近一次扫描没有完全符合的项目。当前共追踪 {tracked_total} 个项目和 {tracked_sources} 个可信来源；下方列出高质量和待核实项目。"
+        zh = f"最近一次扫描没有完全符合的项目。当前共追踪 {tracked_total} 个项目和 {tracked_sources} 个可信来源；下方同时列出其他官方来源项目。"
         return f'<p class="status info">{_bilingual(message, zh)}</p>'
     message = (
         "No open opportunities matched every rule in the latest scan. "
@@ -187,9 +187,9 @@ def render_site(
     tracked_sources: int = 0,
 ) -> str:
     curated = curated or []
-    full = [item for item in candidates if item.fully_qualified and not _is_online_only(item)][:10]
-    near = [item for item in candidates if is_high_quality(item)][:16]
-    found = [item for item in candidates if is_found_opportunity(item)][:30]
+    full = [item for item in candidates if item.fully_qualified and not _is_online_only(item)]
+    near = [item for item in candidates if is_high_quality(item)]
+    found = [item for item in candidates if is_found_opportunity(item)]
     # Count only opportunities that could actually be surfaced, so the
     # "tracking N" figure matches the page.
     tracked_total = sum(
@@ -223,7 +223,7 @@ def render_site(
 {seo_head(_SITE_URL, _SITE_DESCRIPTION, site_config or {})}
   {_BOOT_SCRIPT}
   <link rel="alternate" type="application/rss+xml" title="Summa" href="feed.xml">
-  {jsonld_block(full + near + found[:10], public_location=_public_location)}
+  {jsonld_block((full + near + found)[:36], public_location=_public_location)}
   <style>
 {_THEME_CSS}
 {_HOME_HERO_CSS}
@@ -232,7 +232,7 @@ def render_site(
 {_DISCOVER_CSS}
   </style>
 </head>
-<body data-page-title-en="Summa · Funded research summer schools" data-page-title-zh="Summa · 科研暑校与训练机会">
+<body class="home-page" data-page-title-en="Summa · Funded research summer schools" data-page-title-zh="Summa · 科研暑校与训练机会">
   {_site_nav()}
   <header class="hero" id="top">
     <div class="wrap">
@@ -258,12 +258,17 @@ def render_site(
     </div>
     {status_banner}
     <section id="opportunities" class="anchor">
-      <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p>{_bilingual(f"{len(curated) + len(full) + len(near) + len(found)} shown · Updated {updated}", f"显示 {len(curated) + len(full) + len(near) + len(found)} 条 · 更新于 {updated}")}</p></div>
-      {filters}
-      {_curated_section(curated_rows) if curated else ""}
-      {_qualified_section(full_rows) if full else ""}
-      {near_block}
-      {_found_section(found_rows) if found_rows else ""}
+      <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p>{_bilingual(f"{len(curated) + len(full) + len(near) + len(found)} total · 15 per page · Updated {updated}", f"共 {len(curated) + len(full) + len(near) + len(found)} 条 · 每页 15 条 · 更新于 {updated}")}</p></div>
+      <div class="opportunity-browser">
+        {filters}
+        <div class="opportunity-results">
+          {_curated_section(curated_rows) if curated else ""}
+          {_qualified_section(full_rows) if full else ""}
+          {near_block}
+          {_found_section(found_rows) if found_rows else ""}
+          {render_pagination()}
+        </div>
+      </div>
     </section>
     {_notes_section(notes) if notes else ""}
     {_subscribe_section(site_config or {})}
@@ -311,7 +316,7 @@ def _curated_section(rows: str) -> str:
 def _near_section(rows: str) -> str:
     return f"""
     <section class="opportunity-tier">
-      <div class="sr-only-tier"><h2 data-i18n="tier.high">High-Quality Opportunities</h2><p data-i18n="tier.high.lead">Relevant funded or low-fee opportunities that still need official-page verification.</p></div>
+      <div class="sr-only-tier"><h2 data-i18n="tier.high">High-Quality Opportunities</h2><p data-i18n="tier.high.lead">Relevant funded or low-fee opportunities from official sources.</p></div>
       <div class="table-wrap opportunity-table-wrap">
         <table class="opportunity-table standard-table">
           <thead><tr><th data-i18n="table.title">Title</th><th data-i18n="table.organizer">Organizer</th><th data-i18n="table.location">Location</th><th data-i18n="table.duration">Duration</th><th data-i18n="table.deadline">Deadline</th><th data-i18n="table.funding">Funding / Fee</th><th data-i18n="table.topic">Topic</th><th data-i18n="table.actions">Actions</th></tr></thead>
@@ -325,7 +330,7 @@ def _near_section(rows: str) -> str:
 def _found_section(rows: str) -> str:
     return f"""
     <section class="opportunity-tier">
-      <div class="sr-only-tier"><h2 data-i18n="tier.found">Found Opportunities</h2><p data-i18n="tier.found.lead">Relevant leads with unresolved evidence.</p></div>
+      <div class="sr-only-tier"><h2 data-i18n="tier.found">Listed Opportunities</h2><p data-i18n="tier.found.lead">Additional research-training opportunities collected from official sources.</p></div>
       <div class="table-wrap opportunity-table-wrap">
         <table class="opportunity-table standard-table">
           <thead><tr><th data-i18n="table.title">Title</th><th data-i18n="table.organizer">Organizer</th><th data-i18n="table.location">Location</th><th data-i18n="table.duration">Duration</th><th data-i18n="table.deadline">Deadline</th><th data-i18n="table.funding">Funding / Fee</th><th data-i18n="table.topic">Topic</th><th data-i18n="table.actions">Actions</th></tr></thead>
@@ -485,7 +490,7 @@ def _row_attrs(candidate: Candidate, status: str | None = None) -> str:
     status_labels = {
         "qualified": ("Fully qualified", "完全符合"),
         "high-quality": ("High quality", "高质量"),
-        "found": ("Found", "待核实"),
+        "found": ("Listed", "已收录"),
     }
     status_en, status_cn = status_labels.get(status, (status, status))
     funding = candidate.financial_access_status

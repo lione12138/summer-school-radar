@@ -88,7 +88,7 @@ AI branch constraints:
 - Source health tracks last attempt, last success, and consecutive failures per configured source; status-refresh manifests must not recursively nest older refresh manifests.
 - Multi-session detection supports labelled prose, table rows, and JSON-LD `subEvent`; unlabelled event calendars remain excluded.
 - `src/research_school_radar/programme_sessions.py` — multi-session duration/date presentation shared by reports, RSS, and HTML.
-- `src/research_school_radar/site_components.py`, `site_calendar.py`, `site_filters.py`, `site_layout.py`, and `site_paths.py` — reusable site presentation primitives.
+- `src/research_school_radar/site_components.py`, `site_calendar.py`, `site_layout.py`, and `site_paths.py` — reusable site presentation primitives; `site_filters.py` owns browser-side filtering, responsive sidebar behavior, and 15-item pagination.
 - `src/research_school_radar/site_detail.py` and `site_sources_page.py` — dedicated detail and source-page renderers; `site.py` remains the build coordinator.
 - `src/research_school_radar/site_home_page.py`, `site_home.py`, and `site_home_styles.py` — homepage renderer, static sections, and homepage-only styles.
 - `src/research_school_radar/urls.py` — validates public external URLs before rendering links.

@@ -122,7 +122,8 @@ FUNDING_TYPE_ZH = {
 STATUS_ZH = {
     "Fully qualified": "完全符合",
     "High quality": "高质量",
-    "Found": "待核实",
+    "Found": "已收录",
+    "Listed": "已收录",
     "Curated": "人工精选",
 }
 
