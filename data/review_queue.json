@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-15",
+  "generated": "2026-07-16",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -117,6 +117,43 @@
       }
     },
     {
+      "title": "48th CERN School of Computing",
+      "url": "https://csc.web.cern.ch/csc-2026/",
+      "organizer": "CERN School of Computing",
+      "source_layer": "1",
+      "location": "University of Liverpool, Liverpool, United Kingdom",
+      "dates": {
+        "start": "2026-08-23",
+        "end": "2026-09-05",
+        "duration_days": 14
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "software engineering",
+        "physics",
+        "particle physics",
+        "engineering",
+        "history"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "23 August – 5 September 2026",
+        "funding": "Financial support may be available. Categories Schools , Upcoming School Post navigation Previous Post Previous tCSC 2026 Next Post Next",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "Applied Public Policy Evaluation",
       "url": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
       "organizer": "Tinbergen Institute",
@@ -141,10 +178,9 @@
         "economics"
       ],
       "needs_review": [
-        "application deadline is uncertain",
-        "in-person status is uncertain"
+        "application deadline is uncertain"
       ],
-      "confidence": 0.5,
+      "confidence": 0.75,
       "evidence": {
         "deadline": "",
         "duration": "August 24 - Friday 28 2026",
@@ -196,10 +232,9 @@
         "economics"
       ],
       "needs_review": [
-        "application deadline is uncertain",
-        "in-person status is uncertain"
+        "application deadline is uncertain"
       ],
-      "confidence": 0.5,
+      "confidence": 0.75,
       "evidence": {
         "deadline": "",
         "duration": "August 24 - Friday 28 2026",
@@ -276,6 +311,135 @@
           "fee": "",
           "funding": ""
         }
+      }
+    },
+    {
+      "title": "Data Management and Scientific Computing (DMSC) Centre Summer School 2026",
+      "url": "https://ess.eu/event/2026/08/24/data-management-and-scientific-computing-dmsc-centre-summer-school-2026",
+      "organizer": "ESS Data and Computing Schools",
+      "source_layer": "1",
+      "location": "Lyngby, Denmark",
+      "dates": {
+        "start": "2026-08-24",
+        "end": "2026-08-28",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "geoscience",
+        "sustainability",
+        "physics",
+        "condensed matter",
+        "particle physics",
+        "chemistry",
+        "engineering",
+        "architecture"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "August 24, 2026 - August 28, 2026",
+        "funding": "",
+        "mode": "will take place in Lyngby, Denmark , from 24-28 August 2026, with a w"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "medium",
+        "validation_warnings": [
+          "missing_evidence_id:location",
+          "missing_evidence_id:mode"
+        ],
+        "chinese_summary": "ESS举办的2026年数据管理与科学计算暑期学校，面向博士生和早期职业研究人员，涵盖中子散射数据全生命周期管理。",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
+      "title": "Explore CISPA",
+      "url": "https://cispa.de/en",
+      "organizer": "CISPA",
+      "source_layer": "2",
+      "location": "Europe",
+      "dates": {
+        "start": "2026-08-24",
+        "end": "2026-08-28",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "AI",
+        "artificial intelligence",
+        "machine learning",
+        "cybersecurity",
+        "cryptography",
+        "design"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "Aug 24, 2026 to Aug 28, 2026",
+        "funding": "funding decision: CISPA set to grow by around 45 million euros annually More ©Stephanie Bremerich CISPA-Faculty Professor Dr. M",
+        "mode": "venues of security, privacy & cryptography alone RESEAR"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Thematic CERN School of Computing",
+      "url": "https://csc.web.cern.ch/scsc-2026/",
+      "organizer": "CERN School of Computing",
+      "source_layer": "1",
+      "location": "Cosener’s House – Abingdon, UK",
+      "dates": {
+        "start": "2026-09-27",
+        "end": "2026-10-03",
+        "duration_days": 7
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "architecture",
+        "history"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "27 September – 3 October 2026",
+        "funding": "",
+        "mode": "will be hosted at the Cosener’s House located in the grounds of the"
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {

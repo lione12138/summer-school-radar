@@ -38,7 +38,7 @@
   "https://businessdatascience.nl/foundations-of-machine-learning-with-applications-in-python": {
     "deadline": "2026-06-15",
     "first_seen": "2026-06-18",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://businessdatascience.nl/foundations-of-machine-learning-with-applications-in-python",
     "status": "near_match",
     "title": "Foundations of Machine Learning with Applications in Python"
@@ -74,17 +74,50 @@
   "https://cispa.de/en": {
     "deadline": null,
     "first_seen": "2026-06-16",
-    "last_seen": "2026-06-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://cispa.de/en",
     "status": "near_match",
-    "title": "WELCOME TO CISPA"
+    "title": "Explore CISPA"
   },
   "https://computerscience.exeter.ac.uk/machine-learning-summer-school/": {
     "deadline": "2026-06-12",
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://computerscience.exeter.ac.uk/machine-learning-summer-school/",
     "status": "near_match",
     "title": "Exeter Machine Learning Summer School"
+  },
+  "https://csc.web.cern.ch/csc-2026/": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://csc.web.cern.ch/csc-2026/",
+    "status": "near_match",
+    "title": "48th CERN School of Computing"
+  },
+  "https://csc.web.cern.ch/scsc-2026/": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://csc.web.cern.ch/scsc-2026/",
+    "status": "near_match",
+    "title": "Thematic CERN School of Computing"
+  },
+  "https://datascience.ase.ro/": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://datascience.ase.ro/",
+    "status": "near_match",
+    "title": "Data Science and AI Summer School"
+  },
+  "https://datascienceafrica.org/dsa-summer-schools/dsa-2026-summer-school-schedule": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://datascienceafrica.org/dsa-summer-schools/dsa-2026-summer-school-schedule",
+    "status": "near_match",
+    "title": "DSA Summer Schools"
   },
   "https://deeplearningindaba.com/": {
     "deadline": null,
@@ -117,7 +150,7 @@
   "https://eage.eventsair.com/short-course-structural-geology-must-knows/": {
     "deadline": "2026-07-31",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://eage.eventsair.com/short-course-structural-geology-must-knows/",
     "status": "near_match",
     "title": "Short Course: Structural Geology Must-Knows"
@@ -125,7 +158,7 @@
   "https://eage.org/students/scholarship-support/": {
     "deadline": "2024-10-11",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://eage.org/students/scholarship-support/",
     "status": "near_match",
     "title": "Scholarships & Awards"
@@ -133,7 +166,7 @@
   "https://ecpr.eu/MethodsSchool": {
     "deadline": null,
     "first_seen": "2026-06-16",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://ecpr.eu/MethodsSchool",
     "status": "near_match",
     "title": "Useful Information"
@@ -148,7 +181,7 @@
   "https://ellis.eu/events/cambridge-ellis-unit-summer-school-on-probabilistic-machine-learning-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://ellis.eu/events/cambridge-ellis-unit-summer-school-on-probabilistic-machine-learning-2026",
     "status": "near_match",
     "title": "Cambridge ELLIS Unit Summer School on Probabilistic Machine Learning 2026"
@@ -156,7 +189,7 @@
   "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school": {
     "deadline": "2026-08-28",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
     "status": "near_match",
     "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School"
@@ -164,7 +197,7 @@
   "https://ellis.eu/events/ellis-doctoral-symposium-2026": {
     "deadline": "2026-06-15",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://ellis.eu/events/ellis-doctoral-symposium-2026",
     "status": "near_match",
     "title": "ELLIS Doctoral Symposium 2026"
@@ -172,7 +205,7 @@
   "https://ellis.eu/events/ellis-sites-icml-fest-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://ellis.eu/events/ellis-sites-icml-fest-2026",
     "status": "near_match",
     "title": "ELLIS Sites ICML Fest 2026: Celebrate, Connect, Collaborate"
@@ -180,7 +213,7 @@
   "https://ellis.eu/events/ellis-summer-school-at-institute-finland-2026": {
     "deadline": "2026-05-20",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://ellis.eu/events/ellis-summer-school-at-institute-finland-2026",
     "status": "near_match",
     "title": "ELLIS Summer School at Institute Finland"
@@ -188,7 +221,7 @@
   "https://ellis.eu/events/ellis-summer-school-at-institute-tuebingen-2026": {
     "deadline": "2026-07-26",
     "first_seen": "2026-06-30",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://ellis.eu/events/ellis-summer-school-at-institute-tuebingen-2026",
     "status": "near_match",
     "title": "ELLIS Summer School at Institute Tübingen"
@@ -196,7 +229,7 @@
   "https://ellis.eu/events/ellis-summer-school-at-unit-barcelona-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://ellis.eu/events/ellis-summer-school-at-unit-barcelona-2026",
     "status": "near_match",
     "title": "ELLIS Summer School at Unit Barcelona"
@@ -211,7 +244,7 @@
   "https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026",
     "status": "near_match",
     "title": "ELLIS Summer School at Unit Munich"
@@ -219,7 +252,7 @@
   "https://ellis.eu/events/ellis-summer-school-at-unit-munich-in-dortmund-2026": {
     "deadline": "2026-06-08",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://ellis.eu/events/ellis-summer-school-at-unit-munich-in-dortmund-2026",
     "status": "near_match",
     "title": "ELLIS Summer School at Unit NRW"
@@ -234,7 +267,7 @@
   "https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026": {
     "deadline": "2026-07-19",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026",
     "status": "qualified",
     "title": "ELLIS Summer School at Unit Saarbrücken"
@@ -256,7 +289,8 @@
   "https://ellis.eu/events/ellis-unit-lisbon-machine-learning-summer-school-lxmls-2026": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-06-15",
+    "last_seen": "2026-07-16",
+    "source_url": "https://ellis.eu/events/ellis-unit-lisbon-machine-learning-summer-school-lxmls-2026",
     "status": "near_match",
     "title": "Lisbon Machine Learning Summer School (LxMLS)"
   },
@@ -365,6 +399,22 @@
     "status": "near_match",
     "title": "Scientists: advanced training by THEME (ocean, land, atmosphere, cryosphere), by TECHNIQUE and MULTI-THEMATIC SUMMER SCHOOLS - eo science..."
   },
+  "https://ess.eu/event/2026/08/17/epics-summer-school": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://ess.eu/event/2026/08/17/epics-summer-school",
+    "status": "near_match",
+    "title": "EPICS Summer School"
+  },
+  "https://ess.eu/event/2026/08/24/data-management-and-scientific-computing-dmsc-centre-summer-school-2026": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://ess.eu/event/2026/08/24/data-management-and-scientific-computing-dmsc-centre-summer-school-2026",
+    "status": "near_match",
+    "title": "Data Management and Scientific Computing (DMSC) Centre Summer School 2026"
+  },
   "https://essexsummerschool.com/course/ess-2026-course-list/": {
     "deadline": null,
     "first_seen": "2026-06-18",
@@ -375,7 +425,7 @@
   "https://essexsummerschool.com/new-application/": {
     "deadline": "2026-07-17",
     "first_seen": "2026-06-18",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://essexsummerschool.com/new-application/",
     "status": "qualified",
     "title": "Social Science Data Analysis"
@@ -404,7 +454,7 @@
   "https://events.vtools.ieee.org/m/564683": {
     "deadline": null,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://events.vtools.ieee.org/m/564683",
     "status": "near_match",
     "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics"
@@ -433,17 +483,18 @@
   "https://icvss.dmi.unict.it/icvss2026/": {
     "deadline": "2026-04-01",
     "first_seen": "2026-06-16",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://icvss.dmi.unict.it/icvss2026/",
     "status": "near_match",
-    "title": "ICVSS 2026"
+    "title": "Industrial Panel"
   },
   "https://icvss.dmi.unict.it/icvss2026/Application": {
     "deadline": "2026-04-01",
     "first_seen": "2026-06-16",
-    "last_seen": "2026-06-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://icvss.dmi.unict.it/icvss2026/Application",
     "status": "near_match",
-    "title": "SCHOOL APPLICATION"
+    "title": "ICVSS 2026"
   },
   "https://icvss.dmi.unict.it/icvss2026/Deadlines": {
     "deadline": "2026-04-01",
@@ -455,7 +506,7 @@
   "https://indico.ictp.it/event/11122": {
     "deadline": "2026-04-04",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://indico.ictp.it/event/11122",
     "status": "near_match",
     "title": "IV Joint ICTP-SAIFR/ICTP-Trieste Summer School on Particle Physics"
@@ -484,7 +535,7 @@
   "https://learninggeoscience.org/mod/page/view.php?id=7307": {
     "deadline": null,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://learninggeoscience.org/mod/page/view.php?id=7307",
     "status": "near_match",
     "title": "Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends"
@@ -492,7 +543,7 @@
   "https://lotschool.nl/": {
     "deadline": "2025-08-15",
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://lotschool.nl/",
     "status": "near_match",
     "title": "LOT – Netherlands Graduate School of Linguistics"
@@ -507,7 +558,7 @@
   "https://lotschool.nl/leiden-summer-school/": {
     "deadline": null,
     "first_seen": "2026-06-29",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://lotschool.nl/leiden-summer-school/",
     "status": "near_match",
     "title": "Leiden Summer School"
@@ -515,10 +566,18 @@
   "https://lxmls.github.io/2026/": {
     "deadline": "2026-05-08",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://lxmls.github.io/2026/",
     "status": "near_match",
-    "title": "The 16th Lisbon Machine Learning School LxMLS 2026"
+    "title": "Summer School Schedule"
+  },
+  "https://mila.quebec/en": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://mila.quebec/en",
+    "status": "near_match",
+    "title": "AI Policy Fellowship Publications"
   },
   "https://mila.quebec/en/continuing-education/summer-school-in-responsible-ai-and-human-rights": {
     "deadline": null,
@@ -545,7 +604,7 @@
   "https://people.disim.univaq.it/~antonio.cicone/2025/MaSAG25/MaSAG25_homepage.html": {
     "deadline": null,
     "first_seen": "2026-06-11",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://people.disim.univaq.it/~antonio.cicone/2025/MaSAG25/MaSAG25_homepage.html",
     "status": "near_match",
     "title": "MaSAG25 Summer School and Conference"
@@ -574,7 +633,7 @@
   "https://tinbergen.nl/event/2026/07/20/13264/deep-learning": {
     "deadline": null,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://tinbergen.nl/event/2026/07/20/13264/deep-learning",
     "status": "near_match",
     "title": "Deep Learning"
@@ -582,7 +641,7 @@
   "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation": {
     "deadline": null,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
     "status": "near_match",
     "title": "Applied Public Policy Evaluation"
@@ -590,7 +649,7 @@
   "https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change": {
     "deadline": null,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change",
     "status": "near_match",
     "title": "Economics of Climate Change"
@@ -598,7 +657,7 @@
   "https://tinbergen.nl/tuition-fees-scholarships-and-financial-support": {
     "deadline": null,
     "first_seen": "2026-06-18",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://tinbergen.nl/tuition-fees-scholarships-and-financial-support",
     "status": "near_match",
     "title": "Tuition fees, scholarships and financial support"
@@ -606,10 +665,10 @@
   "https://unicri.org/training-summer-school-sport-governance-and-ethics-integrity-2026": {
     "deadline": null,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://unicri.org/training-summer-school-sport-governance-and-ethics-integrity-2026",
     "status": "near_match",
-    "title": "Summer School on Sport Governance and Ethics: Integrity in Practice, Spring 2027"
+    "title": "Newsletter"
   },
   "https://utrechtsummerschool.nl/about/utrecht-summer-school": {
     "deadline": null,
@@ -660,6 +719,14 @@
     "status": "near_match",
     "title": "UFS Futuring Summer School: Futuring for Democracy"
   },
+  "https://watersummerschool.wordpress.com/": {
+    "deadline": "2026-07-11",
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://watersummerschool.wordpress.com/",
+    "status": "near_match",
+    "title": "Announcement of 10th W.A.T.E.R. Summer School 2026"
+  },
   "https://www.ametsoc.org/ams/meetings-events/": {
     "deadline": null,
     "first_seen": "2026-06-13",
@@ -702,12 +769,28 @@
     "status": "near_match",
     "title": "Climate Change AI Virtual Summer School 2026"
   },
+  "https://www.clivar.org/events/4th-commodore-workshop-advancing-ocean-modeling-bridging-theory-computation-scales-and": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://www.clivar.org/events/4th-commodore-workshop-advancing-ocean-modeling-bridging-theory-computation-scales-and",
+    "status": "near_match",
+    "title": "Search form"
+  },
   "https://www.clivar.org/events/7th-ictp-summer-school-theory-mechanisms-and-hierarchical-modelling-climate-dynamics": {
     "deadline": "2026-04-30",
     "first_seen": "2026-06-14",
     "last_seen": "2026-06-29",
     "status": "near_match",
     "title": "7th ICTP Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics"
+  },
+  "https://www.clivar.org/events/us-clivar-workshop-quantum-computing-weather-and-climate-applications": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://www.clivar.org/events/us-clivar-workshop-quantum-computing-weather-and-climate-applications",
+    "status": "near_match",
+    "title": "Search form"
   },
   "https://www.compneuronrsn.org/": {
     "deadline": null,
@@ -720,7 +803,7 @@
   "https://www.cs.uoregon.edu/research/summerschool/summer26/": {
     "deadline": null,
     "first_seen": "2026-06-16",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.cs.uoregon.edu/research/summerschool/summer26/",
     "status": "near_match",
     "title": "Types, Proofs, and Program Logics"
@@ -756,26 +839,34 @@
   "https://www.ds3-datascience-polytechnique.fr/": {
     "deadline": null,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.ds3-datascience-polytechnique.fr/",
     "status": "near_match",
-    "title": "VIRTUAL"
+    "title": "Sharing the summer school:"
   },
   "https://www.ds3-datascience-polytechnique.fr/key-dates-application/": {
     "deadline": "2020-10-21",
     "first_seen": "2026-06-16",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.ds3-datascience-polytechnique.fr/key-dates-application/",
     "status": "near_match",
-    "title": "Key Dates & Application"
+    "title": "Important guidelines to the application:"
   },
   "https://www.earthscope.org/event/2026-technical-short-course-insar-processing-and-theory-using-gmtsar/": {
     "deadline": "2026-06-12",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.earthscope.org/event/2026-technical-short-course-insar-processing-and-theory-using-gmtsar/",
     "status": "near_match",
     "title": "2026 Technical Short Course: InSAR Processing and Theory using GMTSAR"
+  },
+  "https://www.ebi.ac.uk/training/events/causality-in-biomedicine-2026/": {
+    "deadline": "2026-06-21",
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://www.ebi.ac.uk/training/events/causality-in-biomedicine-2026/",
+    "status": "near_match",
+    "title": "Causality in biomedicine: going beyond associations"
   },
   "https://www.ecmwf.int/en/learning/training": {
     "deadline": null,
@@ -794,7 +885,7 @@
   "https://www.eeml.eu/": {
     "deadline": null,
     "first_seen": "2026-06-12",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.eeml.eu/",
     "status": "near_match",
     "title": "Eastern European Machine Learning Summer School"
@@ -802,9 +893,10 @@
   "https://www.eeml.eu/previous-editions/eeml2025/application": {
     "deadline": "2025-03-31",
     "first_seen": "2026-06-12",
-    "last_seen": "2026-06-14",
+    "last_seen": "2026-07-16",
+    "source_url": "https://www.eeml.eu/previous-editions/eeml2025/application",
     "status": "near_match",
-    "title": "Application"
+    "title": "Application instructions"
   },
   "https://www.egu.eu/education/gift/field-schools-for-teachers/": {
     "deadline": null,
@@ -879,7 +971,7 @@
   "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/": {
     "deadline": null,
     "first_seen": "2026-06-18",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/",
     "status": "near_match",
     "title": "2026 Advanced Course on International Criminal Law"
@@ -887,7 +979,7 @@
   "https://www.helmholtz-hida.de/en/mobility/hida-mobility-program/application-process/": {
     "deadline": null,
     "first_seen": "2026-06-18",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.helmholtz-hida.de/en/mobility/hida-mobility-program/application-process/",
     "status": "near_match",
     "title": "Application Process"
@@ -944,7 +1036,7 @@
   "https://www.icos-cp.eu/about/opportunities/summer-school": {
     "deadline": "2026-07-31",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.icos-cp.eu/about/opportunities/summer-school",
     "status": "near_match",
     "title": "ICOS Summer/Winter School January 2027, application is now open"
@@ -987,15 +1079,15 @@
   "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/": {
     "deadline": null,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
     "status": "near_match",
-    "title": "Prob_AI Hub Winter School 2027, Tuesday 5 January, 11:00am"
+    "title": "Prob_AI Hub Winter School 2027"
   },
   "https://www.lse.ac.uk/cities": {
     "deadline": null,
     "first_seen": "2026-06-18",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.lse.ac.uk/cities",
     "status": "near_match",
     "title": "LSE Cities"
@@ -1052,7 +1144,7 @@
   "https://www.projects.science.uu.nl/iceclimate/karthaus/application.php": {
     "deadline": null,
     "first_seen": "2026-06-18",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.projects.science.uu.nl/iceclimate/karthaus/application.php",
     "status": "near_match",
     "title": "Karthaus summerschool"
@@ -1060,7 +1152,7 @@
   "https://www.sba-research.org/": {
     "deadline": null,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.sba-research.org/",
     "status": "near_match",
     "title": "Privacy settings"
@@ -1068,10 +1160,10 @@
   "https://www.sba-research.org/events/shecurity-summer-school-2026/": {
     "deadline": null,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.sba-research.org/events/shecurity-summer-school-2026/",
     "status": "near_match",
-    "title": "Privacy settings"
+    "title": "SHECURITY Summer School 2026"
   },
   "https://www.solas-int.org/events/solas-events/summer-school-2026.html": {
     "deadline": null,
@@ -1097,7 +1189,7 @@
   "https://www.unesco-floods.eu/unesco-floods-summer-school/": {
     "deadline": "2026-05-20",
     "first_seen": "2026-06-25",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.unesco-floods.eu/unesco-floods-summer-school/",
     "status": "near_match",
     "title": "HydRoData 2026: Summer school about Hydrology and Data"
@@ -1105,15 +1197,23 @@
   "https://www.unicri.org/index.php/advanced-education-artificial-intelligence-ai-ethics-human-rights-2026": {
     "deadline": "2026-11-30",
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.unicri.org/index.php/advanced-education-artificial-intelligence-ai-ethics-human-rights-2026",
     "status": "near_match",
-    "title": "Winter School on Artificial Intelligence (AI), Ethics and Human Rights, 14-18 December 2026, Hybrid Format: Rome (Italy) and online"
+    "title": "Newsletter"
+  },
+  "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools": {
+    "deadline": "2026-05-22",
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools",
+    "status": "near_match",
+    "title": "Language"
   },
   "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/frontiers-of-modern-physics": {
     "deadline": "2026-03-01",
     "first_seen": "2026-06-18",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/frontiers-of-modern-physics",
     "status": "near_match",
     "title": "Summer School: Frontiers of Modern Physics"
@@ -1129,7 +1229,7 @@
   "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-science-communication": {
     "deadline": "2026-03-29",
     "first_seen": "2026-06-16",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-science-communication",
     "status": "near_match",
     "title": "Summer School Science Communication"
@@ -1137,7 +1237,7 @@
   "https://www.wcrp-climate.org/ictp2014-about": {
     "deadline": null,
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.wcrp-climate.org/ictp2014-about",
     "status": "near_match",
     "title": "WCRP-ICTP 2014 Summer school on Attribution and Prediction of Extremes Events"
@@ -1145,7 +1245,7 @@
   "ihe-delft:edition:09CAEE26-3281-11F1-A0A9-0050561F03F5": {
     "deadline": "2027-02-01",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Wastewater Treatment Design and Selection"
@@ -1153,7 +1253,7 @@
   "ihe-delft:edition:0C1B6BF4-75FF-11F1-A7F4-0050561F03F5": {
     "deadline": "2026-12-11",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Groundwater Resources and Treatment"
@@ -1161,7 +1261,7 @@
   "ihe-delft:edition:10180031-3F14-11F1-9A59-0050561F03F5": {
     "deadline": "2026-10-30",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Surface Water Treatment"
@@ -1169,7 +1269,7 @@
   "ihe-delft:edition:13763E13-4DED-11F1-B159-0050561F03F5": {
     "deadline": "2026-10-02",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Emergency Management for Flood Defences – General Concepts"
@@ -1177,7 +1277,7 @@
   "ihe-delft:edition:1F6DDF05-4DF0-11F1-B159-0050561F03F5": {
     "deadline": "2026-10-09",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Emergency Management for Flood Defences - Operations in Practice"
@@ -1185,7 +1285,7 @@
   "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5": {
     "deadline": "2026-07-28",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Interdisciplinarity for Complex Water Problems"
@@ -1193,7 +1293,7 @@
   "ihe-delft:edition:27FA04F3-3282-11F1-A0A9-0050561F03F5": {
     "deadline": "2026-12-11",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Organizing Water"
@@ -1201,7 +1301,7 @@
   "ihe-delft:edition:2BECA740-3283-11F1-A0A9-0050561F03F5": {
     "deadline": "2027-01-08",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Irrigation Design, Performance Assessment and Modernisation"
@@ -1209,7 +1309,7 @@
   "ihe-delft:edition:2F82D05A-3284-11F1-A0A9-0050561F03F5": {
     "deadline": "2027-02-01",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Design of Risk Reduction Measures in Coastal Zones"
@@ -1217,7 +1317,7 @@
   "ihe-delft:edition:36C27682-3281-11F1-A0A9-0050561F03F5": {
     "deadline": "2027-02-28",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Wastewater Reuse in Agriculture"
@@ -1225,7 +1325,7 @@
   "ihe-delft:edition:427F3F43-3F13-11F1-9A59-0050561F03F5": {
     "deadline": "2026-12-11",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "River Basin Modelling"
@@ -1233,7 +1333,7 @@
   "ihe-delft:edition:565D378D-3283-11F1-A0A9-0050561F03F5": {
     "deadline": "2027-02-01",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Humanitarian WASH"
@@ -1241,7 +1341,7 @@
   "ihe-delft:edition:5DFFA121-3281-11F1-A0A9-0050561F03F5": {
     "deadline": "2027-01-08",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "River Morphodynamics"
@@ -1249,7 +1349,7 @@
   "ihe-delft:edition:5E57A522-3284-11F1-A0A9-0050561F03F5": {
     "deadline": "2027-02-28",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Assessing Social and Environmental Impacts"
@@ -1257,7 +1357,7 @@
   "ihe-delft:edition:7415606A-115B-11F1-BB1B-0050561F03F5": {
     "deadline": "2026-10-31",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "City-Wide Inclusive Sanitation"
@@ -1265,7 +1365,7 @@
   "ihe-delft:edition:8578A6C2-3282-11F1-A0A9-0050561F03F5": {
     "deadline": "2026-12-11",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "On-site Sanitation and Treatment"
@@ -1273,7 +1373,7 @@
   "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5": {
     "deadline": "2026-10-09",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Water Conflict, Cooperation and Diplomacy"
@@ -1281,7 +1381,7 @@
   "ihe-delft:edition:A4942C80-3281-11F1-A0A9-0050561F03F5": {
     "deadline": "2027-02-01",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Policy Analysis"
@@ -1289,7 +1389,7 @@
   "ihe-delft:edition:AFC693D1-3282-11F1-A0A9-0050561F03F5": {
     "deadline": "2027-01-08",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Modelling Coastal Hazards"
@@ -1297,7 +1397,7 @@
   "ihe-delft:edition:C51B289C-3280-11F1-A0A9-0050561F03F5": {
     "deadline": "2026-12-11",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Wastewater Treatment Processes & Technologies"
@@ -1305,7 +1405,7 @@
   "ihe-delft:edition:D12D7660-3F10-11F1-9A59-0050561F03F5": {
     "deadline": "2026-12-11",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Coastal Processes & Morphology"
@@ -1313,7 +1413,7 @@
   "ihe-delft:edition:D23836DC-3283-11F1-A0A9-0050561F03F5": {
     "deadline": "2027-02-28",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Experimental Methods for Evaluation of Wastewater, Sanitation & Environmental Technologies"
@@ -1321,9 +1421,17 @@
   "ihe-delft:edition:E8E593C2-C9F7-11F0-A9A4-0050561F03F5": {
     "deadline": "2026-09-05",
     "first_seen": "2026-06-14",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
     "status": "near_match",
     "title": "Water Quality Assessment and Monitoring"
+  },
+  "sib:https://www.sib.swiss/training/course/20261029_cvana": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://www.sib.swiss/training/course/20261029_CVANA",
+    "status": "near_match",
+    "title": "Cancer Variant Analysis"
   }
 }
