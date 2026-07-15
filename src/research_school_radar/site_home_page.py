@@ -189,7 +189,11 @@ def render_site(
     curated = curated or []
     full = [item for item in candidates if item.fully_qualified and not _is_online_only(item)]
     near = [item for item in candidates if is_high_quality(item)]
-    found = [item for item in candidates if is_found_opportunity(item)]
+    # Lower-confidence/listed records are often dominated by a single direct
+    # catalogue. Interleave their organizers so the first page represents the
+    # breadth of the registry; filtering still exposes every record and keeps
+    # each organizer's original score order.
+    found = _interleave_by_organizer([item for item in candidates if is_found_opportunity(item)])
     # Count only opportunities that could actually be surfaced, so the
     # "tracking N" figure matches the page.
     tracked_total = sum(
@@ -283,6 +287,23 @@ def render_site(
 </body>
 </html>
 """
+
+
+def _interleave_by_organizer(candidates: list[Candidate]) -> list[Candidate]:
+    """Round-robin records by organizer without dropping or re-scoring them."""
+    buckets: dict[str, list[Candidate]] = {}
+    for candidate in candidates:
+        buckets.setdefault(candidate.organizer.casefold(), []).append(candidate)
+    interleaved: list[Candidate] = []
+    while buckets:
+        exhausted: list[str] = []
+        for organizer, bucket in buckets.items():
+            interleaved.append(bucket.pop(0))
+            if not bucket:
+                exhausted.append(organizer)
+        for organizer in exhausted:
+            del buckets[organizer]
+    return interleaved
 
 
 def _qualified_section(rows: str) -> str:

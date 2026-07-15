@@ -67,6 +67,7 @@ GENERIC_TITLES = {
     "apply", "register", "registration", "read more", "skip to main content",
     "student support", "opportunities", "vacancies", "about", "about us",
     "contact", "contact us", "events archive", "upcoming events", "our events",
+    "mobile menu", "our use of cookies",
 }
 
 # Substrings that mark a title as a section, archive, or navigation label

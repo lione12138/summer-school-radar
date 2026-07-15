@@ -179,6 +179,24 @@ def test_dedicated_collectors_use_the_same_enabled_source_registry() -> None:
     assert collectors == {"ELLIS": "ellis", "IHE Delft": "ihe_delft"}
 
 
+def test_computing_and_ai_source_expansion_is_enabled() -> None:
+    sources = _load_sources(Path("config/sources.yaml"))
+    by_name = {source.name: source for source in sources}
+    expected = {
+        "IEEE RAS Technical Education Programs",
+        "IEEE RAS Cognitive Robotics Summer School",
+        "EurAI ESSAI",
+        "ESSIR",
+        "NLDL Winter School",
+        "Prob_AI Hub Winter School",
+        "Exeter Machine Learning Summer School",
+        "UNICRI AI Ethics Winter School",
+    }
+
+    assert expected <= by_name.keys()
+    assert all(by_name[name].url.startswith("https://") for name in expected)
+
+
 def test_curated_opportunities_loader_reads_yaml(tmp_path) -> None:
     path = tmp_path / "opportunities.yml"
     path.write_text(

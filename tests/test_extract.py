@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 from datetime import date, timedelta
+from pathlib import Path
 
 from research_school_radar.extract import extract_candidate, sample_candidate
 from research_school_radar.filter import apply_hard_filters
 from research_school_radar.models import Page, Source
 from research_school_radar.parse import candidate_links, looks_like_opportunity
 from research_school_radar.rank import rank_candidates
+from research_school_radar.utils import load_yaml
 
 
 PROFILE = {
@@ -55,6 +57,17 @@ def test_sample_candidate_fully_qualifies() -> None:
     assert candidate.deadline and candidate.deadline >= date.today()
     assert "travel grant" in candidate.funding_type
     assert candidate.fee_eur == 300
+
+
+def test_configured_duration_gate_keeps_five_day_schools() -> None:
+    profile = load_yaml(Path("config/profile.yaml"))
+    five_day = sample_candidate(profile)
+    five_day.duration_days = 5
+    four_day = sample_candidate(profile)
+    four_day.duration_days = 4
+
+    assert apply_hard_filters(five_day, profile).fully_qualified
+    assert "duration is below 5 days" in apply_hard_filters(four_day, profile).failed_hard_conditions
 
 
 def test_low_fee_without_funding_fully_qualifies() -> None:
@@ -447,6 +460,19 @@ def test_compact_day_range_before_month_is_parsed() -> None:
     assert candidate is not None
     assert candidate.start_date == date(2027, 7, 9)
     assert candidate.end_date == date(2027, 7, 20)
+
+
+def test_ordinal_and_weekday_date_ranges_are_parsed() -> None:
+    from research_school_radar.extract import _extract_dates
+
+    assert _extract_dates("5th to 8th January 2027") == (
+        date(2027, 1, 5),
+        date(2027, 1, 8),
+    )
+    assert _extract_dates("Tuesday, 23 June 2026 to Friday, 3 July 2026") == (
+        date(2026, 6, 23),
+        date(2026, 7, 3),
+    )
 
 
 def test_shared_year_range_is_parsed() -> None:
@@ -1144,6 +1170,30 @@ def test_allcaps_banner_titles_fall_back_to_page_title() -> None:
     title = _extract_title(page)
     assert title != "MOTIVATION AND DESCRIPTION"
     assert "ICVSS" in title  # acronym title is kept, not rejected as a banner
+
+
+def test_mobile_menu_heading_falls_back_to_page_title() -> None:
+    from research_school_radar.extract import _extract_title
+
+    page = _page(
+        "AI ethics winter school.",
+        title="Winter School on Artificial Intelligence, Ethics and Human Rights",
+        html="<html><body><h1>Mobile Menu</h1></body></html>",
+    )
+
+    assert _extract_title(page) == "Winter School on Artificial Intelligence, Ethics and Human Rights"
+
+
+def test_cookie_banner_heading_falls_back_to_page_title() -> None:
+    from research_school_radar.extract import _extract_title
+
+    page = _page(
+        "Probabilistic AI winter school.",
+        title="Prob_AI Hub Winter School 2027 - Lancaster University",
+        html="<html><body><h1>Our use of cookies</h1></body></html>",
+    )
+
+    assert _extract_title(page) == "Prob_AI Hub Winter School 2027"
 
 
 def test_homepage_title_is_rejected() -> None:

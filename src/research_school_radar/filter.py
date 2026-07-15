@@ -19,7 +19,7 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
         elif candidate.deadline_status == "uncertain":
             failed.append("application deadline is uncertain")
 
-    minimum_duration = int(hard.get("minimum_duration_days", 8))
+    minimum_duration = int(hard.get("minimum_duration_days", 5))
     if candidate.duration_days is None:
         failed.append("duration is uncertain")
     elif candidate.duration_days < minimum_duration:

@@ -93,7 +93,7 @@ An opportunity must satisfy all hard conditions:
 | Condition | Requirement |
 |---|---|
 | Deadline | Application is still open or deadline has not passed |
-| Duration | At least 8 days |
+| Duration | At least 5 days |
 | Financial access | Explicit funding is available, or the confirmed total fee is no more than approximately EUR 400 |
 | Mode | In-person or substantially on-site, not online-only |
 | Topic | Relevant to one of the covered fields: environmental & earth science (water, climate, geoscience, remote sensing), computing & data science (machine learning, computer vision, software engineering, cybersecurity, computational neuroscience, linguistics), or the social sciences & humanities (social-science methods, economics, political science, history, digital humanities) |

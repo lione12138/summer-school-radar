@@ -61,7 +61,9 @@ def score_candidate(candidate: Candidate) -> tuple[float, list[str]]:
         score += 4
 
     if candidate.duration_days:
-        if candidate.duration_days >= 8:
+        # A Monday-Friday seasonal school is a substantial training format,
+        # even though it spans only five calendar days.
+        if candidate.duration_days >= 5:
             score += min(candidate.duration_days, 20)
             reasons.append(f"{candidate.duration_days} days")
         else:

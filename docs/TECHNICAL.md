@@ -76,7 +76,7 @@ The default profile targets MSc, PhD, postdoc, and early-career research trainin
 An opportunity is treated as fully qualified only when all hard conditions are satisfied:
 
 - application is open or the deadline has not passed
-- duration is at least 8 days
+- duration is at least 5 days
 - scholarship, travel grant, tuition waiver, stipend, accommodation support, or other funding is explicit; or the confirmed total fee is no more than approximately EUR 400
 - in-person or substantially on-site, not online-only
 - topic is relevant to the configured research profile

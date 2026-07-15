@@ -133,6 +133,62 @@ sources:
     source_type: research_network
     keywords: [data science, AI, machine learning, school]
     notes: Helmholtz Information and Data Science Academy events, including schools for environmental data science.
+  - name: IEEE RAS Technical Education Programs
+    url: https://www.ieee-ras.org/educational-resources-outreach/technical-education-programs/
+    layer: 1
+    region: global
+    source_type: scientific_society
+    keywords: [robotics, embodied AI, machine learning, seasonal school]
+    notes: IEEE Robotics and Automation Society's funded Technical Education Programs (seasonal schools), with annual research-oriented robotics and AI schools worldwide.
+  - name: IEEE RAS Cognitive Robotics Summer School
+    url: https://events.vtools.ieee.org/m/564683
+    layer: 1.5
+    region: continental Europe
+    source_type: scientific_society
+    keywords: [cognitive robotics, embodied AI, machine learning, autonomous systems, summer school]
+    notes: Current official IEEE event page for the September 2026 RAS school on bridging AI and robotics in Germany.
+  - name: EurAI ESSAI
+    url: https://eurai.org/essai
+    layer: 1
+    region: continental Europe
+    source_type: scientific_society
+    keywords: [artificial intelligence, machine learning, robotics, natural language processing, summer school]
+    notes: European Summer School on Artificial Intelligence; EurAI's annual broad AI school for PhD students and young researchers.
+  - name: ESSIR
+    url: https://www.essir.eu/
+    layer: 1.5
+    region: continental Europe
+    source_type: summer_school
+    keywords: [information retrieval, recommender systems, natural language processing, machine learning, data science, summer school]
+    notes: European Summer School on Information Retrieval; a recurring research school linking IR, recommender systems, NLP, machine learning, and data science.
+  - name: NLDL Winter School
+    url: https://www.nldl.org/program/winter-school
+    layer: 1.5
+    region: continental Europe
+    source_type: summer_school
+    keywords: [deep learning, machine learning, trustworthy AI, computer vision, winter school]
+    notes: Northern Lights Deep Learning winter school, co-hosted with the NORA Research School and updated for each annual edition.
+  - name: Prob_AI Hub Winter School
+    url: https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/
+    layer: 1.5
+    region: UK
+    source_type: university_institute
+    keywords: [probabilistic AI, machine learning, probability, artificial intelligence, winter school]
+    notes: Prob_AI Hub winter school for PhD students and researchers; current official Lancaster University event page for the January 2027 edition.
+  - name: Exeter Machine Learning Summer School
+    url: https://computerscience.exeter.ac.uk/machine-learning-summer-school/
+    layer: 2
+    region: UK
+    source_type: university
+    keywords: [machine learning, generative AI, large language models, explainable AI, summer school]
+    notes: University of Exeter's intensive machine-learning research school; the stable programme page is updated for each edition.
+  - name: UNICRI AI Ethics Winter School
+    url: https://www.unicri.org/index.php/advanced-education-artificial-intelligence-ai-ethics-human-rights-2026
+    layer: 1.5
+    region: continental Europe
+    source_type: intergovernmental_research
+    keywords: [artificial intelligence, AI ethics, human rights, responsible AI, winter school]
+    notes: UNICRI and LUMSA winter school on AI, ethics, and human rights; the current edition has an in-person Rome track alongside online participation.
   - name: MLSS Index
     url: http://mlss.cc/
     layer: 1

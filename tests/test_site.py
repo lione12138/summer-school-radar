@@ -11,6 +11,7 @@ from research_school_radar.models import Page, ProgrammeSession, Source
 from research_school_radar.rank import rank_candidates
 from research_school_radar.report import render_report
 from research_school_radar.site import write_site
+from research_school_radar.site_home_page import _interleave_by_organizer
 
 
 PROFILE = {
@@ -32,6 +33,21 @@ PROFILE = {
     "priority_regions": ["continental Europe"],
     "supplementary_regions": ["North America"],
 }
+
+
+def test_listed_opportunities_are_interleaved_by_organizer() -> None:
+    base = sample_candidate(PROFILE)
+    candidates = [
+        replace(base, title="A1", organizer="Large Catalogue"),
+        replace(base, title="A2", organizer="Large Catalogue"),
+        replace(base, title="A3", organizer="Large Catalogue"),
+        replace(base, title="B1", organizer="AI School"),
+        replace(base, title="C1", organizer="Computing Society"),
+    ]
+
+    interleaved = _interleave_by_organizer(candidates)
+
+    assert [candidate.title for candidate in interleaved] == ["A1", "B1", "C1", "A2", "A3"]
 
 
 def _page(text: str, *, html: str = "", title: str = "Test School") -> Page:

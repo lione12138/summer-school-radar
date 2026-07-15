@@ -29,11 +29,14 @@ def _safe_parse_date(value: str) -> date | None:
 
 
 _SEP = r"(?:to|-|–|—|until|through)"
+_RANGE_DAY = r"\d{1,2}(?:st|nd|rd|th)?"
+_WEEKDAY = r"(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)"
+_OPTIONAL_WEEKDAY = rf"(?:{_WEEKDAY}\s*,?\s*)?"
 
 # Ranges where both endpoints carry their own month and year.
 _EXPLICIT_RANGE_PATTERNS = [
-    rf"(\d{{1,2}}\s+[A-Z][a-z]+\s+20\d{{2}})\s*{_SEP}\s*(\d{{1,2}}\s+[A-Z][a-z]+\s+20\d{{2}})",
-    rf"([A-Z][a-z]+\s+\d{{1,2}},?\s+20\d{{2}})\s*{_SEP}\s*([A-Z][a-z]+\s+\d{{1,2}},?\s+20\d{{2}})",
+    rf"({_RANGE_DAY}\s+[A-Z][a-z]+\s+20\d{{2}})\s*{_SEP}\s*{_OPTIONAL_WEEKDAY}({_RANGE_DAY}\s+[A-Z][a-z]+\s+20\d{{2}})",
+    rf"([A-Z][a-z]+\s+{_RANGE_DAY},?\s+20\d{{2}})\s*{_SEP}\s*{_OPTIONAL_WEEKDAY}([A-Z][a-z]+\s+{_RANGE_DAY},?\s+20\d{{2}})",
     rf"(20\d{{2}}-\d{{2}}-\d{{2}})\s*{_SEP}\s*(20\d{{2}}-\d{{2}}-\d{{2}})",
 ]
 
@@ -41,16 +44,16 @@ _EXPLICIT_RANGE_PATTERNS = [
 # "9-14 June 2025", or "June 9 – June 14, 2025".
 _COMPACT_RANGE_PATTERNS = [
     (
-        rf"([A-Z][a-z]+\s+\d{{1,2}}|\d{{1,2}}\s+[A-Z][a-z]+)\s*{_SEP}\s*"
-        rf"([A-Z][a-z]+\s+\d{{1,2}}|\d{{1,2}}\s+[A-Z][a-z]+),?\s+(20\d{{2}})",
+        rf"([A-Z][a-z]+\s+{_RANGE_DAY}|{_RANGE_DAY}\s+[A-Z][a-z]+)\s*{_SEP}\s*{_OPTIONAL_WEEKDAY}"
+        rf"([A-Z][a-z]+\s+{_RANGE_DAY}|{_RANGE_DAY}\s+[A-Z][a-z]+),?\s+(20\d{{2}})",
         lambda m: (f"{m.group(1)} {m.group(3)}", f"{m.group(2)} {m.group(3)}"),
     ),
     (
-        rf"([A-Z][a-z]+)\s+(\d{{1,2}})\s*{_SEP}\s*(\d{{1,2}}),?\s+(20\d{{2}})",
+        rf"([A-Z][a-z]+)\s+({_RANGE_DAY})\s*{_SEP}\s*{_OPTIONAL_WEEKDAY}({_RANGE_DAY}),?\s+(20\d{{2}})",
         lambda m: (f"{m.group(2)} {m.group(1)} {m.group(4)}", f"{m.group(3)} {m.group(1)} {m.group(4)}"),
     ),
     (
-        rf"(\d{{1,2}})\s*{_SEP}\s*(\d{{1,2}})\s+([A-Z][a-z]+)\s+(20\d{{2}})",
+        rf"({_RANGE_DAY})\s*{_SEP}\s*{_OPTIONAL_WEEKDAY}({_RANGE_DAY})\s+([A-Z][a-z]+)\s+(20\d{{2}})",
         lambda m: (f"{m.group(1)} {m.group(3)} {m.group(4)}", f"{m.group(2)} {m.group(3)} {m.group(4)}"),
     ),
 ]
@@ -328,5 +331,4 @@ def _select_deadline(deadlines: list[tuple[date, str]]) -> tuple[date, str] | No
 def _extract_deadline(text: str) -> date | None:
     chosen = _select_deadline(_all_deadlines(text))
     return chosen[0] if chosen else None
-
 
