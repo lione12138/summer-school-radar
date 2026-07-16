@@ -1326,7 +1326,8 @@
       "language revitalization",
       "field methods"
     ],
-    "notes": "The biennial Institute on Collaborative Language Research; intensive training in language documentation, descriptive linguistics, revitalization, and field methods, with participant scholarships."
+    "notes": "The biennial Institute on Collaborative Language Research; intensive training in language documentation, descriptive linguistics, revitalization, and field methods, with participant scholarships.",
+    "notes_zh": "\u4e24\u5e74\u4e00\u5ea6\u7684\u534f\u4f5c\u8bed\u8a00\u7814\u7a76\u5b66\u9662\uff1b\u63d0\u4f9b\u8bed\u8a00\u8bb0\u5f55\u3001\u63cf\u8ff0\u8bed\u8a00\u5b66\u3001\u590d\u5174\u548c\u7530\u91ce\u65b9\u6cd5\u7684\u5f3a\u5316\u57f9\u8bad\uff0c\u5e76\u63d0\u4f9b\u53c2\u4e0e\u8005\u5956\u5b66\u91d1\u3002"
   },
   {
     "name": "CreteLing",
@@ -1341,7 +1342,8 @@
       "phonology",
       "psycholinguistics"
     ],
-    "notes": "University of Crete Summer School of Linguistics; introductory and advanced seminars across theoretical, historical, psycho- and neurolinguistics."
+    "notes": "University of Crete Summer School of Linguistics; introductory and advanced seminars across theoretical, historical, psycho- and neurolinguistics.",
+    "notes_zh": "\u514b\u91cc\u7279\u5927\u5b66\u8bed\u8a00\u5b66\u6691\u671f\u5b66\u6821\uff1b\u6db5\u76d6\u7406\u8bba\u3001\u5386\u53f2\u3001\u5fc3\u7406\u548c\u795e\u7ecf\u8bed\u8a00\u5b66\u7684\u5165\u95e8\u4e0e\u9ad8\u7ea7\u7814\u8ba8\u4f1a\u3002"
   },
   {
     "name": "Advanced Language Processing Winter School",
@@ -1355,7 +1357,8 @@
       "language technology",
       "machine learning"
     ],
-    "notes": "ALPS, co-organised by Universit\u00e9 Grenoble Alpes/LIG; an advanced residential NLP research school for graduate students and researchers."
+    "notes": "ALPS, co-organised by Universit\u00e9 Grenoble Alpes/LIG; an advanced residential NLP research school for graduate students and researchers.",
+    "notes_zh": "ALPS\uff0c\u7531\u683c\u52d2\u8bfa\u5e03\u5c14\u963f\u5c14\u5351\u65af\u5927\u5b66/LIG\u8054\u5408\u7ec4\u7ec7\uff1b\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u8005\u7684\u9ad8\u7ea7\u4f4f\u5bbf\u5f0fNLP\u7814\u7a76\u5b66\u6821\u3002"
   },
   {
     "name": "Charles University Summer School of Linguistics",
@@ -1369,7 +1372,8 @@
       "language research",
       "summer school"
     ],
-    "notes": "A recurring Czech summer school for graduate students and young researchers covering current linguistic research across subfields."
+    "notes": "A recurring Czech summer school for graduate students and young researchers covering current linguistic research across subfields.",
+    "notes_zh": "\u9762\u5411\u7814\u7a76\u751f\u548c\u9752\u5e74\u7814\u7a76\u4eba\u5458\u7684\u6377\u514b\u6691\u671f\u5b66\u6821\uff0c\u6db5\u76d6\u5404\u5b50\u9886\u57df\u7684\u5f53\u524d\u8bed\u8a00\u5b66\u7814\u7a76\u3002"
   },
   {
     "name": "Methods in Language Sciences",
@@ -1384,7 +1388,8 @@
       "computational linguistics",
       "sociolinguistics"
     ],
-    "notes": "Ghent University research-methods summer school spanning quantitative and qualitative methods across the language sciences."
+    "notes": "Ghent University research-methods summer school spanning quantitative and qualitative methods across the language sciences.",
+    "notes_zh": "\u6839\u7279\u5927\u5b66\u7814\u7a76\u65b9\u6cd5\u6691\u671f\u5b66\u6821\uff0c\u6db5\u76d6\u8bed\u8a00\u79d1\u5b66\u4e2d\u7684\u5b9a\u91cf\u4e0e\u5b9a\u6027\u65b9\u6cd5\u3002"
   },
   {
     "name": "Edinburgh Theoretical Historical Linguistics",
@@ -1399,7 +1404,8 @@
       "phonology",
       "morphology"
     ],
-    "notes": "University of Edinburgh-supported postgraduate and early-career summer school in theoretical historical linguistics."
+    "notes": "University of Edinburgh-supported postgraduate and early-career summer school in theoretical historical linguistics.",
+    "notes_zh": "\u7231\u4e01\u5821\u5927\u5b66\u8d44\u52a9\u7684\u7406\u8bba\u5386\u53f2\u8bed\u8a00\u5b66\u7814\u7a76\u751f\u4e0e\u65e9\u671f\u804c\u4e1a\u5b66\u8005\u6691\u671f\u5b66\u6821\u3002"
   },
   {
     "name": "ICVSS",
@@ -1823,7 +1829,8 @@
       "causal inference"
     ],
     "collector": "sicss",
-    "notes": "Summer Institutes in Computational Social Science; the official locations catalogue is parsed into separate, tuition-free institutes so each site keeps its own dates and location."
+    "notes": "Summer Institutes in Computational Social Science; the official locations catalogue is parsed into separate, tuition-free institutes so each site keeps its own dates and location.",
+    "notes_zh": "\u8ba1\u7b97\u793e\u4f1a\u79d1\u5b66\u6691\u671f\u5b66\u9662\uff1b\u5b98\u65b9\u5730\u70b9\u76ee\u5f55\u5df2\u89e3\u6790\u4e3a\u72ec\u7acb\u7684\u514d\u5b66\u8d39\u5b66\u9662\uff0c\u4ee5\u4fbf\u6bcf\u4e2a\u7ad9\u70b9\u4fdd\u7559\u81ea\u5df1\u7684\u65e5\u671f\u548c\u5730\u70b9\u3002"
   },
   {
     "name": "ICPSR Summer Program",
@@ -1853,7 +1860,8 @@
       "quantitative methods",
       "data analysis"
     ],
-    "notes": "Universit\u00e0 della Svizzera italiana and FORS methods school; its parallel one-week course blocks are retained as separate sessions rather than one continuous multi-week course."
+    "notes": "Universit\u00e0 della Svizzera italiana and FORS methods school; its parallel one-week course blocks are retained as separate sessions rather than one continuous multi-week course.",
+    "notes_zh": "\u745e\u58eb\u610f\u5927\u5229\u8bed\u5927\u5b66\u4e0eFORS\u65b9\u6cd5\u5b66\u6821\uff1b\u5176\u5e76\u884c\u7684\u4e00\u5468\u8bfe\u7a0b\u6a21\u5757\u4fdd\u7559\u4e3a\u72ec\u7acb\u8bfe\u7a0b\uff0c\u800c\u975e\u8fde\u7eed\u7684\u591a\u5468\u8bfe\u7a0b\u3002"
   },
   {
     "name": "Oxford Spring School",
@@ -1868,7 +1876,8 @@
       "text analysis",
       "machine learning"
     ],
-    "notes": "University of Oxford DPIR's annual advanced social-research methods school for graduate students and researchers."
+    "notes": "University of Oxford DPIR's annual advanced social-research methods school for graduate students and researchers.",
+    "notes_zh": "\u725b\u6d25\u5927\u5b66DPIR\u5e74\u5ea6\u9ad8\u7ea7\u793e\u4f1a\u7814\u7a76\u65b9\u6cd5\u5b66\u6821\uff0c\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u4eba\u5458\u3002"
   },
   {
     "name": "Essex Summer School",
