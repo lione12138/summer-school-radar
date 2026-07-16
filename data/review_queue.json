@@ -190,54 +190,6 @@
       }
     },
     {
-      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
-      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
-      "organizer": "GESIS Summer School",
-      "source_layer": "1",
-      "location": "Europe",
-      "dates": {
-        "start": "2027-02-22",
-        "end": "2027-03-12",
-        "duration_days": 19
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "funded",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "data analysis",
-        "social science"
-      ],
-      "needs_review": [
-        "application deadline is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "",
-        "duration": "22 Feb – 12 March 2027",
-        "funding": "Scholarships FAQs Sponsors & Partners Contact Fall Seminar in Computational Social Science Go to overview Courses Course Fees Socia",
-        "mode": "onsite) an exciting time in Cologne, complemented by an"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "missing_evidence_id:event_type",
-          "possibly_past_or_closed"
-        ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
-      }
-    },
-    {
       "title": "Applied Public Policy Evaluation",
       "url": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
       "organizer": "Tinbergen Institute",
@@ -492,7 +444,7 @@
         "validation_warnings": [
           "location_context_weak"
         ],
-        "chinese_summary": "IEEE RAS德国分会将于2026年9月7日至11日在德国基姆湖的Abtei Frauenwörth举办认知机器人暑期学校，主题为AI与机器人融合。活动面向学生、早期研究人员和专业人士，需先获录取通知方可注册。注册费：学生非IEEE会员800美元，学生IEEE会员费用未完整列出。",
+        "chinese_summary": "IEEE RAS德国分会将于2026年9月7日至11日在德国基姆湖的Abtei Frauenwörth举办认知机器人暑期学校，主题为AI与机器人融合。仅限受邀申请者注册，费用为：学生/非IEEE会员800美元，学生/IEEE会员费用未完整列出。",
         "extracted_deadline": "",
         "extracted_fee": "Student / Non-IEEE Member: USD 800; Student / IEEE Member: US [incomplete]",
         "extracted_funding": "",

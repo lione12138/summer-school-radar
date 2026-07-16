@@ -118,7 +118,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": "2026-07-15",
-      "consecutive_failures": 4
+      "consecutive_failures": 5
     },
     "notes_zh": "\u8d44\u91d1\u6765\u6e90\uff1b\u673a\u4f1a\u9875\u9762\u53ef\u80fd\u5728\u5176\u4ed6\u5730\u65b9\u94fe\u63a5\u3002"
   },
@@ -398,10 +398,10 @@
     "notes": "Official recurring survey methodology and data-analysis summer school; the scanner follows its current course catalogue.",
     "health": {
       "name": "GESIS Summer School",
-      "status": "healthy",
+      "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": "2026-07-16",
-      "consecutive_failures": 0
+      "consecutive_failures": 1
     },
     "notes_zh": "\u5b98\u65b9\u5b9a\u671f\u4e3e\u529e\u7684\u8c03\u67e5\u65b9\u6cd5\u4e0e\u6570\u636e\u5206\u6790\u6691\u671f\u5b66\u6821\uff1b\u8bfe\u7a0b\u5b89\u6392\u4ee5\u5f53\u524d\u8bfe\u7a0b\u76ee\u5f55\u4e3a\u51c6\u3002"
   },
@@ -981,7 +981,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 5
+      "consecutive_failures": 6
     },
     "notes_zh": "\u7f8e\u56fd\u6c14\u8c61\u5b66\u4f1a\u4f1a\u8bae\u4e0e\u77ed\u671f\u8bfe\u7a0b\u3002"
   },
@@ -1343,10 +1343,10 @@
     "notes_zh": "\u54e5\u4f26\u6bd4\u4e9a\u5927\u5b66\u62c9\u8499\u7279-\u591a\u5c14\u8482\u5730\u7403\u89c2\u6d4b\u7ad9\u3002\u8be5\u7f51\u7ad9\u4f1a\u5c4f\u853d\u6570\u636e\u4e2d\u5fc3 IP\uff0c\u4f46\u53ef\u901a\u8fc7\u6bcf\u5468\u4e00\u3001\u5468\u4e09\u548c\u5468\u4e94\u6765\u6e90\u626b\u63cf\u4f7f\u7528\u7684\u4f4f\u5b85\u7f51\u7edc\u8fde\u63a5\u6b63\u5e38\u52a0\u8f7d\u3002",
     "health": {
       "name": "Lamont-Doherty",
-      "status": "failed",
+      "status": "healthy",
       "last_attempt": "2026-07-16",
-      "last_success": "2026-07-15",
-      "consecutive_failures": 2
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
     }
   },
   {
@@ -1458,7 +1458,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 5
+      "consecutive_failures": 6
     }
   },
   {
@@ -1508,7 +1508,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 5
+      "consecutive_failures": 6
     },
     "notes_zh": "\u5185\u5bb9\u5728\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u6b64\u6e90\u4f7f\u7528\u53ef\u9009\u7684 Playwright \u65e0\u5934\u6d4f\u89c8\u5668\u3002\u5982\u679c\u672a\u5b89\u88c5 Playwright\uff0c\u5219\u56de\u9000\u4e3a\u7a7a\u8bf7\u6c42\u3002"
   },
@@ -1686,10 +1686,10 @@
     "notes": "American Geophysical Union. Direct event paths 404 for scripted requests; the homepage links current meetings and courses.",
     "health": {
       "name": "AGU",
-      "status": "failed",
+      "status": "healthy",
       "last_attempt": "2026-07-16",
-      "last_success": null,
-      "consecutive_failures": 5
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
     },
     "notes_zh": "\u7f8e\u56fd\u5730\u7403\u7269\u7406\u8054\u5408\u4f1a\u3002\u811a\u672c\u8bf7\u6c42\u7684\u76f4\u63a5\u4e8b\u4ef6\u8def\u5f84\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u5f53\u524d\u4f1a\u8bae\u548c\u8bfe\u7a0b\u3002"
   },
@@ -1758,7 +1758,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 5
+      "consecutive_failures": 6
     },
     "notes_zh": "\u6b27\u6d32\u903b\u8f91\u3001\u8bed\u8a00\u4e0e\u4fe1\u606f\u6691\u671f\u5b66\u6821\u2014\u2014\u903b\u8f91/\u8bed\u8a00/\u8ba1\u7b97\u9886\u57df\u7684\u65d7\u8230\u5b66\u6821\u3002\u7740\u9646\u9875\u4e3a\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u4f7f\u7528\u53ef\u9009\u7684\u65e0\u5934\u6d4f\u89c8\u5668\u3002"
   },
@@ -2116,7 +2116,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 5
+      "consecutive_failures": 6
     },
     "notes_zh": "LASER\u8f6f\u4ef6\u5de5\u7a0b\u6691\u671f\u5b66\u6821\uff08\u610f\u5927\u5229\u5384\u5c14\u5df4\u5c9b\uff09\uff0c\u7531\u82cf\u9ece\u4e16\u8054\u90a6\u7406\u5de5\u5b66\u9662\u7ec4\u7ec7\u3002\u90e8\u5206\u8fde\u63a5\u8d85\u65f6\uff1b\u65e0\u6cd5\u8bbf\u95ee\u65f6\u9759\u9ed8\u8df3\u8fc7\u3002"
   },
@@ -2317,7 +2317,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 5
+      "consecutive_failures": 6
     },
     "notes_zh": "\u6781\u5927\u89c4\u6a21\u8ba1\u7b97\u963f\u8d21\u57f9\u8bad\u8ba1\u5212\uff08ATPESC\uff09\uff1b\u8d44\u52a9\u7684\u5bc6\u96c6\u578b\u9ad8\u6027\u80fd\u8ba1\u7b97\u57f9\u8bad\u3002"
   },
@@ -2383,7 +2383,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 5
+      "consecutive_failures": 6
     },
     "notes_zh": "CINECA\uff08\u610f\u5927\u5229\u56fd\u5bb6\u8d85\u7ea7\u8ba1\u7b97\u4e2d\u5fc3\uff09\u57f9\u8bad\u6d3b\u52a8\u4e0e\u9ad8\u6027\u80fd\u8ba1\u7b97\u5b66\u6821\u3002"
   },
@@ -2825,10 +2825,10 @@
     "notes": "Institute of Historical Research (London); historical-research training and events.",
     "health": {
       "name": "IHR History",
-      "status": "healthy",
+      "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": "2026-07-16",
-      "consecutive_failures": 0
+      "consecutive_failures": 1
     },
     "notes_zh": "\u5386\u53f2\u7814\u7a76\u6240\uff08\u4f26\u6566\uff09\uff1b\u5386\u53f2\u7814\u7a76\u57f9\u8bad\u4e0e\u6d3b\u52a8\u3002"
   },
@@ -3224,7 +3224,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 5
+      "consecutive_failures": 6
     },
     "notes_zh": "\u5b89\u4e1c\u00b7\u591a\u6069\u52a8\u7269\u7ad9\uff08\u90a3\u4e0d\u52d2\u65af\uff09\uff1b\u6d77\u6d0b\u751f\u7269\u5b66\u4e0e\u6d77\u6d0b\u79d1\u5b66\u7814\u7a76\u57f9\u8bad\u3002"
   },
