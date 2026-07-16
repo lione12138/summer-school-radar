@@ -348,15 +348,25 @@ def _money_values(text: Any) -> set[tuple[str, str]]:
         values: set[tuple[str, str]] = set()
         amount = text.get("amount") or text.get("max_amount")
         currency = text.get("currency")
-        if amount not in {None, ""} and currency not in {None, ""}:
+        amount_is_scalar = _nonempty_scalar(amount)
+        currency_is_scalar = _nonempty_scalar(currency)
+        if amount_is_scalar and currency_is_scalar:
             embedded = _money_values(str(amount))
             if embedded:
                 values.update(embedded)
             else:
                 normalized_currency = symbols.get(str(currency).upper(), str(currency).upper())
                 values.add((normalized_currency, _normalize_amount(str(amount))))
-        elif amount not in {None, ""}:
+        elif amount_is_scalar:
             values.update(_money_values(str(amount)))
+        elif isinstance(amount, (dict, list)):
+            # Malformed model output occasionally nests another value object
+            # inside ``amount``. Traverse it conservatively; if it contains no
+            # explicit currency/amount pair, validation will reject the fee
+            # rather than aborting the entire follow-up round.
+            values.update(_money_values(amount))
+        if isinstance(currency, (dict, list)):
+            values.update(_money_values(currency))
         for key, nested in text.items():
             if key not in {"amount", "max_amount", "currency"}:
                 values.update(_money_values(nested))
@@ -376,6 +386,10 @@ def _money_values(text: Any) -> set[tuple[str, str]]:
         amount = _normalize_amount(amount)
         values.add((currency, amount))
     return values
+
+
+def _nonempty_scalar(value: Any) -> bool:
+    return not isinstance(value, (dict, list)) and value is not None and value != ""
 
 
 def _normalize_amount(amount: str) -> str:

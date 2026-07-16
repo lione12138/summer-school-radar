@@ -196,6 +196,28 @@ def test_amount_and_currency_in_separate_structured_keys_are_supported() -> None
     assert "fee_value_not_in_evidence" not in warnings
 
 
+def test_nested_malformed_fee_amount_warns_instead_of_crashing() -> None:
+    extraction = {
+        "fee": {
+            "value": {
+                "amount": {"value": 1000},
+                "currency": "EUR",
+            },
+            "evidence_ids": ["E1"],
+        },
+        "confidence": "high",
+    }
+    evidence = "The registration fee is EUR 1000."
+
+    warnings, _confidence = validate_llm_extraction(
+        extraction,
+        [_chunk(evidence)],
+        evidence_snippets=[_snippet(evidence)],
+    )
+
+    assert "fee_value_not_in_evidence" in warnings
+
+
 def test_structured_amount_may_repeat_currency_symbol() -> None:
     extraction = {
         "fee": {
