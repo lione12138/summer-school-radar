@@ -179,6 +179,7 @@ def test_dedicated_collectors_use_the_same_enabled_source_registry() -> None:
     assert collectors == {
         "ELLIS": "ellis",
         "IHE Delft": "ihe_delft",
+        "SICSS": "sicss",
         "SIB Training": "sib_training",
     }
 
@@ -195,6 +196,25 @@ def test_computing_and_ai_source_expansion_is_enabled() -> None:
         "Prob_AI Hub Winter School",
         "Exeter Machine Learning Summer School",
         "UNICRI AI Ethics Winter School",
+    }
+
+    assert expected <= by_name.keys()
+    assert all(by_name[name].url.startswith("https://") for name in expected)
+
+
+def test_social_science_and_linguistics_source_expansion_is_enabled() -> None:
+    sources = _load_sources(Path("config/sources.yaml"))
+    by_name = {source.name: source for source in sources}
+    expected = {
+        "SICSS",
+        "Summer School in Social Sciences Methods",
+        "Oxford Spring School",
+        "CoLang",
+        "CreteLing",
+        "Advanced Language Processing Winter School",
+        "Charles University Summer School of Linguistics",
+        "Methods in Language Sciences",
+        "Edinburgh Theoretical Historical Linguistics",
     }
 
     assert expected <= by_name.keys()

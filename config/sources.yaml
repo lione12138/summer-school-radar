@@ -620,6 +620,48 @@ sources:
     source_type: research_institute
     keywords: [computational linguistics, natural language processing, semantics, language technology]
     notes: Centre for Linguistic Theory and Studies in Probability (University of Gothenburg); computational linguistics and language-technology events and schools.
+  - name: CoLang
+    url: https://www.colanginstitute.org/attend
+    layer: 1.5
+    region: North America
+    source_type: research_training_provider
+    keywords: [linguistics, language documentation, language revitalization, field methods]
+    notes: The biennial Institute on Collaborative Language Research; intensive training in language documentation, descriptive linguistics, revitalization, and field methods, with participant scholarships.
+  - name: CreteLing
+    url: https://linguistics.philology.uoc.gr/cssl26/
+    layer: 1.5
+    region: continental Europe
+    source_type: summer_school
+    keywords: [linguistics, syntax, semantics, phonology, psycholinguistics]
+    notes: University of Crete Summer School of Linguistics; introductory and advanced seminars across theoretical, historical, psycho- and neurolinguistics.
+  - name: Advanced Language Processing Winter School
+    url: https://lig-alps.imag.fr/
+    layer: 1.5
+    region: continental Europe
+    source_type: winter_school
+    keywords: [natural language processing, computational linguistics, language technology, machine learning]
+    notes: ALPS, co-organised by Université Grenoble Alpes/LIG; an advanced residential NLP research school for graduate students and researchers.
+  - name: Charles University Summer School of Linguistics
+    url: https://ssol.ff.cuni.cz/
+    layer: 2
+    region: continental Europe
+    source_type: research_training_provider
+    keywords: [linguistics, psycholinguistics, language research, summer school]
+    notes: A recurring Czech summer school for graduate students and young researchers covering current linguistic research across subfields.
+  - name: Methods in Language Sciences
+    url: https://www.mils.ugent.be/
+    layer: 2
+    region: continental Europe
+    source_type: summer_school
+    keywords: [linguistics, research methods, psycholinguistics, computational linguistics, sociolinguistics]
+    notes: Ghent University research-methods summer school spanning quantitative and qualitative methods across the language sciences.
+  - name: Edinburgh Theoretical Historical Linguistics
+    url: https://ethl.uk/
+    layer: 2
+    region: UK
+    source_type: summer_school
+    keywords: [linguistics, historical linguistics, syntax, phonology, morphology]
+    notes: University of Edinburgh-supported postgraduate and early-career summer school in theoretical historical linguistics.
   - name: ICVSS
     url: https://iplab.dmi.unict.it/icvss/
     layer: 1
@@ -809,6 +851,14 @@ sources:
     source_type: research_network
     keywords: [political science, social science methods, social science, summer school]
     notes: European Consortium for Political Research Methods Schools; social-science research-methods training.
+  - name: SICSS
+    url: https://new.sicss.io/locations
+    layer: 1
+    region: global
+    source_type: research_network
+    keywords: [computational social science, data analysis, text analysis, causal inference]
+    collector: sicss
+    notes: Summer Institutes in Computational Social Science; the official locations catalogue is parsed into separate, tuition-free institutes so each site keeps its own dates and location.
   - name: ICPSR Summer Program
     url: https://www.icpsr.umich.edu/web/pages/sumprog/
     layer: 1.5
@@ -816,6 +866,20 @@ sources:
     source_type: university_institute
     keywords: [social science methods, quantitative methods, statistics, data analysis]
     notes: University of Michigan ICPSR Summer Program in Quantitative Methods of Social Research; a flagship social-science methods school.
+  - name: Summer School in Social Sciences Methods
+    url: https://www.ssm.usi.ch/en/course-list/hybrid-methods
+    layer: 1.5
+    region: continental Europe
+    source_type: research_training_provider
+    keywords: [social science methods, sociology, qualitative methods, quantitative methods, data analysis]
+    notes: Università della Svizzera italiana and FORS methods school; its parallel one-week course blocks are retained as separate sessions rather than one continuous multi-week course.
+  - name: Oxford Spring School
+    url: https://www.politics.ox.ac.uk/spring-school
+    layer: 1.5
+    region: UK
+    source_type: research_training_provider
+    keywords: [social science methods, political science, causal inference, text analysis, machine learning]
+    notes: University of Oxford DPIR's annual advanced social-research methods school for graduate students and researchers.
   - name: Essex Summer School
     url: https://www.essex.ac.uk/summer-schools/social-science-data-analysis
     layer: 2

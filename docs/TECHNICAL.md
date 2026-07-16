@@ -467,7 +467,7 @@ maintainer review against official pages is still required for curation.
 - `src/research_school_radar/snapshot_validation.py` requires schema-v2 display/scanner lists and rejects an unexplained scanner-record drop below 35% of a sufficiently large previous snapshot.
 - `src/research_school_radar/session_extraction.py` conservatively detects explicitly labelled sessions and their deadlines on any source page; it requires at least two distinct labelled ranges so ordinary event calendars are not promoted.
 - `src/research_school_radar/date_extraction.py`, `fee_extraction.py`, and `location_extraction.py` isolate deterministic date/deadline, fee, and location parsing from the candidate assembly performed by `extract.py`.
-- `src/research_school_radar/collector_ihe.py`, `collector_ellis.py`, and `collector_sib.py` contain source-specific direct-collector implementations. The SIB collector reads the official catalogue's embedded Bioschemas `Course` / `CourseInstance` records, so no browser is needed. `api_sources.py` only dispatches collector names configured in `config/sources.yaml` and records health outcomes.
+- `src/research_school_radar/collector_ihe.py`, `collector_ellis.py`, `collector_sib.py`, and `collector_sicss.py` contain source-specific direct-collector implementations. The SIB collector reads the official catalogue's embedded Bioschemas `Course` / `CourseInstance` records, while SICSS reads its official server-rendered location cards as separate institutes. `api_sources.py` only dispatches collector names configured in `config/sources.yaml` and records health outcomes.
 - Full scans attach per-source health (`status`, `last_attempt`, `last_success`, and `consecutive_failures`) to the manifest and source-registry output. Status-refresh manifests collapse to one reference to the latest full scan, avoiding recursive growth.
 - Multi-session extraction handles labelled prose, labelled table rows with optional deadline columns, and schema.org `subEvent` data. Clearly named periods such as “Foundation week” are accepted without numbering, while unlabelled calendars are still rejected.
 - `src/research_school_radar/programme_sessions.py` formats structured session dates and per-session deadlines consistently across HTML, reports, and RSS.
@@ -795,6 +795,8 @@ A site that renders its listing client-side (a single-page app) returns an empty
 
 - **IHE Delft** — course catalogue from `https://www.un-ihe.org/api/v1/...`; each upcoming edition maps to a candidate at full confidence (exact dates, deadline, fee).
 - **ELLIS** — the events listing is server-rendered with each card's date range and location, so the listing is parsed into candidates even though the detail pages are an empty shell.
+- **SIB** — embedded Bioschemas `Course` / `CourseInstance` records provide exact course dates, modes, locations, fees, and stable detail URLs.
+- **SICSS** — the official locations catalogue is split into independent institutes, preserving each site's dates, location, free-tuition evidence, and application URL.
 
 A collector returns `(candidates, errors)` and never raises, so a single failing structured source does not abort collection. The `collector` field on an enabled `config/sources.yaml` record is the only activation path; disabling that record disables both its source entry and direct collector.
 

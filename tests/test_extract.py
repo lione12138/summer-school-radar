@@ -659,6 +659,74 @@ def test_training_provider_prefers_data_courses_within_follow_up_limit() -> None
     assert candidate_links(page, limit=1) == ["https://provider.example/events/data/"]
 
 
+def test_colang_adapter_confirms_stable_attend_page() -> None:
+    source = Source(
+        name="CoLang",
+        url="https://www.colanginstitute.org/attend",
+        layer="1.5",
+        region="North America",
+        source_type="research_training_provider",
+    )
+    page = Page(
+        url=source.url,
+        title="Attend — CoLang",
+        text=(
+            "Planning to Attend. Next CoLang. CoLang 2026 will take place at the University of Nevada, Reno. "
+            "Dates: June 22 - July 10, 2026. Scholarships are available to defray costs for participants. "
+            "Training in language documentation, revitalization, and field methods."
+        ),
+        html='<a href="https://www.unr.edu/colang">Event website</a>',
+        source=source,
+        fetched_at=date(2026, 1, 1),
+    )
+
+    candidate = extract_candidate(page, PROFILE, as_of=date(2026, 1, 1))
+
+    assert candidate is not None
+    assert candidate.title.startswith("CoLang 2026")
+    assert candidate.start_date == date(2026, 6, 22)
+    assert candidate.end_date == date(2026, 7, 10)
+    assert candidate.location == "University of Nevada, Reno"
+    assert candidate.funding_available is True
+    assert candidate.application_link == "https://www.unr.edu/colang"
+
+
+def test_usi_methods_adapter_uses_real_week_blocks_for_duration() -> None:
+    source = Source(
+        name="Summer School in Social Sciences Methods",
+        url="https://www.ssm.usi.ch/en/course-list/hybrid-methods",
+        layer="1.5",
+        region="continental Europe",
+        source_type="research_training_provider",
+    )
+    page = Page(
+        url=source.url,
+        title="Hybrid Methods and Cross-Methods Courses",
+        text=(
+            "Summer School in Social Sciences Methods 6-21 August 2026. "
+            "Week 1 Courses: 10-14 August 2026. Mixed Methods. Design Thinking for Research. "
+            "Week 2 Courses: 17-21 August 2026. Methods for building better theories. "
+            "Courses are offered online and in presence. Registration is open to PhD researchers."
+        ),
+        html='<a href="/en/registration-overview">Registration</a>',
+        source=source,
+        fetched_at=date(2026, 1, 1),
+    )
+
+    candidate = extract_candidate(page, PROFILE, as_of=date(2026, 1, 1))
+
+    assert candidate is not None
+    assert candidate.title == "Summer School in Social Sciences Methods 2026"
+    assert candidate.start_date == date(2026, 8, 10)
+    assert candidate.end_date == date(2026, 8, 21)
+    assert candidate.duration_days == 5
+    assert [(item.name, item.duration_days) for item in candidate.sessions] == [
+        ("Week 1", 5),
+        ("Week 2", 5),
+    ]
+    assert candidate.location == "Lugano, Switzerland"
+
+
 def test_training_provider_course_overview_is_a_narrow_opportunity_signal() -> None:
     source = Source(
         name="Official Training Provider",

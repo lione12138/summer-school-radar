@@ -143,14 +143,17 @@ IN_PERSON_PATTERNS = [
     r"course at (?:EMBL|the European Bioinformatics Institute)",
 ]
 def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -> Candidate | None:
-    if not _has_opportunity_signal(page.text) and not _has_provider_course_signal(page):
+    overrides = resolve_overrides(page)
+    if (
+        not _has_opportunity_signal(page.text)
+        and not _has_provider_course_signal(page)
+        and not overrides.get("programme_confirmed")
+    ):
         return None
     if is_excluded_programme(page.text):
         return None
 
     text = page.text
-    overrides = resolve_overrides(page)
-
     # schema.org JSON-LD is authoritative when the page describes exactly one
     # event; several event nodes mean a calendar/listing page. A per-site adapter
     # still wins over JSON-LD where one exists.
@@ -217,7 +220,10 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
             label for label, pattern in FUNDING_PATTERNS.items() if _funding_is_offered(text, pattern)
         ]
     funding_available = overrides.get("funding_available", True if funding_types else None)
-    funding_evidence = evidence_window(text, r"scholarship|travel grant|tuition waiver|stipend|financial support|funding")
+    funding_evidence = str(overrides.get("funding_evidence") or evidence_window(
+        text,
+        r"scholarship|travel grant|tuition waiver|stipend|financial support|funding",
+    ))
     mode = _extract_mode(text)
     # Fall back to the JSON-LD event name when the page's HTML titles are all
     # generic ("Home", "Events", ...).

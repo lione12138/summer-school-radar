@@ -72,6 +72,7 @@ Key modules:
 - `src/research_school_radar/collector_ihe.py` — IHE Delft structured-course collector.
 - `src/research_school_radar/collector_ellis.py` — ELLIS listing, follow-up, deadline, and fee collector.
 - `src/research_school_radar/collector_sib.py` — SIB Bioschemas Course/CourseInstance collector.
+- `src/research_school_radar/collector_sicss.py` — SICSS official locations catalogue collector; keeps each institute's dates and location separate.
 - `src/research_school_radar/ai_pipeline.py` — semantic ranking, DeepSeek extraction configuration, and advisory-output orchestration used by the CLI.
 - `src/research_school_radar/search.py` — optional two-stage search clients: explicit broad Serper discovery and Brave same-domain refinement.
 - `src/research_school_radar/discovery_filter.py` — pre-fetch Serper result gates for social/aggregator domains, excluded programme types, past years, and official/programme signals.

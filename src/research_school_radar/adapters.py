@@ -207,6 +207,74 @@ def _essex_summer_school(page: Page) -> dict[str, Any]:
     return overrides
 
 
+def _colang(page: Page) -> dict[str, Any]:
+    """Read the stable CoLang ``Attend`` page, which points to each host edition."""
+    text = page.text
+    if "Next CoLang" not in text or "Planning to Attend" not in text:
+        return {}
+    edition = re.search(
+        r"CoLang\s+(20\d{2})\s+will take place at\s+(.+?)\.\s+Dates:\s+"
+        r"([A-Za-z]+\s+\d{1,2})\s*(?:-|–|—|to)\s*([A-Za-z]+\s+\d{1,2}),?\s*(20\d{2})",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if not edition:
+        return {}
+    year = edition.group(1)
+    start = _parse_date(f"{edition.group(3)} {edition.group(5)}")
+    end = _parse_date(f"{edition.group(4)} {edition.group(5)}")
+    if start is None or end is None or end < start:
+        return {}
+    application_url = _first_url(page.html, page.url, ["unr.edu/colang", "current-institute"])
+    return {
+        "programme_confirmed": True,
+        "title": f"CoLang {year} — Institute on Collaborative Language Research",
+        "start_date": start,
+        "end_date": end,
+        "duration_evidence": f"CoLang Attend page: {start.isoformat()} to {end.isoformat()}",
+        "location": re.sub(r"^the\s+", "", clean_space(edition.group(2)), flags=re.IGNORECASE),
+        "application_link": application_url or page.url,
+        "funding_available": True,
+        "funding_type": ["scholarship"],
+        "funding_evidence": "The CoLang Attend page lists participant scholarships and fellowships.",
+    }
+
+
+def _usi_social_methods(page: Page) -> dict[str, Any]:
+    """Keep USI's parallel one-week course blocks out of the outer-window duration."""
+    if "Summer School in Social Sciences Methods" not in page.text or "/course-list/" not in page.url:
+        return {}
+    sessions: list[ProgrammeSession] = []
+    for match in re.finditer(
+        r"Week\s+(\d+)\s+Courses:\s+(\d{1,2})\s*(?:-|–|—)\s*(\d{1,2})\s+([A-Za-z]+)\s+(20\d{2})",
+        page.text,
+        flags=re.IGNORECASE,
+    ):
+        start = _parse_date(f"{match.group(2)} {match.group(4)} {match.group(5)}")
+        end = _parse_date(f"{match.group(3)} {match.group(4)} {match.group(5)}")
+        if start is not None and end is not None and 0 <= (end - start).days <= 14:
+            sessions.append(ProgrammeSession(f"Week {match.group(1)}", start, end))
+    if not sessions:
+        return {}
+    start = min(item.start_date for item in sessions)
+    end = max(item.end_date for item in sessions)
+    year = start.year
+    application_url = _first_url(page.html, page.url, ["registration"])
+    return {
+        "programme_confirmed": True,
+        "title": f"Summer School in Social Sciences Methods {year}",
+        "start_date": start,
+        "end_date": end,
+        "sessions": sessions,
+        "duration_evidence": "USI course blocks: "
+        + "; ".join(
+            f"{item.name} {item.start_date.isoformat()} to {item.end_date.isoformat()}" for item in sessions
+        ),
+        "location": "Lugano, Switzerland",
+        "application_link": application_url or page.url,
+    }
+
+
 def _essex_sessions(
     text: str,
     deadlines: dict[str, date] | None = None,
@@ -289,6 +357,8 @@ _ADAPTERS: dict[str, Callable[[Page], dict[str, Any]]] = {
     "icimod.org": _icimod,
     "essex.ac.uk": _essex_summer_school,
     "essexsummerschool.com": _essex_summer_school,
+    "colanginstitute.org": _colang,
+    "ssm.usi.ch": _usi_social_methods,
 }
 
 _STRUCTURAL_ADAPTERS: list[Callable[[Page], dict[str, Any]]] = [
