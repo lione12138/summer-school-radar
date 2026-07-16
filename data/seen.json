@@ -437,6 +437,14 @@
     "status": "near_match",
     "title": "Q-Step Scholarship"
   },
+  "https://ethl.uk/": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://ethl.uk/",
+    "status": "near_match",
+    "title": "Edinburgh Theoretical Historical Linguistics"
+  },
   "https://etrp.wmo.int/course/index.php?categoryid=81": {
     "deadline": null,
     "first_seen": "2026-06-13",
@@ -540,6 +548,38 @@
     "status": "near_match",
     "title": "Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends"
   },
+  "https://lig-alps.imag.fr/": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://lig-alps.imag.fr/",
+    "status": "near_match",
+    "title": "Welcome to ALPS 2027, the Advanced Language Processing School in the Alps"
+  },
+  "https://lig-alps.imag.fr/index.php/application/": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://lig-alps.imag.fr/index.php/application/",
+    "status": "near_match",
+    "title": "Application – Advanced Language Processing Winter School"
+  },
+  "https://linguistics.philology.uoc.gr/cssl26/": {
+    "deadline": "2026-05-20",
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://linguistics.philology.uoc.gr/cssl26/",
+    "status": "near_match",
+    "title": "The 7th Crete Summer School of Linguistics"
+  },
+  "https://linguistics.philology.uoc.gr/cssl26/application.php": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://linguistics.philology.uoc.gr/cssl26/application.php",
+    "status": "near_match",
+    "title": "CSSL26 / Application"
+  },
   "https://lotschool.nl/": {
     "deadline": "2025-08-15",
     "first_seen": "2026-07-15",
@@ -589,10 +629,10 @@
   "https://mila.quebec/en/news/2026-sustainability-scholarships-program-meet-the-recipients": {
     "deadline": null,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://mila.quebec/en/news/2026-sustainability-scholarships-program-meet-the-recipients",
     "status": "near_match",
-    "title": "2026 Sustainability Scholarships Program: Meet the Recipients"
+    "title": "Mila Ventures Launchpad"
   },
   "https://ncarprojects.ucar.edu/S2S-predictability/2026-s2s-land-atmosphere-interactions-workshop": {
     "deadline": null,
@@ -622,6 +662,30 @@
     "last_seen": "2026-06-14",
     "status": "near_match",
     "title": "Regional and Mesoscale Meteorology Branch AI Applications Using Environmental Satellite Remote Sensing Data"
+  },
+  "https://ssol.ff.cuni.cz/past-years/ssol-2024/": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://ssol.ff.cuni.cz/past-years/ssol-2024/",
+    "status": "near_match",
+    "title": "SSoL 2024"
+  },
+  "https://ssol.ff.cuni.cz/past-years/ssol-2025/": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://ssol.ff.cuni.cz/past-years/ssol-2025/",
+    "status": "near_match",
+    "title": "SSoL 2025"
+  },
+  "https://ssol.ff.cuni.cz/ssol-2026/": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://ssol.ff.cuni.cz/ssol-2026/",
+    "status": "near_match",
+    "title": "SSoL 2026"
   },
   "https://tinbergen.nl/event/2026/07/06/13261/inequalities-in-health-and-healthcare": {
     "deadline": null,
@@ -792,10 +856,18 @@
     "status": "near_match",
     "title": "Search form"
   },
+  "https://www.colanginstitute.org/attend": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://www.colanginstitute.org/attend",
+    "status": "near_match",
+    "title": "CoLang 2026 — Institute on Collaborative Language Research"
+  },
   "https://www.compneuronrsn.org/": {
     "deadline": null,
     "first_seen": "2026-07-15",
-    "last_seen": "2026-07-15",
+    "last_seen": "2026-07-16",
     "source_url": "https://www.compneuronrsn.org/",
     "status": "near_match",
     "title": "Lectures (this is not a final list)"
@@ -946,6 +1018,22 @@
     "last_seen": "2026-06-11",
     "status": "near_match",
     "title": "Polar Winter School - Faculty of Environmental Sciences CZU Prague"
+  },
+  "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
+    "status": "near_match",
+    "title": "GESIS Spring Seminar – Cutting-Edge Methods"
+  },
+  "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
+    "status": "near_match",
+    "title": "GESIS Summer School in Survey Methodology"
   },
   "https://www.gewex.org/event/": {
     "deadline": null,
@@ -1172,6 +1260,22 @@
     "status": "near_match",
     "title": "Summer School 2026"
   },
+  "https://www.ssm.usi.ch/en/course-list/hybrid-methods": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://www.ssm.usi.ch/en/course-list/hybrid-methods",
+    "status": "near_match",
+    "title": "Summer School in Social Sciences Methods 2026"
+  },
+  "https://www.ssm.usi.ch/en/home-ssm/about-the-summer-school": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://www.ssm.usi.ch/en/home-ssm/about-the-summer-school",
+    "status": "near_match",
+    "title": "About the Summer School in Social Sciences Methods"
+  },
   "https://www.summerschoolsineurope.eu/destination/algebra-international-summer-school/": {
     "deadline": null,
     "first_seen": "2026-06-14",
@@ -1283,7 +1387,7 @@
     "title": "Emergency Management for Flood Defences - Operations in Practice"
   },
   "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5": {
-    "deadline": "2026-07-28",
+    "deadline": "2026-08-28",
     "first_seen": "2026-06-14",
     "last_seen": "2026-07-16",
     "source_url": "https://www.un-ihe.org/short-courses",
@@ -1433,5 +1537,93 @@
     "source_url": "https://www.sib.swiss/training/course/20261029_CVANA",
     "status": "near_match",
     "title": "Cancer Variant Analysis"
+  },
+  "sicss:2026:amu-law": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://new.sicss.io/2026/amu-law",
+    "status": "near_match",
+    "title": "SICSS-AMU/Law"
+  },
+  "sicss:2026:brazil": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://new.sicss.io/2026/brazil",
+    "status": "near_match",
+    "title": "SICSS-Brazil"
+  },
+  "sicss:2026:buenos-aires": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://new.sicss.io/2026/buenos-aires",
+    "status": "near_match",
+    "title": "SICSS-Buenos Aires"
+  },
+  "sicss:2026:chicago---chicago-state-university": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://new.sicss.io/2026/chicago---chicago-state-university",
+    "status": "near_match",
+    "title": "SICSS-Chicago - Chicago State University"
+  },
+  "sicss:2026:issp": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://new.sicss.io/2026/issp",
+    "status": "near_match",
+    "title": "SICSS-ISSP"
+  },
+  "sicss:2026:istanbul": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://new.sicss.io/2026/istanbul",
+    "status": "near_match",
+    "title": "SICSS-Istanbul"
+  },
+  "sicss:2026:singapore": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://new.sicss.io/2026/singapore",
+    "status": "near_match",
+    "title": "SICSS-Singapore"
+  },
+  "sicss:2026:stanford": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://new.sicss.io/2026/stanford",
+    "status": "near_match",
+    "title": "SICSS-Stanford"
+  },
+  "sicss:2026:uw": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://new.sicss.io/2026/uw",
+    "status": "near_match",
+    "title": "SICSS-UW"
+  },
+  "sicss:2026:uyo": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://new.sicss.io/2026/uyo",
+    "status": "near_match",
+    "title": "SICSS-NIGERIA"
+  },
+  "sicss:2026:wits-standrews": {
+    "deadline": null,
+    "first_seen": "2026-07-16",
+    "last_seen": "2026-07-16",
+    "source_url": "https://new.sicss.io/2026/wits-standrews",
+    "status": "near_match",
+    "title": "SICSS-WITS-StAndrews"
   }
 }

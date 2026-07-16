@@ -154,6 +154,90 @@
       }
     },
     {
+      "title": "SICSS-AMU/Law",
+      "url": "https://new.sicss.io/2026/amu-law",
+      "organizer": "Summer Institutes in Computational Social Science",
+      "source_layer": "1",
+      "location": "Adam Mickiewicz University, Poznań",
+      "dates": {
+        "start": "2026-09-07",
+        "end": "2026-09-18",
+        "duration_days": 12
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "No tuition required",
+      "fee_eur": 0.0,
+      "topics": [
+        "data science",
+        "law",
+        "social science",
+        "social science methods"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "SICSS locations catalogue: September 7 to September 18, 2026",
+        "funding": "The official SICSS programme overview states that no tuition is required; some locations also cover travel, accommodation, and meals.",
+        "mode": "SICSS location card: Adam Mickiewicz University, Poznań"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
+      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
+      "organizer": "GESIS Summer School",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-02-22",
+        "end": "2027-03-12",
+        "duration_days": 19
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "data analysis",
+        "social science"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "22 Feb – 12 March 2027",
+        "funding": "Scholarships FAQs Sponsors & Partners Contact Fall Seminar in Computational Social Science Go to overview Courses Course Fees Socia",
+        "mode": "onsite) an exciting time in Cologne, complemented by an"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "missing_evidence_id:event_type",
+          "possibly_past_or_closed"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
       "title": "Applied Public Policy Evaluation",
       "url": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
       "organizer": "Tinbergen Institute",
@@ -261,6 +345,111 @@
       }
     },
     {
+      "title": "SICSS-Buenos Aires",
+      "url": "https://new.sicss.io/2026/buenos-aires",
+      "organizer": "Summer Institutes in Computational Social Science",
+      "source_layer": "1",
+      "location": "National University of San Martín, Buenos Aires, Argentina",
+      "dates": {
+        "start": "2026-08-10",
+        "end": "2026-08-21",
+        "duration_days": 12
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "No tuition required",
+      "fee_eur": 0.0,
+      "topics": [
+        "data science",
+        "social science",
+        "social science methods"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "SICSS locations catalogue: From August 10–21, 2026",
+        "funding": "The official SICSS programme overview states that no tuition is required; some locations also cover travel, accommodation, and meals.",
+        "mode": "SICSS location card: National University of San Martín, Buenos Aires, Argentina"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "SICSS-ISSP",
+      "url": "https://new.sicss.io/2026/issp",
+      "organizer": "Summer Institutes in Computational Social Science",
+      "source_layer": "1",
+      "location": "Ouagadougou, Burkina Faso",
+      "dates": {
+        "start": "2026-08-10",
+        "end": "2026-08-21",
+        "duration_days": 12
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "No tuition required",
+      "fee_eur": 0.0,
+      "topics": [
+        "data science",
+        "social science",
+        "social science methods"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "SICSS locations catalogue: August 10 to August 21, 2026",
+        "funding": "The official SICSS programme overview states that no tuition is required; some locations also cover travel, accommodation, and meals.",
+        "mode": "SICSS location card: Ouagadougou, Burkina Faso"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "SICSS-Stanford",
+      "url": "https://new.sicss.io/2026/stanford",
+      "organizer": "Summer Institutes in Computational Social Science",
+      "source_layer": "1",
+      "location": "Stanford University",
+      "dates": {
+        "start": "2026-08-10",
+        "end": "2026-08-21",
+        "duration_days": 12
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "No tuition required",
+      "fee_eur": 0.0,
+      "topics": [
+        "data science",
+        "social science",
+        "social science methods"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "SICSS locations catalogue: August 10 to August 21, 2026",
+        "funding": "The official SICSS programme overview states that no tuition is required; some locations also cover travel, accommodation, and meals.",
+        "mode": "SICSS location card: Stanford University"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
       "url": "https://events.vtools.ieee.org/m/564683",
       "organizer": "IEEE RAS Cognitive Robotics Summer School",
@@ -273,9 +462,9 @@
       },
       "deadline": null,
       "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
+      "financial_access_status": "low-fee",
+      "fee": "free of charge",
+      "fee_eur": 0.0,
       "topics": [
         "climate",
         "AI",
@@ -288,10 +477,9 @@
         "design"
       ],
       "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
+        "application deadline is uncertain"
       ],
-      "confidence": 0.25,
+      "confidence": 0.5,
       "evidence": {
         "deadline": "",
         "duration": "September 7–11, 2026",
@@ -300,17 +488,54 @@
       },
       "ai_advisory": {
         "available": true,
-        "validated_confidence": "high",
-        "validation_warnings": [],
-        "chinese_summary": "IEEE RAS德国分会将于2026年9月7日至11日在德国基姆湖的弗劳恩沃特修道院举办认知机器人暑期学校，面向学生、早期研究人员和专业人士，主题涵盖人工智能与机器人交叉领域。",
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "location_context_weak"
+        ],
+        "chinese_summary": "IEEE RAS德国分会将于2026年9月7日至11日在德国基姆湖的Abtei Frauenwörth举办认知机器人暑期学校，主题为AI与机器人融合。活动面向学生、早期研究人员和专业人士，需先获录取通知方可注册。注册费：学生非IEEE会员800美元，学生IEEE会员费用未完整列出。",
         "extracted_deadline": "",
-        "extracted_fee": "",
+        "extracted_fee": "Student / Non-IEEE Member: USD 800; Student / IEEE Member: US [incomplete]",
         "extracted_funding": "",
         "evidence_fields": {
           "deadline": "",
-          "fee": "",
+          "fee": "Student Registration Fees are Student / Non-IEEE Member: USD 800 Student / IEEE Member: US",
           "funding": ""
         }
+      }
+    },
+    {
+      "title": "SICSS-WITS-StAndrews",
+      "url": "https://new.sicss.io/2026/wits-standrews",
+      "organizer": "Summer Institutes in Computational Social Science",
+      "source_layer": "1",
+      "location": "Johnannesburg, South Africa",
+      "dates": {
+        "start": "2026-08-17",
+        "end": "2026-08-21",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "No tuition required",
+      "fee_eur": 0.0,
+      "topics": [
+        "data science",
+        "social science",
+        "social science methods"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "SICSS locations catalogue: 17–21 August, 2026",
+        "funding": "The official SICSS programme overview states that no tuition is required; some locations also cover travel, accommodation, and meals.",
+        "mode": "SICSS location card: Johnannesburg, South Africa"
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
@@ -354,15 +579,63 @@
         "available": true,
         "validated_confidence": "medium",
         "validation_warnings": [
-          "missing_evidence_id:location",
-          "missing_evidence_id:mode"
+          "missing_evidence_id:location"
         ],
-        "chinese_summary": "ESS举办的2026年数据管理与科学计算暑期学校，面向博士生和早期职业研究人员，涵盖中子散射数据全生命周期管理。",
+        "chinese_summary": "ESS组织的数据管理与科学计算暑期学校，面向博士生和早期职业研究人员，涵盖中子散射数据管理、分析和FAIR原则。",
         "extracted_deadline": "",
         "extracted_fee": "",
         "extracted_funding": "",
         "evidence_fields": {
           "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
+      "title": "CSSL26 / Application",
+      "url": "https://linguistics.philology.uoc.gr/cssl26/application.php",
+      "organizer": "CreteLing",
+      "source_layer": "1.5",
+      "location": "Courses Events",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "€400",
+      "fee_eur": 400.0,
+      "topics": [
+        "linguistics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "funding": "Tuition Waiver: Students and alumni of the University of Crete. Retired faculty (from any university), in recognition of their contrib",
+        "mode": "Venue Courses Events Application Useful info FAQs Conta"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "application_deadline_value_not_in_evidence",
+          "deadline_past",
+          "registration_status_corrected_from_past_deadline"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "2026-05-08",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "The tuition fees associated with this early deadline are lower than the tuition fees associated with the regular application deadline ( May 8 ). | Application deadline Acceptance letter Payment Login Early registration April 5 by April 19 deadline mentioned in the letter of acceptance letter with password after payment Regular registration May 8 by May 24 Ways of Payment : will be described in your acceptance letter .",
           "fee": "",
           "funding": ""
         }
@@ -408,6 +681,110 @@
       }
     },
     {
+      "title": "About the Summer School in Social Sciences Methods",
+      "url": "https://www.ssm.usi.ch/en/home-ssm/about-the-summer-school",
+      "organizer": "Summer School in Social Sciences Methods",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": "2026-08-06",
+        "end": "2026-08-21",
+        "duration_days": 16
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "social science",
+        "political science",
+        "sociology",
+        "psychology"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain",
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.25,
+      "evidence": {
+        "deadline": "",
+        "duration": "6-21 August 2026",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
+      "title": "Application – Advanced Language Processing Winter School",
+      "url": "https://lig-alps.imag.fr/index.php/application/",
+      "organizer": "Advanced Language Processing Winter School",
+      "source_layer": "1.5",
+      "location": "Participant Voices",
+      "dates": {
+        "start": "2027-03-28",
+        "end": "2027-04-02",
+        "duration_days": 6
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "natural language processing"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "28th March – 2nd April 2027",
+        "funding": "",
+        "mode": "Venue Participant Voices Back Application Applications"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "medium",
+        "validation_warnings": [
+          "missing_evidence_id:title",
+          "missing_evidence_id:event_type",
+          "missing_evidence_id:location",
+          "missing_evidence_id:mode",
+          "missing_evidence_id:start_date",
+          "missing_evidence_id:end_date",
+          "missing_evidence_id:registration_status",
+          "missing_evidence_id:eligibility",
+          "missing_evidence_id:application_url"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
       "title": "Thematic CERN School of Computing",
       "url": "https://csc.web.cern.ch/scsc-2026/",
       "organizer": "CERN School of Computing",
@@ -443,6 +820,56 @@
       }
     },
     {
+      "title": "Summer School in Social Sciences Methods 2026",
+      "url": "https://www.ssm.usi.ch/en/course-list/hybrid-methods",
+      "organizer": "Summer School in Social Sciences Methods",
+      "source_layer": "1.5",
+      "location": "Lugano, Switzerland",
+      "dates": {
+        "start": "2026-08-10",
+        "end": "2026-08-21",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "design",
+        "social science"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "USI course blocks: Week 1 2026-08-10 to 2026-08-14; Week 2 2026-08-17 to 2026-08-21",
+        "funding": "",
+        "mode": "Hybrid Methods and Cross-Methods Courses | Summer School"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "missing_evidence_id:application_url",
+          "missing_evidence_id:topics",
+          "missing_evidence_id:chinese_summary"
+        ],
+        "chinese_summary": "未知",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
       "title": "ELLIS Summer School at Unit Munich",
       "url": "https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026",
       "organizer": "ELLIS",
@@ -475,6 +902,106 @@
       },
       "ai_advisory": {
         "available": false
+      }
+    },
+    {
+      "title": "SSoL 2026",
+      "url": "https://ssol.ff.cuni.cz/ssol-2026/",
+      "organizer": "Charles University Summer School of Linguistics",
+      "source_layer": "2",
+      "location": "Europe",
+      "dates": {
+        "start": "2026-08-01",
+        "end": "2026-08-08",
+        "duration_days": 8
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "linguistics",
+        "psycholinguistics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain",
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.25,
+      "evidence": {
+        "deadline": "",
+        "duration": "1 to 8 August 2026",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "medium",
+        "validation_warnings": [
+          "location_context_weak",
+          "application_deadline_value_not_in_evidence",
+          "deadline_past",
+          "registration_status_corrected_from_past_deadline"
+        ],
+        "chinese_summary": "SSoL 2026 语言学暑期学校将于2026年8月1日至8日在捷克布杰约维采举行，申请截止日期为2026年3月30日。",
+        "extracted_deadline": "2026-03-30",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "SSoL 2026 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL 2012 SSoL 2011 SSoL 2010 SSoL 2009 SSoL 2008 SSoL 2007 Contact Partners Facebook Search for: SSoL 2026 APPLICATIONS TO SSoL2026 ARE OPEN TILL 15th 30th MARCH 2026. | The applications are open from 12th February till 15t",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
+      "title": "Welcome to ALPS 2027, the Advanced Language Processing School in the Alps",
+      "url": "https://lig-alps.imag.fr/",
+      "organizer": "Advanced Language Processing Winter School",
+      "source_layer": "1.5",
+      "location": "Participant Voices",
+      "dates": {
+        "start": "2027-03-28",
+        "end": "2027-04-02",
+        "duration_days": 6
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain",
+        "topic relevance is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "28th March – 2nd April 2027",
+        "funding": "",
+        "mode": "Venue Participant Voices Back Welcome to ALPS 2027, the"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "location_context_weak",
+          "start_date_value_not_in_evidence",
+          "end_date_value_not_in_evidence"
+        ],
+        "chinese_summary": "第六届高级语言处理冬季学校将于2027年3月28日至4月2日在法国阿尔卑斯山的奥苏瓦举行，主要面向硕士和博士生，也欢迎学术界和工业界研究人员。",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
       }
     }
   ]

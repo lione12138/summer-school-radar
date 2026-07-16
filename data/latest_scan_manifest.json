@@ -4,20 +4,20 @@
   "mode": "full",
   "healthy": true,
   "source_coverage": {
-    "attempted": 134,
-    "succeeded": 121,
-    "failed": 13,
-    "success_ratio": 0.903
+    "attempted": 143,
+    "succeeded": 132,
+    "failed": 11,
+    "success_ratio": 0.9231
   },
   "http_cache": {
-    "requests": 419,
-    "hits_304": 75,
+    "requests": 466,
+    "hits_304": 37,
     "stale_fallbacks": 4,
-    "stores": 318
+    "stores": 402
   },
   "candidates": {
-    "extracted": 104,
-    "published_snapshot": 87
+    "extracted": 129,
+    "published_snapshot": 112
   },
   "ai": {
     "semantic_enabled": true,
@@ -60,7 +60,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": "2026-07-15",
-      "consecutive_failures": 3
+      "consecutive_failures": 4
     },
     {
       "name": "ELLIS",
@@ -141,10 +141,10 @@
     },
     {
       "name": "GESIS Summer School",
-      "status": "failed",
+      "status": "healthy",
       "last_attempt": "2026-07-16",
-      "last_success": null,
-      "consecutive_failures": 1
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
     },
     {
       "name": "Data Science Africa Summer Schools",
@@ -326,7 +326,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 4
+      "consecutive_failures": 5
     },
     {
       "name": "WCRP",
@@ -431,7 +431,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": "2026-07-15",
-      "consecutive_failures": 1
+      "consecutive_failures": 2
     },
     {
       "name": "IPAM",
@@ -466,14 +466,14 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 4
+      "consecutive_failures": 5
     },
     {
       "name": "CERN Academic Training",
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 4
+      "consecutive_failures": 5
     },
     {
       "name": "ICTP",
@@ -529,7 +529,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 4
+      "consecutive_failures": 5
     },
     {
       "name": "NCAS",
@@ -550,7 +550,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 4
+      "consecutive_failures": 5
     },
     {
       "name": "LSA Linguistic Institute",
@@ -582,6 +582,48 @@
     },
     {
       "name": "CLASP Gothenburg",
+      "status": "healthy",
+      "last_attempt": "2026-07-16",
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
+    },
+    {
+      "name": "CoLang",
+      "status": "healthy",
+      "last_attempt": "2026-07-16",
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
+    },
+    {
+      "name": "CreteLing",
+      "status": "healthy",
+      "last_attempt": "2026-07-16",
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
+    },
+    {
+      "name": "Advanced Language Processing Winter School",
+      "status": "healthy",
+      "last_attempt": "2026-07-16",
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
+    },
+    {
+      "name": "Charles University Summer School of Linguistics",
+      "status": "healthy",
+      "last_attempt": "2026-07-16",
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
+    },
+    {
+      "name": "Methods in Language Sciences",
+      "status": "healthy",
+      "last_attempt": "2026-07-16",
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
+    },
+    {
+      "name": "Edinburgh Theoretical Historical Linguistics",
       "status": "healthy",
       "last_attempt": "2026-07-16",
       "last_success": "2026-07-16",
@@ -620,7 +662,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 4
+      "consecutive_failures": 5
     },
     {
       "name": "CISPA",
@@ -683,7 +725,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 4
+      "consecutive_failures": 5
     },
     {
       "name": "CESM Tutorial",
@@ -704,7 +746,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 4
+      "consecutive_failures": 5
     },
     {
       "name": "Oxford Robotics Institute",
@@ -777,7 +819,28 @@
       "consecutive_failures": 0
     },
     {
+      "name": "SICSS",
+      "status": "healthy",
+      "last_attempt": "2026-07-16",
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
+    },
+    {
       "name": "ICPSR Summer Program",
+      "status": "healthy",
+      "last_attempt": "2026-07-16",
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
+    },
+    {
+      "name": "Summer School in Social Sciences Methods",
+      "status": "healthy",
+      "last_attempt": "2026-07-16",
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
+    },
+    {
+      "name": "Oxford Spring School",
       "status": "healthy",
       "last_attempt": "2026-07-16",
       "last_success": "2026-07-16",
@@ -813,10 +876,10 @@
     },
     {
       "name": "IHR History",
-      "status": "failed",
+      "status": "healthy",
       "last_attempt": "2026-07-16",
-      "last_success": "2026-07-15",
-      "consecutive_failures": 1
+      "last_success": "2026-07-16",
+      "consecutive_failures": 0
     },
     {
       "name": "Khipu",
@@ -942,7 +1005,7 @@
       "status": "failed",
       "last_attempt": "2026-07-16",
       "last_success": null,
-      "consecutive_failures": 4
+      "consecutive_failures": 5
     },
     {
       "name": "LSE Cities",
