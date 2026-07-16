@@ -5,7 +5,7 @@
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
   "_canary": "SSR-CANON-7q3v9x2k8m4w",
   "schema_version": 2,
-  "generated": "2026-07-15",
+  "generated": "2026-07-16",
   "opportunities": [
     {
       "title": "Social Science Data Analysis",
@@ -353,7 +353,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：软件工程、物理学、粒子物理、工程学；资金证明：经济支持；14天；优先区域",
       "risk_points_zh": "申请截止日期不确定",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Organizing Water",
@@ -547,7 +547,7 @@
       "eligibility_zh": "条件 暑期学校主要面向英国本科倒数第二年或最后一年的学生，但也欢迎任何在英国具有相关背景或强烈兴趣的申请者",
       "recommendation_reason_zh": "主题匹配：人工智能、机器学习、数据科学；有奖学金证据；11天；优先地区",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Water Quality Assessment and Monitoring",
@@ -796,7 +796,7 @@
       "eligibility_zh": "经济学研究硕士 为什么选择丁伯根研究所？研究硕士项目结构 学习安排 转博士 就业市场 招生 入学要求 申请",
       "recommendation_reason_zh": "主题匹配：气候、气候变化、机器学习、深度学习；资金证据：奖学金、经济支持；5天；优先地区",
       "risk_points_zh": "申请截止日期不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Economics of Climate Change",
@@ -862,7 +862,7 @@
       "eligibility_zh": "经济学研究硕士 为什么选择丁伯根研究所？研究硕士 项目结构 学习安排 转博士 就业市场 招生 入学要求 申请",
       "recommendation_reason_zh": "主题匹配：气候、气候变化、机器学习、深度学习；资金证据：奖学金、经济支持；5天；优先地区",
       "risk_points_zh": "申请截止日期不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Prob_AI Hub Winter School 2027",
@@ -931,7 +931,7 @@
       "eligibility_zh": "MSci 数据科学 研究生 MSc 人工智能 MSc 数据科学 MSc 健康数据科学 MSc 商业分析 MA 数字人文 MSc 法医语言学",
       "recommendation_reason_zh": "主题匹配：AI，人工智能，机器学习，数据科学；资金证据：旅行补助；优先地区；可信来源层级1.5",
       "risk_points_zh": "申请截止日期不确定；持续时间低于5天",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "2026 Advanced Course on International Criminal Law",
@@ -1136,7 +1136,7 @@
       "eligibility_zh": "获得证书",
       "recommendation_reason_zh": "主题匹配：可持续性、人工智能、网络安全；截止日期似乎开放；5天；优先区域",
       "risk_points_zh": "资金未明确，费用等价性不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Language",
@@ -1203,7 +1203,7 @@
       "eligibility_zh": "博士及专业人士 申请截止日期：2026年5月21日 地点：莱顿，在线 课程费用：€1",
       "recommendation_reason_zh": "主题匹配：语言学、物理学、统计学、法学；资金证明：奖学金；5天；优先区域",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Deep Learning",
@@ -1269,7 +1269,7 @@
       "eligibility_zh": "经济学硕士 为什么选择丁伯根研究所？研究硕士项目结构 学习日程 匹配 转博士 职位市场 招生 入学要求 申请",
       "recommendation_reason_zh": "主题匹配：气候、气候变化、机器学习、深度学习；资金证据：奖学金、经济支持；5天；优先区域",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Foundations of Machine Learning with Applications in Python",
@@ -1829,7 +1829,7 @@
       "eligibility_zh": "目前从事临床医疗和/或分子数据工作的博士生、博士后研究员或研究科学家",
       "recommendation_reason_zh": "主题匹配：可持续性、人工智能、数据科学、编程语言；资金证明：旅行补助、助学金、费用减免、经济支持；6天；可信来源第一层",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Experimental Methods for Evaluation of Wastewater, Sanitation & Environmental Technologies",
@@ -2636,7 +2636,7 @@
       "eligibility_zh": "硕士和博士指导请求 专业硕士和研究生文凭 研究实习 博士后 第二栏 学生生活和资源 实验室",
       "recommendation_reason_zh": "主题匹配：可持续性、AI、人工智能、机器学习；资金证据：奖学金；线下；目标层次：硕士、博士、博士后",
       "risk_points_zh": "申请截止日期不确定；持续时间少于5天",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Summer School Science Communication",
@@ -2772,7 +2772,7 @@
       "eligibility_zh": "法学硕士（LL",
       "recommendation_reason_zh": "主题匹配：人工智能、网络安全、机器人；低费用：约1000欧元；优先区域；可信来源层级1.5",
       "risk_points_zh": "申请截止日期不确定；时长低于5天；费用超过400欧元且无明确资助",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Data Science and AI Summer School",
@@ -2836,7 +2836,7 @@
       "eligibility_zh": "博士 https://www",
       "recommendation_reason_zh": "主题匹配：AI、人工智能、机器学习、数据科学；9天；优先区域；可信来源第一层",
       "risk_points_zh": "申请截止日期已过；资助不明确，费用不确定",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
@@ -2903,7 +2903,7 @@
       "eligibility_zh": "早期职业研究人员和对下一代智能机器人系统感兴趣的专业人士",
       "recommendation_reason_zh": "主题匹配：气候、人工智能、机器学习；5天；优先区域；可信来源层级1.5",
       "risk_points_zh": "申请截止日期不确定；资金不明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Data Management and Scientific Computing (DMSC) Centre Summer School 2026",
@@ -2970,7 +2970,7 @@
       "eligibility_zh": "中子散射或数据管理领域的博士生和早期职业研究人员；希望掌握数据缩减、分析和FAIR原则的科学家；寻求管理实验数据实践技能的人员",
       "recommendation_reason_zh": "主题匹配：地球科学、可持续性、物理学、凝聚态；5天；优先区域；可信来源第一层",
       "risk_points_zh": "申请截止日期不确定；资金未明确，费用不确定",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Application instructions",
@@ -3273,7 +3273,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：地球科学、可持续性、物理学、凝聚态物理；费用低：约0欧元；12天；优先区域",
       "risk_points_zh": "申请截止日期已过；线下状态不确定",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends",
@@ -3337,7 +3337,7 @@
       "eligibility_zh": "地球物理学博士（'90）",
       "recommendation_reason_zh": "主题匹配：地球科学、地球物理学、地震学、物理学；62天；优先区域；可信来源第一层",
       "risk_points_zh": "申请截止日期不确定；资金未明确且费用不确定；仅在线",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "IV Joint ICTP-SAIFR/ICTP-Trieste Summer School on Particle Physics",
@@ -4021,7 +4021,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：干旱、气候、卫星、量子计算；可信来源第一层；线下活动；目标受众：早期职业研究人员",
       "risk_points_zh": "申请截止日期不确定；时长不足5天；资助情况不明确，费用不确定",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "DSA Summer Schools",
@@ -4085,7 +4085,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：人工智能、机器学习、数据科学；为期5天；可信来源层级1；线下",
       "risk_points_zh": "申请截止日期已过；资助不明确，费用不确定",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "ELLIS Doctoral Symposium 2026",
@@ -4324,7 +4324,7 @@
       "eligibility_zh": "硕士 | 博士 - 论文指导 会议 应用研究 I-SEE（集成软件生态系统评估）I-SEE（集成软件生态系统评估）培训",
       "recommendation_reason_zh": "主题匹配：机器学习、网络安全、数学、应用数学；优先地区；线下；目标层次：硕士、博士",
       "risk_points_zh": "申请截止日期不确定；时长不足5天；资助不明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "MaSAG25 Summer School and Conference",
@@ -4443,7 +4443,7 @@
       "eligibility_zh": "您将学习从下一代测序数据中识别体细胞变异的概念，以及进行癌症变异注释的基础知识。",
       "recommendation_reason_zh": "主题匹配：数据分析、设计；费用低：约110欧元；6天；优先区域",
       "risk_points_zh": "申请截止日期不确定；仅线上",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Thematic CERN School of Computing",
@@ -4502,7 +4502,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：架构、历史；7天；优先区域；可信来源层级1",
       "risk_points_zh": "申请截止日期不确定；资金不明确，费用不确定",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "2026 Technical Short Course: InSAR Processing and Theory using GMTSAR",
@@ -4685,7 +4685,7 @@
       "eligibility_zh": "博士生及研究型硕士生 LOT是荷兰国家语言学研究生院，汇聚约400名教师和300名博士生及研究型硕士生，提供",
       "recommendation_reason_zh": "主题匹配：语言学、语义学、设计；12天；优先地区；可信来源层级1.5",
       "risk_points_zh": "申请截止日期已过；资助不明确且费用不确定；线下状态不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Sharing the summer school:",
@@ -4747,7 +4747,7 @@
       "eligibility_zh": "硕士二年级、博士、博士后、学者、公共机构成员及专业人士",
       "recommendation_reason_zh": "主题匹配：气候、数据科学、自然语言处理、统计学；为期6天；优先地区；可信来源层级1.5",
       "risk_points_zh": "申请截止日期已过；资助不明确且费用不确定；线下参与状态不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Privacy settings",
@@ -4811,7 +4811,7 @@
       "eligibility_zh": "硕士 | 博士 - 论文指导 会议 应用研究 I-SEE（集成软件生态系统评估） I-SEE（集成软件生态系统评估） 培训",
       "recommendation_reason_zh": "主题匹配：机器学习、软件工程、网络安全、密码学；5天；优先区域；目标层次：硕士、博士",
       "risk_points_zh": "申请截止日期已过；资助不明确且费用不确定；线下状态不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Winter School on Artificial Intelligence (AI), Ethics and Human Rights, 14-18 December 2026, Hybrid Format: Rome (Italy) and online",
@@ -4984,7 +4984,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：干旱、气候；低费用：约0欧元；可信来源层级1；目标人群：早期职业研究者",
       "risk_points_zh": "申请截止日期不确定；时长不足5天；线下状态不确定",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Types, Proofs, and Program Logics",
@@ -5454,7 +5454,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：工程、力学、设计；5天；可信来源层级1；仅近似匹配：申请截止日期已过；资助不明确且费用不确定；线下状态不确定",
       "risk_points_zh": "申请截止日期已过；资助不明确且费用不确定；线下状态不确定",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "ELLIS Summer School at Unit Barcelona",
@@ -5798,7 +5798,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -6056,7 +6056,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Water Quality Assessment and Monitoring",
@@ -6305,7 +6305,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Economics of Climate Change",
@@ -6371,7 +6371,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Prob_AI Hub Winter School 2027",
@@ -6440,7 +6440,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "2026 Advanced Course on International Criminal Law",
@@ -6645,7 +6645,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Language",
@@ -6712,7 +6712,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Deep Learning",
@@ -6778,7 +6778,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Foundations of Machine Learning with Applications in Python",
@@ -7338,7 +7338,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Experimental Methods for Evaluation of Wastewater, Sanitation & Environmental Technologies",
@@ -8145,7 +8145,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Summer School Science Communication",
@@ -8281,7 +8281,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Data Science and AI Summer School",
@@ -8345,7 +8345,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
@@ -8412,7 +8412,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Data Management and Scientific Computing (DMSC) Centre Summer School 2026",
@@ -8478,7 +8478,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Application instructions",
@@ -8781,7 +8781,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends",
@@ -8845,7 +8845,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "IV Joint ICTP-SAIFR/ICTP-Trieste Summer School on Particle Physics",
@@ -9468,7 +9468,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "DSA Summer Schools",
@@ -9532,7 +9532,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "ELLIS Doctoral Symposium 2026",
@@ -9771,7 +9771,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "MaSAG25 Summer School and Conference",
@@ -9890,7 +9890,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Thematic CERN School of Computing",
@@ -9949,7 +9949,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "2026 Technical Short Course: InSAR Processing and Theory using GMTSAR",
@@ -10132,7 +10132,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Sharing the summer school:",
@@ -10194,7 +10194,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Privacy settings",
@@ -10258,7 +10258,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELLIS Summer School at Unit NRW",
@@ -10434,7 +10434,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Lisbon Machine Learning Summer School (LxMLS)",
@@ -10847,7 +10847,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": false
+      "is_new": true
     },
     {
       "title": "Types, Proofs, and Program Logics",
