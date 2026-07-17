@@ -5,7 +5,7 @@
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
   "_canary": "SSR-CANON-7q3v9x2k8m4w",
   "schema_version": 2,
-  "generated": "2026-07-16",
+  "generated": "2026-07-17",
   "opportunities": [
     {
       "title": "Social Science Data Analysis",
@@ -353,7 +353,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：软件工程、物理学、粒子物理、工程学；资金证明：经济支持；14天；优先区域",
       "risk_points_zh": "申请截止日期不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Organizing Water",
@@ -538,7 +538,7 @@
       "eligibility_zh": "研究生、博士后研究人员和初级教师。",
       "recommendation_reason_zh": "主题匹配：数据科学、法律、社会科学、社会科学方法；资金证明：学费减免；12天；可信来源第一层",
       "risk_points_zh": "申请截止日期不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Exeter Machine Learning Summer School",
@@ -928,75 +928,6 @@
       "is_new": false
     },
     {
-      "title": "Prob_AI Hub Winter School 2027",
-      "type": "winter school",
-      "organizer": "Prob_AI Hub Winter School",
-      "source_layer": "1.5",
-      "region_priority": "priority",
-      "location": "Bristol Open to",
-      "mode": "in-person",
-      "start_date": "2027-01-05",
-      "end_date": "2027-01-08",
-      "duration_days": 4,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": true,
-      "funding_type": [
-        "travel grant"
-      ],
-      "funding_evidence": "Funding The winter school is free to attend, but we expect attendees to cover their accommodation and travel costs (for example",
-      "topic_keywords": [
-        "AI",
-        "artificial intelligence",
-        "machine learning",
-        "data science",
-        "linguistics",
-        "mathematics",
-        "social science",
-        "economics",
-        "digital humanities"
-      ],
-      "eligibility": "MSci Data Science Postgraduate MSc Artificial Intelligence MSc Data Science MSc Health Data Science MSc Business Analytics MA Digital Humanities MSc Forensic Lingu",
-      "target_level": "MSc, PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
-      "source_url": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
-      "summary": "Prob_AI Hub Winter School 2027, Tuesday 5 January, 11:00am - Lancaster University Skip to content Accessibility help Our use of cookies We use necessary cookies to make our site work. We'd also like to set optional cookies to help us measure web traffic and report on campaigns. W",
-      "recommendation_reason": "topic match: AI, artificial intelligence, machine learning, data science; funding evidence: travel grant; priority region; trusted source layer 1.5",
-      "risk_points": "application deadline is uncertain; duration is below 5 days",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [
-        "application deadline is uncertain",
-        "duration is below 5 days"
-      ],
-      "score": 85.0,
-      "score_explanation": [
-        "topic match: AI, artificial intelligence, machine learning, data science",
-        "funding evidence: travel grant",
-        "priority region",
-        "trusted source layer 1.5",
-        "in-person",
-        "target level: MSc, PhD",
-        "near-match only: application deadline is uncertain; duration is below 5 days"
-      ],
-      "first_seen": "2026-07-15",
-      "deadline_evidence": "",
-      "duration_evidence": "5th to 8th January 2027",
-      "mode_evidence": "Venue Bristol Open to Alumni, External Organisations, P",
-      "extraction_confidence": 0.75,
-      "title_zh": "Prob_AI Hub 冬季学校 2027",
-      "organizer_zh": "Prob_AI Hub 冬季学校",
-      "location_zh": "布里斯托尔 开放至",
-      "summary_zh": "Prob_AI Hub 冬季学校 2027，1月5日星期二，11:00 - 兰卡斯特大学 跳转到内容 无障碍帮助 我们使用cookies 我们使用必要的cookies来使网站正常运行。我们也希望设置可选的cookies来帮助我们衡量网络流量和报告活动。",
-      "eligibility_zh": "MSci 数据科学 研究生 MSc 人工智能 MSc 数据科学 MSc 健康数据科学 MSc 商业分析 MA 数字人文 MSc 法医语言学",
-      "recommendation_reason_zh": "主题匹配：AI，人工智能，机器学习，数据科学；资金证据：旅行补助；优先地区；可信来源层级1.5",
-      "risk_points_zh": "申请截止日期不确定；持续时间低于5天",
-      "is_new": false
-    },
-    {
       "title": "2026 Advanced Course on International Criminal Law",
       "type": "advanced course",
       "organizer": "Hague Academy of International Law",
@@ -1063,6 +994,66 @@
       "is_new": false
     },
     {
+      "title": "Energy Harnessing in the Urban Water Cycle",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Delft, Netherlands",
+      "mode": "in-person",
+      "start_date": "2027-01-11",
+      "end_date": "2027-01-29",
+      "duration_days": 19,
+      "deadline": "2026-12-11",
+      "deadline_status": "open",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "design"
+      ],
+      "eligibility": "<div> <ul> <li> <p>Energy and water companies, such as water utilities willing to improve their energy balance</p> </li> <li> <p>Lecturers/Researchers from universities/research centers worldwide, willing to update their",
+      "target_level": "MSc",
+      "fee": "EUR 2600",
+      "fee_eur": 2600.0,
+      "application_link": "https://www.un-ihe.org/short-courses",
+      "source_url": "https://www.un-ihe.org/short-courses",
+      "summary": "<div> <p>This course explores the technical links between water and energy systems, from hydropower to energy recovery in treatment plants. Through lectures, case studies, lab work, and field visits, participants learn to analyze and design sustainable, integrated solutions that ",
+      "recommendation_reason": "topic match: design; low fee: approximately EUR 2600; deadline appears open; 19 days",
+      "risk_points": "fee exceeds EUR 400 without explicit funding",
+      "sessions": [],
+      "identity_key": "ihe-delft:edition:0846DE42-3284-11F1-A0A9-0050561F03F5",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "score": 84.0,
+      "score_explanation": [
+        "topic match: design",
+        "low fee: approximately EUR 2600",
+        "deadline appears open",
+        "19 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "target level: MSc",
+        "near-match only: fee exceeds EUR 400 without explicit funding"
+      ],
+      "first_seen": "2026-06-14",
+      "deadline_evidence": "IHE Delft course catalogue API: applications close 2026-12-11",
+      "duration_evidence": "IHE Delft course catalogue API: 2027-01-11 to 2027-01-29",
+      "mode_evidence": "IHE Delft delivery method: FTF",
+      "extraction_confidence": 1.0,
+      "title_zh": "城市水循环中的能源利用",
+      "organizer_zh": "IHE Delft",
+      "location_zh": "荷兰代尔夫特",
+      "summary_zh": "本课程探讨水与能源系统之间的技术联系，从水力发电到处理厂的能源回收。通过讲座、案例研究、实验室工作和实地考察，学员学习分析和设计可持续的综合解决方案。",
+      "eligibility_zh": "能源和水务公司，例如希望改善能源平衡的水务公司；全球大学/研究中心的讲师/研究人员，希望更新其知识。",
+      "recommendation_reason_zh": "主题匹配：设计；费用低：约2600欧元；截止日期似乎开放；19天",
+      "risk_points_zh": "费用超过400欧元，无明确资助",
+      "is_new": false
+    },
+    {
       "title": "SICSS-Buenos Aires",
       "type": "summer institute",
       "organizer": "Summer Institutes in Computational Social Science",
@@ -1122,7 +1113,7 @@
       "eligibility_zh": "研究生、博士后研究人员和初级教师。",
       "recommendation_reason_zh": "主题匹配：数据科学、社会科学、社会科学方法；资金证明：学费减免；12天；可信来源第一层",
       "risk_points_zh": "申请截止日期不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-ISSP",
@@ -1184,7 +1175,7 @@
       "eligibility_zh": "研究生、博士后研究人员和初级教师。",
       "recommendation_reason_zh": "主题匹配：数据科学、社会科学、社会科学方法；资金证明：学费减免；12天；可信来源层级1",
       "risk_points_zh": "申请截止日期不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-Stanford",
@@ -1246,7 +1237,7 @@
       "eligibility_zh": "研究生、博士后研究人员和初级教师。",
       "recommendation_reason_zh": "主题匹配：数据科学、社会科学、社会科学方法；资金证据：学费减免；12天；可信来源层级1",
       "risk_points_zh": "申请截止日期不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
@@ -1519,7 +1510,7 @@
       "eligibility_zh": "博士及专业人士 申请截止日期：2026年5月21日 地点：莱顿，在线 课程费用：€1",
       "recommendation_reason_zh": "主题匹配：语言学、物理学、统计学、法学；资金证明：奖学金；5天；优先区域",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Deep Learning",
@@ -2077,6 +2068,75 @@
       "is_new": false
     },
     {
+      "title": "Prob_AI Hub Winter School 2027",
+      "type": "winter school",
+      "organizer": "Prob_AI Hub Winter School",
+      "source_layer": "1.5",
+      "region_priority": "priority",
+      "location": "Bristol Open to",
+      "mode": "in-person",
+      "start_date": "2027-01-05",
+      "end_date": "2027-01-08",
+      "duration_days": 4,
+      "deadline": null,
+      "deadline_status": "closed",
+      "funding_available": true,
+      "funding_type": [
+        "travel grant"
+      ],
+      "funding_evidence": "Funding The winter school is free to attend, but we expect attendees to cover their accommodation and travel costs (for example",
+      "topic_keywords": [
+        "AI",
+        "artificial intelligence",
+        "machine learning",
+        "data science",
+        "linguistics",
+        "mathematics",
+        "social science",
+        "economics",
+        "digital humanities"
+      ],
+      "eligibility": "MSci Data Science Postgraduate MSc Artificial Intelligence MSc Data Science MSc Health Data Science MSc Business Analytics MA Digital Humanities MSc Forensic Lingu",
+      "target_level": "MSc, PhD",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
+      "source_url": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
+      "summary": "Prob_AI Hub Winter School 2027, Tuesday 5 January, 11:00am - Lancaster University Skip to content Accessibility help Our use of cookies We use necessary cookies to make our site work. We'd also like to set optional cookies to help us measure web traffic and report on campaigns. W",
+      "recommendation_reason": "topic match: AI, artificial intelligence, machine learning, data science; funding evidence: travel grant; priority region; trusted source layer 1.5",
+      "risk_points": "application deadline has passed; duration is below 5 days",
+      "sessions": [],
+      "identity_key": "",
+      "financial_access_status": "funded",
+      "failed_hard_conditions": [
+        "application deadline has passed",
+        "duration is below 5 days"
+      ],
+      "score": 81.0,
+      "score_explanation": [
+        "topic match: AI, artificial intelligence, machine learning, data science",
+        "funding evidence: travel grant",
+        "priority region",
+        "trusted source layer 1.5",
+        "in-person",
+        "target level: MSc, PhD",
+        "near-match only: application deadline has passed; duration is below 5 days"
+      ],
+      "first_seen": "2026-07-15",
+      "deadline_evidence": "",
+      "duration_evidence": "5th to 8th January 2027",
+      "mode_evidence": "Venue Bristol Open to Alumni, External Organisations, P",
+      "extraction_confidence": 0.75,
+      "title_zh": "Prob_AI Hub 冬季学校 2027",
+      "organizer_zh": "Prob_AI Hub 冬季学校",
+      "location_zh": "布里斯托尔 开放至",
+      "summary_zh": "Prob_AI Hub 冬季学校 2027，1月5日星期二，11:00 - 兰卡斯特大学 跳至内容 无障碍帮助 我们使用cookies 我们使用必要的cookies以确保网站正常运行。我们还希望设置可选的cookies，以帮助我们衡量网络流量并报告活动情况。",
+      "eligibility_zh": "MSci 数据科学 研究生 MSc 人工智能 MSc 数据科学 MSc 健康数据科学 MSc 商业分析 MA 数字人文 MSc 法医语言学",
+      "recommendation_reason_zh": "主题匹配：AI，人工智能，机器学习，数据科学；资金证明：旅行补助；优先区域；可信来源层级1.5",
+      "risk_points_zh": "申请截止日期已过；持续时间不足5天",
+      "is_new": false
+    },
+    {
       "title": "Experimental Methods for Evaluation of Wastewater, Sanitation & Environmental Technologies",
       "type": "short course",
       "organizer": "IHE Delft",
@@ -2256,7 +2316,7 @@
       "eligibility_zh": "研究生、博士后研究人员和初级教师。",
       "recommendation_reason_zh": "主题匹配：数据科学、社会科学、社会科学方法；资金证据：学费减免；13天；可信来源层级1",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-NIGERIA",
@@ -2318,7 +2378,7 @@
       "eligibility_zh": "研究生、博士后研究人员和初级教师。",
       "recommendation_reason_zh": "主题匹配：数据科学、社会科学、社会科学方法；资金证明：学费减免；12天；可信来源层级1",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-UW",
@@ -2380,7 +2440,7 @@
       "eligibility_zh": "研究生、博士后研究员和初级教师。",
       "recommendation_reason_zh": "主题匹配：数据科学、社会科学、社会科学方法；资金证明：学费减免；12天；可信来源层级1",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-Chicago - Chicago State University",
@@ -2442,7 +2502,7 @@
       "eligibility_zh": "研究生、博士后研究人员和初级教师。",
       "recommendation_reason_zh": "主题匹配：数据科学、社会科学、社会科学方法；资金证据：学费减免；11天；可信来源层级1",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Karthaus summerschool",
@@ -2569,7 +2629,7 @@
       "eligibility_zh": "研究生、博士后研究员及初级教师。",
       "recommendation_reason_zh": "主题匹配：数据科学、社会科学、社会科学方法；资金证明：学费减免；5天；可信来源层级1",
       "risk_points_zh": "申请截止日期不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Edinburgh Theoretical Historical Linguistics",
@@ -2632,7 +2692,66 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：语言学、音系学、句法学、形态学；资助证据：助学金；5天；优先地区",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": true
+      "is_new": false
+    },
+    {
+      "title": "Drought Risk Management",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Delft, Netherlands",
+      "mode": "in-person",
+      "start_date": "2027-02-08",
+      "end_date": "2027-02-26",
+      "duration_days": 19,
+      "deadline": "2027-01-08",
+      "deadline_status": "open",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "drought"
+      ],
+      "eligibility": "None",
+      "target_level": "uncertain",
+      "fee": "EUR 2600",
+      "fee_eur": 2600.0,
+      "application_link": "https://www.un-ihe.org/short-courses",
+      "source_url": "https://www.un-ihe.org/short-courses",
+      "summary": "None",
+      "recommendation_reason": "topic match: drought; low fee: approximately EUR 2600; deadline appears open; 19 days",
+      "risk_points": "fee exceeds EUR 400 without explicit funding",
+      "sessions": [],
+      "identity_key": "ihe-delft:edition:58AA4140-3F12-11F1-9A59-0050561F03F5",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "score": 76.0,
+      "score_explanation": [
+        "topic match: drought",
+        "low fee: approximately EUR 2600",
+        "deadline appears open",
+        "19 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "near-match only: fee exceeds EUR 400 without explicit funding"
+      ],
+      "first_seen": "2026-06-14",
+      "deadline_evidence": "IHE Delft course catalogue API: applications close 2027-01-08",
+      "duration_evidence": "IHE Delft course catalogue API: 2027-02-08 to 2027-02-26",
+      "mode_evidence": "IHE Delft delivery method: FTF",
+      "extraction_confidence": 1.0,
+      "title_zh": "干旱风险管理",
+      "organizer_zh": "IHE Delft",
+      "location_zh": "荷兰代尔夫特",
+      "summary_zh": "无",
+      "eligibility_zh": "无",
+      "recommendation_reason_zh": "主题匹配：干旱；费用低：约2600欧元；截止日期似乎开放；19天",
+      "risk_points_zh": "费用超过400欧元且无明确资助",
+      "is_new": false
     },
     {
       "title": "Irrigation Design, Performance Assessment and Modernisation",
@@ -2812,7 +2931,7 @@
       "eligibility_zh": "研究生、博士后研究人员和初级教师。",
       "recommendation_reason_zh": "主题匹配：数据科学、社会科学、社会科学方法；资金证据：学费减免；8天；可信来源层级1",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-Singapore",
@@ -2874,7 +2993,7 @@
       "eligibility_zh": "研究生、博士后研究人员和初级教师。",
       "recommendation_reason_zh": "主题匹配：数据科学、社会科学、社会科学方法；资金证明：学费减免；8天；可信来源层级1",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Assessing Social and Environmental Impacts",
@@ -3393,7 +3512,7 @@
       "funding_type": [
         "scholarship"
       ],
-      "funding_evidence": "Scholarships Program: Meet the Recipients Read the story 08 Jul 2026 Mila and ROOST Launch Suicide Prevention Guardrail Pilot to He",
+      "funding_evidence": "Scholarships Program: Meet the Recipients Read the story See more news Faculty Founded in 1993 by Professor Yoshua Bengio, Mila tod",
       "topic_keywords": [
         "sustainability",
         "AI",
@@ -3441,7 +3560,7 @@
       "eligibility_zh": "硕士和博士指导请求 专业硕士和研究生文凭 研究实习 博士后 第二栏 学生生活和资源 实验室",
       "recommendation_reason_zh": "主题匹配：可持续性、AI、人工智能、机器学习；资金证据：奖学金；线下；目标层次：硕士、博士、博士后",
       "risk_points_zh": "申请截止日期不确定；持续时间少于5天",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Summer School Science Communication",
@@ -3641,7 +3760,7 @@
       "eligibility_zh": "博士 https://www",
       "recommendation_reason_zh": "主题匹配：AI、人工智能、机器学习、数据科学；9天；优先区域；可信来源第一层",
       "risk_points_zh": "申请截止日期已过；资助不明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Data Management and Scientific Computing (DMSC) Centre Summer School 2026",
@@ -3707,7 +3826,7 @@
       "eligibility_zh": "中子散射或数据管理领域的博士生和早期职业研究人员；希望掌握数据缩减、分析和FAIR原则的科学家；寻求管理实验数据实践技能的人员",
       "recommendation_reason_zh": "主题匹配：地球科学、可持续性、物理学、凝聚态；5天；优先区域；可信来源第一层",
       "risk_points_zh": "申请截止日期不确定；资金未明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "CoLang 2026 — Institute on Collaborative Language Research",
@@ -3769,7 +3888,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：语言学、语言记录、人类学、历史；有资助证据：奖学金；19天；可信来源层级1.5",
       "risk_points_zh": "申请尚未开放；仅线上",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Application instructions",
@@ -4010,6 +4129,63 @@
       "is_new": false
     },
     {
+      "title": "Water-Energy-Food Nexus: Approaches for River Basin Management",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Delft, Netherlands",
+      "mode": "in-person",
+      "start_date": "2026-11-30",
+      "end_date": "2026-12-18",
+      "duration_days": 19,
+      "deadline": "2026-10-30",
+      "deadline_status": "open",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [],
+      "eligibility": "None",
+      "target_level": "uncertain",
+      "fee": "EUR 2500",
+      "fee_eur": 2500.0,
+      "application_link": "https://www.un-ihe.org/short-courses",
+      "source_url": "https://www.un-ihe.org/short-courses",
+      "summary": "None",
+      "recommendation_reason": "low fee: approximately EUR 2500; deadline appears open; 19 days; priority region",
+      "risk_points": "fee exceeds EUR 400 without explicit funding; topic relevance is uncertain",
+      "sessions": [],
+      "identity_key": "ihe-delft:edition:D92BB7F7-3F15-11F1-9A59-0050561F03F5",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "fee exceeds EUR 400 without explicit funding",
+        "topic relevance is uncertain"
+      ],
+      "score": 62.0,
+      "score_explanation": [
+        "low fee: approximately EUR 2500",
+        "deadline appears open",
+        "19 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "near-match only: fee exceeds EUR 400 without explicit funding; topic relevance is uncertain"
+      ],
+      "first_seen": "2026-06-14",
+      "deadline_evidence": "IHE Delft course catalogue API: applications close 2026-10-30",
+      "duration_evidence": "IHE Delft course catalogue API: 2026-11-30 to 2026-12-18",
+      "mode_evidence": "IHE Delft delivery method: FTF",
+      "extraction_confidence": 1.0,
+      "title_zh": "水-能源-粮食纽带：流域管理方法",
+      "organizer_zh": "IHE Delft",
+      "location_zh": "荷兰代尔夫特",
+      "summary_zh": "无",
+      "eligibility_zh": "无",
+      "recommendation_reason_zh": "费用低：约2500欧元；截止日期似乎未定；19天；优先区域",
+      "risk_points_zh": "费用超过400欧元且无明确资助；主题相关性不确定",
+      "is_new": false
+    },
+    {
       "title": "EPICS Summer School",
       "type": "summer school",
       "organizer": "ESS Data and Computing Schools",
@@ -4072,7 +4248,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：地球科学、可持续性、物理学、凝聚态物理；费用低：约0欧元；12天；优先区域",
       "risk_points_zh": "申请截止日期已过；线下状态不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends",
@@ -4587,7 +4763,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：设计、社会科学；截止日期似乎开放；5天；优先区域",
       "risk_points_zh": "资金未明确说明，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "CSSL26 / Application",
@@ -4651,7 +4827,7 @@
       "eligibility_zh": "我们努力让CreteLing对尽可能多的人负担得起，仅收取学校运营所必需的費用。",
       "recommendation_reason_zh": "主题匹配：语言学；资助证据：奖学金、学费减免、费用减免、经济支持；优先地区；可信来源层级1.5",
       "risk_points_zh": "申请截止日期已过；时长不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "LSE Cities",
@@ -4778,7 +4954,7 @@
       "eligibility_zh": "来自瑞士及其他国家的博士生、初级和高级研究人员及从业者，从事广泛科学学科：心理学、",
       "recommendation_reason_zh": "主题匹配：社会科学、政治学、社会学、心理学；16天；优先区域；可信来源层级1.5",
       "risk_points_zh": "申请截止日期不确定；资金未明确且费用不确定；线下状态不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ICVSS 2026",
@@ -4901,7 +5077,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：气候、人工智能、语言学、音系学；8天；优先地区；混合形式",
       "risk_points_zh": "申请截止日期已过；资助不明确且费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SSoL 2024",
@@ -4961,65 +5137,6 @@
       "summary_zh": "SSoL 2024 – 语言学暑期学校 跳转到内容 菜单 首页 关于SSoL SSoL 2026 申请 旅行详情 SSoL 2026：讲座摘要 往年 往届演讲者 SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：语言学、计算语言学、句法学、语义学；8天；优先地区；线下",
-      "risk_points_zh": "申请截止日期已过；资助不明确，费用不确定",
-      "is_new": true
-    },
-    {
-      "title": "ELLIS Sites ICML Fest 2026: Celebrate, Connect, Collaborate",
-      "type": "summer school",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Multiple Locations",
-      "mode": "in-person",
-      "start_date": "2026-06-16",
-      "end_date": "2026-07-24",
-      "duration_days": 39,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "AI",
-        "machine learning"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://ellis.eu/events/ellis-sites-icml-fest-2026",
-      "source_url": "https://ellis.eu/events/ellis-sites-icml-fest-2026",
-      "summary": "16/06/26 - 24/07/26 • Multiple Locations ELLIS Sites ICML Fest 2026: Celebrate, Connect, Collaborate Discover the latest research from top AI minds at multiple locations across Europe during the weeks around the International Conference on Machine Learning (ICML) 2026 Fest , Post",
-      "recommendation_reason": "topic match: AI, machine learning; 39 days; priority region; trusted source layer 1",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 48.0,
-      "score_explanation": [
-        "topic match: AI, machine learning",
-        "39 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-06-14",
-      "deadline_evidence": "",
-      "duration_evidence": "ELLIS events listing: 2026-06-16 to 2026-07-24",
-      "mode_evidence": "ELLIS listing location: Multiple Locations",
-      "extraction_confidence": 0.5,
-      "title_zh": "ELLIS站点ICML Fest 2026：庆祝、交流、合作",
-      "organizer_zh": "ELLIS",
-      "location_zh": "多个地点",
-      "summary_zh": "2026年6月16日至7月24日 • 多个地点 ELLIS站点ICML Fest 2026：庆祝、交流、合作 在国际机器学习大会（ICML）2026 Fest前后数周，在欧洲多个地点探索顶尖AI头脑的最新研究。",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "主题匹配：人工智能、机器学习；39天；优先区域；可信来源第一层",
       "risk_points_zh": "申请截止日期已过；资助不明确，费用不确定",
       "is_new": false
     },
@@ -5141,7 +5258,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：干旱、气候、卫星、量子计算；可信来源第一层；线下活动；目标受众：早期职业研究人员",
       "risk_points_zh": "申请截止日期不确定；时长不足5天；资助情况不明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "DSA Summer Schools",
@@ -5205,7 +5322,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：人工智能、机器学习、数据科学；为期5天；可信来源层级1；线下",
       "risk_points_zh": "申请截止日期已过；资助不明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELLIS Doctoral Symposium 2026",
@@ -5264,6 +5381,68 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：AI；费用低：约150欧元；优先区域；可信来源第一层",
       "risk_points_zh": "申请截止日期已过；时长不足5天",
+      "is_new": false
+    },
+    {
+      "title": "LOT – Netherlands Graduate School of Linguistics",
+      "type": "summer school",
+      "organizer": "LOT School",
+      "source_layer": "1.5",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "uncertain",
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-17",
+      "duration_days": 12,
+      "deadline": "2025-08-15",
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "linguistics",
+        "phonetics",
+        "semantics",
+        "design"
+      ],
+      "eligibility": "PhD & RMa students LOT is the Netherlands National Graduate School of Linguistics LOT unites about 400 faculty members and 300 PhD and RMa students and provides a",
+      "target_level": "PhD",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://lotschool.nl/",
+      "source_url": "https://lotschool.nl/",
+      "summary": "LOT – Netherlands Graduate School of Linguistics News & Events Education Graduate Programme in Linguistics in the Netherlands LOT Summer and Winter Schools Experimental Methods in Language Acquisition Research (EMLAR) The Leiden Summer School in Languages and Linguistics LOT Lab",
+      "recommendation_reason": "topic match: linguistics, phonetics, semantics, design; 12 days; priority region; trusted source layer 1.5",
+      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline has passed",
+        "funding is not explicit and fee is uncertain",
+        "in-person status is uncertain"
+      ],
+      "score": 42.0,
+      "score_explanation": [
+        "topic match: linguistics, phonetics, semantics, design",
+        "12 days",
+        "priority region",
+        "trusted source layer 1.5",
+        "target level: PhD",
+        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+      ],
+      "first_seen": "2026-07-15",
+      "deadline_evidence": "deadline for submissions is 15 August.",
+      "duration_evidence": "July 6, 2026 - July 17, 2026",
+      "mode_evidence": "",
+      "extraction_confidence": 0.5,
+      "title_zh": "LOT – 荷兰语言学研究生院",
+      "organizer_zh": "LOT学院",
+      "location_zh": "欧洲",
+      "summary_zh": "LOT – 荷兰语言学研究生院 新闻与活动 教育 荷兰语言学研究生项目 LOT暑期与冬季学校 语言习得研究中的实验方法（EMLAR） 莱顿语言与语言学暑期学校 LOT实验室",
+      "eligibility_zh": "博士生及研究硕士生 LOT是荷兰国家语言学研究生院，汇集约400名教师和300名博士生及研究硕士生，并提供",
+      "recommendation_reason_zh": "主题匹配：语言学、语音学、语义学、设计；12天；优先地区；可信来源层级1.5",
+      "risk_points_zh": "申请截止日期已过；资助不明确且费用不确定；线下状态不确定",
       "is_new": false
     },
     {
@@ -5563,7 +5742,7 @@
       "eligibility_zh": "自然语言处理或相关领域的博士生或高年级硕士生",
       "recommendation_reason_zh": "主题匹配：自然语言处理；6天；优先地区；可信来源层级1.5",
       "risk_points_zh": "申请截止日期不确定；资金不明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Cancer Variant Analysis",
@@ -5622,7 +5801,7 @@
       "eligibility_zh": "您将学习从下一代测序数据中识别体细胞变异的概念，以及进行癌症变异注释的基础知识。",
       "recommendation_reason_zh": "主题匹配：数据分析、设计；费用低：约110欧元；6天；优先区域",
       "risk_points_zh": "申请截止日期不确定；仅线上",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Welcome to ALPS 2027, the Advanced Language Processing School in the Alps",
@@ -5681,7 +5860,7 @@
       "eligibility_zh": "硕士水平（研究导向）或博士水平",
       "recommendation_reason_zh": "主题匹配：自然语言处理；6天；优先地区；可信来源层级1.5",
       "risk_points_zh": "申请截止日期不确定；资金不明确且费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Thematic CERN School of Computing",
@@ -5740,7 +5919,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：架构、历史；7天；优先区域；可信来源层级1",
       "risk_points_zh": "申请截止日期不确定；资金不明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "2026 Technical Short Course: InSAR Processing and Theory using GMTSAR",
@@ -5865,67 +6044,6 @@
       "is_new": false
     },
     {
-      "title": "LOT – Netherlands Graduate School of Linguistics",
-      "type": "summer school",
-      "organizer": "LOT School",
-      "source_layer": "1.5",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "uncertain",
-      "start_date": "2026-07-06",
-      "end_date": "2026-07-17",
-      "duration_days": 12,
-      "deadline": "2025-08-15",
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "linguistics",
-        "semantics",
-        "design"
-      ],
-      "eligibility": "PhD & RMa students LOT is the Netherlands National Graduate School of Linguistics LOT unites about 400 faculty members and 300 PhD and RMa students and provides a",
-      "target_level": "PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://lotschool.nl/",
-      "source_url": "https://lotschool.nl/",
-      "summary": "LOT – Netherlands Graduate School of Linguistics News & Events Education Graduate Programme in Linguistics in the Netherlands LOT Summer and Winter Schools Experimental Methods in Language Acquisition Research (EMLAR) The Leiden Summer School in Languages and Linguistics LOT Lab",
-      "recommendation_reason": "topic match: linguistics, semantics, design; 12 days; priority region; trusted source layer 1.5",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
-        "in-person status is uncertain"
-      ],
-      "score": 36.0,
-      "score_explanation": [
-        "topic match: linguistics, semantics, design",
-        "12 days",
-        "priority region",
-        "trusted source layer 1.5",
-        "target level: PhD",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
-      ],
-      "first_seen": "2026-07-15",
-      "deadline_evidence": "deadline for submissions is 15 August.",
-      "duration_evidence": "July 6, 2026 - July 17, 2026",
-      "mode_evidence": "",
-      "extraction_confidence": 0.5,
-      "title_zh": "LOT – 荷兰语言学研究生院",
-      "organizer_zh": "LOT学院",
-      "location_zh": "欧洲",
-      "summary_zh": "LOT – 荷兰语言学研究生院 新闻与活动 教育 荷兰语言学研究生项目 LOT暑期与冬季学校 语言习得研究中的实验方法（EMLAR） 莱顿语言与语言学暑期学校 LOT实验室",
-      "eligibility_zh": "博士生及研究型硕士生 LOT是荷兰国家语言学研究生院，汇聚约400名教师和300名博士生及研究型硕士生，提供",
-      "recommendation_reason_zh": "主题匹配：语言学、语义学、设计；12天；优先地区；可信来源层级1.5",
-      "risk_points_zh": "申请截止日期已过；资助不明确且费用不确定；线下状态不确定",
-      "is_new": false
-    },
-    {
       "title": "The 7th Crete Summer School of Linguistics",
       "type": "summer school",
       "organizer": "CreteLing",
@@ -5981,7 +6099,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：语言学；14天；优先地区；可信来源层级1.5",
       "risk_points_zh": "申请截止日期已过；资助不明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Sharing the summer school:",
@@ -6224,64 +6342,6 @@
       "is_new": false
     },
     {
-      "title": "SSoL 2026",
-      "type": "summer school",
-      "organizer": "Charles University Summer School of Linguistics",
-      "source_layer": "2",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "in-person",
-      "start_date": "2026-08-01",
-      "end_date": "2026-08-08",
-      "duration_days": 8,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "linguistics",
-        "psycholinguistics"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://ssol.ff.cuni.cz/ssol-2026/",
-      "source_url": "https://ssol.ff.cuni.cz/ssol-2026/",
-      "summary": "SSoL 2026 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
-      "recommendation_reason": "topic match: linguistics, psycholinguistics; 8 days; priority region; in-person",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 31.0,
-      "score_explanation": [
-        "topic match: linguistics, psycholinguistics",
-        "8 days",
-        "priority region",
-        "in-person",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "The Summer School of Linguistics will take place from 1 to 8 August 2026 in České Budějovice, Czech Republic . The Summer School of Linguistics will take place from 1 to 8 August 2026 in České Budějovice, Czech Republic .",
-      "mode_evidence": "The Summer School of Linguistics will take place from 1 to 8 August 2026 in České Budějovice, Czech Republic .",
-      "extraction_confidence": 0.65,
-      "title_zh": "SSoL 2026",
-      "organizer_zh": "查尔斯大学语言学暑期学校",
-      "location_zh": "欧洲",
-      "summary_zh": "SSoL 2026 – 语言学暑期学校 跳至内容 菜单 首页 关于SSoL SSoL 2026 申请 旅行详情 SSoL 2026：讲座摘要 往年 往届演讲者 SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "主题匹配：语言学、心理语言学；8天；优先地区；线下",
-      "risk_points_zh": "申请截止日期已过；资助不明确，费用不确定",
-      "is_new": true
-    },
-    {
       "title": "Search form",
       "type": "summer school",
       "organizer": "CLIVAR",
@@ -6338,7 +6398,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：干旱、气候；低费用：约0欧元；可信来源层级1；目标人群：早期职业研究者",
       "risk_points_zh": "申请截止日期不确定；时长不足5天；线下状态不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Types, Proofs, and Program Logics",
@@ -6865,7 +6925,65 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：工程、力学、设计；5天；可信来源层级1；仅近似匹配：申请截止日期已过；资助不明确且费用不确定；线下状态不确定",
       "risk_points_zh": "申请截止日期已过；资助不明确且费用不确定；线下状态不确定",
-      "is_new": true
+      "is_new": false
+    },
+    {
+      "title": "SSoL 2026",
+      "type": "summer school",
+      "organizer": "Charles University Summer School of Linguistics",
+      "source_layer": "2",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "uncertain",
+      "start_date": "2026-08-01",
+      "end_date": "2026-08-08",
+      "duration_days": 8,
+      "deadline": null,
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "linguistics",
+        "psycholinguistics"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://ssol.ff.cuni.cz/ssol-2026/",
+      "source_url": "https://ssol.ff.cuni.cz/ssol-2026/",
+      "summary": "SSoL 2026 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
+      "recommendation_reason": "topic match: linguistics, psycholinguistics; 8 days; priority region; near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline has passed",
+        "funding is not explicit and fee is uncertain",
+        "in-person status is uncertain"
+      ],
+      "score": 13.0,
+      "score_explanation": [
+        "topic match: linguistics, psycholinguistics",
+        "8 days",
+        "priority region",
+        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+      ],
+      "first_seen": "2026-07-16",
+      "deadline_evidence": "",
+      "duration_evidence": "1 to 8 August 2026",
+      "mode_evidence": "",
+      "extraction_confidence": 0.25,
+      "title_zh": "SSoL 2026",
+      "organizer_zh": "查尔斯大学语言学暑期学校",
+      "location_zh": "欧洲",
+      "summary_zh": "SSoL 2026 – 语言学暑期学校 跳转到内容 菜单 首页 关于SSoL SSoL 2026 申请 旅行详情 SSoL 2026：讲座摘要 往年 往届演讲者 SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "主题匹配：语言学、心理语言学；8天；优先地区；仅近似匹配：申请截止日期已过；资助不明确且费用不确定；线下状态不确定",
+      "risk_points_zh": "申请截止日期已过；资助不明确且费用不确定；线下状态不确定",
+      "is_new": false
     },
     {
       "title": "ELLIS Summer School at Unit Barcelona",
@@ -7209,7 +7327,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -7458,7 +7576,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Exeter Machine Learning Summer School",
@@ -7848,75 +7966,6 @@
       "is_new": false
     },
     {
-      "title": "Prob_AI Hub Winter School 2027",
-      "type": "winter school",
-      "organizer": "Prob_AI Hub Winter School",
-      "source_layer": "1.5",
-      "region_priority": "priority",
-      "location": "Bristol Open to",
-      "mode": "in-person",
-      "start_date": "2027-01-05",
-      "end_date": "2027-01-08",
-      "duration_days": 4,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": true,
-      "funding_type": [
-        "travel grant"
-      ],
-      "funding_evidence": "Funding The winter school is free to attend, but we expect attendees to cover their accommodation and travel costs (for example",
-      "topic_keywords": [
-        "AI",
-        "artificial intelligence",
-        "machine learning",
-        "data science",
-        "linguistics",
-        "mathematics",
-        "social science",
-        "economics",
-        "digital humanities"
-      ],
-      "eligibility": "MSci Data Science Postgraduate MSc Artificial Intelligence MSc Data Science MSc Health Data Science MSc Business Analytics MA Digital Humanities MSc Forensic Lingu",
-      "target_level": "MSc, PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
-      "source_url": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
-      "summary": "Prob_AI Hub Winter School 2027, Tuesday 5 January, 11:00am - Lancaster University Skip to content Accessibility help Our use of cookies We use necessary cookies to make our site work. We'd also like to set optional cookies to help us measure web traffic and report on campaigns. W",
-      "recommendation_reason": "topic match: AI, artificial intelligence, machine learning, data science; funding evidence: travel grant; priority region; trusted source layer 1.5",
-      "risk_points": "application deadline is uncertain; duration is below 5 days",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [
-        "application deadline is uncertain",
-        "duration is below 5 days"
-      ],
-      "score": 85.0,
-      "score_explanation": [
-        "topic match: AI, artificial intelligence, machine learning, data science",
-        "funding evidence: travel grant",
-        "priority region",
-        "trusted source layer 1.5",
-        "in-person",
-        "target level: MSc, PhD",
-        "near-match only: application deadline is uncertain; duration is below 5 days"
-      ],
-      "first_seen": "2026-07-15",
-      "deadline_evidence": "",
-      "duration_evidence": "5th to 8th January 2027",
-      "mode_evidence": "Venue Bristol Open to Alumni, External Organisations, P",
-      "extraction_confidence": 0.75,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
       "title": "2026 Advanced Course on International Criminal Law",
       "type": "advanced course",
       "organizer": "Hague Academy of International Law",
@@ -7973,6 +8022,66 @@
       "duration_evidence": "5 May to 31 August 2026",
       "mode_evidence": "",
       "extraction_confidence": 0.5,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": false
+    },
+    {
+      "title": "Energy Harnessing in the Urban Water Cycle",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Delft, Netherlands",
+      "mode": "in-person",
+      "start_date": "2027-01-11",
+      "end_date": "2027-01-29",
+      "duration_days": 19,
+      "deadline": "2026-12-11",
+      "deadline_status": "open",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "design"
+      ],
+      "eligibility": "<div> <ul> <li> <p>Energy and water companies, such as water utilities willing to improve their energy balance</p> </li> <li> <p>Lecturers/Researchers from universities/research centers worldwide, willing to update their",
+      "target_level": "MSc",
+      "fee": "EUR 2600",
+      "fee_eur": 2600.0,
+      "application_link": "https://www.un-ihe.org/short-courses",
+      "source_url": "https://www.un-ihe.org/short-courses",
+      "summary": "<div> <p>This course explores the technical links between water and energy systems, from hydropower to energy recovery in treatment plants. Through lectures, case studies, lab work, and field visits, participants learn to analyze and design sustainable, integrated solutions that ",
+      "recommendation_reason": "topic match: design; low fee: approximately EUR 2600; deadline appears open; 19 days",
+      "risk_points": "fee exceeds EUR 400 without explicit funding",
+      "sessions": [],
+      "identity_key": "ihe-delft:edition:0846DE42-3284-11F1-A0A9-0050561F03F5",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "score": 84.0,
+      "score_explanation": [
+        "topic match: design",
+        "low fee: approximately EUR 2600",
+        "deadline appears open",
+        "19 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "target level: MSc",
+        "near-match only: fee exceeds EUR 400 without explicit funding"
+      ],
+      "first_seen": "2026-06-14",
+      "deadline_evidence": "IHE Delft course catalogue API: applications close 2026-12-11",
+      "duration_evidence": "IHE Delft course catalogue API: 2027-01-11 to 2027-01-29",
+      "mode_evidence": "IHE Delft delivery method: FTF",
+      "extraction_confidence": 1.0,
       "title_zh": "",
       "organizer_zh": "",
       "location_zh": "",
@@ -8042,7 +8151,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-ISSP",
@@ -8104,7 +8213,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-Stanford",
@@ -8166,7 +8275,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
@@ -8439,7 +8548,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Deep Learning",
@@ -8997,6 +9106,75 @@
       "is_new": false
     },
     {
+      "title": "Prob_AI Hub Winter School 2027",
+      "type": "winter school",
+      "organizer": "Prob_AI Hub Winter School",
+      "source_layer": "1.5",
+      "region_priority": "priority",
+      "location": "Bristol Open to",
+      "mode": "in-person",
+      "start_date": "2027-01-05",
+      "end_date": "2027-01-08",
+      "duration_days": 4,
+      "deadline": null,
+      "deadline_status": "closed",
+      "funding_available": true,
+      "funding_type": [
+        "travel grant"
+      ],
+      "funding_evidence": "Funding The winter school is free to attend, but we expect attendees to cover their accommodation and travel costs (for example",
+      "topic_keywords": [
+        "AI",
+        "artificial intelligence",
+        "machine learning",
+        "data science",
+        "linguistics",
+        "mathematics",
+        "social science",
+        "economics",
+        "digital humanities"
+      ],
+      "eligibility": "MSci Data Science Postgraduate MSc Artificial Intelligence MSc Data Science MSc Health Data Science MSc Business Analytics MA Digital Humanities MSc Forensic Lingu",
+      "target_level": "MSc, PhD",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
+      "source_url": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
+      "summary": "Prob_AI Hub Winter School 2027, Tuesday 5 January, 11:00am - Lancaster University Skip to content Accessibility help Our use of cookies We use necessary cookies to make our site work. We'd also like to set optional cookies to help us measure web traffic and report on campaigns. W",
+      "recommendation_reason": "topic match: AI, artificial intelligence, machine learning, data science; funding evidence: travel grant; priority region; trusted source layer 1.5",
+      "risk_points": "application deadline has passed; duration is below 5 days",
+      "sessions": [],
+      "identity_key": "",
+      "financial_access_status": "funded",
+      "failed_hard_conditions": [
+        "application deadline has passed",
+        "duration is below 5 days"
+      ],
+      "score": 81.0,
+      "score_explanation": [
+        "topic match: AI, artificial intelligence, machine learning, data science",
+        "funding evidence: travel grant",
+        "priority region",
+        "trusted source layer 1.5",
+        "in-person",
+        "target level: MSc, PhD",
+        "near-match only: application deadline has passed; duration is below 5 days"
+      ],
+      "first_seen": "2026-07-15",
+      "deadline_evidence": "",
+      "duration_evidence": "5th to 8th January 2027",
+      "mode_evidence": "Venue Bristol Open to Alumni, External Organisations, P",
+      "extraction_confidence": 0.75,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": false
+    },
+    {
       "title": "Experimental Methods for Evaluation of Wastewater, Sanitation & Environmental Technologies",
       "type": "short course",
       "organizer": "IHE Delft",
@@ -9176,7 +9354,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-NIGERIA",
@@ -9238,7 +9416,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-UW",
@@ -9300,7 +9478,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-Chicago - Chicago State University",
@@ -9362,7 +9540,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Karthaus summerschool",
@@ -9489,7 +9667,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Edinburgh Theoretical Historical Linguistics",
@@ -9552,7 +9730,66 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
+    },
+    {
+      "title": "Drought Risk Management",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Delft, Netherlands",
+      "mode": "in-person",
+      "start_date": "2027-02-08",
+      "end_date": "2027-02-26",
+      "duration_days": 19,
+      "deadline": "2027-01-08",
+      "deadline_status": "open",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "drought"
+      ],
+      "eligibility": "None",
+      "target_level": "uncertain",
+      "fee": "EUR 2600",
+      "fee_eur": 2600.0,
+      "application_link": "https://www.un-ihe.org/short-courses",
+      "source_url": "https://www.un-ihe.org/short-courses",
+      "summary": "None",
+      "recommendation_reason": "topic match: drought; low fee: approximately EUR 2600; deadline appears open; 19 days",
+      "risk_points": "fee exceeds EUR 400 without explicit funding",
+      "sessions": [],
+      "identity_key": "ihe-delft:edition:58AA4140-3F12-11F1-9A59-0050561F03F5",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "score": 76.0,
+      "score_explanation": [
+        "topic match: drought",
+        "low fee: approximately EUR 2600",
+        "deadline appears open",
+        "19 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "near-match only: fee exceeds EUR 400 without explicit funding"
+      ],
+      "first_seen": "2026-06-14",
+      "deadline_evidence": "IHE Delft course catalogue API: applications close 2027-01-08",
+      "duration_evidence": "IHE Delft course catalogue API: 2027-02-08 to 2027-02-26",
+      "mode_evidence": "IHE Delft delivery method: FTF",
+      "extraction_confidence": 1.0,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": false
     },
     {
       "title": "Irrigation Design, Performance Assessment and Modernisation",
@@ -9732,7 +9969,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-Singapore",
@@ -9794,7 +10031,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Assessing Social and Environmental Impacts",
@@ -10313,7 +10550,7 @@
       "funding_type": [
         "scholarship"
       ],
-      "funding_evidence": "Scholarships Program: Meet the Recipients Read the story 08 Jul 2026 Mila and ROOST Launch Suicide Prevention Guardrail Pilot to He",
+      "funding_evidence": "Scholarships Program: Meet the Recipients Read the story See more news Faculty Founded in 1993 by Professor Yoshua Bengio, Mila tod",
       "topic_keywords": [
         "sustainability",
         "AI",
@@ -10361,7 +10598,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Summer School Science Communication",
@@ -10561,7 +10798,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Data Management and Scientific Computing (DMSC) Centre Summer School 2026",
@@ -10627,7 +10864,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "CoLang 2026 — Institute on Collaborative Language Research",
@@ -10689,7 +10926,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Application instructions",
@@ -10930,6 +11167,63 @@
       "is_new": false
     },
     {
+      "title": "Water-Energy-Food Nexus: Approaches for River Basin Management",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Delft, Netherlands",
+      "mode": "in-person",
+      "start_date": "2026-11-30",
+      "end_date": "2026-12-18",
+      "duration_days": 19,
+      "deadline": "2026-10-30",
+      "deadline_status": "open",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [],
+      "eligibility": "None",
+      "target_level": "uncertain",
+      "fee": "EUR 2500",
+      "fee_eur": 2500.0,
+      "application_link": "https://www.un-ihe.org/short-courses",
+      "source_url": "https://www.un-ihe.org/short-courses",
+      "summary": "None",
+      "recommendation_reason": "low fee: approximately EUR 2500; deadline appears open; 19 days; priority region",
+      "risk_points": "fee exceeds EUR 400 without explicit funding; topic relevance is uncertain",
+      "sessions": [],
+      "identity_key": "ihe-delft:edition:D92BB7F7-3F15-11F1-9A59-0050561F03F5",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "fee exceeds EUR 400 without explicit funding",
+        "topic relevance is uncertain"
+      ],
+      "score": 62.0,
+      "score_explanation": [
+        "low fee: approximately EUR 2500",
+        "deadline appears open",
+        "19 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "near-match only: fee exceeds EUR 400 without explicit funding; topic relevance is uncertain"
+      ],
+      "first_seen": "2026-06-14",
+      "deadline_evidence": "IHE Delft course catalogue API: applications close 2026-10-30",
+      "duration_evidence": "IHE Delft course catalogue API: 2026-11-30 to 2026-12-18",
+      "mode_evidence": "IHE Delft delivery method: FTF",
+      "extraction_confidence": 1.0,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": false
+    },
+    {
       "title": "EPICS Summer School",
       "type": "summer school",
       "organizer": "ESS Data and Computing Schools",
@@ -10992,7 +11286,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends",
@@ -11246,7 +11540,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Short Course: Structural Geology Must-Knows",
@@ -11626,7 +11920,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SSoL 2025",
@@ -11688,7 +11982,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SSoL 2024",
@@ -11741,65 +12035,6 @@
       "deadline_evidence": "",
       "duration_evidence": "17 to 24 August 2024",
       "mode_evidence": "in personality description Sunday 18 August 10:00–11:10 Lin",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": true
-    },
-    {
-      "title": "ELLIS Sites ICML Fest 2026: Celebrate, Connect, Collaborate",
-      "type": "summer school",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Multiple Locations",
-      "mode": "in-person",
-      "start_date": "2026-06-16",
-      "end_date": "2026-07-24",
-      "duration_days": 39,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "AI",
-        "machine learning"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://ellis.eu/events/ellis-sites-icml-fest-2026",
-      "source_url": "https://ellis.eu/events/ellis-sites-icml-fest-2026",
-      "summary": "16/06/26 - 24/07/26 • Multiple Locations ELLIS Sites ICML Fest 2026: Celebrate, Connect, Collaborate Discover the latest research from top AI minds at multiple locations across Europe during the weeks around the International Conference on Machine Learning (ICML) 2026 Fest , Post",
-      "recommendation_reason": "topic match: AI, machine learning; 39 days; priority region; trusted source layer 1",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 48.0,
-      "score_explanation": [
-        "topic match: AI, machine learning",
-        "39 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-06-14",
-      "deadline_evidence": "",
-      "duration_evidence": "ELLIS events listing: 2026-06-16 to 2026-07-24",
-      "mode_evidence": "ELLIS listing location: Multiple Locations",
       "extraction_confidence": 0.5,
       "title_zh": "",
       "organizer_zh": "",
@@ -11928,7 +12163,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "DSA Summer Schools",
@@ -11992,7 +12227,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELLIS Doctoral Symposium 2026",
@@ -12044,6 +12279,68 @@
       "duration_evidence": "ELLIS events listing: 2026-07-27 to 2026-07-30",
       "mode_evidence": "ELLIS listing location: Instituto Superior Técnico, Lisbon, Portugal",
       "extraction_confidence": 1.0,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": false
+    },
+    {
+      "title": "LOT – Netherlands Graduate School of Linguistics",
+      "type": "summer school",
+      "organizer": "LOT School",
+      "source_layer": "1.5",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "uncertain",
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-17",
+      "duration_days": 12,
+      "deadline": "2025-08-15",
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "linguistics",
+        "phonetics",
+        "semantics",
+        "design"
+      ],
+      "eligibility": "PhD & RMa students LOT is the Netherlands National Graduate School of Linguistics LOT unites about 400 faculty members and 300 PhD and RMa students and provides a",
+      "target_level": "PhD",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://lotschool.nl/",
+      "source_url": "https://lotschool.nl/",
+      "summary": "LOT – Netherlands Graduate School of Linguistics News & Events Education Graduate Programme in Linguistics in the Netherlands LOT Summer and Winter Schools Experimental Methods in Language Acquisition Research (EMLAR) The Leiden Summer School in Languages and Linguistics LOT Lab",
+      "recommendation_reason": "topic match: linguistics, phonetics, semantics, design; 12 days; priority region; trusted source layer 1.5",
+      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline has passed",
+        "funding is not explicit and fee is uncertain",
+        "in-person status is uncertain"
+      ],
+      "score": 42.0,
+      "score_explanation": [
+        "topic match: linguistics, phonetics, semantics, design",
+        "12 days",
+        "priority region",
+        "trusted source layer 1.5",
+        "target level: PhD",
+        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+      ],
+      "first_seen": "2026-07-15",
+      "deadline_evidence": "deadline for submissions is 15 August.",
+      "duration_evidence": "July 6, 2026 - July 17, 2026",
+      "mode_evidence": "",
+      "extraction_confidence": 0.5,
       "title_zh": "",
       "organizer_zh": "",
       "location_zh": "",
@@ -12350,7 +12647,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Cancer Variant Analysis",
@@ -12409,7 +12706,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Thematic CERN School of Computing",
@@ -12468,7 +12765,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "2026 Technical Short Course: InSAR Processing and Theory using GMTSAR",
@@ -12603,7 +12900,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELLIS Summer School at Unit Munich",
@@ -12654,67 +12951,6 @@
       "deadline_evidence": "",
       "duration_evidence": "ELLIS events listing: 2026-09-14 to 2026-09-18",
       "mode_evidence": "ELLIS listing location: TUM Garching Campus",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
-      "title": "LOT – Netherlands Graduate School of Linguistics",
-      "type": "summer school",
-      "organizer": "LOT School",
-      "source_layer": "1.5",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "uncertain",
-      "start_date": "2026-07-06",
-      "end_date": "2026-07-17",
-      "duration_days": 12,
-      "deadline": "2025-08-15",
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "linguistics",
-        "semantics",
-        "design"
-      ],
-      "eligibility": "PhD & RMa students LOT is the Netherlands National Graduate School of Linguistics LOT unites about 400 faculty members and 300 PhD and RMa students and provides a",
-      "target_level": "PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://lotschool.nl/",
-      "source_url": "https://lotschool.nl/",
-      "summary": "LOT – Netherlands Graduate School of Linguistics News & Events Education Graduate Programme in Linguistics in the Netherlands LOT Summer and Winter Schools Experimental Methods in Language Acquisition Research (EMLAR) The Leiden Summer School in Languages and Linguistics LOT Lab",
-      "recommendation_reason": "topic match: linguistics, semantics, design; 12 days; priority region; trusted source layer 1.5",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
-        "in-person status is uncertain"
-      ],
-      "score": 36.0,
-      "score_explanation": [
-        "topic match: linguistics, semantics, design",
-        "12 days",
-        "priority region",
-        "trusted source layer 1.5",
-        "target level: PhD",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
-      ],
-      "first_seen": "2026-07-15",
-      "deadline_evidence": "deadline for submissions is 15 August.",
-      "duration_evidence": "July 6, 2026 - July 17, 2026",
-      "mode_evidence": "",
       "extraction_confidence": 0.5,
       "title_zh": "",
       "organizer_zh": "",
@@ -12781,7 +13017,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Sharing the summer school:",
@@ -13083,7 +13319,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Lisbon Machine Learning Summer School (LxMLS)",
@@ -13256,7 +13492,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Application Process",
@@ -13497,64 +13733,6 @@
       "is_new": false
     },
     {
-      "title": "SSoL 2026",
-      "type": "summer school",
-      "organizer": "Charles University Summer School of Linguistics",
-      "source_layer": "2",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "uncertain",
-      "start_date": "2026-08-01",
-      "end_date": "2026-08-08",
-      "duration_days": 8,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "linguistics",
-        "psycholinguistics"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://ssol.ff.cuni.cz/ssol-2026/",
-      "source_url": "https://ssol.ff.cuni.cz/ssol-2026/",
-      "summary": "SSoL 2026 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
-      "recommendation_reason": "topic match: linguistics, psycholinguistics; 8 days; priority region; near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; in-person status is uncertain",
-      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain; in-person status is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
-        "in-person status is uncertain"
-      ],
-      "score": 17.0,
-      "score_explanation": [
-        "topic match: linguistics, psycholinguistics",
-        "8 days",
-        "priority region",
-        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; in-person status is uncertain"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "1 to 8 August 2026",
-      "mode_evidence": "",
-      "extraction_confidence": 0.25,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": true
-    },
-    {
       "title": "Announcement of 10th W.A.T.E.R. Summer School 2026",
       "type": "summer school",
       "organizer": "IAHR",
@@ -13611,7 +13789,65 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
+    },
+    {
+      "title": "SSoL 2026",
+      "type": "summer school",
+      "organizer": "Charles University Summer School of Linguistics",
+      "source_layer": "2",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "uncertain",
+      "start_date": "2026-08-01",
+      "end_date": "2026-08-08",
+      "duration_days": 8,
+      "deadline": null,
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "linguistics",
+        "psycholinguistics"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://ssol.ff.cuni.cz/ssol-2026/",
+      "source_url": "https://ssol.ff.cuni.cz/ssol-2026/",
+      "summary": "SSoL 2026 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
+      "recommendation_reason": "topic match: linguistics, psycholinguistics; 8 days; priority region; near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline has passed",
+        "funding is not explicit and fee is uncertain",
+        "in-person status is uncertain"
+      ],
+      "score": 13.0,
+      "score_explanation": [
+        "topic match: linguistics, psycholinguistics",
+        "8 days",
+        "priority region",
+        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+      ],
+      "first_seen": "2026-07-16",
+      "deadline_evidence": "",
+      "duration_evidence": "1 to 8 August 2026",
+      "mode_evidence": "",
+      "extraction_confidence": 0.25,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": false
     },
     {
       "title": "Types, Proofs, and Program Logics",
