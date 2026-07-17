@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-16",
+  "generated": "2026-07-17",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -75,6 +75,38 @@
       "confidence": 1.0,
       "evidence": {
         "deadline": "IHE Delft course catalogue API: applications close 2026-10-31",
+        "duration": "IHE Delft course catalogue API: 2026-11-30 to 2026-12-18",
+        "funding": "",
+        "mode": "IHE Delft delivery method: FTF"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Water-Energy-Food Nexus: Approaches for River Basin Management",
+      "url": "https://www.un-ihe.org/short-courses",
+      "organizer": "IHE Delft",
+      "source_layer": "1",
+      "location": "Delft, Netherlands",
+      "dates": {
+        "start": "2026-11-30",
+        "end": "2026-12-18",
+        "duration_days": 19
+      },
+      "deadline": "2026-10-30",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "EUR 2500",
+      "fee_eur": 2500.0,
+      "topics": [],
+      "needs_review": [
+        "fee exceeds EUR 400 without explicit funding",
+        "topic relevance is uncertain"
+      ],
+      "confidence": 1.0,
+      "evidence": {
+        "deadline": "IHE Delft course catalogue API: applications close 2026-10-30",
         "duration": "IHE Delft course catalogue API: 2026-11-30 to 2026-12-18",
         "funding": "",
         "mode": "IHE Delft delivery method: FTF"
@@ -854,58 +886,6 @@
       },
       "ai_advisory": {
         "available": false
-      }
-    },
-    {
-      "title": "SSoL 2026",
-      "url": "https://ssol.ff.cuni.cz/ssol-2026/",
-      "organizer": "Charles University Summer School of Linguistics",
-      "source_layer": "2",
-      "location": "Europe",
-      "dates": {
-        "start": "2026-08-01",
-        "end": "2026-08-08",
-        "duration_days": 8
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "linguistics",
-        "psycholinguistics"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
-        "in-person status is uncertain"
-      ],
-      "confidence": 0.25,
-      "evidence": {
-        "deadline": "",
-        "duration": "1 to 8 August 2026",
-        "funding": "",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "medium",
-        "validation_warnings": [
-          "location_context_weak",
-          "application_deadline_value_not_in_evidence",
-          "deadline_past",
-          "registration_status_corrected_from_past_deadline"
-        ],
-        "chinese_summary": "SSoL 2026 语言学暑期学校将于2026年8月1日至8日在捷克布杰约维采举行，申请截止日期为2026年3月30日。",
-        "extracted_deadline": "2026-03-30",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "SSoL 2026 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL 2012 SSoL 2011 SSoL 2010 SSoL 2009 SSoL 2008 SSoL 2007 Contact Partners Facebook Search for: SSoL 2026 APPLICATIONS TO SSoL2026 ARE OPEN TILL 15th 30th MARCH 2026. | The applications are open from 12th February till 15t",
-          "fee": "",
-          "funding": ""
-        }
       }
     },
     {
