@@ -5,104 +5,8 @@
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
   "_canary": "SSR-CANON-7q3v9x2k8m4w",
   "schema_version": 2,
-  "generated": "2026-07-17",
+  "generated": "2026-07-18",
   "opportunities": [
-    {
-      "title": "Social Science Data Analysis",
-      "type": "summer school",
-      "organizer": "Essex Summer School",
-      "source_layer": "2",
-      "region_priority": "priority",
-      "location": "Colchester, UK",
-      "mode": "hybrid",
-      "start_date": "2026-06-29",
-      "end_date": "2026-08-14",
-      "duration_days": 12,
-      "deadline": "2026-07-17",
-      "deadline_status": "open",
-      "funding_available": true,
-      "funding_type": [
-        "scholarship"
-      ],
-      "funding_evidence": "Scholarships Q-Step Global South Women in Political Science Home / Application Application Share **2026 APPLICATIONS ARE STILL OPEN",
-      "topic_keywords": [
-        "satellite",
-        "deep learning",
-        "data analysis",
-        "statistics",
-        "law",
-        "design",
-        "social science",
-        "political science"
-      ],
-      "eligibility": "Masters PhD Not Currently a Student Discipline Country of University / Employer * Afghanistan Albania Algeria Andorra Angola Anguilla Antigua and Barbuda Argentina Ar",
-      "target_level": "MSc, PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://essexsummerschool.com/new-application/",
-      "source_url": "https://essexsummerschool.com/new-application/",
-      "summary": "Application – Essex Summer School in Social Science Data Analysis Applications for Essex Summer School 2026 are now open! Keep up to date with our newsletter. SIGN UP About ESS Newsletters Testimonials Partners Instructors Contact Summer Courses Course list MA info Social Program",
-      "recommendation_reason": "topic match: satellite, deep learning, data analysis, statistics; funding evidence: scholarship; deadline appears open; 12 days",
-      "risk_points": "Funding may be competitive or partial.",
-      "sessions": [
-        {
-          "name": "Pre-sessional 1",
-          "start_date": "2026-06-29",
-          "end_date": "2026-07-03",
-          "application_deadline": "2026-06-19"
-        },
-        {
-          "name": "Session 1",
-          "start_date": "2026-07-06",
-          "end_date": "2026-07-17",
-          "application_deadline": "2026-06-19"
-        },
-        {
-          "name": "Pre-sessional 2",
-          "start_date": "2026-07-13",
-          "end_date": "2026-07-17",
-          "application_deadline": "2026-07-03"
-        },
-        {
-          "name": "Session 2",
-          "start_date": "2026-07-20",
-          "end_date": "2026-07-31",
-          "application_deadline": "2026-07-03"
-        },
-        {
-          "name": "Session 3",
-          "start_date": "2026-08-03",
-          "end_date": "2026-08-14",
-          "application_deadline": "2026-07-17"
-        }
-      ],
-      "identity_key": "",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [],
-      "score": 112.0,
-      "score_explanation": [
-        "topic match: satellite, deep learning, data analysis, statistics",
-        "funding evidence: scholarship",
-        "deadline appears open",
-        "12 days",
-        "priority region",
-        "hybrid",
-        "target level: MSc, PhD"
-      ],
-      "first_seen": "2026-06-18",
-      "deadline_evidence": "APPLICATION CLOSING DATES Pre-sessional 1 and session one: 19 June 2026 Pre-sessional 2 and Session two: 3 July 2026 Session three: 17 July 2026 Estimated Cost",
-      "duration_evidence": "",
-      "mode_evidence": "in person, online or hybrid mode In-person courses will be",
-      "extraction_confidence": 1.0,
-      "title_zh": "社会科学数据分析",
-      "organizer_zh": "埃塞克斯暑期学校",
-      "location_zh": "英国科尔切斯特",
-      "summary_zh": "申请 – 埃塞克斯暑期学校社会科学数据分析 2026年埃塞克斯暑期学校现已开放申请！关注我们的新闻通讯以获取最新信息。注册 关于 ESS 新闻通讯 推荐 合作伙伴 讲师 联系方式 课程列表 MA信息 社交项目",
-      "eligibility_zh": "硕士 博士 非在读学生 学科 国家/雇主 * 阿富汗 阿尔巴尼亚 阿尔及利亚 安道尔 安哥拉 安圭拉 安提瓜和巴布达 阿根廷 亚美尼亚",
-      "recommendation_reason_zh": "主题匹配：卫星、深度学习、数据分析、统计学；资金证据：奖学金；截止日期似乎开放；12天",
-      "risk_points_zh": "资金可能具有竞争性或部分资助。",
-      "is_new": false
-    },
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
       "type": "summer school",
@@ -538,6 +442,104 @@
       "eligibility_zh": "研究生、博士后研究人员和初级教师。",
       "recommendation_reason_zh": "主题匹配：数据科学、法律、社会科学、社会科学方法；资金证明：学费减免；12天；可信来源第一层",
       "risk_points_zh": "申请截止日期不确定",
+      "is_new": false
+    },
+    {
+      "title": "Social Science Data Analysis",
+      "type": "summer school",
+      "organizer": "Essex Summer School",
+      "source_layer": "2",
+      "region_priority": "priority",
+      "location": "Colchester, UK",
+      "mode": "hybrid",
+      "start_date": "2026-06-29",
+      "end_date": "2026-08-14",
+      "duration_days": 12,
+      "deadline": "2026-07-17",
+      "deadline_status": "closed",
+      "funding_available": true,
+      "funding_type": [
+        "scholarship"
+      ],
+      "funding_evidence": "Scholarships Q-Step Global South Women in Political Science Home / Application Application Share **2026 APPLICATIONS ARE STILL OPEN",
+      "topic_keywords": [
+        "satellite",
+        "deep learning",
+        "data analysis",
+        "statistics",
+        "law",
+        "design",
+        "social science",
+        "political science"
+      ],
+      "eligibility": "Masters PhD Not Currently a Student Discipline Country of University / Employer * Afghanistan Albania Algeria Andorra Angola Anguilla Antigua and Barbuda Argentina Ar",
+      "target_level": "MSc, PhD",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://essexsummerschool.com/new-application/",
+      "source_url": "https://essexsummerschool.com/new-application/",
+      "summary": "Application – Essex Summer School in Social Science Data Analysis Applications for Essex Summer School 2026 are now open! Keep up to date with our newsletter. SIGN UP About ESS Newsletters Testimonials Partners Instructors Contact Summer Courses Course list MA info Social Program",
+      "recommendation_reason": "topic match: satellite, deep learning, data analysis, statistics; funding evidence: scholarship; 12 days; priority region",
+      "risk_points": "application deadline has passed",
+      "sessions": [
+        {
+          "name": "Pre-sessional 1",
+          "start_date": "2026-06-29",
+          "end_date": "2026-07-03",
+          "application_deadline": "2026-06-19"
+        },
+        {
+          "name": "Session 1",
+          "start_date": "2026-07-06",
+          "end_date": "2026-07-17",
+          "application_deadline": "2026-06-19"
+        },
+        {
+          "name": "Pre-sessional 2",
+          "start_date": "2026-07-13",
+          "end_date": "2026-07-17",
+          "application_deadline": "2026-07-03"
+        },
+        {
+          "name": "Session 2",
+          "start_date": "2026-07-20",
+          "end_date": "2026-07-31",
+          "application_deadline": "2026-07-03"
+        },
+        {
+          "name": "Session 3",
+          "start_date": "2026-08-03",
+          "end_date": "2026-08-14",
+          "application_deadline": "2026-07-17"
+        }
+      ],
+      "identity_key": "",
+      "financial_access_status": "funded",
+      "failed_hard_conditions": [
+        "application deadline has passed"
+      ],
+      "score": 89.0,
+      "score_explanation": [
+        "topic match: satellite, deep learning, data analysis, statistics",
+        "funding evidence: scholarship",
+        "12 days",
+        "priority region",
+        "hybrid",
+        "target level: MSc, PhD",
+        "near-match only: application deadline has passed"
+      ],
+      "first_seen": "2026-06-18",
+      "deadline_evidence": "APPLICATION CLOSING DATES Pre-sessional 1 and session one: 19 June 2026 Pre-sessional 2 and Session two: 3 July 2026 Session three: 17 July 2026 Estimated Cost",
+      "duration_evidence": "",
+      "mode_evidence": "in person, online or hybrid mode In-person courses will be",
+      "extraction_confidence": 1.0,
+      "title_zh": "社会科学数据分析",
+      "organizer_zh": "埃塞克斯暑期学校",
+      "location_zh": "英国科尔切斯特",
+      "summary_zh": "申请 – 埃塞克斯暑期学校社会科学数据分析 2026年埃塞克斯暑期学校现已开放申请！关注我们的新闻通讯以获取最新信息。注册 关于 ESS 新闻通讯 推荐 合作伙伴 讲师 联系方式 课程列表 MA信息 社交项目",
+      "eligibility_zh": "硕士 博士 非在读学生 学科 国家/雇主 * 阿富汗 阿尔巴尼亚 阿尔及利亚 安道尔 安哥拉 安圭拉 安提瓜和巴布达 阿根廷 亚美尼亚",
+      "recommendation_reason_zh": "主题匹配：卫星、深度学习、数据分析、统计学；资金证据：奖学金；截止日期似乎开放；12天",
+      "risk_points_zh": "资金可能具有竞争性或部分资助。",
       "is_new": false
     },
     {
@@ -7044,102 +7046,6 @@
   ],
   "scanner_opportunities": [
     {
-      "title": "Social Science Data Analysis",
-      "type": "summer school",
-      "organizer": "Essex Summer School",
-      "source_layer": "2",
-      "region_priority": "priority",
-      "location": "Colchester, UK",
-      "mode": "hybrid",
-      "start_date": "2026-06-29",
-      "end_date": "2026-08-14",
-      "duration_days": 12,
-      "deadline": "2026-07-17",
-      "deadline_status": "open",
-      "funding_available": true,
-      "funding_type": [
-        "scholarship"
-      ],
-      "funding_evidence": "Scholarships Q-Step Global South Women in Political Science Home / Application Application Share **2026 APPLICATIONS ARE STILL OPEN",
-      "topic_keywords": [
-        "satellite",
-        "deep learning",
-        "data analysis",
-        "statistics",
-        "law",
-        "design",
-        "social science",
-        "political science"
-      ],
-      "eligibility": "Masters PhD Not Currently a Student Discipline Country of University / Employer * Afghanistan Albania Algeria Andorra Angola Anguilla Antigua and Barbuda Argentina Ar",
-      "target_level": "MSc, PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://essexsummerschool.com/new-application/",
-      "source_url": "https://essexsummerschool.com/new-application/",
-      "summary": "Application – Essex Summer School in Social Science Data Analysis Applications for Essex Summer School 2026 are now open! Keep up to date with our newsletter. SIGN UP About ESS Newsletters Testimonials Partners Instructors Contact Summer Courses Course list MA info Social Program",
-      "recommendation_reason": "topic match: satellite, deep learning, data analysis, statistics; funding evidence: scholarship; deadline appears open; 12 days",
-      "risk_points": "Funding may be competitive or partial.",
-      "sessions": [
-        {
-          "name": "Pre-sessional 1",
-          "start_date": "2026-06-29",
-          "end_date": "2026-07-03",
-          "application_deadline": "2026-06-19"
-        },
-        {
-          "name": "Session 1",
-          "start_date": "2026-07-06",
-          "end_date": "2026-07-17",
-          "application_deadline": "2026-06-19"
-        },
-        {
-          "name": "Pre-sessional 2",
-          "start_date": "2026-07-13",
-          "end_date": "2026-07-17",
-          "application_deadline": "2026-07-03"
-        },
-        {
-          "name": "Session 2",
-          "start_date": "2026-07-20",
-          "end_date": "2026-07-31",
-          "application_deadline": "2026-07-03"
-        },
-        {
-          "name": "Session 3",
-          "start_date": "2026-08-03",
-          "end_date": "2026-08-14",
-          "application_deadline": "2026-07-17"
-        }
-      ],
-      "identity_key": "",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [],
-      "score": 112.0,
-      "score_explanation": [
-        "topic match: satellite, deep learning, data analysis, statistics",
-        "funding evidence: scholarship",
-        "deadline appears open",
-        "12 days",
-        "priority region",
-        "hybrid",
-        "target level: MSc, PhD"
-      ],
-      "first_seen": "2026-06-18",
-      "deadline_evidence": "APPLICATION CLOSING DATES Pre-sessional 1 and session one: 19 June 2026 Pre-sessional 2 and Session two: 3 July 2026 Session three: 17 July 2026 Estimated Cost",
-      "duration_evidence": "Essex sessions: Pre-sessional 1 2026-06-29 to 2026-07-03; Session 1 2026-07-06 to 2026-07-17; Pre-sessional 2 2026-07-13 to 2026-07-17; Session 2 2026-07-20 to 2026-07-31; Session 3 2026-08-03 to 2026-08-14",
-      "mode_evidence": "in person, online or hybrid mode In-person courses will be",
-      "extraction_confidence": 1.0,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
       "title": "Interdisciplinarity for Complex Water Problems",
       "type": "short course",
       "organizer": "IHE Delft",
@@ -7569,6 +7475,104 @@
       "duration_evidence": "SICSS locations catalogue: September 7 to September 18, 2026",
       "mode_evidence": "SICSS location card: Adam Mickiewicz University, Poznań",
       "extraction_confidence": 0.75,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": false
+    },
+    {
+      "title": "Social Science Data Analysis",
+      "type": "summer school",
+      "organizer": "Essex Summer School",
+      "source_layer": "2",
+      "region_priority": "priority",
+      "location": "Colchester, UK",
+      "mode": "hybrid",
+      "start_date": "2026-06-29",
+      "end_date": "2026-08-14",
+      "duration_days": 12,
+      "deadline": "2026-07-17",
+      "deadline_status": "closed",
+      "funding_available": true,
+      "funding_type": [
+        "scholarship"
+      ],
+      "funding_evidence": "Scholarships Q-Step Global South Women in Political Science Home / Application Application Share **2026 APPLICATIONS ARE STILL OPEN",
+      "topic_keywords": [
+        "satellite",
+        "deep learning",
+        "data analysis",
+        "statistics",
+        "law",
+        "design",
+        "social science",
+        "political science"
+      ],
+      "eligibility": "Masters PhD Not Currently a Student Discipline Country of University / Employer * Afghanistan Albania Algeria Andorra Angola Anguilla Antigua and Barbuda Argentina Ar",
+      "target_level": "MSc, PhD",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://essexsummerschool.com/new-application/",
+      "source_url": "https://essexsummerschool.com/new-application/",
+      "summary": "Application – Essex Summer School in Social Science Data Analysis Applications for Essex Summer School 2026 are now open! Keep up to date with our newsletter. SIGN UP About ESS Newsletters Testimonials Partners Instructors Contact Summer Courses Course list MA info Social Program",
+      "recommendation_reason": "topic match: satellite, deep learning, data analysis, statistics; funding evidence: scholarship; 12 days; priority region",
+      "risk_points": "application deadline has passed",
+      "sessions": [
+        {
+          "name": "Pre-sessional 1",
+          "start_date": "2026-06-29",
+          "end_date": "2026-07-03",
+          "application_deadline": "2026-06-19"
+        },
+        {
+          "name": "Session 1",
+          "start_date": "2026-07-06",
+          "end_date": "2026-07-17",
+          "application_deadline": "2026-06-19"
+        },
+        {
+          "name": "Pre-sessional 2",
+          "start_date": "2026-07-13",
+          "end_date": "2026-07-17",
+          "application_deadline": "2026-07-03"
+        },
+        {
+          "name": "Session 2",
+          "start_date": "2026-07-20",
+          "end_date": "2026-07-31",
+          "application_deadline": "2026-07-03"
+        },
+        {
+          "name": "Session 3",
+          "start_date": "2026-08-03",
+          "end_date": "2026-08-14",
+          "application_deadline": "2026-07-17"
+        }
+      ],
+      "identity_key": "",
+      "financial_access_status": "funded",
+      "failed_hard_conditions": [
+        "application deadline has passed"
+      ],
+      "score": 89.0,
+      "score_explanation": [
+        "topic match: satellite, deep learning, data analysis, statistics",
+        "funding evidence: scholarship",
+        "12 days",
+        "priority region",
+        "hybrid",
+        "target level: MSc, PhD",
+        "near-match only: application deadline has passed"
+      ],
+      "first_seen": "2026-06-18",
+      "deadline_evidence": "APPLICATION CLOSING DATES Pre-sessional 1 and session one: 19 June 2026 Pre-sessional 2 and Session two: 3 July 2026 Session three: 17 July 2026 Estimated Cost",
+      "duration_evidence": "Essex sessions: Pre-sessional 1 2026-06-29 to 2026-07-03; Session 1 2026-07-06 to 2026-07-17; Pre-sessional 2 2026-07-13 to 2026-07-17; Session 2 2026-07-20 to 2026-07-31; Session 3 2026-08-03 to 2026-08-14",
+      "mode_evidence": "in person, online or hybrid mode In-person courses will be",
+      "extraction_confidence": 1.0,
       "title_zh": "",
       "organizer_zh": "",
       "location_zh": "",
