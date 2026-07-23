@@ -1,30 +1,10 @@
-from __future__ import annotations
-
-# Runs in <head> before first paint, so the saved theme and language apply with
-# no flash. Plain string (real JS braces), interpolated as a value.
-_BOOT_SCRIPT = (
-    "<script>(function(){try{"
-    "var t=localStorage.getItem('summa-theme');"
-    "if(t!=='light'&&t!=='dark'){t=(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}"
-    "document.documentElement.setAttribute('data-theme',t);"
-    "var l=localStorage.getItem('summa-lang');"
-    "if(l!=='zh'&&l!=='en'){l=((navigator.language||'en').toLowerCase().indexOf('zh')===0)?'zh':'en';}"
-    "document.documentElement.setAttribute('lang',l);"
-    "}catch(e){}})();</script>"
-)
-
-
-# Applies translations to [data-i18n] elements and wires the two toggle buttons.
-# Runs at the end of <body>. Plain string (real JS braces).
-_UI_SCRIPT = """
-  <script>
-  (function(){
+(function(){
     var I18N = {
       "nav.opportunities": {en:"Opportunities", zh:"机会"},
       "nav.how": {en:"How it works", zh:"工作原理"},
       "nav.about": {en:"About", zh:"关于"},
       "nav.sources": {en:"Sources", zh:"来源"},
-      "hero.kicker": {en:"Updated daily \\u00B7 Free & open source", zh:"每天更新 \\u00B7 免费开源"},
+      "hero.kicker": {en:"Updated daily \u00B7 Free & open source", zh:"每天更新 \u00B7 免费开源"},
       "hero.title": {en:"Find research training worth applying for", zh:"寻找真正值得申请的科研训练机会"},
       "hero.subtitle": {en:"Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.", zh:"从可信学术来源汇总有资助或低费用的科研训练机会。每条截止日期和资助信息都可追溯到官网。"},
       "hero.disclaimer.summary": {en:"Before applying: verify the official page", zh:"申请前请注意：务必到官网核验"},
@@ -207,7 +187,7 @@ _UI_SCRIPT = """
     }
     function applyTheme(t){
       document.documentElement.setAttribute('data-theme', t);
-      var b=document.getElementById('theme-toggle'); if(b) b.textContent = (t==='dark')?'\\u2600':'\\u263E';
+      var b=document.getElementById('theme-toggle'); if(b) b.textContent = (t==='dark')?'\u2600':'\u263E';
       try{localStorage.setItem('summa-theme', t);}catch(e){}
     }
     applyLang(document.documentElement.getAttribute('lang')||'en');
@@ -215,5 +195,4 @@ _UI_SCRIPT = """
     var lb=document.getElementById('lang-toggle'); if(lb) lb.addEventListener('click', function(){ applyLang(document.documentElement.getAttribute('lang')==='zh'?'en':'zh'); });
     var tb=document.getElementById('theme-toggle'); if(tb) tb.addEventListener('click', function(){ applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'); });
   })();
-  </script>"""
 

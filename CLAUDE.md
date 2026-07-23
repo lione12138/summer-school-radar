@@ -76,8 +76,9 @@ AI branch constraints:
 - `src/research_school_radar/rank.py` — scoring and deduplication.
 - `src/research_school_radar/report.py` — Markdown reports.
 - `src/research_school_radar/site.py` — static site coordinator.
-- `src/research_school_radar/site_styles.py` — CSS.
-- `src/research_school_radar/site_i18n.py` — bilingual UI dictionaries and language script.
+- `src/research_school_radar/site_assets.py` — HTML-template loading and static-asset copying.
+- `src/research_school_radar/web/templates/` — tracked homepage, detail-page, and source-page HTML shells.
+- `src/research_school_radar/web/static/css/` and `web/static/js/` — browser CSS, bilingual UI, filtering, responsive sidebar, and 15-item pagination.
 - `src/research_school_radar/site_seo.py` — sitemap, robots, JSON-LD, canary, watermark.
 - `src/research_school_radar/site_feed.py` — RSS feed.
 - `src/research_school_radar/publication.py` — shared public/high-quality/found display classification.
@@ -88,9 +89,9 @@ AI branch constraints:
 - Source health tracks last attempt, last success, and consecutive failures per configured source; status-refresh manifests must not recursively nest older refresh manifests.
 - Multi-session detection supports labelled prose, table rows, and JSON-LD `subEvent`; unlabelled event calendars remain excluded.
 - `src/research_school_radar/programme_sessions.py` — multi-session duration/date presentation shared by reports, RSS, and HTML.
-- `src/research_school_radar/site_components.py`, `site_calendar.py`, `site_layout.py`, and `site_paths.py` — reusable site presentation primitives; `site_filters.py` owns browser-side filtering, responsive sidebar behavior, and 15-item pagination.
+- `src/research_school_radar/site_components.py`, `site_calendar.py`, `site_layout.py`, and `site_paths.py` — reusable site presentation primitives; `site_filters.py` owns the filter and pagination markup.
 - `src/research_school_radar/site_detail.py` and `site_sources_page.py` — dedicated detail and source-page renderers; `site.py` remains the build coordinator.
-- `src/research_school_radar/site_home_page.py`, `site_home.py`, and `site_home_styles.py` — homepage renderer, static sections, and homepage-only styles.
+- `src/research_school_radar/site_home_page.py` and `site_home.py` — homepage data/fragments and static explanatory sections; the HTML shell and styles live under `web/`.
 - `src/research_school_radar/urls.py` — validates public external URLs before rendering links.
 - `src/research_school_radar/atomic_io.py` — atomically writes generated text artifacts with transient lock retries.
 - `src/research_school_radar/scan_health.py` — non-empty-source and 70% combined page/direct-collector coverage gate plus scan manifests.

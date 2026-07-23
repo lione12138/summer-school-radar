@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$title · Summa</title>
+$seo_head
+  <script src="../assets/js/i18n-boot.js"></script>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/opportunities.css">
+  <link rel="stylesheet" href="../assets/css/detail.css">
+</head>
+<body class="detail-page" data-page-title-en="$title_attr · Summa" data-page-title-zh="$title_zh_attr">
+  $nav
+  <header class="detail-header">
+    <div class="wrap">
+      <a class="detail-back" href="../index.html#opportunities" data-i18n="detail.back">&larr; Back to opportunities</a><br>
+      <span class="status-badge $status_class">$status</span>
+      <h1>$bilingual_title</h1>
+      <p class="detail-org">$organization</p>
+      <div class="detail-facts">
+        <span>$duration</span>
+        <span>$deadline</span>
+        <span>$mode</span>
+      </div>
+    </div>
+  </header>
+  <main class="detail-main">
+    <div class="wrap detail-grid">
+      <div class="detail-stack">
+        <section class="detail-panel"><h2 data-i18n="detail.overview">Overview</h2><p>$summary</p></section>
+        <section class="detail-panel"><h2 data-i18n="detail.eligibility">Who should apply</h2><p>$eligibility</p></section>
+        <section class="detail-panel qualified"><h2 data-i18n="detail.why">Why this status</h2><p>$qualification</p></section>
+        <section class="detail-panel">
+          <h2 data-i18n="detail.source">Official source</h2>
+          <p class="muted" data-i18n="detail.source.original">Original source evidence is retained below for verification.</p>
+          <p>$evidence</p>
+          $official_source_link
+        </section>
+      </div>
+      <aside class="decision-card">
+        <h2 data-i18n="detail.snapshot">Application snapshot</h2>
+        <span class="eyebrow" data-i18n="detail.funding">Funding / fee</span>
+        <p class="decision-value">$financial_summary</p>
+        <span class="eyebrow" data-i18n="detail.deadline">Application deadline</span>
+        <p class="deadline-value">$deadline</p>
+        $session_schedule
+        <p class="muted">$mode &middot; $location<br>$topics</p>
+        <div class="detail-actions">$official_button$calendar</div>
+        <span class="note" data-i18n="detail.verify">Always verify eligibility, fees, funding, and dates on the official page.</span>
+      </aside>
+    </div>
+  </main>
+  <div class="mobile-actions">$official_button$calendar</div>
+  $footer
+  <script src="../assets/js/i18n.js"></script>
+</body>
+</html>

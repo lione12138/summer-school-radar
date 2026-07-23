@@ -60,6 +60,13 @@ school-radar = "research_school_radar.cli:main"
 [tool.setuptools.packages.find]
 where = ["src"]
 
+[tool.setuptools.package-data]
+research_school_radar = [
+  "web/templates/*.html",
+  "web/static/css/*.css",
+  "web/static/js/*.js",
+]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Summa · Funded research summer schools</title>
+$seo_head
+  <script src="assets/js/i18n-boot.js"></script>
+  <link rel="alternate" type="application/rss+xml" title="Summa" href="feed.xml">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/opportunities.css">
+$jsonld
+</head>
+<body class="home-page" data-page-title-en="Summa · Funded research summer schools" data-page-title-zh="Summa · 科研暑校与训练机会">
+  $nav
+  <header class="hero" id="top">
+    <div class="wrap">
+      <p class="kicker" data-i18n="hero.kicker">Updated daily &middot; Free &amp; open source</p>
+      <h1 data-i18n="hero.title">Find research training worth applying for</h1>
+      <p class="subtitle" data-i18n="hero.subtitle">Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.</p>
+      <details class="hero-disclaimer">
+        <summary data-i18n="hero.disclaimer.summary">Before applying: verify the official page</summary>
+        <p data-i18n="hero.disclaimer">Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.</p>
+      </details>
+      <div class="hero-actions">
+        <a class="button primary" href="#opportunities" data-i18n="cta.explore">Explore opportunities</a>
+        <a class="button tonal" href="#how" data-i18n="cta.qualification">How qualification works</a>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="num">$full_count</div><div class="lbl" data-i18n="stat.qualified">Fully qualified</div></div>
+      <div class="stat"><div class="num">$near_count</div><div class="lbl" data-i18n="stat.near">High quality</div></div>
+      <div class="stat"><div class="num">$tracked_sources</div><div class="lbl" data-i18n="stat.sources">Trusted sources</div></div>
+      <div class="stat"><div class="num sm">$updated</div><div class="lbl" data-i18n="stat.updated">Last updated</div></div>
+    </div>
+    $status_banner
+    <section id="opportunities" class="anchor">
+      <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p>$opportunity_total</p></div>
+      <div class="opportunity-browser">
+        $filters
+        <div class="opportunity-results">
+          $curated_section
+          $qualified_section
+          $near_block
+          $found_section
+          $pagination
+        </div>
+      </div>
+    </section>
+    $notes_section
+    $subscribe_section
+    $how_section
+    $about_section
+    $faq_section
+  </main>
+  $footer
+  <script src="assets/js/filters.js"></script>
+  <script src="assets/js/i18n.js"></script>
+  $analytics
+</body>
+</html>

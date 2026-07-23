@@ -4,11 +4,10 @@ from html import escape
 from typing import Any
 
 from .localization import region_zh, source_type_zh, topic_zh
+from .site_assets import render_template
 from .site_components import bilingual
-from .site_i18n import _BOOT_SCRIPT, _UI_SCRIPT
 from .site_layout import site_nav
 from .site_seo import SITE_URL, seo_head, watermark
-from .site_styles import _NAV_CSS, _THEME_CSS
 from .urls import safe_external_url
 
 
@@ -19,64 +18,20 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
     disabled_count = len(registry) - enabled_count
     rows = "".join(_source_row(source) for source in registry)
     manual_section = _manual_sources_section(manual) if manual else ""
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sources &amp; Coverage · Summa</title>
-{seo_head(SITE_URL + "sources.html", "The trusted source registry behind Summa, including coverage notes and sources that must be checked manually.", {})}
-  {_BOOT_SCRIPT}
-  <style>
-{_THEME_CSS}
-{_NAV_CSS}
-    header.hero {{
-      background: linear-gradient(135deg, var(--hero-1), var(--hero-2) 55%, var(--hero-3));
-      color: #f3f9fc;
-      padding: 36px 0 40px;
-    }}
-    h1 {{ margin: 0 0 8px; font-size: clamp(26px, 4vw, 34px); letter-spacing: -0.02em; }}
-    h2 {{ margin: 30px 0 10px; font-size: 21px; letter-spacing: -0.01em; }}
-    header.hero p {{ max-width: 860px; color: rgba(243, 249, 252, .85); margin: 0 0 6px; }}
-    header.hero .pill {{
-      border-color: rgba(255, 255, 255, .3);
-      background: rgba(255, 255, 255, .1);
-      color: #eaf6fa;
-      margin: 8px 8px 0 0;
-    }}
-    header.hero a.pill:hover {{ background: rgba(255, 255, 255, .24); }}
-    main {{ padding: 0 0 48px; }}
-    .status-enabled {{ color: var(--good); font-weight: 700; }}
-    .status-disabled {{ color: var(--warn); font-weight: 700; }}
-  </style>
-</head>
-<body data-page-title-en="Sources &amp; Coverage · Summa" data-page-title-zh="来源与覆盖范围 · Summa">
-  {site_nav(home="index.html")}
-  <header class="hero">
-    <div class="wrap">
-      <h1 data-i18n="sources.title">Sources &amp; Coverage</h1>
-      <p data-i18n="sources.lead">The radar scans a trusted source registry rather than crawling the open web. This page lists the configured sources, including disabled sources kept for transparency.</p>
-      <a class="pill" href="index.html" data-i18n="sources.back">Back to radar</a>
-      <a class="pill" href="sources.json" data-i18n="sources.json">Source JSON</a>
-      <span class="pill">{bilingual(f"{enabled_count} enabled", f"{enabled_count} 个已启用")}</span>
-      <span class="pill">{bilingual(f"{disabled_count} disabled", f"{disabled_count} 个已停用")}</span>
-    </div>
-  </header>
-  <main class="wrap">
-    <h2 data-i18n="sources.configured">Configured Sources</h2>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.status">Status</th><th data-i18n="sources.health">Scan health</th><th data-i18n="sources.layer">Layer</th><th data-i18n="sources.region">Region</th><th data-i18n="sources.type">Type</th><th data-i18n="sources.keywords">Keywords</th><th data-i18n="sources.notes">Notes (original registry text)</th></tr></thead>
-        <tbody>{rows}</tbody>
-      </table>
-    </div>
-    {manual_section}
-  </main>
-  {watermark()}
-  {_UI_SCRIPT}
-</body>
-</html>
-"""
+    return render_template(
+        "sources.html",
+        seo_head=seo_head(
+            SITE_URL + "sources.html",
+            "The trusted source registry behind Summa, including coverage notes and sources that must be checked manually.",
+            {},
+        ),
+        nav=site_nav(home="index.html"),
+        enabled_count=bilingual(f"{enabled_count} enabled", f"{enabled_count} 个已启用"),
+        disabled_count=bilingual(f"{disabled_count} disabled", f"{disabled_count} 个已停用"),
+        rows=rows,
+        manual_section=manual_section,
+        watermark=watermark(),
+    )
 
 
 def _manual_sources_section(manual: list[dict[str, Any]]) -> str:

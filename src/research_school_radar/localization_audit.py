@@ -19,14 +19,14 @@ _ALLOWED_LITERAL_TEXT = {
 }
 
 
-def localization_issues(html: str) -> list[str]:
+def localization_issues(html: str, dictionary_source: str = "") -> list[str]:
     """Return missing translation contracts for user-interface text.
 
     Dynamic content is valid when it contains explicit English/Chinese spans.
     Proper names and calendar product names are intentionally exempt.
     """
     issues: list[str] = []
-    defined = set(_KEY_RE.findall(html))
+    defined = set(_KEY_RE.findall(f"{html}\n{dictionary_source}"))
     used = set(re.findall(r'data-i18n="([\w.]+)"', html))
     used.update(re.findall(r'data-i18n-placeholder="([\w.]+)"', html))
     used.update(re.findall(r'data-i18n-aria-label="([\w.]+)"', html))
@@ -84,21 +84,21 @@ def _unlocalized_text_outside_language_spans(element: object) -> str:
     return " ".join(chunks)
 
 
-def assert_localization_complete(html: str, page: str) -> None:
+def assert_localization_complete(html: str, page: str, dictionary_source: str = "") -> None:
     """Hard gate for tests/CI: raise on any missing translation contract."""
-    issues = localization_issues(html)
+    issues = localization_issues(html, dictionary_source)
     if issues:
         joined = "; ".join(issues[:12])
         raise ValueError(f"localization audit failed for {page}: {joined}")
 
 
-def warn_localization_issues(html: str, page: str) -> list[str]:
+def warn_localization_issues(html: str, page: str, dictionary_source: str = "") -> list[str]:
     """Soft gate for production builds: report issues without aborting.
 
     Page content includes scraped external text, so a new unlocalized string
     must degrade the audit, not kill the daily scan and publish. The strict
     contract is enforced by the test suite instead."""
-    issues = localization_issues(html)
+    issues = localization_issues(html, dictionary_source)
     for issue in issues:
         print(f"(localization) {page}: {issue}")
     return issues

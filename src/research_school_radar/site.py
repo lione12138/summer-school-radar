@@ -14,6 +14,7 @@ from .localization_audit import warn_localization_issues
 from .models import Candidate
 from .publication import is_high_quality, is_public_candidate
 from .review import build_review_queue
+from .site_assets import read_static_asset, write_static_assets
 from .site_components import (
     duration_label as _duration,
     is_online_only as _is_online_only,
@@ -58,6 +59,8 @@ def write_site(
     review_queue_payload: dict[str, Any] | None = None,
 ) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
+    write_static_assets(output_dir)
+    i18n_source = read_static_asset("js/i18n.js")
     curated = curated or []
     sources = sources or []
     source_translation_result = None
@@ -82,7 +85,7 @@ def write_site(
     )
     write_text_atomic(output_dir / "sources.json", json.dumps(sources, indent=2, default=str))
     sources_html = render_sources_page(sources)
-    warn_localization_issues(sources_html, "sources.html")
+    warn_localization_issues(sources_html, "sources.html", i18n_source)
     write_text_atomic(output_dir / "sources.html", sources_html)
     # AI output now enriches the existing homepage tables instead of creating a
     # parallel review UI. Remove stale generated copies from older builds.
@@ -150,7 +153,7 @@ def write_site(
         stale.unlink()
     for candidate in detail_candidates:
         detail_html = render_opportunity_detail(candidate, site_config or {})
-        warn_localization_issues(detail_html, candidate_detail_filename(candidate))
+        warn_localization_issues(detail_html, candidate_detail_filename(candidate), i18n_source)
         write_text_atomic(detail_dir / candidate_detail_filename(candidate), detail_html)
     write_text_atomic(
         output_dir / "feed.xml",
@@ -187,7 +190,7 @@ def write_site(
         curated,
         tracked_sources=tracked_sources,
     )
-    warn_localization_issues(index_html, "index.html")
+    warn_localization_issues(index_html, "index.html", i18n_source)
     write_text_atomic(path, index_html)
     return path
 

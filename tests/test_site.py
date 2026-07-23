@@ -188,12 +188,26 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert (tmp_path / "curated.json").exists()
     assert (tmp_path / "sources.json").exists()
     assert (tmp_path / "sources.html").exists()
+    for asset in (
+        "css/base.css",
+        "css/home.css",
+        "css/opportunities.css",
+        "css/detail.css",
+        "css/sources.css",
+        "js/filters.js",
+        "js/i18n-boot.js",
+        "js/i18n.js",
+    ):
+        assert (tmp_path / "assets" / asset).exists()
     html = index.read_text(encoding="utf-8")
     candidate_payload = json.loads((tmp_path / "candidates.json").read_text(encoding="utf-8"))
     assert candidate_payload["schema_version"] == 2
     assert candidate_payload["opportunities"][0]["title"] == candidate.title
     assert candidate_payload["scanner_opportunities"][0]["title"] == candidate.title
     assert "Summa" in html
+    assert 'href="assets/css/base.css"' in html
+    assert 'src="assets/js/filters.js"' in html
+    assert "<style>" not in html
     assert 'id="lang-toggle"' in html and 'id="theme-toggle"' in html  # CN/EN + dark/light toggles
     assert "Example Hydrology Winter School" in html
     assert "filter-topic" in html
@@ -297,8 +311,9 @@ def test_site_hero_disclaimer_is_rendered(tmp_path) -> None:
     assert "<details" in hero
     assert 'data-i18n="hero.disclaimer.summary"' in hero
     assert "Use this as a starting point, not the only source" in hero
-    assert "请把这里当作基础信息入口" in html
-    assert "祝大家都能录到心仪的项目" in html
+    i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
+    assert "请把这里当作基础信息入口" in i18n
+    assert "祝大家都能录到心仪的项目" in i18n
 
 
 def test_filter_defaults_describe_each_dimension(tmp_path) -> None:
@@ -311,7 +326,8 @@ def test_filter_defaults_describe_each_dimension(tmp_path) -> None:
     assert 'data-i18n="filter.all.funding">All funding</option>' in html
     assert 'data-i18n="filter.all.deadline">All deadlines</option>' in html
     assert 'data-i18n="filter.all.fresh">Any time</option>' in html
-    assert '"filter.all.status": {en:"All statuses", zh:"所有状态"}' in html
+    i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
+    assert '"filter.all.status": {en:"All statuses", zh:"所有状态"}' in i18n
 
 
 def test_opportunity_browser_uses_sidebar_and_fifteen_item_pages(tmp_path) -> None:
@@ -323,7 +339,8 @@ def test_opportunity_browser_uses_sidebar_and_fifteen_item_pages(tmp_path) -> No
     assert 'class="filter-sidebar"' in html
     assert 'class="opportunity-results"' in html
     assert 'id="opportunity-pagination"' in html
-    assert "const pageSize = 15;" in html
+    filters = (tmp_path / "assets" / "js" / "filters.js").read_text(encoding="utf-8")
+    assert "const pageSize = 15;" in filters
 
 
 def test_site_renders_curated_found_opportunities_and_review_queue_json(tmp_path) -> None:
@@ -596,6 +613,7 @@ def test_status_line_uses_correct_singular_and_plural(tmp_path) -> None:
 def test_subscribe_section_renders_email_form_when_configured() -> None:
     from research_school_radar.localization_audit import localization_issues
     from research_school_radar.site import render_site
+    from research_school_radar.site_assets import read_static_asset
 
     # Not configured: no subscribe section is shown.
     plain = render_site([], [], {}, [])
@@ -614,7 +632,7 @@ def test_subscribe_section_renders_email_form_when_configured() -> None:
     assert 'data-i18n-placeholder="subscribe.email.placeholder"' in configured
     assert 'data-i18n="subscribe.submit"' in configured
     assert "RSS feed" not in configured
-    assert localization_issues(configured) == []
+    assert localization_issues(configured, read_static_asset("js/i18n.js")) == []
 
 
 def test_empty_state_stays_informative(tmp_path) -> None:
@@ -636,7 +654,8 @@ def test_empty_state_stays_informative(tmp_path) -> None:
     assert "目前没有项目通过最近一次扫描的全部规则" in html
     assert "每周一、周三和周五检查" in html
     assert "Subscribe via RSS" not in html
-    assert localization_issues(html) == []
+    i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
+    assert localization_issues(html, i18n) == []
 
 
 def test_filters_only_offer_topics_from_rendered_records() -> None:
@@ -873,7 +892,8 @@ def test_localization_contract_holds_across_built_pages(tmp_path) -> None:
     write_site(ranked, [], tmp_path)
     pages = [tmp_path / "index.html", tmp_path / "sources.html"]
     pages.extend(sorted((tmp_path / "opportunities").glob("*.html")))
+    i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
     assert len(pages) >= 3  # index, sources, at least one detail page
     for page in pages:
-        issues = localization_issues(page.read_text(encoding="utf-8"))
+        issues = localization_issues(page.read_text(encoding="utf-8"), i18n)
         assert issues == [], f"{page.name}: {issues[:6]}"

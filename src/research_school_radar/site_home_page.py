@@ -8,6 +8,7 @@ from urllib.parse import quote
 from .localization import financial_summary_zh, region_zh, topic_zh, topics_label_zh
 from .models import Candidate
 from .publication import is_found_opportunity, is_high_quality, is_public_candidate
+from .site_assets import render_template
 from .site_components import (
     bilingual as _bilingual,
     candidate_deadline_cell as _candidate_deadline_cell,
@@ -19,18 +20,15 @@ from .site_components import (
     public_location as _public_location,
     public_location_zh as _public_location_zh,
 )
-from .site_filters import filter_script, render_filters, render_pagination
+from .site_filters import render_filters, render_pagination
 from .site_home import (
     about_section as _about_section,
     faq_section as _faq_section,
     how_it_works_section as _how_it_works_section,
 )
-from .site_home_styles import _HOME_HERO_CSS, _HOME_SECTION_CSS
-from .site_i18n import _BOOT_SCRIPT, _UI_SCRIPT
 from .site_layout import footer_section as _footer_section, site_nav as _site_nav
 from .site_paths import candidate_detail_href
 from .site_seo import SITE_DESCRIPTION as _SITE_DESCRIPTION, SITE_URL as _SITE_URL, jsonld_block, seo_head
-from .site_styles import _DISCOVER_CSS, _NAV_CSS, _THEME_CSS
 from .urls import safe_external_url
 from .utils import format_duration, topics_label
 
@@ -218,75 +216,35 @@ def render_site(
         near_block = ""
     else:
         near_block = _empty_opportunities_block(tracked_total, tracked_sources)
-    return f"""<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Summa · Funded research summer schools</title>
-{seo_head(_SITE_URL, _SITE_DESCRIPTION, site_config or {})}
-  {_BOOT_SCRIPT}
-  <link rel="alternate" type="application/rss+xml" title="Summa" href="feed.xml">
-  {jsonld_block((full + near + found)[:36], public_location=_public_location)}
-  <style>
-{_THEME_CSS}
-{_HOME_HERO_CSS}
-{_NAV_CSS}
-{_HOME_SECTION_CSS}
-{_DISCOVER_CSS}
-  </style>
-</head>
-<body class="home-page" data-page-title-en="Summa · Funded research summer schools" data-page-title-zh="Summa · 科研暑校与训练机会">
-  {_site_nav()}
-  <header class="hero" id="top">
-    <div class="wrap">
-      <p class="kicker" data-i18n="hero.kicker">Updated daily &middot; Free &amp; open source</p>
-      <h1 data-i18n="hero.title">Find research training worth applying for</h1>
-      <p class="subtitle" data-i18n="hero.subtitle">Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.</p>
-      <details class="hero-disclaimer">
-        <summary data-i18n="hero.disclaimer.summary">Before applying: verify the official page</summary>
-        <p data-i18n="hero.disclaimer">Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.</p>
-      </details>
-      <div class="hero-actions">
-        <a class="button primary" href="#opportunities" data-i18n="cta.explore">Explore opportunities</a>
-        <a class="button tonal" href="#how" data-i18n="cta.qualification">How qualification works</a>
-      </div>
-    </div>
-  </header>
-  <main class="wrap">
-    <div class="stats">
-      <div class="stat"><div class="num">{len(full)}</div><div class="lbl" data-i18n="stat.qualified">Fully qualified</div></div>
-      <div class="stat"><div class="num">{len(near)}</div><div class="lbl" data-i18n="stat.near">High quality</div></div>
-      <div class="stat"><div class="num">{tracked_sources}</div><div class="lbl" data-i18n="stat.sources">Trusted sources</div></div>
-      <div class="stat"><div class="num sm">{updated}</div><div class="lbl" data-i18n="stat.updated">Last updated</div></div>
-    </div>
-    {status_banner}
-    <section id="opportunities" class="anchor">
-      <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p>{_bilingual(f"{len(curated) + len(full) + len(near) + len(found)} total · 15 per page · Updated {updated}", f"共 {len(curated) + len(full) + len(near) + len(found)} 条 · 每页 15 条 · 更新于 {updated}")}</p></div>
-      <div class="opportunity-browser">
-        {filters}
-        <div class="opportunity-results">
-          {_curated_section(curated_rows) if curated else ""}
-          {_qualified_section(full_rows) if full else ""}
-          {near_block}
-          {_found_section(found_rows) if found_rows else ""}
-          {render_pagination()}
-        </div>
-      </div>
-    </section>
-    {_notes_section(notes) if notes else ""}
-    {_subscribe_section(site_config or {})}
-    {_how_it_works_section()}
-    {_about_section()}
-    {_faq_section()}
-  </main>
-  {_footer_section(updated)}
-  {filter_script()}
-  {_UI_SCRIPT}
-  {analytics}
-</body>
-</html>
-"""
+    opportunity_count = len(curated) + len(full) + len(near) + len(found)
+    return render_template(
+        "home.html",
+        seo_head=seo_head(_SITE_URL, _SITE_DESCRIPTION, site_config or {}),
+        jsonld=jsonld_block((full + near + found)[:36], public_location=_public_location),
+        nav=_site_nav(),
+        full_count=len(full),
+        near_count=len(near),
+        tracked_sources=tracked_sources,
+        updated=updated,
+        status_banner=status_banner,
+        opportunity_total=_bilingual(
+            f"{opportunity_count} total · 15 per page · Updated {updated}",
+            f"共 {opportunity_count} 条 · 每页 15 条 · 更新于 {updated}",
+        ),
+        filters=filters,
+        curated_section=_curated_section(curated_rows) if curated else "",
+        qualified_section=_qualified_section(full_rows) if full else "",
+        near_block=near_block,
+        found_section=_found_section(found_rows) if found_rows else "",
+        pagination=render_pagination(),
+        notes_section=_notes_section(notes) if notes else "",
+        subscribe_section=_subscribe_section(site_config or {}),
+        how_section=_how_it_works_section(),
+        about_section=_about_section(),
+        faq_section=_faq_section(),
+        footer=_footer_section(updated),
+        analytics=analytics,
+    )
 
 
 def _interleave_by_organizer(candidates: list[Candidate]) -> list[Candidate]:
