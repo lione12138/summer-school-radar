@@ -185,6 +185,54 @@
       }
     },
     {
+      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
+      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
+      "organizer": "GESIS Summer School",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-02-22",
+        "end": "2027-03-12",
+        "duration_days": 19
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "data analysis",
+        "social science"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "22 Feb – 12 March 2027",
+        "funding": "Scholarships FAQs Sponsors & Partners Contact Fall Seminar in Computational Social Science Go to overview Courses Course Fees Socia",
+        "mode": "onsite) an exciting time in Cologne, complemented by an"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "missing_evidence_id:event_type",
+          "possibly_past_or_closed"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
       "title": "Applied Public Policy Evaluation",
       "url": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
       "organizer": "Tinbergen Institute",
@@ -479,44 +527,6 @@
         "duration": "SICSS locations catalogue: 17–21 August, 2026",
         "funding": "The official SICSS programme overview states that no tuition is required; some locations also cover travel, accommodation, and meals.",
         "mode": "SICSS location card: Johnannesburg, South Africa"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "48th CERN School of Computing",
-      "url": "https://csc.web.cern.ch/csc-2026/",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "location": "University of Liverpool, Liverpool, United Kingdom",
-      "dates": {
-        "start": "2026-08-23",
-        "end": "2026-09-05",
-        "duration_days": 14
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "software engineering",
-        "physics",
-        "particle physics",
-        "engineering",
-        "history"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "",
-        "duration": "23 August – 5 September 2026",
-        "funding": "Financial support may be available. Categories Schools , Upcoming School Post navigation Previous Post Previous tCSC 2026 Next Post Next",
-        "mode": ""
       },
       "ai_advisory": {
         "available": false
