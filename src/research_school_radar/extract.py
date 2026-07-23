@@ -275,9 +275,12 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         fee = _extract_fee(text)
         fee_eur = _fee_to_eur(fee, profile)
     # _extract_location already sanitizes, but an override (e.g. a JSON-LD
-    # location) bypasses it, so clean the final value here too.
-    raw_location = overrides.get("location") or _extract_location(page.html, text, page.source.region)
-    location = sanitize_location(raw_location, fallback=raw_location)
+    # location) bypasses it. Never use the raw override as its own fallback:
+    # doing so resurrects placeholders such as "No location set".
+    override_location = str(overrides.get("location") or "")
+    location = sanitize_location(override_location) if override_location else ""
+    if not location:
+        location = _extract_location(page.html, text, page.source.region)
     if mode == "uncertain" and _is_specific_physical_location(location, page.source.region):
         mode = "in-person"
     duration_days = (

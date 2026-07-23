@@ -982,6 +982,7 @@ def test_sanitize_location_drops_junk_fragments() -> None:
     assert sanitize_location(", guide ]") == ""
     assert sanitize_location("Venue Preview Webinar") == ""
     assert sanitize_location("EEML2022") == ""
+    assert sanitize_location("No location set, No address set") == ""
     # Virtual / online normalised.
     assert sanitize_location("Virtual Schedule:") == "Online"
     assert sanitize_location("Virtual") == "Online"
@@ -991,6 +992,26 @@ def test_sanitize_location_drops_junk_fragments() -> None:
     assert sanitize_location("Multiple Locations") == "Multiple Locations"
     # Empty falls back.
     assert sanitize_location("", fallback="Europe") == "Europe"
+
+
+def test_jsonld_location_placeholder_falls_back_to_source_region() -> None:
+    page = _page(
+        "Data science summer school. In-person training from 1 July 2027 to 10 July 2027. "
+        "Application deadline: 1 March 2027. Topics include hydrology and data science.",
+        html=(
+            '<script type="application/ld+json">'
+            '{"@context":"https://schema.org","@type":"Event",'
+            '"name":"Data Science Summer School",'
+            '"startDate":"2027-07-01","endDate":"2027-07-10",'
+            '"location":{"@type":"Place","name":"No location set, No address set"}}'
+            "</script>"
+        ),
+    )
+
+    candidate = extract_candidate(page, PROFILE)
+
+    assert candidate is not None
+    assert candidate.location == "Europe"
 
 
 def test_application_deadline_preferred_over_unrelated_dates() -> None:

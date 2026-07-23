@@ -154,6 +154,13 @@ sources:
     source_type: research_training_provider
     keywords: [scientific computing, data technologies, software engineering, machine learning, security]
     notes: Official recurring main and thematic schools for scientific computing and data-intensive research.
+  - name: CERN School of Computing 2026 application
+    url: https://indico.cern.ch/event/1662800/
+    layer: 1
+    region: continental Europe
+    source_type: research_training_provider
+    keywords: [scientific computing, data technologies, software engineering, physics computing]
+    notes: Official CSC 2026 application record with participant cost responsibility and registration status.
   - name: EMBL-EBI Training
     url: https://www.ebi.ac.uk/about/events/
     layer: 1

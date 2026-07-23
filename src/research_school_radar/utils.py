@@ -63,6 +63,8 @@ _LOCATION_JUNK_FRAGMENTS = (
     "learn more",
     "apply now",
     "find out",
+    "no location set",
+    "no address set",
 )
 
 
