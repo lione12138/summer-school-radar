@@ -1,0 +1,35 @@
+header.hero {
+  background: linear-gradient(135deg, var(--hero-1), var(--hero-2) 55%, var(--hero-3));
+  color: #f3f9fc;
+  padding: 36px 0 40px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(26px, 4vw, 34px);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  margin: 30px 0 10px;
+  font-size: 21px;
+  letter-spacing: -0.01em;
+}
+
+header.hero p {
+  max-width: 860px;
+  color: rgba(243, 249, 252, .85);
+  margin: 0 0 6px;
+}
+
+header.hero .pill {
+  border-color: rgba(255, 255, 255, .3);
+  background: rgba(255, 255, 255, .1);
+  color: #eaf6fa;
+  margin: 8px 8px 0 0;
+}
+
+header.hero a.pill:hover { background: rgba(255, 255, 255, .24); }
+main { padding: 0 0 48px; }
+.status-enabled { color: var(--good); font-weight: 700; }
+.status-disabled { color: var(--warn); font-weight: 700; }
