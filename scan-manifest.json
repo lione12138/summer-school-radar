@@ -8,20 +8,20 @@
     "mode": "full",
     "healthy": true,
     "source_coverage": {
-      "attempted": 143,
+      "attempted": 144,
       "succeeded": 131,
-      "failed": 12,
-      "success_ratio": 0.9161
+      "failed": 13,
+      "success_ratio": 0.9097
     },
     "http_cache": {
-      "requests": 452,
-      "hits_304": 76,
-      "stale_fallbacks": 4,
-      "stores": 344
+      "requests": 445,
+      "hits_304": 75,
+      "stale_fallbacks": 23,
+      "stores": 323
     },
     "candidates": {
-      "extracted": 123,
-      "published_snapshot": 109
+      "extracted": 128,
+      "published_snapshot": 112
     },
     "ai": {
       "semantic_enabled": true,
@@ -64,7 +64,7 @@
         "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": "2026-07-15",
-        "consecutive_failures": 8
+        "consecutive_failures": 9
       },
       {
         "name": "ELLIS",
@@ -145,10 +145,10 @@
       },
       {
         "name": "GESIS Summer School",
-        "status": "failed",
+        "status": "healthy",
         "last_attempt": "2026-07-23",
         "last_success": "2026-07-23",
-        "consecutive_failures": 1
+        "consecutive_failures": 0
       },
       {
         "name": "Data Science Africa Summer Schools",
@@ -159,6 +159,13 @@
       },
       {
         "name": "CERN School of Computing",
+        "status": "healthy",
+        "last_attempt": "2026-07-23",
+        "last_success": "2026-07-23",
+        "consecutive_failures": 0
+      },
+      {
+        "name": "CERN School of Computing 2026 application",
         "status": "healthy",
         "last_attempt": "2026-07-23",
         "last_success": "2026-07-23",
@@ -330,7 +337,7 @@
         "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": null,
-        "consecutive_failures": 9
+        "consecutive_failures": 10
       },
       {
         "name": "WCRP",
@@ -435,7 +442,7 @@
         "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": "2026-07-16",
-        "consecutive_failures": 3
+        "consecutive_failures": 4
       },
       {
         "name": "IPAM",
@@ -470,14 +477,14 @@
         "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": null,
-        "consecutive_failures": 9
+        "consecutive_failures": 10
       },
       {
         "name": "CERN Academic Training",
         "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": null,
-        "consecutive_failures": 9
+        "consecutive_failures": 10
       },
       {
         "name": "ICTP",
@@ -530,10 +537,10 @@
       },
       {
         "name": "AGU",
-        "status": "healthy",
+        "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": "2026-07-23",
-        "consecutive_failures": 0
+        "consecutive_failures": 1
       },
       {
         "name": "NCAS",
@@ -554,7 +561,7 @@
         "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": null,
-        "consecutive_failures": 9
+        "consecutive_failures": 10
       },
       {
         "name": "LSA Linguistic Institute",
@@ -666,7 +673,7 @@
         "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": null,
-        "consecutive_failures": 9
+        "consecutive_failures": 10
       },
       {
         "name": "CISPA",
@@ -729,7 +736,7 @@
         "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": null,
-        "consecutive_failures": 9
+        "consecutive_failures": 10
       },
       {
         "name": "CESM Tutorial",
@@ -750,7 +757,7 @@
         "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": null,
-        "consecutive_failures": 9
+        "consecutive_failures": 10
       },
       {
         "name": "Oxford Robotics Institute",
@@ -880,10 +887,10 @@
       },
       {
         "name": "IHR History",
-        "status": "healthy",
+        "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": "2026-07-23",
-        "consecutive_failures": 0
+        "consecutive_failures": 1
       },
       {
         "name": "Khipu",
@@ -946,7 +953,7 @@
         "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": "2026-07-17",
-        "consecutive_failures": 2
+        "consecutive_failures": 3
       },
       {
         "name": "Boulder School",
@@ -1009,7 +1016,7 @@
         "status": "failed",
         "last_attempt": "2026-07-23",
         "last_success": null,
-        "consecutive_failures": 9
+        "consecutive_failures": 10
       },
       {
         "name": "LSE Cities",
