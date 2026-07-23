@@ -1,23 +1,23 @@
 {
   "schema_version": 1,
-  "generated": "2026-07-17",
+  "generated": "2026-07-23",
   "mode": "full",
   "healthy": true,
   "source_coverage": {
     "attempted": 143,
-    "succeeded": 130,
-    "failed": 13,
-    "success_ratio": 0.9091
+    "succeeded": 131,
+    "failed": 12,
+    "success_ratio": 0.9161
   },
   "http_cache": {
-    "requests": 449,
-    "hits_304": 37,
-    "stale_fallbacks": 10,
-    "stores": 379
+    "requests": 452,
+    "hits_304": 21,
+    "stale_fallbacks": 0,
+    "stores": 408
   },
   "candidates": {
-    "extracted": 128,
-    "published_snapshot": 111
+    "extracted": 127,
+    "published_snapshot": 112
   },
   "ai": {
     "semantic_enabled": true,
@@ -30,995 +30,995 @@
     {
       "name": "EGU Training Schools",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "IAHS",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "IAH",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "NASA ARSET",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "DAAD Short Courses",
       "status": "failed",
-      "last_attempt": "2026-07-17",
+      "last_attempt": "2026-07-23",
       "last_success": "2026-07-15",
-      "consecutive_failures": 6
+      "consecutive_failures": 7
     },
     {
       "name": "ELLIS",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "IHE Delft",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "GFZ Potsdam",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "UKCEH",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "ICIMOD",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Asian Institute of Technology",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "ECMWF Training",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "ESA EO4Society Training",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "NCAR ASP Colloquia",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "PIK Potsdam Events",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "HIDA Events",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "GESIS Summer School",
-      "status": "failed",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-16",
-      "consecutive_failures": 2
+      "status": "healthy",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
+      "consecutive_failures": 0
     },
     {
       "name": "Data Science Africa Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CERN School of Computing",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "EMBL-EBI Training",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "SIB Training",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "ESS Data and Computing Schools",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Data Science and AI Summer School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CODATA-RDA Data Schools",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "IEEE RAS Technical Education Programs",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "IEEE RAS Cognitive Robotics Summer School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "EurAI ESSAI",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "ESSIR",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "NLDL Winter School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Prob_AI Hub Winter School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Exeter Machine Learning Summer School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "UNICRI AI Ethics Winter School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "MLSS Index",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "EEML",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Mediterranean ML Summer School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Nordic ProbAI",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Gaussian Process Summer School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Deep Learning Indaba",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "IWA",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "IAHR",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "SIWI",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "GEWEX",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "AMS Meetings",
       "status": "failed",
-      "last_attempt": "2026-07-17",
+      "last_attempt": "2026-07-23",
       "last_success": null,
-      "consecutive_failures": 7
+      "consecutive_failures": 8
     },
     {
       "name": "WCRP",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "WMO ETRP",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "GFDL Events",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CIDER",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Oxford ML Summer School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "AMMI",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "ISPRS",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "GSA",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "EAGE",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "EarthScope",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CIG Geodynamics",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "EUMETSAT Training",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "ICOS",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "ICTP-SAIFR",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Lamont-Doherty",
       "status": "failed",
-      "last_attempt": "2026-07-17",
+      "last_attempt": "2026-07-23",
       "last_success": "2026-07-16",
-      "consecutive_failures": 1
+      "consecutive_failures": 2
     },
     {
       "name": "IPAM",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CLIVAR",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "APECS",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Barcelona Supercomputing Center",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Climate Change AI",
       "status": "failed",
-      "last_attempt": "2026-07-17",
+      "last_attempt": "2026-07-23",
       "last_success": null,
-      "consecutive_failures": 7
+      "consecutive_failures": 8
     },
     {
       "name": "CERN Academic Training",
       "status": "failed",
-      "last_attempt": "2026-07-17",
+      "last_attempt": "2026-07-23",
       "last_success": null,
-      "consecutive_failures": 7
+      "consecutive_failures": 8
     },
     {
       "name": "ICTP",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "LxMLS",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Karthaus Summer School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "WHOI GFD Program",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "NCEO",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "POGO",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Cyprus Institute",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "AGU",
-      "status": "failed",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-16",
-      "consecutive_failures": 1
+      "status": "healthy",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
+      "consecutive_failures": 0
     },
     {
       "name": "NCAS",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Les Houches Physics School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "ESSLLI",
       "status": "failed",
-      "last_attempt": "2026-07-17",
+      "last_attempt": "2026-07-23",
       "last_success": null,
-      "consecutive_failures": 7
+      "consecutive_failures": 8
     },
     {
       "name": "LSA Linguistic Institute",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "LOT School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "EGG School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Leiden Linguistics Summer School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CLASP Gothenburg",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CoLang",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CreteLing",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Advanced Language Processing Winter School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Charles University Summer School of Linguistics",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Methods in Language Sciences",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Edinburgh Theoretical Historical Linguistics",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "ICVSS",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "DS3 Data Science Summer School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Heidelberg Laureate Forum",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "OPLSS",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "LASER Software Engineering School",
       "status": "failed",
-      "last_attempt": "2026-07-17",
+      "last_attempt": "2026-07-23",
       "last_success": null,
-      "consecutive_failures": 7
+      "consecutive_failures": 8
     },
     {
       "name": "CISPA",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "SBA Research",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Santa Fe Institute",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "DeepLearn",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "EurAI ACAI",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Friday Harbor Laboratories",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "SOLAS",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CSCS Summer School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Argonne ATPESC",
       "status": "failed",
-      "last_attempt": "2026-07-17",
+      "last_attempt": "2026-07-23",
       "last_success": null,
-      "consecutive_failures": 7
+      "consecutive_failures": 8
     },
     {
       "name": "CESM Tutorial",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "GEOMAR",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CINECA HPC",
       "status": "failed",
-      "last_attempt": "2026-07-17",
+      "last_attempt": "2026-07-23",
       "last_success": null,
-      "consecutive_failures": 7
+      "consecutive_failures": 8
     },
     {
       "name": "Oxford Robotics Institute",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Mila",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "OIST OCNC",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "MBL Courses",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CSHL Courses",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CAJAL Training",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Bernstein Network",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CIFAR DLRL Summer School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "IBRO",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "ECPR Methods School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "SICSS",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "ICPSR Summer Program",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Summer School in Social Sciences Methods",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Oxford Spring School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Essex Summer School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CEU Summer University",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "EUI",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "DHSI",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "IHR History",
       "status": "failed",
-      "last_attempt": "2026-07-17",
+      "last_attempt": "2026-07-23",
       "last_success": "2026-07-16",
-      "consecutive_failures": 2
+      "consecutive_failures": 3
     },
     {
       "name": "Khipu",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Helmholtz AI",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Wellcome Connecting Science",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Physalia Courses",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CISM",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "EARSeL",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Alan Turing Institute",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Tinbergen Institute",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CECAM",
-      "status": "healthy",
-      "last_attempt": "2026-07-17",
+      "status": "failed",
+      "last_attempt": "2026-07-23",
       "last_success": "2026-07-17",
-      "consecutive_failures": 0
+      "consecutive_failures": 1
     },
     {
       "name": "Boulder School",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Aspen Center for Physics",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "KITP",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "DESY Summer Student",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "CIMPA",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Hague Academy of International Law",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Asser Institute",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "EARLI",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "Stazione Zoologica",
       "status": "failed",
-      "last_attempt": "2026-07-17",
+      "last_attempt": "2026-07-23",
       "last_success": null,
-      "consecutive_failures": 7
+      "consecutive_failures": 8
     },
     {
       "name": "LSE Cities",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     },
     {
       "name": "The Berlage",
       "status": "healthy",
-      "last_attempt": "2026-07-17",
-      "last_success": "2026-07-17",
+      "last_attempt": "2026-07-23",
+      "last_success": "2026-07-23",
       "consecutive_failures": 0
     }
   ]
