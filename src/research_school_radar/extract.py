@@ -45,7 +45,8 @@ FUNDING_PATTERNS = {
         r"|covers?\s+(?:accommodation|board|lodging|subsistence|meals)"
     ),
     "financial support": (
-        r"financial support|funding (?:is )?available|support is available"
+        r"(?:financial|funding) support\s+(?:(?:is|will be)\s+)?(?:available|offered|provided)"
+        r"|funding (?:is )?available"
         r"|fully funded|all costs?[^.\n]{0,15}covered"
     ),
 }

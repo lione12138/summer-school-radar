@@ -105,6 +105,29 @@ def test_ai_does_not_override_explicit_rule_based_no_funding() -> None:
     assert merged[0].financial_access_status != "funded"
 
 
+def test_ai_vague_possible_support_does_not_fill_unknown_funding() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.source_url = "https://example.org/possibly-supported-school"
+    candidate.application_link = candidate.source_url
+    candidate.funding_available = None
+    candidate.funding_type = []
+    candidate.funding_evidence = ""
+    candidate.fee = ""
+    candidate.fee_eur = None
+    candidate = apply_hard_filters(candidate, PROFILE)
+    item = _item(candidate.source_url)
+    item["llm_extraction"]["funding"] = _field(
+        "Financial support may be available",
+        "Financial support may be available.",
+    )
+
+    merged = merge_ai_for_homepage([candidate], [item], PROFILE)
+
+    assert merged[0].funding_available is None
+    assert merged[0].funding_type == []
+    assert merged[0].financial_access_status != "funded"
+
+
 def test_write_site_persists_ai_enrichment_only_in_display_records(tmp_path) -> None:
     candidate = sample_candidate(PROFILE)
     candidate.source_url = "https://example.org/school"

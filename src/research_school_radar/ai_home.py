@@ -22,6 +22,11 @@ _FUNDING_RE = re.compile(
     r"\b(scholarship|bursary|grant|funding|financial support|travel support|stipend|waiver)\b",
     re.IGNORECASE,
 )
+_VAGUE_FUNDING_RE = re.compile(
+    r"\b(?:scholarships?|bursaries|grants?|funding|financial support|travel support|stipends?|waivers?)\s+"
+    r"(?:may|might|could)\s+be\s+(?:available|offered|provided)\b",
+    re.IGNORECASE,
+)
 _TARGET_PATTERNS = (
     ("PhD", re.compile(r"\b(phd|doctoral)\b", re.IGNORECASE)),
     ("MSc", re.compile(r"\b(master|msc)\b", re.IGNORECASE)),
@@ -131,7 +136,12 @@ def _enrich_candidate(candidate: Candidate, item: dict[str, Any], profile: dict[
         candidate.fee_eur = _fee_to_eur(candidate.fee, profile)
 
     funding = _trusted_text(item, "funding")
-    if funding and candidate.funding_available is None and _FUNDING_RE.search(funding):
+    if (
+        funding
+        and candidate.funding_available is None
+        and _FUNDING_RE.search(funding)
+        and not _VAGUE_FUNDING_RE.search(funding)
+    ):
         candidate.funding_available = True
         candidate.funding_type = _funding_types(funding)
         candidate.funding_evidence = _evidence(item, "funding")
