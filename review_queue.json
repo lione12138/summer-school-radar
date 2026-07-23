@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-17",
+  "generated": "2026-07-23",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -219,6 +219,54 @@
       },
       "ai_advisory": {
         "available": false
+      }
+    },
+    {
+      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
+      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
+      "organizer": "GESIS Summer School",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-02-22",
+        "end": "2027-03-12",
+        "duration_days": 19
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "data analysis",
+        "social science"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "22 Feb – 12 March 2027",
+        "funding": "Scholarships FAQs Sponsors & Partners Contact Fall Seminar in Computational Social Science Go to overview Courses Course Fees Socia",
+        "mode": "onsite) an exciting time in Cologne, complemented by an"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "missing_evidence_id:event_type",
+          "possibly_past_or_closed"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
       }
     },
     {
@@ -450,13 +498,12 @@
       "fee": "free of charge",
       "fee_eur": 0.0,
       "topics": [
-        "climate",
         "AI",
         "artificial intelligence",
         "machine learning",
         "computer vision",
-        "programming languages",
         "robotics",
+        "optimization",
         "engineering",
         "design"
       ],
@@ -476,13 +523,13 @@
         "validation_warnings": [
           "location_context_weak"
         ],
-        "chinese_summary": "IEEE RAS德国分会将于2026年9月7日至11日在德国基姆湖的Abtei Frauenwörth举办认知机器人暑期学校，主题为AI与机器人融合。仅限受邀申请者注册，费用为：学生/非IEEE会员800美元，学生/IEEE会员费用未完整列出。",
-        "extracted_deadline": "",
-        "extracted_fee": "Student / Non-IEEE Member: USD 800; Student / IEEE Member: US [incomplete]",
+        "chinese_summary": "IEEE RAS德国分会将于2026年9月7日至11日在德国基姆湖的Abtei Frauenwörth举办认知机器人暑期学校，主题为AI与机器人融合。注册仅对受邀者开放，截止日期为2026年7月25日。费用根据会员身份和身份（学生/非学生）有所不同。",
+        "extracted_deadline": "2026-07-25",
+        "extracted_fee": "Non-Student Registration Fees: Non-IEEE Member USD 870 (19% VAT included), IEEE Member USD 820 (19% VAT included), IEEE RAS Member USD 770 (19% VAT included); Student Registration Fees: (bring valid student ID or proof of enrollment)",
         "extracted_funding": "",
         "evidence_fields": {
-          "deadline": "",
-          "fee": "Student Registration Fees are Student / Non-IEEE Member: USD 800 Student / IEEE Member: US",
+          "deadline": "Registration is open until July 25, 2026 .",
+          "fee": "Non-Student Registration Fees Non-IEEE Member: USD 870 (19% VAT included) IEEE Member: USD 820 (19% VAT included) IEEE Robotics and Automation Society (RAS) Member: USD 770 (19% VAT included) Student Registration Fees ( Please bring a valid student ID or an official proof of enrollment to the summer school to verify your student status.",
           "funding": ""
         }
       }
@@ -657,7 +704,7 @@
       "evidence": {
         "deadline": "",
         "duration": "Aug 24, 2026 to Aug 28, 2026",
-        "funding": "funding decision: CISPA set to grow by around 45 million euros annually More ©Stephanie Bremerich CISPA-Faculty Professor Dr. M",
+        "funding": "",
         "mode": "venues of security, privacy & cryptography alone RESEAR"
       },
       "ai_advisory": {
@@ -665,15 +712,69 @@
       }
     },
     {
-      "title": "About the Summer School in Social Sciences Methods",
-      "url": "https://www.ssm.usi.ch/en/home-ssm/about-the-summer-school",
-      "organizer": "Summer School in Social Sciences Methods",
-      "source_layer": "1.5",
+      "title": "Summer School: Population Health Management",
+      "url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/phm-summer-school",
+      "organizer": "Leiden Linguistics Summer School",
+      "source_layer": "2",
       "location": "Europe",
       "dates": {
-        "start": "2026-08-06",
-        "end": "2026-08-21",
-        "duration_days": 16
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "low-fee",
+      "fee": "€ 375",
+      "fee_eur": 375.0,
+      "topics": [
+        "statistics",
+        "law",
+        "education research",
+        "archaeology",
+        "education research"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is uncertain",
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.25,
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "llm_chunk_truncated:6",
+          "llm_request_truncated:max_total_chars_per_llm_request",
+          "end_date_value_not_in_evidence"
+        ],
+        "chinese_summary": "莱顿大学人口健康管理暑期学校，2027年7月5日至9日在海牙举办，面向医疗专业人士、政策制定者、高管、顾问、博士生及健康相关硕士生，费用：专业人士950欧元，博士生375欧元，健康相关硕士生免费。",
+        "extracted_deadline": "",
+        "extracted_fee": "Professionals: € 950, PhDs: € 375, Master’s students in health related studies: free",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "CET Language: English Course fee: Professionals: € 950, PhDs: € 375, Master’s students in health related studies: for free.",
+          "funding": ""
+        }
+      }
+    },
+    {
+      "title": "Summer School on Topological Data Analysis and Applications",
+      "url": "https://indico.ictp.it/event/11447",
+      "organizer": "ICTP",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-07-19",
+        "end": "2027-07-30",
+        "duration_days": 12
       },
       "deadline": null,
       "deadline_status": "uncertain",
@@ -681,10 +782,13 @@
       "fee": "",
       "fee_eur": null,
       "topics": [
-        "social science",
-        "political science",
-        "sociology",
-        "psychology"
+        "data analysis",
+        "physics",
+        "cosmology",
+        "condensed matter",
+        "particle physics",
+        "statistical physics",
+        "mathematics"
       ],
       "needs_review": [
         "application deadline is uncertain",
@@ -694,23 +798,12 @@
       "confidence": 0.25,
       "evidence": {
         "deadline": "",
-        "duration": "6-21 August 2026",
+        "duration": "19-30 July 2027",
         "funding": "",
         "mode": ""
       },
       "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
+        "available": false
       }
     },
     {
