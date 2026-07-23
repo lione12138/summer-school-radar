@@ -245,6 +245,12 @@ _DEADLINE_NO_YEAR_PATTERN = (
     r"|\bregister\b(?:\s+\w+){0,5}\s+(?:latest|no later than)\s+on)"
     rf"[^.\n]{{0,40}}?({_NO_YEAR_DATE})(?!\s*,?\s*20\d{{2}})"
 )
+_DATE_BEFORE_APPLICATION_DEADLINE_NO_YEAR = re.compile(
+    rf"({_NO_YEAR_DATE})(?!\s*,?\s*20\d{{2}})"
+    rf"(?:(?!{_NO_YEAR_DATE})[^.\n]){{0,90}}?"
+    r"(?:application\s+deadline|deadline\s+for\s+applications?|applications?\s+deadline)\b",
+    flags=re.IGNORECASE,
+)
 _REGISTRATION_OPEN_RANGE_NO_YEAR = re.compile(
     rf"({_NO_YEAR_DATE})\s*(?:-|–|—|to|until|through)\s*({_NO_YEAR_DATE})\s*:\s*(?:registration|applications?)\s+open",
     flags=re.IGNORECASE,
@@ -280,7 +286,17 @@ def _all_deadlines(text: str, event_start: date | None = None) -> list[tuple[dat
 
 def _no_year_deadlines(text: str, event_start: date) -> list[tuple[date, str]]:
     found: list[tuple[date, str]] = []
+    date_first_matches = list(_DATE_BEFORE_APPLICATION_DEADLINE_NO_YEAR.finditer(text))
+    for match in date_first_matches:
+        parsed = _infer_no_year_date(match.group(1), event_start)
+        if parsed:
+            found.append((parsed, clean_space(match.group(0))))
     for match in re.finditer(_DEADLINE_NO_YEAR_PATTERN, text, flags=re.IGNORECASE):
+        # If the deadline phrase belongs to a date immediately before it, do
+        # not let the forward pattern attach that phrase to the next milestone
+        # (for example, an invitation-notification date).
+        if any(item.start() <= match.start() <= item.end() for item in date_first_matches):
+            continue
         parsed = _infer_no_year_date(match.group(1), event_start)
         if parsed:
             found.append((parsed, clean_space(match.group(0))))
@@ -331,4 +347,3 @@ def _select_deadline(deadlines: list[tuple[date, str]]) -> tuple[date, str] | No
 def _extract_deadline(text: str) -> date | None:
     chosen = _select_deadline(_all_deadlines(text))
     return chosen[0] if chosen else None
-

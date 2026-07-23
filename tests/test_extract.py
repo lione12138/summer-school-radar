@@ -562,6 +562,23 @@ def test_deadline_with_filler_words_is_extracted() -> None:
     assert candidate.deadline == date(2027, 3, 8)
 
 
+def test_date_before_application_deadline_is_not_shifted_to_next_milestone() -> None:
+    from research_school_radar.extract import _all_deadlines, _select_deadline
+
+    text = (
+        "Wednesday 18 March - applications open "
+        "Wednesday 29 April (midnight UTC+2 / CEST) - deadline for applications "
+        "Wednesday 6 May - invitations sent to selected participants "
+        "Wednesday 3 June - registration fee payment deadline"
+    )
+
+    chosen = _select_deadline(_all_deadlines(text, event_start=date(2026, 8, 23)))
+
+    assert chosen is not None
+    assert chosen[0] == date(2026, 4, 29)
+    assert "29 April" in chosen[1]
+
+
 def test_no_participation_fees_plural_is_free() -> None:
     page = _page(
         "Climate summer school. In-person residential training. "
