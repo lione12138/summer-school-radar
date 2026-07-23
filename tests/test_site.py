@@ -797,17 +797,17 @@ def test_public_location_uses_europe_label(tmp_path) -> None:
 def test_multi_session_programme_is_compact_and_expandable(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     candidate.title = "Social Science Data Analysis"
-    candidate.start_date = date(2026, 6, 29)
-    candidate.end_date = date(2026, 8, 14)
+    candidate.start_date = date(2099, 6, 29)
+    candidate.end_date = date(2099, 8, 14)
     candidate.duration_days = 12
-    candidate.deadline = date(2026, 7, 17)
+    candidate.deadline = date(2099, 7, 17)
     candidate.deadline_status = "open"
     candidate.sessions = [
-        ProgrammeSession("Pre-sessional 1", date(2026, 6, 29), date(2026, 7, 3), date(2026, 6, 19)),
-        ProgrammeSession("Session 1", date(2026, 7, 6), date(2026, 7, 17), date(2026, 6, 19)),
-        ProgrammeSession("Pre-sessional 2", date(2026, 7, 13), date(2026, 7, 17), date(2026, 7, 3)),
-        ProgrammeSession("Session 2", date(2026, 7, 20), date(2026, 7, 31), date(2026, 7, 3)),
-        ProgrammeSession("Session 3", date(2026, 8, 3), date(2026, 8, 14), date(2026, 7, 17)),
+        ProgrammeSession("Pre-sessional 1", date(2099, 6, 29), date(2099, 7, 3), date(2099, 6, 19)),
+        ProgrammeSession("Session 1", date(2099, 7, 6), date(2099, 7, 17), date(2099, 6, 19)),
+        ProgrammeSession("Pre-sessional 2", date(2099, 7, 13), date(2099, 7, 17), date(2099, 7, 3)),
+        ProgrammeSession("Session 2", date(2099, 7, 20), date(2099, 7, 31), date(2099, 7, 3)),
+        ProgrammeSession("Session 3", date(2099, 8, 3), date(2099, 8, 14), date(2099, 7, 17)),
     ]
 
     write_site(rank_candidates([candidate]), [], tmp_path)
@@ -818,18 +818,18 @@ def test_multi_session_programme_is_compact_and_expandable(tmp_path) -> None:
     assert '<details class="session-list">' in index
     assert "5 sessions · 5–12 days each" in index
     assert "5 个时段 · 每段 5–12 天" in index
-    assert "Pre-sessional 2: 13 Jul–17 Jul 2026 · apply by 3 Jul 2026" in index
-    assert "预备时段 2：2026年7月13日–7月17日 · 申请截止 2026年7月3日" in index
-    assert "Latest: 2026-07-17" in index
+    assert "Pre-sessional 2: 13 Jul–17 Jul 2099 · apply by 3 Jul 2099" in index
+    assert "预备时段 2：2099年7月13日–7月17日 · 申请截止 2099年7月3日" in index
+    assert "Latest: 2099-07-17" in index
     assert "最晚时段截止：" in index
     assert "47 days" not in index
     assert "47 天" not in index
     assert "5 sessions · 5–12 days each" in detail
     assert payload["opportunities"][0]["sessions"][0] == {
         "name": "Pre-sessional 1",
-        "start_date": "2026-06-29",
-        "end_date": "2026-07-03",
-        "application_deadline": "2026-06-19",
+        "start_date": "2099-06-29",
+        "end_date": "2099-07-03",
+        "application_deadline": "2099-06-19",
     }
     restored = candidate_from_mapping(payload["opportunities"][0])
     assert restored.sessions == candidate.sessions

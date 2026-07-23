@@ -131,7 +131,7 @@ def _enrich_candidate(candidate: Candidate, item: dict[str, Any], profile: dict[
         candidate.fee_eur = _fee_to_eur(candidate.fee, profile)
 
     funding = _trusted_text(item, "funding")
-    if funding and candidate.funding_available is not True and _FUNDING_RE.search(funding):
+    if funding and candidate.funding_available is None and _FUNDING_RE.search(funding):
         candidate.funding_available = True
         candidate.funding_type = _funding_types(funding)
         candidate.funding_evidence = _evidence(item, "funding")

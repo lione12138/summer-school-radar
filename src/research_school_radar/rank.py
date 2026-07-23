@@ -183,7 +183,14 @@ def _merge_into(primary: Candidate, other: Candidate) -> None:
         primary.duration_days = other.duration_days
     if not primary.location and other.location:
         primary.location = other.location
-    if primary.funding_available is not True and other.funding_available is True:
+    # An explicit self-payment/no-funding statement is stronger than a vague
+    # positive found on a duplicate page. Precision matters here: otherwise a
+    # higher-scoring false positive can erase the official cost responsibility.
+    if other.funding_available is False:
+        primary.funding_available = False
+        primary.funding_type = []
+        primary.funding_evidence = other.funding_evidence or primary.funding_evidence
+    elif primary.funding_available is None and other.funding_available is True:
         primary.funding_available = True
         primary.funding_type = other.funding_type or primary.funding_type
         primary.funding_evidence = primary.funding_evidence or other.funding_evidence

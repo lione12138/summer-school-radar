@@ -257,6 +257,33 @@ def test_rank_recomputes_filters_and_score_after_duplicate_enrichment() -> None:
     assert merged.recommendation_reason == "; ".join(expected_reasons[:4])
 
 
+def test_explicit_no_funding_wins_when_duplicate_has_vague_positive() -> None:
+    vague_positive = sample_candidate(PROFILE)
+    vague_positive.source_url = "https://example.org/cern-school"
+    vague_positive.funding_available = True
+    vague_positive.funding_type = ["financial support"]
+    vague_positive.funding_evidence = "Financial support may be available."
+    explicit_responsibility = replace(
+        vague_positive,
+        source_url="https://example.org/cern-school/apply",
+        funding_available=False,
+        funding_type=[],
+        funding_evidence=(
+            "Applicants are responsible for ensuring that their home institute or employer "
+            "covers their registration fee and travel costs."
+        ),
+        score=0,
+    )
+
+    ranked = rank_candidates([vague_positive, explicit_responsibility], profile=PROFILE)
+
+    assert len(ranked) == 1
+    assert ranked[0].funding_available is False
+    assert ranked[0].funding_type == []
+    assert "applicants are responsible" in ranked[0].funding_evidence.lower()
+    assert ranked[0].financial_access_status != "funded"
+
+
 def test_application_page_without_dates_can_close_parent_candidate() -> None:
     source = Source(
         name="Karthaus Summer School",

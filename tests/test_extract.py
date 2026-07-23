@@ -411,6 +411,38 @@ def test_negated_funding_is_not_treated_as_available() -> None:
     assert candidate.funding_type == []
 
 
+def test_applicant_payment_responsibility_overrides_vague_financial_support() -> None:
+    page = _page(
+        "CERN School of Computing. Scientific Computing: Theory and Practice. "
+        "The school takes place from 23 August 2026 to 5 September 2026 in Liverpool, UK. "
+        "Financial support may be available. "
+        "Applicants are responsible for ensuring that their home institute or employer covers "
+        "their registration fee and travel cost, or, failing this, themselves."
+    )
+
+    candidate = extract_candidate(page, PROFILE)
+
+    assert candidate is not None
+    assert candidate.funding_available is False
+    assert candidate.funding_type == []
+    assert "applicants are responsible" in candidate.funding_evidence.lower()
+
+
+def test_explicit_participant_grant_survives_residual_cost_responsibility() -> None:
+    page = _page(
+        "Data science summer school. In-person training from 1 July 2027 to 10 July 2027. "
+        "Application deadline: 1 March 2027. Travel grants are available to selected students. "
+        "Applicants are responsible for costs not covered by the travel grant. "
+        "Topics include hydrology and data science."
+    )
+
+    candidate = extract_candidate(page, PROFILE)
+
+    assert candidate is not None
+    assert candidate.funding_available is True
+    assert "travel grant" in candidate.funding_type
+
+
 def test_evidence_and_confidence_are_captured() -> None:
     page = _page(
         "Hydrology summer school. In-person residential training. "
@@ -1019,7 +1051,7 @@ def test_uncertain_deadline_starting_within_15_days_is_closed() -> None:
 
 
 def test_essex_application_page_enriches_social_science_data_analysis() -> None:
-    as_of = date(2026, 7, 12)
+    as_of = date(2099, 7, 12)
     source = Source(
         name="Essex Summer School",
         url="https://www.essex.ac.uk/summer-schools/social-science-data-analysis",
@@ -1034,10 +1066,10 @@ def test_essex_application_page_enriches_social_science_data_analysis() -> None:
             "Social Science Data Analysis. Essex Summer School in Social Science Data Analysis. "
             "Our 59th annual summer school will offer a combination of in-person and online courses. "
             "The core Summer School consists of three two-week sessions. "
-            "Pre Sessional 1: Monday 29 June - Friday 3 July 2026. "
-            "Session One: Monday 6 July - Friday 17 July 2026. "
-            "Session Two: Monday 20 July - Friday 31 July 2026. "
-            "Session Three: Monday 3 August - Friday 14 August 2026. "
+            "Pre Sessional 1: Monday 29 June - Friday 3 July 2099. "
+            "Session One: Monday 6 July - Friday 17 July 2099. "
+            "Session Two: Monday 20 July - Friday 31 July 2099. "
+            "Session Three: Monday 3 August - Friday 14 August 2099. "
             "In person courses will be held at our Colchester campus. "
             "Mathematics for Social Scientists is provided free of charge for participants. "
             "Fees differ by length of course. Topics include social science data analysis and statistics."
@@ -1055,15 +1087,15 @@ def test_essex_application_page_enriches_social_science_data_analysis() -> None:
         title="Application",
         text=(
             "Application. Essex Summer School in Social Science Data Analysis. "
-            "2026 APPLICATIONS ARE NOW OPEN. APPLICATION CLOSING DATES "
-            "Pre-sessional 1 and session one: 19 June 2026 "
-            "Pre-sessional 2 and Session two: 3 July 2026 "
-            "Session three: 17 July 2026. "
-            "2026 Programme Dates Pre-sessional 1: Monday 29 June - Friday 3 July 2026 "
-            "Session 1: Monday 6 July – Friday 17 July 2026 "
-            "Pre-sessional 2: Monday 13 July - Friday 17 July 2026 "
-            "Session 2: Monday 20 July – Friday 31 July 2026 "
-            "Session 3: Monday 3 August – Friday 14 August 2026. "
+            "2099 APPLICATIONS ARE NOW OPEN. APPLICATION CLOSING DATES "
+            "Pre-sessional 1 and session one: 19 June 2099 "
+            "Pre-sessional 2 and Session two: 3 July 2099 "
+            "Session three: 17 July 2099. "
+            "2099 Programme Dates Pre-sessional 1: Monday 29 June - Friday 3 July 2099 "
+            "Session 1: Monday 6 July – Friday 17 July 2099 "
+            "Pre-sessional 2: Monday 13 July - Friday 17 July 2099 "
+            "Session 2: Monday 20 July – Friday 31 July 2099 "
+            "Session 3: Monday 3 August – Friday 14 August 2099. "
             "Courses are delivered in person, online or hybrid mode. "
             "In-person courses will be held at our Colchester campus. "
             "Current Degree Programme Undergraduate Masters PhD Not Currently a Student. "
@@ -1086,19 +1118,19 @@ def test_essex_application_page_enriches_social_science_data_analysis() -> None:
     candidate = ranked[0]
     assert candidate.title == "Social Science Data Analysis"
     assert candidate.application_link == "https://essexsummerschool.com/new-application/"
-    assert candidate.deadline == date(2026, 7, 17)
+    assert candidate.deadline == date(2099, 7, 17)
     assert candidate.deadline_status == "open"
-    assert candidate.start_date == date(2026, 6, 29)
-    assert candidate.end_date == date(2026, 8, 14)
+    assert candidate.start_date == date(2099, 6, 29)
+    assert candidate.end_date == date(2099, 8, 14)
     assert [
         (session.name, session.start_date, session.end_date, session.application_deadline)
         for session in candidate.sessions
     ] == [
-        ("Pre-sessional 1", date(2026, 6, 29), date(2026, 7, 3), date(2026, 6, 19)),
-        ("Session 1", date(2026, 7, 6), date(2026, 7, 17), date(2026, 6, 19)),
-        ("Pre-sessional 2", date(2026, 7, 13), date(2026, 7, 17), date(2026, 7, 3)),
-        ("Session 2", date(2026, 7, 20), date(2026, 7, 31), date(2026, 7, 3)),
-        ("Session 3", date(2026, 8, 3), date(2026, 8, 14), date(2026, 7, 17)),
+        ("Pre-sessional 1", date(2099, 6, 29), date(2099, 7, 3), date(2099, 6, 19)),
+        ("Session 1", date(2099, 7, 6), date(2099, 7, 17), date(2099, 6, 19)),
+        ("Pre-sessional 2", date(2099, 7, 13), date(2099, 7, 17), date(2099, 7, 3)),
+        ("Session 2", date(2099, 7, 20), date(2099, 7, 31), date(2099, 7, 3)),
+        ("Session 3", date(2099, 8, 3), date(2099, 8, 14), date(2099, 7, 17)),
     ]
     # The outer programme window is 47 days, but no individual session lasts
     # that long. Duration/ranking must use a real selectable session.

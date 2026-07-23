@@ -57,6 +57,23 @@ NEGATION_BEFORE = re.compile(
     flags=re.IGNORECASE,
 )
 
+# An opportunity does not fund participants merely because their university or
+# employer might pay.  This statement often appears far away from a vague
+# boilerplate sentence such as "Financial support may be available", so the
+# local negation check above cannot resolve the contradiction on its own.
+PARTICIPANT_PAYMENT_RESPONSIBILITY_PATTERN = (
+    r"\b(?:applicants?|participants?|students?)\s+"
+    r"(?:(?:are|remain|will be)\s+responsible\s+for[^.\n]{0,220}"
+    r"(?:fees?|costs?|expenses?|travel|accommodation)"
+    r"|(?:must|should|will)\s+(?:cover|pay|fund)[^.\n]{0,100}\bown\b[^.\n]{0,80}"
+    r"(?:fees?|costs?|expenses?|travel|accommodation))\b"
+)
+
+# These are concrete participant benefits.  They may coexist with a statement
+# that participants must pay whatever remains, so that statement must not erase
+# them.  Only the ambiguous catch-all "financial support" is overridden.
+CONCRETE_FUNDING_TYPES = frozenset(FUNDING_PATTERNS) - {"financial support"}
+
 # Generic page titles that carry no opportunity identity and should be skipped
 # in favour of an <h1> or og:title.
 GENERIC_TITLES = {
@@ -219,11 +236,24 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         funding_types = [
             label for label, pattern in FUNDING_PATTERNS.items() if _funding_is_offered(text, pattern)
         ]
-    funding_available = overrides.get("funding_available", True if funding_types else None)
-    funding_evidence = str(overrides.get("funding_evidence") or evidence_window(
+    payment_responsibility_evidence = evidence_window(
         text,
-        r"scholarship|travel grant|tuition waiver|stipend|financial support|funding",
-    ))
+        PARTICIPANT_PAYMENT_RESPONSIBILITY_PATTERN,
+    )
+    if (
+        "funding_available" not in overrides
+        and payment_responsibility_evidence
+        and not CONCRETE_FUNDING_TYPES.intersection(funding_types)
+    ):
+        funding_types = []
+        funding_available = False
+        funding_evidence = payment_responsibility_evidence
+    else:
+        funding_available = overrides.get("funding_available", True if funding_types else None)
+        funding_evidence = str(overrides.get("funding_evidence") or evidence_window(
+            text,
+            r"scholarship|travel grant|tuition waiver|stipend|financial support|funding",
+        ))
     mode = _extract_mode(text)
     # Fall back to the JSON-LD event name when the page's HTML titles are all
     # generic ("Home", "Events", ...).
