@@ -88,7 +88,7 @@
     "title": "Exeter Machine Learning Summer School"
   },
   "https://csc.web.cern.ch/csc-2026/": {
-    "deadline": "2026-05-06",
+    "deadline": "2026-04-29",
     "first_seen": "2026-07-16",
     "last_seen": "2026-07-23",
     "source_url": "https://csc.web.cern.ch/csc-2026/",
@@ -1034,7 +1034,8 @@
   "https://www.essex.ac.uk/short-courses/social-science-data-analysis": {
     "deadline": null,
     "first_seen": "2026-06-18",
-    "last_seen": "2026-06-18",
+    "last_seen": "2026-07-23",
+    "source_url": "https://www.essex.ac.uk/short-courses/social-science-data-analysis",
     "status": "near_match",
     "title": "Social Science Data Analysis"
   },

@@ -185,54 +185,6 @@
       }
     },
     {
-      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
-      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
-      "organizer": "GESIS Summer School",
-      "source_layer": "1",
-      "location": "Europe",
-      "dates": {
-        "start": "2027-02-22",
-        "end": "2027-03-12",
-        "duration_days": 19
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "funded",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "data analysis",
-        "social science"
-      ],
-      "needs_review": [
-        "application deadline is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "",
-        "duration": "22 Feb – 12 March 2027",
-        "funding": "Scholarships FAQs Sponsors & Partners Contact Fall Seminar in Computational Social Science Go to overview Courses Course Fees Socia",
-        "mode": "onsite) an exciting time in Cologne, complemented by an"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "missing_evidence_id:event_type",
-          "possibly_past_or_closed"
-        ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
-      }
-    },
-    {
       "title": "Applied Public Policy Evaluation",
       "url": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
       "organizer": "Tinbergen Institute",
