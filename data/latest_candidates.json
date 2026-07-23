@@ -260,70 +260,6 @@
       "is_new": false
     },
     {
-      "title": "48th CERN School of Computing",
-      "type": "school of computing",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "University of Liverpool, Liverpool, United Kingdom",
-      "mode": "in-person",
-      "start_date": "2026-08-23",
-      "end_date": "2026-09-05",
-      "duration_days": 14,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": true,
-      "funding_type": [
-        "financial support"
-      ],
-      "funding_evidence": "Financial support may be available. Categories Schools , Upcoming School Post navigation Previous Post Previous tCSC 2026 Next Post Next",
-      "topic_keywords": [
-        "software engineering",
-        "physics",
-        "particle physics",
-        "engineering",
-        "history"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://csc.web.cern.ch/csc-2026/",
-      "source_url": "https://csc.web.cern.ch/csc-2026/",
-      "summary": "CSC 2026 – CERN School of Computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a School History Past schools Photo gallery Al",
-      "recommendation_reason": "topic match: software engineering, physics, particle physics, engineering; funding evidence: financial support; 14 days; priority region",
-      "risk_points": "application deadline is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [
-        "application deadline is uncertain"
-      ],
-      "score": 92.0,
-      "score_explanation": [
-        "topic match: software engineering, physics, particle physics, engineering",
-        "funding evidence: financial support",
-        "14 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "near-match only: application deadline is uncertain"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "23 August – 5 September 2026",
-      "mode_evidence": "",
-      "extraction_confidence": 0.75,
-      "title_zh": "第48届CERN计算学校",
-      "organizer_zh": "CERN计算学校",
-      "location_zh": "英国利物浦，利物浦大学",
-      "summary_zh": "CSC 2026 – CERN计算学校 跳转到内容 CERN 加速科学 CERN计算学校 创建科学计算共同文化 菜单 欢迎 关于学校 主学校 专题学校 反向学校 人员 主办学校 历史 往届学校 相册",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "主题匹配：软件工程、物理学、粒子物理、工程学；资金证明：经济支持；14天；优先区域",
-      "risk_points_zh": "申请截止日期不确定",
-      "is_new": false
-    },
-    {
       "title": "Organizing Water",
       "type": "short course",
       "organizer": "IHE Delft",
@@ -764,200 +700,6 @@
       "is_new": false
     },
     {
-      "title": "GESIS Summer School in Survey Methodology",
-      "type": "summer school",
-      "organizer": "GESIS Summer School",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "hybrid",
-      "start_date": "2026-07-22",
-      "end_date": "2026-08-14",
-      "duration_days": 5,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": true,
-      "funding_type": [
-        "scholarship"
-      ],
-      "funding_evidence": "Scholarships FAQs Sponsors & Partners Contact Fall Seminar in Computational Social Science Go to overview Courses Course Fees Socia",
-      "topic_keywords": [
-        "AI",
-        "data science",
-        "data analysis",
-        "design",
-        "social science"
-      ],
-      "eligibility": "PhD student, post-doc, junior or senior researcher, or survey professional, you will: receive high quality training in state-of-the-art techniques and methods of s",
-      "target_level": "PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
-      "source_url": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
-      "summary": "Summer School: Survey Methodology Training - GESIS Training Deutsch Contact Career Login Alles GESIS Training What we offer Summer School in Survey Methodology GESIS Training About us About us Menü schließen Mission Go to overview Key Topics Go to overview Team Go to overview Loc",
-      "recommendation_reason": "topic match: AI, data science, data analysis, design; funding evidence: scholarship; 5 days; priority region",
-      "risk_points": "application deadline has passed",
-      "sessions": [
-        {
-          "name": "Short Course A: Introduction to R for Data Analysis",
-          "start_date": "2026-07-22",
-          "end_date": "2026-07-23",
-          "application_deadline": null
-        },
-        {
-          "name": "Short Course C: Pretesting Survey Questions",
-          "start_date": "2026-07-22",
-          "end_date": "2026-07-24",
-          "application_deadline": null
-        },
-        {
-          "name": "Short Course D: Systematic Review, Meta-Analysis, and Evidence Synthesis Using Model Selection",
-          "start_date": "2026-07-22",
-          "end_date": "2026-07-24",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 1: Factorial Survey Design",
-          "start_date": "2026-07-27",
-          "end_date": "2026-07-31",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 2: Advanced Questionnaire Design",
-          "start_date": "2026-07-27",
-          "end_date": "2026-07-31",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 3: AI-Assisted Surveys: Using AI Tools at Each Step of the Survey Research Process",
-          "start_date": "2026-07-27",
-          "end_date": "2026-07-31",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 4: Data Science Techniques for Survey Researchers",
-          "start_date": "2026-08-03",
-          "end_date": "2026-08-07",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 5: Latent Variable Modeling in Survey Research: Classical and New Approaches",
-          "start_date": "2026-08-03",
-          "end_date": "2026-08-07",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 7: Causal Inference Using Survey Data",
-          "start_date": "2026-08-10",
-          "end_date": "2026-08-14",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 8: Applied Introduction to Bots in Web-based Studies",
-          "start_date": "2026-08-10",
-          "end_date": "2026-08-14",
-          "application_deadline": null
-        },
-        {
-          "name": "Short Course E: Applied Causal Inference Using Directed Acyclic Graphs (DAGs)",
-          "start_date": "2026-08-12",
-          "end_date": "2026-08-14",
-          "application_deadline": null
-        }
-      ],
-      "identity_key": "",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [
-        "application deadline has passed"
-      ],
-      "score": 87.0,
-      "score_explanation": [
-        "topic match: AI, data science, data analysis, design",
-        "funding evidence: scholarship",
-        "5 days",
-        "priority region",
-        "trusted source layer 1",
-        "hybrid",
-        "target level: PhD",
-        "near-match only: application deadline has passed"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "22 July - 14 August 2026",
-      "mode_evidence": "onsite or online participation). ► Online courses will b",
-      "extraction_confidence": 0.75,
-      "title_zh": "GESIS调查方法暑期学校",
-      "organizer_zh": "GESIS暑期学校",
-      "location_zh": "欧洲",
-      "summary_zh": "暑期学校：调查方法培训 - GESIS培训 Deutsch 联系 职业 登录 所有 GESIS培训 我们提供的 调查方法暑期学校 GESIS培训 关于我们 关于我们 菜单关闭 使命 转到概览 关键主题 转到概览 团队 转到概览 地点",
-      "eligibility_zh": "博士生、博士后、初级或高级研究员或调查专业人员，您将：接受关于最新技术和方法的高质量培训",
-      "recommendation_reason_zh": "主题匹配：人工智能、数据科学、数据分析、设计；资金证据：奖学金；5天；优先区域",
-      "risk_points_zh": "申请截止日期已过",
-      "is_new": false
-    },
-    {
-      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
-      "type": "summer school",
-      "organizer": "GESIS Summer School",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "in-person",
-      "start_date": "2027-02-22",
-      "end_date": "2027-03-12",
-      "duration_days": 19,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": true,
-      "funding_type": [
-        "scholarship"
-      ],
-      "funding_evidence": "Scholarships FAQs Sponsors & Partners Contact Fall Seminar in Computational Social Science Go to overview Courses Course Fees Socia",
-      "topic_keywords": [
-        "data analysis",
-        "social science"
-      ],
-      "eligibility": "PhD students, post-docs, junior and senior researchers who are interested in developing and improving their knowledge and skills in state-of-the-art techniques in",
-      "target_level": "PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
-      "source_url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
-      "summary": "Spring Seminar: Cutting-Edge Methods in Social Research - GESIS Training Deutsch Contact Career Login Alles GESIS Training What we offer Spring Seminar – Cutting-Edge Methods GESIS Training About us About us Menü schließen Mission Go to overview Key Topics Go to overview Team Go",
-      "recommendation_reason": "topic match: data analysis, social science; funding evidence: scholarship; 19 days; priority region",
-      "risk_points": "application deadline is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [
-        "application deadline is uncertain"
-      ],
-      "score": 87.0,
-      "score_explanation": [
-        "topic match: data analysis, social science",
-        "funding evidence: scholarship",
-        "19 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "target level: PhD",
-        "near-match only: application deadline is uncertain"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "",
-      "mode_evidence": "onsite) an exciting time in Cologne, complemented by an",
-      "extraction_confidence": 0.75,
-      "title_zh": "GESIS春季研讨会 – 前沿方法",
-      "organizer_zh": "GESIS暑期学校",
-      "location_zh": "欧洲",
-      "summary_zh": "春季研讨会：社会研究前沿方法 - GESIS培训 Deutsch 联系 职业 登录 所有 GESIS培训 我们提供什么 春季研讨会 – 前沿方法 GESIS培训 关于我们 关于我们 菜单关闭 使命 转到概览 关键主题 转到概览 团队 转到",
-      "eligibility_zh": "博士生、博士后、初级和高级研究人员，有兴趣发展和提升其在最新技术方面的知识和技能",
-      "recommendation_reason_zh": "主题匹配：数据分析，社会科学；资助证据：奖学金；19天；优先区域",
-      "risk_points_zh": "申请截止日期不确定",
-      "is_new": false
-    },
-    {
       "title": "Applied Public Policy Evaluation",
       "type": "summer school",
       "organizer": "Tinbergen Institute",
@@ -972,8 +714,7 @@
       "deadline_status": "uncertain",
       "funding_available": true,
       "funding_type": [
-        "scholarship",
-        "financial support"
+        "scholarship"
       ],
       "funding_evidence": "scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat w",
       "topic_keywords": [
@@ -991,7 +732,7 @@
       "application_link": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
       "source_url": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
       "summary": "Applied Public Policy Evaluation – Tinbergen.nl Find a person About us Job Market Contact Intranet Graduate Programs Research Browse our Courses Events News Summer School Alumni Graduate Programs Tinbergen Institute Research Master in Economics Why Tinbergen Institute? Research M",
-      "recommendation_reason": "topic match: climate, climate change, machine learning, deep learning; funding evidence: scholarship, financial support; 5 days; priority region",
+      "recommendation_reason": "topic match: climate, climate change, machine learning, deep learning; funding evidence: scholarship; 5 days; priority region",
       "risk_points": "application deadline is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -1002,7 +743,7 @@
       "score": 86.0,
       "score_explanation": [
         "topic match: climate, climate change, machine learning, deep learning",
-        "funding evidence: scholarship, financial support",
+        "funding evidence: scholarship",
         "5 days",
         "priority region",
         "in-person",
@@ -1017,9 +758,9 @@
       "title_zh": "应用公共政策评估",
       "organizer_zh": "丁伯根研究所",
       "location_zh": "住房学生委员会",
-      "summary_zh": "应用公共政策评估 – Tinbergen.nl 查找人员 关于我们 就业市场 联系 内网 研究生项目 研究 浏览我们的课程 活动 新闻 暑期学校 校友 研究生项目 丁伯根研究所 经济学研究硕士 为什么选择丁伯根研究所？研究硕士",
-      "eligibility_zh": "经济学研究硕士 为什么选择丁伯根研究所？研究硕士项目结构 学习安排 转博士 就业市场 招生 入学要求 申请",
-      "recommendation_reason_zh": "主题匹配：气候、气候变化、机器学习、深度学习；资金证据：奖学金、经济支持；5天；优先地区",
+      "summary_zh": "应用公共政策评估 – Tinbergen.nl 查找人员 关于我们 就业市场 联系 内网 研究生项目 研究 浏览我们的课程 活动 新闻 暑期学校 校友 研究生项目 丁伯根研究所 经济学研究硕士 为何选择丁伯根研究所？研究硕士",
+      "eligibility_zh": "经济学硕士 为何选择丁伯根研究所？研究硕士项目结构 学习安排 转博士 就业市场 招生 入学要求 申请",
+      "recommendation_reason_zh": "主题匹配：气候、气候变化、机器学习、深度学习；资金证据：奖学金；5天；优先地区",
       "risk_points_zh": "申请截止日期不确定",
       "is_new": false
     },
@@ -1038,8 +779,7 @@
       "deadline_status": "uncertain",
       "funding_available": true,
       "funding_type": [
-        "scholarship",
-        "financial support"
+        "scholarship"
       ],
       "funding_evidence": "scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat w",
       "topic_keywords": [
@@ -1057,7 +797,7 @@
       "application_link": "https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change",
       "source_url": "https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change",
       "summary": "Economics of Climate Change – Tinbergen.nl Find a person About us Job Market Contact Intranet Graduate Programs Research Browse our Courses Events News Summer School Alumni Graduate Programs Tinbergen Institute Research Master in Economics Why Tinbergen Institute? Research Master",
-      "recommendation_reason": "topic match: climate, climate change, machine learning, deep learning; funding evidence: scholarship, financial support; 5 days; priority region",
+      "recommendation_reason": "topic match: climate, climate change, machine learning, deep learning; funding evidence: scholarship; 5 days; priority region",
       "risk_points": "application deadline is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -1068,7 +808,7 @@
       "score": 86.0,
       "score_explanation": [
         "topic match: climate, climate change, machine learning, deep learning",
-        "funding evidence: scholarship, financial support",
+        "funding evidence: scholarship",
         "5 days",
         "priority region",
         "in-person",
@@ -1083,9 +823,9 @@
       "title_zh": "气候变化经济学",
       "organizer_zh": "丁伯根研究所",
       "location_zh": "学生住房委员会",
-      "summary_zh": "气候变化经济学 – Tinbergen.nl 查找人员 关于我们 就业市场 联系 内网 研究生项目 研究 浏览我们的课程 活动 新闻 暑期学校 校友 研究生项目 丁伯根研究所 经济学研究硕士 为什么选择丁伯根研究所？研究硕士",
-      "eligibility_zh": "经济学研究硕士 为什么选择丁伯根研究所？研究硕士 项目结构 学习安排 转博士 就业市场 招生 入学要求 申请",
-      "recommendation_reason_zh": "主题匹配：气候、气候变化、机器学习、深度学习；资金证据：奖学金、经济支持；5天；优先地区",
+      "summary_zh": "气候变化经济学 – Tinbergen.nl 寻找人员 关于我们 就业市场 联系 内网 研究生项目 研究 浏览我们的课程 活动 新闻 暑期学校 校友 研究生项目 丁伯根研究所 经济学研究硕士 为什么选择丁伯根研究所？研究硕士",
+      "eligibility_zh": "经济学硕士 为什么选择丁伯根研究所？研究硕士项目结构 学习安排 转博士 就业市场 招生 入学要求 申请",
+      "recommendation_reason_zh": "主题匹配：气候、气候变化、机器学习、深度学习；资助证据：奖学金；5天；优先地区",
       "risk_points_zh": "申请截止日期不确定",
       "is_new": false
     },
@@ -1104,8 +844,7 @@
       "deadline_status": "not_open",
       "funding_available": true,
       "funding_type": [
-        "scholarship",
-        "financial support"
+        "scholarship"
       ],
       "funding_evidence": "Scholarship Sponsors ANBI All About The Academy Sixth Column News Calendar Of Events Support the Academy Frequently Asked Questions",
       "topic_keywords": [
@@ -1122,7 +861,7 @@
       "application_link": "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/",
       "source_url": "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/",
       "summary": "2026 Advanced Course on International Criminal Law | The Hague Academy of International Law Created with Sketch. About The Academy Our Programmes The Experience Of A Lifetime Support the Academy en en fr Back Login Practical Information Practical Information Practical Information",
-      "recommendation_reason": "topic match: artificial intelligence, law, international law, design; funding evidence: scholarship, financial support; 119 days; priority region",
+      "recommendation_reason": "topic match: artificial intelligence, law, international law, design; funding evidence: scholarship; 119 days; priority region",
       "risk_points": "applications are not open yet; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -1134,7 +873,7 @@
       "score": 84.0,
       "score_explanation": [
         "topic match: artificial intelligence, law, international law, design",
-        "funding evidence: scholarship, financial support",
+        "funding evidence: scholarship",
         "119 days",
         "priority region",
         "trusted source layer 1.5",
@@ -1151,7 +890,7 @@
       "location_zh": "欧洲",
       "summary_zh": "2026年国际刑法高级课程 | 海牙国际法学院 创建于草图。关于我们 我们的课程 一生一次的体验 支持学院 en en fr 返回 登录 实用信息 实用信息 实用信息",
       "eligibility_zh": "博士研究人员等",
-      "recommendation_reason_zh": "主题匹配：人工智能、法律、国际法、设计；资金证据：奖学金、经济支持；119天；优先地区",
+      "recommendation_reason_zh": "主题匹配：人工智能、法律、国际法、设计；资金证明：奖学金；119天；优先地区",
       "risk_points_zh": "申请尚未开放；线下状态不确定",
       "is_new": false
     },
@@ -1622,8 +1361,7 @@
       "deadline_status": "closed",
       "funding_available": true,
       "funding_type": [
-        "scholarship",
-        "financial support"
+        "scholarship"
       ],
       "funding_evidence": "Scholarships and Financial Support FAQ Facts and Figures Your pre-research master trajectory Refresh and Test your knowledge Progra",
       "topic_keywords": [
@@ -1644,7 +1382,7 @@
       "application_link": "https://businessdatascience.nl/foundations-of-machine-learning-with-applications-in-python",
       "source_url": "https://businessdatascience.nl/foundations-of-machine-learning-with-applications-in-python",
       "summary": "Summer School 2026 Foundations of Machine Learning with Applications in Python Find a person About us Job Market Contact Intranet Graduate Program Research Browse our Courses Events News Summer School Alumni Graduate Program Why study Business Data Science? Research Master Progra",
-      "recommendation_reason": "topic match: machine learning, deep learning, data science, mathematics; funding evidence: scholarship, financial support; 5 days; priority region",
+      "recommendation_reason": "topic match: machine learning, deep learning, data science, mathematics; funding evidence: scholarship; 5 days; priority region",
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
@@ -1655,7 +1393,7 @@
       "score": 82.0,
       "score_explanation": [
         "topic match: machine learning, deep learning, data science, mathematics",
-        "funding evidence: scholarship, financial support",
+        "funding evidence: scholarship",
         "5 days",
         "priority region",
         "in-person",
@@ -1669,10 +1407,10 @@
       "extraction_confidence": 1.0,
       "title_zh": "Python机器学习基础与应用",
       "organizer_zh": "丁伯根研究所",
-      "location_zh": "住房学生委员会",
-      "summary_zh": "2026年暑期学校：Python机器学习基础与应用。查找人员 关于我们 就业市场 联系方式 内部网 研究生项目 研究 浏览我们的课程 活动 新闻 暑期学校 校友 研究生项目 为什么学习商业数据科学？研究硕士项目",
-      "eligibility_zh": "硕士项目大纲 学习安排 匹配 校友 招生 入学要求 申请流程 学费、奖学金与财务支持 常见问题 学院",
-      "recommendation_reason_zh": "主题匹配：机器学习、深度学习、数据科学、数学；资助证据：奖学金、财务支持；5天；优先地区",
+      "location_zh": "住房学生会",
+      "summary_zh": "2026年暑期学校：Python机器学习基础与应用。查找人员、关于我们、就业市场、联系方式、内联网、研究生项目、研究、浏览课程、活动、新闻、暑期学校、校友、研究生项目、为何学习商业数据科学？研究硕士项目",
+      "eligibility_zh": "硕士项目大纲、学习安排、匹配、校友、录取、入学要求、申请流程、学费、奖学金与财务支持、常见问题、院系",
+      "recommendation_reason_zh": "主题匹配：机器学习、深度学习、数据科学、数学；资金证据：奖学金；5天；优先地区",
       "risk_points_zh": "申请截止日期已过",
       "is_new": false
     },
@@ -3163,69 +2901,6 @@
       "is_new": false
     },
     {
-      "title": "Lectures (this is not a final list)",
-      "type": "summer school",
-      "organizer": "Bernstein Network",
-      "source_layer": "2",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "uncertain",
-      "start_date": "2026-07-06",
-      "end_date": "2026-07-24",
-      "duration_days": 19,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "Funding acquisition and management: Soledad Gonzalo Cogno Home: Schedule Lectures (this is not a final list) Information theory",
-      "topic_keywords": [
-        "physics",
-        "mathematics",
-        "engineering",
-        "mechanics",
-        "computational neuroscience",
-        "neuroscience"
-      ],
-      "eligibility": "PhD students",
-      "target_level": "MSc, PhD, postdoc",
-      "fee": "no registration fees",
-      "fee_eur": 0.0,
-      "application_link": "https://www.compneuronrsn.org/",
-      "source_url": "https://www.compneuronrsn.org/",
-      "summary": "Mathematical Methods in Computational Neuroscience top of page Mathematical Methods in Computational Neuroscience 6 July - 24 July 2026, Fred Kavli Knowledge Center, Eresfjord, Norway About Main Lectures Seminars Schedule Apply Past Editions Fred Kavli Science Center More Use tab",
-      "recommendation_reason": "topic match: physics, mathematics, engineering, mechanics; low fee: approximately EUR 0; 19 days; priority region",
-      "risk_points": "application deadline has passed; in-person status is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "low-fee",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "in-person status is uncertain"
-      ],
-      "score": 70.0,
-      "score_explanation": [
-        "topic match: physics, mathematics, engineering, mechanics",
-        "low fee: approximately EUR 0",
-        "19 days",
-        "priority region",
-        "target level: MSc, PhD, postdoc",
-        "near-match only: application deadline has passed; in-person status is uncertain"
-      ],
-      "first_seen": "2026-07-15",
-      "deadline_evidence": "",
-      "duration_evidence": "6 July - 24 July 2026",
-      "mode_evidence": "",
-      "extraction_confidence": 0.5,
-      "title_zh": "讲座（此为非最终列表）",
-      "organizer_zh": "伯恩斯坦网络",
-      "location_zh": "欧洲",
-      "summary_zh": "计算神经科学中的数学方法 页面顶部 计算神经科学中的数学方法 2026年7月6日至24日，挪威埃雷斯峡湾，弗雷德·卡夫利知识中心 关于 主要讲座 日程 日程安排 申请 往届 弗雷德·卡夫利科学中心 更多 使用Tab键",
-      "eligibility_zh": "博士生",
-      "recommendation_reason_zh": "主题匹配：物理、数学、工程、力学；费用低：约0欧元；19天；优先区域",
-      "risk_points_zh": "申请截止日期已过；线下状态不确定",
-      "is_new": false
-    },
-    {
       "title": "ELLIS Summer School at Unit Saarbrücken",
       "type": "summer school",
       "organizer": "ELLIS",
@@ -3535,6 +3210,68 @@
       "is_new": true
     },
     {
+      "title": "48th CERN School of Computing",
+      "type": "school of computing",
+      "organizer": "CERN School of Computing",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "University of Liverpool, Liverpool, United Kingdom",
+      "mode": "in-person",
+      "start_date": "2026-08-23",
+      "end_date": "2026-09-05",
+      "duration_days": 14,
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "Financial support may be available. Categories Schools , Upcoming School Post navigation Previous Post Previous tCSC 2026 Next Post Next",
+      "topic_keywords": [
+        "software engineering",
+        "physics",
+        "particle physics",
+        "engineering",
+        "history"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://csc.web.cern.ch/csc-2026/",
+      "source_url": "https://csc.web.cern.ch/csc-2026/",
+      "summary": "CSC 2026 – CERN School of Computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a School History Past schools Photo gallery Al",
+      "recommendation_reason": "topic match: software engineering, physics, particle physics, engineering; 14 days; priority region; trusted source layer 1",
+      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "score": 64.0,
+      "score_explanation": [
+        "topic match: software engineering, physics, particle physics, engineering",
+        "14 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain"
+      ],
+      "first_seen": "2026-07-16",
+      "deadline_evidence": "",
+      "duration_evidence": "23 August – 5 September 2026",
+      "mode_evidence": "",
+      "extraction_confidence": 0.5,
+      "title_zh": "第48届CERN计算学校",
+      "organizer_zh": "CERN计算学校",
+      "location_zh": "英国利物浦，利物浦大学",
+      "summary_zh": "CSC 2026 – CERN计算学校 跳过内容 CERN 加速科学 CERN计算学校 创建科学计算共同文化 菜单 欢迎 关于学校 主学校 专题学校 反向学校 人员 主办学校 历史 往届学校 相册",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "主题匹配：软件工程、物理学、粒子物理学、工程学；14天；优先地区；可信来源第一层",
+      "risk_points_zh": "申请截止日期不确定；资金未明确，费用不确定",
+      "is_new": false
+    },
+    {
       "title": "Newsletter",
       "type": "summer school",
       "organizer": "UNICRI AI Ethics Winter School",
@@ -3811,8 +3548,7 @@
       "deadline_status": "closed",
       "funding_available": true,
       "funding_type": [
-        "travel grant",
-        "financial support"
+        "travel grant"
       ],
       "funding_evidence": "travel grant request: if you lack financial support from your institution and your financial background would prevent you from atten",
       "topic_keywords": [
@@ -3827,7 +3563,7 @@
       "application_link": "https://www.eeml.eu/previous-editions/eeml2025/application",
       "source_url": "https://www.eeml.eu/previous-editions/eeml2025/application",
       "summary": "Application Search this site Embedded Files Skip to main content Skip to navigation Home Program Venue/Accommodation Registration Previous editions EEML2025 Program Venue/Accommodation Registration Sponsors Diamond - Google DeepMind Diamond - UiPath Platinum - Bitdefender Platinu",
-      "recommendation_reason": "topic match: machine learning, design, literature; funding evidence: travel grant, financial support; priority region; in-person",
+      "recommendation_reason": "topic match: machine learning, design, literature; funding evidence: travel grant; priority region; in-person",
       "risk_points": "application deadline has passed; duration is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -3839,7 +3575,7 @@
       "score": 62.0,
       "score_explanation": [
         "topic match: machine learning, design, literature",
-        "funding evidence: travel grant, financial support",
+        "funding evidence: travel grant",
         "priority region",
         "in-person",
         "target level: MSc, PhD, postdoc",
@@ -3855,7 +3591,7 @@
       "location_zh": "欧洲",
       "summary_zh": "申请 搜索本站 嵌入文件 跳至主要内容 跳至导航 首页 项目 场地/住宿 注册 往届 EEML2025 项目 场地/住宿 注册 赞助商 钻石 - Google DeepMind 钻石 - UiPath 白金 - Bitdefender 白金",
       "eligibility_zh": "博士生、博士后、硕士生、教师、机器学习等领域从业者等",
-      "recommendation_reason_zh": "主题匹配：机器学习、设计、文献；资助证据：旅行补助、经济支持；优先地区；线下参与",
+      "recommendation_reason_zh": "主题匹配：机器学习、设计、文献；资助证据：旅行补助；优先地区；线下参与",
       "risk_points_zh": "申请截止日期已过；时长不确定",
       "is_new": false
     },
@@ -4688,8 +4424,7 @@
       "funding_type": [
         "fellowship",
         "tuition waiver",
-        "fee waiver",
-        "financial support"
+        "fee waiver"
       ],
       "funding_evidence": "Tuition Waiver: Students and alumni of the University of Crete. Retired faculty (from any university), in recognition of their contrib",
       "topic_keywords": [
@@ -4702,7 +4437,7 @@
       "application_link": "https://linguistics.philology.uoc.gr/cssl26/application.php",
       "source_url": "https://linguistics.philology.uoc.gr/cssl26/application.php",
       "summary": "The 7th Crete Summer School of Linguistics Home Venue Courses Events Application Useful info FAQs Contact Log in CSSL26 / Application Cost & Eligibility We try to make CreteLing affordable to as many people as possible and we charge only the fees that are absolutely necessary for",
-      "recommendation_reason": "topic match: linguistics; funding evidence: fellowship, tuition waiver, fee waiver, financial support; priority region; trusted source layer 1.5",
+      "recommendation_reason": "topic match: linguistics; funding evidence: fellowship, tuition waiver, fee waiver; priority region; trusted source layer 1.5",
       "risk_points": "application deadline has passed; duration is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -4714,7 +4449,7 @@
       "score": 55.0,
       "score_explanation": [
         "topic match: linguistics",
-        "funding evidence: fellowship, tuition waiver, fee waiver, financial support",
+        "funding evidence: fellowship, tuition waiver, fee waiver",
         "priority region",
         "trusted source layer 1.5",
         "in-person",
@@ -4729,9 +4464,9 @@
       "title_zh": "CSSL26 / 申请",
       "organizer_zh": "CreteLing",
       "location_zh": "课程与活动",
-      "summary_zh": "第七届克里特语言学暑期学校 主页 场地 课程与活动 申请 实用信息 常见问题 联系我们 登录 CSSL26 / 申请 费用与资格 我们努力让CreteLing对尽可能多的人负担得起，仅收取学校运营所必需的費用。",
-      "eligibility_zh": "我们努力让CreteLing对尽可能多的人负担得起，仅收取学校运营所必需的費用。",
-      "recommendation_reason_zh": "主题匹配：语言学；资助证据：奖学金、学费减免、费用减免、经济支持；优先地区；可信来源层级1.5",
+      "summary_zh": "第七届克里特语言学暑期学校 主页 场地 课程与活动 申请 实用信息 常见问题 联系我们 登录 CSSL26 / 申请 费用与资格 我们力求让尽可能多的人负担得起CreteLing，仅收取学校运营所必需的费用。",
+      "eligibility_zh": "我们力求让尽可能多的人负担得起CreteLing，仅收取学校运营所必需的费用。",
+      "recommendation_reason_zh": "主题匹配：语言学；资助证据：奖学金、学费减免、费用减免；优先地区；可信来源层级1.5",
       "risk_points_zh": "申请截止日期已过；时长不确定",
       "is_new": false
     },
@@ -7303,70 +7038,6 @@
       "is_new": false
     },
     {
-      "title": "48th CERN School of Computing",
-      "type": "school of computing",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "University of Liverpool, Liverpool, United Kingdom",
-      "mode": "in-person",
-      "start_date": "2026-08-23",
-      "end_date": "2026-09-05",
-      "duration_days": 14,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": true,
-      "funding_type": [
-        "financial support"
-      ],
-      "funding_evidence": "Financial support may be available. Categories Schools , Upcoming School Post navigation Previous Post Previous tCSC 2026 Next Post Next",
-      "topic_keywords": [
-        "software engineering",
-        "physics",
-        "particle physics",
-        "engineering",
-        "history"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://csc.web.cern.ch/csc-2026/",
-      "source_url": "https://csc.web.cern.ch/csc-2026/",
-      "summary": "CSC 2026 – CERN School of Computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a School History Past schools Photo gallery Al",
-      "recommendation_reason": "topic match: software engineering, physics, particle physics, engineering; funding evidence: financial support; 14 days; priority region",
-      "risk_points": "application deadline is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [
-        "application deadline is uncertain"
-      ],
-      "score": 92.0,
-      "score_explanation": [
-        "topic match: software engineering, physics, particle physics, engineering",
-        "funding evidence: financial support",
-        "14 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "near-match only: application deadline is uncertain"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "23 August – 5 September 2026",
-      "mode_evidence": "",
-      "extraction_confidence": 0.75,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
       "type": "summer school",
       "organizer": "ICOS",
@@ -7871,200 +7542,6 @@
       "is_new": false
     },
     {
-      "title": "GESIS Summer School in Survey Methodology",
-      "type": "summer school",
-      "organizer": "GESIS Summer School",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "hybrid",
-      "start_date": "2026-07-22",
-      "end_date": "2026-08-14",
-      "duration_days": 5,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": true,
-      "funding_type": [
-        "scholarship"
-      ],
-      "funding_evidence": "Scholarships FAQs Sponsors & Partners Contact Fall Seminar in Computational Social Science Go to overview Courses Course Fees Socia",
-      "topic_keywords": [
-        "AI",
-        "data science",
-        "data analysis",
-        "design",
-        "social science"
-      ],
-      "eligibility": "PhD student, post-doc, junior or senior researcher, or survey professional, you will: receive high quality training in state-of-the-art techniques and methods of s",
-      "target_level": "PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
-      "source_url": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
-      "summary": "Summer School: Survey Methodology Training - GESIS Training Deutsch Contact Career Login Alles GESIS Training What we offer Summer School in Survey Methodology GESIS Training About us About us Menü schließen Mission Go to overview Key Topics Go to overview Team Go to overview Loc",
-      "recommendation_reason": "topic match: AI, data science, data analysis, design; funding evidence: scholarship; 5 days; priority region",
-      "risk_points": "application deadline has passed",
-      "sessions": [
-        {
-          "name": "Short Course A: Introduction to R for Data Analysis",
-          "start_date": "2026-07-22",
-          "end_date": "2026-07-23",
-          "application_deadline": null
-        },
-        {
-          "name": "Short Course C: Pretesting Survey Questions",
-          "start_date": "2026-07-22",
-          "end_date": "2026-07-24",
-          "application_deadline": null
-        },
-        {
-          "name": "Short Course D: Systematic Review, Meta-Analysis, and Evidence Synthesis Using Model Selection",
-          "start_date": "2026-07-22",
-          "end_date": "2026-07-24",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 1: Factorial Survey Design",
-          "start_date": "2026-07-27",
-          "end_date": "2026-07-31",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 2: Advanced Questionnaire Design",
-          "start_date": "2026-07-27",
-          "end_date": "2026-07-31",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 3: AI-Assisted Surveys: Using AI Tools at Each Step of the Survey Research Process",
-          "start_date": "2026-07-27",
-          "end_date": "2026-07-31",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 4: Data Science Techniques for Survey Researchers",
-          "start_date": "2026-08-03",
-          "end_date": "2026-08-07",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 5: Latent Variable Modeling in Survey Research: Classical and New Approaches",
-          "start_date": "2026-08-03",
-          "end_date": "2026-08-07",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 7: Causal Inference Using Survey Data",
-          "start_date": "2026-08-10",
-          "end_date": "2026-08-14",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 8: Applied Introduction to Bots in Web-based Studies",
-          "start_date": "2026-08-10",
-          "end_date": "2026-08-14",
-          "application_deadline": null
-        },
-        {
-          "name": "Short Course E: Applied Causal Inference Using Directed Acyclic Graphs (DAGs)",
-          "start_date": "2026-08-12",
-          "end_date": "2026-08-14",
-          "application_deadline": null
-        }
-      ],
-      "identity_key": "",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [
-        "application deadline has passed"
-      ],
-      "score": 87.0,
-      "score_explanation": [
-        "topic match: AI, data science, data analysis, design",
-        "funding evidence: scholarship",
-        "5 days",
-        "priority region",
-        "trusted source layer 1",
-        "hybrid",
-        "target level: PhD",
-        "near-match only: application deadline has passed"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "22 July - 14 August 2026",
-      "mode_evidence": "onsite or online participation). ► Online courses will b",
-      "extraction_confidence": 0.75,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
-      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
-      "type": "summer school",
-      "organizer": "GESIS Summer School",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "in-person",
-      "start_date": "2027-02-22",
-      "end_date": "2027-03-12",
-      "duration_days": 19,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": true,
-      "funding_type": [
-        "scholarship"
-      ],
-      "funding_evidence": "Scholarships FAQs Sponsors & Partners Contact Fall Seminar in Computational Social Science Go to overview Courses Course Fees Socia",
-      "topic_keywords": [
-        "data analysis",
-        "social science"
-      ],
-      "eligibility": "PhD students, post-docs, junior and senior researchers who are interested in developing and improving their knowledge and skills in state-of-the-art techniques in",
-      "target_level": "PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
-      "source_url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
-      "summary": "Spring Seminar: Cutting-Edge Methods in Social Research - GESIS Training Deutsch Contact Career Login Alles GESIS Training What we offer Spring Seminar – Cutting-Edge Methods GESIS Training About us About us Menü schließen Mission Go to overview Key Topics Go to overview Team Go",
-      "recommendation_reason": "topic match: data analysis, social science; funding evidence: scholarship; 19 days; priority region",
-      "risk_points": "application deadline is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [
-        "application deadline is uncertain"
-      ],
-      "score": 87.0,
-      "score_explanation": [
-        "topic match: data analysis, social science",
-        "funding evidence: scholarship",
-        "19 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "target level: PhD",
-        "near-match only: application deadline is uncertain"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "22 Feb – 12 March 2027",
-      "mode_evidence": "onsite) an exciting time in Cologne, complemented by an",
-      "extraction_confidence": 0.75,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
       "title": "Applied Public Policy Evaluation",
       "type": "summer school",
       "organizer": "Tinbergen Institute",
@@ -8079,8 +7556,7 @@
       "deadline_status": "uncertain",
       "funding_available": true,
       "funding_type": [
-        "scholarship",
-        "financial support"
+        "scholarship"
       ],
       "funding_evidence": "scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat w",
       "topic_keywords": [
@@ -8098,7 +7574,7 @@
       "application_link": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
       "source_url": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
       "summary": "Applied Public Policy Evaluation – Tinbergen.nl Find a person About us Job Market Contact Intranet Graduate Programs Research Browse our Courses Events News Summer School Alumni Graduate Programs Tinbergen Institute Research Master in Economics Why Tinbergen Institute? Research M",
-      "recommendation_reason": "topic match: climate, climate change, machine learning, deep learning; funding evidence: scholarship, financial support; 5 days; priority region",
+      "recommendation_reason": "topic match: climate, climate change, machine learning, deep learning; funding evidence: scholarship; 5 days; priority region",
       "risk_points": "application deadline is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -8109,7 +7585,7 @@
       "score": 86.0,
       "score_explanation": [
         "topic match: climate, climate change, machine learning, deep learning",
-        "funding evidence: scholarship, financial support",
+        "funding evidence: scholarship",
         "5 days",
         "priority region",
         "in-person",
@@ -8145,8 +7621,7 @@
       "deadline_status": "uncertain",
       "funding_available": true,
       "funding_type": [
-        "scholarship",
-        "financial support"
+        "scholarship"
       ],
       "funding_evidence": "scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat w",
       "topic_keywords": [
@@ -8164,7 +7639,7 @@
       "application_link": "https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change",
       "source_url": "https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change",
       "summary": "Economics of Climate Change – Tinbergen.nl Find a person About us Job Market Contact Intranet Graduate Programs Research Browse our Courses Events News Summer School Alumni Graduate Programs Tinbergen Institute Research Master in Economics Why Tinbergen Institute? Research Master",
-      "recommendation_reason": "topic match: climate, climate change, machine learning, deep learning; funding evidence: scholarship, financial support; 5 days; priority region",
+      "recommendation_reason": "topic match: climate, climate change, machine learning, deep learning; funding evidence: scholarship; 5 days; priority region",
       "risk_points": "application deadline is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -8175,7 +7650,7 @@
       "score": 86.0,
       "score_explanation": [
         "topic match: climate, climate change, machine learning, deep learning",
-        "funding evidence: scholarship, financial support",
+        "funding evidence: scholarship",
         "5 days",
         "priority region",
         "in-person",
@@ -8211,8 +7686,7 @@
       "deadline_status": "not_open",
       "funding_available": true,
       "funding_type": [
-        "scholarship",
-        "financial support"
+        "scholarship"
       ],
       "funding_evidence": "Scholarship Sponsors ANBI All About The Academy Sixth Column News Calendar Of Events Support the Academy Frequently Asked Questions",
       "topic_keywords": [
@@ -8229,7 +7703,7 @@
       "application_link": "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/",
       "source_url": "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/",
       "summary": "2026 Advanced Course on International Criminal Law | The Hague Academy of International Law Created with Sketch. About The Academy Our Programmes The Experience Of A Lifetime Support the Academy en en fr Back Login Practical Information Practical Information Practical Information",
-      "recommendation_reason": "topic match: artificial intelligence, law, international law, design; funding evidence: scholarship, financial support; 119 days; priority region",
+      "recommendation_reason": "topic match: artificial intelligence, law, international law, design; funding evidence: scholarship; 119 days; priority region",
       "risk_points": "applications are not open yet; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -8241,7 +7715,7 @@
       "score": 84.0,
       "score_explanation": [
         "topic match: artificial intelligence, law, international law, design",
-        "funding evidence: scholarship, financial support",
+        "funding evidence: scholarship",
         "119 days",
         "priority region",
         "trusted source layer 1.5",
@@ -8795,8 +8269,7 @@
       "deadline_status": "closed",
       "funding_available": true,
       "funding_type": [
-        "scholarship",
-        "financial support"
+        "scholarship"
       ],
       "funding_evidence": "Scholarships and Financial Support FAQ Facts and Figures Your pre-research master trajectory Refresh and Test your knowledge Progra",
       "topic_keywords": [
@@ -8817,7 +8290,7 @@
       "application_link": "https://businessdatascience.nl/foundations-of-machine-learning-with-applications-in-python",
       "source_url": "https://businessdatascience.nl/foundations-of-machine-learning-with-applications-in-python",
       "summary": "Summer School 2026 Foundations of Machine Learning with Applications in Python Find a person About us Job Market Contact Intranet Graduate Program Research Browse our Courses Events News Summer School Alumni Graduate Program Why study Business Data Science? Research Master Progra",
-      "recommendation_reason": "topic match: machine learning, deep learning, data science, mathematics; funding evidence: scholarship, financial support; 5 days; priority region",
+      "recommendation_reason": "topic match: machine learning, deep learning, data science, mathematics; funding evidence: scholarship; 5 days; priority region",
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
@@ -8828,7 +8301,7 @@
       "score": 82.0,
       "score_explanation": [
         "topic match: machine learning, deep learning, data science, mathematics",
-        "funding evidence: scholarship, financial support",
+        "funding evidence: scholarship",
         "5 days",
         "priority region",
         "in-person",
@@ -10336,69 +9809,6 @@
       "is_new": false
     },
     {
-      "title": "Lectures (this is not a final list)",
-      "type": "summer school",
-      "organizer": "Bernstein Network",
-      "source_layer": "2",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "uncertain",
-      "start_date": "2026-07-06",
-      "end_date": "2026-07-24",
-      "duration_days": 19,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "Funding acquisition and management: Soledad Gonzalo Cogno Home: Schedule Lectures (this is not a final list) Information theory",
-      "topic_keywords": [
-        "physics",
-        "mathematics",
-        "engineering",
-        "mechanics",
-        "computational neuroscience",
-        "neuroscience"
-      ],
-      "eligibility": "PhD students",
-      "target_level": "MSc, PhD, postdoc",
-      "fee": "no registration fees",
-      "fee_eur": 0.0,
-      "application_link": "https://www.compneuronrsn.org/",
-      "source_url": "https://www.compneuronrsn.org/",
-      "summary": "Mathematical Methods in Computational Neuroscience top of page Mathematical Methods in Computational Neuroscience 6 July - 24 July 2026, Fred Kavli Knowledge Center, Eresfjord, Norway About Main Lectures Seminars Schedule Apply Past Editions Fred Kavli Science Center More Use tab",
-      "recommendation_reason": "topic match: physics, mathematics, engineering, mechanics; low fee: approximately EUR 0; 19 days; priority region",
-      "risk_points": "application deadline has passed; in-person status is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "low-fee",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "in-person status is uncertain"
-      ],
-      "score": 70.0,
-      "score_explanation": [
-        "topic match: physics, mathematics, engineering, mechanics",
-        "low fee: approximately EUR 0",
-        "19 days",
-        "priority region",
-        "target level: MSc, PhD, postdoc",
-        "near-match only: application deadline has passed; in-person status is uncertain"
-      ],
-      "first_seen": "2026-07-15",
-      "deadline_evidence": "",
-      "duration_evidence": "6 July - 24 July 2026",
-      "mode_evidence": "",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
       "title": "ELLIS Summer School at Unit Saarbrücken",
       "type": "summer school",
       "organizer": "ELLIS",
@@ -10636,6 +10046,68 @@
       "duration_evidence": "6 to 10 July 2026",
       "mode_evidence": "on-site) from 6-10 July. The registration fee is €575,-.",
       "extraction_confidence": 1.0,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": false
+    },
+    {
+      "title": "48th CERN School of Computing",
+      "type": "school of computing",
+      "organizer": "CERN School of Computing",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "University of Liverpool, Liverpool, United Kingdom",
+      "mode": "in-person",
+      "start_date": "2026-08-23",
+      "end_date": "2026-09-05",
+      "duration_days": 14,
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "Financial support may be available. Categories Schools , Upcoming School Post navigation Previous Post Previous tCSC 2026 Next Post Next",
+      "topic_keywords": [
+        "software engineering",
+        "physics",
+        "particle physics",
+        "engineering",
+        "history"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://csc.web.cern.ch/csc-2026/",
+      "source_url": "https://csc.web.cern.ch/csc-2026/",
+      "summary": "CSC 2026 – CERN School of Computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a School History Past schools Photo gallery Al",
+      "recommendation_reason": "topic match: software engineering, physics, particle physics, engineering; 14 days; priority region; trusted source layer 1",
+      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "score": 64.0,
+      "score_explanation": [
+        "topic match: software engineering, physics, particle physics, engineering",
+        "14 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain"
+      ],
+      "first_seen": "2026-07-16",
+      "deadline_evidence": "",
+      "duration_evidence": "23 August – 5 September 2026",
+      "mode_evidence": "",
+      "extraction_confidence": 0.5,
       "title_zh": "",
       "organizer_zh": "",
       "location_zh": "",
@@ -10922,8 +10394,7 @@
       "deadline_status": "closed",
       "funding_available": true,
       "funding_type": [
-        "travel grant",
-        "financial support"
+        "travel grant"
       ],
       "funding_evidence": "travel grant request: if you lack financial support from your institution and your financial background would prevent you from atten",
       "topic_keywords": [
@@ -10938,7 +10409,7 @@
       "application_link": "https://www.eeml.eu/previous-editions/eeml2025/application",
       "source_url": "https://www.eeml.eu/previous-editions/eeml2025/application",
       "summary": "Application Search this site Embedded Files Skip to main content Skip to navigation Home Program Venue/Accommodation Registration Previous editions EEML2025 Program Venue/Accommodation Registration Sponsors Diamond - Google DeepMind Diamond - UiPath Platinum - Bitdefender Platinu",
-      "recommendation_reason": "topic match: machine learning, design, literature; funding evidence: travel grant, financial support; priority region; in-person",
+      "recommendation_reason": "topic match: machine learning, design, literature; funding evidence: travel grant; priority region; in-person",
       "risk_points": "application deadline has passed; duration is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -10950,7 +10421,7 @@
       "score": 62.0,
       "score_explanation": [
         "topic match: machine learning, design, literature",
-        "funding evidence: travel grant, financial support",
+        "funding evidence: travel grant",
         "priority region",
         "in-person",
         "target level: MSc, PhD, postdoc",
@@ -11474,8 +10945,7 @@
       "funding_type": [
         "fellowship",
         "tuition waiver",
-        "fee waiver",
-        "financial support"
+        "fee waiver"
       ],
       "funding_evidence": "Tuition Waiver: Students and alumni of the University of Crete. Retired faculty (from any university), in recognition of their contrib",
       "topic_keywords": [
@@ -11488,7 +10958,7 @@
       "application_link": "https://linguistics.philology.uoc.gr/cssl26/application.php",
       "source_url": "https://linguistics.philology.uoc.gr/cssl26/application.php",
       "summary": "The 7th Crete Summer School of Linguistics Home Venue Courses Events Application Useful info FAQs Contact Log in CSSL26 / Application Cost & Eligibility We try to make CreteLing affordable to as many people as possible and we charge only the fees that are absolutely necessary for",
-      "recommendation_reason": "topic match: linguistics; funding evidence: fellowship, tuition waiver, fee waiver, financial support; priority region; trusted source layer 1.5",
+      "recommendation_reason": "topic match: linguistics; funding evidence: fellowship, tuition waiver, fee waiver; priority region; trusted source layer 1.5",
       "risk_points": "application deadline is uncertain; duration is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -11500,7 +10970,7 @@
       "score": 59.0,
       "score_explanation": [
         "topic match: linguistics",
-        "funding evidence: fellowship, tuition waiver, fee waiver, financial support",
+        "funding evidence: fellowship, tuition waiver, fee waiver",
         "priority region",
         "trusted source layer 1.5",
         "in-person",
