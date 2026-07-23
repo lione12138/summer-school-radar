@@ -319,6 +319,20 @@
     "notes_zh": "\u9762\u5411\u79d1\u5b66\u8ba1\u7b97\u548c\u6570\u636e\u5bc6\u96c6\u578b\u7814\u7a76\u7684\u5b98\u65b9\u5e38\u8bbe\u4e3b\u4fee\u4e0e\u4e13\u9898\u5b66\u6821\u3002"
   },
   {
+    "name": "CERN School of Computing 2026 application",
+    "url": "https://indico.cern.ch/event/1662800/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "research_training_provider",
+    "keywords": [
+      "scientific computing",
+      "data technologies",
+      "software engineering",
+      "physics computing"
+    ],
+    "notes": "Official CSC 2026 application record with participant cost responsibility and registration status."
+  },
+  {
     "name": "EMBL-EBI Training",
     "url": "https://www.ebi.ac.uk/about/events/",
     "layer": 1,
