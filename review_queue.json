@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-23",
+  "generated": "2026-07-24",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -663,19 +663,17 @@
       },
       "ai_advisory": {
         "available": true,
-        "validated_confidence": "low",
+        "validated_confidence": "medium",
         "validation_warnings": [
-          "llm_chunk_truncated:6",
-          "llm_request_truncated:max_total_chars_per_llm_request",
           "end_date_value_not_in_evidence"
         ],
-        "chinese_summary": "莱顿大学人口健康管理暑期学校，2027年7月5日至9日在海牙举办，面向医疗专业人士、政策制定者、高管、顾问、博士生及健康相关硕士生，费用：专业人士950欧元，博士生375欧元，健康相关硕士生免费。",
+        "chinese_summary": "莱顿大学2027年人口健康管理暑期学校，7月5-9日在海牙举办，面向硕士生、专业人士和博士生，健康相关硕士生免费。",
         "extracted_deadline": "",
-        "extracted_fee": "Professionals: € 950, PhDs: € 375, Master’s students in health related studies: free",
+        "extracted_fee": "Master’s students in health related studies: free",
         "extracted_funding": "",
         "evidence_fields": {
           "deadline": "",
-          "fee": "CET Language: English Course fee: Professionals: € 950, PhDs: € 375, Master’s students in health related studies: for free.",
+          "fee": "Facts & Figures Start date 5-7-2027 Duration 5 days Level Master | Professionals | PhD Location The Hague Course fee Master’s students in health related studies: free.",
           "funding": ""
         }
       }

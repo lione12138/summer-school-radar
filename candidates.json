@@ -5,7 +5,7 @@
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
   "_canary": "SSR-CANON-7q3v9x2k8m4w",
   "schema_version": 2,
-  "generated": "2026-07-23",
+  "generated": "2026-07-24",
   "opportunities": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -492,12 +492,6 @@
         {
           "name": "Session 1",
           "start_date": "2026-07-06",
-          "end_date": "2026-07-17",
-          "application_deadline": null
-        },
-        {
-          "name": "Pre-sessional 2",
-          "start_date": "2026-07-13",
           "end_date": "2026-07-17",
           "application_deadline": null
         },
@@ -2185,68 +2179,6 @@
       "is_new": false
     },
     {
-      "title": "SICSS-Chicago - Chicago State University",
-      "type": "summer institute",
-      "organizer": "Summer Institutes in Computational Social Science",
-      "source_layer": "1",
-      "region_priority": "global",
-      "location": "Chicago State University",
-      "mode": "in-person",
-      "start_date": "2026-07-13",
-      "end_date": "2026-07-23",
-      "duration_days": 11,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": true,
-      "funding_type": [
-        "tuition waiver"
-      ],
-      "funding_evidence": "The official SICSS programme overview states that no tuition is required; some locations also cover travel, accommodation, and meals.",
-      "topic_keywords": [
-        "data science",
-        "social science",
-        "social science methods"
-      ],
-      "eligibility": "Graduate students, postdoctoral researchers, and junior faculty.",
-      "target_level": "PhD, postdoc, early-career researcher",
-      "fee": "No tuition required",
-      "fee_eur": 0.0,
-      "application_link": "https://new.sicss.io/2026/chicago---chicago-state-university/apply",
-      "source_url": "https://new.sicss.io/2026/chicago---chicago-state-university",
-      "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
-      "recommendation_reason": "topic match: data science, social science, social science methods; funding evidence: tuition waiver; 11 days; trusted source layer 1",
-      "risk_points": "application deadline has passed",
-      "sessions": [],
-      "identity_key": "sicss:2026:chicago---chicago-state-university",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [
-        "application deadline has passed"
-      ],
-      "score": 79.0,
-      "score_explanation": [
-        "topic match: data science, social science, social science methods",
-        "funding evidence: tuition waiver",
-        "11 days",
-        "trusted source layer 1",
-        "in-person",
-        "target level: PhD, postdoc, early-career researcher",
-        "near-match only: application deadline has passed"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "SICSS locations catalogue: July 13 to July 23, 2026",
-      "mode_evidence": "SICSS location card: Chicago State University",
-      "extraction_confidence": 0.75,
-      "title_zh": "SICSS-Chicago - 芝加哥州立大学",
-      "organizer_zh": "计算社会科学暑期学院",
-      "location_zh": "芝加哥州立大学",
-      "summary_zh": "一个密集的计算社会科学学院，涵盖文本分析、网络数据、实验、研究伦理和协作研究。",
-      "eligibility_zh": "研究生、博士后研究人员和初级教师。",
-      "recommendation_reason_zh": "主题匹配：数据科学、社会科学、社会科学方法；资金证据：学费减免；11天；可信来源层级1",
-      "risk_points_zh": "申请截止日期已过",
-      "is_new": false
-    },
-    {
       "title": "Karthaus summerschool",
       "type": "summerschool",
       "organizer": "Karthaus Summer School",
@@ -3229,8 +3161,8 @@
       "first_seen": "2026-07-23",
       "deadline_evidence": "",
       "duration_evidence": "",
-      "mode_evidence": "Facts & Figures Start date 5-7-2027 Duration 5 days Level Master | Professionals | PhD Location The Hague Course fee Master’s students in health related studies: free. Join the Summer School Population Health Management for an inspiring and scientific introduction to the fundamentals of Population Health Management at The Health Campus The Hague for professionals (and students) working in and around healthcare.",
-      "extraction_confidence": 0.35,
+      "mode_evidence": "Watch the video on the original website or Accept cookies The Health Campus The Hague The programme of the Summer School will take place on The Health Campus The Hague which is a partnership between Leiden University, Leiden University Medical Center (LUMC), the hospitals Haaglanden Medisch Centrum (HMC), Reinier de Graaf Groep, Haga Ziekenhuis, the municipality of The Hague, the GGD Haaglanden, HADOKS and Parnassia Groep to create noticeable",
+      "extraction_confidence": 0.65,
       "title_zh": "暑期学校：人口健康管理",
       "organizer_zh": "莱顿语言学暑期学校",
       "location_zh": "海牙",
@@ -3238,7 +3170,7 @@
       "eligibility_zh": "人口健康管理硕士项目",
       "recommendation_reason_zh": "主题匹配：统计学、法律、教育研究、考古学；费用低：约375欧元；优先地区；线下",
       "risk_points_zh": "申请截止日期不确定；时长不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Newsletter",
@@ -3985,69 +3917,6 @@
       "eligibility_zh": "地球物理学博士（'90）",
       "recommendation_reason_zh": "主题匹配：地球科学、地球物理学、地震学、物理学；62天；优先区域；可信来源第一层",
       "risk_points_zh": "申请截止日期不确定；资金未明确且费用不确定；仅在线",
-      "is_new": false
-    },
-    {
-      "title": "IV Joint ICTP-SAIFR/ICTP-Trieste Summer School on Particle Physics",
-      "type": "summer school",
-      "organizer": "ICTP",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "uncertain",
-      "start_date": "2026-07-13",
-      "end_date": "2026-07-24",
-      "duration_days": 12,
-      "deadline": "2026-04-04",
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "physics",
-        "cosmology",
-        "condensed matter",
-        "particle physics",
-        "statistical physics",
-        "mathematics"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "no registration fee",
-      "fee_eur": 0.0,
-      "application_link": "https://indico.ictp.it/event/11122",
-      "source_url": "https://indico.ictp.it/event/11122",
-      "summary": "IV Joint ICTP-SAIFR/ICTP-Trieste Summer School on Particle Physics | (smr 4196) (13-24 July 2026) Scientific Calendar Event GO TO SCIENTIFIC CALENDAR Europe/Rome English Administration Search Search in Conferences: Overview Scientific Programme Programme Contribution List Author",
-      "recommendation_reason": "topic match: physics, cosmology, condensed matter, particle physics; low fee: approximately EUR 0; 12 days; priority region",
-      "risk_points": "application deadline has passed; in-person status is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "low-fee",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "in-person status is uncertain"
-      ],
-      "score": 60.0,
-      "score_explanation": [
-        "topic match: physics, cosmology, condensed matter, particle physics",
-        "low fee: approximately EUR 0",
-        "12 days",
-        "priority region",
-        "trusted source layer 1",
-        "near-match only: application deadline has passed; in-person status is uncertain"
-      ],
-      "first_seen": "2026-06-14",
-      "deadline_evidence": "DEADLINE: 04/04/2026",
-      "duration_evidence": "13-24 July 2026",
-      "mode_evidence": "",
-      "extraction_confidence": 0.75,
-      "title_zh": "第四届ICTP-SAIFR/ICTP-Trieste联合粒子物理暑期学校",
-      "organizer_zh": "ICTP",
-      "location_zh": "欧洲",
-      "summary_zh": "第四届ICTP-SAIFR/ICTP-Trieste联合粒子物理暑期学校 | (smr 4196) (2026年7月13-24日) 科学日历活动 前往科学日历 欧洲/罗马 英语 管理 在会议中搜索： 概览 科学计划 计划 投稿列表 作者",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "主题匹配：物理、宇宙学、凝聚态物理、粒子物理；低费用：约0欧元；12天；优先区域",
-      "risk_points_zh": "申请截止日期已过；线下状态不确定",
       "is_new": false
     },
     {
@@ -4853,7 +4722,7 @@
         "history"
       ],
       "eligibility": "Master's Programmes PhD and Sandwich Programmes Career Development Programmes Laboratory Opportunities Associates Programme Postdoctoral Opportunities Science Outreac",
-      "target_level": "MSc, PhD, postdoc, early-career researcher",
+      "target_level": "MSc, PhD, postdoc",
       "fee": "Effective Strategies for a Low-Carbon World, Including Nuclear Power and Fusion | (smr 4397) ICTP sm",
       "fee_eur": null,
       "application_link": "https://www.ictp.it/home/scientific-calendar",
@@ -4875,13 +4744,13 @@
         "priority region",
         "trusted source layer 1",
         "hybrid",
-        "target level: MSc, PhD, postdoc, early-career researcher",
+        "target level: MSc, PhD, postdoc",
         "near-match only: application deadline has passed; duration is uncertain; funding is not explicit and fee equivalence is uncertain"
       ],
       "first_seen": "2026-07-23",
       "deadline_evidence": "",
       "duration_evidence": "",
-      "mode_evidence": "Hybrid Discover all events Opportunities Overview ICTP:",
+      "mode_evidence": "Hybrid workshop 20 Jul 2026 31 Jul 2026 Quantitative Lif",
       "extraction_confidence": 0.25,
       "title_zh": "面包屑导航",
       "organizer_zh": "ICTP",
@@ -4890,7 +4759,7 @@
       "eligibility_zh": "硕士项目 博士和联合培养项目 职业发展项目 实验室机会 访问学者项目 博士后机会 科学推广",
       "recommendation_reason_zh": "主题匹配：气候、气候变化、地球物理学、人工智能；优先区域；可信来源第一层；混合形式",
       "risk_points_zh": "申请截止日期已过；时长不确定；资金未明确且费用等价性不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Choose timezone",
@@ -4960,7 +4829,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：机器学习、软件工程、编程语言、密码学；14天；优先区域；可信来源一级",
       "risk_points_zh": "申请截止日期不确定；资助不明确且费用不确定；仅线上",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "About the Summer School in Social Sciences Methods",
@@ -5150,7 +5019,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题匹配：数据分析、物理学、宇宙学、凝聚态物理；12天；优先地区；可信来源第一层",
       "risk_points_zh": "申请截止日期不确定；资助不明确且费用不确定；线下状态不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELLIS Doctoral Symposium 2026",
@@ -5403,7 +5272,7 @@
       "eligibility_zh": "面向全球早期职业研究人员，探索人工智能和地球观测在支持更可持续的陆地管理中的作用",
       "recommendation_reason_zh": "主题匹配：水资源、遥感、地球观测、卫星；6天；优先区域；可信来源层级1",
       "risk_points_zh": "申请截止日期已过；资助不明确且费用不确定；线下状态不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Eastern European Machine Learning Summer School",
@@ -7439,12 +7308,6 @@
           "application_deadline": null
         },
         {
-          "name": "Pre-sessional 2",
-          "start_date": "2026-07-13",
-          "end_date": "2026-07-17",
-          "application_deadline": null
-        },
-        {
           "name": "Session 2",
           "start_date": "2026-07-20",
           "end_date": "2026-07-31",
@@ -9194,68 +9057,6 @@
       "is_new": false
     },
     {
-      "title": "SICSS-Chicago - Chicago State University",
-      "type": "summer institute",
-      "organizer": "Summer Institutes in Computational Social Science",
-      "source_layer": "1",
-      "region_priority": "global",
-      "location": "Chicago State University",
-      "mode": "in-person",
-      "start_date": "2026-07-13",
-      "end_date": "2026-07-23",
-      "duration_days": 11,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": true,
-      "funding_type": [
-        "tuition waiver"
-      ],
-      "funding_evidence": "The official SICSS programme overview states that no tuition is required; some locations also cover travel, accommodation, and meals.",
-      "topic_keywords": [
-        "data science",
-        "social science",
-        "social science methods"
-      ],
-      "eligibility": "Graduate students, postdoctoral researchers, and junior faculty.",
-      "target_level": "PhD, postdoc, early-career researcher",
-      "fee": "No tuition required",
-      "fee_eur": 0.0,
-      "application_link": "https://new.sicss.io/2026/chicago---chicago-state-university/apply",
-      "source_url": "https://new.sicss.io/2026/chicago---chicago-state-university",
-      "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
-      "recommendation_reason": "topic match: data science, social science, social science methods; funding evidence: tuition waiver; 11 days; trusted source layer 1",
-      "risk_points": "application deadline has passed",
-      "sessions": [],
-      "identity_key": "sicss:2026:chicago---chicago-state-university",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [
-        "application deadline has passed"
-      ],
-      "score": 79.0,
-      "score_explanation": [
-        "topic match: data science, social science, social science methods",
-        "funding evidence: tuition waiver",
-        "11 days",
-        "trusted source layer 1",
-        "in-person",
-        "target level: PhD, postdoc, early-career researcher",
-        "near-match only: application deadline has passed"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "SICSS locations catalogue: July 13 to July 23, 2026",
-      "mode_evidence": "SICSS location card: Chicago State University",
-      "extraction_confidence": 0.75,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
       "title": "Karthaus summerschool",
       "type": "summerschool",
       "organizer": "Karthaus Summer School",
@@ -10935,69 +10736,6 @@
       "is_new": false
     },
     {
-      "title": "IV Joint ICTP-SAIFR/ICTP-Trieste Summer School on Particle Physics",
-      "type": "summer school",
-      "organizer": "ICTP",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "uncertain",
-      "start_date": "2026-07-13",
-      "end_date": "2026-07-24",
-      "duration_days": 12,
-      "deadline": "2026-04-04",
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "physics",
-        "cosmology",
-        "condensed matter",
-        "particle physics",
-        "statistical physics",
-        "mathematics"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "no registration fee",
-      "fee_eur": 0.0,
-      "application_link": "https://indico.ictp.it/event/11122",
-      "source_url": "https://indico.ictp.it/event/11122",
-      "summary": "IV Joint ICTP-SAIFR/ICTP-Trieste Summer School on Particle Physics | (smr 4196) (13-24 July 2026) Scientific Calendar Event GO TO SCIENTIFIC CALENDAR Europe/Rome English Administration Search Search in Conferences: Overview Scientific Programme Programme Contribution List Author",
-      "recommendation_reason": "topic match: physics, cosmology, condensed matter, particle physics; low fee: approximately EUR 0; 12 days; priority region",
-      "risk_points": "application deadline has passed; in-person status is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "financial_access_status": "low-fee",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "in-person status is uncertain"
-      ],
-      "score": 60.0,
-      "score_explanation": [
-        "topic match: physics, cosmology, condensed matter, particle physics",
-        "low fee: approximately EUR 0",
-        "12 days",
-        "priority region",
-        "trusted source layer 1",
-        "near-match only: application deadline has passed; in-person status is uncertain"
-      ],
-      "first_seen": "2026-06-14",
-      "deadline_evidence": "DEADLINE: 04/04/2026",
-      "duration_evidence": "13-24 July 2026",
-      "mode_evidence": "",
-      "extraction_confidence": 0.75,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
       "title": "WCRP-ICTP 2014 Summer school on Attribution and Prediction of Extremes Events",
       "type": "summer school",
       "organizer": "CLIVAR",
@@ -11625,7 +11363,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELLIS Summer School at Institute Finland",
@@ -11729,7 +11467,7 @@
         "history"
       ],
       "eligibility": "Master's Programmes PhD and Sandwich Programmes Career Development Programmes Laboratory Opportunities Associates Programme Postdoctoral Opportunities Science Outreac",
-      "target_level": "MSc, PhD, postdoc, early-career researcher",
+      "target_level": "MSc, PhD, postdoc",
       "fee": "Effective Strategies for a Low-Carbon World, Including Nuclear Power and Fusion | (smr 4397) ICTP sm",
       "fee_eur": null,
       "application_link": "https://www.ictp.it/home/scientific-calendar",
@@ -11751,13 +11489,13 @@
         "priority region",
         "trusted source layer 1",
         "hybrid",
-        "target level: MSc, PhD, postdoc, early-career researcher",
+        "target level: MSc, PhD, postdoc",
         "near-match only: application deadline has passed; duration is uncertain; funding is not explicit and fee equivalence is uncertain"
       ],
       "first_seen": "2026-07-23",
       "deadline_evidence": "",
       "duration_evidence": "",
-      "mode_evidence": "Hybrid Discover all events Opportunities Overview ICTP:",
+      "mode_evidence": "Hybrid workshop 20 Jul 2026 31 Jul 2026 Quantitative Lif",
       "extraction_confidence": 0.25,
       "title_zh": "",
       "organizer_zh": "",
@@ -11766,7 +11504,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Choose timezone",
@@ -11836,7 +11574,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "About the Summer School in Social Sciences Methods",
@@ -12026,7 +11764,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELLIS Doctoral Symposium 2026",
@@ -12279,7 +12017,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Eastern European Machine Learning Summer School",
