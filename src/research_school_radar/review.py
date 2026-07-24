@@ -137,7 +137,9 @@ def _apply_override(candidate: Candidate, override: dict[str, Any]) -> None:
         setattr(candidate, key, _coerce_value(key, value))
     note = str(override.get("note", "")).strip()
     if note:
-        candidate.summary = f"{candidate.summary} Override note: {note}".strip()
+        annotation = f"Override note: {note}"
+        if annotation not in candidate.summary:
+            candidate.summary = f"{candidate.summary} {annotation}".strip()
 
 
 def _coerce_value(key: str, value: Any) -> Any:

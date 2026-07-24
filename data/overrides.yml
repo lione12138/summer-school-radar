@@ -33,3 +33,30 @@ overrides:
       deadline: null
       deadline_status: not_open
       deadline_evidence: Application for 2027 course is not yet open.
+  - url: https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation
+    status: update
+    note: The official 2026 Summer School fee page states a EUR 1,000 student fee and does not offer Summer School participant funding.
+    fields:
+      funding_available: false
+      funding_type: []
+      funding_evidence: Tinbergen Summer School funding is not offered; scholarships described elsewhere apply to the two-year Research Master programme.
+      fee: EUR 1,000 for PhD and Master students; accommodation and travel excluded
+      fee_eur: 1000
+  - url: https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change
+    status: update
+    note: The official 2026 Summer School fee page states a EUR 1,000 student fee and does not offer Summer School participant funding.
+    fields:
+      funding_available: false
+      funding_type: []
+      funding_evidence: Tinbergen Summer School funding is not offered; scholarships described elsewhere apply to the two-year Research Master programme.
+      fee: EUR 1,000 for PhD and Master students; accommodation and travel excluded
+      fee_eur: 1000
+  - url: https://businessdatascience.nl/foundations-of-machine-learning-with-applications-in-python
+    status: update
+    note: The official 2026 Summer School fee page states a EUR 1,000 student fee and does not offer Summer School participant funding.
+    fields:
+      funding_available: false
+      funding_type: []
+      funding_evidence: Tinbergen Summer School funding is not offered; scholarships described elsewhere apply to the two-year Research Master programme.
+      fee: EUR 1,000 for PhD and Master students; accommodation and travel excluded
+      fee_eur: 1000

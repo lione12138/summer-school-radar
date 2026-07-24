@@ -79,6 +79,22 @@ def test_overrides_can_update_and_exclude_candidates() -> None:
     assert update.fee_eur == 100
 
 
+def test_override_notes_are_idempotent_across_daily_refreshes() -> None:
+    from research_school_radar.review import apply_overrides
+
+    candidate = sample_candidate(PROFILE)
+    override = {
+        "url": candidate.source_url,
+        "note": "Official page confirms the participant fee.",
+        "fields": {"fee": "EUR 100", "fee_eur": 100},
+    }
+
+    apply_overrides([candidate], [override])
+    apply_overrides([candidate], [override])
+
+    assert candidate.summary.count("Override note:") == 1
+
+
 def test_project_overrides_fix_ieee_location_and_exclude_network_homepage() -> None:
     from research_school_radar.review import apply_overrides, load_overrides
 
@@ -97,6 +113,26 @@ def test_project_overrides_fix_ieee_location_and_exclude_network_homepage() -> N
     assert candidates == [ieee]
     assert ieee.location == "Abtei Frauenwörth, Chiemsee, Germany"
     assert ieee.mode == "in-person"
+
+
+def test_project_overrides_correct_tinbergen_summer_school_finances() -> None:
+    from research_school_radar.review import apply_overrides, load_overrides
+
+    candidate = sample_candidate(PROFILE)
+    candidate.title = "Economics of Climate Change"
+    candidate.source_url = "https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change"
+    candidate.funding_available = True
+    candidate.funding_type = ["scholarship"]
+    candidate.funding_evidence = "Scholarships and financial support"
+    candidate.fee = ""
+    candidate.fee_eur = None
+
+    corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
+
+    assert corrected.funding_available is False
+    assert corrected.funding_type == []
+    assert corrected.fee_eur == 1000
+    assert "accommodation and travel excluded" in corrected.fee
 
 
 def test_location_sanitizer_rejects_field_labels() -> None:

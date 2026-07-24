@@ -63,6 +63,48 @@ def test_status_refresh_requires_existing_generated_candidates(tmp_path) -> None
         run_status_refresh(config_dir=ROOT / "config", data_dir=tmp_path / "data", site_dir=tmp_path / "site")
 
 
+def test_status_refresh_applies_maintainer_financial_corrections(tmp_path) -> None:
+    profile = load_yaml(ROOT / "config" / "profile.yaml")
+    candidate = sample_candidate(profile)
+    candidate.title = "Economics of Climate Change"
+    candidate.source_url = "https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change"
+    candidate.application_link = candidate.source_url
+    candidate.funding_available = True
+    candidate.funding_type = ["scholarship"]
+    candidate.financial_access_status = "funded"
+
+    site_dir = tmp_path / "site"
+    data_dir = tmp_path / "data"
+    site_dir.mkdir()
+    data_dir.mkdir()
+    (site_dir / "candidates.json").write_text(
+        json.dumps({"opportunities": [candidate_to_dict(candidate)]}),
+        encoding="utf-8",
+    )
+    (data_dir / "overrides.yml").write_text(
+        """overrides:
+  - url: https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change
+    status: update
+    fields:
+      funding_available: false
+      funding_type: []
+      fee: EUR 1,000
+      fee_eur: 1000
+""",
+        encoding="utf-8",
+    )
+
+    run_status_refresh(config_dir=ROOT / "config", data_dir=data_dir, site_dir=site_dir)
+
+    payload = json.loads((site_dir / "candidates.json").read_text(encoding="utf-8"))
+    corrected = payload["opportunities"][0]
+    assert corrected["funding_available"] is False
+    assert corrected["fee_eur"] == 1000
+    assert corrected["financial_access_status"] == "unresolved"
+    assert "fee exceeds EUR 400 without explicit funding" in corrected["failed_hard_conditions"]
+    assert "Economics of Climate Change" not in (site_dir / "index.html").read_text(encoding="utf-8")
+
+
 def test_status_refresh_keeps_ai_display_rows_out_of_scanner_rss(tmp_path) -> None:
     profile = load_yaml(ROOT / "config" / "profile.yaml")
     scanner = sample_candidate(profile)

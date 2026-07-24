@@ -25,6 +25,11 @@ def is_public_candidate(candidate: Candidate) -> bool:
         return False
     if candidate.duration_days is not None and is_too_short(candidate.duration_days):
         return False
+    # Explicitly expensive, unfunded courses must not fall through into the
+    # catch-all "found" tier. Financially unresolved records may still remain
+    # there for conservative tracking, but they cannot be labelled as funded.
+    if any(reason.startswith("fee exceeds EUR ") for reason in candidate.failed_hard_conditions):
+        return False
     return True
 
 

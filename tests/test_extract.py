@@ -550,6 +550,20 @@ def test_funding_detects_bursary_fellowship_and_board() -> None:
     assert labels("No funding or scholarships are available.") == set()
 
 
+def test_funding_navigation_labels_are_not_participant_support() -> None:
+    from research_school_radar.extract import FUNDING_PATTERNS, _funding_is_offered
+
+    text = (
+        "Graduate Programs Research Browse our Courses Events News Summer School Alumni "
+        "Tuition fees scholarships and financial support FAQ Facts and figures "
+        "Research Master Program Structure Study Schedule"
+    )
+
+    labels = {label for label, pattern in FUNDING_PATTERNS.items() if _funding_is_offered(text, pattern)}
+
+    assert labels == set()
+
+
 def test_deadline_with_filler_words_is_extracted() -> None:
     page = _page(
         "Remote sensing summer school. In-person training. "

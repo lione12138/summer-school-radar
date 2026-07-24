@@ -94,8 +94,9 @@ def test_report_keeps_all_publication_tiers_when_qualified_items_exist() -> None
         funding_available=None,
         funding_type=[],
         funding_evidence="",
-        fee="EUR 900",
-        fee_eur=900,
+        fee="EUR 400",
+        fee_eur=400,
+        duration_days=5,
     )
     found = apply_hard_filters(found, PROFILE)
 

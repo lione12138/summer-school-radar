@@ -353,6 +353,11 @@ def run_status_refresh(
     source_path = candidates_json or site_dir / "candidates.json"
     display_candidates, scanner_candidates = _load_generated_candidates(source_path)
     profile = load_yaml(config_dir / "profile.yaml")
+    overrides = load_overrides(data_dir / "overrides.yml")
+    # A maintainer correction should take effect on the next no-network daily
+    # rebuild; it must not wait for the next Monday/Wednesday/Friday full scan.
+    display_candidates = apply_overrides(display_candidates, overrides)
+    scanner_candidates = apply_overrides(scanner_candidates, overrides)
     site_config = _load_optional_yaml(config_dir / "site.yaml")
     curated = _refresh_curated_deadline_statuses(_load_curated_opportunities(data_dir / "opportunities.yml"))
     sources = _load_existing_site_sources(site_dir / "sources.json", config_dir / "sources.yaml")

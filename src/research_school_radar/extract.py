@@ -58,6 +58,19 @@ NEGATION_BEFORE = re.compile(
     flags=re.IGNORECASE,
 )
 
+# A funding noun in navigation or footer text is not evidence that the
+# opportunity funds its participants. Require a nearby concrete offer,
+# participant benefit, or amount before treating the term as funding.
+FUNDING_OFFER_CUE = re.compile(
+    r"\b(?:available|offer(?:s|ed|ing)?|provid(?:e[sd]?|ing)|award(?:s|ed|ing)|"
+    r"grant(?:ed|ing)|eligible|receive[sd]?|cover(?:s|ed|ing)?|"
+    r"reimburs(?:e[sd]?|ement)|waiv(?:e[sd]?|ing)|fund(?:s|ed)|supported|"
+    r"included|free of charge|fully funded|"
+    r"full scholarship)\b|(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD)\s*\d|"
+    r"[€$£]\s*\d",
+    flags=re.IGNORECASE,
+)
+
 # An opportunity does not fund participants merely because their university or
 # employer might pay.  This statement often appears far away from a vague
 # boilerplate sentence such as "Financial support may be available", so the
@@ -366,14 +379,15 @@ def sample_candidate(profile: dict) -> Candidate:
 
 
 def _funding_is_offered(text: str, pattern: str) -> bool:
-    """True only if the funding term appears without a negation just before it."""
-    offered = False
+    """True only when a funding term has nearby evidence of a real offer."""
     for match in re.finditer(pattern, text, flags=re.IGNORECASE):
-        context = text[max(0, match.start() - 30):match.start()]
-        if NEGATION_BEFORE.search(context):
+        before = text[max(0, match.start() - 40):match.start()]
+        if NEGATION_BEFORE.search(before):
             continue
-        offered = True
-    return offered
+        context = text[max(0, match.start() - 80):min(len(text), match.end() + 120)]
+        if FUNDING_OFFER_CUE.search(context):
+            return True
+    return False
 
 
 def _has_opportunity_signal(text: str) -> bool:

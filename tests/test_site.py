@@ -386,8 +386,9 @@ def test_site_renders_curated_found_opportunities_and_review_queue_json(tmp_path
     candidate.funding_available = None
     candidate.funding_type = []
     candidate.funding_evidence = ""
-    candidate.fee = ""
-    candidate.fee_eur = None
+    candidate.fee = "EUR 400"
+    candidate.fee_eur = 400
+    candidate.duration_days = 5
     candidate = apply_hard_filters(candidate, PROFILE)
     ranked = rank_candidates([candidate])
 
@@ -576,22 +577,22 @@ def test_high_quality_site_table_omits_why_monitor(tmp_path) -> None:
     assert '<details class="cal">' not in html
 
 
-def test_high_quality_uses_fee_per_day_threshold(tmp_path) -> None:
+def test_public_site_omits_explicitly_unaffordable_courses(tmp_path) -> None:
     affordable = sample_candidate(PROFILE)
-    affordable.title = "Affordable Ten Day School"
+    affordable.title = "Affordable Five Day School"
     affordable.source_url = "https://example.org/affordable"
     affordable.location = "Delft, Netherlands"
     affordable.funding_available = None
     affordable.funding_type = []
     affordable.funding_evidence = ""
-    affordable.fee = "EUR 650"
-    affordable.fee_eur = 650
-    affordable.duration_days = 10
+    affordable.fee = "EUR 350"
+    affordable.fee_eur = 350
+    affordable.duration_days = 5
     affordable.deadline = None
     affordable.deadline_status = "uncertain"
 
     expensive = sample_candidate(PROFILE)
-    expensive.title = "Expensive Ten Day School"
+    expensive.title = "Expensive Five Day School"
     expensive.source_url = "https://example.org/expensive"
     expensive.location = "Cambridge, UK"
     expensive.funding_available = None
@@ -599,7 +600,7 @@ def test_high_quality_uses_fee_per_day_threshold(tmp_path) -> None:
     expensive.funding_evidence = ""
     expensive.fee = "EUR 900"
     expensive.fee_eur = 900
-    expensive.duration_days = 10
+    expensive.duration_days = 5
     expensive.deadline = None
     expensive.deadline_status = "uncertain"
 
@@ -611,14 +612,10 @@ def test_high_quality_uses_fee_per_day_threshold(tmp_path) -> None:
     high_section = html.split('<h2 data-i18n="tier.high">High-Quality Opportunities</h2>', 1)[1].split(
         '<h2 data-i18n="tier.found">Listed Opportunities</h2>', 1
     )[0]
-    found_section = html.split('<h2 data-i18n="tier.found">Listed Opportunities</h2>', 1)[1]
-
-    assert "Affordable Ten Day School" in high_section
+    assert "Affordable Five Day School" in high_section
     assert 'data-status="high-quality"' in high_section
     assert "Why high quality" not in high_section
-    assert "Expensive Ten Day School" in found_section
-    assert 'data-status="found"' in found_section
-    assert "<th>Notes</th>" not in found_section
+    assert "Expensive Five Day School" not in html
 
 
 def test_status_line_uses_correct_singular_and_plural(tmp_path) -> None:
