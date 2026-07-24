@@ -1,0 +1,8 @@
+<section class="notes">
+  <h2 data-i18n="notes.title">Collection Notes</h2>
+  <ul>
+    {% for note in notes %}
+    <li><span class="lang-en" lang="en">{{ note.en }}</span><span class="lang-zh" lang="zh">{{ note.zh or note.en }}</span></li>
+    {% endfor %}
+  </ul>
+</section>

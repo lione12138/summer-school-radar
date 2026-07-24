@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 from pathlib import Path
-from string import Template
 from typing import Any
+
+from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from .atomic_io import write_text_atomic
 
@@ -11,12 +12,16 @@ WEB_ROOT = Path(__file__).with_name("web")
 TEMPLATE_ROOT = WEB_ROOT / "templates"
 STATIC_ROOT = WEB_ROOT / "static"
 
+_TEMPLATES = Environment(
+    loader=FileSystemLoader(TEMPLATE_ROOT),
+    autoescape=select_autoescape(("html", "xml")),
+    keep_trailing_newline=True,
+)
 
-def render_template(name: str, **context: Any) -> str:
-    """Render a package-owned HTML shell with already escaped HTML fragments."""
-    source = (TEMPLATE_ROOT / name).read_text(encoding="utf-8")
-    values = {key: str(value) for key, value in context.items()}
-    return Template(source).substitute(values)
+
+def render_template(template_name: str, **context: Any) -> str:
+    """Render a package-owned, autoescaped Jinja template."""
+    return _TEMPLATES.get_template(template_name).render(**context)
 
 
 def read_static_asset(relative_path: str) -> str:

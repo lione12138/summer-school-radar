@@ -1,0 +1,14 @@
+<section id="faq" class="anchor">
+  <div class="section-head">
+    <h2 data-i18n="faq.title">Frequently asked</h2>
+    <p class="lead" data-i18n="faq.lead">Quick answers about scope, updates, and contributing.</p>
+  </div>
+  <div class="faq">
+    {% for item in items %}
+    <details>
+      <summary data-i18n="{{ item.question_key }}">{{ item.question }}</summary>
+      <p data-i18n="{{ item.answer_key }}">{{ item.answer }}</p>
+    </details>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,8 @@
+<details class="session-list">
+  <summary>{% include "components/bilingual.html" with context %}</summary>
+  <ul>
+    {% for session in sessions %}
+    <li><span class="lang-en" lang="en">{{ session.en }}</span><span class="lang-zh" lang="zh">{{ session.zh or session.en }}</span></li>
+    {% endfor %}
+  </ul>
+</details>

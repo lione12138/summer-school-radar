@@ -25,6 +25,7 @@ classifiers = [
 requires-python = ">=3.10"
 dependencies = [
   "beautifulsoup4>=4.12",
+  "Jinja2>=3.1",
   "python-dateutil>=2.9",
   "PyYAML>=6.0",
   "requests>=2.31",
@@ -63,6 +64,10 @@ where = ["src"]
 [tool.setuptools.package-data]
 research_school_radar = [
   "web/templates/*.html",
+  "web/templates/components/*.html",
+  "web/templates/home/*.html",
+  "web/templates/sources/*.html",
+  "web/static/*.svg",
   "web/static/css/*.css",
   "web/static/js/*.js",
 ]

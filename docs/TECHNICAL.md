@@ -454,7 +454,7 @@ maintainer review against official pages is still required for curation.
 - `Candidate.identity_key` carries that structured identity through JSON, seen-state, RSS GUIDs, and stable detail-page names.
 - `src/research_school_radar/report.py` writes Markdown reports.
 - `src/research_school_radar/site.py` coordinates static website generation.
-- `src/research_school_radar/site_assets.py` loads package-owned HTML shells and copies tracked CSS/JavaScript from `web/static/` into each generated site. `site_seo.py` and `site_feed.py` retain SEO/sitemap/robots/watermark helpers and RSS rendering.
+- `src/research_school_radar/site_assets.py` configures an autoescaped Jinja environment for package-owned page/component templates and copies tracked CSS/JavaScript from `web/static/` into each generated site. `site_seo.py` and `site_feed.py` retain sitemap/robots helpers and RSS rendering; SEO HTML fragments are templates.
 - `src/research_school_radar/urls.py` validates external links before they enter HTML, JSON-LD, or RSS.
 - `src/research_school_radar/atomic_io.py` atomically replaces generated text artifacts and retries transient Windows file locks.
 - `src/research_school_radar/storage.py` updates the JSON seen-state file (data/seen.json).
@@ -471,8 +471,8 @@ maintainer review against official pages is still required for curation.
 - Full scans attach per-source health (`status`, `last_attempt`, `last_success`, and `consecutive_failures`) to the manifest and source-registry output. Status-refresh manifests collapse to one reference to the latest full scan, avoiding recursive growth.
 - Multi-session extraction handles labelled prose, labelled table rows with optional deadline columns, and schema.org `subEvent` data. Clearly named periods such as “Foundation week” are accepted without numbering, while unlabelled calendars are still rejected.
 - `src/research_school_radar/programme_sessions.py` formats structured session dates and per-session deadlines consistently across HTML, reports, and RSS.
-- `src/research_school_radar/web/templates/` contains the tracked homepage, detail-page, and source-page HTML shells; `web/static/css/` and `web/static/js/` contain the browser assets. `site_detail.py`, `site_sources_page.py`, and `site_home_page.py` prepare escaped page fragments, while `site_components.py`, `site_calendar.py`, `site_filters.py`, `site_layout.py`, and `site_paths.py` provide reusable presentation primitives. `site.py` coordinates artifact generation.
-- `src/research_school_radar/site_home.py` owns the homepage's static explanatory sections. HTML, CSS, and JavaScript are no longer stored in Python string constants.
+- `src/research_school_radar/web/templates/` contains tracked Jinja page shells plus reusable layout, filter, opportunity-row, source-row, detail, SEO, and homepage-section components; `web/static/css/` and `web/static/js/` contain the browser assets. `site_detail.py`, `site_sources_page.py`, and `site_home_page.py` prepare view data, while `site_components.py`, `site_calendar.py`, `site_filters.py`, `site_layout.py`, and `site_paths.py` provide reusable presentation helpers. `site.py` coordinates artifact generation.
+- `src/research_school_radar/site_home.py` owns homepage explanatory-section data. Page-renderer Python modules no longer store frontend markup; a regression test enforces this boundary.
 - `src/research_school_radar/ai_pipeline.py` owns semantic ranking, DeepSeek configuration, follow-up orchestration, and AI sidecar generation so `cli.py` remains an entry-point coordinator.
 - `src/research_school_radar/ai_output_validation.py` protects production snapshots from empty semantic/DeepSeek output or failed build-time Chinese translation.
 - `src/research_school_radar/ai_evaluate.py` writes the human annotation CSV for real-world AI quality checks.

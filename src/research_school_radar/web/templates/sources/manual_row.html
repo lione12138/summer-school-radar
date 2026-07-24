@@ -1,0 +1,6 @@
+<tr>
+  <td>{% if url %}<a href="{{ url }}" target="_blank" rel="noopener">{{ name }}</a>{% else %}{{ name }}{% endif %}</td>
+  <td>{{ region|safe }}</td>
+  <td>{{ keywords|safe }}</td>
+  <td>{{ notes|safe }}</td>
+</tr>

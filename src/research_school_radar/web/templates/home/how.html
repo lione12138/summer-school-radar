@@ -1,0 +1,15 @@
+<section id="how" class="anchor">
+  <div class="section-head">
+    <h2 data-i18n="how.title">How it works</h2>
+    <p class="lead" data-i18n="how.lead">A transparent pipeline you can audit — not a black box.</p>
+  </div>
+  <div class="steps">
+    {% for step in steps %}
+    <div class="step">
+      <span class="n">{{ step.number }}</span>
+      <h3 data-i18n="{{ step.title_key }}">{{ step.title }}</h3>
+      <p data-i18n="{{ step.body_key }}">{{ step.body }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</section>

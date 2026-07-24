@@ -4,16 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Summa · Funded research summer schools</title>
-$seo_head
+{{ seo_head|safe }}
   <script src="assets/js/i18n-boot.js"></script>
   <link rel="alternate" type="application/rss+xml" title="Summa" href="feed.xml">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/home.css">
   <link rel="stylesheet" href="assets/css/opportunities.css">
-$jsonld
+{{ jsonld|safe }}
 </head>
 <body class="home-page" data-page-title-en="Summa · Funded research summer schools" data-page-title-zh="Summa · 科研暑校与训练机会">
-  $nav
+  {{ nav|safe }}
   <header class="hero" id="top">
     <div class="wrap">
       <p class="kicker" data-i18n="hero.kicker">Updated daily &middot; Free &amp; open source</p>
@@ -31,34 +31,34 @@ $jsonld
   </header>
   <main class="wrap">
     <div class="stats">
-      <div class="stat"><div class="num">$full_count</div><div class="lbl" data-i18n="stat.qualified">Fully qualified</div></div>
-      <div class="stat"><div class="num">$near_count</div><div class="lbl" data-i18n="stat.near">High quality</div></div>
-      <div class="stat"><div class="num">$tracked_sources</div><div class="lbl" data-i18n="stat.sources">Trusted sources</div></div>
-      <div class="stat"><div class="num sm">$updated</div><div class="lbl" data-i18n="stat.updated">Last updated</div></div>
+      <div class="stat"><div class="num">{{ full_count }}</div><div class="lbl" data-i18n="stat.qualified">Fully qualified</div></div>
+      <div class="stat"><div class="num">{{ near_count }}</div><div class="lbl" data-i18n="stat.near">High quality</div></div>
+      <div class="stat"><div class="num">{{ tracked_sources }}</div><div class="lbl" data-i18n="stat.sources">Trusted sources</div></div>
+      <div class="stat"><div class="num sm">{{ updated }}</div><div class="lbl" data-i18n="stat.updated">Last updated</div></div>
     </div>
-    $status_banner
+    {{ status_banner|safe }}
     <section id="opportunities" class="anchor">
-      <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p>$opportunity_total</p></div>
+      <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p>{{ opportunity_total|safe }}</p></div>
       <div class="opportunity-browser">
-        $filters
+        {{ filters|safe }}
         <div class="opportunity-results">
-          $curated_section
-          $qualified_section
-          $near_block
-          $found_section
-          $pagination
+          {{ curated_section|safe }}
+          {{ qualified_section|safe }}
+          {{ near_block|safe }}
+          {{ found_section|safe }}
+          {{ pagination|safe }}
         </div>
       </div>
     </section>
-    $notes_section
-    $subscribe_section
-    $how_section
-    $about_section
-    $faq_section
+    {{ notes_section|safe }}
+    {{ subscribe_section|safe }}
+    {{ how_section|safe }}
+    {{ about_section|safe }}
+    {{ faq_section|safe }}
   </main>
-  $footer
+  {{ footer|safe }}
   <script src="assets/js/filters.js"></script>
   <script src="assets/js/i18n.js"></script>
-  $analytics
+  {{ analytics|safe }}
 </body>
 </html>

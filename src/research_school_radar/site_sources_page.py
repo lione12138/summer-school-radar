@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-from html import escape
 from typing import Any
 
 from .localization import region_zh, source_type_zh, topic_zh
@@ -36,36 +35,24 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
 
 def _manual_sources_section(manual: list[dict[str, Any]]) -> str:
     rows = "".join(_manual_source_row(source) for source in manual)
-    return f"""
-    <section>
-      <h2 data-i18n="sources.direct">Sources to Check Directly</h2>
-      <p class="muted" data-i18n="sources.direct.lead">We cannot fetch these automatically yet. Please open them directly to look for opportunities.</p>
-      <div class="table-wrap">
-        <table>
-          <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.region">Region</th><th data-i18n="sources.keywords">Keywords</th><th data-i18n="sources.reason">Why it isn&#39;t fetched automatically</th></tr></thead>
-          <tbody>{rows}</tbody>
-        </table>
-      </div>
-    </section>
-"""
+    return render_template("sources/manual_section.html", rows=rows)
 
 
 def _manual_source_row(source: dict[str, Any]) -> str:
     url = safe_external_url(source.get("url"))
-    name = escape(str(source.get("name", "Unnamed source")))
-    link = f'<a href="{escape(url, quote=True)}" target="_blank" rel="noopener">{name}</a>' if url else name
+    name = str(source.get("name", "Unnamed source"))
     keyword_values = _list_value(source.get("keywords"))
     keywords = ", ".join(keyword_values)
     keywords_cn = "、".join(topic_zh(value) for value in keyword_values)
     notes = str(source.get("notes", ""))
     notes_cn = str(source.get("notes_zh", ""))
-    return (
-        "<tr>"
-        f"<td>{link}</td>"
-        f"<td>{bilingual(str(source.get('region', '')), region_zh(str(source.get('region', ''))))}</td>"
-        f"<td>{bilingual(keywords, keywords_cn)}</td>"
-        f"<td>{bilingual(notes, notes_cn)}</td>"
-        "</tr>"
+    return render_template(
+        "sources/manual_row.html",
+        url=url,
+        name=name,
+        region=bilingual(str(source.get("region", "")), region_zh(str(source.get("region", "")))),
+        keywords=bilingual(keywords, keywords_cn),
+        notes=bilingual(notes, notes_cn),
     )
 
 
@@ -74,8 +61,7 @@ def _source_row(source: dict[str, Any]) -> str:
     status = "enabled" if enabled else "disabled"
     status_class = "status-enabled" if enabled else "status-disabled"
     url = safe_external_url(source.get("url"))
-    name = escape(str(source.get("name", "Unnamed source")))
-    source_link = f'<a href="{escape(url, quote=True)}" target="_blank" rel="noopener">{name}</a>' if url else name
+    name = str(source.get("name", "Unnamed source"))
     keyword_values = _list_value(source.get("keywords"))
     keywords = ", ".join(keyword_values)
     keywords_cn = "、".join(topic_zh(value) for value in keyword_values)
@@ -88,17 +74,21 @@ def _source_row(source: dict[str, Any]) -> str:
     if source.get("render"):
         notes = f"{notes} Rendered with a headless browser.".strip()
         notes_cn = f"{notes_cn} 使用无头浏览器渲染。".strip()
-    return (
-        "<tr>"
-        f"<td>{source_link}</td>"
-        f'<td><span class="{status_class}">{bilingual(status, "已启用" if enabled else "已停用")}</span></td>'
-        f"<td>{_health_cell(source)}</td>"
-        f"<td>{escape(str(source.get('layer', '')))}</td>"
-        f"<td>{bilingual(str(source.get('region', '')), region_zh(str(source.get('region', ''))))}</td>"
-        f"<td>{bilingual(str(source.get('source_type', '')), source_type_zh(str(source.get('source_type', ''))))}</td>"
-        f"<td>{bilingual(keywords, keywords_cn)}</td>"
-        f"<td>{bilingual(notes, notes_cn)}</td>"
-        "</tr>"
+    return render_template(
+        "sources/source_row.html",
+        url=url,
+        name=name,
+        status_class=status_class,
+        status=bilingual(status, "已启用" if enabled else "已停用"),
+        health=_health_cell(source),
+        layer=str(source.get("layer", "")),
+        region=bilingual(str(source.get("region", "")), region_zh(str(source.get("region", "")))),
+        source_type=bilingual(
+            str(source.get("source_type", "")),
+            source_type_zh(str(source.get("source_type", ""))),
+        ),
+        keywords=bilingual(keywords, keywords_cn),
+        notes=bilingual(notes, notes_cn),
     )
 
 

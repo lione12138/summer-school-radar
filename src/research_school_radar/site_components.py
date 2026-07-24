@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from datetime import date
-from html import escape
 
 from .localization import date_zh, duration_zh, region_zh
 from .models import Candidate
@@ -12,27 +11,14 @@ from .programme_sessions import (
     session_line_label,
     session_line_label_zh,
 )
+from .site_assets import render_template
 from .site_calendar import calendar_data_url, calendar_filename, google_calendar_url, outlook_calendar_url
 from .urls import safe_external_url
 from .utils import format_duration, sanitize_location
 
 
 def bilingual(en: str, zh: str) -> str:
-    en_text = escape(en)
-    zh_text = escape(zh.strip() or en)
-    return (
-        f'<span class="lang-en" lang="en">{en_text}</span>'
-        f'<span class="lang-zh" lang="zh">{zh_text}</span>'
-    )
-
-
-def evidence_attr(evidence: str) -> str:
-    text = evidence.strip()
-    if not text:
-        return ""
-    if len(text) > 300:
-        text = text[:297].rstrip() + "..."
-    return f' title="{escape(text, quote=True)}"'
+    return render_template("components/bilingual.html", en=en, zh=zh.strip() or en)
 
 
 def is_online_only(candidate: Candidate) -> bool:
@@ -76,15 +62,15 @@ def duration_cell(candidate: Candidate) -> str:
 
 
 def session_details(candidate: Candidate) -> str:
-    rows = "".join(
-        "<li>" f"{bilingual(session_line_label(session), session_line_label_zh(session))}" "</li>"
+    sessions = [
+        {"en": session_line_label(session), "zh": session_line_label_zh(session)}
         for session in candidate.sessions
-    )
-    return (
-        '<details class="session-list">'
-        f"<summary>{bilingual(duration_label(candidate), duration_label_zh(candidate))}</summary>"
-        f"<ul>{rows}</ul>"
-        "</details>"
+    ]
+    return render_template(
+        "components/session_details.html",
+        en=duration_label(candidate),
+        zh=duration_label_zh(candidate),
+        sessions=sessions,
     )
 
 
@@ -101,19 +87,20 @@ def deadline_cell(deadline: date | None, title: str, url: str, *, latest_session
     if deadline is None:
         return bilingual("uncertain", "待确认")
     safe_url = safe_external_url(url)
-    google = escape(google_calendar_url(deadline, title, safe_url), quote=True)
-    outlook = escape(outlook_calendar_url(deadline, title, safe_url), quote=True)
+    google = google_calendar_url(deadline, title, safe_url)
+    outlook = outlook_calendar_url(deadline, title, safe_url)
     ics = calendar_data_url(deadline, title, safe_url)
-    filename = escape(calendar_filename(title), quote=True)
+    filename = calendar_filename(title)
     deadline_en = f"Latest: {deadline.isoformat()}" if latest_session else deadline.isoformat()
     deadline_cn = f"最晚时段截止：{date_zh(deadline)}" if latest_session else date_zh(deadline)
-    return (
-        f"{bilingual(deadline_en, deadline_cn)}"
-        '<details class="cal"><summary data-i18n="calendar.add">Add to calendar</summary>'
-        f'<a href="{google}" target="_blank" rel="noopener">Google Calendar</a>'
-        f'<a href="{outlook}" target="_blank" rel="noopener">Outlook</a>'
-        f'<a href="{ics}" download="{filename}">Apple / .ics</a>'
-        "</details>"
+    return render_template(
+        "components/deadline.html",
+        deadline_en=deadline_en,
+        deadline_zh=deadline_cn,
+        google=google,
+        outlook=outlook,
+        ics=ics,
+        filename=filename,
     )
 
 
@@ -137,7 +124,6 @@ __all__ = [
     "duration_cell",
     "duration_label",
     "duration_label_zh",
-    "evidence_attr",
     "financial_summary_short",
     "is_online_only",
     "public_location",

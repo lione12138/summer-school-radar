@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from datetime import date
-from html import escape
 from typing import Any
 from urllib.parse import quote
 
@@ -14,7 +13,6 @@ from .site_components import (
     candidate_deadline_cell as _candidate_deadline_cell,
     deadline_cell as _deadline_cell,
     duration_cell as _duration_cell,
-    evidence_attr as _evidence_attr,
     financial_summary_short as _financial_summary_short,
     is_online_only as _is_online_only,
     public_location as _public_location,
@@ -56,24 +54,24 @@ def _status_banner(full_count: int, near_count: int, tracked_total: int, tracked
     if full_count:
         label = f"{full_count} fully qualified opportunit{'ies' if full_count != 1 else 'y'} in the latest scan."
         zh = f"最近一次扫描发现 {full_count} 个完全符合的项目；当前共追踪 {tracked_total} 个项目和 {tracked_sources} 个可信来源。"
-        return f'<p class="status">{_bilingual(f"{label} {coverage}", zh)}</p>'
+        return render_template("home/status_banner.html", variant="", message_en=f"{label} {coverage}", message_zh=zh)
     if near_count:
         message = (
             "No fully qualified matches in the latest scan. "
             f"{coverage} Additional opportunities from official sources are shown below."
         )
         zh = f"最近一次扫描没有完全符合的项目。当前共追踪 {tracked_total} 个项目和 {tracked_sources} 个可信来源；下方同时列出其他官方来源项目。"
-        return f'<p class="status info">{_bilingual(message, zh)}</p>'
+        return render_template("home/status_banner.html", variant="info", message_en=message, message_zh=zh)
     message = (
         "No open opportunities matched every rule in the latest scan. "
         f"{coverage} New schools surface as their deadlines open, typically December to April."
     )
     zh = f"最近一次扫描没有符合全部规则且开放申请的项目。雷达仍在追踪 {tracked_sources} 个可信来源，新项目通常会在每年 12 月至次年 4 月陆续开放。"
-    return f'<p class="status info">{_bilingual(message, zh)}</p>'
+    return render_template("home/status_banner.html", variant="info", message_en=message, message_zh=zh)
 
 
-def _subscribe_form_html(site_config: dict[str, Any]) -> str:
-    """An email subscribe form when a provider is configured, else "".
+def _subscribe_action(site_config: dict[str, Any]) -> str:
+    """Return a safe email-subscription endpoint when configured.
 
     Powered by an RSS-to-email service watching feed.xml, so no backend is
     needed on the static site."""
@@ -90,43 +88,21 @@ def _subscribe_form_html(site_config: dict[str, Any]) -> str:
         )
         if not action:
             return ""
-        return (
-            f'<form class="subscribe-form" action="{escape(action, quote=True)}" '
-            'method="post" target="_blank">'
-            '<input type="email" name="email" placeholder="you@example.com" '
-            'aria-label="Email address" data-i18n-placeholder="subscribe.email.placeholder" '
-            'data-i18n-aria-label="subscribe.email.label" required>'
-            '<button type="submit" data-i18n="subscribe.submit">Get email alerts</button>'
-            "</form>"
-        )
+        return action
     if provider == "followit":
         action = safe_external_url(config.get("followit_form_action"))
         if not action:
             return ""
-        return (
-            f'<form class="subscribe-form" action="{escape(action, quote=True)}" method="post" target="_blank">'
-            '<input type="email" name="email" placeholder="you@example.com" '
-            'aria-label="Email address" data-i18n-placeholder="subscribe.email.placeholder" '
-            'data-i18n-aria-label="subscribe.email.label" required>'
-            '<button type="submit" data-i18n="subscribe.submit">Get email alerts</button>'
-            "</form>"
-        )
+        return action
     return ""
 
 
 def _subscribe_section(site_config: dict[str, Any]) -> str:
     """A 'stay updated' section: an email form when configured, RSS otherwise."""
-    form = _subscribe_form_html(site_config)
-    if not form:
+    action = _subscribe_action(site_config)
+    if not action:
         return ""
-    body = '<p class="lead" data-i18n="subscribe.lead">Get an email when new funded schools open — no spam, unsubscribe anytime.</p>' + form
-    return f"""
-    <section id="subscribe" class="anchor">
-      <div class="section-head">
-        <h2 data-i18n="subscribe.title">Stay updated</h2>
-      </div>
-      <div class="panel">{body}</div>
-    </section>"""
+    return render_template("home/subscribe.html", action=action)
 
 
 def _public_collection_notes(errors: list[str]) -> list[str]:
@@ -169,12 +145,7 @@ def _empty_opportunities_block(tracked_total: int, tracked_sources: int) -> str:
         f"12 月至次年 4 月开放申请。雷达每周一、周三和周五检查 {tracked_sources} 个可信来源，"
         f"目前追踪 {tracked_total} 个项目，并每天刷新截止日期状态。"
     )
-    return f"""
-    <div class="panel">
-      <h3 data-i18n="empty.title">Nothing open right now — but the radar is watching</h3>
-      <p>{_bilingual(message, message_zh)}</p>
-      <p style="margin-top:12px"><a class="pill" href="sources.html" data-i18n="empty.link">See what we track</a></p>
-    </div>"""
+    return render_template("home/empty.html", message_en=message, message_zh=message_zh)
 
 
 def render_site(
@@ -204,8 +175,9 @@ def render_site(
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
     near_rows = "".join(_near_row(candidate) for candidate in near)
     found_rows = "".join(_found_row(candidate) for candidate in found)
-    public_notes = _public_collection_notes(errors)
-    notes = "".join(f"<li>{_bilingual(error, _collection_note_zh(error))}</li>" for error in public_notes[:12])
+    public_notes = [
+        {"en": error, "zh": _collection_note_zh(error)} for error in _public_collection_notes(errors)[:12]
+    ]
     filters = render_filters([*full, *near, *found], curated)
     analytics = _analytics_snippet(site_config or {})
     status_banner = _status_banner(len(full), len(near), tracked_total, tracked_sources)
@@ -237,7 +209,7 @@ def render_site(
         near_block=near_block,
         found_section=_found_section(found_rows) if found_rows else "",
         pagination=render_pagination(),
-        notes_section=_notes_section(notes) if notes else "",
+        notes_section=_notes_section(public_notes) if public_notes else "",
         subscribe_section=_subscribe_section(site_config or {}),
         how_section=_how_it_works_section(),
         about_section=_about_section(),
@@ -265,84 +237,67 @@ def _interleave_by_organizer(candidates: list[Candidate]) -> list[Candidate]:
 
 
 def _qualified_section(rows: str) -> str:
-    return f"""
-    <section class="opportunity-tier">
-      <div class="sr-only-tier"><h2 data-i18n="tier.qualified">Fully Qualified Opportunities</h2></div>
-      <div class="table-wrap opportunity-table-wrap">
-        <table class="opportunity-table qualified-table">
-          <thead><tr><th>#</th><th data-i18n="table.title">Title</th><th data-i18n="table.organizer">Organizer</th><th data-i18n="table.location">Location</th><th data-i18n="table.duration">Duration</th><th data-i18n="table.deadline">Deadline</th><th data-i18n="table.funding">Funding / Fee</th><th data-i18n="table.topic">Topic</th><th data-i18n="table.actions">Actions</th></tr></thead>
-          <tbody>{rows}</tbody>
-        </table>
-      </div>
-    </section>
-"""
+    return _opportunity_section(rows, "qualified")
 
 
 def _curated_section(rows: str) -> str:
-    return f"""
-    <section class="opportunity-tier">
-      <div class="sr-only-tier"><h2 data-i18n="tier.curated">Curated Opportunities</h2><p data-i18n="tier.curated.lead">Maintainer-reviewed records with source evidence.</p></div>
-      <div class="table-wrap opportunity-table-wrap">
-        <table class="opportunity-table curated-table">
-          <thead><tr><th data-i18n="table.title">Title</th><th data-i18n="table.organizer">Organizer</th><th data-i18n="table.location">Location</th><th data-i18n="table.duration">Duration</th><th data-i18n="table.deadline">Deadline</th><th data-i18n="table.funding">Funding / Fee</th><th data-i18n="table.topic">Topic</th><th data-i18n="table.notes">Notes</th><th data-i18n="table.actions">Actions</th></tr></thead>
-          <tbody>{rows}</tbody>
-        </table>
-      </div>
-    </section>
-"""
+    return _opportunity_section(rows, "curated")
 
 
 def _near_section(rows: str) -> str:
-    return f"""
-    <section class="opportunity-tier">
-      <div class="sr-only-tier"><h2 data-i18n="tier.high">High-Quality Opportunities</h2><p data-i18n="tier.high.lead">Relevant funded or low-fee opportunities from official sources.</p></div>
-      <div class="table-wrap opportunity-table-wrap">
-        <table class="opportunity-table standard-table">
-          <thead><tr><th data-i18n="table.title">Title</th><th data-i18n="table.organizer">Organizer</th><th data-i18n="table.location">Location</th><th data-i18n="table.duration">Duration</th><th data-i18n="table.deadline">Deadline</th><th data-i18n="table.funding">Funding / Fee</th><th data-i18n="table.topic">Topic</th><th data-i18n="table.actions">Actions</th></tr></thead>
-          <tbody>{rows}</tbody>
-        </table>
-      </div>
-    </section>
-"""
+    return _opportunity_section(rows, "high")
 
 
 def _found_section(rows: str) -> str:
-    return f"""
-    <section class="opportunity-tier">
-      <div class="sr-only-tier"><h2 data-i18n="tier.found">Listed Opportunities</h2><p data-i18n="tier.found.lead">Additional research-training opportunities collected from official sources.</p></div>
-      <div class="table-wrap opportunity-table-wrap">
-        <table class="opportunity-table standard-table">
-          <thead><tr><th data-i18n="table.title">Title</th><th data-i18n="table.organizer">Organizer</th><th data-i18n="table.location">Location</th><th data-i18n="table.duration">Duration</th><th data-i18n="table.deadline">Deadline</th><th data-i18n="table.funding">Funding / Fee</th><th data-i18n="table.topic">Topic</th><th data-i18n="table.actions">Actions</th></tr></thead>
-          <tbody>{rows}</tbody>
-        </table>
-      </div>
-    </section>
-"""
+    return _opportunity_section(rows, "found")
 
 
-def _notes_section(notes: str) -> str:
-    return f"""
-    <section class="notes">
-      <h2 data-i18n="notes.title">Collection Notes</h2>
-      <ul>{notes}</ul>
-    </section>
-"""
+def _opportunity_section(rows: str, tier: str) -> str:
+    variants = {
+        "qualified": {
+            "title_key": "tier.qualified",
+            "title": "Fully Qualified Opportunities",
+            "lead_key": "",
+            "lead": "",
+            "table_class": "qualified-table",
+        },
+        "curated": {
+            "title_key": "tier.curated",
+            "title": "Curated Opportunities",
+            "lead_key": "tier.curated.lead",
+            "lead": "Maintainer-reviewed records with source evidence.",
+            "table_class": "curated-table",
+        },
+        "high": {
+            "title_key": "tier.high",
+            "title": "High-Quality Opportunities",
+            "lead_key": "tier.high.lead",
+            "lead": "Relevant funded or low-fee opportunities from official sources.",
+            "table_class": "standard-table",
+        },
+        "found": {
+            "title_key": "tier.found",
+            "title": "Listed Opportunities",
+            "lead_key": "tier.found.lead",
+            "lead": "Additional research-training opportunities collected from official sources.",
+            "table_class": "standard-table",
+        },
+    }
+    return render_template(
+        "home/opportunity_section.html",
+        rows=rows,
+        qualified=tier == "qualified",
+        curated=tier == "curated",
+        **variants[tier],
+    )
+
+
+def _notes_section(notes: list[dict[str, str]]) -> str:
+    return render_template("home/notes.html", notes=notes)
 
 
 def _qualified_row(index: int, candidate: Candidate) -> str:
-    return (
-        f"<tr {_row_attrs(candidate)}>"
-        f"<td>{index}</td>"
-        f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
-        f"<td>{_bilingual(candidate.organizer, candidate.organizer_zh)}</td>"
-        f"<td>{_bilingual(_public_location(candidate.location), candidate.location_zh or _public_location_zh(candidate.location))}</td>"
-        f"<td{_evidence_attr(candidate.duration_evidence)}>{_duration_cell(candidate)}</td>"
-        f"<td{_evidence_attr(candidate.deadline_evidence)}>{_candidate_deadline_cell(candidate)}</td>"
-        f"<td{_evidence_attr(candidate.funding_evidence)}>{_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate))}</td>"
-        f"<td>{_bilingual(topics_label(candidate.topic_keywords), topics_label_zh(candidate.topic_keywords))}</td>"
-        f"<td class=\"card-actions\">{_candidate_actions(candidate)}</td>"
-        "</tr>"
-    )
+    return _candidate_row(candidate, "qualified", index=index)
 
 
 def _curated_row(item: dict[str, Any]) -> str:
@@ -353,81 +308,68 @@ def _curated_row(item: dict[str, Any]) -> str:
     organizer = str(item.get("organizer", "uncertain"))
     location = _public_location(str(item.get("location", "uncertain")))
     notes = str(item.get("notes") or item.get("status") or "confirmed")
-    return (
-        f"<tr {_curated_row_attrs(item)}>"
-        f"<td>{_curated_link(item)}</td>"
-        f"<td>{_bilingual(organizer, str(item.get('organizer_zh', '')))}</td>"
-        f"<td>{_bilingual(location, str(item.get('location_zh', '')) or region_zh(location))}</td>"
-        f"<td>{_bilingual(_curated_duration(item), _curated_duration_zh(item))}</td>"
-        f"<td>{_deadline_cell(_parse_iso_date(item.get('application_deadline')), str(item.get('title', 'Untitled opportunity')), safe_external_url(item.get('url')))}</td>"
-        f"<td>{_bilingual(_curated_financial_summary(item, funding), _curated_financial_summary_zh(item, funding))}</td>"
-        f"<td>{_bilingual(topics_label(topics) or 'uncertain', topics_label_zh(topics) or '待确认')}</td>"
-        f"<td>{_bilingual(notes, str(item.get('notes_zh', '')))}</td>"
-        f"<td class=\"card-actions\">{_curated_actions(item)}</td>"
-        "</tr>"
+    official_url = safe_external_url(item.get("url"))
+    return render_template(
+        "home/curated_row.html",
+        attrs=_curated_row_attrs(item),
+        official_url=official_url,
+        title=_bilingual(str(item.get("title", "Untitled opportunity")), str(item.get("title_zh", ""))),
+        organizer=_bilingual(organizer, str(item.get("organizer_zh", ""))),
+        location=_bilingual(location, str(item.get("location_zh", "")) or region_zh(location)),
+        duration=_bilingual(_curated_duration(item), _curated_duration_zh(item)),
+        deadline=_deadline_cell(
+            _parse_iso_date(item.get("application_deadline")),
+            str(item.get("title", "Untitled opportunity")),
+            official_url,
+        ),
+        funding=_bilingual(
+            _curated_financial_summary(item, funding),
+            _curated_financial_summary_zh(item, funding),
+        ),
+        topics=_bilingual(topics_label(topics) or "uncertain", topics_label_zh(topics) or "待确认"),
+        notes=_bilingual(notes, str(item.get("notes_zh", ""))),
     )
 
 
 def _near_row(candidate: Candidate) -> str:
-    return (
-        f"<tr {_row_attrs(candidate, 'high-quality')}>"
-        f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
-        f"<td>{_bilingual(candidate.organizer, candidate.organizer_zh)}</td>"
-        f"<td>{_bilingual(_public_location(candidate.location), candidate.location_zh or _public_location_zh(candidate.location))}</td>"
-        f"<td{_evidence_attr(candidate.duration_evidence)}>{_duration_cell(candidate)}</td>"
-        f"<td{_evidence_attr(candidate.deadline_evidence)}>{_candidate_deadline_cell(candidate)}</td>"
-        f"<td{_evidence_attr(candidate.funding_evidence)}>{_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate))}</td>"
-        f"<td>{_bilingual(topics_label(candidate.topic_keywords) or 'uncertain', topics_label_zh(candidate.topic_keywords) or '待确认')}</td>"
-        f"<td class=\"card-actions\">{_candidate_actions(candidate)}</td>"
-        "</tr>"
-    )
+    return _candidate_row(candidate, "high-quality")
 
 
 def _found_row(candidate: Candidate) -> str:
-    return (
-        f"<tr {_row_attrs(candidate, 'found')}>"
-        f"<td>{_link(candidate)}{_new_badge(candidate)}</td>"
-        f"<td>{_bilingual(candidate.organizer, candidate.organizer_zh)}</td>"
-        f"<td>{_bilingual(_public_location(candidate.location), candidate.location_zh or _public_location_zh(candidate.location))}</td>"
-        f"<td{_evidence_attr(candidate.duration_evidence)}>{_duration_cell(candidate)}</td>"
-        f"<td{_evidence_attr(candidate.deadline_evidence)}>{_candidate_deadline_cell(candidate)}</td>"
-        f"<td{_evidence_attr(candidate.funding_evidence)}>{_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate))}</td>"
-        f"<td>{_bilingual(topics_label(candidate.topic_keywords) or 'uncertain', topics_label_zh(candidate.topic_keywords) or '待确认')}</td>"
-        f"<td class=\"card-actions\">{_candidate_actions(candidate)}</td>"
-        "</tr>"
-    )
+    return _candidate_row(candidate, "found")
 
 
-def _link(candidate: Candidate) -> str:
-    return (
-        f'<a href="{escape(candidate_detail_href(candidate), quote=True)}">'
-        f'{_bilingual(candidate.title, candidate.title_zh)}</a>'
-    )
-
-
-def _candidate_actions(candidate: Candidate) -> str:
+def _candidate_row(candidate: Candidate, status: str, *, index: int | None = None) -> str:
     official = safe_external_url(candidate.application_link or candidate.source_url)
-    official_link = (
-        f'<a class="button tonal" href="{escape(official, quote=True)}" target="_blank" '
-        'rel="noopener" data-i18n="action.official">Official page</a>'
-        if official
-        else ""
+    return render_template(
+        "home/candidate_row.html",
+        attrs=_row_attrs(candidate, status),
+        index=index,
+        detail_href=candidate_detail_href(candidate),
+        title=_bilingual(candidate.title, candidate.title_zh),
+        is_new=candidate.is_new,
+        organizer=_bilingual(candidate.organizer, candidate.organizer_zh),
+        location=_bilingual(
+            _public_location(candidate.location),
+            candidate.location_zh or _public_location_zh(candidate.location),
+        ),
+        duration_evidence=_evidence_text(candidate.duration_evidence),
+        deadline_evidence=_evidence_text(candidate.deadline_evidence),
+        funding_evidence=_evidence_text(candidate.funding_evidence),
+        duration=_duration_cell(candidate),
+        deadline=_candidate_deadline_cell(candidate),
+        funding=_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate)),
+        topics=_bilingual(
+            topics_label(candidate.topic_keywords) or "uncertain",
+            topics_label_zh(candidate.topic_keywords) or "待确认",
+        ),
+        official_url=official,
     )
-    return (
-        f'<a class="button primary" href="{escape(candidate_detail_href(candidate), quote=True)}" data-i18n="action.details">View details</a>'
-        f"{official_link}"
-    )
 
 
-def _curated_actions(item: dict[str, Any]) -> str:
-    url = safe_external_url(item.get("url"))
-    if not url:
-        return ""
-    return f'<a class="button primary" href="{escape(url, quote=True)}" target="_blank" rel="noopener" data-i18n="action.official">Official page</a>'
-
-
-def _new_badge(candidate: Candidate) -> str:
-    return ' <span class="badge-new" data-i18n="badge.new">NEW</span>' if candidate.is_new else ""
+def _evidence_text(evidence: str) -> str:
+    text = evidence.strip()
+    return text[:297].rstrip() + "..." if len(text) > 300 else text
 
 
 def _curated_financial_summary(item: dict[str, Any], funding: dict[str, Any]) -> str:
@@ -464,7 +406,7 @@ def _parse_iso_date(value: Any) -> date | None:
         return None
 
 
-def _row_attrs(candidate: Candidate, status: str | None = None) -> str:
+def _row_attrs(candidate: Candidate, status: str | None = None) -> dict[str, str]:
     status = status or ("qualified" if candidate.fully_qualified else "found")
     status_labels = {
         "qualified": ("Fully qualified", "完全符合"),
@@ -499,10 +441,10 @@ def _row_attrs(candidate: Candidate, status: str | None = None) -> str:
         "data-confidence": str(candidate.extraction_confidence),
         "data-search": searchable,
     }
-    return " ".join(f'{key}="{escape(value, quote=True)}"' for key, value in attrs.items())
+    return attrs
 
 
-def _curated_row_attrs(item: dict[str, Any]) -> str:
+def _curated_row_attrs(item: dict[str, Any]) -> dict[str, str]:
     funding = item.get("funding", {})
     if not isinstance(funding, dict):
         funding = {}
@@ -544,16 +486,7 @@ def _curated_row_attrs(item: dict[str, Any]) -> str:
         "data-new": "false",
         "data-search": searchable,
     }
-    return " ".join(f'{key}="{escape(value, quote=True)}"' for key, value in attrs.items())
-
-
-def _curated_link(item: dict[str, Any]) -> str:
-    title = str(item.get("title", "Untitled opportunity"))
-    label = _bilingual(title, str(item.get("title_zh", "")))
-    url = safe_external_url(item.get("url"))
-    if not url:
-        return label
-    return f'<a href="{escape(url, quote=True)}" target="_blank" rel="noopener">{label}</a>'
+    return attrs
 
 
 def _curated_duration(item: dict[str, Any]) -> str:
@@ -614,17 +547,10 @@ def _analytics_snippet(site_config: dict[str, Any]) -> str:
         token = str(analytics.get("cloudflare_token", "")).strip()
         if not token:
             return ""
-        return (
-            '<script defer src="https://static.cloudflareinsights.com/beacon.min.js" '
-            f"data-cf-beacon='{{\"token\":\"{escape(token, quote=True)}\"}}'></script>"
-        )
+        return render_template("components/analytics.html", provider=provider, token=token, code="")
     if provider == "goatcounter":
         code = str(analytics.get("goatcounter_code", "")).strip()
         if not code:
             return ""
-        safe_code = escape(code, quote=True)
-        return (
-            f'<script data-goatcounter="https://{safe_code}.goatcounter.com/count" '
-            'async src="//gc.zgo.at/count.js"></script>'
-        )
+        return render_template("components/analytics.html", provider=provider, token="", code=code)
     return ""

@@ -3,56 +3,60 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>$title · Summa</title>
-$seo_head
+  <title>{{ title }} · Summa</title>
+{{ seo_head|safe }}
   <script src="../assets/js/i18n-boot.js"></script>
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/opportunities.css">
   <link rel="stylesheet" href="../assets/css/detail.css">
 </head>
-<body class="detail-page" data-page-title-en="$title_attr · Summa" data-page-title-zh="$title_zh_attr">
-  $nav
+<body class="detail-page" data-page-title-en="{{ title }} · Summa" data-page-title-zh="{{ title_zh }} · Summa">
+  {{ nav|safe }}
   <header class="detail-header">
     <div class="wrap">
       <a class="detail-back" href="../index.html#opportunities" data-i18n="detail.back">&larr; Back to opportunities</a><br>
-      <span class="status-badge $status_class">$status</span>
-      <h1>$bilingual_title</h1>
-      <p class="detail-org">$organization</p>
+      <span class="status-badge {{ status_class }}">{{ status|safe }}</span>
+      <h1>{{ bilingual_title|safe }}</h1>
+      <p class="detail-org">{{ organization|safe }}</p>
       <div class="detail-facts">
-        <span>$duration</span>
-        <span>$deadline</span>
-        <span>$mode</span>
+        <span>{{ duration|safe }}</span>
+        <span>{{ deadline|safe }}</span>
+        <span>{{ mode|safe }}</span>
       </div>
     </div>
   </header>
   <main class="detail-main">
     <div class="wrap detail-grid">
       <div class="detail-stack">
-        <section class="detail-panel"><h2 data-i18n="detail.overview">Overview</h2><p>$summary</p></section>
-        <section class="detail-panel"><h2 data-i18n="detail.eligibility">Who should apply</h2><p>$eligibility</p></section>
-        <section class="detail-panel qualified"><h2 data-i18n="detail.why">Why this status</h2><p>$qualification</p></section>
+        <section class="detail-panel"><h2 data-i18n="detail.overview">Overview</h2><p>{{ summary|safe }}</p></section>
+        <section class="detail-panel"><h2 data-i18n="detail.eligibility">Who should apply</h2><p>{{ eligibility|safe }}</p></section>
+        <section class="detail-panel qualified"><h2 data-i18n="detail.why">Why this status</h2><p>{{ qualification|safe }}</p></section>
         <section class="detail-panel">
           <h2 data-i18n="detail.source">Official source</h2>
           <p class="muted" data-i18n="detail.source.original">Original source evidence is retained below for verification.</p>
-          <p>$evidence</p>
-          $official_source_link
+          <p>{{ evidence|safe }}</p>
+          {% if official_url %}
+          <a class="source-link" href="{{ official_url }}" target="_blank" rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>
+          {% else %}
+          <p class="muted" data-i18n="detail.source.unavailable">No safe official URL is available for this record.</p>
+          {% endif %}
         </section>
       </div>
       <aside class="decision-card">
         <h2 data-i18n="detail.snapshot">Application snapshot</h2>
         <span class="eyebrow" data-i18n="detail.funding">Funding / fee</span>
-        <p class="decision-value">$financial_summary</p>
+        <p class="decision-value">{{ financial_summary|safe }}</p>
         <span class="eyebrow" data-i18n="detail.deadline">Application deadline</span>
-        <p class="deadline-value">$deadline</p>
-        $session_schedule
-        <p class="muted">$mode &middot; $location<br>$topics</p>
-        <div class="detail-actions">$official_button$calendar</div>
+        <p class="deadline-value">{{ deadline|safe }}</p>
+        {{ session_schedule|safe }}
+        <p class="muted">{{ mode|safe }} &middot; {{ location|safe }}<br>{{ topics|safe }}</p>
+        <div class="detail-actions">{% if official_url %}<a class="button primary" href="{{ official_url }}" target="_blank" rel="noopener" data-i18n="action.official.open">Open official page</a>{% endif %}{{ calendar|safe }}</div>
         <span class="note" data-i18n="detail.verify">Always verify eligibility, fees, funding, and dates on the official page.</span>
       </aside>
     </div>
   </main>
-  <div class="mobile-actions">$official_button$calendar</div>
-  $footer
+  <div class="mobile-actions">{% if official_url %}<a class="button primary" href="{{ official_url }}" target="_blank" rel="noopener" data-i18n="action.official.open">Open official page</a>{% endif %}{{ calendar|safe }}</div>
+  {{ footer|safe }}
   <script src="../assets/js/i18n.js"></script>
 </body>
 </html>

@@ -2,10 +2,10 @@ from __future__ import annotations
 
 import json
 from datetime import date
-from html import escape
 from typing import Any, Callable
 
 from .models import Candidate
+from .site_assets import read_static_asset, render_template
 from .urls import safe_external_url
 
 
@@ -77,44 +77,22 @@ def seo_head(
     asset_prefix: str = "",
 ) -> str:
     """Canonical link, Open Graph, Twitter card, and verification tags."""
-    desc = escape(description, quote=True)
-    page_title = escape(title, quote=True)
     asset_prefix = "../" if asset_prefix == "../" else ""
     seo = site_config.get("seo", {}) if isinstance(site_config.get("seo"), dict) else {}
     verification = str(seo.get("google_site_verification", "")).strip()
-    verify_tag = (
-        f'\n  <meta name="google-site-verification" content="{escape(verification, quote=True)}">'
-        if verification
-        else ""
+    return render_template(
+        "components/seo_head.html",
+        canonical=canonical,
+        description=description,
+        title=title,
+        asset_prefix=asset_prefix,
+        og_image=OG_IMAGE,
+        verification=verification,
     )
-    return f"""  <link rel="canonical" href="{escape(canonical, quote=True)}">
-  <link rel="icon" type="image/svg+xml" href="{asset_prefix}favicon.svg">
-  <link rel="apple-touch-icon" href="{asset_prefix}og-image.png">
-  <meta name="robots" content="index,follow">
-  <meta name="theme-color" content="#0e7490">
-  <meta name="description" content="{desc}">
-  <meta property="og:title" content="{page_title}">
-  <meta property="og:description" content="{desc}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{escape(canonical, quote=True)}">
-  <meta property="og:site_name" content="Summa">
-  <meta property="og:image" content="{OG_IMAGE}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Summa">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{page_title}">
-  <meta name="twitter:description" content="{desc}">
-  <meta name="twitter:image" content="{OG_IMAGE}">{verify_tag}"""
 
 
 def favicon_svg() -> str:
-    return """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#123524"/>
-  <circle cx="32" cy="32" r="20" fill="none" stroke="#cfe84a" stroke-width="4"/>
-  <path d="M32 12v40M12 32h40M18 20c8 5 20 5 28 0M18 44c8-5 20-5 28 0" fill="none" stroke="#7fd6a0" stroke-width="3" stroke-linecap="round"/>
-</svg>
-"""
+    return read_static_asset("favicon.svg")
 
 
 SEO_LOCATION_STOPWORDS = (
@@ -192,7 +170,7 @@ def jsonld_block(
         )
     payload = json.dumps(graph, ensure_ascii=False, indent=2)
     payload = payload.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
-    return f'<script type="application/ld+json">\n{payload}\n</script>'
+    return render_template("components/jsonld.html", payload=payload)
 
 
 def watermark() -> str:
@@ -201,9 +179,4 @@ def watermark() -> str:
     The visible line is intentionally tiny but present. If a third-party mirrors
     the tables without attribution, the hidden canary string surfaces them.
     """
-    return (
-        f"\n  <!-- Summa | canonical: {SITE_URL} | "
-        f"data CC BY 4.0, attribution and link back required | {CANARY} -->\n"
-        '<span class="src-credit" aria-hidden="true">Source: Summa '
-        f"&mdash; {SITE_URL} &mdash; reuse under CC BY 4.0 with attribution. {CANARY}</span>"
-    )
+    return render_template("components/watermark.html", site_url=SITE_URL, canary=CANARY)

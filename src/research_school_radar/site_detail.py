@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from datetime import date
-from html import escape
 from typing import Any
 
 from .localization import date_zh, financial_summary_zh, mode_zh, status_zh, topics_label_zh
@@ -55,25 +54,12 @@ def render_opportunity_detail(candidate: Candidate, site_config: dict[str, Any] 
     ]
     evidence = " ".join(evidence_parts[:3]) or "Source evidence is retained in the public candidate data."
     calendar = deadline_cell(candidate.deadline, candidate.title, official) if candidate.deadline else ""
-    official_source_link = (
-        f'<a class="source-link" href="{escape(official, quote=True)}" target="_blank" '
-        'rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>'
-        if official
-        else '<p class="muted" data-i18n="detail.source.unavailable">No safe official URL is available for this record.</p>'
-    )
-    official_button = (
-        f'<a class="button primary" href="{escape(official, quote=True)}" target="_blank" '
-        'rel="noopener" data-i18n="action.official.open">Open official page</a>'
-        if official
-        else ""
-    )
     canonical = SITE_URL + candidate_detail_href(candidate)
     updated = date.today().isoformat()
     return render_template(
         "detail.html",
-        title=escape(candidate.title),
-        title_attr=escape(candidate.title, quote=True),
-        title_zh_attr=escape((candidate.title_zh or candidate.title) + " · Summa", quote=True),
+        title=candidate.title,
+        title_zh=candidate.title_zh or candidate.title,
         seo_head=seo_head(canonical, summary, site_config or {}, title=candidate.title, asset_prefix="../"),
         nav=site_nav(home="../index.html", root="../"),
         status_class=status_class,
@@ -90,12 +76,11 @@ def render_opportunity_detail(candidate: Candidate, site_config: dict[str, Any] 
         eligibility=bilingual(eligibility, candidate.eligibility_zh),
         qualification=bilingual(qualification, candidate.recommendation_reason_zh),
         evidence=bilingual(evidence, f"以下为官网原文证据，保留原文便于核对：{evidence}"),
-        official_source_link=official_source_link,
+        official_url=official,
         financial_summary=bilingual(financial_summary_short(candidate), financial_summary_zh(candidate)),
         session_schedule=session_schedule,
         location=bilingual(location, location_cn),
         topics=bilingual(topics, topics_cn),
-        official_button=official_button,
         calendar=calendar,
         footer=footer_section(updated, root="../"),
     )

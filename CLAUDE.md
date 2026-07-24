@@ -76,8 +76,8 @@ AI branch constraints:
 - `src/research_school_radar/rank.py` — scoring and deduplication.
 - `src/research_school_radar/report.py` — Markdown reports.
 - `src/research_school_radar/site.py` — static site coordinator.
-- `src/research_school_radar/site_assets.py` — HTML-template loading and static-asset copying.
-- `src/research_school_radar/web/templates/` — tracked homepage, detail-page, and source-page HTML shells.
+- `src/research_school_radar/site_assets.py` — autoescaped Jinja environment and static-asset copying.
+- `src/research_school_radar/web/templates/` — tracked page shells and component templates; keep frontend markup out of page-renderer Python modules.
 - `src/research_school_radar/web/static/css/` and `web/static/js/` — browser CSS, bilingual UI, filtering, responsive sidebar, and 15-item pagination.
 - `src/research_school_radar/site_seo.py` — sitemap, robots, JSON-LD, canary, watermark.
 - `src/research_school_radar/site_feed.py` — RSS feed.

@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sources &amp; Coverage · Summa</title>
-$seo_head
+{{ seo_head|safe }}
   <script src="assets/js/i18n-boot.js"></script>
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/sources.css">
 </head>
 <body data-page-title-en="Sources &amp; Coverage · Summa" data-page-title-zh="来源与覆盖范围 · Summa">
-  $nav
+  {{ nav|safe }}
   <header class="hero">
     <div class="wrap">
       <h1 data-i18n="sources.title">Sources &amp; Coverage</h1>
       <p data-i18n="sources.lead">The radar scans a trusted source registry rather than crawling the open web. This page lists the configured sources, including disabled sources kept for transparency.</p>
       <a class="pill" href="index.html" data-i18n="sources.back">Back to radar</a>
       <a class="pill" href="sources.json" data-i18n="sources.json">Source JSON</a>
-      <span class="pill">$enabled_count</span>
-      <span class="pill">$disabled_count</span>
+      <span class="pill">{{ enabled_count|safe }}</span>
+      <span class="pill">{{ disabled_count|safe }}</span>
     </div>
   </header>
   <main class="wrap">
@@ -26,12 +26,12 @@ $seo_head
     <div class="table-wrap">
       <table>
         <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.status">Status</th><th data-i18n="sources.health">Scan health</th><th data-i18n="sources.layer">Layer</th><th data-i18n="sources.region">Region</th><th data-i18n="sources.type">Type</th><th data-i18n="sources.keywords">Keywords</th><th data-i18n="sources.notes">Notes (original registry text)</th></tr></thead>
-        <tbody>$rows</tbody>
+        <tbody>{{ rows|safe }}</tbody>
       </table>
     </div>
-    $manual_section
+    {{ manual_section|safe }}
   </main>
-  $watermark
+  {{ watermark|safe }}
   <script src="assets/js/i18n.js"></script>
 </body>
 </html>

@@ -1,0 +1,14 @@
+<tr{% for key, value in attrs.items() %} {{ key }}="{{ value }}"{% endfor %}>
+  {% if index is not none %}<td>{{ index }}</td>{% endif %}
+  <td><a href="{{ detail_href }}">{{ title|safe }}</a>{% if is_new %} <span class="badge-new" data-i18n="badge.new">NEW</span>{% endif %}</td>
+  <td>{{ organizer|safe }}</td>
+  <td>{{ location|safe }}</td>
+  <td{% if duration_evidence %} title="{{ duration_evidence }}"{% endif %}>{{ duration|safe }}</td>
+  <td{% if deadline_evidence %} title="{{ deadline_evidence }}"{% endif %}>{{ deadline|safe }}</td>
+  <td{% if funding_evidence %} title="{{ funding_evidence }}"{% endif %}>{{ funding|safe }}</td>
+  <td>{{ topics|safe }}</td>
+  <td class="card-actions">
+    <a class="button primary" href="{{ detail_href }}" data-i18n="action.details">View details</a>
+    {% if official_url %}<a class="button tonal" href="{{ official_url }}" target="_blank" rel="noopener" data-i18n="action.official">Official page</a>{% endif %}
+  </td>
+</tr>

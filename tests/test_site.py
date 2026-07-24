@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import replace
 from datetime import date, timedelta
+from pathlib import Path
 
 from research_school_radar.candidate_io import candidate_from_mapping
 from research_school_radar.extract import sample_candidate
@@ -33,6 +35,23 @@ PROFILE = {
     "priority_regions": ["continental Europe"],
     "supplementary_regions": ["North America"],
 }
+
+
+def test_page_renderers_do_not_embed_frontend_markup() -> None:
+    package = Path(__file__).parents[1] / "src" / "research_school_radar"
+    renderers = (
+        "site_components.py",
+        "site_detail.py",
+        "site_filters.py",
+        "site_home.py",
+        "site_home_page.py",
+        "site_layout.py",
+        "site_sources_page.py",
+    )
+    tag = re.compile(r"<(?:a|aside|button|details|div|footer|form|header|link|meta|nav|script|section|span|svg|table|td|tr)\b")
+    for name in renderers:
+        source = (package / name).read_text(encoding="utf-8")
+        assert not tag.search(source), f"Move frontend markup from {name} into web/templates"
 
 
 def test_listed_opportunities_are_interleaved_by_organizer() -> None:

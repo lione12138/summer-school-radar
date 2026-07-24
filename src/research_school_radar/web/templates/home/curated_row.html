@@ -1,0 +1,11 @@
+<tr{% for key, value in attrs.items() %} {{ key }}="{{ value }}"{% endfor %}>
+  <td>{% if official_url %}<a href="{{ official_url }}" target="_blank" rel="noopener">{{ title|safe }}</a>{% else %}{{ title|safe }}{% endif %}</td>
+  <td>{{ organizer|safe }}</td>
+  <td>{{ location|safe }}</td>
+  <td>{{ duration|safe }}</td>
+  <td>{{ deadline|safe }}</td>
+  <td>{{ funding|safe }}</td>
+  <td>{{ topics|safe }}</td>
+  <td>{{ notes|safe }}</td>
+  <td class="card-actions">{% if official_url %}<a class="button primary" href="{{ official_url }}" target="_blank" rel="noopener" data-i18n="action.official">Official page</a>{% endif %}</td>
+</tr>

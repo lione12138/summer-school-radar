@@ -54,7 +54,7 @@ Key modules:
 - `src/research_school_radar/rank.py` — scoring and deduplication.
 - `src/research_school_radar/report.py` — Markdown report output.
 - `src/research_school_radar/site.py` — coordinates static site generation.
-- `src/research_school_radar/site_assets.py` — loads HTML templates and copies versioned static assets into generated sites.
+- `src/research_school_radar/site_assets.py` — configures the autoescaped Jinja environment and copies versioned static assets into generated sites.
 - `src/research_school_radar/site_home_page.py` — homepage data preparation and document rendering.
 - `src/research_school_radar/site_home.py` — homepage methodology, about, and FAQ sections.
 - `src/research_school_radar/site_detail.py` — opportunity detail-page rendering.
@@ -64,7 +64,7 @@ Key modules:
 - `src/research_school_radar/site_filters.py` — opportunity filter and pagination markup.
 - `src/research_school_radar/site_layout.py` — shared navigation and footer layout.
 - `src/research_school_radar/site_paths.py` — stable detail-page paths.
-- `src/research_school_radar/web/templates/` — tracked homepage, detail-page, and source-page HTML shells.
+- `src/research_school_radar/web/templates/` — tracked Jinja page shells and component templates; page-renderer Python modules must not embed frontend markup.
 - `src/research_school_radar/web/static/css/` — shared and page-specific browser stylesheets.
 - `src/research_school_radar/web/static/js/` — bilingual UI, language bootstrap, filtering, responsive sidebar, and 15-item pagination.
 - `src/research_school_radar/site_seo.py` — sitemap, robots, JSON-LD, canary, watermark helpers.
