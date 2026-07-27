@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-24",
+  "generated": "2026-07-27",
   "review_queue": [
     {
       "title": "ICOS Summer/Winter School January 2027, application is now open",
@@ -116,39 +116,6 @@
       }
     },
     {
-      "title": "ELLIS Summer School at Institute Tübingen",
-      "url": "https://ellis.eu/events/ellis-summer-school-at-institute-tuebingen-2026",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "location": "Max Planck Institute for Intelligent Systems",
-      "dates": {
-        "start": "2026-08-31",
-        "end": "2026-09-11",
-        "duration_days": 12
-      },
-      "deadline": "2026-07-26",
-      "deadline_status": "open",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "machine learning"
-      ],
-      "needs_review": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "ELLIS detail/registration page: registration deadline 2026-07-26",
-        "duration": "ELLIS events listing: 2026-08-31 to 2026-09-11",
-        "funding": "",
-        "mode": "ELLIS listing location: Max Planck Institute for Intelligent Systems"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
       "title": "SICSS-AMU/Law",
       "url": "https://new.sicss.io/2026/amu-law",
       "organizer": "Summer Institutes in Computational Social Science",
@@ -179,218 +146,6 @@
         "duration": "SICSS locations catalogue: September 7 to September 18, 2026",
         "funding": "The official SICSS programme overview states that no tuition is required; some locations also cover travel, accommodation, and meals.",
         "mode": "SICSS location card: Adam Mickiewicz University, Poznań"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "Applied Public Policy Evaluation",
-      "url": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
-      "organizer": "Tinbergen Institute",
-      "source_layer": "2",
-      "location": "Housing Student Council",
-      "dates": {
-        "start": "2026-08-24",
-        "end": "2026-08-28",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "funded",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "climate",
-        "climate change",
-        "machine learning",
-        "deep learning",
-        "data science",
-        "economics"
-      ],
-      "needs_review": [
-        "application deadline is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "",
-        "duration": "August 24 - Friday 28 2026",
-        "funding": "scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat w",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "missing_evidence_id:chinese_summary",
-          "start_date_value_not_in_evidence",
-          "end_date_value_not_in_evidence",
-          "possibly_past_or_closed"
-        ],
-        "chinese_summary": "未知",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
-      }
-    },
-    {
-      "title": "Economics of Climate Change",
-      "url": "https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change",
-      "organizer": "Tinbergen Institute",
-      "source_layer": "2",
-      "location": "Housing Student Council",
-      "dates": {
-        "start": "2026-08-24",
-        "end": "2026-08-28",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "funded",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "climate",
-        "climate change",
-        "machine learning",
-        "deep learning",
-        "data science",
-        "economics"
-      ],
-      "needs_review": [
-        "application deadline is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "",
-        "duration": "August 24 - Friday 28 2026",
-        "funding": "scholarships and financial support FAQ Facts and figures Refresh and Test your knowledge and skills Join information session Chat w",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "start_date_value_not_in_evidence",
-          "end_date_value_not_in_evidence",
-          "possibly_past_or_closed"
-        ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
-      }
-    },
-    {
-      "title": "SICSS-Buenos Aires",
-      "url": "https://new.sicss.io/2026/buenos-aires",
-      "organizer": "Summer Institutes in Computational Social Science",
-      "source_layer": "1",
-      "location": "National University of San Martín, Buenos Aires, Argentina",
-      "dates": {
-        "start": "2026-08-10",
-        "end": "2026-08-21",
-        "duration_days": 12
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "funded",
-      "fee": "No tuition required",
-      "fee_eur": 0.0,
-      "topics": [
-        "data science",
-        "social science",
-        "social science methods"
-      ],
-      "needs_review": [
-        "application deadline is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "",
-        "duration": "SICSS locations catalogue: From August 10–21, 2026",
-        "funding": "The official SICSS programme overview states that no tuition is required; some locations also cover travel, accommodation, and meals.",
-        "mode": "SICSS location card: National University of San Martín, Buenos Aires, Argentina"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "SICSS-ISSP",
-      "url": "https://new.sicss.io/2026/issp",
-      "organizer": "Summer Institutes in Computational Social Science",
-      "source_layer": "1",
-      "location": "Ouagadougou, Burkina Faso",
-      "dates": {
-        "start": "2026-08-10",
-        "end": "2026-08-21",
-        "duration_days": 12
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "funded",
-      "fee": "No tuition required",
-      "fee_eur": 0.0,
-      "topics": [
-        "data science",
-        "social science",
-        "social science methods"
-      ],
-      "needs_review": [
-        "application deadline is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "",
-        "duration": "SICSS locations catalogue: August 10 to August 21, 2026",
-        "funding": "The official SICSS programme overview states that no tuition is required; some locations also cover travel, accommodation, and meals.",
-        "mode": "SICSS location card: Ouagadougou, Burkina Faso"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "SICSS-Stanford",
-      "url": "https://new.sicss.io/2026/stanford",
-      "organizer": "Summer Institutes in Computational Social Science",
-      "source_layer": "1",
-      "location": "Stanford University",
-      "dates": {
-        "start": "2026-08-10",
-        "end": "2026-08-21",
-        "duration_days": 12
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "funded",
-      "fee": "No tuition required",
-      "fee_eur": 0.0,
-      "topics": [
-        "data science",
-        "social science",
-        "social science methods"
-      ],
-      "needs_review": [
-        "application deadline is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "",
-        "duration": "SICSS locations catalogue: August 10 to August 21, 2026",
-        "funding": "The official SICSS programme overview states that no tuition is required; some locations also cover travel, accommodation, and meals.",
-        "mode": "SICSS location card: Stanford University"
       },
       "ai_advisory": {
         "available": false
@@ -438,12 +193,12 @@
         "validation_warnings": [
           "location_context_weak"
         ],
-        "chinese_summary": "IEEE RAS德国分会将于2026年9月7日至11日在德国基姆湖的Abtei Frauenwörth举办认知机器人暑期学校，主题为AI与机器人融合。注册仅对受邀者开放，截止日期为2026年7月25日。费用根据会员身份和身份（学生/非学生）有所不同。",
-        "extracted_deadline": "2026-07-25",
-        "extracted_fee": "Non-Student Registration Fees: Non-IEEE Member USD 870 (19% VAT included), IEEE Member USD 820 (19% VAT included), IEEE RAS Member USD 770 (19% VAT included); Student Registration Fees: (bring valid student ID or proof of enrollment)",
+        "chinese_summary": "IEEE RAS德国分会将于2026年9月7日至11日在德国基姆湖的Abtei Frauenwörth举办认知机器人暑期学校，主题为AI与机器人融合。注册截止日期为2026年7月31日，仅限受邀者注册。费用根据会员身份和类别不同，非学生非会员870美元，学生类别费用未明确。",
+        "extracted_deadline": "2026-07-31",
+        "extracted_fee": "Non-Student: Non-IEEE Member USD 870, IEEE Member USD 820, IEEE RAS Member USD 770; Student: (fees not specified but categories exist)",
         "extracted_funding": "",
         "evidence_fields": {
-          "deadline": "Registration is open until July 25, 2026 .",
+          "deadline": "Registration is open until July 31, 2026 .",
           "fee": "Non-Student Registration Fees Non-IEEE Member: USD 870 (19% VAT included) IEEE Member: USD 820 (19% VAT included) IEEE Robotics and Automation Society (RAS) Member: USD 770 (19% VAT included) Student Registration Fees ( Please bring a valid student ID or an official proof of enrollment to the summer school to verify your student status.",
           "funding": ""
         }
@@ -482,6 +237,115 @@
       },
       "ai_advisory": {
         "available": false
+      }
+    },
+    {
+      "title": "Applied Public Policy Evaluation",
+      "url": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
+      "organizer": "Tinbergen Institute",
+      "source_layer": "2",
+      "location": "Housing Student Council",
+      "dates": {
+        "start": "2026-08-24",
+        "end": "2026-08-28",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "EUR 1,000 for PhD and Master students; accommodation and travel excluded",
+      "fee_eur": 1000.0,
+      "topics": [
+        "climate",
+        "climate change",
+        "machine learning",
+        "deep learning",
+        "data science",
+        "economics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "August 24 - Friday 28 2026",
+        "funding": "Tinbergen Summer School funding is not offered; scholarships described elsewhere apply to the two-year Research Master programme.",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "missing_evidence_id:chinese_summary",
+          "start_date_value_not_in_evidence",
+          "end_date_value_not_in_evidence",
+          "possibly_past_or_closed"
+        ],
+        "chinese_summary": "未知",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
+      "title": "Economics of Climate Change",
+      "url": "https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change",
+      "organizer": "Tinbergen Institute",
+      "source_layer": "2",
+      "location": "Housing Student Council",
+      "dates": {
+        "start": "2026-08-24",
+        "end": "2026-08-28",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "EUR 1,000 for PhD and Master students; accommodation and travel excluded",
+      "fee_eur": 1000.0,
+      "topics": [
+        "climate",
+        "climate change",
+        "machine learning",
+        "deep learning",
+        "data science",
+        "economics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "August 24 - Friday 28 2026",
+        "funding": "Tinbergen Summer School funding is not offered; scholarships described elsewhere apply to the two-year Research Master programme.",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "start_date_value_not_in_evidence",
+          "end_date_value_not_in_evidence",
+          "possibly_past_or_closed"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
       }
     },
     {
