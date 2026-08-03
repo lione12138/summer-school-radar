@@ -1,8 +1,7 @@
-# Topic keywords gate relevance: a candidate must match at least one of these
-# to qualify. The list is deliberately focused on the project's core domain —
-# water, climate, geoscience, remote sensing, and scientific machine learning —
-# so the relevance gate stays strong and the source registry is tractable. The
-# hard quality filters (deadline, duration, funding/fee, in-person) are separate.
+# Topic keywords are a browsing taxonomy, not an eligibility gate. Summa accepts
+# research-training opportunities from every academic discipline; unmatched
+# topics remain publishable when all quality and actionability rules pass.
+# Add terms here to improve categorisation and topic filtering, not qualification.
 preferred_topics:
   # Water and hydrology
   - hydrology
@@ -164,6 +163,7 @@ hard_filters:
   require_funding_or_low_fee: true
   allow_online_only: false
   require_open_deadline: true
+  require_topic_match: false
 
 # Fixed, approximate reference rates keep the scanner free and API-key-free.
 # They intentionally slightly overestimate EUR cost to reduce false inclusions.

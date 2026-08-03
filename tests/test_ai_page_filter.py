@@ -75,3 +75,12 @@ def test_llm_page_filter_keeps_current_detailed_programme_and_rejects_past_candi
 
     assert [chunk.page_url for chunk in result.chunks] == [current_url]
     assert result.stats["rejected"] == {"past_candidate": 1}
+
+
+def test_llm_page_filter_keeps_detailed_fall_school() -> None:
+    url = "https://example.edu/fall-school-2027"
+    chunks = [_chunk(url, "Linguistics Fall School 2027", "Applications are open. Fee EUR 150.")]
+
+    result = filter_llm_pages(chunks, [], today=date(2026, 8, 3))
+
+    assert [chunk.page_url for chunk in result.chunks] == [url]

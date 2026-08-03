@@ -1,6 +1,6 @@
 # Summa 技术说明
 
-Summa 是一个面向多学科科研训练机会的开源扫描器。它覆盖 summer school、winter school、spring/autumn school、training school、field school、doctoral school、research school、short/advanced course 等短期科研训练项目，不收普通会议 workshop、博士招生、博士职位或完整学位项目。
+Summa 是一个不限制学科的科研训练机会开源扫描器。它覆盖 summer school、winter school、spring/autumn/fall school、training school、field school、doctoral school、research school、summer/winter institute、short/advanced course 等短期科研训练项目，不收普通会议 workshop、博士招生、博士职位或完整学位项目。
 
 项目目标不是全网乱爬，也不是让模型自主浏览网页。Summa 维护一组可信来源，定期扫描官方页面，抽取 deadline、funding、fee、duration、mode、eligibility 等高风险字段，经过硬筛选后发布可审计的静态网页、Markdown 报告、JSON 数据和 RSS feed。
 
@@ -158,21 +158,13 @@ AI 分支不会覆盖扫描器原始 `Candidate` 对象。它只会在生成首�
 - duration 至少 5 天
 - 明确存在 scholarship、travel grant、tuition waiver、stipend、accommodation support 等 participant funding；或者可确认的总费用按参考汇率换算后不超过 400 EUR
 - in-person 或 substantially on-site，不是 online-only
-- 主题与 `config/profile.yaml` 中的研究方向相关
+- 项目属于真实的短期科研训练；学科主题标签只用于分类，不作为公开资格条件
 
 如果 deadline 无法抽取，但项目开始日期已经过去，也会视为过期。字段不确定时默认进入内部 near-match / review queue，不进入公开页面。失败条件保留在 `site/candidates.json` 和 `data/review_queue.json` 中，供维护者检查。
 
 ## 多学科范围
 
-Summa 现在不是单一 water/climate 列表。默认 profile 面向 MSc、PhD、postdoc 和 early-career research training，覆盖：
-
-- environmental & earth science
-- computing & data science
-- social sciences
-- humanities methods
-- 以及配置文件中维护的交叉方向
-
-真正的领域边界由 `config/profile.yaml` 的 `preferred_topics` 决定。扩大或收窄领域时，优先修改 profile 和 trusted source registry，而不是让模型全网搜索。
+Summa 面向 MSc、PhD、postdoc 和 early-career research training，不限制学科。`config/profile.yaml` 的 `preferred_topics` 是用于提取、展示、搜索和筛选的主题分类表，不再是公开资格门槛。没有命中现有分类词的项目，只要满足研究训练性质、开放申请、时长、费用或资助以及线下模式等质量条件，仍可公开。需要部署专门学科版本时，可显式设置 `hard_filters.require_topic_match: true`。
 
 ## 资金可及性规则
 

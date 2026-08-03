@@ -4,7 +4,7 @@
 [![License: AGPL v3](https://img.shields.io/badge/Code-AGPL--3.0-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-green.svg)](#license--reuse)
 
-An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — **across many academic fields**: environmental & earth science, computing & data science, the social sciences, and the humanities.
+An open-source, discipline-agnostic scanner for high-quality research training opportunities — summer schools, winter schools, training schools, field schools, and short courses. Subject area is never an eligibility gate.
 
 It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources and extracts deadline / funding / fee / duration evidence together with the supporting text. Unresolved records remain available for maintainer audit; the public site is fail-closed and publishes only opportunities that pass every deterministic actionability and financial-access gate.
 
@@ -17,7 +17,8 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 Summa combines a conservative fixed-source crawler, rule-based field extraction,
 and transparent evidence preservation to track research training opportunities.
 The public qualification logic remains deterministic: deadlines, duration,
-funding, fee, mode, and topic fit are extracted and filtered by explicit rules.
+funding, fee, and mode are extracted and filtered by explicit rules. Topic
+keywords are descriptive browsing facets, not qualification conditions.
 To improve recall, the project now also includes an optional semantic analysis
 layer using `BAAI/bge-m3` embeddings. This embedding layer ranks scanned page
 chunks for human review and helps surface relevant application, fee, funding,
@@ -82,7 +83,7 @@ An opportunity must satisfy all hard conditions:
 | Duration | At least 5 days |
 | Financial access | Explicit funding is available, or the confirmed total fee is no more than approximately EUR 400 |
 | Mode | In-person or substantially on-site, not online-only |
-| Topic | Relevant to one of the covered fields: environmental & earth science (water, climate, geoscience, remote sensing), computing & data science (machine learning, computer vision, software engineering, cybersecurity, computational neuroscience, linguistics), or the social sciences & humanities (social-science methods, economics, political science, history, digital humanities) |
+| Research scope | Any academic discipline, provided the programme is genuine short-form research training rather than an excluded degree, admissions, conference-workshop, tourism, or generic study-abroad offer |
 
 Near-matches are never rendered on the public site. They remain auditable in generated JSON and the maintainer review queue.
 

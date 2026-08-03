@@ -12,7 +12,7 @@ AI agents working on this repository should read this file first. It is the oper
 
 ## What Summa does
 
-Summa scans trusted official sources for funded, in-person or substantially on-site research training opportunities across multiple disciplines. It publishes a static site, Markdown reports, JSON data, and RSS.
+Summa scans trusted official sources for funded, in-person or substantially on-site research training opportunities without restricting academic discipline. Topic keywords are browsing and classification metadata, not a public qualification gate. It publishes a static site, Markdown reports, JSON data, and RSS.
 
 It targets short research-training formats such as:
 

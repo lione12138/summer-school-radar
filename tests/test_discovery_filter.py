@@ -47,3 +47,12 @@ def test_discovery_filter_accepts_current_official_or_institutional_programmes()
 
     assert result.accepted == [current, academic]
     assert result.rejected == {"duplicate_url": 1}
+
+
+def test_discovery_filter_accepts_fall_schools_and_summer_institutes() -> None:
+    fall_school = _result("Computational Linguistics Fall School 2026", "https://utn.de/fall-school")
+    summer_institute = _result("Qualitative Methods Summer Institute 2027", "https://example.edu/institute")
+
+    result = filter_discovery_results([fall_school, summer_institute], today=date(2026, 8, 3))
+
+    assert result.accepted == [fall_school, summer_institute]

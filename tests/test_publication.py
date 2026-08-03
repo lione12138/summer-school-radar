@@ -65,3 +65,24 @@ def test_fully_qualified_actionable_candidate_is_public() -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
 
     assert is_public_candidate(candidate)
+
+
+def test_publication_does_not_require_a_preclassified_topic() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.topic_keywords = []
+
+    apply_hard_filters(candidate, PROFILE)
+
+    assert "topic relevance is uncertain" not in candidate.failed_hard_conditions
+    assert is_public_candidate(candidate)
+
+
+def test_specialised_profile_can_still_require_a_topic_match() -> None:
+    profile = {**PROFILE, "hard_filters": {**PROFILE["hard_filters"], "require_topic_match": True}}
+    candidate = sample_candidate(profile)
+    candidate.topic_keywords = []
+
+    apply_hard_filters(candidate, profile)
+
+    assert "topic relevance is uncertain" in candidate.failed_hard_conditions
+    assert not is_public_candidate(candidate)

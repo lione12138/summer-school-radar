@@ -55,8 +55,7 @@ def render_feed(
         f"    <link>{escape(site_url)}</link>\n"
         f'    <atom:link href="{escape(feed_url)}" rel="self" type="application/rss+xml"/>\n'
         "    <description>Funded research summer schools, winter schools, and training "
-        "schools across many academic fields — environmental &amp; earth science, "
-        "computing &amp; data science, social sciences, and humanities.</description>\n"
+        "schools in any academic discipline, selected by the same evidence-based quality rules.</description>\n"
         "    <language>en</language>\n"
         f"    <copyright>Data CC BY 4.0 — reuse with attribution and a link back to {escape(site_url)}</copyright>\n"
         "    <generator>Summa</generator>\n"

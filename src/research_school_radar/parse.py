@@ -23,6 +23,8 @@ OPPORTUNITY_TERMS = [
     "doctoral school",
     "field school",
     "research school",
+    "summer institute",
+    "winter institute",
     "short course",
     "advanced course",
     "practical course",

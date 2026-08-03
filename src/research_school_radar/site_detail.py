@@ -38,8 +38,8 @@ def render_opportunity_detail(candidate: Candidate, site_config: dict[str, Any] 
     session_schedule = session_details(candidate) if candidate.sessions else ""
     location = public_location(candidate.location) or "Location uncertain"
     location_cn = candidate.location_zh.strip() or public_location_zh(candidate.location)
-    topics = topics_label(candidate.topic_keywords) or "Topics not resolved"
-    topics_cn = topics_label_zh(candidate.topic_keywords) or "主题待确认"
+    topics = topics_label(candidate.topic_keywords) or "Research training"
+    topics_cn = topics_label_zh(candidate.topic_keywords) or "科研训练"
     summary = candidate.summary.strip() or candidate.recommendation_reason.strip()
     if not summary:
         summary = f"A {candidate.type or 'research training opportunity'} from {candidate.organizer}."

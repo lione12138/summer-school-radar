@@ -326,7 +326,7 @@ def _curated_row(item: dict[str, Any]) -> str:
             _curated_financial_summary(item, funding),
             _curated_financial_summary_zh(item, funding),
         ),
-        topics=_bilingual(topics_label(topics) or "uncertain", topics_label_zh(topics) or "待确认"),
+        topics=_bilingual(topics_label(topics) or "Research training", topics_label_zh(topics) or "科研训练"),
         notes=_bilingual(notes, str(item.get("notes_zh", ""))),
     )
 
@@ -360,8 +360,8 @@ def _candidate_row(candidate: Candidate, status: str, *, index: int | None = Non
         deadline=_candidate_deadline_cell(candidate),
         funding=_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate)),
         topics=_bilingual(
-            topics_label(candidate.topic_keywords) or "uncertain",
-            topics_label_zh(candidate.topic_keywords) or "待确认",
+            topics_label(candidate.topic_keywords) or "Research training",
+            topics_label_zh(candidate.topic_keywords) or "科研训练",
         ),
         official_url=official,
     )

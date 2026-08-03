@@ -1,6 +1,6 @@
 # Summa Technical Notes
 
-Technical notes for Summa, an open-source scanner for funded research training opportunities across many academic fields: environmental & earth science, computing & data science, social sciences, and humanities. It covers seasonal schools and short courses such as summer schools, winter schools, spring/autumn schools, training schools, field schools, doctoral schools, research schools, and short/advanced courses. Generic conference workshops are not included.
+Technical notes for Summa, a discipline-agnostic open-source scanner for funded or low-fee research training opportunities. It covers seasonal schools and short courses such as summer schools, winter schools, spring/autumn/fall schools, training schools, field schools, doctoral schools, research schools, summer/winter institutes, and short/advanced courses. Generic conference workshops are not included.
 
 The project is inspired by curated vertical opportunity platforms such as Josh's Water Jobs, but it is aimed at research training rather than jobs. The goal is not to crawl the whole web. The goal is to maintain a trusted source registry, scan it regularly, extract structured evidence, apply strict filters, and publish a transparent public report.
 
@@ -71,7 +71,7 @@ This repository now contains the current Summa pipeline:
 
 ## What It Looks For
 
-The default profile targets MSc, PhD, postdoc, and early-career research training across multiple fields: environmental & earth science, computing & data science, social sciences, and humanities methods. The `preferred_topics` list in `config/profile.yaml` is the relevance gate; widening or narrowing the domain is a matter of editing that list, but the focused source registry keeps the gate tractable.
+The default profile targets MSc, PhD, postdoc, and early-career research training without restricting academic discipline. `preferred_topics` in `config/profile.yaml` is a maintained taxonomy for extraction, display, search, and filtering; a candidate does not need to match it to qualify. Deployments that intentionally serve a specialised field can opt back into a subject gate with `hard_filters.require_topic_match: true`.
 
 An opportunity is treated as fully qualified only when all hard conditions are satisfied:
 
@@ -79,7 +79,7 @@ An opportunity is treated as fully qualified only when all hard conditions are s
 - duration is at least 5 days
 - scholarship, travel grant, tuition waiver, stipend, accommodation support, or other funding is explicit; or the confirmed total fee is no more than approximately EUR 400
 - in-person or substantially on-site, not online-only
-- topic is relevant to the configured research profile
+- the programme is genuine short-form research training; topic tags are optional classification metadata
 
 If no opportunity fully qualifies, the public site says so clearly and does not substitute unresolved leads. An opportunity is treated as past when its deadline has passed, or, when no deadline could be extracted, when the event itself has already started. Near-matches and their failed hard conditions remain available in `site/candidates.json` and the maintainer review queue, but are not rendered in public tables or RSS.
 
@@ -681,7 +681,7 @@ Contributors can submit:
 - deadline
 - mode
 - funding evidence
-- topic fit
+- optional topic tags
 - eligibility
 - notes or risks
 

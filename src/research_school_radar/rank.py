@@ -37,11 +37,6 @@ def score_candidate(candidate: Candidate) -> tuple[float, list[str]]:
     score = 0.0
     reasons: list[str] = []
 
-    topic_score = min(len(candidate.topic_keywords) * 6, 30)
-    score += topic_score
-    if topic_score:
-        reasons.append(f"topic match: {', '.join(candidate.topic_keywords[:4])}")
-
     if candidate.funding_available:
         funding_score = 20
         if "travel grant" in candidate.funding_type:
@@ -88,6 +83,12 @@ def score_candidate(candidate: Candidate) -> tuple[float, list[str]]:
     if candidate.target_level != "uncertain":
         score += 8
         reasons.append(f"target level: {candidate.target_level}")
+
+    # Topics are descriptive facets, not a proxy for opportunity quality. Keep
+    # them in the explanation without rewarding pages that happen to mention
+    # more taxonomy terms.
+    if candidate.topic_keywords:
+        reasons.append(f"topics: {', '.join(candidate.topic_keywords[:4])}")
 
     if candidate.failed_hard_conditions:
         score -= 8 * len(candidate.failed_hard_conditions)
@@ -183,6 +184,16 @@ def _merge_into(primary: Candidate, other: Candidate) -> None:
         primary.duration_days = other.duration_days
     if not primary.location and other.location:
         primary.location = other.location
+    if primary.mode == "uncertain" and other.mode != "uncertain":
+        primary.mode = other.mode
+        primary.mode_evidence = primary.mode_evidence or other.mode_evidence
+    elif other.mode == "hybrid" or {primary.mode, other.mode} == {"online", "in-person"}:
+        # Two official/supplemental pages may describe different attendance
+        # tracks of the same event. Preserve the on-site option without
+        # pretending the programme is exclusively in person.
+        primary.mode = "hybrid"
+        evidence = [value for value in [primary.mode_evidence, other.mode_evidence] if value]
+        primary.mode_evidence = " | ".join(dict.fromkeys(evidence))
     # An explicit self-payment/no-funding statement is stronger than a vague
     # positive found on a duplicate page. Precision matters here: otherwise a
     # higher-scoring false positive can erase the official cost responsibility.

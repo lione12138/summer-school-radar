@@ -12,8 +12,8 @@ from .utils import clean_space
 
 
 _PROGRAMME_RE = re.compile(
-    r"\b(summer|winter|spring|autumn|seasonal|training|field|doctoral|research) school\b|"
-    r"\b(short|advanced) course\b",
+    r"\b(summer|winter|spring|autumn|fall|seasonal|training|field|doctoral|research) school\b|"
+    r"\b(short|advanced) course\b|\b(summer|winter) institute\b",
     flags=re.IGNORECASE,
 )
 _GENERIC_TITLE_RE = re.compile(

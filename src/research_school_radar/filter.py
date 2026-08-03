@@ -50,7 +50,10 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
         elif candidate.mode == "uncertain":
             failed.append("in-person status is uncertain")
 
-    if not candidate.topic_keywords:
+    # Topic tags support browsing and explainability; they are not a quality
+    # condition. Summa is discipline-agnostic by default, while specialised
+    # deployments can opt back into a profile gate explicitly.
+    if hard.get("require_topic_match", False) and not candidate.topic_keywords:
         failed.append("topic relevance is uncertain")
 
     candidate.failed_hard_conditions = failed

@@ -125,7 +125,7 @@ def _qualified_table(candidates: list[Candidate]) -> list[str]:
                     _cell(_duration(candidate)),
                     _cell(_deadline(candidate)),
                     _cell(candidate.financial_summary),
-                    _cell(topics_label(candidate.topic_keywords)),
+                    _cell(topics_label(candidate.topic_keywords) or "research training"),
                 ]
             )
             + " |"
@@ -150,7 +150,7 @@ def _near_table(candidates: list[Candidate]) -> list[str]:
                     _cell(_duration(candidate)),
                     _cell(_deadline(candidate)),
                     _cell(candidate.financial_summary),
-                    _cell(topics_label(candidate.topic_keywords) or "uncertain"),
+                    _cell(topics_label(candidate.topic_keywords) or "research training"),
                 ]
             )
             + " |"

@@ -1,23 +1,26 @@
-# Broad discovery queries are sent to Serper only when --include-discovery is
-# explicitly enabled in a non-publishing audit. Results must pass deterministic
-# pre-fetch quality gates and remain labelled as discovery sources.
+# Cross-disciplinary discovery queries are sent to Serper only when
+# --include-discovery is explicitly enabled in a non-publishing audit. They
+# search for quality/access signals rather than preferred subjects. Results
+# must pass deterministic pre-fetch gates and remain labelled as discovery
+# sources until an official programme page is fetched and validated.
 queries:
-  topic:
-    - '"summer school" hydrology scholarship application open'
-    - '"winter school" hydrology scholarship application open'
-    - '"training school" water resources travel grant application open'
-    - '"field school" hydrology climate scholarship'
-    - '"doctoral school" environmental modelling funding'
-    - '"short course" hydrogeology travel grant'
-    - '"seasonal school" climate AI scholarship in person'
-    - '"remote sensing" "training school" "travel grant"'
-    - '"capacity building" climate water scholarship'
-    - '"scientific machine learning" climate school scholarship'
-    - '"geoscience" "winter school" "travel grant"'
-    - '"hydrogeology" "training school" scholarship'
-    - '"climate extremes" "doctoral school" funding'
-  region:
-    - '"East Asia" hydrology summer school scholarship'
-    - '"Southeast Asia" climate water training scholarship'
-    - '"Himalayan hydrology" training school scholarship'
-    - '"Mekong" water resources training scholarship'
+  quality:
+    - '"summer school" "applications open" "travel grant" PhD'
+    - '"summer school" scholarship "application deadline" researchers'
+    - '"winter school" "tuition waiver" graduate researchers'
+    - '"fall school" scholarship "applications open"'
+    - '"spring school" bursary "application deadline"'
+    - '"training school" "travel reimbursement" early career researcher'
+    - '"doctoral school" funded "application deadline"'
+    - '"research school" scholarship graduate students'
+    - '"field school" scholarship graduate students'
+    - '"seasonal school" grant PhD postdoc'
+    - '"summer institute" funded early career researchers'
+    - '"winter institute" scholarship graduate students'
+    - '"short course" bursary PhD researchers in person'
+    - '"advanced course" travel grant early career researcher'
+  access:
+    - '"summer school" "no registration fee" researchers'
+    - '"winter school" "free of charge" PhD'
+    - '"training school" accommodation covered travel covered'
+    - '"summer school" "fee waiver" international students research'

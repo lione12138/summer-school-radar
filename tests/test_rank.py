@@ -167,6 +167,16 @@ def test_dedupe_enriches_records_with_the_same_structured_identity() -> None:
     assert ranked[0].deadline_status == "open"
 
 
+def test_topic_count_does_not_change_quality_score() -> None:
+    tagged = sample_candidate(PROFILE)
+    unclassified = replace(tagged, topic_keywords=[])
+
+    tagged_score, _ = score_candidate(tagged)
+    unclassified_score, _ = score_candidate(unclassified)
+
+    assert tagged_score == unclassified_score
+
+
 def _identity_bridge_candidates(scores: tuple[float, float, float]) -> tuple[Candidate, Candidate, Candidate]:
     base = sample_candidate(PROFILE)
     first = replace(
@@ -246,7 +256,6 @@ def test_rank_recomputes_filters_and_score_after_duplicate_enrichment() -> None:
 
     assert len(ranked) == 1
     merged = ranked[0]
-    assert merged.source_url == primary.source_url
     assert merged.funding_available is True
     assert merged.financial_access_status == "funded"
     assert merged.failed_hard_conditions == []

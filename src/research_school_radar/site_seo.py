@@ -15,9 +15,8 @@ DATA_LICENSE = "CC BY 4.0"
 DATA_LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 SITE_DESCRIPTION = (
     "A free scanner of trusted academic sources for funded research summer "
-    "schools, winter schools, and training schools across many academic fields — "
-    "environmental & earth science, computing & data science, social sciences, "
-    "and humanities — with strict filters, transparent evidence, and daily deadline-status updates."
+    "schools, winter schools, and training schools in any academic discipline, "
+    "with strict quality filters, transparent evidence, and daily deadline-status updates."
 )
 
 # A stable, distinctive marker baked into every generated artifact. Searching the

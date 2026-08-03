@@ -44,6 +44,20 @@ sources:
     source_type: funding_body
     keywords: [short course, scholarship, Germany]
     notes: Funding source; opportunity pages may be linked elsewhere.
+  - name: UKRI Short Courses and Summer Schools
+    url: https://www.ukri.org/what-we-do/developing-people-and-skills/research-skills-initiatives/short-courses-and-summer-schools/
+    layer: 1
+    region: UK
+    source_type: funding_body
+    keywords: [research training, summer school, short course, funded doctoral training]
+    notes: Official UK Research and Innovation collection of current research summer schools and short courses; linked host pages remain the source of programme-level evidence.
+  - name: COST Action Events
+    url: https://www.cost.eu/events/?cat=cost-action-event
+    layer: 1
+    region: continental Europe
+    source_type: research_network
+    keywords: [training school, research methods, capacity building, travel reimbursement]
+    notes: Official COST Action event catalogue. Candidate links span disciplines and are followed only when they name a supported research training school or equivalent short programme.
   - name: ELLIS
     url: https://ellis.eu/events
     layer: 1
