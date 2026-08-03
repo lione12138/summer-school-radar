@@ -5,19 +5,19 @@
   "healthy": true,
   "source_coverage": {
     "attempted": 154,
-    "succeeded": 142,
-    "failed": 12,
-    "success_ratio": 0.9221
+    "succeeded": 141,
+    "failed": 13,
+    "success_ratio": 0.9156
   },
   "http_cache": {
-    "requests": 495,
-    "hits_304": 28,
-    "stale_fallbacks": 1,
-    "stores": 437
+    "requests": 497,
+    "hits_304": 78,
+    "stale_fallbacks": 6,
+    "stores": 385
   },
   "candidates": {
-    "extracted": 134,
-    "published_snapshot": 116
+    "extracted": 135,
+    "published_snapshot": 118
   },
   "ai": {
     "semantic_enabled": true,
@@ -53,14 +53,14 @@
       "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": "2026-07-27",
-      "consecutive_failures": 1
+      "consecutive_failures": 2
     },
     {
       "name": "DAAD Short Courses",
       "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": "2026-07-15",
-      "consecutive_failures": 13
+      "consecutive_failures": 14
     },
     {
       "name": "ELLIS",
@@ -102,7 +102,7 @@
       "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": "2026-07-27",
-      "consecutive_failures": 1
+      "consecutive_failures": 2
     },
     {
       "name": "ECMWF Training",
@@ -141,10 +141,10 @@
     },
     {
       "name": "GESIS Summer School",
-      "status": "healthy",
+      "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": "2026-08-03",
-      "consecutive_failures": 0
+      "consecutive_failures": 1
     },
     {
       "name": "GESIS Fall Seminar in Computational Social Science",
@@ -155,10 +155,10 @@
     },
     {
       "name": "GESIS Spring Seminar",
-      "status": "healthy",
+      "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": "2026-08-03",
-      "consecutive_failures": 0
+      "consecutive_failures": 1
     },
     {
       "name": "IDESSAI",
@@ -200,7 +200,7 @@
       "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": null,
-      "consecutive_failures": 1
+      "consecutive_failures": 2
     },
     {
       "name": "Eurac Winter School on Federalism and Governance",
@@ -403,7 +403,7 @@
       "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": "2026-07-24",
-      "consecutive_failures": 2
+      "consecutive_failures": 3
     },
     {
       "name": "WCRP",
@@ -543,14 +543,14 @@
       "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": null,
-      "consecutive_failures": 14
+      "consecutive_failures": 15
     },
     {
       "name": "CERN Academic Training",
       "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": null,
-      "consecutive_failures": 14
+      "consecutive_failures": 15
     },
     {
       "name": "ICTP",
@@ -627,7 +627,7 @@
       "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": null,
-      "consecutive_failures": 14
+      "consecutive_failures": 15
     },
     {
       "name": "LSA Linguistic Institute",
@@ -739,7 +739,7 @@
       "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": null,
-      "consecutive_failures": 14
+      "consecutive_failures": 15
     },
     {
       "name": "CISPA",
@@ -823,7 +823,7 @@
       "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": "2026-07-24",
-      "consecutive_failures": 2
+      "consecutive_failures": 3
     },
     {
       "name": "Oxford Robotics Institute",
@@ -1082,7 +1082,7 @@
       "status": "failed",
       "last_attempt": "2026-08-03",
       "last_success": null,
-      "consecutive_failures": 14
+      "consecutive_failures": 15
     },
     {
       "name": "LSE Cities",

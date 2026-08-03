@@ -152,6 +152,42 @@
       }
     },
     {
+      "title": "CL Fall School 21st of September – 2nd of October 2026",
+      "url": "https://eveeno.com/193677544",
+      "organizer": "eveeno",
+      "source_layer": "1",
+      "location": "More events",
+      "dates": {
+        "start": "2026-09-21",
+        "end": "2026-10-02",
+        "duration_days": 12
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "low-fee",
+      "fee": "150,00 €",
+      "fee_eur": 150.0,
+      "topics": [
+        "linguistics",
+        "computational linguistics",
+        "natural language processing",
+        "corpus linguistics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "September 21–October 2, 2026",
+        "funding": "",
+        "mode": "in person. First Course Week (September 21–25) Programming"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "SICSS-AMU/Law",
       "url": "https://new.sicss.io/2026/amu-law",
       "organizer": "Summer Institutes in Computational Social Science",
@@ -325,8 +361,8 @@
     {
       "title": "GESIS Spring Seminar – Cutting-Edge Methods",
       "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
-      "organizer": "GESIS Spring Seminar",
-      "source_layer": "1.5",
+      "organizer": "GESIS Fall Seminar in Computational Social Science",
+      "source_layer": "1",
       "location": "Europe",
       "dates": {
         "start": "2027-02-22",

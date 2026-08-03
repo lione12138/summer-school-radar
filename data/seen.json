@@ -494,6 +494,14 @@
     "status": "near_match",
     "title": "Regional Workshops"
   },
+  "https://eveeno.com/193677544": {
+    "deadline": null,
+    "first_seen": "2026-08-03",
+    "last_seen": "2026-08-03",
+    "source_url": "https://eveeno.com/193677544",
+    "status": "near_match",
+    "title": "CL Fall School 21st of September – 2nd of October 2026"
+  },
   "https://eventi.cineca.it/en/hpc/cineca-summer-school-hpc-ai-2026/bologna-20260629": {
     "deadline": "2026-05-31",
     "first_seen": "2026-06-16",
@@ -783,6 +791,14 @@
     "source_url": "https://tinbergen.nl/tuition-fees-scholarships-and-financial-support",
     "status": "near_match",
     "title": "Tuition fees, scholarships and financial support"
+  },
+  "https://training.gesis.org/?site=pDetails&pID=0xE1EA4A565CDF45FF8E7F597B6C89B91D": {
+    "deadline": null,
+    "first_seen": "2026-08-03",
+    "last_seen": "2026-08-03",
+    "source_url": "https://training.gesis.org/?site=pDetails&pID=0xE1EA4A565CDF45FF8E7F597B6C89B91D",
+    "status": "near_match",
+    "title": "Summer School in Survey Methodology 2026"
   },
   "https://unicri.org/training-summer-school-sport-governance-and-ethics-integrity-2026": {
     "deadline": null,
@@ -1454,6 +1470,14 @@
     "source_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-science-communication",
     "status": "near_match",
     "title": "Summer School Science Communication"
+  },
+  "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/": {
+    "deadline": "2026-09-06",
+    "first_seen": "2026-08-03",
+    "last_seen": "2026-08-03",
+    "source_url": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
+    "status": "qualified",
+    "title": "Computational Linguistics Fall School 2026"
   },
   "https://www.wcrp-climate.org/ictp2014-about": {
     "deadline": null,
