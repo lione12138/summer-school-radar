@@ -235,6 +235,7 @@ _NO_YEAR_DATE = rf"(?:{_MONTH_NAME}\s+{_DAY_NUM}|{_DAY_NUM}\s+{_MONTH_NAME})"
 _DEADLINE_PATTERN = (
     r"(?:application deadline|registration deadline|submission deadline|abstract deadline"
     r"|deadline|apply by|apply before|applications?\s+(?:close[sd]?|are due|due)"
+    r"|registration\s+period\s+until|(?:registration|applications?)\s+(?:(?:is|are)\s+)?(?:open\s+)?until"
     r"|closing date|last date|\bregister\b(?:\s+\w+){0,5}\s+(?:latest|no later than)\s+on)"
     rf"[^.\n]{{0,40}}?({_SINGLE_DATE})"
 )
@@ -242,6 +243,7 @@ _DEADLINE_NO_YEAR_PATTERN = (
     r"(?:application deadline|registration deadline|submission deadline|abstract deadline"
     r"|deadline for applications?|applications?\s+deadline|deadline|apply by|apply before"
     r"|applications?\s+(?:close[sd]?|are due|due)|closing date|last date"
+    r"|registration\s+period\s+until|(?:registration|applications?)\s+(?:(?:is|are)\s+)?(?:open\s+)?until"
     r"|\bregister\b(?:\s+\w+){0,5}\s+(?:latest|no later than)\s+on)"
     rf"[^.\n]{{0,40}}?({_NO_YEAR_DATE})(?!\s*,?\s*20\d{{2}})"
 )

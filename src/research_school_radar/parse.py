@@ -17,6 +17,7 @@ OPPORTUNITY_TERMS = [
     "winter school",
     "spring school",
     "autumn school",
+    "fall school",
     "seasonal school",
     "training school",
     "doctoral school",

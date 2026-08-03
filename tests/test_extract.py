@@ -890,6 +890,19 @@ def test_school_types_remain_opportunities() -> None:
         assert looks_like_opportunity(text), kind
 
 
+def test_fall_school_is_not_mistaken_for_degree_recruitment() -> None:
+    from research_school_radar.extract import _extract_deadline
+
+    text = (
+        "Computational Linguistics Fall School 2027. The focus is on courses covering topics "
+        "that are not typically offered in regular degree programs. Registration period until "
+        "6 September 2027. Scholarships covering the registration fee are available."
+    )
+
+    assert looks_like_opportunity(text)
+    assert _extract_deadline(text) == date(2027, 9, 6)
+
+
 def test_workshop_titled_page_is_dropped_even_with_course_text() -> None:
     page = _page(
         "Fiber optic sensing short course details. In-person training. "
