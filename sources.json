@@ -299,7 +299,8 @@
       "web data",
       "data analysis"
     ],
-    "notes": "Official recurring computational-social-science methods school. Courses may be online or in person and are evaluated separately; the public financial-access gate still applies because GESIS does not currently provide its own scholarships."
+    "notes": "Official recurring computational-social-science methods school. Courses may be online or in person and are evaluated separately; the public financial-access gate still applies because GESIS does not currently provide its own scholarships.",
+    "notes_zh": "\u5b98\u65b9\u5b9a\u671f\u4e3e\u529e\u7684\u8ba1\u7b97\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u5b66\u6821\u3002\u8bfe\u7a0b\u53ef\u80fd\u5728\u7ebf\u6216\u7ebf\u4e0b\u8fdb\u884c\uff0c\u5e76\u5206\u522b\u8bc4\u4f30\uff1b\u7531\u4e8eGESIS\u76ee\u524d\u4e0d\u63d0\u4f9b\u81ea\u5df1\u7684\u5956\u5b66\u91d1\uff0c\u516c\u5171\u8d22\u653f\u51c6\u5165\u95e8\u69db\u4ecd\u7136\u9002\u7528\u3002"
   },
   {
     "name": "GESIS Spring Seminar",
@@ -314,7 +315,8 @@
       "data analysis",
       "metascience"
     ],
-    "notes": "Official annual advanced methods seminar for graduate students and researchers; individual course instances are checked for mode, dates, fees, and financial access."
+    "notes": "Official annual advanced methods seminar for graduate students and researchers; individual course instances are checked for mode, dates, fees, and financial access.",
+    "notes_zh": "\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u4eba\u5458\u7684\u5b98\u65b9\u5e74\u5ea6\u9ad8\u7ea7\u65b9\u6cd5\u7814\u8ba8\u4f1a\uff1b\u4e2a\u522b\u8bfe\u7a0b\u7684\u5177\u4f53\u5f62\u5f0f\u3001\u65e5\u671f\u3001\u8d39\u7528\u53ca\u7ecf\u6d4e\u63f4\u52a9\u60c5\u51b5\u9700\u9010\u4e00\u6838\u5b9e\u3002"
   },
   {
     "name": "IDESSAI",
@@ -329,7 +331,8 @@
       "trustworthy AI",
       "doctoral school"
     ],
-    "notes": "Official Inria-DFKI European science school on AI, with a recurring programme for doctoral students and early-career researchers."
+    "notes": "Official Inria-DFKI European science school on AI, with a recurring programme for doctoral students and early-career researchers.",
+    "notes_zh": "Inria-DFKI\u6b27\u6d32\u4eba\u5de5\u667a\u80fd\u79d1\u5b66\u5b66\u6821\u5b98\u65b9\u9879\u76ee\uff0c\u9762\u5411\u535a\u58eb\u751f\u548c\u65e9\u671f\u804c\u4e1a\u7814\u7a76\u8005\u7684\u5b9a\u671f\u8bfe\u7a0b\u3002"
   },
   {
     "name": "HiPEAC ACACES",
@@ -344,7 +347,8 @@
       "compilers",
       "artificial intelligence"
     ],
-    "notes": "Official recurring advanced computer architecture and systems school. Selected students may receive grants covering registration and accommodation; each edition is still checked independently."
+    "notes": "Official recurring advanced computer architecture and systems school. Selected students may receive grants covering registration and accommodation; each edition is still checked independently.",
+    "notes_zh": "\u5b98\u65b9\u5b9a\u671f\u4e3e\u529e\u7684\u9ad8\u7ea7\u8ba1\u7b97\u673a\u4f53\u7cfb\u7ed3\u6784\u4e0e\u7cfb\u7edf\u5b66\u6821\u3002\u5165\u9009\u5b66\u751f\u53ef\u80fd\u83b7\u5f97\u6db5\u76d6\u6ce8\u518c\u8d39\u548c\u4f4f\u5bbf\u8d39\u7684\u8d44\u52a9\uff1b\u6bcf\u5c4a\u4ecd\u72ec\u7acb\u5ba1\u6838\u3002"
   },
   {
     "name": "UTN Computational Linguistics Fall School",
@@ -359,7 +363,8 @@
       "explainable AI",
       "sociolinguistics"
     ],
-    "notes": "Official University of Technology Nuremberg 2026 school. The page states an in-person two-week programme, a 6 September registration deadline, student fees of EUR 150, and selected registration-fee scholarships."
+    "notes": "Official University of Technology Nuremberg 2026 school. The page states an in-person two-week programme, a 6 September registration deadline, student fees of EUR 150, and selected registration-fee scholarships.",
+    "notes_zh": "\u7ebd\u4f26\u5821\u5de5\u4e1a\u5927\u5b662026\u5e74\u5b98\u65b9\u5b66\u6821\u3002\u9875\u9762\u8bf4\u660e\u4e3a\u4e3a\u671f\u4e24\u5468\u7684\u7ebf\u4e0b\u9879\u76ee\uff0c\u6ce8\u518c\u622a\u6b62\u65e5\u671f\u4e3a9\u67086\u65e5\uff0c\u5b66\u751f\u8d39\u7528\u4e3a150\u6b27\u5143\uff0c\u5e76\u63d0\u4f9b\u90e8\u5206\u6ce8\u518c\u8d39\u5956\u5b66\u91d1\u3002"
   },
   {
     "name": "TU Graz Summer and Winter Programmes",
@@ -374,7 +379,8 @@
       "scientific computing",
       "engineering"
     ],
-    "notes": "Official TU Graz programme catalogue. It includes recurring graduate research schools such as Graz Security Week; generic, blended-only, and expensive programmes remain excluded by the normal hard filters."
+    "notes": "Official TU Graz programme catalogue. It includes recurring graduate research schools such as Graz Security Week; generic, blended-only, and expensive programmes remain excluded by the normal hard filters.",
+    "notes_zh": "\u683c\u62c9\u8328\u5de5\u4e1a\u5927\u5b66\u5b98\u65b9\u8bfe\u7a0b\u76ee\u5f55\u3002\u5176\u4e2d\u5305\u62ec\u5982\u683c\u62c9\u8328\u5b89\u5168\u5468\u7b49\u5b9a\u671f\u4e3e\u529e\u7684\u7814\u7a76\u751f\u7814\u7a76\u5b66\u6821\uff1b\u5e38\u89c4\u786c\u6027\u7b5b\u9009\u6761\u4ef6\u4ecd\u5c06\u6392\u9664\u901a\u7528\u578b\u3001\u7eaf\u6df7\u5408\u578b\u53ca\u8d39\u7528\u9ad8\u6602\u7684\u8bfe\u7a0b\u3002"
   },
   {
     "name": "Institute for Qualitative and Multi-Method Research",
@@ -389,7 +395,8 @@
       "political science",
       "research design"
     ],
-    "notes": "Official Syracuse University IQMR page, including recurring open-pool competitions for graduate students and early-career researchers from several world regions."
+    "notes": "Official Syracuse University IQMR page, including recurring open-pool competitions for graduate students and early-career researchers from several world regions.",
+    "notes_zh": "\u96ea\u57ce\u5927\u5b66IQMR\u5b98\u65b9\u9875\u9762\uff0c\u5305\u62ec\u9762\u5411\u591a\u4e2a\u4e16\u754c\u5730\u533a\u7814\u7a76\u751f\u548c\u65e9\u671f\u804c\u4e1a\u7814\u7a76\u4eba\u5458\u7684\u5b9a\u671f\u5f00\u653e\u6c60\u7ade\u8d5b\u3002"
   },
   {
     "name": "EITM Institute",
@@ -404,7 +411,8 @@
       "causal inference",
       "research design"
     ],
-    "notes": "Official Empirical Implications of Theoretical Models institute site; recurring summer institutes train early-career social scientists to integrate formal theory and empirical analysis."
+    "notes": "Official Empirical Implications of Theoretical Models institute site; recurring summer institutes train early-career social scientists to integrate formal theory and empirical analysis.",
+    "notes_zh": "\u7406\u8bba\u6a21\u578b\u5b9e\u8bc1\u610f\u4e49\u7814\u7a76\u6240\u5b98\u65b9\u7f51\u7ad9\uff1b\u5b9a\u671f\u4e3e\u529e\u7684\u6691\u671f\u5b66\u9662\u57f9\u8bad\u65e9\u671f\u804c\u4e1a\u793e\u4f1a\u79d1\u5b66\u5bb6\uff0c\u4ee5\u6574\u5408\u5f62\u5f0f\u7406\u8bba\u4e0e\u5b9e\u8bc1\u5206\u6790\u3002"
   },
   {
     "name": "Eurac Winter School on Federalism and Governance",
@@ -419,7 +427,8 @@
       "social science",
       "research training"
     ],
-    "notes": "Official recurring two-week research school organised by Eurac Research and partner universities. Edition pages are checked for open status, programme fees, and scholarships before publication."
+    "notes": "Official recurring two-week research school organised by Eurac Research and partner universities. Edition pages are checked for open status, programme fees, and scholarships before publication.",
+    "notes_zh": "\u7531Eurac Research\u53ca\u5408\u4f5c\u5927\u5b66\u7ec4\u7ec7\u7684\u5b98\u65b9\u5b9a\u671f\u4e24\u5468\u7814\u7a76\u5b66\u6821\u3002\u53d1\u5e03\u524d\u4f1a\u68c0\u67e5\u5404\u671f\u9875\u9762\u7684\u5f00\u653e\u72b6\u6001\u3001\u9879\u76ee\u8d39\u7528\u548c\u5956\u5b66\u91d1\u4fe1\u606f\u3002"
   },
   {
     "name": "Complexity Science Hub Winter School",
@@ -434,7 +443,8 @@
       "computational social science",
       "machine learning"
     ],
-    "notes": "Official graduate and early-career winter school in complexity science. The organiser states that partial tuition scholarships may be available; each edition must still pass the financial-access gate."
+    "notes": "Official graduate and early-career winter school in complexity science. The organiser states that partial tuition scholarships may be available; each edition must still pass the financial-access gate.",
+    "notes_zh": "\u5b98\u65b9\u7814\u7a76\u751f\u53ca\u65e9\u671f\u804c\u4e1a\u590d\u6742\u6027\u79d1\u5b66\u51ac\u5b63\u5b66\u6821\u3002\u4e3b\u529e\u65b9\u8868\u793a\u53ef\u80fd\u63d0\u4f9b\u90e8\u5206\u5b66\u8d39\u5956\u5b66\u91d1\uff1b\u6bcf\u5c4a\u4ecd\u9700\u901a\u8fc7\u7ecf\u6d4e\u51c6\u5165\u5ba1\u6838\u3002"
   },
   {
     "name": "Data Science Africa Summer Schools",
