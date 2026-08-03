@@ -140,6 +140,76 @@ sources:
     source_type: research_training_provider
     keywords: [data analysis, survey methodology, causal inference, statistics, data science]
     notes: Official recurring survey methodology and data-analysis summer school; the scanner follows its current course catalogue.
+  - name: GESIS Fall Seminar in Computational Social Science
+    url: https://www.gesis.org/en/gesis-training/what-we-offer/fall-seminar-in-computational-social-science
+    layer: 1
+    region: continental Europe
+    source_type: research_training_provider
+    keywords: [computational social science, machine learning, text analysis, web data, data analysis]
+    notes: Official recurring computational-social-science methods school. Courses may be online or in person and are evaluated separately; the public financial-access gate still applies because GESIS does not currently provide its own scholarships.
+  - name: GESIS Spring Seminar
+    url: https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods
+    layer: 1.5
+    region: continental Europe
+    source_type: research_training_provider
+    keywords: [social science methods, quantitative methods, statistics, data analysis, metascience]
+    notes: Official annual advanced methods seminar for graduate students and researchers; individual course instances are checked for mode, dates, fees, and financial access.
+  - name: IDESSAI
+    url: https://idessai.eu/
+    layer: 1
+    region: continental Europe
+    source_type: summer_school
+    keywords: [artificial intelligence, machine learning, data science, trustworthy AI, doctoral school]
+    notes: Official Inria-DFKI European science school on AI, with a recurring programme for doctoral students and early-career researchers.
+  - name: HiPEAC ACACES
+    url: https://www.hipeac.net/acaces/
+    layer: 1
+    region: continental Europe
+    source_type: summer_school
+    keywords: [computer architecture, high performance computing, embedded systems, compilers, artificial intelligence]
+    notes: Official recurring advanced computer architecture and systems school. Selected students may receive grants covering registration and accommodation; each edition is still checked independently.
+  - name: UTN Computational Linguistics Fall School
+    url: https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/
+    layer: 1
+    region: continental Europe
+    source_type: research_training_provider
+    keywords: [computational linguistics, natural language processing, corpus linguistics, explainable AI, sociolinguistics]
+    notes: Official University of Technology Nuremberg 2026 school. The page states an in-person two-week programme, a 6 September registration deadline, student fees of EUR 150, and selected registration-fee scholarships.
+  - name: TU Graz Summer and Winter Programmes
+    url: https://www.tugraz.at/en/studying-and-teaching/studying-internationally/summer-and-winter-programmes
+    layer: 1.5
+    region: continental Europe
+    source_type: university
+    keywords: [cybersecurity, data science, machine learning, scientific computing, engineering]
+    notes: Official TU Graz programme catalogue. It includes recurring graduate research schools such as Graz Security Week; generic, blended-only, and expensive programmes remain excluded by the normal hard filters.
+  - name: Institute for Qualitative and Multi-Method Research
+    url: https://www.maxwell.syr.edu/research/center-for-qualitative-and-multi-method-inquiry/institute-for-qualitative-multi-method-research
+    layer: 1
+    region: North America
+    source_type: research_training_provider
+    keywords: [qualitative methods, multi-method research, social science methods, political science, research design]
+    notes: Official Syracuse University IQMR page, including recurring open-pool competitions for graduate students and early-career researchers from several world regions.
+  - name: EITM Institute
+    url: https://eitminstitute.org/
+    layer: 1.5
+    region: global
+    source_type: research_training_provider
+    keywords: [political science, empirical methods, formal theory, causal inference, research design]
+    notes: Official Empirical Implications of Theoretical Models institute site; recurring summer institutes train early-career social scientists to integrate formal theory and empirical analysis.
+  - name: Eurac Winter School on Federalism and Governance
+    url: https://winterschool.eurac.edu/
+    layer: 1.5
+    region: continental Europe
+    source_type: winter_school
+    keywords: [political science, governance, federalism, social science, research training]
+    notes: Official recurring two-week research school organised by Eurac Research and partner universities. Edition pages are checked for open status, programme fees, and scholarships before publication.
+  - name: Complexity Science Hub Winter School
+    url: https://csh.ac.at/education/winterschool/
+    layer: 1.5
+    region: continental Europe
+    source_type: winter_school
+    keywords: [complex systems, network science, data analysis, computational social science, machine learning]
+    notes: Official graduate and early-career winter school in complexity science. The organiser states that partial tuition scholarships may be available; each edition must still pass the financial-access gate.
   - name: Data Science Africa Summer Schools
     url: https://datascienceafrica.org/summer-schools
     layer: 1
