@@ -8,6 +8,69 @@
   "generated": "2026-08-03",
   "opportunities": [
     {
+      "title": "Computational Linguistics Fall School 2026",
+      "type": "fall school",
+      "organizer": "UTN",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "University of Technology Nuremberg",
+      "mode": "in-person",
+      "start_date": "2026-09-21",
+      "end_date": "2026-10-02",
+      "duration_days": 12,
+      "deadline": "2026-09-06",
+      "deadline_status": "open",
+      "funding_available": true,
+      "funding_type": [
+        "scholarship",
+        "stipend"
+      ],
+      "funding_evidence": "Scholarship Student Groups and Initiatives FAQ Contact StaRs Departments Department Computer Science & Artificial Intelligence Arti",
+      "topic_keywords": [
+        "linguistics",
+        "computational linguistics",
+        "natural language processing",
+        "corpus linguistics"
+      ],
+      "eligibility": "Doctoral Guide Research and Support Early Career Center Alumni Milestones Campus Construction Progress Experience Cubes Climate Action Sustainability New Work Concept L",
+      "target_level": "MSc, PhD, early-career researcher",
+      "fee": "150 EUR",
+      "fee_eur": 150.0,
+      "application_link": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
+      "source_url": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
+      "summary": "Computational Linguistics Fall School 2026 | UTN Go to content area Go to search Go to main navigation About us Organisation Founding Executive Board Founding Steering Board Central Services Overview of Representatives University Contract of UTN Anniversary 2026 International Eng",
+      "recommendation_reason": "topic match: linguistics, computational linguistics, natural language processing, corpus linguistics; funding evidence: scholarship, stipend; deadline appears open; 12 days",
+      "risk_points": "Funding may be competitive or partial. Fee noted: 150 EUR.",
+      "sessions": [],
+      "identity_key": "",
+      "financial_access_status": "funded",
+      "failed_hard_conditions": [],
+      "score": 111.0,
+      "score_explanation": [
+        "topic match: linguistics, computational linguistics, natural language processing, corpus linguistics",
+        "funding evidence: scholarship, stipend",
+        "deadline appears open",
+        "12 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "target level: MSc, PhD, early-career researcher"
+      ],
+      "first_seen": "2026-08-03",
+      "deadline_evidence": "Registration Period Until September 6, 2026",
+      "duration_evidence": "September 21–October 2, 2026",
+      "mode_evidence": "in person. First Course Week (September 21–25) Programming",
+      "extraction_confidence": 1.0,
+      "title_zh": "2026年计算语言学秋季学校",
+      "organizer_zh": "UTN",
+      "location_zh": "纽伦堡工业大学",
+      "summary_zh": "2026年计算语言学秋季学校 | UTN 跳转到内容区域 跳转到搜索 跳转到主导航 关于我们 组织机构 创始执行委员会 创始指导委员会 中央服务 代表概览 大学合同 UTN 2026年周年庆 国际",
+      "eligibility_zh": "博士指南 研究与支持 早期职业中心 校友 里程碑 校园建设进展 体验立方体 气候行动 可持续性 新工作理念",
+      "recommendation_reason_zh": "主题匹配：语言学、计算语言学、自然语言处理、语料库语言学；资助证据：奖学金、津贴；截止日期似乎开放；12天",
+      "risk_points_zh": "资助可能具有竞争性或部分资助。费用注明：150欧元。",
+      "is_new": true
+    },
+    {
       "title": "Talk to us",
       "type": "summer school",
       "organizer": "UNICRI AI Ethics Winter School",
@@ -568,6 +631,68 @@
       "eligibility_zh": "要求 申请人应具有定量学科（社会、自然或信息科学、数学、工程）的硕士水平课程学习和/或在定量领域有实际工作经验。",
       "recommendation_reason_zh": "主题匹配：生态学、物理学、数学、工程；资助证据：奖学金；5天；优先地区",
       "risk_points_zh": "申请尚未开放",
+      "is_new": true
+    },
+    {
+      "title": "CL Fall School 21st of September – 2nd of October 2026",
+      "type": "fall school",
+      "organizer": "eveeno",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "More events",
+      "mode": "in-person",
+      "start_date": "2026-09-21",
+      "end_date": "2026-10-02",
+      "duration_days": 12,
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "linguistics",
+        "computational linguistics",
+        "natural language processing",
+        "corpus linguistics"
+      ],
+      "eligibility": "Masterstudierende und Promovierende in der Anfangsphase aus den Geisteswissenschaften und der Informatik",
+      "target_level": "MSc, PhD",
+      "fee": "150,00 €",
+      "fee_eur": 150.0,
+      "application_link": "https://eveeno.com/193677544",
+      "source_url": "https://eveeno.com/193677544",
+      "summary": "CL Fall School 21st of September – 2nd of October 2026 Organize your events Share: Veranstalter-Login Eigene Events erstellen! Demos ausprobieren CL Fall School 21st of September – 2nd of October 2026 Nürnberg Registration selected Info Location More events Contact de en fr Regis",
+      "recommendation_reason": "topic match: linguistics, computational linguistics, natural language processing, corpus linguistics; low fee: approximately EUR 150; 12 days; priority region",
+      "risk_points": "application deadline is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "financial_access_status": "low-fee",
+      "failed_hard_conditions": [
+        "application deadline is uncertain"
+      ],
+      "score": 84.0,
+      "score_explanation": [
+        "topic match: linguistics, computational linguistics, natural language processing, corpus linguistics",
+        "low fee: approximately EUR 150",
+        "12 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "target level: MSc, PhD",
+        "near-match only: application deadline is uncertain"
+      ],
+      "first_seen": "2026-08-03",
+      "deadline_evidence": "",
+      "duration_evidence": "September 21–October 2, 2026",
+      "mode_evidence": "in person. First Course Week (September 21–25) Programming",
+      "extraction_confidence": 0.75,
+      "title_zh": "CL 秋季学校 2026年9月21日至10月2日",
+      "organizer_zh": "eveeno",
+      "location_zh": "更多活动",
+      "summary_zh": "CL 秋季学校 2026年9月21日至10月2日 组织您的活动 分享： 主办方登录 创建自己的活动！ 试用演示 CL 秋季学校 2026年9月21日至10月2日 纽伦堡 注册已选 信息 地点 更多活动 联系方式 de en fr Regis",
+      "eligibility_zh": "人文科学和计算机科学领域的硕士生和初期博士生",
+      "recommendation_reason_zh": "主题匹配：语言学、计算语言学、自然语言处理、语料库语言学；费用低：约150欧元；12天；优先地区",
+      "risk_points_zh": "申请截止日期不确定",
       "is_new": true
     },
     {
@@ -1982,7 +2107,7 @@
       "deadline_evidence": "Applications were open until 13 July 2026; registration until 31 July is only for accepted applicants.",
       "duration_evidence": "September 7–11, 2026",
       "mode_evidence": "Official IEEE event announcement gives an on-site venue at Abtei Frauenwörth, Chiemsee, Germany.",
-      "extraction_confidence": 0.5,
+      "extraction_confidence": 0.75,
       "title_zh": "IEEE RAS德国暑期学校：连接人工智能与机器人技术",
       "organizer_zh": "IEEE RAS认知机器人暑期学校",
       "location_zh": "德国基姆湖弗劳恩沃斯修道院",
@@ -3345,8 +3470,8 @@
     {
       "title": "GESIS Spring Seminar – Cutting-Edge Methods",
       "type": "summer school",
-      "organizer": "GESIS Spring Seminar",
-      "source_layer": "1.5",
+      "organizer": "GESIS Fall Seminar in Computational Social Science",
+      "source_layer": "1",
       "region_priority": "priority",
       "location": "Europe",
       "mode": "in-person",
@@ -3369,7 +3494,7 @@
       "application_link": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
       "source_url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
       "summary": "Spring Seminar: Cutting-Edge Methods in Social Research - GESIS Training Deutsch Contact Career Login Alles GESIS Training What we offer Spring Seminar – Cutting-Edge Methods GESIS Training About us About us Menü schließen Mission Go to overview Key Topics Go to overview Team Go",
-      "recommendation_reason": "topic match: data analysis, social science; 19 days; priority region; trusted source layer 1.5",
+      "recommendation_reason": "topic match: data analysis, social science; 19 days; priority region; trusted source layer 1",
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -3383,7 +3508,7 @@
         "topic match: data analysis, social science",
         "19 days",
         "priority region",
-        "trusted source layer 1.5",
+        "trusted source layer 1",
         "in-person",
         "target level: PhD",
         "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain"
@@ -3394,12 +3519,12 @@
       "mode_evidence": "onsite) an exciting time in Cologne, complemented by an",
       "extraction_confidence": 0.5,
       "title_zh": "GESIS春季研讨会——前沿方法",
-      "organizer_zh": "GESIS春季研讨会",
+      "organizer_zh": "GESIS计算社会科学秋季研讨会",
       "location_zh": "欧洲",
       "summary_zh": "春季研讨会：社会研究中的前沿方法 - GESIS培训 Deutsch 联系 职业 登录 所有 GESIS培训 我们提供什么 春季研讨会——前沿方法 GESIS培训 关于我们 关于我们 关闭菜单 使命 转到概览 关键主题 转到概览 团队 转到",
-      "eligibility_zh": "对发展和提升自身在最新技术方面的知识和技能感兴趣的博士生、博士后、初级和高级研究人员",
-      "recommendation_reason_zh": "主题匹配：数据分析、社会科学；19天；优先地区；可信来源层级1.5",
-      "risk_points_zh": "申请截止日期不确定；资助不明确，费用不确定",
+      "eligibility_zh": "对发展和提高自身在最新技术方面的知识和技能感兴趣的博士生、博士后、初级和高级研究人员",
+      "recommendation_reason_zh": "主题匹配：数据分析、社会科学；19天；优先地区；可信来源第一层",
+      "risk_points_zh": "申请截止日期不确定；资金不明确，费用不确定",
       "is_new": false
     },
     {
@@ -4077,7 +4202,7 @@
         "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-16",
-      "deadline_evidence": "register here latest on March 29, 2026 (other dates listed: 2026-03-02)",
+      "deadline_evidence": "register here latest on March 29, 2026 (other dates listed: 2026-03-02, 2026-03-28)",
       "duration_evidence": "6 to 10 July 2026",
       "mode_evidence": "on-site) from 6-10 July. The registration fee is €575,-.",
       "extraction_confidence": 1.0,
@@ -4088,135 +4213,6 @@
       "eligibility_zh": "博士候选人至资深研究人员，且对科学传播不熟悉",
       "recommendation_reason_zh": "主题匹配：设计、社会科学、文学；费用低：约575欧元；5天；优先地区",
       "risk_points_zh": "申请截止日期已过；费用超过400欧元且无明确资助",
-      "is_new": false
-    },
-    {
-      "title": "GESIS Summer School in Survey Methodology",
-      "type": "summer school",
-      "organizer": "GESIS Summer School",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "hybrid",
-      "start_date": "2026-07-22",
-      "end_date": "2026-08-14",
-      "duration_days": 5,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "Scholarships FAQs Sponsors & Partners Contact Fall Seminar in Computational Social Science Go to overview Courses Course Fees Socia",
-      "topic_keywords": [
-        "AI",
-        "data science",
-        "data analysis",
-        "design"
-      ],
-      "eligibility": "PhD student, post-doc, junior or senior researcher, or survey professional, you will: receive high quality training in state-of-the-art techniques and methods of s",
-      "target_level": "PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
-      "source_url": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
-      "summary": "Summer School: Survey Methodology Training - GESIS Training Deutsch Contact Career Login Alles GESIS Training What we offer Summer School in Survey Methodology GESIS Training About us About us Menü schließen Mission Go to overview Key Topics Go to overview Team Go to overview Loc",
-      "recommendation_reason": "topic match: AI, data science, data analysis, design; 5 days; priority region; trusted source layer 1",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
-      "sessions": [
-        {
-          "name": "Short Course A: Introduction to R for Data Analysis",
-          "start_date": "2026-07-22",
-          "end_date": "2026-07-23",
-          "application_deadline": null
-        },
-        {
-          "name": "Short Course C: Pretesting Survey Questions",
-          "start_date": "2026-07-22",
-          "end_date": "2026-07-24",
-          "application_deadline": null
-        },
-        {
-          "name": "Short Course D: Systematic Review, Meta-Analysis, and Evidence Synthesis Using Model Selection",
-          "start_date": "2026-07-22",
-          "end_date": "2026-07-24",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 1: Factorial Survey Design",
-          "start_date": "2026-07-27",
-          "end_date": "2026-07-31",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 2: Advanced Questionnaire Design",
-          "start_date": "2026-07-27",
-          "end_date": "2026-07-31",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 3: AI-Assisted Surveys: Using AI Tools at Each Step of the Survey Research Process",
-          "start_date": "2026-07-27",
-          "end_date": "2026-07-31",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 4: Data Science Techniques for Survey Researchers",
-          "start_date": "2026-08-03",
-          "end_date": "2026-08-07",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 5: Latent Variable Modeling in Survey Research: Classical and New Approaches",
-          "start_date": "2026-08-03",
-          "end_date": "2026-08-07",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 7: Causal Inference Using Survey Data",
-          "start_date": "2026-08-10",
-          "end_date": "2026-08-14",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 8: Applied Introduction to Bots in Web-based Studies",
-          "start_date": "2026-08-10",
-          "end_date": "2026-08-14",
-          "application_deadline": null
-        },
-        {
-          "name": "Short Course E: Applied Causal Inference Using Directed Acyclic Graphs (DAGs)",
-          "start_date": "2026-08-12",
-          "end_date": "2026-08-14",
-          "application_deadline": null
-        }
-      ],
-      "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 53.0,
-      "score_explanation": [
-        "topic match: AI, data science, data analysis, design",
-        "5 days",
-        "priority region",
-        "trusted source layer 1",
-        "hybrid",
-        "target level: PhD",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "22 July - 14 August 2026",
-      "mode_evidence": "onsite or online participation). ► Online courses will b",
-      "extraction_confidence": 0.5,
-      "title_zh": "GESIS 调查方法论暑期学校",
-      "organizer_zh": "GESIS 暑期学校",
-      "location_zh": "欧洲",
-      "summary_zh": "暑期学校：调查方法论培训 - GESIS 培训 Deutsch 登录 职业 所有 GESIS 培训 我们提供什么 调查方法论暑期学校 GESIS 培训 关于我们 关于我们 关闭菜单 使命 转到概览 关键主题 转到概览 团队 转到概览 地点",
-      "eligibility_zh": "博士生、博士后、初级或高级研究员或调查专业人员，您将：接受最先进的技术和方法的高质量培训，涉及...",
-      "recommendation_reason_zh": "主题匹配：人工智能、数据科学、数据分析、设计；5天；优先区域；可信来源第一层",
-      "risk_points_zh": "申请截止日期已过；资金不明确，费用不确定",
       "is_new": false
     },
     {
@@ -5966,6 +5962,136 @@
       "is_new": false
     },
     {
+      "title": "Summer School in Survey Methodology 2026",
+      "type": "summer school",
+      "organizer": "GESIS Fall Seminar in Computational Social Science",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "uncertain",
+      "start_date": "2026-07-22",
+      "end_date": "2026-08-14",
+      "duration_days": 5,
+      "deadline": null,
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "Scholarships FAQs Partners & Sponsors Contact Fall Seminar in Computational Social Sciences Courses Course Fees Social Program ECTS",
+      "topic_keywords": [
+        "AI",
+        "data science",
+        "data analysis",
+        "statistics",
+        "design",
+        "social science"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://training.gesis.org/?site=pDetails&pID=0xE1EA4A565CDF45FF8E7F597B6C89B91D",
+      "source_url": "https://training.gesis.org/?site=pDetails&pID=0xE1EA4A565CDF45FF8E7F597B6C89B91D",
+      "summary": "ï»¿ï»¿ GESIS Training Courses user_jsdisabled Deutsch Contact Login Search GESIS Training About us Mission Key Topics Team Locations Partners & Sponsors Terms and Conditions FAQs Newsletter Contact What we offer Workshops - Tailored to your needs Courses Course Fees FAQs Contact",
+      "recommendation_reason": "topic match: AI, data science, data analysis, statistics; 5 days; priority region; trusted source layer 1",
+      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "sessions": [
+        {
+          "name": "Short Course A: Introduction to R for Data Analysis",
+          "start_date": "2026-07-22",
+          "end_date": "2026-07-23",
+          "application_deadline": null
+        },
+        {
+          "name": "Short Course C: Pretesting Survey Questions",
+          "start_date": "2026-07-22",
+          "end_date": "2026-07-24",
+          "application_deadline": null
+        },
+        {
+          "name": "Short Course D: Systematic Review, Meta-Analysis, and Evidence Synthesis Using Model Selection",
+          "start_date": "2026-07-22",
+          "end_date": "2026-07-24",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 1: Factorial Survey Design",
+          "start_date": "2026-07-27",
+          "end_date": "2026-07-31",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 2: Advanced Questionnaire Design",
+          "start_date": "2026-07-27",
+          "end_date": "2026-07-31",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 3: AI-Assisted Surveys: Using AI Tools at Each Step of the Survey Research Process",
+          "start_date": "2026-07-27",
+          "end_date": "2026-07-31",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 4: Data Science Techniques for Survey Researchers",
+          "start_date": "2026-08-03",
+          "end_date": "2026-08-07",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 5: Latent Variable Modeling in Survey Research: Classical and New Approaches",
+          "start_date": "2026-08-03",
+          "end_date": "2026-08-07",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 7: Causal Inference Using Survey Data",
+          "start_date": "2026-08-10",
+          "end_date": "2026-08-14",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 8: Applied Introduction to Bots in Web-based Studies",
+          "start_date": "2026-08-10",
+          "end_date": "2026-08-14",
+          "application_deadline": null
+        },
+        {
+          "name": "Short Course E: Applied Causal Inference Using Directed Acyclic Graphs (DAGs)",
+          "start_date": "2026-08-12",
+          "end_date": "2026-08-14",
+          "application_deadline": null
+        }
+      ],
+      "identity_key": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline has passed",
+        "funding is not explicit and fee is uncertain",
+        "in-person status is uncertain"
+      ],
+      "score": 33.0,
+      "score_explanation": [
+        "topic match: AI, data science, data analysis, statistics",
+        "5 days",
+        "priority region",
+        "trusted source layer 1",
+        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+      ],
+      "first_seen": "2026-08-03",
+      "deadline_evidence": "",
+      "duration_evidence": "Short Course A: Introduction to R for Data Analysis: 2026-07-22 to 2026-07-23; Short Course C: Pretesting Survey Questions: 2026-07-22 to 2026-07-24; Short Course D: Systematic Review, Meta-Analysis, and Evidence Synthesis Using Model Selection: 2026-07-22 to 2026-07-24; Course 1: Factorial Survey Design: 2026-07-27 to 2026-07-31; Course 2: Advanced Questionnaire Design: 2026-07-27 to 2026-07-31; Course 3: AI-Assisted Surveys: Using AI Tools at Each Step of the Survey Research Process: 2026-07-27 to 2026-07-31; Course 4: Data Science Techniques for Survey Researchers: 2026-08-03 to 2026-08-07; Course 5: Latent Variable Modeling in Survey Research: Classical and New Approaches: 2026-08-03 to 2026-08-07; Course 7: Causal Inference Using Survey Data: 2026-08-10 to 2026-08-14; Course 8: Applied Introduction to Bots in Web-based Studies: 2026-08-10 to 2026-08-14; Short Course E: Applied Causal Inference Using Directed Acyclic Graphs (DAGs): 2026-08-12 to 2026-08-14",
+      "mode_evidence": "",
+      "extraction_confidence": 0.25,
+      "title_zh": "2026年调查方法论暑期学校",
+      "organizer_zh": "GESIS计算社会科学秋季研讨会",
+      "location_zh": "欧洲",
+      "summary_zh": "GESIS培训课程 用户已禁用JavaScript 联系方式 登录 搜索 GESIS培训 关于我们 使命 关键主题 团队 地点 合作伙伴与赞助商 条款与条件 常见问题 通讯 联系我们 我们提供什么 工作坊 - 量身定制 课程 课程费用 常见问题 联系方式",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "主题匹配：人工智能、数据科学、数据分析、统计学；5天；优先地区；可信来源第一层",
+      "risk_points_zh": "申请截止日期已过；资助不明确且费用不确定；线下状态不确定",
+      "is_new": true
+    },
+    {
       "title": "Thematic CERN School of Computing",
       "type": "school of computing",
       "organizer": "CERN School of Computing",
@@ -7235,7 +7361,7 @@
         "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
       ],
       "first_seen": "2026-07-16",
-      "deadline_evidence": "Applications open until July 11th (other dates listed: 2023-04-27, 2026-04-30, 2026-07-15)",
+      "deadline_evidence": "Applications are open until 11 Jul (other dates listed: 2023-04-27, 2025-06-12, 2025-07-11)",
       "duration_evidence": "August 31 – September 4 2026",
       "mode_evidence": "",
       "extraction_confidence": 0.5,
@@ -7419,6 +7545,69 @@
     }
   ],
   "scanner_opportunities": [
+    {
+      "title": "Computational Linguistics Fall School 2026",
+      "type": "fall school",
+      "organizer": "UTN",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "University of Technology Nuremberg",
+      "mode": "in-person",
+      "start_date": "2026-09-21",
+      "end_date": "2026-10-02",
+      "duration_days": 12,
+      "deadline": "2026-09-06",
+      "deadline_status": "open",
+      "funding_available": true,
+      "funding_type": [
+        "scholarship",
+        "stipend"
+      ],
+      "funding_evidence": "Scholarship Student Groups and Initiatives FAQ Contact StaRs Departments Department Computer Science & Artificial Intelligence Arti",
+      "topic_keywords": [
+        "linguistics",
+        "computational linguistics",
+        "natural language processing",
+        "corpus linguistics"
+      ],
+      "eligibility": "Doctoral Guide Research and Support Early Career Center Alumni Milestones Campus Construction Progress Experience Cubes Climate Action Sustainability New Work Concept L",
+      "target_level": "MSc, PhD, early-career researcher",
+      "fee": "150 EUR",
+      "fee_eur": 150.0,
+      "application_link": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
+      "source_url": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
+      "summary": "Computational Linguistics Fall School 2026 | UTN Go to content area Go to search Go to main navigation About us Organisation Founding Executive Board Founding Steering Board Central Services Overview of Representatives University Contract of UTN Anniversary 2026 International Eng",
+      "recommendation_reason": "topic match: linguistics, computational linguistics, natural language processing, corpus linguistics; funding evidence: scholarship, stipend; deadline appears open; 12 days",
+      "risk_points": "Funding may be competitive or partial. Fee noted: 150 EUR.",
+      "sessions": [],
+      "identity_key": "",
+      "financial_access_status": "funded",
+      "failed_hard_conditions": [],
+      "score": 111.0,
+      "score_explanation": [
+        "topic match: linguistics, computational linguistics, natural language processing, corpus linguistics",
+        "funding evidence: scholarship, stipend",
+        "deadline appears open",
+        "12 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "target level: MSc, PhD, early-career researcher"
+      ],
+      "first_seen": "2026-08-03",
+      "deadline_evidence": "Registration Period Until September 6, 2026",
+      "duration_evidence": "September 21–October 2, 2026",
+      "mode_evidence": "in person. First Course Week (September 21–25) Programming",
+      "extraction_confidence": 1.0,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": true
+    },
     {
       "title": "Talk to us",
       "type": "summer school",
@@ -7981,6 +8170,68 @@
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
       "is_new": false
+    },
+    {
+      "title": "CL Fall School 21st of September – 2nd of October 2026",
+      "type": "fall school",
+      "organizer": "eveeno",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "More events",
+      "mode": "in-person",
+      "start_date": "2026-09-21",
+      "end_date": "2026-10-02",
+      "duration_days": 12,
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "linguistics",
+        "computational linguistics",
+        "natural language processing",
+        "corpus linguistics"
+      ],
+      "eligibility": "Masterstudierende und Promovierende in der Anfangsphase aus den Geisteswissenschaften und der Informatik",
+      "target_level": "MSc, PhD",
+      "fee": "150,00 €",
+      "fee_eur": 150.0,
+      "application_link": "https://eveeno.com/193677544",
+      "source_url": "https://eveeno.com/193677544",
+      "summary": "CL Fall School 21st of September – 2nd of October 2026 Organize your events Share: Veranstalter-Login Eigene Events erstellen! Demos ausprobieren CL Fall School 21st of September – 2nd of October 2026 Nürnberg Registration selected Info Location More events Contact de en fr Regis",
+      "recommendation_reason": "topic match: linguistics, computational linguistics, natural language processing, corpus linguistics; low fee: approximately EUR 150; 12 days; priority region",
+      "risk_points": "application deadline is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "financial_access_status": "low-fee",
+      "failed_hard_conditions": [
+        "application deadline is uncertain"
+      ],
+      "score": 84.0,
+      "score_explanation": [
+        "topic match: linguistics, computational linguistics, natural language processing, corpus linguistics",
+        "low fee: approximately EUR 150",
+        "12 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "target level: MSc, PhD",
+        "near-match only: application deadline is uncertain"
+      ],
+      "first_seen": "2026-08-03",
+      "deadline_evidence": "",
+      "duration_evidence": "September 21–October 2, 2026",
+      "mode_evidence": "in person. First Course Week (September 21–25) Programming",
+      "extraction_confidence": 0.75,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": true
     },
     {
       "title": "Energy Harnessing in the Urban Water Cycle",
@@ -9394,7 +9645,7 @@
       "deadline_evidence": "Applications were open until 13 July 2026; registration until 31 July is only for accepted applicants.",
       "duration_evidence": "September 7–11, 2026",
       "mode_evidence": "Official IEEE event announcement gives an on-site venue at Abtei Frauenwörth, Chiemsee, Germany.",
-      "extraction_confidence": 0.5,
+      "extraction_confidence": 0.75,
       "title_zh": "",
       "organizer_zh": "",
       "location_zh": "",
@@ -10757,8 +11008,8 @@
     {
       "title": "GESIS Spring Seminar – Cutting-Edge Methods",
       "type": "summer school",
-      "organizer": "GESIS Spring Seminar",
-      "source_layer": "1.5",
+      "organizer": "GESIS Fall Seminar in Computational Social Science",
+      "source_layer": "1",
       "region_priority": "priority",
       "location": "Europe",
       "mode": "in-person",
@@ -10781,7 +11032,7 @@
       "application_link": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
       "source_url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
       "summary": "Spring Seminar: Cutting-Edge Methods in Social Research - GESIS Training Deutsch Contact Career Login Alles GESIS Training What we offer Spring Seminar – Cutting-Edge Methods GESIS Training About us About us Menü schließen Mission Go to overview Key Topics Go to overview Team Go",
-      "recommendation_reason": "topic match: data analysis, social science; 19 days; priority region; trusted source layer 1.5",
+      "recommendation_reason": "topic match: data analysis, social science; 19 days; priority region; trusted source layer 1",
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -10795,7 +11046,7 @@
         "topic match: data analysis, social science",
         "19 days",
         "priority region",
-        "trusted source layer 1.5",
+        "trusted source layer 1",
         "in-person",
         "target level: PhD",
         "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain"
@@ -11430,139 +11681,10 @@
         "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-16",
-      "deadline_evidence": "register here latest on March 29, 2026 (other dates listed: 2026-03-02)",
+      "deadline_evidence": "register here latest on March 29, 2026 (other dates listed: 2026-03-02, 2026-03-28)",
       "duration_evidence": "6 to 10 July 2026",
       "mode_evidence": "on-site) from 6-10 July. The registration fee is €575,-.",
       "extraction_confidence": 1.0,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
-      "title": "GESIS Summer School in Survey Methodology",
-      "type": "summer school",
-      "organizer": "GESIS Summer School",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "hybrid",
-      "start_date": "2026-07-22",
-      "end_date": "2026-08-14",
-      "duration_days": 5,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "Scholarships FAQs Sponsors & Partners Contact Fall Seminar in Computational Social Science Go to overview Courses Course Fees Socia",
-      "topic_keywords": [
-        "AI",
-        "data science",
-        "data analysis",
-        "design"
-      ],
-      "eligibility": "PhD student, post-doc, junior or senior researcher, or survey professional, you will: receive high quality training in state-of-the-art techniques and methods of s",
-      "target_level": "PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
-      "source_url": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
-      "summary": "Summer School: Survey Methodology Training - GESIS Training Deutsch Contact Career Login Alles GESIS Training What we offer Summer School in Survey Methodology GESIS Training About us About us Menü schließen Mission Go to overview Key Topics Go to overview Team Go to overview Loc",
-      "recommendation_reason": "topic match: AI, data science, data analysis, design; 5 days; priority region; trusted source layer 1",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
-      "sessions": [
-        {
-          "name": "Short Course A: Introduction to R for Data Analysis",
-          "start_date": "2026-07-22",
-          "end_date": "2026-07-23",
-          "application_deadline": null
-        },
-        {
-          "name": "Short Course C: Pretesting Survey Questions",
-          "start_date": "2026-07-22",
-          "end_date": "2026-07-24",
-          "application_deadline": null
-        },
-        {
-          "name": "Short Course D: Systematic Review, Meta-Analysis, and Evidence Synthesis Using Model Selection",
-          "start_date": "2026-07-22",
-          "end_date": "2026-07-24",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 1: Factorial Survey Design",
-          "start_date": "2026-07-27",
-          "end_date": "2026-07-31",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 2: Advanced Questionnaire Design",
-          "start_date": "2026-07-27",
-          "end_date": "2026-07-31",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 3: AI-Assisted Surveys: Using AI Tools at Each Step of the Survey Research Process",
-          "start_date": "2026-07-27",
-          "end_date": "2026-07-31",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 4: Data Science Techniques for Survey Researchers",
-          "start_date": "2026-08-03",
-          "end_date": "2026-08-07",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 5: Latent Variable Modeling in Survey Research: Classical and New Approaches",
-          "start_date": "2026-08-03",
-          "end_date": "2026-08-07",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 7: Causal Inference Using Survey Data",
-          "start_date": "2026-08-10",
-          "end_date": "2026-08-14",
-          "application_deadline": null
-        },
-        {
-          "name": "Course 8: Applied Introduction to Bots in Web-based Studies",
-          "start_date": "2026-08-10",
-          "end_date": "2026-08-14",
-          "application_deadline": null
-        },
-        {
-          "name": "Short Course E: Applied Causal Inference Using Directed Acyclic Graphs (DAGs)",
-          "start_date": "2026-08-12",
-          "end_date": "2026-08-14",
-          "application_deadline": null
-        }
-      ],
-      "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 53.0,
-      "score_explanation": [
-        "topic match: AI, data science, data analysis, design",
-        "5 days",
-        "priority region",
-        "trusted source layer 1",
-        "hybrid",
-        "target level: PhD",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "22 July - 14 August 2026",
-      "mode_evidence": "onsite or online participation). ► Online courses will b",
-      "extraction_confidence": 0.5,
       "title_zh": "",
       "organizer_zh": "",
       "location_zh": "",
@@ -13259,6 +13381,136 @@
       "is_new": false
     },
     {
+      "title": "Summer School in Survey Methodology 2026",
+      "type": "summer school",
+      "organizer": "GESIS Fall Seminar in Computational Social Science",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "uncertain",
+      "start_date": "2026-07-22",
+      "end_date": "2026-08-14",
+      "duration_days": 5,
+      "deadline": null,
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "Scholarships FAQs Partners & Sponsors Contact Fall Seminar in Computational Social Sciences Courses Course Fees Social Program ECTS",
+      "topic_keywords": [
+        "AI",
+        "data science",
+        "data analysis",
+        "statistics",
+        "design",
+        "social science"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://training.gesis.org/?site=pDetails&pID=0xE1EA4A565CDF45FF8E7F597B6C89B91D",
+      "source_url": "https://training.gesis.org/?site=pDetails&pID=0xE1EA4A565CDF45FF8E7F597B6C89B91D",
+      "summary": "ï»¿ï»¿ GESIS Training Courses user_jsdisabled Deutsch Contact Login Search GESIS Training About us Mission Key Topics Team Locations Partners & Sponsors Terms and Conditions FAQs Newsletter Contact What we offer Workshops - Tailored to your needs Courses Course Fees FAQs Contact",
+      "recommendation_reason": "topic match: AI, data science, data analysis, statistics; 5 days; priority region; trusted source layer 1",
+      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "sessions": [
+        {
+          "name": "Short Course A: Introduction to R for Data Analysis",
+          "start_date": "2026-07-22",
+          "end_date": "2026-07-23",
+          "application_deadline": null
+        },
+        {
+          "name": "Short Course C: Pretesting Survey Questions",
+          "start_date": "2026-07-22",
+          "end_date": "2026-07-24",
+          "application_deadline": null
+        },
+        {
+          "name": "Short Course D: Systematic Review, Meta-Analysis, and Evidence Synthesis Using Model Selection",
+          "start_date": "2026-07-22",
+          "end_date": "2026-07-24",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 1: Factorial Survey Design",
+          "start_date": "2026-07-27",
+          "end_date": "2026-07-31",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 2: Advanced Questionnaire Design",
+          "start_date": "2026-07-27",
+          "end_date": "2026-07-31",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 3: AI-Assisted Surveys: Using AI Tools at Each Step of the Survey Research Process",
+          "start_date": "2026-07-27",
+          "end_date": "2026-07-31",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 4: Data Science Techniques for Survey Researchers",
+          "start_date": "2026-08-03",
+          "end_date": "2026-08-07",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 5: Latent Variable Modeling in Survey Research: Classical and New Approaches",
+          "start_date": "2026-08-03",
+          "end_date": "2026-08-07",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 7: Causal Inference Using Survey Data",
+          "start_date": "2026-08-10",
+          "end_date": "2026-08-14",
+          "application_deadline": null
+        },
+        {
+          "name": "Course 8: Applied Introduction to Bots in Web-based Studies",
+          "start_date": "2026-08-10",
+          "end_date": "2026-08-14",
+          "application_deadline": null
+        },
+        {
+          "name": "Short Course E: Applied Causal Inference Using Directed Acyclic Graphs (DAGs)",
+          "start_date": "2026-08-12",
+          "end_date": "2026-08-14",
+          "application_deadline": null
+        }
+      ],
+      "identity_key": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline has passed",
+        "funding is not explicit and fee is uncertain",
+        "in-person status is uncertain"
+      ],
+      "score": 33.0,
+      "score_explanation": [
+        "topic match: AI, data science, data analysis, statistics",
+        "5 days",
+        "priority region",
+        "trusted source layer 1",
+        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+      ],
+      "first_seen": "2026-08-03",
+      "deadline_evidence": "",
+      "duration_evidence": "Short Course A: Introduction to R for Data Analysis: 2026-07-22 to 2026-07-23; Short Course C: Pretesting Survey Questions: 2026-07-22 to 2026-07-24; Short Course D: Systematic Review, Meta-Analysis, and Evidence Synthesis Using Model Selection: 2026-07-22 to 2026-07-24; Course 1: Factorial Survey Design: 2026-07-27 to 2026-07-31; Course 2: Advanced Questionnaire Design: 2026-07-27 to 2026-07-31; Course 3: AI-Assisted Surveys: Using AI Tools at Each Step of the Survey Research Process: 2026-07-27 to 2026-07-31; Course 4: Data Science Techniques for Survey Researchers: 2026-08-03 to 2026-08-07; Course 5: Latent Variable Modeling in Survey Research: Classical and New Approaches: 2026-08-03 to 2026-08-07; Course 7: Causal Inference Using Survey Data: 2026-08-10 to 2026-08-14; Course 8: Applied Introduction to Bots in Web-based Studies: 2026-08-10 to 2026-08-14; Short Course E: Applied Causal Inference Using Directed Acyclic Graphs (DAGs): 2026-08-12 to 2026-08-14",
+      "mode_evidence": "",
+      "extraction_confidence": 0.25,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": true
+    },
+    {
       "title": "Thematic CERN School of Computing",
       "type": "school of computing",
       "organizer": "CERN School of Computing",
@@ -14474,7 +14726,7 @@
         "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
       ],
       "first_seen": "2026-07-16",
-      "deadline_evidence": "Applications open until July 11th (other dates listed: 2023-04-27, 2026-04-30, 2026-07-15)",
+      "deadline_evidence": "Applications are open until 11 Jul (other dates listed: 2023-04-27, 2025-06-12, 2025-07-11)",
       "duration_evidence": "August 31 – September 4 2026",
       "mode_evidence": "",
       "extraction_confidence": 0.5,

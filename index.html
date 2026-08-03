@@ -39,6 +39,33 @@
     "url": "https://lione12138.github.io/summer-school-radar/",
     "inLanguage": "en",
     "description": "A free scanner of trusted academic sources for funded research summer schools, winter schools, and training schools across many academic fields — environmental \u0026 earth science, computing \u0026 data science, social sciences, and humanities — with strict filters, transparent evidence, and daily deadline-status updates."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Open research school opportunities",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "EducationEvent",
+          "name": "Computational Linguistics Fall School 2026",
+          "startDate": "2026-09-21",
+          "endDate": "2026-10-02",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "University of Technology Nuremberg"
+          },
+          "url": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
+          "organizer": {
+            "@type": "Organization",
+            "name": "UTN"
+          }
+        }
+      }
+    ]
   }
 ]
 </script>
@@ -83,18 +110,18 @@
   </header>
   <main class="wrap">
     <div class="stats">
-      <div class="stat"><div class="num">0</div><div class="lbl" data-i18n="stat.qualified">Fully qualified</div></div>
+      <div class="stat"><div class="num">1</div><div class="lbl" data-i18n="stat.qualified">Fully qualified</div></div>
       <div class="stat"><div class="num">0</div><div class="lbl" data-i18n="stat.near">High quality</div></div>
       <div class="stat"><div class="num">154</div><div class="lbl" data-i18n="stat.sources">Trusted sources</div></div>
       <div class="stat"><div class="num sm">2026-08-03</div><div class="lbl" data-i18n="stat.updated">Last updated</div></div>
     </div>
-    <p class="status info">
-  <span class="lang-en" lang="en">No open opportunities matched every rule in the latest scan. Tracking 0 opportunities across 154 trusted sources. New schools surface as their deadlines open, typically December to April.</span>
-  <span class="lang-zh" lang="zh">最近一次扫描没有符合全部规则且开放申请的项目。雷达仍在追踪 154 个可信来源，新项目通常会在每年 12 月至次年 4 月陆续开放。</span>
+    <p class="status">
+  <span class="lang-en" lang="en">1 fully qualified opportunity in the latest scan. Tracking 1 opportunity across 154 trusted sources.</span>
+  <span class="lang-zh" lang="zh">最近一次扫描发现 1 个完全符合的项目；当前共追踪 1 个项目和 154 个可信来源。</span>
 </p>
 
     <section id="opportunities" class="anchor">
-      <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p><span class="lang-en" lang="en">0 total · 15 per page · Updated 2026-08-03</span><span class="lang-zh" lang="zh">共 0 条 · 每页 15 条 · 更新于 2026-08-03</span>
+      <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p><span class="lang-en" lang="en">1 total · 15 per page · Updated 2026-08-03</span><span class="lang-zh" lang="zh">共 1 条 · 每页 15 条 · 更新于 2026-08-03</span>
 </p></div>
       <div class="opportunity-browser">
         <aside class="filter-sidebar" aria-label="Opportunity filters">
@@ -121,7 +148,7 @@
       <label for="filter-topic" data-i18n="filter.topic">Topic</label>
       <select id="filter-topic">
         <option value="" data-i18n="filter.all.topic">All topics</option>
-        
+        <option value="computational linguistics" data-label-en="computational linguistics" data-label-zh="计算语言学">computational linguistics</option><option value="corpus linguistics" data-label-en="corpus linguistics" data-label-zh="语料库语言学">corpus linguistics</option><option value="linguistics" data-label-en="linguistics" data-label-zh="语言学">linguistics</option><option value="natural language processing" data-label-en="natural language processing" data-label-zh="自然语言处理">natural language processing</option>
       </select>
     </div>
     <div class="filter-group">
@@ -156,16 +183,60 @@
 
         <div class="opportunity-results">
           
+          <section class="opportunity-tier">
+  <div class="sr-only-tier">
+    <h2 data-i18n="tier.qualified">Fully Qualified Opportunities</h2>
+    
+  </div>
+  <div class="table-wrap opportunity-table-wrap">
+    <table class="opportunity-table qualified-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th data-i18n="table.title">Title</th>
+          <th data-i18n="table.organizer">Organizer</th>
+          <th data-i18n="table.location">Location</th>
+          <th data-i18n="table.duration">Duration</th>
+          <th data-i18n="table.deadline">Deadline</th>
+          <th data-i18n="table.funding">Funding / Fee</th>
+          <th data-i18n="table.topic">Topic</th>
           
-          <div class="panel">
-  <h3 data-i18n="empty.title">Nothing open right now — but the radar is watching</h3>
-  <p>
-    <span class="lang-en" lang="en">No opportunities matched every rule in the latest scan. That is normal off-season: most summer-school application deadlines open between December and April. The radar checks 154 trusted sources every Monday, Wednesday, and Friday, with 0 opportunities currently tracked; deadline status is refreshed daily.</span>
-    <span class="lang-zh" lang="zh">目前没有项目通过最近一次扫描的全部规则。这在非申请季很正常：大多数暑校会在每年 12 月至次年 4 月开放申请。雷达每周一、周三和周五检查 154 个可信来源，目前追踪 0 个项目，并每天刷新截止日期状态。</span>
-  </p>
-  <p style="margin-top:12px"><a class="pill" href="sources.html" data-i18n="empty.link">See what we track</a></p>
-</div>
+          <th data-i18n="table.actions">Actions</th>
+        </tr>
+      </thead>
+      <tbody><tr data-status="qualified" data-status-label-en="Fully qualified" data-status-label-zh="完全符合" data-region="priority" data-funding="funded" data-deadline="open" data-topics="linguistics|computational linguistics|natural language processing|corpus linguistics" data-new="true" data-confidence="1.0" data-search="computational linguistics fall school 2026 2026年计算语言学秋季学校 utn university of technology nuremberg fall school linguistics, computational linguistics, natural language processing, corpus linguistics 2026年计算语言学秋季学校 | utn 跳转到内容区域 跳转到搜索 跳转到主导航 关于我们 组织机构 创始执行委员会 创始指导委员会 中央服务 代表概览 大学合同 utn 2026年周年庆 国际 博士指南 研究与支持 早期职业中心 校友 里程碑 校园建设进展 体验立方体 气候行动 可持续性 新工作理念 主题匹配：语言学、计算语言学、自然语言处理、语料库语言学；资助证据：奖学金、津贴；截止日期似乎开放；12天">
+  <td>1</td>
+  <td><a href="opportunities/computational-linguistics-fall-school-2026-50903ddb.html"><span class="lang-en" lang="en">Computational Linguistics Fall School 2026</span><span class="lang-zh" lang="zh">2026年计算语言学秋季学校</span>
+</a> <span class="badge-new" data-i18n="badge.new">NEW</span></td>
+  <td><span class="lang-en" lang="en">UTN</span><span class="lang-zh" lang="zh">UTN</span>
+</td>
+  <td><span class="lang-en" lang="en">University of Technology Nuremberg</span><span class="lang-zh" lang="zh">纽伦堡工业大学</span>
+</td>
+  <td title="September 21–October 2, 2026"><span class="lang-en" lang="en">21 Sep – 2 Oct 2026 · 12 days</span><span class="lang-zh" lang="zh">2026年9月21日–2026年10月2日 · 12天</span>
+</td>
+  <td title="Registration Period Until September 6, 2026"><span class="lang-en" lang="en">2026-09-06</span><span class="lang-zh" lang="zh">2026年9月6日</span>
+<details class="cal">
+  <summary data-i18n="calendar.add">Add to calendar</summary>
+  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Application+deadline%3A+Computational+Linguistics+Fall+School+2026&amp;dates=20260906%2F20260907&amp;details=Apply+by+2026-09-06.+Source%3A+https%3A%2F%2Fwww.utn.de%2Fen%2Fdepartments%2Fdepartment-computer-science-artificial-intelligence%2Fnlu%2Fcomputational-linguistics-fall-school-2026%2F" target="_blank" rel="noopener">Google Calendar</a>
+  <a href="https://outlook.live.com/calendar/0/deeplink/compose?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;subject=Application+deadline%3A+Computational+Linguistics+Fall+School+2026&amp;startdt=2026-09-06&amp;enddt=2026-09-07&amp;allday=true&amp;body=Apply+by+2026-09-06.+Source%3A+https%3A%2F%2Fwww.utn.de%2Fen%2Fdepartments%2Fdepartment-computer-science-artificial-intelligence%2Fnlu%2Fcomputational-linguistics-fall-school-2026%2F" target="_blank" rel="noopener">Outlook</a>
+  <a href="data:text/calendar;charset=utf-8,BEGIN%3AVCALENDAR%0D%0AVERSION%3A2.0%0D%0APRODID%3A-//Summa//EN%0D%0ACALSCALE%3AGREGORIAN%0D%0AMETHOD%3APUBLISH%0D%0ABEGIN%3AVEVENT%0D%0AUID%3A20260906-computational-linguistics-fall-school-2026%40research-seasonal-school-radar%0D%0ADTSTAMP%3A20260803T000000Z%0D%0ADTSTART%3BVALUE%3DDATE%3A20260906%0D%0ADTEND%3BVALUE%3DDATE%3A20260907%0D%0ASUMMARY%3AApplication%20deadline%3A%20Computational%20Linguistics%20Fall%20School%202026%0D%0ADESCRIPTION%3AApply%20by%202026-09-06.%20Source%3A%20https%3A//www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/%0D%0AEND%3AVEVENT%0D%0AEND%3AVCALENDAR%0D%0A" download="computational-linguistics-fall-school-2026-deadline.ics">Apple / .ics</a>
+</details>
+</td>
+  <td title="Scholarship Student Groups and Initiatives FAQ Contact StaRs Departments Department Computer Science &amp; Artificial Intelligence Arti"><span class="lang-en" lang="en">scholarship, stipend · amount not stated</span><span class="lang-zh" lang="zh">奖学金、津贴 · 金额未说明</span>
+</td>
+  <td><span class="lang-en" lang="en">linguistics, computational linguistics, natural language processing, corpus linguistics</span><span class="lang-zh" lang="zh">语言学、计算语言学、自然语言处理、语料库语言学</span>
+</td>
+  <td class="card-actions">
+    <a class="button primary" href="opportunities/computational-linguistics-fall-school-2026-50903ddb.html" data-i18n="action.details">View details</a>
+    <a class="button tonal" href="https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/" target="_blank" rel="noopener" data-i18n="action.official">Official page</a>
+  </td>
+</tr>
+</tbody>
+    </table>
+  </div>
+</section>
 
+          
           
           <p class="filter-empty" id="filter-empty" data-i18n="filter.empty" hidden>No opportunities match these filters.</p>
 <nav class="pagination" id="opportunity-pagination" aria-label="Opportunity pages" hidden>
