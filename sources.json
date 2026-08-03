@@ -99,7 +99,8 @@
       "short course",
       "funded doctoral training"
     ],
-    "notes": "Official UK Research and Innovation collection of current research summer schools and short courses; linked host pages remain the source of programme-level evidence."
+    "notes": "Official UK Research and Innovation collection of current research summer schools and short courses; linked host pages remain the source of programme-level evidence.",
+    "notes_zh": "\u82f1\u56fd\u7814\u7a76\u4e0e\u521b\u65b0\u7f72\u5b98\u65b9\u6c47\u603b\u7684\u5f53\u524d\u7814\u7a76\u6691\u671f\u5b66\u6821\u548c\u77ed\u671f\u8bfe\u7a0b\uff1b\u94fe\u63a5\u7684\u4e3b\u529e\u65b9\u9875\u9762\u4ecd\u662f\u9879\u76ee\u7ea7\u8bc1\u636e\u7684\u6765\u6e90\u3002"
   },
   {
     "name": "COST Action Events",
@@ -113,7 +114,8 @@
       "capacity building",
       "travel reimbursement"
     ],
-    "notes": "Official COST Action event catalogue. Candidate links span disciplines and are followed only when they name a supported research training school or equivalent short programme."
+    "notes": "Official COST Action event catalogue. Candidate links span disciplines and are followed only when they name a supported research training school or equivalent short programme.",
+    "notes_zh": "\u5b98\u65b9COST\u884c\u52a8\u8ba1\u5212\u6d3b\u52a8\u76ee\u5f55\u3002\u5019\u9009\u94fe\u63a5\u6db5\u76d6\u591a\u4e2a\u5b66\u79d1\uff0c\u4ec5\u5f53\u94fe\u63a5\u6307\u5411\u53d7\u652f\u6301\u7684\u7814\u7a76\u57f9\u8bad\u5b66\u6821\u6216\u540c\u7b49\u77ed\u671f\u9879\u76ee\u65f6\u624d\u4f1a\u88ab\u8ddf\u8fdb\u3002"
   },
   {
     "name": "ELLIS",
