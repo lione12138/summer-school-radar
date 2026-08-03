@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 from .extract import _deadline_status, _extract_deadline, _fee_to_eur, _region_priority, _target_level, _topic_in_text
 from .http_cache import HttpCache, get_with_cache
 from .models import Candidate
-from .utils import clean_space
+from .utils import DISPLAY_MIN_DURATION_DAYS, clean_space
 
 
 _SIB_TRAINING_URL = "https://www.sib.swiss/training/upcoming-training-courses"
@@ -43,7 +43,9 @@ def _sib_training(profile: dict, http_cache: HttpCache | None = None) -> tuple[l
     except requests.RequestException as exc:
         return [], [f"SIB training listing: {exc}"]
 
-    minimum_duration = int(profile.get("hard_filters", {}).get("minimum_duration_days", 5))
+    minimum_duration = int(
+        profile.get("hard_filters", {}).get("minimum_duration_days", DISPLAY_MIN_DURATION_DAYS)
+    )
     preferred_topics = profile.get("preferred_topics", [])
     candidates: list[Candidate] = []
     seen: set[str] = set()

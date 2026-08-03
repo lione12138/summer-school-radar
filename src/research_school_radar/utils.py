@@ -36,8 +36,9 @@ def evidence_window(text: str, pattern: str, radius: int = 120) -> str:
 
 
 # Opportunities shorter than this many days are too brief to surface publicly,
-# even as high-quality near-matches (a few-day event is closer to a workshop).
-DISPLAY_MIN_DURATION_DAYS = 5
+# even as high-quality near-matches (a one- to three-day event is usually closer
+# to a workshop than a substantial research-training programme).
+DISPLAY_MIN_DURATION_DAYS = 4
 
 
 def is_too_short(duration_days: int | None) -> bool:

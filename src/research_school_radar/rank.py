@@ -8,6 +8,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from .filter import apply_hard_filters
 from .models import Candidate
+from .utils import DISPLAY_MIN_DURATION_DAYS
 
 
 def rank_candidates(candidates: list[Candidate], *, profile: dict | None = None) -> list[Candidate]:
@@ -56,9 +57,9 @@ def score_candidate(candidate: Candidate) -> tuple[float, list[str]]:
         score += 4
 
     if candidate.duration_days:
-        # A Monday-Friday seasonal school is a substantial training format,
-        # even though it spans only five calendar days.
-        if candidate.duration_days >= 5:
+        # A four-day intensive school can still be a substantial training
+        # format, while shorter events retain only a small duration score.
+        if candidate.duration_days >= DISPLAY_MIN_DURATION_DAYS:
             score += min(candidate.duration_days, 20)
             reasons.append(f"{candidate.duration_days} days")
         else:

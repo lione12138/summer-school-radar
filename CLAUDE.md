@@ -214,7 +214,7 @@ If a full test run has unrelated existing failures, report the exact test names.
 Fully qualified opportunities must satisfy all hard conditions:
 
 - application is open or deadline has not passed;
-- duration is at least 5 days;
+- duration is at least 4 days;
 - explicit participant funding exists, or confirmed total fee is within the configured low-fee threshold;
 - in-person or substantially on-site;
 - the programme is genuine short-form research training; topic tags are optional classification metadata, not a hard gate.

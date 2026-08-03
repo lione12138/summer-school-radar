@@ -9,7 +9,7 @@ PROFILE = {
     "preferred_levels": ["PhD", "MSc", "early-career"],
     "hard_filters": {
         "require_open_deadline": True,
-        "minimum_duration_days": 5,
+        "minimum_duration_days": 4,
         "require_funding_or_low_fee": True,
         "allow_online_only": False,
     },
@@ -65,6 +65,19 @@ def test_fully_qualified_actionable_candidate_is_public() -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
 
     assert is_public_candidate(candidate)
+
+
+def test_four_day_candidate_is_public_but_three_day_candidate_is_not() -> None:
+    four_day = sample_candidate(PROFILE)
+    four_day.duration_days = 4
+    three_day = sample_candidate(PROFILE)
+    three_day.duration_days = 3
+
+    apply_hard_filters(four_day, PROFILE)
+    apply_hard_filters(three_day, PROFILE)
+
+    assert is_public_candidate(four_day)
+    assert not is_public_candidate(three_day)
 
 
 def test_publication_does_not_require_a_preclassified_topic() -> None:

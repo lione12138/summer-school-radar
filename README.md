@@ -80,7 +80,7 @@ An opportunity must satisfy all hard conditions:
 | Condition | Requirement |
 |---|---|
 | Deadline | Application is still open or deadline has not passed |
-| Duration | At least 5 days |
+| Duration | At least 4 days |
 | Financial access | Explicit funding is available, or the confirmed total fee is no more than approximately EUR 400 |
 | Mode | In-person or substantially on-site, not online-only |
 | Research scope | Any academic discipline, provided the programme is genuine short-form research training rather than an excluded degree, admissions, conference-workshop, tourism, or generic study-abroad offer |

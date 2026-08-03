@@ -61,15 +61,15 @@ def test_sample_candidate_fully_qualifies() -> None:
     assert candidate.fee_eur == 300
 
 
-def test_configured_duration_gate_keeps_five_day_schools() -> None:
+def test_configured_duration_gate_keeps_four_day_schools() -> None:
     profile = load_yaml(Path("config/profile.yaml"))
-    five_day = sample_candidate(profile)
-    five_day.duration_days = 5
     four_day = sample_candidate(profile)
     four_day.duration_days = 4
+    three_day = sample_candidate(profile)
+    three_day.duration_days = 3
 
-    assert apply_hard_filters(five_day, profile).fully_qualified
-    assert "duration is below 5 days" in apply_hard_filters(four_day, profile).failed_hard_conditions
+    assert apply_hard_filters(four_day, profile).fully_qualified
+    assert "duration is below 4 days" in apply_hard_filters(three_day, profile).failed_hard_conditions
 
 
 def test_low_fee_without_funding_fully_qualifies() -> None:

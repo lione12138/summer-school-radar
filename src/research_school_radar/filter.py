@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import date, timedelta
 
 from .models import Candidate
+from .utils import DISPLAY_MIN_DURATION_DAYS
 
 
 def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
@@ -19,7 +20,7 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
         elif candidate.deadline_status == "uncertain":
             failed.append("application deadline is uncertain")
 
-    minimum_duration = int(hard.get("minimum_duration_days", 5))
+    minimum_duration = int(hard.get("minimum_duration_days", DISPLAY_MIN_DURATION_DAYS))
     if candidate.duration_days is None:
         failed.append("duration is uncertain")
     elif candidate.duration_days < minimum_duration:

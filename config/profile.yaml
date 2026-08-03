@@ -156,10 +156,9 @@ preferred_topics:
   - education research
 
 hard_filters:
-  # Most intensive AI/CS seasonal schools run Monday-Friday. Five calendar
-  # days keeps those programmes while still excluding one- or two-day
-  # conference workshops.
-  minimum_duration_days: 5
+  # Four calendar days keeps intensive long-weekend and Monday-Thursday
+  # research schools while still excluding one- to three-day workshops.
+  minimum_duration_days: 4
   require_funding_or_low_fee: true
   allow_online_only: false
   require_open_deadline: true

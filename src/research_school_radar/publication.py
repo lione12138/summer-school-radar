@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from .models import Candidate
 from .urls import safe_external_url
-from .utils import is_too_short
+from .utils import DISPLAY_MIN_DURATION_DAYS, is_too_short
 
 
 HIGH_QUALITY_MAX_FEE_EUR_PER_DAY = 70
@@ -42,7 +42,7 @@ def is_public_candidate(candidate: Candidate) -> bool:
 def is_high_quality(candidate: Candidate) -> bool:
     if candidate.fully_qualified or not is_public_candidate(candidate):
         return False
-    if candidate.duration_days is None or candidate.duration_days < 5:
+    if candidate.duration_days is None or candidate.duration_days < DISPLAY_MIN_DURATION_DAYS:
         return False
     if candidate.funding_available is True:
         return True

@@ -155,7 +155,7 @@ AI 分支不会覆盖扫描器原始 `Candidate` 对象。它只会在生成首�
 机会必须同时满足：
 
 - 申请开放，或 deadline 未过期
-- duration 至少 5 天
+- duration 至少 4 天
 - 明确存在 scholarship、travel grant、tuition waiver、stipend、accommodation support 等 participant funding；或者可确认的总费用按参考汇率换算后不超过 400 EUR
 - in-person 或 substantially on-site，不是 online-only
 - 项目属于真实的短期科研训练；学科主题标签只用于分类，不作为公开资格条件
