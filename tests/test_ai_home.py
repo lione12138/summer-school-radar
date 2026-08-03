@@ -48,6 +48,7 @@ def _item(page_url: str, *, warnings: list[str] | None = None) -> dict:
             "start_date": _field("2027-07-01", "The school runs from 1 to 10 July 2027."),
             "end_date": _field("2027-07-10", "The school runs from 1 to 10 July 2027."),
             "application_deadline": _field("2027-04-15", "Application deadline: 15 April 2027."),
+            "application_deadline_type": _field("application", "Application deadline: 15 April 2027."),
             "registration_status": _field("open", "Applications are open."),
             "fee": _field("EUR 300", "The student participation fee is EUR 300."),
             "funding": _field("unknown", ""),
@@ -163,6 +164,60 @@ def test_field_warning_prevents_ai_deadline_from_qualifying_candidate() -> None:
 
     assert merged[0].deadline is None
     assert "application deadline is uncertain" in merged[0].failed_hard_conditions
+
+
+def test_accepted_applicants_registration_deadline_does_not_become_application_deadline() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.source_url = "https://example.org/accepted-only"
+    candidate.application_link = candidate.source_url
+    candidate.deadline = None
+    candidate.deadline_status = "uncertain"
+    candidate = apply_hard_filters(candidate, PROFILE)
+    item = _item(candidate.source_url)
+    item["llm_extraction"]["application_deadline"] = _field(
+        "2027-07-31",
+        "Registration is open until July 31 only for accepted applicants.",
+    )
+    item["llm_extraction"]["application_deadline_type"] = _field(
+        "registration",
+        "Registration is open until July 31 only for accepted applicants.",
+    )
+    item["llm_extraction"]["registration_status"] = _field(
+        "open",
+        "Registration is open until July 31 only for accepted applicants.",
+    )
+    item["llm_extraction"]["eligibility"] = _field(
+        "Registration is available only for accepted applicants.",
+        "Registration is available only for accepted applicants.",
+    )
+
+    merged = merge_ai_for_homepage([candidate], [item], PROFILE)
+
+    assert merged[0].deadline is None
+    assert merged[0].deadline_status == "uncertain"
+    assert not merged[0].fully_qualified
+
+
+def test_evidence_backed_ai_fee_replaces_false_rule_based_zero() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.source_url = "https://example.org/paid-school"
+    candidate.application_link = candidate.source_url
+    candidate.fee = "free of charge"
+    candidate.fee_eur = 0
+    candidate.funding_available = False
+    candidate.funding_type = []
+    candidate.funding_evidence = "Applicants must cover the participation fee."
+    item = _item(candidate.source_url)
+    item["llm_extraction"]["fee"] = _field(
+        "EUR 750",
+        "The student participation fee is EUR 750.",
+    )
+
+    merged = merge_ai_for_homepage([candidate], [item], PROFILE)
+
+    assert merged[0].fee == "EUR 750"
+    assert merged[0].fee_eur == 750
+    assert "fee exceeds EUR 400" in merged[0].failed_hard_conditions[0]
 
 
 def test_unmatched_valid_ai_opportunity_becomes_homepage_candidate() -> None:

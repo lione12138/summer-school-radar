@@ -104,7 +104,7 @@ def test_ai_output_with_warnings_is_advisory_not_qualified(tmp_path) -> None:
     assert '"ai_advisory"' in review_json
     assert "deadline_context_weak" in review_json
     assert "ai-review.html" not in html
-    assert "AI Matched Review School" in html
+    assert "AI Matched Review School" not in html
 
 
 def test_missing_ai_extractions_does_not_break_site_generation(tmp_path) -> None:

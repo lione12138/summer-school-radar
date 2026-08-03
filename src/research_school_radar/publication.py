@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from .models import Candidate
+from .urls import safe_external_url
 from .utils import is_too_short
 
 
@@ -25,10 +26,15 @@ def is_public_candidate(candidate: Candidate) -> bool:
         return False
     if candidate.duration_days is not None and is_too_short(candidate.duration_days):
         return False
-    # Explicitly expensive, unfunded courses must not fall through into the
-    # catch-all "found" tier. Financially unresolved records may still remain
-    # there for conservative tracking, but they cannot be labelled as funded.
-    if any(reason.startswith("fee exceeds EUR ") for reason in candidate.failed_hard_conditions):
+    # Public output is deliberately fail-closed. Unresolved candidates remain
+    # available in scanner snapshots and audit reports, but the user-facing
+    # site must contain only actionable records that passed every deterministic
+    # deadline, duration, financial-access, mode, and topic gate.
+    if candidate.failed_hard_conditions:
+        return False
+    if candidate.deadline_status != "open":
+        return False
+    if not safe_external_url(candidate.application_link):
         return False
     return True
 

@@ -113,6 +113,10 @@ def test_project_overrides_fix_ieee_location_and_exclude_network_homepage() -> N
     assert candidates == [ieee]
     assert ieee.location == "Abtei Frauenwörth, Chiemsee, Germany"
     assert ieee.mode == "in-person"
+    assert ieee.deadline == date(2026, 7, 13)
+    assert ieee.deadline_status == "closed"
+    assert ieee.fee_eur == 636.5
+    assert ieee.funding_available is False
 
 
 def test_project_overrides_correct_tinbergen_summer_school_finances() -> None:

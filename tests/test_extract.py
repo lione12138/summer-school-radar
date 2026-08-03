@@ -3,6 +3,8 @@ from __future__ import annotations
 from datetime import date, timedelta
 from pathlib import Path
 
+from bs4 import BeautifulSoup
+
 from research_school_radar.extract import extract_candidate, sample_candidate
 from research_school_radar.filter import apply_hard_filters
 from research_school_radar.models import Page, Source
@@ -1204,6 +1206,72 @@ def test_registration_latest_on_deadline_is_parsed() -> None:
     )
     assert _extract_deadline(text) == date(2026, 3, 29)
     assert _all_deadlines(text)[0][1] == "register here latest on March 29, 2026"
+
+
+def test_account_free_of_charge_is_not_a_zero_course_fee() -> None:
+    from research_school_radar.extract import _extract_fee, _fee_to_eur
+
+    text = (
+        "Creating an IEEE Account is free of charge. "
+        "Student participation fee: USD 670. Non-student participation fee: USD 770."
+    )
+
+    fee = _extract_fee(text)
+    assert fee == "USD 670"
+    assert _fee_to_eur(fee, PROFILE) is not None
+
+
+def test_spelled_out_euro_fee_is_extracted() -> None:
+    from research_school_radar.extract import _extract_fee, _fee_to_eur
+
+    fee = _extract_fee("The in-person course fee is 1,000 Euro. Accommodation is not included.")
+
+    assert fee == "1,000 EUR"
+    assert _fee_to_eur(fee, PROFILE) == 1000
+
+
+def test_applications_are_not_opened_yet_is_not_open() -> None:
+    from research_school_radar.extract import _applications_not_open
+
+    assert _applications_not_open("Applications for ALPS 2027 are not opened yet.")
+
+
+def test_navigation_topics_and_broad_source_name_do_not_pollute_candidate() -> None:
+    source = Source(
+        name="Leiden Linguistics Summer School",
+        url="https://example.org/summer-schools",
+        layer="2",
+        region="continental Europe",
+        source_type="university",
+    )
+    year = date.today().year + 1
+    html = f"""
+    <html><head><meta property="og:site_name" content="Leiden University"></head>
+    <body><nav>Law History Archaeology Linguistics</nav><main>
+      <h1>Population Health Management Summer School</h1>
+      <p>In-person data analysis summer school in The Hague.</p>
+      <p>Dates: 5 July {year} to 9 July {year}.</p>
+      <p>Application deadline: 1 May {year}. Course fee EUR 375.</p>
+    </main></body></html>
+    """
+    page = Page(
+        url="https://example.org/summer-schools/population-health",
+        title="Population Health Management Summer School",
+        text=BeautifulSoup(html, "html.parser").get_text(" "),
+        html=html,
+        source=source,
+        fetched_at=date.today(),
+    )
+
+    profile = {**PROFILE, "preferred_topics": ["data analysis", "law", "history", "archaeology", "linguistics"]}
+    candidate = extract_candidate(page, profile)
+
+    assert candidate is not None
+    assert candidate.organizer == "Leiden University"
+    assert "data analysis" in candidate.topic_keywords
+    assert "law" not in candidate.topic_keywords
+    assert "history" not in candidate.topic_keywords
+    assert "archaeology" not in candidate.topic_keywords
 
 
 def test_leiden_science_communication_deadline_and_fee_are_extracted() -> None:

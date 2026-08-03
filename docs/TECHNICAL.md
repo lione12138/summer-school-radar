@@ -81,7 +81,7 @@ An opportunity is treated as fully qualified only when all hard conditions are s
 - in-person or substantially on-site, not online-only
 - topic is relevant to the configured research profile
 
-If no opportunity fully qualifies, the system says so clearly and lists only still-open near-matches. An opportunity is treated as past — and excluded from the still-open list — when its deadline has passed, or, when no deadline could be extracted, when the event itself has already started. Near-matches are never presented as qualified opportunities. Their failed hard conditions remain available in `site/candidates.json` for maintainers rather than occupying a public table column.
+If no opportunity fully qualifies, the public site says so clearly and does not substitute unresolved leads. An opportunity is treated as past when its deadline has passed, or, when no deadline could be extracted, when the event itself has already started. Near-matches and their failed hard conditions remain available in `site/candidates.json` and the maintainer review queue, but are not rendered in public tables or RSS.
 
 The scanner includes `training school` because research organizations commonly use that label for short, intensive summer-school-style programmes. Generic conference workshops are excluded entirely, since they are rarely funded multi-day schools; the remaining hard filters then apply to the school and course types that are kept.
 
@@ -597,20 +597,20 @@ The website is static and can be served by GitHub Pages. It includes browser-sid
 - financial access: explicit funding, low/no fee, or unresolved/high fee
 - deadline status
 
-The homepage paginates the combined matching result set at 15 records per page.
+The homepage paginates the verified public result set at 15 records per page.
 Desktop layouts keep search and filters in a sticky left sidebar. On mobile,
 search remains visible while the other controls collapse behind a button. The
-internal `found` classification remains available as a filter/data attribute,
-but its cards do not display a warning-style status badge; the public label is
-the neutral `Listed` tier.
+internal `high-quality` and `found` classifications remain available in scanner
+JSON and review artifacts. Records in either class are fail-closed and do not
+receive public cards until every hard condition passes.
 
-Curated opportunities from `data/opportunities.yml` are rendered first as a separate section. Automatic scanner results appear below them as fully qualified opportunities or near-matches.
+Curated opportunities from `data/opportunities.yml` are rendered first as a separate section. Automatic scanner results appear below them only after fully qualifying; near-matches stay internal.
 
 Rows with a known application deadline include an `Add to calendar` link in the deadline column. The link downloads a standard `.ics` all-day calendar event for the application deadline, so users can import it into Apple Calendar, Google Calendar, Outlook, or another calendar client.
 
 The generator also writes `site/sources.html` and `site/sources.json` from `config/sources.yaml`. This Sources & Coverage page shows enabled and disabled sources, source layer, region, source type, keywords, blocked linked domains, and notes.
 
-It also writes `site/feed.xml`, an RSS 2.0 feed of curated, fully qualified, and still-open near-match opportunities, advertised from the homepage for autodiscovery so users and aggregators can subscribe instead of visiting the page.
+It also writes `site/feed.xml`, an RSS 2.0 feed of curated and fully qualified opportunities, advertised from the homepage for autodiscovery so users and aggregators can subscribe instead of visiting the page.
 
 ## Financial Access Rule
 

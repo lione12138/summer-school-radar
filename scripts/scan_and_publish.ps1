@@ -15,6 +15,29 @@ param(
     [string]$Mode = "Auto"
 )
 
+function Test-MissedScheduledFullScan {
+    param(
+        [string]$ManifestPath,
+        [DayOfWeek[]]$ScheduledDays,
+        [datetime]$Now = (Get-Date)
+    )
+    if (-not (Test-Path -LiteralPath $ManifestPath -PathType Leaf)) {
+        return $true
+    }
+    try {
+        $manifest = Get-Content -LiteralPath $ManifestPath -Raw | ConvertFrom-Json
+        $generated = [DateTimeOffset]::Parse([string]$manifest.generated).LocalDateTime.Date
+    } catch {
+        return $true
+    }
+    for ($day = $generated.AddDays(1); $day -lt $Now.Date; $day = $day.AddDays(1)) {
+        if ($ScheduledDays -contains $day.DayOfWeek) {
+            return $true
+        }
+    }
+    return $false
+}
+
 # Native tools (git, python) write normal status to stderr; keep going and check
 # exit codes explicitly so that does not look like a failure.
 $ErrorActionPreference = "Continue"
@@ -435,6 +458,9 @@ try {
     } elseif ($Mode -eq "Status") {
         $runFullScan = $false
     } elseif ($fullScanDays -contains (Get-Date).DayOfWeek) {
+        $runFullScan = $true
+    } elseif (Test-MissedScheduledFullScan -ManifestPath $manifestSnapshot -ScheduledDays $fullScanDays) {
+        Log "A scheduled source scan was missed; running the full scan now instead of a status-only refresh."
         $runFullScan = $true
     } elseif (-not $hasCompleteSnapshot) {
         Log "The candidate/source/manifest snapshot is incomplete; falling back to a full scan."

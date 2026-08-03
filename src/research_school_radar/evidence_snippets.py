@@ -114,7 +114,18 @@ def _snippet_priority(item: dict[str, Any]) -> tuple[int, int, int]:
     signals = item["signals"]
     primary = sum(1 for signal in signals if signal in PRIMARY_SIGNALS)
     secondary = sum(1 for signal in signals if signal in SECONDARY_SIGNALS)
-    return primary, secondary, len(signals)
+    text = item["text"]
+    decisive = 0
+    if "fee" in signals and re.search(r"(?:EUR|USD|GBP|CHF|€|\$|£)\s*\d|\d\s*(?:EUR|USD|GBP|CHF)", text, re.I):
+        if re.search(r"\b(course|workshop|student|participant|tuition|weekly)\b", text, re.I):
+            decisive += 3
+    if "deadline" in signals and re.search(r"\b20\d{2}\b", text):
+        decisive += 3
+    if "funding" in signals and re.search(r"\b(no|not|cannot|does not|without)\b", text, re.I):
+        decisive += 2
+    if re.search(r"\b(cancellation|refund|administrative cost|late payment)\b", text, re.I):
+        decisive -= 3
+    return decisive, primary, secondary + len(signals)
 
 
 def _is_boilerplate(text: str) -> bool:

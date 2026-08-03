@@ -8,10 +8,18 @@ import requests
 from bs4 import BeautifulSoup
 
 from .date_extraction import _date_ranges
-from .extract import _region_priority, _topic_in_text
+from .extract import (
+    _applications_not_open,
+    _deadline_status_from_text,
+    _extract_deadline,
+    _extract_fee,
+    _fee_to_eur,
+    _region_priority,
+    _topic_in_text,
+)
 from .http_cache import HttpCache, get_with_cache
 from .models import Candidate
-from .utils import clean_space
+from .utils import clean_space, sanitize_location
 
 
 _SICSS_LOCATIONS_URL = "https://new.sicss.io/locations"
@@ -65,7 +73,9 @@ def _sicss(profile: dict, http_cache: HttpCache | None = None) -> tuple[list[Can
         return [], [f"SICSS locations listing: {exc}"]
 
     html = _utf8_html(response)
-    return _candidates_from_html(html, profile, as_of=date.today()), []
+    candidates = _candidates_from_html(html, profile, as_of=date.today())
+    _enrich_sicss_candidates(candidates, profile, http_cache=http_cache, as_of=date.today())
+    return candidates, []
 
 
 def _utf8_html(response: object) -> str:
@@ -108,7 +118,7 @@ def _candidates_from_html(html: str, profile: dict, *, as_of: date) -> list[Cand
         location_el = card.select_one(".card-subtitle")
         dates_el = card.select_one(".card-text")
         title = clean_space(title_el.get_text(" ") if title_el else "")
-        location = clean_space(location_el.get_text(" ") if location_el else "")
+        location = sanitize_location(clean_space(location_el.get_text(" ") if location_el else ""))
         dates_text = clean_space(dates_el.get_text(" ") if dates_el else "")
         date_range = _sicss_date_range(dates_text, year)
         if not title or date_range is None:
@@ -141,11 +151,14 @@ def _candidates_from_html(html: str, profile: dict, *, as_of: date) -> list[Cand
                 duration_days=(end - start).days + 1,
                 deadline=None,
                 deadline_status="uncertain",
-                funding_available=True,
-                funding_type=["tuition waiver"],
+                # SICSS has no tuition, but that is not the same as a travel or
+                # living-cost grant. Low-fee qualification is sufficient and
+                # avoids labelling every location as generally funded.
+                funding_available=None,
+                funding_type=[],
                 funding_evidence=(
                     "The official SICSS programme overview states that no tuition is required; "
-                    "some locations also cover travel, accommodation, and meals."
+                    "travel, accommodation, and meal policies vary by location."
                 ),
                 topic_keywords=topics,
                 eligibility="Graduate students, postdoctoral researchers, and junior faculty.",
@@ -169,6 +182,99 @@ def _candidates_from_html(html: str, profile: dict, *, as_of: date) -> list[Cand
         )
         seen.add(identity)
     return candidates
+
+
+def _enrich_sicss_candidates(
+    candidates: list[Candidate],
+    profile: dict,
+    *,
+    http_cache: HttpCache | None,
+    as_of: date,
+) -> None:
+    """Verify each catalogue card against its detail and application pages."""
+    for candidate in candidates:
+        detail_html = _fetch_optional_html(candidate.source_url, http_cache)
+        if not detail_html:
+            continue
+        detail_soup = BeautifulSoup(detail_html, "html.parser")
+        apply_anchor = detail_soup.find(
+            "a",
+            href=re.compile(r"(?:/apply/?$|application|google\.com/forms|docs\.google\.com/forms)", re.I),
+        )
+        application_url = (
+            urljoin(candidate.source_url, str(apply_anchor["href"]))
+            if apply_anchor is not None
+            else candidate.application_link
+        )
+        apply_html = _fetch_optional_html(application_url, http_cache) if application_url else ""
+        _enrich_sicss_candidate_from_html(
+            candidate,
+            detail_html,
+            apply_html,
+            application_url=application_url,
+            profile=profile,
+            as_of=as_of,
+        )
+
+
+def _fetch_optional_html(url: str, http_cache: HttpCache | None) -> str:
+    if not url:
+        return ""
+    try:
+        response = get_with_cache(url, headers=_HEADERS, timeout=30, cache=http_cache)
+    except requests.RequestException:
+        return ""
+    return _utf8_html(response)
+
+
+def _enrich_sicss_candidate_from_html(
+    candidate: Candidate,
+    detail_html: str,
+    apply_html: str,
+    *,
+    application_url: str,
+    profile: dict,
+    as_of: date,
+) -> None:
+    detail_text = clean_space(BeautifulSoup(detail_html, "html.parser").get_text(" "))
+    apply_text = clean_space(BeautifulSoup(apply_html, "html.parser").get_text(" "))
+    combined = clean_space(f"{detail_text} {apply_text}")
+    placeholder = bool(
+        re.search(
+            r"\b(?:under construction|not opened yet|not yet open|due date not yet determined|"
+            r"application form (?:will be|is) available)\b|\{[^}]*due date[^}]*\}",
+            combined,
+            re.I,
+        )
+    )
+    if placeholder or _applications_not_open(combined):
+        candidate.deadline = None
+        candidate.deadline_status = "not_open"
+        candidate.application_link = candidate.source_url
+        candidate.deadline_evidence = "Applications are not yet open on the official location page."
+    else:
+        deadline = _extract_deadline(combined)
+        candidate.deadline = deadline
+        candidate.deadline_status = _deadline_status_from_text(combined, deadline, as_of=as_of)
+        candidate.application_link = application_url or candidate.source_url
+        if deadline is not None:
+            candidate.deadline_evidence = clean_space(
+                next(
+                    (
+                        sentence
+                        for sentence in re.split(r"(?<=[.!?])\s+", combined)
+                        if str(deadline.year) in sentence
+                        and re.search(r"\b(apply|application|deadline|due)\b", sentence, re.I)
+                    ),
+                    "",
+                )
+            )[:600]
+
+    fee = _extract_fee(combined)
+    fee_eur = _fee_to_eur(fee, profile)
+    if fee_eur is not None:
+        candidate.fee = fee
+        candidate.fee_eur = fee_eur
 
 
 def _sicss_date_range(value: str, year: int) -> tuple[date, date] | None:

@@ -241,6 +241,8 @@ def _same_opportunity(a: Candidate, b: Candidate) -> bool:
     same_start = a.start_date is not None and a.start_date == b.start_date
     same_end = a.end_date is not None and a.end_date == b.end_date
     same_deadline = a.deadline is not None and a.deadline == b.deadline
+    if same_start and same_end and _supplemental_page_pair(a, b):
+        return True
     # An identical date span is a strong signal of the same event even when two
     # sources title it differently (an official site vs an aggregator listing).
     if same_start and same_end and similarity >= 0.75:
@@ -272,6 +274,20 @@ def _locations_compatible(a: str, b: str) -> bool:
     if not fa or not fb or fa in _COARSE_LOCATIONS or fb in _COARSE_LOCATIONS:
         return True
     return fa == fb or fa in fb or fb in fa
+
+
+def _supplemental_page_pair(a: Candidate, b: Candidate) -> bool:
+    """Same-site application/fee pages are supporting pages, not new events."""
+    parts_a, parts_b = urlsplit(a.source_url), urlsplit(b.source_url)
+    host_a = (parts_a.hostname or "").removeprefix("www.").lower()
+    host_b = (parts_b.hostname or "").removeprefix("www.").lower()
+    if not host_a or host_a != host_b:
+        return False
+    supplemental = re.compile(
+        r"(?:^|/)(?:apply|application|registration|fees?|funding|practical-information)(?:/|$)",
+        re.I,
+    )
+    return bool(supplemental.search(parts_a.path) or supplemental.search(parts_b.path))
 
 
 def _fold(value: str) -> str:

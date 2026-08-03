@@ -22,15 +22,10 @@ SUPPORTED_FEE_CURRENCIES = {
 
 
 def _extract_fee(text: str) -> str:
-    free = first_match(
-        text,
-        [
-            r"\b(free of charge)\b",
-            r"\b(no (?:registration|participation|tuition|course) fees?)\b",
-            r"\b(participation is free)\b",
-            r"\b(there (?:is|are) no (?:registration|participation|tuition|course) fees?)\b",
-        ],
-    )
+    # Normalize a common spelled-out currency before applying the existing
+    # amount grammars (for example, "1,000 Euro").
+    text = re.sub(r"\beuros?\b", "EUR", text, flags=re.IGNORECASE)
+    free = _free_participation_fee(text)
     if free:
         return free
     contribution = first_match(
@@ -60,7 +55,40 @@ def _extract_fee(text: str) -> str:
     # not a fee, so it must not be reported as one.
     if paid and not re.search(r"\d", paid):
         return ""
+    if paid:
+        paid = re.sub(r"^is\s+", "", clean_space(paid), flags=re.IGNORECASE)
+        paid = paid.rstrip(" .;,")
     return paid
+
+
+def _free_participation_fee(text: str) -> str:
+    """Return a zero-fee claim only when it refers to the programme itself.
+
+    Generic page chrome often says that creating an account or using a service
+    is "free of charge". Treating that as a course fee previously promoted an
+    expensive IEEE school as a free opportunity.
+    """
+    explicit = first_match(
+        text,
+        [
+            r"\b(no (?:registration|participation|tuition|course) fees?)\b",
+            r"\b(participation is free)\b",
+            r"\b(there (?:is|are) no (?:registration|participation|tuition|course) fees?)\b",
+        ],
+    )
+    if explicit:
+        return explicit
+    for match in re.finditer(r"\bfree of charge\b", text, flags=re.IGNORECASE):
+        context = text[max(0, match.start() - 100):min(len(text), match.end() + 100)]
+        if re.search(r"\b(account|profile|membership|sign[ -]?up|login|website access)\b", context, re.IGNORECASE):
+            continue
+        if re.search(
+            r"\b(course|school|programme|program|workshop|training|participation|registration|tuition|attendance)\b",
+            context,
+            re.IGNORECASE,
+        ):
+            return match.group(0)
+    return ""
 
 
 def _course_fee_table_fee(text: str) -> str:
@@ -101,7 +129,7 @@ def _participant_fee(text: str) -> str:
             context = text[max(0, match.start() - 80): match.end() + 40].lower()
             if any(word in context for word in ("room", "board", "housing", "accommodation", "hotel")):
                 continue
-            fee = clean_space(match.group(1))
+            fee = clean_space(match.group(1)).rstrip(" .;,")
             amount = _fee_to_eur(fee, {"financial_access": {"approximate_currency_to_eur": {currency: 1 for currency in SUPPORTED_FEE_CURRENCIES}}})
             # Fee tables often have a first column like "1 course"; a regex can
             # accidentally capture "1 €" from "1 € 210,00". That is a row label,
@@ -116,6 +144,7 @@ def _participant_fee(text: str) -> str:
 def _fee_to_eur(fee: str, profile: dict) -> float | None:
     if not fee:
         return None
+    fee = re.sub(r"\beuros?\b", "EUR", fee, flags=re.IGNORECASE)
     if re.search(r"\bfree of charge\b|\bno (?:registration|participation|tuition|course) fees?\b|\bparticipation is free\b", fee, re.IGNORECASE):
         return 0.0
 
@@ -166,6 +195,3 @@ def _parse_amount(value: str) -> float | None:
         return float(compact)
     except ValueError:
         return None
-
-
-

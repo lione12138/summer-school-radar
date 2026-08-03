@@ -160,7 +160,7 @@ AI 分支不会覆盖扫描器原始 `Candidate` 对象。它只会在生成首�
 - in-person 或 substantially on-site，不是 online-only
 - 主题与 `config/profile.yaml` 中的研究方向相关
 
-如果 deadline 无法抽取，但项目开始日期已经过去，也会视为过期。字段不确定时默认不进入 fully qualified，而是进入 near-match。失败条件保留在 `site/candidates.json` 中，供维护者检查，不占用公开表格列。
+如果 deadline 无法抽取，但项目开始日期已经过去，也会视为过期。字段不确定时默认进入内部 near-match / review queue，不进入公开页面。失败条件保留在 `site/candidates.json` 和 `data/review_queue.json` 中，供维护者检查。
 
 ## 多学科范围
 
@@ -342,7 +342,7 @@ secret 不会写入生成文件或提交。
 - financial access
 - deadline status
 
-首页把所有匹配结果合并后按每页 15 条分页。桌面端将搜索与筛选固定在左侧栏；手机端始终显示搜索，其他筛选通过按钮展开。内部 `found` 分类仍保留在筛选值和数据属性中，但卡片不再显示警示式状态徽标，公开名称改为中性的“更多项目/已收录”。
+首页只对通过全部硬条件的公开结果按每页 15 条分页。桌面端将搜索与筛选固定在左侧栏；手机端始终显示搜索，其他筛选通过按钮展开。内部 `high-quality` / `found` 分类仍保留在 scanner JSON 和审核队列中，但不会生成公开卡片。
 
 已知 deadline 的行会生成 `Add to calendar` `.ics` 下载链接，方便导入 Apple Calendar、Google Calendar、Outlook 等日历。
 

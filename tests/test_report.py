@@ -39,7 +39,8 @@ def test_report_does_not_present_near_match_as_qualified() -> None:
     ranked = rank_candidates([candidate])
     markdown = render_report(ranked, [])
     assert "No fully qualified opportunities found." in markdown
-    assert "High-Quality Opportunities" in markdown
+    assert "High-Quality Opportunities" not in markdown
+    assert candidate.title not in markdown
     assert "failed hard condition" not in markdown
     assert "application deadline is uncertain" not in markdown
 
@@ -72,7 +73,7 @@ def test_update_readme_skips_file_without_markers(tmp_path) -> None:
     assert readme.read_text(encoding="utf-8") == "# Title\n"
 
 
-def test_report_keeps_all_publication_tiers_when_qualified_items_exist() -> None:
+def test_report_keeps_unresolved_tiers_internal_when_qualified_items_exist() -> None:
     qualified = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     qualified.source_url = "https://example.org/qualified"
 
@@ -103,11 +104,11 @@ def test_report_keeps_all_publication_tiers_when_qualified_items_exist() -> None
     markdown = render_report(rank_candidates([qualified, high_quality, found]), [])
 
     assert "Fully Qualified Opportunities" in markdown
-    assert "High-Quality Opportunities" in markdown
-    assert "Found Opportunities" in markdown
+    assert "High-Quality Opportunities" not in markdown
+    assert "Found Opportunities" not in markdown
     assert "Example Hydrology Winter School" in markdown
-    assert "High Quality School" in markdown
-    assert "Found School" in markdown
+    assert "High Quality School" not in markdown
+    assert "Found School" not in markdown
 
 
 def test_report_escapes_markdown_labels_and_rejects_active_urls() -> None:

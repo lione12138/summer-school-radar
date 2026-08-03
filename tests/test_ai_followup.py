@@ -103,6 +103,35 @@ def test_collect_follow_up_pages_respects_page_budget_without_network() -> None:
     assert len(result.pages_by_parent[base.url]) == 1
 
 
+def test_known_application_portal_is_fetched_across_official_subdomains() -> None:
+    parent = "https://events.example.org/2027/school"
+    base = _page(parent, '<a href="https://apply.example.org/form/7">Find out more</a>')
+    item = _item(parent)
+    item["llm_extraction"]["application_url"] = {
+        "value": "https://apply.example.org/form/7",
+        "evidence_ids": ["E1"],
+    }
+
+    def fetcher(source: Source) -> Page:
+        return _page(source.url, "", "Applications are not yet open.")
+
+    result = collect_follow_up_pages(
+        [item],
+        [base],
+        FollowUpConfig(
+            max_rounds=1,
+            max_opportunities=1,
+            max_pages_per_opportunity=1,
+            max_total_followup_pages=1,
+            external_search_enabled=False,
+        ),
+        max_workers=1,
+        fetcher=fetcher,
+    )
+
+    assert [page.url for page in result.pages_by_parent[parent]] == ["https://apply.example.org/form/7"]
+
+
 def test_controlled_search_keeps_results_on_official_domain() -> None:
     base = _page("https://school.example.org/2027/", "")
 

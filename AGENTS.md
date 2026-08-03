@@ -210,6 +210,9 @@ If full-suite failures are unrelated to the current change, state the exact fail
 
 - Keep generated public output auditable from official-source evidence.
 - Keep hard filters deterministic.
+- Keep public opportunity rendering fail-closed: records with any failed hard
+  condition remain in audit JSON/review queues and must not receive public cards
+  or RSS entries.
 - Do not let AI output bypass hard filters.
 - Do not silently promote candidates into `data/opportunities.yml`.
 - Do not add broad web crawling. Source expansion should happen through `config/sources.yaml`, direct collectors, or explicitly scoped discovery.

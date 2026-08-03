@@ -81,3 +81,17 @@ def test_plural_fees_and_rates_are_fee_signals() -> None:
 
     assert snippets
     assert "fee" in snippets[0]["signals"]
+
+
+def test_participant_fee_outranks_cancellation_admin_cost() -> None:
+    snippets = build_evidence_snippets(
+        [
+            _chunk(
+                "Cancellation after July 1 incurs an administrative cost of CHF 50. "
+                "PhD students and postdocs pay a weekly workshop fee of CHF 800."
+            )
+        ],
+        max_snippets=1,
+    )
+
+    assert snippets[0]["text"] == "PhD students and postdocs pay a weekly workshop fee of CHF 800."

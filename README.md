@@ -6,7 +6,7 @@
 
 An open-source scanner for funded research training opportunities — summer schools, winter schools, training schools, field schools, and short courses — **across many academic fields**: environmental & earth science, computing & data science, the social sciences, and the humanities.
 
-It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources, extracts deadline / funding / fee / duration evidence together with the supporting text, separates fully qualified, high-quality, and found opportunities, and publishes a static website that refreshes daily on GitHub Pages.
+It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources and extracts deadline / funding / fee / duration evidence together with the supporting text. Unresolved records remain available for maintainer audit; the public site is fail-closed and publishes only opportunities that pass every deterministic actionability and financial-access gate.
 
 **Live site:** <https://lione12138.github.io/summer-school-radar/>
 
@@ -35,39 +35,25 @@ This section is refreshed from the latest validated snapshot produced by the
 local scan task.
 
 <!-- radar:results:start -->
-_Last scan: 2026-07-07 · 1 fully qualified · 2 high-quality · 4 found shown_
+_Last validated snapshot: 2026-07-27. The live site is the authority for date-sensitive public results._
 
 **Fully Qualified Opportunities**
 
 | # | title | type | organizer | location | duration | deadline | funding / fee | topic |
 |---|---|---|---|---|---|---|---|---|
-| 1 | [Social Science Data Analysis](https://essexsummerschool.com/new-application/) | summer school | Essex Summer School | Colchester, UK | 29 Jun – 14 Aug 2026 · 47 days | 2026-07-17 | scholarship · amount not stated · Apply on official page | satellite, deep learning, data analysis, statistics |
+| 1 | [ICOS Summer/Winter School January 2027](https://www.icos-cp.eu/about/opportunities/summer-school) | summer school | ICOS | Europe | 18 Jan – 28 Jan 2027 · 11 days | 2026-07-31 | Fee about EUR 100 | climate, climate change, remote sensing, statistics |
+| 2 | [ELLIS Summer School at Unit Saarbrücken](https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026) | summer school | ELLIS | Saarland University | 24 Aug – 28 Aug 2026 · 5 days | 2026-07-30 | Fee about EUR 250 | AI |
 
-**High-Quality Opportunities**
-
-| title | type | organizer | location | duration | deadline | funding / fee | topic |
-|---|---|---|---|---|---|---|---|
-| [ICOS Summer/Winter School January 2027, application is now open](https://www.icos-cp.eu/about/opportunities/summer-school) | summer school | ICOS | Europe | 18 Jan – 28 Jan 2027 · 11 days | 2026-07-31 | financial support · amount not stated · Apply on official page | climate, climate change, remote sensing, statistics |
-| [ELLIS Summer School at Unit Saarbrücken](https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026) | summer school | ELLIS | Saarland University | 24 Aug – 28 Aug 2026 · 5 days | 2026-07-19 | Fee about EUR 250 · Apply on official page | AI |
-
-**Found Opportunities**
-
-| title | type | organizer | location | duration | deadline | funding / fee | topic |
-|---|---|---|---|---|---|---|---|
-| [Get to know the Bernstein Network!](https://bernstein-network.de/en/) | advanced course | Bernstein Network | Europe | uncertain | 2026-08-27 | travel grant, stipend · amount not stated · Apply on official page | satellite, AI, data analysis, physics |
-| [River Basin Modelling](https://www.un-ihe.org/short-courses) | short course | IHE Delft | Delft, Netherlands | 11 Jan – 29 Jan 2027 · 19 days | 2026-12-11 | Fee about EUR 2600 · Apply on official page | groundwater, water resources, water quality, GIS |
-| [ELLIS Summer School at Institute Tübingen](https://ellis.eu/events/ellis-summer-school-at-institute-tuebingen-2026) | summer school | ELLIS | Max Planck Institute for Intelligent Systems | 31 Aug – 11 Sep 2026 · 12 days | 2026-07-10 | Funding or fee not stated | machine learning |
-| [ELLIS Summer School at Unit Munich](https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026) | summer school | ELLIS | TUM Garching Campus | 14 Sep – 18 Sep 2026 · 5 days | uncertain | Funding or fee not stated | machine learning, computer vision |
+Unresolved, closed, not-yet-open, and unaffordable records remain in the generated audit JSON and review queue rather than being shown as public opportunities.
 
 <!-- radar:results:end -->
 
 ## Upcoming Research Training Opportunities
 
-The generated website lists scanner results in three public tiers:
+The generated website publishes verified scanner results and keeps unresolved records in internal audit artifacts:
 
 - **Fully Qualified Opportunities**: scanner results that satisfy every hard condition.
-- **High-Quality Opportunities**: not closed, not online-only, at least 5 days long, and either funded or no more than about EUR 70 per day.
-- **Listed Opportunities**: additional relevant records collected from official sources that do not meet the two higher display tiers.
+- **Internal review records**: high-quality leads and other found records that still have an uncertain deadline, fee, mode, application link, or another failed hard condition. They remain in `site/candidates.json` and `data/review_queue.json` but are not rendered publicly.
 - **Sources & Coverage**: the configured trusted source registry, including disabled sources and notes.
 
 The site includes filters for keyword, status, topic, financial access, and deadline status. On desktop they stay in a left sidebar; on mobile search remains visible and the additional filters collapse behind a compact control. Matching records are paginated at 15 per page. Rows with a known application deadline include an **Add to calendar** menu (Google Calendar, Outlook, or a downloadable `.ics` file).
@@ -98,7 +84,7 @@ An opportunity must satisfy all hard conditions:
 | Mode | In-person or substantially on-site, not online-only |
 | Topic | Relevant to one of the covered fields: environmental & earth science (water, climate, geoscience, remote sensing), computing & data science (machine learning, computer vision, software engineering, cybersecurity, computational neuroscience, linguistics), or the social sciences & humanities (social-science methods, economics, political science, history, digital humanities) |
 
-Near-matches are never presented as qualified results.
+Near-matches are never rendered on the public site. They remain auditable in generated JSON and the maintainer review queue.
 
 Foreign-currency fees are converted with configurable fixed reference rates so the default workflow remains free and API-key-free. The rates are deliberately conservative, not real-time. Unknown currencies or ambiguous fees remain near-matches.
 

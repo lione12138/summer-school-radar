@@ -24,6 +24,7 @@ TOPIC_ZH = {
     "condensed matter": "凝聚态物理",
     "corpus linguistics": "语料库语言学",
     "cosmology": "宇宙学",
+    "cryptography": "密码学",
     "cryosphere": "冰冻圈",
     "cybersecurity": "网络安全",
     "data analysis": "数据分析",
@@ -74,6 +75,7 @@ TOPIC_ZH = {
     "neuroAI": "神经人工智能",
     "neuroscience": "神经科学",
     "oceanography": "海洋学",
+    "optimization": "优化",
     "particle physics": "粒子物理",
     "phonetics": "语音学",
     "phonology": "音系学",
@@ -89,6 +91,7 @@ TOPIC_ZH = {
     "seismology": "地震学",
     "semantics": "语义学",
     "social science": "社会科学",
+    "social science methods": "社会科学方法",
     "software engineering": "软件工程",
     "soil science": "土壤科学",
     "speech processing": "语音处理",
@@ -117,6 +120,7 @@ FUNDING_TYPE_ZH = {
     "scholarship": "奖学金",
     "stipend": "津贴",
     "travel grant": "差旅资助",
+    "tuition waiver": "学费减免",
 }
 
 STATUS_ZH = {

@@ -98,7 +98,7 @@ GENERIC_TITLES = {
     "apply", "register", "registration", "read more", "skip to main content",
     "student support", "opportunities", "vacancies", "about", "about us",
     "contact", "contact us", "events archive", "upcoming events", "our events",
-    "mobile menu", "our use of cookies",
+    "mobile menu", "our use of cookies", "newsletter",
 }
 
 # Substrings that mark a title as a section, archive, or navigation label
@@ -137,6 +137,8 @@ _WEAK_CLOSED_PATTERNS = [
 _NOT_OPEN_PATTERNS = [
     r"applications?[^.\n]{0,40}(?:not yet|not currently)\s+open",
     r"registration[^.\n]{0,40}(?:not yet|not currently)\s+open",
+    r"applications?[^.\n]{0,40}(?:are|is)\s+not\s+open(?:ed)?(?:\s+yet)?",
+    r"registration[^.\n]{0,40}(?:are|is)\s+not\s+open(?:ed)?(?:\s+yet)?",
     r"(?:applications?|registration)[^.\n]{0,40}(?:will|is expected to)\s+open",
 ]
 _APPLICATIONS_OPEN_PATTERNS = [
@@ -242,7 +244,8 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         return None
 
     preferred_topics = profile.get("preferred_topics", [])
-    topics = [topic for topic in preferred_topics if _topic_in_text(topic, text)]
+    topic_text = _topic_source_text(page, title_hint=str(overrides.get("jsonld_name", "")))
+    topics = [topic for topic in preferred_topics if _topic_in_text(topic, topic_text)]
     programme_type = _programme_type(text)
     if "funding_type" in overrides:
         funding_types = overrides["funding_type"]
@@ -317,7 +320,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     return Candidate(
         title=title,
         type=programme_type,
-        organizer=page.source.name,
+        organizer=_extract_organizer(page),
         source_layer=str(page.source.layer),
         region_priority=_region_priority(page.source.region, profile),
         location=location,
@@ -470,6 +473,37 @@ def _extract_title(page: Page) -> str:
         ):
             return title
     return ""
+
+
+def _extract_organizer(page: Page) -> str:
+    """Prefer page-level publisher metadata over a broad registry label."""
+    if page.html:
+        from bs4 import BeautifulSoup
+
+        soup = BeautifulSoup(page.html, "html.parser")
+        for attributes in (
+            {"property": "og:site_name"},
+            {"name": "application-name"},
+        ):
+            meta = soup.find("meta", attrs=attributes)
+            value = clean_space(str(meta.get("content", ""))) if meta else ""
+            if value and value.casefold() not in GENERIC_TITLES:
+                return value
+    return page.source.name
+
+
+def _topic_source_text(page: Page, *, title_hint: str = "") -> str:
+    """Use article content for topic matching, excluding menus and footers."""
+    if not page.html:
+        return clean_space(f"{title_hint} {page.title} {page.text}")
+    from bs4 import BeautifulSoup
+
+    soup = BeautifulSoup(page.html, "html.parser")
+    root = soup.find("main") or soup.find("article") or soup.body or soup
+    for element in root.find_all(["nav", "header", "footer", "aside", "script", "style", "noscript"]):
+        element.decompose()
+    content = clean_space(root.get_text(" "))
+    return clean_space(f"{title_hint} {page.title} {content}")
 
 
 def _heading_title(element) -> str:

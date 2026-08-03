@@ -140,8 +140,8 @@
       "faq.1.a": {en:"Yes — entirely free and open source. There is no paywall, no account, and no paid search API in the default pipeline.", zh:"免费，而且开源。默认流程没有付费墙、不需要账号，也不依赖付费搜索 API。"},
       "faq.2.q": {en:"How often is it updated?", zh:"多久更新一次？"},
       "faq.2.a": {en:"The site is rebuilt daily to refresh deadline status. Source pages are fetched every Monday, Wednesday, and Friday.", zh:"网站每天重建以刷新截止日期状态；来源页面在每周一、周三和周五重新抓取。"},
-      "faq.3.q": {en:"Why are some events only near-matches?", zh:"为什么有些项目只是近似匹配？"},
-      "faq.3.a": {en:"They are relevant but fail at least one strict rule, such as uncertain deadline, high fee, unresolved fee, or virtual-only format.", zh:"它们相关，但至少有一条严格规则没通过，例如截止日期不确定、费用过高、费用未确认，或只有线上形式。"},
+      "faq.3.q": {en:"Why are some scanned events not shown?", zh:"为什么有些已扫描项目没有公开展示？"},
+      "faq.3.a": {en:"Unresolved and failed-rule records stay in the maintainer review queue. The public site only shows opportunities with verified open applications, acceptable financial access, dates, mode, and topic fit.", zh:"信息未完整确认或未通过规则的记录只保留在维护者审核队列中。公开页面只展示已确认申请开放、费用或资助可接受，并且日期、形式和主题均符合要求的机会。"},
       "faq.4.q": {en:"How do you avoid spam and low-quality listings?", zh:"怎么避免低质量信息？"},
       "faq.4.a": {en:"The radar only reads a curated registry of trusted academic sources. It does not crawl the open web.", zh:"它只读取人工维护的可信学术来源列表，不做开放网络泛爬。"},
       "faq.5.q": {en:"Can I suggest a source?", zh:"我可以建议来源吗？"},
@@ -195,4 +195,3 @@
     var lb=document.getElementById('lang-toggle'); if(lb) lb.addEventListener('click', function(){ applyLang(document.documentElement.getAttribute('lang')==='zh'?'en':'zh'); });
     var tb=document.getElementById('theme-toggle'); if(tb) tb.addEventListener('click', function(){ applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark'); });
   })();
-

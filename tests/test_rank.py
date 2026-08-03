@@ -324,3 +324,27 @@ def test_application_page_without_dates_can_close_parent_candidate() -> None:
     assert ranked[0].fee_eur == 1000
     assert ranked[0].is_past is True
 
+
+def test_same_site_application_page_with_same_dates_is_not_a_second_opportunity() -> None:
+    parent = sample_candidate(PROFILE)
+    parent.title = "Welcome to ALPS 2027, the Advanced Language Processing School in the Alps"
+    parent.source_url = "https://lig-alps.example/"
+    parent.application_link = parent.source_url
+    parent.deadline = None
+    parent.deadline_status = "uncertain"
+    application = replace(
+        parent,
+        title="Application – Advanced Language Processing Winter School",
+        source_url="https://lig-alps.example/index.php/application/",
+        application_link="https://lig-alps.example/index.php/application/",
+        deadline_status="not_open",
+    )
+
+    ranked = rank_candidates(
+        [apply_hard_filters(parent, PROFILE), apply_hard_filters(application, PROFILE)],
+        profile=PROFILE,
+    )
+
+    assert len(ranked) == 1
+    assert ranked[0].deadline_status == "not_open"
+

@@ -28,14 +28,15 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
     require_financial_access = hard.get("require_funding_or_low_fee", hard.get("require_funding", True))
     maximum_fee = float(profile.get("financial_access", {}).get("maximum_unfunded_fee_eur", 400))
     low_fee = candidate.fee_eur is not None and candidate.fee_eur <= maximum_fee
-    if candidate.funding_available is True:
+    explicit_funding = candidate.funding_available is True and bool(candidate.funding_evidence.strip())
+    if explicit_funding:
         candidate.financial_access_status = "funded"
     elif low_fee:
         candidate.financial_access_status = "low-fee"
     else:
         candidate.financial_access_status = "unresolved"
     if require_financial_access:
-        if candidate.funding_available is not True and not low_fee:
+        if not explicit_funding and not low_fee:
             if candidate.fee_eur is not None:
                 failed.append(f"fee exceeds EUR {maximum_fee:.0f} without explicit funding")
             elif candidate.fee:

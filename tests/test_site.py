@@ -98,9 +98,9 @@ def test_site_shows_evidence_tooltip_and_confidence_data(tmp_path) -> None:
     assert '<td title=' in html  # evidence hover tooltip
 
 
-def test_started_event_without_deadline_is_not_still_open(tmp_path) -> None:
-    # An event that has already started, with no known deadline, is past: you
-    # cannot apply, so it must not appear among still-open near-matches.
+def test_events_without_verified_deadlines_are_not_public(tmp_path) -> None:
+    # Unknown application status is retained for internal review, regardless
+    # of whether the event itself has started, but is never published.
     started = sample_candidate(PROFILE)
     started.deadline = None
     started.deadline_status = "uncertain"
@@ -122,18 +122,18 @@ def test_started_event_without_deadline_is_not_still_open(tmp_path) -> None:
     assert started.is_past and not upcoming.is_past
     ranked = rank_candidates([started, upcoming])
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
-    assert "Upcoming School" in html
+    assert "Upcoming School" not in html
     assert "Already Started School" not in html
     markdown = render_report(ranked, [])
-    assert "Upcoming School" in markdown
+    assert "Upcoming School" not in markdown
     assert "Already Started School" not in markdown
 
 
 def test_too_short_events_are_dropped_from_display(tmp_path) -> None:
     def near_match(title: str, url: str, days: int, span: int):
         c = sample_candidate(PROFILE)
-        c.deadline = None
-        c.deadline_status = "uncertain"
+        c.deadline = date.today() + timedelta(days=20)
+        c.deadline_status = "open"
         c.start_date = date.today() + timedelta(days=30)
         c.end_date = date.today() + timedelta(days=30 + span)
         c.duration_days = days
@@ -362,7 +362,7 @@ def test_opportunity_browser_uses_sidebar_and_fifteen_item_pages(tmp_path) -> No
     assert "const pageSize = 15;" in filters
 
 
-def test_site_renders_curated_found_opportunities_and_review_queue_json(tmp_path) -> None:
+def test_site_renders_curated_opportunities_and_keeps_unresolved_items_internal(tmp_path) -> None:
     reviewed = {
         "title": "Reviewed Social Science School",
         "organizer": "Example University",
@@ -398,16 +398,12 @@ def test_site_renders_curated_found_opportunities_and_review_queue_json(tmp_path
 
     assert "Curated Opportunities" in html
     assert "Reviewed Social Science School" in html
-    assert "Listed Opportunities" in html
-    assert "Unreviewed Law Summer School" in html
+    assert "Listed Opportunities" not in html
+    assert "Unreviewed Law Summer School" not in html
     assert "待核实" not in html
     assert "application deadline is uncertain" not in html
     assert "application deadline is uncertain" in review_json
     assert "Unreviewed Law Summer School" in review_json
-
-    detail = next((tmp_path / "opportunities").glob("*.html")).read_text(encoding="utf-8")
-    assert "待核实" not in detail
-
 
 def test_site_generation_writes_favicon(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
@@ -560,7 +556,7 @@ def test_site_generation_can_inject_cloudflare(tmp_path) -> None:
     assert "abc123" in html
 
 
-def test_high_quality_site_table_omits_why_monitor(tmp_path) -> None:
+def test_unresolved_high_quality_candidate_is_not_published(tmp_path) -> None:
     candidate = sample_candidate(PROFILE)
     candidate.deadline = None
     candidate.deadline_status = "uncertain"
@@ -569,17 +565,17 @@ def test_high_quality_site_table_omits_why_monitor(tmp_path) -> None:
     index_html = write_site(ranked, [], tmp_path)
     html = index_html.read_text(encoding="utf-8")
     assert "Why Monitor" not in html
-    assert 'data-status="high-quality"' in html
+    assert 'data-status="high-quality"' not in html
+    assert candidate.title not in html
     assert "Failed Condition" not in html
     assert "Region Priority" not in html
     assert "Topic Match" not in html
-    assert '<th data-i18n="table.duration">Duration</th>' in html
     assert '<details class="cal">' not in html
 
 
 def test_public_site_omits_explicitly_unaffordable_courses(tmp_path) -> None:
     affordable = sample_candidate(PROFILE)
-    affordable.title = "Affordable Five Day School"
+    affordable.title = "Affordable Eight Day School"
     affordable.source_url = "https://example.org/affordable"
     affordable.location = "Delft, Netherlands"
     affordable.funding_available = None
@@ -587,12 +583,12 @@ def test_public_site_omits_explicitly_unaffordable_courses(tmp_path) -> None:
     affordable.funding_evidence = ""
     affordable.fee = "EUR 350"
     affordable.fee_eur = 350
-    affordable.duration_days = 5
-    affordable.deadline = None
-    affordable.deadline_status = "uncertain"
+    affordable.duration_days = 8
+    affordable.deadline = date.today() + timedelta(days=20)
+    affordable.deadline_status = "open"
 
     expensive = sample_candidate(PROFILE)
-    expensive.title = "Expensive Five Day School"
+    expensive.title = "Expensive Eight Day School"
     expensive.source_url = "https://example.org/expensive"
     expensive.location = "Cambridge, UK"
     expensive.funding_available = None
@@ -600,22 +596,18 @@ def test_public_site_omits_explicitly_unaffordable_courses(tmp_path) -> None:
     expensive.funding_evidence = ""
     expensive.fee = "EUR 900"
     expensive.fee_eur = 900
-    expensive.duration_days = 5
-    expensive.deadline = None
-    expensive.deadline_status = "uncertain"
+    expensive.duration_days = 8
+    expensive.deadline = date.today() + timedelta(days=20)
+    expensive.deadline_status = "open"
 
     ranked = rank_candidates([
         apply_hard_filters(affordable, PROFILE),
         apply_hard_filters(expensive, PROFILE),
     ])
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
-    high_section = html.split('<h2 data-i18n="tier.high">High-Quality Opportunities</h2>', 1)[1].split(
-        '<h2 data-i18n="tier.found">Listed Opportunities</h2>', 1
-    )[0]
-    assert "Affordable Five Day School" in high_section
-    assert 'data-status="high-quality"' in high_section
-    assert "Why high quality" not in high_section
-    assert "Expensive Five Day School" not in html
+    assert "Affordable Eight Day School" in html
+    assert 'data-status="qualified"' in html
+    assert "Expensive Eight Day School" not in html
 
 
 def test_status_line_uses_correct_singular_and_plural(tmp_path) -> None:

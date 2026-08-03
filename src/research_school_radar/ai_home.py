@@ -27,6 +27,12 @@ _VAGUE_FUNDING_RE = re.compile(
     r"(?:may|might|could)\s+be\s+(?:available|offered|provided)\b",
     re.IGNORECASE,
 )
+_ACCEPTED_ONLY_RE = re.compile(
+    r"\b(?:only\s+(?:for|available to)|restricted to|for)\s+(?:already\s+)?"
+    r"(?:accepted|selected|invited|admitted)\s+(?:applicants?|participants?|students?)\b|"
+    r"\b(?:accepted|selected|invited|admitted)\s+(?:applicants?|participants?|students?)\s+only\b",
+    re.IGNORECASE,
+)
 _TARGET_PATTERNS = (
     ("PhD", re.compile(r"\b(phd|doctoral)\b", re.IGNORECASE)),
     ("MSc", re.compile(r"\b(master|msc)\b", re.IGNORECASE)),
@@ -117,8 +123,16 @@ def _enrich_candidate(candidate: Candidate, item: dict[str, Any], profile: dict[
         )
         candidate.duration_evidence = _joined_evidence(item, ("start_date", "end_date"))
 
-    deadline = _trusted_date(item, "application_deadline")
+    deadline_type = _trusted_text(item, "application_deadline_type").lower()
+    access_evidence = _joined_evidence(
+        item,
+        ("application_deadline", "application_deadline_type", "registration_status", "eligibility", "other_deadlines"),
+    )
+    accepted_only_registration = deadline_type == "registration" and bool(_ACCEPTED_ONLY_RE.search(access_evidence))
+    deadline = None if accepted_only_registration else _trusted_date(item, "application_deadline")
     status = _trusted_status(item)
+    if accepted_only_registration and status == "open":
+        status = "uncertain"
     if deadline is not None and (candidate.deadline is None or candidate.deadline_status == "uncertain"):
         candidate.deadline = deadline
         candidate.deadline_evidence = _evidence(item, "application_deadline")
@@ -130,10 +144,17 @@ def _enrich_candidate(candidate: Candidate, item: dict[str, Any], profile: dict[
         candidate.deadline_status = "closed"
 
     fee = _trusted_text(item, "fee")
-    if fee and not candidate.fee:
-        candidate.fee = _compact_value(_raw_value(extraction.get("fee")))
-    if candidate.fee_eur is None and fee and not _has_warning(item, "fee_tiers_incomplete"):
-        candidate.fee_eur = _fee_to_eur(candidate.fee, profile)
+    ai_fee_display = _compact_value(_raw_value(extraction.get("fee"))) if fee else ""
+    ai_fee_eur = (
+        _fee_to_eur(ai_fee_display, profile)
+        if fee and not _has_warning(item, "fee_tiers_incomplete")
+        else None
+    )
+    false_zero_contradiction = candidate.fee_eur == 0 and ai_fee_eur is not None and ai_fee_eur > 0
+    if fee and (not candidate.fee or false_zero_contradiction):
+        candidate.fee = ai_fee_display
+    if ai_fee_eur is not None and (candidate.fee_eur is None or false_zero_contradiction):
+        candidate.fee_eur = ai_fee_eur
 
     funding = _trusted_text(item, "funding")
     if (

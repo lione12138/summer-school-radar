@@ -210,3 +210,26 @@ quality boundaries and audit data remain intact. Public cards no longer render
 the warning-style `Found / 待核实` badge. The neutral `Listed / 已收录` wording is
 used where a label is required, while official-source links, evidence, and the
 general “verify before applying” guidance remain visible.
+
+## 2026-07-30: Fail-Closed Public Opportunity Audit
+
+A manual official-source audit found that unresolved records could still reach
+the public `found` tier. The most serious cases confused an accepted-applicant
+payment deadline with an application deadline, treated free account creation as
+a zero course fee, or missed decisive fee/status information on linked official
+pages. The public boundary is now fail-closed: only records that pass every hard
+condition and have a safe application URL are rendered. Near-matches stay in
+candidate JSON and the maintainer review queue.
+
+Supporting changes include deadline-type validation, evidence-backed correction
+of false zero fees, spelled-out Euro parsing, explicit not-yet-open wording,
+same-event application-page deduplication, article-scoped topic matching,
+publisher metadata for broad source directories, and higher priority for actual
+participant-fee evidence over cancellation charges. SICSS location cards are
+now verified against their detail/application pages and no longer equate zero
+tuition with general funding. Known official application portals are fetched
+across sibling subdomains during AI follow-up.
+
+The scheduled Windows task also checks the last full-scan manifest. If a
+Monday/Wednesday/Friday source scan was missed, the next automatic run performs
+that full scan instead of selecting status refresh solely from the current day.

@@ -81,6 +81,12 @@ _APPLICATION_DEADLINE_CONTEXT_RE = re.compile(
     r"\b(deadline|close|closes|until|due|by).{0,80}\b(application|applications|apply|registration|register)\b",
     re.I,
 )
+_ACCEPTED_ONLY_REGISTRATION_RE = re.compile(
+    r"\b(?:only\s+(?:for|available to)|restricted to|for)\s+(?:already\s+)?"
+    r"(?:accepted|selected|invited|admitted)\s+(?:applicants?|participants?|students?)\b|"
+    r"\b(?:accepted|selected|invited|admitted)\s+(?:applicants?|participants?|students?)\s+only\b",
+    re.I,
+)
 
 
 def validate_llm_extraction(
@@ -142,6 +148,12 @@ def validate_llm_extraction(
         warnings.append("non_application_deadline_risk")
     deadline_type = _field_value(extraction.get("application_deadline_type")).lower()
     if deadline_type in {"payment", "scholarship", "travel_grant", "abstract"}:
+        warnings.append("non_application_deadline_risk")
+    deadline_access_evidence = " ".join(
+        cited_by_field.get(field, "")
+        for field in ("application_deadline", "registration_status", "eligibility", "other_deadlines")
+    )
+    if deadline_type == "registration" and _ACCEPTED_ONLY_REGISTRATION_RE.search(deadline_access_evidence):
         warnings.append("non_application_deadline_risk")
 
     status = _field_value(extraction.get("registration_status")).lower()

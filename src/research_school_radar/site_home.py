@@ -58,8 +58,8 @@ def faq_section() -> str:
         {
             "question_key": "faq.3.q",
             "answer_key": "faq.3.a",
-            "question": "Why are some events only near-matches?",
-            "answer": "They are relevant but fail at least one strict rule, such as uncertain deadline, high fee, unresolved fee, or virtual-only format.",
+            "question": "Why are some scanned events not shown?",
+            "answer": "Unresolved and failed-rule records stay in the maintainer review queue. The public site only shows opportunities with verified open applications, acceptable financial access, dates, mode, and topic fit.",
         },
         {
             "question_key": "faq.4.q",

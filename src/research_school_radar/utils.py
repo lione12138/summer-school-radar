@@ -63,6 +63,7 @@ _LOCATION_JUNK_FRAGMENTS = (
     "learn more",
     "apply now",
     "find out",
+    "participant voices",
     "no location set",
     "no address set",
 )
@@ -92,6 +93,7 @@ def sanitize_location(value: str, fallback: str = "") -> str:
         return "Online"
     if any(fragment in low for fragment in _LOCATION_JUNK_FRAGMENTS):
         return fallback
+    text = re.sub(r"\bJohnannesburg\b", "Johannesburg", text, flags=re.IGNORECASE)
     # A single token containing a digit is almost always an event code, not a
     # place (e.g. "EEML2022"); real one-word cities don't carry numbers.
     if " " not in text and any(ch.isdigit() for ch in text):

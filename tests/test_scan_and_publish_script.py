@@ -23,6 +23,8 @@ def test_scheduled_scan_retries_git_and_recovers_pending_publish() -> None:
     assert "Test-AutomationGeneratedPath" in source
     assert "BRAVE_SEARCH_API_KEY" in source
     assert "search_healthcheck --provider brave --strict" in source
+    assert "function Test-MissedScheduledFullScan" in source
+    assert "A scheduled source scan was missed" in source
 
 
 def test_scheduled_task_is_allowed_to_run_on_battery() -> None:

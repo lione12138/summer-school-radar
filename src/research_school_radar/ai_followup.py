@@ -45,6 +45,7 @@ _LINK_TERMS = {
     "financial support": 8,
     "practical information": 6,
     "admission": 6,
+    "find out more": 2,
 }
 _FIELD_TERMS = {
     "application_deadline": ("application", "apply", "registration", "register", "deadline", "dates"),
@@ -204,6 +205,32 @@ def collect_follow_up_pages(
     for _round in range(max(0, config.max_rounds)):
         tasks: dict[str, set[str]] = defaultdict(set)
         sources: dict[str, Source] = {}
+        # A model may already have identified the official application portal
+        # while deadline/fee/status remain missing. Fetch that exact URL even
+        # when its anchor label is the unhelpful "Find out more".
+        if _round == 0:
+            for item in selected:
+                parent = str(item.get("page_url", ""))
+                extraction = item.get("llm_extraction", {})
+                application_url = (
+                    _normalize_url(_field_text(extraction.get("application_url")))
+                    if isinstance(extraction, dict)
+                    else ""
+                )
+                base_page = page_by_url.get(_normalize_url(parent))
+                if (
+                    base_page is not None
+                    and application_url
+                    and application_url != _normalize_url(parent)
+                    and _fetchable_url(application_url)
+                    and (
+                        not config.official_domains_only
+                        or _same_official_domain(parent, application_url)
+                    )
+                ):
+                    seen_by_parent[parent].add(application_url)
+                    tasks[application_url].add(parent)
+                    sources.setdefault(application_url, _linked_source(base_page, application_url))
         for parent, frontier_pages in frontier.items():
             capacity = config.max_pages_per_opportunity - len(result.pages_by_parent[parent])
             if capacity <= 0:
@@ -499,7 +526,25 @@ def _same_official_domain(left: str, right: str) -> bool:
     right_host = (urlsplit(right).hostname or "").lower().removeprefix("www.")
     if not left_host or not right_host:
         return False
-    return left_host == right_host or left_host.endswith(f".{right_host}") or right_host.endswith(f".{left_host}")
+    return (
+        left_host == right_host
+        or left_host.endswith(f".{right_host}")
+        or right_host.endswith(f".{left_host}")
+        or _registrable_domain(left_host) == _registrable_domain(right_host)
+    )
+
+
+def _registrable_domain(host: str) -> str:
+    labels = [label for label in host.split(".") if label]
+    if len(labels) <= 2:
+        return ".".join(labels)
+    common_second_level_suffixes = {
+        "ac.uk", "co.uk", "org.uk", "gov.uk",
+        "com.au", "edu.au", "org.au",
+        "co.nz", "ac.nz", "co.jp",
+    }
+    suffix = ".".join(labels[-2:])
+    return ".".join(labels[-3:]) if suffix in common_second_level_suffixes else suffix
 
 
 def _unique_pages(pages: Sequence[Page]) -> list[Page]:
