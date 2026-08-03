@@ -125,7 +125,7 @@
       "about.what.title": {en:"What it is", zh:"它是什么"},
       "about.what.body": {en:"Summa is an open-source, fixed-source scanner with rule-based extraction and transparent per-field evidence. It is not a fully automatic all-web crawler.", zh:"Summa 是一个开源的固定来源扫描器，使用规则提取，并为每个字段保留证据。它不是全网自动爬虫。"},
       "about.domains.title": {en:"Domains covered", zh:"覆盖领域"},
-      "about.domains.body": {en:"It covers environmental and earth science, computing and data science, and selected social-science and humanities methods fields. The same quality filters apply across fields.", zh:"覆盖环境与地球科学、计算与数据科学，以及部分社会科学和人文学科方法领域。所有领域使用同一套质量筛选标准。"},
+      "about.domains.body": {en:"It accepts every academic discipline. The same deadline, duration, financial-access, in-person, and official-evidence rules apply to every field.", zh:"不限制学科方向。所有领域统一执行截止日期、时长、费用或资助、线下形式和官方证据规则。"},
       "about.qualifies.title": {en:"What qualifies", zh:"什么算符合"},
       "about.q1": {en:"Funded, or low / no fee — not an expensive paid course.", zh:"有资助，或低费用/免费，而不是昂贵付费课程。"},
       "about.q2": {en:"In-person — virtual-only events are set aside.", zh:"线下参与；纯线上活动会被排除。"},
@@ -141,7 +141,7 @@
       "faq.2.q": {en:"How often is it updated?", zh:"多久更新一次？"},
       "faq.2.a": {en:"The site is rebuilt daily to refresh deadline status. Source pages are fetched every Monday, Wednesday, and Friday.", zh:"网站每天重建以刷新截止日期状态；来源页面在每周一、周三和周五重新抓取。"},
       "faq.3.q": {en:"Why are some scanned events not shown?", zh:"为什么有些已扫描项目没有公开展示？"},
-      "faq.3.a": {en:"Unresolved and failed-rule records stay in the maintainer review queue. The public site only shows opportunities with verified open applications, acceptable financial access, dates, mode, and topic fit.", zh:"信息未完整确认或未通过规则的记录只保留在维护者审核队列中。公开页面只展示已确认申请开放、费用或资助可接受，并且日期、形式和主题均符合要求的机会。"},
+      "faq.3.a": {en:"Unresolved and failed-rule records stay in the maintainer review queue. The public site only shows genuine research-training opportunities with verified open applications, acceptable financial access, dates, and in-person mode. Academic discipline is not a restriction.", zh:"信息不完整或未通过规则的记录只保留在维护者审核队列中。公开页面只展示已确认属于科研训练、申请开放、费用或资助可接受、日期明确且包含线下参与的机会；学科方向不受限制。"},
       "faq.4.q": {en:"How do you avoid spam and low-quality listings?", zh:"怎么避免低质量信息？"},
       "faq.4.a": {en:"The radar only reads a curated registry of trusted academic sources. It does not crawl the open web.", zh:"它只读取人工维护的可信学术来源列表，不做开放网络泛爬。"},
       "faq.5.q": {en:"Can I suggest a source?", zh:"我可以建议来源吗？"},
@@ -157,7 +157,7 @@
       "foot.explore": {en:"Explore", zh:"浏览"},
       "foot.project": {en:"Project", zh:"项目"},
       "foot.contribute": {en:"Contribute", zh:"参与"},
-      "foot.blurb": {en:"A free, open-source scanner for funded research summer schools, winter schools, and training schools across many academic fields. Updated daily.", zh:"一个免费的开源扫描器，追踪多个学科中有资助的暑校、冬校和训练营项目。每天更新。"},
+      "foot.blurb": {en:"A free, open-source scanner for high-quality research summer schools, winter schools, and training schools in any academic discipline. Updated daily.", zh:"一个免费的开源扫描器，追踪不限学科的优质科研暑校、冬校和训练学校。每天更新。"},
       "foot.legal": {en:"Near-matches are not treated as qualified opportunities. Built and maintained openly on GitHub.", zh:"近似匹配不会被当作完全符合的机会。项目在 GitHub 上公开维护。"}
     };
     function txt(el, lang){
