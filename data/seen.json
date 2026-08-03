@@ -134,6 +134,14 @@
     "status": "near_match",
     "title": "Home - Deep Learning Indaba"
   },
+  "https://dhsi.org/scholarships/": {
+    "deadline": null,
+    "first_seen": "2026-08-03",
+    "last_seen": "2026-08-03",
+    "source_url": "https://dhsi.org/scholarships/",
+    "status": "near_match",
+    "title": "Digital Humanities Summer Institute"
+  },
   "https://eage.eventsair.com/6th-eage-workshop-on-fiber-optic-sensing-for-energy-applications": {
     "deadline": "2026-06-21",
     "first_seen": "2026-06-14",
@@ -474,7 +482,7 @@
   "https://essexsummerschool.com/summer-school-facts/scholarships/q-step-scholarship/": {
     "deadline": "2026-04-03",
     "first_seen": "2026-06-18",
-    "last_seen": "2026-07-27",
+    "last_seen": "2026-08-03",
     "source_url": "https://essexsummerschool.com/summer-school-facts/scholarships/q-step-scholarship/",
     "status": "near_match",
     "title": "Social Science Data Analysis"
@@ -617,7 +625,7 @@
   "https://lig-alps.imag.fr/": {
     "deadline": null,
     "first_seen": "2026-07-16",
-    "last_seen": "2026-07-27",
+    "last_seen": "2026-08-03",
     "source_url": "https://lig-alps.imag.fr/",
     "status": "near_match",
     "title": "Welcome to ALPS 2027, the Advanced Language Processing School in the Alps"
@@ -954,6 +962,30 @@
     "status": "near_match",
     "title": "Lectures (this is not a final list)"
   },
+  "https://www.cost.eu/cost-events/cinnamon-ts1-2026/": {
+    "deadline": "2026-08-16",
+    "first_seen": "2026-08-03",
+    "last_seen": "2026-08-03",
+    "source_url": "https://www.cost.eu/cost-events/cinnamon-ts1-2026/",
+    "status": "near_match",
+    "title": "CINNAMON training school: From bench to bedside: translating CAR-T and cell-based immunotherapies"
+  },
+  "https://www.cost.eu/cost-events/enfiber-training-school-2026/": {
+    "deadline": "2026-07-12",
+    "first_seen": "2026-08-03",
+    "last_seen": "2026-08-03",
+    "source_url": "https://www.cost.eu/cost-events/enfiber-training-school-2026/",
+    "status": "near_match",
+    "title": "ENFiber training school"
+  },
+  "https://www.cost.eu/cost-events/pact-training-school-energy-transition-in-ports-and-cities-territories/": {
+    "deadline": "2026-07-25",
+    "first_seen": "2026-08-03",
+    "last_seen": "2026-08-03",
+    "source_url": "https://www.cost.eu/cost-events/pact-training-school-energy-transition-in-ports-and-cities-territories/",
+    "status": "near_match",
+    "title": "PACT Training School"
+  },
   "https://www.cs.uoregon.edu/research/summerschool/summer26/": {
     "deadline": null,
     "first_seen": "2026-06-16",
@@ -1264,6 +1296,14 @@
     "source_url": "https://www.isprs.org/society/awards/torlegard.aspx",
     "status": "near_match",
     "title": "Deed of Award"
+  },
+  "https://www.keele.ac.uk/astronomy-summer-school/": {
+    "deadline": null,
+    "first_seen": "2026-08-03",
+    "last_seen": "2026-08-03",
+    "source_url": "https://www.keele.ac.uk/astronomy-summer-school/",
+    "status": "near_match",
+    "title": "STFC Summer School"
   },
   "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/": {
     "deadline": null,
