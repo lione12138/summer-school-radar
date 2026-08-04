@@ -109,6 +109,24 @@ def run_refinement_queries(
     return results, errors
 
 
+def official_resolution_queries(leads: list[SearchResult], limit: int = 8) -> list[str]:
+    """Turn lead-only collection results into searches for canonical pages."""
+    queries: list[str] = []
+    seen: set[str] = set()
+    for lead in leads:
+        title = " ".join(lead.title.split()).strip(" -–—|")
+        if not title:
+            continue
+        query = f'"{title[:140]}" official university institute application'
+        if query.casefold() in seen:
+            continue
+        seen.add(query.casefold())
+        queries.append(query)
+        if len(queries) >= limit:
+            break
+    return queries
+
+
 def _api_key(name: str) -> str:
     try:
         from dotenv import load_dotenv

@@ -10,6 +10,8 @@ from research_school_radar.rank import rank_candidates
 from research_school_radar.search import (
     BRAVE_ENDPOINT,
     SERPER_ENDPOINT,
+    SearchResult,
+    official_resolution_queries,
     run_discovery_queries,
     run_refinement_queries,
 )
@@ -512,4 +514,20 @@ def test_refinement_parses_brave_results(monkeypatch) -> None:
     request = responses.calls[0].request
     assert "extra_snippets=true" in request.url
     assert "safesearch=strict" in request.url
+
+
+def test_collection_leads_become_official_resolution_queries() -> None:
+    leads = [
+        SearchResult(
+            title="Empirical Research Methods Summer School 2026",
+            url="https://www.summerschoolsineurope.eu/course/123",
+            snippet="",
+            query="collection",
+            provider="serper",
+        )
+    ]
+
+    assert official_resolution_queries(leads) == [
+        '"Empirical Research Methods Summer School 2026" official university institute application'
+    ]
 

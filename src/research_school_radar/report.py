@@ -6,7 +6,7 @@ from pathlib import Path
 from .atomic_io import write_text_atomic
 from .models import Candidate
 from .programme_sessions import programme_duration_label
-from .publication import is_found_opportunity, is_high_quality
+from .publication import is_high_quality
 from .urls import markdown_link, markdown_text
 from .utils import format_duration, topics_label
 
@@ -17,10 +17,6 @@ def _high_quality(candidates: list[Candidate]) -> list[Candidate]:
         for item in candidates
         if is_high_quality(item)
     ]
-
-
-def _found(candidates: list[Candidate]) -> list[Candidate]:
-    return [item for item in candidates if is_found_opportunity(item)]
 
 
 README_START = "<!-- radar:results:start -->"
@@ -37,7 +33,6 @@ def write_report(candidates: list[Candidate], output_dir: Path, errors: list[str
 def render_report(candidates: list[Candidate], errors: list[str]) -> str:
     full = [item for item in candidates if item.fully_qualified][:10]
     high = _high_quality(candidates)[:10]
-    found = _found(candidates)[:10]
     lines = [f"# Summa Report - {date.today().isoformat()}", ""]
 
     if errors:
@@ -46,17 +41,14 @@ def render_report(candidates: list[Candidate], errors: list[str]) -> str:
         lines.append("")
 
     if full:
-        lines.extend(["## Fully Qualified Opportunities", ""])
+        lines.extend(["## Funded and Accessible Recommendations", ""])
         lines.extend(_qualified_table(full))
     else:
-        lines.extend(["**No fully qualified opportunities found.**", ""])
+        lines.extend(["**No funded or low-fee recommendations found.**", ""])
     if high:
-        lines.extend(["", "## High-Quality Opportunities", ""])
+        lines.extend(["", "## Officially Verified Self-Funded Schools", ""])
         lines.extend(_near_table(high))
-    if found:
-        lines.extend(["", "## Found Opportunities", ""])
-        lines.extend(_near_table(found))
-    if not full and not high and not found:
+    if not full and not high:
         lines.append("No open opportunities were found in the latest scan.")
 
     lines.append("")
@@ -84,26 +76,22 @@ def update_readme(readme_path: Path, candidates: list[Candidate]) -> bool:
 def render_readme_section(candidates: list[Candidate]) -> str:
     full = [item for item in candidates if item.fully_qualified][:10]
     high = _high_quality(candidates)[:8]
-    found = _found(candidates)[:8]
     lines = [
         f"_Last scan: {date.today().isoformat()} · "
-        f"{len(full)} fully qualified · {len(high)} high-quality · {len(found)} found shown_",
+        f"{len(full)} funded/low-fee · {len(high)} verified self-funded shown_",
         "",
     ]
     if full:
-        lines.extend(["**Fully Qualified Opportunities**", ""])
+        lines.extend(["**Funded and Accessible Recommendations**", ""])
         lines.extend(_qualified_table(full))
     else:
         lines.append(
-            "**No fully qualified opportunities in the latest scan.** "
-            "High-quality and found opportunities below are leads for manual checking."
+            "**No funded or low-fee recommendations in the latest scan.** "
+            "Verified self-funded schools may be listed separately below."
         )
     if high:
-        lines.extend(["", "**High-Quality Opportunities**", ""])
+        lines.extend(["", "**Officially Verified Self-Funded Schools**", ""])
         lines.extend(_near_table(high))
-    if found:
-        lines.extend(["", "**Found Opportunities**", ""])
-        lines.extend(_near_table(found))
     return "\n".join(lines).rstrip() + "\n"
 
 

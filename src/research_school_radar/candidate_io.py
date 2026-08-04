@@ -58,7 +58,13 @@ def coerce_date(value: Any) -> date | None:
 def _coerce_candidate_value(name: str, value: Any) -> Any:
     if name in {"start_date", "end_date", "deadline", "first_seen"}:
         return coerce_date(value)
-    if name in {"funding_type", "topic_keywords", "failed_hard_conditions", "score_explanation"}:
+    if name in {
+        "funding_type",
+        "topic_keywords",
+        "failed_hard_conditions",
+        "failed_recommendation_conditions",
+        "score_explanation",
+    }:
         return [str(item) for item in value] if isinstance(value, list) else []
     if name == "sessions":
         if not isinstance(value, list):

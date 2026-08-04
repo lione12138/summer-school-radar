@@ -101,7 +101,11 @@ def build_audit_report(site_dir: Path, *, previous_json: Path | None = None) -> 
             "scanner": len(scanner_items),
             "previous_scanner": len(previous_scanner),
             "retention_ratio": retention_ratio,
-            "fully_qualified": sum(not _as_list(item.get("failed_hard_conditions")) for item in scanner_items),
+            "fully_qualified": sum(
+                not _as_list(item.get("failed_hard_conditions"))
+                and not _as_list(item.get("failed_recommendation_conditions"))
+                for item in scanner_items
+            ),
             "multi_session": sum(bool(_as_list(item.get("sessions"))) for item in scanner_items),
         },
         "semantic": {

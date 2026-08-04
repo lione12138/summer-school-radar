@@ -93,8 +93,8 @@ def test_fee_above_threshold_without_funding_is_near_match() -> None:
     candidate.fee_eur = 450
     candidate = apply_hard_filters(candidate, PROFILE)
     assert not candidate.fully_qualified
-    assert candidate.financial_access_status == "unresolved"
-    assert "fee exceeds EUR 400 without explicit funding" in candidate.failed_hard_conditions
+    assert candidate.financial_access_status == "self-funded"
+    assert "fee exceeds EUR 400 without explicit funding" in candidate.failed_recommendation_conditions
 
 
 def test_unknown_fee_currency_without_funding_is_near_match() -> None:
@@ -106,7 +106,10 @@ def test_unknown_fee_currency_without_funding_is_near_match() -> None:
     candidate.fee_eur = None
     candidate = apply_hard_filters(candidate, PROFILE)
     assert not candidate.fully_qualified
-    assert any("fee equivalence is uncertain" in condition for condition in candidate.failed_hard_conditions)
+    assert any(
+        "fee equivalence is uncertain" in condition
+        for condition in candidate.failed_recommendation_conditions
+    )
 
 
 def test_fee_extraction_converts_supported_currency() -> None:
@@ -901,6 +904,31 @@ def test_fall_school_is_not_mistaken_for_degree_recruitment() -> None:
 
     assert looks_like_opportunity(text)
     assert _extract_deadline(text) == date(2027, 9, 6)
+
+
+def test_registration_fee_scholarship_preserves_scope_and_ignores_navigation_noise() -> None:
+    from research_school_radar.localization import financial_summary_zh
+
+    page = _page(
+        "Scholarship Student Groups and Initiatives FAQ Contact StaRs. "
+        "Computational Linguistics Fall School 2027. The in-person school runs from "
+        "21 September 2027 to 2 October 2027 in Nuremberg. Registration is open until "
+        "6 September 2027. Registration fee: 150 EUR. Scholarships for registration fees. "
+        "Thanks to the support of GSCL and DGfS, scholarships covering the registration fee "
+        "will be available for selected participants. Latest news: UTN Awards Its First "
+        "Deutschlandstipendium Scholarship."
+    )
+
+    candidate = extract_candidate(page, PROFILE)
+
+    assert candidate is not None
+    assert candidate.funding_type == ["scholarship"]
+    assert candidate.funding_scope == "registration fee covered"
+    assert "covering the registration fee" in candidate.funding_evidence
+    assert "Student Groups and Initiatives" not in candidate.funding_evidence
+    assert "registration fee covered" in candidate.financial_summary
+    assert "amount not stated" not in candidate.financial_summary
+    assert financial_summary_zh(candidate) == "注册费奖学金 · 入选者注册费全额覆盖"
 
 
 def test_workshop_titled_page_is_dropped_even_with_course_text() -> None:

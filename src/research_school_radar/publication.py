@@ -1,11 +1,14 @@
 from __future__ import annotations
 
+import re
+
 from .models import Candidate
 from .urls import safe_external_url
 from .utils import DISPLAY_MIN_DURATION_DAYS, is_too_short
 
 
-HIGH_QUALITY_MAX_FEE_EUR_PER_DAY = 70
+DIRECTORY_MAX_TOTAL_FEE_EUR = 1500
+DIRECTORY_MAX_FEE_EUR_PER_DAY = 150
 
 GENERIC_FOUND_TITLES = {
     "application process",
@@ -16,23 +19,42 @@ GENERIC_FOUND_TITLES = {
     "tuition fees",
     "scholarships & awards",
     "key dates & application",
+    "talk to us",
+    "search form",
+    "course funding",
 }
+
+_GENERIC_TITLE_RE = re.compile(
+    r"^(?:deadline for application|application deadline|registration deadline|"
+    r"meet the lecturers?|welcome to .+ website|important dates|key dates|"
+    r"fees? and funding|funding and fees?)\b",
+    flags=re.IGNORECASE,
+)
 
 
 def is_public_candidate(candidate: Candidate) -> bool:
     if candidate.is_past or candidate.is_online_only:
         return False
-    if candidate.title.strip().lower() in GENERIC_FOUND_TITLES:
+    if not has_meaningful_title(candidate.title):
         return False
     if candidate.duration_days is not None and is_too_short(candidate.duration_days):
         return False
     # Public output is deliberately fail-closed. Unresolved candidates remain
     # available in scanner snapshots and audit reports, but the user-facing
     # site must contain only actionable records that passed every deterministic
-    # deadline, duration, financial-access, mode, and topic gate.
+    # deadline, duration, mode, topic, and link-safety gate. Recommendation
+    # affordability is intentionally handled by the separate public tier below.
     if candidate.failed_hard_conditions:
         return False
     if candidate.deadline_status != "open":
+        return False
+    if candidate.duration_days is None or candidate.mode not in {"in-person", "hybrid"}:
+        return False
+    # A directory card must state either a concrete participant benefit or a
+    # confirmed fee. Records with wholly unknown financial access stay in the
+    # private review queue instead of displaying a vague warning.
+    explicit_funding = candidate.funding_available is True and bool(candidate.funding_evidence.strip())
+    if not explicit_funding and candidate.fee_eur is None:
         return False
     if not safe_external_url(candidate.application_link):
         return False
@@ -40,17 +62,53 @@ def is_public_candidate(candidate: Candidate) -> bool:
 
 
 def is_high_quality(candidate: Candidate) -> bool:
+    """Compatibility name for the verified self-funded directory tier."""
+    return is_verified_self_funded(candidate)
+
+
+def is_verified_self_funded(candidate: Candidate) -> bool:
     if candidate.fully_qualified or not is_public_candidate(candidate):
         return False
-    if candidate.duration_days is None or candidate.duration_days < DISPLAY_MIN_DURATION_DAYS:
+    if candidate.funding_available is True or candidate.fee_eur is None:
         return False
-    if candidate.funding_available is True:
-        return True
-    return fee_per_day(candidate) <= HIGH_QUALITY_MAX_FEE_EUR_PER_DAY
+    if candidate.financial_access_status != "self-funded":
+        return False
+    if candidate.fee_eur > DIRECTORY_MAX_TOTAL_FEE_EUR:
+        return False
+    return fee_per_day(candidate) <= DIRECTORY_MAX_FEE_EUR_PER_DAY
 
 
 def is_found_opportunity(candidate: Candidate) -> bool:
-    return not candidate.fully_qualified and not is_high_quality(candidate) and is_public_candidate(candidate)
+    return False
+
+
+def is_archive_candidate(candidate: Candidate) -> bool:
+    """A verified past edition suitable for the recurring-programme library.
+
+    Archive entries are never represented as open applications and never enter
+    RSS. They provide useful programme discovery without weakening the current
+    opportunity gate.
+    """
+    if not candidate.is_past or candidate.deadline_status == "not_open" or candidate.is_online_only:
+        return False
+    if not has_meaningful_title(candidate.title):
+        return False
+    if candidate.source_layer not in {"1", "1.5"}:
+        return False
+    if candidate.duration_days is None or candidate.duration_days < DISPLAY_MIN_DURATION_DAYS:
+        return False
+    if candidate.mode not in {"in-person", "hybrid"}:
+        return False
+    if candidate.start_date is None or not safe_external_url(candidate.source_url):
+        return False
+    return candidate.funding_available is True or candidate.fee_eur is not None
+
+
+def has_meaningful_title(title: str) -> bool:
+    value = " ".join(title.split()).strip(" -–—:|")
+    if len(value) < 8 or value.casefold() in GENERIC_FOUND_TITLES:
+        return False
+    return _GENERIC_TITLE_RE.search(value) is None
 
 
 def fee_per_day(candidate: Candidate) -> float:

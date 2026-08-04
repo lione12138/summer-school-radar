@@ -76,8 +76,16 @@ class Candidate:
     # deliberately separate from source/application URLs: one catalogue page
     # can describe many distinct opportunities.
     identity_key: str = ""
+    # A non-numeric benefit can be precise even when no single currency amount
+    # applies, e.g. a scholarship that covers each selected participant's
+    # applicable registration fee.
+    funding_scope: str = ""
     financial_access_status: str = "unresolved"
     failed_hard_conditions: list[str] = field(default_factory=list)
+    # Recommendation conditions are stricter than safe public-listing
+    # conditions. A transparent self-funded school may appear in the directory
+    # without being labelled as a funded/low-fee Summa recommendation.
+    failed_recommendation_conditions: list[str] = field(default_factory=list)
     score: float = 0.0
     score_explanation: list[str] = field(default_factory=list)
     first_seen: date | None = None
@@ -131,7 +139,7 @@ class Candidate:
 
     @property
     def fully_qualified(self) -> bool:
-        return not self.failed_hard_conditions
+        return not self.failed_hard_conditions and not self.failed_recommendation_conditions
 
     @property
     def is_online_only(self) -> bool:
@@ -143,6 +151,8 @@ class Candidate:
     @property
     def financial_summary(self) -> str:
         if self.funding_available is True:
+            if self.funding_scope == "registration fee covered":
+                return "registration-fee scholarship · registration fee covered · Selected participants"
             funding_label = ", ".join(self.funding_type) or "Funding available"
             amount = _money_amount(self.funding_evidence)
             amount_text = amount or "amount not stated"

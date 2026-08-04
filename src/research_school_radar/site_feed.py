@@ -15,6 +15,7 @@ def render_feed(
     curated: list[dict[str, Any]] | None,
     site_config: dict[str, Any] | None = None,
     *,
+    is_public_candidate: Callable[[Candidate], bool],
     is_online_only: Callable[[Candidate], bool],
     is_high_quality: Callable[[Candidate], bool],
     duration: Callable[[Candidate], str],
@@ -28,7 +29,11 @@ def render_feed(
     configured_site_url = safe_external_url((site_config or {}).get("site_url"))
     site_url = (configured_site_url or SITE_URL).rstrip("/") + "/"
     feed_url = site_url + "feed.xml"
-    qualified = [item for item in candidates if item.fully_qualified and not is_online_only(item)]
+    qualified = [
+        item
+        for item in candidates
+        if item.fully_qualified and is_public_candidate(item) and not is_online_only(item)
+    ]
     near = [item for item in candidates if is_high_quality(item)]
     scanner_items = [
         _candidate_feed_item(item, duration, public_location, topics_label)
@@ -51,11 +56,11 @@ def render_feed(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n'
         "  <channel>\n"
-        "    <title>Summa · Funded research summer schools</title>\n"
+        "    <title>Summa · Research training opportunities</title>\n"
         f"    <link>{escape(site_url)}</link>\n"
         f'    <atom:link href="{escape(feed_url)}" rel="self" type="application/rss+xml"/>\n'
-        "    <description>Funded research summer schools, winter schools, and training "
-        "schools in any academic discipline, selected by the same evidence-based quality rules.</description>\n"
+        "    <description>Funded and accessible research-training recommendations, plus "
+        "clearly separated officially verified self-funded schools.</description>\n"
         "    <language>en</language>\n"
         f"    <copyright>Data CC BY 4.0 — reuse with attribution and a link back to {escape(site_url)}</copyright>\n"
         "    <generator>Summa</generator>\n"
@@ -89,7 +94,7 @@ def _candidate_feed_item(
         "title": f"{candidate.title} — {candidate.organizer}",
         "link": safe_external_url(candidate.application_link or candidate.source_url),
         "guid": candidate.identity_key or safe_external_url(candidate.source_url),
-        "tag": "Fully qualified" if candidate.fully_qualified else "High quality",
+        "tag": "Funded / low fee" if candidate.fully_qualified else "Verified self-funded",
         "date": candidate.first_seen or date.today(),
         "summary": ". ".join(part for part in parts if part),
     }

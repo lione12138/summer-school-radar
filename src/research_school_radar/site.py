@@ -161,6 +161,7 @@ def write_site(
             scanner_candidates,
             curated,
             site_config or {},
+            is_public_candidate=is_public_candidate,
             is_online_only=_is_online_only,
             is_high_quality=is_high_quality,
             duration=_duration,

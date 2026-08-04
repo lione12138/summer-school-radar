@@ -250,7 +250,7 @@ def test_rank_recomputes_filters_and_score_after_duplicate_enrichment() -> None:
         apply_hard_filters(primary, PROFILE),
         apply_hard_filters(supplement, PROFILE),
     ]
-    assert "funding is not explicit and fee is uncertain" in primary.failed_hard_conditions
+    assert "funding is not explicit and fee is uncertain" in primary.failed_recommendation_conditions
 
     ranked = rank_candidates(filtered, profile=PROFILE)
 

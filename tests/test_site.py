@@ -69,6 +69,33 @@ def test_listed_opportunities_are_interleaved_by_organizer() -> None:
     assert [candidate.title for candidate in interleaved] == ["A1", "B1", "C1", "A2", "A3"]
 
 
+def test_recurring_programme_library_is_separate_and_capped_by_organizer(tmp_path) -> None:
+    candidates = []
+    for index, organizer in enumerate(("Large Catalogue", "Large Catalogue", "Large Catalogue", "AI Society"), start=1):
+        candidate = sample_candidate(PROFILE)
+        candidate.title = f"Recurring Research School {index}"
+        candidate.organizer = organizer
+        candidate.source_layer = "1"
+        candidate.source_url = f"https://example.org/archive-{index}"
+        candidate.application_link = candidate.source_url
+        candidate.identity_key = f"archive:{index}"
+        candidate.deadline = date.today() - timedelta(days=10)
+        candidate.deadline_status = "closed"
+        candidate.start_date = date.today() - timedelta(days=5)
+        candidate.end_date = date.today() + timedelta(days=5)
+        candidates.append(apply_hard_filters(candidate, PROFILE))
+
+    html = write_site(rank_candidates(candidates), [], tmp_path).read_text(encoding="utf-8")
+
+    assert "Recurring programme library" in html
+    assert "Past edition · applications closed" in html
+    assert "Recurring Research School 1" in html
+    assert "Recurring Research School 2" in html
+    assert "Recurring Research School 3" not in html
+    assert "Recurring Research School 4" in html
+    assert 'data-status="qualified"' not in html
+
+
 def _page(text: str, *, html: str = "", title: str = "Test School") -> Page:
     source = Source(
         name="Example Source",
@@ -573,7 +600,7 @@ def test_unresolved_high_quality_candidate_is_not_published(tmp_path) -> None:
     assert '<details class="cal">' not in html
 
 
-def test_public_site_omits_explicitly_unaffordable_courses(tmp_path) -> None:
+def test_public_site_separates_verified_self_funded_courses(tmp_path) -> None:
     affordable = sample_candidate(PROFILE)
     affordable.title = "Affordable Eight Day School"
     affordable.source_url = "https://example.org/affordable"
@@ -607,14 +634,16 @@ def test_public_site_omits_explicitly_unaffordable_courses(tmp_path) -> None:
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
     assert "Affordable Eight Day School" in html
     assert 'data-status="qualified"' in html
-    assert "Expensive Eight Day School" not in html
+    assert "Expensive Eight Day School" in html
+    assert 'data-status="high-quality"' in html
+    assert "Officially Verified Self-Funded Schools" in html
 
 
 def test_status_line_uses_correct_singular_and_plural(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
-    assert "1 fully qualified opportunity in the latest scan" in html
+    assert "1 funded or low-fee recommendation in the latest scan" in html
     assert "opportunityies" not in html
 
 
@@ -710,6 +739,18 @@ def test_untrusted_external_urls_are_not_rendered(tmp_path) -> None:
     assert "javascript:" not in index
     assert "data:text/html" not in source_page
     assert "javascript:" not in feed
+
+
+def test_candidate_with_unsafe_application_link_is_excluded_from_site_and_feed(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    candidate.application_link = "javascript:alert(1)"
+
+    write_site([candidate], [], tmp_path)
+
+    index = (tmp_path / "index.html").read_text(encoding="utf-8")
+    feed = (tmp_path / "feed.xml").read_text(encoding="utf-8")
+    assert candidate.title not in index
+    assert candidate.title not in feed
 
 
 def test_near_matches_hide_durationless_supplemental_pages(tmp_path) -> None:

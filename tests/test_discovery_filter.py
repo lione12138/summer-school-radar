@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from datetime import date
 
-from research_school_radar.discovery_filter import filter_discovery_results
+from research_school_radar.discovery_filter import aggregator_discovery_leads, filter_discovery_results
 from research_school_radar.search import SearchResult
 
 
@@ -56,3 +56,15 @@ def test_discovery_filter_accepts_fall_schools_and_summer_institutes() -> None:
     result = filter_discovery_results([fall_school, summer_institute], today=date(2026, 8, 3))
 
     assert result.accepted == [fall_school, summer_institute]
+
+
+def test_aggregator_results_are_leads_only_and_never_accepted_as_evidence() -> None:
+    lead = _result(
+        "Empirical Research Methods Summer School 2026",
+        "https://www.summerschoolsineurope.eu/course/123",
+    )
+
+    assert aggregator_discovery_leads([lead], today=date(2026, 8, 4)) == [lead]
+    filtered = filter_discovery_results([lead], today=date(2026, 8, 4))
+    assert filtered.accepted == []
+    assert filtered.rejected == {"aggregator_domain": 1}

@@ -26,6 +26,7 @@ FIELD_NAMES = {
     "deadline_status",
     "funding_available",
     "funding_type",
+    "funding_scope",
     "funding_evidence",
     "topic_keywords",
     "eligibility",
@@ -179,7 +180,8 @@ def _needs_review(candidate: Candidate) -> bool:
         return False
     if candidate.duration_days is None and candidate.title.strip().lower() in GENERIC_REVIEW_TITLES:
         return False
-    return any(reason in REVIEWABLE_FAILURES for reason in candidate.failed_hard_conditions)
+    failures = [*candidate.failed_hard_conditions, *candidate.failed_recommendation_conditions]
+    return any(reason in REVIEWABLE_FAILURES for reason in failures)
 
 
 def _review_priority(candidate: Candidate) -> int:
@@ -217,7 +219,10 @@ def _review_item(candidate: Candidate, ai_items: list[dict[str, Any]] | None = N
         "fee": candidate.fee,
         "fee_eur": candidate.fee_eur,
         "topics": candidate.topic_keywords,
-        "needs_review": candidate.failed_hard_conditions,
+        "needs_review": [
+            *candidate.failed_hard_conditions,
+            *candidate.failed_recommendation_conditions,
+        ],
         "confidence": candidate.extraction_confidence,
         "evidence": {
             "deadline": candidate.deadline_evidence,

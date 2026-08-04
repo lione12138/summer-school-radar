@@ -31,8 +31,8 @@
   </header>
   <main class="wrap">
     <div class="stats">
-      <div class="stat"><div class="num">{{ full_count }}</div><div class="lbl" data-i18n="stat.qualified">Fully qualified</div></div>
-      <div class="stat"><div class="num">{{ near_count }}</div><div class="lbl" data-i18n="stat.near">High quality</div></div>
+      <div class="stat"><div class="num">{{ full_count }}</div><div class="lbl" data-i18n="stat.qualified">Funded / low fee</div></div>
+      <div class="stat"><div class="num">{{ near_count }}</div><div class="lbl" data-i18n="stat.near">Verified self-funded</div></div>
       <div class="stat"><div class="num">{{ tracked_sources }}</div><div class="lbl" data-i18n="stat.sources">Trusted sources</div></div>
       <div class="stat"><div class="num sm">{{ updated }}</div><div class="lbl" data-i18n="stat.updated">Last updated</div></div>
     </div>
@@ -45,8 +45,8 @@
           {{ curated_section|safe }}
           {{ qualified_section|safe }}
           {{ near_block|safe }}
-          {{ found_section|safe }}
           {{ pagination|safe }}
+          {{ archive_section|safe }}
         </div>
       </div>
     </section>

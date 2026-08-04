@@ -1,0 +1,12 @@
+<article class="library-card">
+  <div class="library-card-head">
+    <span class="library-status" data-i18n="library.closed">Past edition · applications closed</span>
+    <h3>{{ title|safe }}</h3>
+  </div>
+  <p>{{ organizer|safe }} · {{ location|safe }}</p>
+  <div class="library-facts">
+    <span>{{ duration|safe }}</span>
+    <span>{{ funding|safe }}</span>
+  </div>
+  {% if official_url %}<a class="button tonal" href="{{ official_url }}" target="_blank" rel="noopener" data-i18n="library.official">View official programme</a>{% endif %}
+</article>

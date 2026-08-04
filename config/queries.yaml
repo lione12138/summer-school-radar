@@ -24,3 +24,9 @@ queries:
     - '"winter school" "free of charge" PhD'
     - '"training school" accommodation covered travel covered'
     - '"summer school" "fee waiver" international students research'
+  collection_leads:
+    # Lead-only searches run exclusively in an explicit non-publishing audit.
+    # Aggregator pages are never fetched or cited; their titles trigger a
+    # second Serper search for a canonical university/institute page.
+    - 'site:summerschoolsineurope.eu "summer school" 2026 research'
+    - 'site:study.eu "summer school" 2026 university'

@@ -16,6 +16,14 @@
 #       fee_eur: 300
 #       deadline_evidence: Application deadline is 15 October 2026.
 overrides:
+  - url: https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/
+    status: update
+    note: The official UTN programme section states that selected participants can receive scholarships covering the applicable registration fee; Deutschlandstipendium in the page footer is unrelated navigation/news content.
+    fields:
+      funding_available: true
+      funding_type: [scholarship]
+      funding_scope: registration fee covered
+      funding_evidence: Thanks to the support of the associations GSCL and DGfS, scholarships covering the registration fee will be available for selected participants.
   - url: https://events.vtools.ieee.org/m/564683
     status: update
     note: The official IEEE announcement closed applications on 13 July; 31 July is registration/payment for accepted applicants, not an application deadline.

@@ -28,6 +28,8 @@ _AGGREGATOR_HOSTS = {
     "scholarships.com",
     "opportunitiesforafricans.com",
     "youthop.com",
+    "summerschoolsineurope.eu",
+    "study.eu",
 }
 _PROGRAMME_RE = re.compile(
     r"\b(summer|winter|spring|autumn|fall|seasonal|training|field|doctoral|research) school\b|"
@@ -51,6 +53,36 @@ _YEAR_RE = re.compile(r"\b20\d{2}\b")
 class DiscoveryFilterResult:
     accepted: list[SearchResult]
     rejected: dict[str, int]
+
+
+def aggregator_discovery_leads(
+    results: list[SearchResult], *, today: date | None = None, limit: int = 8
+) -> list[SearchResult]:
+    """Keep aggregator hits only as title leads for a second official search.
+
+    Their URLs are never fetched and their snippets never become evidence.
+    LinkedIn and other social results remain excluded entirely.
+    """
+    current_year = (today or date.today()).year
+    leads: list[SearchResult] = []
+    seen_titles: set[str] = set()
+    for result in results:
+        url = safe_external_url(result.url)
+        hostname = (urlsplit(url).hostname or "").lower().removeprefix("www.") if url else ""
+        combined = f"{result.title} {result.snippet}"
+        years = [int(value) for value in _YEAR_RE.findall(combined)]
+        title_key = " ".join(result.title.split()).casefold()
+        if not _host_matches(hostname, _AGGREGATOR_HOSTS):
+            continue
+        if not _PROGRAMME_RE.search(combined) or (years and max(years) < current_year):
+            continue
+        if len(title_key) < 12 or title_key in seen_titles:
+            continue
+        seen_titles.add(title_key)
+        leads.append(result)
+        if len(leads) >= limit:
+            break
+    return leads
 
 
 def filter_discovery_results(

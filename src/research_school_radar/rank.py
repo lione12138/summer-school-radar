@@ -91,9 +91,10 @@ def score_candidate(candidate: Candidate) -> tuple[float, list[str]]:
     if candidate.topic_keywords:
         reasons.append(f"topics: {', '.join(candidate.topic_keywords[:4])}")
 
-    if candidate.failed_hard_conditions:
-        score -= 8 * len(candidate.failed_hard_conditions)
-        reasons.append("near-match only: " + "; ".join(candidate.failed_hard_conditions))
+    failures = [*candidate.failed_hard_conditions, *candidate.failed_recommendation_conditions]
+    if failures:
+        score -= 8 * len(failures)
+        reasons.append("near-match only: " + "; ".join(failures))
 
     return max(score, 0.0), reasons
 

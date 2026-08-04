@@ -9,6 +9,7 @@ from .utils import DISPLAY_MIN_DURATION_DAYS
 def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
     hard = profile.get("hard_filters", {})
     failed: list[str] = []
+    recommendation_failed: list[str] = []
 
     if hard.get("require_open_deadline", True):
         if candidate.deadline_status == "uncertain" and candidate.deadline is None and _starts_too_soon(candidate):
@@ -34,16 +35,22 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
         candidate.financial_access_status = "funded"
     elif low_fee:
         candidate.financial_access_status = "low-fee"
+    elif candidate.fee_eur is not None:
+        candidate.financial_access_status = "self-funded"
     else:
         candidate.financial_access_status = "unresolved"
     if require_financial_access:
         if not explicit_funding and not low_fee:
             if candidate.fee_eur is not None:
-                failed.append(f"fee exceeds EUR {maximum_fee:.0f} without explicit funding")
+                recommendation_failed.append(
+                    f"fee exceeds EUR {maximum_fee:.0f} without explicit funding"
+                )
             elif candidate.fee:
-                failed.append("funding is not explicit and fee equivalence is uncertain")
+                recommendation_failed.append(
+                    "funding is not explicit and fee equivalence is uncertain"
+                )
             else:
-                failed.append("funding is not explicit and fee is uncertain")
+                recommendation_failed.append("funding is not explicit and fee is uncertain")
 
     if not hard.get("allow_online_only", False):
         if candidate.mode == "online":
@@ -58,7 +65,9 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
         failed.append("topic relevance is uncertain")
 
     candidate.failed_hard_conditions = failed
-    candidate.risk_points = "; ".join(failed) if failed else _risk_points(candidate)
+    candidate.failed_recommendation_conditions = recommendation_failed
+    all_failures = [*failed, *recommendation_failed]
+    candidate.risk_points = "; ".join(all_failures) if all_failures else _risk_points(candidate)
     return candidate
 
 

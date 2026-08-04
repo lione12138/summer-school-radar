@@ -38,7 +38,9 @@ FUNDING_PATTERNS = {
     ),
     "tuition waiver": r"tuition waiver[s]?",
     "fee waiver": r"fee waiver[s]?|registration (?:fee )?waiver|waived (?:registration|tuition) fee",
-    "stipend": r"stipend[s]?",
+    # Word boundaries avoid treating institution names such as the German
+    # "Deutschlandstipendium" as a participant stipend on the current page.
+    "stipend": r"\bstipends?\b",
     "accommodation support": (
         r"accommodation support|covered accommodation|accommodation is covered|free accommodation"
         r"|(?:accommodation|board and lodging|board|lodging|meals?)\s+(?:is|are|will be)?\s*(?:provided|covered|included)"
@@ -87,6 +89,15 @@ PARTICIPANT_PAYMENT_RESPONSIBILITY_PATTERN = (
 # that participants must pay whatever remains, so that statement must not erase
 # them.  Only the ambiguous catch-all "financial support" is overridden.
 CONCRETE_FUNDING_TYPES = frozenset(FUNDING_PATTERNS) - {"financial support"}
+
+REGISTRATION_FEE_COVERAGE_RE = re.compile(
+    r"(?:scholarships?|grants?|bursar(?:y|ies)|support)[^.\n]{0,180}"
+    r"(?:cover(?:s|ed|ing)?|reimburs(?:e[sd]?|ement)|waiv(?:e[sd]?|ing))"
+    r"[^.\n]{0,60}(?:the\s+)?registration fees?"
+    r"|registration fees?[^.\n]{0,100}"
+    r"(?:cover(?:s|ed|ing)?|reimburs(?:e[sd]?|ement)|waiv(?:e[sd]?|ing))",
+    flags=re.IGNORECASE,
+)
 
 # Generic page titles that carry no opportunity identity and should be skipped
 # in favour of an <h1> or og:title.
@@ -267,10 +278,11 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         funding_evidence = payment_responsibility_evidence
     else:
         funding_available = overrides.get("funding_available", True if funding_types else None)
-        funding_evidence = str(overrides.get("funding_evidence") or evidence_window(
-            text,
-            r"scholarship|travel grant|tuition waiver|stipend|financial support|funding",
-        ))
+        funding_evidence = str(
+            overrides.get("funding_evidence")
+            or _funding_offer_evidence(text)
+        )
+    funding_scope = str(overrides.get("funding_scope") or _funding_scope(text))
     mode = _extract_mode(text)
     # Fall back to the JSON-LD event name when the page's HTML titles are all
     # generic ("Home", "Events", ...).
@@ -343,6 +355,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         summary=_summary(text),
         recommendation_reason="",
         risk_points="",
+        funding_scope=funding_scope,
         sessions=sessions,
         deadline_evidence=deadline_evidence,
         duration_evidence=duration_evidence,
@@ -391,6 +404,40 @@ def _funding_is_offered(text: str, pattern: str) -> bool:
         if FUNDING_OFFER_CUE.search(context):
             return True
     return False
+
+
+def _funding_scope(text: str) -> str:
+    if REGISTRATION_FEE_COVERAGE_RE.search(text):
+        return "registration fee covered"
+    return ""
+
+
+def _funding_offer_evidence(text: str) -> str:
+    """Return a concrete participant-benefit sentence, not a menu label.
+
+    Funding nouns frequently occur in global navigation and recent-post lists.
+    Reuse the same nearby-offer requirement used for classification, preferring
+    an explicit coverage statement when one is available.
+    """
+    scope_match = REGISTRATION_FEE_COVERAGE_RE.search(text)
+    if scope_match:
+        return _sentence_window(text, scope_match.start(), scope_match.end())
+    for pattern in FUNDING_PATTERNS.values():
+        for match in re.finditer(pattern, text, flags=re.IGNORECASE):
+            before = text[max(0, match.start() - 40):match.start()]
+            context = text[max(0, match.start() - 80):min(len(text), match.end() + 120)]
+            if not NEGATION_BEFORE.search(before) and FUNDING_OFFER_CUE.search(context):
+                return _sentence_window(text, match.start(), match.end())
+    return ""
+
+
+def _sentence_window(text: str, start: int, end: int) -> str:
+    sentence_start = max(text.rfind(".", 0, start), text.rfind("\n", 0, start)) + 1
+    period = text.find(".", end)
+    newline = text.find("\n", end)
+    candidates = [value for value in (period, newline) if value >= 0]
+    sentence_end = min(candidates) + 1 if candidates else min(len(text), end + 180)
+    return clean_space(text[sentence_start:sentence_end])
 
 
 def _has_opportunity_signal(text: str) -> bool:

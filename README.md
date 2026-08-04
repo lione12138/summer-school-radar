@@ -53,8 +53,10 @@ Unresolved, closed, not-yet-open, and unaffordable records remain in the generat
 
 The generated website publishes verified scanner results and keeps unresolved records in internal audit artifacts:
 
-- **Fully Qualified Opportunities**: scanner results that satisfy every hard condition.
-- **Internal review records**: high-quality leads and other found records that still have an uncertain deadline, fee, mode, application link, or another failed hard condition. They remain in `site/candidates.json` and `data/review_queue.json` but are not rendered publicly.
+- **Funded and accessible recommendations**: open, on-site programmes with explicit participant support or a confirmed total fee no higher than approximately EUR 400.
+- **Officially verified self-funded schools**: open programmes whose official dates, location and fee are clear, shown separately and never described as funded recommendations. The directory excludes very high total or daily fees.
+- **Recurring programme library**: verified past editions from official sources, clearly marked closed and excluded from open-opportunity counts and RSS.
+- **Internal review records**: records with an uncertain deadline, fee, mode, unsafe title/link, or another failed public condition. They remain in `site/candidates.json` and `data/review_queue.json` but are not rendered as current opportunities.
 - **Sources & Coverage**: the configured trusted source registry, including disabled sources and notes.
 
 The site includes filters for keyword, status, topic, financial access, and deadline status. On desktop they stay in a left sidebar; on mobile search remains visible and the additional filters collapse behind a compact control. Matching records are paginated at 15 per page. Rows with a known application deadline include an **Add to calendar** menu (Google Calendar, Outlook, or a downloadable `.ics` file).
@@ -85,7 +87,7 @@ An opportunity must satisfy all hard conditions:
 | Mode | In-person or substantially on-site, not online-only |
 | Research scope | Any academic discipline, provided the programme is genuine short-form research training rather than an excluded degree, admissions, conference-workshop, tourism, or generic study-abroad offer |
 
-Near-matches are never rendered on the public site. They remain auditable in generated JSON and the maintainer review queue.
+Failed public-safety records are never rendered as current opportunities. A programme that passes the date, duration, in-person, title, link, and financial-evidence gates may appear in the explicitly labelled self-funded directory without being promoted to a Summa recommendation.
 
 Foreign-currency fees are converted with configurable fixed reference rates so the default workflow remains free and API-key-free. The rates are deliberately conservative, not real-time. Unknown currencies or ambiguous fees remain near-matches.
 

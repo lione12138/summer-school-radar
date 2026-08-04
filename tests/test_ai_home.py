@@ -217,7 +217,7 @@ def test_evidence_backed_ai_fee_replaces_false_rule_based_zero() -> None:
 
     assert merged[0].fee == "EUR 750"
     assert merged[0].fee_eur == 750
-    assert "fee exceeds EUR 400" in merged[0].failed_hard_conditions[0]
+    assert "fee exceeds EUR 400" in merged[0].failed_recommendation_conditions[0]
 
 
 def test_unmatched_valid_ai_opportunity_becomes_homepage_candidate() -> None:
@@ -239,7 +239,7 @@ def test_write_site_renders_ai_result_in_existing_tables(tmp_path) -> None:
     write_site([], [], tmp_path, ai_items=[_item("https://example.org/new-school")], profile=PROFILE)
 
     html = (tmp_path / "index.html").read_text(encoding="utf-8")
-    assert "Fully Qualified Opportunities" in html
+    assert "Funded and Accessible Recommendations" in html
     assert "AI Research Summer School" in html
     assert "2027-04-15" in html
     assert "ai-review.html" not in html

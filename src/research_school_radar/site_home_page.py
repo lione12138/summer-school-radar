@@ -6,7 +6,11 @@ from urllib.parse import quote
 
 from .localization import financial_summary_zh, region_zh, topic_zh, topics_label_zh
 from .models import Candidate
-from .publication import is_found_opportunity, is_high_quality, is_public_candidate
+from .publication import (
+    is_archive_candidate,
+    is_public_candidate,
+    is_verified_self_funded,
+)
 from .site_assets import render_template
 from .site_components import (
     bilingual as _bilingual,
@@ -52,15 +56,16 @@ def _status_banner(full_count: int, near_count: int, tracked_total: int, tracked
     opportunities = f"{tracked_total} opportunit{'ies' if tracked_total != 1 else 'y'}"
     coverage = f"Tracking {opportunities} across {tracked_sources} trusted sources."
     if full_count:
-        label = f"{full_count} fully qualified opportunit{'ies' if full_count != 1 else 'y'} in the latest scan."
-        zh = f"最近一次扫描发现 {full_count} 个完全符合的项目；当前共追踪 {tracked_total} 个项目和 {tracked_sources} 个可信来源。"
-        return render_template("home/status_banner.html", variant="", message_en=f"{label} {coverage}", message_zh=zh)
+        label = f"{full_count} funded or low-fee recommendation{'s' if full_count != 1 else ''} in the latest scan."
+        extra = f" {near_count} verified self-funded school{'s are' if near_count != 1 else ' is'} listed separately." if near_count else ""
+        zh = f"最近一次扫描发现 {full_count} 个资助或低费用优选项目；另有 {near_count} 个官网已核实的自费项目。当前扫描 {tracked_sources} 个可信来源。"
+        return render_template("home/status_banner.html", variant="", message_en=f"{label}{extra} {coverage}", message_zh=zh)
     if near_count:
         message = (
-            "No fully qualified matches in the latest scan. "
-            f"{coverage} Additional opportunities from official sources are shown below."
+            "No funded or low-fee recommendations in the latest scan. "
+            f"{coverage} Verified self-funded schools with clear official fees are shown separately."
         )
-        zh = f"最近一次扫描没有完全符合的项目。当前共追踪 {tracked_total} 个项目和 {tracked_sources} 个可信来源；下方同时列出其他官方来源项目。"
+        zh = f"最近一次扫描没有资助或低费用优选项目。当前扫描 {tracked_sources} 个可信来源；下方另列官网费用明确的自费项目。"
         return render_template("home/status_banner.html", variant="info", message_en=message, message_zh=zh)
     message = (
         "No open opportunities matched every rule in the latest scan. "
@@ -156,13 +161,18 @@ def render_site(
     tracked_sources: int = 0,
 ) -> str:
     curated = curated or []
-    full = [item for item in candidates if item.fully_qualified and not _is_online_only(item)]
-    near = [item for item in candidates if is_high_quality(item)]
-    # Lower-confidence/listed records are often dominated by a single direct
-    # catalogue. Interleave their organizers so the first page represents the
-    # breadth of the registry; filtering still exposes every record and keeps
-    # each organizer's original score order.
-    found = _interleave_by_organizer([item for item in candidates if is_found_opportunity(item)])
+    full = [item for item in candidates if item.fully_qualified and is_public_candidate(item)]
+    # A separate, plainly labelled directory tier can include transparent
+    # self-funded schools without describing them as Summa recommendations.
+    near = _limit_by_organizer(
+        _interleave_by_organizer([item for item in candidates if is_verified_self_funded(item)]),
+        per_organizer=2,
+    )
+    archive = _limit_by_organizer(
+        _interleave_by_organizer([item for item in candidates if is_archive_candidate(item)]),
+        per_organizer=2,
+        total=12,
+    )
     # Count only opportunities that could actually be surfaced, so the
     # "tracking N" figure matches the page.
     tracked_total = sum(
@@ -174,25 +184,25 @@ def render_site(
     curated_rows = "".join(_curated_row(item) for item in curated)
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
     near_rows = "".join(_near_row(candidate) for candidate in near)
-    found_rows = "".join(_found_row(candidate) for candidate in found)
+    archive_rows = "".join(_archive_row(candidate) for candidate in archive)
     public_notes = [
         {"en": error, "zh": _collection_note_zh(error)} for error in _public_collection_notes(errors)[:12]
     ]
-    filters = render_filters([*full, *near, *found], curated)
+    filters = render_filters([*full, *near], curated)
     analytics = _analytics_snippet(site_config or {})
     status_banner = _status_banner(len(full), len(near), tracked_total, tracked_sources)
     if near:
         near_block = _near_section(near_rows)
-    elif full or found or curated:
+    elif full or curated:
         # Other sections are shown; no empty-state needed.
         near_block = ""
     else:
         near_block = _empty_opportunities_block(tracked_total, tracked_sources)
-    opportunity_count = len(curated) + len(full) + len(near) + len(found)
+    opportunity_count = len(curated) + len(full) + len(near)
     return render_template(
         "home.html",
         seo_head=seo_head(_SITE_URL, _SITE_DESCRIPTION, site_config or {}),
-        jsonld=jsonld_block((full + near + found)[:36], public_location=_public_location),
+        jsonld=jsonld_block((full + near)[:36], public_location=_public_location),
         nav=_site_nav(),
         full_count=len(full),
         near_count=len(near),
@@ -207,7 +217,7 @@ def render_site(
         curated_section=_curated_section(curated_rows) if curated else "",
         qualified_section=_qualified_section(full_rows) if full else "",
         near_block=near_block,
-        found_section=_found_section(found_rows) if found_rows else "",
+        archive_section=_archive_section(archive_rows, len(archive)) if archive_rows else "",
         pagination=render_pagination(),
         notes_section=_notes_section(public_notes) if public_notes else "",
         subscribe_section=_subscribe_section(site_config or {}),
@@ -236,6 +246,22 @@ def _interleave_by_organizer(candidates: list[Candidate]) -> list[Candidate]:
     return interleaved
 
 
+def _limit_by_organizer(
+    candidates: list[Candidate], *, per_organizer: int, total: int | None = None
+) -> list[Candidate]:
+    counts: dict[str, int] = {}
+    selected: list[Candidate] = []
+    for candidate in candidates:
+        organizer = candidate.organizer.casefold()
+        if counts.get(organizer, 0) >= per_organizer:
+            continue
+        counts[organizer] = counts.get(organizer, 0) + 1
+        selected.append(candidate)
+        if total is not None and len(selected) >= total:
+            break
+    return selected
+
+
 def _qualified_section(rows: str) -> str:
     return _opportunity_section(rows, "qualified")
 
@@ -248,15 +274,11 @@ def _near_section(rows: str) -> str:
     return _opportunity_section(rows, "high")
 
 
-def _found_section(rows: str) -> str:
-    return _opportunity_section(rows, "found")
-
-
 def _opportunity_section(rows: str, tier: str) -> str:
     variants = {
         "qualified": {
             "title_key": "tier.qualified",
-            "title": "Fully Qualified Opportunities",
+            "title": "Funded and Accessible Recommendations",
             "lead_key": "",
             "lead": "",
             "table_class": "qualified-table",
@@ -270,16 +292,9 @@ def _opportunity_section(rows: str, tier: str) -> str:
         },
         "high": {
             "title_key": "tier.high",
-            "title": "High-Quality Opportunities",
+            "title": "Officially Verified Self-Funded Schools",
             "lead_key": "tier.high.lead",
-            "lead": "Relevant funded or low-fee opportunities from official sources.",
-            "table_class": "standard-table",
-        },
-        "found": {
-            "title_key": "tier.found",
-            "title": "Listed Opportunities",
-            "lead_key": "tier.found.lead",
-            "lead": "Additional research-training opportunities collected from official sources.",
+            "lead": "Open programmes with clear official fees; listed separately from funded recommendations.",
             "table_class": "standard-table",
         },
     }
@@ -335,8 +350,23 @@ def _near_row(candidate: Candidate) -> str:
     return _candidate_row(candidate, "high-quality")
 
 
-def _found_row(candidate: Candidate) -> str:
-    return _candidate_row(candidate, "found")
+def _archive_row(candidate: Candidate) -> str:
+    return render_template(
+        "home/archive_row.html",
+        title=_bilingual(candidate.title, candidate.title_zh),
+        organizer=_bilingual(candidate.organizer, candidate.organizer_zh),
+        location=_bilingual(
+            _public_location(candidate.location),
+            candidate.location_zh or _public_location_zh(candidate.location),
+        ),
+        duration=_duration_cell(candidate),
+        funding=_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate)),
+        official_url=safe_external_url(candidate.source_url or candidate.application_link),
+    )
+
+
+def _archive_section(rows: str, count: int) -> str:
+    return render_template("home/archive_section.html", rows=rows, count=count)
 
 
 def _candidate_row(candidate: Candidate, status: str, *, index: int | None = None) -> str:
@@ -409,9 +439,8 @@ def _parse_iso_date(value: Any) -> date | None:
 def _row_attrs(candidate: Candidate, status: str | None = None) -> dict[str, str]:
     status = status or ("qualified" if candidate.fully_qualified else "found")
     status_labels = {
-        "qualified": ("Fully qualified", "完全符合"),
-        "high-quality": ("High quality", "高质量"),
-        "found": ("Listed", "已收录"),
+        "qualified": ("Funded / low fee", "资助优选"),
+        "high-quality": ("Verified self-funded", "官网核实自费"),
     }
     status_en, status_cn = status_labels.get(status, (status, status))
     funding = candidate.financial_access_status

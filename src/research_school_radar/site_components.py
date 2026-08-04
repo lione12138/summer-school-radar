@@ -110,10 +110,10 @@ def financial_summary_short(candidate: Candidate) -> str:
 
 def candidate_status(candidate: Candidate) -> tuple[str, str]:
     if candidate.fully_qualified:
-        return "Fully qualified", "qualified"
+        return "Funded / low fee", "qualified"
     if is_high_quality(candidate):
-        return "High quality", "high-quality"
-    return "Listed", "found"
+        return "Verified self-funded", "high-quality"
+    return "Internal review", "found"
 
 
 __all__ = [

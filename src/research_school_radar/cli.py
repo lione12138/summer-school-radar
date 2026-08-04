@@ -19,7 +19,7 @@ from .ai_pipeline import (
 from .api_sources import CollectorOutcome, collect_api_candidates
 from .candidate_io import candidate_from_mapping, coerce_date
 from .collect import DEFAULT_MAX_WORKERS, collect_sources, fetch_source
-from .discovery_filter import filter_discovery_results
+from .discovery_filter import aggregator_discovery_leads, filter_discovery_results
 from .extract import extract_candidate, sample_candidate
 from .filter import apply_hard_filters
 from .http_cache import HttpCache
@@ -28,7 +28,7 @@ from .parse import candidate_links, looks_like_opportunity
 from .rank import rank_candidates
 from .report import update_readme, write_report
 from .review import apply_overrides, load_overrides, write_review_queue
-from .search import run_discovery_queries
+from .search import official_resolution_queries, run_discovery_queries
 from .scan_health import (
     SourceCoverage,
     build_source_health,
@@ -210,6 +210,13 @@ def run_scan(
             query_config = load_yaml(config_dir / "queries.yaml")
             queries = _flatten_queries(query_config.get("queries", {}))
             search_results, search_errors = run_discovery_queries(queries)
+            leads = aggregator_discovery_leads(search_results)
+            resolution_queries = official_resolution_queries(leads)
+            resolved_results, resolution_errors = run_discovery_queries(resolution_queries)
+            discovery_stats["aggregator_leads"] = len(leads)
+            discovery_stats["official_resolution_queries"] = len(resolution_queries)
+            discovery_stats["official_resolution_results"] = len(resolved_results)
+            search_results.extend(resolved_results)
             discovery_stats["queries"] = len(queries)
             discovery_stats["results"] = len(search_results)
             discovery_stats["unique_results"] = len({result.url for result in search_results if result.url})
@@ -223,7 +230,7 @@ def run_scan(
                     for reason, count in filtered_discovery.rejected.items()
                 }
             )
-            errors.extend(search_errors)
+            errors.extend([*search_errors, *resolution_errors])
             discovery_sources = [
                 Source(
                     name=f"Discovery: {result.title}",

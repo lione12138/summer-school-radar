@@ -126,6 +126,9 @@ FUNDING_TYPE_ZH = {
 STATUS_ZH = {
     "Fully qualified": "完全符合",
     "High quality": "高质量",
+    "Funded / low fee": "资助优选",
+    "Verified self-funded": "官网核实自费",
+    "Internal review": "内部审核",
     "Found": "已收录",
     "Listed": "已收录",
     "Curated": "人工精选",
@@ -158,6 +161,7 @@ SOURCE_TYPE_ZH = {
     "summer_school": "暑期学校",
     "university": "大学",
     "university_institute": "大学研究机构",
+    "university_network": "大学联盟",
 }
 
 
@@ -205,6 +209,8 @@ def duration_zh(candidate: Candidate) -> str:
 
 def financial_summary_zh(candidate: Candidate) -> str:
     if candidate.funding_available is True:
+        if candidate.funding_scope == "registration fee covered":
+            return "注册费奖学金 · 入选者注册费全额覆盖"
         funding = "、".join(FUNDING_TYPE_ZH.get(item, item) for item in candidate.funding_type) or "提供资助"
         return f"{funding} · 金额未说明"
     if candidate.fee_eur is not None:

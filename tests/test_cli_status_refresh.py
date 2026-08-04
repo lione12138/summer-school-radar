@@ -72,6 +72,7 @@ def test_status_refresh_applies_maintainer_financial_corrections(tmp_path) -> No
     candidate.funding_available = True
     candidate.funding_type = ["scholarship"]
     candidate.financial_access_status = "funded"
+    candidate.duration_days = 5
 
     site_dir = tmp_path / "site"
     data_dir = tmp_path / "data"
@@ -100,8 +101,8 @@ def test_status_refresh_applies_maintainer_financial_corrections(tmp_path) -> No
     corrected = payload["opportunities"][0]
     assert corrected["funding_available"] is False
     assert corrected["fee_eur"] == 1000
-    assert corrected["financial_access_status"] == "unresolved"
-    assert "fee exceeds EUR 400 without explicit funding" in corrected["failed_hard_conditions"]
+    assert corrected["financial_access_status"] == "self-funded"
+    assert "fee exceeds EUR 400 without explicit funding" in corrected["failed_recommendation_conditions"]
     assert "Economics of Climate Change" not in (site_dir / "index.html").read_text(encoding="utf-8")
 
 

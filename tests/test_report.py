@@ -38,8 +38,8 @@ def test_report_does_not_present_near_match_as_qualified() -> None:
     candidate = apply_hard_filters(candidate, PROFILE)
     ranked = rank_candidates([candidate])
     markdown = render_report(ranked, [])
-    assert "No fully qualified opportunities found." in markdown
-    assert "High-Quality Opportunities" not in markdown
+    assert "No funded or low-fee recommendations found." in markdown
+    assert "Officially Verified Self-Funded Schools" not in markdown
     assert candidate.title not in markdown
     assert "failed hard condition" not in markdown
     assert "application deadline is uncertain" not in markdown
@@ -57,7 +57,7 @@ def test_update_readme_replaces_marker_section(tmp_path) -> None:
     content = readme.read_text(encoding="utf-8")
     assert "old" not in content
     assert "Example Hydrology Winter School" in content
-    assert "1 fully qualified" in content
+    assert "1 funded/low-fee" in content
     assert content.startswith("# Title")
     assert content.rstrip().endswith("Footer")
     # A second run must stay idempotent and keep the markers intact.
@@ -103,8 +103,8 @@ def test_report_keeps_unresolved_tiers_internal_when_qualified_items_exist() -> 
 
     markdown = render_report(rank_candidates([qualified, high_quality, found]), [])
 
-    assert "Fully Qualified Opportunities" in markdown
-    assert "High-Quality Opportunities" not in markdown
+    assert "Funded and Accessible Recommendations" in markdown
+    assert "Officially Verified Self-Funded Schools" not in markdown
     assert "Found Opportunities" not in markdown
     assert "Example Hydrology Winter School" in markdown
     assert "High Quality School" not in markdown

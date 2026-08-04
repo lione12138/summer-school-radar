@@ -1,6 +1,10 @@
 from research_school_radar.extract import sample_candidate
 from research_school_radar.filter import apply_hard_filters
-from research_school_radar.publication import is_public_candidate
+from research_school_radar.publication import (
+    has_meaningful_title,
+    is_public_candidate,
+    is_verified_self_funded,
+)
 
 
 PROFILE = {
@@ -38,6 +42,40 @@ def test_publication_is_fail_closed_for_unresolved_financial_access() -> None:
     apply_hard_filters(candidate, PROFILE)
 
     assert not is_public_candidate(candidate)
+
+
+def test_verified_self_funded_school_is_public_but_not_fully_qualified() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.funding_available = False
+    candidate.funding_type = []
+    candidate.funding_evidence = ""
+    candidate.fee = "EUR 600"
+    candidate.fee_eur = 600
+
+    apply_hard_filters(candidate, PROFILE)
+
+    assert candidate.failed_hard_conditions == []
+    assert candidate.failed_recommendation_conditions == [
+        "fee exceeds EUR 400 without explicit funding"
+    ]
+    assert not candidate.fully_qualified
+    assert is_public_candidate(candidate)
+    assert is_verified_self_funded(candidate)
+
+
+def test_short_expensive_course_is_not_in_self_funded_directory() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.duration_days = 5
+    candidate.funding_available = False
+    candidate.funding_type = []
+    candidate.funding_evidence = ""
+    candidate.fee = "EUR 1,000"
+    candidate.fee_eur = 1000
+
+    apply_hard_filters(candidate, PROFILE)
+
+    assert is_public_candidate(candidate)
+    assert not is_verified_self_funded(candidate)
 
 
 def test_funding_flag_without_evidence_does_not_qualify_unknown_fee() -> None:
@@ -99,3 +137,15 @@ def test_specialised_profile_can_still_require_a_topic_match() -> None:
 
     assert "topic relevance is uncertain" in candidate.failed_hard_conditions
     assert not is_public_candidate(candidate)
+
+
+def test_generic_navigation_titles_are_not_publishable() -> None:
+    for title in (
+        "Talk to us",
+        "Search form",
+        "Deadline for application: 16 November 2026",
+        "Welcome to EARSeL's Website",
+    ):
+        assert not has_meaningful_title(title), title
+
+    assert has_meaningful_title("Computational Linguistics Fall School 2026")

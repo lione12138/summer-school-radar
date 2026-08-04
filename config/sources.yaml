@@ -581,7 +581,28 @@ sources:
     source_type: aggregator
     keywords: [summer school, multidisciplinary]
     enabled: false
-    notes: Cross-disciplinary aggregator. Disabled when the project refocused on water/climate/geoscience/remote-sensing/ML; it is mostly off-domain and also returns 403 for scripted requests.
+    notes: Commercial cross-disciplinary aggregator retained only as a manual Serper lead source. Its pages are never fetched or used as evidence; any lead must resolve to an official organizer page.
+  - name: ELLS Summer Schools
+    url: https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026
+    layer: 1.5
+    region: continental Europe
+    source_type: university_network
+    keywords: [agriculture, environmental science, sustainability, social science, data science]
+    notes: Official Euroleague for Life Sciences catalogue. Individual schools must still resolve to an organizer page and pass the normal date, mode, fee, and evidence gates.
+  - name: Una Europa Summer Schools
+    url: https://www.una-europa.eu/opportunities/una-europa-summer-schools
+    layer: 1.5
+    region: continental Europe
+    source_type: university_network
+    keywords: [interdisciplinary, doctoral training, sustainability, data science, humanities]
+    notes: Official alliance catalogue for joint intensive and doctoral summer schools across eleven European universities.
+  - name: EDUC Summer Schools
+    url: https://www.educalliance.eu/calls/educ-summer-schools-2026
+    layer: 1.5
+    region: continental Europe
+    source_type: university_network
+    keywords: [interdisciplinary, doctoral training, research methods, artificial intelligence, education]
+    notes: Official European university alliance catalogue. Linked detail pages remain subject to the normal official-evidence and affordability classification.
   - name: Utrecht Summer School
     url: https://utrechtsummerschool.nl/courses
     layer: 2

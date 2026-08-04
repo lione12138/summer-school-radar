@@ -139,6 +139,22 @@ def test_project_overrides_correct_tinbergen_summer_school_finances() -> None:
     assert "accommodation and travel excluded" in corrected.fee
 
 
+def test_project_override_preserves_utn_registration_fee_coverage() -> None:
+    from research_school_radar.review import apply_overrides, load_overrides
+
+    candidate = sample_candidate(PROFILE)
+    candidate.title = "Computational Linguistics Fall School 2026"
+    candidate.source_url = "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/"
+    candidate.application_link = candidate.source_url
+
+    corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
+
+    assert corrected.funding_type == ["scholarship"]
+    assert corrected.funding_scope == "registration fee covered"
+    assert "covering the registration fee" in corrected.funding_evidence
+    assert "amount not stated" not in corrected.financial_summary
+
+
 def test_location_sanitizer_rejects_field_labels() -> None:
     from research_school_radar.utils import sanitize_location
 
