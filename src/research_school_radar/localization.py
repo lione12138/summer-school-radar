@@ -128,6 +128,7 @@ STATUS_ZH = {
     "High quality": "高质量",
     "Funded / low fee": "资助优选",
     "Verified self-funded": "官网核实自费",
+    "Official listing": "官网项目",
     "Internal review": "内部审核",
     "Found": "已收录",
     "Listed": "已收录",

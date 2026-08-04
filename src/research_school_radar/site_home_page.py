@@ -8,6 +8,7 @@ from .localization import financial_summary_zh, region_zh, topic_zh, topics_labe
 from .models import Candidate
 from .publication import (
     is_archive_candidate,
+    is_found_opportunity,
     is_public_candidate,
     is_verified_self_funded,
 )
@@ -49,23 +50,70 @@ def _collection_note_zh(note: str) -> str:
     return ""
 
 
-def _status_banner(full_count: int, near_count: int, tracked_total: int, tracked_sources: int) -> str:
+def _status_banner(
+    full_count: int,
+    near_count: int,
+    regular_count: int,
+    tracked_total: int,
+    tracked_sources: int,
+) -> str:
     """The headline status line. Even with zero qualified results it stays
     informative — emphasising coverage and the seasonal nature of deadlines so
     the page never reads as empty or broken."""
     opportunities = f"{tracked_total} opportunit{'ies' if tracked_total != 1 else 'y'}"
     coverage = f"Tracking {opportunities} across {tracked_sources} trusted sources."
     if full_count:
-        label = f"{full_count} funded or low-fee recommendation{'s' if full_count != 1 else ''} in the latest scan."
-        extra = f" {near_count} verified self-funded school{'s are' if near_count != 1 else ' is'} listed separately." if near_count else ""
-        zh = f"最近一次扫描发现 {full_count} 个资助或低费用优选项目；另有 {near_count} 个官网已核实的自费项目。当前扫描 {tracked_sources} 个可信来源。"
-        return render_template("home/status_banner.html", variant="", message_en=f"{label}{extra} {coverage}", message_zh=zh)
+        plural = "s" if full_count != 1 else ""
+        label = f"{full_count} funded or low-fee recommendation{plural} in the latest scan."
+        if near_count:
+            verb = "are" if near_count != 1 else "is"
+            extra = f" {near_count} verified self-funded school{'s' if near_count != 1 else ''} {verb} listed separately."
+        else:
+            extra = ""
+        if regular_count:
+            verb = "are" if regular_count != 1 else "is"
+            directory = (
+                f" {regular_count} additional official programme"
+                f"{'s' if regular_count != 1 else ''} {verb} listed without a financial recommendation."
+            )
+        else:
+            directory = ""
+        zh = (
+            f"最近一次扫描发现 {full_count} 个资助或低费用优选项目；另有 {near_count} 个官网已核实的自费项目和 "
+            f"{regular_count} 个更多官网项目。当前扫描 {tracked_sources} 个可信来源。"
+        )
+        return render_template(
+            "home/status_banner.html",
+            variant="",
+            message_en=f"{label}{extra}{directory} {coverage}",
+            message_zh=zh,
+        )
     if near_count:
+        directory = (
+            f" {regular_count} additional official programme"
+            f"{'s are' if regular_count != 1 else ' is'} also listed without a financial recommendation."
+            if regular_count
+            else ""
+        )
         message = (
             "No funded or low-fee recommendations in the latest scan. "
-            f"{coverage} Verified self-funded schools with clear official fees are shown separately."
+            f"{coverage} Verified self-funded schools are shown separately.{directory}"
         )
-        zh = f"最近一次扫描没有资助或低费用优选项目。当前扫描 {tracked_sources} 个可信来源；下方另列官网费用明确的自费项目。"
+        zh = (
+            f"最近一次扫描没有资助或低费用优选项目。当前扫描 {tracked_sources} 个可信来源；"
+            f"下方另列官网费用明确的自费项目和 {regular_count} 个更多官网项目。"
+        )
+        return render_template("home/status_banner.html", variant="info", message_en=message, message_zh=zh)
+    if regular_count:
+        message = (
+            "No funded or verified self-funded recommendations in the latest scan. "
+            f"{regular_count} current official programme{'s are' if regular_count != 1 else ' is'} listed without a financial recommendation. "
+            f"{coverage}"
+        )
+        zh = (
+            f"最近一次扫描没有资助优选或费用明确的自费项目；下方收录 {regular_count} 个不作费用推荐的更多官网项目。"
+            f"当前扫描 {tracked_sources} 个可信来源。"
+        )
         return render_template("home/status_banner.html", variant="info", message_en=message, message_zh=zh)
     message = (
         "No open opportunities matched every rule in the latest scan. "
@@ -168,6 +216,11 @@ def render_site(
         _interleave_by_organizer([item for item in candidates if is_verified_self_funded(item)]),
         per_organizer=2,
     )
+    regular = _limit_by_organizer(
+        _interleave_by_organizer([item for item in candidates if is_found_opportunity(item)]),
+        per_organizer=2,
+        total=12,
+    )
     archive = _limit_by_organizer(
         _interleave_by_organizer([item for item in candidates if is_archive_candidate(item)]),
         per_organizer=2,
@@ -175,37 +228,35 @@ def render_site(
     )
     # Count only opportunities that could actually be surfaced, so the
     # "tracking N" figure matches the page.
-    tracked_total = sum(
-        1
-        for item in candidates
-        if is_public_candidate(item)
-    )
+    tracked_total = len(full) + len(near) + len(regular)
     updated = date.today().isoformat()
     curated_rows = "".join(_curated_row(item) for item in curated)
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
     near_rows = "".join(_near_row(candidate) for candidate in near)
+    regular_rows = "".join(_found_row(candidate) for candidate in regular)
     archive_rows = "".join(_archive_row(candidate) for candidate in archive)
     public_notes = [
         {"en": error, "zh": _collection_note_zh(error)} for error in _public_collection_notes(errors)[:12]
     ]
-    filters = render_filters([*full, *near], curated)
+    filters = render_filters([*full, *near, *regular], curated)
     analytics = _analytics_snippet(site_config or {})
-    status_banner = _status_banner(len(full), len(near), tracked_total, tracked_sources)
+    status_banner = _status_banner(len(full), len(near), len(regular), tracked_total, tracked_sources)
     if near:
         near_block = _near_section(near_rows)
-    elif full or curated:
+    elif full or regular or curated:
         # Other sections are shown; no empty-state needed.
         near_block = ""
     else:
         near_block = _empty_opportunities_block(tracked_total, tracked_sources)
-    opportunity_count = len(curated) + len(full) + len(near)
+    opportunity_count = len(curated) + len(full) + len(near) + len(regular)
     return render_template(
         "home.html",
         seo_head=seo_head(_SITE_URL, _SITE_DESCRIPTION, site_config or {}),
-        jsonld=jsonld_block((full + near)[:36], public_location=_public_location),
+        jsonld=jsonld_block((full + near + regular)[:36], public_location=_public_location),
         nav=_site_nav(),
         full_count=len(full),
         near_count=len(near),
+        regular_count=len(regular),
         tracked_sources=tracked_sources,
         updated=updated,
         status_banner=status_banner,
@@ -217,6 +268,7 @@ def render_site(
         curated_section=_curated_section(curated_rows) if curated else "",
         qualified_section=_qualified_section(full_rows) if full else "",
         near_block=near_block,
+        regular_section=_found_section(regular_rows) if regular_rows else "",
         archive_section=_archive_section(archive_rows, len(archive)) if archive_rows else "",
         pagination=render_pagination(),
         notes_section=_notes_section(public_notes) if public_notes else "",
@@ -274,6 +326,10 @@ def _near_section(rows: str) -> str:
     return _opportunity_section(rows, "high")
 
 
+def _found_section(rows: str) -> str:
+    return _opportunity_section(rows, "found")
+
+
 def _opportunity_section(rows: str, tier: str) -> str:
     variants = {
         "qualified": {
@@ -295,6 +351,13 @@ def _opportunity_section(rows: str, tier: str) -> str:
             "title": "Officially Verified Self-Funded Schools",
             "lead_key": "tier.high.lead",
             "lead": "Open programmes with clear official fees; listed separately from funded recommendations.",
+            "table_class": "standard-table",
+        },
+        "found": {
+            "title_key": "tier.found",
+            "title": "More Official Programmes",
+            "lead_key": "tier.found.lead",
+            "lead": "Open official programmes that meet the basic format rules; no funding or affordability recommendation is made.",
             "table_class": "standard-table",
         },
     }
@@ -348,6 +411,10 @@ def _curated_row(item: dict[str, Any]) -> str:
 
 def _near_row(candidate: Candidate) -> str:
     return _candidate_row(candidate, "high-quality")
+
+
+def _found_row(candidate: Candidate) -> str:
+    return _candidate_row(candidate, "found")
 
 
 def _archive_row(candidate: Candidate) -> str:
@@ -441,6 +508,7 @@ def _row_attrs(candidate: Candidate, status: str | None = None) -> dict[str, str
     status_labels = {
         "qualified": ("Funded / low fee", "资助优选"),
         "high-quality": ("Verified self-funded", "官网核实自费"),
+        "found": ("Official listing", "官网项目"),
     }
     status_en, status_cn = status_labels.get(status, (status, status))
     funding = candidate.financial_access_status

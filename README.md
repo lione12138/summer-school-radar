@@ -6,7 +6,7 @@
 
 An open-source, discipline-agnostic scanner for high-quality research training opportunities — summer schools, winter schools, training schools, field schools, and short courses. Subject area is never an eligibility gate.
 
-It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources and extracts deadline / funding / fee / duration evidence together with the supporting text. Unresolved records remain available for maintainer audit; the public site is fail-closed and publishes only opportunities that pass every deterministic actionability and financial-access gate.
+It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources and extracts deadline / funding / fee / duration evidence together with the supporting text. Unresolved records remain available for maintainer audit; the public site is fail-closed on deadline, duration, mode, title, and link safety. Financial accessibility controls recommendation status, while a narrowly defined ordinary directory can list a current official programme without making a funding claim.
 
 **Live site:** <https://lione12138.github.io/summer-school-radar/>
 
@@ -45,7 +45,7 @@ _Last validated snapshot: 2026-07-27. The live site is the authority for date-se
 | 1 | [ICOS Summer/Winter School January 2027](https://www.icos-cp.eu/about/opportunities/summer-school) | summer school | ICOS | Europe | 18 Jan – 28 Jan 2027 · 11 days | 2026-07-31 | Fee about EUR 100 | climate, climate change, remote sensing, statistics |
 | 2 | [ELLIS Summer School at Unit Saarbrücken](https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026) | summer school | ELLIS | Saarland University | 24 Aug – 28 Aug 2026 · 5 days | 2026-07-30 | Fee about EUR 250 | AI |
 
-Unresolved, closed, not-yet-open, and unaffordable records remain in the generated audit JSON and review queue rather than being shown as public opportunities.
+Closed, not-yet-open, unsafe, and unaffordable records remain in the generated audit JSON and review queue rather than being shown as public opportunities. A current official record whose only missing field is fee/funding may appear solely in the separately labelled ordinary directory.
 
 <!-- radar:results:end -->
 
@@ -55,8 +55,9 @@ The generated website publishes verified scanner results and keeps unresolved re
 
 - **Funded and accessible recommendations**: open, on-site programmes with explicit participant support or a confirmed total fee no higher than approximately EUR 400.
 - **Officially verified self-funded schools**: open programmes whose official dates, location and fee are clear, shown separately and never described as funded recommendations. The directory excludes very high total or daily fees.
+- **More official programmes**: open official programmes that pass every hard safety and format rule but have no confirmed fee or funding evidence. They are ordinary directory entries, not affordability recommendations, and known expensive courses cannot enter through this tier.
 - **Recurring programme library**: verified past editions from official sources, clearly marked closed and excluded from open-opportunity counts and RSS.
-- **Internal review records**: records with an uncertain deadline, fee, mode, unsafe title/link, or another failed public condition. They remain in `site/candidates.json` and `data/review_queue.json` but are not rendered as current opportunities.
+- **Internal review records**: records with an uncertain deadline or mode, unsafe title/link, excessive known fee, or another failed public condition. They remain in `site/candidates.json` and `data/review_queue.json` but are not rendered as current opportunities.
 - **Sources & Coverage**: the configured trusted source registry, including disabled sources and notes.
 
 The site includes filters for keyword, status, topic, financial access, and deadline status. On desktop they stay in a left sidebar; on mobile search remains visible and the additional filters collapse behind a compact control. Matching records are paginated at 15 per page. Rows with a known application deadline include an **Add to calendar** menu (Google Calendar, Outlook, or a downloadable `.ics` file).
@@ -87,7 +88,7 @@ An opportunity must satisfy all hard conditions:
 | Mode | In-person or substantially on-site, not online-only |
 | Research scope | Any academic discipline, provided the programme is genuine short-form research training rather than an excluded degree, admissions, conference-workshop, tourism, or generic study-abroad offer |
 
-Failed public-safety records are never rendered as current opportunities. A programme that passes the date, duration, in-person, title, link, and financial-evidence gates may appear in the explicitly labelled self-funded directory without being promoted to a Summa recommendation.
+Failed public-safety records are never rendered as current opportunities. A programme that passes the date, duration, in-person, title, and link gates may appear either in the explicitly labelled self-funded directory when its fee is known and within the directory caps, or in “More official programmes” when its fee/funding is unstated. Neither tier is promoted to a funded recommendation.
 
 Foreign-currency fees are converted with configurable fixed reference rates so the default workflow remains free and API-key-free. The rates are deliberately conservative, not real-time. Unknown currencies or ambiguous fees remain near-matches.
 

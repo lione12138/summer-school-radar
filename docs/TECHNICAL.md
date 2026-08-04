@@ -81,7 +81,7 @@ An opportunity is treated as fully qualified only when all hard conditions are s
 - in-person or substantially on-site, not online-only
 - the programme is genuine short-form research training; topic tags are optional classification metadata
 
-The public model has two independent gates. Deadline, duration, in-person mode, meaningful title, safe official link, and concrete financial evidence are fail-closed publication conditions. Financial accessibility is the stricter recommendation condition: funded or no-more-than-EUR-400 records receive the recommendation label, while clearly priced self-funded schools may appear in a separate directory only when total and per-day caps pass. Unresolved records stay internal. Verified past editions may appear only in the clearly closed recurring-programme library and never enter current counts or RSS.
+The public model has two independent gates. Deadline, duration, in-person mode, meaningful title, and a safe official link are fail-closed publication conditions. Financial accessibility is the stricter recommendation condition: funded or no-more-than-EUR-400 records receive the recommendation label, while clearly priced self-funded schools may appear in a separate directory only when total and per-day caps pass. A current official programme with no stated fee/funding may appear in the plainly labelled ordinary directory, without an affordability recommendation. Known expensive courses cannot use that tier. Verified past editions may appear only in the clearly closed recurring-programme library and never enter current counts or RSS.
 
 The scanner includes `training school` because research organizations commonly use that label for short, intensive summer-school-style programmes. Generic conference workshops are excluded entirely, since they are rarely funded multi-day schools; the remaining hard filters then apply to the school and course types that are kept.
 
@@ -597,18 +597,18 @@ The website is static and can be served by GitHub Pages. It includes browser-sid
 - financial access: explicit funding, low/no fee, verified self-funded, or unresolved
 - deadline status
 
-The homepage paginates current funded/low-fee recommendations and verified self-funded records at 15 records per page.
+The homepage paginates current funded/low-fee recommendations, verified self-funded records, and more official programmes at 15 records per page.
 Desktop layouts keep search and filters in a sticky left sidebar. On mobile,
 search remains visible while the other controls collapse behind a button. The
-Records with unresolved deadlines, mode, duration, title, link, or financial evidence remain fail-closed in scanner JSON and review artifacts. Self-funded directory records have a known official fee and pass every public-safety condition; they fail only the stricter recommendation-access condition.
+Records with unresolved deadlines, mode, duration, title, or link remain fail-closed in scanner JSON and review artifacts. Self-funded directory records have a known official fee and pass every public-safety condition; ordinary directory records also pass every public-safety condition but make no funding or affordability claim because the official fee/funding is unstated.
 
-Curated opportunities from `data/opportunities.yml` are rendered first. Automatic results are split into funded/accessible recommendations and plainly labelled verified self-funded schools. A separate capped and organizer-balanced library shows verified closed editions for discovery; near-matches stay internal.
+Curated opportunities from `data/opportunities.yml` are rendered first. Automatic results are split into funded/accessible recommendations, plainly labelled verified self-funded schools, and capped organizer-balanced ordinary official listings. A separate library shows verified closed editions for discovery; unsafe or deadline-uncertain near-matches stay internal.
 
 Rows with a known application deadline include an `Add to calendar` link in the deadline column. The link downloads a standard `.ics` all-day calendar event for the application deadline, so users can import it into Apple Calendar, Google Calendar, Outlook, or another calendar client.
 
 The generator also writes `site/sources.html` and `site/sources.json` from `config/sources.yaml`. This Sources & Coverage page shows enabled and disabled sources, source layer, region, source type, keywords, blocked linked domains, and notes.
 
-It also writes `site/feed.xml`, an RSS 2.0 feed of curated, funded/low-fee, and verified self-funded open opportunities. Closed library entries never enter the feed.
+It also writes `site/feed.xml`, an RSS 2.0 feed of curated, funded/low-fee, and verified self-funded open opportunities. Ordinary official listings and closed library entries never enter the feed.
 
 ## Financial Access Rule
 

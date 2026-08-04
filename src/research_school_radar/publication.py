@@ -79,7 +79,39 @@ def is_verified_self_funded(candidate: Candidate) -> bool:
 
 
 def is_found_opportunity(candidate: Candidate) -> bool:
-    return False
+    """A safe current official listing without a financial recommendation.
+
+    This tier broadens the useful directory without allowing known expensive
+    courses to bypass the self-funded affordability ceiling. It is deliberately
+    excluded from recommendation counts and RSS.
+    """
+    if candidate.fully_qualified or is_verified_self_funded(candidate):
+        return False
+    if candidate.is_past or candidate.is_online_only:
+        return False
+    if candidate.source_layer not in {"1", "1.5"}:
+        return False
+    if not has_meaningful_title(candidate.title) or candidate.failed_hard_conditions:
+        return False
+    if candidate.deadline_status != "open":
+        return False
+    if candidate.duration_days is None or candidate.duration_days < DISPLAY_MIN_DURATION_DAYS:
+        return False
+    if candidate.mode not in {"in-person", "hybrid"}:
+        return False
+    if not safe_external_url(candidate.application_link or candidate.source_url):
+        return False
+    # Known paid programmes must qualify for the explicitly labelled
+    # self-funded tier. The ordinary directory is for official programmes whose
+    # fee/funding is not stated, not a back door for costly commercial courses.
+    return candidate.financial_access_status == "unresolved" and candidate.fee_eur is None
+
+
+def is_display_candidate(candidate: Candidate) -> bool:
+    """Whether a current candidate receives a public card/detail page."""
+    return (
+        candidate.fully_qualified and is_public_candidate(candidate)
+    ) or is_verified_self_funded(candidate) or is_found_opportunity(candidate)
 
 
 def is_archive_candidate(candidate: Candidate) -> bool:

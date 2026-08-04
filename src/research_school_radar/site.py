@@ -12,7 +12,7 @@ from .candidate_io import CANDIDATE_SNAPSHOT_SCHEMA_VERSION, candidate_to_dict
 from .llm_client import BaseLLMClient
 from .localization_audit import warn_localization_issues
 from .models import Candidate
-from .publication import is_high_quality, is_public_candidate
+from .publication import is_display_candidate, is_high_quality, is_public_candidate
 from .review import build_review_queue
 from .site_assets import read_static_asset, write_static_assets
 from .site_components import (
@@ -146,7 +146,7 @@ def write_site(
             ensure_ascii=False,
         ),
     )
-    detail_candidates = [candidate for candidate in homepage_candidates if is_public_candidate(candidate)]
+    detail_candidates = [candidate for candidate in homepage_candidates if is_display_candidate(candidate)]
     detail_dir = output_dir / "opportunities"
     detail_dir.mkdir(parents=True, exist_ok=True)
     for stale in detail_dir.glob("*.html"):

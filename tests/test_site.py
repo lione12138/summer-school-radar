@@ -372,8 +372,33 @@ def test_filter_defaults_describe_each_dimension(tmp_path) -> None:
     assert 'data-i18n="filter.all.funding">All funding</option>' in html
     assert 'data-i18n="filter.all.deadline">All deadlines</option>' in html
     assert 'data-i18n="filter.all.fresh">Any time</option>' in html
+    assert 'value="found" data-i18n="filter.status.found"' in html
     i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
     assert '"filter.all.status": {en:"All statuses", zh:"所有状态"}' in i18n
+
+
+def test_more_official_programmes_are_separate_and_do_not_enter_rss(tmp_path) -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.title = "Official Data Methods Summer School"
+    candidate.source_layer = "1"
+    candidate.funding_available = None
+    candidate.funding_type = []
+    candidate.funding_evidence = ""
+    candidate.fee = ""
+    candidate.fee_eur = None
+    candidate = apply_hard_filters(candidate, PROFILE)
+
+    write_site([candidate], [], tmp_path)
+
+    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    feed = (tmp_path / "feed.xml").read_text(encoding="utf-8")
+    details = list((tmp_path / "opportunities").glob("*.html"))
+    assert "More Official Programmes" in html
+    assert "更多官网项目" in html
+    assert 'data-status="found"' in html
+    assert candidate.title in html
+    assert candidate.title not in feed
+    assert len(details) == 1
 
 
 def test_opportunity_browser_uses_sidebar_and_fifteen_item_pages(tmp_path) -> None:

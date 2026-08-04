@@ -81,7 +81,7 @@ AI branch constraints:
 - `src/research_school_radar/web/static/css/` and `web/static/js/` — browser CSS, bilingual UI, filtering, responsive sidebar, and 15-item pagination.
 - `src/research_school_radar/site_seo.py` — sitemap, robots, JSON-LD, canary, watermark.
 - `src/research_school_radar/site_feed.py` — RSS feed.
-- `src/research_school_radar/publication.py` — public-safety, funded/low-fee, verified self-funded, title-quality, and closed-library classification.
+- `src/research_school_radar/publication.py` — public-safety, funded/low-fee, verified self-funded, ordinary official, title-quality, and closed-library classification.
 - `src/research_school_radar/candidate_io.py` — shared `Candidate` JSON serialization/deserialization.
 - `src/research_school_radar/session_extraction.py` — source-independent extraction of explicitly labelled multi-session schedules.
 - `src/research_school_radar/date_extraction.py`, `fee_extraction.py`, and `location_extraction.py` — focused deterministic field extractors used by the candidate coordinator.
@@ -219,7 +219,7 @@ Fully qualified opportunities must satisfy all hard conditions:
 - in-person or substantially on-site;
 - the programme is genuine short-form research training; topic tags are optional classification metadata, not a hard gate.
 
-When deadline, duration, mode, title, link, or financial evidence is missing or ambiguous, keep the record internal. A clearly priced self-funded programme may be public only in the separately labelled directory tier and must not be described as funded or fully qualified.
+When deadline, duration, mode, title, or link is missing or ambiguous, keep the record internal. A clearly priced self-funded programme may be public only in its separately labelled directory tier. A programme with no stated fee/funding may use the ordinary official directory only after every hard public condition passes. Neither tier may be described as funded or fully qualified, and known expensive programmes must not enter through the ordinary tier.
 
 Do not let model-generated translations, summaries, or inferred values become factual fields unless they are backed by official-source evidence and deterministic validation.
 

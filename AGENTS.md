@@ -84,7 +84,7 @@ Key modules:
 - `src/research_school_radar/ai_output_validation.py` — rejects unusable semantic, DeepSeek extraction, or build-time Chinese translation output before an AI snapshot can replace the last known-good snapshot.
 - `src/research_school_radar/audit_report.py` — summarizes source coverage, Serper discovery, Brave refinement, semantic/DeepSeek output, translation, and candidate retention for non-publishing audit runs.
 - `src/research_school_radar/storage.py` — seen-state JSON handling.
-- `src/research_school_radar/publication.py` — fail-closed public eligibility, funded/low-fee recommendation, verified self-funded directory, title-quality, and closed programme-library classification.
+- `src/research_school_radar/publication.py` — fail-closed public eligibility, funded/low-fee recommendation, verified self-funded and ordinary official directories, title-quality, and closed programme-library classification.
 - `src/research_school_radar/candidate_io.py` — shared `Candidate` JSON serialization/deserialization.
 - `src/research_school_radar/session_extraction.py` — conservative, source-independent extraction of explicitly labelled multi-session schedules and per-session deadlines.
 - `src/research_school_radar/programme_sessions.py` — shared multi-session duration/date labels for reports, RSS, and the site.
@@ -217,6 +217,10 @@ If full-suite failures are unrelated to the current change, state the exact fail
   may appear as verified self-funded only when its official fee is concrete and
   it passes the configured total/per-day directory limits; it must never carry
   a funded/low-fee recommendation label.
+- A programme with an open deadline and no hard failure may appear in the
+  separately labelled ordinary official directory when fee/funding is unstated.
+  Known expensive programmes must not use this tier, and ordinary listings do
+  not enter RSS or recommendation counts.
 - Do not let AI output bypass hard filters.
 - Do not silently promote candidates into `data/opportunities.yml`.
 - Do not add broad web crawling. Source expansion should happen through `config/sources.yaml`, direct collectors, or explicitly scoped discovery.

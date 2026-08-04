@@ -2,6 +2,8 @@ from research_school_radar.extract import sample_candidate
 from research_school_radar.filter import apply_hard_filters
 from research_school_radar.publication import (
     has_meaningful_title,
+    is_display_candidate,
+    is_found_opportunity,
     is_public_candidate,
     is_verified_self_funded,
 )
@@ -42,6 +44,55 @@ def test_publication_is_fail_closed_for_unresolved_financial_access() -> None:
     apply_hard_filters(candidate, PROFILE)
 
     assert not is_public_candidate(candidate)
+
+
+def test_open_official_school_with_unknown_finances_is_a_regular_listing() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.source_layer = "1"
+    candidate.funding_available = None
+    candidate.funding_type = []
+    candidate.funding_evidence = ""
+    candidate.fee = ""
+    candidate.fee_eur = None
+
+    apply_hard_filters(candidate, PROFILE)
+
+    assert candidate.failed_hard_conditions == []
+    assert is_found_opportunity(candidate)
+    assert is_display_candidate(candidate)
+
+
+def test_known_expensive_school_cannot_reenter_as_a_regular_listing() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.source_layer = "1"
+    candidate.funding_available = False
+    candidate.funding_type = []
+    candidate.funding_evidence = ""
+    candidate.fee = "EUR 2,000"
+    candidate.fee_eur = 2000
+    candidate.duration_days = 5
+
+    apply_hard_filters(candidate, PROFILE)
+
+    assert not is_verified_self_funded(candidate)
+    assert not is_found_opportunity(candidate)
+    assert not is_display_candidate(candidate)
+
+
+def test_regular_listing_still_requires_an_open_deadline() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.source_layer = "1"
+    candidate.deadline = None
+    candidate.deadline_status = "uncertain"
+    candidate.funding_available = None
+    candidate.funding_evidence = ""
+    candidate.fee = ""
+    candidate.fee_eur = None
+
+    apply_hard_filters(candidate, PROFILE)
+
+    assert not is_found_opportunity(candidate)
+    assert not is_display_candidate(candidate)
 
 
 def test_verified_self_funded_school_is_public_but_not_fully_qualified() -> None:

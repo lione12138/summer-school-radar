@@ -4,7 +4,7 @@ from datetime import date
 
 from .localization import date_zh, duration_zh, region_zh
 from .models import Candidate
-from .publication import is_high_quality
+from .publication import is_found_opportunity, is_high_quality
 from .programme_sessions import (
     programme_duration_label,
     programme_duration_label_zh,
@@ -113,6 +113,8 @@ def candidate_status(candidate: Candidate) -> tuple[str, str]:
         return "Funded / low fee", "qualified"
     if is_high_quality(candidate):
         return "Verified self-funded", "high-quality"
+    if is_found_opportunity(candidate):
+        return "Official listing", "found"
     return "Internal review", "found"
 
 
