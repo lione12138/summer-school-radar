@@ -1236,8 +1236,52 @@
       "multidisciplinary"
     ],
     "enabled": false,
-    "notes": "Cross-disciplinary aggregator. Disabled when the project refocused on water/climate/geoscience/remote-sensing/ML; it is mostly off-domain and also returns 403 for scripted requests.",
-    "notes_zh": "\u8de8\u5b66\u79d1\u805a\u5408\u5668\u3002\u5f53\u9879\u76ee\u91cd\u65b0\u805a\u7126\u4e8e\u6c34/\u6c14\u5019/\u5730\u7403\u79d1\u5b66/\u9065\u611f/\u673a\u5668\u5b66\u4e60\u65f6\u88ab\u7981\u7528\uff1b\u5b83\u5927\u591a\u4e0d\u5728\u672c\u9886\u57df\uff0c\u4e14\u5bf9\u811a\u672c\u8bf7\u6c42\u8fd4\u56de403\u9519\u8bef\u3002"
+    "notes": "Commercial cross-disciplinary aggregator retained only as a manual Serper lead source. Its pages are never fetched or used as evidence; any lead must resolve to an official organizer page."
+  },
+  {
+    "name": "ELLS Summer Schools",
+    "url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "university_network",
+    "keywords": [
+      "agriculture",
+      "environmental science",
+      "sustainability",
+      "social science",
+      "data science"
+    ],
+    "notes": "Official Euroleague for Life Sciences catalogue. Individual schools must still resolve to an organizer page and pass the normal date, mode, fee, and evidence gates."
+  },
+  {
+    "name": "Una Europa Summer Schools",
+    "url": "https://www.una-europa.eu/opportunities/una-europa-summer-schools",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "university_network",
+    "keywords": [
+      "interdisciplinary",
+      "doctoral training",
+      "sustainability",
+      "data science",
+      "humanities"
+    ],
+    "notes": "Official alliance catalogue for joint intensive and doctoral summer schools across eleven European universities."
+  },
+  {
+    "name": "EDUC Summer Schools",
+    "url": "https://www.educalliance.eu/calls/educ-summer-schools-2026",
+    "layer": 1.5,
+    "region": "continental Europe",
+    "source_type": "university_network",
+    "keywords": [
+      "interdisciplinary",
+      "doctoral training",
+      "research methods",
+      "artificial intelligence",
+      "education"
+    ],
+    "notes": "Official European university alliance catalogue. Linked detail pages remain subject to the normal official-evidence and affordability classification."
   },
   {
     "name": "Utrecht Summer School",

@@ -5,7 +5,7 @@
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
   "_canary": "SSR-CANON-7q3v9x2k8m4w",
   "schema_version": 2,
-  "generated": "2026-08-03",
+  "generated": "2026-08-04",
   "opportunities": [
     {
       "title": "Computational Linguistics Fall School 2026",
@@ -22,10 +22,9 @@
       "deadline_status": "open",
       "funding_available": true,
       "funding_type": [
-        "scholarship",
-        "stipend"
+        "scholarship"
       ],
-      "funding_evidence": "Scholarship Student Groups and Initiatives FAQ Contact StaRs Departments Department Computer Science & Artificial Intelligence Arti",
+      "funding_evidence": "Thanks to the support of the associations GSCL and DGfS, scholarships covering the registration fee will be available for selected participants.",
       "topic_keywords": [
         "linguistics",
         "computational linguistics",
@@ -38,16 +37,18 @@
       "fee_eur": 150.0,
       "application_link": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
       "source_url": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
-      "summary": "Computational Linguistics Fall School 2026 | UTN Go to content area Go to search Go to main navigation About us Organisation Founding Executive Board Founding Steering Board Central Services Overview of Representatives University Contract of UTN Anniversary 2026 International Eng",
-      "recommendation_reason": "funding evidence: scholarship, stipend; deadline appears open; 12 days; priority region",
+      "summary": "Computational Linguistics Fall School 2026 | UTN Go to content area Go to search Go to main navigation About us Organisation Founding Executive Board Founding Steering Board Central Services Overview of Representatives University Contract of UTN Anniversary 2026 International Eng Override note: The official UTN programme section states that selected participants can receive scholarships covering the applicable registration fee; Deutschlandstipendium in the page footer is unrelated navigation/news content.",
+      "recommendation_reason": "funding evidence: scholarship; deadline appears open; 12 days; priority region",
       "risk_points": "Funding may be competitive or partial. Fee noted: 150 EUR.",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "registration fee covered",
       "financial_access_status": "funded",
       "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [],
       "score": 87.0,
       "score_explanation": [
-        "funding evidence: scholarship, stipend",
+        "funding evidence: scholarship",
         "deadline appears open",
         "12 days",
         "priority region",
@@ -68,7 +69,7 @@
       "eligibility_zh": "博士指南 研究支持 早期职业中心 校友 里程碑 校园建设进展 体验立方体 气候行动 可持续性 新工作理念 L",
       "recommendation_reason_zh": "资助证据：奖学金、津贴；截止日期似乎开放；12天；优先区域",
       "risk_points_zh": "资助可能具有竞争性或部分资助。费用注明：150欧元。",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Energy Harnessing in the Urban Water Cycle",
@@ -100,8 +101,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:0846DE42-3284-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 78.0,
@@ -161,8 +164,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:27FA04F3-3282-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 78.0,
@@ -222,8 +227,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:5DFFA121-3281-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 78.0,
@@ -284,8 +291,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:E8E593C2-C9F7-11F0-A9A4-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -341,8 +350,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:7415606A-115B-11F1-BB1B-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -400,8 +411,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:10180031-3F14-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -457,8 +470,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:D92BB7F7-3F15-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -517,8 +532,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:D12D7660-3F10-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -577,8 +594,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:0C1B6BF4-75FF-11F1-A7F4-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -638,8 +657,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:8578A6C2-3282-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -700,8 +721,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:427F3F43-3F13-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -760,8 +783,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:C51B289C-3280-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -819,8 +844,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:8117413A-3F0F-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -878,8 +905,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:58AA4140-3F12-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -937,8 +966,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:2BECA740-3283-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -997,8 +1028,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:AFC693D1-3282-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -1054,8 +1087,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:A4537FAC-3F13-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -1113,8 +1148,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:2F82D05A-3284-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -1172,8 +1209,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:565D378D-3283-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -1232,8 +1271,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:A4942C80-3281-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -1292,8 +1333,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:09CAEE26-3281-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -1351,8 +1394,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:5E57A522-3284-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 69.0,
@@ -1411,8 +1456,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:D23836DC-3283-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 69.0,
@@ -1471,8 +1518,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:36C27682-3281-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 69.0,
@@ -1536,8 +1585,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 64.0,
@@ -1598,8 +1649,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 64.0,
@@ -1626,7 +1679,7 @@
       "eligibility_zh": "法学硕士（LL",
       "recommendation_reason_zh": "费用低：约800欧元；截止日期似乎开放；为期5天；优先地区",
       "risk_points_zh": "费用超过400欧元，且无明确资助",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Interdisciplinarity for Complex Water Problems",
@@ -1662,8 +1715,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 64.0,
@@ -1722,8 +1777,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 63.0,
@@ -1786,10 +1843,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 61.0,
       "score_explanation": [
         "funding evidence: travel grant",
@@ -1848,10 +1907,12 @@
       "risk_points": "application deadline is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 60.0,
       "score_explanation": [
         "low fee: approximately EUR 150",
@@ -1875,7 +1936,7 @@
       "eligibility_zh": "人文与计算机科学领域的硕士生和初期博士生",
       "recommendation_reason_zh": "费用低：约150欧元；12天；优先区域；可信来源第一层",
       "risk_points_zh": "申请截止日期不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Karthaus summerschool",
@@ -1913,9 +1974,12 @@
       "risk_points": "applications are not open yet; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "applications are not open yet",
+        "applications are not open yet"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 59.0,
@@ -1980,10 +2044,12 @@
       "risk_points": "applications are not open yet",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "applications are not open yet"
       ],
+      "failed_recommendation_conditions": [],
       "score": 57.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -2007,7 +2073,7 @@
       "eligibility_zh": "要求 申请人应具有定量学科（社会、自然或信息科学、数学、工程）的硕士水平课程学习和/或在定量领域有实际工作经验。",
       "recommendation_reason_zh": "资助证据：奖学金；5天；优先区域；可信来源层级1.5",
       "risk_points_zh": "申请尚未开放",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Emergency Management for Flood Defences – General Concepts",
@@ -2039,8 +2105,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:13763E13-4DED-11F1-B159-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 56.0,
@@ -2098,8 +2166,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:1F6DDF05-4DF0-11F1-B159-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 56.0,
@@ -2170,10 +2240,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 53.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -2231,10 +2303,12 @@
       "risk_points": "application deadline is uncertain",
       "sessions": [],
       "identity_key": "sicss:2026:amu-law",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 53.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -2295,10 +2369,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 52.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -2359,9 +2435,12 @@
       "risk_points": "application deadline is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 52.0,
@@ -2387,7 +2466,7 @@
       "eligibility_zh": "天体物理学博士生",
       "recommendation_reason_zh": "资助证据：住宿支持；优先区域；可信来源第一层；线下",
       "risk_points_zh": "申请截止日期不确定；时长不足5天；费用超过400欧元且无明确资助",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "CSSL26 / Application",
@@ -2423,11 +2502,13 @@
       "risk_points": "application deadline has passed; duration is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 49.0,
       "score_explanation": [
         "funding evidence: fellowship, tuition waiver, fee waiver",
@@ -2484,10 +2565,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "sicss:2026:buenos-aires",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 49.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -2544,10 +2627,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "sicss:2026:issp",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 49.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -2604,10 +2689,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "sicss:2026:stanford",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 49.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -2664,10 +2751,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "sicss:2026:brazil",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 48.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -2723,9 +2812,12 @@
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 47.0,
@@ -2783,8 +2875,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 47.0,
@@ -2844,11 +2938,13 @@
       "risk_points": "application deadline has passed; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 45.0,
       "score_explanation": [
         "funding evidence: financial support",
@@ -2904,10 +3000,12 @@
       "risk_points": "application deadline is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 45.0,
       "score_explanation": [
         "low fee: approximately EUR 100",
@@ -2930,7 +3028,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "费用低：约100欧元；5天；优先区域；可信来源层级1",
       "risk_points_zh": "申请截止日期不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Edinburgh Theoretical Historical Linguistics",
@@ -2967,9 +3065,12 @@
       "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 44.0,
@@ -3034,11 +3135,13 @@
       "risk_points": "application deadline has passed; duration is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 44.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -3099,11 +3202,13 @@
       "risk_points": "application deadline has passed; duration is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 44.0,
       "score_explanation": [
         "funding evidence: scholarship, tuition waiver",
@@ -3163,11 +3268,13 @@
       "risk_points": "application deadline is uncertain; duration is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "duration is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 43.0,
       "score_explanation": [
         "funding evidence: scholarship, fee waiver, stipend, financial support",
@@ -3219,8 +3326,10 @@
       "risk_points": "funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 43.0,
@@ -3288,9 +3397,12 @@
       "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 42.0,
@@ -3349,10 +3461,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 42.0,
       "score_explanation": [
         "low fee: approximately EUR 380",
@@ -3409,10 +3523,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "sicss:2026:wits-standrews",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 42.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -3474,9 +3590,12 @@
       "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 41.0,
@@ -3534,10 +3653,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 41.0,
       "score_explanation": [
         "low fee: approximately EUR 350",
@@ -3592,10 +3713,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 41.0,
       "score_explanation": [
         "low fee: approximately EUR 250",
@@ -3650,9 +3773,12 @@
       "risk_points": "application deadline is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 40.0,
@@ -3711,9 +3837,12 @@
       "risk_points": "application deadline is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 40.0,
@@ -3770,9 +3899,12 @@
       "risk_points": "duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 39.5,
@@ -3797,7 +3929,7 @@
       "eligibility_zh": "对 CAR-T 和其他先进细胞免疫疗法感兴趣的博士生和早期职业研究人员",
       "recommendation_reason_zh": "截止日期似乎开放；优先地区；一级可信来源；混合形式",
       "risk_points_zh": "时长少于5天；资金未明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Summer School: Frontiers of Modern Physics",
@@ -3832,11 +3964,13 @@
       "risk_points": "application deadline has passed; duration is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 39.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -3895,11 +4029,13 @@
       "risk_points": "application deadline has passed; online-only",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "online-only"
       ],
+      "failed_recommendation_conditions": [],
       "score": 38.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -3952,14 +4088,17 @@
       "source_url": "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/",
       "summary": "2026 Advanced Course on International Criminal Law | The Hague Academy of International Law Created with Sketch. About The Academy Our Programmes The Experience Of A Lifetime Support the Academy en en fr Back Login Practical Information Practical Information Practical Information",
       "recommendation_reason": "low fee: approximately EUR 900; 119 days; priority region; trusted source layer 1.5",
-      "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding; in-person status is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "fee exceeds EUR 400 without explicit funding",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 38.0,
       "score_explanation": [
@@ -3969,7 +4108,7 @@
         "trusted source layer 1.5",
         "target level: PhD",
         "topics: artificial intelligence, law, international law, design",
-        "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-18",
       "deadline_evidence": "",
@@ -4017,9 +4156,12 @@
       "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 36.0,
@@ -4084,9 +4226,12 @@
       "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 36.0,
@@ -4148,10 +4293,13 @@
       "risk_points": "application deadline is uncertain; duration is below 4 days; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 33.5,
@@ -4213,9 +4361,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 33.0,
@@ -4270,9 +4421,12 @@
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 33.0,
@@ -4326,9 +4480,12 @@
       "risk_points": "applications are not open yet; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "applications are not open yet",
+        "applications are not open yet"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 30.0,
@@ -4387,9 +4544,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 30.0,
@@ -4449,9 +4609,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 30.0,
@@ -4508,9 +4671,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 30.0,
@@ -4567,11 +4733,13 @@
       "risk_points": "application deadline has passed; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 30.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -4627,14 +4795,17 @@
       "source_url": "https://learninggeoscience.org/mod/page/view.php?id=7307",
       "summary": "Learning Geoscience: Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends | LG Skip to main content Side panel Home Calendar Calendar FREE Learning E-Lectures Student E-Lectures Distinguished Lecturer Webinars How-to-Videos EAGE Courses Self-paced C",
       "recommendation_reason": "62 days; priority region; trusted source layer 1; target level: PhD",
-      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain; online-only",
+      "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
         "online-only"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 30.0,
       "score_explanation": [
@@ -4643,7 +4814,7 @@
         "trusted source layer 1",
         "target level: PhD",
         "topics: geoscience, geophysics, seismology, physics",
-        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; online-only"
+        "near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-15",
       "deadline_evidence": "",
@@ -4759,9 +4930,12 @@
         }
       ],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 29.0,
@@ -4821,9 +4995,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 29.0,
@@ -4884,9 +5061,12 @@
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 28.0,
@@ -4948,12 +5128,14 @@
       "risk_points": "application deadline is uncertain; duration is uncertain; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "duration is uncertain",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 28.0,
       "score_explanation": [
         "funding evidence: travel grant, scholarship, bursary, tuition waiver",
@@ -4973,7 +5155,7 @@
       "eligibility_zh": "早期职业研究人员和非学生",
       "recommendation_reason_zh": "资助证据：旅行补助、奖学金、助学金、学费减免；目标级别：早期职业研究人员；主题：社会科学、数字人文；仅近似匹配：申请截止日期不确定；持续时间不确定；线下状态不确定",
       "risk_points_zh": "申请截止日期不确定；持续时间不确定；线下状态不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELLIS Summer School at Institute Tübingen",
@@ -5005,9 +5187,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 28.0,
@@ -5064,11 +5249,13 @@
       "risk_points": "application deadline is uncertain; online-only",
       "sessions": [],
       "identity_key": "sib:https://www.sib.swiss/training/course/20261029_cvana",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "online-only"
       ],
+      "failed_recommendation_conditions": [],
       "score": 28.0,
       "score_explanation": [
         "low fee: approximately EUR 110",
@@ -5122,10 +5309,13 @@
       "risk_points": "application deadline has passed; duration is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is uncertain",
+        "duration is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 28.0,
@@ -5190,9 +5380,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 28.0,
@@ -5217,7 +5410,7 @@
       "eligibility_zh": "博士论文 RDIP丛书 EARSeL专著 工作 档案 新闻档案 EARSeL活动档案 其他活动档案 暑期学校档案 职位提供 新",
       "recommendation_reason_zh": "优先区域；可信来源层级1.5；线下；目标层次：硕士、博士、博士后",
       "risk_points_zh": "申请截止日期已过；持续时间不足5天；资金不明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Thematic CERN School of Computing",
@@ -5249,9 +5442,12 @@
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 27.0,
@@ -5307,11 +5503,13 @@
       "risk_points": "application deadline is uncertain; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 27.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -5368,12 +5566,14 @@
       "risk_points": "application deadline has passed; duration is uncertain; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 26.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -5395,7 +5595,7 @@
       "eligibility_zh": "格拉茨技术大学的硕士生 格拉茨技术大学（电子研究所）的硕士奖学金现已开放，面向已注册或有意注册以下专业的学生：电气与",
       "recommendation_reason_zh": "资助证据：奖学金；优先区域；可信来源层级1.5；目标层次：硕士",
       "risk_points_zh": "申请截止日期已过；时长不确定；线下状态不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Scholarships & Awards",
@@ -5439,12 +5639,14 @@
       "risk_points": "application deadline has passed; duration is uncertain; online-only",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain",
         "online-only"
       ],
+      "failed_recommendation_conditions": [],
       "score": 26.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -5504,12 +5706,14 @@
       "risk_points": "application deadline is uncertain; duration is uncertain; online-only",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "duration is uncertain",
         "online-only"
       ],
+      "failed_recommendation_conditions": [],
       "score": 25.0,
       "score_explanation": [
         "funding evidence: financial support",
@@ -5563,9 +5767,12 @@
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 25.0,
@@ -5619,9 +5826,12 @@
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 24.0,
@@ -5673,14 +5883,17 @@
       "source_url": "https://lotschool.nl/",
       "summary": "LOT – Netherlands Graduate School of Linguistics News & Events Education Graduate Programme in Linguistics in the Netherlands LOT Summer and Winter Schools Experimental Methods in Language Acquisition Research (EMLAR) The Leiden Summer School in Languages and Linguistics LOT Lab",
       "recommendation_reason": "deadline appears open; priority region; trusted source layer 1.5; target level: PhD, postdoc",
-      "risk_points": "duration is below 4 days; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "risk_points": "duration is below 4 days; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "duration is below 4 days",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 22.0,
       "score_explanation": [
@@ -5689,7 +5902,7 @@
         "trusted source layer 1.5",
         "target level: PhD, postdoc",
         "topics: linguistics",
-        "near-match only: duration is below 4 days; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: duration is below 4 days; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-15",
       "deadline_evidence": "deadline for submissions is 15 August.",
@@ -5733,9 +5946,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 22.0,
@@ -5790,14 +6006,17 @@
       "source_url": "https://www.ssm.usi.ch/en/home-ssm/about-the-summer-school",
       "summary": "About the Summer School in Social Sciences Methods | Summer School in Social Sciences Methods Skip to main content Università della Svizzera italiana Summer School in Social Sciences Methods Summer School in Social Sciences Methods 6-21 August 2026 About Courses Instructors Fees",
       "recommendation_reason": "16 days; priority region; trusted source layer 1.5; target level: PhD",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 22.0,
       "score_explanation": [
@@ -5806,7 +6025,7 @@
         "trusted source layer 1.5",
         "target level: PhD",
         "topics: social science, political science, sociology, psychology",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -5866,9 +6085,12 @@
         }
       ],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 21.0,
@@ -5931,9 +6153,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 21.0,
@@ -5957,7 +6182,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "为期5天；优先区域；可信来源层级1.5；线下活动",
       "risk_points_zh": "申请截止日期已过；资助不明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELLIS Unit Berlin: 2026 Berlin Summer School of Artificial Intelligence and Society",
@@ -5991,9 +6216,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 20.0,
@@ -6017,7 +6245,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "优先地区；可信来源层级1；线下；主题：AI、人工智能、设计",
       "risk_points_zh": "申请截止日期已过；时长不足5天；资金未明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SSoL 2025",
@@ -6054,9 +6282,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 19.0,
@@ -6115,9 +6346,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 19.0,
@@ -6172,12 +6406,14 @@
       "risk_points": "application deadline has passed; duration is uncertain; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 18.0,
       "score_explanation": [
         "low fee: approximately EUR 50",
@@ -6233,10 +6469,13 @@
       "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee equivalence is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee equivalence is uncertain"
       ],
       "score": 17.5,
@@ -6294,9 +6533,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 17.0,
@@ -6352,10 +6594,13 @@
       "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 17.0,
@@ -6379,7 +6624,7 @@
       "eligibility_zh": "根据ENFiber的预算",
       "recommendation_reason_zh": "优先区域；可信来源第一层；线下；目标级别：博士、博士后",
       "risk_points_zh": "申请截止日期已过；时长低于5天；资金不明确且费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Summer School: Population Health Management",
@@ -6409,12 +6654,14 @@
       "risk_points": "application deadline is uncertain; duration is uncertain; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "duration is uncertain",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 17.0,
       "score_explanation": [
         "low fee: approximately EUR 375",
@@ -6434,7 +6681,7 @@
       "eligibility_zh": "人口健康管理硕士项目",
       "recommendation_reason_zh": "费用低：约375欧元；优先地区；目标层次：硕士、博士；仅近似匹配：申请截止日期不确定；时长不确定；线下状态不确定",
       "risk_points_zh": "申请截止日期不确定；时长不确定；线下状态不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Types, Proofs, and Program Logics",
@@ -6467,9 +6714,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 17.0,
@@ -6523,10 +6773,13 @@
       "risk_points": "application deadline is uncertain; duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 16.5,
@@ -6605,10 +6858,13 @@
       "risk_points": "application deadline has passed; duration is uncertain; funding is not explicit and fee equivalence is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is uncertain",
+        "duration is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee equivalence is uncertain"
       ],
       "score": 16.0,
@@ -6673,14 +6929,17 @@
       "source_url": "https://indico.cern.ch/event/1662800/timetable/",
       "summary": "48th CERN School of Computing 2026 (August 23, 2026 - September 5, 2026) · Indico Focus on: All days Aug 23, 2026 Aug 24, 2026 Aug 25, 2026 Aug 26, 2026 Aug 27, 2026 Aug 28, 2026 Aug 29, 2026 Aug 30, 2026 Aug 31, 2026 Sep 1, 2026 Sep 2, 2026 Sep 3, 2026 Sep 4, 2026 Sep 5, 2026 Al",
       "recommendation_reason": "14 days; priority region; trusted source layer 1; topics: machine learning, software engineering, programming languages, cryptography",
-      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain; online-only",
+      "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
         "online-only"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 16.0,
       "score_explanation": [
@@ -6688,7 +6947,7 @@
         "priority region",
         "trusted source layer 1",
         "topics: machine learning, software engineering, programming languages, cryptography",
-        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; online-only"
+        "near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-23",
       "deadline_evidence": "",
@@ -6731,15 +6990,18 @@
       "source_url": "https://www.helmholtz-hida.de/en/mobility/hida-mobility-program/application-process/",
       "summary": "Application Process - Helmholtz Information & Data Science Academy Zum Inhalt springen Training Research Schools Mobility HIDA Jobs Training Training offers Data Science Courses AI Literacy Training Course Catalog AI in Administration & Management Data Science Instructor Certific",
       "recommendation_reason": "low fee: approximately EUR 2000; priority region; trusted source layer 1.5; target level: PhD",
-      "risk_points": "application deadline is uncertain; duration is uncertain; fee exceeds EUR 400 without explicit funding; in-person status is uncertain",
+      "risk_points": "application deadline is uncertain; duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "duration is uncertain",
-        "fee exceeds EUR 400 without explicit funding",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 14.0,
       "score_explanation": [
@@ -6748,7 +7010,7 @@
         "trusted source layer 1.5",
         "target level: PhD",
         "topics: data science",
-        "near-match only: application deadline is uncertain; duration is uncertain; fee exceeds EUR 400 without explicit funding; in-person status is uncertain"
+        "near-match only: application deadline is uncertain; duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-18",
       "deadline_evidence": "",
@@ -6801,9 +7063,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 14.0,
@@ -6855,14 +7120,17 @@
       "source_url": "https://indico.ictp.it/event/11447",
       "summary": "Summer School on Topological Data Analysis and Applications | (smr 4373) (19-30 July 2027) Scientific Calendar Event GO TO SCIENTIFIC CALENDAR Europe/Rome English Administration Search Search in Conferences: Overview Scientific Programme Programme Contribution List Author List Ap",
       "recommendation_reason": "12 days; priority region; trusted source layer 1; topics: data analysis",
-      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "risk_points": "application deadline is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 14.0,
       "score_explanation": [
@@ -6870,7 +7138,7 @@
         "priority region",
         "trusted source layer 1",
         "topics: data analysis",
-        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-23",
       "deadline_evidence": "",
@@ -6916,14 +7184,17 @@
       "source_url": "https://www.ds3-datascience-polytechnique.fr/",
       "summary": "Data Science Summer School (DS³) – École Polytechnique Home Key Dates & Application Practical Sessions Speakers Posters Program FAQ Sponsors Organizers Past Meetings DS 3 -2019 DS 3 -2018 DS 3 -2017 Meilleur Casino En Ligne France Casino Non Aams Italia Non Gamstop Casino Casinos",
       "recommendation_reason": "6 days; priority region; trusted source layer 1.5; target level: MSc, PhD, postdoc",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 12.0,
       "score_explanation": [
@@ -6932,7 +7203,7 @@
         "trusted source layer 1.5",
         "target level: MSc, PhD, postdoc",
         "topics: climate, data science, natural language processing, statistics",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-15",
       "deadline_evidence": "",
@@ -6980,14 +7251,17 @@
       "source_url": "https://eo4society.esa.int/2026/07/01/esa-supports-eth-zurichs-2026-beyond-the-visible-summer-school/",
       "summary": "ESA contributes to ETH Zurich’s Beyond the Visible Summer School in Heilbronn - eo science for society → European Space Agency eo science for society eo science for society Home Opportunities Invitations to Tender Training & education Workshops NoR Sponsorship Platforms Network O",
       "recommendation_reason": "6 days; priority region; trusted source layer 1; target level: early-career researcher",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 12.0,
       "score_explanation": [
@@ -6996,7 +7270,7 @@
         "trusted source layer 1",
         "target level: early-career researcher",
         "topics: water resources, earth observation, satellite, AI",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-23",
       "deadline_evidence": "",
@@ -7042,9 +7316,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 12.0,
@@ -7100,10 +7377,13 @@
       "risk_points": "application deadline has passed; duration is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is uncertain",
+        "duration is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 11.0,
@@ -7161,10 +7441,13 @@
       "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 10.5,
@@ -7217,14 +7500,17 @@
       "source_url": "https://ecpr.eu/MethodsSchool",
       "summary": "Methods School 2026 You are currently browsing offline My ECPR My Profile My Account My Invoices My Event Applications My Funding Applications My Prizes My Groups My Agreements My Events Help Centre News Contact Us ECPR Admin Our Organisation Useful Information We are the leading",
       "recommendation_reason": "4 days; priority region; trusted source layer 1.5; target level: PhD, early-career researcher",
-      "risk_points": "application deadline has passed; funding is not explicit and fee equivalence is uncertain; in-person status is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee equivalence is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee equivalence is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee equivalence is uncertain"
       ],
       "score": 10.0,
       "score_explanation": [
@@ -7233,7 +7519,7 @@
         "trusted source layer 1.5",
         "target level: PhD, early-career researcher",
         "topics: AI, design",
-        "near-match only: application deadline has passed; funding is not explicit and fee equivalence is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee equivalence is uncertain"
       ],
       "first_seen": "2026-06-16",
       "deadline_evidence": "",
@@ -7277,10 +7563,13 @@
       "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 9.5,
@@ -7302,7 +7591,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "优先区域；可信来源第一层；线下活动；仅近似匹配：申请截止日期已过；持续时间低于5天；资金不明确且费用不确定",
       "risk_points_zh": "申请截止日期已过；持续时间低于5天；资金不明确且费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Mila Ventures Launchpad",
@@ -7339,10 +7628,13 @@
       "risk_points": "application deadline is uncertain; duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 9.0,
@@ -7397,10 +7689,13 @@
       "risk_points": "application deadline has passed; duration is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is uncertain",
+        "duration is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 9.0,
@@ -7454,22 +7749,25 @@
       "application_link": "https://www.isprs.org/resources/templates/summer-school-application-form/",
       "source_url": "https://www.isprs.org/resources/templates/summer-school-application-form/",
       "summary": "Summer School Application Form August 03, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commission",
-      "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, AI, philosophy; near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; online-only",
-      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain; online-only",
+      "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, AI, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
+      "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
         "online-only"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 1.0,
       "score_explanation": [
         "6 days",
         "trusted source layer 1",
         "topics: remote sensing, geospatial, AI, philosophy",
-        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; online-only"
+        "near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-13",
       "deadline_evidence": "",
@@ -7514,22 +7812,25 @@
       "application_link": "https://www.isprs.org/society/awards/torlegard.aspx",
       "source_url": "https://www.isprs.org/society/awards/torlegard.aspx",
       "summary": "ISPRS WEC Kennert Torlegård Travel Grant August 03, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council",
-      "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, design, philosophy; near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; online-only",
-      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain; online-only",
+      "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, design, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
+      "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
         "online-only"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 1.0,
       "score_explanation": [
         "6 days",
         "trusted source layer 1",
         "topics: remote sensing, geospatial, design, philosophy",
-        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; online-only"
+        "near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-13",
       "deadline_evidence": "",
@@ -7575,22 +7876,25 @@
       "application_link": "https://ssol.ff.cuni.cz/ssol-2026/",
       "source_url": "https://ssol.ff.cuni.cz/ssol-2026/",
       "summary": "SSoL 2026 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
-      "recommendation_reason": "8 days; priority region; topics: linguistics, syntax, psycholinguistics, law; near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "recommendation_reason": "8 days; priority region; topics: linguistics, syntax, psycholinguistics, law; near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 1.0,
       "score_explanation": [
         "8 days",
         "priority region",
         "topics: linguistics, syntax, psycholinguistics, law",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -7630,22 +7934,25 @@
       "application_link": "https://winterschool.eurac.edu/en/applications-closed",
       "source_url": "https://winterschool.eurac.edu/en/applications-closed",
       "summary": "Applications Closed Loading... Applications Closed Applications for the 2027 edition of the Winter School will open in September 2026! Applications that are successfully submitted and complete will receive a confirmation via email within 5 working days after submission. Please re",
-      "recommendation_reason": "priority region; trusted source layer 1.5; near-match only: application deadline has passed; duration is uncertain; funding is not explicit and fee equivalence is uncertain; in-person status is uncertain",
-      "risk_points": "application deadline has passed; duration is uncertain; funding is not explicit and fee equivalence is uncertain; in-person status is uncertain",
+      "recommendation_reason": "priority region; trusted source layer 1.5; near-match only: application deadline has passed; duration is uncertain; in-person status is uncertain; funding is not explicit and fee equivalence is uncertain",
+      "risk_points": "application deadline has passed; duration is uncertain; in-person status is uncertain; funding is not explicit and fee equivalence is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain",
-        "funding is not explicit and fee equivalence is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee equivalence is uncertain"
       ],
       "score": 0.0,
       "score_explanation": [
         "priority region",
         "trusted source layer 1.5",
-        "near-match only: application deadline has passed; duration is uncertain; funding is not explicit and fee equivalence is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; duration is uncertain; in-person status is uncertain; funding is not explicit and fee equivalence is uncertain"
       ],
       "first_seen": "2026-08-03",
       "deadline_evidence": "",
@@ -7659,7 +7966,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "优先地区；可信来源层级1.5；仅近似匹配：申请截止日期已过；时长不确定；资金不明确且费用等价性不确定；线下状态不确定",
       "risk_points_zh": "申请截止日期已过；时长不确定；资金不明确且费用等价性不确定；线下状态不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Announcement of 10th W.A.T.E.R. Summer School 2026",
@@ -7688,22 +7995,25 @@
       "application_link": "https://watersummerschool.wordpress.com/",
       "source_url": "https://watersummerschool.wordpress.com/",
       "summary": "W.A.T.E.R. Workshop on Advanced measurement Techniques and Experimental Research – International Summer School on Hydraulics Measurement Techniques | Stuttgart, Germany | August 31 – September 4 2026 Skip to content W.A.T.E.R. Workshop on Advanced measurement Techniques and Exper",
-      "recommendation_reason": "5 days; trusted source layer 1; topics: engineering, mechanics; near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "recommendation_reason": "5 days; trusted source layer 1; topics: engineering, mechanics; near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 0.0,
       "score_explanation": [
         "5 days",
         "trusted source layer 1",
         "topics: engineering, mechanics",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "Applications are open until 11 Jul (other dates listed: 2023-04-27, 2025-06-12, 2025-07-11)",
@@ -7750,10 +8060,13 @@
       "risk_points": "application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "duration is uncertain",
+        "duration is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 0.0,
@@ -7793,10 +8106,9 @@
       "deadline_status": "open",
       "funding_available": true,
       "funding_type": [
-        "scholarship",
-        "stipend"
+        "scholarship"
       ],
-      "funding_evidence": "Scholarship Student Groups and Initiatives FAQ Contact StaRs Departments Department Computer Science & Artificial Intelligence Arti",
+      "funding_evidence": "Thanks to the support of the associations GSCL and DGfS, scholarships covering the registration fee will be available for selected participants.",
       "topic_keywords": [
         "linguistics",
         "computational linguistics",
@@ -7809,16 +8121,18 @@
       "fee_eur": 150.0,
       "application_link": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
       "source_url": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
-      "summary": "Computational Linguistics Fall School 2026 | UTN Go to content area Go to search Go to main navigation About us Organisation Founding Executive Board Founding Steering Board Central Services Overview of Representatives University Contract of UTN Anniversary 2026 International Eng",
-      "recommendation_reason": "funding evidence: scholarship, stipend; deadline appears open; 12 days; priority region",
+      "summary": "Computational Linguistics Fall School 2026 | UTN Go to content area Go to search Go to main navigation About us Organisation Founding Executive Board Founding Steering Board Central Services Overview of Representatives University Contract of UTN Anniversary 2026 International Eng Override note: The official UTN programme section states that selected participants can receive scholarships covering the applicable registration fee; Deutschlandstipendium in the page footer is unrelated navigation/news content.",
+      "recommendation_reason": "funding evidence: scholarship; deadline appears open; 12 days; priority region",
       "risk_points": "Funding may be competitive or partial. Fee noted: 150 EUR.",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "registration fee covered",
       "financial_access_status": "funded",
       "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [],
       "score": 87.0,
       "score_explanation": [
-        "funding evidence: scholarship, stipend",
+        "funding evidence: scholarship",
         "deadline appears open",
         "12 days",
         "priority region",
@@ -7839,7 +8153,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Energy Harnessing in the Urban Water Cycle",
@@ -7871,8 +8185,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:0846DE42-3284-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 78.0,
@@ -7932,8 +8248,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:27FA04F3-3282-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 78.0,
@@ -7993,8 +8311,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:5DFFA121-3281-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 78.0,
@@ -8055,8 +8375,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:E8E593C2-C9F7-11F0-A9A4-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8112,8 +8434,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:7415606A-115B-11F1-BB1B-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8171,8 +8495,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:10180031-3F14-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8228,8 +8554,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:D92BB7F7-3F15-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8288,8 +8616,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:D12D7660-3F10-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8348,8 +8678,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:0C1B6BF4-75FF-11F1-A7F4-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8409,8 +8741,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:8578A6C2-3282-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8471,8 +8805,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:427F3F43-3F13-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8531,8 +8867,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:C51B289C-3280-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8590,8 +8928,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:8117413A-3F0F-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8649,8 +8989,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:58AA4140-3F12-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8708,8 +9050,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:2BECA740-3283-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8768,8 +9112,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:AFC693D1-3282-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8825,8 +9171,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:A4537FAC-3F13-11F1-9A59-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8884,8 +9232,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:2F82D05A-3284-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -8943,8 +9293,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:565D378D-3283-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -9003,8 +9355,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:A4942C80-3281-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -9063,8 +9417,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:09CAEE26-3281-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 70.0,
@@ -9122,8 +9478,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:5E57A522-3284-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 69.0,
@@ -9182,8 +9540,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:D23836DC-3283-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 69.0,
@@ -9242,8 +9602,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:36C27682-3281-11F1-A0A9-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 69.0,
@@ -9307,8 +9669,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 64.0,
@@ -9369,8 +9733,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 64.0,
@@ -9397,7 +9763,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Interdisciplinarity for Complex Water Problems",
@@ -9433,8 +9799,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 64.0,
@@ -9493,8 +9861,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 63.0,
@@ -9559,10 +9929,12 @@
       "risk_points": "application deadline is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 61.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -9586,7 +9958,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Prob_AI Hub Winter School 2027",
@@ -9623,10 +9995,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 61.0,
       "score_explanation": [
         "funding evidence: travel grant",
@@ -9685,10 +10059,12 @@
       "risk_points": "application deadline is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 60.0,
       "score_explanation": [
         "low fee: approximately EUR 150",
@@ -9712,7 +10088,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Emergency Management for Flood Defences – General Concepts",
@@ -9744,8 +10120,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:13763E13-4DED-11F1-B159-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 56.0,
@@ -9803,8 +10181,10 @@
       "risk_points": "fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "ihe-delft:edition:1F6DDF05-4DF0-11F1-B159-0050561F03F5",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 56.0,
@@ -9875,10 +10255,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 53.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -9937,11 +10319,13 @@
       "risk_points": "application deadline is uncertain; duration is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "duration is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 53.0,
       "score_explanation": [
         "funding evidence: fellowship, tuition waiver, fee waiver",
@@ -9999,10 +10383,12 @@
       "risk_points": "application deadline is uncertain",
       "sessions": [],
       "identity_key": "sicss:2026:amu-law",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 53.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -10063,10 +10449,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 52.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -10127,9 +10515,12 @@
       "risk_points": "application deadline is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 52.0,
@@ -10155,7 +10546,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-Buenos Aires",
@@ -10189,10 +10580,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "sicss:2026:buenos-aires",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 49.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -10249,10 +10642,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "sicss:2026:issp",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 49.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -10309,10 +10704,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "sicss:2026:stanford",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 49.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -10369,10 +10766,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "sicss:2026:brazil",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 48.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -10428,9 +10827,12 @@
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 47.0,
@@ -10490,11 +10892,13 @@
       "risk_points": "application deadline has passed; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 45.0,
       "score_explanation": [
         "funding evidence: financial support",
@@ -10550,10 +10954,12 @@
       "risk_points": "application deadline is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 45.0,
       "score_explanation": [
         "low fee: approximately EUR 100",
@@ -10576,7 +10982,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Edinburgh Theoretical Historical Linguistics",
@@ -10613,9 +11019,12 @@
       "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 44.0,
@@ -10680,11 +11089,13 @@
       "risk_points": "application deadline has passed; duration is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 44.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -10745,11 +11156,13 @@
       "risk_points": "application deadline has passed; duration is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 44.0,
       "score_explanation": [
         "funding evidence: scholarship, tuition waiver",
@@ -10809,11 +11222,13 @@
       "risk_points": "application deadline is uncertain; duration is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "duration is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 43.0,
       "score_explanation": [
         "funding evidence: scholarship, fee waiver, stipend, financial support",
@@ -10865,8 +11280,10 @@
       "risk_points": "funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 43.0,
@@ -10934,9 +11351,12 @@
       "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 42.0,
@@ -10995,10 +11415,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 42.0,
       "score_explanation": [
         "low fee: approximately EUR 380",
@@ -11055,10 +11477,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "sicss:2026:wits-standrews",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 42.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -11120,9 +11544,12 @@
       "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 41.0,
@@ -11180,10 +11607,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 41.0,
       "score_explanation": [
         "low fee: approximately EUR 350",
@@ -11238,10 +11667,12 @@
       "risk_points": "application deadline has passed",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed"
       ],
+      "failed_recommendation_conditions": [],
       "score": 41.0,
       "score_explanation": [
         "low fee: approximately EUR 250",
@@ -11299,14 +11730,17 @@
       "source_url": "https://www.projects.science.uu.nl/iceclimate/karthaus/application.php",
       "summary": "Ice and Climate : Karthaus summerschool Karthaus summerschool Ice and Climate Karthaus Course Information Course Information How to apply Practical information History Historical background Karthaus book Previous courses How to apply Ice and Climate Karthaus course How to apply > Override note: Official application page says applications for the 2027 course are not yet open.",
       "recommendation_reason": "funding evidence: travel grant; 10 days; priority region; trusted source layer 1.5",
-      "risk_points": "applications are not open yet; fee exceeds EUR 400 without explicit funding; in-person status is uncertain",
+      "risk_points": "applications are not open yet; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
         "applications are not open yet",
-        "fee exceeds EUR 400 without explicit funding",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 41.0,
       "score_explanation": [
@@ -11316,7 +11750,7 @@
         "trusted source layer 1.5",
         "target level: MSc, PhD",
         "topics: climate, glaciology, physics, chemistry",
-        "near-match only: applications are not open yet; fee exceeds EUR 400 without explicit funding; in-person status is uncertain"
+        "near-match only: applications are not open yet; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-18",
       "deadline_evidence": "Application for 2027 course is not yet open.",
@@ -11362,9 +11796,12 @@
       "risk_points": "application deadline is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 40.0,
@@ -11423,9 +11860,12 @@
       "risk_points": "application deadline is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 40.0,
@@ -11482,9 +11922,12 @@
       "risk_points": "duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 39.5,
@@ -11509,7 +11952,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Summer School: Frontiers of Modern Physics",
@@ -11544,11 +11987,13 @@
       "risk_points": "application deadline has passed; duration is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 39.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -11607,11 +12052,13 @@
       "risk_points": "application deadline has passed; online-only",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "online-only"
       ],
+      "failed_recommendation_conditions": [],
       "score": 38.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -11664,14 +12111,17 @@
       "source_url": "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/",
       "summary": "2026 Advanced Course on International Criminal Law | The Hague Academy of International Law Created with Sketch. About The Academy Our Programmes The Experience Of A Lifetime Support the Academy en en fr Back Login Practical Information Practical Information Practical Information",
       "recommendation_reason": "low fee: approximately EUR 900; 119 days; priority region; trusted source layer 1.5",
-      "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding; in-person status is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "fee exceeds EUR 400 without explicit funding",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 38.0,
       "score_explanation": [
@@ -11681,7 +12131,7 @@
         "trusted source layer 1.5",
         "target level: PhD",
         "topics: artificial intelligence, law, international law, design",
-        "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-18",
       "deadline_evidence": "",
@@ -11729,9 +12179,12 @@
       "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 36.0,
@@ -11796,9 +12249,12 @@
       "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 36.0,
@@ -11860,10 +12316,13 @@
       "risk_points": "application deadline is uncertain; duration is below 4 days; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 33.5,
@@ -11925,9 +12384,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 33.0,
@@ -11982,9 +12444,12 @@
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 33.0,
@@ -12038,9 +12503,12 @@
       "risk_points": "applications are not open yet; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "applications are not open yet",
+        "applications are not open yet"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 30.0,
@@ -12099,9 +12567,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 30.0,
@@ -12161,9 +12632,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 30.0,
@@ -12220,9 +12694,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 30.0,
@@ -12279,11 +12756,13 @@
       "risk_points": "application deadline has passed; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 30.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -12339,14 +12818,17 @@
       "source_url": "https://learninggeoscience.org/mod/page/view.php?id=7307",
       "summary": "Learning Geoscience: Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends | LG Skip to main content Side panel Home Calendar Calendar FREE Learning E-Lectures Student E-Lectures Distinguished Lecturer Webinars How-to-Videos EAGE Courses Self-paced C",
       "recommendation_reason": "62 days; priority region; trusted source layer 1; target level: PhD",
-      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain; online-only",
+      "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
         "online-only"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 30.0,
       "score_explanation": [
@@ -12355,7 +12837,7 @@
         "trusted source layer 1",
         "target level: PhD",
         "topics: geoscience, geophysics, seismology, physics",
-        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; online-only"
+        "near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-15",
       "deadline_evidence": "",
@@ -12471,9 +12953,12 @@
         }
       ],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 29.0,
@@ -12533,9 +13018,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 29.0,
@@ -12596,9 +13084,12 @@
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 28.0,
@@ -12660,12 +13151,14 @@
       "risk_points": "application deadline is uncertain; duration is uncertain; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "duration is uncertain",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 28.0,
       "score_explanation": [
         "funding evidence: travel grant, scholarship, bursary, tuition waiver",
@@ -12685,7 +13178,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELLIS Summer School at Institute Tübingen",
@@ -12717,9 +13210,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 28.0,
@@ -12776,11 +13272,13 @@
       "risk_points": "application deadline is uncertain; online-only",
       "sessions": [],
       "identity_key": "sib:https://www.sib.swiss/training/course/20261029_cvana",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "online-only"
       ],
+      "failed_recommendation_conditions": [],
       "score": 28.0,
       "score_explanation": [
         "low fee: approximately EUR 110",
@@ -12842,9 +13340,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 28.0,
@@ -12869,7 +13370,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Thematic CERN School of Computing",
@@ -12901,9 +13402,12 @@
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 27.0,
@@ -12959,11 +13463,13 @@
       "risk_points": "application deadline is uncertain; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 27.0,
       "score_explanation": [
         "low fee: approximately EUR 0",
@@ -13020,12 +13526,14 @@
       "risk_points": "application deadline has passed; duration is uncertain; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 26.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -13047,7 +13555,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Scholarships & Awards",
@@ -13091,12 +13599,14 @@
       "risk_points": "application deadline has passed; duration is uncertain; online-only",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain",
         "online-only"
       ],
+      "failed_recommendation_conditions": [],
       "score": 26.0,
       "score_explanation": [
         "funding evidence: scholarship",
@@ -13156,12 +13666,14 @@
       "risk_points": "application deadline is uncertain; duration is uncertain; online-only",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "duration is uncertain",
         "online-only"
       ],
+      "failed_recommendation_conditions": [],
       "score": 25.0,
       "score_explanation": [
         "funding evidence: financial support",
@@ -13215,9 +13727,12 @@
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 25.0,
@@ -13271,9 +13786,12 @@
       "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 24.0,
@@ -13325,14 +13843,17 @@
       "source_url": "https://lotschool.nl/",
       "summary": "LOT – Netherlands Graduate School of Linguistics News & Events Education Graduate Programme in Linguistics in the Netherlands LOT Summer and Winter Schools Experimental Methods in Language Acquisition Research (EMLAR) The Leiden Summer School in Languages and Linguistics LOT Lab",
       "recommendation_reason": "deadline appears open; priority region; trusted source layer 1.5; target level: PhD, postdoc",
-      "risk_points": "duration is below 4 days; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "risk_points": "duration is below 4 days; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "duration is below 4 days",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 22.0,
       "score_explanation": [
@@ -13341,7 +13862,7 @@
         "trusted source layer 1.5",
         "target level: PhD, postdoc",
         "topics: linguistics",
-        "near-match only: duration is below 4 days; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: duration is below 4 days; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-15",
       "deadline_evidence": "deadline for submissions is 15 August.",
@@ -13385,9 +13906,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 22.0,
@@ -13442,14 +13966,17 @@
       "source_url": "https://www.ssm.usi.ch/en/home-ssm/about-the-summer-school",
       "summary": "About the Summer School in Social Sciences Methods | Summer School in Social Sciences Methods Skip to main content Università della Svizzera italiana Summer School in Social Sciences Methods Summer School in Social Sciences Methods 6-21 August 2026 About Courses Instructors Fees",
       "recommendation_reason": "16 days; priority region; trusted source layer 1.5; target level: PhD",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 22.0,
       "score_explanation": [
@@ -13458,7 +13985,7 @@
         "trusted source layer 1.5",
         "target level: PhD",
         "topics: social science, political science, sociology, psychology",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -13518,9 +14045,12 @@
         }
       ],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 21.0,
@@ -13583,9 +14113,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 21.0,
@@ -13609,7 +14142,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELLIS Unit Berlin: 2026 Berlin Summer School of Artificial Intelligence and Society",
@@ -13643,9 +14176,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 20.0,
@@ -13669,7 +14205,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SSoL 2025",
@@ -13706,9 +14242,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 19.0,
@@ -13767,9 +14306,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 19.0,
@@ -13824,12 +14366,14 @@
       "risk_points": "application deadline has passed; duration is uncertain; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 18.0,
       "score_explanation": [
         "low fee: approximately EUR 50",
@@ -13885,10 +14429,13 @@
       "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee equivalence is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee equivalence is uncertain"
       ],
       "score": 17.5,
@@ -13946,9 +14493,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 17.0,
@@ -14004,10 +14554,13 @@
       "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 17.0,
@@ -14031,7 +14584,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Summer School: Population Health Management",
@@ -14061,12 +14614,14 @@
       "risk_points": "application deadline is uncertain; duration is uncertain; in-person status is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "duration is uncertain",
         "in-person status is uncertain"
       ],
+      "failed_recommendation_conditions": [],
       "score": 17.0,
       "score_explanation": [
         "low fee: approximately EUR 375",
@@ -14086,7 +14641,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SHECURITY Summer School 2026",
@@ -14118,10 +14673,13 @@
       "risk_points": "application deadline is uncertain; duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 16.5,
@@ -14200,10 +14758,13 @@
       "risk_points": "application deadline has passed; duration is uncertain; funding is not explicit and fee equivalence is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is uncertain",
+        "duration is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee equivalence is uncertain"
       ],
       "score": 16.0,
@@ -14268,14 +14829,17 @@
       "source_url": "https://indico.cern.ch/event/1662800/timetable/",
       "summary": "48th CERN School of Computing 2026 (August 23, 2026 - September 5, 2026) · Indico Focus on: All days Aug 23, 2026 Aug 24, 2026 Aug 25, 2026 Aug 26, 2026 Aug 27, 2026 Aug 28, 2026 Aug 29, 2026 Aug 30, 2026 Aug 31, 2026 Sep 1, 2026 Sep 2, 2026 Sep 3, 2026 Sep 4, 2026 Sep 5, 2026 Al",
       "recommendation_reason": "14 days; priority region; trusted source layer 1; topics: machine learning, software engineering, programming languages, cryptography",
-      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain; online-only",
+      "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
         "online-only"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 16.0,
       "score_explanation": [
@@ -14283,7 +14847,7 @@
         "priority region",
         "trusted source layer 1",
         "topics: machine learning, software engineering, programming languages, cryptography",
-        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; online-only"
+        "near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-23",
       "deadline_evidence": "",
@@ -14326,15 +14890,18 @@
       "source_url": "https://www.helmholtz-hida.de/en/mobility/hida-mobility-program/application-process/",
       "summary": "Application Process - Helmholtz Information & Data Science Academy Zum Inhalt springen Training Research Schools Mobility HIDA Jobs Training Training offers Data Science Courses AI Literacy Training Course Catalog AI in Administration & Management Data Science Instructor Certific",
       "recommendation_reason": "low fee: approximately EUR 2000; priority region; trusted source layer 1.5; target level: PhD",
-      "risk_points": "application deadline is uncertain; duration is uncertain; fee exceeds EUR 400 without explicit funding; in-person status is uncertain",
+      "risk_points": "application deadline is uncertain; duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
         "application deadline is uncertain",
         "duration is uncertain",
-        "fee exceeds EUR 400 without explicit funding",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 14.0,
       "score_explanation": [
@@ -14343,7 +14910,7 @@
         "trusted source layer 1.5",
         "target level: PhD",
         "topics: data science",
-        "near-match only: application deadline is uncertain; duration is uncertain; fee exceeds EUR 400 without explicit funding; in-person status is uncertain"
+        "near-match only: application deadline is uncertain; duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-18",
       "deadline_evidence": "",
@@ -14396,9 +14963,12 @@
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 14.0,
@@ -14450,14 +15020,17 @@
       "source_url": "https://indico.ictp.it/event/11447",
       "summary": "Summer School on Topological Data Analysis and Applications | (smr 4373) (19-30 July 2027) Scientific Calendar Event GO TO SCIENTIFIC CALENDAR Europe/Rome English Administration Search Search in Conferences: Overview Scientific Programme Programme Contribution List Author List Ap",
       "recommendation_reason": "12 days; priority region; trusted source layer 1; topics: data analysis",
-      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "risk_points": "application deadline is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 14.0,
       "score_explanation": [
@@ -14465,7 +15038,7 @@
         "priority region",
         "trusted source layer 1",
         "topics: data analysis",
-        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-23",
       "deadline_evidence": "",
@@ -14511,14 +15084,17 @@
       "source_url": "https://www.ds3-datascience-polytechnique.fr/",
       "summary": "Data Science Summer School (DS³) – École Polytechnique Home Key Dates & Application Practical Sessions Speakers Posters Program FAQ Sponsors Organizers Past Meetings DS 3 -2019 DS 3 -2018 DS 3 -2017 Meilleur Casino En Ligne France Casino Non Aams Italia Non Gamstop Casino Casinos",
       "recommendation_reason": "6 days; priority region; trusted source layer 1.5; target level: MSc, PhD, postdoc",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 12.0,
       "score_explanation": [
@@ -14527,7 +15103,7 @@
         "trusted source layer 1.5",
         "target level: MSc, PhD, postdoc",
         "topics: climate, data science, natural language processing, statistics",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-15",
       "deadline_evidence": "",
@@ -14575,14 +15151,17 @@
       "source_url": "https://eo4society.esa.int/2026/07/01/esa-supports-eth-zurichs-2026-beyond-the-visible-summer-school/",
       "summary": "ESA contributes to ETH Zurich’s Beyond the Visible Summer School in Heilbronn - eo science for society → European Space Agency eo science for society eo science for society Home Opportunities Invitations to Tender Training & education Workshops NoR Sponsorship Platforms Network O",
       "recommendation_reason": "6 days; priority region; trusted source layer 1; target level: early-career researcher",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 12.0,
       "score_explanation": [
@@ -14591,7 +15170,7 @@
         "trusted source layer 1",
         "target level: early-career researcher",
         "topics: water resources, earth observation, satellite, AI",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-23",
       "deadline_evidence": "",
@@ -14638,10 +15217,13 @@
       "risk_points": "application deadline has passed; duration is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is uncertain",
+        "duration is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 11.0,
@@ -14699,10 +15281,13 @@
       "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 10.5,
@@ -14754,15 +15339,18 @@
       "source_url": "https://icvss.dmi.unict.it/icvss2026/Application",
       "summary": "ICVSS 2026 - International Computer Vision Summer School 2026 Facebook group Twitter Computer Vision for Spatial and Physical Intelligence Home Committee Courses Reading Group Industrial Session Deadlines Application Registration Location and Accommodation Sponsors Call for Poste",
       "recommendation_reason": "low fee: approximately EUR 850; priority region; trusted source layer 1; target level: MSc, PhD, postdoc",
-      "risk_points": "application deadline has passed; duration is uncertain; fee exceeds EUR 400 without explicit funding; in-person status is uncertain",
+      "risk_points": "application deadline has passed; duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
-      "financial_access_status": "unresolved",
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain",
-        "fee exceeds EUR 400 without explicit funding",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 10.0,
       "score_explanation": [
@@ -14771,7 +15359,7 @@
         "trusted source layer 1",
         "target level: MSc, PhD, postdoc",
         "topics: computer vision",
-        "near-match only: application deadline has passed; duration is uncertain; fee exceeds EUR 400 without explicit funding; in-person status is uncertain"
+        "near-match only: application deadline has passed; duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-16",
       "deadline_evidence": "Deadline: 1 April 2026",
@@ -14815,14 +15403,17 @@
       "source_url": "https://ecpr.eu/MethodsSchool",
       "summary": "Methods School 2026 You are currently browsing offline My ECPR My Profile My Account My Invoices My Event Applications My Funding Applications My Prizes My Groups My Agreements My Events Help Centre News Contact Us ECPR Admin Our Organisation Useful Information We are the leading",
       "recommendation_reason": "4 days; priority region; trusted source layer 1.5; target level: PhD, early-career researcher",
-      "risk_points": "application deadline has passed; funding is not explicit and fee equivalence is uncertain; in-person status is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee equivalence is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee equivalence is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee equivalence is uncertain"
       ],
       "score": 10.0,
       "score_explanation": [
@@ -14831,7 +15422,7 @@
         "trusted source layer 1.5",
         "target level: PhD, early-career researcher",
         "topics: AI, design",
-        "near-match only: application deadline has passed; funding is not explicit and fee equivalence is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee equivalence is uncertain"
       ],
       "first_seen": "2026-06-16",
       "deadline_evidence": "",
@@ -14875,10 +15466,13 @@
       "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 9.5,
@@ -14900,7 +15494,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Mila Ventures Launchpad",
@@ -14937,10 +15531,13 @@
       "risk_points": "application deadline is uncertain; duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "duration is below 4 days",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 9.0,
@@ -14995,10 +15592,13 @@
       "risk_points": "application deadline has passed; duration is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "duration is uncertain",
+        "duration is uncertain"
+      ],
+      "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
       ],
       "score": 9.0,
@@ -15052,22 +15652,25 @@
       "application_link": "https://www.isprs.org/resources/templates/summer-school-application-form/",
       "source_url": "https://www.isprs.org/resources/templates/summer-school-application-form/",
       "summary": "Summer School Application Form August 03, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commission",
-      "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, AI, philosophy; near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; online-only",
-      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain; online-only",
+      "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, AI, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
+      "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
         "online-only"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 1.0,
       "score_explanation": [
         "6 days",
         "trusted source layer 1",
         "topics: remote sensing, geospatial, AI, philosophy",
-        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; online-only"
+        "near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-13",
       "deadline_evidence": "",
@@ -15112,22 +15715,25 @@
       "application_link": "https://www.isprs.org/society/awards/torlegard.aspx",
       "source_url": "https://www.isprs.org/society/awards/torlegard.aspx",
       "summary": "ISPRS WEC Kennert Torlegård Travel Grant August 03, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council",
-      "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, design, philosophy; near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; online-only",
-      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain; online-only",
+      "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, design, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
+      "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
         "online-only"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 1.0,
       "score_explanation": [
         "6 days",
         "trusted source layer 1",
         "topics: remote sensing, geospatial, design, philosophy",
-        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain; online-only"
+        "near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-13",
       "deadline_evidence": "",
@@ -15173,22 +15779,25 @@
       "application_link": "https://ssol.ff.cuni.cz/ssol-2026/",
       "source_url": "https://ssol.ff.cuni.cz/ssol-2026/",
       "summary": "SSoL 2026 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
-      "recommendation_reason": "8 days; priority region; topics: linguistics, syntax, psycholinguistics, law; near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "recommendation_reason": "8 days; priority region; topics: linguistics, syntax, psycholinguistics, law; near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 1.0,
       "score_explanation": [
         "8 days",
         "priority region",
         "topics: linguistics, syntax, psycholinguistics, law",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -15231,21 +15840,24 @@
       "application_link": "https://www.cs.uoregon.edu/research/summerschool/summer26/",
       "source_url": "https://www.cs.uoregon.edu/research/summerschool/summer26/",
       "summary": "﻿ OPLSS 2026 | University of Oregon One Stop Apply Visit Give June 22-July 4, 2026 Types, Proofs, and Program Logics Topics Participants Pictures Archives Sponsors For 24 years, the Oregon Programming Languages Summer School (OPLSS) has focused on teaching the principles of progr",
-      "recommendation_reason": "13 days; topics: programming languages, design; near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "recommendation_reason": "13 days; topics: programming languages, design; near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 0.0,
       "score_explanation": [
         "13 days",
         "topics: programming languages, design",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-16",
       "deadline_evidence": "",
@@ -15285,22 +15897,25 @@
       "application_link": "https://winterschool.eurac.edu/en/applications-closed",
       "source_url": "https://winterschool.eurac.edu/en/applications-closed",
       "summary": "Applications Closed Loading... Applications Closed Applications for the 2027 edition of the Winter School will open in September 2026! Applications that are successfully submitted and complete will receive a confirmation via email within 5 working days after submission. Please re",
-      "recommendation_reason": "priority region; trusted source layer 1.5; near-match only: application deadline has passed; duration is uncertain; funding is not explicit and fee equivalence is uncertain; in-person status is uncertain",
-      "risk_points": "application deadline has passed; duration is uncertain; funding is not explicit and fee equivalence is uncertain; in-person status is uncertain",
+      "recommendation_reason": "priority region; trusted source layer 1.5; near-match only: application deadline has passed; duration is uncertain; in-person status is uncertain; funding is not explicit and fee equivalence is uncertain",
+      "risk_points": "application deadline has passed; duration is uncertain; in-person status is uncertain; funding is not explicit and fee equivalence is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
         "duration is uncertain",
-        "funding is not explicit and fee equivalence is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee equivalence is uncertain"
       ],
       "score": 0.0,
       "score_explanation": [
         "priority region",
         "trusted source layer 1.5",
-        "near-match only: application deadline has passed; duration is uncertain; funding is not explicit and fee equivalence is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; duration is uncertain; in-person status is uncertain; funding is not explicit and fee equivalence is uncertain"
       ],
       "first_seen": "2026-08-03",
       "deadline_evidence": "",
@@ -15314,7 +15929,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Announcement of 10th W.A.T.E.R. Summer School 2026",
@@ -15343,22 +15958,25 @@
       "application_link": "https://watersummerschool.wordpress.com/",
       "source_url": "https://watersummerschool.wordpress.com/",
       "summary": "W.A.T.E.R. Workshop on Advanced measurement Techniques and Experimental Research – International Summer School on Hydraulics Measurement Techniques | Stuttgart, Germany | August 31 – September 4 2026 Skip to content W.A.T.E.R. Workshop on Advanced measurement Techniques and Exper",
-      "recommendation_reason": "5 days; trusted source layer 1; topics: engineering, mechanics; near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain",
+      "recommendation_reason": "5 days; trusted source layer 1; topics: engineering, mechanics; near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
+      "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
         "application deadline has passed",
-        "funding is not explicit and fee is uncertain",
         "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 0.0,
       "score_explanation": [
         "5 days",
         "trusted source layer 1",
         "topics: engineering, mechanics",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain; in-person status is uncertain"
+        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "Applications are open until 11 Jul (other dates listed: 2023-04-27, 2025-06-12, 2025-07-11)",

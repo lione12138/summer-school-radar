@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Summa · Funded research summer schools</title>
+    <title>Summa · Research training opportunities</title>
     <link>https://lione12138.github.io/summer-school-radar/</link>
     <atom:link href="https://lione12138.github.io/summer-school-radar/feed.xml" rel="self" type="application/rss+xml"/>
-    <description>Funded research summer schools, winter schools, and training schools in any academic discipline, selected by the same evidence-based quality rules.</description>
+    <description>Funded and accessible research-training recommendations, plus clearly separated officially verified self-funded schools.</description>
     <language>en</language>
     <copyright>Data CC BY 4.0 — reuse with attribution and a link back to https://lione12138.github.io/summer-school-radar/</copyright>
     <generator>Summa</generator>
     <!-- SSR-CANON-7q3v9x2k8m4w -->
-    <lastBuildDate>Mon, 03 Aug 2026 15:52:55 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Aug 2026 03:04:50 +0000</lastBuildDate>
     <item>
       <title>Computational Linguistics Fall School 2026 — UTN</title>
       <link>https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/</link>
       <guid isPermaLink="false">https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/</guid>
-      <category>Fully qualified</category>
+      <category>Funded / low fee</category>
       <pubDate>Mon, 03 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Dates: 21 Sep – 2 Oct 2026 · 12 days. Location: University of Technology Nuremberg. Deadline: 2026-09-06. scholarship, stipend · amount not stated · Apply on official page. Topics: linguistics, computational linguistics, natural language processing, corpus linguistics</description>
+      <description>Dates: 21 Sep – 2 Oct 2026 · 12 days. Location: University of Technology Nuremberg. Deadline: 2026-09-06. registration-fee scholarship · registration fee covered · Selected participants. Topics: linguistics, computational linguistics, natural language processing, corpus linguistics</description>
+    </item>
+    <item>
+      <title>Interdisciplinarity for Complex Water Problems — IHE Delft</title>
+      <link>https://www.un-ihe.org/short-courses</link>
+      <guid isPermaLink="false">ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5</guid>
+      <category>Verified self-funded</category>
+      <pubDate>Sun, 14 Jun 2026 00:00:00 +0000</pubDate>
+      <description>Dates: 28 Sep – 2 Oct 2026 · 5 days. Location: Delft, Netherlands. Deadline: 2026-08-28. Fee about EUR 450 · Apply on official page. Topics: hydrology, environmental science, engineering, design</description>
     </item>
   </channel>
 </rss>
