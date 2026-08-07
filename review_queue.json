@@ -1,6 +1,114 @@
 {
-  "generated": "2026-08-03",
+  "generated": "2026-08-07",
   "review_queue": [
+    {
+      "title": "Una Europa Summer School 2026 for doctoral researchers: Sustainability for All",
+      "url": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-sustainability-for-all",
+      "organizer": "Una Europa",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2026-09-23",
+      "deadline_status": "open",
+      "financial_access_status": "low-fee",
+      "fee": "no tuition fee",
+      "fee_eur": 0.0,
+      "topics": [
+        "climate",
+        "climate change",
+        "sustainability",
+        "artificial intelligence",
+        "data science",
+        "design"
+      ],
+      "needs_review": [
+        "duration is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "Deadline 23 Sep 2026 (other dates listed: 2026-08-09, 2026-09-15)",
+        "duration": "",
+        "funding": "",
+        "mode": "in-person programme, there will be a compulsory online part"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Una Europa Winter School 2027 for doctoral researchers: Rethinking Cultural Heritage Collections",
+      "url": "https://www.una-europa.eu/calendar/una-europa-winter-school-2027-for-doctoral-researchers-rethinking-cultural-heritage-collections",
+      "organizer": "Una Europa",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2026-09-23",
+      "deadline_status": "open",
+      "financial_access_status": "low-fee",
+      "fee": "no tuition fee",
+      "fee_eur": 0.0,
+      "topics": [
+        "linguistics",
+        "design",
+        "sociology",
+        "anthropology",
+        "history",
+        "archaeology",
+        "digital humanities"
+      ],
+      "needs_review": [
+        "duration is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "Deadline 23 Sep 2026 (other dates listed: 2026-08-09)",
+        "duration": "",
+        "funding": "",
+        "mode": "onsite programme at Freie Universität Berlin. At most Un"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
+      "url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
+      "organizer": "ELLIS",
+      "source_layer": "1",
+      "location": "HPI Potsdam",
+      "dates": {
+        "start": "2026-08-31",
+        "end": "2026-09-03",
+        "duration_days": 4
+      },
+      "deadline": "2026-08-28",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [],
+      "needs_review": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "ELLIS detail/registration page: registration deadline 2026-08-28",
+        "duration": "ELLIS events listing: 2026-08-31 to 2026-09-03",
+        "funding": "",
+        "mode": "ELLIS listing location: HPI Potsdam"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
     {
       "title": "Winter School​",
       "url": "https://csh.ac.at/education/winterschool/",
@@ -32,7 +140,7 @@
       "evidence": {
         "deadline": "",
         "duration": "22–26 February 2027",
-        "funding": "scholarships may be available for participants with financial need; instructions will be provided to accepted students. Audience Th",
+        "funding": "Partial tuition scholarships may be available for participants with financial need; instructions will be provided to accepted students.",
         "mode": "residential experience and should be considered a full-time c"
       },
       "ai_advisory": {
@@ -53,6 +161,43 @@
           "fee": "",
           "funding": ""
         }
+      }
+    },
+    {
+      "title": "STFC Summer School",
+      "url": "https://www.keele.ac.uk/astronomy-summer-school/",
+      "organizer": "Keele University",
+      "source_layer": "1",
+      "location": "UK",
+      "dates": {
+        "start": "2026-09-01",
+        "end": "2026-09-04",
+        "duration_days": 4
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "of £700 (to cover registration, accommodation for 5 nights, breakfasts, lunch, coffee breaks, and di",
+      "fee_eur": 840.0,
+      "topics": [
+        "sustainability",
+        "physics",
+        "astrophysics",
+        "astronomy",
+        "history"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "1st to 4th September 2026",
+        "funding": "Travel and Accommodation The Summer School will be held in the Dorothy Hodgkin Building on the main Keele University campus, with meals provided in the Chancellor’s Building and accommodation provided on campus, all of which are fully accessible.",
+        "mode": "Venue hire and conferences About Keele About Keele Our"
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
@@ -174,7 +319,7 @@
       },
       "deadline": null,
       "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
+      "financial_access_status": "self-funded",
       "fee": "EUR 1,000 for PhD and Master students; accommodation and travel excluded",
       "fee_eur": 1000.0,
       "topics": [
@@ -224,7 +369,7 @@
       },
       "deadline": null,
       "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
+      "financial_access_status": "self-funded",
       "fee": "EUR 1,000 for PhD and Master students; accommodation and travel excluded",
       "fee_eur": 1000.0,
       "topics": [
@@ -263,6 +408,78 @@
       }
     },
     {
+      "title": "Advanced Statistics: Statistical Modelling",
+      "url": "https://www.sib.swiss/training/course/20260907_ADDMG",
+      "organizer": "SIB Swiss Institute of Bioinformatics",
+      "source_layer": "1",
+      "location": "Lausanne, Switzerland",
+      "dates": {
+        "start": "2026-09-07",
+        "end": "2026-09-10",
+        "duration_days": 4
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "self-funded",
+      "fee": "Academic: 400 CHF",
+      "fee_eur": 440.0,
+      "topics": [
+        "artificial intelligence",
+        "machine learning",
+        "data analysis",
+        "statistics",
+        "design"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "",
+        "duration": "Bioschemas CourseInstance: 2026-09-07 to 2026-09-10",
+        "funding": "",
+        "mode": "Bioschemas courseMode: onsite, synchronous"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Search form",
+      "url": "https://www.clivar.org/events/4th-commodore-workshop-advancing-ocean-modeling-bridging-theory-computation-scales-and",
+      "organizer": "CLIVAR",
+      "source_layer": "1",
+      "location": "global",
+      "dates": {
+        "start": "2026-09-21",
+        "end": "2026-09-24",
+        "duration_days": 4
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "low-fee",
+      "fee": "no registration fee",
+      "fee_eur": 0.0,
+      "topics": [
+        "climate"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "September 21, 2026 to Thursday, September 24, 2026",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "CSSL26 / Application",
       "url": "https://linguistics.philology.uoc.gr/cssl26/application.php",
       "organizer": "CreteLing 2026",
@@ -289,7 +506,7 @@
       "evidence": {
         "deadline": "",
         "duration": "",
-        "funding": "Tuition Waiver: Students and alumni of the University of Crete. Retired faculty (from any university), in recognition of their contrib",
+        "funding": "Our funds to award such fellowships are limited.",
         "mode": "Venue Courses Events Application Useful info FAQs Conta"
       },
       "ai_advisory": {
@@ -312,15 +529,15 @@
       }
     },
     {
-      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
-      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
-      "organizer": "GESIS Spring Seminar",
-      "source_layer": "1.5",
-      "location": "Europe",
+      "title": "ELLIS Summer School at Institute Tübingen",
+      "url": "https://ellis.eu/events/ellis-summer-school-at-institute-tuebingen-2026",
+      "organizer": "ELLIS",
+      "source_layer": "1",
+      "location": "Max Planck Institute for Intelligent Systems",
       "dates": {
-        "start": "2027-02-22",
-        "end": "2027-03-12",
-        "duration_days": 19
+        "start": "2026-08-31",
+        "end": "2026-09-11",
+        "duration_days": 12
       },
       "deadline": null,
       "deadline_status": "uncertain",
@@ -328,8 +545,7 @@
       "fee": "",
       "fee_eur": null,
       "topics": [
-        "data analysis",
-        "social science"
+        "machine learning"
       ],
       "needs_review": [
         "application deadline is uncertain",
@@ -338,26 +554,12 @@
       "confidence": 0.5,
       "evidence": {
         "deadline": "",
-        "duration": "22 Feb – 12 March 2027",
-        "funding": "Scholarships FAQs Sponsors & Partners Contact Fall Seminar in Computational Social Science Go to overview Courses Course Fees Socia",
-        "mode": "onsite) an exciting time in Cologne, complemented by an"
+        "duration": "ELLIS events listing: 2026-08-31 to 2026-09-11",
+        "funding": "",
+        "mode": "ELLIS listing location: Max Planck Institute for Intelligent Systems"
       },
       "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "missing_evidence_id:event_type",
-          "possibly_past_or_closed"
-        ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
+        "available": false
       }
     },
     {
@@ -428,7 +630,7 @@
       "evidence": {
         "deadline": "",
         "duration": "",
-        "funding": "Scholarships & Bursaries | Digital Humanities Summer Institute Digital Humanities Summer Institute About Archive Course Offerings R",
+        "funding": "The travel grants are awarded as partial reimbursement of travel costs (e.",
         "mode": ""
       },
       "ai_advisory": {
@@ -525,8 +727,8 @@
       ],
       "needs_review": [
         "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain",
-        "in-person status is uncertain"
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
       ],
       "confidence": 0.25,
       "evidence": {
@@ -582,6 +784,38 @@
           "fee": "",
           "funding": ""
         }
+      }
+    },
+    {
+      "title": "ELLIS Summer School at Unit Barcelona",
+      "url": "https://ellis.eu/events/ellis-summer-school-at-unit-barcelona-2026",
+      "organizer": "ELLIS",
+      "source_layer": "1",
+      "location": "Casa Convalescència, UAB Barcelona",
+      "dates": {
+        "start": "2026-09-15",
+        "end": "2026-09-18",
+        "duration_days": 4
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "ELLIS events listing: 2026-09-15 to 2026-09-18",
+        "funding": "",
+        "mode": "ELLIS listing location: Casa Convalescència, UAB Barcelona"
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
