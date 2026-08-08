@@ -5,7 +5,7 @@
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
   "_canary": "SSR-CANON-7q3v9x2k8m4w",
   "schema_version": 2,
-  "generated": "2026-08-07",
+  "generated": "2026-08-08",
   "opportunities": [
     {
       "title": "Computational Linguistics Fall School 2026",
@@ -324,7 +324,7 @@
       "eligibility_zh": "博士研究员：人工智能与创造力 | Una Europa 跳至导航 跳至主要内容 参与 学习 知识中心 故事 关于 EN Über",
       "recommendation_reason_zh": "费用低：约0欧元；截止日期似乎开放；5天；优先地区",
       "risk_points_zh": "没有明确的资助；费用约为0欧元。",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Una Europa Summer School 2026 for doctoral researchers: Exploring Soft Materials – From Molecules to BioMaterials",
@@ -387,7 +387,7 @@
       "eligibility_zh": "博士研究员 | 探索软物质：从分子到… | Una Europa 跳转到导航 跳转到主要内容 参与 学习 知识中心 故事 关于",
       "recommendation_reason_zh": "费用低：约0欧元；截止日期似乎开放；5天；优先地区",
       "risk_points_zh": "没有明确的资助；费用约为0欧元。",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Water Quality Assessment and Monitoring",
@@ -2334,7 +2334,7 @@
       "eligibility_zh": "博士研究员：人人享有可持续性 | Una Europa 跳至导航 跳至主要内容 参与 学习 知识中心 故事 关于 EN Über uns Chi siamo Tu",
       "recommendation_reason_zh": "低费用：约0欧元；截止日期似乎开放；优先地区；可信来源层级1.5",
       "risk_points_zh": "时长不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Una Europa Winter School 2027 for doctoral researchers: Rethinking Cultural Heritage Collections",
@@ -2401,7 +2401,7 @@
       "eligibility_zh": "博士研究员：重新思考文化遗产收藏 | Una Europa 跳至导航 跳至主要内容 参与进来 学习 知识中心 故事 关于 EN 关于我们",
       "recommendation_reason_zh": "费用低：约0欧元；截止日期似乎开放；优先地区；可信来源层级1.5",
       "risk_points_zh": "持续时间不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Emergency Management for Flood Defences – General Concepts",
@@ -2661,7 +2661,7 @@
       "eligibility_zh": "硕士课程、学期交换、博士流动、实习路径、案例研究竞赛、学生会议、大会和论坛、联系内网",
       "recommendation_reason_zh": "低费用：约0欧元；9天；优先区域；可信来源层级1.5",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-AMU/Law",
@@ -2916,7 +2916,7 @@
       "eligibility_zh": "硕士课程、学期交换、博士流动、实习路径、案例研究竞赛、学生会议、大会和论坛、联系内网",
       "recommendation_reason_zh": "低费用：约0欧元；8天；优先区域；可信来源层级1.5",
       "risk_points_zh": "申请截止日期已过",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "CSSL26 / Application",
@@ -4519,7 +4519,7 @@
       "eligibility_zh": "这门为期4天的课程介绍超越经典线性模型的统计模型和技术，重点强调在生物学中的具体应用。",
       "recommendation_reason_zh": "费用低：约440欧元；4天；优先地区；可信来源层级1",
       "risk_points_zh": "申请截止日期不确定；费用超过400欧元且无明确资助",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Talk to us",
@@ -5349,7 +5349,7 @@
       "eligibility_zh": "硕士课程、学期交换、博士流动、实习路径、案例研究竞赛、学生会议、大会和论坛。联系内网。",
       "recommendation_reason_zh": "费用低：约2026欧元；优先地区；可信来源层级1.5；线下活动。",
       "risk_points_zh": "申请截止日期已过；时长不确定；费用超过400欧元且无明确资助。",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Digital Humanities Summer Institute",
@@ -5857,7 +5857,7 @@
       "eligibility_zh": "本 ELIXIR-GOBLET 培训师培训课程提供关于设计培训/教学、开发及实施培训活动的指导、技巧和窍门。",
       "recommendation_reason_zh": "费用低：约 0 欧元；4 天；优先地区；可信来源第一层",
       "risk_points_zh": "申请截止日期不确定；仅线上",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELIXIR-GOBLET Train-the-Trainer",
@@ -5918,7 +5918,7 @@
       "eligibility_zh": "本 ELIXIR-GOBLET 培训师培训课程提供关于设计培训/教学、开发及实施培训活动的指导、技巧和窍门。",
       "recommendation_reason_zh": "费用低：约 0 欧元；4 天；优先地区；可信来源第一层",
       "risk_points_zh": "申请截止日期不确定；仅线上",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "LSE Cities",
@@ -7079,79 +7079,6 @@
       "is_new": false
     },
     {
-      "title": "Choose timezone",
-      "type": "school of computing",
-      "organizer": "Indico",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "online",
-      "start_date": "2026-08-23",
-      "end_date": "2026-09-05",
-      "duration_days": 14,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "machine learning",
-        "software engineering",
-        "programming languages",
-        "cryptography",
-        "data analysis",
-        "physics",
-        "particle physics",
-        "statistics",
-        "probability",
-        "optimization",
-        "engineering",
-        "law",
-        "design"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://indico.cern.ch/event/1662800/timetable/",
-      "source_url": "https://indico.cern.ch/event/1662800/timetable/",
-      "summary": "48th CERN School of Computing 2026 (August 23, 2026 - September 5, 2026) · Indico Focus on: All days Aug 23, 2026 Aug 24, 2026 Aug 25, 2026 Aug 26, 2026 Aug 27, 2026 Aug 28, 2026 Aug 29, 2026 Aug 30, 2026 Aug 31, 2026 Sep 1, 2026 Sep 2, 2026 Sep 3, 2026 Sep 4, 2026 Sep 5, 2026 Al",
-      "recommendation_reason": "14 days; priority region; trusted source layer 1; topics: machine learning, software engineering, programming languages, cryptography",
-      "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline is uncertain",
-        "online-only"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 16.0,
-      "score_explanation": [
-        "14 days",
-        "priority region",
-        "trusted source layer 1",
-        "topics: machine learning, software engineering, programming languages, cryptography",
-        "near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-07-23",
-      "deadline_evidence": "",
-      "duration_evidence": "August 23, 2026 - September 5, 2026",
-      "mode_evidence": "online course documentation will gradually reveal more and more",
-      "extraction_confidence": 0.5,
-      "title_zh": "选择时区",
-      "organizer_zh": "Indico",
-      "location_zh": "欧洲",
-      "summary_zh": "第48届CERN计算学校2026（2026年8月23日 - 2026年9月5日）· Indico 关注：所有日期 2026年8月23日 2026年8月24日 2026年8月25日 2026年8月26日 2026年8月27日 2026年8月28日 2026年8月29日 2026年8月30日 2026年8月31日 2026年9月1日 2026年9月2日 2026年9月3日 2026年9月4日 2026年9月5日 Al",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "14天；优先区域；可信来源层级1；主题：机器学习、软件工程、编程语言、密码学",
-      "risk_points_zh": "申请截止日期不确定；仅在线；资金未明确且费用不确定",
-      "is_new": false
-    },
-    {
       "title": "Application Process",
       "type": "research school",
       "organizer": "HIDA - Helmholtz Information and Data Science Academy",
@@ -7340,6 +7267,79 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "为期12天；优先地区；可信来源第一层；主题：数据分析",
       "risk_points_zh": "申请截止日期不确定；线下状态不确定；资金未明确且费用不确定",
+      "is_new": false
+    },
+    {
+      "title": "Choose timezone",
+      "type": "school of computing",
+      "organizer": "Indico",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "online",
+      "start_date": "2026-08-23",
+      "end_date": "2026-09-05",
+      "duration_days": 14,
+      "deadline": null,
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "machine learning",
+        "software engineering",
+        "programming languages",
+        "cryptography",
+        "data analysis",
+        "physics",
+        "particle physics",
+        "statistics",
+        "probability",
+        "optimization",
+        "engineering",
+        "law",
+        "design"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://indico.cern.ch/event/1662800/timetable/",
+      "source_url": "https://indico.cern.ch/event/1662800/timetable/",
+      "summary": "48th CERN School of Computing 2026 (August 23, 2026 - September 5, 2026) · Indico Focus on: All days Aug 23, 2026 Aug 24, 2026 Aug 25, 2026 Aug 26, 2026 Aug 27, 2026 Aug 28, 2026 Aug 29, 2026 Aug 30, 2026 Aug 31, 2026 Sep 1, 2026 Sep 2, 2026 Sep 3, 2026 Sep 4, 2026 Sep 5, 2026 Al",
+      "recommendation_reason": "14 days; priority region; trusted source layer 1; topics: machine learning, software engineering, programming languages, cryptography",
+      "risk_points": "application deadline has passed; online-only; funding is not explicit and fee is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "funding_scope": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline has passed",
+        "online-only"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "score": 12.0,
+      "score_explanation": [
+        "14 days",
+        "priority region",
+        "trusted source layer 1",
+        "topics: machine learning, software engineering, programming languages, cryptography",
+        "near-match only: application deadline has passed; online-only; funding is not explicit and fee is uncertain"
+      ],
+      "first_seen": "2026-07-23",
+      "deadline_evidence": "",
+      "duration_evidence": "August 23, 2026 - September 5, 2026",
+      "mode_evidence": "online course documentation will gradually reveal more and more",
+      "extraction_confidence": 0.5,
+      "title_zh": "选择时区",
+      "organizer_zh": "Indico",
+      "location_zh": "欧洲",
+      "summary_zh": "第48届CERN计算学校2026（2026年8月23日 - 2026年9月5日）· Indico 关注：所有日期 2026年8月23日 2026年8月24日 2026年8月25日 2026年8月26日 2026年8月27日 2026年8月28日 2026年8月29日 2026年8月30日 2026年8月31日 2026年9月1日 2026年9月2日 2026年9月3日 2026年9月4日 2026年9月5日 Al",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "14天；优先区域；可信来源层级1；主题：机器学习、软件工程、编程语言、密码学",
+      "risk_points_zh": "申请截止日期不确定；仅在线；资金未明确且费用不确定",
       "is_new": false
     },
     {
@@ -8592,7 +8592,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Una Europa Summer School 2026 for doctoral researchers: Exploring Soft Materials – From Molecules to BioMaterials",
@@ -8655,7 +8655,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Water Quality Assessment and Monitoring",
@@ -10535,7 +10535,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Una Europa Winter School 2027 for doctoral researchers: Rethinking Cultural Heritage Collections",
@@ -10602,7 +10602,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Emergency Management for Flood Defences – General Concepts",
@@ -10862,7 +10862,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "CSSL26 / Application",
@@ -11182,7 +11182,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "SICSS-Buenos Aires",
@@ -12787,7 +12787,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Talk to us",
@@ -13617,7 +13617,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Digital Humanities Summer Institute",
@@ -14062,7 +14062,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ELIXIR-GOBLET Train-the-Trainer",
@@ -14123,7 +14123,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "LSE Cities",
@@ -15224,79 +15224,6 @@
       "is_new": false
     },
     {
-      "title": "Choose timezone",
-      "type": "school of computing",
-      "organizer": "Indico",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "online",
-      "start_date": "2026-08-23",
-      "end_date": "2026-09-05",
-      "duration_days": 14,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "machine learning",
-        "software engineering",
-        "programming languages",
-        "cryptography",
-        "data analysis",
-        "physics",
-        "particle physics",
-        "statistics",
-        "probability",
-        "optimization",
-        "engineering",
-        "law",
-        "design"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://indico.cern.ch/event/1662800/timetable/",
-      "source_url": "https://indico.cern.ch/event/1662800/timetable/",
-      "summary": "48th CERN School of Computing 2026 (August 23, 2026 - September 5, 2026) · Indico Focus on: All days Aug 23, 2026 Aug 24, 2026 Aug 25, 2026 Aug 26, 2026 Aug 27, 2026 Aug 28, 2026 Aug 29, 2026 Aug 30, 2026 Aug 31, 2026 Sep 1, 2026 Sep 2, 2026 Sep 3, 2026 Sep 4, 2026 Sep 5, 2026 Al",
-      "recommendation_reason": "14 days; priority region; trusted source layer 1; topics: machine learning, software engineering, programming languages, cryptography",
-      "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline is uncertain",
-        "online-only"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 16.0,
-      "score_explanation": [
-        "14 days",
-        "priority region",
-        "trusted source layer 1",
-        "topics: machine learning, software engineering, programming languages, cryptography",
-        "near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-07-23",
-      "deadline_evidence": "",
-      "duration_evidence": "August 23, 2026 - September 5, 2026",
-      "mode_evidence": "online course documentation will gradually reveal more and more",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
       "title": "Application Process",
       "type": "research school",
       "organizer": "HIDA - Helmholtz Information and Data Science Academy",
@@ -15478,6 +15405,79 @@
       "duration_evidence": "19-30 July 2027",
       "mode_evidence": "",
       "extraction_confidence": 0.25,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": false
+    },
+    {
+      "title": "Choose timezone",
+      "type": "school of computing",
+      "organizer": "Indico",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "online",
+      "start_date": "2026-08-23",
+      "end_date": "2026-09-05",
+      "duration_days": 14,
+      "deadline": null,
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "machine learning",
+        "software engineering",
+        "programming languages",
+        "cryptography",
+        "data analysis",
+        "physics",
+        "particle physics",
+        "statistics",
+        "probability",
+        "optimization",
+        "engineering",
+        "law",
+        "design"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://indico.cern.ch/event/1662800/timetable/",
+      "source_url": "https://indico.cern.ch/event/1662800/timetable/",
+      "summary": "48th CERN School of Computing 2026 (August 23, 2026 - September 5, 2026) · Indico Focus on: All days Aug 23, 2026 Aug 24, 2026 Aug 25, 2026 Aug 26, 2026 Aug 27, 2026 Aug 28, 2026 Aug 29, 2026 Aug 30, 2026 Aug 31, 2026 Sep 1, 2026 Sep 2, 2026 Sep 3, 2026 Sep 4, 2026 Sep 5, 2026 Al",
+      "recommendation_reason": "14 days; priority region; trusted source layer 1; topics: machine learning, software engineering, programming languages, cryptography",
+      "risk_points": "application deadline has passed; online-only; funding is not explicit and fee is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "funding_scope": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline has passed",
+        "online-only"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "score": 12.0,
+      "score_explanation": [
+        "14 days",
+        "priority region",
+        "trusted source layer 1",
+        "topics: machine learning, software engineering, programming languages, cryptography",
+        "near-match only: application deadline has passed; online-only; funding is not explicit and fee is uncertain"
+      ],
+      "first_seen": "2026-07-23",
+      "deadline_evidence": "",
+      "duration_evidence": "August 23, 2026 - September 5, 2026",
+      "mode_evidence": "online course documentation will gradually reveal more and more",
+      "extraction_confidence": 0.5,
       "title_zh": "",
       "organizer_zh": "",
       "location_zh": "",
