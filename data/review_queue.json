@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-07",
+  "generated": "2026-08-10",
   "review_queue": [
     {
       "title": "Una Europa Summer School 2026 for doctoral researchers: Sustainability for All",
@@ -30,7 +30,7 @@
       ],
       "confidence": 0.75,
       "evidence": {
-        "deadline": "Deadline 23 Sep 2026 (other dates listed: 2026-08-09, 2026-09-15)",
+        "deadline": "Deadline 23 Sep 2026 (other dates listed: 2026-09-15)",
         "duration": "",
         "funding": "",
         "mode": "in-person programme, there will be a compulsory online part"
@@ -69,13 +69,69 @@
       ],
       "confidence": 0.75,
       "evidence": {
-        "deadline": "Deadline 23 Sep 2026 (other dates listed: 2026-08-09)",
+        "deadline": "Deadline 23 Sep 2026",
         "duration": "",
         "funding": "",
         "mode": "onsite programme at Freie Universität Berlin. At most Un"
       },
       "ai_advisory": {
         "available": false
+      }
+    },
+    {
+      "title": "PWF Sri Lanka: Summer School on Theoretical and Computational Biophysics (21-25 September 2026)",
+      "url": "https://indico.ictp.it/event/11489",
+      "organizer": "Indico - Conferences and Events",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2026-09-21",
+        "end": "2026-09-25",
+        "duration_days": 5
+      },
+      "deadline": "2026-09-01",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "machine learning",
+        "data analysis",
+        "physics",
+        "chemistry",
+        "engineering",
+        "mechanics"
+      ],
+      "needs_review": [
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "Application deadline: 1 September 2026",
+        "duration": "21-25 September 2026",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "llm_chunk_truncated:6",
+          "llm_request_truncated:max_total_chars_per_llm_request",
+          "location_context_weak",
+          "start_date_value_not_in_evidence",
+          "end_date_value_not_in_evidence"
+        ],
+        "chinese_summary": "该暑期学校将于2026年9月21日至25日在斯里兰卡举办，面向斯里兰卡大学的本科生、研究生及早期职业研究人员，主题为理论与计算生物物理学。申请截止日期为2026年9月1日。",
+        "extracted_deadline": "2026-09-01",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "Application deadline: 1 September 2026 Registration https://docs.google.com/forms/d/e/1FAIpQLSdXXOLaJrKbBNB53Cliq7MSWDJ98mCrN5DCiR981x6HmY3R7Q/viewform?usp=header Programme GO TO SCIENTIFIC CALENDAR Facebook Twitter Youtube Instagram Linkedin Flickr Governing members ICTP is governed by UNESCO, IAEA, and Italy, and is a UNESCO Category 1 Institute E-News from ICTP Stay up-to-date with ICTP's latest news, activities and events by subscribing to",
+          "fee": "",
+          "funding": ""
+        }
       }
     },
     {
@@ -145,14 +201,12 @@
       },
       "ai_advisory": {
         "available": true,
-        "validated_confidence": "low",
+        "validated_confidence": "medium",
         "validation_warnings": [
           "llm_chunk_truncated:6",
-          "llm_request_truncated:max_total_chars_per_llm_request",
-          "missing_evidence_id:chinese_summary",
-          "conflicting_evidence"
+          "llm_request_truncated:max_total_chars_per_llm_request"
         ],
-        "chinese_summary": "未知",
+        "chinese_summary": "该冬季学校面向早期职业研究人员，主题为复杂性科学。申请要求包括定量学科的硕士课程或相关实践经验，以及英语工作 proficiency。申请将于2026年10月在该页面公布。",
         "extracted_deadline": "",
         "extracted_fee": "",
         "extracted_funding": "",
@@ -270,141 +324,6 @@
       },
       "ai_advisory": {
         "available": false
-      }
-    },
-    {
-      "title": "ELLIS Unit Heidelberg: European AI for Fundamental Physics Conference (EuCAIFCon)",
-      "url": "https://ellis.eu/events/ellis-unit-heidelberg-european-ai-for-fundamental-physics-conference-eucaifcon-2026",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "location": "Heidelberg",
-      "dates": {
-        "start": "2026-08-24",
-        "end": "2026-08-28",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "low-fee",
-      "fee": "EUR 100-100",
-      "fee_eur": 100.0,
-      "topics": [
-        "AI",
-        "physics"
-      ],
-      "needs_review": [
-        "application deadline is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "",
-        "duration": "ELLIS events listing: 2026-08-24 to 2026-08-28",
-        "funding": "",
-        "mode": "ELLIS listing location: Heidelberg"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "Applied Public Policy Evaluation",
-      "url": "https://tinbergen.nl/event/2026/08/24/13256/applied-public-policy-evaluation",
-      "organizer": "Tinbergen Institute",
-      "source_layer": "2",
-      "location": "Housing Student Council",
-      "dates": {
-        "start": "2026-08-24",
-        "end": "2026-08-28",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "self-funded",
-      "fee": "EUR 1,000 for PhD and Master students; accommodation and travel excluded",
-      "fee_eur": 1000.0,
-      "topics": [
-        "economics"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "fee exceeds EUR 400 without explicit funding"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "",
-        "duration": "August 24 - Friday 28 2026",
-        "funding": "Tinbergen Summer School funding is not offered; scholarships described elsewhere apply to the two-year Research Master programme.",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "missing_evidence_id:chinese_summary",
-          "start_date_value_not_in_evidence",
-          "end_date_value_not_in_evidence",
-          "possibly_past_or_closed"
-        ],
-        "chinese_summary": "未知",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
-      }
-    },
-    {
-      "title": "Economics of Climate Change",
-      "url": "https://tinbergen.nl/event/2026/08/24/13258/economics-of-climate-change",
-      "organizer": "Tinbergen Institute",
-      "source_layer": "2",
-      "location": "Housing Student Council",
-      "dates": {
-        "start": "2026-08-24",
-        "end": "2026-08-28",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "self-funded",
-      "fee": "EUR 1,000 for PhD and Master students; accommodation and travel excluded",
-      "fee_eur": 1000.0,
-      "topics": [
-        "climate",
-        "climate change",
-        "economics"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "fee exceeds EUR 400 without explicit funding"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "",
-        "duration": "August 24 - Friday 28 2026",
-        "funding": "Tinbergen Summer School funding is not offered; scholarships described elsewhere apply to the two-year Research Master programme.",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "start_date_value_not_in_evidence",
-          "end_date_value_not_in_evidence",
-          "possibly_past_or_closed"
-        ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
       }
     },
     {
@@ -529,6 +448,55 @@
       }
     },
     {
+      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
+      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
+      "organizer": "GESIS Spring Seminar",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-02-22",
+        "end": "2027-03-12",
+        "duration_days": 19
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "data analysis",
+        "social science"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "22 Feb – 12 March 2027",
+        "funding": "",
+        "mode": "onsite) an exciting time in Cologne, complemented by an"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "missing_evidence_id:event_type",
+          "possibly_past_or_closed"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
       "title": "ELLIS Summer School at Institute Tübingen",
       "url": "https://ellis.eu/events/ellis-summer-school-at-institute-tuebingen-2026",
       "organizer": "ELLIS",
@@ -557,45 +525,6 @@
         "duration": "ELLIS events listing: 2026-08-31 to 2026-09-11",
         "funding": "",
         "mode": "ELLIS listing location: Max Planck Institute for Intelligent Systems"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "Explore CISPA",
-      "url": "https://cispa.de/en",
-      "organizer": "CISPA",
-      "source_layer": "2",
-      "location": "Europe",
-      "dates": {
-        "start": "2026-08-24",
-        "end": "2026-08-28",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "AI",
-        "artificial intelligence",
-        "machine learning",
-        "cybersecurity",
-        "cryptography",
-        "design"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "",
-        "duration": "Aug 24, 2026 to Aug 28, 2026",
-        "funding": "",
-        "mode": "venues of security, privacy & cryptography alone RESEAR"
       },
       "ai_advisory": {
         "available": false
@@ -739,51 +668,6 @@
       },
       "ai_advisory": {
         "available": false
-      }
-    },
-    {
-      "title": "Data Management and Scientific Computing (DMSC) Centre Summer School 2026",
-      "url": "https://ess.eu/event/2026/08/24/data-management-and-scientific-computing-dmsc-centre-summer-school-2026",
-      "organizer": "ESS Data and Computing Schools",
-      "source_layer": "1",
-      "location": "Lyngby, Denmark",
-      "dates": {
-        "start": "2026-08-24",
-        "end": "2026-08-28",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "",
-        "duration": "August 24, 2026 - August 28, 2026",
-        "funding": "",
-        "mode": "will take place in Lyngby, Denmark , from 24-28 August 2026, with a w"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "medium",
-        "validation_warnings": [
-          "missing_evidence_id:location"
-        ],
-        "chinese_summary": "ESS组织的数据管理与科学计算暑期学校，面向博士生和早期职业研究人员，涵盖中子散射数据管理、分析和FAIR原则。",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
       }
     },
     {
