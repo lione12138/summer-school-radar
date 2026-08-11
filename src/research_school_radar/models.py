@@ -164,10 +164,17 @@ class Candidate:
         if self.fee_eur is not None:
             if self.fee_eur == 0:
                 return "Fee EUR 0 · Apply on official page"
+            if self.has_tiered_fee:
+                return f"{self.fee} · Apply on official page"
             if "excl. vat" in self.fee.lower() or "excluding vat" in self.fee.lower():
                 return f"Fee EUR {self.fee_eur:.0f} excl. VAT · Apply on official page"
             return f"Fee about EUR {self.fee_eur:.0f} · Apply on official page"
         return "Funding or fee not stated"
+
+    @property
+    def has_tiered_fee(self) -> bool:
+        """Whether the official fee text carries multiple participant prices."""
+        return len(_money_amounts(self.fee)) >= 2
 
 
 def _money_amount(value: str) -> str:
@@ -177,3 +184,11 @@ def _money_amount(value: str) -> str:
         flags=re.IGNORECASE,
     )
     return match.group(0) if match else ""
+
+
+def _money_amounts(value: str) -> list[str]:
+    return re.findall(
+        r"(?:(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD)\s?\d[\d,.]*|[€$£]\s?\d[\d,.]*)",
+        value,
+        flags=re.IGNORECASE,
+    )

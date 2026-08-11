@@ -95,6 +95,48 @@ def test_override_notes_are_idempotent_across_daily_refreshes() -> None:
     assert candidate.summary.count("Override note:") == 1
 
 
+def test_override_invalidates_stale_translations_unless_replaced_explicitly() -> None:
+    from research_school_radar.review import apply_overrides
+
+    candidate = sample_candidate(PROFILE)
+    candidate.organizer = "Old organizer"
+    candidate.organizer_zh = "旧主办方"
+    candidate.recommendation_reason_zh = "旧推荐理由"
+    candidate.risk_points_zh = "旧风险说明"
+
+    apply_overrides(
+        [candidate],
+        [
+            {
+                "url": candidate.source_url,
+                "fields": {
+                    "organizer": "New organizer",
+                    "fee": "EUR 100 / EUR 200",
+                    "fee_eur": 100,
+                },
+            }
+        ],
+    )
+
+    assert candidate.organizer_zh == ""
+    assert candidate.recommendation_reason_zh == ""
+    assert candidate.risk_points_zh == ""
+
+    apply_overrides(
+        [candidate],
+        [
+            {
+                "url": candidate.source_url,
+                "fields": {
+                    "organizer": "Final organizer",
+                    "organizer_zh": "最终主办方",
+                },
+            }
+        ],
+    )
+    assert candidate.organizer_zh == "最终主办方"
+
+
 def test_project_overrides_fix_ieee_location_and_exclude_network_homepage() -> None:
     from research_school_radar.review import apply_overrides, load_overrides
 
@@ -119,6 +161,8 @@ def test_project_overrides_fix_ieee_location_and_exclude_network_homepage() -> N
     assert "USD 820" in ieee.fee
     assert "19% VAT" in ieee.fee_evidence
     assert "perception" in ieee.topic_keywords
+    assert ieee.financial_summary.startswith("Student USD 670 RAS")
+    assert "USD 870" in ieee.financial_summary
     assert ieee.funding_available is False
 
 
@@ -187,6 +231,7 @@ def test_project_overrides_correct_hpi_fee_and_targeted_support() -> None:
     assert corrected.fee_eur == 0
     assert corrected.organizer == "HPI Engine & ELIAS Startup Opportunities"
     assert corrected.funding_type == ["travel grant", "accommodation"]
+    assert corrected.organizer_zh == "HPI Engine 与 ELIAS Startup Opportunities"
     assert corrected.funding_scope == (
         "20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants "
         "(travel + accommodation covered)"
@@ -217,6 +262,7 @@ def test_project_override_corrects_prob_ai_fee_access_fund_and_location() -> Non
     corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
 
     assert corrected.organizer == "Prob_AI Hub"
+    assert corrected.organizer_zh == "Prob_AI Hub"
     assert corrected.location == "Fry Building, University of Bristol, Bristol, UK"
     assert corrected.fee_eur == 0
     assert corrected.funding_type == ["access fund"]
@@ -265,15 +311,22 @@ def test_project_override_corrects_hydrodata_organizer_location_and_fees() -> No
     candidate.location = "global"
     candidate.fee = ""
     candidate.fee_eur = None
+    candidate.funding_available = False
+    candidate.funding_type = []
 
     corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
 
     assert corrected.organizer == (
         "UNESCO Chair on Water-related Disaster Risk Reduction, University of Ljubljana"
     )
+    assert corrected.organizer_zh == "卢布尔雅那大学联合国教科文组织水相关灾害风险减少教席"
     assert corrected.location == "Ljubljana, Slovenia"
     assert corrected.fee == "EUR 340 IAHR members / EUR 380 non-members"
     assert corrected.fee_eur == 340
+    assert corrected.financial_summary.startswith("EUR 340 IAHR members / EUR 380 non-members")
+    from research_school_radar.localization import financial_summary_zh
+
+    assert financial_summary_zh(corrected) == "费用：EUR 340 IAHR 会员 / EUR 380 非会员"
     assert corrected.deadline == date(2026, 5, 17)
     assert corrected.deadline_status == "closed"
     assert "postdoctoral" in corrected.eligibility

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import date
+import re
 
 from .models import Candidate
 
@@ -116,6 +117,8 @@ MODE_ZH = {
 }
 
 FUNDING_TYPE_ZH = {
+    "access fund": "可及性基金",
+    "accommodation": "住宿支持",
     "bursary": "助学金",
     "fee waiver": "费用减免",
     "financial support": "经济资助",
@@ -229,7 +232,58 @@ def financial_summary_zh(candidate: Candidate) -> str:
     if candidate.fee_eur is not None:
         if candidate.fee_eur == 0:
             return "费用 EUR 0"
+        if candidate.has_tiered_fee:
+            return f"费用：{_tiered_fee_zh(candidate.fee)}"
         if "excl. vat" in candidate.fee.lower() or "excluding vat" in candidate.fee.lower():
             return f"费用 EUR {candidate.fee_eur:.0f}（未含增值税）"
         return f"费用约 EUR {candidate.fee_eur:.0f}"
     return "资助或费用未说明"
+
+
+def recommendation_reason_zh(reasons: list[str], limit: int = 4) -> str:
+    return "；".join(_score_reason_zh(reason) for reason in reasons[:limit])
+
+
+def _score_reason_zh(reason: str) -> str:
+    if reason.startswith("funding evidence: "):
+        types = reason.removeprefix("funding evidence: ").split(", ")
+        translated = "、".join(FUNDING_TYPE_ZH.get(item, item) for item in types)
+        return f"资助证据：{translated}"
+    if match := re.fullmatch(r"low fee: approximately EUR (\d+)", reason):
+        return f"低费用：约 EUR {match.group(1)}"
+    if reason == "deadline appears open":
+        return "截止日期显示仍开放"
+    if match := re.fullmatch(r"(\d+) days", reason):
+        return f"{match.group(1)}天"
+    if reason == "priority region":
+        return "优先区域"
+    if match := re.fullmatch(r"trusted source layer (.+)", reason):
+        return f"可信来源第 {match.group(1)} 层"
+    if reason == "in-person":
+        return "线下举办"
+    if reason == "hybrid":
+        return "混合形式举办"
+    if reason.startswith("target level: "):
+        return f"申请层级：{reason.removeprefix('target level: ')}"
+    if reason.startswith("topics: "):
+        topics = reason.removeprefix("topics: ").split(", ")
+        return "主题：" + "、".join(topic_zh(topic) for topic in topics)
+    if reason.startswith("near-match only: "):
+        return "仅为近似匹配：" + reason.removeprefix("near-match only: ")
+    return reason
+
+
+def _tiered_fee_zh(value: str) -> str:
+    replacements = (
+        (r"\bnon-student\b", "非学生"),
+        (r"\bstudent\b", "学生"),
+        (r"\bnon-members?\b", "非会员"),
+        (r"\bmembers?\b", "会员"),
+        (r"\bmandatory dinner contribution\b", "强制晚宴费用"),
+        (r"\bregistration fee for other participants\b", "其他参与者注册费"),
+        (r"\bVAT included\b", "含增值税"),
+    )
+    localized = value
+    for pattern, replacement in replacements:
+        localized = re.sub(pattern, replacement, localized, flags=re.IGNORECASE)
+    return localized

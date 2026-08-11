@@ -124,6 +124,23 @@ def test_translation_allows_localized_currency_label_when_amount_is_preserved(tm
     assert result.candidates[0].recommendation_reason_zh == "费用约为 2600 欧元。"
 
 
+def test_disabled_translation_refreshes_rule_based_recommendation_reason() -> None:
+    candidate = _candidate()
+    candidate.score_explanation = [
+        "funding evidence: travel grant, accommodation",
+        "4 days",
+        "priority region",
+        "trusted source layer 1",
+    ]
+    candidate.recommendation_reason_zh = "旧的中文理由"
+
+    result = translate_candidates([candidate], TranslationConfig(enabled=False))
+
+    assert result.candidates[0].recommendation_reason_zh == (
+        "资助证据：差旅资助、住宿支持；4天；优先区域；可信来源第 1 层"
+    )
+
+
 def test_translation_config_uses_deepseek_environment(monkeypatch, tmp_path) -> None:
     config_path = tmp_path / "ai.yaml"
     config_path.write_text(

@@ -10,6 +10,7 @@ from typing import Any, Sequence
 
 from .ai_cache import AICache
 from .llm_client import BaseLLMClient, LLMClientConfig, create_llm_client
+from .localization import recommendation_reason_zh
 from .models import Candidate
 from .utils import ROOT, clean_space, content_hash, load_yaml
 
@@ -149,7 +150,18 @@ def translate_candidates(
     client: BaseLLMClient | None = None,
 ) -> TranslationResult:
     if not config.enabled:
-        return TranslationResult(candidates=[replace(candidate) for candidate in candidates], skipped=len(candidates))
+        refreshed = [
+            replace(
+                candidate,
+                recommendation_reason_zh=(
+                    recommendation_reason_zh(candidate.score_explanation)
+                    if candidate.score_explanation
+                    else candidate.recommendation_reason_zh
+                ),
+            )
+            for candidate in candidates
+        ]
+        return TranslationResult(candidates=refreshed, skipped=len(candidates))
 
     cache = AICache(
         enabled=config.cache_enabled,

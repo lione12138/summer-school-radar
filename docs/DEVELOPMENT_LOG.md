@@ -335,3 +335,25 @@ hosts, the Czech University of Life Sciences role and Konitsa venue for
 Exploring Your Eco, and the complete VAT-inclusive IEEE student/non-student fee
 table. Prob_AI's yearless "Friday 9 July" wording remains intentionally
 unnormalized; the explicit closed state is retained without inventing a date.
+
+## 2026-08-11: Override-Aware Translations and Tiered Fees
+
+Daily status refreshes reused translated fields from the last full snapshot.
+When a maintainer override changed a canonical English value, an old Chinese
+organizer or explanation could therefore survive beside the corrected English
+record. Override application now invalidates the corresponding `_zh` field
+whenever its English source changes, unless the same override supplies an
+explicit replacement. Fields that affect derived ranking and risk copy also
+invalidate those translations. In no-API refreshes, the small fixed vocabulary
+used by score explanations is regenerated deterministically in Chinese; full
+AI scans continue to translate other changed prose through DeepSeek and its
+source-keyed cache.
+
+The override whitelist now includes every candidate translation field, fixing
+the previous silent rejection of `organizer_zh`. Confirmed Chinese organizers
+were added for HPI/ELIAS, Prob_AI, and HydRoData. Financial summaries also retain
+the official fee string whenever it contains multiple participant prices, so
+member/non-member and student/non-student tiers are no longer collapsed to the
+lowest EUR-normalized amount. EUR normalization remains available for filtering
+and classification, while the public card shows the conditions users actually
+need to pay.

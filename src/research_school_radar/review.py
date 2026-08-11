@@ -35,9 +35,13 @@ FIELD_NAMES = {
     "fee_eur",
     "application_link",
     "summary",
+    "title_zh",
+    "organizer_zh",
     "summary_zh",
     "eligibility_zh",
     "location_zh",
+    "recommendation_reason_zh",
+    "risk_points_zh",
     "financial_access_status",
     "deadline_evidence",
     "duration_evidence",
@@ -65,6 +69,30 @@ GENERIC_REVIEW_TITLES = {
     "tuition fees",
     "scholarships & awards",
     "key dates & application",
+}
+
+_TRANSLATED_CANONICAL_FIELDS = {
+    "title": "title_zh",
+    "organizer": "organizer_zh",
+    "location": "location_zh",
+    "summary": "summary_zh",
+    "eligibility": "eligibility_zh",
+    "recommendation_reason": "recommendation_reason_zh",
+    "risk_points": "risk_points_zh",
+}
+_DERIVED_TRANSLATION_INPUTS = {
+    "deadline",
+    "deadline_status",
+    "duration_days",
+    "fee",
+    "fee_eur",
+    "funding_available",
+    "funding_evidence",
+    "funding_scope",
+    "funding_type",
+    "mode",
+    "target_level",
+    "topic_keywords",
 }
 
 
@@ -140,15 +168,35 @@ def _apply_override(candidate: Candidate, override: dict[str, Any]) -> None:
             for key, value in override.items()
             if key in FIELD_NAMES
         }
+    before = {
+        key: getattr(candidate, key)
+        for key in fields
+        if key in FIELD_NAMES and hasattr(candidate, key)
+    }
     for key, value in fields.items():
         if key not in FIELD_NAMES:
             continue
         setattr(candidate, key, _coerce_value(key, value))
+    changed = {
+        key
+        for key, previous in before.items()
+        if getattr(candidate, key) != previous
+    }
+    for canonical, translated in _TRANSLATED_CANONICAL_FIELDS.items():
+        if canonical in changed and translated not in fields:
+            setattr(candidate, translated, "")
+    if changed & _DERIVED_TRANSLATION_INPUTS:
+        if "recommendation_reason_zh" not in fields:
+            candidate.recommendation_reason_zh = ""
+        if "risk_points_zh" not in fields:
+            candidate.risk_points_zh = ""
     note = str(override.get("note", "")).strip()
     if note and "summary" not in fields:
         annotation = f"Override note: {note}"
         if annotation not in candidate.summary:
             candidate.summary = f"{candidate.summary} {annotation}".strip()
+            if "summary_zh" not in fields:
+                candidate.summary_zh = ""
 
 
 def _coerce_value(key: str, value: Any) -> Any:

@@ -38,6 +38,7 @@ overrides:
     note: The official HPI programme page states Fee None; ELLIS reserves 20 funded places for affiliated PhD candidates and postdocs, with travel and accommodation covered.
     fields:
       organizer: HPI Engine & ELIAS Startup Opportunities
+      organizer_zh: HPI Engine 与 ELIAS Startup Opportunities
       fee: Fee EUR 0
       fee_eur: 0
       funding_available: true
@@ -54,8 +55,7 @@ overrides:
     note: The official event page says attendance is free; attendees normally cover travel and accommodation, with only a small UK-only Access Fund for eligible participation barriers.
     fields:
       organizer: Prob_AI Hub
-      location: University of Bristol, Bristol, UK
-      location_zh: 英国布里斯托尔大学（布里斯托尔）
+      organizer_zh: Prob_AI Hub
       fee: Fee EUR 0
       fee_eur: 0
       funding_available: true
@@ -85,6 +85,7 @@ overrides:
     note: The official HydRoData page identifies the UNESCO Chair and University of Ljubljana as organizer and venue; IAHR is only used for fee categories.
     fields:
       organizer: UNESCO Chair on Water-related Disaster Risk Reduction, University of Ljubljana
+      organizer_zh: 卢布尔雅那大学联合国教科文组织水相关灾害风险减少教席
       location: Ljubljana, Slovenia
       location_zh: 斯洛文尼亚卢布尔雅那
       fee: EUR 340 IAHR members / EUR 380 non-members
