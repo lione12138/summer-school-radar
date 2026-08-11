@@ -139,7 +139,7 @@
       "about.q2": {en:"In-person — virtual-only events are set aside.", zh:"线下参与；纯线上活动会被排除。"},
       "about.q3": {en:"An application deadline that is still open.", zh:"申请截止日期仍未过去。"},
       "about.q4": {en:"A real research school, training school, field school, or short course — not a conference or a full degree programme.", zh:"是真正的研究暑校、训练营、田野学校或短课程，而不是会议或完整学位项目。"},
-      "about.q5": {en:"On-domain in the topics above.", zh:"主题属于上面覆盖的学科范围。"},
+      "about.q5": {en:"A genuine academic research-training programme, regardless of discipline.", zh:"是真正的学术研究训练项目，不限制学科。"},
       "about.evidence.title": {en:"Evidence and honesty", zh:"证据与透明度"},
       "about.evidence.body": {en:"Every extracted field carries source evidence where available. Near-matches are shown separately and never counted as qualified.", zh:"每个可提取字段都会尽量保留来源证据。近似匹配会单独展示，不会被当作完全符合。"},
       "faq.title": {en:"Frequently asked", zh:"常见问题"},
