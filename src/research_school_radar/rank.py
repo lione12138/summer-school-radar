@@ -210,6 +210,7 @@ def _merge_into(primary: Candidate, other: Candidate) -> None:
     if primary.fee_eur is None and other.fee_eur is not None:
         primary.fee = primary.fee or other.fee
         primary.fee_eur = other.fee_eur
+    primary.fee_evidence = primary.fee_evidence or other.fee_evidence
 
 
 def _canonical_url(url: str) -> str:

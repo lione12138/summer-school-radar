@@ -62,8 +62,11 @@ overrides:
       funding_type: [access fund]
       funding_scope: limited Access Fund for eligible UK-based participants
       funding_evidence: The school is free to attend. A small Access Fund is available only to eligible UK-based participants facing financial or accessibility barriers; other attendees cover travel and accommodation.
-      eligibility: ""
-      eligibility_zh: ""
+      deadline_evidence: The official page says applications have closed and names Friday 9 July without a reliable year, so Summa does not infer an exact deadline date.
+      eligibility: Open to applicants worldwide, with priority given to UK-based applicants.
+      eligibility_zh: 面向全球申请者，英国申请者优先。
+      location: Fry Building, University of Bristol, Bristol, UK
+      location_zh: 英国布里斯托尔大学 Fry Building（布里斯托尔）
       summary: "A four-day Prob_AI Hub winter school covering causality, computational optimal transport, operator learning, reinforcement learning, machine learning for PDEs, and neural processes. Attendance is free; travel and accommodation are normally self-funded, with a limited Access Fund for eligible UK-based participants."
       summary_zh: "Prob_AI Hub 举办的四天冬季学校，内容包括因果推断、计算最优传输、算子学习、强化学习、偏微分方程机器学习和神经过程。项目免费参加；交通和住宿通常自理，符合条件的英国参与者可申请有限的 Access Fund。"
       topic_keywords: [causality, optimal transport, operator learning, reinforcement learning, machine learning, neural processes]
@@ -137,8 +140,10 @@ overrides:
       funding_type: []
       funding_evidence: Participants must pay the applicable registration fee; creating an IEEE account free of charge is unrelated to the school fee.
       fee: Student USD 670 RAS / USD 710 IEEE / USD 750 non-IEEE; non-student USD 770 RAS / USD 820 IEEE / USD 870 non-IEEE (VAT included)
+      fee_evidence: "Official registration table: students pay USD 670 (RAS), USD 710 (IEEE), or USD 750 (non-IEEE); non-students pay USD 770 (RAS), USD 820 (IEEE), or USD 870 (non-IEEE), all including 19% VAT."
       fee_eur: 636.5
       organizer: IEEE Robotics and Automation Society (IEEE RAS)
+      topic_keywords: [artificial intelligence, machine learning, robotics, perception, planning, cognitive robotics]
       summary: A five-day in-person IEEE RAS summer school on cognitive robotics, bridging artificial intelligence, machine learning, perception, planning, and intelligent robotic systems.
       summary_zh: IEEE RAS 举办的五天线下认知机器人暑期学校，连接人工智能、机器学习、感知、规划与智能机器人系统。
   - url: https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html
@@ -164,14 +169,19 @@ overrides:
     status: update
     note: The official ELLS page provides the Konitsa/Vikos-Aoos venue and a clean programme description; navigation text is not programme eligibility or summary content.
     fields:
-      organizer: Euroleague for Life Sciences (ELLS)
-      location: Vikos-Aoos UNESCO Geopark, Konitsa, Greece
-      location_zh: 希腊科尼察维科斯－奥奥斯联合国教科文组织世界地质公园
+      organizer: Czech University of Life Sciences Prague, with Vikos-Aoos UNESCO Global Geopark and Trace Your Eco
+      location: Konitsa, Vikos-Aoos UNESCO Global Geopark, Greece
+      location_zh: 希腊科尼察（维科斯－奥奥斯联合国教科文组织世界地质公园）
       eligibility: ""
       eligibility_zh: ""
       summary: A nine-day on-site summer school in Konitsa examining the living, cultural, and eco-tourism environments of the Vikos-Aoos UNESCO Geopark through research, field activities, and participant recommendations.
       summary_zh: 在希腊科尼察举办的九天线下暑期学校，通过研究、田野活动和学员建议考察维科斯－奥奥斯世界地质公园的生活、文化与生态旅游环境。
       topic_keywords: [ecology, eco-tourism, cultural heritage, geopark, recreation]
+  - identity_key: sicss:2026:stanford
+    status: update
+    note: The official SICSS Stanford page identifies the local hosts rather than the umbrella SICSS programme as the organizers.
+    fields:
+      organizer: Tech Impact and Policy Center & Social Media Lab
   - url: https://ellis.eu/events/ellis-summer-school-at-institute-finland-2026
     status: update
     note: The official ELLIS listing provides a concise AI-for-Research programme description.

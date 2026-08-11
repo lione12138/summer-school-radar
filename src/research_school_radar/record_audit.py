@@ -143,6 +143,7 @@ def build_evidence_packet(
     for label, value in (
         ("deadline_evidence", candidate.deadline_evidence),
         ("duration_evidence", candidate.duration_evidence),
+        ("fee_evidence", candidate.fee_evidence),
         ("funding_evidence", candidate.funding_evidence),
         ("mode_evidence", candidate.mode_evidence),
         ("eligibility_extract", candidate.eligibility),
@@ -428,6 +429,9 @@ def _validated_model_result(
         if not reason:
             warnings.append(f"record_audit_missing_reason:{field}")
             continue
+        if not _date_suggestion_has_cited_year(field, suggested, cited_ids, evidence):
+            warnings.append(f"record_audit_date_year_not_in_evidence:{field}")
+            continue
         if _temporal_suggestion_conflicts(
             candidate,
             field,
@@ -514,6 +518,24 @@ def _suggested_deadline(raw_issues: Sequence[Any]) -> date | None:
         except ValueError:
             continue
     return None
+
+
+def _date_suggestion_has_cited_year(
+    field: str,
+    suggested: str,
+    cited_ids: Sequence[str],
+    evidence: Sequence[dict[str, str]],
+) -> bool:
+    if field not in {"start_date", "end_date", "deadline"}:
+        return True
+    try:
+        suggested_date = date.fromisoformat(suggested)
+    except ValueError:
+        return True
+    cited_text = " ".join(
+        item.get("text", "") for item in evidence if item.get("id") in cited_ids
+    )
+    return str(suggested_date.year) in cited_text
 
 
 def _suggestion_is_noop(candidate: Candidate, field: str, suggested: str) -> bool:

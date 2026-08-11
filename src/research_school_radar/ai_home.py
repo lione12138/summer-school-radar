@@ -155,6 +155,8 @@ def _enrich_candidate(candidate: Candidate, item: dict[str, Any], profile: dict[
         candidate.fee = ai_fee_display
     if ai_fee_eur is not None and (candidate.fee_eur is None or false_zero_contradiction):
         candidate.fee_eur = ai_fee_eur
+    if fee and not candidate.fee_evidence:
+        candidate.fee_evidence = _evidence(item, "fee")
 
     funding = _trusted_text(item, "funding")
     if (
@@ -265,6 +267,7 @@ def _candidate_from_ai(item: dict[str, Any], profile: dict[str, Any]) -> Candida
         risk_points="AI-assisted extraction; verify all details on the official page.",
         deadline_evidence=_evidence(item, "application_deadline"),
         duration_evidence=_joined_evidence(item, ("start_date", "end_date")),
+        fee_evidence=_evidence(item, "fee"),
         mode_evidence=_evidence(item, "mode"),
         extraction_confidence=_confidence_number(item),
     )

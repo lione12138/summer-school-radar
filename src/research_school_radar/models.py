@@ -93,6 +93,7 @@ class Candidate:
     # heuristic confidence (fraction of core fields that were resolved).
     deadline_evidence: str = ""
     duration_evidence: str = ""
+    fee_evidence: str = ""
     mode_evidence: str = ""
     extraction_confidence: float = 0.0
     # Build-time Chinese translations. The English source fields remain the

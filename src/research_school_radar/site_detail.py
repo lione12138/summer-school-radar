@@ -49,10 +49,15 @@ def render_opportunity_detail(candidate: Candidate, site_config: dict[str, Any] 
     )
     evidence_parts = [
         value.strip()
-        for value in (candidate.deadline_evidence, candidate.duration_evidence, candidate.funding_evidence)
+        for value in (
+            candidate.deadline_evidence,
+            candidate.duration_evidence,
+            candidate.fee_evidence,
+            candidate.funding_evidence,
+        )
         if value.strip()
     ]
-    evidence = " ".join(evidence_parts[:3]) or "Source evidence is retained in the public candidate data."
+    evidence = " ".join(evidence_parts[:4]) or "Source evidence is retained in the public candidate data."
     calendar = deadline_cell(candidate.deadline, candidate.title, official) if candidate.deadline else ""
     canonical = SITE_URL + candidate_detail_href(candidate)
     updated = date.today().isoformat()

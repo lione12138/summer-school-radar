@@ -41,6 +41,7 @@ FIELD_NAMES = {
     "financial_access_status",
     "deadline_evidence",
     "duration_evidence",
+    "fee_evidence",
     "mode_evidence",
     "extraction_confidence",
 }
@@ -234,6 +235,7 @@ def _review_item(candidate: Candidate, ai_items: list[dict[str, Any]] | None = N
         "evidence": {
             "deadline": candidate.deadline_evidence,
             "duration": candidate.duration_evidence,
+            "fee": candidate.fee_evidence,
             "funding": candidate.funding_evidence,
             "mode": candidate.mode_evidence,
         },

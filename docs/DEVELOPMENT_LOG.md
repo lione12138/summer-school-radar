@@ -316,3 +316,22 @@ model could substitute an incorrect internal notion of the current year when
 judging deadline status. Audit prompts now carry an explicit runtime audit date,
 and any proposed `open` status that conflicts with a past deterministic
 deadline/start date is discarded before it can become an issue or gate.
+
+Two follow-up production audits were used to reduce advisory false positives.
+The validator now checks a proposed open state against both the stored deadline
+and any deadline proposed in the same response, rejects an invented ISO year
+unless that year occurs in the cited evidence, ignores no-op corrections, and
+does not treat absence from a selected snippet as proof that a stored value is
+wrong. Evidence windows retain more leading table context. A dedicated
+`fee_evidence` field now survives AI enrichment, candidate snapshots,
+deduplication, review output, detail-page evidence, and final record audit so
+tiered participant fees do not depend on an arbitrary page-window boundary.
+
+The final audit run completed all 16 current/library records with zero
+publication gates, 89.31% source-fetch success, complete artifacts, and no
+translation warning. Remaining supported details were made deterministic:
+Prob_AI's worldwide eligibility and Bristol venue, the local SICSS Stanford
+hosts, the Czech University of Life Sciences role and Konitsa venue for
+Exploring Your Eco, and the complete VAT-inclusive IEEE student/non-student fee
+table. Prob_AI's yearless "Friday 9 July" wording remains intentionally
+unnormalized; the explicit closed state is retained without inventing a date.

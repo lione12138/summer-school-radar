@@ -70,7 +70,7 @@ def _candidate():
     return apply_hard_filters(candidate, PROFILE)
 
 
-def _page() -> Page:
+def _page(text: str = "") -> Page:
     source = Source(
         name="Official school",
         url="https://example.org/school",
@@ -81,7 +81,8 @@ def _page() -> Page:
     return Page(
         url=source.url,
         title="Example AI Summer School",
-        text=(
+        text=text
+        or (
             "The University AI Lab organizes the summer school. "
             "It will take place in Bristol from 10 to 14 August 2099. "
             "Attendance is free and applications close on 1 July 2099."
@@ -257,6 +258,43 @@ def test_record_audit_drops_noop_and_absence_only_unknown_suggestions() -> None:
     assert item["issues"] == []
     assert "record_audit_noop_suggestion:funding" in item["validation_warnings"]
     assert "record_audit_absence_only_suggestion:deadline_status" in item["validation_warnings"]
+
+
+def test_record_audit_rejects_invented_year_for_ambiguous_deadline() -> None:
+    candidate = _candidate()
+    candidate.deadline = None
+    candidate.deadline_evidence = ""
+    candidate.duration_evidence = ""
+    candidate.fee_evidence = ""
+    candidate.funding_evidence = ""
+    candidate.mode_evidence = ""
+    candidate.eligibility = ""
+    candidate.summary = ""
+    page = _page("Applications must be received by Friday 9th July. Applications are closed.")
+    client = StubClient(
+        {
+            "verdict": "needs_correction",
+            "issues": [
+                {
+                    "field": "deadline",
+                    "severity": "medium",
+                    "suggested_value": "2026-07-09",
+                    "evidence_ids": ["E1"],
+                    "reason": "The page names 9 July but does not print a year.",
+                }
+            ],
+        }
+    )
+
+    item = run_record_audit(
+        [candidate],
+        [page],
+        client=client,
+        config=RecordAuditConfig(max_workers=1),
+    )[0]
+
+    assert item["issues"] == []
+    assert "record_audit_date_year_not_in_evidence:deadline" in item["validation_warnings"]
 
 
 def test_record_audit_cache_is_keyed_by_record_and_evidence(tmp_path) -> None:

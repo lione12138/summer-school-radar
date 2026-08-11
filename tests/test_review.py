@@ -116,6 +116,9 @@ def test_project_overrides_fix_ieee_location_and_exclude_network_homepage() -> N
     assert ieee.deadline == date(2026, 7, 13)
     assert ieee.deadline_status == "closed"
     assert ieee.fee_eur == 636.5
+    assert "USD 820" in ieee.fee
+    assert "19% VAT" in ieee.fee_evidence
+    assert "perception" in ieee.topic_keywords
     assert ieee.funding_available is False
 
 
@@ -214,7 +217,7 @@ def test_project_override_corrects_prob_ai_fee_access_fund_and_location() -> Non
     corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
 
     assert corrected.organizer == "Prob_AI Hub"
-    assert corrected.location == "University of Bristol, Bristol, UK"
+    assert corrected.location == "Fry Building, University of Bristol, Bristol, UK"
     assert corrected.fee_eur == 0
     assert corrected.funding_type == ["access fund"]
     assert corrected.funding_scope == "limited Access Fund for eligible UK-based participants"
@@ -222,7 +225,8 @@ def test_project_override_corrects_prob_ai_fee_access_fund_and_location() -> Non
         "Fee EUR 0 · limited Access Fund for eligible UK-based participants"
     )
     assert "Skip to content" not in corrected.summary
-    assert corrected.eligibility == ""
+    assert corrected.eligibility == "Open to applicants worldwide, with priority given to UK-based applicants."
+    assert "without a reliable year" in corrected.deadline_evidence
     assert "causality" in corrected.topic_keywords
 
 
@@ -343,8 +347,8 @@ def test_project_overrides_correct_ells_records_and_exclude_conference() -> None
     assert ds_food.fee_eur == 90
     assert "EUR 250" in ds_food.fee
     assert "Alliance Study Offers" not in ds_food.summary
-    assert eco.organizer == "Euroleague for Life Sciences (ELLS)"
-    assert eco.location == "Vikos-Aoos UNESCO Geopark, Konitsa, Greece"
+    assert eco.organizer.startswith("Czech University of Life Sciences Prague")
+    assert eco.location == "Konitsa, Vikos-Aoos UNESCO Global Geopark, Greece"
     assert eco.eligibility == ""
     assert "Alliance Study Offers" not in eco.summary
 
@@ -367,6 +371,18 @@ def test_project_overrides_clean_ellis_library_summaries() -> None:
     assert corrected[1].organizer == "ELLIS Unit Saarbrücken"
     assert corrected[1].location == "Saarland University, Saarbrücken, Germany"
     assert "Read More" not in corrected[1].summary
+
+
+def test_project_override_uses_local_sicss_stanford_hosts() -> None:
+    from research_school_radar.review import apply_overrides, load_overrides
+
+    candidate = sample_candidate(PROFILE)
+    candidate.identity_key = "sicss:2026:stanford"
+    candidate.organizer = "Summer Institutes in Computational Social Science"
+
+    corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
+
+    assert corrected.organizer == "Tech Impact and Policy Center & Social Media Lab"
 
 
 def test_location_sanitizer_rejects_field_labels() -> None:
