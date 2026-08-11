@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from typing import Any, Callable
+from urllib.parse import quote
 from xml.sax.saxutils import escape
 
 from .models import Candidate
@@ -61,7 +62,8 @@ def data_license_text() -> str:
 
 def sitemap_xml(pages: list[str]) -> str:
     urls = "".join(
-        f"  <url><loc>{escape(SITE_URL + page)}</loc></url>\n" for page in dict.fromkeys(pages)
+        f"  <url><loc>{escape(quote(SITE_URL + page, safe=':/%'))}</loc></url>\n"
+        for page in dict.fromkeys(pages)
     )
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'

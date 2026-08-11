@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+from urllib.parse import quote
 
 from .models import Candidate
 
@@ -21,4 +22,4 @@ def candidate_detail_filename(candidate: Candidate) -> str:
 
 
 def candidate_detail_href(candidate: Candidate) -> str:
-    return f"opportunities/{candidate_detail_filename(candidate)}"
+    return f"opportunities/{quote(candidate_detail_filename(candidate), safe='')}"

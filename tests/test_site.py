@@ -952,6 +952,20 @@ def test_identity_key_keeps_shared_listing_records_distinct_in_site_and_feed(tmp
     assert "ihe-delft:course-2" in feed
 
 
+def test_detail_urls_percent_encode_non_ascii_slugs(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    candidate.title = "Saarbrücken AI Summer School"
+    candidate.source_url = "https://example.org/saarbruecken"
+    candidate.application_link = candidate.source_url
+
+    html = write_site([candidate], [], tmp_path).read_text(encoding="utf-8")
+    sitemap = (tmp_path / "sitemap.xml").read_text(encoding="utf-8")
+
+    assert list((tmp_path / "opportunities").glob("*saarbrücken*.html"))
+    assert "opportunities/saarbr%C3%BCcken-ai-summer-school" in html
+    assert "opportunities/saarbr%C3%BCcken-ai-summer-school" in sitemap
+
+
 def test_topic_display_is_capped_at_four_terms(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     candidate.topic_keywords = ["one", "two", "three", "four", "five", "six"]
