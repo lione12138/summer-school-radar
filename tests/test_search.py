@@ -62,9 +62,9 @@ def test_ihe_delft_api_maps_courses_to_candidates() -> None:
     course = candidates[0]
     assert course.title.startswith("Water Resources Assessment")
     assert course.duration_days == 13
-    assert course.start_date == api_start - timedelta(days=1)
-    assert course.end_date == api_end - timedelta(days=1)
-    assert course.deadline == api_deadline - timedelta(days=1)
+    assert course.start_date == api_start
+    assert course.end_date == api_end
+    assert course.deadline == api_deadline
     assert course.fee == "EUR 3670 excl. VAT"
     assert course.fee_eur == 3670.0
     assert course.summary == "Basics of remote sensing for hydrology."
@@ -118,7 +118,7 @@ def test_ihe_delft_courses_keep_distinct_product_identities_when_ranked() -> Non
 
     assert not errors
     assert len(ranked) == 2
-    start_key = (start - timedelta(days=1)).isoformat()
+    start_key = start.isoformat()
     assert {candidate.identity_key for candidate in ranked} == {
         f"ihe-delft:product:101:{start_key}",
         f"ihe-delft:product:202:{start_key}",

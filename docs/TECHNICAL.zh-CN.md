@@ -164,7 +164,7 @@ AI 分支不会覆盖扫描器原始 `Candidate` 对象。它只会在生成首�
 
 时间一致性校验独立于提取到的截止状态：相关开课日期一旦到达，即使页面中误提取到更晚的“截止日期”，项目也必须关闭；晚于开课日期的申请截止日本身属于硬性校验失败。多时段项目以最后一个可选时段的开始日期判断。
 
-IHE Delft 专用 collector 会把 educator API 的午夜 UTC 时间戳按前一目录日的 date-only 边界解释，清除 introduction / forwhom 字段中的 HTML，并保留官网费用中的 `excl. VAT` 限定。项目正文 override 可以在保留官网证据的前提下，修正被导航污染的简介、申请对象、中文、地点、资助范围和主题标签。
+IHE Delft 专用 collector 直接读取 educator API 的 ISO 日期部分，不做时区加减；同时清除 introduction / forwhom 字段中的 HTML，并保留官网费用中的 `excl. VAT` 限定。当 IHE 的不同公开层只对某个 edition 给出冲突日期时，使用 identity-key 精确修正该 edition，避免整体移动其他课程日期。项目正文 override 可以在保留官网证据的前提下，修正被导航污染的简介、申请对象、中文、地点、资助范围和主题标签。
 
 ## 多学科范围
 

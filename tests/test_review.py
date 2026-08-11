@@ -224,6 +224,7 @@ def test_project_override_migrates_pre_fix_ihe_snapshot() -> None:
     candidate = sample_candidate(PROFILE)
     candidate.title = "Interdisciplinarity for Complex Water Problems"
     candidate.organizer = "IHE Delft"
+    candidate.identity_key = "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5"
     candidate.start_date = date(2026, 9, 28)
     candidate.end_date = date(2026, 10, 2)
     candidate.deadline = date(2026, 8, 28)

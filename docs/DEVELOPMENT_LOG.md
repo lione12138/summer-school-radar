@@ -260,10 +260,11 @@ for event history, labelling future and currently running schools as past
 editions. Library cards now classify event timing independently as upcoming,
 ongoing, or past while keeping the shared applications-closed warning.
 
-The IHE Delft collector now normalizes its midnight UTC catalogue boundaries,
-strips API HTML fragments, and preserves the `excl. VAT` price qualifier. A
-snapshot compatibility override makes the corrected Interdisciplinarity course
-dates and deadline visible before the next full collection.
+The IHE Delft collector now strips API HTML fragments and preserves the `excl.
+VAT` price qualifier. Investigation showed that the raw API and dynamic public
+listing agree with each other, so applying a global one-day shift would be
+unsafe. An edition-identity override applies the confirmed Interdisciplinarity
+course dates and deadline without changing unrelated IHE records.
 
 Official-page review also tightened three programme records. Prob_AI is shown
 as free with a small UK-only Access Fund instead of a generic travel grant, and

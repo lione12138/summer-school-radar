@@ -118,6 +118,9 @@ def write_review_queue(path: Path, candidates: list[Candidate], ai_items: list[d
 
 
 def _matches(candidate: Candidate, override: dict[str, Any]) -> bool:
+    identity_key = str(override.get("identity_key", "")).strip()
+    if identity_key and identity_key == candidate.identity_key:
+        return True
     url = str(override.get("url", "")).strip()
     if url and canonical_url(url) == canonical_url(candidate.source_url):
         return True

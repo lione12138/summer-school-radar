@@ -85,7 +85,7 @@ The public model has two independent gates. Deadline, duration, in-person mode, 
 
 Temporal validation is independent of extracted deadline status. A programme whose relevant start date has arrived is closed even if a page supplies a later date labelled as a deadline; a deadline later than the programme start is itself a hard validation failure. For multi-session programmes, the relevant start is the latest selectable session start.
 
-The IHE Delft collector treats its midnight UTC educator timestamps as date-only boundaries for the preceding catalogue day, strips HTML from introduction/audience fields, and preserves the official `excl. VAT` fee qualifier. Project content overrides may replace polluted summary, eligibility, translation, location, funding-scope, or topic fields while retaining the official evidence trail.
+The IHE Delft collector reads the educator API's ISO date portion without timezone arithmetic, strips HTML from introduction/audience fields, and preserves the official `excl. VAT` fee qualifier. When IHE's public layers disagree for one edition, an identity-keyed override corrects that edition without shifting unrelated catalogue dates. Project content overrides may replace polluted summary, eligibility, translation, location, funding-scope, or topic fields while retaining the official evidence trail.
 
 The scanner includes `training school` because research organizations commonly use that label for short, intensive summer-school-style programmes. Generic conference workshops are excluded entirely, since they are rarely funded multi-day schools; the remaining hard filters then apply to the school and course types that are kept.
 

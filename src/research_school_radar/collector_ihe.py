@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import json
-from datetime import date, timedelta
+from datetime import date
 from hashlib import sha256
 from typing import Any
 from urllib.parse import urlencode
@@ -21,21 +21,13 @@ _IHE_DELFT_LISTING = "https://www.un-ihe.org/short-courses"
 
 
 def _api_date(value: Any) -> date | None:
-    """Convert IHE's midnight UTC boundary to its intended catalogue date.
-
-    The educator API serializes date-only catalogue fields as midnight UTC at
-    the start of the following day.  Treating the ISO prefix as the public date
-    shifts course dates and application cut-offs one day late.
-    """
+    """Read the date portion of an IHE educator API timestamp."""
     if not isinstance(value, str) or len(value) < 10:
         return None
     try:
-        parsed = date.fromisoformat(value[:10])
+        return date.fromisoformat(value[:10])
     except ValueError:
         return None
-    if value.endswith("T00:00:00Z"):
-        return parsed - timedelta(days=1)
-    return parsed
 
 
 def _pick_edition(editions: list[dict]) -> dict | None:

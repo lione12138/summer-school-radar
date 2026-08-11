@@ -55,9 +55,9 @@ overrides:
       funding_type: [access fund]
       funding_scope: limited Access Fund for eligible UK-based participants
       funding_evidence: The school is free to attend. A small Access Fund is available only to eligible UK-based participants facing financial or accessibility barriers; other attendees cover travel and accommodation.
-  - title: Interdisciplinarity for Complex Water Problems
+  - identity_key: ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5
     status: update
-    note: Compatibility correction for snapshots produced before the IHE midnight-boundary parser fix; the next full IHE collection produces these values directly.
+    note: The IHE API and public listing expose a conflicting date layer for this edition; use the confirmed programme/deadline dates without shifting unrelated IHE courses.
     fields:
       start_date: 2026-09-27
       end_date: 2026-10-01
