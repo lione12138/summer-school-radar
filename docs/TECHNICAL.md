@@ -457,8 +457,13 @@ maintainer review against official pages is still required for curation.
 - `src/research_school_radar/filter.py` applies hard filters.
 - `src/research_school_radar/rank.py` scores and deduplicates candidates. Stable collector identities take precedence; URL/title/date similarity is used only when no structured identity is available. Facts are merged before hard filters and scores are recomputed.
 - `Candidate.identity_key` carries that structured identity through JSON, seen-state, RSS GUIDs, and stable detail-page names.
+- `Candidate.programme_key` optionally names the recurring programme that owns an edition. When a collector has no explicit key, `programme_catalog.py` derives a conservative organizer + year/edition-neutral title identity. The durable public programme catalogue merges previously published editions instead of inferring history from only the latest scan.
 - `src/research_school_radar/report.py` writes Markdown reports.
 - `src/research_school_radar/site.py` coordinates static website generation.
+- `src/research_school_radar/programme_catalog.py` maintains programme-to-edition relationships and the durable `api/programmes.json` catalogue. `site_programme.py` renders programme history pages; opportunity detail pages remain edition pages.
+- `src/research_school_radar/site_localization.py` turns the compatibility HTML into crawlable single-language `/en/` and `/zh/` trees, rewrites local assets, structured-data URLs, canonicals and reciprocal `hreflang`, and replaces the runtime language switcher with ordinary links.
+- `src/research_school_radar/site_localized_build.py` prepares per-page localized metadata and JSON-LD translations, writes the complete language trees, and enumerates their sitemap entries without expanding `site.py` into another renderer.
+- `src/research_school_radar/site_topics.py` maps programme topic metadata to maintained landing-page facets and emits a page only when at least two distinct programmes match.
 - `src/research_school_radar/site_assets.py` configures an autoescaped Jinja environment for package-owned page/component templates and copies tracked CSS/JavaScript from `web/static/` into each generated site. `site_seo.py` and `site_feed.py` retain sitemap/robots helpers and RSS rendering; SEO HTML fragments are templates.
 - `src/research_school_radar/urls.py` validates external links before they enter HTML, JSON-LD, or RSS.
 - `src/research_school_radar/atomic_io.py` atomically replaces generated text artifacts and retries transient Windows file locks.
@@ -575,8 +580,9 @@ scheduled mode copies the committed source snapshot, runs `refresh-status` from
 the candidate snapshot, and publishes the resulting `site/` directory to
 `gh-pages`. This keeps date-sensitive presentation current while avoiding daily
 source load and competing branch writers. Before rebuilding, it seeds previously
-published opportunity detail pages from `gh-pages`; closed or temporarily absent
-programmes therefore keep their established URLs instead of turning into 404s.
+published opportunity, programme, and programme-catalogue artifacts from
+`gh-pages`; closed or temporarily absent programmes and editions therefore keep
+their established URLs and history instead of turning into 404s.
 
 Cloud AI scanning is manual only. Selecting the workflow's `ai` mode installs
 the semantic/LLM extras, reads `DEEPSEEK_API_KEY` from repository secrets, runs
@@ -593,8 +599,12 @@ limits. Secret values are never written to generated output or commits.
 The scanner generates:
 
 - `site/index.html`
+- `site/en/index.html` and `site/zh/index.html`
 - `site/opportunities/*.html`
+- `site/programmes/*.html`
+- `site/topics/*.html` (only themes with at least two programmes)
 - `site/api/opportunities.json`
+- `site/api/programmes.json`
 - `site/candidates.json` (internal build/snapshot artifact; not deployed)
 - `site/review_queue.json` (internal build artifact; not deployed)
 - `site/curated.json`
@@ -613,7 +623,12 @@ Desktop layouts keep search and filters in a sticky left sidebar. On mobile,
 search remains visible while the other controls collapse behind a button. The
 records with unresolved deadlines, mode, duration, title, or link remain fail-closed in scanner JSON and review artifacts. Self-funded directory records have a known official fee and pass every public-safety condition; ordinary directory records also pass every public-safety condition but make no funding or affordability claim because the official fee/funding is unstated.
 
-Curated opportunities from `data/opportunities.yml` are rendered first. Automatic results are split into funded/accessible recommendations, plainly labelled verified self-funded schools, and capped organizer-balanced ordinary official listings. A separate library shows verified closed editions for discovery. Those editions receive permanent detail pages with timing-aware closed status and remain in the sitemap; unsafe or deadline-uncertain near-matches stay internal.
+Curated opportunities from `data/opportunities.yml` are rendered first. Automatic results are split into funded/accessible recommendations, plainly labelled verified self-funded schools, and capped organizer-balanced ordinary official listings. A separate library shows verified closed editions for discovery. Every edition keeps a permanent detail page and points to a durable programme history page. The programme catalogue is carried across deployments, so a later edition joins the existing programme instead of replacing its history. Unsafe or deadline-uncertain near-matches stay internal.
+
+The root URL tree remains the backward-compatible `x-default` version. `/en/`
+and `/zh/` contain one visible language each, have language-specific canonical
+URLs and metadata, and link to one another with reciprocal `hreflang`. Current
+detail, programme, topic, and source pages are emitted in all three trees.
 
 SEO output keeps the homepage as a `WebSite` + `ItemList` directory whose item
 URLs point to Summa detail pages. Each eligible detail page owns its

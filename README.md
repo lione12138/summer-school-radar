@@ -49,15 +49,22 @@ The generated website publishes verified scanner results and keeps unresolved re
 - **Funded and accessible recommendations**: open, on-site programmes with explicit participant support or a confirmed total fee no higher than approximately EUR 400.
 - **Officially verified self-funded schools**: open programmes whose official dates, location and fee are clear, shown separately and never described as funded recommendations. The directory excludes very high total or daily fees.
 - **More official programmes**: open official programmes that pass every hard safety and format rule but have no confirmed fee or funding evidence. They are ordinary directory entries, not affordability recommendations, and known expensive courses cannot enter through this tier.
-- **Recurring programme library**: verified closed calls from official sources, with permanent Summa detail pages and timing-aware status; excluded from open-opportunity counts and RSS.
+- **Recurring programme library**: verified closed calls grouped into durable programmes, while every edition keeps its own dates, status, fee/funding evidence, official link, and permanent Summa detail page; excluded from open-opportunity counts and RSS.
 - **Internal review records**: records with an uncertain deadline or mode, unsafe title/link, excessive known fee, or another failed public condition. They remain in build/repository audit artifacts but are not deployed to GitHub Pages.
 - **Sources & Coverage**: the configured trusted source registry, including disabled sources and notes.
 
 The site includes filters for keyword, status, topic, financial access, and deadline status. On desktop they stay in a left sidebar; on mobile search remains visible and the additional filters collapse behind a compact control. Matching records are paginated at 15 per page. Rows with a known application deadline include an **Add to calendar** menu (Google Calendar, Outlook, or a downloadable `.ics` file).
 
+English and Simplified Chinese have crawlable, single-language URL trees under `/en/` and `/zh/`, with reciprocal `hreflang` links; the historical root URLs remain the `x-default` compatibility version. Topic landing pages are generated only when at least two distinct programmes match a maintained theme, avoiding empty or one-record SEO pages.
+
 ```text
 site/index.html
+site/en/index.html
+site/zh/index.html
 site/api/opportunities.json
+site/api/programmes.json
+site/programmes/*.html
+site/topics/*.html
 site/sources.html
 site/sources.json
 site/feed.xml

@@ -16,6 +16,7 @@
   <header class="detail-header">
     <div class="wrap">
       <a class="detail-back" href="../index.html#opportunities" data-i18n="detail.back">&larr; Back to opportunities</a><br>
+      {% if programme_href %}<a class="detail-back" href="{{ programme_href }}" data-i18n="programme.view">View programme</a><br>{% endif %}
       <span class="status-badge {{ status_class }}">{{ status|safe }}</span>
       <h1>{{ bilingual_title|safe }}</h1>
       <p class="detail-org">{{ organization|safe }}</p>

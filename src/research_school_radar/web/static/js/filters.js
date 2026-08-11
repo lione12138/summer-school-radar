@@ -69,7 +69,7 @@ const pageSize = 15;
       const lang = document.documentElement.getAttribute("lang") || "en";
       const first = matching.length ? start + 1 : 0;
       const last = Math.min(start + pageSize, matching.length);
-      controls.count.textContent = lang === "zh"
+      controls.count.textContent = lang.startsWith("zh")
         ? `显示 ${first}–${last} / ${matching.length} 条`
         : `Showing ${first}–${last} of ${matching.length}`;
       controls.empty.hidden = matching.length !== 0;

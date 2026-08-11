@@ -46,7 +46,9 @@ def test_page_renderers_do_not_embed_frontend_markup() -> None:
         "site_home.py",
         "site_home_page.py",
         "site_layout.py",
+        "site_programme.py",
         "site_sources_page.py",
+        "site_topics.py",
     )
     tag = re.compile(r"<(?:a|aside|button|details|div|footer|form|header|link|meta|nav|script|section|span|svg|table|td|tr)\b")
     for name in renderers:

@@ -1,4 +1,6 @@
 <link rel="canonical" href="{{ canonical }}">
+{% for language, url in alternates.items() %}<link rel="alternate" hreflang="{{ language }}" href="{{ url }}">
+{% endfor %}
 <link rel="icon" type="image/svg+xml" href="{{ asset_prefix }}favicon.svg">
 <link rel="apple-touch-icon" href="{{ asset_prefix }}og-image.png">
 <meta name="robots" content="index,follow">

@@ -6,6 +6,7 @@ from .localization import region_zh, source_type_zh, topic_zh
 from .site_assets import render_template
 from .site_components import bilingual
 from .site_layout import site_nav
+from .site_localization import language_urls
 from .site_seo import SITE_URL, seo_head, watermark
 from .urls import safe_external_url
 
@@ -25,6 +26,7 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
             {},
             title="Sources & Coverage · Summa",
             image_alt="Summa trusted academic source coverage",
+            alternates=language_urls("sources.html"),
         ),
         nav=site_nav(home="index.html"),
         enabled_count=bilingual(f"{enabled_count} enabled", f"{enabled_count} 个已启用"),

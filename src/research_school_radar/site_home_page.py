@@ -6,6 +6,7 @@ from urllib.parse import quote
 
 from .localization import financial_summary_zh, region_zh, topic_zh, topics_label_zh
 from .models import Candidate
+from .programme_catalog import edition_identity
 from .publication import (
     is_archive_candidate,
     is_found_opportunity,
@@ -29,6 +30,7 @@ from .site_home import (
     how_it_works_section as _how_it_works_section,
 )
 from .site_layout import footer_section as _footer_section, site_nav as _site_nav
+from .site_localization import language_urls
 from .site_paths import candidate_detail_href
 from .site_seo import (
     SITE_DESCRIPTION as _SITE_DESCRIPTION,
@@ -72,7 +74,9 @@ def _status_banner(
         label = f"{full_count} funded or low-fee recommendation{plural} in the latest scan."
         if near_count:
             verb = "are" if near_count != 1 else "is"
-            extra = f" {near_count} verified self-funded school{'s' if near_count != 1 else ''} {verb} listed separately."
+            extra = (
+                f" {near_count} verified self-funded school{'s' if near_count != 1 else ''} {verb} listed separately."
+            )
         else:
             extra = ""
         if regular_count:
@@ -141,9 +145,7 @@ def _subscribe_action(site_config: dict[str, Any]) -> str:
         username = str(config.get("buttondown_username", "")).strip()
         if not username:
             return ""
-        action = safe_external_url(
-            f"https://buttondown.email/api/emails/embed-subscribe/{quote(username, safe='')}"
-        )
+        action = safe_external_url(f"https://buttondown.email/api/emails/embed-subscribe/{quote(username, safe='')}")
         if not action:
             return ""
         return action
@@ -212,6 +214,8 @@ def render_site(
     site_config: dict[str, Any] | None = None,
     curated: list[dict[str, Any]] | None = None,
     tracked_sources: int = 0,
+    programme_hrefs: dict[str, str] | None = None,
+    topic_links_html: str = "",
 ) -> str:
     curated = curated or []
     full = [item for item in candidates if item.fully_qualified and is_public_candidate(item)]
@@ -239,10 +243,11 @@ def render_site(
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
     near_rows = "".join(_near_row(candidate) for candidate in near)
     regular_rows = "".join(_found_row(candidate) for candidate in regular)
-    archive_rows = "".join(_archive_row(candidate) for candidate in archive)
-    public_notes = [
-        {"en": error, "zh": _collection_note_zh(error)} for error in _public_collection_notes(errors)[:12]
-    ]
+    programme_hrefs = programme_hrefs or {}
+    archive_rows = "".join(
+        _archive_row(candidate, programme_hrefs.get(edition_identity(candidate), "")) for candidate in archive
+    )
+    public_notes = [{"en": error, "zh": _collection_note_zh(error)} for error in _public_collection_notes(errors)[:12]]
     filters = render_filters([*full, *near, *regular], curated)
     analytics = _analytics_snippet(site_config or {})
     status_banner = _status_banner(len(full), len(near), len(regular), tracked_total, tracked_sources)
@@ -263,6 +268,7 @@ def render_site(
             site_config or {},
             title=_SITE_TITLE,
             image_alt="Summa funded summer schools, winter schools, and research training",
+            alternates=language_urls(""),
         ),
         jsonld=jsonld_block((full + near + regular)[:36], public_location=_public_location),
         nav=_site_nav(),
@@ -282,6 +288,7 @@ def render_site(
         near_block=near_block,
         regular_section=_found_section(regular_rows) if regular_rows else "",
         archive_section=_archive_section(archive_rows, len(archive)) if archive_rows else "",
+        topic_links=topic_links_html,
         pagination=render_pagination(),
         notes_section=_notes_section(public_notes) if public_notes else "",
         subscribe_section=_subscribe_section(site_config or {}),
@@ -429,7 +436,7 @@ def _found_row(candidate: Candidate) -> str:
     return _candidate_row(candidate, "found")
 
 
-def _archive_row(candidate: Candidate) -> str:
+def _archive_row(candidate: Candidate, programme_href: str = "") -> str:
     status_key, status_en = _library_status(candidate)
     return render_template(
         "home/archive_row.html",
@@ -443,7 +450,9 @@ def _archive_row(candidate: Candidate) -> str:
         ),
         duration=_duration_cell(candidate),
         funding=_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate)),
+        title_href=programme_href or candidate_detail_href(candidate),
         detail_href=candidate_detail_href(candidate),
+        programme_href=programme_href,
         official_url=safe_external_url(candidate.source_url or candidate.application_link),
     )
 

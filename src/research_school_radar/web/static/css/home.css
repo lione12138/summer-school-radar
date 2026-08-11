@@ -254,3 +254,10 @@ footer.site .legal {
   .steps { grid-template-columns: 1fr 1fr; }
   table { font-size: 13px; }
 }
+    .topic-guides { margin-top: 56px; }
+    .topic-link-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .topic-link-card { display: flex; min-height: 108px; padding: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); color: var(--ink); flex-direction: column; justify-content: space-between; box-shadow: var(--shadow-soft); }
+    .topic-link-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+    .topic-link-card span { color: var(--muted); font-size: 13px; }
+    @media (max-width: 850px) { .topic-link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .topic-link-grid { grid-template-columns: 1fr; } }

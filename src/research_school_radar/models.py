@@ -76,6 +76,10 @@ class Candidate:
     # deliberately separate from source/application URLs: one catalogue page
     # can describe many distinct opportunities.
     identity_key: str = ""
+    # Stable recurring-programme identity. One programme can have multiple
+    # dated editions; collectors/overrides may provide this explicitly, while
+    # the site catalogue derives a conservative fallback when it is absent.
+    programme_key: str = ""
     # A non-numeric benefit can be precise even when no single currency amount
     # applies, e.g. a scholarship that covers each selected participant's
     # applicable registration fee.

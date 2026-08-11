@@ -29,20 +29,29 @@ CANARY = "SSR-CANON-7q3v9x2k8m4w"
 # intentionally allowed. OAI-SearchBot is handled separately because it powers
 # ChatGPT Search and is independent from the training crawler GPTBot.
 BLOCKED_BOTS = (
-    "GPTBot", "ChatGPT-User", "CCBot", "Google-Extended",
-    "anthropic-ai", "ClaudeBot", "Claude-Web", "PerplexityBot", "Bytespider",
-    "Amazonbot", "Applebot-Extended", "cohere-ai", "Diffbot", "Omgilibot",
-    "ImagesiftBot", "FacebookBot", "meta-externalagent",
+    "GPTBot",
+    "ChatGPT-User",
+    "CCBot",
+    "Google-Extended",
+    "anthropic-ai",
+    "ClaudeBot",
+    "Claude-Web",
+    "PerplexityBot",
+    "Bytespider",
+    "Amazonbot",
+    "Applebot-Extended",
+    "cohere-ai",
+    "Diffbot",
+    "Omgilibot",
+    "ImagesiftBot",
+    "FacebookBot",
+    "meta-externalagent",
 )
 
 
 def robots_txt() -> str:
     blocked = "".join(f"User-agent: {bot}\nDisallow: /\n\n" for bot in BLOCKED_BOTS)
-    return (
-        f"User-agent: OAI-SearchBot\nAllow: /\n\n"
-        f"{blocked}"
-        f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n"
-    )
+    return f"User-agent: OAI-SearchBot\nAllow: /\n\n{blocked}User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n"
 
 
 def data_license_text() -> str:
@@ -62,8 +71,7 @@ def data_license_text() -> str:
 
 def sitemap_xml(pages: list[str]) -> str:
     urls = "".join(
-        f"  <url><loc>{escape(quote(SITE_URL + page, safe=':/%'))}</loc></url>\n"
-        for page in dict.fromkeys(pages)
+        f"  <url><loc>{escape(quote(SITE_URL + page, safe=':/%'))}</loc></url>\n" for page in dict.fromkeys(pages)
     )
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -82,6 +90,7 @@ def seo_head(
     asset_prefix: str = "",
     og_type: str = "website",
     image_alt: str = "Summa research training opportunity directory",
+    alternates: dict[str, str] | None = None,
 ) -> str:
     """Canonical link, Open Graph, Twitter card, and verification tags."""
     asset_prefix = "../" if asset_prefix == "../" else ""
@@ -96,6 +105,7 @@ def seo_head(
         og_image=OG_IMAGE,
         og_type=og_type,
         image_alt=image_alt,
+        alternates=alternates or {},
         verification=verification,
     )
 

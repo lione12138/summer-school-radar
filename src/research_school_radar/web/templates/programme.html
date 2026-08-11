@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} — Programme history · Summa</title>
+{{ seo_head|safe }}
+{{ jsonld|safe }}
+  <script src="../assets/js/i18n-boot.js"></script>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/opportunities.css">
+  <link rel="stylesheet" href="../assets/css/programme.css">
+</head>
+<body class="programme-page" data-page-title-en="{{ title }} — Programme history · Summa" data-page-title-zh="{{ title_zh }} — 历届项目 · Summa">
+  {{ nav|safe }}
+  <main class="wrap programme-main">
+    <a class="detail-back" href="../index.html#programme-library" data-i18n="programme.back">&larr; Back to programme library</a>
+    <header class="programme-hero">
+      <span class="eyebrow" data-i18n="programme.label">Recurring programme</span>
+      <h1>{{ bilingual_title|safe }}</h1>
+      <p class="programme-org">{{ organizer|safe }}</p>
+      <p class="lead">{{ summary|safe }}</p>
+      <div class="programme-meta"><span>{{ edition_count|safe }}</span><span>{{ topics|safe }}</span></div>
+    </header>
+    <section class="programme-editions">
+      <div class="section-head">
+        <h2 data-i18n="programme.editions">Verified editions</h2>
+        <p data-i18n="programme.editions.lead">Each edition keeps its own dates, application status, fees, funding and official link.</p>
+      </div>
+      <div class="edition-list">{{ edition_cards|safe }}</div>
+    </section>
+  </main>
+  {{ footer|safe }}
+  <script src="../assets/js/i18n.js"></script>
+</body>
+</html>

@@ -114,6 +114,10 @@ AI 分支不会覆盖扫描器原始 `Candidate` 对象。它只会在生成首�
 - `src/research_school_radar/rank.py`：解释性打分和去重；优先使用采集器提供的稳定身份，在事实合并后重新硬筛和评分
 - `src/research_school_radar/report.py`：生成 Markdown 报告
 - `src/research_school_radar/site.py`：协调静态网站生成
+- `src/research_school_radar/programme_catalog.py`：维护真正的 programme → edition 关系，并跨部署合并公开的 `api/programmes.json` 历史；`site_programme.py` 渲染周期项目历届页，机会详情页仍对应某一届 edition
+- `src/research_school_radar/site_localization.py`：把兼容版 HTML 生成为可抓取的 `/en/`、`/zh/` 单语言目录，并重写静态资源、结构化数据 URL、canonical、互相对应的 `hreflang` 和显式语言链接
+- `src/research_school_radar/site_localized_build.py`：准备各页面的语言专属 metadata 与 JSON-LD 翻译，写出完整语言目录并汇总 sitemap URL，避免把渲染职责重新堆回 `site.py`
+- `src/research_school_radar/site_topics.py`：按维护的主题分类聚合 programme，只有至少两个不同 programme 命中时才生成主题落地页，避免薄内容页面
 - `src/research_school_radar/site_assets.py`：配置自动转义的 Jinja 环境，并把真实 CSS/JavaScript 复制到生成站点
 - `src/research_school_radar/web/templates/`：受版本控制的页面外壳与布局、筛选、项目行、来源行、详情、SEO、首页区块等 Jinja 组件；页面渲染 Python 模块不得内嵌前端标签
 - `src/research_school_radar/web/static/css/` 与 `web/static/js/`：页面样式、中英文词典、语言切换、筛选、响应式侧栏和每页 15 条分页逻辑
@@ -322,8 +326,12 @@ secret 不会写入生成文件或提交。
 网站生成器会写入：
 
 - `site/index.html`
+- `site/en/index.html` 与 `site/zh/index.html`
 - `site/opportunities/*.html`
+- `site/programmes/*.html`
+- `site/topics/*.html`（至少有两个 programme 的主题才生成）
 - `site/api/opportunities.json`
+- `site/api/programmes.json`
 - `site/candidates.json`（仅供构建、校验和快照使用，不部署）
 - `site/review_queue.json`（内部构建产物，不部署）
 - `site/curated.json`
@@ -334,7 +342,7 @@ secret 不会写入生成文件或提交。
 - `site/robots.txt`
 - `site/.nojekyll`
 
-周期性项目库中的已关闭项目也会生成带状态的永久详情页并进入 sitemap。首页 JSON-LD 只使用 `WebSite` 与指向 Summa 详情页的 `ItemList`；每个具备可靠日期和地点的详情页单独输出 `EducationEvent`。sitemap 暂不写 `lastmod`，避免每日构建伪造全部页面的实质更新时间。`robots.txt` 允许用于 ChatGPT Search 的 `OAI-SearchBot`，同时继续禁止用于模型训练的 `GPTBot`。
+周期性项目库中的已关闭 edition 会生成带状态的永久详情页并进入 sitemap，同时关联到可跨年份保留历史的 programme 页面。根 URL 保持为兼容的 `x-default` 版本；`/en/` 与 `/zh/` 只显示各自语言，并为首页、来源、机会、programme 和主题页输出语言专属 canonical 与互相对应的 `hreflang`。首页 JSON-LD 只使用 `WebSite` 与指向 Summa 详情页的 `ItemList`；每个具备可靠日期和地点的详情页单独输出 `EducationEvent`。sitemap 暂不写 `lastmod`，避免每日构建伪造全部页面的实质更新时间。`robots.txt` 允许用于 ChatGPT Search 的 `OAI-SearchBot`，同时继续禁止用于模型训练的 `GPTBot`。
 
 内部 scanner 记录、失败条件与 review queue 会在发布前从 `site/` 删除；Pages 只公开字段干净的 `site/api/opportunities.json`。
 

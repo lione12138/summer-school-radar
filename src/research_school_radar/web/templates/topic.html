@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} · Summa</title>
+{{ seo_head|safe }}
+{{ jsonld|safe }}
+  <script src="../assets/js/i18n-boot.js"></script>
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/opportunities.css">
+  <link rel="stylesheet" href="../assets/css/programme.css">
+</head>
+<body class="topic-page" data-page-title-en="{{ title }} · Summa" data-page-title-zh="{{ title_zh }} · Summa">
+  {{ nav|safe }}
+  <main class="wrap programme-main">
+    <a class="detail-back" href="../index.html#topics" data-i18n="topics.back">&larr; Browse all opportunities</a>
+    <header class="programme-hero">
+      <span class="eyebrow" data-i18n="topics.label">Topic guide</span>
+      <h1>{{ bilingual_title|safe }}</h1>
+      <p class="lead">{{ description|safe }}</p>
+      <div class="programme-meta"><span>{{ count|safe }}</span></div>
+    </header>
+    <section>
+      <div class="section-head"><h2 data-i18n="topics.programmes">Verified programmes</h2></div>
+      <div class="edition-list">{{ cards|safe }}</div>
+    </section>
+  </main>
+  {{ footer|safe }}
+  <script src="../assets/js/i18n.js"></script>
+</body>
+</html>

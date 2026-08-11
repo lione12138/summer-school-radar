@@ -144,15 +144,14 @@ def _merge_into(primary: Candidate, other: Candidate) -> None:
     # catalogue item with a similar title and the same dates.
     if not primary.identity_key and other.identity_key:
         primary.identity_key = other.identity_key
+    if not primary.programme_key and other.programme_key:
+        primary.programme_key = other.programme_key
     if other.sessions:
         sessions = {}
         for session in [*primary.sessions, *other.sessions]:
             key = (session.name, session.start_date, session.end_date)
             existing = sessions.get(key)
-            if existing is None or (
-                existing.application_deadline is None
-                and session.application_deadline is not None
-            ):
+            if existing is None or (existing.application_deadline is None and session.application_deadline is not None):
                 sessions[key] = session
         primary.sessions = sorted(
             sessions.values(),
@@ -168,9 +167,7 @@ def _merge_into(primary: Candidate, other: Candidate) -> None:
         if other.deadline_status:
             primary.deadline_status = other.deadline_status
     primary_has_future_open_deadline = (
-        primary.deadline_status == "open"
-        and primary.deadline is not None
-        and primary.deadline >= date.today()
+        primary.deadline_status == "open" and primary.deadline is not None and primary.deadline >= date.today()
     )
     if (
         primary.deadline_status not in {"closed", "not_open"}
@@ -274,10 +271,25 @@ def _same_opportunity(a: Candidate, b: Candidate) -> bool:
 # Coarse region placeholders used as a location fallback. They are not real
 # venues, so they must not be treated as a conflicting place during dedup.
 _COARSE_LOCATIONS = {
-    "europe", "continental europe", "global", "worldwide", "online", "various",
-    "multiple locations", "north america", "south america", "latin america",
-    "asia", "east asia", "southeast asia", "south asia", "africa", "middle east",
-    "uk", "united kingdom", "australia and new zealand",
+    "europe",
+    "continental europe",
+    "global",
+    "worldwide",
+    "online",
+    "various",
+    "multiple locations",
+    "north america",
+    "south america",
+    "latin america",
+    "asia",
+    "east asia",
+    "southeast asia",
+    "south asia",
+    "africa",
+    "middle east",
+    "uk",
+    "united kingdom",
+    "australia and new zealand",
 }
 
 

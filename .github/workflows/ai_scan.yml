@@ -110,13 +110,19 @@ jobs:
           path: _pages
           fetch-depth: 1
 
-      - name: Seed permanent opportunity pages
+      - name: Seed permanent catalogue pages
         if: steps.build.outputs.can_build == 'true' && steps.build.outputs.mode != 'audit'
         shell: bash
         run: |
-          mkdir -p site/opportunities
+          mkdir -p site/opportunities site/programmes site/topics site/api
           if compgen -G "_pages/opportunities/*.html" > /dev/null; then
             cp -n _pages/opportunities/*.html site/opportunities/
+          fi
+          if compgen -G "_pages/programmes/*.html" > /dev/null; then
+            cp -n _pages/programmes/*.html site/programmes/
+          fi
+          if [[ -f _pages/api/programmes.json ]]; then
+            cp _pages/api/programmes.json site/api/programmes.json
           fi
 
       - name: Restore bge-m3 model cache

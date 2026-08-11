@@ -79,11 +79,26 @@ def test_merge_does_not_resurrect_a_closed_event() -> None:
     base = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     # Same event, two sources: one says applications are closed (no date), the
     # other lists a future deadline. The closed status must survive the merge.
-    closed = replace(base, title="X Summer School", location="Berlin", deadline=None,
-                     deadline_status="closed", source_url="https://a", application_link="https://a", score=10.0)
-    openish = replace(base, title="X Summer School", location="Berlin",
-                      deadline=date.today() + timedelta(days=30), deadline_status="open",
-                      source_url="https://b", application_link="https://b", score=5.0)
+    closed = replace(
+        base,
+        title="X Summer School",
+        location="Berlin",
+        deadline=None,
+        deadline_status="closed",
+        source_url="https://a",
+        application_link="https://a",
+        score=10.0,
+    )
+    openish = replace(
+        base,
+        title="X Summer School",
+        location="Berlin",
+        deadline=date.today() + timedelta(days=30),
+        deadline_status="open",
+        source_url="https://b",
+        application_link="https://b",
+        score=5.0,
+    )
     deduped = _dedupe_candidates([closed, openish])
     assert len(deduped) == 1
     assert deduped[0].deadline_status == "closed"
@@ -125,10 +140,12 @@ def test_different_series_events_are_not_merged() -> None:
     from research_school_radar.rank import _dedupe_candidates
 
     base = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
-    vienna = replace(base, title="ELLIS Summer School at Unit Vienna", location="Vienna",
-                     source_url="https://ellis.eu/events/vienna")
-    munich = replace(base, title="ELLIS Summer School at Unit Munich", location="Munich",
-                     source_url="https://ellis.eu/events/munich")
+    vienna = replace(
+        base, title="ELLIS Summer School at Unit Vienna", location="Vienna", source_url="https://ellis.eu/events/vienna"
+    )
+    munich = replace(
+        base, title="ELLIS Summer School at Unit Munich", location="Munich", source_url="https://ellis.eu/events/munich"
+    )
     # Same dates but different cities: distinct events, must stay separate.
     assert len(_dedupe_candidates([vienna, munich])) == 2
 
@@ -158,6 +175,7 @@ def test_dedupe_enriches_records_with_the_same_structured_identity() -> None:
         deadline_status="open",
         topic_keywords=[],
         mode="online",
+        programme_key="programme:catalogue-school",
     )
 
     ranked = rank_candidates([primary, supplement], profile=PROFILE)
@@ -165,6 +183,7 @@ def test_dedupe_enriches_records_with_the_same_structured_identity() -> None:
     assert len(ranked) == 1
     assert ranked[0].deadline == supplement.deadline
     assert ranked[0].deadline_status == "open"
+    assert ranked[0].programme_key == "programme:catalogue-school"
 
 
 def test_topic_count_does_not_change_quality_score() -> None:
@@ -372,4 +391,3 @@ def test_same_site_application_page_with_same_dates_is_not_a_second_opportunity(
 
     assert len(ranked) == 1
     assert ranked[0].deadline_status == "not_open"
-

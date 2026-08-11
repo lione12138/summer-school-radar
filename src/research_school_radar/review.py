@@ -15,6 +15,7 @@ from .utils import is_too_short
 
 FIELD_NAMES = {
     "title",
+    "programme_key",
     "type",
     "organizer",
     "location",
@@ -127,11 +128,7 @@ def build_review_queue(
     limit: int | None = None,
     ai_items: list[dict[str, Any]] | None = None,
 ) -> list[dict[str, Any]]:
-    reviewable = [
-        candidate
-        for candidate in candidates
-        if _needs_review(candidate)
-    ]
+    reviewable = [candidate for candidate in candidates if _needs_review(candidate)]
     reviewable.sort(key=lambda item: (_review_priority(item), item.score), reverse=True)
     rows = [_review_item(candidate, ai_items) for candidate in reviewable]
     return rows if limit is None else rows[:limit]
@@ -163,25 +160,13 @@ def _matches(candidate: Candidate, override: dict[str, Any]) -> bool:
 def _apply_override(candidate: Candidate, override: dict[str, Any]) -> None:
     fields = override.get("fields", {})
     if not isinstance(fields, dict):
-        fields = {
-            key: value
-            for key, value in override.items()
-            if key in FIELD_NAMES
-        }
-    before = {
-        key: getattr(candidate, key)
-        for key in fields
-        if key in FIELD_NAMES and hasattr(candidate, key)
-    }
+        fields = {key: value for key, value in override.items() if key in FIELD_NAMES}
+    before = {key: getattr(candidate, key) for key in fields if key in FIELD_NAMES and hasattr(candidate, key)}
     for key, value in fields.items():
         if key not in FIELD_NAMES:
             continue
         setattr(candidate, key, _coerce_value(key, value))
-    changed = {
-        key
-        for key, previous in before.items()
-        if getattr(candidate, key) != previous
-    }
+    changed = {key for key, previous in before.items() if getattr(candidate, key) != previous}
     for canonical, translated in _TRANSLATED_CANONICAL_FIELDS.items():
         if canonical in changed and translated not in fields:
             setattr(candidate, translated, "")

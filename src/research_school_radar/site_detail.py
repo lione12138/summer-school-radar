@@ -19,13 +19,19 @@ from .site_components import (
     session_details,
 )
 from .site_layout import footer_section, site_nav
+from .site_localization import language_urls
 from .site_paths import candidate_detail_href
 from .site_seo import SITE_URL, event_jsonld_block, seo_description, seo_head
 from .urls import safe_external_url
 from .utils import topics_label
 
 
-def render_opportunity_detail(candidate: Candidate, site_config: dict[str, Any] | None = None) -> str:
+def render_opportunity_detail(
+    candidate: Candidate,
+    site_config: dict[str, Any] | None = None,
+    *,
+    programme_href: str = "",
+) -> str:
     official = safe_external_url(candidate.application_link) or safe_external_url(candidate.source_url)
     status_label, status_class = candidate_status(candidate)
     has_session_deadlines = any(session.application_deadline for session in candidate.sessions)
@@ -44,7 +50,10 @@ def render_opportunity_detail(candidate: Candidate, site_config: dict[str, Any] 
     summary = candidate.summary.strip() or candidate.recommendation_reason.strip()
     if not summary:
         summary = f"A {candidate.type or 'research training opportunity'} from {candidate.organizer}."
-    eligibility = candidate.eligibility.strip() or "Check the official programme page for eligibility and application requirements."
+    eligibility = (
+        candidate.eligibility.strip()
+        or "Check the official programme page for eligibility and application requirements."
+    )
     qualification = candidate.recommendation_reason.strip() or (
         "Official dates, funding or fee information, organizer, and programme location are shown with source evidence where available."
     )
@@ -79,9 +88,11 @@ def render_opportunity_detail(candidate: Candidate, site_config: dict[str, Any] 
             asset_prefix="../",
             og_type="article",
             image_alt=f"{candidate.title} on Summa",
+            alternates=language_urls(candidate_detail_href(candidate)),
         ),
         jsonld=event_jsonld_block(candidate, public_location=public_location),
         nav=site_nav(home="../index.html", root="../"),
+        programme_href=programme_href,
         status_class=status_class,
         status=bilingual(status_label, status_zh(status_label)),
         bilingual_title=bilingual(candidate.title, candidate.title_zh),

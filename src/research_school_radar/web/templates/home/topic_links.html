@@ -1,0 +1,9 @@
+<section class="topic-guides anchor" id="topics">
+  <div class="section-head">
+    <h2 data-i18n="topics.home.title">Browse research schools by topic</h2>
+    <p class="lead" data-i18n="topics.home.lead">Indexable topic guides are created only when enough verified programmes exist, avoiding thin pages.</p>
+  </div>
+  <div class="topic-link-grid">
+    {% for link in links %}<a class="topic-link-card" href="{{ link.href }}"><strong>{{ link.title|safe }}</strong><span>{{ link.count|safe }}</span></a>{% endfor %}
+  </div>
+</section>

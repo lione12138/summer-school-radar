@@ -64,6 +64,11 @@ Key modules:
 - `src/research_school_radar/site_filters.py` — opportunity filter and pagination markup.
 - `src/research_school_radar/site_layout.py` — shared navigation and footer layout.
 - `src/research_school_radar/site_paths.py` — stable detail-page paths.
+- `src/research_school_radar/programme_catalog.py` — durable programme-to-edition identity and history catalogue. Explicit `Candidate.programme_key` wins; the fallback is a conservative normalized title + organizer identity.
+- `src/research_school_radar/site_programme.py` — recurring programme history-page rendering; opportunity detail pages remain individual editions.
+- `src/research_school_radar/site_localization.py` — builds single-language `/en/` and `/zh/` page trees with localized metadata, canonical URLs, reciprocal `hreflang`, and explicit language links.
+- `src/research_school_radar/site_localized_build.py` — prepares localized page metadata, translates JSON-LD text, writes the language trees, and enumerates their sitemap URLs.
+- `src/research_school_radar/site_topics.py` — maintained topic facets and non-thin landing pages; a facet needs at least two distinct programmes.
 - `src/research_school_radar/web/templates/` — tracked Jinja page shells and component templates; page-renderer Python modules must not embed frontend markup.
 - `src/research_school_radar/web/static/css/` — shared and page-specific browser stylesheets.
 - `src/research_school_radar/web/static/js/` — bilingual UI, language bootstrap, filtering, responsive sidebar, and 15-item pagination.
@@ -250,7 +255,7 @@ If full-suite failures are unrelated to the current change, state the exact fail
 - Only successful full scans update the three source snapshots on `main`; status refreshes rebuild presentation without overwriting source-scan snapshots. Full scans may also commit generated seen/review/report state. The local task never writes `gh-pages`.
 - Scheduled Git operations may reuse a reachable Windows user proxy through process-scoped Git configuration and retry transient failures. If generation finishes while GitHub is unavailable, the automation records the generated commit under `.git/`, restores the clean pre-run branch, and retries that exact generated output after connectivity returns.
 - The Windows task is allowed to start and continue on battery power; `StartWhenAvailable` handles missed wake times.
-- `.github/workflows/ai_scan.yml` is the sole `gh-pages` writer. It runs a no-fetch `refresh-status` build from snapshots every day, preserves previously published programme detail pages so indexed URLs do not become 404s, and strips internal candidate/review artifacts before deployment. Its cloud AI scan modes are manual only. Manual `audit` runs upload evidence and metrics without committing snapshots or publishing, while manual `ai` runs may publish only after all gates pass.
+- `.github/workflows/ai_scan.yml` is the sole `gh-pages` writer. It runs a no-fetch `refresh-status` build from snapshots every day, preserves previously published edition pages, programme pages, and the public programme catalogue so indexed URLs and edition history do not disappear, and strips internal candidate/review artifacts before deployment. Its cloud AI scan modes are manual only. Manual `audit` runs upload evidence and metrics without committing snapshots or publishing, while manual `ai` runs may publish only after all gates pass.
 
 ## Current design priorities
 

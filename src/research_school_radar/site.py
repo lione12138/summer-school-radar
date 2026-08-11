@@ -12,6 +12,12 @@ from .candidate_io import CANDIDATE_SNAPSHOT_SCHEMA_VERSION, candidate_to_dict
 from .llm_client import BaseLLMClient
 from .localization_audit import warn_localization_issues
 from .models import Candidate
+from .programme_catalog import (
+    build_programme_catalog,
+    edition_identity,
+    programme_lookup,
+    programme_path,
+)
 from .publication import is_archive_candidate, is_display_candidate, is_high_quality, is_public_candidate
 from .record_audit import filter_display_candidates_by_audit
 from .review import build_review_queue
@@ -29,7 +35,9 @@ from .site_home_page import (
     _parse_iso_date,
     render_site,
 )
+from .site_localized_build import sitemap_pages, write_localized_site
 from .site_paths import candidate_detail_filename
+from .site_programme import render_programme_page
 from .site_public_api import public_api_payload
 from .site_sources_page import render_sources_page
 from .site_seo import (
@@ -42,6 +50,7 @@ from .site_seo import (
     robots_txt,
     sitemap_xml,
 )
+from .site_topics import available_topic_pages, render_topic_links, render_topic_page
 from .translation import TranslationConfig, translate_candidates, translate_source_metadata
 from .utils import ROOT, topics_label
 
@@ -157,17 +166,60 @@ def write_site(
         for candidate in homepage_candidates
         if is_display_candidate(candidate) or is_archive_candidate(candidate)
     ]
+    public_api_dir = output_dir / "api"
+    public_api_dir.mkdir(parents=True, exist_ok=True)
+    previous_catalogue = _read_json_object(public_api_dir / "programmes.json")
+    catalogue = build_programme_catalog(detail_candidates, previous_catalogue)
+    catalogue.update(
+        {
+            "_license": _DATA_LICENSE,
+            "_license_url": _DATA_LICENSE_URL,
+            "_attribution": "Summa",
+            "_canonical": _SITE_URL + "api/programmes.json",
+        }
+    )
+    programmes = [item for item in catalogue.get("programmes", []) if isinstance(item, dict)]
+    programme_by_edition = programme_lookup(catalogue)
+    programme_hrefs = {edition_id: programme_path(programme) for edition_id, programme in programme_by_edition.items()}
+
+    programme_dir = output_dir / "programmes"
+    programme_dir.mkdir(parents=True, exist_ok=True)
+    for programme in programmes:
+        programme_html = render_programme_page(programme, site_config or {})
+        filename = f"{programme['slug']}.html"
+        warn_localization_issues(programme_html, filename, i18n_source)
+        write_text_atomic(programme_dir / filename, programme_html)
+
+    topic_pages = available_topic_pages(programmes)
+    topic_dir = output_dir / "topics"
+    topic_dir.mkdir(parents=True, exist_ok=True)
+    for facet, topic_programmes in topic_pages:
+        topic_html = render_topic_page(facet, topic_programmes, site_config or {})
+        warn_localization_issues(topic_html, f"topics/{facet.key}.html", i18n_source)
+        write_text_atomic(topic_dir / f"{facet.key}.html", topic_html)
+
     detail_dir = output_dir / "opportunities"
     detail_dir.mkdir(parents=True, exist_ok=True)
     for candidate in detail_candidates:
-        detail_html = render_opportunity_detail(candidate, site_config or {})
+        programme_href = programme_hrefs.get(edition_identity(candidate), "")
+        detail_html = render_opportunity_detail(
+            candidate,
+            site_config or {},
+            programme_href=f"../{programme_href}" if programme_href else "",
+        )
         warn_localization_issues(detail_html, candidate_detail_filename(candidate), i18n_source)
         write_text_atomic(detail_dir / candidate_detail_filename(candidate), detail_html)
-    public_api_dir = output_dir / "api"
-    public_api_dir.mkdir(parents=True, exist_ok=True)
     write_text_atomic(
         public_api_dir / "opportunities.json",
-        json.dumps(public_api_payload(detail_candidates), indent=2, ensure_ascii=False),
+        json.dumps(
+            public_api_payload(detail_candidates, programme_by_edition),
+            indent=2,
+            ensure_ascii=False,
+        ),
+    )
+    write_text_atomic(
+        public_api_dir / "programmes.json",
+        json.dumps(catalogue, indent=2, ensure_ascii=False),
     )
     write_text_atomic(
         output_dir / "feed.xml",
@@ -187,25 +239,10 @@ def write_site(
         ),
     )
     write_text_atomic(output_dir / "robots.txt", robots_txt())
-    write_text_atomic(
-        output_dir / "sitemap.xml",
-        sitemap_xml(
-            [
-                "",
-                "sources.html",
-                *[
-                    path.relative_to(output_dir).as_posix()
-                    for path in sorted(detail_dir.glob("*.html"))
-                ],
-            ]
-        ),
-    )
     write_text_atomic(output_dir / "favicon.svg", favicon_svg())
     _copy_og_image(output_dir)
     _copy_verification_files(output_dir)
-    tracked_sources = sum(
-        1 for source in sources if source.get("enabled", True) and not source.get("check_manually")
-    )
+    tracked_sources = sum(1 for source in sources if source.get("enabled", True) and not source.get("check_manually"))
     path = output_dir / "index.html"
     index_html = render_site(
         homepage_candidates,
@@ -213,10 +250,32 @@ def write_site(
         site_config or {},
         curated,
         tracked_sources=tracked_sources,
+        programme_hrefs=programme_hrefs,
+        topic_links_html=render_topic_links(topic_pages),
     )
     warn_localization_issues(index_html, "index.html", i18n_source)
     write_text_atomic(path, index_html)
+    write_localized_site(
+        output_dir,
+        index_html=index_html,
+        sources_html=sources_html,
+        candidates=detail_candidates,
+        programmes=programmes,
+        topic_pages=topic_pages,
+        i18n_source=i18n_source,
+    )
+    write_text_atomic(output_dir / "sitemap.xml", sitemap_xml(sitemap_pages(output_dir)))
     return path
+
+
+def _read_json_object(path: Path) -> dict[str, Any] | None:
+    if not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    return payload if isinstance(payload, dict) else None
 
 
 def _manual_source_notes(sources: list[dict[str, Any]]) -> list[str]:
@@ -227,7 +286,9 @@ def _manual_source_notes(sources: list[dict[str, Any]]) -> list[str]:
         name = str(source.get("name", "Manual source")).strip()
         note = str(source.get("notes", "")).strip()
         suffix = f" {note}" if note else ""
-        notes.append(f"{name}: high-quality official source; check manually because it cannot be collected reliably yet.{suffix}")
+        notes.append(
+            f"{name}: high-quality official source; check manually because it cannot be collected reliably yet.{suffix}"
+        )
     return notes
 
 

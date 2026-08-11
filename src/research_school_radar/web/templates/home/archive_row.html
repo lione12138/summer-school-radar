@@ -1,7 +1,7 @@
 <article class="library-card">
   <div class="library-card-head">
     <span class="library-status" data-i18n="{{ status_key }}">{{ status_en }}</span>
-    <h3><a href="{{ detail_href }}">{{ title|safe }}</a></h3>
+    <h3><a href="{{ title_href }}">{{ title|safe }}</a></h3>
   </div>
   <p>{{ organizer|safe }} · {{ location|safe }}</p>
   <div class="library-facts">
@@ -10,6 +10,7 @@
   </div>
   <div class="card-actions">
     <a class="button tonal" href="{{ detail_href }}" data-i18n="action.details">View details</a>
+    {% if programme_href %}<a class="button tonal" href="{{ programme_href }}" data-i18n="programme.view">View programme history</a>{% endif %}
     {% if official_url %}<a class="button tonal" href="{{ official_url }}" target="_blank" rel="noopener" data-i18n="library.official">View official programme</a>{% endif %}
   </div>
 </article>
