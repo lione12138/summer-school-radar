@@ -24,6 +24,30 @@ overrides:
       funding_type: [scholarship]
       funding_scope: registration fee covered
       funding_evidence: Thanks to the support of the associations GSCL and DGfS, scholarships covering the registration fee will be available for selected participants.
+  - url: https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school
+    status: update
+    note: The official HPI programme page states Fee None; ELLIS and HPI state that 20 ELLIS/ELIAS participant places include covered travel and accommodation.
+    fields:
+      fee: Fee EUR 0
+      fee_eur: 0
+      funding_available: true
+      funding_type: [travel grant, accommodation]
+      funding_scope: "ELLIS/ELIAS participants: travel + accommodation covered"
+      funding_evidence: "ELIAS / ELLIS affiliated students: 20 participant places from the ELLIS and ELIAS network include travel and accommodation covered."
+  - url: https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity
+    status: update
+    note: The official programme page gives 13 March 2026 as the application deadline; 23 September was an unrelated page date and the June event has ended.
+    fields:
+      deadline: 2026-03-13
+      deadline_status: closed
+      deadline_evidence: Submit the application by 23:59 IST/UTC on 13 March 2026.
+  - url: https://www.una-europa.eu/calendar/una-europa-summer-school-2026-exploring-soft-materials
+    status: update
+    note: The official programme page gives 13 March 2026 as the application deadline; 23 September was an unrelated page date and the June/July event has ended.
+    fields:
+      deadline: 2026-03-13
+      deadline_status: closed
+      deadline_evidence: Submit the application by 23:59 CET on 13 March 2026.
   - url: https://events.vtools.ieee.org/m/564683
     status: update
     note: The official IEEE announcement closed applications on 13 July; 31 July is registration/payment for accepted applicants, not an application deadline.

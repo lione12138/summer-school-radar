@@ -212,8 +212,13 @@ def financial_summary_zh(candidate: Candidate) -> str:
     if candidate.funding_available is True:
         if candidate.funding_scope == "registration fee covered":
             return "注册费奖学金 · 入选者注册费全额覆盖"
+        if candidate.funding_scope == "ELLIS/ELIAS participants: travel + accommodation covered":
+            fee = "费用 EUR 0" if candidate.fee_eur == 0 else "费用未说明"
+            return f"{fee} · ELLIS/ELIAS 参与者：差旅及住宿全额覆盖"
         funding = "、".join(FUNDING_TYPE_ZH.get(item, item) for item in candidate.funding_type) or "提供资助"
         return f"{funding} · 金额未说明"
     if candidate.fee_eur is not None:
+        if candidate.fee_eur == 0:
+            return "费用 EUR 0"
         return f"费用约 EUR {candidate.fee_eur:.0f}"
     return "资助或费用未说明"

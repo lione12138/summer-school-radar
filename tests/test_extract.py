@@ -1147,6 +1147,34 @@ def test_uncertain_deadline_starting_within_15_days_is_closed() -> None:
     assert candidate.is_past is True
 
 
+def test_started_programme_is_closed_even_when_extracted_deadline_is_future() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.start_date = date.today() - timedelta(days=30)
+    candidate.end_date = date.today() - timedelta(days=26)
+    candidate.duration_days = 5
+    candidate.deadline = date.today() + timedelta(days=30)
+    candidate.deadline_status = "open"
+
+    candidate = apply_hard_filters(candidate, PROFILE)
+
+    assert candidate.deadline_status == "closed"
+    assert candidate.is_past is True
+    assert "programme has already started" in candidate.failed_hard_conditions
+
+
+def test_deadline_after_future_programme_start_fails_closed() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.start_date = date.today() + timedelta(days=40)
+    candidate.end_date = date.today() + timedelta(days=44)
+    candidate.duration_days = 5
+    candidate.deadline = date.today() + timedelta(days=60)
+    candidate.deadline_status = "open"
+
+    candidate = apply_hard_filters(candidate, PROFILE)
+
+    assert "application deadline is after programme start" in candidate.failed_hard_conditions
+
+
 def test_essex_application_page_enriches_social_science_data_analysis() -> None:
     as_of = date(2099, 7, 12)
     source = Source(

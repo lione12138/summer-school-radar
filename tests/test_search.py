@@ -255,6 +255,68 @@ def test_ellis_registration_open_range_and_euro_suffix_fee() -> None:
     assert _ellis_fee_from_text(text) == ("Student/PhD EUR 350", 350)
 
 
+def test_ellis_enrichment_extracts_zero_fee_and_targeted_ellis_support(monkeypatch) -> None:
+    from datetime import date as _date, timedelta
+
+    import research_school_radar.api_sources as api_sources
+    from research_school_radar.models import Candidate
+
+    start = _date.today() + timedelta(days=30)
+    end = start + timedelta(days=3)
+    deadline = start - timedelta(days=3)
+    candidate = Candidate(
+        title='ELIAS & HPI Engine "How to Be a (Startup-) CTO" Summer School',
+        type="summer school",
+        organizer="ELLIS",
+        source_layer="1",
+        region_priority="priority",
+        location="HPI Potsdam",
+        mode="in-person",
+        start_date=start,
+        end_date=end,
+        duration_days=4,
+        deadline=None,
+        deadline_status="uncertain",
+        funding_available=None,
+        funding_type=[],
+        funding_evidence="",
+        topic_keywords=["AI"],
+        eligibility="",
+        target_level="MSc, PhD",
+        fee="",
+        fee_eur=None,
+        application_link="https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
+        source_url="https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
+        summary="",
+        recommendation_reason="",
+        risk_points="",
+    )
+    text = (
+        f"Registration Deadline: {deadline.isoformat()}. Fee None. "
+        "ELIAS / ELLIS affiliated students: We offer 20 spots for participants from the "
+        "ELLIS and ELIAS network, with travel and accommodation covered."
+    )
+    monkeypatch.setattr(
+        api_sources,
+        "_page_data_for_urls",
+        lambda urls, **kwargs: {
+            candidate.application_link: {"text": text, "links": []},
+        },
+    )
+
+    api_sources._enrich_ellis_deadlines([candidate])
+
+    assert candidate.fee == "Fee EUR 0"
+    assert candidate.fee_eur == 0
+    assert candidate.funding_available is True
+    assert candidate.funding_type == ["travel grant", "accommodation"]
+    assert candidate.funding_scope == "ELLIS/ELIAS participants: travel + accommodation covered"
+    assert "travel and accommodation covered" in candidate.funding_evidence
+    assert candidate.financial_summary == (
+        "Fee EUR 0 · ELLIS/ELIAS participants: travel + accommodation covered"
+    )
+
+
 def _future_ellis_fixture():
     """Relative dates so these tests do not rot as real time passes: the
     enrichment only touches events whose start date is still in the future, and

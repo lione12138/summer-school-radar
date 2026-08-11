@@ -43,6 +43,7 @@ FIELD_NAMES = {
 }
 
 REVIEWABLE_FAILURES = {
+    "application deadline is after programme start",
     "application deadline is uncertain",
     "duration is uncertain",
     "funding is not explicit and fee is uncertain",

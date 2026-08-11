@@ -83,6 +83,8 @@ An opportunity is treated as fully qualified only when all hard conditions are s
 
 The public model has two independent gates. Deadline, duration, in-person mode, meaningful title, and a safe official link are fail-closed publication conditions. Financial accessibility is the stricter recommendation condition: funded or no-more-than-EUR-400 records receive the recommendation label, while clearly priced self-funded schools may appear in a separate directory only when total and per-day caps pass. A current official programme with no stated fee/funding may appear in the plainly labelled ordinary directory, without an affordability recommendation. Known expensive courses cannot use that tier. Verified past editions may appear only in the clearly closed recurring-programme library and never enter current counts or RSS.
 
+Temporal validation is independent of extracted deadline status. A programme whose relevant start date has arrived is closed even if a page supplies a later date labelled as a deadline; a deadline later than the programme start is itself a hard validation failure. For multi-session programmes, the relevant start is the latest selectable session start.
+
 The scanner includes `training school` because research organizations commonly use that label for short, intensive summer-school-style programmes. Generic conference workshops are excluded entirely, since they are rarely funded multi-day schools; the remaining hard filters then apply to the school and course types that are kept.
 
 ## Architecture

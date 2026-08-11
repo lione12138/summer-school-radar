@@ -233,3 +233,22 @@ across sibling subdomains during AI follow-up.
 The scheduled Windows task also checks the last full-scan manifest. If a
 Monday/Wednesday/Friday source scan was missed, the next automatic run performs
 that full scan instead of selecting status refresh solely from the current day.
+
+## 2026-08-11: Event-Date Consistency and Conditional Participant Support
+
+An official-source audit found two independent display errors. Una Europa
+summer-school pages had already ended, but an unrelated September date was
+misclassified as their application deadline and kept them in the open list.
+The final filter now closes a programme once its relevant start date arrives,
+regardless of a conflicting future deadline, and rejects any deadline later
+than the programme start. Multi-session records use the latest selectable
+session start so earlier optional blocks do not prematurely close the series.
+
+The ELLIS follow-up collector also treated only numeric Euro amounts as fees,
+so HPI's labelled `Fee: None` remained unresolved. It now recognizes explicit
+zero-fee labels and retains conditional participant support separately. For the
+HPI/ELIAS CTO school the public summary states both the zero fee and that travel
+and accommodation are covered only for ELLIS/ELIAS participants. Evidence-based
+overrides apply the confirmed corrections immediately during daily no-network
+refreshes, while the generalized extraction and temporal guards protect future
+scans and other sources.

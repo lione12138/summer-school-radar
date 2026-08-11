@@ -114,15 +114,15 @@ class Candidate:
     @property
     def is_past(self) -> bool:
         """No longer applicable: applications are closed, the deadline has passed,
-        or (when no deadline is known) the event itself has already started."""
+        or the event itself has already started."""
         today = date.today()
+        event_start = self.status_reference_start
+        if event_start is not None and event_start <= today:
+            return True
         if self.deadline_status in {"closed", "not_open"}:
             return True
         if self.deadline is not None:
             return self.deadline < today
-        event_start = self.status_reference_start
-        if event_start is not None:
-            return event_start < today
         return False
 
     @property
@@ -153,11 +153,16 @@ class Candidate:
         if self.funding_available is True:
             if self.funding_scope == "registration fee covered":
                 return "registration-fee scholarship · registration fee covered · Selected participants"
+            if self.funding_scope == "ELLIS/ELIAS participants: travel + accommodation covered":
+                fee = "Fee EUR 0" if self.fee_eur == 0 else "Fee not stated"
+                return f"{fee} · {self.funding_scope}"
             funding_label = ", ".join(self.funding_type) or "Funding available"
             amount = _money_amount(self.funding_evidence)
             amount_text = amount or "amount not stated"
             return f"{funding_label} · {amount_text} · Apply on official page"
         if self.fee_eur is not None:
+            if self.fee_eur == 0:
+                return "Fee EUR 0 · Apply on official page"
             return f"Fee about EUR {self.fee_eur:.0f} · Apply on official page"
         return "Funding or fee not stated"
 

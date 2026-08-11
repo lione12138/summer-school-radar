@@ -66,6 +66,9 @@ def test_matched_ai_fields_fill_candidate_and_recompute_qualification() -> None:
     candidate = sample_candidate(PROFILE)
     candidate.source_url = "https://example.org/school"
     candidate.application_link = candidate.source_url
+    candidate.start_date = None
+    candidate.end_date = None
+    candidate.duration_days = None
     candidate.deadline = None
     candidate.deadline_status = "uncertain"
     candidate.funding_available = None

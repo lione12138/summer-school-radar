@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import re
-from datetime import date
+from datetime import date, timedelta
 
 from .adapters import resolve_overrides
 from .date_extraction import (
@@ -365,15 +365,17 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
 
 
 def sample_candidate(profile: dict) -> Candidate:
-    start_year = date.today().year + 1
-    deadline_year = date.today().year + 1
+    today = date.today()
+    deadline = today + timedelta(days=60)
+    start = today + timedelta(days=120)
+    end = start + timedelta(days=10)
     page = Page(
         url="https://example.org/hydrology-winter-school",
         title="Example Hydrology Winter School",
         text=(
             "Example Hydrology Winter School is an in-person residential training school hosted in Germany. "
-            f"Dates: 10 January {start_year} to 20 January {start_year}. "
-            f"Application deadline: 15 October {deadline_year}. "
+            f"Dates: {start:%d %B %Y} to {end:%d %B %Y}. "
+            f"Application deadline: {deadline:%d %B %Y}. "
             "Travel grants and tuition waivers are available for selected PhD, MSc and early-career researchers. "
             "Topics include hydrology, climate extremes, water resources, environmental modelling and remote sensing. "
             "Fee: 300 EUR."

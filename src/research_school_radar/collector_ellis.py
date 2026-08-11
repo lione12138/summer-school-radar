@@ -168,6 +168,13 @@ def _enrich_ellis_deadlines(candidates: list[Candidate], *, http_cache: HttpCach
         if fee_eur is not None:
             candidate.fee = fee
             candidate.fee_eur = fee_eur
+        support = _ellis_targeted_support_from_text(text)
+        if support is not None:
+            funding_types, funding_scope, funding_evidence = support
+            candidate.funding_available = True
+            candidate.funding_type = funding_types
+            candidate.funding_scope = funding_scope
+            candidate.funding_evidence = funding_evidence
         resolved = sum(
             [
                 candidate.deadline is not None,
@@ -282,6 +289,12 @@ def _is_external_event_homepage(href: str) -> bool:
 
 def _ellis_fee_from_text(text: str) -> tuple[str, float | None]:
     """Read the ELLIS registration-fee table, preferring the academic column."""
+    if re.search(
+        r"\bfee\s*[:\-]?\s*(?:none|no fee|free)\b|\bno\s+(?:tuition|registration|participation|course)\s+fee\b",
+        text,
+        flags=re.IGNORECASE,
+    ):
+        return "Fee EUR 0", 0.0
     rows = re.findall(
         r"(Early Bird|Regular|Late Bird)\s+(\d+(?:[.,]\d+)?)\s*EUR\s+(\d+(?:[.,]\d+)?)\s*EUR",
         text,
@@ -317,6 +330,24 @@ def _ellis_fee_from_text(text: str) -> tuple[str, float | None]:
     if not valid:
         return "", None
     return f"EUR {min(valid):.0f}-{max(valid):.0f}", max(valid)
+
+
+def _ellis_targeted_support_from_text(text: str) -> tuple[list[str], str, str] | None:
+    match = re.search(
+        r"(?:(?:ELIAS\s*/\s*ELLIS|ELLIS\s+and\s+ELIAS)[^\n]{0,220}?"
+        r"(?:participants?|students?)[^\n]{0,260}?)"
+        r"travel\s+and\s+accommodation\s+(?:will\s+be\s+)?(?:fully\s+)?covered",
+        text,
+        flags=re.IGNORECASE,
+    )
+    if match is None:
+        return None
+    evidence = clean_space(match.group(0))
+    return (
+        ["travel grant", "accommodation"],
+        "ELLIS/ELIAS participants: travel + accommodation covered",
+        evidence,
+    )
 
 
 def _parse_number(value: str) -> float | None:
@@ -383,6 +414,5 @@ def _ellis_candidate(
         mode_evidence=f"ELLIS listing location: {location}",
         extraction_confidence=round(sum([False, True, False, True]) / 4, 2),
     )
-
 
 

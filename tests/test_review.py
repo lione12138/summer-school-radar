@@ -155,6 +155,49 @@ def test_project_override_preserves_utn_registration_fee_coverage() -> None:
     assert "amount not stated" not in corrected.financial_summary
 
 
+def test_project_overrides_correct_hpi_fee_and_targeted_support() -> None:
+    from research_school_radar.review import apply_overrides, load_overrides
+
+    candidate = sample_candidate(PROFILE)
+    candidate.title = 'ELIAS & HPI Engine "How to Be a (Startup-) CTO" Summer School'
+    candidate.source_url = "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school"
+    candidate.application_link = candidate.source_url
+    candidate.fee = ""
+    candidate.fee_eur = None
+    candidate.funding_available = None
+    candidate.funding_type = []
+    candidate.funding_evidence = ""
+
+    corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
+
+    assert corrected.fee == "Fee EUR 0"
+    assert corrected.fee_eur == 0
+    assert corrected.funding_type == ["travel grant", "accommodation"]
+    assert corrected.funding_scope == "ELLIS/ELIAS participants: travel + accommodation covered"
+
+
+def test_project_overrides_correct_una_europa_march_deadlines() -> None:
+    from research_school_radar.review import apply_overrides, load_overrides
+
+    urls = [
+        "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity",
+        "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-exploring-soft-materials",
+    ]
+    candidates = []
+    for url in urls:
+        candidate = sample_candidate(PROFILE)
+        candidate.source_url = url
+        candidate.application_link = url
+        candidate.deadline = date(2026, 9, 23)
+        candidate.deadline_status = "open"
+        candidates.append(candidate)
+
+    corrected = apply_overrides(candidates, load_overrides(Path("data/overrides.yml")))
+
+    assert [candidate.deadline for candidate in corrected] == [date(2026, 3, 13)] * 2
+    assert all(candidate.deadline_status == "closed" for candidate in corrected)
+
+
 def test_location_sanitizer_rejects_field_labels() -> None:
     from research_school_radar.utils import sanitize_location
 

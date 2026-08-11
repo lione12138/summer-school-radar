@@ -506,16 +506,16 @@ def _refresh_generated_candidates(candidates: list[Candidate], profile: dict[str
 
 def _refresh_candidate_deadline_status(candidate: Candidate) -> None:
     today = date.today()
+    event_start = candidate.status_reference_start
+    if event_start is not None and event_start <= today:
+        candidate.deadline_status = "closed"
+        return
     if candidate.deadline is not None:
         if candidate.deadline < today:
             candidate.deadline_status = "closed"
         elif candidate.deadline_status not in {"closed", "not_open"}:
             candidate.deadline_status = "open"
         return
-
-    event_start = candidate.status_reference_start
-    if event_start is not None and event_start < today:
-        candidate.deadline_status = "closed"
 
 
 def _refresh_curated_deadline_statuses(items: list[dict]) -> list[dict]:

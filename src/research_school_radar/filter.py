@@ -11,10 +11,23 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
     failed: list[str] = []
     recommendation_failed: list[str] = []
 
+    event_start = candidate.status_reference_start
+    programme_started = event_start is not None and event_start <= date.today()
+    deadline_after_start = (
+        candidate.deadline is not None
+        and event_start is not None
+        and candidate.deadline > event_start
+    )
+
     if hard.get("require_open_deadline", True):
+        if programme_started:
+            candidate.deadline_status = "closed"
+            failed.append("programme has already started")
+        elif deadline_after_start:
+            failed.append("application deadline is after programme start")
         if candidate.deadline_status == "uncertain" and candidate.deadline is None and _starts_too_soon(candidate):
             candidate.deadline_status = "closed"
-        if candidate.deadline_status == "closed":
+        if candidate.deadline_status == "closed" and not programme_started:
             failed.append("application deadline has passed")
         elif candidate.deadline_status == "not_open":
             failed.append("applications are not open yet")
