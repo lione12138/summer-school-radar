@@ -261,10 +261,11 @@ editions. Library cards now classify event timing independently as upcoming,
 ongoing, or past while keeping the shared applications-closed warning.
 
 The IHE Delft collector now strips API HTML fragments and preserves the `excl.
-VAT` price qualifier. Investigation showed that the raw API and dynamic public
-listing agree with each other, so applying a global one-day shift would be
-unsafe. An edition-identity override applies the confirmed Interdisciplinarity
-course dates and deadline without changing unrelated IHE records.
+VAT` price qualifier. The raw IHE API, Study in NL, and the public programme
+list agree on a 28 September 2026 start and 28 August 2026 application
+deadline. A short-lived edition override that shifted these values back one
+day was therefore removed. IHE dates remain the API calendar dates; no UTC
+timezone correction is applied to date-only course fields.
 
 Official-page review also tightened three programme records. Prob_AI is shown
 as free with a small UK-only Access Fund instead of a generic travel grant, and
@@ -273,3 +274,13 @@ replaced with the programme's actual audience and academic overview rather than
 WordPress navigation. HPI now states that exactly 20 ELLIS/ELIAS-affiliated
 PhD/postdoc places cover travel and accommodation, and exposes its AI,
 entrepreneurship, startup, and technology-strategy topics.
+
+A second organizer audit corrected HydRoData from the fee-category label IAHR
+to the UNESCO Chair on Water-related Disaster Risk Reduction at the University
+of Ljubljana, with Ljubljana, Slovenia as its venue and both member/non-member
+fees retained. Its extracted 20 May deadline was also corrected to the official
+17 May registration deadline. The HPI organizer is now HPI Engine and ELIAS Startup
+Opportunities, while Prob_AI is attributed to the Prob_AI Hub and its venue to
+the University of Bristol. The About qualification copy was also aligned with
+the discipline-agnostic product policy: qualification requires a genuine
+academic research-training programme, regardless of discipline.

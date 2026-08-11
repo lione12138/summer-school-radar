@@ -179,6 +179,7 @@ def test_project_overrides_correct_hpi_fee_and_targeted_support() -> None:
 
     assert corrected.fee == "Fee EUR 0"
     assert corrected.fee_eur == 0
+    assert corrected.organizer == "HPI Engine & ELIAS Startup Opportunities"
     assert corrected.funding_type == ["travel grant", "accommodation"]
     assert corrected.funding_scope == (
         "20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants "
@@ -209,7 +210,8 @@ def test_project_override_corrects_prob_ai_fee_access_fund_and_location() -> Non
 
     corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
 
-    assert corrected.location == "Bristol, UK"
+    assert corrected.organizer == "Prob_AI Hub"
+    assert corrected.location == "University of Bristol, Bristol, UK"
     assert corrected.fee_eur == 0
     assert corrected.funding_type == ["access fund"]
     assert corrected.funding_scope == "limited Access Fund for eligible UK-based participants"
@@ -218,7 +220,7 @@ def test_project_override_corrects_prob_ai_fee_access_fund_and_location() -> Non
     )
 
 
-def test_project_override_migrates_pre_fix_ihe_snapshot() -> None:
+def test_project_override_preserves_official_ihe_api_dates() -> None:
     from research_school_radar.review import apply_overrides, load_overrides
 
     candidate = sample_candidate(PROFILE)
@@ -235,11 +237,35 @@ def test_project_override_migrates_pre_fix_ihe_snapshot() -> None:
 
     corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
 
-    assert corrected.start_date == date(2026, 9, 27)
-    assert corrected.end_date == date(2026, 10, 1)
-    assert corrected.deadline == date(2026, 8, 27)
+    assert corrected.start_date == date(2026, 9, 28)
+    assert corrected.end_date == date(2026, 10, 2)
+    assert corrected.deadline == date(2026, 8, 28)
     assert corrected.fee == "EUR 450 excl. VAT"
     assert corrected.financial_summary == "Fee EUR 450 excl. VAT · Apply on official page"
+
+
+def test_project_override_corrects_hydrodata_organizer_location_and_fees() -> None:
+    from research_school_radar.review import apply_overrides, load_overrides
+
+    candidate = sample_candidate(PROFILE)
+    candidate.title = "HydRoData 2026: Summer school about Hydrology and Data"
+    candidate.source_url = "https://www.unesco-floods.eu/unesco-floods-summer-school/"
+    candidate.application_link = candidate.source_url
+    candidate.organizer = "IAHR"
+    candidate.location = "global"
+    candidate.fee = ""
+    candidate.fee_eur = None
+
+    corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
+
+    assert corrected.organizer == (
+        "UNESCO Chair on Water-related Disaster Risk Reduction, University of Ljubljana"
+    )
+    assert corrected.location == "Ljubljana, Slovenia"
+    assert corrected.fee == "EUR 340 IAHR members / EUR 380 non-members"
+    assert corrected.fee_eur == 340
+    assert corrected.deadline == date(2026, 5, 17)
+    assert corrected.deadline_status == "closed"
 
 
 def test_project_overrides_correct_una_europa_march_deadlines() -> None:

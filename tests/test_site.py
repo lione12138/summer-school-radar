@@ -1004,3 +1004,16 @@ def test_localization_contract_holds_across_built_pages(tmp_path) -> None:
     for page in pages:
         issues = localization_issues(page.read_text(encoding="utf-8"), i18n)
         assert issues == [], f"{page.name}: {issues[:6]}"
+
+
+def test_about_qualification_is_discipline_agnostic(tmp_path) -> None:
+    write_site([], [], tmp_path)
+    index = (tmp_path / "index.html").read_text(encoding="utf-8")
+    i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
+
+    expected = "A genuine academic research-training programme, regardless of discipline."
+    assert expected in index
+    assert expected in i18n
+    assert "On-domain in the topics above." not in index
+    assert "On-domain in the topics above." not in i18n
+    assert "是真正的学术研究训练项目，不限制学科。" in i18n

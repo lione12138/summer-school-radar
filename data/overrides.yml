@@ -32,6 +32,7 @@ overrides:
     status: update
     note: The official HPI programme page states Fee None; ELLIS reserves 20 funded places for affiliated PhD candidates and postdocs, with travel and accommodation covered.
     fields:
+      organizer: HPI Engine & ELIAS Startup Opportunities
       fee: Fee EUR 0
       fee_eur: 0
       funding_available: true
@@ -47,8 +48,9 @@ overrides:
     status: update
     note: The official event page says attendance is free; attendees normally cover travel and accommodation, with only a small UK-only Access Fund for eligible participation barriers.
     fields:
-      location: Bristol, UK
-      location_zh: 英国布里斯托尔
+      organizer: Prob_AI Hub
+      location: University of Bristol, Bristol, UK
+      location_zh: 英国布里斯托尔大学（布里斯托尔）
       fee: Fee EUR 0
       fee_eur: 0
       funding_available: true
@@ -57,21 +59,26 @@ overrides:
       funding_evidence: The school is free to attend. A small Access Fund is available only to eligible UK-based participants facing financial or accessibility barriers; other attendees cover travel and accommodation.
   - identity_key: ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5
     status: update
-    note: The IHE API and public listing expose a conflicting date layer for this edition; use the confirmed programme/deadline dates without shifting unrelated IHE courses.
+    note: Preserve the official IHE API dates and add the VAT qualification and clean programme content.
     fields:
-      start_date: 2026-09-27
-      end_date: 2026-10-01
-      duration_days: 5
-      deadline: 2026-08-27
-      deadline_status: open
       fee: EUR 450 excl. VAT
       fee_eur: 450
       summary: This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.
       summary_zh: 本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。
       eligibility: PhD students working on water-related issues across engineering, hydrology, environmental science, social science, or the humanities.
       eligibility_zh: 面向从工程、水文、环境科学、社会科学或人文学科角度研究水相关问题的博士生。
-      deadline_evidence: IHE Delft application deadline is 27 August 2026 at 23:59 CET.
-      duration_evidence: IHE Delft course dates are 27 September to 1 October 2026.
+  - url: https://www.unesco-floods.eu/unesco-floods-summer-school/
+    status: update
+    note: The official HydRoData page identifies the UNESCO Chair and University of Ljubljana as organizer and venue; IAHR is only used for fee categories.
+    fields:
+      organizer: UNESCO Chair on Water-related Disaster Risk Reduction, University of Ljubljana
+      location: Ljubljana, Slovenia
+      location_zh: 斯洛文尼亚卢布尔雅那
+      fee: EUR 340 IAHR members / EUR 380 non-members
+      fee_eur: 340
+      deadline: 2026-05-17
+      deadline_status: closed
+      deadline_evidence: Registration deadline is 17 May 2026.
   - url: https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity
     status: update
     note: The official programme page gives 13 March 2026 as the application deadline; 23 September was an unrelated page date and the June event has ended.
