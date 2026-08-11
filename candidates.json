@@ -5,7 +5,7 @@
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
   "_canary": "SSR-CANON-7q3v9x2k8m4w",
   "schema_version": 2,
-  "generated": "2026-08-10",
+  "generated": "2026-08-11",
   "opportunities": [
     {
       "title": "Computational Linguistics Fall School 2026",
@@ -260,133 +260,61 @@
       "is_new": false
     },
     {
-      "title": "Una Europa Summer School 2026 for doctoral researchers: Artificial Intelligence and Creativity",
+      "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
       "type": "summer school",
-      "organizer": "Una Europa",
-      "source_layer": "1.5",
+      "organizer": "ELLIS",
+      "source_layer": "1",
       "region_priority": "priority",
-      "location": "Europe",
+      "location": "HPI Potsdam",
       "mode": "in-person",
-      "start_date": "2026-06-15",
-      "end_date": "2026-06-19",
-      "duration_days": 5,
-      "deadline": "2026-09-23",
+      "start_date": "2026-08-31",
+      "end_date": "2026-09-03",
+      "duration_days": 4,
+      "deadline": "2026-08-28",
       "deadline_status": "open",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "sustainability",
-        "AI",
-        "artificial intelligence",
-        "data science",
-        "statistics",
-        "engineering",
-        "law",
-        "design",
-        "social science"
+      "funding_available": true,
+      "funding_type": [
+        "travel grant",
+        "accommodation"
       ],
-      "eligibility": "doctoral researchers: Artificial intelligence and creativity | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About EN Über",
-      "target_level": "PhD",
-      "fee": "no tuition fee",
+      "funding_evidence": "ELIAS / ELLIS affiliated students: 20 participant places from the ELLIS and ELIAS network include travel and accommodation covered.",
+      "topic_keywords": [],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "Fee EUR 0",
       "fee_eur": 0.0,
-      "application_link": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity",
-      "source_url": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity",
-      "summary": "Una Europa Summer School 2026 for doctoral researchers: Artificial intelligence and creativity | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About EN Über uns Chi siamo Tutustu meihin suomeksi Om oss O nas Over ons Acerca de nosotro",
-      "recommendation_reason": "low fee: approximately EUR 0; deadline appears open; 5 days; priority region",
-      "risk_points": "No funding is explicit; fee is approximately EUR 0.",
+      "application_link": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
+      "source_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
+      "summary": "31/08/26 - 03/09/26 • HPI Potsdam ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School ELIAS Startup Opportunities and HPI Engine host the \"How to Be a (Startup-) CTO\" Summer School at HPI Potsdam. Summer School , Projects Building on ELLIS Read More Override note: The official HPI programme page states Fee None; ELLIS and HPI state that 20 ELLIS/ELIAS participant places include covered travel and accommodation.",
+      "recommendation_reason": "funding evidence: travel grant, accommodation; deadline appears open; 4 days; priority region",
+      "risk_points": "Fee noted: Fee EUR 0.",
       "sessions": [],
       "identity_key": "",
-      "funding_scope": "",
-      "financial_access_status": "low-fee",
+      "funding_scope": "ELLIS/ELIAS participants: travel + accommodation covered",
+      "financial_access_status": "funded",
       "failed_hard_conditions": [],
       "failed_recommendation_conditions": [],
-      "score": 72.0,
+      "score": 76.0,
       "score_explanation": [
-        "low fee: approximately EUR 0",
+        "funding evidence: travel grant, accommodation",
         "deadline appears open",
-        "5 days",
+        "4 days",
         "priority region",
-        "trusted source layer 1.5",
-        "in-person",
-        "target level: PhD",
-        "topics: sustainability, AI, artificial intelligence, data science"
+        "trusted source layer 1",
+        "in-person"
       ],
-      "first_seen": "2026-08-07",
-      "deadline_evidence": "Deadline 23 Sep 2026 (other dates listed: 2025-09-20, 2026-09-15)",
-      "duration_evidence": "15–19 June 2026",
-      "mode_evidence": "in-person programme, there will be a compulsory online part",
-      "extraction_confidence": 1.0,
-      "title_zh": "Una Europa 2026年博士研究员暑期学校：人工智能与创造力",
-      "organizer_zh": "Una Europa",
-      "location_zh": "欧洲",
-      "summary_zh": "Una Europa 2026年博士研究员暑期学校：人工智能与创造力 | Una Europa 跳至导航 跳至主要内容 参与 学习 知识中心 故事 关于 EN Über uns Chi siamo Tutustu meihin suomeksi Om oss O nas Over ons Acerca de nosotro",
-      "eligibility_zh": "博士研究员：人工智能与创造力 | Una Europa 跳至导航 跳至主要内容 参与 学习 知识中心 故事 关于 EN Über",
-      "recommendation_reason_zh": "费用低：约0欧元；截止日期似乎开放；5天；优先地区",
-      "risk_points_zh": "没有明确的资助；费用约为0欧元。",
-      "is_new": false
-    },
-    {
-      "title": "Una Europa Summer School 2026 for doctoral researchers: Exploring Soft Materials – From Molecules to BioMaterials",
-      "type": "summer school",
-      "organizer": "Una Europa",
-      "source_layer": "1.5",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "in-person",
-      "start_date": "2026-06-29",
-      "end_date": "2026-07-03",
-      "duration_days": 5,
-      "deadline": "2026-09-23",
-      "deadline_status": "open",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "sustainability",
-        "physics",
-        "chemistry",
-        "materials science",
-        "engineering"
-      ],
-      "eligibility": "doctoral researchers | Exploring Soft Materials: From Molecules to… | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About",
-      "target_level": "MSc, PhD",
-      "fee": "no tuition fee",
-      "fee_eur": 0.0,
-      "application_link": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-exploring-soft-materials",
-      "source_url": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-exploring-soft-materials",
-      "summary": "Una Europa Summer School 2026 for doctoral researchers | Exploring Soft Materials: From Molecules to… | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About EN Über uns Chi siamo Tutustu meihin suomeksi Om oss O nas Over ons Acerca de",
-      "recommendation_reason": "low fee: approximately EUR 0; deadline appears open; 5 days; priority region",
-      "risk_points": "No funding is explicit; fee is approximately EUR 0.",
-      "sessions": [],
-      "identity_key": "",
-      "funding_scope": "",
-      "financial_access_status": "low-fee",
-      "failed_hard_conditions": [],
-      "failed_recommendation_conditions": [],
-      "score": 72.0,
-      "score_explanation": [
-        "low fee: approximately EUR 0",
-        "deadline appears open",
-        "5 days",
-        "priority region",
-        "trusted source layer 1.5",
-        "in-person",
-        "target level: MSc, PhD",
-        "topics: sustainability, physics, chemistry, materials science"
-      ],
-      "first_seen": "2026-08-07",
-      "deadline_evidence": "Deadline 23 Sep 2026 (other dates listed: 2025-09-20, 2026-09-15)",
-      "duration_evidence": "29 Jun - 03 Jul, 2026",
-      "mode_evidence": "in-person programme hosted at the Navile Campus of Alma Mat",
-      "extraction_confidence": 1.0,
-      "title_zh": "Una Europa 2026年博士研究员暑期学校：探索软物质——从分子到生物材料",
-      "organizer_zh": "Una Europa",
-      "location_zh": "欧洲",
-      "summary_zh": "Una Europa 2026年博士研究员暑期学校 | 探索软物质：从分子到… | Una Europa 跳转到导航 跳转到主要内容 参与 学习 知识中心 故事 关于 EN 关于我们 Über uns Chi siamo Tutustu meihin suomeksi Om oss O nas Over ons Acerca de",
-      "eligibility_zh": "博士研究员 | 探索软物质：从分子到… | Una Europa 跳转到导航 跳转到主要内容 参与 学习 知识中心 故事 关于",
-      "recommendation_reason_zh": "费用低：约0欧元；截止日期似乎开放；5天；优先地区",
-      "risk_points_zh": "没有明确的资助；费用约为0欧元。",
+      "first_seen": "2026-06-14",
+      "deadline_evidence": "ELLIS detail/registration page: registration deadline 2026-08-28",
+      "duration_evidence": "ELLIS events listing: 2026-08-31 to 2026-09-03",
+      "mode_evidence": "ELLIS listing location: HPI Potsdam",
+      "extraction_confidence": 0.75,
+      "title_zh": "ELIAS & HPI Engine“如何成为（初创公司）首席技术官”暑期学校",
+      "organizer_zh": "ELLIS",
+      "location_zh": "HPI波茨坦",
+      "summary_zh": "31/08/26 - 03/09/26 • HPI波茨坦 ELIAS & HPI Engine“如何成为（初创公司）首席技术官”暑期学校 ELIAS创业机会和HPI Engine在HPI波茨坦举办“如何成为（初创公司）首席技术官”暑期学校。暑期学校，项目基于ELLIS阅读更多",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "截止日期似乎开放；4天；优先区域；可信来源第一层",
+      "risk_points_zh": "资金未明确，费用不确定",
       "is_new": false
     },
     {
@@ -2565,13 +2493,13 @@
       "source_url": "https://lxmls.github.io/2026/",
       "summary": "LxMLS 2026 - The 16th Lisbon Machine Learning Summer School Menu Home About Dates FAQ Schedule Posters Speakers Organizers Labs The 16th Lisbon Machine Learning School LxMLS 2026 20-25 July 2026 Place and registration The summer school will be held at the Congress Center of Insti",
       "recommendation_reason": "funding evidence: scholarship; 6 days; priority region; in-person",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "registration fee covered",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 53.0,
@@ -2582,7 +2510,7 @@
         "in-person",
         "target level: PhD",
         "topics: climate, geospatial, AI, machine learning",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-06-14",
       "deadline_evidence": "deadline for applications is May 8th, 2026",
@@ -2629,13 +2557,13 @@
       "source_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/exploring-your-eco-2026-exploring-the-living-cultural-and-ec.html",
       "summary": "Alliance Study Offers Summer Schools MSc Programmes Semester Exchange Mobility for PhD students Internship Pathways Case Study Competitions Student Conference General Assembly and Forum Contact Intranet (shared docs) Alliance Support Teams Subject Areas Student Association Projec",
       "recommendation_reason": "low fee: approximately EUR 0; 9 days; priority region; trusted source layer 1.5",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 53.0,
@@ -2647,7 +2575,7 @@
         "in-person",
         "target level: MSc, PhD",
         "topics: ecology, architecture, design, history",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-08-07",
       "deadline_evidence": "Application Deadline 19 April 2026 (other dates listed: 2025-06-20)",
@@ -2759,13 +2687,13 @@
       "source_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools",
       "summary": "Summer Schools - Leiden University Skip to main content University Leiden Students Staff Members Organisational Structure Library Search for subject or person and select category Searchterm All categories Persons Education Research News Events Dossiers Locations Courses Vacancies",
       "recommendation_reason": "funding evidence: scholarship; 5 days; priority region; hybrid",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 52.0,
@@ -2776,7 +2704,7 @@
         "hybrid",
         "target level: MSc, PhD",
         "topics: linguistics, physics, statistics, law",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "Apply before 22-05-2026 (other dates listed: 2026-03-01, 2026-03-29, 2026-04-30)",
@@ -2824,13 +2752,13 @@
       "source_url": "https://ethl.uk/",
       "summary": "ETHL - Edinburgh Theoretical Historical Linguistics Home About us Programme Handouts ETHL 2025 Contact ☰ About us Programme Handouts ETHL 2025 Contact ETHL Edinburgh Theoretical Historical Linguistics Summer School 2026 22 nd –26 th June, at the University of Edinburgh Overview T",
       "recommendation_reason": "funding evidence: bursary; 5 days; priority region; hybrid",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 52.0,
@@ -2841,7 +2769,7 @@
         "hybrid",
         "target level: early-career researcher",
         "topics: linguistics, phonology, syntax, morphology",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -2884,13 +2812,13 @@
       "source_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
       "summary": "Alliance Study Offers Summer Schools MSc Programmes Semester Exchange Mobility for PhD students Internship Pathways Case Study Competitions Student Conference General Assembly and Forum Contact Intranet (shared docs) Alliance Support Teams Subject Areas Student Association Projec",
       "recommendation_reason": "low fee: approximately EUR 0; 8 days; priority region; trusted source layer 1.5",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 52.0,
@@ -2902,7 +2830,7 @@
         "in-person",
         "target level: MSc, PhD",
         "topics: sustainability",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-08-07",
       "deadline_evidence": "Application Deadline 1 May 20 (other dates listed: 2026-05-01)",
@@ -2916,6 +2844,140 @@
       "eligibility_zh": "硕士课程、学期交换、博士流动、实习路径、案例研究竞赛、学生会议、大会和论坛、联系内网",
       "recommendation_reason_zh": "低费用：约0欧元；8天；优先区域；可信来源层级1.5",
       "risk_points_zh": "申请截止日期已过",
+      "is_new": false
+    },
+    {
+      "title": "Una Europa Summer School 2026 for doctoral researchers: Artificial Intelligence and Creativity",
+      "type": "summer school",
+      "organizer": "Una Europa",
+      "source_layer": "1.5",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "in-person",
+      "start_date": "2026-06-15",
+      "end_date": "2026-06-19",
+      "duration_days": 5,
+      "deadline": "2026-03-13",
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "sustainability",
+        "AI",
+        "artificial intelligence",
+        "data science",
+        "statistics",
+        "engineering",
+        "law",
+        "design",
+        "social science"
+      ],
+      "eligibility": "doctoral researchers: Artificial intelligence and creativity | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About EN Über",
+      "target_level": "PhD",
+      "fee": "no tuition fee",
+      "fee_eur": 0.0,
+      "application_link": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity",
+      "source_url": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity",
+      "summary": "Una Europa Summer School 2026 for doctoral researchers: Artificial intelligence and creativity | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About EN Über uns Chi siamo Tutustu meihin suomeksi Om oss O nas Over ons Acerca de nosotro Override note: The official programme page gives 13 March 2026 as the application deadline; 23 September was an unrelated page date and the June event has ended.",
+      "recommendation_reason": "low fee: approximately EUR 0; 5 days; priority region; trusted source layer 1.5",
+      "risk_points": "programme has already started",
+      "sessions": [],
+      "identity_key": "",
+      "funding_scope": "",
+      "financial_access_status": "low-fee",
+      "failed_hard_conditions": [
+        "programme has already started"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 49.0,
+      "score_explanation": [
+        "low fee: approximately EUR 0",
+        "5 days",
+        "priority region",
+        "trusted source layer 1.5",
+        "in-person",
+        "target level: PhD",
+        "topics: sustainability, AI, artificial intelligence, data science",
+        "near-match only: programme has already started"
+      ],
+      "first_seen": "2026-08-07",
+      "deadline_evidence": "Submit the application by 23:59 IST/UTC on 13 March 2026.",
+      "duration_evidence": "15–19 June 2026",
+      "mode_evidence": "in-person programme, there will be a compulsory online part",
+      "extraction_confidence": 1.0,
+      "title_zh": "Una Europa 2026年博士研究员暑期学校：人工智能与创造力",
+      "organizer_zh": "Una Europa",
+      "location_zh": "欧洲",
+      "summary_zh": "Una Europa 2026年博士研究员暑期学校：人工智能与创造力 | Una Europa 跳至导航 跳至主要内容 参与 学习 知识中心 故事 关于 EN Über uns Chi siamo Tutustu meihin suomeksi Om oss O nas Over ons Acerca de nosotro",
+      "eligibility_zh": "博士研究员：人工智能与创造力 | Una Europa 跳至导航 跳至主要内容 参与 学习 知识中心 故事 关于 EN Über",
+      "recommendation_reason_zh": "费用低：约0欧元；截止日期似乎开放；5天；优先地区",
+      "risk_points_zh": "没有明确的资助；费用约为0欧元。",
+      "is_new": false
+    },
+    {
+      "title": "Una Europa Summer School 2026 for doctoral researchers: Exploring Soft Materials – From Molecules to BioMaterials",
+      "type": "summer school",
+      "organizer": "Una Europa",
+      "source_layer": "1.5",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "in-person",
+      "start_date": "2026-06-29",
+      "end_date": "2026-07-03",
+      "duration_days": 5,
+      "deadline": "2026-03-13",
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "sustainability",
+        "physics",
+        "chemistry",
+        "materials science",
+        "engineering"
+      ],
+      "eligibility": "doctoral researchers | Exploring Soft Materials: From Molecules to… | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About",
+      "target_level": "MSc, PhD",
+      "fee": "no tuition fee",
+      "fee_eur": 0.0,
+      "application_link": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-exploring-soft-materials",
+      "source_url": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-exploring-soft-materials",
+      "summary": "Una Europa Summer School 2026 for doctoral researchers | Exploring Soft Materials: From Molecules to… | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About EN Über uns Chi siamo Tutustu meihin suomeksi Om oss O nas Over ons Acerca de Override note: The official programme page gives 13 March 2026 as the application deadline; 23 September was an unrelated page date and the June/July event has ended.",
+      "recommendation_reason": "low fee: approximately EUR 0; 5 days; priority region; trusted source layer 1.5",
+      "risk_points": "programme has already started",
+      "sessions": [],
+      "identity_key": "",
+      "funding_scope": "",
+      "financial_access_status": "low-fee",
+      "failed_hard_conditions": [
+        "programme has already started"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 49.0,
+      "score_explanation": [
+        "low fee: approximately EUR 0",
+        "5 days",
+        "priority region",
+        "trusted source layer 1.5",
+        "in-person",
+        "target level: MSc, PhD",
+        "topics: sustainability, physics, chemistry, materials science",
+        "near-match only: programme has already started"
+      ],
+      "first_seen": "2026-08-07",
+      "deadline_evidence": "Submit the application by 23:59 CET on 13 March 2026.",
+      "duration_evidence": "29 Jun - 03 Jul, 2026",
+      "mode_evidence": "in-person programme hosted at the Navile Campus of Alma Mat",
+      "extraction_confidence": 1.0,
+      "title_zh": "Una Europa 2026年博士研究员暑期学校：探索软物质——从分子到生物材料",
+      "organizer_zh": "Una Europa",
+      "location_zh": "欧洲",
+      "summary_zh": "Una Europa 2026年博士研究员暑期学校 | 探索软物质：从分子到… | Una Europa 跳转到导航 跳转到主要内容 参与 学习 知识中心 故事 关于 EN 关于我们 Über uns Chi siamo Tutustu meihin suomeksi Om oss O nas Over ons Acerca de",
+      "eligibility_zh": "博士研究员 | 探索软物质：从分子到… | Una Europa 跳转到导航 跳转到主要内容 参与 学习 知识中心 故事 关于",
+      "recommendation_reason_zh": "费用低：约0欧元；截止日期似乎开放；5天；优先地区",
+      "risk_points_zh": "没有明确的资助；费用约为0欧元。",
       "is_new": false
     },
     {
@@ -3012,13 +3074,13 @@
       "source_url": "https://new.sicss.io/2026/buenos-aires",
       "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
       "recommendation_reason": "low fee: approximately EUR 0; 12 days; trusted source layer 1; in-person",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "sicss:2026:buenos-aires",
       "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 49.0,
@@ -3029,7 +3091,7 @@
         "in-person",
         "target level: PhD, postdoc, early-career researcher",
         "topics: data science, social science, social science methods",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -3074,13 +3136,13 @@
       "source_url": "https://new.sicss.io/2026/issp",
       "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
       "recommendation_reason": "low fee: approximately EUR 0; 12 days; trusted source layer 1; in-person",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "sicss:2026:issp",
       "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 49.0,
@@ -3091,7 +3153,7 @@
         "in-person",
         "target level: PhD, postdoc, early-career researcher",
         "topics: data science, social science, social science methods",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -3136,13 +3198,13 @@
       "source_url": "https://new.sicss.io/2026/stanford",
       "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
       "recommendation_reason": "low fee: approximately EUR 0; 12 days; trusted source layer 1; in-person",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "sicss:2026:stanford",
       "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 49.0,
@@ -3153,7 +3215,7 @@
         "in-person",
         "target level: PhD, postdoc, early-career researcher",
         "topics: data science, social science, social science methods",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "Summer Institute in Computational Social Science Home Locations Host Learn Online People In the News All News Featured Stories About About SICSS Post-Mortem Sponsor SICSS Apply SICSS-Stanford August 10 to August 21, 2026 | Stanford University Home 2026 Stanford Overview Apply Pre-arrival People Schedule & Materials Apply Other Events: 2025 From August 10 to August 21, 2026 the Tech Impact and Policy Center and Social Media Lab will host a Summer Institute in Computational Social Science at Stanford University (SICSS-Stanford).",
@@ -3326,13 +3388,13 @@
       "source_url": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
       "summary": "Summer School: Survey Methodology Training - GESIS Training Deutsch Contact Career Login Alles GESIS Training What we offer Summer School in Survey Methodology GESIS Training About us About us Menü schließen Mission Go to overview Key Topics Go to overview Team Go to overview Loc",
       "recommendation_reason": "24 days; priority region; trusted source layer 1; hybrid",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -3345,7 +3407,7 @@
         "hybrid",
         "target level: PhD",
         "topics: AI, data science, data analysis, design",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -3563,63 +3625,6 @@
       "is_new": false
     },
     {
-      "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
-      "type": "summer school",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "HPI Potsdam",
-      "mode": "in-person",
-      "start_date": "2026-08-31",
-      "end_date": "2026-09-03",
-      "duration_days": 4,
-      "deadline": "2026-08-28",
-      "deadline_status": "open",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
-      "source_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
-      "summary": "31/08/26 - 03/09/26 • HPI Potsdam ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School ELIAS Startup Opportunities and HPI Engine host the \"How to Be a (Startup-) CTO\" Summer School at HPI Potsdam. Summer School , Projects Building on ELLIS Read More",
-      "recommendation_reason": "deadline appears open; 4 days; priority region; trusted source layer 1",
-      "risk_points": "funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 43.0,
-      "score_explanation": [
-        "deadline appears open",
-        "4 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "near-match only: funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-06-14",
-      "deadline_evidence": "ELLIS detail/registration page: registration deadline 2026-08-28",
-      "duration_evidence": "ELLIS events listing: 2026-08-31 to 2026-09-03",
-      "mode_evidence": "ELLIS listing location: HPI Potsdam",
-      "extraction_confidence": 0.75,
-      "title_zh": "ELIAS & HPI Engine“如何成为（初创公司）首席技术官”暑期学校",
-      "organizer_zh": "ELLIS",
-      "location_zh": "HPI波茨坦",
-      "summary_zh": "31/08/26 - 03/09/26 • HPI波茨坦 ELIAS & HPI Engine“如何成为（初创公司）首席技术官”暑期学校 ELIAS创业机会和HPI Engine在HPI波茨坦举办“如何成为（初创公司）首席技术官”暑期学校。暑期学校，项目基于ELLIS阅读更多",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "截止日期似乎开放；4天；优先区域；可信来源第一层",
-      "risk_points_zh": "资金未明确，费用不确定",
-      "is_new": false
-    },
-    {
       "title": "Exeter Machine Learning Summer School",
       "type": "summer school",
       "organizer": "University of Exeter",
@@ -3658,13 +3663,13 @@
       "source_url": "https://computerscience.exeter.ac.uk/machine-learning-summer-school/",
       "summary": "Exeter Machine Learning Summer School | Computer Science | University of Exeter Skip to main content Search all Study Studying at Exeter Why choose Exeter? Our campuses Accommodation Student life Careers Funding and scholarships International students Clearing 2026 Levels of stud",
       "recommendation_reason": "low fee: approximately EUR 1500; 11 days; priority region; in-person",
-      "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "programme has already started; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
@@ -3677,7 +3682,7 @@
         "in-person",
         "target level: MSc",
         "topics: AI, artificial intelligence, machine learning, data science",
-        "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding"
+        "near-match only: programme has already started; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-07-15",
       "deadline_evidence": "Application deadline: Friday 12 June 2026",
@@ -4225,13 +4230,13 @@
       "source_url": "https://www.colanginstitute.org/attend",
       "summary": "Attend — CoLang 0 Skip to Content CoLang About Learn Attend Repository FAQ News Stay in touch Open Menu Close Menu CoLang About Learn Attend Repository FAQ News Stay in touch Open Menu Close Menu About Learn Attend Repository FAQ News Stay in touch Planning to Attend PHOTO: 2012",
       "recommendation_reason": "funding evidence: scholarship; 19 days; trusted source layer 1.5; topics: linguistics, language documentation, anthropology, history",
-      "risk_points": "application deadline has passed; online-only",
+      "risk_points": "programme has already started; online-only",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "online-only"
       ],
       "failed_recommendation_conditions": [],
@@ -4241,7 +4246,7 @@
         "19 days",
         "trusted source layer 1.5",
         "topics: linguistics, language documentation, anthropology, history",
-        "near-match only: application deadline has passed; online-only"
+        "near-match only: programme has already started; online-only"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -4287,13 +4292,13 @@
       "source_url": "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/",
       "summary": "2026 Advanced Course on International Criminal Law | The Hague Academy of International Law Created with Sketch. About The Academy Our Programmes The Experience Of A Lifetime Support the Academy en en fr Back Login Practical Information Practical Information Practical Information",
       "recommendation_reason": "low fee: approximately EUR 900; 119 days; priority region; trusted source layer 1.5",
-      "risk_points": "application deadline has passed; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "programme has already started; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "registration fee covered",
       "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
@@ -4307,7 +4312,7 @@
         "trusted source layer 1.5",
         "target level: PhD",
         "topics: artificial intelligence, law, international law, design",
-        "near-match only: application deadline has passed; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
+        "near-match only: programme has already started; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-18",
       "deadline_evidence": "",
@@ -4352,13 +4357,13 @@
       "source_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-science-communication",
       "summary": "Summer School Science Communication - Leiden University Skip to main content University Leiden Students Staff Members Organisational Structure Library Search for subject or person and select category Searchterm All categories Persons Education Research News Events Dossiers Locati",
       "recommendation_reason": "low fee: approximately EUR 575; 5 days; priority region; in-person",
-      "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "programme has already started; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
@@ -4371,7 +4376,7 @@
         "in-person",
         "target level: MSc, PhD",
         "topics: design, social science, literature",
-        "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding"
+        "near-match only: programme has already started; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-16",
       "deadline_evidence": "register here latest on March 29, 2026 (other dates listed: 2026-03-02, 2026-03-28)",
@@ -4548,13 +4553,13 @@
       "source_url": "https://businessdatascience.nl/foundations-of-machine-learning-with-applications-in-python",
       "summary": "Summer School 2026 Foundations of Machine Learning with Applications in Python Find a person About us Job Market Contact Intranet Graduate Program Research Browse our Courses Events News Summer School Alumni Graduate Program Why study Business Data Science? Research Master Progra Override note: The official 2026 Summer School fee page states a EUR 1,000 student fee and does not offer Summer School participant funding.",
       "recommendation_reason": "low fee: approximately EUR 1000; 5 days; priority region; in-person",
-      "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "programme has already started; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
@@ -4567,7 +4572,7 @@
         "in-person",
         "target level: MSc, PhD",
         "topics: machine learning, deep learning, data science, mathematics",
-        "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding"
+        "near-match only: programme has already started; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-18",
       "deadline_evidence": "Application deadline June 15, 2026 (other dates listed: 2026-06-01)",
@@ -4714,7 +4719,7 @@
       "eligibility_zh": "来自斯里兰卡大学",
       "recommendation_reason_zh": "截止日期似乎开放；为期5天；优先区域；可信来源层级1",
       "risk_points_zh": "线下状态不确定；资金未明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Talk to us",
@@ -4816,13 +4821,13 @@
       "source_url": "https://datascience.ase.ro/",
       "summary": "datascience.ase.ro Toggle navigation Home Schedule Lecturers Venue Registration Previous Editions 2025 Edition 2024 Edition 2023 Edition 2022 Edition 2019 Edition 2018 Edition Contact Skip to content Home Schedule Lecturers Venue Registration Previous Editions 2025 Edition 2024 E",
       "recommendation_reason": "9 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -4835,7 +4840,7 @@
         "in-person",
         "target level: PhD",
         "topics: AI, artificial intelligence, machine learning, data science",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -5033,7 +5038,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "14天；优先区域；可信来源第一层；线下",
       "risk_points_zh": "申请截止日期已过；资金不明确，费用不确定",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "The 7th Crete Summer School of Linguistics",
@@ -5062,13 +5067,13 @@
       "source_url": "https://linguistics.philology.uoc.gr/cssl26/",
       "summary": "The 7th Crete Summer School of Linguistics Home Venue Courses Events Application Useful info FAQs Contact Log in The 7th Crete Summer School of Linguistics Welcome to CreteLing 2026! July 18 to July 31, 2026, Rethymnon, Crete We regret that we are unable to accept any more applic",
       "recommendation_reason": "14 days; priority region; trusted source layer 1.5; in-person",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -5080,7 +5085,7 @@
         "trusted source layer 1.5",
         "in-person",
         "topics: linguistics",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "Deadline for regular application: 8 May 20 (other dates listed: 2026-04-05, 2026-05-08)",
@@ -5313,13 +5318,13 @@
       "source_url": "https://www.wcrp-climate.org/ictp2014-about",
       "summary": "WCRP-ICTP 2014 Summer school on Attribution and Prediction of Extremes Events About WCRP Back About us History Organization Governance Early to Mid Career WCRP Sponsors and Contributors WCRP Partners WCRP Film How to get Involved WCRP Fellowship for Global South Contact Us Core P",
       "recommendation_reason": "12 days; trusted source layer 1; in-person; target level: PhD",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -5331,7 +5336,7 @@
         "in-person",
         "target level: PhD",
         "topics: drought, climate, climate extremes, physics",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-14",
       "deadline_evidence": "",
@@ -6388,13 +6393,13 @@
       "source_url": "https://people.disim.univaq.it/~antonio.cicone/2025/MaSAG25/MaSAG25_homepage.html",
       "summary": "MaSAG25 Summer School and Conference MaSAG25 Summer School and Conference Università degli Studi dell'Aquila, June 9-14, 2025 Home Aim and scope Invited Lecturers & Speakers Registration Program Participants Practical Information Welcome to the webpage of the third Summer School",
       "recommendation_reason": "6 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -6405,7 +6410,7 @@
         "priority region",
         "trusted source layer 1",
         "in-person",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-11",
       "deadline_evidence": "",
@@ -6451,13 +6456,13 @@
       "source_url": "https://www.ssm.usi.ch/en/home-ssm/about-the-summer-school",
       "summary": "About the Summer School in Social Sciences Methods | Summer School in Social Sciences Methods Skip to main content Università della Svizzera italiana Summer School in Social Sciences Methods Summer School in Social Sciences Methods 6-21 August 2026 About Courses Instructors Fees",
       "recommendation_reason": "16 days; priority region; trusted source layer 1.5; target level: PhD",
-      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
@@ -6470,7 +6475,7 @@
         "trusted source layer 1.5",
         "target level: PhD",
         "topics: social science, political science, sociology, psychology",
-        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -6595,13 +6600,13 @@
       "source_url": "https://www.geschichte.tu-darmstadt.de/institut_fuer_geschichte_1/fach__und_arbeitsgebiete_ifg/technikgeschichte/lehre_und_studium_tg/unite_summerschool.de.jsp",
       "summary": "unite_summerschool – Institut für Geschichte – TU Darmstadt Institut für Geschichte Unite! Summer School: What Computers and AI can't do. (June 2024) Reflecting on Errors, Malfunctioning, and Limitations of Technology in the Digital Age. Unite! Summer School Sie befinden sich hie",
       "recommendation_reason": "5 days; priority region; trusted source layer 1.5; in-person",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -6613,7 +6618,7 @@
         "trusted source layer 1.5",
         "in-person",
         "topics: AI, machine learning, engineering, history of science",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-08-03",
       "deadline_evidence": "",
@@ -6724,13 +6729,13 @@
       "source_url": "https://ssol.ff.cuni.cz/past-years/ssol-2025/",
       "summary": "SSoL 2025 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
       "recommendation_reason": "8 days; priority region; hybrid; topics: climate, AI, linguistics, phonology",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -6741,7 +6746,7 @@
         "priority region",
         "hybrid",
         "topics: climate, AI, linguistics, phonology",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -6788,13 +6793,13 @@
       "source_url": "https://ssol.ff.cuni.cz/past-years/ssol-2024/",
       "summary": "SSoL 2024 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
       "recommendation_reason": "8 days; priority region; in-person; topics: linguistics, computational linguistics, syntax, semantics",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -6805,7 +6810,7 @@
         "priority region",
         "in-person",
         "topics: linguistics, computational linguistics, syntax, semantics",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -6975,13 +6980,13 @@
       "source_url": "https://www.eeml.eu/",
       "summary": "Home Search this site Embedded Files Skip to main content Skip to navigation Home Program Venue/Accommodation Registration Previous editions EEML2025 Program Venue/Accommodation Registration Sponsors Diamond - Google DeepMind Diamond - UiPath Platinum - Bitdefender Platinum - Jan",
       "recommendation_reason": "6 days; priority region; in-person; topics: AI, artificial intelligence, machine learning",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -6992,7 +6997,7 @@
         "priority region",
         "in-person",
         "topics: AI, artificial intelligence, machine learning",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-12",
       "deadline_evidence": "",
@@ -7155,14 +7160,14 @@
       "application_link": "https://www.cs.uoregon.edu/research/summerschool/summer26/",
       "source_url": "https://www.cs.uoregon.edu/research/summerschool/summer26/",
       "summary": "﻿ OPLSS 2026 | University of Oregon One Stop Apply Visit Give June 22-July 4, 2026 Types, Proofs, and Program Logics Topics Participants Pictures Archives Sponsors For 24 years, the Oregon Programming Languages Summer School (OPLSS) has focused on teaching the principles of progr",
-      "recommendation_reason": "13 days; in-person; topics: programming languages, design; near-match only: application deadline has passed; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "recommendation_reason": "13 days; in-person; topics: programming languages, design; near-match only: programme has already started; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -7172,7 +7177,7 @@
         "13 days",
         "in-person",
         "topics: programming languages, design",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-16",
       "deadline_evidence": "",
@@ -7432,13 +7437,13 @@
       "source_url": "https://datascienceafrica.org/dsa-summer-schools/dsa-2026-summer-school-schedule",
       "summary": "DSA 2026 Summer School Schedule This email address is being protected from spambots. You need JavaScript enabled to view it. Home About us Programmes Programmes and Activities Research Grants Capacity Strengthening DSA Fellowship Program Affiliated Centres & Local Chapters DSA Ug",
       "recommendation_reason": "5 days; trusted source layer 1; hybrid; topics: AI, artificial intelligence, machine learning, data science",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -7449,7 +7454,7 @@
         "trusted source layer 1",
         "hybrid",
         "topics: AI, artificial intelligence, machine learning, data science",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -7556,13 +7561,13 @@
       "source_url": "https://www.ds3-datascience-polytechnique.fr/",
       "summary": "Data Science Summer School (DS³) – École Polytechnique Home Key Dates & Application Practical Sessions Speakers Posters Program FAQ Sponsors Organizers Past Meetings DS 3 -2019 DS 3 -2018 DS 3 -2017 Meilleur Casino En Ligne France Casino Non Aams Italia Non Gamstop Casino Casinos",
       "recommendation_reason": "6 days; priority region; trusted source layer 1.5; target level: MSc, PhD, postdoc",
-      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
@@ -7575,7 +7580,7 @@
         "trusted source layer 1.5",
         "target level: MSc, PhD, postdoc",
         "topics: climate, data science, natural language processing, statistics",
-        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-15",
       "deadline_evidence": "",
@@ -7623,13 +7628,13 @@
       "source_url": "https://eo4society.esa.int/2026/07/01/esa-supports-eth-zurichs-2026-beyond-the-visible-summer-school/",
       "summary": "ESA contributes to ETH Zurich’s Beyond the Visible Summer School in Heilbronn - eo science for society → European Space Agency eo science for society eo science for society Home Opportunities Invitations to Tender Training & education Workshops NoR Sponsorship Platforms Network O",
       "recommendation_reason": "6 days; priority region; trusted source layer 1; target level: early-career researcher",
-      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
@@ -7642,7 +7647,7 @@
         "trusted source layer 1",
         "target level: early-career researcher",
         "topics: water resources, earth observation, satellite, AI",
-        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-23",
       "deadline_evidence": "",
@@ -7758,13 +7763,13 @@
       "source_url": "https://www.ssm.usi.ch/en",
       "summary": "未知",
       "recommendation_reason": "5 days; in-person; target level: PhD; topics: design",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -7775,7 +7780,7 @@
         "in-person",
         "target level: PhD",
         "topics: design",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": null,
       "deadline_evidence": "",
@@ -8318,14 +8323,14 @@
       "application_link": "https://ssol.ff.cuni.cz/ssol-2026/",
       "source_url": "https://ssol.ff.cuni.cz/ssol-2026/",
       "summary": "SSoL 2026 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
-      "recommendation_reason": "8 days; priority region; topics: linguistics, syntax, psycholinguistics, law; near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "recommendation_reason": "8 days; priority region; topics: linguistics, syntax, psycholinguistics, law; near-match only: programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
@@ -8336,7 +8341,7 @@
         "8 days",
         "priority region",
         "topics: linguistics, syntax, psycholinguistics, law",
-        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -8786,126 +8791,54 @@
       "is_new": false
     },
     {
-      "title": "Una Europa Summer School 2026 for doctoral researchers: Artificial Intelligence and Creativity",
+      "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
       "type": "summer school",
-      "organizer": "Una Europa",
-      "source_layer": "1.5",
+      "organizer": "ELLIS",
+      "source_layer": "1",
       "region_priority": "priority",
-      "location": "Europe",
+      "location": "HPI Potsdam",
       "mode": "in-person",
-      "start_date": "2026-06-15",
-      "end_date": "2026-06-19",
-      "duration_days": 5,
-      "deadline": "2026-09-23",
+      "start_date": "2026-08-31",
+      "end_date": "2026-09-03",
+      "duration_days": 4,
+      "deadline": "2026-08-28",
       "deadline_status": "open",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "sustainability",
-        "AI",
-        "artificial intelligence",
-        "data science",
-        "statistics",
-        "engineering",
-        "law",
-        "design",
-        "social science"
+      "funding_available": true,
+      "funding_type": [
+        "travel grant",
+        "accommodation"
       ],
-      "eligibility": "doctoral researchers: Artificial intelligence and creativity | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About EN Über",
-      "target_level": "PhD",
-      "fee": "no tuition fee",
+      "funding_evidence": "ELIAS / ELLIS affiliated students: 20 participant places from the ELLIS and ELIAS network include travel and accommodation covered.",
+      "topic_keywords": [],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "Fee EUR 0",
       "fee_eur": 0.0,
-      "application_link": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity",
-      "source_url": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity",
-      "summary": "Una Europa Summer School 2026 for doctoral researchers: Artificial intelligence and creativity | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About EN Über uns Chi siamo Tutustu meihin suomeksi Om oss O nas Over ons Acerca de nosotro",
-      "recommendation_reason": "low fee: approximately EUR 0; deadline appears open; 5 days; priority region",
-      "risk_points": "No funding is explicit; fee is approximately EUR 0.",
+      "application_link": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
+      "source_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
+      "summary": "31/08/26 - 03/09/26 • HPI Potsdam ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School ELIAS Startup Opportunities and HPI Engine host the \"How to Be a (Startup-) CTO\" Summer School at HPI Potsdam. Summer School , Projects Building on ELLIS Read More Override note: The official HPI programme page states Fee None; ELLIS and HPI state that 20 ELLIS/ELIAS participant places include covered travel and accommodation.",
+      "recommendation_reason": "funding evidence: travel grant, accommodation; deadline appears open; 4 days; priority region",
+      "risk_points": "Fee noted: Fee EUR 0.",
       "sessions": [],
       "identity_key": "",
-      "funding_scope": "",
-      "financial_access_status": "low-fee",
+      "funding_scope": "ELLIS/ELIAS participants: travel + accommodation covered",
+      "financial_access_status": "funded",
       "failed_hard_conditions": [],
       "failed_recommendation_conditions": [],
-      "score": 72.0,
+      "score": 76.0,
       "score_explanation": [
-        "low fee: approximately EUR 0",
+        "funding evidence: travel grant, accommodation",
         "deadline appears open",
-        "5 days",
+        "4 days",
         "priority region",
-        "trusted source layer 1.5",
-        "in-person",
-        "target level: PhD",
-        "topics: sustainability, AI, artificial intelligence, data science"
+        "trusted source layer 1",
+        "in-person"
       ],
-      "first_seen": "2026-08-07",
-      "deadline_evidence": "Deadline 23 Sep 2026 (other dates listed: 2025-09-20, 2026-09-15)",
-      "duration_evidence": "15–19 June 2026",
-      "mode_evidence": "in-person programme, there will be a compulsory online part",
-      "extraction_confidence": 1.0,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
-      "title": "Una Europa Summer School 2026 for doctoral researchers: Exploring Soft Materials – From Molecules to BioMaterials",
-      "type": "summer school",
-      "organizer": "Una Europa",
-      "source_layer": "1.5",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "in-person",
-      "start_date": "2026-06-29",
-      "end_date": "2026-07-03",
-      "duration_days": 5,
-      "deadline": "2026-09-23",
-      "deadline_status": "open",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "sustainability",
-        "physics",
-        "chemistry",
-        "materials science",
-        "engineering"
-      ],
-      "eligibility": "doctoral researchers | Exploring Soft Materials: From Molecules to… | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About",
-      "target_level": "MSc, PhD",
-      "fee": "no tuition fee",
-      "fee_eur": 0.0,
-      "application_link": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-exploring-soft-materials",
-      "source_url": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-exploring-soft-materials",
-      "summary": "Una Europa Summer School 2026 for doctoral researchers | Exploring Soft Materials: From Molecules to… | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About EN Über uns Chi siamo Tutustu meihin suomeksi Om oss O nas Over ons Acerca de",
-      "recommendation_reason": "low fee: approximately EUR 0; deadline appears open; 5 days; priority region",
-      "risk_points": "No funding is explicit; fee is approximately EUR 0.",
-      "sessions": [],
-      "identity_key": "",
-      "funding_scope": "",
-      "financial_access_status": "low-fee",
-      "failed_hard_conditions": [],
-      "failed_recommendation_conditions": [],
-      "score": 72.0,
-      "score_explanation": [
-        "low fee: approximately EUR 0",
-        "deadline appears open",
-        "5 days",
-        "priority region",
-        "trusted source layer 1.5",
-        "in-person",
-        "target level: MSc, PhD",
-        "topics: sustainability, physics, chemistry, materials science"
-      ],
-      "first_seen": "2026-08-07",
-      "deadline_evidence": "Deadline 23 Sep 2026 (other dates listed: 2025-09-20, 2026-09-15)",
-      "duration_evidence": "29 Jun - 03 Jul, 2026",
-      "mode_evidence": "in-person programme hosted at the Navile Campus of Alma Mat",
-      "extraction_confidence": 1.0,
+      "first_seen": "2026-06-14",
+      "deadline_evidence": "ELLIS detail/registration page: registration deadline 2026-08-28",
+      "duration_evidence": "ELLIS events listing: 2026-08-31 to 2026-09-03",
+      "mode_evidence": "ELLIS listing location: HPI Potsdam",
+      "extraction_confidence": 0.75,
       "title_zh": "",
       "organizer_zh": "",
       "location_zh": "",
@@ -11024,13 +10957,13 @@
       "source_url": "https://lxmls.github.io/2026/",
       "summary": "LxMLS 2026 - The 16th Lisbon Machine Learning Summer School Menu Home About Dates FAQ Schedule Posters Speakers Organizers Labs The 16th Lisbon Machine Learning School LxMLS 2026 20-25 July 2026 Place and registration The summer school will be held at the Congress Center of Insti",
       "recommendation_reason": "funding evidence: scholarship; 6 days; priority region; in-person",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "registration fee covered",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 53.0,
@@ -11041,7 +10974,7 @@
         "in-person",
         "target level: PhD",
         "topics: climate, geospatial, AI, machine learning",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-06-14",
       "deadline_evidence": "deadline for applications is May 8th, 2026",
@@ -11088,13 +11021,13 @@
       "source_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/exploring-your-eco-2026-exploring-the-living-cultural-and-ec.html",
       "summary": "Alliance Study Offers Summer Schools MSc Programmes Semester Exchange Mobility for PhD students Internship Pathways Case Study Competitions Student Conference General Assembly and Forum Contact Intranet (shared docs) Alliance Support Teams Subject Areas Student Association Projec",
       "recommendation_reason": "low fee: approximately EUR 0; 9 days; priority region; trusted source layer 1.5",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 53.0,
@@ -11106,7 +11039,7 @@
         "in-person",
         "target level: MSc, PhD",
         "topics: ecology, architecture, design, history",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-08-07",
       "deadline_evidence": "Application Deadline 19 April 2026 (other dates listed: 2025-06-20)",
@@ -11283,13 +11216,13 @@
       "source_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools",
       "summary": "Summer Schools - Leiden University Skip to main content University Leiden Students Staff Members Organisational Structure Library Search for subject or person and select category Searchterm All categories Persons Education Research News Events Dossiers Locations Courses Vacancies",
       "recommendation_reason": "funding evidence: scholarship; 5 days; priority region; hybrid",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 52.0,
@@ -11300,7 +11233,7 @@
         "hybrid",
         "target level: MSc, PhD",
         "topics: linguistics, physics, statistics, law",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "Apply before 22-05-2026 (other dates listed: 2026-03-01, 2026-03-29, 2026-04-30)",
@@ -11348,13 +11281,13 @@
       "source_url": "https://ethl.uk/",
       "summary": "ETHL - Edinburgh Theoretical Historical Linguistics Home About us Programme Handouts ETHL 2025 Contact ☰ About us Programme Handouts ETHL 2025 Contact ETHL Edinburgh Theoretical Historical Linguistics Summer School 2026 22 nd –26 th June, at the University of Edinburgh Overview T",
       "recommendation_reason": "funding evidence: bursary; 5 days; priority region; hybrid",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 52.0,
@@ -11365,7 +11298,7 @@
         "hybrid",
         "target level: early-career researcher",
         "topics: linguistics, phonology, syntax, morphology",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -11408,13 +11341,13 @@
       "source_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
       "summary": "Alliance Study Offers Summer Schools MSc Programmes Semester Exchange Mobility for PhD students Internship Pathways Case Study Competitions Student Conference General Assembly and Forum Contact Intranet (shared docs) Alliance Support Teams Subject Areas Student Association Projec",
       "recommendation_reason": "low fee: approximately EUR 0; 8 days; priority region; trusted source layer 1.5",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 52.0,
@@ -11426,12 +11359,146 @@
         "in-person",
         "target level: MSc, PhD",
         "topics: sustainability",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-08-07",
       "deadline_evidence": "Application Deadline 1 May 20 (other dates listed: 2026-05-01)",
       "duration_evidence": "5th to 12th July 2026",
       "mode_evidence": "on-site part). Prospective participants from ELLS univers",
+      "extraction_confidence": 1.0,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": false
+    },
+    {
+      "title": "Una Europa Summer School 2026 for doctoral researchers: Artificial Intelligence and Creativity",
+      "type": "summer school",
+      "organizer": "Una Europa",
+      "source_layer": "1.5",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "in-person",
+      "start_date": "2026-06-15",
+      "end_date": "2026-06-19",
+      "duration_days": 5,
+      "deadline": "2026-03-13",
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "sustainability",
+        "AI",
+        "artificial intelligence",
+        "data science",
+        "statistics",
+        "engineering",
+        "law",
+        "design",
+        "social science"
+      ],
+      "eligibility": "doctoral researchers: Artificial intelligence and creativity | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About EN Über",
+      "target_level": "PhD",
+      "fee": "no tuition fee",
+      "fee_eur": 0.0,
+      "application_link": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity",
+      "source_url": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity",
+      "summary": "Una Europa Summer School 2026 for doctoral researchers: Artificial intelligence and creativity | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About EN Über uns Chi siamo Tutustu meihin suomeksi Om oss O nas Over ons Acerca de nosotro Override note: The official programme page gives 13 March 2026 as the application deadline; 23 September was an unrelated page date and the June event has ended.",
+      "recommendation_reason": "low fee: approximately EUR 0; 5 days; priority region; trusted source layer 1.5",
+      "risk_points": "programme has already started",
+      "sessions": [],
+      "identity_key": "",
+      "funding_scope": "",
+      "financial_access_status": "low-fee",
+      "failed_hard_conditions": [
+        "programme has already started"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 49.0,
+      "score_explanation": [
+        "low fee: approximately EUR 0",
+        "5 days",
+        "priority region",
+        "trusted source layer 1.5",
+        "in-person",
+        "target level: PhD",
+        "topics: sustainability, AI, artificial intelligence, data science",
+        "near-match only: programme has already started"
+      ],
+      "first_seen": "2026-08-07",
+      "deadline_evidence": "Submit the application by 23:59 IST/UTC on 13 March 2026.",
+      "duration_evidence": "15–19 June 2026",
+      "mode_evidence": "in-person programme, there will be a compulsory online part",
+      "extraction_confidence": 1.0,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "is_new": false
+    },
+    {
+      "title": "Una Europa Summer School 2026 for doctoral researchers: Exploring Soft Materials – From Molecules to BioMaterials",
+      "type": "summer school",
+      "organizer": "Una Europa",
+      "source_layer": "1.5",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "in-person",
+      "start_date": "2026-06-29",
+      "end_date": "2026-07-03",
+      "duration_days": 5,
+      "deadline": "2026-03-13",
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "sustainability",
+        "physics",
+        "chemistry",
+        "materials science",
+        "engineering"
+      ],
+      "eligibility": "doctoral researchers | Exploring Soft Materials: From Molecules to… | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About",
+      "target_level": "MSc, PhD",
+      "fee": "no tuition fee",
+      "fee_eur": 0.0,
+      "application_link": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-exploring-soft-materials",
+      "source_url": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-exploring-soft-materials",
+      "summary": "Una Europa Summer School 2026 for doctoral researchers | Exploring Soft Materials: From Molecules to… | Una Europa Skip to navigation Skip to main content Get involved Study Knowledge hub Stories About EN Über uns Chi siamo Tutustu meihin suomeksi Om oss O nas Over ons Acerca de Override note: The official programme page gives 13 March 2026 as the application deadline; 23 September was an unrelated page date and the June/July event has ended.",
+      "recommendation_reason": "low fee: approximately EUR 0; 5 days; priority region; trusted source layer 1.5",
+      "risk_points": "programme has already started",
+      "sessions": [],
+      "identity_key": "",
+      "funding_scope": "",
+      "financial_access_status": "low-fee",
+      "failed_hard_conditions": [
+        "programme has already started"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 49.0,
+      "score_explanation": [
+        "low fee: approximately EUR 0",
+        "5 days",
+        "priority region",
+        "trusted source layer 1.5",
+        "in-person",
+        "target level: MSc, PhD",
+        "topics: sustainability, physics, chemistry, materials science",
+        "near-match only: programme has already started"
+      ],
+      "first_seen": "2026-08-07",
+      "deadline_evidence": "Submit the application by 23:59 CET on 13 March 2026.",
+      "duration_evidence": "29 Jun - 03 Jul, 2026",
+      "mode_evidence": "in-person programme hosted at the Navile Campus of Alma Mat",
       "extraction_confidence": 1.0,
       "title_zh": "",
       "organizer_zh": "",
@@ -11471,13 +11538,13 @@
       "source_url": "https://new.sicss.io/2026/buenos-aires",
       "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
       "recommendation_reason": "low fee: approximately EUR 0; 12 days; trusted source layer 1; in-person",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "sicss:2026:buenos-aires",
       "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 49.0,
@@ -11488,7 +11555,7 @@
         "in-person",
         "target level: PhD, postdoc, early-career researcher",
         "topics: data science, social science, social science methods",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -11533,13 +11600,13 @@
       "source_url": "https://new.sicss.io/2026/issp",
       "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
       "recommendation_reason": "low fee: approximately EUR 0; 12 days; trusted source layer 1; in-person",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "sicss:2026:issp",
       "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 49.0,
@@ -11550,7 +11617,7 @@
         "in-person",
         "target level: PhD, postdoc, early-career researcher",
         "topics: data science, social science, social science methods",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -11595,13 +11662,13 @@
       "source_url": "https://new.sicss.io/2026/stanford",
       "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
       "recommendation_reason": "low fee: approximately EUR 0; 12 days; trusted source layer 1; in-person",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "sicss:2026:stanford",
       "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 49.0,
@@ -11612,7 +11679,7 @@
         "in-person",
         "target level: PhD, postdoc, early-career researcher",
         "topics: data science, social science, social science methods",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "Summer Institute in Computational Social Science Home Locations Host Learn Online People In the News All News Featured Stories About About SICSS Post-Mortem Sponsor SICSS Apply SICSS-Stanford August 10 to August 21, 2026 | Stanford University Home 2026 Stanford Overview Apply Pre-arrival People Schedule & Materials Apply Other Events: 2025 From August 10 to August 21, 2026 the Tech Impact and Policy Center and Social Media Lab will host a Summer Institute in Computational Social Science at Stanford University (SICSS-Stanford).",
@@ -11852,13 +11919,13 @@
       "source_url": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
       "summary": "Summer School: Survey Methodology Training - GESIS Training Deutsch Contact Career Login Alles GESIS Training What we offer Summer School in Survey Methodology GESIS Training About us About us Menü schließen Mission Go to overview Key Topics Go to overview Team Go to overview Loc",
       "recommendation_reason": "24 days; priority region; trusted source layer 1; hybrid",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -11871,7 +11938,7 @@
         "hybrid",
         "target level: PhD",
         "topics: AI, data science, data analysis, design",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -12089,63 +12156,6 @@
       "is_new": false
     },
     {
-      "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
-      "type": "summer school",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "HPI Potsdam",
-      "mode": "in-person",
-      "start_date": "2026-08-31",
-      "end_date": "2026-09-03",
-      "duration_days": 4,
-      "deadline": "2026-08-28",
-      "deadline_status": "open",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
-      "source_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
-      "summary": "31/08/26 - 03/09/26 • HPI Potsdam ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School ELIAS Startup Opportunities and HPI Engine host the \"How to Be a (Startup-) CTO\" Summer School at HPI Potsdam. Summer School , Projects Building on ELLIS Read More",
-      "recommendation_reason": "deadline appears open; 4 days; priority region; trusted source layer 1",
-      "risk_points": "funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 43.0,
-      "score_explanation": [
-        "deadline appears open",
-        "4 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "near-match only: funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-06-14",
-      "deadline_evidence": "ELLIS detail/registration page: registration deadline 2026-08-28",
-      "duration_evidence": "ELLIS events listing: 2026-08-31 to 2026-09-03",
-      "mode_evidence": "ELLIS listing location: HPI Potsdam",
-      "extraction_confidence": 0.75,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "is_new": false
-    },
-    {
       "title": "Exeter Machine Learning Summer School",
       "type": "summer school",
       "organizer": "University of Exeter",
@@ -12184,13 +12194,13 @@
       "source_url": "https://computerscience.exeter.ac.uk/machine-learning-summer-school/",
       "summary": "Exeter Machine Learning Summer School | Computer Science | University of Exeter Skip to main content Search all Study Studying at Exeter Why choose Exeter? Our campuses Accommodation Student life Careers Funding and scholarships International students Clearing 2026 Levels of stud",
       "recommendation_reason": "low fee: approximately EUR 1500; 11 days; priority region; in-person",
-      "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "programme has already started; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
@@ -12203,7 +12213,7 @@
         "in-person",
         "target level: MSc",
         "topics: AI, artificial intelligence, machine learning, data science",
-        "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding"
+        "near-match only: programme has already started; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-07-15",
       "deadline_evidence": "Application deadline: Friday 12 June 2026",
@@ -12751,13 +12761,13 @@
       "source_url": "https://www.colanginstitute.org/attend",
       "summary": "Attend — CoLang 0 Skip to Content CoLang About Learn Attend Repository FAQ News Stay in touch Open Menu Close Menu CoLang About Learn Attend Repository FAQ News Stay in touch Open Menu Close Menu About Learn Attend Repository FAQ News Stay in touch Planning to Attend PHOTO: 2012",
       "recommendation_reason": "funding evidence: scholarship; 19 days; trusted source layer 1.5; topics: linguistics, language documentation, anthropology, history",
-      "risk_points": "application deadline has passed; online-only",
+      "risk_points": "programme has already started; online-only",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "online-only"
       ],
       "failed_recommendation_conditions": [],
@@ -12767,7 +12777,7 @@
         "19 days",
         "trusted source layer 1.5",
         "topics: linguistics, language documentation, anthropology, history",
-        "near-match only: application deadline has passed; online-only"
+        "near-match only: programme has already started; online-only"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -12813,13 +12823,13 @@
       "source_url": "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/",
       "summary": "2026 Advanced Course on International Criminal Law | The Hague Academy of International Law Created with Sketch. About The Academy Our Programmes The Experience Of A Lifetime Support the Academy en en fr Back Login Practical Information Practical Information Practical Information",
       "recommendation_reason": "low fee: approximately EUR 900; 119 days; priority region; trusted source layer 1.5",
-      "risk_points": "application deadline has passed; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "programme has already started; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "registration fee covered",
       "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
@@ -12833,7 +12843,7 @@
         "trusted source layer 1.5",
         "target level: PhD",
         "topics: artificial intelligence, law, international law, design",
-        "near-match only: application deadline has passed; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
+        "near-match only: programme has already started; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-18",
       "deadline_evidence": "",
@@ -12878,13 +12888,13 @@
       "source_url": "https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools/summer-school-science-communication",
       "summary": "Summer School Science Communication - Leiden University Skip to main content University Leiden Students Staff Members Organisational Structure Library Search for subject or person and select category Searchterm All categories Persons Education Research News Events Dossiers Locati",
       "recommendation_reason": "low fee: approximately EUR 575; 5 days; priority region; in-person",
-      "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "programme has already started; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
@@ -12897,7 +12907,7 @@
         "in-person",
         "target level: MSc, PhD",
         "topics: design, social science, literature",
-        "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding"
+        "near-match only: programme has already started; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-16",
       "deadline_evidence": "register here latest on March 29, 2026 (other dates listed: 2026-03-02, 2026-03-28)",
@@ -13074,13 +13084,13 @@
       "source_url": "https://businessdatascience.nl/foundations-of-machine-learning-with-applications-in-python",
       "summary": "Summer School 2026 Foundations of Machine Learning with Applications in Python Find a person About us Job Market Contact Intranet Graduate Program Research Browse our Courses Events News Summer School Alumni Graduate Program Why study Business Data Science? Research Master Progra Override note: The official 2026 Summer School fee page states a EUR 1,000 student fee and does not offer Summer School participant funding.",
       "recommendation_reason": "low fee: approximately EUR 1000; 5 days; priority region; in-person",
-      "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "programme has already started; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
@@ -13093,7 +13103,7 @@
         "in-person",
         "target level: MSc, PhD",
         "topics: machine learning, deep learning, data science, mathematics",
-        "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding"
+        "near-match only: programme has already started; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-06-18",
       "deadline_evidence": "Application deadline June 15, 2026 (other dates listed: 2026-06-01)",
@@ -13240,7 +13250,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Talk to us",
@@ -13342,13 +13352,13 @@
       "source_url": "https://datascience.ase.ro/",
       "summary": "datascience.ase.ro Toggle navigation Home Schedule Lecturers Venue Registration Previous Editions 2025 Edition 2024 Edition 2023 Edition 2022 Edition 2019 Edition 2018 Edition Contact Skip to content Home Schedule Lecturers Venue Registration Previous Editions 2025 Edition 2024 E",
       "recommendation_reason": "9 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -13361,7 +13371,7 @@
         "in-person",
         "target level: PhD",
         "topics: AI, artificial intelligence, machine learning, data science",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -13559,7 +13569,7 @@
       "eligibility_zh": "",
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "The 7th Crete Summer School of Linguistics",
@@ -13588,13 +13598,13 @@
       "source_url": "https://linguistics.philology.uoc.gr/cssl26/",
       "summary": "The 7th Crete Summer School of Linguistics Home Venue Courses Events Application Useful info FAQs Contact Log in The 7th Crete Summer School of Linguistics Welcome to CreteLing 2026! July 18 to July 31, 2026, Rethymnon, Crete We regret that we are unable to accept any more applic",
       "recommendation_reason": "14 days; priority region; trusted source layer 1.5; in-person",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -13606,7 +13616,7 @@
         "trusted source layer 1.5",
         "in-person",
         "topics: linguistics",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "Deadline for regular application: 8 May 20 (other dates listed: 2026-04-05, 2026-05-08)",
@@ -13839,13 +13849,13 @@
       "source_url": "https://www.wcrp-climate.org/ictp2014-about",
       "summary": "WCRP-ICTP 2014 Summer school on Attribution and Prediction of Extremes Events About WCRP Back About us History Organization Governance Early to Mid Career WCRP Sponsors and Contributors WCRP Partners WCRP Film How to get Involved WCRP Fellowship for Global South Contact Us Core P",
       "recommendation_reason": "12 days; trusted source layer 1; in-person; target level: PhD",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -13857,7 +13867,7 @@
         "in-person",
         "target level: PhD",
         "topics: drought, climate, climate extremes, physics",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-14",
       "deadline_evidence": "",
@@ -14851,13 +14861,13 @@
       "source_url": "https://people.disim.univaq.it/~antonio.cicone/2025/MaSAG25/MaSAG25_homepage.html",
       "summary": "MaSAG25 Summer School and Conference MaSAG25 Summer School and Conference Università degli Studi dell'Aquila, June 9-14, 2025 Home Aim and scope Invited Lecturers & Speakers Registration Program Participants Practical Information Welcome to the webpage of the third Summer School",
       "recommendation_reason": "6 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -14868,7 +14878,7 @@
         "priority region",
         "trusted source layer 1",
         "in-person",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-11",
       "deadline_evidence": "",
@@ -14914,13 +14924,13 @@
       "source_url": "https://www.ssm.usi.ch/en/home-ssm/about-the-summer-school",
       "summary": "About the Summer School in Social Sciences Methods | Summer School in Social Sciences Methods Skip to main content Università della Svizzera italiana Summer School in Social Sciences Methods Summer School in Social Sciences Methods 6-21 August 2026 About Courses Instructors Fees",
       "recommendation_reason": "16 days; priority region; trusted source layer 1.5; target level: PhD",
-      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
@@ -14933,7 +14943,7 @@
         "trusted source layer 1.5",
         "target level: PhD",
         "topics: social science, political science, sociology, psychology",
-        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -15058,13 +15068,13 @@
       "source_url": "https://www.geschichte.tu-darmstadt.de/institut_fuer_geschichte_1/fach__und_arbeitsgebiete_ifg/technikgeschichte/lehre_und_studium_tg/unite_summerschool.de.jsp",
       "summary": "unite_summerschool – Institut für Geschichte – TU Darmstadt Institut für Geschichte Unite! Summer School: What Computers and AI can't do. (June 2024) Reflecting on Errors, Malfunctioning, and Limitations of Technology in the Digital Age. Unite! Summer School Sie befinden sich hie",
       "recommendation_reason": "5 days; priority region; trusted source layer 1.5; in-person",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -15076,7 +15086,7 @@
         "trusted source layer 1.5",
         "in-person",
         "topics: AI, machine learning, engineering, history of science",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-08-03",
       "deadline_evidence": "",
@@ -15187,13 +15197,13 @@
       "source_url": "https://ssol.ff.cuni.cz/past-years/ssol-2025/",
       "summary": "SSoL 2025 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
       "recommendation_reason": "8 days; priority region; hybrid; topics: climate, AI, linguistics, phonology",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -15204,7 +15214,7 @@
         "priority region",
         "hybrid",
         "topics: climate, AI, linguistics, phonology",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -15251,13 +15261,13 @@
       "source_url": "https://ssol.ff.cuni.cz/past-years/ssol-2024/",
       "summary": "SSoL 2024 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
       "recommendation_reason": "8 days; priority region; in-person; topics: linguistics, computational linguistics, syntax, semantics",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -15268,7 +15278,7 @@
         "priority region",
         "in-person",
         "topics: linguistics, computational linguistics, syntax, semantics",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -15438,13 +15448,13 @@
       "source_url": "https://www.eeml.eu/",
       "summary": "Home Search this site Embedded Files Skip to main content Skip to navigation Home Program Venue/Accommodation Registration Previous editions EEML2025 Program Venue/Accommodation Registration Sponsors Diamond - Google DeepMind Diamond - UiPath Platinum - Bitdefender Platinum - Jan",
       "recommendation_reason": "6 days; priority region; in-person; topics: AI, artificial intelligence, machine learning",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -15455,7 +15465,7 @@
         "priority region",
         "in-person",
         "topics: AI, artificial intelligence, machine learning",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-12",
       "deadline_evidence": "",
@@ -15835,13 +15845,13 @@
       "source_url": "https://datascienceafrica.org/dsa-summer-schools/dsa-2026-summer-school-schedule",
       "summary": "DSA 2026 Summer School Schedule This email address is being protected from spambots. You need JavaScript enabled to view it. Home About us Programmes Programmes and Activities Research Grants Capacity Strengthening DSA Fellowship Program Affiliated Centres & Local Chapters DSA Ug",
       "recommendation_reason": "5 days; trusted source layer 1; hybrid; topics: AI, artificial intelligence, machine learning, data science",
-      "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "funding is not explicit and fee is uncertain"
@@ -15852,7 +15862,7 @@
         "trusted source layer 1",
         "hybrid",
         "topics: AI, artificial intelligence, machine learning, data science",
-        "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -15959,13 +15969,13 @@
       "source_url": "https://www.ds3-datascience-polytechnique.fr/",
       "summary": "Data Science Summer School (DS³) – École Polytechnique Home Key Dates & Application Practical Sessions Speakers Posters Program FAQ Sponsors Organizers Past Meetings DS 3 -2019 DS 3 -2018 DS 3 -2017 Meilleur Casino En Ligne France Casino Non Aams Italia Non Gamstop Casino Casinos",
       "recommendation_reason": "6 days; priority region; trusted source layer 1.5; target level: MSc, PhD, postdoc",
-      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
@@ -15978,7 +15988,7 @@
         "trusted source layer 1.5",
         "target level: MSc, PhD, postdoc",
         "topics: climate, data science, natural language processing, statistics",
-        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-15",
       "deadline_evidence": "",
@@ -16026,13 +16036,13 @@
       "source_url": "https://eo4society.esa.int/2026/07/01/esa-supports-eth-zurichs-2026-beyond-the-visible-summer-school/",
       "summary": "ESA contributes to ETH Zurich’s Beyond the Visible Summer School in Heilbronn - eo science for society → European Space Agency eo science for society eo science for society Home Opportunities Invitations to Tender Training & education Workshops NoR Sponsorship Platforms Network O",
       "recommendation_reason": "6 days; priority region; trusted source layer 1; target level: early-career researcher",
-      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
@@ -16045,7 +16055,7 @@
         "trusted source layer 1",
         "target level: early-career researcher",
         "topics: water resources, earth observation, satellite, AI",
-        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-23",
       "deadline_evidence": "",
@@ -16663,14 +16673,14 @@
       "application_link": "https://ssol.ff.cuni.cz/ssol-2026/",
       "source_url": "https://ssol.ff.cuni.cz/ssol-2026/",
       "summary": "SSoL 2026 – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL",
-      "recommendation_reason": "8 days; priority region; topics: linguistics, syntax, psycholinguistics, law; near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "recommendation_reason": "8 days; priority region; topics: linguistics, syntax, psycholinguistics, law; near-match only: programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
@@ -16681,7 +16691,7 @@
         "8 days",
         "priority region",
         "topics: linguistics, syntax, psycholinguistics, law",
-        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-07-16",
       "deadline_evidence": "",
@@ -16724,14 +16734,14 @@
       "application_link": "https://www.cs.uoregon.edu/research/summerschool/summer26/",
       "source_url": "https://www.cs.uoregon.edu/research/summerschool/summer26/",
       "summary": "﻿ OPLSS 2026 | University of Oregon One Stop Apply Visit Give June 22-July 4, 2026 Types, Proofs, and Program Logics Topics Participants Pictures Archives Sponsors For 24 years, the Oregon Programming Languages Summer School (OPLSS) has focused on teaching the principles of progr",
-      "recommendation_reason": "13 days; topics: programming languages, design; near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "recommendation_reason": "13 days; topics: programming languages, design; near-match only: programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
@@ -16741,7 +16751,7 @@
       "score_explanation": [
         "13 days",
         "topics: programming languages, design",
-        "near-match only: application deadline has passed; in-person status is uncertain; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-16",
       "deadline_evidence": "",
