@@ -30,6 +30,12 @@ recommendation status. Future work may add field-specific research-training
 ontologies for specialized domains, but public output should remain auditable
 through official-source evidence and deterministic validation.
 
+After field completion, a separate whole-record DeepSeek audit checks organizer
+roles, locations, dates/status, fees/funding, eligibility, summaries, topics,
+and multi-session consistency. Model-generated rejections require official
+evidence IDs, while deterministic contradictions can fail closed independently.
+Only homepage copies are suppressed; scanner and RSS records remain deterministic.
+
 ## Latest Scan Results
 
 This section is refreshed from the latest validated snapshot produced by the
@@ -371,7 +377,7 @@ Recommended operation:
 - Manual deterministic scan: `python -m research_school_radar.cli scan`
 - Manual semantic review: `python -m research_school_radar.cli scan --enable-semantic`
 - Production-style AI scan: `python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --no-readme-update`
-- Validate an AI build before snapshotting it: `python -m research_school_radar.ai_output_validation --site-dir site`
+- Validate semantic extraction, whole-record audit, and translation before snapshotting: `python -m research_school_radar.ai_output_validation --site-dir site`
 
 The scheduled local task uses LLM extraction only on full-scan days. A failed
 DeepSeek health check, insufficient source coverage, or unusable AI output stops
@@ -424,7 +430,7 @@ Running from a home/mobile connection avoids that entirely.
 `scripts/scan_and_publish.ps1`, scheduled once a day by Windows Task Scheduler:
 
 1. runs a DeepSeek-assisted full source scan on Monday, Wednesday, and Friday;
-2. requires `ai_output_validation.py` to accept semantic ranking, DeepSeek extraction, and build-time Chinese translation;
+2. requires `ai_output_validation.py` to accept semantic ranking, DeepSeek extraction, whole-record audit, and build-time Chinese translation;
 3. runs `refresh-status` from `data/latest_candidates.json` on the other days, without fetching source pages;
 4. lets only a validated full scan replace the three source snapshots on `main` (`data/latest_candidates.json`, `data/latest_sources.json`, and `data/latest_scan_manifest.json`); status refreshes leave them intact;
 5. leaves all `gh-pages` writes to GitHub Actions.

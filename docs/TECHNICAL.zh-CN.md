@@ -139,6 +139,7 @@ AI 分支不会覆盖扫描器原始 `Candidate` 对象。它只会在生成首�
 - `src/research_school_radar/site_home.py`：负责首页说明区块数据；页面 HTML、CSS 和 JavaScript 不再存放于 Python 字符串中，并由架构回归测试防止倒退
 - `src/research_school_radar/ai_pipeline.py`：集中管理 semantic 排序、DeepSeek 配置、补页编排与 AI sidecar 生成，使 `cli.py` 保持为入口协调器
 - `src/research_school_radar/ai_output_validation.py`：AI 快照替换上一个可用快照前，检查 semantic、DeepSeek 抽取与构建时中文翻译是否可用
+- `src/research_school_radar/record_audit.py`：在字段补全后对所有公开记录进行证据约束的整体审计；无效证据编号会被丢弃，只有高/严重且证据充分的拒绝项能隐藏首页副本
 - `src/research_school_radar/ai_evaluate.py`：生成真人标注 CSV 模板
 
 ## 配置文件
@@ -247,7 +248,7 @@ Secret 读取 `SERPER_API_KEY`。发布型 `ai`、云端定时刷新和本地定
 校验是否通过，audit 都不会提交 `data/latest_*`，也不会写入 `gh-pages`。
 
 生产自动化还有第二层构建级门槛：
-`python -m research_school_radar.ai_output_validation --site-dir site` 必须确认存在可用 semantic chunks 和至少一条通过证据校验的 DeepSeek 抽取，AI 运行才可以替换 last-known-good 快照。
+`python -m research_school_radar.ai_output_validation --site-dir site` 必须确认存在可用 semantic chunks、至少一条通过证据校验的 DeepSeek 抽取、完整覆盖全部公开记录的整体审计，以及可用的中文翻译，AI 运行才可以替换 last-known-good 快照。
 
 AI 结果保存在：
 

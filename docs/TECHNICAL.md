@@ -85,7 +85,7 @@ The public model has two independent gates. Deadline, duration, in-person mode, 
 
 Temporal validation is independent of extracted deadline status. A programme whose relevant start date has arrived is closed even if a page supplies a later date labelled as a deadline; a deadline later than the programme start is itself a hard validation failure. For multi-session programmes, the relevant start is the latest selectable session start.
 
-The IHE Delft collector reads the educator API's ISO date portion without timezone arithmetic, strips HTML from introduction/audience fields, and preserves the official `excl. VAT` fee qualifier. When IHE's public layers disagree for one edition, an identity-keyed override corrects that edition without shifting unrelated catalogue dates. Project content overrides may replace polluted summary, eligibility, translation, location, funding-scope, or topic fields while retaining the official evidence trail.
+The IHE Delft collector reads the educator API's ISO date portion without timezone arithmetic, strips HTML from introduction/audience fields, and preserves the official `excl. VAT` fee qualifier. Project content overrides may replace polluted summary, eligibility, translation, location, funding-scope, or topic fields while retaining the official evidence trail; IHE date-only fields are never shifted for UTC.
 
 The scanner includes `training school` because research organizations commonly use that label for short, intensive summer-school-style programmes. Generic conference workshops are excluded entirely, since they are rarely funded multi-day schools; the remaining hard filters then apply to the school and course types that are kept.
 
@@ -98,7 +98,7 @@ Default branch:
 sources -> collect -> parse -> extract rules -> filter -> rank -> report/site
 
 Optional AI branch:
-pages -> semantic chunks -> evidence snippets -> DeepSeek extraction -> evidence-ID validation -> homepage candidate copies + sidecar JSON
+pages -> semantic chunks -> evidence snippets -> DeepSeek extraction -> evidence-ID validation -> whole-record audit -> homepage candidate copies + sidecar JSON
 ```
 
 `config/sources.yaml` is also the authority for structured sources: a source's
@@ -371,9 +371,10 @@ AI extraction -> maintainer checks official page -> maintainer edits data/opport
 There is deliberately no automatic promotion into curated data.
 
 Before production automation replaces a last-known-good snapshot,
-`ai_output_validation.py` requires usable semantic chunks and at least one
-usable evidence-validated DeepSeek extraction. This build-level check is in
-addition to field-level validation in `llm_validate.py`.
+`ai_output_validation.py` requires usable semantic chunks, at least one usable
+evidence-validated DeepSeek extraction, a complete whole-record audit of every
+public display target, and usable build-time translation. This build-level
+check is in addition to field-level validation in `llm_validate.py`.
 
 ### Real-world AI validation
 
@@ -479,6 +480,7 @@ maintainer review against official pages is still required for curation.
 - `src/research_school_radar/site_home.py` owns homepage explanatory-section data. Page-renderer Python modules no longer store frontend markup; a regression test enforces this boundary.
 - `src/research_school_radar/ai_pipeline.py` owns semantic ranking, DeepSeek configuration, follow-up orchestration, and AI sidecar generation so `cli.py` remains an entry-point coordinator.
 - `src/research_school_radar/ai_output_validation.py` protects production snapshots from empty semantic/DeepSeek output or failed build-time Chinese translation.
+- `src/research_school_radar/record_audit.py` audits every public/display-library record after AI completion, using selected official evidence snippets and a strict cited-issue schema. Unsupported evidence IDs are discarded; DeepSeek rejections require evidence, while deterministic high/critical contradictions can gate independently.
 - `src/research_school_radar/ai_evaluate.py` writes the human annotation CSV for real-world AI quality checks.
 
 ## Configuration

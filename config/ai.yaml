@@ -25,6 +25,17 @@ llm:
   max_chunks_per_page: 3
   max_chars_per_chunk: 2200
   max_total_chars_per_request: 7000
+record_audit:
+  # Final, evidence-gated review of every record that would receive a public
+  # card or recurring-programme-library row. It never mutates scanner/RSS data.
+  enabled: true
+  max_records: 80
+  max_workers: 4
+  max_attempts: 2
+  max_evidence_snippets: 9
+  max_chars_per_snippet: 1000
+  max_total_evidence_chars: 7000
+  max_tokens: 1800
 translation:
   # Translation runs only while generating the static site. Existing cache
   # entries are always reused; new API calls require DEEPSEEK_API_KEY.

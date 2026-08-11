@@ -21,6 +21,11 @@ from .collect import DEFAULT_MAX_WORKERS
 from .llm_client import LLMClientConfig, create_llm_client
 from .llm_extract import run_llm_extraction, write_llm_sidecars
 from .models import Candidate, Page
+from .record_audit import (
+    load_record_audit_config,
+    run_record_audit,
+    write_record_audit_sidecars,
+)
 from .semantic import SemanticRanker, write_semantic_sidecars
 from .utils import ROOT, clean_space, load_yaml
 
@@ -410,6 +415,46 @@ def _write_empty_llm_outputs(
     )
     print(f"Wrote AI extraction sidecar: {site_path}")
     print(f"Wrote AI extraction report: {report_path}")
+
+
+def _write_record_audit_outputs(
+    ai_config: Path,
+    candidates: list[Candidate],
+    pages: list[Page],
+    site_dir: Path,
+    reports_dir: Path,
+    *,
+    ai_items: list[dict[str, Any]] | None = None,
+    cache: AICache | None = None,
+) -> list[dict[str, Any]]:
+    audit_config = load_record_audit_config(ai_config)
+    if not audit_config.enabled:
+        return []
+    llm_config = _load_llm_config(ai_config)
+    client_config = _client_config(llm_config)
+    client_config.max_tokens = audit_config.max_tokens
+    client = create_llm_client(client_config)
+    items = run_record_audit(
+        candidates,
+        pages,
+        client=client,
+        config=audit_config,
+        cache=cache,
+        ai_items=ai_items,
+    )
+    site_path, report_path, markdown_path = write_record_audit_sidecars(
+        items,
+        site_dir=site_dir,
+        reports_dir=reports_dir,
+        provider=client_config.provider,
+        model=client.last_model_used,
+        requested_records=len(candidates),
+        cache=cache,
+    )
+    print(f"Wrote record audit sidecar: {site_path}")
+    print(f"Wrote record audit report: {report_path}")
+    print(f"Wrote record audit summary: {markdown_path}")
+    return items
 
 
 def _load_llm_config(path: Path) -> dict:

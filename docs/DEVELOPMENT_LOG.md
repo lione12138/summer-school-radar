@@ -284,3 +284,23 @@ Opportunities, while Prob_AI is attributed to the Prob_AI Hub and its venue to
 the University of Bristol. The About qualification copy was also aligned with
 the discipline-agnostic product policy: qualification requires a genuine
 academic research-training programme, regardless of discipline.
+
+## 2026-08-11: Evidence-Gated Whole-Record Audit
+
+Field-level extraction validation could still miss cross-field mistakes such
+as a publisher being presented as the organizer, a fee category becoming an
+institution name, navigation text entering a venue, or an accurate date being
+paired with the wrong application state. A final `record_audit.py` stage now
+runs after AI field completion and before translation for every record that
+would receive a current card or recurring-programme-library row.
+
+The DeepSeek response is a strict issue list with field, severity, suggested
+value, reason, and official evidence IDs. Unknown evidence IDs and malformed
+issues are discarded. A DeepSeek high/critical `reject` must be evidence-backed;
+deterministic high/critical contradictions can gate independently. Only the
+homepage copy is removed; scanner candidates, RSS, reports, and curated data
+remain unchanged. Deterministic cross-field checks run alongside the model. Audit
+results are cached by record plus evidence hash, written to JSON/Markdown
+sidecars, summarized in non-publishing audit artifacts, and required by the
+production AI-output gate so an incomplete audit cannot replace the last-known-
+good snapshot.

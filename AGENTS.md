@@ -82,6 +82,7 @@ Key modules:
 - Full-scan manifests retain per-source last-attempt, last-success, and consecutive-failure state; status refreshes point directly to the latest full scan instead of recursively nesting refresh manifests.
 - `src/research_school_radar/snapshot_validation.py` — validates candidate schema v2, non-empty display/scanner records, and suspicious retention below 35% before snapshot replacement.
 - `src/research_school_radar/ai_output_validation.py` — rejects unusable semantic, DeepSeek extraction, or build-time Chinese translation output before an AI snapshot can replace the last known-good snapshot.
+- `src/research_school_radar/record_audit.py` — performs the final evidence-gated whole-record DeepSeek audit, caches by record/evidence hash, and may suppress only the homepage copy of an evidence-backed rejected record.
 - `src/research_school_radar/audit_report.py` — summarizes source coverage, Serper discovery, Brave refinement, semantic/DeepSeek output, translation, and candidate retention for non-publishing audit runs.
 - `src/research_school_radar/storage.py` — seen-state JSON handling.
 - `src/research_school_radar/publication.py` — fail-closed public eligibility, funded/low-fee recommendation, verified self-funded and ordinary official directories, title-quality, and closed programme-library classification.
@@ -94,10 +95,12 @@ Key modules:
 Optional AI branch:
 
 ```text
-pages -> semantic chunks -> evidence snippets -> DeepSeek extraction -> validation -> homepage candidate copies
+pages -> semantic chunks -> evidence snippets -> DeepSeek extraction -> validation -> whole-record audit -> homepage candidate copies
 ```
 
 AI output is advisory. It may fill missing fields in copied candidates for homepage generation, then the normal hard filters run again. It must not mutate scanner `Candidate` objects, curated records, RSS source records, or Markdown report source records.
+
+The record audit runs after AI field completion and before translation. It checks organizer roles, location contamination, temporal consistency, fee/funding semantics, eligibility, summary quality, topics, and multi-session interpretation. A DeepSeek rejection requires valid official evidence IDs; deterministic high/critical contradictions may gate independently. Unsupported suggestions are discarded. Audit failures must fail the production AI-output gate rather than publish an unaudited replacement snapshot.
 
 `Candidate.identity_key` is the stable identity for structured collector records and takes precedence over URL/title similarity during deduplication. Preserve it in JSON serialization, RSS GUIDs, detail-page names, and seen-state handling.
 
@@ -112,7 +115,7 @@ Multi-session extraction accepts explicitly labelled prose, table rows, and sche
 - The only supported LLM provider is currently **DeepSeek**.
 - Do not reintroduce Ollama, LM Studio, Qwen local-provider code, provider comparison scripts, or local-model setup instructions unless the user explicitly asks.
 - API keys must come from environment variables or local ignored files. Never commit real keys.
-- `DEEPSEEK_API_KEY` is used for optional LLM extraction and build-time Chinese translation.
+- `DEEPSEEK_API_KEY` is used for optional LLM extraction, final record audit, and build-time Chinese translation.
 - The model receives selected evidence snippets, not whole webpages and not browser control.
 - Non-unknown model fields must cite valid evidence IDs and pass deterministic validation before being used in homepage copies.
 - Search is not performed by DeepSeek. `SERPER_API_KEY` may power explicitly requested broad discovery in non-publishing manual audits only; `BRAVE_SEARCH_API_KEY` may power same-domain follow-up refinement. Missing search keys must degrade safely.

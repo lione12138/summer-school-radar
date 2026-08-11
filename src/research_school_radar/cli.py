@@ -14,9 +14,11 @@ from .ai_pipeline import (
     _select_top_semantic_pages as _select_top_semantic_pages,
     _write_empty_llm_outputs as _write_empty_llm_outputs,
     _write_llm_outputs as _write_llm_outputs,
+    _write_record_audit_outputs as _write_record_audit_outputs,
     _write_semantic_outputs as _write_semantic_outputs,
 )
 from .api_sources import CollectorOutcome, collect_api_candidates
+from .ai_home import merge_ai_for_homepage
 from .candidate_io import candidate_from_mapping, coerce_date
 from .collect import DEFAULT_MAX_WORKERS, collect_sources, fetch_source
 from .discovery_filter import aggregator_discovery_leads, filter_discovery_results
@@ -25,6 +27,7 @@ from .filter import apply_hard_filters
 from .http_cache import HttpCache
 from .models import Candidate, Page, Source
 from .parse import candidate_links, looks_like_opportunity
+from .publication import is_archive_candidate, is_display_candidate
 from .rank import rank_candidates
 from .report import update_readme, write_report
 from .review import apply_overrides, load_overrides, write_review_queue
@@ -268,6 +271,7 @@ def run_scan(
     semantic_chunks = []
     semantic_ok = True
     ai_items: list[dict[str, Any]] | None = None
+    record_audit_items: list[dict[str, Any]] | None = None
     ai_config_path = ai_config if ai_config is not None else config_dir / "ai.yaml"
     cache = _load_ai_cache(ai_config_path, data_dir=data_dir, refresh=refresh_ai_cache) if (
         enable_semantic or enable_llm_extraction
@@ -298,6 +302,21 @@ def run_scan(
                 cache=cache,
                 max_workers=max_workers,
             )
+    if enable_llm_extraction and not offline_sample:
+        audit_candidates = [
+            candidate
+            for candidate in merge_ai_for_homepage(ranked, ai_items, profile)
+            if is_display_candidate(candidate) or is_archive_candidate(candidate)
+        ]
+        record_audit_items = _write_record_audit_outputs(
+            ai_config_path,
+            audit_candidates,
+            semantic_pages,
+            site_dir,
+            reports_dir,
+            ai_items=ai_items,
+            cache=cache,
+        )
     update_seen(data_dir / "seen.json", ranked)
     write_review_queue(data_dir / "review_queue.json", ranked, ai_items=ai_items)
     report_path = write_report(ranked, reports_dir, errors)
@@ -325,6 +344,7 @@ def run_scan(
             ai_items=ai_items,
             profile=profile,
             translation_config=translation_config,
+            record_audit_items=record_audit_items,
         )
         print(f"Wrote site: {site_path}")
     manifest = full_scan_manifest(

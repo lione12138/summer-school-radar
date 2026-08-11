@@ -82,6 +82,19 @@ def test_build_audit_report_summarizes_search_and_ai_outputs(tmp_path) -> None:
         site_dir / "translation-status.json",
         {"enabled": True, "provider": "deepseek", "translated": 1, "cache_hits": 2, "warnings": []},
     )
+    _write_json(
+        site_dir / "record-audit.json",
+        {
+            "provider": "deepseek",
+            "model": "deepseek-v4-flash",
+            "requested_records": 1,
+            "audited_records": 1,
+            "rejected_records": 0,
+            "cache_hits": 0,
+            "warnings": [],
+            "items": [{"verdict": "needs_correction", "issues": [{"field": "organizer"}]}],
+        },
+    )
 
     report = build_audit_report(site_dir, previous_json=previous)
 
@@ -96,6 +109,8 @@ def test_build_audit_report_summarizes_search_and_ai_outputs(tmp_path) -> None:
     assert report["refinement"]["queries"] == 2
     assert report["refinement"]["fields_gained"] == 1
     assert report["refinement"]["field_gains"]["application_deadline"] == 1
+    assert report["record_audit"]["audited"] == 1
+    assert report["record_audit"]["issues"] == 1
     assert all(report["review_signals"].values())
     assert "Serper" in render_markdown(report)
 

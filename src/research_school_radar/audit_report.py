@@ -42,6 +42,7 @@ def build_audit_report(site_dir: Path, *, previous_json: Path | None = None) -> 
     candidates = _read_object(site_dir / "candidates.json", missing)
     semantic = _read_object(site_dir / "semantic_chunks.json", missing)
     extractions = _read_object(site_dir / "ai_extractions.json", missing)
+    record_audit = _read_object(site_dir / "record-audit.json", missing)
     translation = _read_object(site_dir / "translation-status.json", missing)
     previous = _read_object(previous_json, missing, required=False) if previous_json else {}
 
@@ -50,6 +51,7 @@ def build_audit_report(site_dir: Path, *, previous_json: Path | None = None) -> 
     previous_scanner = _items(previous, "scanner_opportunities") or _items(previous, "opportunities")
     semantic_items = _items(semantic)
     ai_items = _items(extractions)
+    record_audit_items = _items(record_audit)
     validation_warnings = Counter(
         _warning_type(str(warning))
         for item in ai_items
@@ -133,6 +135,16 @@ def build_audit_report(site_dir: Path, *, previous_json: Path | None = None) -> 
             "fields_gained": sum(field_gains.values()),
             "field_gains": field_gains,
         },
+        "record_audit": {
+            "provider": record_audit.get("provider"),
+            "model": record_audit.get("model"),
+            "requested": int(record_audit.get("requested_records") or 0),
+            "audited": int(record_audit.get("audited_records") or 0),
+            "rejected": int(record_audit.get("rejected_records") or 0),
+            "cache_hits": int(record_audit.get("cache_hits") or 0),
+            "issues": sum(len(_as_list(item.get("issues"))) for item in record_audit_items),
+            "warnings": len(_as_list(record_audit.get("warnings"))),
+        },
         "translation": {
             "enabled": bool(translation.get("enabled")),
             "provider": translation.get("provider"),
@@ -146,6 +158,16 @@ def build_audit_report(site_dir: Path, *, previous_json: Path | None = None) -> 
         "source_coverage_healthy": bool(manifest.get("healthy")),
         "semantic_output_present": bool(semantic_items),
         "deepseek_output_present": bool(ai_items),
+        "record_audit_complete": (
+            int(record_audit.get("requested_records") or 0)
+            == int(
+                record_audit.get("audited_records")
+                if record_audit.get("audited_records") is not None
+                else -1
+            )
+            == len(record_audit_items)
+            and not _as_list(record_audit.get("warnings"))
+        ),
         "retention_above_floor": retention_ratio is None or retention_ratio >= 0.35,
         "translation_has_no_warnings": not _as_list(translation.get("warnings")),
     }
@@ -168,6 +190,7 @@ def render_markdown(report: Mapping[str, Any]) -> str:
     semantic = _mapping(report.get("semantic"))
     deepseek = _mapping(report.get("deepseek"))
     refinement = _mapping(report.get("refinement"))
+    record_audit = _mapping(report.get("record_audit"))
     translation = _mapping(report.get("translation"))
     signals = _mapping(report.get("review_signals"))
     lines = [
@@ -192,6 +215,8 @@ def render_markdown(report: Mapping[str, Any]) -> str:
         f"| Brave | Queries / pages | {refinement.get('queries', 0)} / {refinement.get('pages_fetched', 0)} |",
         f"| Brave | Reprocessed opportunities | {refinement.get('opportunities_reprocessed', 0)} |",
         f"| Brave | Previously missing fields resolved | {refinement.get('fields_gained', 0)} |",
+        f"| Record audit | Audited / requested | {record_audit.get('audited', 0)} / {record_audit.get('requested', 0)} |",
+        f"| Record audit | Issues / publication gates | {record_audit.get('issues', 0)} / {record_audit.get('rejected', 0)} |",
         f"| Translation | New / cache hits / warnings | {translation.get('translated', 0)} / {translation.get('cache_hits', 0)} / {translation.get('warnings', 0)} |",
         "",
         "## Review Signals",

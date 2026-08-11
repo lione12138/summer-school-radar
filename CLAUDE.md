@@ -97,6 +97,7 @@ AI branch constraints:
 - `src/research_school_radar/scan_health.py` — non-empty-source and 70% combined page/direct-collector coverage gate plus scan manifests.
 - `src/research_school_radar/snapshot_validation.py` — schema-v2/non-empty/35%-retention gate for last-known-good candidate snapshots.
 - `src/research_school_radar/ai_output_validation.py` — validates semantic, DeepSeek extraction, and build-time Chinese translation artifacts before a snapshot is replaced.
+- `src/research_school_radar/record_audit.py` — final evidence-gated whole-record audit; invalid citations are discarded and only homepage copies can be suppressed.
 - `src/research_school_radar/translation.py` — build-time Chinese translation support.
 - `src/research_school_radar/localization_audit.py` — localization coverage checks.
 

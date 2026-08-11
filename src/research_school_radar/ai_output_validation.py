@@ -42,8 +42,14 @@ def validate_ai_outputs(site_dir: Path, *, expected_generated: str | None = None
     expected_generated = expected_generated or date.today().isoformat()
     semantic = _read_object(site_dir / "semantic_chunks.json")
     extractions = _read_object(site_dir / "ai_extractions.json")
+    record_audit = _read_object(site_dir / "record-audit.json")
     translation = _read_object(site_dir / "translation-status.json")
-    for label, payload in (("semantic", semantic), ("DeepSeek", extractions), ("translation", translation)):
+    for label, payload in (
+        ("semantic", semantic),
+        ("DeepSeek", extractions),
+        ("record audit", record_audit),
+        ("translation", translation),
+    ):
         if str(payload.get("generated", "")) != expected_generated:
             raise AIOutputValidationError(
                 f"{label} output is not from {expected_generated}; refusing to reuse an older sidecar"
@@ -78,6 +84,8 @@ def validate_ai_outputs(site_dir: Path, *, expected_generated: str | None = None
     if not successful:
         raise AIOutputValidationError("DeepSeek extraction did not produce a usable result")
 
+    _validate_record_audit(record_audit)
+
     if translation.get("enabled") is not True:
         raise AIOutputValidationError("build-time Chinese translation was not enabled")
     if str(translation.get("provider", "")).strip().lower() != "deepseek":
@@ -96,6 +104,42 @@ def validate_ai_outputs(site_dir: Path, *, expected_generated: str | None = None
     ):
         raise AIOutputValidationError("build-time Chinese translation reported an operational failure")
     return successful
+
+
+def _validate_record_audit(payload: dict[str, Any]) -> None:
+    if str(payload.get("provider", "")).strip().lower() != "deepseek":
+        raise AIOutputValidationError("record audit output was not produced by DeepSeek")
+    warnings = _required_strings(payload, "warnings", label="record audit")
+    if any(
+        warning.startswith(
+            ("record_audit_unavailable:", "record_audit_invalid_json", "record_audit_no_source_evidence")
+        )
+        for warning in warnings
+    ):
+        raise AIOutputValidationError("record audit reported an operational failure")
+    try:
+        requested = int(payload.get("requested_records", -1))
+        audited = int(payload.get("audited_records", -1))
+    except (TypeError, ValueError) as exc:
+        raise AIOutputValidationError("record audit counts are invalid") from exc
+    items = _items(payload)
+    if requested < 0 or audited != requested or len(items) != audited:
+        raise AIOutputValidationError("record audit did not cover every requested public record")
+    for item in items:
+        verdict = str(item.get("verdict", ""))
+        if verdict not in {"pass", "needs_correction", "reject"}:
+            raise AIOutputValidationError("record audit item has an invalid verdict")
+        _required_strings(item, "validation_warnings", label="record audit item")
+        issues = item.get("issues")
+        if not isinstance(issues, list) or any(not isinstance(issue, dict) for issue in issues):
+            raise AIOutputValidationError("record audit item has an invalid issues list")
+        if any(
+            str(warning).startswith(
+                ("record_audit_unavailable:", "record_audit_invalid_json", "record_audit_no_source_evidence")
+            )
+            for warning in item["validation_warnings"]
+        ):
+            raise AIOutputValidationError("record audit item reported an operational failure")
 
 
 def _read_object(path: Path) -> dict[str, Any]:

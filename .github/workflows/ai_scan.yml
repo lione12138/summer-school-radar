@@ -113,7 +113,7 @@ jobs:
         uses: actions/cache@v5
         with:
           path: data/ai_cache
-          key: summa-ai-${{ runner.os }}-${{ hashFiles('config/ai.yaml', 'src/research_school_radar/llm_extract.py', 'src/research_school_radar/llm_validate.py') }}
+          key: summa-ai-${{ runner.os }}-${{ hashFiles('config/ai.yaml', 'src/research_school_radar/llm_extract.py', 'src/research_school_radar/llm_validate.py', 'src/research_school_radar/record_audit.py') }}
           restore-keys: |
             summa-ai-${{ runner.os }}-
 
@@ -238,6 +238,9 @@ jobs:
             site/scan-manifest.json
             site/candidates.json
             site/semantic_chunks.json
+            site/record-audit.json
+            reports/*.record-audit.json
+            reports/*.record-audit.md
             site/ai_extractions.json
             site/translation-status.json
 

@@ -14,6 +14,9 @@ def _write_outputs(
     semantic_warnings=None,
     extraction_warnings=None,
     item_warnings=None,
+    audit_warnings=None,
+    audit_item_warnings=None,
+    audit_requested=1,
     translation_warnings=None,
     extraction_provider="deepseek",
     translation_provider="deepseek",
@@ -60,6 +63,26 @@ def _write_outputs(
                 "enabled": True,
                 "provider": translation_provider,
                 "warnings": translation_warnings or [],
+            }
+        ),
+        encoding="utf-8",
+    )
+    (tmp_path / "record-audit.json").write_text(
+        json.dumps(
+            {
+                "generated": generated,
+                "provider": "deepseek",
+                "warnings": audit_warnings or [],
+                "requested_records": audit_requested,
+                "audited_records": audit_requested,
+                "items": [
+                    {
+                        "verdict": "pass",
+                        "issues": [],
+                        "validation_warnings": audit_item_warnings or [],
+                    }
+                    for _ in range(audit_requested)
+                ],
             }
         ),
         encoding="utf-8",
@@ -143,4 +166,21 @@ def test_validate_ai_outputs_rejects_malformed_warning_contract(tmp_path) -> Non
     (tmp_path / "translation-status.json").write_text(json.dumps(payload), encoding="utf-8")
 
     with pytest.raises(AIOutputValidationError, match="invalid warnings list"):
+        validate_ai_outputs(tmp_path)
+
+
+def test_validate_ai_outputs_rejects_record_audit_operational_failure(tmp_path) -> None:
+    _write_outputs(tmp_path, audit_item_warnings=["record_audit_invalid_json"])
+
+    with pytest.raises(AIOutputValidationError, match="record audit item reported"):
+        validate_ai_outputs(tmp_path)
+
+
+def test_validate_ai_outputs_rejects_incomplete_record_audit(tmp_path) -> None:
+    _write_outputs(tmp_path, audit_requested=2)
+    payload = json.loads((tmp_path / "record-audit.json").read_text(encoding="utf-8"))
+    payload["items"] = payload["items"][:1]
+    (tmp_path / "record-audit.json").write_text(json.dumps(payload), encoding="utf-8")
+
+    with pytest.raises(AIOutputValidationError, match="cover every requested"):
         validate_ai_outputs(tmp_path)

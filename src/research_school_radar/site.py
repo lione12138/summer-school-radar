@@ -13,6 +13,7 @@ from .llm_client import BaseLLMClient
 from .localization_audit import warn_localization_issues
 from .models import Candidate
 from .publication import is_display_candidate, is_high_quality, is_public_candidate
+from .record_audit import filter_display_candidates_by_audit
 from .review import build_review_queue
 from .site_assets import read_static_asset, write_static_assets
 from .site_components import (
@@ -57,6 +58,7 @@ def write_site(
     translation_client: BaseLLMClient | None = None,
     scanner_candidates: list[Candidate] | None = None,
     review_queue_payload: dict[str, Any] | None = None,
+    record_audit_items: list[dict[str, Any]] | None = None,
 ) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     write_static_assets(output_dir)
@@ -91,6 +93,9 @@ def write_site(
     # parallel review UI. Remove stale generated copies from older builds.
     (output_dir / "ai-review.html").unlink(missing_ok=True)
     homepage_candidates = merge_ai_for_homepage(candidates, ai_items, profile)
+    # DeepSeek audit findings may suppress an unsafe homepage copy, but they
+    # never mutate scanner candidates or the deterministic RSS source records.
+    homepage_candidates = filter_display_candidates_by_audit(homepage_candidates, record_audit_items)
     # Scanner records remain the canonical source for RSS and future
     # no-network refreshes. Homepage copies may contain advisory AI fields or
     # presentation-only translations and must never silently become scanner

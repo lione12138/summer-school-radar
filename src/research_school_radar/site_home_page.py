@@ -19,7 +19,6 @@ from .site_components import (
     deadline_cell as _deadline_cell,
     duration_cell as _duration_cell,
     financial_summary_short as _financial_summary_short,
-    is_online_only as _is_online_only,
     public_location as _public_location,
     public_location_zh as _public_location_zh,
 )
