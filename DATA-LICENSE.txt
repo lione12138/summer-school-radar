@@ -3,7 +3,7 @@ Summa — data license
 
 Canonical source: https://lione12138.github.io/summer-school-radar/
 
-The compiled listings on this site (the opportunity tables, candidates.json,
+The compiled listings on this site (the opportunity tables, public API,
 and the RSS feed) are licensed under Creative Commons Attribution 4.0
 (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
 

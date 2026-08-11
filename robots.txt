@@ -1,10 +1,10 @@
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: GPTBot
 Disallow: /
 
 User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: OAI-SearchBot
 Disallow: /
 
 User-agent: CCBot
