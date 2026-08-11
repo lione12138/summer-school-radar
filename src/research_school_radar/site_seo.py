@@ -1,33 +1,34 @@
 from __future__ import annotations
 
 import json
-from datetime import date
 from typing import Any, Callable
+from xml.sax.saxutils import escape
 
 from .models import Candidate
+from .site_paths import candidate_detail_href
 from .site_assets import read_static_asset, render_template
 from .urls import safe_external_url
 
 
 SITE_URL = "https://lione12138.github.io/summer-school-radar/"
 OG_IMAGE = SITE_URL + "og-image.png"
+SITE_TITLE = "Funded Summer Schools, Winter Schools & Research Training | Summa"
 DATA_LICENSE = "CC BY 4.0"
 DATA_LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 SITE_DESCRIPTION = (
-    "A free scanner of trusted academic sources for funded research summer "
-    "schools, winter schools, and training schools in any academic discipline, "
-    "with strict quality filters, transparent evidence, and daily deadline-status updates."
+    "Find funded and affordable summer schools, winter schools, and research training "
+    "with verified deadlines, fees, funding, and links to official academic sources."
 )
 
 # A stable, distinctive marker baked into every generated artifact. Searching the
 # web for it surfaces sites that have copied this content wholesale.
 CANARY = "SSR-CANON-7q3v9x2k8m4w"
 
-# AI training / scraping crawlers blocked in robots.txt. Search crawlers
-# (Googlebot, Bingbot) are intentionally left allowed for SEO; Google-Extended
-# opts out of Google's AI training without affecting search indexing.
+# AI training / scraping crawlers blocked in robots.txt. Search crawlers are
+# intentionally allowed. OAI-SearchBot is handled separately because it powers
+# ChatGPT Search and is independent from the training crawler GPTBot.
 BLOCKED_BOTS = (
-    "GPTBot", "ChatGPT-User", "OAI-SearchBot", "CCBot", "Google-Extended",
+    "GPTBot", "ChatGPT-User", "CCBot", "Google-Extended",
     "anthropic-ai", "ClaudeBot", "Claude-Web", "PerplexityBot", "Bytespider",
     "Amazonbot", "Applebot-Extended", "cohere-ai", "Diffbot", "Omgilibot",
     "ImagesiftBot", "FacebookBot", "meta-externalagent",
@@ -36,7 +37,11 @@ BLOCKED_BOTS = (
 
 def robots_txt() -> str:
     blocked = "".join(f"User-agent: {bot}\nDisallow: /\n\n" for bot in BLOCKED_BOTS)
-    return f"{blocked}User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n"
+    return (
+        f"User-agent: OAI-SearchBot\nAllow: /\n\n"
+        f"{blocked}"
+        f"User-agent: *\nAllow: /\nSitemap: {SITE_URL}sitemap.xml\n"
+    )
 
 
 def data_license_text() -> str:
@@ -44,7 +49,7 @@ def data_license_text() -> str:
         "Summa — data license\n"
         "==================================\n\n"
         f"Canonical source: {SITE_URL}\n\n"
-        "The compiled listings on this site (the opportunity tables, candidates.json,\n"
+        "The compiled listings on this site (the opportunity tables, public API,\n"
         "and the RSS feed) are licensed under Creative Commons Attribution 4.0\n"
         f"(CC BY 4.0): {DATA_LICENSE_URL}\n\n"
         "You may reuse them, including commercially, provided you give credit to\n"
@@ -55,9 +60,8 @@ def data_license_text() -> str:
 
 
 def sitemap_xml(pages: list[str]) -> str:
-    today = date.today().isoformat()
     urls = "".join(
-        f"  <url><loc>{SITE_URL}{page}</loc><lastmod>{today}</lastmod></url>\n" for page in pages
+        f"  <url><loc>{escape(SITE_URL + page)}</loc></url>\n" for page in dict.fromkeys(pages)
     )
     return (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -74,6 +78,8 @@ def seo_head(
     *,
     title: str = "Summa",
     asset_prefix: str = "",
+    og_type: str = "website",
+    image_alt: str = "Summa research training opportunity directory",
 ) -> str:
     """Canonical link, Open Graph, Twitter card, and verification tags."""
     asset_prefix = "../" if asset_prefix == "../" else ""
@@ -86,6 +92,8 @@ def seo_head(
         title=title,
         asset_prefix=asset_prefix,
         og_image=OG_IMAGE,
+        og_type=og_type,
+        image_alt=image_alt,
         verification=verification,
     )
 
@@ -119,11 +127,10 @@ def jsonld_block(
     *,
     public_location: Callable[[str], str],
 ) -> str:
-    """schema.org JSON-LD: a WebSite node plus an ItemList of clean events.
+    """Homepage WebSite and ItemList markup.
 
-    Only opportunities with concrete dates and a plausible physical location are
-    emitted as EducationEvent, so the structured data stays accurate (bad event
-    markup can hurt rather than help search visibility).
+    Event markup belongs on each event's leaf page. The homepage is only a
+    crawlable directory whose items point to Summa's canonical detail URLs.
     """
     graph: list[dict[str, Any]] = [
         {
@@ -138,25 +145,16 @@ def jsonld_block(
     elements = []
     position = 1
     for candidate in candidates:
-        if not (candidate.start_date and candidate.end_date):
-            continue
         location = public_location(candidate.location).strip()
-        if not seo_location_ok(location):
-            continue
-        event: dict[str, Any] = {
-            "@type": "EducationEvent",
+        item: dict[str, Any] = {
+            "@type": "ListItem",
+            "position": position,
+            "url": SITE_URL + candidate_detail_href(candidate),
             "name": candidate.title,
-            "startDate": candidate.start_date.isoformat(),
-            "endDate": candidate.end_date.isoformat(),
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "location": {"@type": "Place", "name": location},
         }
-        url = safe_external_url(candidate.application_link or candidate.source_url)
-        if url:
-            event["url"] = url
-        if candidate.organizer and candidate.organizer.lower() != "uncertain":
-            event["organizer"] = {"@type": "Organization", "name": candidate.organizer}
-        elements.append({"@type": "ListItem", "position": position, "item": event})
+        if location and seo_location_ok(location):
+            item["description"] = f"{candidate.organizer} · {location}"
+        elements.append(item)
         position += 1
     if elements:
         graph.append(
@@ -170,6 +168,80 @@ def jsonld_block(
     payload = json.dumps(graph, ensure_ascii=False, indent=2)
     payload = payload.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
     return render_template("components/jsonld.html", payload=payload)
+
+
+def event_jsonld_block(
+    candidate: Candidate,
+    *,
+    public_location: Callable[[str], str],
+) -> str:
+    """EducationEvent markup for one canonical detail page."""
+    if not (candidate.start_date and candidate.end_date):
+        return ""
+    location = public_location(candidate.location).strip()
+    if not seo_location_ok(location):
+        return ""
+    canonical = SITE_URL + candidate_detail_href(candidate)
+    official = safe_external_url(candidate.application_link) or safe_external_url(candidate.source_url)
+    description = seo_description(
+        candidate.summary
+        or candidate.recommendation_reason
+        or f"Research training programme organized by {candidate.organizer}."
+    )
+    event: dict[str, Any] = {
+        "@context": "https://schema.org",
+        "@type": "EducationEvent",
+        "name": candidate.title,
+        "url": canonical,
+        "mainEntityOfPage": canonical,
+        "startDate": candidate.start_date.isoformat(),
+        "endDate": candidate.end_date.isoformat(),
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": (
+            "https://schema.org/MixedEventAttendanceMode"
+            if candidate.mode == "hybrid"
+            else "https://schema.org/OfflineEventAttendanceMode"
+        ),
+        "location": {"@type": "Place", "name": location},
+        "description": description,
+        "image": [OG_IMAGE],
+    }
+    if official:
+        event["sameAs"] = official
+    if candidate.organizer and candidate.organizer.lower() != "uncertain":
+        event["organizer"] = {"@type": "Organization", "name": candidate.organizer}
+    # A single normalized fee is safe to expose as an Offer. Tiered member /
+    # non-member or student / professional prices need richer source data; a
+    # lowest-price-only Offer would misrepresent the amount most users pay.
+    if candidate.fee_eur is not None and not candidate.has_tiered_fee and official:
+        event["offers"] = {
+            "@type": "Offer",
+            "url": official,
+            "price": f"{candidate.fee_eur:.2f}",
+            "priceCurrency": "EUR",
+        }
+    if candidate.sessions:
+        event["subEvent"] = [
+            {
+                "@type": "EducationEvent",
+                "name": f"{candidate.title} — {session.name}",
+                "startDate": session.start_date.isoformat(),
+                "endDate": session.end_date.isoformat(),
+                "location": {"@type": "Place", "name": location},
+            }
+            for session in candidate.sessions
+        ]
+    payload = json.dumps(event, ensure_ascii=False, indent=2)
+    payload = payload.replace("<", "\\u003c").replace(">", "\\u003e").replace("&", "\\u0026")
+    return render_template("components/jsonld.html", payload=payload)
+
+
+def seo_description(value: str, *, max_length: int = 160) -> str:
+    """Normalize extracted prose into a compact, stable search snippet."""
+    text = " ".join(value.split()).strip()
+    if len(text) <= max_length:
+        return text
+    return text[: max_length - 1].rsplit(" ", 1)[0].rstrip(" ,;:") + "…"
 
 
 def watermark() -> str:

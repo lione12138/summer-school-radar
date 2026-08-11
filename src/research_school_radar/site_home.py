@@ -22,7 +22,7 @@ def how_it_works_section() -> str:
         {
             "number": "3",
             "title": "Apply strict filters",
-            "body": "Only funded or low-fee, in-person opportunities with an open deadline in covered domains are treated as qualified.",
+            "body": "Only genuine in-person research-training opportunities with an open deadline and acceptable financial access are treated as qualified; academic discipline is not a restriction.",
             "title_key": "how.3.title",
             "body_key": "how.3.body",
         },

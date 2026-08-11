@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }} · Summa</title>
 {{ seo_head|safe }}
+{{ jsonld|safe }}
   <script src="../assets/js/i18n-boot.js"></script>
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="../assets/css/opportunities.css">
@@ -30,7 +31,7 @@
       <div class="detail-stack">
         <section class="detail-panel"><h2 data-i18n="detail.overview">Overview</h2><p>{{ summary|safe }}</p></section>
         <section class="detail-panel"><h2 data-i18n="detail.eligibility">Who should apply</h2><p>{{ eligibility|safe }}</p></section>
-        <section class="detail-panel qualified"><h2 data-i18n="detail.why">Why this status</h2><p>{{ qualification|safe }}</p></section>
+        <section class="detail-panel {{ qualification_class }}"><h2 data-i18n="detail.why">Why this status</h2><p>{{ qualification|safe }}</p></section>
         <section class="detail-panel">
           <h2 data-i18n="detail.source">Official source</h2>
           <p class="muted" data-i18n="detail.source.original">Original source evidence is retained below for verification.</p>

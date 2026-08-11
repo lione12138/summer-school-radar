@@ -12,7 +12,7 @@ from .candidate_io import CANDIDATE_SNAPSHOT_SCHEMA_VERSION, candidate_to_dict
 from .llm_client import BaseLLMClient
 from .localization_audit import warn_localization_issues
 from .models import Candidate
-from .publication import is_display_candidate, is_high_quality, is_public_candidate
+from .publication import is_archive_candidate, is_display_candidate, is_high_quality, is_public_candidate
 from .record_audit import filter_display_candidates_by_audit
 from .review import build_review_queue
 from .site_assets import read_static_asset, write_static_assets
@@ -29,7 +29,8 @@ from .site_home_page import (
     _parse_iso_date,
     render_site,
 )
-from .site_paths import candidate_detail_filename, candidate_detail_href
+from .site_paths import candidate_detail_filename
+from .site_public_api import public_api_payload
 from .site_sources_page import render_sources_page
 from .site_seo import (
     CANARY as _CANARY,
@@ -151,15 +152,23 @@ def write_site(
             ensure_ascii=False,
         ),
     )
-    detail_candidates = [candidate for candidate in homepage_candidates if is_display_candidate(candidate)]
+    detail_candidates = [
+        candidate
+        for candidate in homepage_candidates
+        if is_display_candidate(candidate) or is_archive_candidate(candidate)
+    ]
     detail_dir = output_dir / "opportunities"
     detail_dir.mkdir(parents=True, exist_ok=True)
-    for stale in detail_dir.glob("*.html"):
-        stale.unlink()
     for candidate in detail_candidates:
         detail_html = render_opportunity_detail(candidate, site_config or {})
         warn_localization_issues(detail_html, candidate_detail_filename(candidate), i18n_source)
         write_text_atomic(detail_dir / candidate_detail_filename(candidate), detail_html)
+    public_api_dir = output_dir / "api"
+    public_api_dir.mkdir(parents=True, exist_ok=True)
+    write_text_atomic(
+        public_api_dir / "opportunities.json",
+        json.dumps(public_api_payload(detail_candidates), indent=2, ensure_ascii=False),
+    )
     write_text_atomic(
         output_dir / "feed.xml",
         render_feed(
@@ -180,7 +189,16 @@ def write_site(
     write_text_atomic(output_dir / "robots.txt", robots_txt())
     write_text_atomic(
         output_dir / "sitemap.xml",
-        sitemap_xml(["", "sources.html", *[candidate_detail_href(candidate) for candidate in detail_candidates]]),
+        sitemap_xml(
+            [
+                "",
+                "sources.html",
+                *[
+                    path.relative_to(output_dir).as_posix()
+                    for path in sorted(detail_dir.glob("*.html"))
+                ],
+            ]
+        ),
     )
     write_text_atomic(output_dir / "favicon.svg", favicon_svg())
     _copy_og_image(output_dir)

@@ -102,6 +102,23 @@ jobs:
           python-version: "3.12"
           cache: pip
 
+      - name: Check out current Pages branch
+        if: steps.build.outputs.can_build == 'true' && steps.build.outputs.mode != 'audit'
+        uses: actions/checkout@v6
+        with:
+          ref: gh-pages
+          path: _pages
+          fetch-depth: 1
+
+      - name: Seed permanent opportunity pages
+        if: steps.build.outputs.can_build == 'true' && steps.build.outputs.mode != 'audit'
+        shell: bash
+        run: |
+          mkdir -p site/opportunities
+          if compgen -G "_pages/opportunities/*.html" > /dev/null; then
+            cp -n _pages/opportunities/*.html site/opportunities/
+          fi
+
       - name: Restore bge-m3 model cache
         if: steps.build.outputs.scan == 'true'
         uses: actions/cache@v5
@@ -245,18 +262,18 @@ jobs:
             site/ai_extractions.json
             site/translation-status.json
 
-      - name: Check out current Pages branch
-        if: steps.build.outputs.can_build == 'true' && steps.build.outputs.mode != 'audit'
-        uses: actions/checkout@v6
-        with:
-          ref: gh-pages
-          path: _pages
-          fetch-depth: 1
-
       - name: Publish generated site to gh-pages
         if: steps.build.outputs.can_build == 'true' && steps.build.outputs.mode != 'audit'
         shell: bash
         run: |
+          rm -f \
+            site/candidates.json \
+            site/review_queue.json \
+            site/translation-status.json \
+            site/record-audit.json \
+            site/semantic_chunks.json \
+            site/ai_extractions.json \
+            site/scan-manifest.json
           find _pages -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
           cp -a site/. _pages/
           cd _pages

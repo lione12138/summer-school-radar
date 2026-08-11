@@ -23,6 +23,8 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
             SITE_URL + "sources.html",
             "The trusted source registry behind Summa, including coverage notes and sources that must be checked manually.",
             {},
+            title="Sources & Coverage · Summa",
+            image_alt="Summa trusted academic source coverage",
         ),
         nav=site_nav(home="index.html"),
         enabled_count=bilingual(f"{enabled_count} enabled", f"{enabled_count} 个已启用"),

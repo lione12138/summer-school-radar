@@ -94,6 +94,10 @@ def test_recurring_programme_library_is_separate_and_capped_by_organizer(tmp_pat
     assert "Recurring Research School 3" not in html
     assert "Recurring Research School 4" in html
     assert 'data-status="qualified"' not in html
+    detail_pages = list((tmp_path / "opportunities").glob("*.html"))
+    assert len(detail_pages) == 4
+    assert all("applications closed" in page.read_text(encoding="utf-8") for page in detail_pages)
+    assert 'href="opportunities/' in html
 
 
 def test_recurring_programme_library_distinguishes_event_timing(tmp_path) -> None:
@@ -331,6 +335,7 @@ def test_site_generation_writes_seo_artifacts(tmp_path) -> None:
     sitemap = (tmp_path / "sitemap.xml").read_text(encoding="utf-8")
     assert "summer-school-radar/</loc>" in sitemap
     assert "sources.html</loc>" in sitemap
+    assert "<lastmod>" not in sitemap
     # Head-level discovery tags.
     html = (tmp_path / "index.html").read_text(encoding="utf-8")
     assert 'rel="canonical"' in html
@@ -342,6 +347,10 @@ def test_site_generation_writes_seo_artifacts(tmp_path) -> None:
     payload = match.group(1).replace("\\u003c", "<").replace("\\u003e", ">").replace("\\u0026", "&")
     graph = json.loads(payload)
     assert any(node.get("@type") == "WebSite" for node in graph)
+    item_list = next(node for node in graph if node.get("@type") == "ItemList")
+    item = item_list["itemListElement"][0]
+    assert item["url"].startswith("https://lione12138.github.io/summer-school-radar/opportunities/")
+    assert "item" not in item
 
 
 def test_site_generation_writes_attribution_and_bot_controls(tmp_path) -> None:
@@ -352,6 +361,8 @@ def test_site_generation_writes_attribution_and_bot_controls(tmp_path) -> None:
     write_site(ranked, [], tmp_path)
     # robots.txt blocks AI crawlers but leaves search crawlers (the "*" allow).
     robots = (tmp_path / "robots.txt").read_text(encoding="utf-8")
+    assert "User-agent: OAI-SearchBot\nAllow: /" in robots
+    assert "User-agent: OAI-SearchBot\nDisallow: /" not in robots
     assert "User-agent: GPTBot\nDisallow: /" in robots
     assert "User-agent: Google-Extended\nDisallow: /" in robots
     assert "User-agent: *\nAllow: /" in robots
@@ -878,6 +889,50 @@ def test_site_renders_figma_card_layout_and_detail_pages(tmp_path) -> None:
     assert "Who should apply" in detail_html
     assert "Open official page" in detail_html
     assert f"opportunities/{detail_files[0].name}" in (tmp_path / "sitemap.xml").read_text(encoding="utf-8")
+    jsonld_match = re.search(r'<script type="application/ld\+json">(.*?)</script>', detail_html, re.S)
+    assert jsonld_match is not None
+    event = json.loads(jsonld_match.group(1))
+    assert event["@type"] == "EducationEvent"
+    assert event["url"].startswith("https://lione12138.github.io/summer-school-radar/opportunities/")
+    assert event["sameAs"] == candidate.application_link
+
+
+def test_site_preserves_existing_detail_pages_and_keeps_them_in_sitemap(tmp_path) -> None:
+    detail_dir = tmp_path / "opportunities"
+    detail_dir.mkdir(parents=True)
+    stale = detail_dir / "previously-indexed-school.html"
+    stale.write_text("<!doctype html><title>Archived school</title>", encoding="utf-8")
+
+    write_site([], [], tmp_path)
+
+    assert stale.exists()
+    sitemap = (tmp_path / "sitemap.xml").read_text(encoding="utf-8")
+    assert "opportunities/previously-indexed-school.html" in sitemap
+
+
+def test_public_api_contains_only_clean_public_records(tmp_path) -> None:
+    candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    write_site(rank_candidates([candidate]), [], tmp_path)
+
+    payload = json.loads((tmp_path / "api" / "opportunities.json").read_text(encoding="utf-8"))
+    assert len(payload["opportunities"]) == 1
+    record = payload["opportunities"][0]
+    assert record["url"].startswith("https://lione12138.github.io/summer-school-radar/opportunities/")
+    assert record["directory_tier"] == "funded-or-low-fee"
+    assert "failed_hard_conditions" not in record
+    assert "risk_points" not in record
+    assert "scanner_opportunities" not in payload
+
+
+def test_pages_workflow_preserves_programme_pages_and_strips_internal_json() -> None:
+    workflow = (
+        Path(__file__).parents[1] / ".github" / "workflows" / "ai_scan.yml"
+    ).read_text(encoding="utf-8")
+
+    assert 'cp -n _pages/opportunities/*.html site/opportunities/' in workflow
+    assert "site/candidates.json" in workflow
+    assert "site/review_queue.json" in workflow
+    assert workflow.index("Persist AI-enriched snapshot") < workflow.index("rm -f \\")
 
 
 def test_identity_key_keeps_shared_listing_records_distinct_in_site_and_feed(tmp_path) -> None:

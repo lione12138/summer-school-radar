@@ -266,7 +266,7 @@ AI 结果保存在：
 
 这个页面列出所有 configured sources，包括 enabled 和 disabled 来源、layer、region、source_type、keywords、notes，以及 blocked linked domains。它的目的不是展示“我们爬了全网”，而是明确项目维护的是 trusted source registry。
 
-公开机会表格不展示 `region priority` 和 `failed hard condition` 这类内部字段。它们仍保留在 `site/candidates.json` 中供维护者检查和调试。扫描结果标题链接到站内详情页；只有通过 HTTP(S) 安全校验的外链才会显示官网操作按钮。
+公开机会表格不展示 `region priority` 和 `failed hard condition` 这类内部字段。它们仍保留在不部署的 `site/candidates.json` 构建产物中供维护者检查和调试；Pages 只发布字段精简的 `site/api/opportunities.json`。扫描结果标题链接到站内详情页；只有通过 HTTP(S) 安全校验的外链才会显示官网操作按钮。
 
 ## Curated Workflow
 
@@ -305,7 +305,7 @@ python -m research_school_radar.cli refresh-status --candidates-json data/latest
 
 完整本机扫描的同一次提交还可以包含更新后的 `seen.json`、review queue 和带日期的 Markdown 报告，用于保留扫描历史与审计记录；它们不是另一条 Pages 发布通道。
 
-本机任务不写 `gh-pages`。`.github/workflows/ai_scan.yml` 是 `gh-pages` 的唯一写入者，并使用单一 publisher concurrency group 防止并发发布。它每天从已提交快照执行无抓取的 `refresh-status`，再把生成的 `site/` 发布到 Pages。
+本机任务不写 `gh-pages`。`.github/workflows/ai_scan.yml` 是 `gh-pages` 的唯一写入者，并使用单一 publisher concurrency group 防止并发发布。它每天从已提交快照执行无抓取的 `refresh-status`，再把生成的 `site/` 发布到 Pages。构建前会先从现有 `gh-pages` 恢复已发布的项目详情页，因此截止或暂时未出现在新快照中的项目不会直接变成 404。
 
 云端 AI 扫描只支持手动触发。手动选择 `ai` mode 时，workflow 才读取 GitHub repository secrets 中的 `DEEPSEEK_API_KEY`，运行 `bge-m3`、受限补页和 DeepSeek 证据抽取，通过 `ai_output_validation.py` 与 `snapshot_validation.py` 后保存快照，并由同一个单写入者流程发布。
 
@@ -322,7 +322,10 @@ secret 不会写入生成文件或提交。
 网站生成器会写入：
 
 - `site/index.html`
-- `site/candidates.json`
+- `site/opportunities/*.html`
+- `site/api/opportunities.json`
+- `site/candidates.json`（仅供构建、校验和快照使用，不部署）
+- `site/review_queue.json`（内部构建产物，不部署）
 - `site/curated.json`
 - `site/sources.html`
 - `site/sources.json`
@@ -330,6 +333,10 @@ secret 不会写入生成文件或提交。
 - `site/sitemap.xml`
 - `site/robots.txt`
 - `site/.nojekyll`
+
+周期性项目库中的已关闭项目也会生成带状态的永久详情页并进入 sitemap。首页 JSON-LD 只使用 `WebSite` 与指向 Summa 详情页的 `ItemList`；每个具备可靠日期和地点的详情页单独输出 `EducationEvent`。sitemap 暂不写 `lastmod`，避免每日构建伪造全部页面的实质更新时间。`robots.txt` 允许用于 ChatGPT Search 的 `OAI-SearchBot`，同时继续禁止用于模型训练的 `GPTBot`。
+
+内部 scanner 记录、失败条件与 review queue 会在发布前从 `site/` 删除；Pages 只公开字段干净的 `site/api/opportunities.json`。
 
 网页支持浏览器端筛选：
 

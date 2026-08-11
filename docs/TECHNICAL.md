@@ -574,7 +574,9 @@ only Pages writer, protected by a single publisher concurrency group. Its daily
 scheduled mode copies the committed source snapshot, runs `refresh-status` from
 the candidate snapshot, and publishes the resulting `site/` directory to
 `gh-pages`. This keeps date-sensitive presentation current while avoiding daily
-source load and competing branch writers.
+source load and competing branch writers. Before rebuilding, it seeds previously
+published opportunity detail pages from `gh-pages`; closed or temporarily absent
+programmes therefore keep their established URLs instead of turning into 404s.
 
 Cloud AI scanning is manual only. Selecting the workflow's `ai` mode installs
 the semantic/LLM extras, reads `DEEPSEEK_API_KEY` from repository secrets, runs
@@ -591,7 +593,10 @@ limits. Secret values are never written to generated output or commits.
 The scanner generates:
 
 - `site/index.html`
-- `site/candidates.json`
+- `site/opportunities/*.html`
+- `site/api/opportunities.json`
+- `site/candidates.json` (internal build/snapshot artifact; not deployed)
+- `site/review_queue.json` (internal build artifact; not deployed)
 - `site/curated.json`
 - `site/.nojekyll`
 
@@ -606,9 +611,18 @@ The website is static and can be served by GitHub Pages. It includes browser-sid
 The homepage paginates current funded/low-fee recommendations, verified self-funded records, and more official programmes at 15 records per page.
 Desktop layouts keep search and filters in a sticky left sidebar. On mobile,
 search remains visible while the other controls collapse behind a button. The
-Records with unresolved deadlines, mode, duration, title, or link remain fail-closed in scanner JSON and review artifacts. Self-funded directory records have a known official fee and pass every public-safety condition; ordinary directory records also pass every public-safety condition but make no funding or affordability claim because the official fee/funding is unstated.
+records with unresolved deadlines, mode, duration, title, or link remain fail-closed in scanner JSON and review artifacts. Self-funded directory records have a known official fee and pass every public-safety condition; ordinary directory records also pass every public-safety condition but make no funding or affordability claim because the official fee/funding is unstated.
 
-Curated opportunities from `data/opportunities.yml` are rendered first. Automatic results are split into funded/accessible recommendations, plainly labelled verified self-funded schools, and capped organizer-balanced ordinary official listings. A separate library shows verified closed editions for discovery; unsafe or deadline-uncertain near-matches stay internal.
+Curated opportunities from `data/opportunities.yml` are rendered first. Automatic results are split into funded/accessible recommendations, plainly labelled verified self-funded schools, and capped organizer-balanced ordinary official listings. A separate library shows verified closed editions for discovery. Those editions receive permanent detail pages with timing-aware closed status and remain in the sitemap; unsafe or deadline-uncertain near-matches stay internal.
+
+SEO output keeps the homepage as a `WebSite` + `ItemList` directory whose item
+URLs point to Summa detail pages. Each eligible detail page owns its
+`EducationEvent` JSON-LD with dates, location, organizer, canonical Summa URL,
+official `sameAs` URL, and a single-price offer only when that price is
+unambiguous. The sitemap intentionally omits `lastmod` until per-page material
+change dates can be tracked accurately. `robots.txt` allows `OAI-SearchBot` for
+ChatGPT Search while continuing to disallow the separate training crawler
+`GPTBot`.
 
 Rows with a known application deadline include an `Add to calendar` link in the deadline column. The link downloads a standard `.ics` all-day calendar event for the application deadline, so users can import it into Apple Calendar, Google Calendar, Outlook, or another calendar client.
 
@@ -629,7 +643,7 @@ This design keeps scheduled scans free and avoids an exchange-rate API key. The 
 
 No backend server is required. The filters operate on HTML `data-*` attributes generated for each table row.
 
-The public table intentionally hides internal ranking fields such as region priority and failed hard conditions. Those fields remain in `site/candidates.json` for maintainers and debugging. Scanner titles link to an internal detail page; official-page actions are rendered only for validated HTTP(S) URLs.
+The public table intentionally hides internal ranking fields such as region priority and failed hard conditions. Those fields remain in the non-deployed `site/candidates.json` build artifact for maintainers and validation. GitHub Pages exposes only the clean `site/api/opportunities.json` product API; scanner records and review queues are removed before publication. Scanner titles link to an internal detail page; official-page actions are rendered only for validated HTTP(S) URLs.
 
 After pushing to GitHub, configure Pages to serve the `gh-pages` branch. The
 daily GitHub Actions refresh publishes the latest committed snapshot. Run the

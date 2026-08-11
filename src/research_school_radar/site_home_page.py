@@ -30,7 +30,13 @@ from .site_home import (
 )
 from .site_layout import footer_section as _footer_section, site_nav as _site_nav
 from .site_paths import candidate_detail_href
-from .site_seo import SITE_DESCRIPTION as _SITE_DESCRIPTION, SITE_URL as _SITE_URL, jsonld_block, seo_head
+from .site_seo import (
+    SITE_DESCRIPTION as _SITE_DESCRIPTION,
+    SITE_TITLE as _SITE_TITLE,
+    SITE_URL as _SITE_URL,
+    jsonld_block,
+    seo_head,
+)
 from .urls import safe_external_url
 from .utils import format_duration, topics_label
 
@@ -250,7 +256,14 @@ def render_site(
     opportunity_count = len(curated) + len(full) + len(near) + len(regular)
     return render_template(
         "home.html",
-        seo_head=seo_head(_SITE_URL, _SITE_DESCRIPTION, site_config or {}),
+        page_title=_SITE_TITLE,
+        seo_head=seo_head(
+            _SITE_URL,
+            _SITE_DESCRIPTION,
+            site_config or {},
+            title=_SITE_TITLE,
+            image_alt="Summa funded summer schools, winter schools, and research training",
+        ),
         jsonld=jsonld_block((full + near + regular)[:36], public_location=_public_location),
         nav=_site_nav(),
         full_count=len(full),
@@ -430,6 +443,7 @@ def _archive_row(candidate: Candidate) -> str:
         ),
         duration=_duration_cell(candidate),
         funding=_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate)),
+        detail_href=candidate_detail_href(candidate),
         official_url=safe_external_url(candidate.source_url or candidate.application_link),
     )
 

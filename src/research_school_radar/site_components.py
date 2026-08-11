@@ -4,7 +4,7 @@ from datetime import date
 
 from .localization import date_zh, duration_zh, region_zh
 from .models import Candidate
-from .publication import is_found_opportunity, is_high_quality
+from .publication import is_archive_candidate, is_found_opportunity, is_high_quality
 from .programme_sessions import (
     programme_duration_label,
     programme_duration_label_zh,
@@ -115,6 +115,15 @@ def candidate_status(candidate: Candidate) -> tuple[str, str]:
         return "Verified self-funded", "high-quality"
     if is_found_opportunity(candidate):
         return "Official listing", "found"
+    if is_archive_candidate(candidate):
+        start = candidate.start_date
+        end = candidate.end_date or start
+        today = date.today()
+        if start is not None and start > today:
+            return "Upcoming · applications closed", "found"
+        if start is not None and start <= today and (end is None or end >= today):
+            return "Ongoing · applications closed", "found"
+        return "Past edition · applications closed", "found"
     return "Internal review", "found"
 
 

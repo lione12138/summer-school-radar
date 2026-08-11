@@ -68,6 +68,7 @@ Key modules:
 - `src/research_school_radar/web/static/css/` — shared and page-specific browser stylesheets.
 - `src/research_school_radar/web/static/js/` — bilingual UI, language bootstrap, filtering, responsive sidebar, and 15-item pagination.
 - `src/research_school_radar/site_seo.py` — sitemap, robots, JSON-LD, canary, watermark helpers.
+- `src/research_school_radar/site_public_api.py` — clean public opportunity API projection; excludes scanner/debug/review fields.
 - `src/research_school_radar/site_feed.py` — RSS rendering.
 - `src/research_school_radar/api_sources.py` — direct collectors for structured source APIs/listings.
 - `src/research_school_radar/collector_ihe.py` — IHE Delft structured-course collector.
@@ -249,7 +250,7 @@ If full-suite failures are unrelated to the current change, state the exact fail
 - Only successful full scans update the three source snapshots on `main`; status refreshes rebuild presentation without overwriting source-scan snapshots. Full scans may also commit generated seen/review/report state. The local task never writes `gh-pages`.
 - Scheduled Git operations may reuse a reachable Windows user proxy through process-scoped Git configuration and retry transient failures. If generation finishes while GitHub is unavailable, the automation records the generated commit under `.git/`, restores the clean pre-run branch, and retries that exact generated output after connectivity returns.
 - The Windows task is allowed to start and continue on battery power; `StartWhenAvailable` handles missed wake times.
-- `.github/workflows/ai_scan.yml` is the sole `gh-pages` writer. It runs a no-fetch `refresh-status` build from snapshots every day; its cloud AI scan modes are manual only. Manual `audit` runs upload evidence and metrics without committing snapshots or publishing, while manual `ai` runs may publish only after all gates pass.
+- `.github/workflows/ai_scan.yml` is the sole `gh-pages` writer. It runs a no-fetch `refresh-status` build from snapshots every day, preserves previously published programme detail pages so indexed URLs do not become 404s, and strips internal candidate/review artifacts before deployment. Its cloud AI scan modes are manual only. Manual `audit` runs upload evidence and metrics without committing snapshots or publishing, while manual `ai` runs may publish only after all gates pass.
 
 ## Current design priorities
 

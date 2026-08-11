@@ -10,6 +10,8 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 
 **Live site:** <https://lione12138.github.io/summer-school-radar/>
 
+**Public API:** <https://lione12138.github.io/summer-school-radar/api/opportunities.json>
+
 [Technical README](docs/TECHNICAL.md) | [中文技术说明](docs/TECHNICAL.zh-CN.md) | [License & reuse](#license--reuse)
 
 ## Abstract
@@ -38,22 +40,7 @@ Only homepage copies are suppressed; scanner and RSS records remain deterministi
 
 ## Latest Scan Results
 
-This section is refreshed from the latest validated snapshot produced by the
-local scan task.
-
-<!-- radar:results:start -->
-_Last validated snapshot: 2026-07-27. The live site is the authority for date-sensitive public results._
-
-**Fully Qualified Opportunities**
-
-| # | title | type | organizer | location | duration | deadline | funding / fee | topic |
-|---|---|---|---|---|---|---|---|---|
-| 1 | [ICOS Summer/Winter School January 2027](https://www.icos-cp.eu/about/opportunities/summer-school) | summer school | ICOS | Europe | 18 Jan – 28 Jan 2027 · 11 days | 2026-07-31 | Fee about EUR 100 | climate, climate change, remote sensing, statistics |
-| 2 | [ELLIS Summer School at Unit Saarbrücken](https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026) | summer school | ELLIS | Saarland University | 24 Aug – 28 Aug 2026 · 5 days | 2026-07-30 | Fee about EUR 250 | AI |
-
-Closed, not-yet-open, unsafe, and unaffordable records remain in the generated audit JSON and review queue rather than being shown as public opportunities. A current official record whose only missing field is fee/funding may appear solely in the separately labelled ordinary directory.
-
-<!-- radar:results:end -->
+Date-sensitive results belong on the [live Summa site](https://lione12138.github.io/summer-school-radar/), which is rebuilt daily. The repository README deliberately does not duplicate a snapshot that can become stale between scans.
 
 ## Upcoming Research Training Opportunities
 
@@ -62,15 +49,15 @@ The generated website publishes verified scanner results and keeps unresolved re
 - **Funded and accessible recommendations**: open, on-site programmes with explicit participant support or a confirmed total fee no higher than approximately EUR 400.
 - **Officially verified self-funded schools**: open programmes whose official dates, location and fee are clear, shown separately and never described as funded recommendations. The directory excludes very high total or daily fees.
 - **More official programmes**: open official programmes that pass every hard safety and format rule but have no confirmed fee or funding evidence. They are ordinary directory entries, not affordability recommendations, and known expensive courses cannot enter through this tier.
-- **Recurring programme library**: verified past editions from official sources, clearly marked closed and excluded from open-opportunity counts and RSS.
-- **Internal review records**: records with an uncertain deadline or mode, unsafe title/link, excessive known fee, or another failed public condition. They remain in `site/candidates.json` and `data/review_queue.json` but are not rendered as current opportunities.
+- **Recurring programme library**: verified closed calls from official sources, with permanent Summa detail pages and timing-aware status; excluded from open-opportunity counts and RSS.
+- **Internal review records**: records with an uncertain deadline or mode, unsafe title/link, excessive known fee, or another failed public condition. They remain in build/repository audit artifacts but are not deployed to GitHub Pages.
 - **Sources & Coverage**: the configured trusted source registry, including disabled sources and notes.
 
 The site includes filters for keyword, status, topic, financial access, and deadline status. On desktop they stay in a left sidebar; on mobile search remains visible and the additional filters collapse behind a compact control. Matching records are paginated at 15 per page. Rows with a known application deadline include an **Add to calendar** menu (Google Calendar, Outlook, or a downloadable `.ics` file).
 
 ```text
 site/index.html
-site/candidates.json
+site/api/opportunities.json
 site/sources.html
 site/sources.json
 site/feed.xml
