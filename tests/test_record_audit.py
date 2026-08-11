@@ -185,6 +185,80 @@ def test_record_audit_rejects_open_status_that_conflicts_with_past_deadline() ->
     assert date.today().isoformat() in client.prompts[0]
 
 
+def test_record_audit_rejects_open_status_that_conflicts_with_suggested_past_deadline() -> None:
+    candidate = _candidate()
+    candidate.deadline = None
+    candidate.deadline_status = "closed"
+    client = StubClient(
+        {
+            "verdict": "needs_correction",
+            "issues": [
+                {
+                    "field": "deadline_status",
+                    "severity": "high",
+                    "suggested_value": "open",
+                    "evidence_ids": ["E1"],
+                    "reason": "The model compared the dates incorrectly.",
+                },
+                {
+                    "field": "deadline",
+                    "severity": "medium",
+                    "suggested_value": "2026-07-09",
+                    "evidence_ids": ["E1"],
+                    "reason": "The evidence names this deadline.",
+                },
+            ],
+        }
+    )
+
+    item = run_record_audit(
+        [candidate],
+        [_page()],
+        client=client,
+        config=RecordAuditConfig(max_workers=1),
+    )[0]
+
+    assert [issue["field"] for issue in item["issues"]] == ["deadline"]
+    assert "record_audit_temporal_suggestion_conflict:deadline_status" in item["validation_warnings"]
+
+
+def test_record_audit_drops_noop_and_absence_only_unknown_suggestions() -> None:
+    candidate = _candidate()
+    candidate.funding_available = False
+    client = StubClient(
+        {
+            "verdict": "needs_correction",
+            "issues": [
+                {
+                    "field": "funding",
+                    "severity": "low",
+                    "suggested_value": "false",
+                    "evidence_ids": ["E1"],
+                    "reason": "The current value is correct.",
+                },
+                {
+                    "field": "deadline_status",
+                    "severity": "medium",
+                    "suggested_value": "unknown",
+                    "evidence_ids": ["E1"],
+                    "reason": "The selected evidence does not provide a deadline.",
+                },
+            ],
+        }
+    )
+
+    item = run_record_audit(
+        [candidate],
+        [_page()],
+        client=client,
+        config=RecordAuditConfig(max_workers=1),
+    )[0]
+
+    assert item["issues"] == []
+    assert "record_audit_noop_suggestion:funding" in item["validation_warnings"]
+    assert "record_audit_absence_only_suggestion:deadline_status" in item["validation_warnings"]
+
+
 def test_record_audit_cache_is_keyed_by_record_and_evidence(tmp_path) -> None:
     candidate = _candidate()
     client = StubClient({"verdict": "pass", "issues": []})

@@ -17,7 +17,7 @@ from .utils import clean_space, content_hash, load_yaml
 
 
 AUDIT_SCHEMA_VERSION = "record-audit-v1"
-PROMPT_VERSION = "record-audit-prompt-v2"
+PROMPT_VERSION = "record-audit-prompt-v3"
 
 _ALLOWED_FIELDS = {
     "title",
@@ -407,6 +407,7 @@ def _validated_model_result(
     if not isinstance(raw_issues, list):
         warnings.append("record_audit_invalid_issues")
         raw_issues = []
+    suggested_deadline = _suggested_deadline(raw_issues)
     issues: list[dict[str, Any]] = []
     for raw in raw_issues[:12]:
         if not isinstance(raw, dict):
@@ -427,8 +428,19 @@ def _validated_model_result(
         if not reason:
             warnings.append(f"record_audit_missing_reason:{field}")
             continue
-        if _temporal_suggestion_conflicts(candidate, field, suggested):
+        if _temporal_suggestion_conflicts(
+            candidate,
+            field,
+            suggested,
+            suggested_deadline=suggested_deadline,
+        ):
             warnings.append(f"record_audit_temporal_suggestion_conflict:{field}")
+            continue
+        if _suggestion_is_noop(candidate, field, suggested):
+            warnings.append(f"record_audit_noop_suggestion:{field}")
+            continue
+        if _absence_only_unknown_suggestion(suggested, reason):
+            warnings.append(f"record_audit_absence_only_suggestion:{field}")
             continue
         issues.append(
             {
@@ -474,14 +486,57 @@ def _rule_issue(field: str, severity: str, reason: str) -> dict[str, Any]:
     }
 
 
-def _temporal_suggestion_conflicts(candidate: Candidate, field: str, suggested: str) -> bool:
+def _temporal_suggestion_conflicts(
+    candidate: Candidate,
+    field: str,
+    suggested: str,
+    *,
+    suggested_deadline: date | None = None,
+) -> bool:
     if field != "deadline_status" or suggested.strip().lower() != "open":
         return False
     today = date.today()
     if candidate.deadline is not None and candidate.deadline < today:
         return True
+    if suggested_deadline is not None and suggested_deadline < today:
+        return True
     start = candidate.status_reference_start
     return start is not None and start <= today
+
+
+def _suggested_deadline(raw_issues: Sequence[Any]) -> date | None:
+    for raw in raw_issues:
+        if not isinstance(raw, dict) or clean_space(str(raw.get("field", ""))).lower() != "deadline":
+            continue
+        value = clean_space(str(raw.get("suggested_value", "")))
+        try:
+            return date.fromisoformat(value)
+        except ValueError:
+            continue
+    return None
+
+
+def _suggestion_is_noop(candidate: Candidate, field: str, suggested: str) -> bool:
+    normalized = clean_space(suggested).casefold()
+    if field == "funding" and candidate.funding_available is not None:
+        return normalized == str(candidate.funding_available).casefold()
+    current = _current_field_value(candidate, field)
+    if isinstance(current, (str, int, float, bool)):
+        return normalized == clean_space(str(current)).casefold()
+    return False
+
+
+def _absence_only_unknown_suggestion(suggested: str, reason: str) -> bool:
+    normalized = clean_space(suggested).casefold()
+    if normalized not in {"", "unknown", "null", "none", "not stated"}:
+        return False
+    return bool(
+        re.search(
+            r"\b(?:no evidence|does not (?:provide|mention|state)|not supported by (?:the )?evidence|unsupported)\b",
+            reason,
+            flags=re.IGNORECASE,
+        )
+    )
 
 
 def _relevant_page_windows(text: str, title: str, config: RecordAuditConfig) -> list[str]:
@@ -492,8 +547,8 @@ def _relevant_page_windows(text: str, title: str, config: RecordAuditConfig) -> 
     title_terms = [term.casefold() for term in re.findall(r"[A-Za-z][A-Za-z0-9_-]{3,}", title)[:8]]
     windows: list[tuple[int, str]] = []
     for match in matches[:80]:
-        start = max(0, match.start() - 260)
-        end = min(len(cleaned), match.end() + 620)
+        start = max(0, match.start() - 450)
+        end = min(len(cleaned), match.end() + 520)
         snippet = cleaned[start:end].strip()
         score = len(_RELEVANT_RE.findall(snippet)) * 3
         score += sum(term in snippet.casefold() for term in title_terms)
@@ -523,6 +578,8 @@ def _audit_prompt(context: dict[str, Any], evidence: Sequence[dict[str, str]]) -
         "and multi-session interpretation.\n"
         "Use only the supplied evidence snippets. Never infer a correction from general knowledge. "
         "Every issue must cite one or more supplied evidence IDs. If evidence is insufficient, do not invent an issue.\n"
+        "Absence from a selected evidence snippet is not proof that the current value is wrong: report an issue only when evidence positively contradicts it. "
+        "Do not report acronym-versus-expanded-name style differences when both identify the same organizer, and do not repeat a value that is already correct.\n"
         "Use verdict=reject only when a high/critical, evidence-backed error makes public display misleading or unsafe. "
         "Use needs_correction for supported non-blocking inaccuracies, otherwise pass.\n"
         "Return one JSON object only with this schema:\n"

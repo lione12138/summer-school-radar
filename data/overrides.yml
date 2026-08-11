@@ -136,7 +136,7 @@ overrides:
       funding_available: false
       funding_type: []
       funding_evidence: Participants must pay the applicable registration fee; creating an IEEE account free of charge is unrelated to the school fee.
-      fee: Student registration USD 670–750; non-student registration USD 770–870
+      fee: Student USD 670 RAS / USD 710 IEEE / USD 750 non-IEEE; non-student USD 770 RAS / USD 820 IEEE / USD 870 non-IEEE (VAT included)
       fee_eur: 636.5
       organizer: IEEE Robotics and Automation Society (IEEE RAS)
       summary: A five-day in-person IEEE RAS summer school on cognitive robotics, bridging artificial intelligence, machine learning, perception, planning, and intelligent robotic systems.

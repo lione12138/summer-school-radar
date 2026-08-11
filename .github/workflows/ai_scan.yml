@@ -28,6 +28,7 @@ on:
       - "data/latest_scan_manifest.json"
       - "data/latest_sources.json"
       - "data/opportunities.yml"
+      - "data/overrides.yml"
       - "config/ai.yaml"
       - "config/profile.yaml"
       - "config/site.yaml"
