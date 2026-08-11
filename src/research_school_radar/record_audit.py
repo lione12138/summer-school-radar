@@ -17,7 +17,7 @@ from .utils import clean_space, content_hash, load_yaml
 
 
 AUDIT_SCHEMA_VERSION = "record-audit-v1"
-PROMPT_VERSION = "record-audit-prompt-v1"
+PROMPT_VERSION = "record-audit-prompt-v2"
 
 _ALLOWED_FIELDS = {
     "title",
@@ -100,6 +100,7 @@ def audit_key(candidate: Candidate) -> str:
 
 def record_context(candidate: Candidate) -> dict[str, Any]:
     return {
+        "audit_date": date.today().isoformat(),
         "title": candidate.title,
         "organizer": candidate.organizer,
         "location": candidate.location,
@@ -426,6 +427,9 @@ def _validated_model_result(
         if not reason:
             warnings.append(f"record_audit_missing_reason:{field}")
             continue
+        if _temporal_suggestion_conflicts(candidate, field, suggested):
+            warnings.append(f"record_audit_temporal_suggestion_conflict:{field}")
+            continue
         issues.append(
             {
                 "field": field,
@@ -470,6 +474,16 @@ def _rule_issue(field: str, severity: str, reason: str) -> dict[str, Any]:
     }
 
 
+def _temporal_suggestion_conflicts(candidate: Candidate, field: str, suggested: str) -> bool:
+    if field != "deadline_status" or suggested.strip().lower() != "open":
+        return False
+    today = date.today()
+    if candidate.deadline is not None and candidate.deadline < today:
+        return True
+    start = candidate.status_reference_start
+    return start is not None and start <= today
+
+
 def _relevant_page_windows(text: str, title: str, config: RecordAuditConfig) -> list[str]:
     cleaned = clean_space(text)
     if not cleaned:
@@ -503,6 +517,7 @@ def _audit_prompt(context: dict[str, Any], evidence: Sequence[dict[str, str]]) -
     return (
         "You are the final evidence auditor for Summa, an academic research-training directory.\n"
         "Audit the complete record for factual consistency and source fidelity. The record is a claim, not evidence.\n"
+        f"The audit date is {date.today().isoformat()}. Use exactly this date for all open/closed and past/future reasoning; never substitute another current date.\n"
         "Check organizer role (organizer vs publisher/network/member category), venue/location contamination, "
         "dates and application status, fee versus funding semantics, eligibility, summary navigation noise, topics, "
         "and multi-session interpretation.\n"

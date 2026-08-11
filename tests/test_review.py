@@ -150,6 +150,9 @@ def test_project_override_preserves_utn_registration_fee_coverage() -> None:
     corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
 
     assert corrected.funding_type == ["scholarship"]
+    assert corrected.organizer == "University of Technology Nuremberg (UTN)"
+    assert corrected.location == "University of Technology Nuremberg, Nuremberg, Germany"
+    assert corrected.fee_eur == 100
     assert corrected.funding_scope == "registration fee covered"
     assert "covering the registration fee" in corrected.funding_evidence
     assert "amount not stated" not in corrected.financial_summary
@@ -218,6 +221,9 @@ def test_project_override_corrects_prob_ai_fee_access_fund_and_location() -> Non
     assert corrected.financial_summary == (
         "Fee EUR 0 · limited Access Fund for eligible UK-based participants"
     )
+    assert "Skip to content" not in corrected.summary
+    assert corrected.eligibility == ""
+    assert "causality" in corrected.topic_keywords
 
 
 def test_project_override_preserves_official_ihe_api_dates() -> None:
@@ -266,6 +272,8 @@ def test_project_override_corrects_hydrodata_organizer_location_and_fees() -> No
     assert corrected.fee_eur == 340
     assert corrected.deadline == date(2026, 5, 17)
     assert corrected.deadline_status == "closed"
+    assert "postdoctoral" in corrected.eligibility
+    assert "Landslide Observatory" not in corrected.summary
 
 
 def test_project_overrides_correct_una_europa_march_deadlines() -> None:
@@ -288,6 +296,77 @@ def test_project_overrides_correct_una_europa_march_deadlines() -> None:
 
     assert [candidate.deadline for candidate in corrected] == [date(2026, 3, 13)] * 2
     assert all(candidate.deadline_status == "closed" for candidate in corrected)
+    assert corrected[0].location == "University College Dublin, Dublin, Ireland"
+    assert corrected[0].mode == "hybrid"
+    assert "Skip to navigation" not in corrected[0].summary
+    assert corrected[1].location == "University of Bologna Navile Campus, Bologna, Italy"
+    assert "Skip to navigation" not in corrected[1].summary
+
+
+def test_project_overrides_correct_ells_records_and_exclude_conference() -> None:
+    from research_school_radar.review import apply_overrides, load_overrides
+
+    ds_food = sample_candidate(PROFILE)
+    ds_food.source_url = (
+        "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/"
+        "r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html"
+    )
+    ds_food.application_link = ds_food.source_url
+    ds_food.fee = "free of charge"
+    ds_food.fee_eur = 0
+    ds_food.deadline = date(2026, 5, 20)
+    ds_food.summary = "Alliance Study Offers Summer Schools MSc Programmes"
+
+    eco = sample_candidate(PROFILE)
+    eco.source_url = (
+        "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/"
+        "r-21651-summer-schools-2026/exploring-your-eco-2026-exploring-the-living-cultural-and-ec.html"
+    )
+    eco.application_link = eco.source_url
+    eco.location = "Vikos-Aou UNESCO Geopark, in the town of Konista"
+    eco.summary = "Alliance Study Offers Summer Schools MSc Programmes"
+    eco.eligibility = "MSc Programmes Semester Exchange"
+
+    conference = sample_candidate(PROFILE)
+    conference.source_url = (
+        "https://ellis.eu/events/ellis-unit-heidelberg-european-ai-for-fundamental-physics-"
+        "conference-eucaifcon-2026"
+    )
+
+    corrected = apply_overrides(
+        [ds_food, eco, conference],
+        load_overrides(Path("data/overrides.yml")),
+    )
+
+    assert corrected == [ds_food, eco]
+    assert ds_food.deadline == date(2026, 5, 1)
+    assert ds_food.fee_eur == 90
+    assert "EUR 250" in ds_food.fee
+    assert "Alliance Study Offers" not in ds_food.summary
+    assert eco.organizer == "Euroleague for Life Sciences (ELLS)"
+    assert eco.location == "Vikos-Aoos UNESCO Geopark, Konitsa, Greece"
+    assert eco.eligibility == ""
+    assert "Alliance Study Offers" not in eco.summary
+
+
+def test_project_overrides_clean_ellis_library_summaries() -> None:
+    from research_school_radar.review import apply_overrides, load_overrides
+
+    finland = sample_candidate(PROFILE)
+    finland.source_url = "https://ellis.eu/events/ellis-summer-school-at-institute-finland-2026"
+    finland.summary = "Topic: AI for Research Summer School Read More"
+    saar = sample_candidate(PROFILE)
+    saar.source_url = "https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026"
+    saar.summary = "Topic: Trustworthy AI Summer School Read More"
+
+    corrected = apply_overrides([finland, saar], load_overrides(Path("data/overrides.yml")))
+
+    assert corrected[0].organizer == "ELLIS Institute Finland"
+    assert corrected[0].location == "Aalto University, Espoo, Finland"
+    assert "Read More" not in corrected[0].summary
+    assert corrected[1].organizer == "ELLIS Unit Saarbrücken"
+    assert corrected[1].location == "Saarland University, Saarbrücken, Germany"
+    assert "Read More" not in corrected[1].summary
 
 
 def test_location_sanitizer_rejects_field_labels() -> None:

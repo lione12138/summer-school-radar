@@ -20,6 +20,11 @@ overrides:
     status: update
     note: The official UTN programme content identifies the intended audience and academic focus; navigation text and the unrelated Deutschlandstipendium footer item are excluded.
     fields:
+      organizer: University of Technology Nuremberg (UTN)
+      location: University of Technology Nuremberg, Nuremberg, Germany
+      location_zh: 德国纽伦堡工业大学（纽伦堡）
+      fee: EUR 100 early bird / EUR 150 regular; non-students EUR 150 / EUR 200
+      fee_eur: 100
       funding_available: true
       funding_type: [scholarship]
       funding_scope: registration fee covered
@@ -57,6 +62,11 @@ overrides:
       funding_type: [access fund]
       funding_scope: limited Access Fund for eligible UK-based participants
       funding_evidence: The school is free to attend. A small Access Fund is available only to eligible UK-based participants facing financial or accessibility barriers; other attendees cover travel and accommodation.
+      eligibility: ""
+      eligibility_zh: ""
+      summary: "A four-day Prob_AI Hub winter school covering causality, computational optimal transport, operator learning, reinforcement learning, machine learning for PDEs, and neural processes. Attendance is free; travel and accommodation are normally self-funded, with a limited Access Fund for eligible UK-based participants."
+      summary_zh: "Prob_AI Hub 举办的四天冬季学校，内容包括因果推断、计算最优传输、算子学习、强化学习、偏微分方程机器学习和神经过程。项目免费参加；交通和住宿通常自理，符合条件的英国参与者可申请有限的 Access Fund。"
+      topic_keywords: [causality, optimal transport, operator learning, reinforcement learning, machine learning, neural processes]
   - identity_key: ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5
     status: update
     note: Preserve the official IHE API dates and add the VAT qualification and clean programme content.
@@ -79,6 +89,11 @@ overrides:
       deadline: 2026-05-17
       deadline_status: closed
       deadline_evidence: Registration deadline is 17 May 2026.
+      eligibility: PhD students; postdoctoral researchers and MSc students are also welcome to apply.
+      eligibility_zh: 主要面向博士生，博士后研究人员和硕士生也可申请。
+      summary: A five-day University of Ljubljana summer school on hydrological data collection, manipulation, analysis, visualization, modelling, and R programming, organized by the UNESCO Chair on Water-related Disaster Risk Reduction.
+      summary_zh: 卢布尔雅那大学举办的五天水文数据暑期学校，涵盖数据采集、处理、分析、可视化、建模和 R 编程，由联合国教科文组织水相关灾害风险减少教席组织。
+      topic_keywords: [hydrology, data analysis, data visualization, hydrological modelling, R programming]
   - url: https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity
     status: update
     note: The official programme page gives 13 March 2026 as the application deadline; 23 September was an unrelated page date and the June event has ended.
@@ -86,6 +101,14 @@ overrides:
       deadline: 2026-03-13
       deadline_status: closed
       deadline_evidence: Submit the application by 23:59 IST/UTC on 13 March 2026.
+      location: University College Dublin, Dublin, Ireland
+      location_zh: 爱尔兰都柏林大学
+      mode: hybrid
+      eligibility: Doctoral researchers enrolled or employed at an Una Europa partner university through 30 June 2026.
+      eligibility_zh: 面向截至2026年6月30日仍在 Una Europa 合作大学注册或任职的博士研究人员。
+      summary: A doctoral summer school on artificial intelligence and creativity, held at University College Dublin with a compulsory online component before the in-person programme.
+      summary_zh: 面向博士研究人员的人工智能与创造力暑期学校，在爱尔兰都柏林大学举行，并包含线下课程前的必修线上环节。
+      topic_keywords: [artificial intelligence, creativity]
   - url: https://www.una-europa.eu/calendar/una-europa-summer-school-2026-exploring-soft-materials
     status: update
     note: The official programme page gives 13 March 2026 as the application deadline; 23 September was an unrelated page date and the June/July event has ended.
@@ -93,6 +116,13 @@ overrides:
       deadline: 2026-03-13
       deadline_status: closed
       deadline_evidence: Submit the application by 23:59 CET on 13 March 2026.
+      location: University of Bologna Navile Campus, Bologna, Italy
+      location_zh: 意大利博洛尼亚大学纳维莱校区
+      eligibility: Doctoral researchers enrolled or employed at an Una Europa partner university at the time of the summer school.
+      eligibility_zh: 面向暑期学校举办期间仍在 Una Europa 合作大学注册或任职的博士研究人员。
+      summary: An in-person doctoral summer school at the University of Bologna on soft materials, spanning molecular systems through biomaterials.
+      summary_zh: 在博洛尼亚大学线下举办的博士暑期学校，主题涵盖从分子体系到生物材料的软物质研究。
+      topic_keywords: [soft materials, molecular science, biomaterials, materials science]
   - url: https://events.vtools.ieee.org/m/564683
     status: update
     note: The official IEEE announcement closed applications on 13 July; 31 July is registration/payment for accepted applicants, not an application deadline.
@@ -108,6 +138,63 @@ overrides:
       funding_evidence: Participants must pay the applicable registration fee; creating an IEEE account free of charge is unrelated to the school fee.
       fee: Student registration USD 670–750; non-student registration USD 770–870
       fee_eur: 636.5
+      organizer: IEEE Robotics and Automation Society (IEEE RAS)
+      summary: A five-day in-person IEEE RAS summer school on cognitive robotics, bridging artificial intelligence, machine learning, perception, planning, and intelligent robotic systems.
+      summary_zh: IEEE RAS 举办的五天线下认知机器人暑期学校，连接人工智能、机器学习、感知、规划与智能机器人系统。
+  - url: https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html
+    status: update
+    note: The official DS-FOOD page gives a 1 May deadline, a mandatory EUR 90 dinner contribution, and a EUR 250 registration fee for participants outside the listed promoting universities.
+    fields:
+      organizer: Euroleague for Life Sciences (ELLS)
+      deadline: 2026-05-01
+      deadline_status: closed
+      deadline_evidence: Application deadline is 1 May 2026.
+      funding_available: false
+      funding_type: []
+      funding_scope: ""
+      funding_evidence: The official page states participant charges rather than a scholarship or travel grant.
+      fee: EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants
+      fee_eur: 90
+      eligibility: Students at the listed non-Italian ELLS promoting universities; other participants may attend for the stated registration fee.
+      eligibility_zh: 面向官网列出的非意大利 ELLS 合作大学学生；其他参与者可按官网所列费用参加。
+      summary: An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.
+      summary_zh: 在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。
+      topic_keywords: [sustainable food systems, food systems design, sustainability]
+  - url: https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/exploring-your-eco-2026-exploring-the-living-cultural-and-ec.html
+    status: update
+    note: The official ELLS page provides the Konitsa/Vikos-Aoos venue and a clean programme description; navigation text is not programme eligibility or summary content.
+    fields:
+      organizer: Euroleague for Life Sciences (ELLS)
+      location: Vikos-Aoos UNESCO Geopark, Konitsa, Greece
+      location_zh: 希腊科尼察维科斯－奥奥斯联合国教科文组织世界地质公园
+      eligibility: ""
+      eligibility_zh: ""
+      summary: A nine-day on-site summer school in Konitsa examining the living, cultural, and eco-tourism environments of the Vikos-Aoos UNESCO Geopark through research, field activities, and participant recommendations.
+      summary_zh: 在希腊科尼察举办的九天线下暑期学校，通过研究、田野活动和学员建议考察维科斯－奥奥斯世界地质公园的生活、文化与生态旅游环境。
+      topic_keywords: [ecology, eco-tourism, cultural heritage, geopark, recreation]
+  - url: https://ellis.eu/events/ellis-summer-school-at-institute-finland-2026
+    status: update
+    note: The official ELLIS listing provides a concise AI-for-Research programme description.
+    fields:
+      organizer: ELLIS Institute Finland
+      location: Aalto University, Espoo, Finland
+      location_zh: 芬兰埃斯波阿尔托大学
+      summary: A five-day AI-for-Research school on AI as a scientific tool, trustworthy and reliable AI for discovery, recent AI-for-Science advances, uncertainty quantification, and scientific applications.
+      summary_zh: 为期五天的“AI 促进科研”暑期学校，涵盖作为科学研究工具的 AI、可信可靠的科学发现 AI、AI for Science 最新进展、不确定性量化和科学应用。
+      topic_keywords: [AI for Science, scientific discovery, trustworthy AI, uncertainty quantification]
+  - url: https://ellis.eu/events/ellis-summer-school-at-unit-saarbruecken-2026
+    status: update
+    note: The official ELLIS listing provides the Unit Saarbrücken topic and venue without listing-page navigation text.
+    fields:
+      organizer: ELLIS Unit Saarbrücken
+      location: Saarland University, Saarbrücken, Germany
+      location_zh: 德国萨尔布吕肯萨尔大学
+      summary: A five-day interdisciplinary school on trustworthy and responsible AI for drug discovery, covering robustness, privacy-aware machine learning, explainability, dual-use risks, cheminformatics, structural bioinformatics, and regulation.
+      summary_zh: 为期五天的跨学科暑期学校，聚焦用于药物发现的可信与负责任 AI，涵盖鲁棒性、隐私保护机器学习、可解释性、双重用途风险、化学信息学、结构生物信息学和监管。
+      topic_keywords: [trustworthy AI, responsible AI, drug discovery, machine learning, cheminformatics, bioinformatics]
+  - url: https://ellis.eu/events/ellis-unit-heidelberg-european-ai-for-fundamental-physics-conference-eucaifcon-2026
+    status: exclude
+    note: EuCAIFCon is explicitly a conference, not a research-training school or short course.
   - title_contains: Get to know the Bernstein Network
     status: exclude
     note: This is the research network homepage, not a seasonal school or short research-training programme.

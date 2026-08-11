@@ -304,3 +304,15 @@ results are cached by record plus evidence hash, written to JSON/Markdown
 sidecars, summarized in non-publishing audit artifacts, and required by the
 production AI-output gate so an incomplete audit cannot replace the last-known-
 good snapshot.
+
+The first non-publishing production audit covered all 17 public/library
+targets with no operational warning. It correctly gated a navigation-polluted
+Prob_AI summary and surfaced additional evidence-backed corrections: DS-FOOD
+was not universally free, several ELLS/ELLIS summaries contained listing
+navigation, HydRoData and IEEE detail text needed cleaning, and Una Europa
+locations/eligibility were incomplete. These were converted into deterministic
+official-URL overrides before publication. The same run also showed that the
+model could substitute an incorrect internal notion of the current year when
+judging deadline status. Audit prompts now carry an explicit runtime audit date,
+and any proposed `open` status that conflicts with a past deterministic
+deadline/start date is discarded before it can become an issue or gate.

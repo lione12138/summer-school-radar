@@ -154,6 +154,37 @@ def test_record_audit_drops_unknown_evidence_ids_and_downgrades_reject() -> None
     assert "record_audit_invalid_evidence:organizer" in item["validation_warnings"]
 
 
+def test_record_audit_rejects_open_status_that_conflicts_with_past_deadline() -> None:
+    candidate = _candidate()
+    candidate.deadline = date(2026, 5, 1)
+    candidate.deadline_status = "closed"
+    client = StubClient(
+        {
+            "verdict": "needs_correction",
+            "issues": [
+                {
+                    "field": "deadline_status",
+                    "severity": "high",
+                    "suggested_value": "open",
+                    "evidence_ids": ["E1"],
+                    "reason": "The model used the wrong current year.",
+                }
+            ],
+        }
+    )
+
+    item = run_record_audit(
+        [candidate],
+        [_page()],
+        client=client,
+        config=RecordAuditConfig(max_workers=1),
+    )[0]
+
+    assert item["issues"] == []
+    assert "record_audit_temporal_suggestion_conflict:deadline_status" in item["validation_warnings"]
+    assert date.today().isoformat() in client.prompts[0]
+
+
 def test_record_audit_cache_is_keyed_by_record_and_evidence(tmp_path) -> None:
     candidate = _candidate()
     client = StubClient({"verdict": "pass", "issues": []})
