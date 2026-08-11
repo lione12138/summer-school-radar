@@ -1,0 +1,16 @@
+.programme-main { padding-top: 36px; padding-bottom: 64px; }
+.programme-hero { max-width: 900px; margin: 24px 0 48px; }
+.programme-hero h1 { max-width: 860px; margin: 10px 0 8px; font-size: clamp(32px, 5vw, 56px); line-height: 1.08; }
+.programme-org { color: var(--muted); font-size: 18px; }
+.programme-meta, .edition-facts { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); }
+.programme-meta span { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; }
+.programme-editions { max-width: 980px; }
+.edition-list { display: grid; gap: 14px; }
+.edition-card { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow-soft); }
+.edition-card h3 { margin: 10px 0 8px; font-size: 21px; }
+.edition-card p { color: var(--accent-ink); }
+@media (max-width: 700px) {
+  .programme-main { padding-top: 22px; }
+  .programme-hero { margin-bottom: 34px; }
+  .edition-card { padding: 16px; }
+}
