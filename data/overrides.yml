@@ -18,13 +18,14 @@
 overrides:
   - url: https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/
     status: update
-    note: The official UTN programme content identifies the intended audience and academic focus; navigation text and the unrelated Deutschlandstipendium footer item are excluded.
+    note: The official UTN programme content identifies the intended audience and academic focus; after the 15 July early-bird cutoff, regular fees are EUR 150 for students and EUR 200 for non-students, while selected participants may receive a registration-fee scholarship.
     fields:
       organizer: University of Technology Nuremberg (UTN)
       location: University of Technology Nuremberg, Nuremberg, Germany
       location_zh: 德国纽伦堡工业大学（纽伦堡）
-      fee: EUR 100 early bird / EUR 150 regular; non-students EUR 150 / EUR 200
-      fee_eur: 100
+      fee: EUR 150 students / EUR 200 non-students
+      fee_eur: 150
+      fee_evidence: After the 15 July early-bird deadline, the regular registration fee is EUR 150 for students and EUR 200 for non-students.
       funding_available: true
       funding_type: [scholarship]
       funding_scope: registration fee covered

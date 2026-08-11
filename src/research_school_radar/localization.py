@@ -217,7 +217,9 @@ def duration_zh(candidate: Candidate) -> str:
 def financial_summary_zh(candidate: Candidate) -> str:
     if candidate.funding_available is True:
         if candidate.funding_scope == "registration fee covered":
-            return "注册费奖学金 · 入选者注册费全额覆盖"
+            if candidate.fee:
+                return f"入选者可获注册费奖学金 · 未获奖者：{_tiered_fee_zh(candidate.fee)}"
+            return "入选者可获注册费奖学金 · 其他参与者费用未说明"
         if candidate.funding_scope == (
             "20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants "
             "(travel + accommodation covered)"
@@ -274,16 +276,28 @@ def _score_reason_zh(reason: str) -> str:
 
 
 def _tiered_fee_zh(value: str) -> str:
+    currency = r"(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD|[€$£])\s?\d[\d,.]*"
+    localized = re.sub(
+        rf"(?P<amount>{currency})\s+non-students?\b",
+        r"非学生 \g<amount>",
+        value,
+        flags=re.IGNORECASE,
+    )
+    localized = re.sub(
+        rf"(?P<amount>{currency})\s+students?\b",
+        r"学生 \g<amount>",
+        localized,
+        flags=re.IGNORECASE,
+    )
     replacements = (
-        (r"\bnon-student\b", "非学生"),
-        (r"\bstudent\b", "学生"),
+        (r"\bnon-students?\b", "非学生"),
+        (r"\bstudents?\b", "学生"),
         (r"\bnon-members?\b", "非会员"),
         (r"\bmembers?\b", "会员"),
         (r"\bmandatory dinner contribution\b", "强制晚宴费用"),
         (r"\bregistration fee for other participants\b", "其他参与者注册费"),
         (r"\bVAT included\b", "含增值税"),
     )
-    localized = value
     for pattern, replacement in replacements:
         localized = re.sub(pattern, replacement, localized, flags=re.IGNORECASE)
     return localized

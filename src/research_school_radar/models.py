@@ -153,7 +153,12 @@ class Candidate:
     def financial_summary(self) -> str:
         if self.funding_available is True:
             if self.funding_scope == "registration fee covered":
-                return "registration-fee scholarship · registration fee covered · Selected participants"
+                if self.fee:
+                    return (
+                        "Registration-fee scholarship for selected participants · "
+                        f"otherwise {self.fee} · Apply on official page"
+                    )
+                return "Registration-fee scholarship for selected participants · fee otherwise not stated"
             if self.funding_scope:
                 fee = "Fee EUR 0" if self.fee_eur == 0 else "Fee not stated"
                 return f"{fee} · {self.funding_scope}"

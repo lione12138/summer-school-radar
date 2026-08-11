@@ -106,6 +106,46 @@ def test_status_refresh_applies_maintainer_financial_corrections(tmp_path) -> No
     assert "Economics of Climate Change" not in (site_dir / "index.html").read_text(encoding="utf-8")
 
 
+def test_status_refresh_sanitizes_legacy_html_in_public_candidate_json(tmp_path) -> None:
+    profile = load_yaml(ROOT / "config" / "profile.yaml")
+    candidate = sample_candidate(profile)
+    candidate.title = "Legacy IHE Course"
+    candidate.summary = "<div><p>Applied <strong>water</strong> research.</p></div>"
+    candidate.eligibility = "<ul><li>PhD students</li><li>Researchers</li></ul>"
+    candidate.summary_zh = "<p>应用水研究。</p>"
+    candidate.eligibility_zh = "<ul><li>博士生</li><li>研究人员</li></ul>"
+    candidate.funding_available = False
+    candidate.funding_type = []
+    candidate.fee = "EUR 2600"
+    candidate.fee_eur = 2600
+
+    site_dir = tmp_path / "site"
+    data_dir = tmp_path / "data"
+    site_dir.mkdir()
+    data_dir.mkdir()
+    legacy = candidate_to_dict(candidate)
+    # Re-introduce legacy tags after serialization to exercise snapshot loading.
+    legacy["summary"] = candidate.summary
+    legacy["eligibility"] = candidate.eligibility
+    legacy["summary_zh"] = candidate.summary_zh
+    legacy["eligibility_zh"] = candidate.eligibility_zh
+    (site_dir / "candidates.json").write_text(
+        json.dumps({"opportunities": [legacy], "scanner_opportunities": [legacy]}),
+        encoding="utf-8",
+    )
+
+    run_status_refresh(config_dir=ROOT / "config", data_dir=data_dir, site_dir=site_dir)
+
+    payload = json.loads((site_dir / "candidates.json").read_text(encoding="utf-8"))
+    for collection in (payload["opportunities"], payload["scanner_opportunities"]):
+        item = collection[0]
+        assert item["summary"] == "Applied water research."
+        assert item["eligibility"] == "PhD students Researchers"
+        assert item["summary_zh"] == "应用水研究。"
+        assert item["eligibility_zh"] == "博士生 研究人员"
+        assert "low fee:" not in item["recommendation_reason"]
+
+
 def test_status_refresh_keeps_ai_display_rows_out_of_scanner_rss(tmp_path) -> None:
     profile = load_yaml(ROOT / "config" / "profile.yaml")
     scanner = sample_candidate(profile)

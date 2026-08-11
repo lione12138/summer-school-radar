@@ -22,6 +22,17 @@ def clean_space(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+def html_to_text(value: str) -> str:
+    """Flatten an HTML fragment while leaving ordinary comparison text alone."""
+    if not value:
+        return ""
+    if not re.search(r"<[A-Za-z/][^>]*>", value):
+        return clean_space(value)
+    from bs4 import BeautifulSoup
+
+    return clean_space(BeautifulSoup(value, "html.parser").get_text(" "))
+
+
 def content_hash(value: str) -> str:
     return hashlib.sha256(value.encode("utf-8", errors="ignore")).hexdigest()
 

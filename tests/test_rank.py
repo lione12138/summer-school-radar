@@ -177,6 +177,22 @@ def test_topic_count_does_not_change_quality_score() -> None:
     assert tagged_score == unclassified_score
 
 
+def test_expensive_fee_is_not_described_or_scored_as_low_fee() -> None:
+    candidate = sample_candidate(PROFILE)
+    candidate.funding_available = False
+    candidate.funding_type = []
+    candidate.funding_evidence = ""
+    candidate.fee = "EUR 2600"
+    candidate.fee_eur = 2600
+    candidate = apply_hard_filters(candidate, PROFILE)
+
+    ranked = rank_candidates([candidate], profile=PROFILE)[0]
+
+    assert not any(reason.startswith("low fee:") for reason in ranked.score_explanation)
+    assert "low fee:" not in ranked.recommendation_reason
+    assert "fee exceeds EUR 400 without explicit funding" in ranked.failed_recommendation_conditions
+
+
 def _identity_bridge_candidates(scores: tuple[float, float, float]) -> tuple[Candidate, Candidate, Candidate]:
     base = sample_candidate(PROFILE)
     first = replace(

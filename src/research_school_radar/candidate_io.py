@@ -5,13 +5,17 @@ from datetime import date
 from typing import Any
 
 from .models import Candidate, ProgrammeSession
+from .utils import html_to_text
 
 
 CANDIDATE_SNAPSHOT_SCHEMA_VERSION = 2
+_RICH_TEXT_FIELDS = {"summary", "eligibility", "summary_zh", "eligibility_zh"}
 
 
 def candidate_to_dict(candidate: Candidate) -> dict[str, Any]:
     raw = asdict(candidate)
+    for key in _RICH_TEXT_FIELDS:
+        raw[key] = html_to_text(str(raw.get(key, "")))
     for key in ["start_date", "end_date", "deadline", "first_seen"]:
         value = raw[key]
         raw[key] = value.isoformat() if value else None
@@ -90,4 +94,6 @@ def _coerce_candidate_value(name: str, value: Any) -> Any:
         return bool(value) if value is not None else None
     if value is None:
         return ""
+    if name in _RICH_TEXT_FIELDS:
+        return html_to_text(str(value))
     return value

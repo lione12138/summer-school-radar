@@ -926,9 +926,10 @@ def test_registration_fee_scholarship_preserves_scope_and_ignores_navigation_noi
     assert candidate.funding_scope == "registration fee covered"
     assert "covering the registration fee" in candidate.funding_evidence
     assert "Student Groups and Initiatives" not in candidate.funding_evidence
-    assert "registration fee covered" in candidate.financial_summary
+    assert "Registration-fee scholarship for selected participants" in candidate.financial_summary
+    assert "otherwise 150 EUR" in candidate.financial_summary
     assert "amount not stated" not in candidate.financial_summary
-    assert financial_summary_zh(candidate) == "注册费奖学金 · 入选者注册费全额覆盖"
+    assert financial_summary_zh(candidate) == "入选者可获注册费奖学金 · 未获奖者：150 EUR"
 
 
 def test_workshop_titled_page_is_dropped_even_with_course_text() -> None:

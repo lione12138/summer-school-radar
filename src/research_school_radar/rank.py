@@ -20,21 +20,21 @@ def rank_candidates(candidates: list[Candidate], *, profile: dict | None = None)
     filter fields recomputed from those merged facts.
     """
     for candidate in candidates:
-        _update_score(candidate)
+        _update_score(candidate, profile)
     merged = _dedupe_candidates(candidates)
     for candidate in merged:
         if profile is not None:
             apply_hard_filters(candidate, profile)
-        _update_score(candidate)
+        _update_score(candidate, profile)
     return sorted(merged, key=lambda item: item.score, reverse=True)
 
 
-def _update_score(candidate: Candidate) -> None:
-    candidate.score, candidate.score_explanation = score_candidate(candidate)
+def _update_score(candidate: Candidate, profile: dict | None = None) -> None:
+    candidate.score, candidate.score_explanation = score_candidate(candidate, profile)
     candidate.recommendation_reason = "; ".join(candidate.score_explanation[:4])
 
 
-def score_candidate(candidate: Candidate) -> tuple[float, list[str]]:
+def score_candidate(candidate: Candidate, profile: dict | None = None) -> tuple[float, list[str]]:
     score = 0.0
     reasons: list[str] = []
 
@@ -46,7 +46,8 @@ def score_candidate(candidate: Candidate) -> tuple[float, list[str]]:
             funding_score += 5
         score += funding_score
         reasons.append(f"funding evidence: {', '.join(candidate.funding_type)}")
-    elif candidate.fee_eur is not None:
+    maximum_fee = float((profile or {}).get("financial_access", {}).get("maximum_unfunded_fee_eur", 400))
+    if candidate.funding_available is not True and candidate.fee_eur is not None and candidate.fee_eur <= maximum_fee:
         score += 12
         reasons.append(f"low fee: approximately EUR {candidate.fee_eur:.0f}")
 

@@ -357,3 +357,24 @@ member/non-member and student/non-student tiers are no longer collapsed to the
 lowest EUR-normalized amount. EUR normalization remains available for filtering
 and classification, while the public card shows the conditions users actually
 need to pay.
+
+## 2026-08-11: Conditional Scholarships and Public JSON Hygiene
+
+A registration-fee scholarship does not imply that every participant attends
+for free. Financial summaries now combine the conditional benefit with the
+ordinary participant price when both are known. UTN therefore shows the
+selected-participant registration-fee scholarship together with the current
+post-early-bird rates of EUR 150 for students and EUR 200 for non-students, in
+both English and Chinese.
+
+Normalized EUR values continue to drive affordability filters, but ranking now
+uses the configured affordability ceiling before adding a `low fee` reason or
+score. A known EUR 2,600 fee can no longer be described as low while also
+failing the EUR 400 recommendation threshold.
+
+The public `candidates.json` is treated as a product surface rather than a raw
+debug dump. Candidate snapshot loading and serialization now flatten HTML in
+summary and eligibility fields, including their Chinese counterparts. This
+also cleans legacy IHE records during a no-network status refresh instead of
+waiting for the next full source scan; the IHE collector uses the same shared
+HTML-to-text helper for newly fetched API records.

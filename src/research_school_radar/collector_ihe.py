@@ -7,12 +7,10 @@ from typing import Any
 from urllib.parse import urlencode
 
 import requests
-from bs4 import BeautifulSoup
-
 from .extract import _deadline_status, _duration_days, _region_priority, _target_level, _topic_in_text
 from .http_cache import HttpCache, get_with_cache
 from .models import Candidate
-from .utils import clean_space
+from .utils import clean_space, html_to_text
 
 
 _HEADERS = {"User-Agent": "summer-school-radar/0.1", "Accept": "application/json"}
@@ -44,13 +42,6 @@ def _pick_edition(editions: list[dict]) -> dict | None:
             upcoming.append((start, edition))
     upcoming.sort(key=lambda item: item[0])
     return upcoming[0][1] if upcoming else None
-
-
-def _api_html_text(value: Any) -> str:
-    """Flatten the small HTML fragments returned in IHE description fields."""
-    if not isinstance(value, str) or not value.strip():
-        return ""
-    return clean_space(BeautifulSoup(value, "html.parser").get_text(" "))
 
 
 def _ihe_delft(profile: dict, http_cache: HttpCache | None = None) -> tuple[list[Candidate], list[str]]:
@@ -91,8 +82,8 @@ def _ihe_candidate(product: dict, preferred: list[str], profile: dict) -> Candid
     fee_eur = float(price) if isinstance(price, (int, float)) else None
     fee = f"EUR {fee_eur:.0f} excl. VAT" if fee_eur is not None else ""
 
-    introduction = _api_html_text(product.get("introduction"))
-    for_whom = _api_html_text(product.get("forwhom"))
+    introduction = html_to_text(str(product.get("introduction") or ""))
+    for_whom = html_to_text(str(product.get("forwhom") or ""))
     description = clean_space(f"{introduction} {for_whom}")
     topic_text = f"{name}. {description}"
     topics = [topic for topic in preferred if _topic_in_text(topic, topic_text)]

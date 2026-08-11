@@ -199,10 +199,20 @@ def test_project_override_preserves_utn_registration_fee_coverage() -> None:
     assert corrected.funding_type == ["scholarship"]
     assert corrected.organizer == "University of Technology Nuremberg (UTN)"
     assert corrected.location == "University of Technology Nuremberg, Nuremberg, Germany"
-    assert corrected.fee_eur == 100
+    assert corrected.fee_eur == 150
+    assert corrected.fee == "EUR 150 students / EUR 200 non-students"
     assert corrected.funding_scope == "registration fee covered"
     assert "covering the registration fee" in corrected.funding_evidence
     assert "amount not stated" not in corrected.financial_summary
+    assert corrected.financial_summary == (
+        "Registration-fee scholarship for selected participants · "
+        "otherwise EUR 150 students / EUR 200 non-students · Apply on official page"
+    )
+    from research_school_radar.localization import financial_summary_zh
+
+    assert financial_summary_zh(corrected) == (
+        "入选者可获注册费奖学金 · 未获奖者：学生 EUR 150 / 非学生 EUR 200"
+    )
     assert corrected.eligibility == (
         "Master's students and early-stage PhD students from the humanities and computer science."
     )
