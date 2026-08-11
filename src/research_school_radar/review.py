@@ -35,6 +35,9 @@ FIELD_NAMES = {
     "fee_eur",
     "application_link",
     "summary",
+    "summary_zh",
+    "eligibility_zh",
+    "location_zh",
     "financial_access_status",
     "deadline_evidence",
     "duration_evidence",
@@ -138,7 +141,7 @@ def _apply_override(candidate: Candidate, override: dict[str, Any]) -> None:
             continue
         setattr(candidate, key, _coerce_value(key, value))
     note = str(override.get("note", "")).strip()
-    if note:
+    if note and "summary" not in fields:
         annotation = f"Override note: {note}"
         if annotation not in candidate.summary:
             candidate.summary = f"{candidate.summary} {annotation}".strip()

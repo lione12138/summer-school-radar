@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 import json
-from datetime import date
+from datetime import date, timedelta
 from hashlib import sha256
 from typing import Any
 from urllib.parse import urlencode
 
 import requests
+from bs4 import BeautifulSoup
 
 from .extract import _deadline_status, _duration_days, _region_priority, _target_level, _topic_in_text
 from .http_cache import HttpCache, get_with_cache
@@ -20,12 +21,21 @@ _IHE_DELFT_LISTING = "https://www.un-ihe.org/short-courses"
 
 
 def _api_date(value: Any) -> date | None:
+    """Convert IHE's midnight UTC boundary to its intended catalogue date.
+
+    The educator API serializes date-only catalogue fields as midnight UTC at
+    the start of the following day.  Treating the ISO prefix as the public date
+    shifts course dates and application cut-offs one day late.
+    """
     if not isinstance(value, str) or len(value) < 10:
         return None
     try:
-        return date.fromisoformat(value[:10])
+        parsed = date.fromisoformat(value[:10])
     except ValueError:
         return None
+    if value.endswith("T00:00:00Z"):
+        return parsed - timedelta(days=1)
+    return parsed
 
 
 def _pick_edition(editions: list[dict]) -> dict | None:
@@ -42,6 +52,13 @@ def _pick_edition(editions: list[dict]) -> dict | None:
             upcoming.append((start, edition))
     upcoming.sort(key=lambda item: item[0])
     return upcoming[0][1] if upcoming else None
+
+
+def _api_html_text(value: Any) -> str:
+    """Flatten the small HTML fragments returned in IHE description fields."""
+    if not isinstance(value, str) or not value.strip():
+        return ""
+    return clean_space(BeautifulSoup(value, "html.parser").get_text(" "))
 
 
 def _ihe_delft(profile: dict, http_cache: HttpCache | None = None) -> tuple[list[Candidate], list[str]]:
@@ -80,9 +97,11 @@ def _ihe_candidate(product: dict, preferred: list[str], profile: dict) -> Candid
     deadline = _api_date(edition.get("applicationenddate"))
     price = edition.get("price")
     fee_eur = float(price) if isinstance(price, (int, float)) else None
-    fee = f"EUR {fee_eur:.0f}" if fee_eur is not None else ""
+    fee = f"EUR {fee_eur:.0f} excl. VAT" if fee_eur is not None else ""
 
-    description = clean_space(f"{product.get('introduction', '')} {product.get('forwhom', '')}")
+    introduction = _api_html_text(product.get("introduction"))
+    for_whom = _api_html_text(product.get("forwhom"))
+    description = clean_space(f"{introduction} {for_whom}")
     topic_text = f"{name}. {description}"
     topics = [topic for topic in preferred if _topic_in_text(topic, topic_text)]
     mode = "in-person" if str(product.get("deliverymethod_code", "")).upper() == "FTF" else "online"
@@ -106,13 +125,13 @@ def _ihe_candidate(product: dict, preferred: list[str], profile: dict) -> Candid
         funding_type=[],
         funding_evidence="",
         topic_keywords=topics,
-        eligibility=clean_space(str(product.get("forwhom", "")))[:220],
+        eligibility=for_whom[:220],
         target_level=_target_level(topic_text),
         fee=fee,
         fee_eur=fee_eur,
         application_link=_IHE_DELFT_LISTING,
         source_url=_IHE_DELFT_LISTING,
-        summary=clean_space(str(product.get("introduction", "")))[:280],
+        summary=introduction[:280],
         recommendation_reason="",
         risk_points="",
         identity_key=_ihe_identity_key(product, edition, name, start, end),
@@ -173,5 +192,3 @@ def _ihe_identity_key(
     )
     digest = sha256(stable_fields.encode("utf-8")).hexdigest()[:20]
     return f"ihe-delft:derived:{digest}"
-
-

@@ -25,9 +25,12 @@ _API_PROFILE = {
 
 @responses.activate
 def test_ihe_delft_api_maps_courses_to_candidates() -> None:
-    start = (date.today() + timedelta(days=60)).isoformat() + "T00:00:00Z"
-    end = (date.today() + timedelta(days=72)).isoformat() + "T00:00:00Z"
-    deadline = (date.today() + timedelta(days=30)).isoformat() + "T00:00:00Z"
+    api_start = date.today() + timedelta(days=60)
+    api_end = date.today() + timedelta(days=72)
+    api_deadline = date.today() + timedelta(days=30)
+    start = api_start.isoformat() + "T00:00:00Z"
+    end = api_end.isoformat() + "T00:00:00Z"
+    deadline = api_deadline.isoformat() + "T00:00:00Z"
     responses.add(
         responses.GET,
         _IHE_DELFT_URL,
@@ -36,8 +39,8 @@ def test_ihe_delft_api_maps_courses_to_candidates() -> None:
                 {
                     "id": None,
                     "name": "Water Resources Assessment using Remote-Sensing Data",
-                    "introduction": "Basics of remote sensing for hydrology.",
-                    "forwhom": "Researchers and professionals.",
+                    "introduction": "<p>Basics of <strong>remote sensing</strong> for hydrology.</p>",
+                    "forwhom": "<p>Researchers and professionals.</p>",
                     "deliverymethod_code": "FTF",
                     "plannedproducts": [
                         {
@@ -59,8 +62,13 @@ def test_ihe_delft_api_maps_courses_to_candidates() -> None:
     course = candidates[0]
     assert course.title.startswith("Water Resources Assessment")
     assert course.duration_days == 13
-    assert course.deadline is not None
+    assert course.start_date == api_start - timedelta(days=1)
+    assert course.end_date == api_end - timedelta(days=1)
+    assert course.deadline == api_deadline - timedelta(days=1)
+    assert course.fee == "EUR 3670 excl. VAT"
     assert course.fee_eur == 3670.0
+    assert course.summary == "Basics of remote sensing for hydrology."
+    assert course.eligibility == "Researchers and professionals."
     assert course.mode == "in-person"
     assert "remote sensing" in course.topic_keywords
     assert course.extraction_confidence == 1.0
@@ -110,7 +118,7 @@ def test_ihe_delft_courses_keep_distinct_product_identities_when_ranked() -> Non
 
     assert not errors
     assert len(ranked) == 2
-    start_key = start.isoformat()
+    start_key = (start - timedelta(days=1)).isoformat()
     assert {candidate.identity_key for candidate in ranked} == {
         f"ihe-delft:product:101:{start_key}",
         f"ihe-delft:product:202:{start_key}",
@@ -310,10 +318,14 @@ def test_ellis_enrichment_extracts_zero_fee_and_targeted_ellis_support(monkeypat
     assert candidate.fee_eur == 0
     assert candidate.funding_available is True
     assert candidate.funding_type == ["travel grant", "accommodation"]
-    assert candidate.funding_scope == "ELLIS/ELIAS participants: travel + accommodation covered"
+    assert candidate.funding_scope == (
+        "20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants "
+        "(travel + accommodation covered)"
+    )
     assert "travel and accommodation covered" in candidate.funding_evidence
     assert candidate.financial_summary == (
-        "Fee EUR 0 · ELLIS/ELIAS participants: travel + accommodation covered"
+        "Fee EUR 0 · 20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants "
+        "(travel + accommodation covered)"
     )
 
 

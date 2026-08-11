@@ -153,7 +153,7 @@ class Candidate:
         if self.funding_available is True:
             if self.funding_scope == "registration fee covered":
                 return "registration-fee scholarship · registration fee covered · Selected participants"
-            if self.funding_scope == "ELLIS/ELIAS participants: travel + accommodation covered":
+            if self.funding_scope:
                 fee = "Fee EUR 0" if self.fee_eur == 0 else "Fee not stated"
                 return f"{fee} · {self.funding_scope}"
             funding_label = ", ".join(self.funding_type) or "Funding available"
@@ -163,6 +163,8 @@ class Candidate:
         if self.fee_eur is not None:
             if self.fee_eur == 0:
                 return "Fee EUR 0 · Apply on official page"
+            if "excl. vat" in self.fee.lower() or "excluding vat" in self.fee.lower():
+                return f"Fee EUR {self.fee_eur:.0f} excl. VAT · Apply on official page"
             return f"Fee about EUR {self.fee_eur:.0f} · Apply on official page"
         return "Funding or fee not stated"
 

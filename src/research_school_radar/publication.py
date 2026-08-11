@@ -115,11 +115,10 @@ def is_display_candidate(candidate: Candidate) -> bool:
 
 
 def is_archive_candidate(candidate: Candidate) -> bool:
-    """A verified past edition suitable for the recurring-programme library.
+    """A verified closed-call record suitable for the recurring-programme library.
 
-    Archive entries are never represented as open applications and never enter
-    RSS. They provide useful programme discovery without weakening the current
-    opportunity gate.
+    The event itself may be upcoming, ongoing, or past; only the application is
+    necessarily closed. Entries never enter current counts or RSS.
     """
     if not candidate.is_past or candidate.deadline_status == "not_open" or candidate.is_online_only:
         return False

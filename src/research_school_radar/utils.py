@@ -87,6 +87,11 @@ def sanitize_location(value: str, fallback: str = "") -> str:
     text = text.strip(" :;,.–—-").strip()
     if not text:
         return fallback
+    # Stop at the next labelled field when flattened page text leaks it into
+    # the venue value, e.g. "Bristol Open to Alumni, External Organisations".
+    text = re.sub(r"\s+open\s+to(?:\s+.*)?$", "", text, flags=re.IGNORECASE).strip()
+    if not text:
+        return fallback
     low = text.lower()
     if low in {"host", "hosts", "location", "venue", "place"}:
         return fallback

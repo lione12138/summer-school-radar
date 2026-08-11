@@ -343,9 +343,16 @@ def _ellis_targeted_support_from_text(text: str) -> tuple[list[str], str, str] |
     if match is None:
         return None
     evidence = clean_space(match.group(0))
+    count_match = re.search(r"\b(\d{1,3})\s+(?:spots?|places?)\b", evidence, flags=re.IGNORECASE)
+    place_label = (
+        f"{count_match.group(1)} funded places"
+        if count_match is not None
+        else "Limited funded places"
+    )
     return (
         ["travel grant", "accommodation"],
-        "ELLIS/ELIAS participants: travel + accommodation covered",
+        f"{place_label} for ELLIS/ELIAS-affiliated PhD/postdoc participants "
+        "(travel + accommodation covered)",
         evidence,
     )
 
@@ -414,5 +421,3 @@ def _ellis_candidate(
         mode_evidence=f"ELLIS listing location: {location}",
         extraction_confidence=round(sum([False, True, False, True]) / 4, 2),
     )
-
-

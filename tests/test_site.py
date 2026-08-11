@@ -88,12 +88,45 @@ def test_recurring_programme_library_is_separate_and_capped_by_organizer(tmp_pat
     html = write_site(rank_candidates(candidates), [], tmp_path).read_text(encoding="utf-8")
 
     assert "Recurring programme library" in html
-    assert "Past edition · applications closed" in html
+    assert "Ongoing · applications closed" in html
     assert "Recurring Research School 1" in html
     assert "Recurring Research School 2" in html
     assert "Recurring Research School 3" not in html
     assert "Recurring Research School 4" in html
     assert 'data-status="qualified"' not in html
+
+
+def test_recurring_programme_library_distinguishes_event_timing(tmp_path) -> None:
+    timing = {
+        "Upcoming Closed School": (date.today() + timedelta(days=20), date.today() + timedelta(days=24)),
+        "Ongoing Closed School": (date.today() - timedelta(days=2), date.today() + timedelta(days=2)),
+        "Past Closed School": (date.today() - timedelta(days=20), date.today() - timedelta(days=16)),
+    }
+    candidates = []
+    for index, (title, (start, end)) in enumerate(timing.items()):
+        candidate = sample_candidate(PROFILE)
+        candidate.title = title
+        candidate.organizer = f"Library Organizer {index}"
+        candidate.source_layer = "1"
+        candidate.source_url = f"https://example.org/library-{index}"
+        candidate.application_link = candidate.source_url
+        candidate.identity_key = f"library:{index}"
+        candidate.deadline = date.today() - timedelta(days=10)
+        candidate.deadline_status = "closed"
+        candidate.start_date = start
+        candidate.end_date = end
+        candidate.duration_days = 5
+        candidates.append(apply_hard_filters(candidate, PROFILE))
+
+    html = write_site(rank_candidates(candidates), [], tmp_path).read_text(encoding="utf-8")
+
+    assert "Upcoming · applications closed" in html
+    assert "Ongoing · applications closed" in html
+    assert "Past edition · applications closed" in html
+    i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
+    assert "即将举办 · 申请已结束" in i18n
+    assert "正在举办 · 申请已结束" in i18n
+    assert "往届项目 · 申请已结束" in i18n
 
 
 def _page(text: str, *, html: str = "", title: str = "Test School") -> Page:

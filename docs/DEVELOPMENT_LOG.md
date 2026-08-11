@@ -252,3 +252,23 @@ and accommodation are covered only for ELLIS/ELIAS participants. Evidence-based
 overrides apply the confirmed corrections immediately during daily no-network
 refreshes, while the generalized extraction and temporal guards protect future
 scans and other sources.
+
+## 2026-08-11: Closed-Call Timing and Source-Specific Content Accuracy
+
+The recurring-programme library previously used application closure as a proxy
+for event history, labelling future and currently running schools as past
+editions. Library cards now classify event timing independently as upcoming,
+ongoing, or past while keeping the shared applications-closed warning.
+
+The IHE Delft collector now normalizes its midnight UTC catalogue boundaries,
+strips API HTML fragments, and preserves the `excl. VAT` price qualifier. A
+snapshot compatibility override makes the corrected Interdisciplinarity course
+dates and deadline visible before the next full collection.
+
+Official-page review also tightened three programme records. Prob_AI is shown
+as free with a small UK-only Access Fund instead of a generic travel grant, and
+its venue no longer absorbs the following `Open to` label. UTN detail content is
+replaced with the programme's actual audience and academic overview rather than
+WordPress navigation. HPI now states that exactly 20 ELLIS/ELIAS-affiliated
+PhD/postdoc places cover travel and accommodation, and exposes its AI,
+entrepreneurship, startup, and technology-strategy topics.

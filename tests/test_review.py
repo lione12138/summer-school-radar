@@ -153,6 +153,13 @@ def test_project_override_preserves_utn_registration_fee_coverage() -> None:
     assert corrected.funding_scope == "registration fee covered"
     assert "covering the registration fee" in corrected.funding_evidence
     assert "amount not stated" not in corrected.financial_summary
+    assert corrected.eligibility == (
+        "Master's students and early-stage PhD students from the humanities and computer science."
+    )
+    assert "Doctoral Guide" not in corrected.eligibility
+    assert corrected.summary.startswith("A biennial Computational Linguistics Fall School")
+    assert "Go to content area" not in corrected.summary
+    assert "人文" in corrected.eligibility_zh
 
 
 def test_project_overrides_correct_hpi_fee_and_targeted_support() -> None:
@@ -173,7 +180,65 @@ def test_project_overrides_correct_hpi_fee_and_targeted_support() -> None:
     assert corrected.fee == "Fee EUR 0"
     assert corrected.fee_eur == 0
     assert corrected.funding_type == ["travel grant", "accommodation"]
-    assert corrected.funding_scope == "ELLIS/ELIAS participants: travel + accommodation covered"
+    assert corrected.funding_scope == (
+        "20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants "
+        "(travel + accommodation covered)"
+    )
+    assert corrected.topic_keywords == ["AI", "entrepreneurship", "startups", "technology strategy"]
+    assert corrected.financial_summary == (
+        "Fee EUR 0 · 20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants "
+        "(travel + accommodation covered)"
+    )
+
+
+def test_project_override_corrects_prob_ai_fee_access_fund_and_location() -> None:
+    from research_school_radar.review import apply_overrides, load_overrides
+
+    candidate = sample_candidate(PROFILE)
+    candidate.title = "Prob_AI Hub Winter School 2027"
+    candidate.source_url = (
+        "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/"
+        "probai-hub-winter-school-2027/"
+    )
+    candidate.application_link = candidate.source_url
+    candidate.location = "Bristol Open to"
+    candidate.fee = ""
+    candidate.fee_eur = None
+    candidate.funding_available = True
+    candidate.funding_type = ["travel grant"]
+
+    corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
+
+    assert corrected.location == "Bristol, UK"
+    assert corrected.fee_eur == 0
+    assert corrected.funding_type == ["access fund"]
+    assert corrected.funding_scope == "limited Access Fund for eligible UK-based participants"
+    assert corrected.financial_summary == (
+        "Fee EUR 0 · limited Access Fund for eligible UK-based participants"
+    )
+
+
+def test_project_override_migrates_pre_fix_ihe_snapshot() -> None:
+    from research_school_radar.review import apply_overrides, load_overrides
+
+    candidate = sample_candidate(PROFILE)
+    candidate.title = "Interdisciplinarity for Complex Water Problems"
+    candidate.organizer = "IHE Delft"
+    candidate.start_date = date(2026, 9, 28)
+    candidate.end_date = date(2026, 10, 2)
+    candidate.deadline = date(2026, 8, 28)
+    candidate.fee = "EUR 450"
+    candidate.fee_eur = 450
+    candidate.funding_available = None
+    candidate.funding_type = []
+
+    corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
+
+    assert corrected.start_date == date(2026, 9, 27)
+    assert corrected.end_date == date(2026, 10, 1)
+    assert corrected.deadline == date(2026, 8, 27)
+    assert corrected.fee == "EUR 450 excl. VAT"
+    assert corrected.financial_summary == "Fee EUR 450 excl. VAT · Apply on official page"
 
 
 def test_project_overrides_correct_una_europa_march_deadlines() -> None:
@@ -202,6 +267,7 @@ def test_location_sanitizer_rejects_field_labels() -> None:
     from research_school_radar.utils import sanitize_location
 
     assert sanitize_location("Hosts", fallback="Europe") == "Europe"
+    assert sanitize_location("Bristol Open to", fallback="Europe") == "Bristol"
 
 
 def test_review_queue_captures_fixable_non_qualified_candidates(tmp_path) -> None:

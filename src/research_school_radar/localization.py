@@ -41,6 +41,7 @@ TOPIC_ZH = {
     "economics": "经济学",
     "education research": "教育研究",
     "engineering": "工程学",
+    "entrepreneurship": "创业",
     "environmental modelling": "环境建模",
     "environmental science": "环境科学",
     "flood": "洪水",
@@ -97,8 +98,10 @@ TOPIC_ZH = {
     "speech processing": "语音处理",
     "statistical physics": "统计物理",
     "statistics": "统计学",
+    "startups": "初创企业",
     "sustainability": "可持续发展",
     "syntax": "句法学",
+    "technology strategy": "技术战略",
     "uncertainty quantification": "不确定性量化",
     "water management": "水资源管理",
     "water quality": "水质",
@@ -212,13 +215,21 @@ def financial_summary_zh(candidate: Candidate) -> str:
     if candidate.funding_available is True:
         if candidate.funding_scope == "registration fee covered":
             return "注册费奖学金 · 入选者注册费全额覆盖"
-        if candidate.funding_scope == "ELLIS/ELIAS participants: travel + accommodation covered":
+        if candidate.funding_scope == (
+            "20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants "
+            "(travel + accommodation covered)"
+        ):
             fee = "费用 EUR 0" if candidate.fee_eur == 0 else "费用未说明"
-            return f"{fee} · ELLIS/ELIAS 参与者：差旅及住宿全额覆盖"
+            return f"{fee} · 面向 ELLIS/ELIAS 关联博士生及博士后的 20 个资助名额（差旅及住宿全额覆盖）"
+        if candidate.funding_scope == "limited Access Fund for eligible UK-based participants":
+            fee = "费用 EUR 0" if candidate.fee_eur == 0 else "费用未说明"
+            return f"{fee} · 面向符合条件的英国境内参与者提供少量可及性基金"
         funding = "、".join(FUNDING_TYPE_ZH.get(item, item) for item in candidate.funding_type) or "提供资助"
         return f"{funding} · 金额未说明"
     if candidate.fee_eur is not None:
         if candidate.fee_eur == 0:
             return "费用 EUR 0"
+        if "excl. vat" in candidate.fee.lower() or "excluding vat" in candidate.fee.lower():
+            return f"费用 EUR {candidate.fee_eur:.0f}（未含增值税）"
         return f"费用约 EUR {candidate.fee_eur:.0f}"
     return "资助或费用未说明"

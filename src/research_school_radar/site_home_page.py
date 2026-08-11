@@ -418,8 +418,11 @@ def _found_row(candidate: Candidate) -> str:
 
 
 def _archive_row(candidate: Candidate) -> str:
+    status_key, status_en = _library_status(candidate)
     return render_template(
         "home/archive_row.html",
+        status_key=status_key,
+        status_en=status_en,
         title=_bilingual(candidate.title, candidate.title_zh),
         organizer=_bilingual(candidate.organizer, candidate.organizer_zh),
         location=_bilingual(
@@ -430,6 +433,18 @@ def _archive_row(candidate: Candidate) -> str:
         funding=_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate)),
         official_url=safe_external_url(candidate.source_url or candidate.application_link),
     )
+
+
+def _library_status(candidate: Candidate) -> tuple[str, str]:
+    """Describe event timing independently from its closed application state."""
+    today = date.today()
+    start = candidate.start_date
+    end = candidate.end_date or start
+    if start is not None and start > today:
+        return "library.upcoming_closed", "Upcoming · applications closed"
+    if start is not None and start <= today and (end is None or end >= today):
+        return "library.ongoing_closed", "Ongoing · applications closed"
+    return "library.past_closed", "Past edition · applications closed"
 
 
 def _archive_section(rows: str, count: int) -> str:

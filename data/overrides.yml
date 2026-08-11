@@ -18,22 +18,60 @@
 overrides:
   - url: https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/
     status: update
-    note: The official UTN programme section states that selected participants can receive scholarships covering the applicable registration fee; Deutschlandstipendium in the page footer is unrelated navigation/news content.
+    note: The official UTN programme content identifies the intended audience and academic focus; navigation text and the unrelated Deutschlandstipendium footer item are excluded.
     fields:
       funding_available: true
       funding_type: [scholarship]
       funding_scope: registration fee covered
       funding_evidence: Thanks to the support of the associations GSCL and DGfS, scholarships covering the registration fee will be available for selected participants.
+      eligibility: "Master's students and early-stage PhD students from the humanities and computer science."
+      eligibility_zh: "面向人文学科和计算机科学领域的硕士生及博士早期阶段学生。"
+      summary: "A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes."
+      summary_zh: "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。"
   - url: https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school
     status: update
-    note: The official HPI programme page states Fee None; ELLIS and HPI state that 20 ELLIS/ELIAS participant places include covered travel and accommodation.
+    note: The official HPI programme page states Fee None; ELLIS reserves 20 funded places for affiliated PhD candidates and postdocs, with travel and accommodation covered.
     fields:
       fee: Fee EUR 0
       fee_eur: 0
       funding_available: true
       funding_type: [travel grant, accommodation]
-      funding_scope: "ELLIS/ELIAS participants: travel + accommodation covered"
-      funding_evidence: "ELIAS / ELLIS affiliated students: 20 participant places from the ELLIS and ELIAS network include travel and accommodation covered."
+      funding_scope: "20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants (travel + accommodation covered)"
+      funding_evidence: "ELLIS states that 20 places are reserved for ELLIS/ELIAS-affiliated PhD candidates and postdocs, with travel and accommodation fully covered."
+      topic_keywords: [AI, entrepreneurship, startups, technology strategy]
+      eligibility: "Master's students in computer science and PhD candidates; the 20 funded ELLIS/ELIAS places are reserved for affiliated PhD candidates and postdocs."
+      eligibility_zh: "面向计算机科学硕士生和博士生；其中 20 个 ELLIS/ELIAS 资助名额专门面向网络关联博士生及博士后。"
+      summary: "An intensive four-day school on the CTO role in startups and technology companies, covering AI-first company building, technology strategy, leadership, lean analytics, and startup financing."
+      summary_zh: "为期四天的密集型暑期学校，聚焦初创公司与科技企业中的 CTO 职责，内容包括 AI 优先的公司建设、技术战略、领导力、精益分析和初创企业融资。"
+  - url: https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/
+    status: update
+    note: The official event page says attendance is free; attendees normally cover travel and accommodation, with only a small UK-only Access Fund for eligible participation barriers.
+    fields:
+      location: Bristol, UK
+      location_zh: 英国布里斯托尔
+      fee: Fee EUR 0
+      fee_eur: 0
+      funding_available: true
+      funding_type: [access fund]
+      funding_scope: limited Access Fund for eligible UK-based participants
+      funding_evidence: The school is free to attend. A small Access Fund is available only to eligible UK-based participants facing financial or accessibility barriers; other attendees cover travel and accommodation.
+  - title: Interdisciplinarity for Complex Water Problems
+    status: update
+    note: Compatibility correction for snapshots produced before the IHE midnight-boundary parser fix; the next full IHE collection produces these values directly.
+    fields:
+      start_date: 2026-09-27
+      end_date: 2026-10-01
+      duration_days: 5
+      deadline: 2026-08-27
+      deadline_status: open
+      fee: EUR 450 excl. VAT
+      fee_eur: 450
+      summary: This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.
+      summary_zh: 本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。
+      eligibility: PhD students working on water-related issues across engineering, hydrology, environmental science, social science, or the humanities.
+      eligibility_zh: 面向从工程、水文、环境科学、社会科学或人文学科角度研究水相关问题的博士生。
+      deadline_evidence: IHE Delft application deadline is 27 August 2026 at 23:59 CET.
+      duration_evidence: IHE Delft course dates are 27 September to 1 October 2026.
   - url: https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity
     status: update
     note: The official programme page gives 13 March 2026 as the application deadline; 23 September was an unrelated page date and the June event has ended.
