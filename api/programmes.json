@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-08-16",
+  "generated": "2026-08-17",
   "programmes": [
     {
       "id": "programme:21ea41829cac43f3",
@@ -989,6 +989,84 @@
         ],
         "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
         "summary_zh": "一个密集的计算社会科学学院，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
+        "sessions": []
+      }
+    },
+    {
+      "id": "programme:387a5d8d79efdbf8",
+      "slug": "stfc-summer-school-e084155d",
+      "title": "STFC Summer School",
+      "title_zh": "STFC暑期学校",
+      "organizer": "Keele University",
+      "organizer_zh": "基尔大学",
+      "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE",
+      "summary_zh": "STFC暑期学校 - 基尔大学 跳至主要内容 无障碍 首页 搜索基尔 跳至主要内容 无障碍 首页 基础 2026年补录 本科 2027年研究生 研究 持续专业发展 学生 欢迎新生 健康与福祉 告知我们 学生KLE",
+      "topics": [
+        "sustainability",
+        "physics",
+        "astrophysics",
+        "astronomy",
+        "history"
+      ],
+      "editions": [
+        {
+          "id": "edition:6f6669516bdd22ce",
+          "title": "STFC Summer School",
+          "title_zh": "STFC暑期学校",
+          "detail_path": "opportunities/stfc-summer-school-767dea8d.html",
+          "official_url": "https://www.keele.ac.uk/astronomy-summer-school/",
+          "location": "UK",
+          "location_zh": "英国",
+          "start_date": "2026-09-01",
+          "end_date": "2026-09-04",
+          "deadline": null,
+          "deadline_status": "closed",
+          "duration_days": 4,
+          "mode": "in-person",
+          "financial_summary": "accommodation support · amount not stated",
+          "financial_summary_zh": "accommodation support · 金额未说明",
+          "funding_available": true,
+          "fee_eur": 840.0,
+          "topics": [
+            "sustainability",
+            "physics",
+            "astrophysics",
+            "astronomy",
+            "history"
+          ],
+          "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE",
+          "summary_zh": "STFC暑期学校 - 基尔大学 跳至主要内容 无障碍 首页 搜索基尔 跳至主要内容 无障碍 首页 基础 2026年补录 本科 2027年研究生 研究 持续专业发展 学生 欢迎新生 健康与福祉 告知我们 学生KLE",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:6f6669516bdd22ce",
+        "title": "STFC Summer School",
+        "title_zh": "STFC暑期学校",
+        "detail_path": "opportunities/stfc-summer-school-767dea8d.html",
+        "official_url": "https://www.keele.ac.uk/astronomy-summer-school/",
+        "location": "UK",
+        "location_zh": "英国",
+        "start_date": "2026-09-01",
+        "end_date": "2026-09-04",
+        "deadline": null,
+        "deadline_status": "closed",
+        "duration_days": 4,
+        "mode": "in-person",
+        "financial_summary": "accommodation support · amount not stated",
+        "financial_summary_zh": "accommodation support · 金额未说明",
+        "funding_available": true,
+        "fee_eur": 840.0,
+        "topics": [
+          "sustainability",
+          "physics",
+          "astrophysics",
+          "astronomy",
+          "history"
+        ],
+        "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE",
+        "summary_zh": "STFC暑期学校 - 基尔大学 跳至主要内容 无障碍 首页 搜索基尔 跳至主要内容 无障碍 首页 基础 2026年补录 本科 2027年研究生 研究 持续专业发展 学生 欢迎新生 健康与福祉 告知我们 学生KLE",
         "sessions": []
       }
     },

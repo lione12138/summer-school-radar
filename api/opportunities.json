@@ -3,7 +3,7 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-08-16",
+  "generated": "2026-08-17",
   "opportunities": [
     {
       "id": "opportunities/computational-linguistics-fall-school-2026-50903ddb",
@@ -159,6 +159,58 @@
       "summary_zh": "Prob_AI Hub 举办的四天冬季学校，内容包括因果推断、计算最优传输、算子学习、强化学习、偏微分方程机器学习和神经过程。项目免费参加；交通和住宿通常自理，符合条件的英国参与者可申请有限的 Access Fund。",
       "eligibility": "Open to applicants worldwide, with priority given to UK-based applicants.",
       "eligibility_zh": "面向全球申请者，英国申请者优先。",
+      "sessions": []
+    },
+    {
+      "id": "opportunities/stfc-summer-school-767dea8d",
+      "edition_id": "edition:6f6669516bdd22ce",
+      "programme_id": "programme:387a5d8d79efdbf8",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/stfc-summer-school-e084155d.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/stfc-summer-school-e084155d.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/stfc-summer-school-e084155d.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/stfc-summer-school-e084155d.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/stfc-summer-school-767dea8d.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/stfc-summer-school-767dea8d.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/stfc-summer-school-767dea8d.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/stfc-summer-school-767dea8d.html"
+      },
+      "official_url": "https://www.keele.ac.uk/astronomy-summer-school/",
+      "title": "STFC Summer School",
+      "title_zh": "STFC暑期学校",
+      "type": "summer school",
+      "organizer": "Keele University",
+      "organizer_zh": "基尔大学",
+      "location": "UK",
+      "location_zh": "英国",
+      "mode": "in-person",
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-04",
+      "duration_days": 4,
+      "application_deadline": null,
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "accommodation support · amount not stated",
+      "fee": "of £700 (to cover registration, accommodation for 5 nights, breakfasts, lunch, coffee breaks, and di",
+      "fee_eur": 840.0,
+      "funding_available": true,
+      "funding_type": [
+        "accommodation support"
+      ],
+      "funding_scope": "",
+      "topics": [
+        "sustainability",
+        "physics",
+        "astrophysics",
+        "astronomy",
+        "history"
+      ],
+      "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE",
+      "summary_zh": "STFC暑期学校 - 基尔大学 跳至主要内容 无障碍 首页 搜索基尔 跳至主要内容 无障碍 首页 基础 2026年补录 本科 2027年研究生 研究 持续专业发展 学生 欢迎新生 健康与福祉 告知我们 学生KLE",
+      "eligibility": "PhD students in astrophysics",
+      "eligibility_zh": "天体物理学博士生",
       "sessions": []
     },
     {
