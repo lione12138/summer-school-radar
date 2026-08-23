@@ -3,7 +3,7 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-08-22",
+  "generated": "2026-08-23",
   "opportunities": [
     {
       "id": "opportunities/computational-linguistics-fall-school-2026-50903ddb",
@@ -458,6 +458,55 @@
       "sessions": []
     },
     {
+      "id": "sicss:2026:amu-law",
+      "edition_id": "sicss:2026:amu-law",
+      "programme_id": "programme:71652decb8975874",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/sicss-amu-law-ea0b8009.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/sicss-amu-law-ea0b8009.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/sicss-amu-law-ea0b8009.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/sicss-amu-law-ea0b8009.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/sicss-2026-amu-law-61e7da57.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/sicss-2026-amu-law-61e7da57.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/sicss-2026-amu-law-61e7da57.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/sicss-2026-amu-law-61e7da57.html"
+      },
+      "official_url": "https://new.sicss.io/apply",
+      "title": "SICSS-AMU/Law",
+      "title_zh": "SICSS-AMU/法律",
+      "type": "summer institute",
+      "organizer": "Summer Institutes in Computational Social Science",
+      "organizer_zh": "计算社会科学暑期学院",
+      "location": "Adam Mickiewicz University, Poznań",
+      "location_zh": "亚当·密茨凯维奇大学，波兹南",
+      "mode": "in-person",
+      "start_date": "2026-09-07",
+      "end_date": "2026-09-18",
+      "duration_days": 12,
+      "application_deadline": null,
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 0",
+      "fee": "No tuition required",
+      "fee_eur": 0.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "topics": [
+        "data science",
+        "law",
+        "social science",
+        "social science methods"
+      ],
+      "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
+      "summary_zh": "一个密集的计算社会科学学院，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
+      "eligibility": "Graduate students, postdoctoral researchers, and junior faculty.",
+      "eligibility_zh": "研究生、博士后研究员和初级教师。",
+      "sessions": []
+    },
+    {
       "id": "sicss:2026:buenos-aires",
       "edition_id": "sicss:2026:buenos-aires",
       "programme_id": "programme:799c5b84b7aedb21",
@@ -848,6 +897,56 @@
       "summary_zh": "IEEE RAS 举办的五天线下认知机器人暑期学校，连接人工智能、机器学习、感知、规划与智能机器人系统。",
       "eligibility": "early-career researchers, and professionals interested in the next generation of intelligent robotic systems",
       "eligibility_zh": "早期职业研究人员以及对下一代智能机器人系统感兴趣的专业人士",
+      "sessions": []
+    },
+    {
+      "id": "sib:https://www.sib.swiss/training/course/20260907_addmg",
+      "edition_id": "sib:https://www.sib.swiss/training/course/20260907_addmg",
+      "programme_id": "programme:db89f04e7c1c4380",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/advanced-statistics-statistical-modelling-803f1bf8.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/advanced-statistics-statistical-modelling-803f1bf8.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/advanced-statistics-statistical-modelling-803f1bf8.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/advanced-statistics-statistical-modelling-803f1bf8.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/sib-https-www-sib-swiss-training-course-20260907-addmg-07b34363.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/sib-https-www-sib-swiss-training-course-20260907-addmg-07b34363.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/sib-https-www-sib-swiss-training-course-20260907-addmg-07b34363.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/sib-https-www-sib-swiss-training-course-20260907-addmg-07b34363.html"
+      },
+      "official_url": "https://www.sib.swiss/training/course/20260907_ADDMG",
+      "title": "Advanced Statistics: Statistical Modelling",
+      "title_zh": "高级统计学：统计建模",
+      "type": "advanced course",
+      "organizer": "SIB Swiss Institute of Bioinformatics",
+      "organizer_zh": "SIB瑞士生物信息学研究所",
+      "location": "Lausanne, Switzerland",
+      "location_zh": "瑞士洛桑",
+      "mode": "in-person",
+      "start_date": "2026-09-07",
+      "end_date": "2026-09-10",
+      "duration_days": 4,
+      "application_deadline": null,
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee about EUR 440",
+      "fee": "Academic: 400 CHF",
+      "fee_eur": 440.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "topics": [
+        "artificial intelligence",
+        "machine learning",
+        "data analysis",
+        "statistics",
+        "design"
+      ],
+      "summary": "This 4-day course presents statistical models and techniques beyond classical linear modelling, with an emphasis on concrete applications in biology.",
+      "summary_zh": "这门为期4天的课程介绍超越经典线性模型的统计模型和技术，重点强调在生物学中的具体应用。",
+      "eligibility": "This 4-day course presents statistical models and techniques beyond classical linear modelling, with an emphasis on concrete applications in biology.",
+      "eligibility_zh": "这门为期4天的课程介绍超越经典线性模型的统计模型和技术，重点强调在生物学中的具体应用。",
       "sessions": []
     }
   ]

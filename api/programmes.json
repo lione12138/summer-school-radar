@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-08-22",
+  "generated": "2026-08-23",
   "programmes": [
     {
       "id": "programme:21ea41829cac43f3",
@@ -227,6 +227,84 @@
         ],
         "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
         "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
+        "sessions": []
+      }
+    },
+    {
+      "id": "programme:db89f04e7c1c4380",
+      "slug": "advanced-statistics-statistical-modelling-803f1bf8",
+      "title": "Advanced Statistics: Statistical Modelling",
+      "title_zh": "高级统计学：统计建模",
+      "organizer": "SIB Swiss Institute of Bioinformatics",
+      "organizer_zh": "SIB瑞士生物信息学研究所",
+      "summary": "This 4-day course presents statistical models and techniques beyond classical linear modelling, with an emphasis on concrete applications in biology.",
+      "summary_zh": "这门为期4天的课程介绍超越经典线性模型的统计模型和技术，重点强调在生物学中的具体应用。",
+      "topics": [
+        "artificial intelligence",
+        "machine learning",
+        "data analysis",
+        "statistics",
+        "design"
+      ],
+      "editions": [
+        {
+          "id": "sib:https://www.sib.swiss/training/course/20260907_addmg",
+          "title": "Advanced Statistics: Statistical Modelling",
+          "title_zh": "高级统计学：统计建模",
+          "detail_path": "opportunities/sib-https-www-sib-swiss-training-course-20260907-addmg-07b34363.html",
+          "official_url": "https://www.sib.swiss/training/course/20260907_ADDMG",
+          "location": "Lausanne, Switzerland",
+          "location_zh": "瑞士洛桑",
+          "start_date": "2026-09-07",
+          "end_date": "2026-09-10",
+          "deadline": null,
+          "deadline_status": "closed",
+          "duration_days": 4,
+          "mode": "in-person",
+          "financial_summary": "Fee about EUR 440",
+          "financial_summary_zh": "费用约 EUR 440",
+          "funding_available": null,
+          "fee_eur": 440.0,
+          "topics": [
+            "artificial intelligence",
+            "machine learning",
+            "data analysis",
+            "statistics",
+            "design"
+          ],
+          "summary": "This 4-day course presents statistical models and techniques beyond classical linear modelling, with an emphasis on concrete applications in biology.",
+          "summary_zh": "这门为期4天的课程介绍超越经典线性模型的统计模型和技术，重点强调在生物学中的具体应用。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "sib:https://www.sib.swiss/training/course/20260907_addmg",
+        "title": "Advanced Statistics: Statistical Modelling",
+        "title_zh": "高级统计学：统计建模",
+        "detail_path": "opportunities/sib-https-www-sib-swiss-training-course-20260907-addmg-07b34363.html",
+        "official_url": "https://www.sib.swiss/training/course/20260907_ADDMG",
+        "location": "Lausanne, Switzerland",
+        "location_zh": "瑞士洛桑",
+        "start_date": "2026-09-07",
+        "end_date": "2026-09-10",
+        "deadline": null,
+        "deadline_status": "closed",
+        "duration_days": 4,
+        "mode": "in-person",
+        "financial_summary": "Fee about EUR 440",
+        "financial_summary_zh": "费用约 EUR 440",
+        "funding_available": null,
+        "fee_eur": 440.0,
+        "topics": [
+          "artificial intelligence",
+          "machine learning",
+          "data analysis",
+          "statistics",
+          "design"
+        ],
+        "summary": "This 4-day course presents statistical models and techniques beyond classical linear modelling, with an emphasis on concrete applications in biology.",
+        "summary_zh": "这门为期4天的课程介绍超越经典线性模型的统计模型和技术，重点强调在生物学中的具体应用。",
         "sessions": []
       }
     },
@@ -701,6 +779,81 @@
         ],
         "summary": "A four-day Prob_AI Hub winter school covering causality, computational optimal transport, operator learning, reinforcement learning, machine learning for PDEs, and neural processes. Attendance is free; travel and accommodation are normally self-funded, with a limited Access Fund for eligible UK-based participants.",
         "summary_zh": "Prob_AI Hub 举办的四天冬季学校，内容包括因果推断、计算最优传输、算子学习、强化学习、偏微分方程机器学习和神经过程。项目免费参加；交通和住宿通常自理，符合条件的英国参与者可申请有限的 Access Fund。",
+        "sessions": []
+      }
+    },
+    {
+      "id": "programme:71652decb8975874",
+      "slug": "sicss-amu-law-ea0b8009",
+      "title": "SICSS-AMU/Law",
+      "title_zh": "SICSS-AMU/法律",
+      "organizer": "Summer Institutes in Computational Social Science",
+      "organizer_zh": "计算社会科学暑期学院",
+      "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
+      "summary_zh": "一个密集的计算社会科学学院，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
+      "topics": [
+        "data science",
+        "law",
+        "social science",
+        "social science methods"
+      ],
+      "editions": [
+        {
+          "id": "sicss:2026:amu-law",
+          "title": "SICSS-AMU/Law",
+          "title_zh": "SICSS-AMU/法律",
+          "detail_path": "opportunities/sicss-2026-amu-law-61e7da57.html",
+          "official_url": "https://new.sicss.io/apply",
+          "location": "Adam Mickiewicz University, Poznań",
+          "location_zh": "亚当·密茨凯维奇大学，波兹南",
+          "start_date": "2026-09-07",
+          "end_date": "2026-09-18",
+          "deadline": null,
+          "deadline_status": "closed",
+          "duration_days": 12,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 0",
+          "financial_summary_zh": "费用 EUR 0",
+          "funding_available": null,
+          "fee_eur": 0.0,
+          "topics": [
+            "data science",
+            "law",
+            "social science",
+            "social science methods"
+          ],
+          "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
+          "summary_zh": "一个密集的计算社会科学学院，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "sicss:2026:amu-law",
+        "title": "SICSS-AMU/Law",
+        "title_zh": "SICSS-AMU/法律",
+        "detail_path": "opportunities/sicss-2026-amu-law-61e7da57.html",
+        "official_url": "https://new.sicss.io/apply",
+        "location": "Adam Mickiewicz University, Poznań",
+        "location_zh": "亚当·密茨凯维奇大学，波兹南",
+        "start_date": "2026-09-07",
+        "end_date": "2026-09-18",
+        "deadline": null,
+        "deadline_status": "closed",
+        "duration_days": 12,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 0",
+        "financial_summary_zh": "费用 EUR 0",
+        "funding_available": null,
+        "fee_eur": 0.0,
+        "topics": [
+          "data science",
+          "law",
+          "social science",
+          "social science methods"
+        ],
+        "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
+        "summary_zh": "一个密集的计算社会科学学院，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
         "sessions": []
       }
     },
