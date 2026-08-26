@@ -8,7 +8,7 @@
       "title": "Computational Linguistics Fall School",
       "title_zh": "计算语言学秋季学校",
       "organizer": "University of Technology Nuremberg (UTN)",
-      "organizer_zh": "",
+      "organizer_zh": "纽伦堡工业大学（UTN）",
       "summary": "A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.",
       "summary_zh": "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。",
       "topics": [
@@ -96,11 +96,11 @@
         {
           "id": "edition:f7aa51ed5670a606",
           "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
-          "title_zh": "ELIAS & HPI Engine“如何成为（初创公司）首席技术官”暑期学校",
+          "title_zh": "ELIAS & HPI 引擎“如何成为（初创公司）首席技术官”暑期学校",
           "detail_path": "opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499.html",
           "official_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
           "location": "HPI Potsdam",
-          "location_zh": "HPI波茨坦",
+          "location_zh": "HPI 波茨坦",
           "start_date": "2026-08-31",
           "end_date": "2026-09-03",
           "deadline": "2026-08-28",
@@ -126,11 +126,11 @@
       "latest_edition": {
         "id": "edition:f7aa51ed5670a606",
         "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
-        "title_zh": "ELIAS & HPI Engine“如何成为（初创公司）首席技术官”暑期学校",
+        "title_zh": "ELIAS & HPI 引擎“如何成为（初创公司）首席技术官”暑期学校",
         "detail_path": "opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499.html",
         "official_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
         "location": "HPI Potsdam",
-        "location_zh": "HPI波茨坦",
+        "location_zh": "HPI 波茨坦",
         "start_date": "2026-08-31",
         "end_date": "2026-09-03",
         "deadline": "2026-08-28",
@@ -172,7 +172,7 @@
         {
           "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
           "title": "Interdisciplinarity for Complex Water Problems",
-          "title_zh": "复杂水问题的跨学科研究",
+          "title_zh": "复杂水问题的跨学科方法",
           "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
           "official_url": "https://www.un-ihe.org/short-courses",
           "location": "Delft, Netherlands",
@@ -203,7 +203,7 @@
       "latest_edition": {
         "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
         "title": "Interdisciplinarity for Complex Water Problems",
-        "title_zh": "复杂水问题的跨学科研究",
+        "title_zh": "复杂水问题的跨学科方法",
         "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
         "official_url": "https://www.un-ihe.org/short-courses",
         "location": "Delft, Netherlands",
@@ -470,7 +470,7 @@
       "title": "Exploring Your Eco – Exploring the living, cultural, and eco-tourism recreational environments of Konitsa, in northern Greece",
       "title_zh": "探索你的生态——探索希腊北部科尼察的生活、文化和生态旅游休闲环境",
       "organizer": "Czech University of Life Sciences Prague, with Vikos-Aoos UNESCO Global Geopark and Trace Your Eco",
-      "organizer_zh": "",
+      "organizer_zh": "捷克布拉格生命科学大学，与维科斯-阿奥斯联合国教科文组织世界地质公园和Trace Your Eco合作",
       "summary": "A nine-day on-site summer school in Konitsa examining the living, cultural, and eco-tourism environments of the Vikos-Aoos UNESCO Geopark through research, field activities, and participant recommendations.",
       "summary_zh": "在希腊科尼察举办的九天线下暑期学校，通过研究、田野活动和学员建议考察维科斯－奥奥斯世界地质公园的生活、文化与生态旅游环境。",
       "topics": [
@@ -626,7 +626,7 @@
       "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
       "title_zh": "IEEE RAS德国暑期学校：人工智能与机器人技术的融合",
       "organizer": "IEEE Robotics and Automation Society (IEEE RAS)",
-      "organizer_zh": "",
+      "organizer_zh": "IEEE机器人与自动化学会（IEEE RAS）",
       "summary": "A five-day in-person IEEE RAS summer school on cognitive robotics, bridging artificial intelligence, machine learning, perception, planning, and intelligent robotic systems.",
       "summary_zh": "IEEE RAS 举办的五天线下认知机器人暑期学校，连接人工智能、机器学习、感知、规划与智能机器人系统。",
       "topics": [
@@ -641,11 +641,11 @@
         {
           "id": "edition:e496622f769510db",
           "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
-          "title_zh": "IEEE RAS德国暑期学校：人工智能与机器人技术的融合",
+          "title_zh": "IEEE RAS德国暑期学校：连接人工智能与机器人技术",
           "detail_path": "opportunities/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-40f851a3.html",
           "official_url": "https://events.vtools.ieee.org/m/564683",
           "location": "Abtei Frauenwörth, Chiemsee, Germany",
-          "location_zh": "德国基姆湖弗劳恩沃斯修道院",
+          "location_zh": "德国基姆湖弗劳恩沃特修道院",
           "start_date": "2026-09-07",
           "end_date": "2026-09-11",
           "deadline": "2026-07-13",
@@ -673,11 +673,11 @@
       "latest_edition": {
         "id": "edition:e496622f769510db",
         "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
-        "title_zh": "IEEE RAS德国暑期学校：人工智能与机器人技术的融合",
+        "title_zh": "IEEE RAS德国暑期学校：连接人工智能与机器人技术",
         "detail_path": "opportunities/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-40f851a3.html",
         "official_url": "https://events.vtools.ieee.org/m/564683",
         "location": "Abtei Frauenwörth, Chiemsee, Germany",
-        "location_zh": "德国基姆湖弗劳恩沃斯修道院",
+        "location_zh": "德国基姆湖弗劳恩沃特修道院",
         "start_date": "2026-09-07",
         "end_date": "2026-09-11",
         "deadline": "2026-07-13",
@@ -722,7 +722,7 @@
         {
           "id": "edition:d6b60f7163195ea3",
           "title": "Prob_AI Hub Winter School 2027",
-          "title_zh": "Prob_AI Hub 冬季学校 2027",
+          "title_zh": "Prob_AI Hub 2027冬季学校",
           "detail_path": "opportunities/prob-ai-hub-winter-school-2027-cee177c1.html",
           "official_url": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
           "location": "Fry Building, University of Bristol, Bristol, UK",
@@ -754,7 +754,7 @@
       "latest_edition": {
         "id": "edition:d6b60f7163195ea3",
         "title": "Prob_AI Hub Winter School 2027",
-        "title_zh": "Prob_AI Hub 冬季学校 2027",
+        "title_zh": "Prob_AI Hub 2027冬季学校",
         "detail_path": "opportunities/prob-ai-hub-winter-school-2027-cee177c1.html",
         "official_url": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
         "location": "Fry Building, University of Bristol, Bristol, UK",
@@ -1153,12 +1153,14 @@
       "organizer": "Keele University",
       "organizer_zh": "基尔大学",
       "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE Override note: The official registration rules distinguish reimbursable participant support from accommodation and meals included in the paid package.",
-      "summary_zh": "STFC暑期学校 - 基尔大学 跳至主要内容 无障碍 首页 搜索基尔 跳至主要内容 无障碍 首页 基础 2026年补录 本科 2027年研究生 研究 持续专业发展 学生 欢迎新生 健康与福祉 告知我们 学生KLE",
+      "summary_zh": "STFC暑期学校 - 基尔大学 跳至主要内容 无障碍 首页 搜索基尔 跳至主要内容 无障碍 首页 基础 2026年补录 本科 2027年研究生 研究 持续专业发展 学生 欢迎新生 健康与福祉 告知我们 学生KLE 覆盖说明：官方注册规则区分可报销的参与者支持与包含在付费套餐中的住宿和餐饮。",
       "topics": [
         "sustainability",
+        "AI",
         "physics",
         "astrophysics",
         "astronomy",
+        "cosmology",
         "history"
       ],
       "editions": [
@@ -1182,13 +1184,15 @@
           "fee_eur": 840.0,
           "topics": [
             "sustainability",
+            "AI",
             "physics",
             "astrophysics",
             "astronomy",
+            "cosmology",
             "history"
           ],
           "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE Override note: The official registration rules distinguish reimbursable participant support from accommodation and meals included in the paid package.",
-          "summary_zh": "",
+          "summary_zh": "STFC暑期学校 - 基尔大学 跳至主要内容 无障碍 首页 搜索基尔 跳至主要内容 无障碍 首页 基础 2026年补录 本科 2027年研究生 研究 持续专业发展 学生 欢迎新生 健康与福祉 告知我们 学生KLE 覆盖说明：官方注册规则区分可报销的参与者支持与包含在付费套餐中的住宿和餐饮。",
           "sessions": []
         }
       ],
@@ -1213,13 +1217,15 @@
         "fee_eur": 840.0,
         "topics": [
           "sustainability",
+          "AI",
           "physics",
           "astrophysics",
           "astronomy",
+          "cosmology",
           "history"
         ],
         "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE Override note: The official registration rules distinguish reimbursable participant support from accommodation and meals included in the paid package.",
-        "summary_zh": "",
+        "summary_zh": "STFC暑期学校 - 基尔大学 跳至主要内容 无障碍 首页 搜索基尔 跳至主要内容 无障碍 首页 基础 2026年补录 本科 2027年研究生 研究 持续专业发展 学生 欢迎新生 健康与福祉 告知我们 学生KLE 覆盖说明：官方注册规则区分可报销的参与者支持与包含在付费套餐中的住宿和餐饮。",
         "sessions": []
       }
     },
@@ -1229,7 +1235,7 @@
       "title": "Summer school DS-FOOD Design of sustainable food systems",
       "title_zh": "可持续食品系统设计暑期学校（）",
       "organizer": "Euroleague for Life Sciences (ELLS)",
-      "organizer_zh": "",
+      "organizer_zh": "欧洲生命科学联盟（ELLS）",
       "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
       "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
       "topics": [
@@ -1241,11 +1247,11 @@
         {
           "id": "edition:736b6cbf96f90a6f",
           "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-          "title_zh": "可持续食品系统设计暑期学校（第6届）",
+          "title_zh": "可持续食品系统设计暑期学校（第六届）",
           "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
           "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
           "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-          "location_zh": "意大利特伦托省皮耶韦泰西诺高山研究中心，Via Rovigo, 7, 38050, TN",
+          "location_zh": "阿尔卑斯学习中心，位于意大利特伦托省Pieve Tesino，Via Rovigo, 7, 38050, TN",
           "start_date": "2026-07-05",
           "end_date": "2026-07-12",
           "deadline": "2026-05-01",
@@ -1270,11 +1276,11 @@
       "latest_edition": {
         "id": "edition:736b6cbf96f90a6f",
         "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-        "title_zh": "可持续食品系统设计暑期学校（第6届）",
+        "title_zh": "可持续食品系统设计暑期学校（第六届）",
         "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
         "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
         "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-        "location_zh": "意大利特伦托省皮耶韦泰西诺高山研究中心，Via Rovigo, 7, 38050, TN",
+        "location_zh": "阿尔卑斯学习中心，位于意大利特伦托省Pieve Tesino，Via Rovigo, 7, 38050, TN",
         "start_date": "2026-07-05",
         "end_date": "2026-07-12",
         "deadline": "2026-05-01",
