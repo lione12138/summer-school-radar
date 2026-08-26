@@ -242,6 +242,9 @@ def test_project_override_distinguishes_stfc_reimbursement_from_paid_package() -
     assert "otherwise GBP 700 for non-STFC-funded" in corrected.financial_summary
     assert "accommodation support" not in corrected.financial_summary
     assert financial_summary_zh(corrected).startswith("STFC 奖学金持有者及自费研究生免注册费")
+    assert corrected.location == "Keele University, Staffordshire, UK"
+    assert corrected.topic_keywords == ["astronomy", "astrophysics", "physics"]
+    assert "Skip to main content" not in corrected.summary
 
 
 def test_project_overrides_correct_hpi_fee_and_targeted_support() -> None:

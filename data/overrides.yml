@@ -254,3 +254,8 @@ overrides:
       funding_evidence: "STFC Studentship holders and self-funded postgraduates can register free of charge and claim back travel and subsistence."
       fee: "GBP 700 for non-STFC-funded PhD students, postdocs, and university/organization employees; includes registration, 5 nights accommodation, meals, and social events"
       fee_eur: 840
+      location: "Keele University, Staffordshire, UK"
+      location_zh: "英国斯塔福德郡基尔大学"
+      topic_keywords: [astronomy, astrophysics, physics]
+      summary: "An introductory residential astronomy summer school for postgraduate researchers, hosted by Keele University."
+      summary_zh: "由基尔大学主办、面向研究生研究人员的入门级住宿制天文学暑期学校。"
