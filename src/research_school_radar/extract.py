@@ -23,7 +23,8 @@ from .utils import clean_space, evidence_window, first_match, sanitize_location
 FUNDING_PATTERNS = {
     "travel grant": (
         r"travel grant[s]?|travel bursar(?:y|ies)|travel support"
-        r"|travel costs?[^.\n]{0,20}(?:covered|reimbursed)"
+        r"|travel(?:\s*(?:&|and)\s*subsistence|\s+costs?)?[^.\n]{0,30}"
+        r"(?:covered|reimbursed|claimed back)"
         r"|covers?[^.\n]{0,20}(?:travel costs?|airfare|flights?)"
     ),
     "scholarship": r"scholarship[s]?",
@@ -37,14 +38,18 @@ FUNDING_PATTERNS = {
         r"|fellowship[s]?\s+(?:to|for)\s+(?:attend|participat)"
     ),
     "tuition waiver": r"tuition waiver[s]?",
-    "fee waiver": r"fee waiver[s]?|registration (?:fee )?waiver|waived (?:registration|tuition) fee",
+    "fee waiver": (
+        r"fee waiver[s]?|registration (?:fee )?waiver|waived (?:registration|tuition) fee"
+        r"|(?:register|registration)\s+free[- ]of[- ]charge|free registration"
+    ),
     # Word boundaries avoid treating institution names such as the German
     # "Deutschlandstipendium" as a participant stipend on the current page.
     "stipend": r"\bstipends?\b",
     "accommodation support": (
         r"accommodation support|covered accommodation|accommodation is covered|free accommodation"
-        r"|(?:accommodation|board and lodging|board|lodging|meals?)\s+(?:is|are|will be)?\s*(?:provided|covered|included)"
-        r"|covers?\s+(?:accommodation|board|lodging|subsistence|meals)"
+        r"|(?:accommodation|board and lodging|board|lodging|meals?)\s+"
+        r"(?:is|are|will be)?\s*(?:provided\s+free of charge|covered)"
+        r"|(?:covers?|reimburses?)\s+(?:accommodation|board|lodging|subsistence|meals)"
     ),
     "financial support": (
         r"(?:financial|funding) support\s+(?:(?:is|will be)\s+)?(?:available|offered|provided)"
@@ -66,8 +71,8 @@ NEGATION_BEFORE = re.compile(
 FUNDING_OFFER_CUE = re.compile(
     r"\b(?:available|offer(?:s|ed|ing)?|provid(?:e[sd]?|ing)|award(?:s|ed|ing)|"
     r"grant(?:ed|ing)|eligible|receive[sd]?|cover(?:s|ed|ing)?|"
-    r"reimburs(?:e[sd]?|ement)|waiv(?:e[sd]?|ing)|fund(?:s|ed)|supported|"
-    r"included|free of charge|fully funded|"
+    r"reimburs(?:e[sd]?|ement)|claim(?:ed)? back|waiv(?:e[sd]?|ing)|fund(?:s|ed)|supported|"
+    r"included|free[- ]of[- ]charge|fully funded|"
     r"full scholarship)\b|(?:EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD)\s*\d|"
     r"[€$£]\s*\d",
     flags=re.IGNORECASE,

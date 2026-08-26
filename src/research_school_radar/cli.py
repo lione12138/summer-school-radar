@@ -42,6 +42,7 @@ from .scan_health import (
 )
 from .semantic import unique_pages
 from .site import write_site
+from .site_freshness import source_health_by_name
 from .storage import update_seen
 from .translation import TranslationConfig, load_translation_config
 from .utils import ROOT, load_yaml
@@ -322,6 +323,17 @@ def run_scan(
     report_path = write_report(ranked, reports_dir, errors)
     if update_readme_latest and not offline_sample and update_readme(ROOT / "README.md", ranked):
         print("Updated README latest-scan section")
+    manifest = full_scan_manifest(
+        coverage=coverage,
+        http_cache_stats=http_cache.stats,
+        extracted_candidates=len(candidates),
+        published_candidates=len(ranked),
+        semantic_enabled=enable_semantic,
+        llm_enabled=enable_llm_extraction,
+        discovery_enabled=include_discovery,
+        discovery_stats=discovery_stats if include_discovery else None,
+        source_health=source_health,
+    )
     if generate_site:
         all_sources = _load_all_sources(config_dir / "sources.yaml")
         health_by_name = {item["name"]: item for item in source_health}
@@ -345,19 +357,9 @@ def run_scan(
             profile=profile,
             translation_config=translation_config,
             record_audit_items=record_audit_items,
+            scan_manifest=manifest,
         )
         print(f"Wrote site: {site_path}")
-    manifest = full_scan_manifest(
-        coverage=coverage,
-        http_cache_stats=http_cache.stats,
-        extracted_candidates=len(candidates),
-        published_candidates=len(ranked),
-        semantic_enabled=enable_semantic,
-        llm_enabled=enable_llm_extraction,
-        discovery_enabled=include_discovery,
-        discovery_stats=discovery_stats if include_discovery else None,
-        source_health=source_health,
-    )
     write_scan_manifest(data_dir / "latest_scan_manifest.json", manifest)
     if generate_site:
         write_scan_manifest(site_dir / "scan-manifest.json", manifest)
@@ -387,7 +389,12 @@ def run_status_refresh(
     scanner_candidates = apply_overrides(scanner_candidates, overrides)
     site_config = _load_optional_yaml(config_dir / "site.yaml")
     curated = _refresh_curated_deadline_statuses(_load_curated_opportunities(data_dir / "opportunities.yml"))
-    sources = _load_existing_site_sources(site_dir / "sources.json", config_dir / "sources.yaml")
+    previous_manifest = load_scan_manifest(data_dir / "latest_scan_manifest.json")
+    sources = _load_existing_site_sources(
+        site_dir / "sources.json",
+        config_dir / "sources.yaml",
+        previous_manifest,
+    )
     review_queue_payload = _load_existing_review_queue(
         data_dir / "review_queue.json",
         site_dir / "review_queue.json",
@@ -413,8 +420,8 @@ def run_status_refresh(
         translation_config=_disabled_translation_config(config_dir / "ai.yaml", data_dir=data_dir),
         scanner_candidates=scanner_ranked,
         review_queue_payload=review_queue_payload,
+        scan_manifest=previous_manifest,
     )
-    previous_manifest = load_scan_manifest(data_dir / "latest_scan_manifest.json")
     write_scan_manifest(site_dir / "scan-manifest.json", status_refresh_manifest(previous_manifest))
     print(f"Wrote status-refreshed site: {site_path}")
     return site_path
@@ -555,7 +562,11 @@ def _refresh_curated_deadline_statuses(items: list[dict]) -> list[dict]:
     return refreshed
 
 
-def _load_existing_site_sources(site_sources_path: Path, config_sources_path: Path) -> list[dict]:
+def _load_existing_site_sources(
+    site_sources_path: Path,
+    config_sources_path: Path,
+    scan_manifest: object = None,
+) -> list[dict]:
     configured = _load_all_sources(config_sources_path)
     existing: list[dict] = []
     if site_sources_path.exists():
@@ -573,6 +584,7 @@ def _load_existing_site_sources(site_sources_path: Path, config_sources_path: Pa
         (str(item.get("name", "")), str(item.get("url", ""))): item
         for item in existing
     }
+    manifest_health = source_health_by_name(scan_manifest)
     merged: list[dict] = []
     for source in configured:
         current = dict(source)
@@ -584,6 +596,11 @@ def _load_existing_site_sources(site_sources_path: Path, config_sources_path: Pa
             and str(previous.get("notes_zh", "")).strip()
         ):
             current["notes_zh"] = previous["notes_zh"]
+        health = manifest_health.get(str(current.get("name", "")))
+        if health is None and previous is not None and isinstance(previous.get("health"), dict):
+            health = dict(previous["health"])
+        if health is not None:
+            current["health"] = health
         merged.append(current)
     return merged
 

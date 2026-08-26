@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import re
 from dataclasses import dataclass
 from datetime import date
 from typing import Any
@@ -112,6 +111,7 @@ TOPIC_FACETS = (
                 "climate",
                 "climate change",
                 "environmental science",
+                "environmental engineering",
                 "geoscience",
                 "sustainability",
                 "ecology",
@@ -215,17 +215,13 @@ def _programme_card(programme: dict[str, Any]) -> str:
 
 
 def _matches(programme: dict[str, Any], facet: TopicFacet) -> bool:
-    topics = {str(topic).strip().casefold() for topic in programme.get("topics", [])}
-    for topic in topics:
-        if any(_contains_phrase(topic, signal) or _contains_phrase(signal, topic) for signal in facet.signals):
-            return True
-    return False
+    topics = {_normalize_topic(topic) for topic in programme.get("topics", [])}
+    signals = {_normalize_topic(signal) for signal in facet.signals}
+    return bool(topics & signals)
 
 
-def _contains_phrase(value: str, phrase: str) -> bool:
-    if not value or not phrase:
-        return False
-    return re.search(rf"(?<!\w){re.escape(phrase)}(?!\w)", value) is not None
+def _normalize_topic(value: object) -> str:
+    return " ".join(str(value).strip().casefold().replace("&", "and").split())
 
 
 def _compact(value: str, limit: int = 260) -> str:

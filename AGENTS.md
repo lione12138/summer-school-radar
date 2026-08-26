@@ -68,6 +68,9 @@ Key modules:
 - `src/research_school_radar/site_programme.py` — recurring programme history-page rendering; opportunity detail pages remain individual editions.
 - `src/research_school_radar/site_localization.py` — builds single-language `/en/` and `/zh/` page trees with localized metadata, canonical URLs, reciprocal `hreflang`, and explicit language links.
 - `src/research_school_radar/site_localized_build.py` — prepares localized page metadata, translates JSON-LD text, writes the language trees, and enumerates their sitemap URLs.
+- `src/research_school_radar/site_language_selector.py` — renders the lightweight root `x-default` language choice; the complete homepages live at `/en/` and `/zh/`.
+- `src/research_school_radar/site_freshness.py` — separates full source-scan freshness from daily deadline refreshes and merges per-source manifest health.
+- `src/research_school_radar/site_integrity.py` — CI/deployment validation for sitemap targets, canonical/hreflang, internal links, public APIs, programme references, and private artifacts.
 - `src/research_school_radar/site_topics.py` — maintained topic facets and non-thin landing pages; a facet needs at least two distinct programmes.
 - `src/research_school_radar/web/templates/` — tracked Jinja page shells and component templates; page-renderer Python modules must not embed frontend markup.
 - `src/research_school_radar/web/static/css/` — shared and page-specific browser stylesheets.

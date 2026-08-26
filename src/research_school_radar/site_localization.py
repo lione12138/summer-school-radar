@@ -218,7 +218,6 @@ def _localize_jsonld(
         localized = _walk_jsonld(payload, language, text_map)
         if isinstance(localized, dict) and localized.get("@type") in {
             "CollectionPage",
-            "EducationEvent",
             "WebPage",
         }:
             if title:

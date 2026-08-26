@@ -22,6 +22,8 @@ data/translation_cache/
 site/
 reports/*.ai.json
 reports/*.semantic.json
+reports/*.record-audit.json
+reports/*.record-audit.md
 reports/*.provider-comparison.json
 reports/*.ai-run-comparison.md
 reports/*.ai-evaluation-template.csv

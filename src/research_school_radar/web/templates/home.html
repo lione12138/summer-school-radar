@@ -16,7 +16,7 @@
   {{ nav|safe }}
   <header class="hero" id="top">
     <div class="wrap">
-      <p class="kicker" data-i18n="hero.kicker">Updated daily &middot; Free &amp; open source</p>
+      <p class="kicker" data-i18n="hero.kicker">Deadline status refreshed daily &middot; Free &amp; open source</p>
       <h1 data-i18n="hero.title">Find research training worth applying for</h1>
       <p class="subtitle" data-i18n="hero.subtitle">Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.</p>
       <details class="hero-disclaimer">
@@ -34,8 +34,9 @@
       <div class="stat"><div class="num">{{ full_count }}</div><div class="lbl" data-i18n="stat.qualified">Funded / low fee</div></div>
       <div class="stat"><div class="num">{{ near_count }}</div><div class="lbl" data-i18n="stat.near">Verified self-funded</div></div>
       <div class="stat"><div class="num">{{ tracked_sources }}</div><div class="lbl" data-i18n="stat.sources">Trusted sources</div></div>
-      <div class="stat"><div class="num sm">{{ updated }}</div><div class="lbl" data-i18n="stat.updated">Last updated</div></div>
+      <div class="stat"><div class="num sm">{{ source_scanned }}</div><div class="lbl" data-i18n="stat.scanned">Sources last scanned</div></div>
     </div>
+    {{ freshness_warning|safe }}
     {{ status_banner|safe }}
     <section id="opportunities" class="anchor">
       <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p>{{ opportunity_total|safe }}</p></div>

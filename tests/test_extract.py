@@ -549,6 +549,14 @@ def test_funding_detects_bursary_fellowship_and_board() -> None:
     assert "fee waiver" in labels("A fee waiver is available on request.")
     assert "accommodation support" in labels("We will cover board and lodging for participants.")
     assert "accommodation support" in labels("Accommodation and meals are provided free of charge.")
+    assert "accommodation support" not in labels(
+        "The GBP 700 fee includes accommodation for five nights and all meals."
+    )
+    assert "accommodation support" not in labels(
+        "Accommodation is provided on campus for registered participants."
+    )
+    assert "travel grant" in labels("Travel & subsistence can be claimed back after the school.")
+    assert "fee waiver" in labels("STFC studentship holders can register free-of-charge.")
     assert "financial support" in labels("Financial support is available to accepted students.")
     assert labels("Financial support may be available.") == set()
     # Negated funding is still suppressed.

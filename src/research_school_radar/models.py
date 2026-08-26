@@ -164,6 +164,8 @@ class Candidate:
                     )
                 return "Registration-fee scholarship for selected participants · fee otherwise not stated"
             if self.funding_scope:
+                if self.fee and self.fee_eur not in {None, 0}:
+                    return f"{self.funding_scope} · otherwise {self.fee} · Apply on official page"
                 fee = "Fee EUR 0" if self.fee_eur == 0 else "Fee not stated"
                 return f"{fee} · {self.funding_scope}"
             funding_label = ", ".join(self.funding_type) or "Funding available"

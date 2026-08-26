@@ -5,19 +5,28 @@ from typing import Any
 from .localization import region_zh, source_type_zh, topic_zh
 from .site_assets import render_template
 from .site_components import bilingual
+from .site_freshness import site_freshness
 from .site_layout import site_nav
 from .site_localization import language_urls
 from .site_seo import SITE_URL, seo_head, watermark
 from .urls import safe_external_url
 
 
-def render_sources_page(sources: list[dict[str, Any]]) -> str:
+def render_sources_page(
+    sources: list[dict[str, Any]],
+    *,
+    scan_manifest: dict[str, Any] | None = None,
+) -> str:
     manual = [source for source in sources if source.get("check_manually")]
     registry = [source for source in sources if not source.get("check_manually")]
     enabled_count = sum(1 for source in registry if source.get("enabled", True))
     disabled_count = len(registry) - enabled_count
     rows = "".join(_source_row(source) for source in registry)
     manual_section = _manual_sources_section(manual) if manual else ""
+    freshness = site_freshness(scan_manifest)
+    source_scan_date = (
+        freshness.source_scan_date.isoformat() if freshness.source_scan_date else "Not available"
+    )
     return render_template(
         "sources.html",
         seo_head=seo_head(
@@ -31,6 +40,10 @@ def render_sources_page(sources: list[dict[str, Any]]) -> str:
         nav=site_nav(home="index.html"),
         enabled_count=bilingual(f"{enabled_count} enabled", f"{enabled_count} 个已启用"),
         disabled_count=bilingual(f"{disabled_count} disabled", f"{disabled_count} 个已停用"),
+        source_scan_date=bilingual(
+            f"Sources last scanned: {source_scan_date}",
+            f"来源最近扫描：{source_scan_date}",
+        ),
         rows=rows,
         manual_section=manual_section,
         watermark=watermark(),
@@ -71,6 +84,7 @@ def _source_row(source: dict[str, Any]) -> str:
     keywords_cn = "、".join(topic_zh(value) for value in keyword_values)
     notes = str(source.get("notes", ""))
     notes_cn = str(source.get("notes_zh", ""))
+    health_status, last_success, failures = _health_fields(source)
     blocked_domains = _list_value(source.get("blocked_link_domains"))
     if blocked_domains:
         notes = f"{notes} Blocked linked domains: {', '.join(blocked_domains)}".strip()
@@ -84,7 +98,9 @@ def _source_row(source: dict[str, Any]) -> str:
         name=name,
         status_class=status_class,
         status=bilingual(status, "已启用" if enabled else "已停用"),
-        health=_health_cell(source),
+        health=health_status,
+        last_success=last_success,
+        failures=failures,
         layer=str(source.get("layer", "")),
         region=bilingual(str(source.get("region", "")), region_zh(str(source.get("region", "")))),
         source_type=bilingual(
@@ -96,26 +112,25 @@ def _source_row(source: dict[str, Any]) -> str:
     )
 
 
-def _health_cell(source: dict[str, Any]) -> str:
+def _health_fields(source: dict[str, Any]) -> tuple[str, str, int | str]:
     health = source.get("health")
     if not isinstance(health, dict):
-        return bilingual("Not scanned yet", "尚未扫描")
-    status = str(health.get("status", "unknown"))
-    last_success = str(health.get("last_success") or "never")
+        return bilingual("Not scanned yet", "尚未扫描"), bilingual("Never", "从未"), "—"
     failures = int(health.get("consecutive_failures", 0) or 0)
-    if status == "healthy":
+    last_success = str(health.get("last_success") or "Never")
+    if failures == 0 and str(health.get("status")) == "healthy":
         label_en = "Healthy"
         label_zh = "正常"
-    elif status == "failed":
-        label_en = f"Failed · {failures} consecutive"
-        label_zh = f"失败 · 连续 {failures} 次"
+    elif failures >= 5:
+        label_en = "Broken"
+        label_zh = "持续故障"
+    elif failures > 0:
+        label_en = "Degraded"
+        label_zh = "降级"
     else:
         label_en = "Unknown"
         label_zh = "未知"
-    return bilingual(
-        f"{label_en} · Last success: {last_success}",
-        f"{label_zh} · 上次成功：{last_success}",
-    )
+    return bilingual(label_en, label_zh), last_success, failures
 
 
 def _list_value(value: Any) -> list[str]:

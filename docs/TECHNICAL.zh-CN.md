@@ -342,7 +342,11 @@ secret 不会写入生成文件或提交。
 - `site/robots.txt`
 - `site/.nojekyll`
 
-周期性项目库中的已关闭 edition 会生成带状态的永久详情页并进入 sitemap，同时关联到可跨年份保留历史的 programme 页面。根 URL 保持为兼容的 `x-default` 版本；`/en/` 与 `/zh/` 只显示各自语言，并为首页、来源、机会、programme 和主题页输出语言专属 canonical 与互相对应的 `hreflang`。首页 JSON-LD 只使用 `WebSite` 与指向 Summa 详情页的 `ItemList`；每个具备可靠日期和地点的详情页单独输出 `EducationEvent`。sitemap 暂不写 `lastmod`，避免每日构建伪造全部页面的实质更新时间。`robots.txt` 允许用于 ChatGPT Search 的 `OAI-SearchBot`，同时继续禁止用于模型训练的 `GPTBot`。
+周期性项目库中的已关闭 edition 会生成带状态的永久详情页并进入 sitemap，同时关联到可跨年份保留历史的 programme 页面。根首页现在是轻量的 `x-default` 语言选择页；完整目录位于 `/en/` 与 `/zh/`，两者只显示各自语言，并为首页、来源、机会、programme 和主题页输出语言专属 canonical 与互相对应的 `hreflang`。首页 JSON-LD 只使用 `WebSite` 与指向 Summa 详情页的 `ItemList`；每个具备可靠日期和地点的详情页单独输出 `EducationEvent`，其 `name` 只保存活动名，SEO 后缀只进入 `<title>`。sitemap 暂不写 `lastmod`，避免每日构建伪造全部页面的实质更新时间。`robots.txt` 允许用于 ChatGPT Search 的 `OAI-SearchBot`，同时继续禁止用于模型训练的 `GPTBot`。
+
+首页分别公开“来源最近扫描日期”和“截止状态刷新日期”。最近一次成功 full scan 超过 4 天时会显示延迟警告，避免把每日日期重算误解成每日重新抓取。来源页会把 manifest 中的健康状态按来源名合并回来，并独立展示最近成功日期和连续失败次数。
+
+CI 在 Python 3.10、3.12、3.13 上运行测试，同时执行 Ruff。发布前还会校验 sitemap URL、canonical、三方 reciprocal hreflang、站内链接、公开 API schema、programme 引用，以及内部审计文件没有进入 Pages。
 
 内部 scanner 记录、失败条件与 review queue 会在发布前从 `site/` 删除；Pages 只公开字段干净的 `site/api/opportunities.json`。
 

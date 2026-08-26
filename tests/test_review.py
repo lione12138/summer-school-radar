@@ -222,6 +222,28 @@ def test_project_override_preserves_utn_registration_fee_coverage() -> None:
     assert "人文" in corrected.eligibility_zh
 
 
+def test_project_override_distinguishes_stfc_reimbursement_from_paid_package() -> None:
+    from research_school_radar.localization import financial_summary_zh
+    from research_school_radar.review import apply_overrides, load_overrides
+
+    candidate = sample_candidate(PROFILE)
+    candidate.title = "STFC Introductory Summer School"
+    candidate.source_url = "https://www.keele.ac.uk/astronomy-summer-school/"
+    candidate.application_link = candidate.source_url
+    candidate.funding_type = ["accommodation support"]
+    candidate.fee = "GBP 700"
+    candidate.fee_eur = 840
+
+    corrected = apply_overrides([candidate], load_overrides(Path("data/overrides.yml")))[0]
+
+    assert corrected.funding_type == ["fee waiver", "travel grant"]
+    assert corrected.funding_scope.startswith("Fee GBP 0 for STFC studentship holders")
+    assert corrected.financial_summary.startswith(corrected.funding_scope)
+    assert "otherwise GBP 700 for non-STFC-funded" in corrected.financial_summary
+    assert "accommodation support" not in corrected.financial_summary
+    assert financial_summary_zh(corrected).startswith("STFC 奖学金持有者及自费研究生免注册费")
+
+
 def test_project_overrides_correct_hpi_fee_and_targeted_support() -> None:
     from research_school_radar.review import apply_overrides, load_overrides
 

@@ -25,6 +25,7 @@ def render_programme_page(programme: dict[str, Any], site_config: dict[str, Any]
     topic_en = topics_label(topics) or "Research training"
     topic_zh = topics_label_zh(topics) or "科研训练"
     editions = [item for item in programme.get("editions", []) if isinstance(item, dict)]
+    pattern = _programme_pattern(editions)
     description = seo_description(
         f"{title}: dates, application status, funding and fees across {len(editions)} verified edition"
         f"{'s' if len(editions) != 1 else ''}, linked to official sources."
@@ -55,9 +56,48 @@ def render_programme_page(programme: dict[str, Any], site_config: dict[str, Any]
             f"{len(editions)} verified edition{'s' if len(editions) != 1 else ''}",
             f"已核实 {len(editions)} 届",
         ),
+        pattern=render_template("programme/pattern.html", **pattern) if editions else "",
         edition_cards="".join(_edition_card(edition) for edition in editions),
         footer=footer_section(updated, root="../"),
     )
+
+
+def _programme_pattern(editions: list[dict[str, Any]]) -> dict[str, str]:
+    starts = [value for edition in editions if (value := _parse_date(edition.get("start_date")))]
+    deadlines = [value for edition in editions if (value := _parse_date(edition.get("deadline")))]
+    durations = sorted(
+        int(value)
+        for edition in editions
+        if (value := edition.get("duration_days")) is not None and int(value) > 0
+    )
+    locations = _unique(str(edition.get("location") or "") for edition in editions)
+    locations_zh = _unique(str(edition.get("location_zh") or "") for edition in editions)
+    finances = _unique(str(edition.get("financial_summary") or "") for edition in editions)
+    finances_zh = _unique(str(edition.get("financial_summary_zh") or "") for edition in editions)
+    years = ", ".join(str(year) for year in sorted({value.year for value in starts})) or "Not stated"
+    month_numbers = sorted({value.month for value in deadlines})
+    months_en = ", ".join(date(2000, month, 1).strftime("%B") for month in month_numbers) or "Not stated"
+    months_zh = "、".join(f"{month}月" for month in month_numbers) or "未说明"
+    if durations:
+        duration_en = f"{durations[0]} days" if durations[0] == durations[-1] else f"{durations[0]}–{durations[-1]} days"
+        duration_zh = f"{durations[0]} 天" if durations[0] == durations[-1] else f"{durations[0]}–{durations[-1]} 天"
+    else:
+        duration_en, duration_zh = "Not stated", "未说明"
+    return {
+        "basis": bilingual(
+            f"Observed across {len(editions)} verified edition{'s' if len(editions) != 1 else ''}; no future call is inferred.",
+            f"基于已核实的 {len(editions)} 届记录；不据此推断下一届招生。",
+        ),
+        "years": bilingual(years, years),
+        "duration": bilingual(duration_en, duration_zh),
+        "months": bilingual(months_en, months_zh),
+        "venues": bilingual(", ".join(locations) or "Not stated", "、".join(locations_zh) or "未说明"),
+        "finances": bilingual(" · ".join(finances[:4]) or "Not stated", " · ".join(finances_zh[:4]) or "未说明"),
+    }
+
+
+def _unique(values) -> list[str]:
+    return list(dict.fromkeys(value.strip() for value in values if value.strip()))
 
 
 def _edition_card(edition: dict[str, Any]) -> str:

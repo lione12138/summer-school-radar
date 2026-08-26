@@ -82,6 +82,30 @@ def test_language_directories_are_single_language_and_reciprocal(tmp_path) -> No
     assert detail.select_one('link[href="../../assets/css/base.css"]') is not None
     assert detail.select_one('a[aria-label="Switch to English"]')["href"].startswith("../../en/opportunities/")
 
+    event_script = detail.select_one('script[type="application/ld+json"]')
+    event = json.loads(event_script.string)
+    assert event["@type"] == "EducationEvent"
+    assert event["name"] == candidate.title_zh
+    assert "申请、费用与截止日期" not in event["name"]
+
+
+def test_x_default_root_is_only_a_language_selector(tmp_path) -> None:
+    candidate = _candidate("Example Hydrology School", "edition:selector")
+    write_site([candidate], [], tmp_path)
+
+    root = BeautifulSoup((tmp_path / "index.html").read_text(encoding="utf-8"), "html.parser")
+    text = root.get_text(" ", strip=True)
+    alternates = {tag["hreflang"]: tag["href"] for tag in root.select('link[rel="alternate"][hreflang]')}
+
+    assert root.select_one('a[href="en/"]') is not None
+    assert root.select_one('a[href="zh/"]') is not None
+    assert candidate.title not in text
+    assert candidate.title_zh not in text
+    assert "filters.js" not in str(root)
+    assert alternates["x-default"].endswith("/summer-school-radar/")
+    assert alternates["en"].endswith("/en/")
+    assert alternates["zh-Hans"].endswith("/zh/")
+
 
 def test_programme_catalog_persists_editions_across_builds(tmp_path) -> None:
     first = _candidate("2026 Example Data School", "edition:data-2026")
@@ -113,6 +137,9 @@ def test_programme_catalog_persists_editions_across_builds(tmp_path) -> None:
     assert "2027 Example Data School" in page
     assert "Application deadline:" in page
     assert "2 programme sessions" in page
+    assert "Observed programme pattern" in page
+    assert "2026, 2027" in page
+    assert "no future call is inferred" in page
     first_edition = next(edition for edition in programme["editions"] if edition["id"] == "edition:data-2026")
     assert len(first_edition["sessions"]) == 2
     assert (tmp_path / "en" / "programmes" / f"{programme['slug']}.html").exists()
@@ -130,7 +157,7 @@ def test_topic_pages_require_two_distinct_programmes(tmp_path) -> None:
     assert (tmp_path / "en" / "topics" / "ai-computing.html").exists()
     assert (tmp_path / "zh" / "topics" / "ai-computing.html").exists()
     assert not (tmp_path / "topics" / "social-sciences.html").exists()
-    home = (tmp_path / "index.html").read_text(encoding="utf-8")
+    home = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     sitemap = (tmp_path / "sitemap.xml").read_text(encoding="utf-8")
     assert 'href="topics/ai-computing.html"' in home
     assert "/en/topics/ai-computing.html" in sitemap
@@ -165,6 +192,27 @@ def test_short_ai_signal_does_not_match_sustainability_substring() -> None:
             "id": "programme:sustainable",
             "title": "Sustainable Food School",
             "topics": ["sustainability"],
+        }
+    ]
+
+    keys = {facet.key for facet, _matches in available_topic_pages(programmes, minimum=1)}
+
+    assert "ai-computing" not in keys
+    assert "environment-earth" in keys
+
+
+def test_generic_engineering_topic_does_not_enter_ai_computing() -> None:
+    programmes = [
+        {
+            "id": "programme:ihe-interdisciplinarity",
+            "title": "Interdisciplinarity for Complex Water Problems",
+            "topics": [
+                "hydrology",
+                "environmental science",
+                "engineering",
+                "design",
+                "social science",
+            ],
         }
     ]
 

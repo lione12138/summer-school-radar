@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from bs4 import BeautifulSoup
+
 from research_school_radar.extract import sample_candidate
 from research_school_radar.filter import apply_hard_filters
 from research_school_radar.rank import rank_candidates
@@ -202,7 +204,9 @@ def test_site_build_translates_dynamic_content_and_enforces_static_ui_contract(t
     html = index.read_text(encoding="utf-8")
     assert 'data-i18n="hero.title"' in html
     assert 'data-i18n="action.details"' in html
-    assert '<span class="lang-zh" lang="zh">示例水文学冬季学校</span>' in html
+    assert "示例水文学冬季学校" not in BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
+    chinese = (tmp_path / "site" / "zh" / "index.html").read_text(encoding="utf-8")
+    assert "示例水文学冬季学校" in chinese
     detail = next((tmp_path / "site" / "opportunities").glob("*.html")).read_text(encoding="utf-8")
     assert '<span class="lang-zh" lang="zh">面向研究人员的水文学训练项目。</span>' in detail
     assert 'data-i18n="detail.snapshot"' in detail

@@ -36,6 +36,7 @@ from .site_home_page import (
     render_site,
 )
 from .site_localized_build import sitemap_pages, write_localized_site
+from .site_language_selector import render_language_selector
 from .site_paths import candidate_detail_filename
 from .site_programme import render_programme_page
 from .site_public_api import public_api_payload
@@ -69,6 +70,7 @@ def write_site(
     scanner_candidates: list[Candidate] | None = None,
     review_queue_payload: dict[str, Any] | None = None,
     record_audit_items: list[dict[str, Any]] | None = None,
+    scan_manifest: dict[str, Any] | None = None,
 ) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     write_static_assets(output_dir)
@@ -96,7 +98,7 @@ def write_site(
         json.dumps(review_queue_payload, indent=2, ensure_ascii=False, default=str),
     )
     write_text_atomic(output_dir / "sources.json", json.dumps(sources, indent=2, default=str))
-    sources_html = render_sources_page(sources)
+    sources_html = render_sources_page(sources, scan_manifest=scan_manifest)
     warn_localization_issues(sources_html, "sources.html", i18n_source)
     write_text_atomic(output_dir / "sources.html", sources_html)
     # AI output now enriches the existing homepage tables instead of creating a
@@ -252,6 +254,7 @@ def write_site(
         tracked_sources=tracked_sources,
         programme_hrefs=programme_hrefs,
         topic_links_html=render_topic_links(topic_pages),
+        scan_manifest=scan_manifest,
     )
     warn_localization_issues(index_html, "index.html", i18n_source)
     write_text_atomic(path, index_html)
@@ -264,8 +267,14 @@ def write_site(
         topic_pages=topic_pages,
         i18n_source=i18n_source,
     )
+    # The x-default root is deliberately a lightweight language selector. The
+    # complete, indexable directory lives under the explicit language URLs.
+    write_text_atomic(path, render_language_selector(site_config or {}))
     write_text_atomic(output_dir / "sitemap.xml", sitemap_xml(sitemap_pages(output_dir)))
-    return path
+    # Return the English directory page for backwards compatibility with the
+    # Python API: callers historically consumed the substantive homepage from
+    # this return value, while the public x-default root is now only a selector.
+    return output_dir / "en" / "index.html"
 
 
 def _read_json_object(path: Path) -> dict[str, Any] | None:

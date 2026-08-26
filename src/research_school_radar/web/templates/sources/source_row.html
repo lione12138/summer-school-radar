@@ -2,6 +2,8 @@
   <td>{% if url %}<a href="{{ url }}" target="_blank" rel="noopener">{{ name }}</a>{% else %}{{ name }}{% endif %}</td>
   <td><span class="{{ status_class }}">{{ status|safe }}</span></td>
   <td>{{ health|safe }}</td>
+  <td>{{ last_success }}</td>
+  <td>{{ failures }}</td>
   <td>{{ layer }}</td>
   <td>{{ region|safe }}</td>
   <td>{{ source_type|safe }}</td>

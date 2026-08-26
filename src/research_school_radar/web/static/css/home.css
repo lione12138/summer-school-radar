@@ -90,6 +90,11 @@ h2 { margin: 0 0 10px; font-size: 21px; letter-spacing: -0.01em; }
   border-left-color: var(--warn);
   background: var(--warn-soft);
 }
+.status.warning {
+  border-left-color: var(--warn);
+  background: var(--warn-soft);
+  color: var(--ink);
+}
 .status.info {
   border-left-color: var(--accent);
   background: var(--accent-soft);

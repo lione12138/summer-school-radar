@@ -24,6 +24,7 @@ from .site_components import (
     public_location_zh as _public_location_zh,
 )
 from .site_filters import render_filters, render_pagination
+from .site_freshness import site_freshness
 from .site_home import (
     about_section as _about_section,
     faq_section as _faq_section,
@@ -216,6 +217,7 @@ def render_site(
     tracked_sources: int = 0,
     programme_hrefs: dict[str, str] | None = None,
     topic_links_html: str = "",
+    scan_manifest: dict[str, Any] | None = None,
 ) -> str:
     curated = curated or []
     full = [item for item in candidates if item.fully_qualified and is_public_candidate(item)]
@@ -238,7 +240,11 @@ def render_site(
     # Count only opportunities that could actually be surfaced, so the
     # "tracking N" figure matches the page.
     tracked_total = len(full) + len(near) + len(regular)
-    updated = date.today().isoformat()
+    freshness = site_freshness(scan_manifest)
+    updated = freshness.deadline_refresh_date.isoformat()
+    source_scanned = (
+        freshness.source_scan_date.isoformat() if freshness.source_scan_date else "Not available"
+    )
     curated_rows = "".join(_curated_row(item) for item in curated)
     full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
     near_rows = "".join(_near_row(candidate) for candidate in near)
@@ -277,10 +283,14 @@ def render_site(
         regular_count=len(regular),
         tracked_sources=tracked_sources,
         updated=updated,
+        source_scanned=source_scanned,
+        freshness_warning=_freshness_warning(freshness.source_scan_age_days)
+        if freshness.source_scan_delayed
+        else "",
         status_banner=status_banner,
         opportunity_total=_bilingual(
-            f"{opportunity_count} total · 15 per page · Updated {updated}",
-            f"共 {opportunity_count} 条 · 每页 15 条 · 更新于 {updated}",
+            f"{opportunity_count} total · 15 per page · Deadline status refreshed {updated}",
+            f"共 {opportunity_count} 条 · 每页 15 条 · 截止状态刷新于 {updated}",
         ),
         filters=filters,
         curated_section=_curated_section(curated_rows) if curated else "",
@@ -297,6 +307,23 @@ def render_site(
         faq_section=_faq_section(),
         footer=_footer_section(updated),
         analytics=analytics,
+    )
+
+
+def _freshness_warning(age_days: int | None) -> str:
+    if age_days is None:
+        message_en = "Source scan date is unavailable. Current listings may miss newly opened programmes."
+        message_zh = "来源扫描日期不可用，当前列表可能遗漏新开放的项目。"
+    else:
+        message_en = (
+            f"Source scan delayed ({age_days} days ago). Current listings may miss newly opened programmes."
+        )
+        message_zh = f"来源扫描已延迟（距今 {age_days} 天），当前列表可能遗漏新开放的项目。"
+    return render_template(
+        "home/status_banner.html",
+        message_en=message_en,
+        message_zh=message_zh,
+        variant="warning",
     )
 
 

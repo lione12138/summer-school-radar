@@ -317,11 +317,27 @@ def test_status_sources_use_current_config_and_only_reuse_matching_note_translat
         encoding="utf-8",
     )
 
-    sources = _load_existing_site_sources(old_path, config_path)
+    manifest = {
+        "mode": "status-refresh",
+        "source_scan": {
+            "mode": "full",
+            "generated": "2026-08-22",
+            "source_health": [
+                {
+                    "name": "ELLIS",
+                    "status": "healthy",
+                    "last_success": "2026-08-22",
+                    "consecutive_failures": 0,
+                }
+            ],
+        },
+    }
+    sources = _load_existing_site_sources(old_path, config_path, manifest)
 
     assert sources[0]["enabled"] is True
     assert sources[0]["collector"] == "ellis"
     assert sources[0]["notes_zh"] == "保留翻译"
+    assert sources[0]["health"]["last_success"] == "2026-08-22"
     assert "scan_frequency" not in sources[0]
     assert sources[1]["collector"] == "ihe_delft"
     assert "notes_zh" not in sources[1]

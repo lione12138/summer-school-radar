@@ -625,10 +625,11 @@ records with unresolved deadlines, mode, duration, title, or link remain fail-cl
 
 Curated opportunities from `data/opportunities.yml` are rendered first. Automatic results are split into funded/accessible recommendations, plainly labelled verified self-funded schools, and capped organizer-balanced ordinary official listings. A separate library shows verified closed editions for discovery. Every edition keeps a permanent detail page and points to a durable programme history page. The programme catalogue is carried across deployments, so a later edition joins the existing programme instead of replacing its history. Unsafe or deadline-uncertain near-matches stay internal.
 
-The root URL tree remains the backward-compatible `x-default` version. `/en/`
-and `/zh/` contain one visible language each, have language-specific canonical
-URLs and metadata, and link to one another with reciprocal `hreflang`. Current
-detail, programme, topic, and source pages are emitted in all three trees.
+The root homepage is a lightweight `x-default` language selector. `/en/` and
+`/zh/` contain the complete single-language directory, have language-specific
+canonical URLs and metadata, and link to one another with reciprocal
+`hreflang`. Detail, programme, topic, and source pages remain available in the
+root compatibility tree as well as both language trees.
 
 SEO output keeps the homepage as a `WebSite` + `ItemList` directory whose item
 URLs point to Summa detail pages. Each eligible detail page owns its
@@ -641,7 +642,18 @@ ChatGPT Search while continuing to disallow the separate training crawler
 
 Rows with a known application deadline include an `Add to calendar` link in the deadline column. The link downloads a standard `.ics` all-day calendar event for the application deadline, so users can import it into Apple Calendar, Google Calendar, Outlook, or another calendar client.
 
-The generator also writes `site/sources.html` and `site/sources.json` from `config/sources.yaml`. This Sources & Coverage page shows enabled and disabled sources, source layer, region, source type, keywords, blocked linked domains, and notes.
+The generator also writes `site/sources.html` and `site/sources.json` from
+`config/sources.yaml`. Full-scan health from `latest_scan_manifest.json` is
+merged by source name, so the page exposes health, last successful scan and
+consecutive failures alongside source metadata. The homepage separately shows
+the last full source-scan date and the daily deadline-status refresh date; a
+source scan older than four days produces a warning instead of an implied daily
+crawl claim.
+
+CI runs Ruff and pytest on Python 3.10, 3.12 and 3.13. A production-surface
+build then validates sitemap targets, self-referencing canonicals, reciprocal
+`hreflang`, internal links, public API structure, programme references and the
+absence of scanner/debug artifacts before deployment.
 
 It also writes `site/feed.xml`, an RSS 2.0 feed of curated, funded/low-fee, and verified self-funded open opportunities. Ordinary official listings and closed library entries never enter the feed.
 

@@ -10,7 +10,11 @@ It is a fixed trusted-source scanner with rule-based extraction and transparent 
 
 **Live site:** <https://lione12138.github.io/summer-school-radar/>
 
-**Public API:** <https://lione12138.github.io/summer-school-radar/api/opportunities.json>
+**Public APIs:** [editions/opportunities](https://lione12138.github.io/summer-school-radar/api/opportunities.json) · [programme catalogue](https://lione12138.github.io/summer-school-radar/api/programmes.json)
+
+`opportunities.json` contains both current public opportunities and archived
+public editions. Filter on `application_status` and `directory_tier`; do not
+assume every record is currently open.
 
 [Technical README](docs/TECHNICAL.md) | [中文技术说明](docs/TECHNICAL.zh-CN.md) | [License & reuse](#license--reuse)
 
@@ -55,7 +59,7 @@ The generated website publishes verified scanner results and keeps unresolved re
 
 The site includes filters for keyword, status, topic, financial access, and deadline status. On desktop they stay in a left sidebar; on mobile search remains visible and the additional filters collapse behind a compact control. Matching records are paginated at 15 per page. Rows with a known application deadline include an **Add to calendar** menu (Google Calendar, Outlook, or a downloadable `.ics` file).
 
-English and Simplified Chinese have crawlable, single-language URL trees under `/en/` and `/zh/`, with reciprocal `hreflang` links; the historical root URLs remain the `x-default` compatibility version. Topic landing pages are generated only when at least two distinct programmes match a maintained theme, avoiding empty or one-record SEO pages.
+English and Simplified Chinese have crawlable, single-language URL trees under `/en/` and `/zh/`, with reciprocal `hreflang` links. The root `/` is a lightweight `x-default` language selector, so search snippets do not concatenate two complete language versions. Topic landing pages are generated only when at least two distinct programmes match a maintained theme, avoiding empty or one-record SEO pages.
 
 ```text
 site/index.html
@@ -105,7 +109,8 @@ Most summer school lists are plain link collections. This project is different:
 - hard filters with visible failed conditions
 - static public website plus Markdown and JSON outputs
 - residential-network collection on Monday/Wednesday/Friday, daily deadline-status refreshes, and one GitHub Actions writer for GitHub Pages
-- source coverage transparency through a generated Sources & Coverage page
+- separate source-scan and deadline-refresh dates, with a public warning when the full scan is more than four days old
+- source coverage transparency through a generated Sources & Coverage page, including last success and consecutive failures
 
 Full scans must attempt at least one configured source and reach 70% success
 across page sources and direct collectors before replacing the last-known-good

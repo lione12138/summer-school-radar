@@ -232,6 +232,14 @@ def financial_summary_zh(candidate: Candidate) -> str:
         if candidate.funding_scope == "limited Access Fund for eligible UK-based participants":
             fee = "费用 EUR 0" if candidate.fee_eur == 0 else "费用未说明"
             return f"{fee} · 面向符合条件的英国境内参与者提供少量可及性基金"
+        if candidate.funding_scope == (
+            "Fee GBP 0 for STFC studentship holders and self-funded postgraduates; "
+            "travel + subsistence reimbursable"
+        ):
+            return (
+                "STFC 奖学金持有者及自费研究生免注册费，并可报销差旅与生活费 · "
+                f"其他符合条件者：{_tiered_fee_zh(candidate.fee)}"
+            )
         funding = "、".join(FUNDING_TYPE_ZH.get(item, item) for item in candidate.funding_type) or "提供资助"
         return f"{funding} · 金额未说明"
     if candidate.fee_eur is not None:

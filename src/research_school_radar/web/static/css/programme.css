@@ -5,6 +5,12 @@
 .programme-meta, .edition-facts { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); }
 .programme-meta span { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; }
 .programme-editions { max-width: 980px; }
+.programme-pattern { max-width: 980px; margin: 0 0 42px; }
+.pattern-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 18px 0 0; }
+.pattern-grid > div { padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+.pattern-grid .pattern-wide { grid-column: 1 / -1; }
+.pattern-grid dt { color: var(--muted); font-size: 12px; }
+.pattern-grid dd { margin: 5px 0 0; font-weight: 650; }
 .edition-list { display: grid; gap: 14px; }
 .edition-card { padding: 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); box-shadow: var(--shadow-soft); }
 .edition-card h3 { margin: 10px 0 8px; font-size: 21px; }
@@ -13,4 +19,5 @@
   .programme-main { padding-top: 22px; }
   .programme-hero { margin-bottom: 34px; }
   .edition-card { padding: 16px; }
+  .pattern-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }

@@ -19,13 +19,14 @@
       <a class="pill" href="sources.json" data-i18n="sources.json">Source JSON</a>
       <span class="pill">{{ enabled_count|safe }}</span>
       <span class="pill">{{ disabled_count|safe }}</span>
+      <span class="pill">{{ source_scan_date|safe }}</span>
     </div>
   </header>
   <main class="wrap">
     <h2 data-i18n="sources.configured">Configured Sources</h2>
     <div class="table-wrap">
       <table>
-        <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.status">Status</th><th data-i18n="sources.health">Scan health</th><th data-i18n="sources.layer">Layer</th><th data-i18n="sources.region">Region</th><th data-i18n="sources.type">Type</th><th data-i18n="sources.keywords">Keywords</th><th data-i18n="sources.notes">Notes (original registry text)</th></tr></thead>
+        <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.status">Status</th><th data-i18n="sources.health">Scan health</th><th data-i18n="sources.last_success">Last success</th><th data-i18n="sources.failures">Failures</th><th data-i18n="sources.layer">Layer</th><th data-i18n="sources.region">Region</th><th data-i18n="sources.type">Type</th><th data-i18n="sources.keywords">Keywords</th><th data-i18n="sources.notes">Notes (original registry text)</th></tr></thead>
         <tbody>{{ rows|safe }}</tbody>
       </table>
     </div>

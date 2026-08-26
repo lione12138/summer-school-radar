@@ -1,0 +1,13 @@
+<section class="programme-pattern" aria-labelledby="programme-pattern-title">
+  <div class="section-head">
+    <h2 id="programme-pattern-title" data-i18n="programme.pattern">Observed programme pattern</h2>
+    <p>{{ basis|safe }}</p>
+  </div>
+  <dl class="pattern-grid">
+    <div><dt data-i18n="programme.pattern.years">Edition years</dt><dd>{{ years|safe }}</dd></div>
+    <div><dt data-i18n="programme.pattern.duration">Observed duration</dt><dd>{{ duration|safe }}</dd></div>
+    <div><dt data-i18n="programme.pattern.months">Application months</dt><dd>{{ months|safe }}</dd></div>
+    <div><dt data-i18n="programme.pattern.venues">Previous venues</dt><dd>{{ venues|safe }}</dd></div>
+    <div class="pattern-wide"><dt data-i18n="programme.pattern.finances">Funding and fee history</dt><dd>{{ finances|safe }}</dd></div>
+  </dl>
+</section>

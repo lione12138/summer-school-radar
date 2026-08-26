@@ -10,6 +10,7 @@ import pytest
 
 SCRIPT = Path(__file__).parents[1] / "scripts" / "scan_and_publish.ps1"
 REGISTER_SCRIPT = Path(__file__).parents[1] / "scripts" / "register_task.ps1"
+GITIGNORE = Path(__file__).parents[1] / ".gitignore"
 
 
 def test_scheduled_scan_retries_git_and_recovers_pending_publish() -> None:
@@ -25,6 +26,13 @@ def test_scheduled_scan_retries_git_and_recovers_pending_publish() -> None:
     assert "search_healthcheck --provider brave --strict" in source
     assert "function Test-MissedScheduledFullScan" in source
     assert "A scheduled source scan was missed" in source
+
+
+def test_generated_record_audit_reports_cannot_lock_the_scheduled_scan() -> None:
+    ignored = GITIGNORE.read_text(encoding="utf-8")
+
+    assert "reports/*.record-audit.json" in ignored
+    assert "reports/*.record-audit.md" in ignored
 
 
 def test_scheduled_task_is_allowed_to_run_on_battery() -> None:

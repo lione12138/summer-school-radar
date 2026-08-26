@@ -280,6 +280,7 @@ jobs:
             site/semantic_chunks.json \
             site/ai_extractions.json \
             site/scan-manifest.json
+          python -m research_school_radar.site_integrity --site-dir site
           find _pages -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
           cp -a site/. _pages/
           cd _pages

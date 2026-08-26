@@ -6,6 +6,8 @@ from dataclasses import replace
 from datetime import date, timedelta
 from pathlib import Path
 
+from bs4 import BeautifulSoup
+
 from research_school_radar.candidate_io import candidate_from_mapping
 from research_school_radar.extract import sample_candidate
 from research_school_radar.filter import apply_hard_filters
@@ -13,7 +15,7 @@ from research_school_radar.models import Page, ProgrammeSession, Source
 from research_school_radar.rank import rank_candidates
 from research_school_radar.report import render_report
 from research_school_radar.site import write_site
-from research_school_radar.site_home_page import _interleave_by_organizer
+from research_school_radar.site_home_page import _interleave_by_organizer, render_site
 
 
 PROFILE = {
@@ -232,9 +234,9 @@ def test_site_generation_writes_valid_rss_feed(tmp_path) -> None:
     assert items[0].findtext("link")
     assert items[0].findtext("pubDate")
     # The page advertises the feed for autodiscovery.
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     assert 'type="application/rss+xml"' in html
-    assert 'href="feed.xml"' in html
+    assert 'href="../feed.xml"' in html
 
 
 def test_rss_feed_includes_curated_records(tmp_path) -> None:
@@ -259,7 +261,7 @@ def test_rss_feed_includes_curated_records(tmp_path) -> None:
     assert len(items) == 1
     assert "Maintainer Reviewed School" in items[0].findtext("title")
     assert items[0].findtext("category") == "Curated"
-    index = (tmp_path / "index.html").read_text(encoding="utf-8")
+    index = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     assert "1 total · 15 per page" in index
     assert '<h3 data-i18n="empty.title">' not in index
 
@@ -290,10 +292,10 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert candidate_payload["opportunities"][0]["title"] == candidate.title
     assert candidate_payload["scanner_opportunities"][0]["title"] == candidate.title
     assert "Summa" in html
-    assert 'href="assets/css/base.css"' in html
-    assert 'src="assets/js/filters.js"' in html
+    assert 'href="../assets/css/base.css"' in html
+    assert 'src="../assets/js/filters.js"' in html
     assert "<style>" not in html
-    assert 'id="lang-toggle"' in html and 'id="theme-toggle"' in html  # CN/EN + dark/light toggles
+    assert 'aria-label="切换到中文"' in html and 'id="theme-toggle"' in html
     assert "Example Hydrology Winter School" in html
     assert "filter-topic" in html
     assert 'data-status="qualified"' in html
@@ -339,7 +341,7 @@ def test_site_generation_writes_seo_artifacts(tmp_path) -> None:
     assert "sources.html</loc>" in sitemap
     assert "<lastmod>" not in sitemap
     # Head-level discovery tags.
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     assert 'rel="canonical"' in html
     assert 'property="og:image"' in html
     assert 'name="twitter:card"' in html
@@ -351,7 +353,7 @@ def test_site_generation_writes_seo_artifacts(tmp_path) -> None:
     assert any(node.get("@type") == "WebSite" for node in graph)
     item_list = next(node for node in graph if node.get("@type") == "ItemList")
     item = item_list["itemListElement"][0]
-    assert item["url"].startswith("https://lione12138.github.io/summer-school-radar/opportunities/")
+    assert item["url"].startswith("https://lione12138.github.io/summer-school-radar/en/opportunities/")
     assert "item" not in item
 
 
@@ -375,7 +377,7 @@ def test_site_generation_writes_attribution_and_bot_controls(tmp_path) -> None:
     assert isinstance(data["opportunities"], list)
     assert (tmp_path / "DATA-LICENSE.txt").exists()
     # A hidden canonical-source watermark is embedded in the page.
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     assert data["_canary"] in html
     assert "CC BY 4.0" in html
 
@@ -384,7 +386,7 @@ def test_site_hero_omits_cta_json_and_rss_links(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
     write_site(ranked, [], tmp_path)
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     hero = html.split("</header>", 1)[0]
     assert "Browse opportunities" not in hero
     assert "Subscribe via RSS" not in html
@@ -397,7 +399,7 @@ def test_site_hero_disclaimer_is_rendered(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
     write_site(ranked, [], tmp_path)
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     hero = html.split("</header>", 1)[0]
     assert 'class="hero-disclaimer"' in hero
     assert "<details" in hero
@@ -411,14 +413,15 @@ def test_site_hero_disclaimer_is_rendered(tmp_path) -> None:
 def test_filter_defaults_describe_each_dimension(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     write_site(rank_candidates([candidate]), [], tmp_path)
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
 
-    assert 'data-i18n="filter.all.status">All statuses</option>' in html
-    assert 'data-i18n="filter.all.topic">All topics</option>' in html
-    assert 'data-i18n="filter.all.funding">All funding</option>' in html
-    assert 'data-i18n="filter.all.deadline">All deadlines</option>' in html
-    assert 'data-i18n="filter.all.fresh">Any time</option>' in html
-    assert 'value="found" data-i18n="filter.status.found"' in html
+    soup = BeautifulSoup(html, "html.parser")
+    assert soup.select_one('#filter-status option[value=""]').get_text(strip=True) == "All statuses"
+    assert soup.select_one('#filter-topic option[value=""]').get_text(strip=True) == "All topics"
+    assert soup.select_one('#filter-funding option[value=""]').get_text(strip=True) == "All funding"
+    assert soup.select_one('#filter-deadline option[value=""]').get_text(strip=True) == "All deadlines"
+    assert soup.select_one('#filter-new option[value=""]').get_text(strip=True) == "Any time"
+    assert soup.select_one('#filter-status option[value="found"]') is not None
     i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
     assert '"filter.all.status": {en:"All statuses", zh:"所有状态"}' in i18n
 
@@ -436,11 +439,11 @@ def test_more_official_programmes_are_separate_and_do_not_enter_rss(tmp_path) ->
 
     write_site([candidate], [], tmp_path)
 
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     feed = (tmp_path / "feed.xml").read_text(encoding="utf-8")
     details = list((tmp_path / "opportunities").glob("*.html"))
     assert "More Official Programmes" in html
-    assert "更多官网项目" in html
+    assert "更多官网项目" in (tmp_path / "zh" / "index.html").read_text(encoding="utf-8")
     assert 'data-status="found"' in html
     assert candidate.title in html
     assert candidate.title not in feed
@@ -450,7 +453,7 @@ def test_more_official_programmes_are_separate_and_do_not_enter_rss(tmp_path) ->
 def test_opportunity_browser_uses_sidebar_and_fifteen_item_pages(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     write_site(rank_candidates([candidate]), [], tmp_path)
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
 
     assert 'class="opportunity-browser"' in html
     assert 'class="filter-sidebar"' in html
@@ -491,7 +494,7 @@ def test_site_renders_curated_opportunities_and_keeps_unresolved_items_internal(
     ranked = rank_candidates([candidate])
 
     write_site(ranked, [], tmp_path, curated=[reviewed])
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     review_json = (tmp_path / "review_queue.json").read_text(encoding="utf-8")
 
     assert "Curated Opportunities" in html
@@ -507,8 +510,8 @@ def test_site_generation_writes_favicon(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
     write_site(ranked, [], tmp_path)
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
-    assert '<link rel="icon" type="image/svg+xml" href="favicon.svg">' in html
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
+    assert 'href="../favicon.svg"' in html
     assert (tmp_path / "favicon.svg").exists()
 
     detail = next((tmp_path / "opportunities").glob("*.html")).read_text(encoding="utf-8")
@@ -525,7 +528,7 @@ def test_collection_notes_are_public_friendly(tmp_path) -> None:
         "AGU: 403 Client Error: Forbidden for url: https://www.agu.org/",
     ]
     write_site(ranked, errors, tmp_path)
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     assert "Collection Notes" in html
     assert "browser rendering unavailable" in html
     assert "source website" in html
@@ -547,7 +550,7 @@ def test_manual_sources_are_listed_in_collection_notes(tmp_path) -> None:
             }
         ],
     )
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     assert "Collection Notes" in html
     assert "Manual Excellent Source" in html
     assert "check manually" in html
@@ -597,9 +600,12 @@ def test_site_generation_renders_sources_page(tmp_path) -> None:
     assert "Enabled Source" in html
     assert "Disabled Source" in html
     assert "blocked.example.org" in html
-    assert "Last success: 2026-07-13" in html
-    assert "Failed · 2 consecutive" in html
-    assert "上次成功：2026-07-10" in html
+    assert "2026-07-13" in html
+    assert "Degraded" in html
+    assert ">2<" in html
+    chinese_sources = (tmp_path / "zh" / "sources.html").read_text(encoding="utf-8")
+    assert "2026-07-10" in chinese_sources
+    assert "降级" in chinese_sources
     assert "Disabled Source" in source_json
 
 
@@ -752,18 +758,32 @@ def test_empty_state_stays_informative(tmp_path) -> None:
         {"name": "Manual", "url": "https://m", "enabled": True, "check_manually": True},
     ]
     write_site([], [], tmp_path, sources=sources)
-    html = (tmp_path / "index.html").read_text(encoding="utf-8")
+    html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     # A coverage stat and a positive, seasonal empty-state instead of a blank page.
     assert "Trusted sources" in html
     assert "across 2 trusted sources" in html  # manual sources are not counted as scanned
     assert "the radar is watching" in html
     assert "See what we track" in html
-    assert 'class="lang-zh" lang="zh"' in html
-    assert "目前没有项目通过最近一次扫描的全部规则" in html
-    assert "每周一、周三和周五检查" in html
+    chinese = (tmp_path / "zh" / "index.html").read_text(encoding="utf-8")
+    assert "目前没有项目通过最近一次扫描的全部规则" in chinese
+    assert "每周一、周三和周五检查" in chinese
     assert "Subscribe via RSS" not in html
     i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
-    assert localization_issues(html, i18n) == []
+    assert localization_issues(render_site([], [], {}, [], tracked_sources=2), i18n) == []
+
+
+def test_home_distinguishes_source_scan_from_daily_deadline_refresh() -> None:
+    stale_date = date.today() - timedelta(days=5)
+
+    html = render_site(
+        [],
+        [],
+        scan_manifest={"mode": "full", "generated": stale_date.isoformat()},
+    )
+
+    assert "Source scan delayed (5 days ago)" in html
+    assert f">{stale_date.isoformat()}<" in html
+    assert f"Deadline status refreshed {date.today().isoformat()}" in html
 
 
 def test_filters_only_offer_topics_from_rendered_records() -> None:
@@ -804,7 +824,7 @@ def test_untrusted_external_urls_are_not_rendered(tmp_path) -> None:
 
     write_site([], [], tmp_path, curated=curated, sources=sources)
 
-    index = (tmp_path / "index.html").read_text(encoding="utf-8")
+    index = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     source_page = (tmp_path / "sources.html").read_text(encoding="utf-8")
     feed = (tmp_path / "feed.xml").read_text(encoding="utf-8")
     assert "javascript:" not in index
@@ -818,7 +838,7 @@ def test_candidate_with_unsafe_application_link_is_excluded_from_site_and_feed(t
 
     write_site([candidate], [], tmp_path)
 
-    index = (tmp_path / "index.html").read_text(encoding="utf-8")
+    index = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     feed = (tmp_path / "feed.xml").read_text(encoding="utf-8")
     assert candidate.title not in index
     assert candidate.title not in feed
@@ -864,9 +884,7 @@ def test_duration_shows_date_range_and_days(tmp_path) -> None:
     ranked = rank_candidates([candidate])
     start = candidate.start_date
     end = candidate.end_date
-    expected = (
-        f"{start.day} {start.strftime('%b')} – {end.day} {end.strftime('%b')} {end.year} · 11 days"
-    )
+    expected = f"{start.day} {start.strftime('%b')} {start.year} – {end.day} {end.strftime('%b')} {end.year} · 11 days"
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
     assert expected in html
     markdown = render_report(ranked, [])
@@ -973,7 +991,7 @@ def test_topic_display_is_capped_at_four_terms(tmp_path) -> None:
     candidate.topic_keywords = ["one", "two", "three", "four", "five", "six"]
     ranked = rank_candidates([candidate])
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
-    assert '<span class="lang-en" lang="en">one, two, three, four</span>' in html
+    assert "one, two, three, four" in html
     assert "five" not in html.split("<td>one, two, three, four</td>")[0][-200:]
     # The filter attribute keeps every topic so filtering still works.
     assert "five|six" in html
@@ -987,8 +1005,8 @@ def test_public_location_uses_europe_label(tmp_path) -> None:
     candidate.location = "continental Europe"
     ranked = rank_candidates([candidate])
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
-    assert ">Europe<" in html
-    assert ">continental Europe<" not in html
+    assert "Europe" in BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
+    assert "continental Europe" not in BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
 
 
 def test_multi_session_programme_is_compact_and_expandable(tmp_path) -> None:
@@ -1008,19 +1026,20 @@ def test_multi_session_programme_is_compact_and_expandable(tmp_path) -> None:
     ]
 
     write_site(rank_candidates([candidate]), [], tmp_path)
-    index = (tmp_path / "index.html").read_text(encoding="utf-8")
+    index = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     detail = next((tmp_path / "opportunities").glob("*.html")).read_text(encoding="utf-8")
     payload = json.loads((tmp_path / "candidates.json").read_text(encoding="utf-8"))
 
     assert '<details class="session-list">' in index
     assert "5 sessions · 5–12 days each" in index
-    assert "5 个时段 · 每段 5–12 天" in index
+    chinese_index = (tmp_path / "zh" / "index.html").read_text(encoding="utf-8")
+    assert "5 个时段 · 每段 5–12 天" in chinese_index
     assert "Pre-sessional 2: 13 Jul–17 Jul 2099 · apply by 3 Jul 2099" in index
-    assert "预备时段 2：2099年7月13日–7月17日 · 申请截止 2099年7月3日" in index
+    assert "预备时段 2：2099年7月13日–7月17日 · 申请截止 2099年7月3日" in chinese_index
     assert "Latest: 2099-07-17" in index
-    assert "最晚时段截止：" in index
+    assert "最晚时段截止：" in chinese_index
     assert "47 days" not in index
-    assert "47 天" not in index
+    assert "47 天" not in chinese_index
     assert "5 sessions · 5–12 days each" in detail
     assert payload["opportunities"][0]["sessions"][0] == {
         "name": "Pre-sessional 1",
@@ -1068,10 +1087,11 @@ def test_localization_contract_holds_across_built_pages(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
     write_site(ranked, [], tmp_path)
-    pages = [tmp_path / "index.html", tmp_path / "sources.html"]
+    pages = [tmp_path / "sources.html"]
     pages.extend(sorted((tmp_path / "opportunities").glob("*.html")))
     i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
-    assert len(pages) >= 3  # index, sources, at least one detail page
+    assert len(pages) >= 2  # sources and at least one detail page
+    assert localization_issues(render_site(ranked, []), i18n) == []
     for page in pages:
         issues = localization_issues(page.read_text(encoding="utf-8"), i18n)
         assert issues == [], f"{page.name}: {issues[:6]}"
@@ -1079,7 +1099,7 @@ def test_localization_contract_holds_across_built_pages(tmp_path) -> None:
 
 def test_about_qualification_is_discipline_agnostic(tmp_path) -> None:
     write_site([], [], tmp_path)
-    index = (tmp_path / "index.html").read_text(encoding="utf-8")
+    index = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
 
     expected = "A genuine academic research-training programme, regardless of discipline."

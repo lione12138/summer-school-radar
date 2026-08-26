@@ -244,3 +244,13 @@ overrides:
       funding_evidence: Tinbergen Summer School funding is not offered; scholarships described elsewhere apply to the two-year Research Master programme.
       fee: EUR 1,000 for PhD and Master students; accommodation and travel excluded
       fee_eur: 1000
+  - url: https://www.keele.ac.uk/astronomy-summer-school/
+    status: update
+    note: The official registration rules distinguish reimbursable participant support from accommodation and meals included in the paid package.
+    fields:
+      funding_available: true
+      funding_type: [fee waiver, travel grant]
+      funding_scope: "Fee GBP 0 for STFC studentship holders and self-funded postgraduates; travel + subsistence reimbursable"
+      funding_evidence: "STFC Studentship holders and self-funded postgraduates can register free of charge and claim back travel and subsistence."
+      fee: "GBP 700 for non-STFC-funded PhD students, postdocs, and university/organization employees; includes registration, 5 nights accommodation, meals, and social events"
+      fee_eur: 840
