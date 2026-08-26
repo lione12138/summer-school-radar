@@ -252,7 +252,7 @@ jobs:
 
       - name: Upload non-publishing audit artifacts
         if: always() && steps.build.outputs.mode == 'audit'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: summa-search-audit-${{ github.run_id }}
           retention-days: 14
