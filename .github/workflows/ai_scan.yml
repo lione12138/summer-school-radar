@@ -56,7 +56,7 @@ jobs:
       HF_HOME: ${{ github.workspace }}/.cache/huggingface
     steps:
       - name: Check out source
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
 
@@ -104,7 +104,7 @@ jobs:
 
       - name: Check out current Pages branch
         if: steps.build.outputs.can_build == 'true' && steps.build.outputs.mode != 'audit'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           ref: gh-pages
           path: _pages
