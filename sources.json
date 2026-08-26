@@ -12,7 +12,14 @@
       "training school"
     ],
     "notes": "Core geoscience training source.",
-    "notes_zh": "\u6838\u5fc3\u5730\u7403\u79d1\u5b66\u57f9\u8bad\u8d44\u6e90\u3002"
+    "notes_zh": "\u6838\u5fc3\u5730\u7403\u79d1\u5b66\u57f9\u8bad\u8d44\u6e90\u3002",
+    "health": {
+      "name": "EGU Training Schools",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "IAHS",
@@ -26,7 +33,14 @@
       "training"
     ],
     "notes": "International Association of Hydrological Sciences. Cloudflare blocks datacenter IPs; the Monday/Wednesday/Friday source scan runs from a residential connection, where it loads fine.",
-    "notes_zh": "\u56fd\u9645\u6c34\u6587\u79d1\u5b66\u534f\u4f1a\u3002Cloudflare \u4f1a\u5c4f\u853d\u6570\u636e\u4e2d\u5fc3 IP\uff1b\u6bcf\u5468\u4e00\u3001\u5468\u4e09\u548c\u5468\u4e94\u7684\u6765\u6e90\u626b\u63cf\u901a\u8fc7\u4f4f\u5b85\u7f51\u7edc\u8fde\u63a5\u8fd0\u884c\uff0c\u56e0\u6b64\u53ef\u4ee5\u6b63\u5e38\u52a0\u8f7d\u3002"
+    "notes_zh": "\u56fd\u9645\u6c34\u6587\u79d1\u5b66\u534f\u4f1a\u3002Cloudflare \u4f1a\u5c4f\u853d\u6570\u636e\u4e2d\u5fc3 IP\uff1b\u6bcf\u5468\u4e00\u3001\u5468\u4e09\u548c\u5468\u4e94\u7684\u6765\u6e90\u626b\u63cf\u901a\u8fc7\u4f4f\u5b85\u7f51\u7edc\u8fde\u63a5\u8fd0\u884c\uff0c\u56e0\u6b64\u53ef\u4ee5\u6b63\u5e38\u52a0\u8f7d\u3002",
+    "health": {
+      "name": "IAHS",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "IAH",
@@ -40,7 +54,14 @@
       "training"
     ],
     "notes": "International Association of Hydrogeologists.",
-    "notes_zh": "\u56fd\u9645\u6c34\u6587\u5730\u8d28\u5b66\u5bb6\u534f\u4f1a\u3002"
+    "notes_zh": "\u56fd\u9645\u6c34\u6587\u5730\u8d28\u5b66\u5bb6\u534f\u4f1a\u3002",
+    "health": {
+      "name": "IAH",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CUAHSI",
@@ -71,7 +92,14 @@
       "training"
     ],
     "notes": "NASA Applied Remote Sensing Training. Unreachable from the GitHub runner but loads from a residential connection; most ARSET trainings are online so expect mostly near-matches.",
-    "notes_zh": "NASA\u5e94\u7528\u9065\u611f\u57f9\u8bad\u3002\u4eceGitHub\u8fd0\u884c\u5668\u65e0\u6cd5\u8bbf\u95ee\uff0c\u4f46\u4ece\u4f4f\u5b85\u8fde\u63a5\u53ef\u52a0\u8f7d\uff1b\u5927\u591a\u6570ARSET\u57f9\u8bad\u5728\u7ebf\u8fdb\u884c\uff0c\u56e0\u6b64\u9884\u8ba1\u4e3b\u8981\u4e3a\u8fd1\u4f3c\u5339\u914d\u3002"
+    "notes_zh": "NASA\u5e94\u7528\u9065\u611f\u57f9\u8bad\u3002\u4eceGitHub\u8fd0\u884c\u5668\u65e0\u6cd5\u8bbf\u95ee\uff0c\u4f46\u4ece\u4f4f\u5b85\u8fde\u63a5\u53ef\u52a0\u8f7d\uff1b\u5927\u591a\u6570ARSET\u57f9\u8bad\u5728\u7ebf\u8fdb\u884c\uff0c\u56e0\u6b64\u9884\u8ba1\u4e3b\u8981\u4e3a\u8fd1\u4f3c\u5339\u914d\u3002",
+    "health": {
+      "name": "NASA ARSET",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-07-27",
+      "consecutive_failures": 5
+    }
   },
   {
     "name": "DAAD Short Courses",
@@ -85,7 +113,14 @@
       "Germany"
     ],
     "notes": "Funding source; opportunity pages may be linked elsewhere.",
-    "notes_zh": "\u8d44\u91d1\u6765\u6e90\uff1b\u673a\u4f1a\u9875\u9762\u53ef\u80fd\u5728\u5176\u4ed6\u5730\u65b9\u94fe\u63a5\u3002"
+    "notes_zh": "\u8d44\u91d1\u6765\u6e90\uff1b\u673a\u4f1a\u9875\u9762\u53ef\u80fd\u5728\u5176\u4ed6\u5730\u65b9\u94fe\u63a5\u3002",
+    "health": {
+      "name": "DAAD Short Courses",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-07-15",
+      "consecutive_failures": 17
+    }
   },
   {
     "name": "UKRI Short Courses and Summer Schools",
@@ -100,7 +135,14 @@
       "funded doctoral training"
     ],
     "notes": "Official UK Research and Innovation collection of current research summer schools and short courses; linked host pages remain the source of programme-level evidence.",
-    "notes_zh": "\u82f1\u56fd\u7814\u7a76\u4e0e\u521b\u65b0\u7f72\u5b98\u65b9\u6c47\u603b\u7684\u5f53\u524d\u7814\u7a76\u6691\u671f\u5b66\u6821\u548c\u77ed\u671f\u8bfe\u7a0b\uff1b\u94fe\u63a5\u7684\u4e3b\u529e\u65b9\u9875\u9762\u4ecd\u662f\u9879\u76ee\u7ea7\u8bc1\u636e\u7684\u6765\u6e90\u3002"
+    "notes_zh": "\u82f1\u56fd\u7814\u7a76\u4e0e\u521b\u65b0\u7f72\u5b98\u65b9\u6c47\u603b\u7684\u5f53\u524d\u7814\u7a76\u6691\u671f\u5b66\u6821\u548c\u77ed\u671f\u8bfe\u7a0b\uff1b\u94fe\u63a5\u7684\u4e3b\u529e\u65b9\u9875\u9762\u4ecd\u662f\u9879\u76ee\u7ea7\u8bc1\u636e\u7684\u6765\u6e90\u3002",
+    "health": {
+      "name": "UKRI Short Courses and Summer Schools",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "COST Action Events",
@@ -115,7 +157,14 @@
       "travel reimbursement"
     ],
     "notes": "Official COST Action event catalogue. Candidate links span disciplines and are followed only when they name a supported research training school or equivalent short programme.",
-    "notes_zh": "\u5b98\u65b9COST\u884c\u52a8\u8ba1\u5212\u6d3b\u52a8\u76ee\u5f55\u3002\u5019\u9009\u94fe\u63a5\u6db5\u76d6\u591a\u4e2a\u5b66\u79d1\uff0c\u4ec5\u5f53\u94fe\u63a5\u6307\u5411\u53d7\u652f\u6301\u7684\u7814\u7a76\u57f9\u8bad\u5b66\u6821\u6216\u540c\u7b49\u77ed\u671f\u9879\u76ee\u65f6\u624d\u4f1a\u88ab\u8ddf\u8fdb\u3002"
+    "notes_zh": "\u5b98\u65b9COST\u884c\u52a8\u8ba1\u5212\u6d3b\u52a8\u76ee\u5f55\u3002\u5019\u9009\u94fe\u63a5\u6db5\u76d6\u591a\u4e2a\u5b66\u79d1\uff0c\u4ec5\u5f53\u94fe\u63a5\u6307\u5411\u53d7\u652f\u6301\u7684\u7814\u7a76\u57f9\u8bad\u5b66\u6821\u6216\u540c\u7b49\u77ed\u671f\u9879\u76ee\u65f6\u624d\u4f1a\u88ab\u8ddf\u8fdb\u3002",
+    "health": {
+      "name": "COST Action Events",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "ELLIS",
@@ -130,7 +179,14 @@
     ],
     "collector": "ellis",
     "notes": "AI and scientific ML events. The site is a single-page app whose detail pages are empty shells, but its server-rendered listing carries each event's dates and location inline, so it is parsed by a dedicated listing collector (see src/research_school_radar/api_sources.py).",
-    "notes_zh": "AI\u4e0e\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u6d3b\u52a8\u3002\u8be5\u7f51\u7ad9\u4e3a\u5355\u9875\u5e94\u7528\uff0c\u8be6\u60c5\u9875\u4e3a\u7a7a\u58f3\uff0c\u4f46\u670d\u52a1\u7aef\u6e32\u67d3\u7684\u5217\u8868\u9875\u5185\u5d4c\u4e86\u6bcf\u4e2a\u6d3b\u52a8\u7684\u65e5\u671f\u548c\u5730\u70b9\uff0c\u56e0\u6b64\u7531\u4e13\u7528\u5217\u8868\u91c7\u96c6\u5668\u89e3\u6790\uff08\u89c1 src/research_school_radar/api_sources.py\uff09\u3002"
+    "notes_zh": "AI\u4e0e\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u6d3b\u52a8\u3002\u8be5\u7f51\u7ad9\u4e3a\u5355\u9875\u5e94\u7528\uff0c\u8be6\u60c5\u9875\u4e3a\u7a7a\u58f3\uff0c\u4f46\u670d\u52a1\u7aef\u6e32\u67d3\u7684\u5217\u8868\u9875\u5185\u5d4c\u4e86\u6bcf\u4e2a\u6d3b\u52a8\u7684\u65e5\u671f\u548c\u5730\u70b9\uff0c\u56e0\u6b64\u7531\u4e13\u7528\u5217\u8868\u91c7\u96c6\u5668\u89e3\u6790\uff08\u89c1 src/research_school_radar/api_sources.py\uff09\u3002",
+    "health": {
+      "name": "ELLIS",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "IHE Delft",
@@ -146,7 +202,14 @@
     ],
     "collector": "ihe_delft",
     "notes": "Premier water education source. The listing is client-side rendered (empty HTML), so it is collected directly from its public JSON API instead (see src/research_school_radar/api_sources.py), which gives exact dates, deadline, and fee.",
-    "notes_zh": "\u9876\u7ea7\u6c34\u8d44\u6e90\u6559\u80b2\u5e73\u53f0\u3002\u8be5\u5217\u8868\u7531\u5ba2\u6237\u7aef\u6e32\u67d3\uff08HTML\u4e3a\u7a7a\uff09\uff0c\u56e0\u6b64\u76f4\u63a5\u4ece\u5176\u516c\u5171JSON API\u83b7\u53d6\uff08\u53c2\u89c1src/research_school_radar/api_sources.py\uff09\uff0c\u8be5API\u63d0\u4f9b\u7cbe\u786e\u65e5\u671f\u3001\u622a\u6b62\u65e5\u671f\u548c\u8d39\u7528\u3002"
+    "notes_zh": "\u9876\u7ea7\u6c34\u8d44\u6e90\u6559\u80b2\u5e73\u53f0\u3002\u8be5\u5217\u8868\u7531\u5ba2\u6237\u7aef\u6e32\u67d3\uff08HTML\u4e3a\u7a7a\uff09\uff0c\u56e0\u6b64\u76f4\u63a5\u4ece\u5176\u516c\u5171JSON API\u83b7\u53d6\uff08\u53c2\u89c1src/research_school_radar/api_sources.py\uff09\uff0c\u8be5API\u63d0\u4f9b\u7cbe\u786e\u65e5\u671f\u3001\u622a\u6b62\u65e5\u671f\u548c\u8d39\u7528\u3002",
+    "health": {
+      "name": "IHE Delft",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "IIASA",
@@ -176,7 +239,14 @@
       "school"
     ],
     "notes": "Strong geoscience relevance.",
-    "notes_zh": "\u4e0e\u5730\u7403\u79d1\u5b66\u9ad8\u5ea6\u76f8\u5173\u3002"
+    "notes_zh": "\u4e0e\u5730\u7403\u79d1\u5b66\u9ad8\u5ea6\u76f8\u5173\u3002",
+    "health": {
+      "name": "GFZ Potsdam",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "UKCEH",
@@ -191,7 +261,14 @@
       "training"
     ],
     "notes": "UK environmental science training listing. Previous /training redirected to a 403 page.",
-    "notes_zh": "\u82f1\u56fd\u73af\u5883\u79d1\u5b66\u57f9\u8bad\u5217\u8868\u3002\u4e4b\u524d\u7684/training\u9875\u9762\u91cd\u5b9a\u5411\u5230403\u9875\u9762\u3002"
+    "notes_zh": "\u82f1\u56fd\u73af\u5883\u79d1\u5b66\u57f9\u8bad\u5217\u8868\u3002\u4e4b\u524d\u7684/training\u9875\u9762\u91cd\u5b9a\u5411\u5230403\u9875\u9762\u3002",
+    "health": {
+      "name": "UKCEH",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "ICIMOD",
@@ -209,7 +286,14 @@
       "servir.icimod.org"
     ],
     "notes": "Strong regional water and climate relevance. SERVIR subdomain is skipped because local TLS certificate validation fails.",
-    "notes_zh": "\u4e0e\u533a\u57df\u6c34\u548c\u6c14\u5019\u9ad8\u5ea6\u76f8\u5173\u3002\u56e0\u672c\u5730TLS\u8bc1\u4e66\u9a8c\u8bc1\u5931\u8d25\uff0c\u8df3\u8fc7SERVIR\u5b50\u57df\u3002"
+    "notes_zh": "\u4e0e\u533a\u57df\u6c34\u548c\u6c14\u5019\u9ad8\u5ea6\u76f8\u5173\u3002\u56e0\u672c\u5730TLS\u8bc1\u4e66\u9a8c\u8bc1\u5931\u8d25\uff0c\u8df3\u8fc7SERVIR\u5b50\u57df\u3002",
+    "health": {
+      "name": "ICIMOD",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Asian Institute of Technology",
@@ -224,7 +308,14 @@
       "short course"
     ],
     "notes": "Regional university source.",
-    "notes_zh": "\u5730\u533a\u6027\u5927\u5b66\u6765\u6e90\u3002"
+    "notes_zh": "\u5730\u533a\u6027\u5927\u5b66\u6765\u6e90\u3002",
+    "health": {
+      "name": "Asian Institute of Technology",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "ECMWF Training",
@@ -239,7 +330,14 @@
       "training"
     ],
     "notes": "European Centre for Medium-Range Weather Forecasts training catalogue. Many courses are online; in-person ones surface as candidates.",
-    "notes_zh": "\u6b27\u6d32\u4e2d\u671f\u5929\u6c14\u9884\u62a5\u4e2d\u5fc3\u57f9\u8bad\u76ee\u5f55\u3002\u8bb8\u591a\u8bfe\u7a0b\u4e3a\u5728\u7ebf\u5f62\u5f0f\uff1b\u7ebf\u4e0b\u8bfe\u7a0b\u4f5c\u4e3a\u5019\u9009\u5217\u51fa\u3002"
+    "notes_zh": "\u6b27\u6d32\u4e2d\u671f\u5929\u6c14\u9884\u62a5\u4e2d\u5fc3\u57f9\u8bad\u76ee\u5f55\u3002\u8bb8\u591a\u8bfe\u7a0b\u4e3a\u5728\u7ebf\u5f62\u5f0f\uff1b\u7ebf\u4e0b\u8bfe\u7a0b\u4f5c\u4e3a\u5019\u9009\u5217\u51fa\u3002",
+    "health": {
+      "name": "ECMWF Training",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "ESA EO4Society Training",
@@ -254,7 +352,14 @@
       "school"
     ],
     "notes": "European Space Agency Earth observation training and education.",
-    "notes_zh": "\u6b27\u6d32\u7a7a\u95f4\u5c40\u5730\u7403\u89c2\u6d4b\u57f9\u8bad\u4e0e\u6559\u80b2\u3002"
+    "notes_zh": "\u6b27\u6d32\u7a7a\u95f4\u5c40\u5730\u7403\u89c2\u6d4b\u57f9\u8bad\u4e0e\u6559\u80b2\u3002",
+    "health": {
+      "name": "ESA EO4Society Training",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "NCAR ASP Colloquia",
@@ -268,7 +373,14 @@
       "summer colloquium"
     ],
     "notes": "NCAR Advanced Study Program summer colloquia, usually funded for early-career researchers.",
-    "notes_zh": "NCAR\u9ad8\u7ea7\u7814\u7a76\u9879\u76ee\u6691\u671f\u7814\u8ba8\u4f1a\uff0c\u901a\u5e38\u8d44\u52a9\u65e9\u671f\u804c\u4e1a\u7814\u7a76\u4eba\u5458\u3002"
+    "notes_zh": "NCAR\u9ad8\u7ea7\u7814\u7a76\u9879\u76ee\u6691\u671f\u7814\u8ba8\u4f1a\uff0c\u901a\u5e38\u8d44\u52a9\u65e9\u671f\u804c\u4e1a\u7814\u7a76\u4eba\u5458\u3002",
+    "health": {
+      "name": "NCAR ASP Colloquia",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "PIK Potsdam Events",
@@ -283,7 +395,14 @@
       "workshop"
     ],
     "notes": "Potsdam Institute for Climate Impact Research events.",
-    "notes_zh": "\u6ce2\u8328\u5766\u6c14\u5019\u5f71\u54cd\u7814\u7a76\u6240\u6d3b\u52a8\u3002"
+    "notes_zh": "\u6ce2\u8328\u5766\u6c14\u5019\u5f71\u54cd\u7814\u7a76\u6240\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "PIK Potsdam Events",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "HIDA Events",
@@ -298,7 +417,14 @@
       "school"
     ],
     "notes": "Helmholtz Information and Data Science Academy events, including schools for environmental data science.",
-    "notes_zh": "\u4ea5\u59c6\u970d\u5179\u4fe1\u606f\u4e0e\u6570\u636e\u79d1\u5b66\u5b66\u9662\u6d3b\u52a8\uff0c\u5305\u62ec\u73af\u5883\u6570\u636e\u79d1\u5b66\u5b66\u6821\u3002"
+    "notes_zh": "\u4ea5\u59c6\u970d\u5179\u4fe1\u606f\u4e0e\u6570\u636e\u79d1\u5b66\u5b66\u9662\u6d3b\u52a8\uff0c\u5305\u62ec\u73af\u5883\u6570\u636e\u79d1\u5b66\u5b66\u6821\u3002",
+    "health": {
+      "name": "HIDA Events",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "GESIS Summer School",
@@ -314,7 +440,14 @@
       "data science"
     ],
     "notes": "Official recurring survey methodology and data-analysis summer school; the scanner follows its current course catalogue.",
-    "notes_zh": "\u5b98\u65b9\u5b9a\u671f\u4e3e\u529e\u7684\u8c03\u67e5\u65b9\u6cd5\u4e0e\u6570\u636e\u5206\u6790\u6691\u671f\u5b66\u6821\uff1b\u8bfe\u7a0b\u5b89\u6392\u4ee5\u5f53\u524d\u8bfe\u7a0b\u76ee\u5f55\u4e3a\u51c6\u3002"
+    "notes_zh": "\u5b98\u65b9\u5b9a\u671f\u4e3e\u529e\u7684\u8c03\u67e5\u65b9\u6cd5\u4e0e\u6570\u636e\u5206\u6790\u6691\u671f\u5b66\u6821\uff1b\u8bfe\u7a0b\u5b89\u6392\u4ee5\u5f53\u524d\u8bfe\u7a0b\u76ee\u5f55\u4e3a\u51c6\u3002",
+    "health": {
+      "name": "GESIS Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "GESIS Fall Seminar in Computational Social Science",
@@ -330,7 +463,14 @@
       "data analysis"
     ],
     "notes": "Official recurring computational-social-science methods school. Courses may be online or in person and are evaluated separately; the public financial-access gate still applies because GESIS does not currently provide its own scholarships.",
-    "notes_zh": "\u5b98\u65b9\u5b9a\u671f\u4e3e\u529e\u7684\u8ba1\u7b97\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u5b66\u6821\u3002\u8bfe\u7a0b\u53ef\u80fd\u5728\u7ebf\u6216\u7ebf\u4e0b\u8fdb\u884c\uff0c\u5e76\u5206\u522b\u8bc4\u4f30\uff1b\u7531\u4e8eGESIS\u76ee\u524d\u4e0d\u63d0\u4f9b\u81ea\u5df1\u7684\u5956\u5b66\u91d1\uff0c\u516c\u5171\u8d22\u653f\u51c6\u5165\u95e8\u69db\u4ecd\u7136\u9002\u7528\u3002"
+    "notes_zh": "\u5b98\u65b9\u5b9a\u671f\u4e3e\u529e\u7684\u8ba1\u7b97\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u5b66\u6821\u3002\u8bfe\u7a0b\u53ef\u80fd\u5728\u7ebf\u6216\u7ebf\u4e0b\u8fdb\u884c\uff0c\u5e76\u5206\u522b\u8bc4\u4f30\uff1b\u7531\u4e8eGESIS\u76ee\u524d\u4e0d\u63d0\u4f9b\u81ea\u5df1\u7684\u5956\u5b66\u91d1\uff0c\u516c\u5171\u8d22\u653f\u51c6\u5165\u95e8\u69db\u4ecd\u7136\u9002\u7528\u3002",
+    "health": {
+      "name": "GESIS Fall Seminar in Computational Social Science",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-03",
+      "consecutive_failures": 2
+    }
   },
   {
     "name": "GESIS Spring Seminar",
@@ -346,7 +486,14 @@
       "metascience"
     ],
     "notes": "Official annual advanced methods seminar for graduate students and researchers; individual course instances are checked for mode, dates, fees, and financial access.",
-    "notes_zh": "\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u4eba\u5458\u7684\u5b98\u65b9\u5e74\u5ea6\u9ad8\u7ea7\u65b9\u6cd5\u7814\u8ba8\u4f1a\uff1b\u4e2a\u522b\u8bfe\u7a0b\u7684\u5177\u4f53\u5f62\u5f0f\u3001\u65e5\u671f\u3001\u8d39\u7528\u53ca\u7ecf\u6d4e\u63f4\u52a9\u60c5\u51b5\u9700\u9010\u4e00\u6838\u5b9e\u3002"
+    "notes_zh": "\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u4eba\u5458\u7684\u5b98\u65b9\u5e74\u5ea6\u9ad8\u7ea7\u65b9\u6cd5\u7814\u8ba8\u4f1a\uff1b\u4e2a\u522b\u8bfe\u7a0b\u7684\u5177\u4f53\u5f62\u5f0f\u3001\u65e5\u671f\u3001\u8d39\u7528\u53ca\u7ecf\u6d4e\u63f4\u52a9\u60c5\u51b5\u9700\u9010\u4e00\u6838\u5b9e\u3002",
+    "health": {
+      "name": "GESIS Spring Seminar",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "IDESSAI",
@@ -362,7 +509,14 @@
       "doctoral school"
     ],
     "notes": "Official Inria-DFKI European science school on AI, with a recurring programme for doctoral students and early-career researchers.",
-    "notes_zh": "Inria-DFKI\u6b27\u6d32\u4eba\u5de5\u667a\u80fd\u79d1\u5b66\u5b66\u6821\u5b98\u65b9\u9879\u76ee\uff0c\u9762\u5411\u535a\u58eb\u751f\u548c\u65e9\u671f\u804c\u4e1a\u7814\u7a76\u8005\u7684\u5b9a\u671f\u8bfe\u7a0b\u3002"
+    "notes_zh": "Inria-DFKI\u6b27\u6d32\u4eba\u5de5\u667a\u80fd\u79d1\u5b66\u5b66\u6821\u5b98\u65b9\u9879\u76ee\uff0c\u9762\u5411\u535a\u58eb\u751f\u548c\u65e9\u671f\u804c\u4e1a\u7814\u7a76\u8005\u7684\u5b9a\u671f\u8bfe\u7a0b\u3002",
+    "health": {
+      "name": "IDESSAI",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "HiPEAC ACACES",
@@ -378,7 +532,14 @@
       "artificial intelligence"
     ],
     "notes": "Official recurring advanced computer architecture and systems school. Selected students may receive grants covering registration and accommodation; each edition is still checked independently.",
-    "notes_zh": "\u5b98\u65b9\u5b9a\u671f\u4e3e\u529e\u7684\u9ad8\u7ea7\u8ba1\u7b97\u673a\u4f53\u7cfb\u7ed3\u6784\u4e0e\u7cfb\u7edf\u5b66\u6821\u3002\u5165\u9009\u5b66\u751f\u53ef\u80fd\u83b7\u5f97\u6db5\u76d6\u6ce8\u518c\u8d39\u548c\u4f4f\u5bbf\u8d39\u7684\u8d44\u52a9\uff1b\u6bcf\u5c4a\u4ecd\u72ec\u7acb\u5ba1\u6838\u3002"
+    "notes_zh": "\u5b98\u65b9\u5b9a\u671f\u4e3e\u529e\u7684\u9ad8\u7ea7\u8ba1\u7b97\u673a\u4f53\u7cfb\u7ed3\u6784\u4e0e\u7cfb\u7edf\u5b66\u6821\u3002\u5165\u9009\u5b66\u751f\u53ef\u80fd\u83b7\u5f97\u6db5\u76d6\u6ce8\u518c\u8d39\u548c\u4f4f\u5bbf\u8d39\u7684\u8d44\u52a9\uff1b\u6bcf\u5c4a\u4ecd\u72ec\u7acb\u5ba1\u6838\u3002",
+    "health": {
+      "name": "HiPEAC ACACES",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "UTN Computational Linguistics Fall School",
@@ -394,7 +555,14 @@
       "sociolinguistics"
     ],
     "notes": "Official University of Technology Nuremberg 2026 school. The page states an in-person two-week programme, a 6 September registration deadline, student fees of EUR 150, and selected registration-fee scholarships.",
-    "notes_zh": "\u7ebd\u4f26\u5821\u5de5\u4e1a\u5927\u5b662026\u5e74\u5b98\u65b9\u5b66\u6821\u3002\u9875\u9762\u8bf4\u660e\u4e3a\u4e3a\u671f\u4e24\u5468\u7684\u7ebf\u4e0b\u9879\u76ee\uff0c\u6ce8\u518c\u622a\u6b62\u65e5\u671f\u4e3a9\u67086\u65e5\uff0c\u5b66\u751f\u8d39\u7528\u4e3a150\u6b27\u5143\uff0c\u5e76\u63d0\u4f9b\u90e8\u5206\u6ce8\u518c\u8d39\u5956\u5b66\u91d1\u3002"
+    "notes_zh": "\u7ebd\u4f26\u5821\u5de5\u4e1a\u5927\u5b662026\u5e74\u5b98\u65b9\u5b66\u6821\u3002\u9875\u9762\u8bf4\u660e\u4e3a\u4e3a\u671f\u4e24\u5468\u7684\u7ebf\u4e0b\u9879\u76ee\uff0c\u6ce8\u518c\u622a\u6b62\u65e5\u671f\u4e3a9\u67086\u65e5\uff0c\u5b66\u751f\u8d39\u7528\u4e3a150\u6b27\u5143\uff0c\u5e76\u63d0\u4f9b\u90e8\u5206\u6ce8\u518c\u8d39\u5956\u5b66\u91d1\u3002",
+    "health": {
+      "name": "UTN Computational Linguistics Fall School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "TU Graz Summer and Winter Programmes",
@@ -410,7 +578,14 @@
       "engineering"
     ],
     "notes": "Official TU Graz programme catalogue. It includes recurring graduate research schools such as Graz Security Week; generic, blended-only, and expensive programmes remain excluded by the normal hard filters.",
-    "notes_zh": "\u683c\u62c9\u8328\u5de5\u4e1a\u5927\u5b66\u5b98\u65b9\u8bfe\u7a0b\u76ee\u5f55\u3002\u5176\u4e2d\u5305\u62ec\u5982\u683c\u62c9\u8328\u5b89\u5168\u5468\u7b49\u5b9a\u671f\u4e3e\u529e\u7684\u7814\u7a76\u751f\u7814\u7a76\u5b66\u6821\uff1b\u5e38\u89c4\u786c\u6027\u7b5b\u9009\u6761\u4ef6\u4ecd\u5c06\u6392\u9664\u901a\u7528\u578b\u3001\u7eaf\u6df7\u5408\u578b\u53ca\u8d39\u7528\u9ad8\u6602\u7684\u8bfe\u7a0b\u3002"
+    "notes_zh": "\u683c\u62c9\u8328\u5de5\u4e1a\u5927\u5b66\u5b98\u65b9\u8bfe\u7a0b\u76ee\u5f55\u3002\u5176\u4e2d\u5305\u62ec\u5982\u683c\u62c9\u8328\u5b89\u5168\u5468\u7b49\u5b9a\u671f\u4e3e\u529e\u7684\u7814\u7a76\u751f\u7814\u7a76\u5b66\u6821\uff1b\u5e38\u89c4\u786c\u6027\u7b5b\u9009\u6761\u4ef6\u4ecd\u5c06\u6392\u9664\u901a\u7528\u578b\u3001\u7eaf\u6df7\u5408\u578b\u53ca\u8d39\u7528\u9ad8\u6602\u7684\u8bfe\u7a0b\u3002",
+    "health": {
+      "name": "TU Graz Summer and Winter Programmes",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Institute for Qualitative and Multi-Method Research",
@@ -426,7 +601,14 @@
       "research design"
     ],
     "notes": "Official Syracuse University IQMR page, including recurring open-pool competitions for graduate students and early-career researchers from several world regions.",
-    "notes_zh": "\u96ea\u57ce\u5927\u5b66IQMR\u5b98\u65b9\u9875\u9762\uff0c\u5305\u62ec\u9762\u5411\u591a\u4e2a\u4e16\u754c\u5730\u533a\u7814\u7a76\u751f\u548c\u65e9\u671f\u804c\u4e1a\u7814\u7a76\u4eba\u5458\u7684\u5b9a\u671f\u5f00\u653e\u6c60\u7ade\u8d5b\u3002"
+    "notes_zh": "\u96ea\u57ce\u5927\u5b66IQMR\u5b98\u65b9\u9875\u9762\uff0c\u5305\u62ec\u9762\u5411\u591a\u4e2a\u4e16\u754c\u5730\u533a\u7814\u7a76\u751f\u548c\u65e9\u671f\u804c\u4e1a\u7814\u7a76\u4eba\u5458\u7684\u5b9a\u671f\u5f00\u653e\u6c60\u7ade\u8d5b\u3002",
+    "health": {
+      "name": "Institute for Qualitative and Multi-Method Research",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EITM Institute",
@@ -442,7 +624,14 @@
       "research design"
     ],
     "notes": "Official Empirical Implications of Theoretical Models institute site; recurring summer institutes train early-career social scientists to integrate formal theory and empirical analysis.",
-    "notes_zh": "\u7406\u8bba\u6a21\u578b\u5b9e\u8bc1\u610f\u4e49\u7814\u7a76\u6240\u5b98\u65b9\u7f51\u7ad9\uff1b\u5b9a\u671f\u4e3e\u529e\u7684\u6691\u671f\u5b66\u9662\u57f9\u8bad\u65e9\u671f\u804c\u4e1a\u793e\u4f1a\u79d1\u5b66\u5bb6\uff0c\u4ee5\u6574\u5408\u5f62\u5f0f\u7406\u8bba\u4e0e\u5b9e\u8bc1\u5206\u6790\u3002"
+    "notes_zh": "\u7406\u8bba\u6a21\u578b\u5b9e\u8bc1\u610f\u4e49\u7814\u7a76\u6240\u5b98\u65b9\u7f51\u7ad9\uff1b\u5b9a\u671f\u4e3e\u529e\u7684\u6691\u671f\u5b66\u9662\u57f9\u8bad\u65e9\u671f\u804c\u4e1a\u793e\u4f1a\u79d1\u5b66\u5bb6\uff0c\u4ee5\u6574\u5408\u5f62\u5f0f\u7406\u8bba\u4e0e\u5b9e\u8bc1\u5206\u6790\u3002",
+    "health": {
+      "name": "EITM Institute",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": null,
+      "consecutive_failures": 5
+    }
   },
   {
     "name": "Eurac Winter School on Federalism and Governance",
@@ -458,7 +647,14 @@
       "research training"
     ],
     "notes": "Official recurring two-week research school organised by Eurac Research and partner universities. Edition pages are checked for open status, programme fees, and scholarships before publication.",
-    "notes_zh": "\u7531Eurac Research\u53ca\u5408\u4f5c\u5927\u5b66\u7ec4\u7ec7\u7684\u5b98\u65b9\u5b9a\u671f\u4e24\u5468\u7814\u7a76\u5b66\u6821\u3002\u53d1\u5e03\u524d\u4f1a\u68c0\u67e5\u5404\u671f\u9875\u9762\u7684\u5f00\u653e\u72b6\u6001\u3001\u9879\u76ee\u8d39\u7528\u548c\u5956\u5b66\u91d1\u4fe1\u606f\u3002"
+    "notes_zh": "\u7531Eurac Research\u53ca\u5408\u4f5c\u5927\u5b66\u7ec4\u7ec7\u7684\u5b98\u65b9\u5b9a\u671f\u4e24\u5468\u7814\u7a76\u5b66\u6821\u3002\u53d1\u5e03\u524d\u4f1a\u68c0\u67e5\u5404\u671f\u9875\u9762\u7684\u5f00\u653e\u72b6\u6001\u3001\u9879\u76ee\u8d39\u7528\u548c\u5956\u5b66\u91d1\u4fe1\u606f\u3002",
+    "health": {
+      "name": "Eurac Winter School on Federalism and Governance",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Complexity Science Hub Winter School",
@@ -474,7 +670,14 @@
       "machine learning"
     ],
     "notes": "Official graduate and early-career winter school in complexity science. The organiser states that partial tuition scholarships may be available; each edition must still pass the financial-access gate.",
-    "notes_zh": "\u5b98\u65b9\u7814\u7a76\u751f\u53ca\u65e9\u671f\u804c\u4e1a\u590d\u6742\u6027\u79d1\u5b66\u51ac\u5b63\u5b66\u6821\u3002\u4e3b\u529e\u65b9\u8868\u793a\u53ef\u80fd\u63d0\u4f9b\u90e8\u5206\u5b66\u8d39\u5956\u5b66\u91d1\uff1b\u6bcf\u5c4a\u4ecd\u9700\u901a\u8fc7\u7ecf\u6d4e\u51c6\u5165\u5ba1\u6838\u3002"
+    "notes_zh": "\u5b98\u65b9\u7814\u7a76\u751f\u53ca\u65e9\u671f\u804c\u4e1a\u590d\u6742\u6027\u79d1\u5b66\u51ac\u5b63\u5b66\u6821\u3002\u4e3b\u529e\u65b9\u8868\u793a\u53ef\u80fd\u63d0\u4f9b\u90e8\u5206\u5b66\u8d39\u5956\u5b66\u91d1\uff1b\u6bcf\u5c4a\u4ecd\u9700\u901a\u8fc7\u7ecf\u6d4e\u51c6\u5165\u5ba1\u6838\u3002",
+    "health": {
+      "name": "Complexity Science Hub Winter School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Data Science Africa Summer Schools",
@@ -490,7 +693,14 @@
       "Africa"
     ],
     "notes": "Official annual Data Science Africa summer-school archive and current programme listing.",
-    "notes_zh": "\u6570\u636e\u79d1\u5b66\u975e\u6d32\u5e74\u5ea6\u6691\u671f\u5b66\u6821\u5b98\u65b9\u6863\u6848\u53ca\u5f53\u524d\u8bfe\u7a0b\u5217\u8868\u3002"
+    "notes_zh": "\u6570\u636e\u79d1\u5b66\u975e\u6d32\u5e74\u5ea6\u6691\u671f\u5b66\u6821\u5b98\u65b9\u6863\u6848\u53ca\u5f53\u524d\u8bfe\u7a0b\u5217\u8868\u3002",
+    "health": {
+      "name": "Data Science Africa Summer Schools",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CERN School of Computing",
@@ -506,7 +716,14 @@
       "security"
     ],
     "notes": "Official recurring main and thematic schools for scientific computing and data-intensive research.",
-    "notes_zh": "\u9762\u5411\u79d1\u5b66\u8ba1\u7b97\u548c\u6570\u636e\u5bc6\u96c6\u578b\u7814\u7a76\u7684\u5b98\u65b9\u5e38\u8bbe\u4e3b\u4fee\u4e0e\u4e13\u9898\u5b66\u6821\u3002"
+    "notes_zh": "\u9762\u5411\u79d1\u5b66\u8ba1\u7b97\u548c\u6570\u636e\u5bc6\u96c6\u578b\u7814\u7a76\u7684\u5b98\u65b9\u5e38\u8bbe\u4e3b\u4fee\u4e0e\u4e13\u9898\u5b66\u6821\u3002",
+    "health": {
+      "name": "CERN School of Computing",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CERN School of Computing 2026 application",
@@ -521,7 +738,14 @@
       "physics computing"
     ],
     "notes": "Official CSC 2026 application record with participant cost responsibility and registration status.",
-    "notes_zh": "CSC 2026\u5b98\u65b9\u7533\u8bf7\u8bb0\u5f55\uff0c\u5305\u542b\u53c2\u4e0e\u8005\u8d39\u7528\u8d23\u4efb\u548c\u6ce8\u518c\u72b6\u6001\u3002"
+    "notes_zh": "CSC 2026\u5b98\u65b9\u7533\u8bf7\u8bb0\u5f55\uff0c\u5305\u542b\u53c2\u4e0e\u8005\u8d39\u7528\u8d23\u4efb\u548c\u6ce8\u518c\u72b6\u6001\u3002",
+    "health": {
+      "name": "CERN School of Computing 2026 application",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EMBL-EBI Training",
@@ -537,7 +761,14 @@
       "data analysis"
     ],
     "notes": "Official EMBL-EBI catalogue of researcher-facing bioinformatics and biological data courses.",
-    "notes_zh": "EMBL-EBI \u9762\u5411\u7814\u7a76\u4eba\u5458\u7684\u751f\u7269\u4fe1\u606f\u5b66\u548c\u751f\u7269\u6570\u636e\u8bfe\u7a0b\u5b98\u65b9\u76ee\u5f55\u3002"
+    "notes_zh": "EMBL-EBI \u9762\u5411\u7814\u7a76\u4eba\u5458\u7684\u751f\u7269\u4fe1\u606f\u5b66\u548c\u751f\u7269\u6570\u636e\u8bfe\u7a0b\u5b98\u65b9\u76ee\u5f55\u3002",
+    "health": {
+      "name": "EMBL-EBI Training",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "SIB Training",
@@ -554,7 +785,14 @@
       "omics data analysis"
     ],
     "notes": "Official SIB Bioschemas catalogue parsed directly from embedded Course and CourseInstance records.",
-    "notes_zh": "\u76f4\u63a5\u4ece\u5d4c\u5165\u7684Course\u548cCourseInstance\u8bb0\u5f55\u4e2d\u89e3\u6790\u7684SIB Bioschemas\u5b98\u65b9\u76ee\u5f55\u3002"
+    "notes_zh": "\u76f4\u63a5\u4ece\u5d4c\u5165\u7684Course\u548cCourseInstance\u8bb0\u5f55\u4e2d\u89e3\u6790\u7684SIB Bioschemas\u5b98\u65b9\u76ee\u5f55\u3002",
+    "health": {
+      "name": "SIB Training",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "ESS Data and Computing Schools",
@@ -570,7 +808,14 @@
       "scientific computing"
     ],
     "notes": "European Spallation Source events, including its Data Management and Scientific Computing summer school.",
-    "notes_zh": "\u6b27\u6d32\u6563\u88c2\u6e90\u6d3b\u52a8\uff0c\u5305\u62ec\u5176\u6570\u636e\u7ba1\u7406\u4e0e\u79d1\u5b66\u8ba1\u7b97\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "\u6b27\u6d32\u6563\u88c2\u6e90\u6d3b\u52a8\uff0c\u5305\u62ec\u5176\u6570\u636e\u7ba1\u7406\u4e0e\u79d1\u5b66\u8ba1\u7b97\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "ESS Data and Computing Schools",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Data Science and AI Summer School",
@@ -586,7 +831,14 @@
       "artificial intelligence"
     ],
     "notes": "Recurring research-oriented Data Science and AI Summer School organised by Bucharest University of Economic Studies and partners.",
-    "notes_zh": "\u7531\u5e03\u52a0\u52d2\u65af\u7279\u7ecf\u6d4e\u7814\u7a76\u5927\u5b66\u53ca\u5176\u5408\u4f5c\u4f19\u4f34\u7ec4\u7ec7\u7684\u5b9a\u671f\u7814\u7a76\u578b\u6570\u636e\u79d1\u5b66\u4e0e\u4eba\u5de5\u667a\u80fd\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "\u7531\u5e03\u52a0\u52d2\u65af\u7279\u7ecf\u6d4e\u7814\u7a76\u5927\u5b66\u53ca\u5176\u5408\u4f5c\u4f19\u4f34\u7ec4\u7ec7\u7684\u5b9a\u671f\u7814\u7a76\u578b\u6570\u636e\u79d1\u5b66\u4e0e\u4eba\u5de5\u667a\u80fd\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "Data Science and AI Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CODATA-RDA Data Schools",
@@ -602,7 +854,14 @@
       "visualisation"
     ],
     "notes": "Official CODATA-RDA research data science school series and links to upcoming editions.",
-    "notes_zh": "CODATA-RDA\u7814\u7a76\u6570\u636e\u79d1\u5b66\u7cfb\u5217\u5b98\u65b9\u57f9\u8bad\u5b66\u6821\u53ca\u672a\u6765\u5404\u5c4a\u94fe\u63a5\u3002"
+    "notes_zh": "CODATA-RDA\u7814\u7a76\u6570\u636e\u79d1\u5b66\u7cfb\u5217\u5b98\u65b9\u57f9\u8bad\u5b66\u6821\u53ca\u672a\u6765\u5404\u5c4a\u94fe\u63a5\u3002",
+    "health": {
+      "name": "CODATA-RDA Data Schools",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "IEEE RAS Technical Education Programs",
@@ -617,7 +876,14 @@
       "seasonal school"
     ],
     "notes": "IEEE Robotics and Automation Society's funded Technical Education Programs (seasonal schools), with annual research-oriented robotics and AI schools worldwide.",
-    "notes_zh": "IEEE\u673a\u5668\u4eba\u4e0e\u81ea\u52a8\u5316\u534f\u4f1a\u8d44\u52a9\u7684\u6280\u672f\u6559\u80b2\u9879\u76ee\uff08\u5b63\u8282\u6027\u5b66\u6821\uff09\uff0c\u6bcf\u5e74\u5728\u5168\u7403\u4e3e\u529e\u7814\u7a76\u5bfc\u5411\u7684\u673a\u5668\u4eba\u4e0eAI\u5b66\u6821\u3002"
+    "notes_zh": "IEEE\u673a\u5668\u4eba\u4e0e\u81ea\u52a8\u5316\u534f\u4f1a\u8d44\u52a9\u7684\u6280\u672f\u6559\u80b2\u9879\u76ee\uff08\u5b63\u8282\u6027\u5b66\u6821\uff09\uff0c\u6bcf\u5e74\u5728\u5168\u7403\u4e3e\u529e\u7814\u7a76\u5bfc\u5411\u7684\u673a\u5668\u4eba\u4e0eAI\u5b66\u6821\u3002",
+    "health": {
+      "name": "IEEE RAS Technical Education Programs",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "IEEE RAS Cognitive Robotics Summer School",
@@ -633,7 +899,14 @@
       "summer school"
     ],
     "notes": "Current official IEEE event page for the September 2026 RAS school on bridging AI and robotics in Germany.",
-    "notes_zh": "IEEE 2026\u5e749\u6708\u5728\u5fb7\u56fd\u4e3e\u529e\u7684RAS\u5b66\u6821\u5b98\u65b9\u6d3b\u52a8\u9875\u9762\uff0c\u4e3b\u9898\u4e3a\u8fde\u63a5\u4eba\u5de5\u667a\u80fd\u4e0e\u673a\u5668\u4eba\u6280\u672f\u3002"
+    "notes_zh": "IEEE 2026\u5e749\u6708\u5728\u5fb7\u56fd\u4e3e\u529e\u7684RAS\u5b66\u6821\u5b98\u65b9\u6d3b\u52a8\u9875\u9762\uff0c\u4e3b\u9898\u4e3a\u8fde\u63a5\u4eba\u5de5\u667a\u80fd\u4e0e\u673a\u5668\u4eba\u6280\u672f\u3002",
+    "health": {
+      "name": "IEEE RAS Cognitive Robotics Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EurAI ESSAI",
@@ -649,7 +922,14 @@
       "summer school"
     ],
     "notes": "European Summer School on Artificial Intelligence; EurAI's annual broad AI school for PhD students and young researchers.",
-    "notes_zh": "\u6b27\u6d32\u4eba\u5de5\u667a\u80fd\u6691\u671f\u5b66\u6821\uff1bEurAI\u6bcf\u5e74\u4e3a\u535a\u58eb\u751f\u548c\u9752\u5e74\u7814\u7a76\u4eba\u5458\u4e3e\u529e\u7684\u5e7f\u6cdbAI\u5b66\u6821\u3002"
+    "notes_zh": "\u6b27\u6d32\u4eba\u5de5\u667a\u80fd\u6691\u671f\u5b66\u6821\uff1bEurAI\u6bcf\u5e74\u4e3a\u535a\u58eb\u751f\u548c\u9752\u5e74\u7814\u7a76\u4eba\u5458\u4e3e\u529e\u7684\u5e7f\u6cdbAI\u5b66\u6821\u3002",
+    "health": {
+      "name": "EurAI ESSAI",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "ESSIR",
@@ -666,7 +946,14 @@
       "summer school"
     ],
     "notes": "European Summer School on Information Retrieval; a recurring research school linking IR, recommender systems, NLP, machine learning, and data science.",
-    "notes_zh": "\u6b27\u6d32\u4fe1\u606f\u68c0\u7d22\u6691\u671f\u5b66\u6821\uff1b\u4e00\u4e2a\u8fde\u63a5\u4fe1\u606f\u68c0\u7d22\u3001\u63a8\u8350\u7cfb\u7edf\u3001\u81ea\u7136\u8bed\u8a00\u5904\u7406\u3001\u673a\u5668\u5b66\u4e60\u548c\u6570\u636e\u79d1\u5b66\u7684\u5b9a\u671f\u7814\u7a76\u5b66\u6821\u3002"
+    "notes_zh": "\u6b27\u6d32\u4fe1\u606f\u68c0\u7d22\u6691\u671f\u5b66\u6821\uff1b\u4e00\u4e2a\u8fde\u63a5\u4fe1\u606f\u68c0\u7d22\u3001\u63a8\u8350\u7cfb\u7edf\u3001\u81ea\u7136\u8bed\u8a00\u5904\u7406\u3001\u673a\u5668\u5b66\u4e60\u548c\u6570\u636e\u79d1\u5b66\u7684\u5b9a\u671f\u7814\u7a76\u5b66\u6821\u3002",
+    "health": {
+      "name": "ESSIR",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "NLDL Winter School",
@@ -682,7 +969,14 @@
       "winter school"
     ],
     "notes": "Northern Lights Deep Learning winter school, co-hosted with the NORA Research School and updated for each annual edition.",
-    "notes_zh": "\u5317\u6781\u5149\u6df1\u5ea6\u5b66\u4e60\u51ac\u5b63\u5b66\u6821\uff0c\u4e0eNORA\u7814\u7a76\u5b66\u9662\u5408\u529e\uff0c\u6bcf\u5e74\u66f4\u65b0\u5185\u5bb9\u3002"
+    "notes_zh": "\u5317\u6781\u5149\u6df1\u5ea6\u5b66\u4e60\u51ac\u5b63\u5b66\u6821\uff0c\u4e0eNORA\u7814\u7a76\u5b66\u9662\u5408\u529e\uff0c\u6bcf\u5e74\u66f4\u65b0\u5185\u5bb9\u3002",
+    "health": {
+      "name": "NLDL Winter School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Prob_AI Hub Winter School",
@@ -698,7 +992,14 @@
       "winter school"
     ],
     "notes": "Prob_AI Hub winter school for PhD students and researchers; current official Lancaster University event page for the January 2027 edition.",
-    "notes_zh": "Prob_AI Hub\u51ac\u5b63\u5b66\u6821\uff0c\u9762\u5411\u535a\u58eb\u751f\u548c\u7814\u7a76\u4eba\u5458\uff1b\u5170\u5361\u65af\u7279\u5927\u5b662027\u5e741\u6708\u6d3b\u52a8\u7684\u5b98\u65b9\u9875\u9762\u3002"
+    "notes_zh": "Prob_AI Hub\u51ac\u5b63\u5b66\u6821\uff0c\u9762\u5411\u535a\u58eb\u751f\u548c\u7814\u7a76\u4eba\u5458\uff1b\u5170\u5361\u65af\u7279\u5927\u5b662027\u5e741\u6708\u6d3b\u52a8\u7684\u5b98\u65b9\u9875\u9762\u3002",
+    "health": {
+      "name": "Prob_AI Hub Winter School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Exeter Machine Learning Summer School",
@@ -714,7 +1015,14 @@
       "summer school"
     ],
     "notes": "University of Exeter's intensive machine-learning research school; the stable programme page is updated for each edition.",
-    "notes_zh": "\u57c3\u514b\u585e\u7279\u5927\u5b66\u673a\u5668\u5b66\u4e60\u7814\u7a76\u5f3a\u5316\u5b66\u6821\uff1b\u7a33\u5b9a\u9879\u76ee\u9875\u9762\u6bcf\u671f\u66f4\u65b0\u3002"
+    "notes_zh": "\u57c3\u514b\u585e\u7279\u5927\u5b66\u673a\u5668\u5b66\u4e60\u7814\u7a76\u5f3a\u5316\u5b66\u6821\uff1b\u7a33\u5b9a\u9879\u76ee\u9875\u9762\u6bcf\u671f\u66f4\u65b0\u3002",
+    "health": {
+      "name": "Exeter Machine Learning Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "UNICRI AI Ethics Winter School",
@@ -730,7 +1038,14 @@
       "winter school"
     ],
     "notes": "UNICRI and LUMSA winter school on AI, ethics, and human rights; the current edition has an in-person Rome track alongside online participation.",
-    "notes_zh": "UNICRI\u4e0eLUMSA\u51ac\u5b63\u5b66\u6821\uff1a\u4eba\u5de5\u667a\u80fd\u3001\u4f26\u7406\u4e0e\u4eba\u6743\uff1b\u672c\u671f\u8bbe\u6709\u7f57\u9a6c\u7ebf\u4e0b\u8bfe\u7a0b\u53ca\u5728\u7ebf\u53c2\u4e0e\u3002"
+    "notes_zh": "UNICRI\u4e0eLUMSA\u51ac\u5b63\u5b66\u6821\uff1a\u4eba\u5de5\u667a\u80fd\u3001\u4f26\u7406\u4e0e\u4eba\u6743\uff1b\u672c\u671f\u8bbe\u6709\u7f57\u9a6c\u7ebf\u4e0b\u8bfe\u7a0b\u53ca\u5728\u7ebf\u53c2\u4e0e\u3002",
+    "health": {
+      "name": "UNICRI AI Ethics Winter School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "MLSS Index",
@@ -743,7 +1058,14 @@
       "summer school"
     ],
     "notes": "Canonical index of Machine Learning Summer Schools worldwide.",
-    "notes_zh": "\u5168\u7403\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u7684\u6743\u5a01\u7d22\u5f15\u3002"
+    "notes_zh": "\u5168\u7403\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u7684\u6743\u5a01\u7d22\u5f15\u3002",
+    "health": {
+      "name": "MLSS Index",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EEML",
@@ -757,7 +1079,14 @@
       "summer school"
     ],
     "notes": "Eastern European Machine Learning Summer School.",
-    "notes_zh": "\u4e1c\u6b27\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "\u4e1c\u6b27\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "EEML",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Mediterranean ML Summer School",
@@ -771,7 +1100,14 @@
       "summer school"
     ],
     "notes": "M2L summer school on machine learning.",
-    "notes_zh": "M2L\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "M2L\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "Mediterranean ML Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Nordic ProbAI",
@@ -785,7 +1121,14 @@
       "summer school"
     ],
     "notes": "Nordic Probabilistic AI School.",
-    "notes_zh": "\u5317\u6b27\u6982\u7387\u4eba\u5de5\u667a\u80fd\u5b66\u6821\u3002"
+    "notes_zh": "\u5317\u6b27\u6982\u7387\u4eba\u5de5\u667a\u80fd\u5b66\u6821\u3002",
+    "health": {
+      "name": "Nordic ProbAI",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Gaussian Process Summer School",
@@ -799,7 +1142,14 @@
       "summer school"
     ],
     "notes": "Sheffield Gaussian Process Summer School, relevant to uncertainty quantification.",
-    "notes_zh": "\u8c22\u83f2\u5c14\u5fb7\u9ad8\u65af\u8fc7\u7a0b\u6691\u671f\u5b66\u6821\uff0c\u4e0e\u4e0d\u786e\u5b9a\u6027\u91cf\u5316\u76f8\u5173\u3002"
+    "notes_zh": "\u8c22\u83f2\u5c14\u5fb7\u9ad8\u65af\u8fc7\u7a0b\u6691\u671f\u5b66\u6821\uff0c\u4e0e\u4e0d\u786e\u5b9a\u6027\u91cf\u5316\u76f8\u5173\u3002",
+    "health": {
+      "name": "Gaussian Process Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Deep Learning Indaba",
@@ -813,7 +1163,14 @@
       "summer school"
     ],
     "notes": "Pan-African deep learning summer school with travel support.",
-    "notes_zh": "\u6cdb\u975e\u6df1\u5ea6\u5b66\u4e60\u6691\u671f\u5b66\u6821\uff0c\u63d0\u4f9b\u5dee\u65c5\u652f\u6301\u3002"
+    "notes_zh": "\u6cdb\u975e\u6df1\u5ea6\u5b66\u4e60\u6691\u671f\u5b66\u6821\uff0c\u63d0\u4f9b\u5dee\u65c5\u652f\u6301\u3002",
+    "health": {
+      "name": "Deep Learning Indaba",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "IWA",
@@ -828,7 +1185,14 @@
       "training"
     ],
     "notes": "International Water Association events and conferences.",
-    "notes_zh": "\u56fd\u9645\u6c34\u534f\u4f1a\uff08IWA\uff09\u7684\u6d3b\u52a8\u4e0e\u4f1a\u8bae\u3002"
+    "notes_zh": "\u56fd\u9645\u6c34\u534f\u4f1a\uff08IWA\uff09\u7684\u6d3b\u52a8\u4e0e\u4f1a\u8bae\u3002",
+    "health": {
+      "name": "IWA",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "IAHR",
@@ -843,7 +1207,14 @@
       "training"
     ],
     "notes": "International Association for Hydro-Environment Engineering and Research.",
-    "notes_zh": "\u56fd\u9645\u6c34\u5229\u4e0e\u73af\u5883\u5de5\u7a0b\u7814\u7a76\u534f\u4f1a"
+    "notes_zh": "\u56fd\u9645\u6c34\u5229\u4e0e\u73af\u5883\u5de5\u7a0b\u7814\u7a76\u534f\u4f1a",
+    "health": {
+      "name": "IAHR",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "SIWI",
@@ -857,7 +1228,14 @@
       "training"
     ],
     "notes": "Stockholm International Water Institute events.",
-    "notes_zh": "\u65af\u5fb7\u54e5\u5c14\u6469\u56fd\u9645\u6c34\u7814\u7a76\u6240\u6d3b\u52a8\u3002"
+    "notes_zh": "\u65af\u5fb7\u54e5\u5c14\u6469\u56fd\u9645\u6c34\u7814\u7a76\u6240\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "SIWI",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "GEWEX",
@@ -872,7 +1250,14 @@
       "training"
     ],
     "notes": "Global Energy and Water Exchanges programme of the World Climate Research Programme.",
-    "notes_zh": "\u4e16\u754c\u6c14\u5019\u7814\u7a76\u8ba1\u5212\u4e0b\u7684\u5168\u7403\u80fd\u6e90\u4e0e\u6c34\u4ea4\u6362\u8ba1\u5212\u3002"
+    "notes_zh": "\u4e16\u754c\u6c14\u5019\u7814\u7a76\u8ba1\u5212\u4e0b\u7684\u5168\u7403\u80fd\u6e90\u4e0e\u6c34\u4ea4\u6362\u8ba1\u5212\u3002",
+    "health": {
+      "name": "GEWEX",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "AMS Meetings",
@@ -887,7 +1272,14 @@
       "short course"
     ],
     "notes": "American Meteorological Society meetings and short courses.",
-    "notes_zh": "\u7f8e\u56fd\u6c14\u8c61\u5b66\u4f1a\u4f1a\u8bae\u4e0e\u77ed\u671f\u8bfe\u7a0b\u3002"
+    "notes_zh": "\u7f8e\u56fd\u6c14\u8c61\u5b66\u4f1a\u4f1a\u8bae\u4e0e\u77ed\u671f\u8bfe\u7a0b\u3002",
+    "health": {
+      "name": "AMS Meetings",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-07-24",
+      "consecutive_failures": 6
+    }
   },
   {
     "name": "WCRP",
@@ -902,7 +1294,14 @@
       "school"
     ],
     "notes": "World Climate Research Programme. The /events path 404s; the homepage links current activities.",
-    "notes_zh": "\u4e16\u754c\u6c14\u5019\u7814\u7a76\u8ba1\u5212\u3002\u8def\u5f84/events\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u4e86\u5f53\u524d\u6d3b\u52a8\u3002"
+    "notes_zh": "\u4e16\u754c\u6c14\u5019\u7814\u7a76\u8ba1\u5212\u3002\u8def\u5f84/events\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u4e86\u5f53\u524d\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "WCRP",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "WMO ETRP",
@@ -917,7 +1316,14 @@
       "training"
     ],
     "notes": "World Meteorological Organization Education and Training Programme.",
-    "notes_zh": "\u4e16\u754c\u6c14\u8c61\u7ec4\u7ec7\u6559\u80b2\u4e0e\u57f9\u8bad\u8ba1\u5212\u3002"
+    "notes_zh": "\u4e16\u754c\u6c14\u8c61\u7ec4\u7ec7\u6559\u80b2\u4e0e\u57f9\u8bad\u8ba1\u5212\u3002",
+    "health": {
+      "name": "WMO ETRP",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "GFDL Events",
@@ -931,7 +1337,14 @@
       "training"
     ],
     "notes": "NOAA Geophysical Fluid Dynamics Laboratory events.",
-    "notes_zh": "NOAA\u5730\u7403\u7269\u7406\u6d41\u4f53\u52a8\u529b\u5b66\u5b9e\u9a8c\u5ba4\u6d3b\u52a8\u3002"
+    "notes_zh": "NOAA\u5730\u7403\u7269\u7406\u6d41\u4f53\u52a8\u529b\u5b66\u5b9e\u9a8c\u5ba4\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "GFDL Events",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Urbino Summer School",
@@ -961,7 +1374,14 @@
       "summer school"
     ],
     "notes": "Cooperative Institute for Dynamic Earth Research summer programme.",
-    "notes_zh": "\u52a8\u6001\u5730\u7403\u7814\u7a76\u5408\u4f5c\u7814\u7a76\u6240\u6691\u671f\u9879\u76ee\u3002"
+    "notes_zh": "\u52a8\u6001\u5730\u7403\u7814\u7a76\u5408\u4f5c\u7814\u7a76\u6240\u6691\u671f\u9879\u76ee\u3002",
+    "health": {
+      "name": "CIDER",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Oxford ML Summer School",
@@ -977,7 +1397,14 @@
       "summer school"
     ],
     "notes": "OxML summer school on machine learning across application tracks.",
-    "notes_zh": "OxML \u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\uff0c\u6db5\u76d6\u591a\u4e2a\u5e94\u7528\u65b9\u5411\u3002"
+    "notes_zh": "OxML \u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\uff0c\u6db5\u76d6\u591a\u4e2a\u5e94\u7528\u65b9\u5411\u3002",
+    "health": {
+      "name": "Oxford ML Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "AMMI",
@@ -991,7 +1418,14 @@
       "summer school"
     ],
     "notes": "African Master of Machine Intelligence, fully funded programme.",
-    "notes_zh": "\u975e\u6d32\u673a\u5668\u667a\u80fd\u7855\u58eb\uff0c\u5168\u989d\u8d44\u52a9\u9879\u76ee\u3002"
+    "notes_zh": "\u975e\u6d32\u673a\u5668\u667a\u80fd\u7855\u58eb\uff0c\u5168\u989d\u8d44\u52a9\u9879\u76ee\u3002",
+    "health": {
+      "name": "AMMI",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "IEEE GRSS",
@@ -1023,7 +1457,14 @@
       "summer school"
     ],
     "notes": "International Society for Photogrammetry and Remote Sensing. Calendar path 404s; homepage links current activities.",
-    "notes_zh": "\u56fd\u9645\u6444\u5f71\u6d4b\u91cf\u4e0e\u9065\u611f\u5b66\u4f1a\u3002\u65e5\u5386\u8def\u5f84404\uff1b\u4e3b\u9875\u94fe\u63a5\u5f53\u524d\u6d3b\u52a8\u3002"
+    "notes_zh": "\u56fd\u9645\u6444\u5f71\u6d4b\u91cf\u4e0e\u9065\u611f\u5b66\u4f1a\u3002\u65e5\u5386\u8def\u5f84404\uff1b\u4e3b\u9875\u94fe\u63a5\u5f53\u524d\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "ISPRS",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "GSA",
@@ -1037,7 +1478,14 @@
       "short course"
     ],
     "notes": "Geological Society of America. Direct event-list path 404s for scripted requests; homepage links current events.",
-    "notes_zh": "\u7f8e\u56fd\u5730\u8d28\u5b66\u4f1a\u3002\u811a\u672c\u8bf7\u6c42\u7684\u76f4\u63a5\u4e8b\u4ef6\u5217\u8868\u8def\u5f84\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u5f53\u524d\u6d3b\u52a8\u3002"
+    "notes_zh": "\u7f8e\u56fd\u5730\u8d28\u5b66\u4f1a\u3002\u811a\u672c\u8bf7\u6c42\u7684\u76f4\u63a5\u4e8b\u4ef6\u5217\u8868\u8def\u5f84\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u5f53\u524d\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "GSA",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EAGE",
@@ -1052,7 +1500,14 @@
       "short course"
     ],
     "notes": "European Association of Geoscientists and Engineers; runs many short courses and education days.",
-    "notes_zh": "\u6b27\u6d32\u5730\u7403\u79d1\u5b66\u5bb6\u4e0e\u5de5\u7a0b\u5e08\u534f\u4f1a\uff1b\u4e3e\u529e\u4f17\u591a\u77ed\u671f\u8bfe\u7a0b\u548c\u6559\u80b2\u65e5\u6d3b\u52a8\u3002"
+    "notes_zh": "\u6b27\u6d32\u5730\u7403\u79d1\u5b66\u5bb6\u4e0e\u5de5\u7a0b\u5e08\u534f\u4f1a\uff1b\u4e3e\u529e\u4f17\u591a\u77ed\u671f\u8bfe\u7a0b\u548c\u6559\u80b2\u65e5\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "EAGE",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EarthScope",
@@ -1067,7 +1522,14 @@
       "short course"
     ],
     "notes": "EarthScope Consortium (formerly IRIS/UNAVCO); seismology and geodesy short courses and summer workshops.",
-    "notes_zh": "EarthScope\u8054\u76df\uff08\u539fIRIS/UNAVCO\uff09\uff1b\u5730\u9707\u5b66\u4e0e\u5927\u5730\u6d4b\u91cf\u5b66\u77ed\u671f\u8bfe\u7a0b\u53ca\u590f\u5b63\u7814\u8ba8\u4f1a\u3002"
+    "notes_zh": "EarthScope\u8054\u76df\uff08\u539fIRIS/UNAVCO\uff09\uff1b\u5730\u9707\u5b66\u4e0e\u5927\u5730\u6d4b\u91cf\u5b66\u77ed\u671f\u8bfe\u7a0b\u53ca\u590f\u5b63\u7814\u8ba8\u4f1a\u3002",
+    "health": {
+      "name": "EarthScope",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CIG Geodynamics",
@@ -1082,7 +1544,14 @@
       "workshop"
     ],
     "notes": "Computational Infrastructure for Geodynamics; computational geoscience workshops and training.",
-    "notes_zh": "\u8ba1\u7b97\u5730\u7403\u52a8\u529b\u5b66\u8ba1\u7b97\u57fa\u7840\u8bbe\u65bd\uff1b\u8ba1\u7b97\u5730\u7403\u79d1\u5b66\u7814\u8ba8\u4f1a\u4e0e\u57f9\u8bad\u3002"
+    "notes_zh": "\u8ba1\u7b97\u5730\u7403\u52a8\u529b\u5b66\u8ba1\u7b97\u57fa\u7840\u8bbe\u65bd\uff1b\u8ba1\u7b97\u5730\u7403\u79d1\u5b66\u7814\u8ba8\u4f1a\u4e0e\u57f9\u8bad\u3002",
+    "health": {
+      "name": "CIG Geodynamics",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EUMETSAT Training",
@@ -1098,7 +1567,14 @@
       "training"
     ],
     "notes": "EUMETSAT training portal for satellite meteorology and climate.",
-    "notes_zh": "EUMETSAT\u536b\u661f\u6c14\u8c61\u4e0e\u6c14\u5019\u57f9\u8bad\u95e8\u6237\u3002"
+    "notes_zh": "EUMETSAT\u536b\u661f\u6c14\u8c61\u4e0e\u6c14\u5019\u57f9\u8bad\u95e8\u6237\u3002",
+    "health": {
+      "name": "EUMETSAT Training",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "ICOS",
@@ -1114,7 +1590,14 @@
       "training"
     ],
     "notes": "Integrated Carbon Observation System events and training.",
-    "notes_zh": "\u7efc\u5408\u78b3\u89c2\u6d4b\u7cfb\u7edf\u6d3b\u52a8\u4e0e\u57f9\u8bad\u3002"
+    "notes_zh": "\u7efc\u5408\u78b3\u89c2\u6d4b\u7cfb\u7edf\u6d3b\u52a8\u4e0e\u57f9\u8bad\u3002",
+    "health": {
+      "name": "ICOS",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "ICTP-SAIFR",
@@ -1130,7 +1613,14 @@
       "school"
     ],
     "notes": "South American Institute for Fundamental Research (ICTP partner); runs data science, ML, and climate schools.",
-    "notes_zh": "\u5357\u7f8e\u57fa\u7840\u7814\u7a76\u6240\uff08ICTP\u5408\u4f5c\u4f19\u4f34\uff09\uff1b\u4e3e\u529e\u6570\u636e\u79d1\u5b66\u3001\u673a\u5668\u5b66\u4e60\u548c\u6c14\u5019\u5b66\u6821\u3002"
+    "notes_zh": "\u5357\u7f8e\u57fa\u7840\u7814\u7a76\u6240\uff08ICTP\u5408\u4f5c\u4f19\u4f34\uff09\uff1b\u4e3e\u529e\u6570\u636e\u79d1\u5b66\u3001\u673a\u5668\u5b66\u4e60\u548c\u6c14\u5019\u5b66\u6821\u3002",
+    "health": {
+      "name": "ICTP-SAIFR",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Lamont-Doherty",
@@ -1146,7 +1636,14 @@
       "earth observation"
     ],
     "notes": "Lamont-Doherty Earth Observatory (Columbia University). Blocks datacenter IPs; loads from the residential connection used for Monday/Wednesday/Friday source scans.",
-    "notes_zh": "\u54e5\u4f26\u6bd4\u4e9a\u5927\u5b66\u62c9\u8499\u7279-\u591a\u5c14\u8482\u5730\u7403\u89c2\u6d4b\u7ad9\u3002\u8be5\u7f51\u7ad9\u4f1a\u5c4f\u853d\u6570\u636e\u4e2d\u5fc3 IP\uff0c\u4f46\u53ef\u901a\u8fc7\u6bcf\u5468\u4e00\u3001\u5468\u4e09\u548c\u5468\u4e94\u6765\u6e90\u626b\u63cf\u4f7f\u7528\u7684\u4f4f\u5b85\u7f51\u7edc\u8fde\u63a5\u6b63\u5e38\u52a0\u8f7d\u3002"
+    "notes_zh": "\u54e5\u4f26\u6bd4\u4e9a\u5927\u5b66\u62c9\u8499\u7279-\u591a\u5c14\u8482\u5730\u7403\u89c2\u6d4b\u7ad9\u3002\u8be5\u7f51\u7ad9\u4f1a\u5c4f\u853d\u6570\u636e\u4e2d\u5fc3 IP\uff0c\u4f46\u53ef\u901a\u8fc7\u6bcf\u5468\u4e00\u3001\u5468\u4e09\u548c\u5468\u4e94\u6765\u6e90\u626b\u63cf\u4f7f\u7528\u7684\u4f4f\u5b85\u7f51\u7edc\u8fde\u63a5\u6b63\u5e38\u52a0\u8f7d\u3002",
+    "health": {
+      "name": "Lamont-Doherty",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-03",
+      "consecutive_failures": 3
+    }
   },
   {
     "name": "IPAM",
@@ -1161,7 +1658,14 @@
       "summer school"
     ],
     "notes": "UCLA Institute for Pure and Applied Mathematics; graduate summer schools in data science, ML, and computational science, usually with travel support.",
-    "notes_zh": "UCLA\u7eaf\u6570\u5b66\u4e0e\u5e94\u7528\u6570\u5b66\u7814\u7a76\u6240\uff1b\u6570\u636e\u79d1\u5b66\u3001\u673a\u5668\u5b66\u4e60\u548c\u8ba1\u7b97\u79d1\u5b66\u7814\u7a76\u751f\u6691\u671f\u5b66\u6821\uff0c\u901a\u5e38\u63d0\u4f9b\u5dee\u65c5\u652f\u6301\u3002"
+    "notes_zh": "UCLA\u7eaf\u6570\u5b66\u4e0e\u5e94\u7528\u6570\u5b66\u7814\u7a76\u6240\uff1b\u6570\u636e\u79d1\u5b66\u3001\u673a\u5668\u5b66\u4e60\u548c\u8ba1\u7b97\u79d1\u5b66\u7814\u7a76\u751f\u6691\u671f\u5b66\u6821\uff0c\u901a\u5e38\u63d0\u4f9b\u5dee\u65c5\u652f\u6301\u3002",
+    "health": {
+      "name": "IPAM",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CLIVAR",
@@ -1176,7 +1680,14 @@
       "summer school"
     ],
     "notes": "World Climate Research Programme's CLIVAR project; climate variability and predictability schools and events.",
-    "notes_zh": "\u4e16\u754c\u6c14\u5019\u7814\u7a76\u8ba1\u5212\uff08WCRP\uff09\u7684CLIVAR\u9879\u76ee\uff1b\u6c14\u5019\u53d8\u7387\u4e0e\u53ef\u9884\u6d4b\u6027\u76f8\u5173\u7684\u57f9\u8bad\u4e0e\u6d3b\u52a8\u3002"
+    "notes_zh": "\u4e16\u754c\u6c14\u5019\u7814\u7a76\u8ba1\u5212\uff08WCRP\uff09\u7684CLIVAR\u9879\u76ee\uff1b\u6c14\u5019\u53d8\u7387\u4e0e\u53ef\u9884\u6d4b\u6027\u76f8\u5173\u7684\u57f9\u8bad\u4e0e\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "CLIVAR",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "APECS",
@@ -1191,7 +1702,14 @@
       "early-career"
     ],
     "notes": "Association of Polar Early Career Scientists; polar and cryosphere training schools and webinars.",
-    "notes_zh": "\u6781\u5730\u65e9\u671f\u804c\u4e1a\u79d1\u5b66\u5bb6\u534f\u4f1a\uff1b\u6781\u5730\u4e0e\u51b0\u51bb\u5708\u57f9\u8bad\u5b66\u6821\u53ca\u7f51\u7edc\u7814\u8ba8\u4f1a\u3002"
+    "notes_zh": "\u6781\u5730\u65e9\u671f\u804c\u4e1a\u79d1\u5b66\u5bb6\u534f\u4f1a\uff1b\u6781\u5730\u4e0e\u51b0\u51bb\u5708\u57f9\u8bad\u5b66\u6821\u53ca\u7f51\u7edc\u7814\u8ba8\u4f1a\u3002",
+    "health": {
+      "name": "APECS",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Barcelona Supercomputing Center",
@@ -1206,7 +1724,14 @@
       "training"
     ],
     "notes": "BSC training in high-performance and data-driven computational science, including ML for science.",
-    "notes_zh": "\u9ad8\u6027\u80fd\u4e0e\u6570\u636e\u9a71\u52a8\u8ba1\u7b97\u79d1\u5b66\u9886\u57df\u7684BSC\u57f9\u8bad\uff0c\u5305\u62ec\u9762\u5411\u79d1\u5b66\u7684\u673a\u5668\u5b66\u4e60\u3002"
+    "notes_zh": "\u9ad8\u6027\u80fd\u4e0e\u6570\u636e\u9a71\u52a8\u8ba1\u7b97\u79d1\u5b66\u9886\u57df\u7684BSC\u57f9\u8bad\uff0c\u5305\u62ec\u9762\u5411\u79d1\u5b66\u7684\u673a\u5668\u5b66\u4e60\u3002",
+    "health": {
+      "name": "Barcelona Supercomputing Center",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Climate Change AI",
@@ -1223,7 +1748,14 @@
     ],
     "render": true,
     "notes": "AI for climate. Its events page is client-side rendered, so it uses the optional Playwright headless browser during local Monday/Wednesday/Friday source scans. Its flagship summer school is virtual, so expect mostly near-matches.",
-    "notes_zh": "\u9762\u5411\u6c14\u5019\u9886\u57df\u7684\u4eba\u5de5\u667a\u80fd\u9879\u76ee\u3002\u5176\u6d3b\u52a8\u9875\u9762\u7531\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u672c\u673a\u6bcf\u5468\u4e00\u3001\u5468\u4e09\u548c\u5468\u4e94\u6293\u53d6\u6765\u6e90\u65f6\u4f1a\u4f7f\u7528\u53ef\u9009\u7684 Playwright \u65e0\u5934\u6d4f\u89c8\u5668\u3002\u5176\u65d7\u8230\u6691\u6821\u4e3a\u7ebf\u4e0a\u5f62\u5f0f\uff0c\u56e0\u6b64\u591a\u6570\u7ed3\u679c\u9884\u8ba1\u53ea\u4f1a\u5f52\u5165\u8fd1\u4f3c\u5339\u914d\u3002"
+    "notes_zh": "\u9762\u5411\u6c14\u5019\u9886\u57df\u7684\u4eba\u5de5\u667a\u80fd\u9879\u76ee\u3002\u5176\u6d3b\u52a8\u9875\u9762\u7531\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u672c\u673a\u6bcf\u5468\u4e00\u3001\u5468\u4e09\u548c\u5468\u4e94\u6293\u53d6\u6765\u6e90\u65f6\u4f1a\u4f7f\u7528\u53ef\u9009\u7684 Playwright \u65e0\u5934\u6d4f\u89c8\u5668\u3002\u5176\u65d7\u8230\u6691\u6821\u4e3a\u7ebf\u4e0a\u5f62\u5f0f\uff0c\u56e0\u6b64\u591a\u6570\u7ed3\u679c\u9884\u8ba1\u53ea\u4f1a\u5f52\u5165\u8fd1\u4f3c\u5339\u914d\u3002",
+    "health": {
+      "name": "Climate Change AI",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": null,
+      "consecutive_failures": 18
+    }
   },
   {
     "name": "Summer Schools in Europe",
@@ -1253,7 +1785,14 @@
       "data science"
     ],
     "notes": "Official Euroleague for Life Sciences catalogue. Individual schools must still resolve to an organizer page and pass the normal date, mode, fee, and evidence gates.",
-    "notes_zh": "\u6b27\u6d32\u751f\u547d\u79d1\u5b66\u5b98\u65b9\u76ee\u5f55\u3002\u5404\u5b66\u6821\u4ecd\u9700\u8df3\u8f6c\u81f3\u7ec4\u7ec7\u8005\u9875\u9762\uff0c\u5e76\u901a\u8fc7\u5e38\u89c4\u7684\u65e5\u671f\u3001\u6a21\u5f0f\u3001\u8d39\u7528\u548c\u8bc1\u636e\u5ba1\u6838\u3002"
+    "notes_zh": "\u6b27\u6d32\u751f\u547d\u79d1\u5b66\u5b98\u65b9\u76ee\u5f55\u3002\u5404\u5b66\u6821\u4ecd\u9700\u8df3\u8f6c\u81f3\u7ec4\u7ec7\u8005\u9875\u9762\uff0c\u5e76\u901a\u8fc7\u5e38\u89c4\u7684\u65e5\u671f\u3001\u6a21\u5f0f\u3001\u8d39\u7528\u548c\u8bc1\u636e\u5ba1\u6838\u3002",
+    "health": {
+      "name": "ELLS Summer Schools",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Una Europa Summer Schools",
@@ -1269,7 +1808,14 @@
       "humanities"
     ],
     "notes": "Official alliance catalogue for joint intensive and doctoral summer schools across eleven European universities.",
-    "notes_zh": "\u6b27\u6d32\u5341\u4e00\u6240\u5927\u5b66\u8054\u5408\u4e3e\u529e\u7684\u5bc6\u96c6\u8bfe\u7a0b\u4e0e\u535a\u58eb\u6691\u671f\u5b66\u6821\u7684\u5b98\u65b9\u8054\u76df\u76ee\u5f55\u3002"
+    "notes_zh": "\u6b27\u6d32\u5341\u4e00\u6240\u5927\u5b66\u8054\u5408\u4e3e\u529e\u7684\u5bc6\u96c6\u8bfe\u7a0b\u4e0e\u535a\u58eb\u6691\u671f\u5b66\u6821\u7684\u5b98\u65b9\u8054\u76df\u76ee\u5f55\u3002",
+    "health": {
+      "name": "Una Europa Summer Schools",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EDUC Summer Schools",
@@ -1285,7 +1831,14 @@
       "education"
     ],
     "notes": "Official European university alliance catalogue. Linked detail pages remain subject to the normal official-evidence and affordability classification.",
-    "notes_zh": "\u6b27\u6d32\u5927\u5b66\u8054\u76df\u5b98\u65b9\u76ee\u5f55\u3002\u94fe\u63a5\u7684\u8be6\u60c5\u9875\u9762\u4ecd\u53d7\u5e38\u89c4\u5b98\u65b9\u8bc1\u636e\u548c\u53ef\u8d1f\u62c5\u6027\u5206\u7c7b\u7684\u7ea6\u675f\u3002"
+    "notes_zh": "\u6b27\u6d32\u5927\u5b66\u8054\u76df\u5b98\u65b9\u76ee\u5f55\u3002\u94fe\u63a5\u7684\u8be6\u60c5\u9875\u9762\u4ecd\u53d7\u5e38\u89c4\u5b98\u65b9\u8bc1\u636e\u548c\u53ef\u8d1f\u62c5\u6027\u5206\u7c7b\u7684\u7ea6\u675f\u3002",
+    "health": {
+      "name": "EDUC Summer Schools",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Utrecht Summer School",
@@ -1315,7 +1868,14 @@
     ],
     "render": true,
     "notes": "Content is rendered client-side, so this source uses the optional Playwright headless browser. Falls back to an empty fetch if Playwright is not installed.",
-    "notes_zh": "\u5185\u5bb9\u5728\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u6b64\u6e90\u4f7f\u7528\u53ef\u9009\u7684 Playwright \u65e0\u5934\u6d4f\u89c8\u5668\u3002\u5982\u679c\u672a\u5b89\u88c5 Playwright\uff0c\u5219\u56de\u9000\u4e3a\u7a7a\u8bf7\u6c42\u3002"
+    "notes_zh": "\u5185\u5bb9\u5728\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u6b64\u6e90\u4f7f\u7528\u53ef\u9009\u7684 Playwright \u65e0\u5934\u6d4f\u89c8\u5668\u3002\u5982\u679c\u672a\u5b89\u88c5 Playwright\uff0c\u5219\u56de\u9000\u4e3a\u7a7a\u8bf7\u6c42\u3002",
+    "health": {
+      "name": "CERN Academic Training",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": null,
+      "consecutive_failures": 18
+    }
   },
   {
     "name": "ICTP",
@@ -1332,7 +1892,14 @@
       "workshop"
     ],
     "notes": "Abdus Salam ICTP runs many funded schools in geophysics, climate, and scientific ML. The /scientific-calendar path 404s; /home/scientific-calendar works for scripted requests.",
-    "notes_zh": "Abdus Salam ICTP \u4e3e\u529e\u591a\u9879\u8d44\u52a9\u7684\u5730\u7403\u7269\u7406\u3001\u6c14\u5019\u548c\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u57f9\u8bad\u73ed\u3002/scientific-calendar \u8def\u5f84\u8fd4\u56de404\uff1b/home/scientific-calendar \u53ef\u7528\u4e8e\u811a\u672c\u8bf7\u6c42\u3002"
+    "notes_zh": "Abdus Salam ICTP \u4e3e\u529e\u591a\u9879\u8d44\u52a9\u7684\u5730\u7403\u7269\u7406\u3001\u6c14\u5019\u548c\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u57f9\u8bad\u73ed\u3002/scientific-calendar \u8def\u5f84\u8fd4\u56de404\uff1b/home/scientific-calendar \u53ef\u7528\u4e8e\u811a\u672c\u8bf7\u6c42\u3002",
+    "health": {
+      "name": "ICTP",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "LxMLS",
@@ -1346,7 +1913,14 @@
       "summer school"
     ],
     "notes": "Lisbon Machine Learning School. The canonical lxmls.it.pt domain times out from the CI runner, so this points at the current edition on GitHub Pages directly. Bump the year when a new edition is published.",
-    "notes_zh": "\u91cc\u65af\u672c\u673a\u5668\u5b66\u4e60\u5b66\u6821\u3002\u5b98\u65b9\u57df\u540d lxmls.it.pt \u5728 CI \u8fd0\u884c\u5668\u4e2d\u8d85\u65f6\uff0c\u56e0\u6b64\u76f4\u63a5\u6307\u5411 GitHub Pages \u4e0a\u7684\u5f53\u524d\u7248\u672c\u3002\u65b0\u7248\u672c\u53d1\u5e03\u65f6\u8bf7\u66f4\u65b0\u5e74\u4efd\u3002"
+    "notes_zh": "\u91cc\u65af\u672c\u673a\u5668\u5b66\u4e60\u5b66\u6821\u3002\u5b98\u65b9\u57df\u540d lxmls.it.pt \u5728 CI \u8fd0\u884c\u5668\u4e2d\u8d85\u65f6\uff0c\u56e0\u6b64\u76f4\u63a5\u6307\u5411 GitHub Pages \u4e0a\u7684\u5f53\u524d\u7248\u672c\u3002\u65b0\u7248\u672c\u53d1\u5e03\u65f6\u8bf7\u66f4\u65b0\u5e74\u4efd\u3002",
+    "health": {
+      "name": "LxMLS",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Karthaus Summer School",
@@ -1362,7 +1936,14 @@
       "summer school"
     ],
     "notes": "Utrecht University's Karthaus course on ice sheets and climate; a flagship funded cryosphere school.",
-    "notes_zh": "\u4e4c\u5f97\u52d2\u652f\u5927\u5b66\u7684Karthaus\u51b0\u76d6\u4e0e\u6c14\u5019\u8bfe\u7a0b\uff1b\u4e00\u9879\u65d7\u8230\u8d44\u52a9\u7684\u51b0\u51bb\u5708\u5b66\u6821\u3002"
+    "notes_zh": "\u4e4c\u5f97\u52d2\u652f\u5927\u5b66\u7684Karthaus\u51b0\u76d6\u4e0e\u6c14\u5019\u8bfe\u7a0b\uff1b\u4e00\u9879\u65d7\u8230\u8d44\u52a9\u7684\u51b0\u51bb\u5708\u5b66\u6821\u3002",
+    "health": {
+      "name": "Karthaus Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "WHOI GFD Program",
@@ -1377,7 +1958,14 @@
       "summer school"
     ],
     "notes": "Woods Hole Geophysical Fluid Dynamics summer program; a classic funded ten-week school in ocean and climate fluid dynamics.",
-    "notes_zh": "\u4f0d\u5179\u970d\u5c14\u5730\u7403\u7269\u7406\u6d41\u4f53\u52a8\u529b\u5b66\u6691\u671f\u9879\u76ee\uff1b\u4e00\u4e2a\u7ecf\u5178\u7684\u3001\u6709\u8d44\u52a9\u7684\u5341\u5468\u6d77\u6d0b\u4e0e\u6c14\u5019\u6d41\u4f53\u52a8\u529b\u5b66\u5b66\u6821\u3002"
+    "notes_zh": "\u4f0d\u5179\u970d\u5c14\u5730\u7403\u7269\u7406\u6d41\u4f53\u52a8\u529b\u5b66\u6691\u671f\u9879\u76ee\uff1b\u4e00\u4e2a\u7ecf\u5178\u7684\u3001\u6709\u8d44\u52a9\u7684\u5341\u5468\u6d77\u6d0b\u4e0e\u6c14\u5019\u6d41\u4f53\u52a8\u529b\u5b66\u5b66\u6821\u3002",
+    "health": {
+      "name": "WHOI GFD Program",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "NCEO",
@@ -1392,7 +1980,14 @@
       "training"
     ],
     "notes": "UK National Centre for Earth Observation training, including its annual Earth observation summer school.",
-    "notes_zh": "\u82f1\u56fd\u56fd\u5bb6\u5730\u7403\u89c2\u6d4b\u4e2d\u5fc3\u57f9\u8bad\uff0c\u5305\u62ec\u5176\u5e74\u5ea6\u5730\u7403\u89c2\u6d4b\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "\u82f1\u56fd\u56fd\u5bb6\u5730\u7403\u89c2\u6d4b\u4e2d\u5fc3\u57f9\u8bad\uff0c\u5305\u62ec\u5176\u5e74\u5ea6\u5730\u7403\u89c2\u6d4b\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "NCEO",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "POGO",
@@ -1407,7 +2002,14 @@
       "capacity development"
     ],
     "notes": "Partnership for Observation of the Global Ocean; funded ocean-observation training and fellowships.",
-    "notes_zh": "\u5168\u7403\u6d77\u6d0b\u89c2\u6d4b\u4f19\u4f34\u5173\u7cfb\uff1b\u8d44\u52a9\u6d77\u6d0b\u89c2\u6d4b\u57f9\u8bad\u4e0e\u5956\u5b66\u91d1\u3002"
+    "notes_zh": "\u5168\u7403\u6d77\u6d0b\u89c2\u6d4b\u4f19\u4f34\u5173\u7cfb\uff1b\u8d44\u52a9\u6d77\u6d0b\u89c2\u6d4b\u57f9\u8bad\u4e0e\u5956\u5b66\u91d1\u3002",
+    "health": {
+      "name": "POGO",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Cyprus Institute",
@@ -1423,7 +2025,14 @@
       "summer school"
     ],
     "notes": "The Cyprus Institute graduate school runs summer schools in climate, computational science, and machine learning.",
-    "notes_zh": "\u585e\u6d66\u8def\u65af\u7814\u7a76\u6240\u7814\u7a76\u751f\u9662\u4e3e\u529e\u6c14\u5019\u3001\u8ba1\u7b97\u79d1\u5b66\u548c\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "\u585e\u6d66\u8def\u65af\u7814\u7a76\u6240\u7814\u7a76\u751f\u9662\u4e3e\u529e\u6c14\u5019\u3001\u8ba1\u7b97\u79d1\u5b66\u548c\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "Cyprus Institute",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "AGU",
@@ -1440,7 +2049,14 @@
       "short course"
     ],
     "notes": "American Geophysical Union. Direct event paths 404 for scripted requests; the homepage links current meetings and courses.",
-    "notes_zh": "\u7f8e\u56fd\u5730\u7403\u7269\u7406\u8054\u5408\u4f1a\u3002\u811a\u672c\u8bf7\u6c42\u7684\u76f4\u63a5\u4e8b\u4ef6\u8def\u5f84\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u5f53\u524d\u4f1a\u8bae\u548c\u8bfe\u7a0b\u3002"
+    "notes_zh": "\u7f8e\u56fd\u5730\u7403\u7269\u7406\u8054\u5408\u4f1a\u3002\u811a\u672c\u8bf7\u6c42\u7684\u76f4\u63a5\u4e8b\u4ef6\u8def\u5f84\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u5f53\u524d\u4f1a\u8bae\u548c\u8bfe\u7a0b\u3002",
+    "health": {
+      "name": "AGU",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-03",
+      "consecutive_failures": 2
+    }
   },
   {
     "name": "NCAS",
@@ -1455,7 +2071,14 @@
       "training"
     ],
     "notes": "UK National Centre for Atmospheric Science; runs funded atmospheric and climate science training courses and summer schools.",
-    "notes_zh": "\u82f1\u56fd\u56fd\u5bb6\u5927\u6c14\u79d1\u5b66\u4e2d\u5fc3\uff1b\u8fd0\u8425\u8d44\u52a9\u7684\u5927\u6c14\u4e0e\u6c14\u5019\u79d1\u5b66\u57f9\u8bad\u8bfe\u7a0b\u53ca\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "\u82f1\u56fd\u56fd\u5bb6\u5927\u6c14\u79d1\u5b66\u4e2d\u5fc3\uff1b\u8fd0\u8425\u8d44\u52a9\u7684\u5927\u6c14\u4e0e\u6c14\u5019\u79d1\u5b66\u57f9\u8bad\u8bfe\u7a0b\u53ca\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "NCAS",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Les Houches Physics School",
@@ -1471,7 +2094,14 @@
       "school"
     ],
     "notes": "Les Houches School of Physics; among its sessions are climate-physics and scientific machine-learning schools. Off-domain physics sessions are dropped by the filters.",
-    "notes_zh": "\u83b1\u82cf\u4ec0\u7269\u7406\u5b66\u9662\uff1b\u5176\u8bfe\u7a0b\u5305\u62ec\u6c14\u5019\u7269\u7406\u548c\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u5b66\u6821\u3002\u975e\u672c\u9886\u57df\u7684\u7269\u7406\u8bfe\u7a0b\u4f1a\u88ab\u7b5b\u9009\u6389\u3002"
+    "notes_zh": "\u83b1\u82cf\u4ec0\u7269\u7406\u5b66\u9662\uff1b\u5176\u8bfe\u7a0b\u5305\u62ec\u6c14\u5019\u7269\u7406\u548c\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u5b66\u6821\u3002\u975e\u672c\u9886\u57df\u7684\u7269\u7406\u8bfe\u7a0b\u4f1a\u88ab\u7b5b\u9009\u6389\u3002",
+    "health": {
+      "name": "Les Houches Physics School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "ESSLLI",
@@ -1488,7 +2118,14 @@
     ],
     "render": true,
     "notes": "European Summer School in Logic, Language and Information \u2014 the flagship logic/language/computation school. The landing page is client-side rendered, so it uses the optional headless browser.",
-    "notes_zh": "\u6b27\u6d32\u903b\u8f91\u3001\u8bed\u8a00\u4e0e\u4fe1\u606f\u6691\u671f\u5b66\u6821\u2014\u2014\u903b\u8f91/\u8bed\u8a00/\u8ba1\u7b97\u9886\u57df\u7684\u65d7\u8230\u5b66\u6821\u3002\u7740\u9646\u9875\u4e3a\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u4f7f\u7528\u53ef\u9009\u7684\u65e0\u5934\u6d4f\u89c8\u5668\u3002"
+    "notes_zh": "\u6b27\u6d32\u903b\u8f91\u3001\u8bed\u8a00\u4e0e\u4fe1\u606f\u6691\u671f\u5b66\u6821\u2014\u2014\u903b\u8f91/\u8bed\u8a00/\u8ba1\u7b97\u9886\u57df\u7684\u65d7\u8230\u5b66\u6821\u3002\u7740\u9646\u9875\u4e3a\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u4f7f\u7528\u53ef\u9009\u7684\u65e0\u5934\u6d4f\u89c8\u5668\u3002",
+    "health": {
+      "name": "ESSLLI",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": null,
+      "consecutive_failures": 18
+    }
   },
   {
     "name": "LSA Linguistic Institute",
@@ -1503,7 +2140,14 @@
       "summer institute"
     ],
     "notes": "The Linguistic Society of America's biennial summer Linguistic Institute, a major funded linguistics training school.",
-    "notes_zh": "\u7f8e\u56fd\u8bed\u8a00\u5b66\u4f1a\u6bcf\u4e24\u5e74\u4e3e\u529e\u7684\u590f\u5b63\u8bed\u8a00\u5b66\u7814\u7a76\u6240\uff0c\u662f\u4e00\u4e2a\u5927\u578b\u8d44\u52a9\u6027\u8bed\u8a00\u5b66\u57f9\u8bad\u5b66\u6821\u3002"
+    "notes_zh": "\u7f8e\u56fd\u8bed\u8a00\u5b66\u4f1a\u6bcf\u4e24\u5e74\u4e3e\u529e\u7684\u590f\u5b63\u8bed\u8a00\u5b66\u7814\u7a76\u6240\uff0c\u662f\u4e00\u4e2a\u5927\u578b\u8d44\u52a9\u6027\u8bed\u8a00\u5b66\u57f9\u8bad\u5b66\u6821\u3002",
+    "health": {
+      "name": "LSA Linguistic Institute",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "LOT School",
@@ -1519,7 +2163,14 @@
       "summer school"
     ],
     "notes": "The Dutch national graduate school in linguistics (LOT); runs funded summer and winter schools across linguistics subfields.",
-    "notes_zh": "\u8377\u5170\u56fd\u5bb6\u8bed\u8a00\u5b66\u7814\u7a76\u751f\u9662\uff08LOT\uff09\uff1b\u5728\u8bed\u8a00\u5b66\u5404\u5b50\u9886\u57df\u4e3e\u529e\u6709\u8d44\u52a9\u7684\u6691\u671f\u548c\u51ac\u5b63\u5b66\u6821\u3002"
+    "notes_zh": "\u8377\u5170\u56fd\u5bb6\u8bed\u8a00\u5b66\u7814\u7a76\u751f\u9662\uff08LOT\uff09\uff1b\u5728\u8bed\u8a00\u5b66\u5404\u5b50\u9886\u57df\u4e3e\u529e\u6709\u8d44\u52a9\u7684\u6691\u671f\u548c\u51ac\u5b63\u5b66\u6821\u3002",
+    "health": {
+      "name": "LOT School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EGG School",
@@ -1535,7 +2186,14 @@
       "summer school"
     ],
     "notes": "Eastern Generative Grammar summer school in theoretical linguistics, held in Central/Eastern Europe with low fees.",
-    "notes_zh": "\u4e1c\u6b27\u751f\u6210\u8bed\u6cd5\u6691\u671f\u5b66\u6821\uff0c\u4e13\u6ce8\u4e8e\u7406\u8bba\u8bed\u8a00\u5b66\uff0c\u4f4d\u4e8e\u4e2d\u6b27/\u4e1c\u6b27\uff0c\u8d39\u7528\u4f4e\u5ec9\u3002"
+    "notes_zh": "\u4e1c\u6b27\u751f\u6210\u8bed\u6cd5\u6691\u671f\u5b66\u6821\uff0c\u4e13\u6ce8\u4e8e\u7406\u8bba\u8bed\u8a00\u5b66\uff0c\u4f4d\u4e8e\u4e2d\u6b27/\u4e1c\u6b27\uff0c\u8d39\u7528\u4f4e\u5ec9\u3002",
+    "health": {
+      "name": "EGG School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Leiden Linguistics Summer School",
@@ -1550,7 +2208,14 @@
       "summer school"
     ],
     "notes": "Leiden Summer School in Languages and Linguistics; academic linguistics (not language-teaching) courses.",
-    "notes_zh": "\u83b1\u987f\u6691\u671f\u8bed\u8a00\u4e0e\u8bed\u8a00\u5b66\u5b66\u6821\uff1b\u5b66\u672f\u8bed\u8a00\u5b66\uff08\u975e\u8bed\u8a00\u6559\u5b66\uff09\u8bfe\u7a0b\u3002"
+    "notes_zh": "\u83b1\u987f\u6691\u671f\u8bed\u8a00\u4e0e\u8bed\u8a00\u5b66\u5b66\u6821\uff1b\u5b66\u672f\u8bed\u8a00\u5b66\uff08\u975e\u8bed\u8a00\u6559\u5b66\uff09\u8bfe\u7a0b\u3002",
+    "health": {
+      "name": "Leiden Linguistics Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CLASP Gothenburg",
@@ -1565,7 +2230,14 @@
       "language technology"
     ],
     "notes": "Centre for Linguistic Theory and Studies in Probability (University of Gothenburg); computational linguistics and language-technology events and schools.",
-    "notes_zh": "\u6982\u7387\u8bed\u8a00\u5b66\u7406\u8bba\u4e0e\u7814\u7a76\u4e2d\u5fc3\uff08\u54e5\u5fb7\u5821\u5927\u5b66\uff09\uff1b\u8ba1\u7b97\u8bed\u8a00\u5b66\u4e0e\u8bed\u8a00\u6280\u672f\u76f8\u5173\u6d3b\u52a8\u53ca\u5b66\u6821\u3002"
+    "notes_zh": "\u6982\u7387\u8bed\u8a00\u5b66\u7406\u8bba\u4e0e\u7814\u7a76\u4e2d\u5fc3\uff08\u54e5\u5fb7\u5821\u5927\u5b66\uff09\uff1b\u8ba1\u7b97\u8bed\u8a00\u5b66\u4e0e\u8bed\u8a00\u6280\u672f\u76f8\u5173\u6d3b\u52a8\u53ca\u5b66\u6821\u3002",
+    "health": {
+      "name": "CLASP Gothenburg",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CoLang",
@@ -1580,7 +2252,14 @@
       "field methods"
     ],
     "notes": "The biennial Institute on Collaborative Language Research; intensive training in language documentation, descriptive linguistics, revitalization, and field methods, with participant scholarships.",
-    "notes_zh": "\u4e24\u5e74\u4e00\u5ea6\u7684\u534f\u4f5c\u8bed\u8a00\u7814\u7a76\u5b66\u9662\uff1b\u63d0\u4f9b\u8bed\u8a00\u8bb0\u5f55\u3001\u63cf\u8ff0\u8bed\u8a00\u5b66\u3001\u590d\u5174\u548c\u7530\u91ce\u65b9\u6cd5\u7684\u5f3a\u5316\u57f9\u8bad\uff0c\u5e76\u63d0\u4f9b\u53c2\u4e0e\u8005\u5956\u5b66\u91d1\u3002"
+    "notes_zh": "\u4e24\u5e74\u4e00\u5ea6\u7684\u534f\u4f5c\u8bed\u8a00\u7814\u7a76\u5b66\u9662\uff1b\u63d0\u4f9b\u8bed\u8a00\u8bb0\u5f55\u3001\u63cf\u8ff0\u8bed\u8a00\u5b66\u3001\u590d\u5174\u548c\u7530\u91ce\u65b9\u6cd5\u7684\u5f3a\u5316\u57f9\u8bad\uff0c\u5e76\u63d0\u4f9b\u53c2\u4e0e\u8005\u5956\u5b66\u91d1\u3002",
+    "health": {
+      "name": "CoLang",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CreteLing",
@@ -1596,7 +2275,14 @@
       "psycholinguistics"
     ],
     "notes": "University of Crete Summer School of Linguistics; introductory and advanced seminars across theoretical, historical, psycho- and neurolinguistics.",
-    "notes_zh": "\u514b\u91cc\u7279\u5927\u5b66\u8bed\u8a00\u5b66\u6691\u671f\u5b66\u6821\uff1b\u6db5\u76d6\u7406\u8bba\u3001\u5386\u53f2\u3001\u5fc3\u7406\u548c\u795e\u7ecf\u8bed\u8a00\u5b66\u7684\u5165\u95e8\u4e0e\u9ad8\u7ea7\u7814\u8ba8\u4f1a\u3002"
+    "notes_zh": "\u514b\u91cc\u7279\u5927\u5b66\u8bed\u8a00\u5b66\u6691\u671f\u5b66\u6821\uff1b\u6db5\u76d6\u7406\u8bba\u3001\u5386\u53f2\u3001\u5fc3\u7406\u548c\u795e\u7ecf\u8bed\u8a00\u5b66\u7684\u5165\u95e8\u4e0e\u9ad8\u7ea7\u7814\u8ba8\u4f1a\u3002",
+    "health": {
+      "name": "CreteLing",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Advanced Language Processing Winter School",
@@ -1611,7 +2297,14 @@
       "machine learning"
     ],
     "notes": "ALPS, co-organised by Universit\u00e9 Grenoble Alpes/LIG; an advanced residential NLP research school for graduate students and researchers.",
-    "notes_zh": "ALPS\uff0c\u7531\u683c\u52d2\u8bfa\u5e03\u5c14\u963f\u5c14\u5351\u65af\u5927\u5b66/LIG\u8054\u5408\u7ec4\u7ec7\uff1b\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u8005\u7684\u9ad8\u7ea7\u4f4f\u5bbf\u5f0fNLP\u7814\u7a76\u5b66\u6821\u3002"
+    "notes_zh": "ALPS\uff0c\u7531\u683c\u52d2\u8bfa\u5e03\u5c14\u963f\u5c14\u5351\u65af\u5927\u5b66/LIG\u8054\u5408\u7ec4\u7ec7\uff1b\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u8005\u7684\u9ad8\u7ea7\u4f4f\u5bbf\u5f0fNLP\u7814\u7a76\u5b66\u6821\u3002",
+    "health": {
+      "name": "Advanced Language Processing Winter School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Charles University Summer School of Linguistics",
@@ -1626,7 +2319,14 @@
       "summer school"
     ],
     "notes": "A recurring Czech summer school for graduate students and young researchers covering current linguistic research across subfields.",
-    "notes_zh": "\u9762\u5411\u7814\u7a76\u751f\u548c\u9752\u5e74\u7814\u7a76\u4eba\u5458\u7684\u6377\u514b\u6691\u671f\u5b66\u6821\uff0c\u6db5\u76d6\u5404\u5b50\u9886\u57df\u7684\u5f53\u524d\u8bed\u8a00\u5b66\u7814\u7a76\u3002"
+    "notes_zh": "\u9762\u5411\u7814\u7a76\u751f\u548c\u9752\u5e74\u7814\u7a76\u4eba\u5458\u7684\u6377\u514b\u6691\u671f\u5b66\u6821\uff0c\u6db5\u76d6\u5404\u5b50\u9886\u57df\u7684\u5f53\u524d\u8bed\u8a00\u5b66\u7814\u7a76\u3002",
+    "health": {
+      "name": "Charles University Summer School of Linguistics",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Methods in Language Sciences",
@@ -1642,7 +2342,14 @@
       "sociolinguistics"
     ],
     "notes": "Ghent University research-methods summer school spanning quantitative and qualitative methods across the language sciences.",
-    "notes_zh": "\u6839\u7279\u5927\u5b66\u7814\u7a76\u65b9\u6cd5\u6691\u671f\u5b66\u6821\uff0c\u6db5\u76d6\u8bed\u8a00\u79d1\u5b66\u4e2d\u7684\u5b9a\u91cf\u4e0e\u5b9a\u6027\u65b9\u6cd5\u3002"
+    "notes_zh": "\u6839\u7279\u5927\u5b66\u7814\u7a76\u65b9\u6cd5\u6691\u671f\u5b66\u6821\uff0c\u6db5\u76d6\u8bed\u8a00\u79d1\u5b66\u4e2d\u7684\u5b9a\u91cf\u4e0e\u5b9a\u6027\u65b9\u6cd5\u3002",
+    "health": {
+      "name": "Methods in Language Sciences",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Edinburgh Theoretical Historical Linguistics",
@@ -1658,7 +2365,14 @@
       "morphology"
     ],
     "notes": "University of Edinburgh-supported postgraduate and early-career summer school in theoretical historical linguistics.",
-    "notes_zh": "\u7231\u4e01\u5821\u5927\u5b66\u8d44\u52a9\u7684\u7406\u8bba\u5386\u53f2\u8bed\u8a00\u5b66\u7814\u7a76\u751f\u4e0e\u65e9\u671f\u804c\u4e1a\u5b66\u8005\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "\u7231\u4e01\u5821\u5927\u5b66\u8d44\u52a9\u7684\u7406\u8bba\u5386\u53f2\u8bed\u8a00\u5b66\u7814\u7a76\u751f\u4e0e\u65e9\u671f\u804c\u4e1a\u5b66\u8005\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "Edinburgh Theoretical Historical Linguistics",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "ICVSS",
@@ -1673,7 +2387,14 @@
       "summer school"
     ],
     "notes": "International Computer Vision Summer School (Sicily); a flagship, competitive computer-vision school.",
-    "notes_zh": "\u56fd\u9645\u8ba1\u7b97\u673a\u89c6\u89c9\u6691\u671f\u5b66\u6821\uff08\u897f\u897f\u91cc\uff09\uff1b\u65d7\u8230\u7ea7\u3001\u7ade\u4e89\u6027\u8ba1\u7b97\u673a\u89c6\u89c9\u5b66\u6821\u3002"
+    "notes_zh": "\u56fd\u9645\u8ba1\u7b97\u673a\u89c6\u89c9\u6691\u671f\u5b66\u6821\uff08\u897f\u897f\u91cc\uff09\uff1b\u65d7\u8230\u7ea7\u3001\u7ade\u4e89\u6027\u8ba1\u7b97\u673a\u89c6\u89c9\u5b66\u6821\u3002",
+    "health": {
+      "name": "ICVSS",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "DS3 Data Science Summer School",
@@ -1689,7 +2410,14 @@
       "summer school"
     ],
     "notes": "\u00c9cole Polytechnique Data Science Summer School (DS3); data science and machine learning.",
-    "notes_zh": "\u5df4\u9ece\u7efc\u5408\u7406\u5de5\u5b66\u9662\u6570\u636e\u79d1\u5b66\u6691\u671f\u5b66\u6821\uff08DS3\uff09\uff1b\u6570\u636e\u79d1\u5b66\u4e0e\u673a\u5668\u5b66\u4e60\u3002"
+    "notes_zh": "\u5df4\u9ece\u7efc\u5408\u7406\u5de5\u5b66\u9662\u6570\u636e\u79d1\u5b66\u6691\u671f\u5b66\u6821\uff08DS3\uff09\uff1b\u6570\u636e\u79d1\u5b66\u4e0e\u673a\u5668\u5b66\u4e60\u3002",
+    "health": {
+      "name": "DS3 Data Science Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Heidelberg Laureate Forum",
@@ -1704,7 +2432,14 @@
       "early-career"
     ],
     "notes": "HLF brings young researchers together with Turing/Abel/Fields laureates; fully funded for selected applicants.",
-    "notes_zh": "HLF\u6c47\u805a\u9752\u5e74\u7814\u7a76\u4eba\u5458\u4e0e\u56fe\u7075\u5956/\u963f\u8d1d\u5c14\u5956/\u83f2\u5c14\u5179\u5956\u5f97\u4e3b\uff1b\u4e3a\u5165\u9009\u8005\u63d0\u4f9b\u5168\u989d\u8d44\u52a9\u3002"
+    "notes_zh": "HLF\u6c47\u805a\u9752\u5e74\u7814\u7a76\u4eba\u5458\u4e0e\u56fe\u7075\u5956/\u963f\u8d1d\u5c14\u5956/\u83f2\u5c14\u5179\u5956\u5f97\u4e3b\uff1b\u4e3a\u5165\u9009\u8005\u63d0\u4f9b\u5168\u989d\u8d44\u52a9\u3002",
+    "health": {
+      "name": "Heidelberg Laureate Forum",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "OPLSS",
@@ -1719,7 +2454,14 @@
       "summer school"
     ],
     "notes": "Oregon Programming Languages Summer School; programming languages, type theory, and formal methods.",
-    "notes_zh": "\u4fc4\u52d2\u5188\u7f16\u7a0b\u8bed\u8a00\u6691\u671f\u5b66\u6821\uff1b\u7f16\u7a0b\u8bed\u8a00\u3001\u7c7b\u578b\u7406\u8bba\u4e0e\u5f62\u5f0f\u5316\u65b9\u6cd5\u3002"
+    "notes_zh": "\u4fc4\u52d2\u5188\u7f16\u7a0b\u8bed\u8a00\u6691\u671f\u5b66\u6821\uff1b\u7f16\u7a0b\u8bed\u8a00\u3001\u7c7b\u578b\u7406\u8bba\u4e0e\u5f62\u5f0f\u5316\u65b9\u6cd5\u3002",
+    "health": {
+      "name": "OPLSS",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "LASER Software Engineering School",
@@ -1734,7 +2476,14 @@
       "summer school"
     ],
     "notes": "LASER summer school on software engineering (Elba, Italy), organised by ETH Zurich. Times out from some connections; skipped silently when unreachable.",
-    "notes_zh": "LASER\u8f6f\u4ef6\u5de5\u7a0b\u6691\u671f\u5b66\u6821\uff08\u610f\u5927\u5229\u5384\u5c14\u5df4\u5c9b\uff09\uff0c\u7531\u82cf\u9ece\u4e16\u8054\u90a6\u7406\u5de5\u5b66\u9662\u7ec4\u7ec7\u3002\u90e8\u5206\u8fde\u63a5\u8d85\u65f6\uff1b\u65e0\u6cd5\u8bbf\u95ee\u65f6\u9759\u9ed8\u8df3\u8fc7\u3002"
+    "notes_zh": "LASER\u8f6f\u4ef6\u5de5\u7a0b\u6691\u671f\u5b66\u6821\uff08\u610f\u5927\u5229\u5384\u5c14\u5df4\u5c9b\uff09\uff0c\u7531\u82cf\u9ece\u4e16\u8054\u90a6\u7406\u5de5\u5b66\u9662\u7ec4\u7ec7\u3002\u90e8\u5206\u8fde\u63a5\u8d85\u65f6\uff1b\u65e0\u6cd5\u8bbf\u95ee\u65f6\u9759\u9ed8\u8df3\u8fc7\u3002",
+    "health": {
+      "name": "LASER Software Engineering School",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": null,
+      "consecutive_failures": 18
+    }
   },
   {
     "name": "CISPA",
@@ -1749,7 +2498,14 @@
       "cryptography"
     ],
     "notes": "CISPA Helmholtz Center for Information Security (Saarbr\u00fccken); runs a funded cybersecurity summer school and research events.",
-    "notes_zh": "CISPA\u4ea5\u59c6\u970d\u5179\u4fe1\u606f\u5b89\u5168\u4e2d\u5fc3\uff08\u8428\u5c14\u5e03\u5415\u80af\uff09\uff1b\u4e3e\u529e\u8d44\u52a9\u7684\u7f51\u7edc\u5b89\u5168\u6691\u671f\u5b66\u6821\u548c\u7814\u7a76\u6d3b\u52a8\u3002"
+    "notes_zh": "CISPA\u4ea5\u59c6\u970d\u5179\u4fe1\u606f\u5b89\u5168\u4e2d\u5fc3\uff08\u8428\u5c14\u5e03\u5415\u80af\uff09\uff1b\u4e3e\u529e\u8d44\u52a9\u7684\u7f51\u7edc\u5b89\u5168\u6691\u671f\u5b66\u6821\u548c\u7814\u7a76\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "CISPA",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "SBA Research",
@@ -1764,7 +2520,14 @@
       "network security"
     ],
     "notes": "Austrian research centre for information security; security training, schools, and events.",
-    "notes_zh": "\u5965\u5730\u5229\u4fe1\u606f\u5b89\u5168\u7814\u7a76\u4e2d\u5fc3\uff1b\u63d0\u4f9b\u5b89\u5168\u57f9\u8bad\u3001\u5b66\u6821\u53ca\u6d3b\u52a8\u3002"
+    "notes_zh": "\u5965\u5730\u5229\u4fe1\u606f\u5b89\u5168\u7814\u7a76\u4e2d\u5fc3\uff1b\u63d0\u4f9b\u5b89\u5168\u57f9\u8bad\u3001\u5b66\u6821\u53ca\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "SBA Research",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Santa Fe Institute",
@@ -1780,7 +2543,14 @@
       "summer school"
     ],
     "notes": "Santa Fe Institute Complex Systems Summer School (CSSS) and related schools; funded interdisciplinary training in complex systems, networks, and data science.",
-    "notes_zh": "\u5723\u5854\u83f2\u7814\u7a76\u6240\u590d\u6742\u7cfb\u7edf\u6691\u671f\u5b66\u6821\uff08CSSS\uff09\u53ca\u76f8\u5173\u5b66\u6821\uff1b\u8d44\u52a9\u7684\u590d\u6742\u7cfb\u7edf\u3001\u7f51\u7edc\u4e0e\u6570\u636e\u79d1\u5b66\u8de8\u5b66\u79d1\u57f9\u8bad\u3002"
+    "notes_zh": "\u5723\u5854\u83f2\u7814\u7a76\u6240\u590d\u6742\u7cfb\u7edf\u6691\u671f\u5b66\u6821\uff08CSSS\uff09\u53ca\u76f8\u5173\u5b66\u6821\uff1b\u8d44\u52a9\u7684\u590d\u6742\u7cfb\u7edf\u3001\u7f51\u7edc\u4e0e\u6570\u636e\u79d1\u5b66\u8de8\u5b66\u79d1\u57f9\u8bad\u3002",
+    "health": {
+      "name": "Santa Fe Institute",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "DeepLearn",
@@ -1796,7 +2566,14 @@
       "summer school"
     ],
     "notes": "International School on Deep Learning (IRDTA). Points at the current edition; bump the year when a new one is published.",
-    "notes_zh": "\u56fd\u9645\u6df1\u5ea6\u5b66\u4e60\u5b66\u6821\uff08IRDTA\uff09\u3002\u6307\u5411\u5f53\u524d\u7248\u672c\uff1b\u65b0\u7248\u672c\u53d1\u5e03\u65f6\u66f4\u65b0\u5e74\u4efd\u3002"
+    "notes_zh": "\u56fd\u9645\u6df1\u5ea6\u5b66\u4e60\u5b66\u6821\uff08IRDTA\uff09\u3002\u6307\u5411\u5f53\u524d\u7248\u672c\uff1b\u65b0\u7248\u672c\u53d1\u5e03\u65f6\u66f4\u65b0\u5e74\u4efd\u3002",
+    "health": {
+      "name": "DeepLearn",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EurAI ACAI",
@@ -1811,7 +2588,14 @@
       "advanced course"
     ],
     "notes": "EurAI Advanced Course on Artificial Intelligence (ACAI); the European AI society's advanced school.",
-    "notes_zh": "EurAI \u9ad8\u7ea7\u4eba\u5de5\u667a\u80fd\u8bfe\u7a0b\uff08ACAI\uff09\uff1b\u6b27\u6d32\u4eba\u5de5\u667a\u80fd\u534f\u4f1a\u7684\u9ad8\u7ea7\u5b66\u6821\u3002"
+    "notes_zh": "EurAI \u9ad8\u7ea7\u4eba\u5de5\u667a\u80fd\u8bfe\u7a0b\uff08ACAI\uff09\uff1b\u6b27\u6d32\u4eba\u5de5\u667a\u80fd\u534f\u4f1a\u7684\u9ad8\u7ea7\u5b66\u6821\u3002",
+    "health": {
+      "name": "EurAI ACAI",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Friday Harbor Laboratories",
@@ -1826,7 +2610,14 @@
       "field course"
     ],
     "notes": "University of Washington Friday Harbor Labs; funded marine science field courses and summer programmes.",
-    "notes_zh": "\u534e\u76db\u987f\u5927\u5b66\u661f\u671f\u4e94\u6e2f\u5b9e\u9a8c\u5ba4\uff1b\u8d44\u52a9\u7684\u6d77\u6d0b\u79d1\u5b66\u5b9e\u5730\u8bfe\u7a0b\u548c\u6691\u671f\u9879\u76ee\u3002"
+    "notes_zh": "\u534e\u76db\u987f\u5927\u5b66\u661f\u671f\u4e94\u6e2f\u5b9e\u9a8c\u5ba4\uff1b\u8d44\u52a9\u7684\u6d77\u6d0b\u79d1\u5b66\u5b9e\u5730\u8bfe\u7a0b\u548c\u6691\u671f\u9879\u76ee\u3002",
+    "health": {
+      "name": "Friday Harbor Laboratories",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "SOLAS",
@@ -1842,7 +2633,14 @@
       "summer school"
     ],
     "notes": "Surface Ocean Lower Atmosphere Study; ocean-atmosphere and climate summer schools.",
-    "notes_zh": "\u8868\u5c42\u6d77\u6d0b\u4f4e\u5c42\u5927\u6c14\u7814\u7a76\uff1b\u6d77\u6d0b-\u5927\u6c14\u4e0e\u6c14\u5019\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "\u8868\u5c42\u6d77\u6d0b\u4f4e\u5c42\u5927\u6c14\u7814\u7a76\uff1b\u6d77\u6d0b-\u5927\u6c14\u4e0e\u6c14\u5019\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "SOLAS",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CSCS Summer School",
@@ -1857,7 +2655,14 @@
       "summer school"
     ],
     "notes": "Swiss National Supercomputing Centre (CSCS); summer school on HPC and effective scientific computing.",
-    "notes_zh": "\u745e\u58eb\u56fd\u5bb6\u8d85\u7ea7\u8ba1\u7b97\u4e2d\u5fc3\uff08CSCS\uff09\uff1b\u9ad8\u6027\u80fd\u8ba1\u7b97\u4e0e\u9ad8\u6548\u79d1\u5b66\u8ba1\u7b97\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "\u745e\u58eb\u56fd\u5bb6\u8d85\u7ea7\u8ba1\u7b97\u4e2d\u5fc3\uff08CSCS\uff09\uff1b\u9ad8\u6027\u80fd\u8ba1\u7b97\u4e0e\u9ad8\u6548\u79d1\u5b66\u8ba1\u7b97\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "CSCS Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Argonne ATPESC",
@@ -1872,7 +2677,14 @@
       "training"
     ],
     "notes": "Argonne Training Program on Extreme-Scale Computing (ATPESC); funded intensive HPC training.",
-    "notes_zh": "\u6781\u5927\u89c4\u6a21\u8ba1\u7b97\u963f\u8d21\u57f9\u8bad\u8ba1\u5212\uff08ATPESC\uff09\uff1b\u8d44\u52a9\u7684\u5bc6\u96c6\u578b\u9ad8\u6027\u80fd\u8ba1\u7b97\u57f9\u8bad\u3002"
+    "notes_zh": "\u6781\u5927\u89c4\u6a21\u8ba1\u7b97\u963f\u8d21\u57f9\u8bad\u8ba1\u5212\uff08ATPESC\uff09\uff1b\u8d44\u52a9\u7684\u5bc6\u96c6\u578b\u9ad8\u6027\u80fd\u8ba1\u7b97\u57f9\u8bad\u3002",
+    "health": {
+      "name": "Argonne ATPESC",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-03",
+      "consecutive_failures": 3
+    }
   },
   {
     "name": "CESM Tutorial",
@@ -1887,7 +2699,14 @@
       "training"
     ],
     "notes": "NCAR Community Earth System Model (CESM) tutorial; hands-on climate-model training, usually funded for participants.",
-    "notes_zh": "NCAR\u793e\u533a\u5730\u7403\u7cfb\u7edf\u6a21\u578b\uff08CESM\uff09\u6559\u7a0b\uff1b\u6c14\u5019\u6a21\u578b\u5b9e\u8df5\u57f9\u8bad\uff0c\u901a\u5e38\u4e3a\u53c2\u4e0e\u8005\u63d0\u4f9b\u8d44\u52a9\u3002"
+    "notes_zh": "NCAR\u793e\u533a\u5730\u7403\u7cfb\u7edf\u6a21\u578b\uff08CESM\uff09\u6559\u7a0b\uff1b\u6c14\u5019\u6a21\u578b\u5b9e\u8df5\u57f9\u8bad\uff0c\u901a\u5e38\u4e3a\u53c2\u4e0e\u8005\u63d0\u4f9b\u8d44\u52a9\u3002",
+    "health": {
+      "name": "CESM Tutorial",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "GEOMAR",
@@ -1902,7 +2721,14 @@
       "summer school"
     ],
     "notes": "GEOMAR Helmholtz Centre for Ocean Research Kiel; ocean and climate research schools and events.",
-    "notes_zh": "GEOMAR\u4ea5\u59c6\u970d\u5179\u57fa\u5c14\u6d77\u6d0b\u7814\u7a76\u4e2d\u5fc3\uff1b\u6d77\u6d0b\u4e0e\u6c14\u5019\u7814\u7a76\u5b66\u6821\u53ca\u6d3b\u52a8\u3002"
+    "notes_zh": "GEOMAR\u4ea5\u59c6\u970d\u5179\u57fa\u5c14\u6d77\u6d0b\u7814\u7a76\u4e2d\u5fc3\uff1b\u6d77\u6d0b\u4e0e\u6c14\u5019\u7814\u7a76\u5b66\u6821\u53ca\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "GEOMAR",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CINECA HPC",
@@ -1917,7 +2743,14 @@
       "training"
     ],
     "notes": "CINECA (Italian national supercomputing centre) training events and HPC schools.",
-    "notes_zh": "CINECA\uff08\u610f\u5927\u5229\u56fd\u5bb6\u8d85\u7ea7\u8ba1\u7b97\u4e2d\u5fc3\uff09\u57f9\u8bad\u6d3b\u52a8\u4e0e\u9ad8\u6027\u80fd\u8ba1\u7b97\u5b66\u6821\u3002"
+    "notes_zh": "CINECA\uff08\u610f\u5927\u5229\u56fd\u5bb6\u8d85\u7ea7\u8ba1\u7b97\u4e2d\u5fc3\uff09\u57f9\u8bad\u6d3b\u52a8\u4e0e\u9ad8\u6027\u80fd\u8ba1\u7b97\u5b66\u6821\u3002",
+    "health": {
+      "name": "CINECA HPC",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-07-24",
+      "consecutive_failures": 6
+    }
   },
   {
     "name": "Oxford Robotics Institute",
@@ -1932,7 +2765,14 @@
       "computer vision"
     ],
     "notes": "Oxford Robotics Institute; robotics and machine-learning research, schools, and events.",
-    "notes_zh": "\u725b\u6d25\u673a\u5668\u4eba\u7814\u7a76\u6240\uff1b\u673a\u5668\u4eba\u5b66\u4e0e\u673a\u5668\u5b66\u4e60\u7814\u7a76\u3001\u5b66\u6821\u53ca\u6d3b\u52a8\u3002"
+    "notes_zh": "\u725b\u6d25\u673a\u5668\u4eba\u7814\u7a76\u6240\uff1b\u673a\u5668\u4eba\u5b66\u4e0e\u673a\u5668\u5b66\u4e60\u7814\u7a76\u3001\u5b66\u6821\u53ca\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "Oxford Robotics Institute",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Mila",
@@ -1947,7 +2787,14 @@
       "summer school"
     ],
     "notes": "Mila - Quebec AI Institute (Montreal); hosts ML summer schools and training programmes.",
-    "notes_zh": "Mila - \u9b41\u5317\u514b\u4eba\u5de5\u667a\u80fd\u7814\u7a76\u6240\uff08\u8499\u7279\u5229\u5c14\uff09\uff1b\u4e3e\u529e\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u4e0e\u57f9\u8bad\u9879\u76ee\u3002"
+    "notes_zh": "Mila - \u9b41\u5317\u514b\u4eba\u5de5\u667a\u80fd\u7814\u7a76\u6240\uff08\u8499\u7279\u5229\u5c14\uff09\uff1b\u4e3e\u529e\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u4e0e\u57f9\u8bad\u9879\u76ee\u3002",
+    "health": {
+      "name": "Mila",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "OIST OCNC",
@@ -1962,7 +2809,14 @@
       "summer course"
     ],
     "notes": "Okinawa Computational Neuroscience Course (OCNC); a flagship funded comp-neuro summer course.",
-    "notes_zh": "\u51b2\u7ef3\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u8bfe\u7a0b\uff08OCNC\uff09\uff1b\u65d7\u8230\u8d44\u52a9\u7684\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u6691\u671f\u8bfe\u7a0b\u3002"
+    "notes_zh": "\u51b2\u7ef3\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u8bfe\u7a0b\uff08OCNC\uff09\uff1b\u65d7\u8230\u8d44\u52a9\u7684\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u6691\u671f\u8bfe\u7a0b\u3002",
+    "health": {
+      "name": "OIST OCNC",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "MBL Courses",
@@ -1977,7 +2831,14 @@
       "summer course"
     ],
     "notes": "Marine Biological Laboratory advanced research training courses, including Methods in Computational Neuroscience.",
-    "notes_zh": "\u6d77\u6d0b\u751f\u7269\u5b66\u5b9e\u9a8c\u5ba4\u9ad8\u7ea7\u7814\u7a76\u57f9\u8bad\u8bfe\u7a0b\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u65b9\u6cd5\u3002"
+    "notes_zh": "\u6d77\u6d0b\u751f\u7269\u5b66\u5b9e\u9a8c\u5ba4\u9ad8\u7ea7\u7814\u7a76\u57f9\u8bad\u8bfe\u7a0b\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u65b9\u6cd5\u3002",
+    "health": {
+      "name": "MBL Courses",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CSHL Courses",
@@ -1992,7 +2853,14 @@
       "summer course"
     ],
     "notes": "Cold Spring Harbor Laboratory courses, including computational neuroscience and quantitative biology schools.",
-    "notes_zh": "\u51b7\u6cc9\u6e2f\u5b9e\u9a8c\u5ba4\u8bfe\u7a0b\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u548c\u5b9a\u91cf\u751f\u7269\u5b66\u5b66\u6821\u3002"
+    "notes_zh": "\u51b7\u6cc9\u6e2f\u5b9e\u9a8c\u5ba4\u8bfe\u7a0b\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u548c\u5b9a\u91cf\u751f\u7269\u5b66\u5b66\u6821\u3002",
+    "health": {
+      "name": "CSHL Courses",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CAJAL Training",
@@ -2007,7 +2875,14 @@
       "training"
     ],
     "notes": "CAJAL Advanced Neuroscience Training Programme; intensive European neuroscience courses, including computational neuroscience.",
-    "notes_zh": "CAJAL\u9ad8\u7ea7\u795e\u7ecf\u79d1\u5b66\u57f9\u8bad\u9879\u76ee\uff1b\u6b27\u6d32\u5bc6\u96c6\u578b\u795e\u7ecf\u79d1\u5b66\u8bfe\u7a0b\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u3002"
+    "notes_zh": "CAJAL\u9ad8\u7ea7\u795e\u7ecf\u79d1\u5b66\u57f9\u8bad\u9879\u76ee\uff1b\u6b27\u6d32\u5bc6\u96c6\u578b\u795e\u7ecf\u79d1\u5b66\u8bfe\u7a0b\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u3002",
+    "health": {
+      "name": "CAJAL Training",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Bernstein Network",
@@ -2022,7 +2897,14 @@
       "summer school"
     ],
     "notes": "Bernstein Network Computational Neuroscience (Germany); schools and courses in computational neuroscience.",
-    "notes_zh": "Bernstein\u7f51\u7edc\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\uff08\u5fb7\u56fd\uff09\uff1b\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u9886\u57df\u7684\u5b66\u6821\u4e0e\u8bfe\u7a0b\u3002"
+    "notes_zh": "Bernstein\u7f51\u7edc\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\uff08\u5fb7\u56fd\uff09\uff1b\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u9886\u57df\u7684\u5b66\u6821\u4e0e\u8bfe\u7a0b\u3002",
+    "health": {
+      "name": "Bernstein Network",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CIFAR DLRL Summer School",
@@ -2037,7 +2919,14 @@
       "summer school"
     ],
     "notes": "CIFAR Deep Learning and Reinforcement Learning (DLRL) Summer School (Canada); funded for selected students.",
-    "notes_zh": "CIFAR\u6df1\u5ea6\u5b66\u4e60\u4e0e\u5f3a\u5316\u5b66\u4e60\uff08DLRL\uff09\u6691\u671f\u5b66\u6821\uff08\u52a0\u62ff\u5927\uff09\uff1b\u4e3a\u5165\u9009\u5b66\u751f\u63d0\u4f9b\u8d44\u52a9\u3002"
+    "notes_zh": "CIFAR\u6df1\u5ea6\u5b66\u4e60\u4e0e\u5f3a\u5316\u5b66\u4e60\uff08DLRL\uff09\u6691\u671f\u5b66\u6821\uff08\u52a0\u62ff\u5927\uff09\uff1b\u4e3a\u5165\u9009\u5b66\u751f\u63d0\u4f9b\u8d44\u52a9\u3002",
+    "health": {
+      "name": "CIFAR DLRL Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "IBRO",
@@ -2052,7 +2941,14 @@
       "training"
     ],
     "notes": "International Brain Research Organization; runs neuroscience schools worldwide, including computational neuroscience.",
-    "notes_zh": "\u56fd\u9645\u8111\u7814\u7a76\u7ec4\u7ec7\uff1b\u5728\u5168\u7403\u4e3e\u529e\u795e\u7ecf\u79d1\u5b66\u5b66\u6821\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u3002"
+    "notes_zh": "\u56fd\u9645\u8111\u7814\u7a76\u7ec4\u7ec7\uff1b\u5728\u5168\u7403\u4e3e\u529e\u795e\u7ecf\u79d1\u5b66\u5b66\u6821\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u3002",
+    "health": {
+      "name": "IBRO",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "ECPR Methods School",
@@ -2067,7 +2963,14 @@
       "summer school"
     ],
     "notes": "European Consortium for Political Research Methods Schools; social-science research-methods training.",
-    "notes_zh": "\u6b27\u6d32\u653f\u6cbb\u7814\u7a76\u8054\u76df\u65b9\u6cd5\u5b66\u6821\uff1b\u793e\u4f1a\u79d1\u5b66\u7814\u7a76\u65b9\u6cd5\u57f9\u8bad\u3002"
+    "notes_zh": "\u6b27\u6d32\u653f\u6cbb\u7814\u7a76\u8054\u76df\u65b9\u6cd5\u5b66\u6821\uff1b\u793e\u4f1a\u79d1\u5b66\u7814\u7a76\u65b9\u6cd5\u57f9\u8bad\u3002",
+    "health": {
+      "name": "ECPR Methods School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "SICSS",
@@ -2083,7 +2986,14 @@
     ],
     "collector": "sicss",
     "notes": "Summer Institutes in Computational Social Science; the official locations catalogue is parsed into separate, tuition-free institutes so each site keeps its own dates and location.",
-    "notes_zh": "\u8ba1\u7b97\u793e\u4f1a\u79d1\u5b66\u6691\u671f\u5b66\u9662\uff1b\u5b98\u65b9\u5730\u70b9\u76ee\u5f55\u5df2\u89e3\u6790\u4e3a\u72ec\u7acb\u7684\u514d\u5b66\u8d39\u5b66\u9662\uff0c\u4ee5\u4fbf\u6bcf\u4e2a\u7ad9\u70b9\u4fdd\u7559\u81ea\u5df1\u7684\u65e5\u671f\u548c\u5730\u70b9\u3002"
+    "notes_zh": "\u8ba1\u7b97\u793e\u4f1a\u79d1\u5b66\u6691\u671f\u5b66\u9662\uff1b\u5b98\u65b9\u5730\u70b9\u76ee\u5f55\u5df2\u89e3\u6790\u4e3a\u72ec\u7acb\u7684\u514d\u5b66\u8d39\u5b66\u9662\uff0c\u4ee5\u4fbf\u6bcf\u4e2a\u7ad9\u70b9\u4fdd\u7559\u81ea\u5df1\u7684\u65e5\u671f\u548c\u5730\u70b9\u3002",
+    "health": {
+      "name": "SICSS",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "ICPSR Summer Program",
@@ -2098,7 +3008,14 @@
       "data analysis"
     ],
     "notes": "University of Michigan ICPSR Summer Program in Quantitative Methods of Social Research; a flagship social-science methods school.",
-    "notes_zh": "\u5bc6\u6b47\u6839\u5927\u5b66ICPSR\u793e\u4f1a\u7814\u7a76\u5b9a\u91cf\u65b9\u6cd5\u6691\u671f\u9879\u76ee\uff1b\u65d7\u8230\u7ea7\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u5b66\u5e9c\u3002"
+    "notes_zh": "\u5bc6\u6b47\u6839\u5927\u5b66ICPSR\u793e\u4f1a\u7814\u7a76\u5b9a\u91cf\u65b9\u6cd5\u6691\u671f\u9879\u76ee\uff1b\u65d7\u8230\u7ea7\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u5b66\u5e9c\u3002",
+    "health": {
+      "name": "ICPSR Summer Program",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Summer School in Social Sciences Methods",
@@ -2114,7 +3031,14 @@
       "data analysis"
     ],
     "notes": "Universit\u00e0 della Svizzera italiana and FORS methods school; its parallel one-week course blocks are retained as separate sessions rather than one continuous multi-week course.",
-    "notes_zh": "\u745e\u58eb\u610f\u5927\u5229\u8bed\u5927\u5b66\u4e0eFORS\u65b9\u6cd5\u5b66\u6821\uff1b\u5176\u5e76\u884c\u7684\u4e00\u5468\u8bfe\u7a0b\u6a21\u5757\u4fdd\u7559\u4e3a\u72ec\u7acb\u8bfe\u7a0b\uff0c\u800c\u975e\u8fde\u7eed\u7684\u591a\u5468\u8bfe\u7a0b\u3002"
+    "notes_zh": "\u745e\u58eb\u610f\u5927\u5229\u8bed\u5927\u5b66\u4e0eFORS\u65b9\u6cd5\u5b66\u6821\uff1b\u5176\u5e76\u884c\u7684\u4e00\u5468\u8bfe\u7a0b\u6a21\u5757\u4fdd\u7559\u4e3a\u72ec\u7acb\u8bfe\u7a0b\uff0c\u800c\u975e\u8fde\u7eed\u7684\u591a\u5468\u8bfe\u7a0b\u3002",
+    "health": {
+      "name": "Summer School in Social Sciences Methods",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Oxford Spring School",
@@ -2130,7 +3054,14 @@
       "machine learning"
     ],
     "notes": "University of Oxford DPIR's annual advanced social-research methods school for graduate students and researchers.",
-    "notes_zh": "\u725b\u6d25\u5927\u5b66DPIR\u5e74\u5ea6\u9ad8\u7ea7\u793e\u4f1a\u7814\u7a76\u65b9\u6cd5\u5b66\u6821\uff0c\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u4eba\u5458\u3002"
+    "notes_zh": "\u725b\u6d25\u5927\u5b66DPIR\u5e74\u5ea6\u9ad8\u7ea7\u793e\u4f1a\u7814\u7a76\u65b9\u6cd5\u5b66\u6821\uff0c\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u4eba\u5458\u3002",
+    "health": {
+      "name": "Oxford Spring School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Essex Summer School",
@@ -2145,7 +3076,14 @@
       "summer school"
     ],
     "notes": "Essex Summer School in Social Science Data Analysis; long-running quantitative social-science methods school.",
-    "notes_zh": "\u57c3\u585e\u514b\u65af\u793e\u4f1a\u79d1\u5b66\u6570\u636e\u5206\u6790\u6691\u671f\u5b66\u6821\uff1b\u5386\u53f2\u60a0\u4e45\u7684\u5b9a\u91cf\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u57f9\u8bad\u9879\u76ee\u3002"
+    "notes_zh": "\u57c3\u585e\u514b\u65af\u793e\u4f1a\u79d1\u5b66\u6570\u636e\u5206\u6790\u6691\u671f\u5b66\u6821\uff1b\u5386\u53f2\u60a0\u4e45\u7684\u5b9a\u91cf\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u57f9\u8bad\u9879\u76ee\u3002",
+    "health": {
+      "name": "Essex Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Essex Summer School",
@@ -2161,7 +3099,14 @@
       "application"
     ],
     "notes": "Official ESS application page; carries session-specific application closing dates and programme dates.",
-    "notes_zh": "ESS\u5b98\u65b9\u7533\u8bf7\u9875\u9762\uff1b\u5305\u542b\u5404\u671f\u7533\u8bf7\u622a\u6b62\u65e5\u671f\u548c\u9879\u76ee\u65e5\u671f\u3002"
+    "notes_zh": "ESS\u5b98\u65b9\u7533\u8bf7\u9875\u9762\uff1b\u5305\u542b\u5404\u671f\u7533\u8bf7\u622a\u6b62\u65e5\u671f\u548c\u9879\u76ee\u65e5\u671f\u3002",
+    "health": {
+      "name": "Essex Summer School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CEU Summer University",
@@ -2176,7 +3121,14 @@
       "summer school"
     ],
     "notes": "Central European University Summer University; social science and humanities courses, often with funding for selected participants.",
-    "notes_zh": "\u4e2d\u6b27\u5927\u5b66\u6691\u671f\u5b66\u6821\uff1b\u793e\u4f1a\u79d1\u5b66\u4e0e\u4eba\u6587\u5b66\u79d1\u8bfe\u7a0b\uff0c\u901a\u5e38\u4e3a\u5165\u9009\u8005\u63d0\u4f9b\u8d44\u52a9\u3002"
+    "notes_zh": "\u4e2d\u6b27\u5927\u5b66\u6691\u671f\u5b66\u6821\uff1b\u793e\u4f1a\u79d1\u5b66\u4e0e\u4eba\u6587\u5b66\u79d1\u8bfe\u7a0b\uff0c\u901a\u5e38\u4e3a\u5165\u9009\u8005\u63d0\u4f9b\u8d44\u52a9\u3002",
+    "health": {
+      "name": "CEU Summer University",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EUI",
@@ -2192,7 +3144,14 @@
       "summer school"
     ],
     "notes": "European University Institute (Florence); summer schools in history, economics, political and social science, and law.",
-    "notes_zh": "\u6b27\u6d32\u5927\u5b66\u5b66\u9662\uff08\u4f5b\u7f57\u4f26\u8428\uff09\uff1b\u5386\u53f2\u3001\u7ecf\u6d4e\u3001\u653f\u6cbb\u4e0e\u793e\u4f1a\u79d1\u5b66\u53ca\u6cd5\u5f8b\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "\u6b27\u6d32\u5927\u5b66\u5b66\u9662\uff08\u4f5b\u7f57\u4f26\u8428\uff09\uff1b\u5386\u53f2\u3001\u7ecf\u6d4e\u3001\u653f\u6cbb\u4e0e\u793e\u4f1a\u79d1\u5b66\u53ca\u6cd5\u5f8b\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "EUI",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "DHSI",
@@ -2207,7 +3166,14 @@
       "training"
     ],
     "notes": "Digital Humanities Summer Institute (Victoria); training at the intersection of humanities and computing.",
-    "notes_zh": "\u6570\u5b57\u4eba\u6587\u5b66\u6691\u671f\u5b66\u9662\uff08\u7ef4\u591a\u5229\u4e9a\uff09\uff1b\u4eba\u6587\u5b66\u79d1\u4e0e\u8ba1\u7b97\u4ea4\u53c9\u9886\u57df\u7684\u57f9\u8bad\u3002"
+    "notes_zh": "\u6570\u5b57\u4eba\u6587\u5b66\u6691\u671f\u5b66\u9662\uff08\u7ef4\u591a\u5229\u4e9a\uff09\uff1b\u4eba\u6587\u5b66\u79d1\u4e0e\u8ba1\u7b97\u4ea4\u53c9\u9886\u57df\u7684\u57f9\u8bad\u3002",
+    "health": {
+      "name": "DHSI",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "IHR History",
@@ -2222,7 +3188,14 @@
       "training"
     ],
     "notes": "Institute of Historical Research (London); historical-research training and events.",
-    "notes_zh": "\u5386\u53f2\u7814\u7a76\u6240\uff08\u4f26\u6566\uff09\uff1b\u5386\u53f2\u7814\u7a76\u57f9\u8bad\u4e0e\u6d3b\u52a8\u3002"
+    "notes_zh": "\u5386\u53f2\u7814\u7a76\u6240\uff08\u4f26\u6566\uff09\uff1b\u5386\u53f2\u7814\u7a76\u57f9\u8bad\u4e0e\u6d3b\u52a8\u3002",
+    "health": {
+      "name": "IHR History",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-03",
+      "consecutive_failures": 3
+    }
   },
   {
     "name": "Khipu",
@@ -2237,7 +3210,14 @@
       "summer school"
     ],
     "notes": "Khipu Latin American Meeting in Artificial Intelligence; a funded AI summer school.",
-    "notes_zh": "Khipu\u62c9\u4e01\u7f8e\u6d32\u4eba\u5de5\u667a\u80fd\u4f1a\u8bae\uff1b\u4e00\u4e2a\u8d44\u52a9\u578bAI\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "Khipu\u62c9\u4e01\u7f8e\u6d32\u4eba\u5de5\u667a\u80fd\u4f1a\u8bae\uff1b\u4e00\u4e2a\u8d44\u52a9\u578bAI\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "Khipu",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Helmholtz AI",
@@ -2252,7 +3232,14 @@
       "data science"
     ],
     "notes": "Helmholtz AI; AI-for-science training, schools, and conferences across the Helmholtz association.",
-    "notes_zh": "Helmholtz AI\uff1b\u4ea5\u59c6\u970d\u5179\u8054\u5408\u4f1a\u5185\u7684\u4eba\u5de5\u667a\u80fd\u79d1\u5b66\u57f9\u8bad\u3001\u5b66\u6821\u53ca\u4f1a\u8bae\u3002"
+    "notes_zh": "Helmholtz AI\uff1b\u4ea5\u59c6\u970d\u5179\u8054\u5408\u4f1a\u5185\u7684\u4eba\u5de5\u667a\u80fd\u79d1\u5b66\u57f9\u8bad\u3001\u5b66\u6821\u53ca\u4f1a\u8bae\u3002",
+    "health": {
+      "name": "Helmholtz AI",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Wellcome Connecting Science",
@@ -2267,7 +3254,14 @@
       "data analysis"
     ],
     "notes": "Wellcome Connecting Science advanced courses and conferences; genomics and computational biology training, many with bursaries.",
-    "notes_zh": "Wellcome Connecting Science \u9ad8\u7ea7\u8bfe\u7a0b\u4e0e\u4f1a\u8bae\uff1b\u57fa\u56e0\u7ec4\u5b66\u4e0e\u8ba1\u7b97\u751f\u7269\u5b66\u57f9\u8bad\uff0c\u8bb8\u591a\u63d0\u4f9b\u52a9\u5b66\u91d1\u3002"
+    "notes_zh": "Wellcome Connecting Science \u9ad8\u7ea7\u8bfe\u7a0b\u4e0e\u4f1a\u8bae\uff1b\u57fa\u56e0\u7ec4\u5b66\u4e0e\u8ba1\u7b97\u751f\u7269\u5b66\u57f9\u8bad\uff0c\u8bb8\u591a\u63d0\u4f9b\u52a9\u5b66\u91d1\u3002",
+    "health": {
+      "name": "Wellcome Connecting Science",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Physalia Courses",
@@ -2282,7 +3276,14 @@
       "statistics"
     ],
     "notes": "Physalia-Courses; intensive bioinformatics and data-analysis courses for the life sciences.",
-    "notes_zh": "Physalia-Courses\uff1b\u9762\u5411\u751f\u547d\u79d1\u5b66\u7684\u751f\u7269\u4fe1\u606f\u5b66\u4e0e\u6570\u636e\u5206\u6790\u5f3a\u5316\u8bfe\u7a0b\u3002"
+    "notes_zh": "Physalia-Courses\uff1b\u9762\u5411\u751f\u547d\u79d1\u5b66\u7684\u751f\u7269\u4fe1\u606f\u5b66\u4e0e\u6570\u636e\u5206\u6790\u5f3a\u5316\u8bfe\u7a0b\u3002",
+    "health": {
+      "name": "Physalia Courses",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CISM",
@@ -2297,7 +3298,14 @@
       "machine learning"
     ],
     "notes": "International Centre for Mechanical Sciences (Udine); advanced schools in computational and applied science, including ML for engineering.",
-    "notes_zh": "\u56fd\u9645\u673a\u68b0\u79d1\u5b66\u4e2d\u5fc3\uff08\u4e4c\u8fea\u5185\uff09\uff1b\u8ba1\u7b97\u4e0e\u5e94\u7528\u79d1\u5b66\u9ad8\u7ea7\u7814\u4fee\u73ed\uff0c\u5305\u62ec\u5de5\u7a0b\u4e2d\u7684\u673a\u5668\u5b66\u4e60\u3002"
+    "notes_zh": "\u56fd\u9645\u673a\u68b0\u79d1\u5b66\u4e2d\u5fc3\uff08\u4e4c\u8fea\u5185\uff09\uff1b\u8ba1\u7b97\u4e0e\u5e94\u7528\u79d1\u5b66\u9ad8\u7ea7\u7814\u4fee\u73ed\uff0c\u5305\u62ec\u5de5\u7a0b\u4e2d\u7684\u673a\u5668\u5b66\u4e60\u3002",
+    "health": {
+      "name": "CISM",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EARSeL",
@@ -2312,7 +3320,14 @@
       "summer school"
     ],
     "notes": "European Association of Remote Sensing Laboratories; remote-sensing summer schools and training.",
-    "notes_zh": "\u6b27\u6d32\u9065\u611f\u5b9e\u9a8c\u5ba4\u534f\u4f1a\uff1b\u9065\u611f\u6691\u671f\u5b66\u6821\u4e0e\u57f9\u8bad\u3002"
+    "notes_zh": "\u6b27\u6d32\u9065\u611f\u5b9e\u9a8c\u5ba4\u534f\u4f1a\uff1b\u9065\u611f\u6691\u671f\u5b66\u6821\u4e0e\u57f9\u8bad\u3002",
+    "health": {
+      "name": "EARSeL",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Alan Turing Institute",
@@ -2327,7 +3342,14 @@
       "statistics"
     ],
     "notes": "The Alan Turing Institute (UK national institute for data science and AI); training events, schools, and workshops.",
-    "notes_zh": "\u827e\u4f26\u00b7\u56fe\u7075\u7814\u7a76\u6240\uff08\u82f1\u56fd\u56fd\u5bb6\u6570\u636e\u79d1\u5b66\u4e0e\u4eba\u5de5\u667a\u80fd\u7814\u7a76\u6240\uff09\uff1b\u57f9\u8bad\u6d3b\u52a8\u3001\u6691\u671f\u5b66\u6821\u548c\u7814\u8ba8\u4f1a\u3002"
+    "notes_zh": "\u827e\u4f26\u00b7\u56fe\u7075\u7814\u7a76\u6240\uff08\u82f1\u56fd\u56fd\u5bb6\u6570\u636e\u79d1\u5b66\u4e0e\u4eba\u5de5\u667a\u80fd\u7814\u7a76\u6240\uff09\uff1b\u57f9\u8bad\u6d3b\u52a8\u3001\u6691\u671f\u5b66\u6821\u548c\u7814\u8ba8\u4f1a\u3002",
+    "health": {
+      "name": "Alan Turing Institute",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Tinbergen Institute",
@@ -2342,7 +3364,14 @@
       "summer school"
     ],
     "notes": "Tinbergen Institute (Amsterdam/Rotterdam); economics and econometrics summer schools.",
-    "notes_zh": "\u4e01\u4f2f\u6839\u7814\u7a76\u6240\uff08\u963f\u59c6\u65af\u7279\u4e39/\u9e7f\u7279\u4e39\uff09\uff1b\u7ecf\u6d4e\u5b66\u4e0e\u8ba1\u91cf\u7ecf\u6d4e\u5b66\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "\u4e01\u4f2f\u6839\u7814\u7a76\u6240\uff08\u963f\u59c6\u65af\u7279\u4e39/\u9e7f\u7279\u4e39\uff09\uff1b\u7ecf\u6d4e\u5b66\u4e0e\u8ba1\u91cf\u7ecf\u6d4e\u5b66\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "Tinbergen Institute",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CECAM",
@@ -2357,7 +3386,14 @@
       "machine learning"
     ],
     "notes": "Centre Europ\u00e9en de Calcul Atomique et Mol\u00e9culaire; schools and workshops in computational chemistry, materials, and ML for molecular science.",
-    "notes_zh": "\u6b27\u6d32\u539f\u5b50\u4e0e\u5206\u5b50\u8ba1\u7b97\u4e2d\u5fc3\uff1b\u8ba1\u7b97\u5316\u5b66\u3001\u6750\u6599\u53ca\u5206\u5b50\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u9886\u57df\u7684\u5b66\u6821\u4e0e\u7814\u8ba8\u4f1a\u3002"
+    "notes_zh": "\u6b27\u6d32\u539f\u5b50\u4e0e\u5206\u5b50\u8ba1\u7b97\u4e2d\u5fc3\uff1b\u8ba1\u7b97\u5316\u5b66\u3001\u6750\u6599\u53ca\u5206\u5b50\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u9886\u57df\u7684\u5b66\u6821\u4e0e\u7814\u8ba8\u4f1a\u3002",
+    "health": {
+      "name": "CECAM",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-07",
+      "consecutive_failures": 1
+    }
   },
   {
     "name": "Boulder School",
@@ -2372,7 +3408,14 @@
       "summer school"
     ],
     "notes": "Boulder School for Condensed Matter and Materials Physics; a funded graduate summer school.",
-    "notes_zh": "\u535a\u5c14\u5fb7\u51dd\u805a\u6001\u4e0e\u6750\u6599\u7269\u7406\u6691\u671f\u5b66\u6821\uff1b\u6709\u8d44\u52a9\u7684\u7814\u7a76\u751f\u6691\u671f\u5b66\u6821\u3002"
+    "notes_zh": "\u535a\u5c14\u5fb7\u51dd\u805a\u6001\u4e0e\u6750\u6599\u7269\u7406\u6691\u671f\u5b66\u6821\uff1b\u6709\u8d44\u52a9\u7684\u7814\u7a76\u751f\u6691\u671f\u5b66\u6821\u3002",
+    "health": {
+      "name": "Boulder School",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Aspen Center for Physics",
@@ -2387,7 +3430,14 @@
       "summer program"
     ],
     "notes": "Aspen Center for Physics; summer workshops and programmes across physics and astrophysics.",
-    "notes_zh": "\u963f\u65af\u5f6d\u7269\u7406\u4e2d\u5fc3\uff1b\u6db5\u76d6\u7269\u7406\u5b66\u548c\u5929\u4f53\u7269\u7406\u5b66\u7684\u590f\u5b63\u7814\u8ba8\u4f1a\u4e0e\u9879\u76ee\u3002"
+    "notes_zh": "\u963f\u65af\u5f6d\u7269\u7406\u4e2d\u5fc3\uff1b\u6db5\u76d6\u7269\u7406\u5b66\u548c\u5929\u4f53\u7269\u7406\u5b66\u7684\u590f\u5b63\u7814\u8ba8\u4f1a\u4e0e\u9879\u76ee\u3002",
+    "health": {
+      "name": "Aspen Center for Physics",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "KITP",
@@ -2402,7 +3452,14 @@
       "biophysics"
     ],
     "notes": "Kavli Institute for Theoretical Physics (UC Santa Barbara); programmes and schools across theoretical physics.",
-    "notes_zh": "\u5361\u5f17\u91cc\u7406\u8bba\u7269\u7406\u7814\u7a76\u6240\uff08\u52a0\u5dde\u5927\u5b66\u5723\u5854\u82ad\u82ad\u62c9\u5206\u6821\uff09\uff1b\u6db5\u76d6\u7406\u8bba\u7269\u7406\u9886\u57df\u7684\u9879\u76ee\u4e0e\u5b66\u6821\u3002"
+    "notes_zh": "\u5361\u5f17\u91cc\u7406\u8bba\u7269\u7406\u7814\u7a76\u6240\uff08\u52a0\u5dde\u5927\u5b66\u5723\u5854\u82ad\u82ad\u62c9\u5206\u6821\uff09\uff1b\u6db5\u76d6\u7406\u8bba\u7269\u7406\u9886\u57df\u7684\u9879\u76ee\u4e0e\u5b66\u6821\u3002",
+    "health": {
+      "name": "KITP",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "DESY Summer Student",
@@ -2417,7 +3474,14 @@
       "summer programme"
     ],
     "notes": "DESY Summer Student Programme; funded research training in particle and photon physics.",
-    "notes_zh": "DESY\u6691\u671f\u5b66\u751f\u9879\u76ee\uff1b\u7c92\u5b50\u4e0e\u5149\u5b50\u7269\u7406\u5b66\u8d44\u52a9\u7814\u7a76\u57f9\u8bad\u3002"
+    "notes_zh": "DESY\u6691\u671f\u5b66\u751f\u9879\u76ee\uff1b\u7c92\u5b50\u4e0e\u5149\u5b50\u7269\u7406\u5b66\u8d44\u52a9\u7814\u7a76\u57f9\u8bad\u3002",
+    "health": {
+      "name": "DESY Summer Student",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "CIMPA",
@@ -2432,7 +3496,14 @@
       "summer school"
     ],
     "notes": "CIMPA (Centre International de Math\u00e9matiques Pures et Appliqu\u00e9es); funded mathematics research schools, often in the Global South.",
-    "notes_zh": "CIMPA\uff08\u56fd\u9645\u7eaf\u7cb9\u4e0e\u5e94\u7528\u6570\u5b66\u4e2d\u5fc3\uff09\uff1b\u8d44\u52a9\u7684\u6570\u5b66\u7814\u7a76\u5b66\u6821\uff0c\u901a\u5e38\u4f4d\u4e8e\u5168\u7403\u5357\u65b9\u3002"
+    "notes_zh": "CIMPA\uff08\u56fd\u9645\u7eaf\u7cb9\u4e0e\u5e94\u7528\u6570\u5b66\u4e2d\u5fc3\uff09\uff1b\u8d44\u52a9\u7684\u6570\u5b66\u7814\u7a76\u5b66\u6821\uff0c\u901a\u5e38\u4f4d\u4e8e\u5168\u7403\u5357\u65b9\u3002",
+    "health": {
+      "name": "CIMPA",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Hague Academy of International Law",
@@ -2447,7 +3518,14 @@
       "summer course"
     ],
     "notes": "The Hague Academy of International Law; summer courses in public and private international law, with scholarships.",
-    "notes_zh": "\u6d77\u7259\u56fd\u9645\u6cd5\u5b66\u9662\uff1b\u56fd\u9645\u516c\u6cd5\u4e0e\u56fd\u9645\u79c1\u6cd5\u6691\u671f\u8bfe\u7a0b\uff0c\u63d0\u4f9b\u5956\u5b66\u91d1\u3002"
+    "notes_zh": "\u6d77\u7259\u56fd\u9645\u6cd5\u5b66\u9662\uff1b\u56fd\u9645\u516c\u6cd5\u4e0e\u56fd\u9645\u79c1\u6cd5\u6691\u671f\u8bfe\u7a0b\uff0c\u63d0\u4f9b\u5956\u5b66\u91d1\u3002",
+    "health": {
+      "name": "Hague Academy of International Law",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Asser Institute",
@@ -2462,7 +3540,14 @@
       "training"
     ],
     "notes": "T.M.C. Asser Instituut (The Hague); international and European law summer programmes and training.",
-    "notes_zh": "T.M.C. Asser Instituut\uff08\u6d77\u7259\uff09\uff1b\u56fd\u9645\u4e0e\u6b27\u6d32\u6cd5\u6691\u671f\u9879\u76ee\u53ca\u57f9\u8bad\u3002"
+    "notes_zh": "T.M.C. Asser Instituut\uff08\u6d77\u7259\uff09\uff1b\u56fd\u9645\u4e0e\u6b27\u6d32\u6cd5\u6691\u671f\u9879\u76ee\u53ca\u57f9\u8bad\u3002",
+    "health": {
+      "name": "Asser Institute",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "EARLI",
@@ -2477,7 +3562,14 @@
       "summer school"
     ],
     "notes": "European Association for Research on Learning and Instruction; the JURE summer school and research training in education.",
-    "notes_zh": "\u6b27\u6d32\u5b66\u4e60\u4e0e\u6559\u5b66\u7814\u7a76\u534f\u4f1a\uff1bJURE\u6691\u671f\u5b66\u6821\u4e0e\u6559\u80b2\u7814\u7a76\u57f9\u8bad\u3002"
+    "notes_zh": "\u6b27\u6d32\u5b66\u4e60\u4e0e\u6559\u5b66\u7814\u7a76\u534f\u4f1a\uff1bJURE\u6691\u671f\u5b66\u6821\u4e0e\u6559\u80b2\u7814\u7a76\u57f9\u8bad\u3002",
+    "health": {
+      "name": "EARLI",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "Stazione Zoologica",
@@ -2492,7 +3584,14 @@
       "summer course"
     ],
     "notes": "Stazione Zoologica Anton Dohrn (Naples); marine biology and ocean science research training.",
-    "notes_zh": "\u5b89\u4e1c\u00b7\u591a\u6069\u52a8\u7269\u7ad9\uff08\u90a3\u4e0d\u52d2\u65af\uff09\uff1b\u6d77\u6d0b\u751f\u7269\u5b66\u4e0e\u6d77\u6d0b\u79d1\u5b66\u7814\u7a76\u57f9\u8bad\u3002"
+    "notes_zh": "\u5b89\u4e1c\u00b7\u591a\u6069\u52a8\u7269\u7ad9\uff08\u90a3\u4e0d\u52d2\u65af\uff09\uff1b\u6d77\u6d0b\u751f\u7269\u5b66\u4e0e\u6d77\u6d0b\u79d1\u5b66\u7814\u7a76\u57f9\u8bad\u3002",
+    "health": {
+      "name": "Stazione Zoologica",
+      "status": "failed",
+      "last_attempt": "2026-08-10",
+      "last_success": null,
+      "consecutive_failures": 18
+    }
   },
   {
     "name": "LSE Cities",
@@ -2507,7 +3606,14 @@
       "social science"
     ],
     "notes": "LSE Cities; urban studies research and summer programmes.",
-    "notes_zh": "LSE Cities\uff1b\u57ce\u5e02\u7814\u7a76\u53ca\u6691\u671f\u9879\u76ee\u3002"
+    "notes_zh": "LSE Cities\uff1b\u57ce\u5e02\u7814\u7a76\u53ca\u6691\u671f\u9879\u76ee\u3002",
+    "health": {
+      "name": "LSE Cities",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   },
   {
     "name": "The Berlage",
@@ -2522,6 +3628,13 @@
       "summer school"
     ],
     "notes": "The Berlage Center for Advanced Studies in Architecture and Urban Design (TU Delft); architecture and urbanism programmes.",
-    "notes_zh": "\u8d1d\u5c14\u62c9\u683c\u5efa\u7b51\u4e0e\u57ce\u5e02\u8bbe\u8ba1\u9ad8\u7ea7\u7814\u7a76\u4e2d\u5fc3\uff08\u4ee3\u5c14\u592b\u7279\u7406\u5de5\u5927\u5b66\uff09\uff1b\u5efa\u7b51\u4e0e\u57ce\u5e02\u4e3b\u4e49\u9879\u76ee\u3002"
+    "notes_zh": "\u8d1d\u5c14\u62c9\u683c\u5efa\u7b51\u4e0e\u57ce\u5e02\u8bbe\u8ba1\u9ad8\u7ea7\u7814\u7a76\u4e2d\u5fc3\uff08\u4ee3\u5c14\u592b\u7279\u7406\u5de5\u5927\u5b66\uff09\uff1b\u5efa\u7b51\u4e0e\u57ce\u5e02\u4e3b\u4e49\u9879\u76ee\u3002",
+    "health": {
+      "name": "The Berlage",
+      "status": "healthy",
+      "last_attempt": "2026-08-10",
+      "last_success": "2026-08-10",
+      "consecutive_failures": 0
+    }
   }
 ]

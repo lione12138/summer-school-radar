@@ -1152,7 +1152,7 @@
       "title_zh": "STFC暑期学校",
       "organizer": "Keele University",
       "organizer_zh": "基尔大学",
-      "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE",
+      "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE Override note: The official registration rules distinguish reimbursable participant support from accommodation and meals included in the paid package.",
       "summary_zh": "STFC暑期学校 - 基尔大学 跳至主要内容 无障碍 首页 搜索基尔 跳至主要内容 无障碍 首页 基础 2026年补录 本科 2027年研究生 研究 持续专业发展 学生 欢迎新生 健康与福祉 告知我们 学生KLE",
       "topics": [
         "sustainability",
@@ -1176,8 +1176,8 @@
           "deadline_status": "closed",
           "duration_days": 4,
           "mode": "in-person",
-          "financial_summary": "accommodation support · amount not stated",
-          "financial_summary_zh": "accommodation support · 金额未说明",
+          "financial_summary": "Fee GBP 0 for STFC studentship holders and self-funded postgraduates; travel + subsistence reimbursable · otherwise GBP 700 for non-STFC-funded PhD students, postdocs, and university/organization employees; includes registration, 5 nights accommodation, meals, and social events",
+          "financial_summary_zh": "STFC 奖学金持有者及自费研究生免注册费，并可报销差旅与生活费 · 其他符合条件者：GBP 700 for non-STFC-funded PhD 学生, postdocs, and university/organization employees; includes registration, 5 nights accommodation, meals, and social events",
           "funding_available": true,
           "fee_eur": 840.0,
           "topics": [
@@ -1187,8 +1187,8 @@
             "astronomy",
             "history"
           ],
-          "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE",
-          "summary_zh": "STFC暑期学校 - 基尔大学 跳至主要内容 无障碍 首页 搜索基尔 跳至主要内容 无障碍 首页 基础 2026年补录 本科 2027年研究生 研究 持续专业发展 学生 欢迎新生 健康与福祉 告知我们 学生KLE",
+          "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE Override note: The official registration rules distinguish reimbursable participant support from accommodation and meals included in the paid package.",
+          "summary_zh": "",
           "sessions": []
         }
       ],
@@ -1207,8 +1207,8 @@
         "deadline_status": "closed",
         "duration_days": 4,
         "mode": "in-person",
-        "financial_summary": "accommodation support · amount not stated",
-        "financial_summary_zh": "accommodation support · 金额未说明",
+        "financial_summary": "Fee GBP 0 for STFC studentship holders and self-funded postgraduates; travel + subsistence reimbursable · otherwise GBP 700 for non-STFC-funded PhD students, postdocs, and university/organization employees; includes registration, 5 nights accommodation, meals, and social events",
+        "financial_summary_zh": "STFC 奖学金持有者及自费研究生免注册费，并可报销差旅与生活费 · 其他符合条件者：GBP 700 for non-STFC-funded PhD 学生, postdocs, and university/organization employees; includes registration, 5 nights accommodation, meals, and social events",
         "funding_available": true,
         "fee_eur": 840.0,
         "topics": [
@@ -1218,8 +1218,8 @@
           "astronomy",
           "history"
         ],
-        "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE",
-        "summary_zh": "STFC暑期学校 - 基尔大学 跳至主要内容 无障碍 首页 搜索基尔 跳至主要内容 无障碍 首页 基础 2026年补录 本科 2027年研究生 研究 持续专业发展 学生 欢迎新生 健康与福祉 告知我们 学生KLE",
+        "summary": "STFC Summer School - Keele University Skip to main content Accessibility Home Search Keele Skip to main content Accessibility Home Foundation Clearing 2026 Undergraduate 2027 Postgraduate Research CPD Student home Welcome new students Health and wellbeing Let us know Student KLE Override note: The official registration rules distinguish reimbursable participant support from accommodation and meals included in the paid package.",
+        "summary_zh": "",
         "sessions": []
       }
     },
