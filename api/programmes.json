@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-08-28",
+  "generated": "2026-08-29",
   "programmes": [
     {
       "id": "programme:21ea41829cac43f3",
@@ -74,159 +74,6 @@
         ],
         "summary": "A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.",
         "summary_zh": "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。",
-        "sessions": []
-      }
-    },
-    {
-      "id": "programme:005729e641c21ccf",
-      "slug": "elias-hpi-engine-how-to-be-a-startup-cto-summer-school-74f36bb2",
-      "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
-      "title_zh": "ELIAS & HPI Engine“如何成为（初创公司）首席技术官”暑期学校",
-      "organizer": "HPI Engine & ELIAS Startup Opportunities",
-      "organizer_zh": "HPI Engine 与 ELIAS Startup Opportunities",
-      "summary": "An intensive four-day school on the CTO role in startups and technology companies, covering AI-first company building, technology strategy, leadership, lean analytics, and startup financing.",
-      "summary_zh": "为期四天的密集型暑期学校，聚焦初创公司与科技企业中的 CTO 职责，内容包括 AI 优先的公司建设、技术战略、领导力、精益分析和初创企业融资。",
-      "topics": [
-        "AI",
-        "entrepreneurship",
-        "startups",
-        "technology strategy"
-      ],
-      "editions": [
-        {
-          "id": "edition:f7aa51ed5670a606",
-          "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
-          "title_zh": "ELIAS & HPI 引擎“如何成为（初创公司）首席技术官”暑期学校",
-          "detail_path": "opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499.html",
-          "official_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
-          "location": "HPI Potsdam",
-          "location_zh": "HPI 波茨坦",
-          "start_date": "2026-08-31",
-          "end_date": "2026-09-03",
-          "deadline": "2026-08-28",
-          "deadline_status": "open",
-          "duration_days": 4,
-          "mode": "in-person",
-          "financial_summary": "Fee EUR 0 · 20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants (travel + accommodation covered)",
-          "financial_summary_zh": "费用 EUR 0 · 面向 ELLIS/ELIAS 关联博士生及博士后的 20 个资助名额（差旅及住宿全额覆盖）",
-          "funding_available": true,
-          "fee_eur": 0.0,
-          "topics": [
-            "AI",
-            "entrepreneurship",
-            "startups",
-            "technology strategy"
-          ],
-          "summary": "An intensive four-day school on the CTO role in startups and technology companies, covering AI-first company building, technology strategy, leadership, lean analytics, and startup financing.",
-          "summary_zh": "为期四天的密集型暑期学校，聚焦初创公司与科技企业中的 CTO 职责，内容包括 AI 优先的公司建设、技术战略、领导力、精益分析和初创企业融资。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "edition:f7aa51ed5670a606",
-        "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
-        "title_zh": "ELIAS & HPI 引擎“如何成为（初创公司）首席技术官”暑期学校",
-        "detail_path": "opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499.html",
-        "official_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
-        "location": "HPI Potsdam",
-        "location_zh": "HPI 波茨坦",
-        "start_date": "2026-08-31",
-        "end_date": "2026-09-03",
-        "deadline": "2026-08-28",
-        "deadline_status": "open",
-        "duration_days": 4,
-        "mode": "in-person",
-        "financial_summary": "Fee EUR 0 · 20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants (travel + accommodation covered)",
-        "financial_summary_zh": "费用 EUR 0 · 面向 ELLIS/ELIAS 关联博士生及博士后的 20 个资助名额（差旅及住宿全额覆盖）",
-        "funding_available": true,
-        "fee_eur": 0.0,
-        "topics": [
-          "AI",
-          "entrepreneurship",
-          "startups",
-          "technology strategy"
-        ],
-        "summary": "An intensive four-day school on the CTO role in startups and technology companies, covering AI-first company building, technology strategy, leadership, lean analytics, and startup financing.",
-        "summary_zh": "为期四天的密集型暑期学校，聚焦初创公司与科技企业中的 CTO 职责，内容包括 AI 优先的公司建设、技术战略、领导力、精益分析和初创企业融资。",
-        "sessions": []
-      }
-    },
-    {
-      "id": "programme:259cc91832fad73a",
-      "slug": "interdisciplinarity-for-complex-water-problems-709bc84b",
-      "title": "Interdisciplinarity for Complex Water Problems",
-      "title_zh": "复杂水问题的跨学科研究",
-      "organizer": "IHE Delft",
-      "organizer_zh": "IHE Delft",
-      "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
-      "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
-      "topics": [
-        "hydrology",
-        "environmental science",
-        "engineering",
-        "design",
-        "social science"
-      ],
-      "editions": [
-        {
-          "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-          "title": "Interdisciplinarity for Complex Water Problems",
-          "title_zh": "复杂水问题的跨学科方法",
-          "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-          "official_url": "https://www.un-ihe.org/short-courses",
-          "location": "Delft, Netherlands",
-          "location_zh": "荷兰代尔夫特",
-          "start_date": "2026-09-28",
-          "end_date": "2026-10-02",
-          "deadline": "2026-08-28",
-          "deadline_status": "open",
-          "duration_days": 5,
-          "mode": "in-person",
-          "financial_summary": "Fee EUR 450 excl. VAT",
-          "financial_summary_zh": "费用 EUR 450（未含增值税）",
-          "funding_available": null,
-          "fee_eur": 450.0,
-          "topics": [
-            "hydrology",
-            "environmental science",
-            "engineering",
-            "design",
-            "social science"
-          ],
-          "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
-          "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-        "title": "Interdisciplinarity for Complex Water Problems",
-        "title_zh": "复杂水问题的跨学科方法",
-        "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-        "official_url": "https://www.un-ihe.org/short-courses",
-        "location": "Delft, Netherlands",
-        "location_zh": "荷兰代尔夫特",
-        "start_date": "2026-09-28",
-        "end_date": "2026-10-02",
-        "deadline": "2026-08-28",
-        "deadline_status": "open",
-        "duration_days": 5,
-        "mode": "in-person",
-        "financial_summary": "Fee EUR 450 excl. VAT",
-        "financial_summary_zh": "费用 EUR 450（未含增值税）",
-        "funding_available": null,
-        "fee_eur": 450.0,
-        "topics": [
-          "hydrology",
-          "environmental science",
-          "engineering",
-          "design",
-          "social science"
-        ],
-        "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
-        "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
         "sessions": []
       }
     },
@@ -305,6 +152,81 @@
         ],
         "summary": "This 4-day course presents statistical models and techniques beyond classical linear modelling, with an emphasis on concrete applications in biology.",
         "summary_zh": "这门为期4天的课程介绍超越经典线性模型的统计模型和技术，重点强调在生物学中的具体应用。",
+        "sessions": []
+      }
+    },
+    {
+      "id": "programme:005729e641c21ccf",
+      "slug": "elias-hpi-engine-how-to-be-a-startup-cto-summer-school-74f36bb2",
+      "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
+      "title_zh": "ELIAS & HPI Engine“如何成为（初创公司）首席技术官”暑期学校",
+      "organizer": "HPI Engine & ELIAS Startup Opportunities",
+      "organizer_zh": "HPI Engine 与 ELIAS Startup Opportunities",
+      "summary": "An intensive four-day school on the CTO role in startups and technology companies, covering AI-first company building, technology strategy, leadership, lean analytics, and startup financing.",
+      "summary_zh": "为期四天的密集型暑期学校，聚焦初创公司与科技企业中的 CTO 职责，内容包括 AI 优先的公司建设、技术战略、领导力、精益分析和初创企业融资。",
+      "topics": [
+        "AI",
+        "entrepreneurship",
+        "startups",
+        "technology strategy"
+      ],
+      "editions": [
+        {
+          "id": "edition:f7aa51ed5670a606",
+          "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
+          "title_zh": "ELIAS & HPI 引擎“如何成为（初创公司）首席技术官”暑期学校",
+          "detail_path": "opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499.html",
+          "official_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
+          "location": "HPI Potsdam",
+          "location_zh": "HPI 波茨坦",
+          "start_date": "2026-08-31",
+          "end_date": "2026-09-03",
+          "deadline": "2026-08-28",
+          "deadline_status": "closed",
+          "duration_days": 4,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 0 · 20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants (travel + accommodation covered)",
+          "financial_summary_zh": "费用 EUR 0 · 面向 ELLIS/ELIAS 关联博士生及博士后的 20 个资助名额（差旅及住宿全额覆盖）",
+          "funding_available": true,
+          "fee_eur": 0.0,
+          "topics": [
+            "AI",
+            "entrepreneurship",
+            "startups",
+            "technology strategy"
+          ],
+          "summary": "An intensive four-day school on the CTO role in startups and technology companies, covering AI-first company building, technology strategy, leadership, lean analytics, and startup financing.",
+          "summary_zh": "为期四天的密集型暑期学校，聚焦初创公司与科技企业中的 CTO 职责，内容包括 AI 优先的公司建设、技术战略、领导力、精益分析和初创企业融资。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:f7aa51ed5670a606",
+        "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
+        "title_zh": "ELIAS & HPI 引擎“如何成为（初创公司）首席技术官”暑期学校",
+        "detail_path": "opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499.html",
+        "official_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
+        "location": "HPI Potsdam",
+        "location_zh": "HPI 波茨坦",
+        "start_date": "2026-08-31",
+        "end_date": "2026-09-03",
+        "deadline": "2026-08-28",
+        "deadline_status": "closed",
+        "duration_days": 4,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 0 · 20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants (travel + accommodation covered)",
+        "financial_summary_zh": "费用 EUR 0 · 面向 ELLIS/ELIAS 关联博士生及博士后的 20 个资助名额（差旅及住宿全额覆盖）",
+        "funding_available": true,
+        "fee_eur": 0.0,
+        "topics": [
+          "AI",
+          "entrepreneurship",
+          "startups",
+          "technology strategy"
+        ],
+        "summary": "An intensive four-day school on the CTO role in startups and technology companies, covering AI-first company building, technology strategy, leadership, lean analytics, and startup financing.",
+        "summary_zh": "为期四天的密集型暑期学校，聚焦初创公司与科技企业中的 CTO 职责，内容包括 AI 优先的公司建设、技术战略、领导力、精益分析和初创企业融资。",
         "sessions": []
       }
     },
@@ -698,6 +620,84 @@
         ],
         "summary": "A five-day in-person IEEE RAS summer school on cognitive robotics, bridging artificial intelligence, machine learning, perception, planning, and intelligent robotic systems.",
         "summary_zh": "IEEE RAS 举办的五天线下认知机器人暑期学校，连接人工智能、机器学习、感知、规划与智能机器人系统。",
+        "sessions": []
+      }
+    },
+    {
+      "id": "programme:259cc91832fad73a",
+      "slug": "interdisciplinarity-for-complex-water-problems-709bc84b",
+      "title": "Interdisciplinarity for Complex Water Problems",
+      "title_zh": "复杂水问题的跨学科研究",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
+      "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
+      "topics": [
+        "hydrology",
+        "environmental science",
+        "engineering",
+        "design",
+        "social science"
+      ],
+      "editions": [
+        {
+          "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
+          "title": "Interdisciplinarity for Complex Water Problems",
+          "title_zh": "复杂水问题的跨学科方法",
+          "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
+          "official_url": "https://www.un-ihe.org/short-courses",
+          "location": "Delft, Netherlands",
+          "location_zh": "荷兰代尔夫特",
+          "start_date": "2026-09-28",
+          "end_date": "2026-10-02",
+          "deadline": "2026-08-28",
+          "deadline_status": "closed",
+          "duration_days": 5,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 450 excl. VAT",
+          "financial_summary_zh": "费用 EUR 450（未含增值税）",
+          "funding_available": null,
+          "fee_eur": 450.0,
+          "topics": [
+            "hydrology",
+            "environmental science",
+            "engineering",
+            "design",
+            "social science"
+          ],
+          "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
+          "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
+        "title": "Interdisciplinarity for Complex Water Problems",
+        "title_zh": "复杂水问题的跨学科方法",
+        "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
+        "official_url": "https://www.un-ihe.org/short-courses",
+        "location": "Delft, Netherlands",
+        "location_zh": "荷兰代尔夫特",
+        "start_date": "2026-09-28",
+        "end_date": "2026-10-02",
+        "deadline": "2026-08-28",
+        "deadline_status": "closed",
+        "duration_days": 5,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 450 excl. VAT",
+        "financial_summary_zh": "费用 EUR 450（未含增值税）",
+        "funding_available": null,
+        "fee_eur": 450.0,
+        "topics": [
+          "hydrology",
+          "environmental science",
+          "engineering",
+          "design",
+          "social science"
+        ],
+        "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
+        "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
         "sessions": []
       }
     },
