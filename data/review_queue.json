@@ -1,6 +1,55 @@
 {
-  "generated": "2026-08-26",
+  "generated": "2026-08-30",
   "review_queue": [
+    {
+      "title": "Al-Nour Winter School on Fusion Science",
+      "url": "https://indico.ictp.it/event/11407",
+      "organizer": "Indico - Conferences and Events",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-01-04",
+        "end": "2027-01-08",
+        "duration_days": 5
+      },
+      "deadline": "2026-11-20",
+      "deadline_status": "open",
+      "financial_access_status": "funded",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "physics",
+        "mathematics",
+        "engineering"
+      ],
+      "needs_review": [
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.75,
+      "evidence": {
+        "deadline": "Deadline: 15 Nov 20 (other dates listed: 2026-11-15)",
+        "duration": "04-8 January 2027",
+        "fee": "",
+        "funding": "For the accepted applicants, the total cost of accommodation and meals will be covered.",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "location_context_weak"
+        ],
+        "chinese_summary": "该冬季学校旨在向学生和早期职业科学家传播聚变科学知识，涵盖数学、物理和工程等背景，最多选拔50名参与者。申请需提交简历和动机信，申请截止日期为2026年11月15日。",
+        "extracted_deadline": "2026-11-15",
+        "extracted_fee": "",
+        "extracted_funding": "Travel support may be available; accommodation and meals covered for accepted applicants.",
+        "evidence_fields": {
+          "deadline": "​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ Deadline: 15 Nov 2026 Fusion is one of the most promising sources of green and limitless energy for the future.",
+          "fee": "",
+          "funding": "Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of f | Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of financial support will be indicated in the acceptance letter. | For the accepted applicants, the total cost of accommodation and meals will be covered."
+        }
+      }
+    },
     {
       "title": "Una Europa Winter School 2027 for doctoral researchers: Rethinking Cultural Heritage Collections",
       "url": "https://www.una-europa.eu/calendar/una-europa-winter-school-2027-for-doctoral-researchers-rethinking-cultural-heritage-collections",
@@ -39,6 +88,63 @@
       },
       "ai_advisory": {
         "available": false
+      }
+    },
+    {
+      "title": "PWF Sri Lanka: Summer School on Theoretical and Computational Biophysics (21-25 September 2026)",
+      "url": "https://indico.ictp.it/event/11489",
+      "organizer": "Indico - Conferences and Events",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2026-09-21",
+        "end": "2026-09-25",
+        "duration_days": 5
+      },
+      "deadline": "2026-09-01",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "machine learning",
+        "data analysis",
+        "physics",
+        "chemistry",
+        "engineering",
+        "mechanics"
+      ],
+      "needs_review": [
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "Application deadline: 1 September 2026",
+        "duration": "21-25 September 2026",
+        "fee": "",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "llm_chunk_truncated:6",
+          "llm_request_truncated:max_total_chars_per_llm_request",
+          "location_context_weak",
+          "start_date_value_not_in_evidence",
+          "end_date_value_not_in_evidence"
+        ],
+        "chinese_summary": "该暑期学校将于2026年9月21-25日在斯里兰卡举办，面向斯里兰卡大学的本科生、研究生及青年研究人员，主题为理论与计算生物物理学。申请截止日期为2026年9月1日。",
+        "extracted_deadline": "2026-09-01",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "Application deadline: 1 September 2026 Registration https://docs.google.com/forms/d/e/1FAIpQLSdXXOLaJrKbBNB53Cliq7MSWDJ98mCrN5DCiR981x6HmY3R7Q/viewform?usp=header The programme of the school can be found here: Poster Programme GO TO SCIENTIFIC CALENDAR Facebook Twitter Youtube Instagram Linkedin Flickr Governing members ICTP is governed by UNESCO, IAEA, and Italy, and is a UNESCO Category 1 Institute E-News from ICTP Stay up-to-date with ICTP's",
+          "fee": "",
+          "funding": ""
+        }
       }
     },
     {
@@ -295,8 +401,8 @@
     {
       "title": "GESIS Spring Seminar – Cutting-Edge Methods",
       "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
-      "organizer": "GESIS Summer School",
-      "source_layer": "1",
+      "organizer": "GESIS Spring Seminar",
+      "source_layer": "1.5",
       "location": "Europe",
       "dates": {
         "start": "2027-02-22",
@@ -328,15 +434,16 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "possibly_past_or_closed"
+          "possibly_past_or_closed",
+          "index_or_listing_page"
         ],
-        "chinese_summary": "该页面为GESIS春季研讨会的费用页面，列出了不同参与者的课程费用，并提及了ECTS学分的管理费。",
+        "chinese_summary": "",
         "extracted_deadline": "",
-        "extracted_fee": "{'tier': 'Participants from universities and non-commercial institutions', 'amount': 'EUR 550 per course', 'evidence_ids': ['E2']}, {'tier': 'Participants from the business sector', 'amount': 'EUR 825 per course', 'evidence_ids': ['E2']}, {'tier': 'Participants from the business sector', 'amount': 'EUR 1,650 per course', 'evidence_ids': ['E2']}, {'tier': 'ECTS administrative fee', 'amount': 'EUR 20 per course', 'evidence_ids': ['E2']}",
+        "extracted_fee": "",
         "extracted_funding": "",
         "evidence_fields": {
           "deadline": "",
-          "fee": "EUR 550 per course Participants from universities and non-commercial institutions EUR 825 per course Participants from the business sector EUR 1,650 per course If you wish to obtain ECTS credits, you will be charged an additional administrative fee of EUR 20 per course.",
+          "fee": "",
           "funding": ""
         }
       }
@@ -455,15 +562,15 @@
       }
     },
     {
-      "title": "ELLIS Summer School at Unit Munich",
-      "url": "https://ellis.eu/events/ellis-summer-school-at-unit-munich-2026",
-      "organizer": "ELLIS",
+      "title": "Summer School on Topological Data Analysis and Applications",
+      "url": "https://indico.ictp.it/event/11447",
+      "organizer": "Indico - Conferences and Events",
       "source_layer": "1",
-      "location": "TUM Garching Campus",
+      "location": "Europe",
       "dates": {
-        "start": "2026-09-14",
-        "end": "2026-09-18",
-        "duration_days": 5
+        "start": "2027-07-19",
+        "end": "2027-07-30",
+        "duration_days": 12
       },
       "deadline": null,
       "deadline_status": "uncertain",
@@ -471,20 +578,20 @@
       "fee": "",
       "fee_eur": null,
       "topics": [
-        "machine learning",
-        "computer vision"
+        "data analysis"
       ],
       "needs_review": [
         "application deadline is uncertain",
+        "in-person status is uncertain",
         "funding is not explicit and fee is uncertain"
       ],
-      "confidence": 0.5,
+      "confidence": 0.25,
       "evidence": {
         "deadline": "",
-        "duration": "ELLIS events listing: 2026-09-14 to 2026-09-18",
+        "duration": "19-30 July 2027",
         "fee": "",
         "funding": "",
-        "mode": "ELLIS listing location: TUM Garching Campus"
+        "mode": ""
       },
       "ai_advisory": {
         "available": false
