@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-08-29",
+  "generated": "2026-08-30",
   "programmes": [
     {
       "id": "programme:21ea41829cac43f3",
@@ -174,11 +174,11 @@
         {
           "id": "edition:f7aa51ed5670a606",
           "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
-          "title_zh": "ELIAS & HPI 引擎“如何成为（初创公司）首席技术官”暑期学校",
+          "title_zh": "ELIAS & HPI引擎“如何成为（初创公司）首席技术官”暑期学校",
           "detail_path": "opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499.html",
           "official_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
           "location": "HPI Potsdam",
-          "location_zh": "HPI 波茨坦",
+          "location_zh": "HPI波茨坦",
           "start_date": "2026-08-31",
           "end_date": "2026-09-03",
           "deadline": "2026-08-28",
@@ -204,11 +204,11 @@
       "latest_edition": {
         "id": "edition:f7aa51ed5670a606",
         "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
-        "title_zh": "ELIAS & HPI 引擎“如何成为（初创公司）首席技术官”暑期学校",
+        "title_zh": "ELIAS & HPI引擎“如何成为（初创公司）首席技术官”暑期学校",
         "detail_path": "opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499.html",
         "official_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
         "location": "HPI Potsdam",
-        "location_zh": "HPI 波茨坦",
+        "location_zh": "HPI波茨坦",
         "start_date": "2026-08-31",
         "end_date": "2026-09-03",
         "deadline": "2026-08-28",
