@@ -1,5 +1,5 @@
 {
-  "generated": "2026-08-30",
+  "generated": "2026-09-01",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -399,56 +399,6 @@
       }
     },
     {
-      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
-      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
-      "organizer": "GESIS Spring Seminar",
-      "source_layer": "1.5",
-      "location": "Europe",
-      "dates": {
-        "start": "2027-02-22",
-        "end": "2027-03-12",
-        "duration_days": 19
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "data analysis",
-        "social science"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "",
-        "duration": "22 Feb – 12 March 2027",
-        "fee": "",
-        "funding": "",
-        "mode": "onsite) an exciting time in Cologne, complemented by an"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "possibly_past_or_closed",
-          "index_or_listing_page"
-        ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
-      }
-    },
-    {
       "title": "Digital Humanities Summer Institute",
       "url": "https://dhsi.org/scholarships/",
       "organizer": "Digital Humanities Summer Institute",
@@ -592,39 +542,6 @@
         "fee": "",
         "funding": "",
         "mode": ""
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "ELLIS Summer School at Unit Barcelona",
-      "url": "https://ellis.eu/events/ellis-summer-school-at-unit-barcelona-2026",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "location": "Casa Convalescència, UAB Barcelona",
-      "dates": {
-        "start": "2026-09-15",
-        "end": "2026-09-18",
-        "duration_days": 4
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "",
-        "duration": "ELLIS events listing: 2026-09-15 to 2026-09-18",
-        "fee": "",
-        "funding": "",
-        "mode": "ELLIS listing location: Casa Convalescència, UAB Barcelona"
       },
       "ai_advisory": {
         "available": false
