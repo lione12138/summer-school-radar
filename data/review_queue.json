@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-01",
+  "generated": "2026-09-02",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -88,63 +88,6 @@
       },
       "ai_advisory": {
         "available": false
-      }
-    },
-    {
-      "title": "PWF Sri Lanka: Summer School on Theoretical and Computational Biophysics (21-25 September 2026)",
-      "url": "https://indico.ictp.it/event/11489",
-      "organizer": "Indico - Conferences and Events",
-      "source_layer": "1",
-      "location": "Europe",
-      "dates": {
-        "start": "2026-09-21",
-        "end": "2026-09-25",
-        "duration_days": 5
-      },
-      "deadline": "2026-09-01",
-      "deadline_status": "open",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "machine learning",
-        "data analysis",
-        "physics",
-        "chemistry",
-        "engineering",
-        "mechanics"
-      ],
-      "needs_review": [
-        "in-person status is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "Application deadline: 1 September 2026",
-        "duration": "21-25 September 2026",
-        "fee": "",
-        "funding": "",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "llm_chunk_truncated:6",
-          "llm_request_truncated:max_total_chars_per_llm_request",
-          "location_context_weak",
-          "start_date_value_not_in_evidence",
-          "end_date_value_not_in_evidence"
-        ],
-        "chinese_summary": "该暑期学校将于2026年9月21-25日在斯里兰卡举办，面向斯里兰卡大学的本科生、研究生及青年研究人员，主题为理论与计算生物物理学。申请截止日期为2026年9月1日。",
-        "extracted_deadline": "2026-09-01",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "Application deadline: 1 September 2026 Registration https://docs.google.com/forms/d/e/1FAIpQLSdXXOLaJrKbBNB53Cliq7MSWDJ98mCrN5DCiR981x6HmY3R7Q/viewform?usp=header The programme of the school can be found here: Poster Programme GO TO SCIENTIFIC CALENDAR Facebook Twitter Youtube Instagram Linkedin Flickr Governing members ICTP is governed by UNESCO, IAEA, and Italy, and is a UNESCO Category 1 Institute E-News from ICTP Stay up-to-date with ICTP's",
-          "fee": "",
-          "funding": ""
-        }
       }
     },
     {

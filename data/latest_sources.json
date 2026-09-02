@@ -15,8 +15,8 @@
     "health": {
       "name": "EGU Training Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6838\u5fc3\u5730\u7403\u79d1\u5b66\u57f9\u8bad\u8d44\u6e90\u3002"
@@ -37,8 +37,8 @@
     "health": {
       "name": "IAHS",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     }
   },
@@ -57,8 +57,8 @@
     "health": {
       "name": "IAH",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u56fd\u9645\u6c34\u6587\u5730\u8d28\u5b66\u5bb6\u534f\u4f1a\u3002"
@@ -95,8 +95,8 @@
     "health": {
       "name": "NASA ARSET",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "NASA\u5e94\u7528\u9065\u611f\u57f9\u8bad\u3002\u4eceGitHub\u8fd0\u884c\u5668\u65e0\u6cd5\u8bbf\u95ee\uff0c\u4f46\u4ece\u4f4f\u5b85\u8fde\u63a5\u53ef\u52a0\u8f7d\uff1b\u5927\u591a\u6570ARSET\u57f9\u8bad\u5728\u7ebf\u8fdb\u884c\uff0c\u56e0\u6b64\u9884\u8ba1\u4e3b\u8981\u4e3a\u8fd1\u4f3c\u5339\u914d\u3002"
@@ -116,9 +116,9 @@
     "health": {
       "name": "DAAD Short Courses",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": "2026-07-15",
-      "consecutive_failures": 20
+      "consecutive_failures": 21
     },
     "notes_zh": "\u8d44\u91d1\u6765\u6e90\uff1b\u673a\u4f1a\u9875\u9762\u53ef\u80fd\u5728\u5176\u4ed6\u5730\u65b9\u94fe\u63a5\u3002"
   },
@@ -138,8 +138,8 @@
     "health": {
       "name": "UKRI Short Courses and Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u82f1\u56fd\u7814\u7a76\u4e0e\u521b\u65b0\u7f72\u5b98\u65b9\u6c47\u603b\u7684\u5f53\u524d\u7814\u7a76\u6691\u671f\u5b66\u6821\u548c\u77ed\u671f\u8bfe\u7a0b\uff1b\u94fe\u63a5\u7684\u4e3b\u529e\u65b9\u9875\u9762\u4ecd\u662f\u9879\u76ee\u7ea7\u8bc1\u636e\u7684\u6765\u6e90\u3002"
@@ -160,8 +160,8 @@
     "health": {
       "name": "COST Action Events",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5b98\u65b9COST\u884c\u52a8\u8ba1\u5212\u6d3b\u52a8\u76ee\u5f55\u3002\u5019\u9009\u94fe\u63a5\u6db5\u76d6\u591a\u4e2a\u5b66\u79d1\uff0c\u4ec5\u5f53\u94fe\u63a5\u6307\u5411\u53d7\u652f\u6301\u7684\u7814\u7a76\u57f9\u8bad\u5b66\u6821\u6216\u540c\u7b49\u77ed\u671f\u9879\u76ee\u65f6\u624d\u4f1a\u88ab\u8ddf\u8fdb\u3002"
@@ -182,8 +182,8 @@
     "health": {
       "name": "ELLIS",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "AI\u4e0e\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u6d3b\u52a8\u3002\u8be5\u7f51\u7ad9\u4e3a\u5355\u9875\u5e94\u7528\uff0c\u8be6\u60c5\u9875\u4e3a\u7a7a\u58f3\uff0c\u4f46\u670d\u52a1\u7aef\u6e32\u67d3\u7684\u5217\u8868\u9875\u5185\u5d4c\u4e86\u6bcf\u4e2a\u6d3b\u52a8\u7684\u65e5\u671f\u548c\u5730\u70b9\uff0c\u56e0\u6b64\u7531\u4e13\u7528\u5217\u8868\u91c7\u96c6\u5668\u89e3\u6790\uff08\u89c1 src/research_school_radar/api_sources.py\uff09\u3002"
@@ -205,8 +205,8 @@
     "health": {
       "name": "IHE Delft",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u9876\u7ea7\u6c34\u8d44\u6e90\u6559\u80b2\u5e73\u53f0\u3002\u8be5\u5217\u8868\u7531\u5ba2\u6237\u7aef\u6e32\u67d3\uff08HTML\u4e3a\u7a7a\uff09\uff0c\u56e0\u6b64\u76f4\u63a5\u4ece\u5176\u516c\u5171JSON API\u83b7\u53d6\uff08\u53c2\u89c1src/research_school_radar/api_sources.py\uff09\uff0c\u8be5API\u63d0\u4f9b\u7cbe\u786e\u65e5\u671f\u3001\u622a\u6b62\u65e5\u671f\u548c\u8d39\u7528\u3002"
@@ -242,8 +242,8 @@
     "health": {
       "name": "GFZ Potsdam",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4e0e\u5730\u7403\u79d1\u5b66\u9ad8\u5ea6\u76f8\u5173\u3002"
@@ -264,8 +264,8 @@
     "health": {
       "name": "UKCEH",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u82f1\u56fd\u73af\u5883\u79d1\u5b66\u57f9\u8bad\u5217\u8868\u3002\u4e4b\u524d\u7684/training\u9875\u9762\u91cd\u5b9a\u5411\u5230403\u9875\u9762\u3002"
@@ -289,8 +289,8 @@
     "health": {
       "name": "ICIMOD",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4e0e\u533a\u57df\u6c34\u548c\u6c14\u5019\u9ad8\u5ea6\u76f8\u5173\u3002\u56e0\u672c\u5730TLS\u8bc1\u4e66\u9a8c\u8bc1\u5931\u8d25\uff0c\u8df3\u8fc7SERVIR\u5b50\u57df\u3002"
@@ -311,8 +311,8 @@
     "health": {
       "name": "Asian Institute of Technology",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5730\u533a\u6027\u5927\u5b66\u6765\u6e90\u3002"
@@ -333,8 +333,8 @@
     "health": {
       "name": "ECMWF Training",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u4e2d\u671f\u5929\u6c14\u9884\u62a5\u4e2d\u5fc3\u57f9\u8bad\u76ee\u5f55\u3002\u8bb8\u591a\u8bfe\u7a0b\u4e3a\u5728\u7ebf\u5f62\u5f0f\uff1b\u7ebf\u4e0b\u8bfe\u7a0b\u4f5c\u4e3a\u5019\u9009\u5217\u51fa\u3002"
@@ -355,8 +355,8 @@
     "health": {
       "name": "ESA EO4Society Training",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u7a7a\u95f4\u5c40\u5730\u7403\u89c2\u6d4b\u57f9\u8bad\u4e0e\u6559\u80b2\u3002"
@@ -376,8 +376,8 @@
     "health": {
       "name": "NCAR ASP Colloquia",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "NCAR\u9ad8\u7ea7\u7814\u7a76\u9879\u76ee\u6691\u671f\u7814\u8ba8\u4f1a\uff0c\u901a\u5e38\u8d44\u52a9\u65e9\u671f\u804c\u4e1a\u7814\u7a76\u4eba\u5458\u3002"
@@ -398,8 +398,8 @@
     "health": {
       "name": "PIK Potsdam Events",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6ce2\u8328\u5766\u6c14\u5019\u5f71\u54cd\u7814\u7a76\u6240\u6d3b\u52a8\u3002"
@@ -420,8 +420,8 @@
     "health": {
       "name": "HIDA Events",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4ea5\u59c6\u970d\u5179\u4fe1\u606f\u4e0e\u6570\u636e\u79d1\u5b66\u5b66\u9662\u6d3b\u52a8\uff0c\u5305\u62ec\u73af\u5883\u6570\u636e\u79d1\u5b66\u5b66\u6821\u3002"
@@ -442,10 +442,10 @@
     "notes": "Official recurring survey methodology and data-analysis summer school; the scanner follows its current course catalogue.",
     "health": {
       "name": "GESIS Summer School",
-      "status": "failed",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-08-26",
-      "consecutive_failures": 2
+      "status": "healthy",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
+      "consecutive_failures": 0
     },
     "notes_zh": "\u5b98\u65b9\u5b9a\u671f\u4e3e\u529e\u7684\u8c03\u67e5\u65b9\u6cd5\u4e0e\u6570\u636e\u5206\u6790\u6691\u671f\u5b66\u6821\uff1b\u8bfe\u7a0b\u5b89\u6392\u4ee5\u5f53\u524d\u8bfe\u7a0b\u76ee\u5f55\u4e3a\u51c6\u3002"
   },
@@ -466,9 +466,9 @@
     "health": {
       "name": "GESIS Fall Seminar in Computational Social Science",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": "2026-08-26",
-      "consecutive_failures": 2
+      "consecutive_failures": 3
     },
     "notes_zh": "\u5b98\u65b9\u5b9a\u671f\u4e3e\u529e\u7684\u8ba1\u7b97\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u5b66\u6821\u3002\u8bfe\u7a0b\u53ef\u80fd\u5728\u7ebf\u6216\u7ebf\u4e0b\u8fdb\u884c\uff0c\u5e76\u5206\u522b\u8bc4\u4f30\uff1b\u7531\u4e8eGESIS\u76ee\u524d\u4e0d\u63d0\u4f9b\u81ea\u5df1\u7684\u5956\u5b66\u91d1\uff0c\u516c\u5171\u8d22\u653f\u51c6\u5165\u95e8\u69db\u4ecd\u7136\u9002\u7528\u3002"
   },
@@ -489,9 +489,9 @@
     "health": {
       "name": "GESIS Spring Seminar",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": "2026-08-30",
-      "consecutive_failures": 1
+      "consecutive_failures": 2
     },
     "notes_zh": "\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u4eba\u5458\u7684\u5b98\u65b9\u5e74\u5ea6\u9ad8\u7ea7\u65b9\u6cd5\u7814\u8ba8\u4f1a\uff1b\u4e2a\u522b\u8bfe\u7a0b\u7684\u5177\u4f53\u5f62\u5f0f\u3001\u65e5\u671f\u3001\u8d39\u7528\u53ca\u7ecf\u6d4e\u63f4\u52a9\u60c5\u51b5\u9700\u9010\u4e00\u6838\u5b9e\u3002"
   },
@@ -512,8 +512,8 @@
     "health": {
       "name": "IDESSAI",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "Inria-DFKI\u6b27\u6d32\u4eba\u5de5\u667a\u80fd\u79d1\u5b66\u5b66\u6821\u5b98\u65b9\u9879\u76ee\uff0c\u9762\u5411\u535a\u58eb\u751f\u548c\u65e9\u671f\u804c\u4e1a\u7814\u7a76\u8005\u7684\u5b9a\u671f\u8bfe\u7a0b\u3002"
@@ -535,8 +535,8 @@
     "health": {
       "name": "HiPEAC ACACES",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5b98\u65b9\u5b9a\u671f\u4e3e\u529e\u7684\u9ad8\u7ea7\u8ba1\u7b97\u673a\u4f53\u7cfb\u7ed3\u6784\u4e0e\u7cfb\u7edf\u5b66\u6821\u3002\u5165\u9009\u5b66\u751f\u53ef\u80fd\u83b7\u5f97\u6db5\u76d6\u6ce8\u518c\u8d39\u548c\u4f4f\u5bbf\u8d39\u7684\u8d44\u52a9\uff1b\u6bcf\u5c4a\u4ecd\u72ec\u7acb\u5ba1\u6838\u3002"
@@ -558,8 +558,8 @@
     "health": {
       "name": "UTN Computational Linguistics Fall School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u7ebd\u4f26\u5821\u5de5\u4e1a\u5927\u5b662026\u5e74\u5b98\u65b9\u5b66\u6821\u3002\u9875\u9762\u8bf4\u660e\u4e3a\u4e3a\u671f\u4e24\u5468\u7684\u7ebf\u4e0b\u9879\u76ee\uff0c\u6ce8\u518c\u622a\u6b62\u65e5\u671f\u4e3a9\u67086\u65e5\uff0c\u5b66\u751f\u8d39\u7528\u4e3a150\u6b27\u5143\uff0c\u5e76\u63d0\u4f9b\u90e8\u5206\u6ce8\u518c\u8d39\u5956\u5b66\u91d1\u3002"
@@ -581,8 +581,8 @@
     "health": {
       "name": "TU Graz Summer and Winter Programmes",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u683c\u62c9\u8328\u5de5\u4e1a\u5927\u5b66\u5b98\u65b9\u8bfe\u7a0b\u76ee\u5f55\u3002\u5176\u4e2d\u5305\u62ec\u5982\u683c\u62c9\u8328\u5b89\u5168\u5468\u7b49\u5b9a\u671f\u4e3e\u529e\u7684\u7814\u7a76\u751f\u7814\u7a76\u5b66\u6821\uff1b\u5e38\u89c4\u786c\u6027\u7b5b\u9009\u6761\u4ef6\u4ecd\u5c06\u6392\u9664\u901a\u7528\u578b\u3001\u7eaf\u6df7\u5408\u578b\u53ca\u8d39\u7528\u9ad8\u6602\u7684\u8bfe\u7a0b\u3002"
@@ -604,8 +604,8 @@
     "health": {
       "name": "Institute for Qualitative and Multi-Method Research",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u96ea\u57ce\u5927\u5b66IQMR\u5b98\u65b9\u9875\u9762\uff0c\u5305\u62ec\u9762\u5411\u591a\u4e2a\u4e16\u754c\u5730\u533a\u7814\u7a76\u751f\u548c\u65e9\u671f\u804c\u4e1a\u7814\u7a76\u4eba\u5458\u7684\u5b9a\u671f\u5f00\u653e\u6c60\u7ade\u8d5b\u3002"
@@ -627,9 +627,9 @@
     "health": {
       "name": "EITM Institute",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": null,
-      "consecutive_failures": 8
+      "consecutive_failures": 9
     },
     "notes_zh": "\u7406\u8bba\u6a21\u578b\u5b9e\u8bc1\u610f\u4e49\u7814\u7a76\u6240\u5b98\u65b9\u7f51\u7ad9\uff1b\u5b9a\u671f\u4e3e\u529e\u7684\u6691\u671f\u5b66\u9662\u57f9\u8bad\u65e9\u671f\u804c\u4e1a\u793e\u4f1a\u79d1\u5b66\u5bb6\uff0c\u4ee5\u6574\u5408\u5f62\u5f0f\u7406\u8bba\u4e0e\u5b9e\u8bc1\u5206\u6790\u3002"
   },
@@ -650,8 +650,8 @@
     "health": {
       "name": "Eurac Winter School on Federalism and Governance",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u7531Eurac Research\u53ca\u5408\u4f5c\u5927\u5b66\u7ec4\u7ec7\u7684\u5b98\u65b9\u5b9a\u671f\u4e24\u5468\u7814\u7a76\u5b66\u6821\u3002\u53d1\u5e03\u524d\u4f1a\u68c0\u67e5\u5404\u671f\u9875\u9762\u7684\u5f00\u653e\u72b6\u6001\u3001\u9879\u76ee\u8d39\u7528\u548c\u5956\u5b66\u91d1\u4fe1\u606f\u3002"
@@ -673,8 +673,8 @@
     "health": {
       "name": "Complexity Science Hub Winter School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5b98\u65b9\u7814\u7a76\u751f\u53ca\u65e9\u671f\u804c\u4e1a\u590d\u6742\u6027\u79d1\u5b66\u51ac\u5b63\u5b66\u6821\u3002\u4e3b\u529e\u65b9\u8868\u793a\u53ef\u80fd\u63d0\u4f9b\u90e8\u5206\u5b66\u8d39\u5956\u5b66\u91d1\uff1b\u6bcf\u5c4a\u4ecd\u9700\u901a\u8fc7\u7ecf\u6d4e\u51c6\u5165\u5ba1\u6838\u3002"
@@ -696,8 +696,8 @@
     "health": {
       "name": "Data Science Africa Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6570\u636e\u79d1\u5b66\u975e\u6d32\u5e74\u5ea6\u6691\u671f\u5b66\u6821\u5b98\u65b9\u6863\u6848\u53ca\u5f53\u524d\u8bfe\u7a0b\u5217\u8868\u3002"
@@ -719,8 +719,8 @@
     "health": {
       "name": "CERN School of Computing",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u9762\u5411\u79d1\u5b66\u8ba1\u7b97\u548c\u6570\u636e\u5bc6\u96c6\u578b\u7814\u7a76\u7684\u5b98\u65b9\u5e38\u8bbe\u4e3b\u4fee\u4e0e\u4e13\u9898\u5b66\u6821\u3002"
@@ -741,8 +741,8 @@
     "health": {
       "name": "CERN School of Computing 2026 application",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "CSC 2026\u5b98\u65b9\u7533\u8bf7\u8bb0\u5f55\uff0c\u5305\u542b\u53c2\u4e0e\u8005\u8d39\u7528\u8d23\u4efb\u548c\u6ce8\u518c\u72b6\u6001\u3002"
@@ -764,8 +764,8 @@
     "health": {
       "name": "EMBL-EBI Training",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "EMBL-EBI \u9762\u5411\u7814\u7a76\u4eba\u5458\u7684\u751f\u7269\u4fe1\u606f\u5b66\u548c\u751f\u7269\u6570\u636e\u8bfe\u7a0b\u5b98\u65b9\u76ee\u5f55\u3002"
@@ -788,8 +788,8 @@
     "health": {
       "name": "SIB Training",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u76f4\u63a5\u4ece\u5d4c\u5165\u7684Course\u548cCourseInstance\u8bb0\u5f55\u4e2d\u89e3\u6790\u7684SIB Bioschemas\u5b98\u65b9\u76ee\u5f55\u3002"
@@ -811,8 +811,8 @@
     "health": {
       "name": "ESS Data and Computing Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u6563\u88c2\u6e90\u6d3b\u52a8\uff0c\u5305\u62ec\u5176\u6570\u636e\u7ba1\u7406\u4e0e\u79d1\u5b66\u8ba1\u7b97\u6691\u671f\u5b66\u6821\u3002"
@@ -834,8 +834,8 @@
     "health": {
       "name": "Data Science and AI Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u7531\u5e03\u52a0\u52d2\u65af\u7279\u7ecf\u6d4e\u7814\u7a76\u5927\u5b66\u53ca\u5176\u5408\u4f5c\u4f19\u4f34\u7ec4\u7ec7\u7684\u5b9a\u671f\u7814\u7a76\u578b\u6570\u636e\u79d1\u5b66\u4e0e\u4eba\u5de5\u667a\u80fd\u6691\u671f\u5b66\u6821\u3002"
@@ -857,8 +857,8 @@
     "health": {
       "name": "CODATA-RDA Data Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "CODATA-RDA\u7814\u7a76\u6570\u636e\u79d1\u5b66\u7cfb\u5217\u5b98\u65b9\u57f9\u8bad\u5b66\u6821\u53ca\u672a\u6765\u5404\u5c4a\u94fe\u63a5\u3002"
@@ -879,8 +879,8 @@
     "health": {
       "name": "IEEE RAS Technical Education Programs",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "IEEE\u673a\u5668\u4eba\u4e0e\u81ea\u52a8\u5316\u534f\u4f1a\u8d44\u52a9\u7684\u6280\u672f\u6559\u80b2\u9879\u76ee\uff08\u5b63\u8282\u6027\u5b66\u6821\uff09\uff0c\u6bcf\u5e74\u5728\u5168\u7403\u4e3e\u529e\u7814\u7a76\u5bfc\u5411\u7684\u673a\u5668\u4eba\u4e0eAI\u5b66\u6821\u3002"
@@ -902,8 +902,8 @@
     "health": {
       "name": "IEEE RAS Cognitive Robotics Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "IEEE 2026\u5e749\u6708\u5728\u5fb7\u56fd\u4e3e\u529e\u7684RAS\u5b66\u6821\u5b98\u65b9\u6d3b\u52a8\u9875\u9762\uff0c\u4e3b\u9898\u4e3a\u8fde\u63a5\u4eba\u5de5\u667a\u80fd\u4e0e\u673a\u5668\u4eba\u6280\u672f\u3002"
@@ -925,8 +925,8 @@
     "health": {
       "name": "EurAI ESSAI",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u4eba\u5de5\u667a\u80fd\u6691\u671f\u5b66\u6821\uff1bEurAI\u6bcf\u5e74\u4e3a\u535a\u58eb\u751f\u548c\u9752\u5e74\u7814\u7a76\u4eba\u5458\u4e3e\u529e\u7684\u5e7f\u6cdbAI\u5b66\u6821\u3002"
@@ -949,8 +949,8 @@
     "health": {
       "name": "ESSIR",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u4fe1\u606f\u68c0\u7d22\u6691\u671f\u5b66\u6821\uff1b\u4e00\u4e2a\u8fde\u63a5\u4fe1\u606f\u68c0\u7d22\u3001\u63a8\u8350\u7cfb\u7edf\u3001\u81ea\u7136\u8bed\u8a00\u5904\u7406\u3001\u673a\u5668\u5b66\u4e60\u548c\u6570\u636e\u79d1\u5b66\u7684\u5b9a\u671f\u7814\u7a76\u5b66\u6821\u3002"
@@ -972,8 +972,8 @@
     "health": {
       "name": "NLDL Winter School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5317\u6781\u5149\u6df1\u5ea6\u5b66\u4e60\u51ac\u5b63\u5b66\u6821\uff0c\u4e0eNORA\u7814\u7a76\u5b66\u9662\u5408\u529e\uff0c\u6bcf\u5e74\u66f4\u65b0\u5185\u5bb9\u3002"
@@ -995,8 +995,8 @@
     "health": {
       "name": "Prob_AI Hub Winter School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "Prob_AI Hub\u51ac\u5b63\u5b66\u6821\uff0c\u9762\u5411\u535a\u58eb\u751f\u548c\u7814\u7a76\u4eba\u5458\uff1b\u5170\u5361\u65af\u7279\u5927\u5b662027\u5e741\u6708\u6d3b\u52a8\u7684\u5b98\u65b9\u9875\u9762\u3002"
@@ -1018,8 +1018,8 @@
     "health": {
       "name": "Exeter Machine Learning Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u57c3\u514b\u585e\u7279\u5927\u5b66\u673a\u5668\u5b66\u4e60\u7814\u7a76\u5f3a\u5316\u5b66\u6821\uff1b\u7a33\u5b9a\u9879\u76ee\u9875\u9762\u6bcf\u671f\u66f4\u65b0\u3002"
@@ -1041,8 +1041,8 @@
     "health": {
       "name": "UNICRI AI Ethics Winter School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "UNICRI\u4e0eLUMSA\u51ac\u5b63\u5b66\u6821\uff1a\u4eba\u5de5\u667a\u80fd\u3001\u4f26\u7406\u4e0e\u4eba\u6743\uff1b\u672c\u671f\u8bbe\u6709\u7f57\u9a6c\u7ebf\u4e0b\u8bfe\u7a0b\u53ca\u5728\u7ebf\u53c2\u4e0e\u3002"
@@ -1061,8 +1061,8 @@
     "health": {
       "name": "MLSS Index",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5168\u7403\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u7684\u6743\u5a01\u7d22\u5f15\u3002"
@@ -1082,8 +1082,8 @@
     "health": {
       "name": "EEML",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4e1c\u6b27\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u3002"
@@ -1103,8 +1103,8 @@
     "health": {
       "name": "Mediterranean ML Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "M2L\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u3002"
@@ -1124,8 +1124,8 @@
     "health": {
       "name": "Nordic ProbAI",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5317\u6b27\u6982\u7387\u4eba\u5de5\u667a\u80fd\u5b66\u6821\u3002"
@@ -1145,8 +1145,8 @@
     "health": {
       "name": "Gaussian Process Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u8c22\u83f2\u5c14\u5fb7\u9ad8\u65af\u8fc7\u7a0b\u6691\u671f\u5b66\u6821\uff0c\u4e0e\u4e0d\u786e\u5b9a\u6027\u91cf\u5316\u76f8\u5173\u3002"
@@ -1166,8 +1166,8 @@
     "health": {
       "name": "Deep Learning Indaba",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6cdb\u975e\u6df1\u5ea6\u5b66\u4e60\u6691\u671f\u5b66\u6821\uff0c\u63d0\u4f9b\u5dee\u65c5\u652f\u6301\u3002"
@@ -1188,8 +1188,8 @@
     "health": {
       "name": "IWA",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u56fd\u9645\u6c34\u534f\u4f1a\uff08IWA\uff09\u7684\u6d3b\u52a8\u4e0e\u4f1a\u8bae\u3002"
@@ -1210,8 +1210,8 @@
     "health": {
       "name": "IAHR",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u56fd\u9645\u6c34\u5229\u4e0e\u73af\u5883\u5de5\u7a0b\u7814\u7a76\u534f\u4f1a"
@@ -1231,8 +1231,8 @@
     "health": {
       "name": "SIWI",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u65af\u5fb7\u54e5\u5c14\u6469\u56fd\u9645\u6c34\u7814\u7a76\u6240\u6d3b\u52a8\u3002"
@@ -1253,8 +1253,8 @@
     "health": {
       "name": "GEWEX",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4e16\u754c\u6c14\u5019\u7814\u7a76\u8ba1\u5212\u4e0b\u7684\u5168\u7403\u80fd\u6e90\u4e0e\u6c34\u4ea4\u6362\u8ba1\u5212\u3002"
@@ -1275,8 +1275,8 @@
     "health": {
       "name": "AMS Meetings",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u7f8e\u56fd\u6c14\u8c61\u5b66\u4f1a\u4f1a\u8bae\u4e0e\u77ed\u671f\u8bfe\u7a0b\u3002"
@@ -1297,8 +1297,8 @@
     "health": {
       "name": "WCRP",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4e16\u754c\u6c14\u5019\u7814\u7a76\u8ba1\u5212\u3002\u8def\u5f84/events\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u4e86\u5f53\u524d\u6d3b\u52a8\u3002"
@@ -1319,8 +1319,8 @@
     "health": {
       "name": "WMO ETRP",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4e16\u754c\u6c14\u8c61\u7ec4\u7ec7\u6559\u80b2\u4e0e\u57f9\u8bad\u8ba1\u5212\u3002"
@@ -1340,8 +1340,8 @@
     "health": {
       "name": "GFDL Events",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "NOAA\u5730\u7403\u7269\u7406\u6d41\u4f53\u52a8\u529b\u5b66\u5b9e\u9a8c\u5ba4\u6d3b\u52a8\u3002"
@@ -1377,8 +1377,8 @@
     "health": {
       "name": "CIDER",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u52a8\u6001\u5730\u7403\u7814\u7a76\u5408\u4f5c\u7814\u7a76\u6240\u6691\u671f\u9879\u76ee\u3002"
@@ -1400,8 +1400,8 @@
     "health": {
       "name": "Oxford ML Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "OxML \u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\uff0c\u6db5\u76d6\u591a\u4e2a\u5e94\u7528\u65b9\u5411\u3002"
@@ -1421,8 +1421,8 @@
     "health": {
       "name": "AMMI",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u975e\u6d32\u673a\u5668\u667a\u80fd\u7855\u58eb\uff0c\u5168\u989d\u8d44\u52a9\u9879\u76ee\u3002"
@@ -1460,8 +1460,8 @@
     "health": {
       "name": "ISPRS",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u56fd\u9645\u6444\u5f71\u6d4b\u91cf\u4e0e\u9065\u611f\u5b66\u4f1a\u3002\u65e5\u5386\u8def\u5f84404\uff1b\u4e3b\u9875\u94fe\u63a5\u5f53\u524d\u6d3b\u52a8\u3002"
@@ -1481,8 +1481,8 @@
     "health": {
       "name": "GSA",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u7f8e\u56fd\u5730\u8d28\u5b66\u4f1a\u3002\u811a\u672c\u8bf7\u6c42\u7684\u76f4\u63a5\u4e8b\u4ef6\u5217\u8868\u8def\u5f84\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u5f53\u524d\u6d3b\u52a8\u3002"
@@ -1503,8 +1503,8 @@
     "health": {
       "name": "EAGE",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u5730\u7403\u79d1\u5b66\u5bb6\u4e0e\u5de5\u7a0b\u5e08\u534f\u4f1a\uff1b\u4e3e\u529e\u4f17\u591a\u77ed\u671f\u8bfe\u7a0b\u548c\u6559\u80b2\u65e5\u6d3b\u52a8\u3002"
@@ -1525,8 +1525,8 @@
     "health": {
       "name": "EarthScope",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "EarthScope\u8054\u76df\uff08\u539fIRIS/UNAVCO\uff09\uff1b\u5730\u9707\u5b66\u4e0e\u5927\u5730\u6d4b\u91cf\u5b66\u77ed\u671f\u8bfe\u7a0b\u53ca\u590f\u5b63\u7814\u8ba8\u4f1a\u3002"
@@ -1547,8 +1547,8 @@
     "health": {
       "name": "CIG Geodynamics",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u8ba1\u7b97\u5730\u7403\u52a8\u529b\u5b66\u8ba1\u7b97\u57fa\u7840\u8bbe\u65bd\uff1b\u8ba1\u7b97\u5730\u7403\u79d1\u5b66\u7814\u8ba8\u4f1a\u4e0e\u57f9\u8bad\u3002"
@@ -1570,8 +1570,8 @@
     "health": {
       "name": "EUMETSAT Training",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "EUMETSAT\u536b\u661f\u6c14\u8c61\u4e0e\u6c14\u5019\u57f9\u8bad\u95e8\u6237\u3002"
@@ -1593,8 +1593,8 @@
     "health": {
       "name": "ICOS",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u7efc\u5408\u78b3\u89c2\u6d4b\u7cfb\u7edf\u6d3b\u52a8\u4e0e\u57f9\u8bad\u3002"
@@ -1616,8 +1616,8 @@
     "health": {
       "name": "ICTP-SAIFR",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5357\u7f8e\u57fa\u7840\u7814\u7a76\u6240\uff08ICTP\u5408\u4f5c\u4f19\u4f34\uff09\uff1b\u4e3e\u529e\u6570\u636e\u79d1\u5b66\u3001\u673a\u5668\u5b66\u4e60\u548c\u6c14\u5019\u5b66\u6821\u3002"
@@ -1640,9 +1640,9 @@
     "health": {
       "name": "Lamont-Doherty",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": "2026-08-03",
-      "consecutive_failures": 6
+      "consecutive_failures": 7
     }
   },
   {
@@ -1661,8 +1661,8 @@
     "health": {
       "name": "IPAM",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "UCLA\u7eaf\u6570\u5b66\u4e0e\u5e94\u7528\u6570\u5b66\u7814\u7a76\u6240\uff1b\u6570\u636e\u79d1\u5b66\u3001\u673a\u5668\u5b66\u4e60\u548c\u8ba1\u7b97\u79d1\u5b66\u7814\u7a76\u751f\u6691\u671f\u5b66\u6821\uff0c\u901a\u5e38\u63d0\u4f9b\u5dee\u65c5\u652f\u6301\u3002"
@@ -1683,8 +1683,8 @@
     "health": {
       "name": "CLIVAR",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4e16\u754c\u6c14\u5019\u7814\u7a76\u8ba1\u5212\uff08WCRP\uff09\u7684CLIVAR\u9879\u76ee\uff1b\u6c14\u5019\u53d8\u7387\u4e0e\u53ef\u9884\u6d4b\u6027\u76f8\u5173\u7684\u57f9\u8bad\u4e0e\u6d3b\u52a8\u3002"
@@ -1705,8 +1705,8 @@
     "health": {
       "name": "APECS",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6781\u5730\u65e9\u671f\u804c\u4e1a\u79d1\u5b66\u5bb6\u534f\u4f1a\uff1b\u6781\u5730\u4e0e\u51b0\u51bb\u5708\u57f9\u8bad\u5b66\u6821\u53ca\u7f51\u7edc\u7814\u8ba8\u4f1a\u3002"
@@ -1727,8 +1727,8 @@
     "health": {
       "name": "Barcelona Supercomputing Center",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u9ad8\u6027\u80fd\u4e0e\u6570\u636e\u9a71\u52a8\u8ba1\u7b97\u79d1\u5b66\u9886\u57df\u7684BSC\u57f9\u8bad\uff0c\u5305\u62ec\u9762\u5411\u79d1\u5b66\u7684\u673a\u5668\u5b66\u4e60\u3002"
@@ -1752,9 +1752,9 @@
     "health": {
       "name": "Climate Change AI",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": null,
-      "consecutive_failures": 21
+      "consecutive_failures": 22
     }
   },
   {
@@ -1788,8 +1788,8 @@
     "health": {
       "name": "ELLS Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u751f\u547d\u79d1\u5b66\u5b98\u65b9\u76ee\u5f55\u3002\u5404\u5b66\u6821\u4ecd\u9700\u8df3\u8f6c\u81f3\u7ec4\u7ec7\u8005\u9875\u9762\uff0c\u5e76\u901a\u8fc7\u5e38\u89c4\u7684\u65e5\u671f\u3001\u6a21\u5f0f\u3001\u8d39\u7528\u548c\u8bc1\u636e\u5ba1\u6838\u3002"
@@ -1811,8 +1811,8 @@
     "health": {
       "name": "Una Europa Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u5341\u4e00\u6240\u5927\u5b66\u8054\u5408\u4e3e\u529e\u7684\u5bc6\u96c6\u8bfe\u7a0b\u4e0e\u535a\u58eb\u6691\u671f\u5b66\u6821\u7684\u5b98\u65b9\u8054\u76df\u76ee\u5f55\u3002"
@@ -1834,8 +1834,8 @@
     "health": {
       "name": "EDUC Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u5927\u5b66\u8054\u76df\u5b98\u65b9\u76ee\u5f55\u3002\u94fe\u63a5\u7684\u8be6\u60c5\u9875\u9762\u4ecd\u53d7\u5e38\u89c4\u5b98\u65b9\u8bc1\u636e\u548c\u53ef\u8d1f\u62c5\u6027\u5206\u7c7b\u7684\u7ea6\u675f\u3002"
@@ -1871,9 +1871,9 @@
     "health": {
       "name": "CERN Academic Training",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": null,
-      "consecutive_failures": 21
+      "consecutive_failures": 22
     },
     "notes_zh": "\u5185\u5bb9\u5728\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u6b64\u6e90\u4f7f\u7528\u53ef\u9009\u7684 Playwright \u65e0\u5934\u6d4f\u89c8\u5668\u3002\u5982\u679c\u672a\u5b89\u88c5 Playwright\uff0c\u5219\u56de\u9000\u4e3a\u7a7a\u8bf7\u6c42\u3002"
   },
@@ -1895,8 +1895,8 @@
     "health": {
       "name": "ICTP",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "Abdus Salam ICTP \u4e3e\u529e\u591a\u9879\u8d44\u52a9\u7684\u5730\u7403\u7269\u7406\u3001\u6c14\u5019\u548c\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u57f9\u8bad\u73ed\u3002/scientific-calendar \u8def\u5f84\u8fd4\u56de404\uff1b/home/scientific-calendar \u53ef\u7528\u4e8e\u811a\u672c\u8bf7\u6c42\u3002"
@@ -1916,8 +1916,8 @@
     "health": {
       "name": "LxMLS",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u91cc\u65af\u672c\u673a\u5668\u5b66\u4e60\u5b66\u6821\u3002\u5b98\u65b9\u57df\u540d lxmls.it.pt \u5728 CI \u8fd0\u884c\u5668\u4e2d\u8d85\u65f6\uff0c\u56e0\u6b64\u76f4\u63a5\u6307\u5411 GitHub Pages \u4e0a\u7684\u5f53\u524d\u7248\u672c\u3002\u65b0\u7248\u672c\u53d1\u5e03\u65f6\u8bf7\u66f4\u65b0\u5e74\u4efd\u3002"
@@ -1939,8 +1939,8 @@
     "health": {
       "name": "Karthaus Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4e4c\u5f97\u52d2\u652f\u5927\u5b66\u7684Karthaus\u51b0\u76d6\u4e0e\u6c14\u5019\u8bfe\u7a0b\uff1b\u4e00\u9879\u65d7\u8230\u8d44\u52a9\u7684\u51b0\u51bb\u5708\u5b66\u6821\u3002"
@@ -1961,8 +1961,8 @@
     "health": {
       "name": "WHOI GFD Program",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4f0d\u5179\u970d\u5c14\u5730\u7403\u7269\u7406\u6d41\u4f53\u52a8\u529b\u5b66\u6691\u671f\u9879\u76ee\uff1b\u4e00\u4e2a\u7ecf\u5178\u7684\u3001\u6709\u8d44\u52a9\u7684\u5341\u5468\u6d77\u6d0b\u4e0e\u6c14\u5019\u6d41\u4f53\u52a8\u529b\u5b66\u5b66\u6821\u3002"
@@ -1983,8 +1983,8 @@
     "health": {
       "name": "NCEO",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u82f1\u56fd\u56fd\u5bb6\u5730\u7403\u89c2\u6d4b\u4e2d\u5fc3\u57f9\u8bad\uff0c\u5305\u62ec\u5176\u5e74\u5ea6\u5730\u7403\u89c2\u6d4b\u6691\u671f\u5b66\u6821\u3002"
@@ -2005,8 +2005,8 @@
     "health": {
       "name": "POGO",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5168\u7403\u6d77\u6d0b\u89c2\u6d4b\u4f19\u4f34\u5173\u7cfb\uff1b\u8d44\u52a9\u6d77\u6d0b\u89c2\u6d4b\u57f9\u8bad\u4e0e\u5956\u5b66\u91d1\u3002"
@@ -2028,8 +2028,8 @@
     "health": {
       "name": "Cyprus Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u585e\u6d66\u8def\u65af\u7814\u7a76\u6240\u7814\u7a76\u751f\u9662\u4e3e\u529e\u6c14\u5019\u3001\u8ba1\u7b97\u79d1\u5b66\u548c\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u3002"
@@ -2052,9 +2052,9 @@
     "health": {
       "name": "AGU",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": "2026-08-03",
-      "consecutive_failures": 5
+      "consecutive_failures": 6
     },
     "notes_zh": "\u7f8e\u56fd\u5730\u7403\u7269\u7406\u8054\u5408\u4f1a\u3002\u811a\u672c\u8bf7\u6c42\u7684\u76f4\u63a5\u4e8b\u4ef6\u8def\u5f84\u8fd4\u56de404\uff1b\u4e3b\u9875\u94fe\u63a5\u5f53\u524d\u4f1a\u8bae\u548c\u8bfe\u7a0b\u3002"
   },
@@ -2074,8 +2074,8 @@
     "health": {
       "name": "NCAS",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u82f1\u56fd\u56fd\u5bb6\u5927\u6c14\u79d1\u5b66\u4e2d\u5fc3\uff1b\u8fd0\u8425\u8d44\u52a9\u7684\u5927\u6c14\u4e0e\u6c14\u5019\u79d1\u5b66\u57f9\u8bad\u8bfe\u7a0b\u53ca\u6691\u671f\u5b66\u6821\u3002"
@@ -2097,8 +2097,8 @@
     "health": {
       "name": "Les Houches Physics School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u83b1\u82cf\u4ec0\u7269\u7406\u5b66\u9662\uff1b\u5176\u8bfe\u7a0b\u5305\u62ec\u6c14\u5019\u7269\u7406\u548c\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u5b66\u6821\u3002\u975e\u672c\u9886\u57df\u7684\u7269\u7406\u8bfe\u7a0b\u4f1a\u88ab\u7b5b\u9009\u6389\u3002"
@@ -2121,9 +2121,9 @@
     "health": {
       "name": "ESSLLI",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": null,
-      "consecutive_failures": 21
+      "consecutive_failures": 22
     },
     "notes_zh": "\u6b27\u6d32\u903b\u8f91\u3001\u8bed\u8a00\u4e0e\u4fe1\u606f\u6691\u671f\u5b66\u6821\u2014\u2014\u903b\u8f91/\u8bed\u8a00/\u8ba1\u7b97\u9886\u57df\u7684\u65d7\u8230\u5b66\u6821\u3002\u7740\u9646\u9875\u4e3a\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u4f7f\u7528\u53ef\u9009\u7684\u65e0\u5934\u6d4f\u89c8\u5668\u3002"
   },
@@ -2143,8 +2143,8 @@
     "health": {
       "name": "LSA Linguistic Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u7f8e\u56fd\u8bed\u8a00\u5b66\u4f1a\u6bcf\u4e24\u5e74\u4e3e\u529e\u7684\u590f\u5b63\u8bed\u8a00\u5b66\u7814\u7a76\u6240\uff0c\u662f\u4e00\u4e2a\u5927\u578b\u8d44\u52a9\u6027\u8bed\u8a00\u5b66\u57f9\u8bad\u5b66\u6821\u3002"
@@ -2166,8 +2166,8 @@
     "health": {
       "name": "LOT School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u8377\u5170\u56fd\u5bb6\u8bed\u8a00\u5b66\u7814\u7a76\u751f\u9662\uff08LOT\uff09\uff1b\u5728\u8bed\u8a00\u5b66\u5404\u5b50\u9886\u57df\u4e3e\u529e\u6709\u8d44\u52a9\u7684\u6691\u671f\u548c\u51ac\u5b63\u5b66\u6821\u3002"
@@ -2189,8 +2189,8 @@
     "health": {
       "name": "EGG School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4e1c\u6b27\u751f\u6210\u8bed\u6cd5\u6691\u671f\u5b66\u6821\uff0c\u4e13\u6ce8\u4e8e\u7406\u8bba\u8bed\u8a00\u5b66\uff0c\u4f4d\u4e8e\u4e2d\u6b27/\u4e1c\u6b27\uff0c\u8d39\u7528\u4f4e\u5ec9\u3002"
@@ -2211,8 +2211,8 @@
     "health": {
       "name": "Leiden Linguistics Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u83b1\u987f\u6691\u671f\u8bed\u8a00\u4e0e\u8bed\u8a00\u5b66\u5b66\u6821\uff1b\u5b66\u672f\u8bed\u8a00\u5b66\uff08\u975e\u8bed\u8a00\u6559\u5b66\uff09\u8bfe\u7a0b\u3002"
@@ -2233,8 +2233,8 @@
     "health": {
       "name": "CLASP Gothenburg",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6982\u7387\u8bed\u8a00\u5b66\u7406\u8bba\u4e0e\u7814\u7a76\u4e2d\u5fc3\uff08\u54e5\u5fb7\u5821\u5927\u5b66\uff09\uff1b\u8ba1\u7b97\u8bed\u8a00\u5b66\u4e0e\u8bed\u8a00\u6280\u672f\u76f8\u5173\u6d3b\u52a8\u53ca\u5b66\u6821\u3002"
@@ -2255,8 +2255,8 @@
     "health": {
       "name": "CoLang",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4e24\u5e74\u4e00\u5ea6\u7684\u534f\u4f5c\u8bed\u8a00\u7814\u7a76\u5b66\u9662\uff1b\u63d0\u4f9b\u8bed\u8a00\u8bb0\u5f55\u3001\u63cf\u8ff0\u8bed\u8a00\u5b66\u3001\u590d\u5174\u548c\u7530\u91ce\u65b9\u6cd5\u7684\u5f3a\u5316\u57f9\u8bad\uff0c\u5e76\u63d0\u4f9b\u53c2\u4e0e\u8005\u5956\u5b66\u91d1\u3002"
@@ -2278,8 +2278,8 @@
     "health": {
       "name": "CreteLing",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u514b\u91cc\u7279\u5927\u5b66\u8bed\u8a00\u5b66\u6691\u671f\u5b66\u6821\uff1b\u6db5\u76d6\u7406\u8bba\u3001\u5386\u53f2\u3001\u5fc3\u7406\u548c\u795e\u7ecf\u8bed\u8a00\u5b66\u7684\u5165\u95e8\u4e0e\u9ad8\u7ea7\u7814\u8ba8\u4f1a\u3002"
@@ -2300,8 +2300,8 @@
     "health": {
       "name": "Advanced Language Processing Winter School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "ALPS\uff0c\u7531\u683c\u52d2\u8bfa\u5e03\u5c14\u963f\u5c14\u5351\u65af\u5927\u5b66/LIG\u8054\u5408\u7ec4\u7ec7\uff1b\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u8005\u7684\u9ad8\u7ea7\u4f4f\u5bbf\u5f0fNLP\u7814\u7a76\u5b66\u6821\u3002"
@@ -2322,8 +2322,8 @@
     "health": {
       "name": "Charles University Summer School of Linguistics",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u9762\u5411\u7814\u7a76\u751f\u548c\u9752\u5e74\u7814\u7a76\u4eba\u5458\u7684\u6377\u514b\u6691\u671f\u5b66\u6821\uff0c\u6db5\u76d6\u5404\u5b50\u9886\u57df\u7684\u5f53\u524d\u8bed\u8a00\u5b66\u7814\u7a76\u3002"
@@ -2345,8 +2345,8 @@
     "health": {
       "name": "Methods in Language Sciences",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6839\u7279\u5927\u5b66\u7814\u7a76\u65b9\u6cd5\u6691\u671f\u5b66\u6821\uff0c\u6db5\u76d6\u8bed\u8a00\u79d1\u5b66\u4e2d\u7684\u5b9a\u91cf\u4e0e\u5b9a\u6027\u65b9\u6cd5\u3002"
@@ -2368,8 +2368,8 @@
     "health": {
       "name": "Edinburgh Theoretical Historical Linguistics",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u7231\u4e01\u5821\u5927\u5b66\u8d44\u52a9\u7684\u7406\u8bba\u5386\u53f2\u8bed\u8a00\u5b66\u7814\u7a76\u751f\u4e0e\u65e9\u671f\u804c\u4e1a\u5b66\u8005\u6691\u671f\u5b66\u6821\u3002"
@@ -2390,8 +2390,8 @@
     "health": {
       "name": "ICVSS",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u56fd\u9645\u8ba1\u7b97\u673a\u89c6\u89c9\u6691\u671f\u5b66\u6821\uff08\u897f\u897f\u91cc\uff09\uff1b\u65d7\u8230\u7ea7\u3001\u7ade\u4e89\u6027\u8ba1\u7b97\u673a\u89c6\u89c9\u5b66\u6821\u3002"
@@ -2413,8 +2413,8 @@
     "health": {
       "name": "DS3 Data Science Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5df4\u9ece\u7efc\u5408\u7406\u5de5\u5b66\u9662\u6570\u636e\u79d1\u5b66\u6691\u671f\u5b66\u6821\uff08DS3\uff09\uff1b\u6570\u636e\u79d1\u5b66\u4e0e\u673a\u5668\u5b66\u4e60\u3002"
@@ -2435,8 +2435,8 @@
     "health": {
       "name": "Heidelberg Laureate Forum",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "HLF\u6c47\u805a\u9752\u5e74\u7814\u7a76\u4eba\u5458\u4e0e\u56fe\u7075\u5956/\u963f\u8d1d\u5c14\u5956/\u83f2\u5c14\u5179\u5956\u5f97\u4e3b\uff1b\u4e3a\u5165\u9009\u8005\u63d0\u4f9b\u5168\u989d\u8d44\u52a9\u3002"
@@ -2457,8 +2457,8 @@
     "health": {
       "name": "OPLSS",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4fc4\u52d2\u5188\u7f16\u7a0b\u8bed\u8a00\u6691\u671f\u5b66\u6821\uff1b\u7f16\u7a0b\u8bed\u8a00\u3001\u7c7b\u578b\u7406\u8bba\u4e0e\u5f62\u5f0f\u5316\u65b9\u6cd5\u3002"
@@ -2479,9 +2479,9 @@
     "health": {
       "name": "LASER Software Engineering School",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": null,
-      "consecutive_failures": 21
+      "consecutive_failures": 22
     },
     "notes_zh": "LASER\u8f6f\u4ef6\u5de5\u7a0b\u6691\u671f\u5b66\u6821\uff08\u610f\u5927\u5229\u5384\u5c14\u5df4\u5c9b\uff09\uff0c\u7531\u82cf\u9ece\u4e16\u8054\u90a6\u7406\u5de5\u5b66\u9662\u7ec4\u7ec7\u3002\u90e8\u5206\u8fde\u63a5\u8d85\u65f6\uff1b\u65e0\u6cd5\u8bbf\u95ee\u65f6\u9759\u9ed8\u8df3\u8fc7\u3002"
   },
@@ -2501,8 +2501,8 @@
     "health": {
       "name": "CISPA",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "CISPA\u4ea5\u59c6\u970d\u5179\u4fe1\u606f\u5b89\u5168\u4e2d\u5fc3\uff08\u8428\u5c14\u5e03\u5415\u80af\uff09\uff1b\u4e3e\u529e\u8d44\u52a9\u7684\u7f51\u7edc\u5b89\u5168\u6691\u671f\u5b66\u6821\u548c\u7814\u7a76\u6d3b\u52a8\u3002"
@@ -2523,8 +2523,8 @@
     "health": {
       "name": "SBA Research",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5965\u5730\u5229\u4fe1\u606f\u5b89\u5168\u7814\u7a76\u4e2d\u5fc3\uff1b\u63d0\u4f9b\u5b89\u5168\u57f9\u8bad\u3001\u5b66\u6821\u53ca\u6d3b\u52a8\u3002"
@@ -2546,8 +2546,8 @@
     "health": {
       "name": "Santa Fe Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5723\u5854\u83f2\u7814\u7a76\u6240\u590d\u6742\u7cfb\u7edf\u6691\u671f\u5b66\u6821\uff08CSSS\uff09\u53ca\u76f8\u5173\u5b66\u6821\uff1b\u8d44\u52a9\u7684\u590d\u6742\u7cfb\u7edf\u3001\u7f51\u7edc\u4e0e\u6570\u636e\u79d1\u5b66\u8de8\u5b66\u79d1\u57f9\u8bad\u3002"
@@ -2569,8 +2569,8 @@
     "health": {
       "name": "DeepLearn",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u56fd\u9645\u6df1\u5ea6\u5b66\u4e60\u5b66\u6821\uff08IRDTA\uff09\u3002\u6307\u5411\u5f53\u524d\u7248\u672c\uff1b\u65b0\u7248\u672c\u53d1\u5e03\u65f6\u66f4\u65b0\u5e74\u4efd\u3002"
@@ -2591,8 +2591,8 @@
     "health": {
       "name": "EurAI ACAI",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "EurAI \u9ad8\u7ea7\u4eba\u5de5\u667a\u80fd\u8bfe\u7a0b\uff08ACAI\uff09\uff1b\u6b27\u6d32\u4eba\u5de5\u667a\u80fd\u534f\u4f1a\u7684\u9ad8\u7ea7\u5b66\u6821\u3002"
@@ -2613,8 +2613,8 @@
     "health": {
       "name": "Friday Harbor Laboratories",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u534e\u76db\u987f\u5927\u5b66\u661f\u671f\u4e94\u6e2f\u5b9e\u9a8c\u5ba4\uff1b\u8d44\u52a9\u7684\u6d77\u6d0b\u79d1\u5b66\u5b9e\u5730\u8bfe\u7a0b\u548c\u6691\u671f\u9879\u76ee\u3002"
@@ -2636,8 +2636,8 @@
     "health": {
       "name": "SOLAS",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u8868\u5c42\u6d77\u6d0b\u4f4e\u5c42\u5927\u6c14\u7814\u7a76\uff1b\u6d77\u6d0b-\u5927\u6c14\u4e0e\u6c14\u5019\u6691\u671f\u5b66\u6821\u3002"
@@ -2658,8 +2658,8 @@
     "health": {
       "name": "CSCS Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u745e\u58eb\u56fd\u5bb6\u8d85\u7ea7\u8ba1\u7b97\u4e2d\u5fc3\uff08CSCS\uff09\uff1b\u9ad8\u6027\u80fd\u8ba1\u7b97\u4e0e\u9ad8\u6548\u79d1\u5b66\u8ba1\u7b97\u6691\u671f\u5b66\u6821\u3002"
@@ -2680,9 +2680,9 @@
     "health": {
       "name": "Argonne ATPESC",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": "2026-08-03",
-      "consecutive_failures": 6
+      "consecutive_failures": 7
     },
     "notes_zh": "\u6781\u5927\u89c4\u6a21\u8ba1\u7b97\u963f\u8d21\u57f9\u8bad\u8ba1\u5212\uff08ATPESC\uff09\uff1b\u8d44\u52a9\u7684\u5bc6\u96c6\u578b\u9ad8\u6027\u80fd\u8ba1\u7b97\u57f9\u8bad\u3002"
   },
@@ -2702,8 +2702,8 @@
     "health": {
       "name": "CESM Tutorial",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "NCAR\u793e\u533a\u5730\u7403\u7cfb\u7edf\u6a21\u578b\uff08CESM\uff09\u6559\u7a0b\uff1b\u6c14\u5019\u6a21\u578b\u5b9e\u8df5\u57f9\u8bad\uff0c\u901a\u5e38\u4e3a\u53c2\u4e0e\u8005\u63d0\u4f9b\u8d44\u52a9\u3002"
@@ -2724,8 +2724,8 @@
     "health": {
       "name": "GEOMAR",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "GEOMAR\u4ea5\u59c6\u970d\u5179\u57fa\u5c14\u6d77\u6d0b\u7814\u7a76\u4e2d\u5fc3\uff1b\u6d77\u6d0b\u4e0e\u6c14\u5019\u7814\u7a76\u5b66\u6821\u53ca\u6d3b\u52a8\u3002"
@@ -2746,8 +2746,8 @@
     "health": {
       "name": "CINECA HPC",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "CINECA\uff08\u610f\u5927\u5229\u56fd\u5bb6\u8d85\u7ea7\u8ba1\u7b97\u4e2d\u5fc3\uff09\u57f9\u8bad\u6d3b\u52a8\u4e0e\u9ad8\u6027\u80fd\u8ba1\u7b97\u5b66\u6821\u3002"
@@ -2768,8 +2768,8 @@
     "health": {
       "name": "Oxford Robotics Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u725b\u6d25\u673a\u5668\u4eba\u7814\u7a76\u6240\uff1b\u673a\u5668\u4eba\u5b66\u4e0e\u673a\u5668\u5b66\u4e60\u7814\u7a76\u3001\u5b66\u6821\u53ca\u6d3b\u52a8\u3002"
@@ -2790,8 +2790,8 @@
     "health": {
       "name": "Mila",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "Mila - \u9b41\u5317\u514b\u4eba\u5de5\u667a\u80fd\u7814\u7a76\u6240\uff08\u8499\u7279\u5229\u5c14\uff09\uff1b\u4e3e\u529e\u673a\u5668\u5b66\u4e60\u6691\u671f\u5b66\u6821\u4e0e\u57f9\u8bad\u9879\u76ee\u3002"
@@ -2812,8 +2812,8 @@
     "health": {
       "name": "OIST OCNC",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u51b2\u7ef3\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u8bfe\u7a0b\uff08OCNC\uff09\uff1b\u65d7\u8230\u8d44\u52a9\u7684\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u6691\u671f\u8bfe\u7a0b\u3002"
@@ -2834,8 +2834,8 @@
     "health": {
       "name": "MBL Courses",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6d77\u6d0b\u751f\u7269\u5b66\u5b9e\u9a8c\u5ba4\u9ad8\u7ea7\u7814\u7a76\u57f9\u8bad\u8bfe\u7a0b\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u65b9\u6cd5\u3002"
@@ -2856,8 +2856,8 @@
     "health": {
       "name": "CSHL Courses",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u51b7\u6cc9\u6e2f\u5b9e\u9a8c\u5ba4\u8bfe\u7a0b\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u548c\u5b9a\u91cf\u751f\u7269\u5b66\u5b66\u6821\u3002"
@@ -2878,8 +2878,8 @@
     "health": {
       "name": "CAJAL Training",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "CAJAL\u9ad8\u7ea7\u795e\u7ecf\u79d1\u5b66\u57f9\u8bad\u9879\u76ee\uff1b\u6b27\u6d32\u5bc6\u96c6\u578b\u795e\u7ecf\u79d1\u5b66\u8bfe\u7a0b\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u3002"
@@ -2900,8 +2900,8 @@
     "health": {
       "name": "Bernstein Network",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "Bernstein\u7f51\u7edc\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\uff08\u5fb7\u56fd\uff09\uff1b\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u9886\u57df\u7684\u5b66\u6821\u4e0e\u8bfe\u7a0b\u3002"
@@ -2922,8 +2922,8 @@
     "health": {
       "name": "CIFAR DLRL Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "CIFAR\u6df1\u5ea6\u5b66\u4e60\u4e0e\u5f3a\u5316\u5b66\u4e60\uff08DLRL\uff09\u6691\u671f\u5b66\u6821\uff08\u52a0\u62ff\u5927\uff09\uff1b\u4e3a\u5165\u9009\u5b66\u751f\u63d0\u4f9b\u8d44\u52a9\u3002"
@@ -2944,8 +2944,8 @@
     "health": {
       "name": "IBRO",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u56fd\u9645\u8111\u7814\u7a76\u7ec4\u7ec7\uff1b\u5728\u5168\u7403\u4e3e\u529e\u795e\u7ecf\u79d1\u5b66\u5b66\u6821\uff0c\u5305\u62ec\u8ba1\u7b97\u795e\u7ecf\u79d1\u5b66\u3002"
@@ -2966,8 +2966,8 @@
     "health": {
       "name": "ECPR Methods School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u653f\u6cbb\u7814\u7a76\u8054\u76df\u65b9\u6cd5\u5b66\u6821\uff1b\u793e\u4f1a\u79d1\u5b66\u7814\u7a76\u65b9\u6cd5\u57f9\u8bad\u3002"
@@ -2989,8 +2989,8 @@
     "health": {
       "name": "SICSS",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u8ba1\u7b97\u793e\u4f1a\u79d1\u5b66\u6691\u671f\u5b66\u9662\uff1b\u5b98\u65b9\u5730\u70b9\u76ee\u5f55\u5df2\u89e3\u6790\u4e3a\u72ec\u7acb\u7684\u514d\u5b66\u8d39\u5b66\u9662\uff0c\u4ee5\u4fbf\u6bcf\u4e2a\u7ad9\u70b9\u4fdd\u7559\u81ea\u5df1\u7684\u65e5\u671f\u548c\u5730\u70b9\u3002"
@@ -3011,8 +3011,8 @@
     "health": {
       "name": "ICPSR Summer Program",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5bc6\u6b47\u6839\u5927\u5b66ICPSR\u793e\u4f1a\u7814\u7a76\u5b9a\u91cf\u65b9\u6cd5\u6691\u671f\u9879\u76ee\uff1b\u65d7\u8230\u7ea7\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u5b66\u5e9c\u3002"
@@ -3034,8 +3034,8 @@
     "health": {
       "name": "Summer School in Social Sciences Methods",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u745e\u58eb\u610f\u5927\u5229\u8bed\u5927\u5b66\u4e0eFORS\u65b9\u6cd5\u5b66\u6821\uff1b\u5176\u5e76\u884c\u7684\u4e00\u5468\u8bfe\u7a0b\u6a21\u5757\u4fdd\u7559\u4e3a\u72ec\u7acb\u8bfe\u7a0b\uff0c\u800c\u975e\u8fde\u7eed\u7684\u591a\u5468\u8bfe\u7a0b\u3002"
@@ -3057,8 +3057,8 @@
     "health": {
       "name": "Oxford Spring School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u725b\u6d25\u5927\u5b66DPIR\u5e74\u5ea6\u9ad8\u7ea7\u793e\u4f1a\u7814\u7a76\u65b9\u6cd5\u5b66\u6821\uff0c\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u4eba\u5458\u3002"
@@ -3079,8 +3079,8 @@
     "health": {
       "name": "Essex Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u57c3\u585e\u514b\u65af\u793e\u4f1a\u79d1\u5b66\u6570\u636e\u5206\u6790\u6691\u671f\u5b66\u6821\uff1b\u5386\u53f2\u60a0\u4e45\u7684\u5b9a\u91cf\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u57f9\u8bad\u9879\u76ee\u3002"
@@ -3102,8 +3102,8 @@
     "health": {
       "name": "Essex Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "ESS\u5b98\u65b9\u7533\u8bf7\u9875\u9762\uff1b\u5305\u542b\u5404\u671f\u7533\u8bf7\u622a\u6b62\u65e5\u671f\u548c\u9879\u76ee\u65e5\u671f\u3002"
@@ -3124,8 +3124,8 @@
     "health": {
       "name": "CEU Summer University",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4e2d\u6b27\u5927\u5b66\u6691\u671f\u5b66\u6821\uff1b\u793e\u4f1a\u79d1\u5b66\u4e0e\u4eba\u6587\u5b66\u79d1\u8bfe\u7a0b\uff0c\u901a\u5e38\u4e3a\u5165\u9009\u8005\u63d0\u4f9b\u8d44\u52a9\u3002"
@@ -3147,8 +3147,8 @@
     "health": {
       "name": "EUI",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u5927\u5b66\u5b66\u9662\uff08\u4f5b\u7f57\u4f26\u8428\uff09\uff1b\u5386\u53f2\u3001\u7ecf\u6d4e\u3001\u653f\u6cbb\u4e0e\u793e\u4f1a\u79d1\u5b66\u53ca\u6cd5\u5f8b\u6691\u671f\u5b66\u6821\u3002"
@@ -3169,8 +3169,8 @@
     "health": {
       "name": "DHSI",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6570\u5b57\u4eba\u6587\u5b66\u6691\u671f\u5b66\u9662\uff08\u7ef4\u591a\u5229\u4e9a\uff09\uff1b\u4eba\u6587\u5b66\u79d1\u4e0e\u8ba1\u7b97\u4ea4\u53c9\u9886\u57df\u7684\u57f9\u8bad\u3002"
@@ -3191,9 +3191,9 @@
     "health": {
       "name": "IHR History",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": "2026-08-03",
-      "consecutive_failures": 6
+      "consecutive_failures": 7
     },
     "notes_zh": "\u5386\u53f2\u7814\u7a76\u6240\uff08\u4f26\u6566\uff09\uff1b\u5386\u53f2\u7814\u7a76\u57f9\u8bad\u4e0e\u6d3b\u52a8\u3002"
   },
@@ -3213,8 +3213,8 @@
     "health": {
       "name": "Khipu",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "Khipu\u62c9\u4e01\u7f8e\u6d32\u4eba\u5de5\u667a\u80fd\u4f1a\u8bae\uff1b\u4e00\u4e2a\u8d44\u52a9\u578bAI\u6691\u671f\u5b66\u6821\u3002"
@@ -3235,8 +3235,8 @@
     "health": {
       "name": "Helmholtz AI",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "Helmholtz AI\uff1b\u4ea5\u59c6\u970d\u5179\u8054\u5408\u4f1a\u5185\u7684\u4eba\u5de5\u667a\u80fd\u79d1\u5b66\u57f9\u8bad\u3001\u5b66\u6821\u53ca\u4f1a\u8bae\u3002"
@@ -3257,8 +3257,8 @@
     "health": {
       "name": "Wellcome Connecting Science",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "Wellcome Connecting Science \u9ad8\u7ea7\u8bfe\u7a0b\u4e0e\u4f1a\u8bae\uff1b\u57fa\u56e0\u7ec4\u5b66\u4e0e\u8ba1\u7b97\u751f\u7269\u5b66\u57f9\u8bad\uff0c\u8bb8\u591a\u63d0\u4f9b\u52a9\u5b66\u91d1\u3002"
@@ -3279,8 +3279,8 @@
     "health": {
       "name": "Physalia Courses",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "Physalia-Courses\uff1b\u9762\u5411\u751f\u547d\u79d1\u5b66\u7684\u751f\u7269\u4fe1\u606f\u5b66\u4e0e\u6570\u636e\u5206\u6790\u5f3a\u5316\u8bfe\u7a0b\u3002"
@@ -3301,8 +3301,8 @@
     "health": {
       "name": "CISM",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u56fd\u9645\u673a\u68b0\u79d1\u5b66\u4e2d\u5fc3\uff08\u4e4c\u8fea\u5185\uff09\uff1b\u8ba1\u7b97\u4e0e\u5e94\u7528\u79d1\u5b66\u9ad8\u7ea7\u7814\u4fee\u73ed\uff0c\u5305\u62ec\u5de5\u7a0b\u4e2d\u7684\u673a\u5668\u5b66\u4e60\u3002"
@@ -3323,8 +3323,8 @@
     "health": {
       "name": "EARSeL",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u9065\u611f\u5b9e\u9a8c\u5ba4\u534f\u4f1a\uff1b\u9065\u611f\u6691\u671f\u5b66\u6821\u4e0e\u57f9\u8bad\u3002"
@@ -3345,8 +3345,8 @@
     "health": {
       "name": "Alan Turing Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u827e\u4f26\u00b7\u56fe\u7075\u7814\u7a76\u6240\uff08\u82f1\u56fd\u56fd\u5bb6\u6570\u636e\u79d1\u5b66\u4e0e\u4eba\u5de5\u667a\u80fd\u7814\u7a76\u6240\uff09\uff1b\u57f9\u8bad\u6d3b\u52a8\u3001\u6691\u671f\u5b66\u6821\u548c\u7814\u8ba8\u4f1a\u3002"
@@ -3367,8 +3367,8 @@
     "health": {
       "name": "Tinbergen Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u4e01\u4f2f\u6839\u7814\u7a76\u6240\uff08\u963f\u59c6\u65af\u7279\u4e39/\u9e7f\u7279\u4e39\uff09\uff1b\u7ecf\u6d4e\u5b66\u4e0e\u8ba1\u91cf\u7ecf\u6d4e\u5b66\u6691\u671f\u5b66\u6821\u3002"
@@ -3389,8 +3389,8 @@
     "health": {
       "name": "CECAM",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u539f\u5b50\u4e0e\u5206\u5b50\u8ba1\u7b97\u4e2d\u5fc3\uff1b\u8ba1\u7b97\u5316\u5b66\u3001\u6750\u6599\u53ca\u5206\u5b50\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u9886\u57df\u7684\u5b66\u6821\u4e0e\u7814\u8ba8\u4f1a\u3002"
@@ -3411,8 +3411,8 @@
     "health": {
       "name": "Boulder School",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u535a\u5c14\u5fb7\u51dd\u805a\u6001\u4e0e\u6750\u6599\u7269\u7406\u6691\u671f\u5b66\u6821\uff1b\u6709\u8d44\u52a9\u7684\u7814\u7a76\u751f\u6691\u671f\u5b66\u6821\u3002"
@@ -3433,8 +3433,8 @@
     "health": {
       "name": "Aspen Center for Physics",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u963f\u65af\u5f6d\u7269\u7406\u4e2d\u5fc3\uff1b\u6db5\u76d6\u7269\u7406\u5b66\u548c\u5929\u4f53\u7269\u7406\u5b66\u7684\u590f\u5b63\u7814\u8ba8\u4f1a\u4e0e\u9879\u76ee\u3002"
@@ -3455,8 +3455,8 @@
     "health": {
       "name": "KITP",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u5361\u5f17\u91cc\u7406\u8bba\u7269\u7406\u7814\u7a76\u6240\uff08\u52a0\u5dde\u5927\u5b66\u5723\u5854\u82ad\u82ad\u62c9\u5206\u6821\uff09\uff1b\u6db5\u76d6\u7406\u8bba\u7269\u7406\u9886\u57df\u7684\u9879\u76ee\u4e0e\u5b66\u6821\u3002"
@@ -3477,8 +3477,8 @@
     "health": {
       "name": "DESY Summer Student",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "DESY\u6691\u671f\u5b66\u751f\u9879\u76ee\uff1b\u7c92\u5b50\u4e0e\u5149\u5b50\u7269\u7406\u5b66\u8d44\u52a9\u7814\u7a76\u57f9\u8bad\u3002"
@@ -3499,8 +3499,8 @@
     "health": {
       "name": "CIMPA",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "CIMPA\uff08\u56fd\u9645\u7eaf\u7cb9\u4e0e\u5e94\u7528\u6570\u5b66\u4e2d\u5fc3\uff09\uff1b\u8d44\u52a9\u7684\u6570\u5b66\u7814\u7a76\u5b66\u6821\uff0c\u901a\u5e38\u4f4d\u4e8e\u5168\u7403\u5357\u65b9\u3002"
@@ -3521,8 +3521,8 @@
     "health": {
       "name": "Hague Academy of International Law",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6d77\u7259\u56fd\u9645\u6cd5\u5b66\u9662\uff1b\u56fd\u9645\u516c\u6cd5\u4e0e\u56fd\u9645\u79c1\u6cd5\u6691\u671f\u8bfe\u7a0b\uff0c\u63d0\u4f9b\u5956\u5b66\u91d1\u3002"
@@ -3543,8 +3543,8 @@
     "health": {
       "name": "Asser Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "T.M.C. Asser Instituut\uff08\u6d77\u7259\uff09\uff1b\u56fd\u9645\u4e0e\u6b27\u6d32\u6cd5\u6691\u671f\u9879\u76ee\u53ca\u57f9\u8bad\u3002"
@@ -3565,8 +3565,8 @@
     "health": {
       "name": "EARLI",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u6b27\u6d32\u5b66\u4e60\u4e0e\u6559\u5b66\u7814\u7a76\u534f\u4f1a\uff1bJURE\u6691\u671f\u5b66\u6821\u4e0e\u6559\u80b2\u7814\u7a76\u57f9\u8bad\u3002"
@@ -3587,9 +3587,9 @@
     "health": {
       "name": "Stazione Zoologica",
       "status": "failed",
-      "last_attempt": "2026-09-01",
+      "last_attempt": "2026-09-02",
       "last_success": null,
-      "consecutive_failures": 21
+      "consecutive_failures": 22
     },
     "notes_zh": "\u5b89\u4e1c\u00b7\u591a\u6069\u52a8\u7269\u7ad9\uff08\u90a3\u4e0d\u52d2\u65af\uff09\uff1b\u6d77\u6d0b\u751f\u7269\u5b66\u4e0e\u6d77\u6d0b\u79d1\u5b66\u7814\u7a76\u57f9\u8bad\u3002"
   },
@@ -3609,8 +3609,8 @@
     "health": {
       "name": "LSE Cities",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "LSE Cities\uff1b\u57ce\u5e02\u7814\u7a76\u53ca\u6691\u671f\u9879\u76ee\u3002"
@@ -3631,8 +3631,8 @@
     "health": {
       "name": "The Berlage",
       "status": "healthy",
-      "last_attempt": "2026-09-01",
-      "last_success": "2026-09-01",
+      "last_attempt": "2026-09-02",
+      "last_success": "2026-09-02",
       "consecutive_failures": 0
     },
     "notes_zh": "\u8d1d\u5c14\u62c9\u683c\u5efa\u7b51\u4e0e\u57ce\u5e02\u8bbe\u8ba1\u9ad8\u7ea7\u7814\u7a76\u4e2d\u5fc3\uff08\u4ee3\u5c14\u592b\u7279\u7406\u5de5\u5927\u5b66\uff09\uff1b\u5efa\u7b51\u4e0e\u57ce\u5e02\u4e3b\u4e49\u9879\u76ee\u3002"
