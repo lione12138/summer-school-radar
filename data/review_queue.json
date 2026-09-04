@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-02",
+  "generated": "2026-09-04",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -88,6 +88,54 @@
       },
       "ai_advisory": {
         "available": false
+      }
+    },
+    {
+      "title": "LOT – Netherlands Graduate School of Linguistics",
+      "url": "https://lotschool.nl/",
+      "organizer": "LOT – Netherlands Graduate School of Linguistics",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-01-11",
+        "end": "2027-01-22",
+        "duration_days": 12
+      },
+      "deadline": "2026-09-25",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "linguistics"
+      ],
+      "needs_review": [
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "registration deadline is 25 September.",
+        "duration": "January 11, 2027 - January 22, 2027",
+        "fee": "",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "index_or_listing_page"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
       }
     },
     {
@@ -218,6 +266,55 @@
       }
     },
     {
+      "title": "How to apply",
+      "url": "https://winterschool.eurac.edu/en/how-to-apply",
+      "organizer": "Winterschool",
+      "source_layer": "1.5",
+      "location": "person",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2026-10-12",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "AI",
+        "artificial intelligence"
+      ],
+      "needs_review": [
+        "duration is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "Deadline for applications: Sunday, 12 October 2026",
+        "duration": "",
+        "fee": "",
+        "funding": "",
+        "mode": "in person . There is no possibility to attend the course on"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "missing_evidence_id:other_deadlines"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "2026-10-12",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "In case of questions regarding the application form and procedure, please contact winterschool@eurac.edu Deadline for applications: Sunday, 12 October 2026, 23:59 CEST Applications which are successfully submitted and complete will receive a confirmation via e-mail within 5 working days after submission.",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
       "title": "Search form",
       "url": "https://www.clivar.org/events/4th-commodore-workshop-advancing-ocean-modeling-bridging-theory-computation-scales-and",
       "organizer": "CLIVAR",
@@ -342,6 +439,54 @@
       }
     },
     {
+      "title": "Leiden Summer School",
+      "url": "https://lotschool.nl/leiden-summer-school/",
+      "organizer": "LOT – Netherlands Graduate School of Linguistics",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-01-11",
+        "end": "2027-01-22",
+        "duration_days": 12
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "linguistics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "January 11, 2027 - January 22, 2027",
+        "fee": "",
+        "funding": "",
+        "mode": "hybrid form; III. After the end of the two-week course,"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "index_or_listing_page"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
       "title": "Digital Humanities Summer Institute",
       "url": "https://dhsi.org/scholarships/",
       "organizer": "Digital Humanities Summer Institute",
@@ -414,6 +559,42 @@
       }
     },
     {
+      "title": "CERN School of Computing",
+      "url": "https://csc.web.cern.ch/",
+      "organizer": "CERN School of Computing",
+      "source_layer": "1",
+      "location": "Liverpool, UK",
+      "dates": {
+        "start": "2026-11-09",
+        "end": "2026-11-13",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "physics",
+        "particle physics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "November 9-13, 2026",
+        "fee": "",
+        "funding": "",
+        "mode": "will take place in Liverpool, UK from 23 August to 5 September. Appli"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "Oxford Spring School in Advanced Social Research Methods",
       "url": "https://www.politics.ox.ac.uk/spring-school",
       "organizer": "Oxford Spring School",
@@ -449,6 +630,84 @@
         "fee": "",
         "funding": "",
         "mode": "in-person and online formats every year. The experience inc"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "CERN School of Computing on IT Services",
+      "url": "https://csc.web.cern.ch/tcsc-on-it-services-2026/",
+      "organizer": "CERN School of Computing",
+      "source_layer": "1",
+      "location": "Ferney-Voltaire, France",
+      "dates": {
+        "start": "2026-11-09",
+        "end": "2026-11-13",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "physics",
+        "engineering"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "9 – 13 November 2026",
+        "fee": "",
+        "funding": "",
+        "mode": "will be hosted at the Appart’City Ferney-Voltaire . Academic progra"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "LOT Winter School 2027",
+      "url": "https://lotschool.nl/events/lot-winter-school-2027/",
+      "organizer": "LOT – Netherlands Graduate School of Linguistics",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-01-11",
+        "end": "2027-01-22",
+        "duration_days": 12
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "linguistics",
+        "phonetics",
+        "phonology",
+        "syntax",
+        "semantics",
+        "psycholinguistics",
+        "statistics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.25,
+      "evidence": {
+        "deadline": "",
+        "duration": "11 to 22 January 2027",
+        "fee": "",
+        "funding": "",
+        "mode": ""
       },
       "ai_advisory": {
         "available": false
