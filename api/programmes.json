@@ -78,6 +78,84 @@
       }
     },
     {
+      "id": "programme:259cc91832fad73a",
+      "slug": "interdisciplinarity-for-complex-water-problems-709bc84b",
+      "title": "Interdisciplinarity for Complex Water Problems",
+      "title_zh": "复杂水问题的跨学科研究",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
+      "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
+      "topics": [
+        "hydrology",
+        "environmental science",
+        "engineering",
+        "design",
+        "social science"
+      ],
+      "editions": [
+        {
+          "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
+          "title": "Interdisciplinarity for Complex Water Problems",
+          "title_zh": "复杂水问题的跨学科方法",
+          "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
+          "official_url": "https://www.un-ihe.org/short-courses",
+          "location": "Delft, Netherlands",
+          "location_zh": "荷兰代尔夫特",
+          "start_date": "2026-09-28",
+          "end_date": "2026-10-02",
+          "deadline": "2026-09-06",
+          "deadline_status": "open",
+          "duration_days": 5,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 450 excl. VAT",
+          "financial_summary_zh": "费用 EUR 450（未含增值税）",
+          "funding_available": null,
+          "fee_eur": 450.0,
+          "topics": [
+            "hydrology",
+            "environmental science",
+            "engineering",
+            "design",
+            "social science"
+          ],
+          "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
+          "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
+        "title": "Interdisciplinarity for Complex Water Problems",
+        "title_zh": "复杂水问题的跨学科方法",
+        "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
+        "official_url": "https://www.un-ihe.org/short-courses",
+        "location": "Delft, Netherlands",
+        "location_zh": "荷兰代尔夫特",
+        "start_date": "2026-09-28",
+        "end_date": "2026-10-02",
+        "deadline": "2026-09-06",
+        "deadline_status": "open",
+        "duration_days": 5,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 450 excl. VAT",
+        "financial_summary_zh": "费用 EUR 450（未含增值税）",
+        "funding_available": null,
+        "fee_eur": 450.0,
+        "topics": [
+          "hydrology",
+          "environmental science",
+          "engineering",
+          "design",
+          "social science"
+        ],
+        "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
+        "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
+        "sessions": []
+      }
+    },
+    {
       "id": "programme:db89f04e7c1c4380",
       "slug": "advanced-statistics-statistical-modelling-803f1bf8",
       "title": "Advanced Statistics: Statistical Modelling",
@@ -620,84 +698,6 @@
         ],
         "summary": "A five-day in-person IEEE RAS summer school on cognitive robotics, bridging artificial intelligence, machine learning, perception, planning, and intelligent robotic systems.",
         "summary_zh": "IEEE RAS 举办的五天线下认知机器人暑期学校，连接人工智能、机器学习、感知、规划与智能机器人系统。",
-        "sessions": []
-      }
-    },
-    {
-      "id": "programme:259cc91832fad73a",
-      "slug": "interdisciplinarity-for-complex-water-problems-709bc84b",
-      "title": "Interdisciplinarity for Complex Water Problems",
-      "title_zh": "复杂水问题的跨学科研究",
-      "organizer": "IHE Delft",
-      "organizer_zh": "IHE Delft",
-      "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
-      "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
-      "topics": [
-        "hydrology",
-        "environmental science",
-        "engineering",
-        "design",
-        "social science"
-      ],
-      "editions": [
-        {
-          "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-          "title": "Interdisciplinarity for Complex Water Problems",
-          "title_zh": "复杂水问题的跨学科方法",
-          "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-          "official_url": "https://www.un-ihe.org/short-courses",
-          "location": "Delft, Netherlands",
-          "location_zh": "荷兰代尔夫特",
-          "start_date": "2026-09-28",
-          "end_date": "2026-10-02",
-          "deadline": "2026-08-28",
-          "deadline_status": "closed",
-          "duration_days": 5,
-          "mode": "in-person",
-          "financial_summary": "Fee EUR 450 excl. VAT",
-          "financial_summary_zh": "费用 EUR 450（未含增值税）",
-          "funding_available": null,
-          "fee_eur": 450.0,
-          "topics": [
-            "hydrology",
-            "environmental science",
-            "engineering",
-            "design",
-            "social science"
-          ],
-          "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
-          "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-        "title": "Interdisciplinarity for Complex Water Problems",
-        "title_zh": "复杂水问题的跨学科方法",
-        "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-        "official_url": "https://www.un-ihe.org/short-courses",
-        "location": "Delft, Netherlands",
-        "location_zh": "荷兰代尔夫特",
-        "start_date": "2026-09-28",
-        "end_date": "2026-10-02",
-        "deadline": "2026-08-28",
-        "deadline_status": "closed",
-        "duration_days": 5,
-        "mode": "in-person",
-        "financial_summary": "Fee EUR 450 excl. VAT",
-        "financial_summary_zh": "费用 EUR 450（未含增值税）",
-        "funding_available": null,
-        "fee_eur": 450.0,
-        "topics": [
-          "hydrology",
-          "environmental science",
-          "engineering",
-          "design",
-          "social science"
-        ],
-        "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
-        "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
         "sessions": []
       }
     },

@@ -211,58 +211,6 @@
       "sessions": []
     },
     {
-      "id": "opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499",
-      "edition_id": "edition:f7aa51ed5670a606",
-      "programme_id": "programme:005729e641c21ccf",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-74f36bb2.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-74f36bb2.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-74f36bb2.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-74f36bb2.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/elias-hpi-engine-how-to-be-a-startup-cto-summer-school-97092499.html"
-      },
-      "official_url": "https://ellis.eu/events/elias-hpi-engine-how-to-be-a-startup-cto-summer-school",
-      "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
-      "title_zh": "ELIAS & HPI 引擎“如何成为（初创公司）首席技术官”暑期学校",
-      "type": "summer school",
-      "organizer": "HPI Engine & ELIAS Startup Opportunities",
-      "organizer_zh": "HPI Engine 与 ELIAS Startup Opportunities",
-      "location": "HPI Potsdam",
-      "location_zh": "HPI 波茨坦",
-      "mode": "in-person",
-      "start_date": "2026-08-31",
-      "end_date": "2026-09-03",
-      "duration_days": 4,
-      "application_deadline": null,
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee EUR 0 · 20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants (travel + accommodation covered)",
-      "fee": "Fee EUR 0",
-      "fee_eur": 0.0,
-      "funding_available": true,
-      "funding_type": [
-        "travel grant",
-        "accommodation"
-      ],
-      "funding_scope": "20 funded places for ELLIS/ELIAS-affiliated PhD/postdoc participants (travel + accommodation covered)",
-      "topics": [
-        "AI",
-        "entrepreneurship",
-        "startups",
-        "technology strategy"
-      ],
-      "summary": "An intensive four-day school on the CTO role in startups and technology companies, covering AI-first company building, technology strategy, leadership, lean analytics, and startup financing.",
-      "summary_zh": "为期四天的密集型暑期学校，聚焦初创公司与科技企业中的 CTO 职责，内容包括 AI 优先的公司建设、技术战略、领导力、精益分析和初创企业融资。",
-      "eligibility": "Master's students in computer science and PhD candidates; the 20 funded ELLIS/ELIAS places are reserved for affiliated PhD candidates and postdocs.",
-      "eligibility_zh": "面向计算机科学硕士生和博士生；其中 20 个 ELLIS/ELIAS 资助名额专门面向网络关联博士生及博士后。",
-      "sessions": []
-    },
-    {
       "id": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373",
       "edition_id": "edition:736b6cbf96f90a6f",
       "programme_id": "programme:6d05e72313fdb49c",
@@ -308,6 +256,56 @@
       "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
       "eligibility": "Students at the listed non-Italian ELLS promoting universities; other participants may attend for the stated registration fee.",
       "eligibility_zh": "面向官网列出的非意大利 ELLS 合作大学学生；其他参与者可按官网所列费用参加。",
+      "sessions": []
+    },
+    {
+      "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
+      "edition_id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
+      "programme_id": "programme:259cc91832fad73a",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html"
+      },
+      "official_url": "https://www.un-ihe.org/short-courses",
+      "title": "Interdisciplinarity for Complex Water Problems",
+      "title_zh": "复杂水问题的跨学科方法",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "location": "Delft, Netherlands",
+      "location_zh": "荷兰代尔夫特",
+      "mode": "in-person",
+      "start_date": "2026-09-28",
+      "end_date": "2026-10-02",
+      "duration_days": 5,
+      "application_deadline": "2026-09-06",
+      "application_status": "open",
+      "directory_tier": "verified-self-funded",
+      "financial_summary": "Fee EUR 450 excl. VAT",
+      "fee": "EUR 450 excl. VAT",
+      "fee_eur": 450.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "topics": [
+        "hydrology",
+        "environmental science",
+        "engineering",
+        "design",
+        "social science"
+      ],
+      "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
+      "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
+      "eligibility": "PhD students working on water-related issues across engineering, hydrology, environmental science, social science, or the humanities.",
+      "eligibility_zh": "面向从工程、水文、环境科学、社会科学或人文学科角度研究水相关问题的博士生。",
       "sessions": []
     },
     {
@@ -360,56 +358,6 @@
       "sessions": []
     },
     {
-      "id": "opportunities/hydrodata-2026-summer-school-about-hydrology-and-data-e4a8b827",
-      "edition_id": "edition:bc35c7229e6cdfeb",
-      "programme_id": "programme:18f99da411613a7b",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/hydrodata-summer-school-about-hydrology-and-data-6e0533b3.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/hydrodata-summer-school-about-hydrology-and-data-6e0533b3.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/hydrodata-summer-school-about-hydrology-and-data-6e0533b3.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/hydrodata-summer-school-about-hydrology-and-data-6e0533b3.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/hydrodata-2026-summer-school-about-hydrology-and-data-e4a8b827.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/hydrodata-2026-summer-school-about-hydrology-and-data-e4a8b827.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/hydrodata-2026-summer-school-about-hydrology-and-data-e4a8b827.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/hydrodata-2026-summer-school-about-hydrology-and-data-e4a8b827.html"
-      },
-      "official_url": "https://www.unesco-floods.eu/unesco-floods-summer-school/",
-      "title": "HydRoData 2026: Summer school about Hydrology and Data",
-      "title_zh": "HydRoData 2026：水文学与数据暑期学校",
-      "type": "summer school",
-      "organizer": "UNESCO Chair on Water-related Disaster Risk Reduction, University of Ljubljana",
-      "organizer_zh": "卢布尔雅那大学联合国教科文组织水相关灾害风险减少教席",
-      "location": "Ljubljana, Slovenia",
-      "location_zh": "斯洛文尼亚卢布尔雅那",
-      "mode": "in-person",
-      "start_date": "2026-08-31",
-      "end_date": "2026-09-04",
-      "duration_days": 5,
-      "application_deadline": "2026-05-17",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "EUR 340 IAHR members / EUR 380 non-members",
-      "fee": "EUR 340 IAHR members / EUR 380 non-members",
-      "fee_eur": 340.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "topics": [
-        "hydrology",
-        "data analysis",
-        "data visualization",
-        "hydrological modelling",
-        "R programming"
-      ],
-      "summary": "A five-day University of Ljubljana summer school on hydrological data collection, manipulation, analysis, visualization, modelling, and R programming, organized by the UNESCO Chair on Water-related Disaster Risk Reduction.",
-      "summary_zh": "卢布尔雅那大学举办的五天水文数据暑期学校，涵盖数据采集、处理、分析、可视化、建模和 R 编程，由联合国教科文组织水相关灾害风险减少教席组织。",
-      "eligibility": "PhD students; postdoctoral researchers and MSc students are also welcome to apply.",
-      "eligibility_zh": "主要面向博士生，博士后研究人员和硕士生也可申请。",
-      "sessions": []
-    },
-    {
       "id": "opportunities/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-40f851a3",
       "edition_id": "edition:e496622f769510db",
       "programme_id": "programme:551a5648d92c46be",
@@ -458,56 +406,6 @@
       "summary_zh": "IEEE RAS 举办的五天线下认知机器人暑期学校，连接人工智能、机器学习、感知、规划与智能机器人系统。",
       "eligibility": "early-career researchers, and professionals interested in the next generation of intelligent robotic systems",
       "eligibility_zh": "对下一代智能机器人系统感兴趣的早期职业研究人员和专业人士",
-      "sessions": []
-    },
-    {
-      "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-      "edition_id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-      "programme_id": "programme:259cc91832fad73a",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html"
-      },
-      "official_url": "https://www.un-ihe.org/short-courses",
-      "title": "Interdisciplinarity for Complex Water Problems",
-      "title_zh": "复杂水问题的跨学科方法",
-      "type": "short course",
-      "organizer": "IHE Delft",
-      "organizer_zh": "IHE Delft",
-      "location": "Delft, Netherlands",
-      "location_zh": "荷兰代尔夫特",
-      "mode": "in-person",
-      "start_date": "2026-09-28",
-      "end_date": "2026-10-02",
-      "duration_days": 5,
-      "application_deadline": "2026-08-28",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee EUR 450 excl. VAT",
-      "fee": "EUR 450 excl. VAT",
-      "fee_eur": 450.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "topics": [
-        "hydrology",
-        "environmental science",
-        "engineering",
-        "design",
-        "social science"
-      ],
-      "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
-      "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
-      "eligibility": "PhD students working on water-related issues across engineering, hydrology, environmental science, social science, or the humanities.",
-      "eligibility_zh": "面向从工程、水文、环境科学、社会科学或人文学科角度研究水相关问题的博士生。",
       "sessions": []
     },
     {
