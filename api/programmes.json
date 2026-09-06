@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-09-05",
+  "generated": "2026-09-06",
   "programmes": [
     {
       "id": "programme:21ea41829cac43f3",
@@ -230,6 +230,81 @@
         ],
         "summary": "This 4-day course presents statistical models and techniques beyond classical linear modelling, with an emphasis on concrete applications in biology.",
         "summary_zh": "这门为期4天的课程介绍超越经典线性模型的统计模型和技术，重点强调在生物学中的具体应用。",
+        "sessions": []
+      }
+    },
+    {
+      "id": "programme:f40f853dcdd6757a",
+      "slug": "cl-fall-school-21st-of-september-2nd-of-october-283dadb1",
+      "title": "CL Fall School 21st of September – 2nd of October",
+      "title_zh": "CL秋季学校 9月21日至10月2日",
+      "organizer": "eveeno",
+      "organizer_zh": "eveeno",
+      "summary": "CL Fall School 21st of September – 2nd of October 2026 Organize your events Share: Veranstalter-Login Eigene Events erstellen! Demos ausprobieren CL Fall School 21st of September – 2nd of October 2026 Nürnberg Registration selected Info Location More events Contact de en fr Regis",
+      "summary_zh": "CL秋季学校 2026年9月21日至10月2日 组织您的活动 分享： 主办方登录 创建自己的活动！ 试用演示 CL秋季学校 2026年9月21日至10月2日 纽伦堡 注册已选 信息 地点 更多活动 联系方式 de en fr Regis",
+      "topics": [
+        "linguistics",
+        "computational linguistics",
+        "natural language processing",
+        "corpus linguistics"
+      ],
+      "editions": [
+        {
+          "id": "edition:b74ea802fe5c7519",
+          "title": "CL Fall School 21st of September – 2nd of October 2026",
+          "title_zh": "CL秋季学校 2026年9月21日至10月2日",
+          "detail_path": "opportunities/cl-fall-school-21st-of-september-2nd-of-october-2026-029ba39c.html",
+          "official_url": "https://eveeno.com/193677544",
+          "location": "More events",
+          "location_zh": "更多活动",
+          "start_date": "2026-09-21",
+          "end_date": "2026-10-02",
+          "deadline": null,
+          "deadline_status": "closed",
+          "duration_days": 12,
+          "mode": "in-person",
+          "financial_summary": "Fee about EUR 150",
+          "financial_summary_zh": "费用约 EUR 150",
+          "funding_available": null,
+          "fee_eur": 150.0,
+          "topics": [
+            "linguistics",
+            "computational linguistics",
+            "natural language processing",
+            "corpus linguistics"
+          ],
+          "summary": "CL Fall School 21st of September – 2nd of October 2026 Organize your events Share: Veranstalter-Login Eigene Events erstellen! Demos ausprobieren CL Fall School 21st of September – 2nd of October 2026 Nürnberg Registration selected Info Location More events Contact de en fr Regis",
+          "summary_zh": "CL秋季学校 2026年9月21日至10月2日 组织您的活动 分享： 主办方登录 创建自己的活动！ 试用演示 CL秋季学校 2026年9月21日至10月2日 纽伦堡 注册已选 信息 地点 更多活动 联系方式 de en fr Regis",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:b74ea802fe5c7519",
+        "title": "CL Fall School 21st of September – 2nd of October 2026",
+        "title_zh": "CL秋季学校 2026年9月21日至10月2日",
+        "detail_path": "opportunities/cl-fall-school-21st-of-september-2nd-of-october-2026-029ba39c.html",
+        "official_url": "https://eveeno.com/193677544",
+        "location": "More events",
+        "location_zh": "更多活动",
+        "start_date": "2026-09-21",
+        "end_date": "2026-10-02",
+        "deadline": null,
+        "deadline_status": "closed",
+        "duration_days": 12,
+        "mode": "in-person",
+        "financial_summary": "Fee about EUR 150",
+        "financial_summary_zh": "费用约 EUR 150",
+        "funding_available": null,
+        "fee_eur": 150.0,
+        "topics": [
+          "linguistics",
+          "computational linguistics",
+          "natural language processing",
+          "corpus linguistics"
+        ],
+        "summary": "CL Fall School 21st of September – 2nd of October 2026 Organize your events Share: Veranstalter-Login Eigene Events erstellen! Demos ausprobieren CL Fall School 21st of September – 2nd of October 2026 Nürnberg Registration selected Info Location More events Contact de en fr Regis",
+        "summary_zh": "CL秋季学校 2026年9月21日至10月2日 组织您的活动 分享： 主办方登录 创建自己的活动！ 试用演示 CL秋季学校 2026年9月21日至10月2日 纽伦堡 注册已选 信息 地点 更多活动 联系方式 de en fr Regis",
         "sessions": []
       }
     },
