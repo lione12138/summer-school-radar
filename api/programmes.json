@@ -1,160 +1,7 @@
 {
   "schema_version": 1,
-  "generated": "2026-09-06",
+  "generated": "2026-09-07",
   "programmes": [
-    {
-      "id": "programme:21ea41829cac43f3",
-      "slug": "computational-linguistics-fall-school-499f7a40",
-      "title": "Computational Linguistics Fall School",
-      "title_zh": "计算语言学秋季学校",
-      "organizer": "University of Technology Nuremberg (UTN)",
-      "organizer_zh": "纽伦堡工业大学（UTN）",
-      "summary": "A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.",
-      "summary_zh": "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。",
-      "topics": [
-        "linguistics",
-        "computational linguistics",
-        "natural language processing",
-        "corpus linguistics"
-      ],
-      "editions": [
-        {
-          "id": "edition:be59b18304848f3b",
-          "title": "Computational Linguistics Fall School 2026",
-          "title_zh": "2026年计算语言学秋季学校",
-          "detail_path": "opportunities/computational-linguistics-fall-school-2026-50903ddb.html",
-          "official_url": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
-          "location": "University of Technology Nuremberg, Nuremberg, Germany",
-          "location_zh": "德国纽伦堡工业大学（纽伦堡）",
-          "start_date": "2026-09-21",
-          "end_date": "2026-10-02",
-          "deadline": "2026-09-06",
-          "deadline_status": "open",
-          "duration_days": 12,
-          "mode": "in-person",
-          "financial_summary": "Registration-fee scholarship for selected participants · otherwise EUR 150 students / EUR 200 non-students",
-          "financial_summary_zh": "入选者可获注册费奖学金 · 未获奖者：学生 EUR 150 / 非学生 EUR 200",
-          "funding_available": true,
-          "fee_eur": 150.0,
-          "topics": [
-            "linguistics",
-            "computational linguistics",
-            "natural language processing",
-            "corpus linguistics"
-          ],
-          "summary": "A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.",
-          "summary_zh": "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "edition:be59b18304848f3b",
-        "title": "Computational Linguistics Fall School 2026",
-        "title_zh": "2026年计算语言学秋季学校",
-        "detail_path": "opportunities/computational-linguistics-fall-school-2026-50903ddb.html",
-        "official_url": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
-        "location": "University of Technology Nuremberg, Nuremberg, Germany",
-        "location_zh": "德国纽伦堡工业大学（纽伦堡）",
-        "start_date": "2026-09-21",
-        "end_date": "2026-10-02",
-        "deadline": "2026-09-06",
-        "deadline_status": "open",
-        "duration_days": 12,
-        "mode": "in-person",
-        "financial_summary": "Registration-fee scholarship for selected participants · otherwise EUR 150 students / EUR 200 non-students",
-        "financial_summary_zh": "入选者可获注册费奖学金 · 未获奖者：学生 EUR 150 / 非学生 EUR 200",
-        "funding_available": true,
-        "fee_eur": 150.0,
-        "topics": [
-          "linguistics",
-          "computational linguistics",
-          "natural language processing",
-          "corpus linguistics"
-        ],
-        "summary": "A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.",
-        "summary_zh": "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。",
-        "sessions": []
-      }
-    },
-    {
-      "id": "programme:259cc91832fad73a",
-      "slug": "interdisciplinarity-for-complex-water-problems-709bc84b",
-      "title": "Interdisciplinarity for Complex Water Problems",
-      "title_zh": "复杂水问题的跨学科研究",
-      "organizer": "IHE Delft",
-      "organizer_zh": "IHE Delft",
-      "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
-      "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
-      "topics": [
-        "hydrology",
-        "environmental science",
-        "engineering",
-        "design",
-        "social science"
-      ],
-      "editions": [
-        {
-          "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-          "title": "Interdisciplinarity for Complex Water Problems",
-          "title_zh": "复杂水问题的跨学科方法",
-          "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-          "official_url": "https://www.un-ihe.org/short-courses",
-          "location": "Delft, Netherlands",
-          "location_zh": "荷兰代尔夫特",
-          "start_date": "2026-09-28",
-          "end_date": "2026-10-02",
-          "deadline": "2026-09-06",
-          "deadline_status": "open",
-          "duration_days": 5,
-          "mode": "in-person",
-          "financial_summary": "Fee EUR 450 excl. VAT",
-          "financial_summary_zh": "费用 EUR 450（未含增值税）",
-          "funding_available": null,
-          "fee_eur": 450.0,
-          "topics": [
-            "hydrology",
-            "environmental science",
-            "engineering",
-            "design",
-            "social science"
-          ],
-          "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
-          "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-        "title": "Interdisciplinarity for Complex Water Problems",
-        "title_zh": "复杂水问题的跨学科方法",
-        "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-        "official_url": "https://www.un-ihe.org/short-courses",
-        "location": "Delft, Netherlands",
-        "location_zh": "荷兰代尔夫特",
-        "start_date": "2026-09-28",
-        "end_date": "2026-10-02",
-        "deadline": "2026-09-06",
-        "deadline_status": "open",
-        "duration_days": 5,
-        "mode": "in-person",
-        "financial_summary": "Fee EUR 450 excl. VAT",
-        "financial_summary_zh": "费用 EUR 450（未含增值税）",
-        "funding_available": null,
-        "fee_eur": 450.0,
-        "topics": [
-          "hydrology",
-          "environmental science",
-          "engineering",
-          "design",
-          "social science"
-        ],
-        "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
-        "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
-        "sessions": []
-      }
-    },
     {
       "id": "programme:db89f04e7c1c4380",
       "slug": "advanced-statistics-statistical-modelling-803f1bf8",
@@ -305,6 +152,81 @@
         ],
         "summary": "CL Fall School 21st of September – 2nd of October 2026 Organize your events Share: Veranstalter-Login Eigene Events erstellen! Demos ausprobieren CL Fall School 21st of September – 2nd of October 2026 Nürnberg Registration selected Info Location More events Contact de en fr Regis",
         "summary_zh": "CL秋季学校 2026年9月21日至10月2日 组织您的活动 分享： 主办方登录 创建自己的活动！ 试用演示 CL秋季学校 2026年9月21日至10月2日 纽伦堡 注册已选 信息 地点 更多活动 联系方式 de en fr Regis",
+        "sessions": []
+      }
+    },
+    {
+      "id": "programme:21ea41829cac43f3",
+      "slug": "computational-linguistics-fall-school-499f7a40",
+      "title": "Computational Linguistics Fall School",
+      "title_zh": "计算语言学秋季学校",
+      "organizer": "University of Technology Nuremberg (UTN)",
+      "organizer_zh": "纽伦堡工业大学（UTN）",
+      "summary": "A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.",
+      "summary_zh": "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。",
+      "topics": [
+        "linguistics",
+        "computational linguistics",
+        "natural language processing",
+        "corpus linguistics"
+      ],
+      "editions": [
+        {
+          "id": "edition:be59b18304848f3b",
+          "title": "Computational Linguistics Fall School 2026",
+          "title_zh": "2026年计算语言学秋季学校",
+          "detail_path": "opportunities/computational-linguistics-fall-school-2026-50903ddb.html",
+          "official_url": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
+          "location": "University of Technology Nuremberg, Nuremberg, Germany",
+          "location_zh": "德国纽伦堡工业大学（纽伦堡）",
+          "start_date": "2026-09-21",
+          "end_date": "2026-10-02",
+          "deadline": "2026-09-06",
+          "deadline_status": "closed",
+          "duration_days": 12,
+          "mode": "in-person",
+          "financial_summary": "Registration-fee scholarship for selected participants · otherwise EUR 150 students / EUR 200 non-students",
+          "financial_summary_zh": "入选者可获注册费奖学金 · 未获奖者：学生 EUR 150 / 非学生 EUR 200",
+          "funding_available": true,
+          "fee_eur": 150.0,
+          "topics": [
+            "linguistics",
+            "computational linguistics",
+            "natural language processing",
+            "corpus linguistics"
+          ],
+          "summary": "A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.",
+          "summary_zh": "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:be59b18304848f3b",
+        "title": "Computational Linguistics Fall School 2026",
+        "title_zh": "2026年计算语言学秋季学校",
+        "detail_path": "opportunities/computational-linguistics-fall-school-2026-50903ddb.html",
+        "official_url": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
+        "location": "University of Technology Nuremberg, Nuremberg, Germany",
+        "location_zh": "德国纽伦堡工业大学（纽伦堡）",
+        "start_date": "2026-09-21",
+        "end_date": "2026-10-02",
+        "deadline": "2026-09-06",
+        "deadline_status": "closed",
+        "duration_days": 12,
+        "mode": "in-person",
+        "financial_summary": "Registration-fee scholarship for selected participants · otherwise EUR 150 students / EUR 200 non-students",
+        "financial_summary_zh": "入选者可获注册费奖学金 · 未获奖者：学生 EUR 150 / 非学生 EUR 200",
+        "funding_available": true,
+        "fee_eur": 150.0,
+        "topics": [
+          "linguistics",
+          "computational linguistics",
+          "natural language processing",
+          "corpus linguistics"
+        ],
+        "summary": "A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.",
+        "summary_zh": "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。",
         "sessions": []
       }
     },
@@ -773,6 +695,84 @@
         ],
         "summary": "A five-day in-person IEEE RAS summer school on cognitive robotics, bridging artificial intelligence, machine learning, perception, planning, and intelligent robotic systems.",
         "summary_zh": "IEEE RAS 举办的五天线下认知机器人暑期学校，连接人工智能、机器学习、感知、规划与智能机器人系统。",
+        "sessions": []
+      }
+    },
+    {
+      "id": "programme:259cc91832fad73a",
+      "slug": "interdisciplinarity-for-complex-water-problems-709bc84b",
+      "title": "Interdisciplinarity for Complex Water Problems",
+      "title_zh": "复杂水问题的跨学科研究",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
+      "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
+      "topics": [
+        "hydrology",
+        "environmental science",
+        "engineering",
+        "design",
+        "social science"
+      ],
+      "editions": [
+        {
+          "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
+          "title": "Interdisciplinarity for Complex Water Problems",
+          "title_zh": "复杂水问题的跨学科方法",
+          "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
+          "official_url": "https://www.un-ihe.org/short-courses",
+          "location": "Delft, Netherlands",
+          "location_zh": "荷兰代尔夫特",
+          "start_date": "2026-09-28",
+          "end_date": "2026-10-02",
+          "deadline": "2026-09-06",
+          "deadline_status": "closed",
+          "duration_days": 5,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 450 excl. VAT",
+          "financial_summary_zh": "费用 EUR 450（未含增值税）",
+          "funding_available": null,
+          "fee_eur": 450.0,
+          "topics": [
+            "hydrology",
+            "environmental science",
+            "engineering",
+            "design",
+            "social science"
+          ],
+          "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
+          "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
+        "title": "Interdisciplinarity for Complex Water Problems",
+        "title_zh": "复杂水问题的跨学科方法",
+        "detail_path": "opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
+        "official_url": "https://www.un-ihe.org/short-courses",
+        "location": "Delft, Netherlands",
+        "location_zh": "荷兰代尔夫特",
+        "start_date": "2026-09-28",
+        "end_date": "2026-10-02",
+        "deadline": "2026-09-06",
+        "deadline_status": "closed",
+        "duration_days": 5,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 450 excl. VAT",
+        "financial_summary_zh": "费用 EUR 450（未含增值税）",
+        "funding_available": null,
+        "fee_eur": 450.0,
+        "topics": [
+          "hydrology",
+          "environmental science",
+          "engineering",
+          "design",
+          "social science"
+        ],
+        "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
+        "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
         "sessions": []
       }
     },

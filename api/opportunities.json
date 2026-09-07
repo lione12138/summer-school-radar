@@ -3,7 +3,7 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-09-06",
+  "generated": "2026-09-07",
   "opportunities": [
     {
       "id": "opportunities/computational-linguistics-fall-school-2026-50903ddb",
@@ -34,8 +34,8 @@
       "end_date": "2026-10-02",
       "duration_days": 12,
       "application_deadline": "2026-09-06",
-      "application_status": "open",
-      "directory_tier": "funded-or-low-fee",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
       "financial_summary": "Registration-fee scholarship for selected participants · otherwise EUR 150 students / EUR 200 non-students",
       "fee": "EUR 150 students / EUR 200 non-students",
       "fee_eur": 150.0,
@@ -308,56 +308,6 @@
       "sessions": []
     },
     {
-      "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-      "edition_id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-      "programme_id": "programme:259cc91832fad73a",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html"
-      },
-      "official_url": "https://www.un-ihe.org/short-courses",
-      "title": "Interdisciplinarity for Complex Water Problems",
-      "title_zh": "复杂水问题的跨学科方法",
-      "type": "short course",
-      "organizer": "IHE Delft",
-      "organizer_zh": "IHE Delft",
-      "location": "Delft, Netherlands",
-      "location_zh": "荷兰代尔夫特",
-      "mode": "in-person",
-      "start_date": "2026-09-28",
-      "end_date": "2026-10-02",
-      "duration_days": 5,
-      "application_deadline": "2026-09-06",
-      "application_status": "open",
-      "directory_tier": "verified-self-funded",
-      "financial_summary": "Fee EUR 450 excl. VAT",
-      "fee": "EUR 450 excl. VAT",
-      "fee_eur": 450.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "topics": [
-        "hydrology",
-        "environmental science",
-        "engineering",
-        "design",
-        "social science"
-      ],
-      "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
-      "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
-      "eligibility": "PhD students working on water-related issues across engineering, hydrology, environmental science, social science, or the humanities.",
-      "eligibility_zh": "面向从工程、水文、环境科学、社会科学或人文学科角度研究水相关问题的博士生。",
-      "sessions": []
-    },
-    {
       "id": "sicss:2026:amu-law",
       "edition_id": "sicss:2026:amu-law",
       "programme_id": "programme:71652decb8975874",
@@ -404,6 +354,56 @@
       "summary_zh": "一个密集的计算社会科学学院，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
       "eligibility": "Graduate students, postdoctoral researchers, and junior faculty.",
       "eligibility_zh": "研究生、博士后研究人员和初级教师。",
+      "sessions": []
+    },
+    {
+      "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
+      "edition_id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
+      "programme_id": "programme:259cc91832fad73a",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html"
+      },
+      "official_url": "https://www.un-ihe.org/short-courses",
+      "title": "Interdisciplinarity for Complex Water Problems",
+      "title_zh": "复杂水问题的跨学科方法",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "location": "Delft, Netherlands",
+      "location_zh": "荷兰代尔夫特",
+      "mode": "in-person",
+      "start_date": "2026-09-28",
+      "end_date": "2026-10-02",
+      "duration_days": 5,
+      "application_deadline": "2026-09-06",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 450 excl. VAT",
+      "fee": "EUR 450 excl. VAT",
+      "fee_eur": 450.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "topics": [
+        "hydrology",
+        "environmental science",
+        "engineering",
+        "design",
+        "social science"
+      ],
+      "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
+      "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
+      "eligibility": "PhD students working on water-related issues across engineering, hydrology, environmental science, social science, or the humanities.",
+      "eligibility_zh": "面向从工程、水文、环境科学、社会科学或人文学科角度研究水相关问题的博士生。",
       "sessions": []
     },
     {
