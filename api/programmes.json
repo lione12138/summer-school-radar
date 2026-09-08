@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-09-07",
+  "generated": "2026-09-08",
   "programmes": [
     {
       "id": "programme:db89f04e7c1c4380",
@@ -88,7 +88,7 @@
       "organizer": "eveeno",
       "organizer_zh": "eveeno",
       "summary": "CL Fall School 21st of September – 2nd of October 2026 Organize your events Share: Veranstalter-Login Eigene Events erstellen! Demos ausprobieren CL Fall School 21st of September – 2nd of October 2026 Nürnberg Registration selected Info Location More events Contact de en fr Regis",
-      "summary_zh": "CL秋季学校 2026年9月21日至10月2日 组织您的活动 分享： 主办方登录 创建自己的活动！ 试用演示 CL秋季学校 2026年9月21日至10月2日 纽伦堡 注册已选 信息 地点 更多活动 联系方式 de en fr Regis",
+      "summary_zh": "CL 秋季学校 2026年9月21日至10月2日 组织您的活动 分享： 主办方登录 创建自己的活动！ 试用演示 CL 秋季学校 2026年9月21日至10月2日 纽伦堡 注册已选择 信息 地点 更多活动 联系方式 de en fr Regis",
       "topics": [
         "linguistics",
         "computational linguistics",
@@ -99,7 +99,7 @@
         {
           "id": "edition:b74ea802fe5c7519",
           "title": "CL Fall School 21st of September – 2nd of October 2026",
-          "title_zh": "CL秋季学校 2026年9月21日至10月2日",
+          "title_zh": "CL 秋季学校 2026年9月21日至10月2日",
           "detail_path": "opportunities/cl-fall-school-21st-of-september-2nd-of-october-2026-029ba39c.html",
           "official_url": "https://eveeno.com/193677544",
           "location": "More events",
@@ -121,7 +121,7 @@
             "corpus linguistics"
           ],
           "summary": "CL Fall School 21st of September – 2nd of October 2026 Organize your events Share: Veranstalter-Login Eigene Events erstellen! Demos ausprobieren CL Fall School 21st of September – 2nd of October 2026 Nürnberg Registration selected Info Location More events Contact de en fr Regis",
-          "summary_zh": "CL秋季学校 2026年9月21日至10月2日 组织您的活动 分享： 主办方登录 创建自己的活动！ 试用演示 CL秋季学校 2026年9月21日至10月2日 纽伦堡 注册已选 信息 地点 更多活动 联系方式 de en fr Regis",
+          "summary_zh": "CL 秋季学校 2026年9月21日至10月2日 组织您的活动 分享： 主办方登录 创建自己的活动！ 试用演示 CL 秋季学校 2026年9月21日至10月2日 纽伦堡 注册已选择 信息 地点 更多活动 联系方式 de en fr Regis",
           "sessions": []
         }
       ],
@@ -129,7 +129,7 @@
       "latest_edition": {
         "id": "edition:b74ea802fe5c7519",
         "title": "CL Fall School 21st of September – 2nd of October 2026",
-        "title_zh": "CL秋季学校 2026年9月21日至10月2日",
+        "title_zh": "CL 秋季学校 2026年9月21日至10月2日",
         "detail_path": "opportunities/cl-fall-school-21st-of-september-2nd-of-october-2026-029ba39c.html",
         "official_url": "https://eveeno.com/193677544",
         "location": "More events",
@@ -151,7 +151,7 @@
           "corpus linguistics"
         ],
         "summary": "CL Fall School 21st of September – 2nd of October 2026 Organize your events Share: Veranstalter-Login Eigene Events erstellen! Demos ausprobieren CL Fall School 21st of September – 2nd of October 2026 Nürnberg Registration selected Info Location More events Contact de en fr Regis",
-        "summary_zh": "CL秋季学校 2026年9月21日至10月2日 组织您的活动 分享： 主办方登录 创建自己的活动！ 试用演示 CL秋季学校 2026年9月21日至10月2日 纽伦堡 注册已选 信息 地点 更多活动 联系方式 de en fr Regis",
+        "summary_zh": "CL 秋季学校 2026年9月21日至10月2日 组织您的活动 分享： 主办方登录 创建自己的活动！ 试用演示 CL 秋季学校 2026年9月21日至10月2日 纽伦堡 注册已选择 信息 地点 更多活动 联系方式 de en fr Regis",
         "sessions": []
       }
     },
@@ -638,7 +638,7 @@
         {
           "id": "edition:e496622f769510db",
           "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
-          "title_zh": "IEEE RAS德国暑期学校：连接人工智能与机器人技术",
+          "title_zh": "IEEE RAS德国暑期学校：连接人工智能与机器人",
           "detail_path": "opportunities/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-40f851a3.html",
           "official_url": "https://events.vtools.ieee.org/m/564683",
           "location": "Abtei Frauenwörth, Chiemsee, Germany",
@@ -670,7 +670,7 @@
       "latest_edition": {
         "id": "edition:e496622f769510db",
         "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
-        "title_zh": "IEEE RAS德国暑期学校：连接人工智能与机器人技术",
+        "title_zh": "IEEE RAS德国暑期学校：连接人工智能与机器人",
         "detail_path": "opportunities/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-40f851a3.html",
         "official_url": "https://events.vtools.ieee.org/m/564683",
         "location": "Abtei Frauenwörth, Chiemsee, Germany",
