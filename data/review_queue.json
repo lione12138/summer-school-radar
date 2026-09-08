@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-04",
+  "generated": "2026-09-08",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -39,14 +39,14 @@
         "validation_warnings": [
           "location_context_weak"
         ],
-        "chinese_summary": "该冬季学校旨在向学生和早期职业科学家传播聚变科学知识，涵盖数学、物理和工程等背景，最多选拔50名参与者。申请需提交简历和动机信，申请截止日期为2026年11月15日。",
+        "chinese_summary": "该冬季学校旨在向学生和早期职业科学家传播聚变科学知识，涵盖数学、物理和工程等背景，最多选拔50名参与者。申请需提交简历和动机信，截止日期为2026年11月15日。",
         "extracted_deadline": "2026-11-15",
         "extracted_fee": "",
         "extracted_funding": "Travel support may be available; accommodation and meals covered for accepted applicants.",
         "evidence_fields": {
           "deadline": "​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ Deadline: 15 Nov 2026 Fusion is one of the most promising sources of green and limitless energy for the future.",
           "fee": "",
-          "funding": "Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of f | Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of financial support will be indicated in the acceptance letter. | For the accepted applicants, the total cost of accommodation and meals will be covered."
+          "funding": "Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of financial support will be indicated in the acceptance letter. | For the accepted applicants, the total cost of accommodation and meals will be covered."
         }
       }
     },
@@ -91,7 +91,7 @@
       }
     },
     {
-      "title": "LOT – Netherlands Graduate School of Linguistics",
+      "title": "LOT Winter School 2027",
       "url": "https://lotschool.nl/",
       "organizer": "LOT – Netherlands Graduate School of Linguistics",
       "source_layer": "1.5",
@@ -125,10 +125,15 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
+          "missing_evidence_id:title",
+          "missing_evidence_id:event_type",
+          "missing_evidence_id:application_deadline",
+          "missing_evidence_id:application_deadline_type",
+          "missing_evidence_id:application_url",
           "index_or_listing_page"
         ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
+        "chinese_summary": "该页面为LOT语言学研究生院网站，提及LOT冬季学校2027及注册截止日期为9月25日，但具体信息不明确。",
+        "extracted_deadline": "2026-09-25",
         "extracted_fee": "",
         "extracted_funding": "",
         "evidence_fields": {
@@ -190,43 +195,6 @@
           "fee": "",
           "funding": ""
         }
-      }
-    },
-    {
-      "title": "CL Fall School 21st of September – 2nd of October 2026",
-      "url": "https://eveeno.com/193677544",
-      "organizer": "eveeno",
-      "source_layer": "1",
-      "location": "More events",
-      "dates": {
-        "start": "2026-09-21",
-        "end": "2026-10-02",
-        "duration_days": 12
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "low-fee",
-      "fee": "150,00 €",
-      "fee_eur": 150.0,
-      "topics": [
-        "linguistics",
-        "computational linguistics",
-        "natural language processing",
-        "corpus linguistics"
-      ],
-      "needs_review": [
-        "application deadline is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "",
-        "duration": "September 21–October 2, 2026",
-        "fee": "",
-        "funding": "",
-        "mode": "in person. First Course Week (September 21–25) Programming"
-      },
-      "ai_advisory": {
-        "available": false
       }
     },
     {
@@ -315,41 +283,6 @@
       }
     },
     {
-      "title": "Search form",
-      "url": "https://www.clivar.org/events/4th-commodore-workshop-advancing-ocean-modeling-bridging-theory-computation-scales-and",
-      "organizer": "CLIVAR",
-      "source_layer": "1",
-      "location": "global",
-      "dates": {
-        "start": "2026-09-21",
-        "end": "2026-09-24",
-        "duration_days": 4
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "low-fee",
-      "fee": "no registration fee",
-      "fee_eur": 0.0,
-      "topics": [
-        "climate"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "in-person status is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "",
-        "duration": "September 21, 2026 to Thursday, September 24, 2026",
-        "fee": "",
-        "funding": "",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
       "title": "2026 Advanced Course on International Criminal Law",
       "url": "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/",
       "organizer": "The Hague Academy of International Law",
@@ -433,6 +366,106 @@
         "extracted_funding": "",
         "evidence_fields": {
           "deadline": "The tuition fees associated with this early deadline are lower than the tuition fees associated with the regular application deadline ( May 8 ). | Application deadline Acceptance letter Payment Login Early registration April 5 by April 19 deadline mentioned in the letter of acceptance letter with password after payment Regular registration May 8 by May 24 Ways of Payment : will be described in your acceptance letter .",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
+      "title": "GESIS Summer School in Survey Methodology",
+      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
+      "organizer": "GESIS Spring Seminar",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-07-28",
+        "end": "2027-08-20",
+        "duration_days": 24
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "data analysis",
+        "design"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "28 July - 20 August 2027",
+        "fee": "",
+        "funding": "",
+        "mode": "onsite or online participation). ► All courses will be h"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "no_evidence_snippets",
+          "possibly_past_or_closed"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
+      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
+      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
+      "organizer": "GESIS Spring Seminar",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-02-22",
+        "end": "2027-03-12",
+        "duration_days": 19
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "data analysis",
+        "social science"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "22 Feb – 12 March 2027",
+        "fee": "",
+        "funding": "",
+        "mode": "onsite) an exciting time in Cologne, complemented by an"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "missing_evidence_id:event_type",
+          "possibly_past_or_closed"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
           "fee": "",
           "funding": ""
         }
@@ -666,48 +699,6 @@
         "fee": "",
         "funding": "",
         "mode": "will be hosted at the Appart’City Ferney-Voltaire . Academic progra"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "LOT Winter School 2027",
-      "url": "https://lotschool.nl/events/lot-winter-school-2027/",
-      "organizer": "LOT – Netherlands Graduate School of Linguistics",
-      "source_layer": "1.5",
-      "location": "Europe",
-      "dates": {
-        "start": "2027-01-11",
-        "end": "2027-01-22",
-        "duration_days": 12
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "linguistics",
-        "phonetics",
-        "phonology",
-        "syntax",
-        "semantics",
-        "psycholinguistics",
-        "statistics"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "in-person status is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.25,
-      "evidence": {
-        "deadline": "",
-        "duration": "11 to 22 January 2027",
-        "fee": "",
-        "funding": "",
-        "mode": ""
       },
       "ai_advisory": {
         "available": false
