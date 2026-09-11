@@ -3,6 +3,78 @@
   "generated": "2026-09-11",
   "programmes": [
     {
+      "id": "programme:4e21d848f39190e3",
+      "slug": "al-nour-winter-school-on-fusion-science-3d170023",
+      "title": "Al-Nour Winter School on Fusion Science",
+      "title_zh": "Al-Nour 聚变科学冬季学校",
+      "organizer": "Indico - Conferences and Events",
+      "organizer_zh": "Indico - 会议与活动",
+      "summary": "Al-Nour Winter School on Fusion Science | (smr 4333) (04-8 January 2027) Scientific Calendar Event GO TO SCIENTIFIC CALENDAR Europe/Rome English Administration Search Search in Conferences: Overview Scientific Programme Programme Contribution List Author List Apply here Home Al-N",
+      "summary_zh": "Al-Nour 聚变科学冬季学校 | (smr 4333)（2027年1月4日至8日）科学日历活动 前往科学日历 欧洲/罗马 英语 管理 搜索 在会议中搜索：概览 科学日程 日程 投稿列表 作者列表 在此申请 首页 Al-N",
+      "topics": [
+        "physics",
+        "mathematics",
+        "engineering"
+      ],
+      "editions": [
+        {
+          "id": "edition:49e9300f62e215a4",
+          "title": "Al-Nour Winter School on Fusion Science",
+          "title_zh": "Al-Nour 聚变科学冬季学校",
+          "detail_path": "opportunities/al-nour-winter-school-on-fusion-science-a5413f47.html",
+          "official_url": "https://indico.ictp.it/event/11407",
+          "location": "Europe",
+          "location_zh": "欧洲",
+          "start_date": "2027-01-04",
+          "end_date": "2027-01-08",
+          "deadline": "2026-11-20",
+          "deadline_status": "open",
+          "duration_days": 5,
+          "mode": "in-person",
+          "financial_summary": "accommodation support · amount not stated",
+          "financial_summary_zh": "accommodation support · 金额未说明",
+          "funding_available": true,
+          "fee_eur": null,
+          "topics": [
+            "physics",
+            "mathematics",
+            "engineering"
+          ],
+          "summary": "Al-Nour Winter School on Fusion Science | (smr 4333) (04-8 January 2027) Scientific Calendar Event GO TO SCIENTIFIC CALENDAR Europe/Rome English Administration Search Search in Conferences: Overview Scientific Programme Programme Contribution List Author List Apply here Home Al-N",
+          "summary_zh": "Al-Nour 聚变科学冬季学校 | (smr 4333)（2027年1月4日至8日）科学日历活动 前往科学日历 欧洲/罗马 英语 管理 搜索 在会议中搜索：概览 科学日程 日程 投稿列表 作者列表 在此申请 首页 Al-N",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:49e9300f62e215a4",
+        "title": "Al-Nour Winter School on Fusion Science",
+        "title_zh": "Al-Nour 聚变科学冬季学校",
+        "detail_path": "opportunities/al-nour-winter-school-on-fusion-science-a5413f47.html",
+        "official_url": "https://indico.ictp.it/event/11407",
+        "location": "Europe",
+        "location_zh": "欧洲",
+        "start_date": "2027-01-04",
+        "end_date": "2027-01-08",
+        "deadline": "2026-11-20",
+        "deadline_status": "open",
+        "duration_days": 5,
+        "mode": "in-person",
+        "financial_summary": "accommodation support · amount not stated",
+        "financial_summary_zh": "accommodation support · 金额未说明",
+        "funding_available": true,
+        "fee_eur": null,
+        "topics": [
+          "physics",
+          "mathematics",
+          "engineering"
+        ],
+        "summary": "Al-Nour Winter School on Fusion Science | (smr 4333) (04-8 January 2027) Scientific Calendar Event GO TO SCIENTIFIC CALENDAR Europe/Rome English Administration Search Search in Conferences: Overview Scientific Programme Programme Contribution List Author List Apply here Home Al-N",
+        "summary_zh": "Al-Nour 聚变科学冬季学校 | (smr 4333)（2027年1月4日至8日）科学日历活动 前往科学日历 欧洲/罗马 英语 管理 搜索 在会议中搜索：概览 科学日程 日程 投稿列表 作者列表 在此申请 首页 Al-N",
+        "sessions": []
+      }
+    },
+    {
       "id": "programme:db89f04e7c1c4380",
       "slug": "advanced-statistics-statistical-modelling-803f1bf8",
       "title": "Advanced Statistics: Statistical Modelling",
@@ -725,7 +797,7 @@
           "location_zh": "荷兰代尔夫特",
           "start_date": "2026-09-28",
           "end_date": "2026-10-02",
-          "deadline": "2026-09-06",
+          "deadline": "2026-09-10",
           "deadline_status": "closed",
           "duration_days": 5,
           "mode": "in-person",
@@ -756,7 +828,7 @@
         "location_zh": "荷兰代尔夫特",
         "start_date": "2026-09-28",
         "end_date": "2026-10-02",
-        "deadline": "2026-09-06",
+        "deadline": "2026-09-10",
         "deadline_status": "closed",
         "duration_days": 5,
         "mode": "in-person",
