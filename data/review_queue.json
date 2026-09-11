@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-09",
+  "generated": "2026-09-11",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -37,18 +37,16 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "llm_chunk_truncated:6",
-          "llm_request_truncated:max_total_chars_per_llm_request",
           "location_context_weak"
         ],
-        "chinese_summary": "该冬季学校旨在向学生和科学家传播聚变科学知识，面向数学、物理和工程背景的学生及早期职业科学家，最多50人，申请截止日期为2026年11月15日。",
+        "chinese_summary": "阿尔努尔聚变科学冬季学校（smr 4333）将于2027年1月4日至8日在约旦安曼（Allan - Jordan）举行，申请截止日期为2026年11月15日，申请现已开放。",
         "extracted_deadline": "2026-11-15",
         "extracted_fee": "",
-        "extracted_funding": "Accommodation and meals covered for accepted applicants; travel support possible",
+        "extracted_funding": "Financial support to cover travel may be requested; level of support indicated in acceptance letter. For accepted applicants, total cost of accommodation and meals will be covered.",
         "evidence_fields": {
           "deadline": "​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ Deadline: 15 Nov 2026 Fusion is one of the most promising sources of green and limitless energy for the future.",
           "fee": "",
-          "funding": "For the accepted applicants, the total cost of accommodation and meals will be covered. | Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of financial support will be indicated in the acceptance letter."
+          "funding": "Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of financial support will be indicated in the acceptance letter. | For the accepted applicants, the total cost of accommodation and meals will be covered."
         }
       }
     },
@@ -270,17 +268,15 @@
       "ai_advisory": {
         "available": true,
         "validated_confidence": "low",
-        "validation_warnings": [
-          "missing_evidence_id:other_deadlines"
-        ],
-        "chinese_summary": "",
+        "validation_warnings": [],
+        "chinese_summary": "Eurac 联邦制与治理冬季学校2027年申请现已开放，申请截止日期为2026年10月12日23:59 CEST。申请须通过在线申请系统提交，仅完整申请会被考虑。参与费为300欧元；奖学金获得者仍需缴纳150欧元参与费。提供基于成绩和需求的奖学金，优先考虑非欧洲国家的学生和申请人，另有部分奖学金覆盖住宿费用。",
         "extracted_deadline": "2026-10-12",
-        "extracted_fee": "",
-        "extracted_funding": "",
+        "extracted_fee": "300,00 € participation fee; 150,00 € participation fee for scholarship holders upon enrollment",
+        "extracted_funding": "Scholarships awarded based on merit and need, preference to students and applicants from non-European countries; partial scholarships covering accommodation costs in a shared 3-bed room in Innsbruck and Bolzano/Bozen for 13 nights plus breakfast; 2 scholarships available; 3 scholarships available",
         "evidence_fields": {
           "deadline": "In case of questions regarding the application form and procedure, please contact winterschool@eurac.edu Deadline for applications: Sunday, 12 October 2026, 23:59 CEST Applications which are successfully submitted and complete will receive a confirmation via e-mail within 5 working days after submission.",
-          "fee": "",
-          "funding": ""
+          "fee": "Please note that holders of these scholarships are still required to pay a participation fee of 150,00 € upon enrollment . | will be booked through the organizers, participants organize accommodation in Innsbruck and Bolzano/Bozen by themselves (= 300,00 Euro participation fee only). | ​If no accommodation will be booked through the organizers, participants organize accommodation in Innsbruck and Bolzano/Bozen by themselves (= 300,00 Euro participation fee only). | 300,00 € The participation fee",
+          "funding": "Scholarships will be awarded based on merit and need ; preference will be given to students and applicants from non-European countries. | “Partial scholarships” covering the accommodation costs in a shared 3-bed room in Innsbruck and Bolzano/Bozen for 13 nights plus breakfast. | SCHOLARSHIPS The organizers of the Winter School will award a limited number of scholarships . | 2 scholarships are available. | 3 scholarships are available."
         }
       }
     },
@@ -368,105 +364,6 @@
         "extracted_funding": "",
         "evidence_fields": {
           "deadline": "The tuition fees associated with this early deadline are lower than the tuition fees associated with the regular application deadline ( May 8 ). | Application deadline Acceptance letter Payment Login Early registration April 5 by April 19 deadline mentioned in the letter of acceptance letter with password after payment Regular registration May 8 by May 24 Ways of Payment : will be described in your acceptance letter .",
-          "fee": "",
-          "funding": ""
-        }
-      }
-    },
-    {
-      "title": "GESIS Summer School in Survey Methodology",
-      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
-      "organizer": "GESIS Summer School",
-      "source_layer": "1",
-      "location": "Europe",
-      "dates": {
-        "start": "2027-07-28",
-        "end": "2027-08-20",
-        "duration_days": 24
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "data analysis",
-        "design"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "",
-        "duration": "28 July - 20 August 2027",
-        "fee": "",
-        "funding": "",
-        "mode": "onsite or online participation). ► All courses will be h"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "possibly_past_or_closed"
-        ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
-      }
-    },
-    {
-      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
-      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
-      "organizer": "GESIS Summer School",
-      "source_layer": "1",
-      "location": "Europe",
-      "dates": {
-        "start": "2027-02-22",
-        "end": "2027-03-12",
-        "duration_days": 19
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "data analysis",
-        "social science"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "",
-        "duration": "22 Feb – 12 March 2027",
-        "fee": "",
-        "funding": "",
-        "mode": "onsite) an exciting time in Cologne, complemented by an"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "missing_evidence_id:event_type",
-          "possibly_past_or_closed"
-        ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
           "fee": "",
           "funding": ""
         }
