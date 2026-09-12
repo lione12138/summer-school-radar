@@ -932,3 +932,14 @@ This would move the project from a daily scanner toward a credible vertical oppo
 
 
 
+
+
+## Publication corrections and withdrawal state
+
+Complete dates are excluded from yearless deadline matching, so a year such as 2026 cannot become a second day-of-month candidate. Evidence-backed high/critical record-audit issues gate homepage publication even when the model verdict is `needs_correction`; lower-severity suggestions remain advisory. Scanner and RSS records remain separate.
+
+Schema-v2 snapshots additionally carry optional `withdrawn_editions` (edition ID and detail path). Daily refreshes preserve this state. Known non-public editions are removed from the durable programme catalogue, and already published detail/programme/topic URLs render bilingual, non-indexable withdrawal notices without old dates, funding claims or event JSON-LD. Editions absent from a scan are still preserved unless explicitly withdrawn. A verified correction can restore the edition; organizer corrections move it between fallback programme identities rather than duplicate it.
+
+`scan_quality.py` records scanner/public/review counts, missing-field counts, and per-source candidate and open-listing counts in full-scan manifests. Exact page provenance takes precedence; hostname attribution is used only when one configured source owns that hostname, otherwise records are reported as unattributed. Sources with at least five consecutive failures trigger a log warning and a bilingual homepage coverage warning independently of the aggregate transport-success gate. Per-source output counts describe the last full scan, not the daily refresh.
+
+The publisher calls the reusable test workflow and waits for lint, the Python test matrix, wheel asset/isolated-render checks, and snapshot site-integrity validation before scanning or publishing. `python scripts/check_wheel.py` checks all package-owned web assets against the built wheel and renders a programme using the extracted distribution outside the editable checkout.

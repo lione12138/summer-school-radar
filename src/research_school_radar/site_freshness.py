@@ -4,6 +4,8 @@ from dataclasses import dataclass
 from datetime import date
 from typing import Any
 
+from .scan_quality import persistent_source_failures
+
 
 MAX_SOURCE_SCAN_AGE_DAYS = 4
 
@@ -14,6 +16,7 @@ class SiteFreshness:
     deadline_refresh_date: date
     source_scan_age_days: int | None
     source_scan_delayed: bool
+    persistent_failure_count: int = 0
 
 
 def site_freshness(
@@ -31,6 +34,7 @@ def site_freshness(
         deadline_refresh_date=today,
         source_scan_age_days=age,
         source_scan_delayed=age is None or age > maximum_age_days,
+        persistent_failure_count=len(persistent_source_failures(list(source_health_by_name(manifest).values()))),
     )
 
 

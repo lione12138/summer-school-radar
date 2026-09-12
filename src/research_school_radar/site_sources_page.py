@@ -101,6 +101,8 @@ def _source_row(source: dict[str, Any]) -> str:
         health=health_status,
         last_success=last_success,
         failures=failures,
+        scanner_records=(source.get("health") or {}).get("scanner_records", "—"),
+        public_records=(source.get("health") or {}).get("public_open_records", "—"),
         layer=str(source.get("layer", "")),
         region=bilingual(str(source.get("region", "")), region_zh(str(source.get("region", "")))),
         source_type=bilingual(

@@ -12,7 +12,7 @@ import argparse
 import json
 import sys
 from dataclasses import dataclass
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from typing import Any
 
 from .candidate_io import CANDIDATE_SNAPSHOT_SCHEMA_VERSION
@@ -66,6 +66,19 @@ def inspect_candidate_snapshot(path: Path, *, allow_legacy: bool = False) -> Sna
         )
 
     opportunities = _require_candidate_list(payload, "opportunities", path)
+    withdrawals = payload.get("withdrawn_editions", [])
+    if not isinstance(withdrawals, list):
+        raise SnapshotValidationError("withdrawn_editions must be a list")
+    for item in withdrawals:
+        if not isinstance(item, dict) or not isinstance(item.get("id"), str) or not item["id"].strip():
+            raise SnapshotValidationError("withdrawn_editions must contain non-empty edition IDs")
+        detail = item.get("detail_path")
+        if not isinstance(detail, str):
+            raise SnapshotValidationError("withdrawn edition detail_path must be a string")
+        relative = PurePosixPath(detail)
+        if (len(relative.parts) != 2 or relative.parts[0] != "opportunities"
+                or relative.suffix != ".html" or "\\" in detail):
+            raise SnapshotValidationError("withdrawn edition detail_path must be a local opportunity page")
     if not opportunities:
         raise SnapshotValidationError(f"Candidate snapshot has no opportunities: {path}")
 

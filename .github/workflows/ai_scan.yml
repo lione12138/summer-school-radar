@@ -45,7 +45,12 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  validate:
+    uses: ./.github/workflows/tests.yml
+    permissions:
+      contents: read
   build-and-publish:
+    needs: validate
     runs-on: ubuntu-latest
     timeout-minutes: 90
     env:

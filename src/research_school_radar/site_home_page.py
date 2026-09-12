@@ -257,6 +257,13 @@ def render_site(
     filters = render_filters([*full, *near, *regular], curated)
     analytics = _analytics_snippet(site_config or {})
     status_banner = _status_banner(len(full), len(near), len(regular), tracked_total, tracked_sources)
+    if freshness.persistent_failure_count:
+        count = freshness.persistent_failure_count
+        status_banner += render_template(
+            "home/status_banner.html", variant="warning",
+            message_en=f"Coverage is incomplete: {count} sources have failed at least 5 consecutive scans. See Sources & Coverage for details.",
+            message_zh=f"来源覆盖不完整：{count} 个来源已连续至少 5 次扫描失败。详情见“来源与覆盖”。",
+        )
     if near:
         near_block = _near_section(near_rows)
     elif full or regular or curated:

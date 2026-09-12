@@ -16,6 +16,19 @@
 #       fee_eur: 300
 #       deadline_evidence: Application deadline is 15 October 2026.
 overrides:
+  - url: https://indico.ictp.it/event/11407
+    status: update
+    note: Official programme checked on 2026-09-12; the deadline is 15 Nov 2026 and the venue is Allan, Jordan. Indico is the publishing platform, not the organizer.
+    fields:
+      deadline: 2026-11-15
+      deadline_status: open
+      deadline_evidence: "Deadline: 15 Nov 2026"
+      organizer: Jordanian Atomic Energy Commission, SESAME, ICTP, and Arab Fusion Energy Initiative
+      organizer_zh: 约旦原子能委员会、SESAME、ICTP及阿拉伯聚变能源倡议
+      location: Allan, Jordan
+      location_zh: 约旦阿兰
+      summary: The Al-Nour Winter School on Fusion Science runs from 4 to 8 January 2027 in Allan, Jordan. It introduces students and early-career scientists to fusion science. Accommodation and meals are covered for accepted applicants; travel support may be requested.
+      summary_zh: 阿尔努尔聚变科学冬季学校将于2027年1月4日至8日在约旦阿兰举行，面向学生和青年科研人员介绍聚变科学。录取者的住宿和餐食费用由项目承担，旅行资助可另行申请。
   - url: https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/
     status: update
     note: The official UTN programme content identifies the intended audience and academic focus; after the 15 July early-bird cutoff, regular fees are EUR 150 for students and EUR 200 for non-students, while selected participants may receive a registration-fee scholarship.

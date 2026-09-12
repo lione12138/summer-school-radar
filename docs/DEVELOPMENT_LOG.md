@@ -378,3 +378,12 @@ summary and eligibility fields, including their Chinese counterparts. This
 also cleans legacy IHE records during a no-network status refresh instead of
 waiting for the next full source scan; the IHE collector uses the same shared
 HTML-to-text helper for newly fetched API records.
+
+
+## 2026-09-12: Close the correction and withdrawal loop
+
+The project review reproduced `Deadline: 15 Nov 2026` becoming 20 November through partial yearless matching. The same record's official organizer, location and deadline had already been flagged as high-severity audit corrections, but `needs_correction` did not gate publication. Complete-date masking and evidence-backed severity gating now prevent that chain; the official Al-Nour correction is recorded in overrides rather than rewriting source snapshots or curated data.
+
+A two-build regression also demonstrated that a rejected record could survive in permanent detail pages and the programme catalogue. Withdrawal metadata now survives snapshots and daily refreshes, replaces existing public URLs with notices, and removes affected editions from programme/topic discovery. Missing historical editions remain preserved. A separate restoration regression covers a subsequent verified correction.
+
+Coverage warnings now expose persistent failures independently of the 70% transport gate. Per-source yield and unresolved-field metrics support source maintenance without weakening public qualification rules. Publishing now depends on the reusable test workflow; wheel verification caught the previously omitted programme/topic subtemplates. The two pre-existing test failures were fixed by using explicit edition dates and matching the maintained compact date format.

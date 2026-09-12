@@ -17,7 +17,7 @@ from .utils import clean_space, content_hash, load_yaml
 
 
 AUDIT_SCHEMA_VERSION = "record-audit-v1"
-PROMPT_VERSION = "record-audit-prompt-v3"
+PROMPT_VERSION = "record-audit-prompt-v4"
 
 _ALLOWED_FIELDS = {
     "title",
@@ -367,11 +367,10 @@ def _audit_item(
 ) -> dict[str, Any]:
     model_issues = list(model_result.get("issues", []))
     issues = [*deterministic, *model_issues]
-    model_verdict = str(model_result.get("verdict", "pass"))
     deterministic_gate = any(
         issue.get("severity") in {"high", "critical"} for issue in deterministic
     )
-    evidence_backed_reject = model_verdict == "reject" and any(
+    evidence_backed_reject = any(
         issue.get("severity") in {"high", "critical"} and issue.get("evidence_ids")
         for issue in model_issues
     )

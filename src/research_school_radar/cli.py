@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import json
+from copy import deepcopy
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
 from pathlib import Path
@@ -29,6 +30,7 @@ from .models import Candidate, Page, Source
 from .parse import candidate_links, looks_like_opportunity
 from .publication import is_archive_candidate, is_display_candidate
 from .rank import rank_candidates
+from .record_audit import filter_display_candidates_by_audit
 from .report import update_readme, write_report
 from .review import apply_overrides, load_overrides, write_review_queue
 from .search import official_resolution_queries, run_discovery_queries
@@ -41,7 +43,9 @@ from .scan_health import (
     write_scan_manifest,
 )
 from .semantic import unique_pages
+from .scan_quality import build_scan_quality, persistent_source_failures
 from .site import write_site
+from .site_withdrawal import reconcile_withdrawals
 from .site_freshness import source_health_by_name
 from .storage import update_seen
 from .translation import TranslationConfig, load_translation_config
@@ -134,6 +138,7 @@ def run_scan(
     coverage = SourceCoverage(attempted=0, succeeded=0)
     previous_manifest = load_scan_manifest(data_dir / "latest_scan_manifest.json")
     source_health: list[dict[str, Any]] = []
+    sources: list[Source] = []
     discovery_stats = {
         "queries": 0,
         "results": 0,
@@ -261,7 +266,14 @@ def run_scan(
         for warning in http_cache.warnings:
             print(f"HTTP cache warning: {warning}")
 
+    before_overrides = deepcopy(candidates)
     candidates = apply_overrides(candidates, overrides)
+    previous_candidates_path = data_dir / "latest_candidates.json"
+    carried_withdrawals = (
+        json.loads(previous_candidates_path.read_text(encoding="utf-8")).get("withdrawn_editions", [])
+        if previous_candidates_path.exists() else []
+    )
+    override_withdrawals = reconcile_withdrawals(before_overrides, candidates, carried_withdrawals)
     filtered = [apply_hard_filters(candidate, profile) for candidate in candidates]
     ranked = rank_candidates(filtered, profile=profile)
     discovery_ranked = [candidate for candidate in ranked if candidate.source_layer == "discovery"]
@@ -334,6 +346,18 @@ def run_scan(
         discovery_stats=discovery_stats if include_discovery else None,
         source_health=source_health,
     )
+    quality = build_scan_quality(
+        ranked, filter_display_candidates_by_audit(merge_ai_for_homepage(ranked, ai_items, profile), record_audit_items),
+        sources, semantic_pages,
+    )
+    manifest["quality"] = quality
+    broken_sources = persistent_source_failures(source_health)
+    manifest["quality"]["persistent_source_failures"] = broken_sources
+    for health in source_health:
+        health.update(quality["per_source"].get(health["name"], {}))
+    manifest["source_health"] = source_health
+    if broken_sources:
+        print(f"Warning: {len(broken_sources)} sources have failed at least 5 consecutive scans: {', '.join(broken_sources)}")
     if generate_site:
         all_sources = _load_all_sources(config_dir / "sources.yaml")
         health_by_name = {item["name"]: item for item in source_health}
@@ -357,6 +381,7 @@ def run_scan(
             profile=profile,
             translation_config=translation_config,
             record_audit_items=record_audit_items,
+            withdrawn_editions=override_withdrawals,
             scan_manifest=manifest,
         )
         print(f"Wrote site: {site_path}")
@@ -381,11 +406,16 @@ def run_status_refresh(
     """
     source_path = candidates_json or site_dir / "candidates.json"
     display_candidates, scanner_candidates = _load_generated_candidates(source_path)
+    snapshot_metadata = json.loads(source_path.read_text(encoding="utf-8"))
     profile = load_yaml(config_dir / "profile.yaml")
     overrides = load_overrides(data_dir / "overrides.yml")
     # A maintainer correction should take effect on the next no-network daily
     # rebuild; it must not wait for the next Monday/Wednesday/Friday full scan.
+    before_overrides = deepcopy(display_candidates)
     display_candidates = apply_overrides(display_candidates, overrides)
+    withdrawals = reconcile_withdrawals(
+        before_overrides, display_candidates, snapshot_metadata.get("withdrawn_editions", []),
+    )
     scanner_candidates = apply_overrides(scanner_candidates, overrides)
     site_config = _load_optional_yaml(config_dir / "site.yaml")
     curated = _refresh_curated_deadline_statuses(_load_curated_opportunities(data_dir / "opportunities.yml"))
@@ -421,6 +451,7 @@ def run_status_refresh(
         scanner_candidates=scanner_ranked,
         review_queue_payload=review_queue_payload,
         scan_manifest=previous_manifest,
+        withdrawn_editions=withdrawals,
     )
     write_scan_manifest(site_dir / "scan-manifest.json", status_refresh_manifest(previous_manifest))
     print(f"Wrote status-refreshed site: {site_path}")

@@ -70,6 +70,8 @@ Key modules:
 - `src/research_school_radar/site_localized_build.py` — prepares localized page metadata, translates JSON-LD text, writes the language trees, and enumerates their sitemap URLs.
 - `src/research_school_radar/site_language_selector.py` — renders the lightweight root `x-default` language choice; the complete homepages live at `/en/` and `/zh/`.
 - `src/research_school_radar/site_freshness.py` — separates full source-scan freshness from daily deadline refreshes and merges per-source manifest health.
+- `src/research_school_radar/site_withdrawal.py` — persistent snapshot withdrawal IDs, catalogue removal, and bilingual notices at previously published URLs.
+- `src/research_school_radar/scan_quality.py` — per-source output and unresolved-field metrics, plus persistent-failure warnings.
 - `src/research_school_radar/site_integrity.py` — CI/deployment validation for sitemap targets, canonical/hreflang, internal links, public APIs, programme references, and private artifacts.
 - `src/research_school_radar/site_topics.py` — maintained topic facets and non-thin landing pages; a facet needs at least two distinct programmes.
 - `src/research_school_radar/web/templates/` — tracked Jinja page shells and component templates; page-renderer Python modules must not embed frontend markup.
@@ -109,7 +111,7 @@ pages -> semantic chunks -> evidence snippets -> DeepSeek extraction -> validati
 
 AI output is advisory. It may fill missing fields in copied candidates for homepage generation, then the normal hard filters run again. It must not mutate scanner `Candidate` objects, curated records, RSS source records, or Markdown report source records.
 
-The record audit runs after AI field completion and before translation. It checks organizer roles, location contamination, temporal consistency, fee/funding semantics, eligibility, summary quality, topics, and multi-session interpretation. A DeepSeek rejection requires valid official evidence IDs; deterministic high/critical contradictions may gate independently. Unsupported suggestions are discarded. Audit failures must fail the production AI-output gate rather than publish an unaudited replacement snapshot.
+The record audit runs after AI field completion and before translation. It checks organizer roles, location contamination, temporal consistency, fee/funding semantics, eligibility, summary quality, topics, and multi-session interpretation. Evidence-backed high/critical DeepSeek issues gate publication even with a needs_correction verdict; they require valid official evidence IDs. Deterministic high/critical contradictions may gate independently. Unsupported suggestions are discarded. Audit failures must fail the production AI-output gate rather than publish an unaudited replacement snapshot.
 
 `Candidate.identity_key` is the stable identity for structured collector records and takes precedence over URL/title similarity during deduplication. Preserve it in JSON serialization, RSS GUIDs, detail-page names, and seen-state handling.
 

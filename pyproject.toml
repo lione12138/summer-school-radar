@@ -67,6 +67,8 @@ research_school_radar = [
   "web/templates/components/*.html",
   "web/templates/home/*.html",
   "web/templates/sources/*.html",
+  "web/templates/programme/*.html",
+  "web/templates/topic/*.html",
   "web/static/*.svg",
   "web/static/css/*.css",
   "web/static/js/*.js",

@@ -109,18 +109,26 @@ def test_x_default_root_is_only_a_language_selector(tmp_path) -> None:
 
 def test_programme_catalog_persists_editions_across_builds(tmp_path) -> None:
     first = _candidate("2026 Example Data School", "edition:data-2026")
+    first.start_date = date(2026, 8, 1)
+    first.source_layer = "1"
+    first.end_date = date(2026, 8, 11)
+    first.deadline = date(2026, 7, 1)
+    first = apply_hard_filters(first, PROFILE)
     first.programme_key = "programme:data-school"
     first.sessions = [
         ProgrammeSession("Session 1", first.start_date, first.start_date + timedelta(days=3)),
         ProgrammeSession("Session 2", first.start_date + timedelta(days=4), first.end_date),
     ]
+    first.duration_days = max(session.duration_days for session in first.sessions)
     write_site([first], [], tmp_path)
 
     second = _candidate("2027 Example Data School", "edition:data-2027")
     second.programme_key = "programme:data-school"
-    second.start_date = date.today() + timedelta(days=400)
+    second.source_layer = "1"
+    second.start_date = date(2027, 8, 1)
     second.end_date = second.start_date + timedelta(days=6)
-    second.deadline = date.today() + timedelta(days=300)
+    second.duration_days = 7
+    second.deadline = date(2027, 7, 1)
     second = apply_hard_filters(second, PROFILE)
     write_site([second], [], tmp_path)
 

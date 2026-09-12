@@ -884,7 +884,9 @@ def test_duration_shows_date_range_and_days(tmp_path) -> None:
     ranked = rank_candidates([candidate])
     start = candidate.start_date
     end = candidate.end_date
-    expected = f"{start.day} {start.strftime('%b')} {start.year} – {end.day} {end.strftime('%b')} {end.year} · 11 days"
+    expected = f"{start.day} {start.strftime('%b')} – {end.day} {end.strftime('%b')} {end.year} · 11 days"
+    if start.year != end.year:
+        expected = f"{start.day} {start.strftime('%b')} {start.year} – {end.day} {end.strftime('%b')} {end.year} · 11 days"
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
     assert expected in html
     markdown = render_report(ranked, [])

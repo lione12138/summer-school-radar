@@ -38,6 +38,13 @@ def build_programme_catalog(
 
     for candidate in candidates:
         key = programme_identity(candidate)
+        identity = edition_identity(candidate)
+        # An organizer correction may change the fallback programme key.
+        # Move the edition instead of retaining the old, incorrect copy too.
+        for existing_key, existing in programmes.items():
+            if existing_key != key:
+                existing["editions"] = [edition for edition in existing.get("editions", [])
+                                        if edition.get("id") != identity]
         record = programmes.get(key)
         if record is None:
             record = _new_programme(candidate, key)
@@ -47,6 +54,8 @@ def build_programme_catalog(
     result = []
     for record in programmes.values():
         editions = _dedupe_editions(record.get("editions", []))
+        if not editions:
+            continue
         editions.sort(key=_edition_sort_key, reverse=True)
         record["editions"] = editions
         record["edition_count"] = len(editions)

@@ -52,6 +52,7 @@ from .site_seo import (
     sitemap_xml,
 )
 from .site_topics import available_topic_pages, render_topic_links, render_topic_page
+from .site_withdrawal import reconcile_withdrawals, withdraw_previous_editions, write_withdrawn_page
 from .translation import TranslationConfig, translate_candidates, translate_source_metadata
 from .utils import ROOT, topics_label
 
@@ -71,6 +72,7 @@ def write_site(
     review_queue_payload: dict[str, Any] | None = None,
     record_audit_items: list[dict[str, Any]] | None = None,
     scan_manifest: dict[str, Any] | None = None,
+    withdrawn_editions: list[dict[str, Any]] | None = None,
 ) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     write_static_assets(output_dir)
@@ -105,6 +107,7 @@ def write_site(
     # parallel review UI. Remove stale generated copies from older builds.
     (output_dir / "ai-review.html").unlink(missing_ok=True)
     homepage_candidates = merge_ai_for_homepage(candidates, ai_items, profile)
+    known_candidates = list(homepage_candidates)
     # DeepSeek audit findings may suppress an unsafe homepage copy, but they
     # never mutate scanner candidates or the deterministic RSS source records.
     homepage_candidates = filter_display_candidates_by_audit(homepage_candidates, record_audit_items)
@@ -145,10 +148,17 @@ def write_site(
         )
     else:
         (output_dir / "translation-status.json").unlink(missing_ok=True)
+    public_candidates = [c for c in homepage_candidates if is_display_candidate(c) or is_archive_candidate(c)]
+    previous_snapshot = _read_json_object(output_dir / "candidates.json") or {}
+    withdrawals = reconcile_withdrawals(
+        known_candidates, public_candidates,
+        [*(previous_snapshot.get("withdrawn_editions") or []), *(withdrawn_editions or [])],
+    )
     write_text_atomic(
         output_dir / "candidates.json",
         json.dumps(
             {
+                "withdrawn_editions": withdrawals,
                 "_license": _DATA_LICENSE,
                 "_license_url": _DATA_LICENSE_URL,
                 "_attribution": "Summa",
@@ -171,6 +181,7 @@ def write_site(
     public_api_dir = output_dir / "api"
     public_api_dir.mkdir(parents=True, exist_ok=True)
     previous_catalogue = _read_json_object(public_api_dir / "programmes.json")
+    previous_catalogue = withdraw_previous_editions(previous_catalogue, withdrawals, output_dir)
     catalogue = build_programme_catalog(detail_candidates, previous_catalogue)
     catalogue.update(
         {
@@ -186,6 +197,10 @@ def write_site(
 
     programme_dir = output_dir / "programmes"
     programme_dir.mkdir(parents=True, exist_ok=True)
+    active_programmes = {f"{programme['slug']}.html" for programme in programmes}
+    for old_programme in programme_dir.glob("*.html"):
+        if old_programme.name not in active_programmes:
+            write_withdrawn_page(output_dir, f"programmes/{old_programme.name}")
     for programme in programmes:
         programme_html = render_programme_page(programme, site_config or {})
         filename = f"{programme['slug']}.html"
@@ -195,6 +210,10 @@ def write_site(
     topic_pages = available_topic_pages(programmes)
     topic_dir = output_dir / "topics"
     topic_dir.mkdir(parents=True, exist_ok=True)
+    active_topics = {f"{facet.key}.html" for facet, _ in topic_pages}
+    for old_topic in topic_dir.glob("*.html"):
+        if old_topic.name not in active_topics:
+            write_withdrawn_page(output_dir, f"topics/{old_topic.name}")
     for facet, topic_programmes in topic_pages:
         topic_html = render_topic_page(facet, topic_programmes, site_config or {})
         warn_localization_issues(topic_html, f"topics/{facet.key}.html", i18n_source)

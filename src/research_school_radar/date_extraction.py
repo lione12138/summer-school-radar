@@ -229,7 +229,7 @@ _SINGLE_DATE = (
     rf"|20\d{{2}}-\d{{2}}-\d{{2}}"
     rf"|\d{{1,2}}[./-]\d{{1,2}}[./-]20\d{{2}})"
 )
-_NO_YEAR_DATE = rf"(?:{_MONTH_NAME}\s+{_DAY_NUM}|{_DAY_NUM}\s+{_MONTH_NAME})"
+_NO_YEAR_DATE = rf"\b(?:{_MONTH_NAME}\s+{_DAY_NUM}|{_DAY_NUM}\s+{_MONTH_NAME})\b"
 
 
 _DEADLINE_PATTERN = (
@@ -287,6 +287,9 @@ def _all_deadlines(text: str, event_start: date | None = None) -> list[tuple[dat
 
 
 def _no_year_deadlines(text: str, event_start: date) -> list[tuple[date, str]]:
+    # Never reinterpret any part of a complete date as a yearless date.
+    # In particular, "15 Nov 2026" must not also match "Nov 20".
+    text = re.sub(_SINGLE_DATE, lambda match: " " * len(match.group()), text, flags=re.IGNORECASE)
     found: list[tuple[date, str]] = []
     date_first_matches = list(_DATE_BEFORE_APPLICATION_DEADLINE_NO_YEAR.finditer(text))
     for match in date_first_matches:
