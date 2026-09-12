@@ -1,5 +1,7 @@
 (function(){
     var I18N = {
+      "sources.candidates": {en:"Scanner records", zh:"扫描记录"},
+      "sources.public_open": {en:"Open listings (last scan)", zh:"开放条目（上次扫描）"},
       "nav.opportunities": {en:"Opportunities", zh:"机会"},
       "nav.how": {en:"How it works", zh:"工作原理"},
       "nav.about": {en:"About", zh:"关于"},
