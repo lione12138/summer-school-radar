@@ -72,16 +72,22 @@
 </svg>
  Summa</a>
     <div class="links">
+      <details class="nav-menu" open>
+        <summary data-i18n="nav.menu">Menu</summary>
+        <div class="menu-links">
       <a href="../index.html#opportunities" data-i18n="nav.opportunities">Opportunities</a>
       <a class="hide-sm" href="../index.html#how" data-i18n="nav.how">How it works</a>
       <a class="hide-sm" href="../index.html#about" data-i18n="nav.about">About</a>
       <a href="../sources.html" data-i18n="nav.sources">Sources</a>
       <a href="https://github.com/lione12138/summer-school-radar">GitHub</a>
+        </div>
+      </details>
       <button id="lang-toggle" class="toggle" type="button" aria-label="Language">中</button>
       <button id="theme-toggle" class="toggle" type="button" aria-label="Theme">&#9790;</button>
     </div>
   </div>
 </nav>
+<script src="../assets/js/navigation.js" defer></script>
 
   <header class="detail-header">
     <div class="wrap">
@@ -106,17 +112,24 @@
   <main class="detail-main">
     <div class="wrap detail-grid">
       <div class="detail-stack">
-        <section class="detail-panel"><h2 data-i18n="detail.overview">Overview</h2><p><span class="lang-en" lang="en">A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.</span><span class="lang-zh" lang="zh">一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。</span>
+        <section class="detail-panel anchor" id="overview"><h2 data-i18n="detail.overview">Overview</h2><p><span class="lang-en" lang="en">A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.</span><span class="lang-zh" lang="zh">一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。</span>
 </p></section>
         <section class="detail-panel"><h2 data-i18n="detail.eligibility">Who should apply</h2><p><span class="lang-en" lang="en">Master&#39;s students and early-stage PhD students from the humanities and computer science.</span><span class="lang-zh" lang="zh">面向人文学科和计算机科学领域的硕士生及博士早期阶段学生。</span>
 </p></section>
-        <section class="detail-panel "><h2 data-i18n="detail.why">Why this status</h2><p><span class="lang-en" lang="en">funding evidence: scholarship; 12 days; priority region; trusted source layer 1</span><span class="lang-zh" lang="zh">资助证据：奖学金；12天；优先区域；可信来源第 1 层</span>
-</p></section>
+        <details class="detail-panel"><summary data-i18n="detail.why">Why this status</summary><p><span class="lang-en" lang="en">funding evidence: scholarship; 12 days; priority region; trusted source layer 1</span><span class="lang-zh" lang="zh">资助证据：奖学金；12天；优先区域；可信来源第 1 层</span>
+</p></details>
         <section class="detail-panel">
           <h2 data-i18n="detail.source">Official source</h2>
           <p class="muted" data-i18n="detail.source.original">Original source evidence is retained below for verification.</p>
-          <p><span class="lang-en" lang="en">Registration Period Until September 6, 2026 September 21–October 2, 2026 After the 15 July early-bird deadline, the regular registration fee is EUR 150 for students and EUR 200 for non-students. Thanks to the support of the associations GSCL and DGfS, scholarships covering the registration fee will be available for selected participants.</span><span class="lang-zh" lang="zh">以下为官网原文证据，保留原文便于核对：Registration Period Until September 6, 2026 September 21–October 2, 2026 After the 15 July early-bird deadline, the regular registration fee is EUR 150 for students and EUR 200 for non-students. Thanks to the support of the associations GSCL and DGfS, scholarships covering the registration fee will be available for selected participants.</span>
-</p>
+          
+          <details class="evidence-item"><summary data-i18n="detail.deadline">Application deadline</summary><blockquote>Registration Period Until September 6, 2026</blockquote></details>
+          
+          <details class="evidence-item"><summary data-i18n="table.duration">Duration</summary><blockquote>September 21–October 2, 2026</blockquote></details>
+          
+          <details class="evidence-item"><summary data-i18n="detail.fee.evidence">Fee evidence</summary><blockquote>After the 15 July early-bird deadline, the regular registration fee is EUR 150 for students and EUR 200 for non-students.</blockquote></details>
+          
+          <details class="evidence-item"><summary data-i18n="detail.funding.evidence">Funding evidence</summary><blockquote>Thanks to the support of the associations GSCL and DGfS, scholarships covering the registration fee will be available for selected participants.</blockquote></details>
+          
           
           <a class="source-link" href="https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/" target="_blank" rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>
           
@@ -127,6 +140,7 @@
         <span class="eyebrow" data-i18n="detail.funding">Funding / fee</span>
         <p class="decision-value"><span class="lang-en" lang="en">Registration-fee scholarship for selected participants · otherwise EUR 150 students / EUR 200 non-students</span><span class="lang-zh" lang="zh">入选者可获注册费奖学金 · 未获奖者：学生 EUR 150 / 非学生 EUR 200</span>
 </p>
+        <a class="funding-context" href="#overview" data-i18n="detail.coverage">See the overview for coverage and eligibility</a>
         <span class="eyebrow" data-i18n="detail.deadline">Application deadline</span>
         <p class="deadline-value"><span class="lang-en" lang="en">06 Sep 2026</span><span class="lang-zh" lang="zh">2026年9月6日</span>
 </p>

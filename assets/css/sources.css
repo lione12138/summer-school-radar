@@ -33,3 +33,37 @@ header.hero a.pill:hover { background: rgba(255, 255, 255, .24); }
 main { padding: 0 0 48px; }
 .status-enabled { color: var(--good); font-weight: 700; }
 .status-disabled { color: var(--warn); font-weight: 700; }
+
+.source-filters { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin: 20px 0 8px; }
+.source-filters label { font-size: 13px; font-weight: 600; }
+.source-filters input, .source-filters select, .source-filters button { min-height: 44px; padding: 8px 12px; font: inherit; font-size: 14px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel); color: var(--ink); }
+.source-filters input { flex: 1 1 200px; min-width: 0; }
+.source-filters button { cursor: pointer; }
+#source-count, #source-empty { font-size: 13px; color: var(--muted); }
+.registry-table table { min-width: 0; table-layout: fixed; }
+.registry-table th:first-child { width: 27%; }
+.registry-table th:last-child { width: 32%; }
+.registry-table td { overflow-wrap: anywhere; }
+.source-details summary { cursor: pointer; color: var(--accent-ink); font-weight: 600; min-height: 32px; }
+.source-details dl { margin: 12px 0 0; font-size: 12px; }
+.source-details dt { color: var(--muted); margin-top: 10px; }
+.source-details dd { margin: 2px 0; }
+.mobile-label { display: none; }
+@media (max-width: 720px) {
+  .source-filters label { flex-basis: 100%; }
+  .source-filters input { flex-basis: 100%; width: 100%; }
+  .source-filters select { flex: 1; min-width: 0; }
+  .registry-table { border: 0; background: transparent; box-shadow: none; overflow: visible; }
+  .registry-table table, .registry-table tbody { display: block; width: 100%; }
+  .registry-table thead { display: none; }
+  .registry-table tr { display: block; border: 1px solid var(--line); background: var(--panel); border-radius: 12px; padding: 14px; margin-bottom: 10px; }
+  .registry-table td { display: block; padding: 4px 0; border: 0; }
+  .source-name { font-size: 16px; font-weight: 650; margin-bottom: 8px; }
+  .mobile-label { display: inline-block; min-width: 105px; font-size: 12px; color: var(--muted); margin-right: 10px; }
+  .source-details summary { margin-top: 6px; }
+  .table-wrap:not(.registry-table) table { min-width: 0; }
+  .table-wrap:not(.registry-table) thead { display: none; }
+  .table-wrap:not(.registry-table) tr, .table-wrap:not(.registry-table) td { display: block; }
+  .table-wrap:not(.registry-table) tr { padding: 12px; border-bottom: 1px solid var(--line); }
+  .table-wrap:not(.registry-table) td { border: 0; padding: 4px 0; overflow-wrap: anywhere; }
+}

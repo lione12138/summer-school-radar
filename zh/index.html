@@ -55,51 +55,61 @@
 </svg>
  Summa</a>
 <div class="links">
+<details class="nav-menu" open="">
+<summary data-i18n="nav.menu">菜单</summary>
+<div class="menu-links">
 <a data-i18n="nav.opportunities" href="#opportunities">机会</a>
 <a class="hide-sm" data-i18n="nav.how" href="#how">工作原理</a>
 <a class="hide-sm" data-i18n="nav.about" href="#about">关于</a>
 <a data-i18n="nav.sources" href="sources.html">来源</a>
 <a href="https://github.com/lione12138/summer-school-radar">GitHub</a>
+</div>
+</details>
 <a aria-label="Switch to English" class="toggle" href="../en/">EN</a>
 <button aria-label="Theme" class="toggle" id="theme-toggle" type="button">☾</button>
 </div>
 </div>
 </nav>
+<script defer="" src="../assets/js/navigation.js"></script>
 <header class="hero" id="top">
 <div class="wrap">
-<p class="kicker" data-i18n="hero.kicker">每日刷新截止状态 · 免费开源</p>
-<h1 data-i18n="hero.title">寻找真正值得申请的科研训练机会</h1>
-<p class="subtitle" data-i18n="hero.subtitle">从可信学术来源汇总有资助或低费用的科研训练机会。每条截止日期和资助信息都可追溯到官网。</p>
-<details class="hero-disclaimer">
-<summary data-i18n="hero.disclaimer.summary">申请前请注意：务必到官网核验</summary>
-<p data-i18n="hero.disclaimer">请把这里当作基础信息入口，而不是唯一信息来源。本站信息来自各大组织和学校官网，但自动收集和解析仍可能因为技术问题出错；申请前请务必到官网核对截止日期、费用、资助和资格要求。少数质量很高但暂时无法自动收集的官网已列在采集说明里。祝大家都能录到心仪的项目。</p>
-</details>
-<div class="hero-actions">
-<a class="button primary" data-i18n="cta.explore" href="#opportunities">浏览开放项目</a>
-<a class="button tonal" data-i18n="cta.qualification" href="#how">了解筛选标准</a>
-</div>
+<p class="kicker" data-i18n="hero.kicker">不限学科 · 免费开源</p>
+<h1 data-i18n="hero.title">寻找下一站科研训练</h1>
+<p class="subtitle" data-i18n="hero.subtitle">汇总官方学术来源的资助与低费用科研训练。申请前核对日期、费用和资格要求。</p>
 </div>
 </header>
 <main class="wrap">
-<div class="stats">
-<div class="stat"><div class="num">0</div><div class="lbl" data-i18n="stat.qualified">资助优选</div></div>
-<div class="stat"><div class="num">0</div><div class="lbl" data-i18n="stat.near">官网核实自费</div></div>
-<div class="stat"><div class="num">159</div><div class="lbl" data-i18n="stat.sources">可信来源</div></div>
-<div class="stat"><div class="num sm">2026-09-14</div><div class="lbl" data-i18n="stat.scanned">来源最近扫描</div></div>
-</div>
-<p class="status info">
-
-最近一次扫描没有符合全部规则且开放申请的项目。雷达仍在追踪 159 个可信来源，新项目通常会在每年 12 月至次年 4 月陆续开放。
-</p>
+<p class="scan-summary"><a href="sources.html"><strong>159</strong> <span data-i18n="stat.sources">可信来源</span></a><span><span data-i18n="stat.scanned">来源最近扫描</span>: <time>2026-09-14</time></span></p>
 <p class="status warning">
 
 来源覆盖不完整：9 个来源已连续至少 5 次扫描失败。详情见“来源与覆盖”。
 </p>
+<section class="topic-guides anchor" id="topics">
+<div class="section-head">
+<h2 data-i18n="topics.home.title">按主题浏览科研暑校</h2>
+<p class="lead" data-i18n="topics.home.lead">只有在已核实项目数量足够时才生成可索引主题页，避免内容单薄。</p>
+</div>
+<div class="topic-link-grid">
+<a class="topic-link-card" href="topics/ai-computing.html"><strong>人工智能与计算机暑校
+</strong><span>7 个项目
+</span></a><a class="topic-link-card" href="topics/data-analysis.html"><strong>数据分析与统计学暑校
+</strong><span>8 个项目
+</span></a><a class="topic-link-card" href="topics/social-sciences.html"><strong>社会科学研究暑校
+</strong><span>6 个项目
+</span></a><a class="topic-link-card" href="topics/environment-earth.html"><strong>环境、地球与水科学暑校
+</strong><span>4 个项目
+</span></a>
+</div>
+</section>
+<nav aria-label="浏览项目" class="browse-switch" data-i18n-aria-label="browse.label">
+<a aria-current="true" data-i18n="browse.open" data-view="open" href="#opportunities">当前可申请</a>
+<a data-i18n="browse.library" data-view="library" href="#programme-library">历届项目库</a>
+</nav>
 <section class="anchor" id="opportunities">
 <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">开放申请的项目</h2><p>共 0 条 · 每页 15 条 · 截止状态刷新于 2026-09-14
 </p></div>
 <div class="opportunity-browser">
-<aside aria-label="Opportunity filters" class="filter-sidebar">
+<aside aria-label="筛选项目" class="filter-sidebar" data-i18n-aria-label="filter.title">
 <div class="filter-sidebar-head">
 <h3 data-i18n="filter.title">筛选项目</h3>
 <button aria-controls="opportunity-filters" aria-expanded="false" class="filter-mobile-toggle" data-i18n="filter.toggle" id="filter-mobile-toggle" type="button">更多筛选</button>
@@ -108,16 +118,6 @@
 <div class="filter-group">
 <label data-i18n="filter.search" for="filter-search">搜索</label>
 <input data-i18n-placeholder="filter.search.placeholder" id="filter-search" placeholder="标题、主办方、地点" type="search"/>
-</div>
-<div class="filter-group">
-<label data-i18n="filter.status" for="filter-status">状态</label>
-<select id="filter-status">
-<option data-i18n="filter.all.status" value="">所有状态</option>
-<option data-i18n="filter.status.qualified" value="qualified">资助优选</option>
-<option data-i18n="filter.status.high" value="high-quality">官网核实自费</option>
-<option data-i18n="filter.status.found" value="found">更多官网项目</option>
-<option data-i18n="filter.status.curated" value="curated">人工精选</option>
-</select>
 </div>
 <div class="filter-group">
 <label data-i18n="filter.topic" for="filter-topic">主题</label>
@@ -132,16 +132,7 @@
 <option data-i18n="filter.funding.explicit" value="funded">明确提供资助</option>
 <option data-i18n="filter.funding.low" value="low-fee">低费用或免费</option>
 <option data-i18n="filter.funding.self" value="self-funded">需自费</option>
-<option data-i18n="filter.funding.unresolved" value="unresolved">费用未确认或较高</option>
-</select>
-</div>
-<div class="filter-group">
-<label data-i18n="filter.deadline" for="filter-deadline">截止日期</label>
-<select id="filter-deadline">
-<option data-i18n="filter.all.deadline" value="">所有截止状态</option>
-<option data-i18n="filter.deadline.open" value="open">开放申请</option>
-<option data-i18n="filter.deadline.uncertain" value="uncertain">待确认</option>
-<option data-i18n="filter.deadline.closed" value="closed">已截止</option>
+<option data-i18n="filter.funding.unresolved" value="unresolved">资助或费用未说明</option>
 </select>
 </div>
 <div class="filter-group">
@@ -164,22 +155,31 @@
 </p>
 <p style="margin-top:12px"><a class="pill" data-i18n="empty.link" href="sources.html">查看监测来源</a></p>
 </div>
-<p class="filter-empty" data-i18n="filter.empty" hidden="" id="filter-empty">没有符合当前筛选条件的项目。</p>
+<p class="filter-empty" data-i18n="filter.empty" hidden="" id="filter-empty">没有符合当前筛选条件的开放申请项目。</p>
 <nav aria-label="Opportunity pages" class="pagination" hidden="" id="opportunity-pagination">
 <button class="pagination-step" data-i18n="pagination.previous" id="pagination-previous" type="button">上一页</button>
 <div class="pagination-pages" id="pagination-pages"></div>
 <button class="pagination-step" data-i18n="pagination.next" id="pagination-next" type="button">下一页</button>
 </nav>
+</div>
+</div>
+</section>
 <section class="programme-library" id="programme-library">
 <div class="section-head">
-<h2 data-i18n="library.title">周期性暑校项目库</h2>
+<h2 data-i18n="library.title">历届与周期项目</h2>
 <p class="lead" data-i18n="library.lead">来自官网、申请已经结束的周期性项目；活动时间状态单独标注，可用于发现长期举办的暑校并关注下一次开放。</p>
 </div>
-<p class="library-count"><span data-i18n="library.count">当前展示已核实的周期项目</span> · 7</p>
-<div class="library-grid"><article class="library-card">
+<div class="library-search">
+<label data-i18n="library.search" for="library-search">搜索历届项目</label>
+<input data-i18n-placeholder="filter.search.placeholder" id="library-search" placeholder="标题、主办方、地点" type="search"/>
+<button class="filter-reset" data-i18n="filter.reset" id="library-reset" type="button">清除筛选</button>
+</div>
+<p aria-live="polite" class="library-count" id="library-count"><span data-i18n="library.count">当前展示已核实的周期项目</span> · 7</p>
+<p class="filter-empty" data-i18n="library.empty" hidden="" id="library-empty">没有符合搜索条件的历届项目。</p>
+<div class="library-grid"><article class="library-card" data-search="computational linguistics fall school 2026 2026年计算语言学秋季学校 university of technology nuremberg (utn) 纽伦堡工业大学（utn） university of technology nuremberg, nuremberg, germany 德国纽伦堡工业大学（纽伦堡） fall school linguistics, computational linguistics, natural language processing, corpus linguistics 一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。 面向人文学科和计算机科学领域的硕士生及博士早期阶段学生。 资助证据：奖学金；12天；优先区域；可信来源第 1 层">
 <div class="library-card-head">
 <span class="library-status" data-i18n="library.upcoming_closed">即将举办 · 申请已结束</span>
-<h3><a href="programmes/computational-linguistics-fall-school-499f7a40.html">2026年计算语言学秋季学校
+<h3><a href="opportunities/computational-linguistics-fall-school-2026-50903ddb.html">2026年计算语言学秋季学校
 </a></h3>
 </div>
 <p>纽伦堡工业大学（UTN）
@@ -192,15 +192,15 @@
 </span>
 </div>
 <div class="card-actions">
-<a class="button tonal" data-i18n="action.details" href="opportunities/computational-linguistics-fall-school-2026-50903ddb.html">查看详情</a>
-<a class="button tonal" data-i18n="programme.view" href="programmes/computational-linguistics-fall-school-499f7a40.html">查看周期项目</a>
-<a class="button tonal" data-i18n="library.official" href="https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/" rel="noopener" target="_blank">查看项目官网</a>
+<a class="button tonal" data-i18n="action.edition" href="opportunities/computational-linguistics-fall-school-2026-50903ddb.html">本届详情</a>
+<a class="text-action" data-i18n="programme.view" href="programmes/computational-linguistics-fall-school-499f7a40.html">历届记录</a>
+<a class="text-action" data-i18n="library.official" href="https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/" rel="noopener" target="_blank">前往官网 ↗</a>
 </div>
 </article>
-<article class="library-card">
+<article class="library-card" data-search="stfc summer school stfc暑期学校 keele university 基尔大学 keele university, staffordshire, uk 英国斯塔福德郡基尔大学 summer school astronomy, astrophysics, physics 由基尔大学主办、面向研究生研究人员的入门级住宿制天文学暑期学校。 天体物理学博士生 资助证据：费用减免、差旅资助；4天；优先区域；可信来源第 1 层">
 <div class="library-card-head">
 <span class="library-status" data-i18n="library.past_closed">往届项目 · 申请已结束</span>
-<h3><a href="programmes/stfc-summer-school-e084155d.html">STFC暑期学校
+<h3><a href="opportunities/stfc-summer-school-767dea8d.html">STFC暑期学校
 </a></h3>
 </div>
 <p>基尔大学
@@ -213,15 +213,15 @@
 </span>
 </div>
 <div class="card-actions">
-<a class="button tonal" data-i18n="action.details" href="opportunities/stfc-summer-school-767dea8d.html">查看详情</a>
-<a class="button tonal" data-i18n="programme.view" href="programmes/stfc-summer-school-e084155d.html">查看周期项目</a>
-<a class="button tonal" data-i18n="library.official" href="https://www.keele.ac.uk/astronomy-summer-school/" rel="noopener" target="_blank">查看项目官网</a>
+<a class="button tonal" data-i18n="action.edition" href="opportunities/stfc-summer-school-767dea8d.html">本届详情</a>
+<a class="text-action" data-i18n="programme.view" href="programmes/stfc-summer-school-e084155d.html">历届记录</a>
+<a class="text-action" data-i18n="library.official" href="https://www.keele.ac.uk/astronomy-summer-school/" rel="noopener" target="_blank">前往官网 ↗</a>
 </div>
 </article>
-<article class="library-card">
+<article class="library-card" data-search="prob_ai hub winter school 2027 prob_ai hub 2027冬季学校 prob_ai hub prob_ai hub fry building, university of bristol, bristol, uk 英国布里斯托尔大学 fry building（布里斯托尔） winter school causality, optimal transport, operator learning, reinforcement learning, machine learning, neural processes prob_ai hub 举办的四天冬季学校，内容包括因果推断、计算最优传输、算子学习、强化学习、偏微分方程机器学习和神经过程。项目免费参加；交通和住宿通常自理，符合条件的英国参与者可申请有限的 access fund。 面向全球申请者，英国申请者优先。 资助证据：可及性基金；4天；优先区域；可信来源第 1.5 层">
 <div class="library-card-head">
 <span class="library-status" data-i18n="library.upcoming_closed">即将举办 · 申请已结束</span>
-<h3><a href="programmes/prob-ai-hub-winter-school-5b77f225.html">Prob_AI Hub 2027冬季学校
+<h3><a href="opportunities/prob-ai-hub-winter-school-2027-cee177c1.html">Prob_AI Hub 2027冬季学校
 </a></h3>
 </div>
 <p>Prob_AI Hub
@@ -234,15 +234,15 @@
 </span>
 </div>
 <div class="card-actions">
-<a class="button tonal" data-i18n="action.details" href="opportunities/prob-ai-hub-winter-school-2027-cee177c1.html">查看详情</a>
-<a class="button tonal" data-i18n="programme.view" href="programmes/prob-ai-hub-winter-school-5b77f225.html">查看周期项目</a>
-<a class="button tonal" data-i18n="library.official" href="https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/" rel="noopener" target="_blank">查看项目官网</a>
+<a class="button tonal" data-i18n="action.edition" href="opportunities/prob-ai-hub-winter-school-2027-cee177c1.html">本届详情</a>
+<a class="text-action" data-i18n="programme.view" href="programmes/prob-ai-hub-winter-school-5b77f225.html">历届记录</a>
+<a class="text-action" data-i18n="library.official" href="https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/" rel="noopener" target="_blank">前往官网 ↗</a>
 </div>
 </article>
-<article class="library-card">
+<article class="library-card" data-search="exploring your eco 2026 – exploring the living, cultural, and eco-tourism recreational environments of konitsa, in northern greece 探索你的生态2026——探索希腊北部科尼察的生活、文化和生态旅游休闲环境 czech university of life sciences prague, with vikos-aoos unesco global geopark and trace your eco 捷克布拉格生命科学大学，与维科斯-阿奥斯联合国教科文组织世界地质公园和trace your eco合作 konitsa, vikos-aoos unesco global geopark, greece 希腊科尼察（维科斯－奥奥斯联合国教科文组织世界地质公园） summer school ecology, eco-tourism, cultural heritage, geopark, recreation 在希腊科尼察举办的九天线下暑期学校，通过研究、田野活动和学员建议考察维科斯－奥奥斯世界地质公园的生活、文化与生态旅游环境。  低费用：约 eur 0；9天；优先区域；可信来源第 1.5 层">
 <div class="library-card-head">
 <span class="library-status" data-i18n="library.past_closed">往届项目 · 申请已结束</span>
-<h3><a href="programmes/exploring-your-eco-exploring-the-living-cultural-and-eco-t-fb556078.html">探索你的生态2026——探索希腊北部科尼察的生活、文化和生态旅游休闲环境
+<h3><a href="opportunities/exploring-your-eco-2026-exploring-the-living-cultural-and-eco-tourism--80a3833c.html">探索你的生态2026——探索希腊北部科尼察的生活、文化和生态旅游休闲环境
 </a></h3>
 </div>
 <p>捷克布拉格生命科学大学，与维科斯-阿奥斯联合国教科文组织世界地质公园和Trace Your Eco合作
@@ -255,15 +255,15 @@
 </span>
 </div>
 <div class="card-actions">
-<a class="button tonal" data-i18n="action.details" href="opportunities/exploring-your-eco-2026-exploring-the-living-cultural-and-eco-tourism--80a3833c.html">查看详情</a>
-<a class="button tonal" data-i18n="programme.view" href="programmes/exploring-your-eco-exploring-the-living-cultural-and-eco-t-fb556078.html">查看周期项目</a>
-<a class="button tonal" data-i18n="library.official" href="https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/exploring-your-eco-2026-exploring-the-living-cultural-and-ec.html" rel="noopener" target="_blank">查看项目官网</a>
+<a class="button tonal" data-i18n="action.edition" href="opportunities/exploring-your-eco-2026-exploring-the-living-cultural-and-eco-tourism--80a3833c.html">本届详情</a>
+<a class="text-action" data-i18n="programme.view" href="programmes/exploring-your-eco-exploring-the-living-cultural-and-eco-t-fb556078.html">历届记录</a>
+<a class="text-action" data-i18n="library.official" href="https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/exploring-your-eco-2026-exploring-the-living-cultural-and-ec.html" rel="noopener" target="_blank">前往官网 ↗</a>
 </div>
 </article>
-<article class="library-card">
+<article class="library-card" data-search="summer school ds-food design of sustainable food systems (6th edition) 可持续食品系统设计暑期学校（第六届） euroleague for life sciences (ells) 欧洲生命科学联盟（ells） alpine study centre located in pieve tesino, via rovigo, 7, 38050, tn, italy 阿尔卑斯学习中心，位于意大利特伦托省pieve tesino，via rovigo, 7, 38050, tn summer school sustainable food systems, food systems design, sustainability 在意大利 pieve tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。 面向官网列出的非意大利 ells 合作大学学生；其他参与者可按官网所列费用参加。 低费用：约 eur 90；8天；优先区域；可信来源第 1.5 层">
 <div class="library-card-head">
 <span class="library-status" data-i18n="library.past_closed">往届项目 · 申请已结束</span>
-<h3><a href="programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html">可持续食品系统设计暑期学校（第六届）
+<h3><a href="opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html">可持续食品系统设计暑期学校（第六届）
 </a></h3>
 </div>
 <p>欧洲生命科学联盟（ELLS）
@@ -276,15 +276,15 @@
 </span>
 </div>
 <div class="card-actions">
-<a class="button tonal" data-i18n="action.details" href="opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html">查看详情</a>
-<a class="button tonal" data-i18n="programme.view" href="programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html">查看周期项目</a>
-<a class="button tonal" data-i18n="library.official" href="https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html" rel="noopener" target="_blank">查看项目官网</a>
+<a class="button tonal" data-i18n="action.edition" href="opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html">本届详情</a>
+<a class="text-action" data-i18n="programme.view" href="programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html">历届记录</a>
+<a class="text-action" data-i18n="library.official" href="https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html" rel="noopener" target="_blank">前往官网 ↗</a>
 </div>
 </article>
-<article class="library-card">
+<article class="library-card" data-search="sicss-amu/law sicss-amu/法律 summer institutes in computational social science 计算社会科学暑期学院 adam mickiewicz university, poznań 亚当·密茨凯维奇大学，波兹南 summer institute data science, law, social science, social science methods 一个密集的计算社会科学学院，涵盖文本分析、网络数据、实验、研究伦理和合作研究。 研究生、博士后研究人员和初级教师。 低费用：约 eur 0；12天；可信来源第 1 层；线下举办">
 <div class="library-card-head">
 <span class="library-status" data-i18n="library.ongoing_closed">正在举办 · 申请已结束</span>
-<h3><a href="programmes/sicss-amu-law-ea0b8009.html">SICSS-AMU/法律
+<h3><a href="opportunities/sicss-2026-amu-law-61e7da57.html">SICSS-AMU/法律
 </a></h3>
 </div>
 <p>计算社会科学暑期学院
@@ -297,15 +297,15 @@
 </span>
 </div>
 <div class="card-actions">
-<a class="button tonal" data-i18n="action.details" href="opportunities/sicss-2026-amu-law-61e7da57.html">查看详情</a>
-<a class="button tonal" data-i18n="programme.view" href="programmes/sicss-amu-law-ea0b8009.html">查看周期项目</a>
-<a class="button tonal" data-i18n="library.official" href="https://new.sicss.io/2026/amu-law" rel="noopener" target="_blank">查看项目官网</a>
+<a class="button tonal" data-i18n="action.edition" href="opportunities/sicss-2026-amu-law-61e7da57.html">本届详情</a>
+<a class="text-action" data-i18n="programme.view" href="programmes/sicss-amu-law-ea0b8009.html">历届记录</a>
+<a class="text-action" data-i18n="library.official" href="https://new.sicss.io/2026/amu-law" rel="noopener" target="_blank">前往官网 ↗</a>
 </div>
 </article>
-<article class="library-card">
+<article class="library-card" data-search="ieee ras summer school in germany: bridging ai and robotics ieee ras德国暑期学校：连接人工智能与机器人 ieee robotics and automation society (ieee ras) ieee机器人与自动化学会（ieee ras） abtei frauenwörth, chiemsee, germany 德国基姆湖弗劳恩沃特修道院 summer school artificial intelligence, machine learning, robotics, perception, planning, cognitive robotics ieee ras 举办的五天线下认知机器人暑期学校，连接人工智能、机器学习、感知、规划与智能机器人系统。 对下一代智能机器人系统感兴趣的早期职业研究人员和专业人士 5天；优先区域；可信来源第 1.5 层；线下举办">
 <div class="library-card-head">
 <span class="library-status" data-i18n="library.past_closed">往届项目 · 申请已结束</span>
-<h3><a href="programmes/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-f01dd519.html">IEEE RAS德国暑期学校：连接人工智能与机器人
+<h3><a href="opportunities/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-40f851a3.html">IEEE RAS德国暑期学校：连接人工智能与机器人
 </a></h3>
 </div>
 <p>IEEE机器人与自动化学会（IEEE RAS）
@@ -318,33 +318,23 @@
 </span>
 </div>
 <div class="card-actions">
-<a class="button tonal" data-i18n="action.details" href="opportunities/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-40f851a3.html">查看详情</a>
-<a class="button tonal" data-i18n="programme.view" href="programmes/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-f01dd519.html">查看周期项目</a>
-<a class="button tonal" data-i18n="library.official" href="https://events.vtools.ieee.org/m/564683" rel="noopener" target="_blank">查看项目官网</a>
+<a class="button tonal" data-i18n="action.edition" href="opportunities/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-40f851a3.html">本届详情</a>
+<a class="text-action" data-i18n="programme.view" href="programmes/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-f01dd519.html">历届记录</a>
+<a class="text-action" data-i18n="library.official" href="https://events.vtools.ieee.org/m/564683" rel="noopener" target="_blank">前往官网 ↗</a>
 </div>
 </article>
 </div>
 </section>
-</div>
-</div>
-</section>
-<section class="topic-guides anchor" id="topics">
-<div class="section-head">
-<h2 data-i18n="topics.home.title">按主题浏览科研暑校</h2>
-<p class="lead" data-i18n="topics.home.lead">只有在已核实项目数量足够时才生成可索引主题页，避免内容单薄。</p>
-</div>
-<div class="topic-link-grid">
-<a class="topic-link-card" href="topics/ai-computing.html"><strong>人工智能与计算机暑校
-</strong><span>7 个项目
-</span></a><a class="topic-link-card" href="topics/data-analysis.html"><strong>数据分析与统计学暑校
-</strong><span>8 个项目
-</span></a><a class="topic-link-card" href="topics/social-sciences.html"><strong>社会科学研究暑校
-</strong><span>6 个项目
-</span></a><a class="topic-link-card" href="topics/environment-earth.html"><strong>环境、地球与水科学暑校
-</strong><span>4 个项目
-</span></a>
-</div>
-</section>
+<details class="home-information">
+<summary data-i18n="home.information">来源、筛选方法与常见问题</summary>
+<details class="hero-disclaimer">
+<summary data-i18n="hero.disclaimer.summary">申请前请注意：务必到官网核验</summary>
+<p data-i18n="hero.disclaimer">请把这里当作基础信息入口，而不是唯一信息来源。本站信息来自各大组织和学校官网，但自动收集和解析仍可能因为技术问题出错；申请前请务必到官网核对截止日期、费用、资助和资格要求。少数质量很高但暂时无法自动收集的官网已列在采集说明里。祝大家都能录到心仪的项目。</p>
+</details>
+<p class="status info">
+
+最近一次扫描没有符合全部规则且开放申请的项目。雷达仍在追踪 159 个可信来源，新项目通常会在每年 12 月至次年 4 月陆续开放。
+</p>
 <section class="notes">
 <h2 data-i18n="notes.title">采集说明</h2>
 <ul>
@@ -431,6 +421,7 @@
 </details>
 </div>
 </section>
+</details>
 </main>
 <footer class="site">
 <div class="wrap">

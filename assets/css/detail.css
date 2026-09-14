@@ -47,3 +47,16 @@
       }
       .mobile-actions .button.primary { flex: 1; }
     }
+
+.detail-panel > summary { cursor: pointer; font-size: 16px; font-weight: 650; }
+.detail-panel[open] > summary { margin-bottom: 12px; }
+.evidence-item { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 8px; }
+.evidence-item summary { cursor: pointer; padding: 8px 0; font-weight: 600; }
+.evidence-item blockquote { margin: 8px 0 0; padding: 0 0 0 14px; border-left: 3px solid var(--line); color: var(--muted); font-size: 13px; overflow-wrap: anywhere; white-space: pre-line; }
+.funding-context { font-size: 12px; }
+.detail-stack, .decision-card { min-width: 0; overflow-wrap: anywhere; }
+@media (max-width: 800px) {
+  .mobile-actions { padding-bottom: max(12px, env(safe-area-inset-bottom)); align-items: center; }
+  .mobile-actions .cal { flex: 0 1 auto; }
+  .mobile-actions .cal-menu { bottom: calc(100% + 10px); top: auto; right: 0; left: auto; }
+}

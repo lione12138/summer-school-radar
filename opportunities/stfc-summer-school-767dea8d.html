@@ -78,16 +78,22 @@
 </svg>
  Summa</a>
     <div class="links">
+      <details class="nav-menu" open>
+        <summary data-i18n="nav.menu">Menu</summary>
+        <div class="menu-links">
       <a href="../index.html#opportunities" data-i18n="nav.opportunities">Opportunities</a>
       <a class="hide-sm" href="../index.html#how" data-i18n="nav.how">How it works</a>
       <a class="hide-sm" href="../index.html#about" data-i18n="nav.about">About</a>
       <a href="../sources.html" data-i18n="nav.sources">Sources</a>
       <a href="https://github.com/lione12138/summer-school-radar">GitHub</a>
+        </div>
+      </details>
       <button id="lang-toggle" class="toggle" type="button" aria-label="Language">中</button>
       <button id="theme-toggle" class="toggle" type="button" aria-label="Theme">&#9790;</button>
     </div>
   </div>
 </nav>
+<script src="../assets/js/navigation.js" defer></script>
 
   <header class="detail-header">
     <div class="wrap">
@@ -112,17 +118,20 @@
   <main class="detail-main">
     <div class="wrap detail-grid">
       <div class="detail-stack">
-        <section class="detail-panel"><h2 data-i18n="detail.overview">Overview</h2><p><span class="lang-en" lang="en">An introductory residential astronomy summer school for postgraduate researchers, hosted by Keele University.</span><span class="lang-zh" lang="zh">由基尔大学主办、面向研究生研究人员的入门级住宿制天文学暑期学校。</span>
+        <section class="detail-panel anchor" id="overview"><h2 data-i18n="detail.overview">Overview</h2><p><span class="lang-en" lang="en">An introductory residential astronomy summer school for postgraduate researchers, hosted by Keele University.</span><span class="lang-zh" lang="zh">由基尔大学主办、面向研究生研究人员的入门级住宿制天文学暑期学校。</span>
 </p></section>
         <section class="detail-panel"><h2 data-i18n="detail.eligibility">Who should apply</h2><p><span class="lang-en" lang="en">PhD students in astrophysics</span><span class="lang-zh" lang="zh">天体物理学博士生</span>
 </p></section>
-        <section class="detail-panel "><h2 data-i18n="detail.why">Why this status</h2><p><span class="lang-en" lang="en">funding evidence: fee waiver, travel grant; 4 days; priority region; trusted source layer 1</span><span class="lang-zh" lang="zh">资助证据：费用减免、差旅资助；4天；优先区域；可信来源第 1 层</span>
-</p></section>
+        <details class="detail-panel"><summary data-i18n="detail.why">Why this status</summary><p><span class="lang-en" lang="en">funding evidence: fee waiver, travel grant; 4 days; priority region; trusted source layer 1</span><span class="lang-zh" lang="zh">资助证据：费用减免、差旅资助；4天；优先区域；可信来源第 1 层</span>
+</p></details>
         <section class="detail-panel">
           <h2 data-i18n="detail.source">Official source</h2>
           <p class="muted" data-i18n="detail.source.original">Original source evidence is retained below for verification.</p>
-          <p><span class="lang-en" lang="en">1st to 4th September 2026 STFC Studentship holders and self-funded postgraduates can register free of charge and claim back travel and subsistence.</span><span class="lang-zh" lang="zh">以下为官网原文证据，保留原文便于核对：1st to 4th September 2026 STFC Studentship holders and self-funded postgraduates can register free of charge and claim back travel and subsistence.</span>
-</p>
+          
+          <details class="evidence-item"><summary data-i18n="table.duration">Duration</summary><blockquote>1st to 4th September 2026</blockquote></details>
+          
+          <details class="evidence-item"><summary data-i18n="detail.funding.evidence">Funding evidence</summary><blockquote>STFC Studentship holders and self-funded postgraduates can register free of charge and claim back travel and subsistence.</blockquote></details>
+          
           
           <a class="source-link" href="https://www.keele.ac.uk/astronomy-summer-school/" target="_blank" rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>
           
@@ -133,6 +142,7 @@
         <span class="eyebrow" data-i18n="detail.funding">Funding / fee</span>
         <p class="decision-value"><span class="lang-en" lang="en">Fee GBP 0 for STFC studentship holders and self-funded postgraduates; travel + subsistence reimbursable · otherwise GBP 700 for non-STFC-funded PhD students, postdocs, and university/organization employees; includes registration, 5 nights accommodation, meals, and social events</span><span class="lang-zh" lang="zh">STFC 奖学金持有者及自费研究生免注册费，并可报销差旅与生活费 · 其他符合条件者：GBP 700 for non-STFC-funded PhD 学生, postdocs, and university/organization employees; includes registration, 5 nights accommodation, meals, and social events</span>
 </p>
+        <a class="funding-context" href="#overview" data-i18n="detail.coverage">See the overview for coverage and eligibility</a>
         <span class="eyebrow" data-i18n="detail.deadline">Application deadline</span>
         <p class="deadline-value"><span class="lang-en" lang="en">Deadline uncertain</span><span class="lang-zh" lang="zh">截止日期待确认</span>
 </p>
