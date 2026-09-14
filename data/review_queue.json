@@ -1,18 +1,18 @@
 {
-  "generated": "2026-09-11",
+  "generated": "2026-09-14",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
       "url": "https://indico.ictp.it/event/11407",
-      "organizer": "Indico - Conferences and Events",
+      "organizer": "Jordanian Atomic Energy Commission, SESAME, ICTP, and Arab Fusion Energy Initiative",
       "source_layer": "1",
-      "location": "Europe",
+      "location": "Allan, Jordan",
       "dates": {
         "start": "2027-01-04",
         "end": "2027-01-08",
         "duration_days": 5
       },
-      "deadline": "2026-11-20",
+      "deadline": "2026-11-15",
       "deadline_status": "open",
       "financial_access_status": "funded",
       "fee": "",
@@ -27,7 +27,7 @@
       ],
       "confidence": 0.75,
       "evidence": {
-        "deadline": "Deadline: 15 Nov 20 (other dates listed: 2026-11-15)",
+        "deadline": "Deadline: 15 Nov 2026",
         "duration": "04-8 January 2027",
         "fee": "",
         "funding": "For the accepted applicants, the total cost of accommodation and meals will be covered.",
@@ -39,10 +39,10 @@
         "validation_warnings": [
           "location_context_weak"
         ],
-        "chinese_summary": "阿尔努尔聚变科学冬季学校（smr 4333）将于2027年1月4日至8日在约旦安曼（Allan - Jordan）举行，申请截止日期为2026年11月15日，申请现已开放。",
+        "chinese_summary": "该冬季学校旨在向学生和早期职业科学家传播聚变科学知识，涵盖数学、物理和工程等背景，最多选拔50名参与者。申请需提交简历和动机信，截止日期为2026年11月15日。",
         "extracted_deadline": "2026-11-15",
         "extracted_fee": "",
-        "extracted_funding": "Financial support to cover travel may be requested; level of support indicated in acceptance letter. For accepted applicants, total cost of accommodation and meals will be covered.",
+        "extracted_funding": "Travel support may be available; accommodation and meals covered for accepted applicants.",
         "evidence_fields": {
           "deadline": "​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ Deadline: 15 Nov 2026 Fusion is one of the most promising sources of green and limitless energy for the future.",
           "fee": "",
@@ -80,7 +80,7 @@
       ],
       "confidence": 0.75,
       "evidence": {
-        "deadline": "Deadline 19 Oct 2026 (other dates listed: 2026-09-13, 2026-09-18, 2026-09-23)",
+        "deadline": "Deadline 19 Oct 2026 (other dates listed: 2026-09-18, 2026-09-23)",
         "duration": "",
         "fee": "",
         "funding": "",
@@ -115,7 +115,7 @@
       ],
       "confidence": 0.5,
       "evidence": {
-        "deadline": "registration deadline is 25 September.",
+        "deadline": "registration deadline is 25 September",
         "duration": "January 11, 2027 - January 22, 2027",
         "fee": "",
         "funding": "",
@@ -449,41 +449,6 @@
         "fee": "",
         "funding": "The travel grants are awarded as partial reimbursement of travel costs (e.",
         "mode": ""
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "Thematic CERN School of Computing",
-      "url": "https://csc.web.cern.ch/scsc-2026/",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "location": "Cosener’s House – Abingdon, UK",
-      "dates": {
-        "start": "2026-09-27",
-        "end": "2026-10-03",
-        "duration_days": 7
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "architecture"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "",
-        "duration": "27 September – 3 October 2026",
-        "fee": "",
-        "funding": "",
-        "mode": "will be hosted at the Cosener’s House located in the grounds of the"
       },
       "ai_advisory": {
         "available": false
