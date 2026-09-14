@@ -19,25 +19,17 @@
       <p class="kicker" data-i18n="hero.kicker">Deadline status refreshed daily &middot; Free &amp; open source</p>
       <h1 data-i18n="hero.title">Find research training worth applying for</h1>
       <p class="subtitle" data-i18n="hero.subtitle">Funded and low-fee opportunities from trusted academic sources. Every deadline and funding claim stays traceable to the official page.</p>
-      <details class="hero-disclaimer">
-        <summary data-i18n="hero.disclaimer.summary">Before applying: verify the official page</summary>
-        <p data-i18n="hero.disclaimer">Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.</p>
-      </details>
-      <div class="hero-actions">
-        <a class="button primary" href="#opportunities" data-i18n="cta.explore">Explore opportunities</a>
-        <a class="button tonal" href="#how" data-i18n="cta.qualification">How qualification works</a>
-      </div>
     </div>
   </header>
   <main class="wrap">
-    <div class="stats">
-      <div class="stat"><div class="num">{{ full_count }}</div><div class="lbl" data-i18n="stat.qualified">Funded / low fee</div></div>
-      <div class="stat"><div class="num">{{ near_count }}</div><div class="lbl" data-i18n="stat.near">Verified self-funded</div></div>
-      <div class="stat"><div class="num">{{ tracked_sources }}</div><div class="lbl" data-i18n="stat.sources">Trusted sources</div></div>
-      <div class="stat"><div class="num sm">{{ source_scanned }}</div><div class="lbl" data-i18n="stat.scanned">Sources last scanned</div></div>
-    </div>
+    <p class="scan-summary"><a href="sources.html"><strong>{{ tracked_sources }}</strong> <span data-i18n="stat.sources">Trusted sources</span></a><span><span data-i18n="stat.scanned">Sources last scanned</span>: <time>{{ source_scanned }}</time></span></p>
     {{ freshness_warning|safe }}
-    {{ status_banner|safe }}
+    {{ coverage_warning|safe }}
+    {{ topic_links|safe }}
+    <nav class="browse-switch" data-i18n-aria-label="browse.label" aria-label="Browse opportunities">
+      <a href="#opportunities" data-view="open" aria-current="true" data-i18n="browse.open">Open applications</a>
+      {% if archive_section %}<a href="#programme-library" data-view="library" data-i18n="browse.library">Past editions</a>{% endif %}
+    </nav>
     <section id="opportunities" class="anchor">
       <div class="opportunity-list-head"><h2 data-i18n="opportunities.title">Open opportunities</h2><p>{{ opportunity_total|safe }}</p></div>
       <div class="opportunity-browser">
@@ -48,16 +40,23 @@
           {{ near_block|safe }}
           {{ regular_section|safe }}
           {{ pagination|safe }}
-          {{ archive_section|safe }}
         </div>
       </div>
     </section>
-    {{ topic_links|safe }}
+    {{ archive_section|safe }}
+    <details class="home-information">
+      <summary data-i18n="home.information">Sources, methodology & frequently asked questions</summary>
+      <details class="hero-disclaimer">
+        <summary data-i18n="hero.disclaimer.summary">Before applying: verify the official page</summary>
+        <p data-i18n="hero.disclaimer">Use this as a starting point, not the only source. Information is collected from official university and organization pages, but automated extraction can still be wrong. Always verify deadlines, fees, funding, and eligibility on the official page. High-quality official sources that cannot be collected automatically are listed in Collection Notes. Wishing everyone admission to a programme they are excited about.</p>
+      </details>
+    {{ status_banner|safe }}
     {{ notes_section|safe }}
     {{ subscribe_section|safe }}
     {{ how_section|safe }}
     {{ about_section|safe }}
     {{ faq_section|safe }}
+    </details>
   </main>
   {{ footer|safe }}
   <script src="assets/js/filters.js"></script>

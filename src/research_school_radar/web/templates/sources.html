@@ -24,15 +24,30 @@
   </header>
   <main class="wrap">
     <h2 data-i18n="sources.configured">Configured Sources</h2>
-    <div class="table-wrap">
+    <div class="source-filters">
+      <label for="source-search" data-i18n="sources.search">Search sources</label>
+      <input id="source-search" type="search" data-i18n-placeholder="sources.search.placeholder" placeholder="Source, region, topic">
+      <label for="source-state" data-i18n="sources.health">Scan health</label>
+      <select id="source-state">
+        <option value="" data-i18n="sources.all">All sources</option>
+        <option value="attention" data-i18n="sources.attention">Needs attention</option>
+        <option value="healthy" data-i18n="sources.healthy">Healthy</option>
+        <option value="disabled" data-i18n="sources.disabled">Disabled</option>
+      </select>
+      <button type="button" id="source-reset" data-i18n="filter.reset">Clear filters</button>
+    </div>
+    <p id="source-count" aria-live="polite"></p>
+    <p id="source-empty" hidden data-i18n="sources.empty">No sources match these filters.</p>
+    <div class="table-wrap registry-table">
       <table>
-        <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.status">Status</th><th data-i18n="sources.health">Scan health</th><th data-i18n="sources.last_success">Last success</th><th data-i18n="sources.failures">Failures</th><th data-i18n="sources.candidates">Scanner records</th><th data-i18n="sources.public_open">Open listings (last scan)</th><th data-i18n="sources.layer">Layer</th><th data-i18n="sources.region">Region</th><th data-i18n="sources.type">Type</th><th data-i18n="sources.keywords">Keywords</th><th data-i18n="sources.notes">Notes (original registry text)</th></tr></thead>
+        <thead><tr><th data-i18n="sources.source">Source</th><th data-i18n="sources.status">Status</th><th data-i18n="sources.health">Scan health</th><th data-i18n="sources.last_success">Last success</th><th data-i18n="sources.details">Coverage details</th></tr></thead>
         <tbody>{{ rows|safe }}</tbody>
       </table>
     </div>
     {{ manual_section|safe }}
   </main>
   {{ watermark|safe }}
+  <script src="assets/js/sources.js"></script>
   <script src="assets/js/i18n.js"></script>
 </body>
 </html>

@@ -57,18 +57,17 @@ def render_opportunity_detail(
     qualification = candidate.recommendation_reason.strip() or (
         "Official dates, funding or fee information, organizer, and programme location are shown with source evidence where available."
     )
-    evidence_parts = [
-        value.strip()
-        for value in (
-            candidate.deadline_evidence,
-            candidate.duration_evidence,
-            candidate.fee_evidence,
-            candidate.funding_evidence,
+    evidence_items = [
+        {"label": label, "title": title, "text": text.strip()}
+        for label, title, text in (
+            ("detail.deadline", "Application deadline", candidate.deadline_evidence),
+            ("table.duration", "Duration", candidate.duration_evidence),
+            ("detail.fee.evidence", "Fee evidence", candidate.fee_evidence),
+            ("detail.funding.evidence", "Funding evidence", candidate.funding_evidence),
         )
-        if value.strip()
+        if text.strip()
     ]
-    evidence = " ".join(evidence_parts[:4]) or "Source evidence is retained in the public candidate data."
-    calendar = deadline_cell(candidate.deadline, candidate.title, official) if candidate.deadline else ""
+    calendar = deadline_cell(candidate.deadline, candidate.title, official, show_date=False) if candidate.deadline else ""
     canonical = SITE_URL + candidate_detail_href(candidate)
     archived = is_archive_candidate(candidate)
     meta_description = seo_description(
@@ -107,7 +106,7 @@ def render_opportunity_detail(
         eligibility=bilingual(eligibility, candidate.eligibility_zh),
         qualification=bilingual(qualification, candidate.recommendation_reason_zh),
         qualification_class="" if archived else "qualified",
-        evidence=bilingual(evidence, f"以下为官网原文证据，保留原文便于核对：{evidence}"),
+        evidence_items=evidence_items,
         official_url=official,
         financial_summary=bilingual(financial_summary_short(candidate), financial_summary_zh(candidate)),
         session_schedule=session_schedule,

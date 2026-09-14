@@ -30,13 +30,15 @@
   <main class="detail-main">
     <div class="wrap detail-grid">
       <div class="detail-stack">
-        <section class="detail-panel"><h2 data-i18n="detail.overview">Overview</h2><p>{{ summary|safe }}</p></section>
+        <section class="detail-panel anchor" id="overview"><h2 data-i18n="detail.overview">Overview</h2><p>{{ summary|safe }}</p></section>
         <section class="detail-panel"><h2 data-i18n="detail.eligibility">Who should apply</h2><p>{{ eligibility|safe }}</p></section>
-        <section class="detail-panel {{ qualification_class }}"><h2 data-i18n="detail.why">Why this status</h2><p>{{ qualification|safe }}</p></section>
+        <details class="detail-panel"><summary data-i18n="detail.why">Why this status</summary><p>{{ qualification|safe }}</p></details>
         <section class="detail-panel">
           <h2 data-i18n="detail.source">Official source</h2>
           <p class="muted" data-i18n="detail.source.original">Original source evidence is retained below for verification.</p>
-          <p>{{ evidence|safe }}</p>
+          {% for item in evidence_items %}
+          <details class="evidence-item"><summary data-i18n="{{ item.label }}">{{ item.title }}</summary><blockquote>{{ item.text }}</blockquote></details>
+          {% endfor %}
           {% if official_url %}
           <a class="source-link" href="{{ official_url }}" target="_blank" rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>
           {% else %}
@@ -48,6 +50,7 @@
         <h2 data-i18n="detail.snapshot">Application snapshot</h2>
         <span class="eyebrow" data-i18n="detail.funding">Funding / fee</span>
         <p class="decision-value">{{ financial_summary|safe }}</p>
+        <a class="funding-context" href="#overview" data-i18n="detail.coverage">See the overview for coverage and eligibility</a>
         <span class="eyebrow" data-i18n="detail.deadline">Application deadline</span>
         <p class="deadline-value">{{ deadline|safe }}</p>
         {{ session_schedule|safe }}

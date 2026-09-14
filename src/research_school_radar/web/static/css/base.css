@@ -7,6 +7,7 @@
       --muted: #5f6b60;
       --line: #e6e4d7;
       --accent: #1f6b4a;
+      --on-accent: #ffffff;
       --accent-ink: #17533a;
       --accent-soft: #e8f1ea;
       --highlight: #cfe84a;
@@ -28,6 +29,7 @@
       --muted: #9aa896;
       --line: #2b3327;
       --accent: #7fd6a0;
+      --on-accent: #102619;
       --accent-ink: #a7e6bf;
       --accent-soft: #17271c;
       --highlight: #cfe84a;
@@ -40,7 +42,7 @@
       --hero-2: #173d29;
       --hero-3: #1f5236;
     }
-    html[lang="en"] .lang-zh, html[lang="zh"] .lang-en { display: none !important; }
+    html[lang="en"] .lang-zh, html[lang|="zh"] .lang-en { display: none !important; }
     * { box-sizing: border-box; }
     body {
       margin: 0;
@@ -128,3 +130,25 @@
     }
     nav.topbar .toggle:hover { border-color: var(--accent); color: var(--accent); }
     .src-credit { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+
+[hidden] { display: none !important; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+nav.topbar .links { align-items: center; flex-wrap: nowrap; gap: 6px; }
+nav.topbar .toggle { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; height: 44px; line-height: normal; }
+.nav-menu > summary { display: none; }
+.nav-menu > .menu-links { display: flex; align-items: center; }
+@media (max-width: 720px) {
+  .nav-menu > summary { display: flex; align-items: center; min-height: 44px; padding: 0 10px; cursor: pointer; font-size: 13px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel); }
+  .nav-menu > summary::-webkit-details-marker { display: none; }
+  .nav-menu:not([open]) > .menu-links { display: none; }
+  .nav-menu[open] > .menu-links { display: flex; position: absolute; top: 100%; right: 12px; left: 12px; flex-direction: column; align-items: stretch; padding: 10px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); box-shadow: var(--shadow); }
+  nav.topbar .menu-links a, nav.topbar .menu-links a.hide-sm { display: flex; align-items: center; min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+.muted { color: var(--muted); }
+.cal { display: inline-block; position: relative; margin: 4px 0; }
+.cal > summary { cursor: pointer; display: inline-flex; align-items: center; min-height: 32px; font-size: 12px; color: var(--accent-ink); border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; background: var(--panel-2); list-style: none; }
+.cal > summary::-webkit-details-marker { display: none; }
+.cal-menu { position: absolute; top: calc(100% + 4px); left: 0; z-index: 40; min-width: 168px; padding: 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); box-shadow: var(--shadow); }
+.cal-menu a { display: flex; align-items: center; min-height: 40px; padding: 6px 10px; font-size: 12px; white-space: nowrap; }

@@ -1,4 +1,4 @@
-<aside class="filter-sidebar" aria-label="Opportunity filters">
+<aside class="filter-sidebar" aria-label="Opportunity filters" data-i18n-aria-label="filter.title">
   <div class="filter-sidebar-head">
     <h3 data-i18n="filter.title">Filter opportunities</h3>
     <button class="filter-mobile-toggle" id="filter-mobile-toggle" type="button" aria-expanded="false" aria-controls="opportunity-filters" data-i18n="filter.toggle">More filters</button>
@@ -7,16 +7,6 @@
     <div class="filter-group">
       <label for="filter-search" data-i18n="filter.search">Search</label>
       <input id="filter-search" type="search" placeholder="Title, organizer, location" data-i18n-placeholder="filter.search.placeholder">
-    </div>
-    <div class="filter-group">
-      <label for="filter-status" data-i18n="filter.status">Status</label>
-      <select id="filter-status">
-        <option value="" data-i18n="filter.all.status">All statuses</option>
-        <option value="qualified" data-i18n="filter.status.qualified">Funded / low fee</option>
-        <option value="high-quality" data-i18n="filter.status.high">Verified self-funded</option>
-        <option value="found" data-i18n="filter.status.found">More official programmes</option>
-        <option value="curated" data-i18n="filter.status.curated">Curated</option>
-      </select>
     </div>
     <div class="filter-group">
       <label for="filter-topic" data-i18n="filter.topic">Topic</label>
@@ -33,15 +23,6 @@
         <option value="low-fee" data-i18n="filter.funding.low">Low / no fee</option>
         <option value="self-funded" data-i18n="filter.funding.self">Self-funded</option>
         <option value="unresolved" data-i18n="filter.funding.unresolved">Unresolved / high fee</option>
-      </select>
-    </div>
-    <div class="filter-group">
-      <label for="filter-deadline" data-i18n="filter.deadline">Deadline</label>
-      <select id="filter-deadline">
-        <option value="" data-i18n="filter.all.deadline">All deadlines</option>
-        <option value="open" data-i18n="filter.deadline.open">Open</option>
-        <option value="uncertain" data-i18n="filter.deadline.uncertain">Uncertain</option>
-        <option value="closed" data-i18n="filter.deadline.closed">Closed</option>
       </select>
     </div>
     <div class="filter-group">

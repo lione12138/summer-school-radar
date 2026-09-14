@@ -117,9 +117,14 @@ MODE_ZH = {
 }
 
 FUNDING_TYPE_ZH = {
+    "accommodation support": "住宿资助",
+    "travel support": "差旅资助",
+    "registration fee waiver": "注册费减免",
+    "meals": "餐食支持",
     "access fund": "可及性基金",
     "accommodation": "住宿支持",
     "bursary": "助学金",
+    "fellowship": "研究资助",
     "fee waiver": "费用减免",
     "financial support": "经济资助",
     "funding": "资助",
@@ -241,6 +246,10 @@ def financial_summary_zh(candidate: Candidate) -> str:
                 f"其他符合条件者：{_tiered_fee_zh(candidate.fee)}"
             )
         funding = "、".join(FUNDING_TYPE_ZH.get(item, item) for item in candidate.funding_type) or "提供资助"
+        if candidate.funding_type and set(candidate.funding_type) <= {
+            "accommodation support", "accommodation", "fee waiver", "tuition waiver", "meals",
+        }:
+            return f"{funding} · 覆盖条件以官网为准"
         return f"{funding} · 金额未说明"
     if candidate.fee_eur is not None:
         if candidate.fee_eur == 0:

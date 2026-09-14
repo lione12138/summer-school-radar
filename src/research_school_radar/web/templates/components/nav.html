@@ -2,13 +2,19 @@
   <div class="wrap bar">
     <a class="brand" href="{{ brand }}">{% include "components/radar_icon.html" %} Summa</a>
     <div class="links">
+      <details class="nav-menu" open>
+        <summary data-i18n="nav.menu">Menu</summary>
+        <div class="menu-links">
       <a href="{{ home }}#opportunities" data-i18n="nav.opportunities">Opportunities</a>
       <a class="hide-sm" href="{{ home }}#how" data-i18n="nav.how">How it works</a>
       <a class="hide-sm" href="{{ home }}#about" data-i18n="nav.about">About</a>
       <a href="{{ root }}sources.html" data-i18n="nav.sources">Sources</a>
       <a href="{{ github_url }}">GitHub</a>
+        </div>
+      </details>
       <button id="lang-toggle" class="toggle" type="button" aria-label="Language">中</button>
       <button id="theme-toggle" class="toggle" type="button" aria-label="Theme">&#9790;</button>
     </div>
   </div>
 </nav>
+<script src="{{ root }}assets/js/navigation.js" defer></script>

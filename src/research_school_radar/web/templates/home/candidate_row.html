@@ -1,6 +1,6 @@
 <tr{% for key, value in attrs.items() %} {{ key }}="{{ value }}"{% endfor %}>
   {% if index is not none %}<td>{{ index }}</td>{% endif %}
-  <td><a href="{{ detail_href }}">{{ title|safe }}</a>{% if is_new %} <span class="badge-new" data-i18n="badge.new">NEW</span>{% endif %}</td>
+  <td><span class="card-status"><span class="lang-en">{{ attrs['data-status-label-en'] }}</span><span class="lang-zh">{{ attrs['data-status-label-zh'] }}</span></span><a href="{{ detail_href }}">{{ title|safe }}</a>{% if is_new %} <span class="badge-new" data-i18n="badge.new">NEW</span>{% endif %}</td>
   <td>{{ organizer|safe }}</td>
   <td>{{ location|safe }}</td>
   <td{% if duration_evidence %} title="{{ duration_evidence }}"{% endif %}>{{ duration|safe }}</td>

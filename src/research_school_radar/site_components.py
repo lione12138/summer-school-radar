@@ -83,7 +83,7 @@ def candidate_deadline_cell(candidate: Candidate) -> str:
     )
 
 
-def deadline_cell(deadline: date | None, title: str, url: str, *, latest_session: bool = False) -> str:
+def deadline_cell(deadline: date | None, title: str, url: str, *, latest_session: bool = False, show_date: bool = True) -> str:
     if deadline is None:
         return bilingual("uncertain", "待确认")
     safe_url = safe_external_url(url)
@@ -95,6 +95,7 @@ def deadline_cell(deadline: date | None, title: str, url: str, *, latest_session
     deadline_cn = f"最晚时段截止：{date_zh(deadline)}" if latest_session else date_zh(deadline)
     return render_template(
         "components/deadline.html",
+        show_date=show_date,
         deadline_en=deadline_en,
         deadline_zh=deadline_cn,
         google=google,
@@ -105,7 +106,12 @@ def deadline_cell(deadline: date | None, title: str, url: str, *, latest_session
 
 
 def financial_summary_short(candidate: Candidate) -> str:
-    return candidate.financial_summary.replace(" · Apply on official page", "")
+    summary = candidate.financial_summary.replace(" · Apply on official page", "")
+    if candidate.funding_type and set(candidate.funding_type) <= {
+        "accommodation support", "accommodation", "fee waiver", "tuition waiver", "meals",
+    }:
+        summary = summary.replace("amount not stated", "Check official coverage conditions")
+    return summary
 
 
 def candidate_status(candidate: Candidate) -> tuple[str, str]:

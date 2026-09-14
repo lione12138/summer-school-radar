@@ -91,7 +91,7 @@ def test_recurring_programme_library_is_separate_and_capped_by_organizer(tmp_pat
 
     html = write_site(rank_candidates(candidates), [], tmp_path).read_text(encoding="utf-8")
 
-    assert "Recurring programme library" in html
+    assert "Past editions &amp; recurring programmes" in html
     assert "Ongoing · applications closed" in html
     assert "Recurring Research School 1" in html
     assert "Recurring Research School 2" in html
@@ -400,11 +400,11 @@ def test_site_hero_disclaimer_is_rendered(tmp_path) -> None:
     ranked = rank_candidates([candidate])
     write_site(ranked, [], tmp_path)
     html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
-    hero = html.split("</header>", 1)[0]
-    assert 'class="hero-disclaimer"' in hero
-    assert "<details" in hero
-    assert 'data-i18n="hero.disclaimer.summary"' in hero
-    assert "Use this as a starting point, not the only source" in hero
+    soup = BeautifulSoup(html, "html.parser")
+    disclaimer = soup.select_one(".home-information .hero-disclaimer")
+    assert disclaimer is not None
+    assert "Use this as a starting point, not the only source" in disclaimer.get_text()
+    assert "Check dates, costs and eligibility" in soup.select_one("header.hero").get_text()
     i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
     assert "请把这里当作基础信息入口" in i18n
     assert "祝大家都能录到心仪的项目" in i18n
@@ -416,12 +416,11 @@ def test_filter_defaults_describe_each_dimension(tmp_path) -> None:
     html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
 
     soup = BeautifulSoup(html, "html.parser")
-    assert soup.select_one('#filter-status option[value=""]').get_text(strip=True) == "All statuses"
+    assert soup.select_one("#filter-status") is None
     assert soup.select_one('#filter-topic option[value=""]').get_text(strip=True) == "All topics"
     assert soup.select_one('#filter-funding option[value=""]').get_text(strip=True) == "All funding"
-    assert soup.select_one('#filter-deadline option[value=""]').get_text(strip=True) == "All deadlines"
+    assert soup.select_one("#filter-deadline") is None
     assert soup.select_one('#filter-new option[value=""]').get_text(strip=True) == "Any time"
-    assert soup.select_one('#filter-status option[value="found"]') is not None
     i18n = (tmp_path / "assets" / "js" / "i18n.js").read_text(encoding="utf-8")
     assert '"filter.all.status": {en:"All statuses", zh:"所有状态"}' in i18n
 

@@ -96,6 +96,11 @@ def _source_row(source: dict[str, Any]) -> str:
         "sources/source_row.html",
         url=url,
         name=name,
+        source_state=(
+            "disabled" if not enabled else
+            "healthy" if (source.get("health") or {}).get("status") == "healthy" and failures == 0
+            else "attention"
+        ),
         status_class=status_class,
         status=bilingual(status, "已启用" if enabled else "已停用"),
         health=health_status,

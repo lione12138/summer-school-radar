@@ -257,9 +257,10 @@ def render_site(
     filters = render_filters([*full, *near, *regular], curated)
     analytics = _analytics_snippet(site_config or {})
     status_banner = _status_banner(len(full), len(near), len(regular), tracked_total, tracked_sources)
+    coverage_warning = ""
     if freshness.persistent_failure_count:
         count = freshness.persistent_failure_count
-        status_banner += render_template(
+        coverage_warning = render_template(
             "home/status_banner.html", variant="warning",
             message_en=f"Coverage is incomplete: {count} sources have failed at least 5 consecutive scans. See Sources & Coverage for details.",
             message_zh=f"来源覆盖不完整：{count} 个来源已连续至少 5 次扫描失败。详情见“来源与覆盖”。",
@@ -295,6 +296,7 @@ def render_site(
         if freshness.source_scan_delayed
         else "",
         status_banner=status_banner,
+        coverage_warning=coverage_warning,
         opportunity_total=_bilingual(
             f"{opportunity_count} total · 15 per page · Deadline status refreshed {updated}",
             f"共 {opportunity_count} 条 · 每页 15 条 · 截止状态刷新于 {updated}",
@@ -484,7 +486,7 @@ def _archive_row(candidate: Candidate, programme_href: str = "") -> str:
         ),
         duration=_duration_cell(candidate),
         funding=_bilingual(_financial_summary_short(candidate), financial_summary_zh(candidate)),
-        title_href=programme_href or candidate_detail_href(candidate),
+        search=_row_attrs(candidate)["data-search"],
         detail_href=candidate_detail_href(candidate),
         programme_href=programme_href,
         official_url=safe_external_url(candidate.source_url or candidate.application_link),
@@ -589,7 +591,9 @@ def _row_attrs(candidate: Candidate, status: str | None = None) -> dict[str, str
             candidate.title,
             candidate.title_zh,
             candidate.organizer,
+            candidate.organizer_zh,
             candidate.location,
+            candidate.location_zh,
             candidate.type,
             ", ".join(candidate.topic_keywords),
             candidate.summary_zh,

@@ -3,6 +3,12 @@
     <h2 data-i18n="library.title">Recurring programme library</h2>
     <p class="lead" data-i18n="library.lead">Verified recurring programmes from official sources whose applications are closed. Event timing is shown separately; use these records to discover schools and watch for the next call.</p>
   </div>
-  <p class="library-count"><span data-i18n="library.count">Showing verified recurring programmes</span> · {{ count }}</p>
+  <div class="library-search">
+    <label for="library-search" data-i18n="library.search">Search past editions</label>
+    <input type="search" id="library-search" data-i18n-placeholder="filter.search.placeholder" placeholder="Title, organizer, location">
+    <button type="button" id="library-reset" class="filter-reset" data-i18n="filter.reset">Clear filters</button>
+  </div>
+  <p class="library-count" id="library-count" aria-live="polite"><span data-i18n="library.count">Showing verified recurring programmes</span> · {{ count }}</p>
+  <p class="filter-empty" id="library-empty" hidden data-i18n="library.empty">No past editions match your search.</p>
   <div class="library-grid">{{ rows|safe }}</div>
 </section>
