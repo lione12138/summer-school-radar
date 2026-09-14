@@ -3,58 +3,8 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-09-13",
+  "generated": "2026-09-14",
   "opportunities": [
-    {
-      "id": "opportunities/al-nour-winter-school-on-fusion-science-a5413f47",
-      "edition_id": "edition:49e9300f62e215a4",
-      "programme_id": "programme:1e2301271be1d280",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/al-nour-winter-school-on-fusion-science-9ba1e45f.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/al-nour-winter-school-on-fusion-science-9ba1e45f.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/al-nour-winter-school-on-fusion-science-9ba1e45f.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/al-nour-winter-school-on-fusion-science-9ba1e45f.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/al-nour-winter-school-on-fusion-science-a5413f47.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/al-nour-winter-school-on-fusion-science-a5413f47.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/al-nour-winter-school-on-fusion-science-a5413f47.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/al-nour-winter-school-on-fusion-science-a5413f47.html"
-      },
-      "official_url": "https://indico.ictp.it/event/11407",
-      "title": "Al-Nour Winter School on Fusion Science",
-      "title_zh": "Al-Nour 聚变科学冬季学校",
-      "type": "winter school",
-      "organizer": "Jordanian Atomic Energy Commission, SESAME, ICTP, and Arab Fusion Energy Initiative",
-      "organizer_zh": "约旦原子能委员会、SESAME、ICTP及阿拉伯聚变能源倡议",
-      "location": "Allan, Jordan",
-      "location_zh": "约旦阿兰",
-      "mode": "in-person",
-      "start_date": "2027-01-04",
-      "end_date": "2027-01-08",
-      "duration_days": 5,
-      "application_deadline": "2026-11-15",
-      "application_status": "open",
-      "directory_tier": "funded-or-low-fee",
-      "financial_summary": "accommodation support · amount not stated",
-      "fee": "",
-      "fee_eur": null,
-      "funding_available": true,
-      "funding_type": [
-        "accommodation support"
-      ],
-      "funding_scope": "",
-      "topics": [
-        "physics",
-        "mathematics",
-        "engineering"
-      ],
-      "summary": "The Al-Nour Winter School on Fusion Science runs from 4 to 8 January 2027 in Allan, Jordan. It introduces students and early-career scientists to fusion science. Accommodation and meals are covered for accepted applicants; travel support may be requested.",
-      "summary_zh": "阿尔努尔聚变科学冬季学校将于2027年1月4日至8日在约旦阿兰举行，面向学生和青年科研人员介绍聚变科学。录取者的住宿和餐食费用由项目承担，旅行资助可另行申请。",
-      "eligibility": "early-career scientists from a v​​ariety of backgrounds, like mathematics, physics, and engineering, to learn about this cutting-edge field from Arab and non-Arab experts i",
-      "eligibility_zh": "来自数学、物理和工程等不同背景的早期职业科学家，向阿拉伯和非阿拉伯专家学习这一前沿领域",
-      "sessions": []
-    },
     {
       "id": "opportunities/computational-linguistics-fall-school-2026-50903ddb",
       "edition_id": "edition:be59b18304848f3b",
@@ -208,55 +158,6 @@
       "summary_zh": "Prob_AI Hub 举办的四天冬季学校，内容包括因果推断、计算最优传输、算子学习、强化学习、偏微分方程机器学习和神经过程。项目免费参加；交通和住宿通常自理，符合条件的英国参与者可申请有限的 Access Fund。",
       "eligibility": "Open to applicants worldwide, with priority given to UK-based applicants.",
       "eligibility_zh": "面向全球申请者，英国申请者优先。",
-      "sessions": []
-    },
-    {
-      "id": "opportunities/cl-fall-school-21st-of-september-2nd-of-october-2026-029ba39c",
-      "edition_id": "edition:b74ea802fe5c7519",
-      "programme_id": "programme:f40f853dcdd6757a",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/cl-fall-school-21st-of-september-2nd-of-october-283dadb1.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/cl-fall-school-21st-of-september-2nd-of-october-283dadb1.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/cl-fall-school-21st-of-september-2nd-of-october-283dadb1.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/cl-fall-school-21st-of-september-2nd-of-october-283dadb1.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/cl-fall-school-21st-of-september-2nd-of-october-2026-029ba39c.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/cl-fall-school-21st-of-september-2nd-of-october-2026-029ba39c.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/cl-fall-school-21st-of-september-2nd-of-october-2026-029ba39c.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/cl-fall-school-21st-of-september-2nd-of-october-2026-029ba39c.html"
-      },
-      "official_url": "https://eveeno.com/193677544",
-      "title": "CL Fall School 21st of September – 2nd of October 2026",
-      "title_zh": "CL 秋季学校 2026年9月21日至10月2日",
-      "type": "fall school",
-      "organizer": "eveeno",
-      "organizer_zh": "eveeno",
-      "location": "More events",
-      "location_zh": "更多活动",
-      "mode": "in-person",
-      "start_date": "2026-09-21",
-      "end_date": "2026-10-02",
-      "duration_days": 12,
-      "application_deadline": null,
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee about EUR 150",
-      "fee": "150 EUR",
-      "fee_eur": 150.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "topics": [
-        "linguistics",
-        "computational linguistics",
-        "natural language processing",
-        "corpus linguistics"
-      ],
-      "summary": "CL Fall School 21st of September – 2nd of October 2026 Organize your events Share: Veranstalter-Login Eigene Events erstellen! Demos ausprobieren CL Fall School 21st of September – 2nd of October 2026 Nürnberg Registration selected Info Location More events Contact de en fr Regis",
-      "summary_zh": "CL 秋季学校 2026年9月21日至10月2日 组织您的活动 分享： 主办方登录 创建自己的活动！ 试用演示 CL 秋季学校 2026年9月21日至10月2日 纽伦堡 注册已选择 信息 地点 更多活动 联系方式 de en fr Regis",
-      "eligibility": "Masterstudierende und Promovierende in der Anfangsphase aus den Geisteswissenschaften und der Informatik",
-      "eligibility_zh": "人文与计算机科学领域的硕士生和初期博士生",
       "sessions": []
     },
     {
@@ -455,56 +356,6 @@
       "summary_zh": "IEEE RAS 举办的五天线下认知机器人暑期学校，连接人工智能、机器学习、感知、规划与智能机器人系统。",
       "eligibility": "early-career researchers, and professionals interested in the next generation of intelligent robotic systems",
       "eligibility_zh": "对下一代智能机器人系统感兴趣的早期职业研究人员和专业人士",
-      "sessions": []
-    },
-    {
-      "id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-      "edition_id": "ihe-delft:edition:27615956-52B7-11F1-B159-0050561F03F5",
-      "programme_id": "programme:259cc91832fad73a",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/interdisciplinarity-for-complex-water-problems-709bc84b.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-27615956-52b7-11f1-b159-0050561f03f5-5654c874.html"
-      },
-      "official_url": "https://www.un-ihe.org/short-courses",
-      "title": "Interdisciplinarity for Complex Water Problems",
-      "title_zh": "复杂水问题的跨学科方法",
-      "type": "short course",
-      "organizer": "IHE Delft",
-      "organizer_zh": "IHE Delft",
-      "location": "Delft, Netherlands",
-      "location_zh": "荷兰代尔夫特",
-      "mode": "in-person",
-      "start_date": "2026-09-28",
-      "end_date": "2026-10-02",
-      "duration_days": 5,
-      "application_deadline": "2026-09-10",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee EUR 450 excl. VAT",
-      "fee": "EUR 450 excl. VAT",
-      "fee_eur": 450.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "topics": [
-        "hydrology",
-        "environmental science",
-        "engineering",
-        "design",
-        "social science"
-      ],
-      "summary": "This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.",
-      "summary_zh": "本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。",
-      "eligibility": "PhD students working on water-related issues across engineering, hydrology, environmental science, social science, or the humanities.",
-      "eligibility_zh": "面向从工程、水文、环境科学、社会科学或人文学科角度研究水相关问题的博士生。",
       "sessions": []
     }
   ]
