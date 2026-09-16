@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-14",
+  "generated": "2026-09-16",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -47,99 +47,6 @@
           "deadline": "​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ Deadline: 15 Nov 2026 Fusion is one of the most promising sources of green and limitless energy for the future.",
           "fee": "",
           "funding": "Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of financial support will be indicated in the acceptance letter. | For the accepted applicants, the total cost of accommodation and meals will be covered."
-        }
-      }
-    },
-    {
-      "title": "Una Europa Winter School 2027 for doctoral researchers: Rethinking Cultural Heritage Collections",
-      "url": "https://www.una-europa.eu/calendar/una-europa-winter-school-2027-for-doctoral-researchers-rethinking-cultural-heritage-collections",
-      "organizer": "Una Europa",
-      "source_layer": "1.5",
-      "location": "Europe",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": "2026-10-19",
-      "deadline_status": "open",
-      "financial_access_status": "low-fee",
-      "fee": "no tuition fee",
-      "fee_eur": 0.0,
-      "topics": [
-        "linguistics",
-        "design",
-        "sociology",
-        "anthropology",
-        "history",
-        "archaeology",
-        "digital humanities"
-      ],
-      "needs_review": [
-        "duration is uncertain"
-      ],
-      "confidence": 0.75,
-      "evidence": {
-        "deadline": "Deadline 19 Oct 2026 (other dates listed: 2026-09-18, 2026-09-23)",
-        "duration": "",
-        "fee": "",
-        "funding": "",
-        "mode": "onsite programme at Freie Universität Berlin. At most Un"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "LOT Winter School 2027",
-      "url": "https://lotschool.nl/",
-      "organizer": "LOT – Netherlands Graduate School of Linguistics",
-      "source_layer": "1.5",
-      "location": "Europe",
-      "dates": {
-        "start": "2027-01-11",
-        "end": "2027-01-22",
-        "duration_days": 12
-      },
-      "deadline": "2026-09-25",
-      "deadline_status": "open",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "linguistics"
-      ],
-      "needs_review": [
-        "in-person status is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "registration deadline is 25 September",
-        "duration": "January 11, 2027 - January 22, 2027",
-        "fee": "",
-        "funding": "",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "missing_evidence_id:title",
-          "missing_evidence_id:event_type",
-          "missing_evidence_id:application_deadline_type",
-          "missing_evidence_id:chinese_summary",
-          "application_deadline_value_not_in_evidence",
-          "index_or_listing_page"
-        ],
-        "chinese_summary": "未知",
-        "extracted_deadline": "2026-09-25",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "The registration deadline is 25 September.",
-          "fee": "",
-          "funding": ""
         }
       }
     },
@@ -562,6 +469,43 @@
         "fee": "",
         "funding": "",
         "mode": "will be hosted at the Appart’City Ferney-Voltaire . Academic progra"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "LOT Winter School 2027",
+      "url": "https://lotschool.nl/lot-winter-school-2027-preliminary-programme-available/",
+      "organizer": "LOT – Netherlands Graduate School of Linguistics",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-01-11",
+        "end": "2027-01-22",
+        "duration_days": 12
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "linguistics",
+        "design"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.25,
+      "evidence": {
+        "deadline": "",
+        "duration": "January 11, 2027 - January 22, 2027",
+        "fee": "",
+        "funding": "",
+        "mode": ""
       },
       "ai_advisory": {
         "available": false

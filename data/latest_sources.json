@@ -15,8 +15,8 @@
     "health": {
       "name": "EGU Training Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -39,8 +39,8 @@
     "health": {
       "name": "IAHS",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -61,8 +61,8 @@
     "health": {
       "name": "IAH",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -101,8 +101,8 @@
     "health": {
       "name": "NASA ARSET",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -124,9 +124,9 @@
     "health": {
       "name": "DAAD Short Courses",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": "2026-07-15",
-      "consecutive_failures": 26,
+      "consecutive_failures": 27,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -148,8 +148,8 @@
     "health": {
       "name": "UKRI Short Courses and Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -172,8 +172,8 @@
     "health": {
       "name": "COST Action Events",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 3,
       "public_open_records": 0
@@ -196,8 +196,8 @@
     "health": {
       "name": "ELLIS",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 6,
       "public_open_records": 0
@@ -221,10 +221,10 @@
     "health": {
       "name": "IHE Delft",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
-      "scanner_records": 0,
+      "scanner_records": 30,
       "public_open_records": 0
     },
     "notes_zh": "\u9876\u7ea7\u6c34\u8d44\u6e90\u6559\u80b2\u5e73\u53f0\u3002\u8be5\u5217\u8868\u7531\u5ba2\u6237\u7aef\u6e32\u67d3\uff08HTML\u4e3a\u7a7a\uff09\uff0c\u56e0\u6b64\u76f4\u63a5\u4ece\u5176\u516c\u5171JSON API\u83b7\u53d6\uff08\u53c2\u89c1src/research_school_radar/api_sources.py\uff09\uff0c\u8be5API\u63d0\u4f9b\u7cbe\u786e\u65e5\u671f\u3001\u622a\u6b62\u65e5\u671f\u548c\u8d39\u7528\u3002"
@@ -260,8 +260,8 @@
     "health": {
       "name": "GFZ Potsdam",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -284,8 +284,8 @@
     "health": {
       "name": "UKCEH",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -311,8 +311,8 @@
     "health": {
       "name": "ICIMOD",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -335,8 +335,8 @@
     "health": {
       "name": "Asian Institute of Technology",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -359,8 +359,8 @@
     "health": {
       "name": "ECMWF Training",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -383,8 +383,8 @@
     "health": {
       "name": "ESA EO4Society Training",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -406,8 +406,8 @@
     "health": {
       "name": "NCAR ASP Colloquia",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -430,8 +430,8 @@
     "health": {
       "name": "PIK Potsdam Events",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -454,8 +454,8 @@
     "health": {
       "name": "HIDA Events",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -479,9 +479,9 @@
     "health": {
       "name": "GESIS Summer School",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": "2026-09-09",
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -504,9 +504,9 @@
     "health": {
       "name": "GESIS Fall Seminar in Computational Social Science",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": "2026-09-11",
-      "consecutive_failures": 1,
+      "consecutive_failures": 2,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -529,9 +529,9 @@
     "health": {
       "name": "GESIS Spring Seminar",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": "2026-09-08",
-      "consecutive_failures": 3,
+      "consecutive_failures": 4,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -554,8 +554,8 @@
     "health": {
       "name": "IDESSAI",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -579,8 +579,8 @@
     "health": {
       "name": "HiPEAC ACACES",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -604,8 +604,8 @@
     "health": {
       "name": "UTN Computational Linguistics Fall School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -629,8 +629,8 @@
     "health": {
       "name": "TU Graz Summer and Winter Programmes",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -654,8 +654,8 @@
     "health": {
       "name": "Institute for Qualitative and Multi-Method Research",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -679,9 +679,9 @@
     "health": {
       "name": "EITM Institute",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": null,
-      "consecutive_failures": 14,
+      "consecutive_failures": 15,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -704,8 +704,8 @@
     "health": {
       "name": "Eurac Winter School on Federalism and Governance",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -729,8 +729,8 @@
     "health": {
       "name": "Complexity Science Hub Winter School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -754,8 +754,8 @@
     "health": {
       "name": "Data Science Africa Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -779,8 +779,8 @@
     "health": {
       "name": "CERN School of Computing",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 4,
       "public_open_records": 0
@@ -803,8 +803,8 @@
     "health": {
       "name": "CERN School of Computing 2026 application",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -828,8 +828,8 @@
     "health": {
       "name": "EMBL-EBI Training",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -854,8 +854,8 @@
     "health": {
       "name": "SIB Training",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 3,
       "public_open_records": 0
@@ -879,8 +879,8 @@
     "health": {
       "name": "ESS Data and Computing Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -904,8 +904,8 @@
     "health": {
       "name": "Data Science and AI Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -929,8 +929,8 @@
     "health": {
       "name": "CODATA-RDA Data Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -953,8 +953,8 @@
     "health": {
       "name": "IEEE RAS Technical Education Programs",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -978,8 +978,8 @@
     "health": {
       "name": "IEEE RAS Cognitive Robotics Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -1003,8 +1003,8 @@
     "health": {
       "name": "EurAI ESSAI",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1029,8 +1029,8 @@
     "health": {
       "name": "ESSIR",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1054,8 +1054,8 @@
     "health": {
       "name": "NLDL Winter School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1079,8 +1079,8 @@
     "health": {
       "name": "Prob_AI Hub Winter School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -1104,8 +1104,8 @@
     "health": {
       "name": "Exeter Machine Learning Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -1129,8 +1129,8 @@
     "health": {
       "name": "UNICRI AI Ethics Winter School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1151,8 +1151,8 @@
     "health": {
       "name": "MLSS Index",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1174,8 +1174,8 @@
     "health": {
       "name": "EEML",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -1197,8 +1197,8 @@
     "health": {
       "name": "Mediterranean ML Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1220,8 +1220,8 @@
     "health": {
       "name": "Nordic ProbAI",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1243,8 +1243,8 @@
     "health": {
       "name": "Gaussian Process Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1266,8 +1266,8 @@
     "health": {
       "name": "Deep Learning Indaba",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1290,8 +1290,8 @@
     "health": {
       "name": "IWA",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1314,8 +1314,8 @@
     "health": {
       "name": "IAHR",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1337,8 +1337,8 @@
     "health": {
       "name": "SIWI",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1361,8 +1361,8 @@
     "health": {
       "name": "GEWEX",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1385,8 +1385,8 @@
     "health": {
       "name": "AMS Meetings",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1409,8 +1409,8 @@
     "health": {
       "name": "WCRP",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1433,8 +1433,8 @@
     "health": {
       "name": "WMO ETRP",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1456,8 +1456,8 @@
     "health": {
       "name": "GFDL Events",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1495,8 +1495,8 @@
     "health": {
       "name": "CIDER",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1520,8 +1520,8 @@
     "health": {
       "name": "Oxford ML Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1543,8 +1543,8 @@
     "health": {
       "name": "AMMI",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1584,8 +1584,8 @@
     "health": {
       "name": "ISPRS",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -1607,8 +1607,8 @@
     "health": {
       "name": "GSA",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1631,8 +1631,8 @@
     "health": {
       "name": "EAGE",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -1655,8 +1655,8 @@
     "health": {
       "name": "EarthScope",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -1679,8 +1679,8 @@
     "health": {
       "name": "CIG Geodynamics",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1704,8 +1704,8 @@
     "health": {
       "name": "EUMETSAT Training",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1729,8 +1729,8 @@
     "health": {
       "name": "ICOS",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -1754,8 +1754,8 @@
     "health": {
       "name": "ICTP-SAIFR",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1780,9 +1780,9 @@
     "health": {
       "name": "Lamont-Doherty",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": "2026-09-09",
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
       "scanner_records": 0,
       "public_open_records": 0
     }
@@ -1803,8 +1803,8 @@
     "health": {
       "name": "IPAM",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1827,8 +1827,8 @@
     "health": {
       "name": "CLIVAR",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -1851,8 +1851,8 @@
     "health": {
       "name": "APECS",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1875,8 +1875,8 @@
     "health": {
       "name": "Barcelona Supercomputing Center",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -1902,9 +1902,9 @@
     "health": {
       "name": "Climate Change AI",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": null,
-      "consecutive_failures": 27,
+      "consecutive_failures": 28,
       "scanner_records": 0,
       "public_open_records": 0
     }
@@ -1940,8 +1940,8 @@
     "health": {
       "name": "ELLS Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 3,
       "public_open_records": 0
@@ -1965,10 +1965,10 @@
     "health": {
       "name": "Una Europa Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
-      "scanner_records": 1,
+      "scanner_records": 0,
       "public_open_records": 0
     },
     "notes_zh": "\u6b27\u6d32\u5341\u4e00\u6240\u5927\u5b66\u8054\u5408\u4e3e\u529e\u7684\u5bc6\u96c6\u8bfe\u7a0b\u4e0e\u535a\u58eb\u6691\u671f\u5b66\u6821\u7684\u5b98\u65b9\u8054\u76df\u76ee\u5f55\u3002"
@@ -1990,8 +1990,8 @@
     "health": {
       "name": "EDUC Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2029,9 +2029,9 @@
     "health": {
       "name": "CERN Academic Training",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": null,
-      "consecutive_failures": 27,
+      "consecutive_failures": 28,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -2055,8 +2055,8 @@
     "health": {
       "name": "ICTP",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 5,
       "public_open_records": 0
@@ -2078,8 +2078,8 @@
     "health": {
       "name": "LxMLS",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -2103,8 +2103,8 @@
     "health": {
       "name": "Karthaus Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -2127,8 +2127,8 @@
     "health": {
       "name": "WHOI GFD Program",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2151,8 +2151,8 @@
     "health": {
       "name": "NCEO",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2175,8 +2175,8 @@
     "health": {
       "name": "POGO",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2200,8 +2200,8 @@
     "health": {
       "name": "Cyprus Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2226,9 +2226,9 @@
     "health": {
       "name": "AGU",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": "2026-09-09",
-      "consecutive_failures": 2,
+      "consecutive_failures": 3,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -2250,8 +2250,8 @@
     "health": {
       "name": "NCAS",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2275,8 +2275,8 @@
     "health": {
       "name": "Les Houches Physics School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2301,9 +2301,9 @@
     "health": {
       "name": "ESSLLI",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": null,
-      "consecutive_failures": 27,
+      "consecutive_failures": 28,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -2325,8 +2325,8 @@
     "health": {
       "name": "LSA Linguistic Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2350,8 +2350,8 @@
     "health": {
       "name": "LOT School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -2375,8 +2375,8 @@
     "health": {
       "name": "EGG School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2399,8 +2399,8 @@
     "health": {
       "name": "Leiden Linguistics Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 4,
       "public_open_records": 0
@@ -2423,8 +2423,8 @@
     "health": {
       "name": "CLASP Gothenburg",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2447,8 +2447,8 @@
     "health": {
       "name": "CoLang",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -2472,8 +2472,8 @@
     "health": {
       "name": "CreteLing",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -2496,11 +2496,11 @@
     "health": {
       "name": "Advanced Language Processing Winter School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
-      "public_open_records": 0
+      "public_open_records": 1
     },
     "notes_zh": "ALPS\uff0c\u7531\u683c\u52d2\u8bfa\u5e03\u5c14\u963f\u5c14\u5351\u65af\u5927\u5b66/LIG\u8054\u5408\u7ec4\u7ec7\uff1b\u9762\u5411\u7814\u7a76\u751f\u548c\u7814\u7a76\u8005\u7684\u9ad8\u7ea7\u4f4f\u5bbf\u5f0fNLP\u7814\u7a76\u5b66\u6821\u3002"
   },
@@ -2520,8 +2520,8 @@
     "health": {
       "name": "Charles University Summer School of Linguistics",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 3,
       "public_open_records": 0
@@ -2545,8 +2545,8 @@
     "health": {
       "name": "Methods in Language Sciences",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2570,8 +2570,8 @@
     "health": {
       "name": "Edinburgh Theoretical Historical Linguistics",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2594,8 +2594,8 @@
     "health": {
       "name": "ICVSS",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -2619,8 +2619,8 @@
     "health": {
       "name": "DS3 Data Science Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -2643,8 +2643,8 @@
     "health": {
       "name": "Heidelberg Laureate Forum",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2667,8 +2667,8 @@
     "health": {
       "name": "OPLSS",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -2691,9 +2691,9 @@
     "health": {
       "name": "LASER Software Engineering School",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": null,
-      "consecutive_failures": 27,
+      "consecutive_failures": 28,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -2715,8 +2715,8 @@
     "health": {
       "name": "CISPA",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -2739,8 +2739,8 @@
     "health": {
       "name": "SBA Research",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2764,8 +2764,8 @@
     "health": {
       "name": "Santa Fe Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2789,8 +2789,8 @@
     "health": {
       "name": "DeepLearn",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2813,8 +2813,8 @@
     "health": {
       "name": "EurAI ACAI",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2837,8 +2837,8 @@
     "health": {
       "name": "Friday Harbor Laboratories",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2862,8 +2862,8 @@
     "health": {
       "name": "SOLAS",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2886,8 +2886,8 @@
     "health": {
       "name": "CSCS Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2910,9 +2910,9 @@
     "health": {
       "name": "Argonne ATPESC",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": "2026-08-03",
-      "consecutive_failures": 12,
+      "consecutive_failures": 13,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -2934,8 +2934,8 @@
     "health": {
       "name": "CESM Tutorial",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2958,8 +2958,8 @@
     "health": {
       "name": "GEOMAR",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -2982,8 +2982,8 @@
     "health": {
       "name": "CINECA HPC",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3006,8 +3006,8 @@
     "health": {
       "name": "Oxford Robotics Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3030,8 +3030,8 @@
     "health": {
       "name": "Mila",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -3054,8 +3054,8 @@
     "health": {
       "name": "OIST OCNC",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3078,8 +3078,8 @@
     "health": {
       "name": "MBL Courses",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3102,8 +3102,8 @@
     "health": {
       "name": "CSHL Courses",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3126,8 +3126,8 @@
     "health": {
       "name": "CAJAL Training",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3150,8 +3150,8 @@
     "health": {
       "name": "Bernstein Network",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3174,8 +3174,8 @@
     "health": {
       "name": "CIFAR DLRL Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3198,8 +3198,8 @@
     "health": {
       "name": "IBRO",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3222,8 +3222,8 @@
     "health": {
       "name": "ECPR Methods School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -3247,8 +3247,8 @@
     "health": {
       "name": "SICSS",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -3271,8 +3271,8 @@
     "health": {
       "name": "ICPSR Summer Program",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3296,8 +3296,8 @@
     "health": {
       "name": "Summer School in Social Sciences Methods",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -3321,8 +3321,8 @@
     "health": {
       "name": "Oxford Spring School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -3345,8 +3345,8 @@
     "health": {
       "name": "Essex Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -3370,8 +3370,8 @@
     "health": {
       "name": "Essex Summer School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -3394,8 +3394,8 @@
     "health": {
       "name": "CEU Summer University",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3419,8 +3419,8 @@
     "health": {
       "name": "EUI",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3443,8 +3443,8 @@
     "health": {
       "name": "DHSI",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -3467,9 +3467,9 @@
     "health": {
       "name": "IHR History",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": "2026-08-03",
-      "consecutive_failures": 12,
+      "consecutive_failures": 13,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -3491,8 +3491,8 @@
     "health": {
       "name": "Khipu",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3515,8 +3515,8 @@
     "health": {
       "name": "Helmholtz AI",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3539,8 +3539,8 @@
     "health": {
       "name": "Wellcome Connecting Science",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3563,8 +3563,8 @@
     "health": {
       "name": "Physalia Courses",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3587,8 +3587,8 @@
     "health": {
       "name": "CISM",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3611,8 +3611,8 @@
     "health": {
       "name": "EARSeL",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3634,10 +3634,10 @@
     "notes": "The Alan Turing Institute (UK national institute for data science and AI); training events, schools, and workshops.",
     "health": {
       "name": "Alan Turing Institute",
-      "status": "healthy",
-      "last_attempt": "2026-09-14",
+      "status": "failed",
+      "last_attempt": "2026-09-16",
       "last_success": "2026-09-14",
-      "consecutive_failures": 0,
+      "consecutive_failures": 1,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -3659,8 +3659,8 @@
     "health": {
       "name": "Tinbergen Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -3683,8 +3683,8 @@
     "health": {
       "name": "CECAM",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3707,8 +3707,8 @@
     "health": {
       "name": "Boulder School",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3731,8 +3731,8 @@
     "health": {
       "name": "Aspen Center for Physics",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3755,8 +3755,8 @@
     "health": {
       "name": "KITP",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3779,8 +3779,8 @@
     "health": {
       "name": "DESY Summer Student",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3803,8 +3803,8 @@
     "health": {
       "name": "CIMPA",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3827,8 +3827,8 @@
     "health": {
       "name": "Hague Academy of International Law",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 2,
       "public_open_records": 0
@@ -3851,8 +3851,8 @@
     "health": {
       "name": "Asser Institute",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3875,8 +3875,8 @@
     "health": {
       "name": "EARLI",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
@@ -3899,9 +3899,9 @@
     "health": {
       "name": "Stazione Zoologica",
       "status": "failed",
-      "last_attempt": "2026-09-14",
+      "last_attempt": "2026-09-16",
       "last_success": null,
-      "consecutive_failures": 27,
+      "consecutive_failures": 28,
       "scanner_records": 0,
       "public_open_records": 0
     },
@@ -3923,8 +3923,8 @@
     "health": {
       "name": "LSE Cities",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 1,
       "public_open_records": 0
@@ -3947,8 +3947,8 @@
     "health": {
       "name": "The Berlage",
       "status": "healthy",
-      "last_attempt": "2026-09-14",
-      "last_success": "2026-09-14",
+      "last_attempt": "2026-09-16",
+      "last_success": "2026-09-16",
       "consecutive_failures": 0,
       "scanner_records": 0,
       "public_open_records": 0
