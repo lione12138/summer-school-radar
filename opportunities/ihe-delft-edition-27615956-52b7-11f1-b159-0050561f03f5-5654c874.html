@@ -78,16 +78,22 @@
 </svg>
  Summa</a>
     <div class="links">
+      <details class="nav-menu" open>
+        <summary data-i18n="nav.menu">Menu</summary>
+        <div class="menu-links">
       <a href="../index.html#opportunities" data-i18n="nav.opportunities">Opportunities</a>
       <a class="hide-sm" href="../index.html#how" data-i18n="nav.how">How it works</a>
       <a class="hide-sm" href="../index.html#about" data-i18n="nav.about">About</a>
       <a href="../sources.html" data-i18n="nav.sources">Sources</a>
       <a href="https://github.com/lione12138/summer-school-radar">GitHub</a>
+        </div>
+      </details>
       <button id="lang-toggle" class="toggle" type="button" aria-label="Language">中</button>
       <button id="theme-toggle" class="toggle" type="button" aria-label="Theme">&#9790;</button>
     </div>
   </div>
 </nav>
+<script src="../assets/js/navigation.js" defer></script>
 
   <header class="detail-header">
     <div class="wrap">
@@ -112,17 +118,20 @@
   <main class="detail-main">
     <div class="wrap detail-grid">
       <div class="detail-stack">
-        <section class="detail-panel"><h2 data-i18n="detail.overview">Overview</h2><p><span class="lang-en" lang="en">This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.</span><span class="lang-zh" lang="zh">本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。</span>
+        <section class="detail-panel anchor" id="overview"><h2 data-i18n="detail.overview">Overview</h2><p><span class="lang-en" lang="en">This PhD-level course introduces approaches, techniques, concepts, and tools for designing and implementing interdisciplinary research on complex water problems.</span><span class="lang-zh" lang="zh">本课程面向博士生，介绍围绕复杂水问题设计和实施跨学科研究所需的方法、技术、概念与工具。</span>
 </p></section>
         <section class="detail-panel"><h2 data-i18n="detail.eligibility">Who should apply</h2><p><span class="lang-en" lang="en">PhD students working on water-related issues across engineering, hydrology, environmental science, social science, or the humanities.</span><span class="lang-zh" lang="zh">面向从工程、水文、环境科学、社会科学或人文学科角度研究水相关问题的博士生。</span>
 </p></section>
-        <section class="detail-panel "><h2 data-i18n="detail.why">Why this status</h2><p><span class="lang-en" lang="en">5 days; priority region; trusted source layer 1; in-person</span><span class="lang-zh" lang="zh">5天；优先区域；可信来源第 1 层；线下举办</span>
-</p></section>
+        <details class="detail-panel"><summary data-i18n="detail.why">Why this status</summary><p><span class="lang-en" lang="en">5 days; priority region; trusted source layer 1; in-person</span><span class="lang-zh" lang="zh">5天；优先区域；可信来源第 1 层；线下举办</span>
+</p></details>
         <section class="detail-panel">
           <h2 data-i18n="detail.source">Official source</h2>
           <p class="muted" data-i18n="detail.source.original">Original source evidence is retained below for verification.</p>
-          <p><span class="lang-en" lang="en">IHE Delft course catalogue API: applications close 2026-09-10 IHE Delft course catalogue API: 2026-09-28 to 2026-10-02</span><span class="lang-zh" lang="zh">以下为官网原文证据，保留原文便于核对：IHE Delft course catalogue API: applications close 2026-09-10 IHE Delft course catalogue API: 2026-09-28 to 2026-10-02</span>
-</p>
+          
+          <details class="evidence-item"><summary data-i18n="detail.deadline">Application deadline</summary><blockquote>IHE Delft course catalogue API: applications close 2026-09-10</blockquote></details>
+          
+          <details class="evidence-item"><summary data-i18n="table.duration">Duration</summary><blockquote>IHE Delft course catalogue API: 2026-09-28 to 2026-10-02</blockquote></details>
+          
           
           <a class="source-link" href="https://www.un-ihe.org/short-courses" target="_blank" rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>
           
@@ -133,6 +142,7 @@
         <span class="eyebrow" data-i18n="detail.funding">Funding / fee</span>
         <p class="decision-value"><span class="lang-en" lang="en">Fee EUR 450 excl. VAT</span><span class="lang-zh" lang="zh">费用 EUR 450（未含增值税）</span>
 </p>
+        <a class="funding-context" href="#overview" data-i18n="detail.coverage">See the overview for coverage and eligibility</a>
         <span class="eyebrow" data-i18n="detail.deadline">Application deadline</span>
         <p class="deadline-value"><span class="lang-en" lang="en">10 Sep 2026</span><span class="lang-zh" lang="zh">2026年9月10日</span>
 </p>
@@ -180,7 +190,7 @@
         <a href="https://github.com/lione12138/summer-school-radar/stargazers" data-i18n="foot.star">Star on GitHub</a>
       </div>
     </div>
-    <div class="legal">Last updated 2026-09-13 &middot; <span data-i18n="foot.legal">Near-matches are not treated as qualified opportunities. Built and maintained openly on GitHub.</span></div>
+    <div class="legal">Last updated 2026-09-16 &middot; <span data-i18n="foot.legal">Near-matches are not treated as qualified opportunities. Built and maintained openly on GitHub.</span></div>
   </div>
 </footer>
 <!-- Summa | canonical: https://lione12138.github.io/summer-school-radar/ | data CC BY 4.0, attribution and link back required | SSR-CANON-7q3v9x2k8m4w -->
