@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-16",
+  "generated": "2026-09-18",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -35,18 +35,18 @@
       },
       "ai_advisory": {
         "available": true,
-        "validated_confidence": "low",
+        "validated_confidence": "medium",
         "validation_warnings": [
           "location_context_weak"
         ],
-        "chinese_summary": "该冬季学校旨在向学生和早期职业科学家传播聚变科学知识，涵盖数学、物理和工程等背景，最多选拔50名参与者。申请需提交简历和动机信，截止日期为2026年11月15日。",
+        "chinese_summary": "该冬季学校旨在传播聚变科学知识，面向数学、物理和工程背景的学生和早期职业科学家，最多50人，申请截止日期为2026年11月15日。",
         "extracted_deadline": "2026-11-15",
         "extracted_fee": "",
         "extracted_funding": "Travel support may be available; accommodation and meals covered for accepted applicants.",
         "evidence_fields": {
           "deadline": "​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ Deadline: 15 Nov 2026 Fusion is one of the most promising sources of green and limitless energy for the future.",
           "fee": "",
-          "funding": "Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of financial support will be indicated in the acceptance letter. | For the accepted applicants, the total cost of accommodation and meals will be covered."
+          "funding": "Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of f | Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of financial support will be indicated in the acceptance letter. | For the accepted applicants, the total cost of accommodation and meals will be covered."
         }
       }
     },
@@ -224,6 +224,58 @@
       },
       "ai_advisory": {
         "available": false
+      }
+    },
+    {
+      "title": "Search",
+      "url": "https://www.colorado.edu/conference/bss/",
+      "organizer": "Boulder School",
+      "source_layer": "2",
+      "location": "North America",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2027-01-15",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "machine learning",
+        "physics",
+        "condensed matter",
+        "materials science"
+      ],
+      "needs_review": [
+        "duration is uncertain",
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.25,
+      "evidence": {
+        "deadline": "Deadline: January 15, 2027",
+        "duration": "",
+        "fee": "",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "location_context_weak"
+        ],
+        "chinese_summary": "科罗拉多大学博尔德分校凝聚态物质与材料物理暑期学校，面向凝聚态物理、材料科学及相关领域的高年级研究生和博士后，2027年申请截止日期为1月15日，申请已开放。",
+        "extracted_deadline": "2027-01-15",
+        "extracted_fee": "",
+        "extracted_funding": "Supported by the National Science Foundation, with additional funding provided by the University of Colorado; no travel support for shorter attendance; students at universities outside the United States need to supply their own airfare.",
+        "evidence_fields": {
+          "deadline": "Deadline: January 15, 2027 All students are strongly urged to plan on staying for the duration of the School. | Deadline: January 15, 2027 All students are strongly urged to",
+          "fee": "",
+          "funding": "There will be no travel support for shorter attendance. | Please also note that the terms of our NSF grant require that students at universities outside the United States need to supply their own airfare. | The School is supported by the National Science Foundation, with additional funding provided by the University of Colorado, and meets annually during July at CU Physics Department, Boulder, Colorado."
+        }
       }
     },
     {
