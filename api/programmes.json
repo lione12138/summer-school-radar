@@ -1,7 +1,79 @@
 {
   "schema_version": 1,
-  "generated": "2026-09-17",
+  "generated": "2026-09-18",
   "programmes": [
+    {
+      "id": "programme:1e2301271be1d280",
+      "slug": "al-nour-winter-school-on-fusion-science-9ba1e45f",
+      "title": "Al-Nour Winter School on Fusion Science",
+      "title_zh": "Al-Nour 聚变科学冬季学校",
+      "organizer": "Jordanian Atomic Energy Commission, SESAME, ICTP, and Arab Fusion Energy Initiative",
+      "organizer_zh": "约旦原子能委员会、SESAME、ICTP及阿拉伯聚变能源倡议",
+      "summary": "The Al-Nour Winter School on Fusion Science runs from 4 to 8 January 2027 in Allan, Jordan. It introduces students and early-career scientists to fusion science. Accommodation and meals are covered for accepted applicants; travel support may be requested.",
+      "summary_zh": "阿尔努尔聚变科学冬季学校将于2027年1月4日至8日在约旦阿兰举行，面向学生和青年科研人员介绍聚变科学。录取者的住宿和餐食费用由项目承担，旅行资助可另行申请。",
+      "topics": [
+        "physics",
+        "mathematics",
+        "engineering"
+      ],
+      "editions": [
+        {
+          "id": "edition:49e9300f62e215a4",
+          "title": "Al-Nour Winter School on Fusion Science",
+          "title_zh": "Al-Nour 聚变科学冬季学校",
+          "detail_path": "opportunities/al-nour-winter-school-on-fusion-science-a5413f47.html",
+          "official_url": "https://indico.ictp.it/event/11407",
+          "location": "Allan, Jordan",
+          "location_zh": "约旦阿兰",
+          "start_date": "2027-01-04",
+          "end_date": "2027-01-08",
+          "deadline": "2026-11-15",
+          "deadline_status": "open",
+          "duration_days": 5,
+          "mode": "in-person",
+          "financial_summary": "accommodation support · Check official coverage conditions",
+          "financial_summary_zh": "住宿资助 · 覆盖条件以官网为准",
+          "funding_available": true,
+          "fee_eur": null,
+          "topics": [
+            "physics",
+            "mathematics",
+            "engineering"
+          ],
+          "summary": "The Al-Nour Winter School on Fusion Science runs from 4 to 8 January 2027 in Allan, Jordan. It introduces students and early-career scientists to fusion science. Accommodation and meals are covered for accepted applicants; travel support may be requested.",
+          "summary_zh": "阿尔努尔聚变科学冬季学校将于2027年1月4日至8日在约旦阿兰举行，面向学生和青年科研人员介绍聚变科学。录取者的住宿和餐食费用由项目承担，旅行资助可另行申请。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:49e9300f62e215a4",
+        "title": "Al-Nour Winter School on Fusion Science",
+        "title_zh": "Al-Nour 聚变科学冬季学校",
+        "detail_path": "opportunities/al-nour-winter-school-on-fusion-science-a5413f47.html",
+        "official_url": "https://indico.ictp.it/event/11407",
+        "location": "Allan, Jordan",
+        "location_zh": "约旦阿兰",
+        "start_date": "2027-01-04",
+        "end_date": "2027-01-08",
+        "deadline": "2026-11-15",
+        "deadline_status": "open",
+        "duration_days": 5,
+        "mode": "in-person",
+        "financial_summary": "accommodation support · Check official coverage conditions",
+        "financial_summary_zh": "住宿资助 · 覆盖条件以官网为准",
+        "funding_available": true,
+        "fee_eur": null,
+        "topics": [
+          "physics",
+          "mathematics",
+          "engineering"
+        ],
+        "summary": "The Al-Nour Winter School on Fusion Science runs from 4 to 8 January 2027 in Allan, Jordan. It introduces students and early-career scientists to fusion science. Accommodation and meals are covered for accepted applicants; travel support may be requested.",
+        "summary_zh": "阿尔努尔聚变科学冬季学校将于2027年1月4日至8日在约旦阿兰举行，面向学生和青年科研人员介绍聚变科学。录取者的住宿和餐食费用由项目承担，旅行资助可另行申请。",
+        "sessions": []
+      }
+    },
     {
       "id": "programme:d8e5cdd23362c0f5",
       "slug": "application-advanced-language-processing-winter-school-4bdfa128",
