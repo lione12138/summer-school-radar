@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-18",
+  "generated": "2026-09-23",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -47,6 +47,56 @@
           "deadline": "​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ Deadline: 15 Nov 2026 Fusion is one of the most promising sources of green and limitless energy for the future.",
           "fee": "",
           "funding": "Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of f | Travel must be organized and paid for by the participants.​​ It is possible to ask for financial support to cover travel; the level of financial support will be indicated in the acceptance letter. | For the accepted applicants, the total cost of accommodation and meals will be covered."
+        }
+      }
+    },
+    {
+      "title": "MiNaPOLL Winter School 2027 on New Frontiers in Micro- and Nanoplastic Pollution",
+      "url": "https://szn.it/it/formazione/advanced-courses-summer-schools/minapoll-winter-school-2027",
+      "organizer": "Stazione Zoologica",
+      "source_layer": "2",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-02-23",
+        "end": "2027-02-26",
+        "duration_days": 4
+      },
+      "deadline": "2026-12-10",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "environmental science"
+      ],
+      "needs_review": [
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "Application deadline: December 10th 2026",
+        "duration": "February 23rd to 26th 2027",
+        "fee": "",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "start_date_value_not_in_evidence",
+          "end_date_value_not_in_evidence",
+          "application_deadline_value_not_in_evidence"
+        ],
+        "chinese_summary": "MiNaPOLL 2027冬季学校，主题为微塑料和纳米塑料污染新前沿，2027年2月23日至26日在意大利那不勒斯Stazione Zoologica Anton Dohrn举办，面向博士生、博士后和青年研究人员，申请截止日期为2026年12月10日。",
+        "extracted_deadline": "2026-12-10",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "Home Formazione Advanced Courses & Summer schools MiNaPOLL Winter School 2027 MiNaPOLL Winter School 2027 on New Frontiers in Micro- and Nanoplastic Pollution From February 23rd to 26th 2027 Stazione Zoologica Anton Dohrn in the city of Naples (Italy) Who can apply: PhD students, post-docs, and young researchers Application deadline: December 10th 2026 SHORT DESCRIPTION Micro- and nanoplastics pollution is a hot topic in scientific research and",
+          "fee": "",
+          "funding": ""
         }
       }
     },
@@ -141,53 +191,6 @@
       }
     },
     {
-      "title": "How to apply",
-      "url": "https://winterschool.eurac.edu/en/how-to-apply",
-      "organizer": "Winterschool",
-      "source_layer": "1.5",
-      "location": "person",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": "2026-10-12",
-      "deadline_status": "open",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "AI",
-        "artificial intelligence"
-      ],
-      "needs_review": [
-        "duration is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "evidence": {
-        "deadline": "Deadline for applications: Sunday, 12 October 2026",
-        "duration": "",
-        "fee": "",
-        "funding": "",
-        "mode": "in person . There is no possibility to attend the course on"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [],
-        "chinese_summary": "Eurac 联邦制与治理冬季学校2027年申请现已开放，申请截止日期为2026年10月12日23:59 CEST。申请须通过在线申请系统提交，仅完整申请会被考虑。参与费为300欧元；奖学金获得者仍需缴纳150欧元参与费。提供基于成绩和需求的奖学金，优先考虑非欧洲国家的学生和申请人，另有部分奖学金覆盖住宿费用。",
-        "extracted_deadline": "2026-10-12",
-        "extracted_fee": "300,00 € participation fee; 150,00 € participation fee for scholarship holders upon enrollment",
-        "extracted_funding": "Scholarships awarded based on merit and need, preference to students and applicants from non-European countries; partial scholarships covering accommodation costs in a shared 3-bed room in Innsbruck and Bolzano/Bozen for 13 nights plus breakfast; 2 scholarships available; 3 scholarships available",
-        "evidence_fields": {
-          "deadline": "In case of questions regarding the application form and procedure, please contact winterschool@eurac.edu Deadline for applications: Sunday, 12 October 2026, 23:59 CEST Applications which are successfully submitted and complete will receive a confirmation via e-mail within 5 working days after submission.",
-          "fee": "Please note that holders of these scholarships are still required to pay a participation fee of 150,00 € upon enrollment . | will be booked through the organizers, participants organize accommodation in Innsbruck and Bolzano/Bozen by themselves (= 300,00 Euro participation fee only). | ​If no accommodation will be booked through the organizers, participants organize accommodation in Innsbruck and Bolzano/Bozen by themselves (= 300,00 Euro participation fee only). | 300,00 € The participation fee",
-          "funding": "Scholarships will be awarded based on merit and need ; preference will be given to students and applicants from non-European countries. | “Partial scholarships” covering the accommodation costs in a shared 3-bed room in Innsbruck and Bolzano/Bozen for 13 nights plus breakfast. | SCHOLARSHIPS The organizers of the Winter School will award a limited number of scholarships . | 2 scholarships are available. | 3 scholarships are available."
-        }
-      }
-    },
-    {
       "title": "2026 Advanced Course on International Criminal Law",
       "url": "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/",
       "organizer": "The Hague Academy of International Law",
@@ -267,12 +270,12 @@
         "validation_warnings": [
           "location_context_weak"
         ],
-        "chinese_summary": "科罗拉多大学博尔德分校凝聚态物质与材料物理暑期学校，面向凝聚态物理、材料科学及相关领域的高年级研究生和博士后，2027年申请截止日期为1月15日，申请已开放。",
+        "chinese_summary": "科罗拉多大学博尔德分校的凝聚态物质与材料物理暑期学校，面向凝聚态物理、材料科学及相关领域的高年级研究生和博士后，2027年申请截止日期为1月15日，申请已开放。",
         "extracted_deadline": "2027-01-15",
         "extracted_fee": "",
-        "extracted_funding": "Supported by the National Science Foundation, with additional funding provided by the University of Colorado; no travel support for shorter attendance; students at universities outside the United States need to supply their own airfare.",
+        "extracted_funding": "Supported by the National Science Foundation, with additional funding provided by the University of Colorado; no travel support for shorter attendance; students at universities outside the United States need to supply their own airfare",
         "evidence_fields": {
-          "deadline": "Deadline: January 15, 2027 All students are strongly urged to plan on staying for the duration of the School. | Deadline: January 15, 2027 All students are strongly urged to",
+          "deadline": "Deadline: January 15, 2027 All students are strongly urged to plan on staying for the duration of the School. | Deadline: January 15, 2027 All students are strongly",
           "fee": "",
           "funding": "There will be no travel support for shorter attendance. | Please also note that the terms of our NSF grant require that students at universities outside the United States need to supply their own airfare. | The School is supported by the National Science Foundation, with additional funding provided by the University of Colorado, and meets annually during July at CU Physics Department, Boulder, Colorado."
         }
@@ -329,6 +332,55 @@
       }
     },
     {
+      "title": "GESIS Summer School in Survey Methodology",
+      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology",
+      "organizer": "GESIS Summer School",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-07-28",
+        "end": "2027-08-20",
+        "duration_days": 24
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "data analysis",
+        "design"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "28 July - 20 August 2027",
+        "fee": "",
+        "funding": "",
+        "mode": "onsite or online participation). ► All courses will be h"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "possibly_past_or_closed"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
       "title": "Leiden Summer School",
       "url": "https://lotschool.nl/leiden-summer-school/",
       "organizer": "LOT – Netherlands Graduate School of Linguistics",
@@ -374,6 +426,42 @@
           "fee": "",
           "funding": ""
         }
+      }
+    },
+    {
+      "title": "The Second International Summer School on the Study of EXTREME ENVIRONMENTS through Integrated Approaches (ISS-SEEA)",
+      "url": "https://szn.it/it/formazione/advanced-courses-summer-schools/the-second-edition-of-the-iss-seea-summer-school",
+      "organizer": "Stazione Zoologica",
+      "source_layer": "2",
+      "location": "Europe",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "low-fee",
+      "fee": "Early bird: € 350 (in-person), € 100 (remote) Late: € 400 (in-person), € 150 (remote) Deadlines · Ju",
+      "fee_eur": 400.0,
+      "topics": [
+        "oceanography",
+        "ecology"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is uncertain"
+      ],
+      "confidence": 0.5,
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "fee": "",
+        "funding": "",
+        "mode": "in-person), € 100 (remote) Late: € 400 (in-person), € 150 ("
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
