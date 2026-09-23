@@ -64,11 +64,11 @@
 <p data-i18n="sources.lead">Summa 定期检查的官方学术来源。这里可以查看覆盖范围、最近成功采集时间和采集异常。</p>
 <a class="pill" data-i18n="sources.back" href="index.html">返回项目列表</a>
 <a class="pill" data-i18n="sources.json" href="../sources.json">来源 JSON</a>
-<span class="pill">159 个已启用
+<span class="pill">174 个已启用
 </span>
-<span class="pill">3 个已停用
+<span class="pill">6 个已停用
 </span>
-<span class="pill">来源最近扫描：2026-09-18
+<span class="pill">来源最近扫描：2026-09-23
 </span>
 </div>
 </header>
@@ -77,11 +77,11 @@
 <div class="source-filters">
 <label data-i18n="sources.search" for="source-search">搜索来源</label>
 <input data-i18n-placeholder="sources.search.placeholder" id="source-search" placeholder="来源名称、地区、主题" type="search"/>
-<label data-i18n="sources.health" for="source-state">扫描健康状态</label>
+<label data-i18n="sources.health" for="source-state">抓取健康状态</label>
 <select id="source-state">
 <option data-i18n="sources.all" value="">全部来源</option>
 <option data-i18n="sources.attention" value="attention">异常或尚未确认</option>
-<option data-i18n="sources.healthy" value="healthy">采集正常</option>
+<option data-i18n="sources.healthy" value="healthy">抓取成功</option>
 <option data-i18n="sources.disabled" value="disabled">已停用</option>
 </select>
 <button data-i18n="filter.reset" id="source-reset" type="button">清除筛选</button>
@@ -90,16 +90,476 @@
 <p data-i18n="sources.empty" hidden="" id="source-empty">没有符合条件的来源。</p>
 <div class="table-wrap registry-table">
 <table>
-<thead><tr><th data-i18n="sources.source">来源</th><th data-i18n="sources.status">状态</th><th data-i18n="sources.health">扫描健康状态</th><th data-i18n="sources.last_success">上次成功</th><th data-i18n="sources.details">覆盖详情</th></tr></thead>
+<thead><tr><th data-i18n="sources.source">来源</th><th data-i18n="sources.status">状态</th><th data-i18n="sources.health">抓取健康状态</th><th data-i18n="sources.last_success">上次成功</th><th data-i18n="sources.details">覆盖详情</th></tr></thead>
 <tbody><tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://www.viasm.edu.vn/en/hdkh/VIASM-IAMP-PMP-27" rel="noopener" target="_blank">VIASM-IAMP Probability and Mathematical Physics School</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>1</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>东南亚
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>概率论、mathematical physics、数学
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>2027年官方学校页面；免费注册，设有一般截止日期。版本链接需每年审核。范围提取至项目主体，不含博士导航。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://conference-indico.kek.jp/event/378/" rel="noopener" target="_blank">J-PARC Neutron and Muon School</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>1</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>东亚
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>neutron scattering、muon science、materials science
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>2026年日语学校专属版本。采集者整合官方“关于”与“申请”证据，保留辐射工作人员资格、延长截止日期及有条件国内差旅支持。每年审查版本URL与采集者。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://www.icts.res.in/programs/upcoming" rel="noopener" target="_blank">ICTS Schools</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>南亚
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>研究所
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>theoretical physics、biological physics、quantum matter、数学
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>官方即将推出的项目目录；限定范围的学院名称发现与项目正文提取，不包含招生导航、一般性会议及项目提案征集。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://cd3.ipmu.jp/a3n_Aug2026/" rel="noopener" target="_blank">AstroAI Asian Network Summer School</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>东亚
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>astrophysics、机器学习、astronomy
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>Kavli IPMU 官方项目页面，面向轮换举办的亚洲学校；2026 年地点为台北。每年审阅版本 URL。有限的财务支持优先考虑来自亚洲机构的初级研究人员。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="disabled">
+<td class="source-name"><a href="https://ims.nus.edu.sg/events/" rel="noopener" target="_blank">NUS IMS Schools</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-disabled">已停用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>尚未扫描
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>&lt;span class="lang-en" lang="en"&gt;Never&lt;/span&gt;&lt;span class="lang-zh" lang="zh"&gt;从未&lt;/span&gt;
+</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>—</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>此快照未测量
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>—</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>—</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>东南亚
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>研究所
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>数学、logic、quantum information、数据科学
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>访问修复待定（2026-09-23）。普通请求返回空内容；浏览器渲染恢复了目录，但测试的学校详情页返回了 Incapsula 访问验证。不应视为可操作来源。 使用无头浏览器渲染。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://www.ansto.gov.au/whats-on/ansto-hzb-aonsa-neutron-school-2026" rel="noopener" target="_blank">ANSTO-HZB-AONSA Neutron School</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>Australia and New Zealand
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>neutron scattering、materials science、experimental techniques
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>官方版本页面；请每年核查网址。EOI 截止日期决定申请，而非获录取者的缴费注册。AINSE 航班补助有隶属关系和校区位置限制。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://www.unsw.edu.au/business/study-with-us/economics-summer-school" rel="noopener" target="_blank">UNSW Economics Summer School</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>Australia and New Zealand
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>经济学、econometrics、climate economics
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>研究生层次的常规项目。完整项目记录以一般全额费用涵盖两门课程；并未将五天分配给各个半项目课程。仅有注册链接并不能证明申请窗口已开放。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://ws.amsi.org.au/" rel="noopener" target="_blank">AMSI Winter School</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>Australia and New Zealand
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>数学、geometric analysis、winter school
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>定期举办的研究生研究学校。普通非会员费用与有条件资助须分开列明；支持混合形式参与。 已阻止的链接域名：ss.amsi.org.au、srs.amsi.org.au、bis.amsi.org.au
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://ans.org.au/acan" rel="noopener" target="_blank">ACAN Neuroscience</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>Australia and New Zealand
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>research training provider
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>神经科学、experimental techniques、advanced course
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>澳大利亚神经科学学会在UNSW举办的密集型研究课程。保留GST资格要求；机构赞助并非参与者的经济资助。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://www.acspri.org.au/" rel="noopener" target="_blank">ACSPRI</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>3</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>Australia and New Zealand
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>research training provider
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>社会科学、research methods、qualitative methods、统计学
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>对当前季节性项目及线下课程的有限探索。保留课程编号、授课日及标准澳元价格；早鸟截止日期并非申请截止日期。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="disabled">
+<td class="source-name"><a href="https://ss.amsi.org.au/" rel="noopener" target="_blank">AMSI Summer School</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-disabled">已停用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>尚未扫描
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>&lt;span class="lang-en" lang="en"&gt;Never&lt;/span&gt;&lt;span class="lang-zh" lang="zh"&gt;从未&lt;/span&gt;
+</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>—</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>此快照未测量
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>—</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>—</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>Australia and New Zealand
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>数学、summer school
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>官方日期待核对（核对日期：2026-09-22）。主页显示截止日期为2027年2月6日；About页面和AMSI官方活动页面显示截止日期为2027年2月5日。请勿在未说明的情况下擅自选定日期发布。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://dl4sci-school.lbl.gov/" rel="noopener" target="_blank">Berkeley Lab DL4SCI</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>北美
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>scientific computing、深度学习、人工智能
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>伯克利实验室定期举办的研究学校。有明确的当前申请/费用证据；不要参考谷歌收录的存档版本。费用上限并非确切的参与者价格。 已阻止的链接域名：google.com
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://neutrons.ornl.gov/nns" rel="noopener" target="_blank">ORNL National Neutron Scattering School</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>北美
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>neutron scattering、materials science、化学、物理学
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>面向研究生和博士后的NNS专属定期项目页面。北美隶属关系要求仍为资格证明，而非录取保证。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://sismid.sph.emory.edu/modules/index.html" rel="noopener" target="_blank">Emory SISMID</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>16</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>北美
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>research training provider
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>epidemiology、统计学、infectious diseases、modelling
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>线下模块目录。每个模块可单独选择，目前涵盖三个日历日期；切勿将两周的目录窗口视为连续的学校。短期模块仍须遵守四天最低要求。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://sisg.biosciences.gatech.edu/courses-2/" rel="noopener" target="_blank">Georgia Tech SISG</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>17</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>北美
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>research training provider
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>statistical genetics、genomics、biostatistics
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>亚特兰大模块目录；日期标题管辖各课程表。请勿合并选修模块，也不要从单独托管的南方SISG导入日期。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://www.slmath.org/summer-schools" rel="noopener" target="_blank">SLMath Summer Graduate Schools</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>10</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>北美
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>数学、summer school
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>组织方位于美国，国际承办场地；官方结构化当前/即将举办的学校目录。提名与组织方提案是分开的。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://www.crmath.ca/en/activities/schools/" rel="noopener" target="_blank">CRM Schools</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>北美
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>数学、概率论、research school
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>蒙特利尔研究学校目录；有限渲染的详情集合。保留每个活动ID和实际活动地点；合作方列表可能与SLMath重叠。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://www.trisep.ca/" rel="noopener" target="_blank">TRISEP</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>北美
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>粒子物理、astrophysics、summer school
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>由Perimeter、SNOLAB和TRIUMF联合举办的加拿大定期研究生课程。请仅关注当前注册的Indico链接，而非往期版本。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school" rel="noopener" target="_blank">Perimeter Undergraduate Summer School</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+</span></td>
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
+</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
+<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.layer">层级</dt><dd>1</dd>
+<dt data-i18n="sources.region">地区</dt><dd>北美
+</dd>
+<dt data-i18n="sources.type">类型</dt><dd>暑期学校
+</dd>
+<dt data-i18n="sources.keywords">关键词</dt><dd>theoretical physics、summer school
+</dd>
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>仅限本科科研训练学校；科研实习、硕士招生及其资助为独立项目。
+</dd>
+</dl></details></td>
+</tr>
+<tr class="source-row" data-source-state="healthy">
 <td class="source-name"><a href="https://www.egu.eu/meetings/training-schools/" rel="noopener" target="_blank">EGU Training Schools</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -117,13 +577,15 @@
 <td class="source-name"><a href="https://iahs.info/" rel="noopener" target="_blank">IAHS</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
-<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>1</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
 <dt data-i18n="sources.region">地区</dt><dd>全球
 </dd>
@@ -139,11 +601,13 @@
 <td class="source-name"><a href="https://iah.org/" rel="noopener" target="_blank">IAH</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -161,11 +625,13 @@
 <td class="source-name"><a href="https://www.earthdata.nasa.gov/data/projects/arset" rel="noopener" target="_blank">NASA ARSET</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -183,11 +649,13 @@
 <td class="source-name"><a href="https://www.daad.de/en/study-and-research-in-germany/scholarships/daad-scholarships/" rel="noopener" target="_blank">DAAD Short Courses</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>持续故障
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>持续故障
 </td>
 <td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-07-15</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>28</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>31</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>无法判断：抓取失败
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -205,11 +673,13 @@
 <td class="source-name"><a href="https://www.ukri.org/what-we-do/developing-people-and-skills/research-skills-initiatives/short-courses-and-summer-schools/" rel="noopener" target="_blank">UKRI Short Courses and Summer Schools</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -227,12 +697,14 @@
 <td class="source-name"><a href="https://www.cost.eu/events/?cat=cost-action-event" rel="noopener" target="_blank">COST Action Events</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
 <dt data-i18n="sources.region">地区</dt><dd>欧洲大陆
@@ -249,12 +721,14 @@
 <td class="source-name"><a href="https://ellis.eu/events" rel="noopener" target="_blank">ELLIS</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>5</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>3</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
 <dt data-i18n="sources.region">地区</dt><dd>欧洲大陆
@@ -271,11 +745,13 @@
 <td class="source-name"><a href="https://www.un-ihe.org/short-courses" rel="noopener" target="_blank">IHE Delft</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>30</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -293,11 +769,13 @@
 <td class="source-name"><a href="https://www.gfz-potsdam.de/en/events" rel="noopener" target="_blank">GFZ Potsdam</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -315,11 +793,13 @@
 <td class="source-name"><a href="https://www.ceh.ac.uk/filtered-training-listing" rel="noopener" target="_blank">UKCEH</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -337,11 +817,13 @@
 <td class="source-name"><a href="https://www.icimod.org/events/" rel="noopener" target="_blank">ICIMOD</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -359,11 +841,13 @@
 <td class="source-name"><a href="https://ait.ac.th/events/" rel="noopener" target="_blank">Asian Institute of Technology</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -378,16 +862,18 @@
 </dl></details></td>
 </tr>
 <tr class="source-row" data-source-state="healthy">
-<td class="source-name"><a href="https://www.ecmwf.int/en/learning/training" rel="noopener" target="_blank">ECMWF Training</a></td>
+<td class="source-name"><a href="https://events.ecmwf.int/category/1/" rel="noopener" target="_blank">ECMWF Training</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
-<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>7</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>1</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
 <dt data-i18n="sources.region">地区</dt><dd>英国
 </dd>
@@ -403,11 +889,13 @@
 <td class="source-name"><a href="https://eo4society.esa.int/training-education/" rel="noopener" target="_blank">ESA EO4Society Training</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -425,11 +913,13 @@
 <td class="source-name"><a href="https://asp.ucar.edu/asp-colloquia" rel="noopener" target="_blank">NCAR ASP Colloquia</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -447,11 +937,13 @@
 <td class="source-name"><a href="https://www.pik-potsdam.de/en/news/events" rel="noopener" target="_blank">PIK Potsdam Events</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -469,11 +961,13 @@
 <td class="source-name"><a href="https://www.helmholtz-hida.de/en/events/" rel="noopener" target="_blank">HIDA Events</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -487,16 +981,18 @@
 </dd>
 </dl></details></td>
 </tr>
-<tr class="source-row" data-source-state="attention">
+<tr class="source-row" data-source-state="healthy">
 <td class="source-name"><a href="https://www.gesis.org/en/gesis-training/what-we-offer/summer-school-in-survey-methodology" rel="noopener" target="_blank">GESIS Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>降级
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-09</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>4</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
 <dt data-i18n="sources.region">地区</dt><dd>欧洲大陆
@@ -513,11 +1009,13 @@
 <td class="source-name"><a href="https://www.gesis.org/en/gesis-training/what-we-offer/fall-seminar-in-computational-social-science" rel="noopener" target="_blank">GESIS Fall Seminar in Computational Social Science</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>降级
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>持续故障
 </td>
 <td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-11</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>3</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>6</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>无法判断：抓取失败
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -535,11 +1033,13 @@
 <td class="source-name"><a href="https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods" rel="noopener" target="_blank">GESIS Spring Seminar</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>持续故障
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>持续故障
 </td>
 <td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-08</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>5</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>8</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>无法判断：抓取失败
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -557,11 +1057,13 @@
 <td class="source-name"><a href="https://idessai.eu/" rel="noopener" target="_blank">IDESSAI</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -579,11 +1081,13 @@
 <td class="source-name"><a href="https://www.hipeac.net/acaces/" rel="noopener" target="_blank">HiPEAC ACACES</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -601,11 +1105,13 @@
 <td class="source-name"><a href="https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/" rel="noopener" target="_blank">UTN Computational Linguistics Fall School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -623,11 +1129,13 @@
 <td class="source-name"><a href="https://www.tugraz.at/en/studying-and-teaching/studying-internationally/summer-and-winter-programmes" rel="noopener" target="_blank">TU Graz Summer and Winter Programmes</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -645,11 +1153,13 @@
 <td class="source-name"><a href="https://www.maxwell.syr.edu/research/center-for-qualitative-and-multi-method-inquiry/institute-for-qualitative-multi-method-research" rel="noopener" target="_blank">Institute for Qualitative and Multi-Method Research</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -667,11 +1177,13 @@
 <td class="source-name"><a href="https://eitminstitute.org/" rel="noopener" target="_blank">EITM Institute</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>持续故障
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>持续故障
 </td>
 <td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>Never</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>16</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>19</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>无法判断：抓取失败
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -689,13 +1201,15 @@
 <td class="source-name"><a href="https://winterschool.eurac.edu/" rel="noopener" target="_blank">Eurac Winter School on Federalism and Governance</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
-<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>1</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
 <dt data-i18n="sources.region">地区</dt><dd>欧洲大陆
 </dd>
@@ -711,11 +1225,13 @@
 <td class="source-name"><a href="https://csh.ac.at/education/winterschool/" rel="noopener" target="_blank">Complexity Science Hub Winter School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -733,11 +1249,13 @@
 <td class="source-name"><a href="https://datascienceafrica.org/summer-schools" rel="noopener" target="_blank">Data Science Africa Summer Schools</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -755,11 +1273,13 @@
 <td class="source-name"><a href="https://csc.web.cern.ch/" rel="noopener" target="_blank">CERN School of Computing</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>4</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -777,11 +1297,13 @@
 <td class="source-name"><a href="https://indico.cern.ch/event/1662800/" rel="noopener" target="_blank">CERN School of Computing 2026 application</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -799,12 +1321,14 @@
 <td class="source-name"><a href="https://www.ebi.ac.uk/about/events/" rel="noopener" target="_blank">EMBL-EBI Training</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
 <dt data-i18n="sources.region">地区</dt><dd>United Kingdom
@@ -821,11 +1345,13 @@
 <td class="source-name"><a href="https://www.sib.swiss/training/upcoming-training-courses" rel="noopener" target="_blank">SIB Training</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>3</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -843,11 +1369,13 @@
 <td class="source-name"><a href="https://ess.eu/events" rel="noopener" target="_blank">ESS Data and Computing Schools</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -865,11 +1393,13 @@
 <td class="source-name"><a href="https://datascience.ase.ro/" rel="noopener" target="_blank">Data Science and AI Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -887,11 +1417,13 @@
 <td class="source-name"><a href="https://codata.org/initiatives/data-skills/research-data-science-summer-schools/" rel="noopener" target="_blank">CODATA-RDA Data Schools</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -909,11 +1441,13 @@
 <td class="source-name"><a href="https://www.ieee-ras.org/educational-resources-outreach/technical-education-programs/" rel="noopener" target="_blank">IEEE RAS Technical Education Programs</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -931,11 +1465,13 @@
 <td class="source-name"><a href="https://events.vtools.ieee.org/m/564683" rel="noopener" target="_blank">IEEE RAS Cognitive Robotics Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -953,11 +1489,13 @@
 <td class="source-name"><a href="https://eurai.org/essai" rel="noopener" target="_blank">EurAI ESSAI</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -975,11 +1513,13 @@
 <td class="source-name"><a href="https://www.essir.eu/" rel="noopener" target="_blank">ESSIR</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -997,11 +1537,13 @@
 <td class="source-name"><a href="https://www.nldl.org/program/winter-school" rel="noopener" target="_blank">NLDL Winter School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1019,11 +1561,13 @@
 <td class="source-name"><a href="https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/" rel="noopener" target="_blank">Prob_AI Hub Winter School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1041,11 +1585,13 @@
 <td class="source-name"><a href="https://computerscience.exeter.ac.uk/machine-learning-summer-school/" rel="noopener" target="_blank">Exeter Machine Learning Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1063,11 +1609,13 @@
 <td class="source-name"><a href="https://www.unicri.org/index.php/advanced-education-artificial-intelligence-ai-ethics-human-rights-2026" rel="noopener" target="_blank">UNICRI AI Ethics Winter School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1085,11 +1633,13 @@
 <td class="source-name"><a href="http://mlss.cc/" rel="noopener" target="_blank">MLSS Index</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -1107,11 +1657,13 @@
 <td class="source-name"><a href="https://www.eeml.eu/" rel="noopener" target="_blank">EEML</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1129,11 +1681,13 @@
 <td class="source-name"><a href="https://www.m2lschool.org/" rel="noopener" target="_blank">Mediterranean ML Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1151,11 +1705,13 @@
 <td class="source-name"><a href="https://probabilistic.ai/" rel="noopener" target="_blank">Nordic ProbAI</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1173,11 +1729,13 @@
 <td class="source-name"><a href="https://gpss.cc/" rel="noopener" target="_blank">Gaussian Process Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1195,11 +1753,13 @@
 <td class="source-name"><a href="https://deeplearningindaba.com/" rel="noopener" target="_blank">Deep Learning Indaba</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1217,11 +1777,13 @@
 <td class="source-name"><a href="https://www.iwa-network.org/events/" rel="noopener" target="_blank">IWA</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -1239,11 +1801,13 @@
 <td class="source-name"><a href="https://www.iahr.org/index/events" rel="noopener" target="_blank">IAHR</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -1261,11 +1825,13 @@
 <td class="source-name"><a href="https://siwi.org/event" rel="noopener" target="_blank">SIWI</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1283,11 +1849,13 @@
 <td class="source-name"><a href="https://www.gewex.org/event/" rel="noopener" target="_blank">GEWEX</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1305,11 +1873,13 @@
 <td class="source-name"><a href="https://www.ametsoc.org/ams/meetings-events/" rel="noopener" target="_blank">AMS Meetings</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -1327,11 +1897,13 @@
 <td class="source-name"><a href="https://www.wcrp-climate.org/" rel="noopener" target="_blank">WCRP</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -1349,11 +1921,13 @@
 <td class="source-name"><a href="https://etrp.wmo.int/" rel="noopener" target="_blank">WMO ETRP</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -1371,11 +1945,13 @@
 <td class="source-name"><a href="https://www.gfdl.noaa.gov/events/" rel="noopener" target="_blank">GFDL Events</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1393,12 +1969,14 @@
 <td class="source-name"><a href="https://www.urbinossp.it/" rel="noopener" target="_blank">Urbino Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-disabled">已停用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>尚未扫描
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>尚未扫描
 </td>
 <td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>&lt;span class="lang-en" lang="en"&gt;Never&lt;/span&gt;&lt;span class="lang-zh" lang="zh"&gt;从未&lt;/span&gt;
 </td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>—</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>此快照未测量
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>—</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>—</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1416,11 +1994,13 @@
 <td class="source-name"><a href="https://www.deep-earth.org/" rel="noopener" target="_blank">CIDER</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1438,11 +2018,13 @@
 <td class="source-name"><a href="https://www.oxfordml.school/" rel="noopener" target="_blank">Oxford ML Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1460,11 +2042,13 @@
 <td class="source-name"><a href="https://aimsammi.org/" rel="noopener" target="_blank">AMMI</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1482,11 +2066,13 @@
 <td class="source-name"><a href="https://www.isprs.org/" rel="noopener" target="_blank">ISPRS</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -1504,11 +2090,13 @@
 <td class="source-name"><a href="https://www.geosociety.org/" rel="noopener" target="_blank">GSA</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -1526,11 +2114,13 @@
 <td class="source-name"><a href="https://eage.org/events/calendar-of-events/" rel="noopener" target="_blank">EAGE</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -1548,11 +2138,13 @@
 <td class="source-name"><a href="https://www.earthscope.org/event/" rel="noopener" target="_blank">EarthScope</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1570,11 +2162,13 @@
 <td class="source-name"><a href="https://geodynamics.org/events" rel="noopener" target="_blank">CIG Geodynamics</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1592,11 +2186,13 @@
 <td class="source-name"><a href="https://classroom.eumetsat.int/" rel="noopener" target="_blank">EUMETSAT Training</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -1614,11 +2210,13 @@
 <td class="source-name"><a href="https://www.icos-cp.eu/news-and-events/events" rel="noopener" target="_blank">ICOS</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1636,11 +2234,13 @@
 <td class="source-name"><a href="https://www.ictp-saifr.org/" rel="noopener" target="_blank">ICTP-SAIFR</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1658,11 +2258,13 @@
 <td class="source-name"><a href="https://lamont.columbia.edu/events" rel="noopener" target="_blank">Lamont-Doherty</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>降级
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>持续故障
 </td>
 <td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-09</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>4</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>7</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>无法判断：抓取失败
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1680,11 +2282,13 @@
 <td class="source-name"><a href="https://www.ipam.ucla.edu/programs/summer-schools/" rel="noopener" target="_blank">IPAM</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1702,11 +2306,13 @@
 <td class="source-name"><a href="https://www.clivar.org/events" rel="noopener" target="_blank">CLIVAR</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -1724,11 +2330,13 @@
 <td class="source-name"><a href="https://www.apecs.is/" rel="noopener" target="_blank">APECS</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1746,11 +2354,13 @@
 <td class="source-name"><a href="https://www.bsc.es/education/training" rel="noopener" target="_blank">Barcelona Supercomputing Center</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1764,16 +2374,18 @@
 </dd>
 </dl></details></td>
 </tr>
-<tr class="source-row" data-source-state="attention">
+<tr class="source-row" data-source-state="healthy">
 <td class="source-name"><a href="https://www.climatechange.ai/events" rel="noopener" target="_blank">Climate Change AI</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>持续故障
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>Never</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>29</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>3</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
 <dt data-i18n="sources.region">地区</dt><dd>全球
@@ -1790,12 +2402,14 @@
 <td class="source-name"><a href="https://www.summerschoolsineurope.eu/" rel="noopener" target="_blank">Summer Schools in Europe</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-disabled">已停用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>尚未扫描
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>尚未扫描
 </td>
 <td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>&lt;span class="lang-en" lang="en"&gt;Never&lt;/span&gt;&lt;span class="lang-zh" lang="zh"&gt;从未&lt;/span&gt;
 </td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>—</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>此快照未测量
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>—</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>—</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1813,11 +2427,13 @@
 <td class="source-name"><a href="https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026" rel="noopener" target="_blank">ELLS Summer Schools</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>3</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1835,11 +2451,13 @@
 <td class="source-name"><a href="https://www.una-europa.eu/opportunities/una-europa-summer-schools" rel="noopener" target="_blank">Una Europa Summer Schools</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1857,11 +2475,13 @@
 <td class="source-name"><a href="https://www.educalliance.eu/calls/educ-summer-schools-2026" rel="noopener" target="_blank">EDUC Summer Schools</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1879,12 +2499,14 @@
 <td class="source-name"><a href="https://utrechtsummerschool.nl/courses" rel="noopener" target="_blank">Utrecht Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-disabled">已停用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>尚未扫描
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>尚未扫描
 </td>
 <td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>&lt;span class="lang-en" lang="en"&gt;Never&lt;/span&gt;&lt;span class="lang-zh" lang="zh"&gt;从未&lt;/span&gt;
 </td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>—</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>此快照未测量
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>—</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>—</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1898,15 +2520,17 @@
 </dd>
 </dl></details></td>
 </tr>
-<tr class="source-row" data-source-state="attention">
+<tr class="source-row" data-source-state="healthy">
 <td class="source-name"><a href="https://academictraining.cern.ch/" rel="noopener" target="_blank">CERN Academic Training</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>持续故障
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>Never</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>29</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1924,12 +2548,14 @@
 <td class="source-name"><a href="https://www.ictp.it/home/scientific-calendar" rel="noopener" target="_blank">ICTP</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>5</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>4</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>1</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
 <dt data-i18n="sources.region">地区</dt><dd>欧洲大陆
@@ -1946,11 +2572,13 @@
 <td class="source-name"><a href="https://lxmls.github.io/2026/" rel="noopener" target="_blank">LxMLS</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -1968,11 +2596,13 @@
 <td class="source-name"><a href="https://www.projects.science.uu.nl/iceclimate/karthaus/" rel="noopener" target="_blank">Karthaus Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -1990,11 +2620,13 @@
 <td class="source-name"><a href="https://gfd.whoi.edu/" rel="noopener" target="_blank">WHOI GFD Program</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2012,11 +2644,13 @@
 <td class="source-name"><a href="https://www.nceo.ac.uk/training/" rel="noopener" target="_blank">NCEO</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2034,11 +2668,13 @@
 <td class="source-name"><a href="https://pogo-ocean.org/capacity-development/" rel="noopener" target="_blank">POGO</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2056,11 +2692,13 @@
 <td class="source-name"><a href="https://www.cyi.ac.cy/index.php/education/graduate-school/summer-schools.html" rel="noopener" target="_blank">Cyprus Institute</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2078,11 +2716,13 @@
 <td class="source-name"><a href="https://www.agu.org/" rel="noopener" target="_blank">AGU</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>降级
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>持续故障
 </td>
 <td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-09</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>4</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>7</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>无法判断：抓取失败
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -2100,11 +2740,13 @@
 <td class="source-name"><a href="https://ncas.ac.uk/" rel="noopener" target="_blank">NCAS</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2122,11 +2764,13 @@
 <td class="source-name"><a href="https://www.houches-school-physics.com/" rel="noopener" target="_blank">Les Houches Physics School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2140,16 +2784,18 @@
 </dd>
 </dl></details></td>
 </tr>
-<tr class="source-row" data-source-state="attention">
-<td class="source-name"><a href="https://www.esslli.eu/" rel="noopener" target="_blank">ESSLLI</a></td>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://digits.ut.ee/esslli-2027/" rel="noopener" target="_blank">ESSLLI</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>持续故障
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>Never</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>29</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
 <dt data-i18n="sources.region">地区</dt><dd>欧洲大陆
@@ -2158,7 +2804,7 @@
 </dd>
 <dt data-i18n="sources.keywords">关键词</dt><dd>logic、language、computation、计算语言学、summer school
 </dd>
-<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>欧洲逻辑、语言与信息暑期学校——逻辑/语言/计算领域的旗舰学校。着陆页为客户端渲染，因此使用可选的无头浏览器。 使用无头浏览器渲染。
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>塔尔图大学 ESSLLI 2027 官方主办页面；注册于 2027 年春季开始。讲师提案支持不属于参与者资助。下一届公布时请查看年度主办方 URL。
 </dd>
 </dl></details></td>
 </tr>
@@ -2166,11 +2812,13 @@
 <td class="source-name"><a href="https://www.linguisticsociety.org/content/institute" rel="noopener" target="_blank">LSA Linguistic Institute</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -2188,11 +2836,13 @@
 <td class="source-name"><a href="https://lotschool.nl/" rel="noopener" target="_blank">LOT School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2210,11 +2860,13 @@
 <td class="source-name"><a href="https://eggschool.org/" rel="noopener" target="_blank">EGG School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2232,12 +2884,14 @@
 <td class="source-name"><a href="https://www.universiteitleiden.nl/en/education/study-programmes/summer-schools" rel="noopener" target="_blank">Leiden Linguistics Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>4</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>5</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
 <dt data-i18n="sources.region">地区</dt><dd>欧洲大陆
@@ -2254,11 +2908,13 @@
 <td class="source-name"><a href="https://www.gu.se/en/clasp" rel="noopener" target="_blank">CLASP Gothenburg</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2276,11 +2932,13 @@
 <td class="source-name"><a href="https://www.colanginstitute.org/attend" rel="noopener" target="_blank">CoLang</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2298,11 +2956,13 @@
 <td class="source-name"><a href="https://linguistics.philology.uoc.gr/cssl26/" rel="noopener" target="_blank">CreteLing</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2320,11 +2980,13 @@
 <td class="source-name"><a href="https://lig-alps.imag.fr/" rel="noopener" target="_blank">Advanced Language Processing Winter School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>1</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2342,11 +3004,13 @@
 <td class="source-name"><a href="https://ssol.ff.cuni.cz/" rel="noopener" target="_blank">Charles University Summer School of Linguistics</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>3</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2364,11 +3028,13 @@
 <td class="source-name"><a href="https://www.mils.ugent.be/" rel="noopener" target="_blank">Methods in Language Sciences</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2386,11 +3052,13 @@
 <td class="source-name"><a href="https://ethl.uk/" rel="noopener" target="_blank">Edinburgh Theoretical Historical Linguistics</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2408,11 +3076,13 @@
 <td class="source-name"><a href="https://iplab.dmi.unict.it/icvss/" rel="noopener" target="_blank">ICVSS</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
@@ -2430,11 +3100,13 @@
 <td class="source-name"><a href="https://www.ds3-datascience-polytechnique.fr/" rel="noopener" target="_blank">DS3 Data Science Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2452,11 +3124,13 @@
 <td class="source-name"><a href="https://www.heidelberg-laureate-forum.org/" rel="noopener" target="_blank">Heidelberg Laureate Forum</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2474,11 +3148,13 @@
 <td class="source-name"><a href="https://www.cs.uoregon.edu/research/summerschool/" rel="noopener" target="_blank">OPLSS</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2492,17 +3168,20 @@
 </dd>
 </dl></details></td>
 </tr>
-<tr class="source-row" data-source-state="attention">
-<td class="source-name"><a href="https://laser.inf.ethz.ch/" rel="noopener" target="_blank">LASER Software Engineering School</a></td>
-<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
+<tr class="source-row" data-source-state="disabled">
+<td class="source-name"><a href="https://www.laser-foundation.org/" rel="noopener" target="_blank">LASER Software Engineering School</a></td>
+<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-disabled">已停用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>持续故障
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>尚未扫描
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>Never</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>&lt;span class="lang-en" lang="en"&gt;Never&lt;/span&gt;&lt;span class="lang-zh" lang="zh"&gt;从未&lt;/span&gt;
+</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>29</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
-<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>—</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>此快照未测量
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>—</dd>
+<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>—</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
 <dt data-i18n="sources.region">地区</dt><dd>欧洲大陆
 </dd>
@@ -2510,7 +3189,7 @@
 </dd>
 <dt data-i18n="sources.keywords">关键词</dt><dd>软件工程、programming、software、summer school
 </dd>
-<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>LASER软件工程暑期学校（意大利厄尔巴岛），由苏黎世联邦理工学院组织。部分连接超时；无法访问时静默跳过。
+<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>LASER 基金会官网明确说明暑期学校目前暂停举办（最近一届为 2019 年）。保留为停用来源；目前的基金会研讨会不属于 Summa 的采集范围。
 </dd>
 </dl></details></td>
 </tr>
@@ -2518,11 +3197,13 @@
 <td class="source-name"><a href="https://cispa.de/en" rel="noopener" target="_blank">CISPA</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2540,11 +3221,13 @@
 <td class="source-name"><a href="https://www.sba-research.org/" rel="noopener" target="_blank">SBA Research</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2562,11 +3245,13 @@
 <td class="source-name"><a href="https://www.santafe.edu/engage/learn/schools" rel="noopener" target="_blank">Santa Fe Institute</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2584,11 +3269,13 @@
 <td class="source-name"><a href="https://deeplearn.irdta.eu/2026/" rel="noopener" target="_blank">DeepLearn</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2606,11 +3293,13 @@
 <td class="source-name"><a href="https://www.eurai.org/activities/ACAI_schools" rel="noopener" target="_blank">EurAI ACAI</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2628,11 +3317,13 @@
 <td class="source-name"><a href="https://fhl.uw.edu/" rel="noopener" target="_blank">Friday Harbor Laboratories</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2646,15 +3337,17 @@
 </dd>
 </dl></details></td>
 </tr>
-<tr class="source-row" data-source-state="attention">
+<tr class="source-row" data-source-state="healthy">
 <td class="source-name"><a href="https://www.solas-int.org/" rel="noopener" target="_blank">SOLAS</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>降级
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-16</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>1</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2672,11 +3365,13 @@
 <td class="source-name"><a href="https://www.cscs.ch/" rel="noopener" target="_blank">CSCS Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2694,11 +3389,13 @@
 <td class="source-name"><a href="https://extremecomputingtraining.anl.gov/" rel="noopener" target="_blank">Argonne ATPESC</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>持续故障
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>持续故障
 </td>
 <td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-08-03</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>14</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>17</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>无法判断：抓取失败
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2716,11 +3413,13 @@
 <td class="source-name"><a href="https://www.cesm.ucar.edu/events/tutorials" rel="noopener" target="_blank">CESM Tutorial</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2738,11 +3437,13 @@
 <td class="source-name"><a href="https://www.geomar.de/en/" rel="noopener" target="_blank">GEOMAR</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2760,11 +3461,13 @@
 <td class="source-name"><a href="https://eventi.cineca.it/" rel="noopener" target="_blank">CINECA HPC</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2782,11 +3485,13 @@
 <td class="source-name"><a href="https://ori.ox.ac.uk/" rel="noopener" target="_blank">Oxford Robotics Institute</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2804,11 +3509,13 @@
 <td class="source-name"><a href="https://mila.quebec/en/" rel="noopener" target="_blank">Mila</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2826,11 +3533,13 @@
 <td class="source-name"><a href="https://groups.oist.jp/ocnc" rel="noopener" target="_blank">OIST OCNC</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2848,11 +3557,13 @@
 <td class="source-name"><a href="https://www.mbl.edu/education/courses" rel="noopener" target="_blank">MBL Courses</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2870,11 +3581,13 @@
 <td class="source-name"><a href="https://meetings.cshl.edu/courseshome.aspx" rel="noopener" target="_blank">CSHL Courses</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -2892,11 +3605,13 @@
 <td class="source-name"><a href="https://cajal-training.org/" rel="noopener" target="_blank">CAJAL Training</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2914,11 +3629,13 @@
 <td class="source-name"><a href="https://www.bernstein-network.de/en/" rel="noopener" target="_blank">Bernstein Network</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2936,11 +3653,13 @@
 <td class="source-name"><a href="https://dlrlsummerschool.ca/" rel="noopener" target="_blank">CIFAR DLRL Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2958,11 +3677,13 @@
 <td class="source-name"><a href="https://ibro.org/" rel="noopener" target="_blank">IBRO</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -2980,11 +3701,13 @@
 <td class="source-name"><a href="https://ecpr.eu/MethodsSchool" rel="noopener" target="_blank">ECPR Methods School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -3002,12 +3725,14 @@
 <td class="source-name"><a href="https://new.sicss.io/locations" rel="noopener" target="_blank">SICSS</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1</dd>
 <dt data-i18n="sources.region">地区</dt><dd>全球
@@ -3024,11 +3749,13 @@
 <td class="source-name"><a href="https://www.icpsr.umich.edu/web/pages/sumprog/" rel="noopener" target="_blank">ICPSR Summer Program</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -3046,11 +3773,13 @@
 <td class="source-name"><a href="https://www.ssm.usi.ch/en/course-list/hybrid-methods" rel="noopener" target="_blank">Summer School in Social Sciences Methods</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -3068,11 +3797,13 @@
 <td class="source-name"><a href="https://www.politics.ox.ac.uk/spring-school" rel="noopener" target="_blank">Oxford Spring School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -3090,11 +3821,13 @@
 <td class="source-name"><a href="https://www.essex.ac.uk/summer-schools/social-science-data-analysis" rel="noopener" target="_blank">Essex Summer School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3109,36 +3842,16 @@
 </dl></details></td>
 </tr>
 <tr class="source-row" data-source-state="healthy">
-<td class="source-name"><a href="https://essexsummerschool.com/new-application/" rel="noopener" target="_blank">Essex Summer School</a></td>
-<td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
-</span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
-</td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
-<td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
-<dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
-<dt data-i18n="sources.layer">层级</dt><dd>2</dd>
-<dt data-i18n="sources.region">地区</dt><dd>英国
-</dd>
-<dt data-i18n="sources.type">类型</dt><dd>大学
-</dd>
-<dt data-i18n="sources.keywords">关键词</dt><dd>社会科学、数据分析、quantitative methods、summer school、application
-</dd>
-<dt data-i18n="sources.notes">备注（保留原始配置文本）</dt><dd>ESS官方申请页面；包含各期申请截止日期和项目日期。
-</dd>
-</dl></details></td>
-</tr>
-<tr class="source-row" data-source-state="healthy">
 <td class="source-name"><a href="https://summeruniversity.ceu.edu/" rel="noopener" target="_blank">CEU Summer University</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3156,11 +3869,13 @@
 <td class="source-name"><a href="https://www.eui.eu/" rel="noopener" target="_blank">EUI</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -3178,11 +3893,13 @@
 <td class="source-name"><a href="https://dhsi.org/" rel="noopener" target="_blank">DHSI</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3200,11 +3917,13 @@
 <td class="source-name"><a href="https://www.history.ac.uk/" rel="noopener" target="_blank">IHR History</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>持续故障
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>持续故障
 </td>
 <td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-08-03</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>14</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>17</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>无法判断：抓取失败
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3222,11 +3941,13 @@
 <td class="source-name"><a href="https://khipu.ai/" rel="noopener" target="_blank">Khipu</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3244,11 +3965,13 @@
 <td class="source-name"><a href="https://www.helmholtz.ai/" rel="noopener" target="_blank">Helmholtz AI</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -3266,11 +3989,13 @@
 <td class="source-name"><a href="https://coursesandconferences.wellcomeconnectingscience.org/our-events/" rel="noopener" target="_blank">Wellcome Connecting Science</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -3288,11 +4013,13 @@
 <td class="source-name"><a href="https://www.physalia-courses.org/" rel="noopener" target="_blank">Physalia Courses</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3310,11 +4037,13 @@
 <td class="source-name"><a href="https://cism.it/en/activities/courses/" rel="noopener" target="_blank">CISM</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3332,11 +4061,13 @@
 <td class="source-name"><a href="https://www.earsel.org/" rel="noopener" target="_blank">EARSeL</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -3354,11 +4085,13 @@
 <td class="source-name"><a href="https://www.turing.ac.uk/events" rel="noopener" target="_blank">Alan Turing Institute</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>降级
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>持续故障
 </td>
 <td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-14</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>2</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>5</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>无法判断：抓取失败
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -3376,11 +4109,13 @@
 <td class="source-name"><a href="https://www.tinbergen.nl/" rel="noopener" target="_blank">Tinbergen Institute</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3398,11 +4133,13 @@
 <td class="source-name"><a href="https://www.cecam.org/" rel="noopener" target="_blank">CECAM</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -3420,11 +4157,13 @@
 <td class="source-name"><a href="https://boulderschool.yale.edu/" rel="noopener" target="_blank">Boulder School</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3442,11 +4181,13 @@
 <td class="source-name"><a href="https://aspenphys.org/" rel="noopener" target="_blank">Aspen Center for Physics</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3464,11 +4205,13 @@
 <td class="source-name"><a href="https://www.kitp.ucsb.edu/activities/upcoming-programs" rel="noopener" target="_blank">KITP</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -3486,11 +4229,13 @@
 <td class="source-name"><a href="https://summerstudents.desy.de/" rel="noopener" target="_blank">DESY Summer Student</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3508,11 +4253,13 @@
 <td class="source-name"><a href="https://www.cimpa.info/en" rel="noopener" target="_blank">CIMPA</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3530,11 +4277,13 @@
 <td class="source-name"><a href="https://www.hagueacademy.nl/" rel="noopener" target="_blank">Hague Academy of International Law</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>2</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>1.5</dd>
@@ -3552,11 +4301,13 @@
 <td class="source-name"><a href="https://www.asser.nl/" rel="noopener" target="_blank">Asser Institute</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3574,11 +4325,13 @@
 <td class="source-name"><a href="https://www.earli.org/" rel="noopener" target="_blank">EARLI</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3592,16 +4345,18 @@
 </dd>
 </dl></details></td>
 </tr>
-<tr class="source-row" data-source-state="attention">
-<td class="source-name"><a href="https://www.szn.it/" rel="noopener" target="_blank">Stazione Zoologica</a></td>
+<tr class="source-row" data-source-state="healthy">
+<td class="source-name"><a href="https://szn.it/it/formazione/advanced-courses-summer-schools" rel="noopener" target="_blank">Stazione Zoologica</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>持续故障
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>Never</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
-<dt data-i18n="sources.failures">连续失败</dt><dd>29</dd>
-<dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
+<dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
+<dt data-i18n="sources.candidates">扫描记录</dt><dd>6</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
 <dt data-i18n="sources.region">地区</dt><dd>欧洲大陆
@@ -3618,11 +4373,13 @@
 <td class="source-name"><a href="https://www.lse.ac.uk/cities" rel="noopener" target="_blank">LSE Cities</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>已抽出候选；不代表覆盖完整
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>1</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
@@ -3640,11 +4397,13 @@
 <td class="source-name"><a href="https://theberlage.nl/" rel="noopener" target="_blank">The Berlage</a></td>
 <td><span class="mobile-label" data-i18n="sources.status">状态</span><span class="status-enabled">已启用
 </span></td>
-<td><span class="mobile-label" data-i18n="sources.health">扫描健康状态</span>正常
+<td><span class="mobile-label" data-i18n="sources.health">抓取健康状态</span>抓取成功
 </td>
-<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-18</td>
+<td><span class="mobile-label" data-i18n="sources.last_success">上次成功</span>2026-09-23</td>
 <td><details class="source-details"><summary data-i18n="sources.details">覆盖详情</summary><dl>
 <dt data-i18n="sources.failures">连续失败</dt><dd>0</dd>
+<dt data-i18n="sources.extraction">抽取覆盖情况</dt><dd>未抽出候选；覆盖情况未确认
+</dd>
 <dt data-i18n="sources.candidates">扫描记录</dt><dd>0</dd>
 <dt data-i18n="sources.public_open">开放条目（上次扫描）</dt><dd>0</dd>
 <dt data-i18n="sources.layer">层级</dt><dd>2</dd>
