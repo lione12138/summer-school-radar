@@ -1,4 +1,160 @@
 sources:
+  - name: VIASM-IAMP Probability and Mathematical Physics School
+    url: https://www.viasm.edu.vn/en/hdkh/VIASM-IAMP-PMP-27
+    layer: 1
+    region: Southeast Asia
+    source_type: summer_school
+    programme_key: viasm-iamp-probability-mathematical-physics
+    keywords: [probability, mathematical physics, mathematics]
+    notes: Official 2027 school page; free registration with a general closing date. Edition URL requires annual review. Scope extraction to the programme body, excluding PhD navigation.
+  - name: J-PARC Neutron and Muon School
+    url: https://conference-indico.kek.jp/event/378/
+    layer: 1
+    region: East Asia
+    source_type: summer_school
+    collector: neutron_japan
+    keywords: [neutron scattering, muon science, materials science]
+    notes: Edition-specific 2026 Japanese-language school. Collector joins official About and Application evidence, preserves radiation-worker eligibility, extended deadline and conditional domestic travel support. Review edition URL and collector annually.
+  - name: ICTS Schools
+    url: https://www.icts.res.in/programs/upcoming
+    layer: 1
+    region: South Asia
+    source_type: research_institute
+    collector: icts_schools
+    keywords: [theoretical physics, biological physics, quantum matter, mathematics]
+    notes: Official upcoming programme catalogue; bounded school-title discovery and programme-body extraction exclude admissions navigation, generic meetings and programme-proposal calls.
+  - name: AstroAI Asian Network Summer School
+    url: https://cd3.ipmu.jp/a3n_Aug2026/
+    layer: 1
+    region: East Asia
+    source_type: summer_school
+    programme_key: astroai-asian-network-school
+    keywords: [astrophysics, machine learning, astronomy]
+    notes: Official Kavli IPMU programme page for a rotating Asian school; 2026 venue is Taipei. Review edition URL annually. Limited financial support prioritizes junior researchers from Asian institutes.
+  - name: NUS IMS Schools
+    url: https://ims.nus.edu.sg/events/
+    enabled: false
+    render: true
+    layer: 1
+    region: Southeast Asia
+    source_type: research_institute
+    keywords: [mathematics, logic, quantum information, data science]
+    notes: Pending access repair (2026-09-23). Plain requests returned empty content; browser rendering recovered the catalogue but the tested school detail returned an Incapsula access challenge. Do not count as an operational source.
+  - name: ANSTO-HZB-AONSA Neutron School
+    url: https://www.ansto.gov.au/whats-on/ansto-hzb-aonsa-neutron-school-2026
+    layer: 1
+    region: Australia and New Zealand
+    source_type: summer_school
+    programme_key: ansto-hzb-aonsa-neutron-school
+    keywords: [neutron scattering, materials science, experimental techniques]
+    notes: Official edition page; review URL annually. EOI closing date controls applications, not accepted-applicant payment registration. AINSE flight assistance has affiliation and campus-location restrictions.
+  - name: UNSW Economics Summer School
+    url: https://www.unsw.edu.au/business/study-with-us/economics-summer-school
+    layer: 1
+    region: Australia and New Zealand
+    source_type: summer_school
+    programme_key: unsw-economics-summer-school
+    keywords: [economics, econometrics, climate economics]
+    notes: Recurring graduate-level programme. The full-programme record covers both courses with the general full fee; it does not assign five days to individual half-programme courses. A registration link alone does not establish an open application window.
+  - name: AMSI Winter School
+    url: https://ws.amsi.org.au/
+    layer: 1
+    region: Australia and New Zealand
+    source_type: summer_school
+    programme_key: amsi-winter-school
+    blocked_link_domains: [ss.amsi.org.au, srs.amsi.org.au, bis.amsi.org.au]
+    evidence_urls:
+      application: https://ws.amsi.org.au/apply/
+      fees: https://ws.amsi.org.au/apply/
+    keywords: [mathematics, geometric analysis, winter school]
+    notes: Recurring graduate research school. General non-member fees and conditional grants must remain separate; hybrid participation is supported.
+  - name: ACAN Neuroscience
+    url: https://ans.org.au/acan
+    layer: 1
+    region: Australia and New Zealand
+    source_type: research_training_provider
+    keywords: [neuroscience, experimental techniques, advanced course]
+    notes: Australasian Neuroscience Society's intensive UNSW research course. Preserve GST qualification; institutional sponsorship is not participant financial aid.
+  - name: ACSPRI
+    url: https://www.acspri.org.au/
+    layer: 1
+    region: Australia and New Zealand
+    source_type: research_training_provider
+    collector: acspri
+    keywords: [social science, research methods, qualitative methods, statistics]
+    notes: Bounded discovery of current seasonal programmes and in-person course offerings. Preserve offering IDs, teaching days and standard AUD prices; early-bird deadlines are not application closing dates.
+  - name: AMSI Summer School
+    url: https://ss.amsi.org.au/
+    enabled: false
+    layer: 1
+    region: Australia and New Zealand
+    source_type: summer_school
+    keywords: [mathematics, summer school]
+    notes: Pending official date reconciliation (checked 2026-09-22). Homepage ends 6 February 2027; About and AMSI official event page end 5 February 2027. Do not publish a silently chosen date.
+  - name: Berkeley Lab DL4SCI
+    url: https://dl4sci-school.lbl.gov/
+    layer: 1
+    region: North America
+    source_type: summer_school
+    programme_key: berkeley-dl4sci
+    evidence_urls:
+      fees: https://dl4sci-school.lbl.gov/apply
+    keywords: [scientific computing, deep learning, artificial intelligence]
+    blocked_link_domains: [google.com]
+    notes: Recurring Berkeley Lab research school. Explicit current application/fee evidence; do not follow Google-wrapped archived editions. A fee ceiling is not an exact participant price.
+  - name: ORNL National Neutron Scattering School
+    url: https://neutrons.ornl.gov/nns
+    layer: 1
+    region: North America
+    source_type: summer_school
+    keywords: [neutron scattering, materials science, chemistry, physics]
+    notes: Dedicated recurring NNS programme page for graduate students and postdocs. North American affiliation requirements remain eligibility evidence, not a guarantee of admission.
+  - name: Emory SISMID
+    url: https://sismid.sph.emory.edu/modules/index.html
+    layer: 1
+    region: North America
+    source_type: research_training_provider
+    collector: sismid
+    keywords: [epidemiology, statistics, infectious diseases, modelling]
+    notes: In-person module catalogue. Each module is separately selectable and currently spans three calendar dates; never treat the two-week catalogue window as a continuous school. Short modules remain subject to the four-day minimum.
+  - name: Georgia Tech SISG
+    url: https://sisg.biosciences.gatech.edu/courses-2/
+    layer: 1
+    region: North America
+    source_type: research_training_provider
+    collector: sisg
+    keywords: [statistical genetics, genomics, biostatistics]
+    notes: Atlanta module catalogue; date headings govern individual course tables. Do not combine optional modules or import dates from the separately hosted Southern SISG.
+  - name: SLMath Summer Graduate Schools
+    url: https://www.slmath.org/summer-schools
+    layer: 1
+    region: North America
+    source_type: summer_school
+    collector: slmath
+    keywords: [mathematics, summer school]
+    notes: US-based organizer with international host venues; official structured current/upcoming school catalogue. Nominations and organiser proposals are separate.
+  - name: CRM Schools
+    url: https://www.crmath.ca/en/activities/schools/
+    layer: 1
+    region: North America
+    source_type: summer_school
+    collector: crm_schools
+    keywords: [mathematics, probability, research school]
+    notes: Montreal research-school catalogue; bounded rendered detail collection. Preserve each activity ID and actual event location; partner listings can overlap SLMath.
+  - name: TRISEP
+    url: https://www.trisep.ca/
+    layer: 1
+    region: North America
+    source_type: summer_school
+    keywords: [particle physics, astrophysics, summer school]
+    notes: Recurring Canadian graduate school jointly organized by Perimeter, SNOLAB and TRIUMF. Follow only the current registration Indico link, not archived editions.
+  - name: Perimeter Undergraduate Summer School
+    url: https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school
+    layer: 1
+    region: North America
+    source_type: summer_school
+    keywords: [theoretical physics, summer school]
+    notes: Undergraduate research training school only; research internships, masters admissions and their funding are separate programmes.
   - name: EGU Training Schools
     url: https://www.egu.eu/meetings/training-schools/
     layer: 1
@@ -113,7 +269,7 @@ sources:
     keywords: [water, climate, training, short course]
     notes: Regional university source.
   - name: ECMWF Training
-    url: https://www.ecmwf.int/en/learning/training
+    url: https://events.ecmwf.int/category/1/
     layer: 1
     region: UK
     source_type: agency
@@ -212,6 +368,11 @@ sources:
     notes: Official Empirical Implications of Theoretical Models institute site; recurring summer institutes train early-career social scientists to integrate formal theory and empirical analysis.
   - name: Eurac Winter School on Federalism and Governance
     url: https://winterschool.eurac.edu/
+    programme_key: eurac-winter-school-federalism-governance
+    evidence_urls:
+      programme: https://winterschool.eurac.edu/en/program
+      application: https://winterschool.eurac.edu/en/how-to-apply
+      fees: https://winterschool.eurac.edu/en/fees-scholarships
     layer: 1.5
     region: continental Europe
     source_type: winter_school
@@ -690,13 +851,12 @@ sources:
     keywords: [physics, climate, data science, machine learning, school]
     notes: Les Houches School of Physics; among its sessions are climate-physics and scientific machine-learning schools. Off-domain physics sessions are dropped by the filters.
   - name: ESSLLI
-    url: https://www.esslli.eu/
+    url: https://digits.ut.ee/esslli-2027/
     layer: 1
     region: continental Europe
     source_type: summer_school
     keywords: [logic, language, computation, computational linguistics, summer school]
-    render: true
-    notes: European Summer School in Logic, Language and Information — the flagship logic/language/computation school. The landing page is client-side rendered, so it uses the optional headless browser.
+    notes: Official University of Tartu host page for ESSLLI 2027; registration starts in spring 2027. Instructor proposal support is not participant funding. Review the annual host URL when the next edition is announced.
   - name: LSA Linguistic Institute
     url: https://www.linguisticsociety.org/content/institute
     layer: 1
@@ -803,12 +963,14 @@ sources:
     keywords: [programming languages, formal methods, software, summer school]
     notes: Oregon Programming Languages Summer School; programming languages, type theory, and formal methods.
   - name: LASER Software Engineering School
-    url: https://laser.inf.ethz.ch/
+    url: https://www.laser-foundation.org/
     layer: 2
     region: continental Europe
     source_type: summer_school
     keywords: [software engineering, programming, software, summer school]
-    notes: LASER summer school on software engineering (Elba, Italy), organised by ETH Zurich. Times out from some connections; skipped silently when unreachable.
+    enabled: false
+    notes: The official LASER Foundation states that the summer school is currently paused (last held in 2019). Retained as an inactive source; current foundation workshops are outside Summa's scope.
+    notes_zh: LASER 基金会官网明确说明暑期学校目前暂停举办（最近一届为 2019 年）。保留为停用来源；目前的基金会研讨会不属于 Summa 的采集范围。
   - name: CISPA
     url: https://cispa.de/en
     layer: 2
@@ -994,18 +1156,13 @@ sources:
     notes: University of Oxford DPIR's annual advanced social-research methods school for graduate students and researchers.
   - name: Essex Summer School
     url: https://www.essex.ac.uk/summer-schools/social-science-data-analysis
+    evidence_urls:
+      application: https://essexsummerschool.com/new-application/
     layer: 2
     region: UK
     source_type: university
     keywords: [social science, data analysis, quantitative methods, summer school]
     notes: Essex Summer School in Social Science Data Analysis; long-running quantitative social-science methods school.
-  - name: Essex Summer School
-    url: https://essexsummerschool.com/new-application/
-    layer: 2
-    region: UK
-    source_type: university
-    keywords: [social science, data analysis, quantitative methods, summer school, application]
-    notes: Official ESS application page; carries session-specific application closing dates and programme dates.
   - name: CEU Summer University
     url: https://summeruniversity.ceu.edu/
     layer: 2
@@ -1154,7 +1311,8 @@ sources:
     keywords: [education research, learning sciences, education, summer school]
     notes: European Association for Research on Learning and Instruction; the JURE summer school and research training in education.
   - name: Stazione Zoologica
-    url: https://www.szn.it/
+    url: https://szn.it/it/formazione/advanced-courses-summer-schools
+    tls_trust: system
     layer: 2
     region: continental Europe
     source_type: research_institute

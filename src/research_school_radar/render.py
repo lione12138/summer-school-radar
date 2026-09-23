@@ -19,6 +19,7 @@ from bs4 import BeautifulSoup
 
 from .models import Page, Source
 from .utils import clean_space
+from .page_validation import require_content_page
 
 
 DEFAULT_TIMEOUT_MS = 25000
@@ -47,13 +48,16 @@ def fetch_rendered(
             # "domcontentloaded" is far more reliable than "networkidle", which
             # never settles on pages with analytics or polling. Give client-side
             # rendering a brief moment after the DOM is ready.
-            page.goto(source.url, wait_until="domcontentloaded", timeout=timeout_ms)
+            response = page.goto(source.url, wait_until="domcontentloaded", timeout=timeout_ms)
+            if response is not None and response.status >= 400:
+                raise ValueError(f"Rendered source returned HTTP {response.status}: {source.url}")
             page.wait_for_timeout(2000)
             html = page.content()
             final_url = page.url
         finally:
             browser.close()
 
+    require_content_page(html)
     soup = BeautifulSoup(html, "html.parser")
     for element in soup(["script", "style", "noscript"]):
         element.decompose()

@@ -18,6 +18,9 @@ class Source:
     blocked_link_domains: list[str] = field(default_factory=list)
     render: bool = False
     collector: str = ""
+    programme_key: str = ""
+    evidence_urls: dict[str, str] = field(default_factory=dict)
+    tls_trust: str = "default"
 
 
 @dataclass(slots=True)
@@ -80,6 +83,7 @@ class Candidate:
     # dated editions; collectors/overrides may provide this explicitly, while
     # the site catalogue derives a conservative fallback when it is absent.
     programme_key: str = ""
+    evidence_sources: dict[str, str] = field(default_factory=dict)
     # A non-numeric benefit can be precise even when no single currency amount
     # applies, e.g. a scholarship that covers each selected participant's
     # applicable registration fee.

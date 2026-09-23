@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 from .http_cache import HttpCache, get_with_cache
 from .models import Page, Source
 from .utils import clean_space
+from .page_validation import require_content_page
 
 
 DEFAULT_TIMEOUT = 30
@@ -58,12 +59,18 @@ def fetch_source(
         # Playwright is not installed: fall back to a plain request. JS-rendered
         # pages will yield little, but the scan still runs.
     headers = dict(_HEADERS)
+    request_get = requests.get
+    if source.tls_trust == "system":
+        from .tls_transport import get_with_system_trust
+        request_get = get_with_system_trust
+    elif source.tls_trust != "default":
+        raise ValueError(f"Unsupported TLS trust setting: {source.tls_trust}")
     response = get_with_cache(
         source.url,
         headers=headers,
         timeout=DEFAULT_TIMEOUT,
         cache=http_cache,
-        request_get=requests.get,
+        request_get=request_get,
     )
     html = response.text
     refresh_url = _meta_refresh_target(html, response.url)
@@ -73,9 +80,10 @@ def fetch_source(
             headers=headers,
             timeout=DEFAULT_TIMEOUT,
             cache=http_cache,
-            request_get=requests.get,
+            request_get=request_get,
         )
         html = response.text
+    require_content_page(html)
     soup = BeautifulSoup(html, "html.parser")
     for element in soup(["script", "style", "noscript"]):
         element.decompose()

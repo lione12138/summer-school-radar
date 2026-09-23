@@ -21,6 +21,7 @@ def persistent_source_failures(health: list[dict[str, Any]]) -> list[str]:
 
 def build_scan_quality(
     scanner: list[Candidate], display: list[Candidate], sources: list[Source], pages: list[Page],
+    *, extracted: list[Candidate] | None = None,
 ) -> dict[str, Any]:
     by_url = {source.url.rstrip("/"): source.name for source in sources}
     by_url.update({page.url.rstrip("/"): page.source.name for page in pages})
@@ -36,6 +37,7 @@ def build_scan_quality(
         return next(iter(names)) if len(names) == 1 else "unattributed"
 
     scanner_counts = Counter(source_name(candidate) for candidate in scanner)
+    extracted_counts = Counter(source_name(candidate) for candidate in (extracted if extracted is not None else scanner))
     public_counts = Counter(source_name(candidate) for candidate in display if is_display_candidate(candidate))
     return {
         "scanner_records": len(scanner),
@@ -49,7 +51,26 @@ def build_scan_quality(
             "financial_access": sum(candidate.financial_access_status == "unresolved" for candidate in scanner),
         },
         "per_source": {
-            name: {"scanner_records": scanner_counts[name], "public_open_records": public_counts[name]}
-            for name in sorted({source.name for source in sources} | set(scanner_counts) | set(public_counts))
+            name: {"scanner_records": scanner_counts[name], "extracted_records": extracted_counts[name],
+                   "public_open_records": public_counts[name],
+                   "extraction_health": "records_found" if extracted_counts[name] else "no_records"}
+            for name in sorted({source.name for source in sources} | set(scanner_counts) | set(public_counts) | set(extracted_counts))
         },
     }
+
+
+def attach_extraction_health(health: list[dict], quality: dict, previous: object) -> None:
+    """Zero output is an observation, not proof that the source has no events."""
+    from .scan_health import _latest_full_scan
+    prior = _latest_full_scan(previous) or {}
+    by_name = {item['name']: item for item in prior.get('source_health', []) if isinstance(item, dict) and 'name' in item}
+    for item in health:
+        item['fetch_health'] = item['status']
+        item.update(quality['per_source'].get(item['name'], {}))
+        success = item['fetch_health'] == 'healthy'
+        empty = item.get('extracted_records', 0) == 0
+        item['extraction_health'] = ('no_records' if empty else 'records_found') if success else 'unavailable'
+        item['consecutive_empty_scans'] = (
+            int(by_name.get(item['name'], {}).get('consecutive_empty_scans', 0)) + 1
+            if success and empty else 0
+        )

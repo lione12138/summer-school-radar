@@ -28,6 +28,7 @@ from .filter import apply_hard_filters
 from .http_cache import HttpCache
 from .models import Candidate, Page, Source
 from .parse import candidate_links, looks_like_opportunity
+from .programme_evidence import extract_with_programme_evidence
 from .publication import is_archive_candidate, is_display_candidate
 from .rank import rank_candidates
 from .record_audit import filter_display_candidates_by_audit
@@ -43,7 +44,7 @@ from .scan_health import (
     write_scan_manifest,
 )
 from .semantic import unique_pages
-from .scan_quality import build_scan_quality, persistent_source_failures
+from .scan_quality import build_scan_quality, persistent_source_failures, attach_extraction_health
 from .site import write_site
 from .site_withdrawal import reconcile_withdrawals
 from .site_freshness import source_health_by_name
@@ -185,7 +186,7 @@ def run_scan(
             or page.source.source_type == "research_training_provider"
         ]
         candidate_pages.extend(linked_pages)
-        candidates = [candidate for page in candidate_pages if (candidate := extract_candidate(page, profile))]
+        candidates = extract_with_programme_evidence(candidate_pages, profile)
 
         collector_outcomes: list[CollectorOutcome] = []
         api_candidates, api_errors = collect_api_candidates(
@@ -348,13 +349,12 @@ def run_scan(
     )
     quality = build_scan_quality(
         ranked, filter_display_candidates_by_audit(merge_ai_for_homepage(ranked, ai_items, profile), record_audit_items),
-        sources, semantic_pages,
+        sources, semantic_pages, extracted=candidates,
     )
     manifest["quality"] = quality
     broken_sources = persistent_source_failures(source_health)
     manifest["quality"]["persistent_source_failures"] = broken_sources
-    for health in source_health:
-        health.update(quality["per_source"].get(health["name"], {}))
+    attach_extraction_health(source_health, quality, previous_manifest)
     manifest["source_health"] = source_health
     if broken_sources:
         print(f"Warning: {len(broken_sources)} sources have failed at least 5 consecutive scans: {', '.join(broken_sources)}")
@@ -490,6 +490,9 @@ def _load_sources(path: Path) -> list[Source]:
             blocked_link_domains=list(item.get("blocked_link_domains", [])),
             render=bool(item.get("render", False)),
             collector=str(item.get("collector", "")).strip(),
+            programme_key=str(item.get("programme_key", "")),
+            evidence_urls=dict(item.get("evidence_urls", {})),
+            tls_trust=str(item.get("tls_trust", "default")),
         )
         for item in config.get("sources", [])
         if bool(item.get("enabled", True))
@@ -677,11 +680,11 @@ def collect_linked_opportunity_pages(
     linked_sources = []
     seen_urls = {page.url for page in source_pages}
     for page in source_pages:
-        for url in candidate_links(
+        for url in dict.fromkeys([*page.source.evidence_urls.values(), *candidate_links(
             page,
             limit=max_links_per_source,
             blocked_domains=page.source.blocked_link_domains,
-        ):
+        )]):
             if url in seen_urls:
                 continue
             seen_urls.add(url)
@@ -695,6 +698,9 @@ def collect_linked_opportunity_pages(
                 notes=f"Linked from {page.url}",
                 enabled=True,
                 blocked_link_domains=page.source.blocked_link_domains,
+                programme_key=page.source.programme_key,
+                evidence_urls=page.source.evidence_urls,
+                tls_trust=page.source.tls_trust,
             )
             linked_sources.append((page.source.name, url, linked_source))
 
@@ -719,7 +725,7 @@ def collect_linked_opportunity_pages(
             except Exception as exc:  # noqa: BLE001 - keep a single broken link from failing the scan.
                 errors_by_index[index] = f"{source_name} linked page {url}: {exc}"
                 continue
-            if looks_like_opportunity(linked_page.text):
+            if looks_like_opportunity(linked_page.text) or linked_page.url in linked_page.source.evidence_urls.values():
                 pages_by_index[index] = linked_page
     return (
         [pages_by_index[index] for index in sorted(pages_by_index)],
@@ -736,7 +742,7 @@ def _collect_linked_sources_serial(linked_sources, *, http_cache: HttpCache | No
         except Exception as exc:  # noqa: BLE001 - keep a single broken link from failing the scan.
             errors.append(f"{source_name} linked page {url}: {exc}")
             continue
-        if looks_like_opportunity(linked_page.text):
+        if looks_like_opportunity(linked_page.text) or linked_page.url in linked_source.evidence_urls.values():
             pages.append(linked_page)
     return pages, errors
 

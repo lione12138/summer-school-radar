@@ -88,7 +88,10 @@ def test_scan_quality_counts_public_output_and_persistent_failures():
     page = _page()
     metrics = build_scan_quality([candidate], [candidate], [page.source], [page])
     assert metrics["public_open_records"] == 1
-    assert metrics["per_source"][page.source.name] == {"scanner_records": 1, "public_open_records": 1}
+    assert metrics["per_source"][page.source.name] == {
+        "scanner_records": 1, "public_open_records": 1,
+        "extracted_records": 1, "extraction_health": "records_found",
+    }
     candidate.mode = "uncertain"
     metrics = build_scan_quality([candidate], [], [page.source], [page])
     assert metrics["missing_fields"]["mode"] == 1

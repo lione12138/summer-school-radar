@@ -155,7 +155,7 @@ _NOT_OPEN_PATTERNS = [
     r"registration[^.\n]{0,40}(?:not yet|not currently)\s+open",
     r"applications?[^.\n]{0,40}(?:are|is)\s+not\s+open(?:ed)?(?:\s+yet)?",
     r"registration[^.\n]{0,40}(?:are|is)\s+not\s+open(?:ed)?(?:\s+yet)?",
-    r"(?:applications?|registration)[^.\n]{0,40}(?:will|is expected to)\s+open",
+    r"(?:applications?|registration)[^.\n]{0,40}(?:will|is expected to)\s+(?:open|start|begin)",
 ]
 _APPLICATIONS_OPEN_PATTERNS = [
     r"applications?[^.]{0,15}(?:are|is)[^.]{0,10}open",
@@ -192,6 +192,12 @@ IN_PERSON_PATTERNS = [
     r"course at (?:EMBL|the European Bioinformatics Institute)",
 ]
 def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -> Candidate | None:
+    from .asia_adapters import school_body as asian_school_body
+    page = asian_school_body(page)
+    from .training_adapters import programme_body
+    page = programme_body(page)
+    from .us_school_adapters import school_body
+    page = school_body(page)
     overrides = resolve_overrides(page)
     if (
         not _has_opportunity_signal(page.text)
@@ -235,7 +241,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     deadlines = _all_deadlines(text, event_start=start)
     chosen = _select_deadline(deadlines)
     override_deadline = overrides.get("deadline")
-    if override_deadline is not None:
+    if "deadline" in overrides:
         # An adapter/JSON-LD deadline wins; its own evidence describes it, so the
         # text-extracted evidence must not be attached to a different date.
         deadline = override_deadline
@@ -255,7 +261,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     # calendar even if it also quotes a deadline; and with no deadline at all only
     # an exact single range looks like one opportunity.
     event_count = 1 if structured_dates else max(len(ranges), len(jsonld))
-    supplemental_application_page = _applications_not_open(text) or bool(_extract_fee(text))
+    supplemental_application_page = _applications_not_open(text) or bool(overrides.get("fee") or _extract_fee(text))
     if event_count >= 3 or (deadline is None and event_count != 1 and not supplemental_application_page):
         return None
 
@@ -284,11 +290,10 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     else:
         funding_available = overrides.get("funding_available", True if funding_types else None)
         funding_evidence = str(
-            overrides.get("funding_evidence")
-            or _funding_offer_evidence(text)
+            overrides.get("funding_evidence", _funding_offer_evidence(text))
         )
-    funding_scope = str(overrides.get("funding_scope") or _funding_scope(text))
-    mode = _extract_mode(text)
+    funding_scope = str(overrides.get("funding_scope", _funding_scope(text)))
+    mode = overrides.get("mode") or _extract_mode(text)
     # Fall back to the JSON-LD event name when the page's HTML titles are all
     # generic ("Home", "Events", ...).
     title = str(overrides.get("title") or "") or _extract_title(page) or _clean_title(str(overrides.get("jsonld_name", "")))
@@ -303,7 +308,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     )
     if "fee" in overrides:
         fee = str(overrides.get("fee", ""))
-        fee_eur = overrides.get("fee_eur")
+        fee_eur = overrides.get("fee_eur", _fee_to_eur(fee, profile))
     else:
         fee = _extract_fee(text)
         fee_eur = _fee_to_eur(fee, profile)
@@ -337,7 +342,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     return Candidate(
         title=title,
         type=programme_type,
-        organizer=_extract_organizer(page),
+        organizer=str(overrides.get("organizer") or _extract_organizer(page)),
         source_layer=str(page.source.layer),
         region_priority=_region_priority(page.source.region, profile),
         location=location,
@@ -346,7 +351,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         end_date=end,
         duration_days=duration_days,
         deadline=deadline,
-        deadline_status=_deadline_status_from_text(text, deadline, as_of=as_of),
+        deadline_status=overrides.get("deadline_status") or _deadline_status_from_text(text, deadline, as_of=as_of),
         funding_available=funding_available,
         funding_type=funding_types,
         funding_evidence=funding_evidence,
@@ -357,14 +362,14 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         fee_eur=fee_eur,
         application_link=str(overrides.get("application_link") or page.url),
         source_url=page.url,
-        summary=_summary(text),
+        summary=str(overrides.get("summary") or _summary(text)),
         recommendation_reason="",
         risk_points="",
         funding_scope=funding_scope,
         sessions=sessions,
         deadline_evidence=deadline_evidence,
         duration_evidence=duration_evidence,
-        mode_evidence=_mode_evidence(text),
+        mode_evidence=overrides.get("mode_evidence") or _mode_evidence(text),
         extraction_confidence=round(resolved / 4, 2),
     )
 

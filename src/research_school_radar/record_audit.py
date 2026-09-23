@@ -150,11 +150,12 @@ def build_evidence_packet(
         ("summary_extract", candidate.summary),
     ):
         if clean_space(value):
-            snippets.append((label, candidate.source_url, clean_space(value)))
+            field = label.removesuffix("_extract")
+            snippets.append((label, candidate.evidence_sources.get(field, candidate.source_url), clean_space(value)))
 
     candidate_urls = {
         canonical_url(url)
-        for url in (candidate.source_url, candidate.application_link)
+        for url in (candidate.source_url, candidate.application_link, *candidate.evidence_sources.values())
         if canonical_url(url)
     }
     for page in pages:

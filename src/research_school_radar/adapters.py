@@ -27,6 +27,10 @@ from dateutil import parser as date_parser
 
 from .models import Page, ProgrammeSession
 from .utils import clean_space
+from .training_adapters import iahs_academy, eurac_winter_school, esslli_tartu, trisep
+from .us_school_adapters import dl4sci, neutron_school
+from .australia_adapters import amsi_winter, acan, ansto_neutron, unsw_economics
+from .asia_adapters import astroai, viasm
 
 
 def resolve_overrides(page: Page) -> dict[str, Any]:
@@ -354,6 +358,19 @@ def _iso_or_none(value: Any) -> date | None:
 
 
 _ADAPTERS: dict[str, Callable[[Page], dict[str, Any]]] = {
+    "digits.ut.ee": esslli_tartu,
+    "trisep.ca": trisep,
+    "dl4sci-school.lbl.gov": dl4sci,
+    "neutrons.ornl.gov": neutron_school,
+    "sns.gov": neutron_school,
+    "ws.amsi.org.au": amsi_winter,
+    "ans.org.au": acan,
+    "ansto.gov.au": ansto_neutron,
+    "unsw.edu.au": unsw_economics,
+    "cd3.ipmu.jp": astroai,
+    "viasm.edu.vn": viasm,
+    "iahs.info": iahs_academy,
+    "winterschool.eurac.edu": eurac_winter_school,
     "icimod.org": _icimod,
     "essex.ac.uk": _essex_summer_school,
     "essexsummerschool.com": _essex_summer_school,

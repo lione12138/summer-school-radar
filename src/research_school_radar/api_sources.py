@@ -28,6 +28,11 @@ from .collector_ellis import (
 from .collector_ihe import _IHE_DELFT_URL as _IHE_DELFT_URL, _ihe_delft
 from .collector_sicss import _SICSS_LOCATIONS_URL as _SICSS_LOCATIONS_URL, _sicss
 from .collector_sib import _SIB_TRAINING_URL as _SIB_TRAINING_URL, _sib_training
+from .collector_north_america import slmath, crm
+from .collector_us_modules import sismid, sisg
+from .collector_acspri import acspri
+from .collector_asia import icts_schools
+from .collector_neutron_japan import neutron_japan
 from .http_cache import HttpCache
 from .models import Candidate
 from .render import render_page_data
@@ -111,4 +116,11 @@ _COLLECTORS: dict[
     "ellis": _ellis,
     "sib_training": _sib_training,
     "sicss": _sicss,
+    "slmath": slmath,
+    "crm_schools": crm,
+    "sismid": sismid,
+    "sisg": sisg,
+    "acspri": acspri,
+    "icts_schools": icts_schools,
+    "neutron_japan": neutron_japan,
 }

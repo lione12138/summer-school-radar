@@ -20,6 +20,7 @@ OPPORTUNITY_TERMS = [
     "fall school",
     "seasonal school",
     "training school",
+    "training course",
     "doctoral school",
     "field school",
     "research school",
@@ -136,6 +137,21 @@ def candidate_links(page: Page, limit: int = 25, blocked_domains: list[str] | No
         lowered = f"{label} {href}".lower()
         score = sum(2 for term in OPPORTUNITY_TERMS if term in lowered)
         score += sum(1 for term in APPLICATION_TERMS if term in lowered)
+        if (urlparse(page.url).hostname in {"trisep.ca", "www.trisep.ca"}
+                and re.search(r"Registration.{0,150}" + re.escape(href), page.text, re.I)
+                and urlparse(href).hostname in {"events.perimeterinstitute.ca", "indico.triumf.ca", "indico.snolab.ca"}
+                and re.fullmatch(r"/event/\d+/?", urlparse(href).path)):
+            score += 6
+        # IAHS Academy is an explicit official programme, not a global synonym
+        # for schools (which would admit institutional Academy navigation).
+        if (urlparse(href).hostname == "iahs.info"
+                and re.search(r"iahs academy\s+20\d{2}", label, re.I)
+                and "call for topics" not in label.lower()):
+            score += 4
+        # Detail events should outrank general fees/application instructions.
+        if urlparse(href).hostname == "events.ecmwf.int" and re.search(r"/event/\d+/?$", urlparse(href).path):
+            if "training course" in label.lower():
+                score += 4
         if page.source.source_type == "research_training_provider":
             score += _training_provider_link_score(page, anchor, label, href)
             score += sum(3 for term in DATA_TRAINING_TERMS if term in lowered)

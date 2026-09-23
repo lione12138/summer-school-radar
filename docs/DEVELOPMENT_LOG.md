@@ -395,3 +395,38 @@ The live UI audit reproduced zero-width title/location grid tracks on mobile, mi
 Cards now use real translated badges and a single mobile column. Open and archived records have independent search scopes with URL restoration, and archive titles consistently open edition details. Topic entry points moved up; methodology stays available through disclosures and hash links. Shared menus, readable dark-theme buttons, field-level evidence disclosures, common calendar popovers and a searchable responsive source registry complete the presentation changes. Browser screenshot review also caught a native `details` behaviour that hid the desktop menu; the menu now stays open at desktop widths and collapses on mobile.
 
 Added an optional loopback-only Playwright check using both the latest snapshots and synthetic long-title / multi-page records. It catches layout, navigation, history and contrast regressions without fetching sources, invoking an LLM, or changing stored opportunities. The snapshot available during validation had no current public opportunities, making the additional fixtures essential.
+
+## 2026-09-21: Repair verified recall gaps without weakening filters
+
+Replayed cached IAHS/ECMWF entry pages and live detail pages. IAHS produced no candidate links; fetching its Academy article directly exposed a generic title and a conditional EUR 350 fee incorrectly replacing the EUR 650 general fee. ECMWF needed both the training-course vocabulary and the full event catalogue. Eurac needed its full-programme date sentence plus registered application and fee pages, with field provenance for audit. Regression coverage includes stale-edition fees and unregistered donor pages.
+
+The 91 healthy sources with zero scanner records are not 91 proven discovery misses: output is counted after deduplication, and source availability is not extraction completeness. Added distinct pre-deduplication output and coverage states. No automatic empty-source alarm was introduced.
+
+Retested all 16 previously failed sources. Climate Change AI, CERN and ESSLLI initially failed because Playwright's matching headless shell was missing. Installing it recovered the first two; ESSLLI still returns an access challenge, now rejected explicitly. SOLAS recovered without code changes. LASER's former ETH hostname no longer resolves and its official foundation confirms the school is paused; disabled it rather than treating workshops as schools. Other 403 and TLS failures remain visible and require upstream/network resolution; TLS verification and access challenges are not bypassed.
+
+Scheduled task last result was 0xC000013A with no 9/21 log. Added hidden execution and three 15-minute retries to registration and the installed task, preserving its existing trigger. A missed-full-scan catch-up rule already existed. A full production-gated scan is run in an isolated output directory before any snapshot replacement.
+
+Full-scan validation exposed two additional integration defects: the AI branch treated registered Eurac programme evidence as an unmatched new lead, and IAHS navigation contaminated the summary while its physical venue remained global. AI URL matching now includes field provenance, and the IAHS adapter reads the official venue/body description. ALPS is extracted from its application page but currently lists a provisional EUR 700 student fee with no explicit funding, so it is not a low-fee recommendation under the unchanged EUR 400 limit.
+
+
+## 2026-09-22 — Targeted access repair
+
+Replayed all 12 failed sources and relevant official alternatives. Restored SZN through explicit native certificate validation and its training catalogue; a live replay exposed navigation-date contamination, addressed by course-body extraction. Restored ESSLLI through the official Tartu host; instructor calls and benefits remain separate from student applications. Ten sources remain access-limited; accessible ATPESC history and AGU resource pages are not equivalent current catalogues. See SOURCE_REPAIR_AUDIT.md. Full-scan snapshots were not replaced by these targeted checks.
+
+
+2026-09-22: Added SLMath, CRM Schools, TRISEP and Perimeter Undergraduate Summer School. Live replay: 15 raw candidates, 13 after cross-catalogue joint-series deduplication, zero collection errors. SLMath HTML Accept caused HTTP 406 on its content API; JSON Accept resolved it. Perimeter had multiple body fields, so selection targets the actual landing-page body block rather than the header update form. Production snapshots and deployment remain unchanged by onboarding.
+
+
+2026-09-22: Second US batch enabled DL4SCI, ORNL NNS, Emory SISMID and Georgia Tech SISG. Live replay produced 35 candidates with zero errors; all 33 short modules correctly fail the four-day duration gate. DL4SCI required inline-span text repair (its role=main contains only a hero, not the whole programme), plus explicit limited-waiver evidence. FRIB's rendered challenge exposed another HTTP-success/non-content case and now fails content validation. USPAS, INT and FRIB were not enabled. Production snapshots are unchanged by this expansion.
+
+
+2026-09-22: Enabled AMSI Winter School, ACAN Neuroscience and ACSPRI. Five live candidate records found. AMSI Summer School was retained disabled because the root lists 6 February 2027 while About and the official calendar list 5 February. ACSPRI required offering-level structured schedules and separate standard-price pages; early-bird dates and restricted discounts are not application deadlines/general prices. Exact fee overrides now use configured conversion unless explicitly supplied as unknown (such as GST-inclusive totals). Source snapshots were not replaced by this targeted onboarding.
+## Australian source expansion — 2026-09-23
+
+Added ANSTO-HZB-AONSA and UNSW Economics official school entries with scoped adapters and stable programme keys. Live fetches produced two candidates. ANSTO's EOI deadline is distinct from accepted-applicant payment registration; restricted AINSE flight assistance stays conditional. UNSW's full-programme dates use its full general price, not a half-course or student price; application status remains uncertain without affirmative evidence. Regression fixtures cover these distinctions and missing EOI evidence. See `docs/AUSTRALIA_SOURCES.md`. Production snapshots were not replaced by this onboarding replay.
+## Asian source expansion — 2026-09-23
+
+Enabled ICTS Schools and AstroAI Asian Network after live verification (three records, no fetch/extraction errors). ICTS needed bounded school-card discovery and article-only extraction because admissions navigation falsely excluded school pages. AstroAI needed an actual programme title in place of the centre's document title, and explicit conditional funding/venue evidence. NUS IMS is retained disabled: rendered listing works but the tested detail returns a challenge. Neither closed ICTS schools nor the ended AstroAI edition adds a recommendation. Production snapshots remain unchanged. See `docs/ASIA_SOURCES.md`.
+## Asian source expansion, second batch — 2026-09-23
+
+Enabled VIASM-IAMP Probability and Mathematical Physics 2027 and J-PARC Neutron and Muon School 2026. Both pass local hard-filter replay. VIASM needed scoped body/title/venue and explicit free-registration extraction. The Japanese school needed multi-page evidence, the extended rather than old deadline, language and radiation-worker requirements, and conditional domestic travel support. Its adapter fails on missing required evidence rather than claiming a generic international school. GAB2026 was deferred because dates are absent. No production snapshots or deployment changed.

@@ -59,7 +59,7 @@ _CORE_OPPORTUNITY_HINT_RE = re.compile(
     flags=re.IGNORECASE,
 )
 _TYPE_OPPORTUNITY_HINT_RE = re.compile(
-    r"\b(summer school|winter school|training school|short course|doctoral school|field school)\b",
+    r"\b(summer school|winter school|training school|training course|short course|doctoral school|field school)\b",
     flags=re.IGNORECASE,
 )
 _BOILERPLATE_HINTS = (

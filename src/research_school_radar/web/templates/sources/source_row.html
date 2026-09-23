@@ -1,10 +1,11 @@
 <tr class="source-row" data-source-state="{{ source_state }}">
   <td class="source-name">{% if url %}<a href="{{ url }}" target="_blank" rel="noopener">{{ name }}</a>{% else %}{{ name }}{% endif %}</td>
   <td><span class="mobile-label" data-i18n="sources.status">Status</span><span class="{{ status_class }}">{{ status|safe }}</span></td>
-  <td><span class="mobile-label" data-i18n="sources.health">Scan health</span>{{ health|safe }}</td>
+  <td><span class="mobile-label" data-i18n="sources.health">Fetch health</span>{{ health|safe }}</td>
   <td><span class="mobile-label" data-i18n="sources.last_success">Last success</span>{{ last_success }}</td>
   <td><details class="source-details"><summary data-i18n="sources.details">Coverage details</summary><dl>
     <dt data-i18n="sources.failures">Failures</dt><dd>{{ failures }}</dd>
+    <dt data-i18n="sources.extraction">Extraction coverage</dt><dd>{{ extraction_health|safe }}</dd>
     <dt data-i18n="sources.candidates">Scanner records</dt><dd>{{ scanner_records }}</dd>
     <dt data-i18n="sources.public_open">Open listings (last scan)</dt><dd>{{ public_records }}</dd>
     <dt data-i18n="sources.layer">Layer</dt><dd>{{ layer }}</dd>

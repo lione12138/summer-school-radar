@@ -28,7 +28,7 @@ if (-not (Test-Path $script)) {
 
 $action = New-ScheduledTaskAction `
     -Execute "powershell.exe" `
-    -Argument "-NoProfile -NonInteractive -ExecutionPolicy Bypass -File `"$script`"" `
+    -Argument "-NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File `"$script`"" `
     -WorkingDirectory $repo
 
 $trigger = New-ScheduledTaskTrigger -Daily -At 10:00AM
@@ -40,6 +40,8 @@ $settings = New-ScheduledTaskSettingsSet `
     -DontStopIfGoingOnBatteries `
     -RunOnlyIfNetworkAvailable `
     -DontStopOnIdleEnd `
+    -RestartCount 3 `
+    -RestartInterval (New-TimeSpan -Minutes 15) `
     -ExecutionTimeLimit (New-TimeSpan -Hours 3) `
     -MultipleInstances IgnoreNew
 

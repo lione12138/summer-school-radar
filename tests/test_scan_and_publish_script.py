@@ -40,6 +40,9 @@ def test_scheduled_task_is_allowed_to_run_on_battery() -> None:
 
     assert "-AllowStartIfOnBatteries" in source
     assert "-DontStopIfGoingOnBatteries" in source
+    assert "-RestartCount 3" in source
+    assert "-RestartInterval (New-TimeSpan -Minutes 15)" in source
+    assert "-WindowStyle Hidden" in source
 
 
 @pytest.mark.skipif(os.name != "nt", reason="The production automation is a Windows PowerShell script")

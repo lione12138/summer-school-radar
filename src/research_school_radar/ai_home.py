@@ -58,7 +58,7 @@ def merge_ai_for_homepage(
 
     by_url: dict[str, Candidate] = {}
     for candidate in cloned:
-        for url in (candidate.source_url, candidate.application_link):
+        for url in (candidate.source_url, candidate.application_link, *candidate.evidence_sources.values()):
             key = canonical_url(url)
             if key:
                 by_url[key] = candidate

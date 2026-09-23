@@ -86,6 +86,15 @@ def test_matched_ai_fields_fill_candidate_and_recompute_qualification() -> None:
     assert candidate.deadline is None
 
 
+def test_registered_evidence_page_enriches_existing_programme_without_duplicate():
+    candidate = sample_candidate(PROFILE)
+    candidate.evidence_sources = {"duration_evidence": "https://example.org/programme"}
+    merged = merge_ai_for_homepage([candidate], [_item("https://example.org/programme")], PROFILE)
+    assert len(merged) == 1
+    assert merged[0].source_url == candidate.source_url
+    assert candidate.evidence_sources == {"duration_evidence": "https://example.org/programme"}
+
+
 def test_ai_does_not_override_explicit_rule_based_no_funding() -> None:
     candidate = sample_candidate(PROFILE)
     candidate.source_url = "https://example.org/self-funded-school"

@@ -104,6 +104,7 @@ def _source_row(source: dict[str, Any]) -> str:
         status_class=status_class,
         status=bilingual(status, "已启用" if enabled else "已停用"),
         health=health_status,
+        extraction_health=_extraction_label(source),
         last_success=last_success,
         failures=failures,
         scanner_records=(source.get("health") or {}).get("scanner_records", "—"),
@@ -126,8 +127,8 @@ def _health_fields(source: dict[str, Any]) -> tuple[str, str, int | str]:
     failures = int(health.get("consecutive_failures", 0) or 0)
     last_success = str(health.get("last_success") or "Never")
     if failures == 0 and str(health.get("status")) == "healthy":
-        label_en = "Healthy"
-        label_zh = "正常"
+        label_en = "Fetch succeeded"
+        label_zh = "抓取成功"
     elif failures >= 5:
         label_en = "Broken"
         label_zh = "持续故障"
@@ -138,6 +139,18 @@ def _health_fields(source: dict[str, Any]) -> tuple[str, str, int | str]:
         label_en = "Unknown"
         label_zh = "未知"
     return bilingual(label_en, label_zh), last_success, failures
+
+
+def _extraction_label(source: dict[str, Any]) -> str:
+    health = source.get('health') or {}
+    status = health.get('extraction_health')
+    if status == 'records_found':
+        return bilingual('Candidates extracted; coverage not guaranteed', '已抽出候选；不代表覆盖完整')
+    if status == 'no_records':
+        return bilingual('No candidates extracted; coverage unverified', '未抽出候选；覆盖情况未确认')
+    if status == 'unavailable':
+        return bilingual('Unavailable: fetch failed', '无法判断：抓取失败')
+    return bilingual('Not measured in this snapshot', '此快照未测量')
 
 
 def _list_value(value: Any) -> list[str]:

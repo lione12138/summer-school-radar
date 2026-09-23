@@ -177,6 +177,13 @@ def test_dedicated_collectors_use_the_same_enabled_source_registry() -> None:
     collectors = {source.name: source.collector for source in sources if source.collector}
 
     assert collectors == {
+        "SLMath Summer Graduate Schools": "slmath",
+        "CRM Schools": "crm_schools",
+        "Emory SISMID": "sismid",
+        "Georgia Tech SISG": "sisg",
+        "ACSPRI": "acspri",
+        "ICTS Schools": "icts_schools",
+        "J-PARC Neutron and Muon School": "neutron_japan",
         "ELLIS": "ellis",
         "IHE Delft": "ihe_delft",
         "SICSS": "sicss",

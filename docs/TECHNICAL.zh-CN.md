@@ -431,3 +431,29 @@ Schema-v2 快照新增可选字段 `withdrawn_editions`，保存届次 ID 和详
 手机卡片采用单列布局，状态标签使用真正的本地化文本，不再依赖 CSS 读取双语属性。共用原生导航菜单保留语言和主题入口；所有宽度均展示来源覆盖告警。详情页按字段折叠展示经过转义的官网原文证据，日历菜单样式跨页面共用。来源页展示主要健康字段，其他覆盖信息可展开，并提供搜索及健康筛选。这些展示修改不改变公开资格判断或扫描记录。
 
 可选浏览器校验：安装已有的 `render` 扩展和 Playwright Chromium 后，运行 `python scripts/check_site_ui.py --site-dir site`。可用 `--browser-executable` 指定现有 Chromium，使用 `--screenshots` 保存视觉复查截图。脚本仅在本机回环地址提供页面，同时检查实际快照和长标题、多页列表测试数据，覆盖中英文及 360、390、768、1440 像素宽度；检查导航、筛选、URL 恢复、分页、日历和证据展开、来源筛选及明暗主题按钮对比度。此检查独立于离线 pytest 套件，不需要 API 密钥。
+
+## 项目跨页证据与来源覆盖（2026-09-21）
+
+来源可配置 `evidence_urls`（programme/application/fees），在现有有界采集流程中明确抓取，不进行递归爬取。配置 `programme_key` 后，`programme_evidence.py` 将有日期的项目主页记录与已注册的同届证据页合并。日期、申请条件、费用分别由相应角色页面提供；旧届与无关页面不参与。`Candidate.evidence_sources` 在快照和最终记录审查中保留逐字段来源 URL。这是确定性证据补全，不改变 AI 副本隔离政策。
+
+ECMWF 改用完整 Indico 培训目录，并支持 `training course`。IAHS Academy 仅对 IAHS 官方域名上的带年份链接增加发现规则，适配器区分一般费用和限定人群优惠。Eurac 采用官网明确写出的完整两周日期，避免将两个城市的安排当作可选 session。Essex 合并为一个来源并明确配置申请页。LASER 因官网声明学校暂停举办而保留为停用来源。
+
+`fetch_health` 与 `extraction_health` 分开；后者区分已抽出候选、零候选、抓取失败无法判断。`extracted_records` 是去重前候选数，`scanner_records` 仍是去重后数量。连续零结果次数仅用于调查，不自动等同于漏抓。旧快照显示抽取覆盖未测量。HTTP 或浏览器返回访问验证页时记录为失败，不能算作正常零记录。
+
+Windows 任务增加每 15 分钟重试、最多 3 次，并隐藏 PowerShell 窗口。Playwright 升级后需执行 `python -m playwright install chromium --only-shell` 安装匹配浏览器。9 月 21 日中断的任务未留下扫描日志；退出码只能证明中断，不能确定外部触发原因。
+
+
+来源可显式设置 `tls_trust: system`，使用系统信任库校验证书，并传递给关联页面；不关闭 TLS 验证或修改全局 SSL。SZN 使用官方课程目录，课程抽取限定 Joomla 正文，避免导航日期污染。ESSLLI 使用 Tartu 2027 官方主办页及限定适配器，区分讲师招募/支持和学生报名；年度主办入口需随届次复核。
+
+
+来源注册表新增 `collector_north_america.py` 中的 `slmath` 和 `crm_schools`。SLMath 以 JSON Accept 请求官方接口，单独识别带届次的提名开放公告；CRM 最多跟进 20 条学校目录活动路由，要求动态详情正文成功加载。两者保留逐课程日期与身份；SMS、CRM-PIMS 概率学校在日期一致时使用共同身份去重。TRISEP 和 Perimeter 使用限定正文抽取。证据与未确定字段见 `NORTH_AMERICA_SOURCES.md`。
+
+
+`collector_us_modules.py` 新增由注册表控制的 `sismid`、`sisg` 采集器，从带日期表格逐门抽取可选模块，不把整个培训系列的外部时间窗当作连续课程。`us_school_adapters.py` 修复 DL4SCI 行内文本拆分，隔离 ORNL NNS 正文证据。费用上限不转成精确价格，条件性注册费减免保留限制。Incapsula 错误正文被判为访问失败。
+
+
+澳洲接入包括注册表控制的 `collector_acspri.py` 采集器，以及 `australia_adapters.py` 中限定范围的 AMSI Winter School/ACAN/ANSTO/UNSW Economics 适配器。ACSPRI 保留班次身份，按明确授课日期计时长，区分线上和线下班次，从各班次价格页读取标准费用；早鸟优惠截止时间不当作报名截止。适配器提供的精确费用可按配置换算，明确未知的金额仍保持未知，并保留授课方式与状态证据。验证结果及 AMSI Summer School 日期冲突停用说明见 `AUSTRALIA_SOURCES.md`。
+
+ANSTO 使用 EOI 申请截止日期，不使用录取后的注册截止日期。UNSW Economics 的完整课程日期和普通费用均对应两门课，不推断单门半程课程的时长。两者均使用明确的项目身份。
+亚洲来源包括注册表控制的 `collector_asia.py` 中的 `icts_schools` 采集器：限定官方学校卡片、仅解析项目正文，并逐项报告详情页错误。`asia_adapters.py` 保留 AstroAI 届次身份、举办地点和附条件资助。受访问限制的 NUS IMS 暂时停用。验证记录见 `ASIA_SOURCES.md`。
+`collector_neutron_japan.py` 合并 2026 年日本中子／缪子学校的官方介绍与申请页，强制验证届次、授课语言、费用、延期截止和辐射工作人员资格证据。`asia_adapters.school_body` 在通用排除与提取前限定 VIASM 项目正文；适配器读取真实标题、带标签地点和明确免费注册信息。这些届次入口需要每年复核 URL。

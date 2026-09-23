@@ -29,6 +29,7 @@ dependencies = [
   "python-dateutil>=2.9",
   "PyYAML>=6.0",
   "requests>=2.31",
+  "truststore>=0.10",
 ]
 
 [project.urls]
