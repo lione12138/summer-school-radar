@@ -272,3 +272,142 @@ overrides:
       topic_keywords: [astronomy, astrophysics, physics]
       summary: "An introductory residential astronomy summer school for postgraduate researchers, hosted by Keele University."
       summary_zh: "由基尔大学主办、面向研究生研究人员的入门级住宿制天文学暑期学校。"
+
+  # Homepage field audit, 2026-09-25. Edition guards prevent reuse for later editions.
+  - url: https://www.viasm.edu.vn/en/hdkh/VIASM-IAMP-PMP-27
+    edition_year: 2027
+    status: update
+    fields:
+      topic_keywords:
+      - probability
+      - mathematical physics
+      - statistical physics
+      - mathematics
+      primary_topics:
+      - probability
+      - mathematical physics
+      secondary_topics:
+      - statistical physics
+      - mathematics
+      topic_evidence:
+        probability: The goal of the summer school is to introduce selected topics from current research in probability
+          and mathematical physics.
+        mathematical physics: The goal of the summer school is to introduce selected topics from current research
+          in probability and mathematical physics.
+        statistical physics: 'From first-passage times to stochastic resetting: modern approaches in statistical physics'
+        mathematics: International Research Laboratory France-Vietnam in Mathematics and its Applications
+  - url: https://iahs.info/News/news/iahs-academy-2027-closing-date/
+    edition_year: 2027
+    status: update
+    fields:
+      fee: EUR 650 (general fee); EUR 350 for participants from Financially Disadvantaged Countries
+      topic_keywords: [hydrology, water resources, geoscience]
+      primary_topics: [hydrology, water resources, geoscience]
+      secondary_topics: []
+      topic_evidence:
+        hydrology: global training initiative for early-career hydrologists
+        water resources: global training initiative for early-career hydrologists
+        geoscience: global training initiative for early-career hydrologists
+      fee_eur: 650
+      funding_type:
+      - travel grant
+      funding_available: true
+      funding_scope: 'SYSTA: accepted applicants who meet the award requirements may apply; not guaranteed.'
+      funding_evidence: Applicants who have been notified of their acceptance for the IAHS Academy may apply to the
+        IAHS Sivapalan Young Scientists Travel Awards (SYSTA), if they meet the requirements for the SYSTA scholarship.
+      fee_evidence: The course fee is EURO 650.00. Participants from Financially Disadvantaged Countries have access
+        to a reduced fee of EURO 350.00.
+  - url: https://conference-indico.kek.jp/event/378/
+    edition_year: 2026
+    status: update
+    fields:
+      fee: JPY 40,000 (meals and accommodation require no additional payment)
+      topic_keywords: [physics, neutron science, muon science]
+      primary_topics: [physics, neutron science, muon science]
+      secondary_topics: []
+      topic_evidence:
+        physics: 第10回中性子・ミュオンスクール
+        neutron science: 第10回中性子・ミュオンスクール
+        muon science: 第10回中性子・ミュオンスクール
+      evidence_sources:
+        topic_evidence: https://conference-indico.kek.jp/event/378/page/781-about-the-school
+      funding_available: true
+      funding_type:
+      - travel grant
+      funding_scope: Possible domestic travel assistance for students, postdocs and academic early-career researchers;
+        not guaranteed.
+      funding_evidence: 大学生、大学院生、ポスドク、アカデミックの若手研究者は、国内旅費の補助が可能な場合があります。
+      eligibility_zh: 日语授课。面向大学生、研究生和研究人员等；须已在所属机构登记为放射线工作人员，或计划完成登记。须完成 J-PARC/JRR-3 指定登记；特殊健康检查须在半年内（学生及境外机构研究人员为一年内），教育培训须在一年内。名额满时可能提前截止。
+  - url: https://winterschool.eurac.edu/en
+    edition_year: 2027
+    status: update
+    fields:
+      fee: EUR 300 participation fee, excluding accommodation
+      fee_eur: 300
+      funding_available: true
+      funding_type:
+      - scholarship
+      funding_scope: 'Limited scholarships: 2 full and 3 partial; recipients still pay EUR 150. Full: accommodation,
+        breakfast and a small travel contribution; partial: accommodation and breakfast.'
+      funding_evidence: Full scholarships cover accommodation for 13 nights plus breakfast and a small travel contribution
+        (maximum 2). Partial scholarships cover accommodation for 13 nights plus breakfast (maximum 3). Holders still
+        pay a participation fee of EUR 150. Awards are based on merit and need.
+      topic_keywords:
+      - law
+      - political science
+      - AI governance
+      primary_topics:
+      - law
+      - political science
+      secondary_topics:
+      - AI governance
+      evidence_sources:
+        funding_scope: https://winterschool.eurac.edu/en/fees-scholarships
+        funding_evidence: https://winterschool.eurac.edu/en/fees-scholarships
+  - url: https://indico.ictp.it/event/11407
+    edition_year: 2027
+    status: update
+    fields:
+      funding_available: true
+      funding_type:
+      - accommodation support
+      - meals
+      funding_scope: Accommodation and meals covered; travel support may be requested; amount specified in acceptance
+        letter.
+      funding_evidence: For the accepted applicants, the total cost of accommodation and meals will be covered. Travel
+        must be organized and paid for by the participants. It is possible to ask for financial support to cover travel;
+        the level of financial support will be indicated in the acceptance letter.
+  - url: https://lig-alps.imag.fr/index.php/application/
+    edition_year: 2027
+    status: update
+    fields:
+      title: ALPS 2027 — Advanced Language Processing Winter School
+      title_zh: ALPS 2027 高级语言处理冬季学校
+      organizer: LIG (Université Grenoble Alpes) and NAVER Labs Europe
+      organizer_zh: LIG（格勒诺布尔阿尔卑斯大学）与 NAVER Labs Europe
+      fee: EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes
+        accommodation and full board)
+      fee_eur: 700
+      fee_evidence: 'Fees (to be confirmed): students 700 euros; academic non student 900 euros; industry & independents
+        1300 euros. Registration fees encompass accommodation and full board.'
+      evidence_sources:
+        organizer: https://lig-alps.imag.fr/
+        fee: https://lig-alps.imag.fr/index.php/application/
+        fee_evidence: https://lig-alps.imag.fr/index.php/application/
+  - url: https://lig-alps.imag.fr/
+    edition_year: 2027
+    status: update
+    fields:
+      title: ALPS 2027 — Advanced Language Processing Winter School
+      title_zh: ALPS 2027 高级语言处理冬季学校
+      organizer: LIG (Université Grenoble Alpes) and NAVER Labs Europe
+      organizer_zh: LIG（格勒诺布尔阿尔卑斯大学）与 NAVER Labs Europe
+      fee: EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes
+        accommodation and full board)
+      fee_eur: 700
+      fee_evidence: 'Fees (to be confirmed): students 700 euros; academic non student 900 euros; industry & independents
+        1300 euros. Registration fees encompass accommodation and full board.'
+      evidence_sources:
+        organizer: https://lig-alps.imag.fr/
+        fee: https://lig-alps.imag.fr/index.php/application/
+        fee_evidence: https://lig-alps.imag.fr/index.php/application/

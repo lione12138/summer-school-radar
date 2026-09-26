@@ -215,7 +215,7 @@ def _programme_card(programme: dict[str, Any]) -> str:
 
 
 def _matches(programme: dict[str, Any], facet: TopicFacet) -> bool:
-    topics = {_normalize_topic(topic) for topic in programme.get("topics", [])}
+    topics = {_normalize_topic(topic) for topic in programme.get("primary_topics", programme.get("topics", []))}
     signals = {_normalize_topic(signal) for signal in facet.signals}
     return bool(topics & signals)
 

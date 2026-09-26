@@ -253,7 +253,9 @@ def test_status_refresh_preserves_full_scan_ai_advisory_in_data_and_site_queues(
     run_status_refresh(config_dir=ROOT / "config", data_dir=data_dir, site_dir=site_dir)
 
     assert json.loads((data_dir / "review_queue.json").read_text(encoding="utf-8")) == full_scan_queue
-    assert json.loads((site_dir / "review_queue.json").read_text(encoding="utf-8")) == full_scan_queue
+    site_queue = json.loads((site_dir / "review_queue.json").read_text(encoding="utf-8"))
+    assert {key:site_queue[key] for key in full_scan_queue} == full_scan_queue
+    assert 'normalization_review' in site_queue
 
 
 def test_status_sources_use_current_config_and_only_reuse_matching_note_translation(tmp_path) -> None:

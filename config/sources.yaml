@@ -1,4 +1,36 @@
 sources:
+  - name: CSHA Computational and Cognitive Neuroscience
+    url: https://www.csh-asia.org/?content/3046
+    layer: 1
+    region: East Asia
+    source_type: research_training_provider
+    programme_key: csha-computational-cognitive-neuroscience
+    keywords: [computational neuroscience, cognition, neural circuits]
+    notes: Official 2026 course entry; annual edition URL review required. Tuition, board and lodging price is retained; stipend requests are conditional, not guaranteed awards.
+  - name: CSHA Advanced Neuroimaging
+    url: https://www.csh-asia.org/?content/2964
+    layer: 1
+    region: East Asia
+    source_type: research_training_provider
+    programme_key: csha-advanced-neuroimaging
+    keywords: [neuroscience, microscopy, imaging]
+    notes: Official 2026 hands-on research course entry; annual URL review required. Price includes tuition, board, lodging and symposium fee. Do not treat institutional sponsorship as participant funding.
+  - name: IISER Pune CAMP
+    url: https://camp.iiserpune.ac.in/
+    layer: 1
+    region: South Asia
+    source_type: research_training_provider
+    programme_key: iiser-pune-camp
+    keywords: [computational neuroscience, memory, plasticity]
+    notes: Recurring official intensive research-training course. Programme-specific recognition; covered meals/accommodation do not imply covered travel. Previous editions are not merged.
+  - name: NCTS QFT School
+    url: https://phys.ncts.ntu.edu.tw/act/actnews/2026-43406217/home/introduction
+    layer: 1
+    region: East Asia
+    source_type: summer_school
+    collector: ncts_qft
+    keywords: [quantum field theory, theoretical physics]
+    notes: Official 2026 course; annual URL/collector review required. Fifteen teaching days across three weeks, last class moved online. Free dormitory eligibility excludes younger undergraduate auditors. The wider Schools directory includes internships and semester courses and is not broadly crawled.
   - name: VIASM-IAMP Probability and Mathematical Physics School
     url: https://www.viasm.edu.vn/en/hdkh/VIASM-IAMP-PMP-27
     layer: 1
@@ -908,6 +940,10 @@ sources:
     notes: University of Crete Summer School of Linguistics; introductory and advanced seminars across theoretical, historical, psycho- and neurolinguistics.
   - name: Advanced Language Processing Winter School
     url: https://lig-alps.imag.fr/
+    programme_key: alps-language-processing
+    evidence_urls:
+      application: https://lig-alps.imag.fr/index.php/application/
+      fees: https://lig-alps.imag.fr/index.php/application/
     layer: 1.5
     region: continental Europe
     source_type: winter_school

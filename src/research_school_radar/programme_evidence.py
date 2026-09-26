@@ -11,6 +11,7 @@ import re
 
 from .extract import extract_candidate
 from .models import Candidate, Page
+from .topic_taxonomy import classify_topics
 
 
 ROLE_FIELDS = {
@@ -67,6 +68,13 @@ def extract_with_programme_evidence(pages: list[Page], profile: dict) -> list[Ca
             if role == "fees" and donor.fee:
                 primary.fee_evidence = donor.fee
                 primary.evidence_sources['fee_evidence'] = page.url
+            if role in {"programme", "application"}:
+                evidence = {**primary.topic_evidence, **donor.topic_evidence}
+                classification = classify_topics(primary.title, ' '.join(evidence.values()), profile.get('preferred_topics', []))
+                primary.primary_topics = classification.primary
+                primary.secondary_topics = classification.secondary
+                primary.topic_evidence = classification.evidence
+                primary.topic_keywords = classification.primary + classification.secondary
         output.append(primary)
     return output
 

@@ -121,7 +121,7 @@ def _status_banner(
             f"{coverage}"
         )
         zh = (
-            f"最近一次扫描没有资助优选或费用明确的自费项目；下方收录 {regular_count} 个不作费用推荐的更多官网项目。"
+            f"最近一次扫描没有资助或低费用或费用明确的自费项目；下方收录 {regular_count} 个不作费用推荐的更多官网项目。"
             f"当前扫描 {tracked_sources} 个可信来源。"
         )
         return render_template("home/status_banner.html", variant="info", message_en=message, message_zh=zh)
@@ -579,11 +579,14 @@ def _parse_iso_date(value: Any) -> date | None:
 def _row_attrs(candidate: Candidate, status: str | None = None) -> dict[str, str]:
     status = status or ("qualified" if candidate.fully_qualified else "found")
     status_labels = {
-        "qualified": ("Funded / low fee", "资助优选"),
+        "qualified": ("Funded / low fee", "资助或低费用"),
         "high-quality": ("Verified self-funded", "官网核实自费"),
         "found": ("Official listing", "官网项目"),
     }
     status_en, status_cn = status_labels.get(status, (status, status))
+    from .financial_normalization import financial_terms
+    if status == "high-quality" and financial_terms(candidate).fee_status == "provisional":
+        status_en, status_cn = "Self-funded · fee provisional", "自费 · 价格待确认"
     funding = candidate.financial_access_status
     topics = "|".join(topic.lower() for topic in candidate.topic_keywords)
     searchable = " ".join(

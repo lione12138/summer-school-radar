@@ -3,6 +3,7 @@ from __future__ import annotations
 from datetime import date, timedelta
 
 from .models import Candidate
+from .financial_normalization import recommendation_funding, financial_terms
 from .utils import DISPLAY_MIN_DURATION_DAYS
 
 
@@ -42,8 +43,11 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
 
     require_financial_access = hard.get("require_funding_or_low_fee", hard.get("require_funding", True))
     maximum_fee = float(profile.get("financial_access", {}).get("maximum_unfunded_fee_eur", 400))
-    low_fee = candidate.fee_eur is not None and candidate.fee_eur <= maximum_fee
-    explicit_funding = candidate.funding_available is True and bool(candidate.funding_evidence.strip())
+    terms = financial_terms(candidate)
+    if 'conflicting' in {terms.support_status, terms.accommodation, terms.meals, terms.travel_support}:
+        failed.append('financial coverage evidence is contradictory')
+    low_fee = candidate.fee_eur is not None and candidate.fee_eur <= maximum_fee and terms.fee_status != 'provisional'
+    explicit_funding = recommendation_funding(candidate)
     if explicit_funding:
         candidate.financial_access_status = "funded"
     elif low_fee:
@@ -54,7 +58,9 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
         candidate.financial_access_status = "unresolved"
     if require_financial_access:
         if not explicit_funding and not low_fee:
-            if candidate.fee_eur is not None:
+            if terms.fee_status == 'provisional':
+                recommendation_failed.append('participation fee is provisional')
+            elif candidate.fee_eur is not None:
                 recommendation_failed.append(
                     f"fee exceeds EUR {maximum_fee:.0f} without explicit funding"
                 )

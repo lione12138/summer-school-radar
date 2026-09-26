@@ -17,7 +17,7 @@ from .atomic_io import write_text_atomic
 from .utils import clean_space
 
 
-AI_EXTRACTION_SCHEMA_VERSION = "v7-follow-up-evidence"
+AI_EXTRACTION_SCHEMA_VERSION = "v8-financial-topic-evidence"
 
 _SCHEMA = {
     "page_type": {"value": "unknown", "evidence_ids": [], "resolved_evidence_texts": []},
@@ -240,6 +240,11 @@ def build_llm_prompt_from_snippets(
         "You are given numbered evidence snippets from one or more official webpages for a possible opportunity.\n"
         "Extract only facts directly supported by the numbered evidence snippets.\n"
         "Do not use outside knowledge. Do not infer missing dates, deadlines, fees, locations, eligibility, URLs, or funding.\n"
+        "Keep the regular fee, reduced-fee eligibility, included costs and provisional prices separate in fee. "
+        "In funding preserve conditions, award limits, residual participant payments and whether support is merely possible; "
+        "an advertised scholarship does not make a programme fully funded. "
+        "Topic evidence must describe the programme title, curriculum or learning objectives, never navigation or related events. "
+        "A satellite event is not satellite remote sensing; an AI governance workshop within a law school is a secondary topic.\n"
         "For each non-unknown field, cite one or more evidence_ids from the provided snippets.\n"
         "Only use evidence_ids that appear in the input. If no evidence ID supports a field, return value=\"unknown\" and evidence_ids=[].\n"
         "Do not output evidence_text. Do not output thinking, reasoning, or chain-of-thought. Return JSON only.\n"

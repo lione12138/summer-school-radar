@@ -65,6 +65,7 @@ def test_viasm_scopes_body_and_free_registration_without_free_travel():
 def test_japan_neutron_extended_deadline_language_and_eligibility():
     from research_school_radar.collector_neutron_japan import neutron_candidate, ABOUT, APPLICATION
     about = page('', ABOUT, '日程 2026年11月9日（月）～13日（金） 開催場所 茨城県東海村 使用言語 日本語')
+    about.title = '第10回中性子・ミュオンスクール'
     application = page('', APPLICATION,
         '応募締切：2026年9月30日（締切を延長しました。定員に達し次第締切） 応募締切：2026年8月31日 '
         '参加費：40,000円 これらの費用が別途必要になることはありません '
@@ -76,6 +77,31 @@ def test_japan_neutron_extended_deadline_language_and_eligibility():
     assert 'capacity' in c.eligibility and '40,000' in c.fee
     assert 'domestic' in c.funding_scope and 'not guaranteed' in c.funding_scope
     assert c.evidence_sources['deadline'] == APPLICATION
+    assert c.topic_keywords == ['physics', 'neutron science', 'muon science']
+    assert c.evidence_sources['topic_evidence'] == ABOUT
     application.text = application.text.replace('（締切を延長', '（変更')
     with pytest.raises(ValueError, match='evidence missing'):
         neutron_candidate(about, application, {})
+
+
+def test_camp_course_dates_are_not_application_deadline():
+    text = ('Computational Approaches to Memory and Plasticity. intensive 15-day course. '
+            'Workshop Dates: 2nd July - 16th July 2026 Extended Application Deadline: 7th May 2026 '
+            'Location: IISER Pune India. Accommodation and meals will be covered for the participants.')
+    c = extract_candidate(page('', 'https://camp.iiserpune.ac.in/', text), {})
+    assert c.duration_days == 15 and c.deadline == date(2026,5,7)
+    assert 'CAMP' in c.title and 'travel support is not stated' in c.funding_scope
+
+
+def test_ncts_teaching_days_and_conditional_dormitory():
+    from research_school_radar.collector_ncts import qft_candidate, URL
+    text = ('2026 NCTS Summer School on QFT Event Duration 2026-06-22 - 2026-07-10 '
+            '必須修習過量子力學。大四及碩博班學生優先。 '
+            '免費暑期課程，為期3週共15堂。大三以下不提供住宿；免費宿舍。最後一堂改線上。 '
+            'Sign Up Duration 2026-04-15 - 2026-05-20')
+    c = qft_candidate(page('', URL, text), {})
+    assert c.duration_days == 15 and (c.end_date-c.start_date).days+1 == 19
+    assert c.deadline == date(2026,5,20) and c.mode == 'hybrid'
+    assert c.fee_eur == 0 and 'excluded' in c.funding_scope
+    with pytest.raises(ValueError, match='evidence missing'):
+        qft_candidate(page('', URL, text.replace('共15堂', 'schedule pending')), {})

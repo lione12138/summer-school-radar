@@ -8,6 +8,7 @@ from typing import Any, Sequence
 from .extract import _fee_to_eur
 from .filter import apply_hard_filters
 from .models import Candidate
+from .topic_taxonomy import classify_topics
 from .rank import canonical_url, rank_candidates
 from .utils import clean_space, sanitize_location
 
@@ -171,7 +172,7 @@ def _enrich_candidate(candidate: Candidate, item: dict[str, Any], profile: dict[
 
     topics = _topic_keywords(item, profile)
     if topics:
-        candidate.topic_keywords = list(dict.fromkeys([*candidate.topic_keywords, *topics]))
+        _merge_topic_evidence(candidate, item, profile)
 
     eligibility = _trusted_text(item, "eligibility")
     if eligibility and not candidate.eligibility:
@@ -271,6 +272,7 @@ def _candidate_from_ai(item: dict[str, Any], profile: dict[str, Any]) -> Candida
         mode_evidence=_evidence(item, "mode"),
         extraction_confidence=_confidence_number(item),
     )
+    _merge_topic_evidence(candidate, item, profile)
     return apply_hard_filters(candidate, profile)
 
 
@@ -382,19 +384,26 @@ def _has_warning(item: dict[str, Any], warning: str) -> bool:
 
 
 def _topic_keywords(item: dict[str, Any], profile: dict[str, Any]) -> list[str]:
-    extraction = _extraction(item)
-    haystack = " ".join(
-        [
-            _field_text(extraction, "title"),
-            _field_text(extraction, "topics"),
-            _field_text(extraction, "chinese_summary"),
-        ]
-    ).lower()
-    return [
-        str(topic)
-        for topic in profile.get("preferred_topics", [])
-        if re.search(rf"(?<!\w){re.escape(str(topic).lower())}(?!\w)", haystack)
-    ]
+    # Model-written summaries and bare topic values are not source evidence.
+    # Reuse the deterministic context gate on evidence-resolved fields only.
+    evidence = ' '.join(_evidence(item, field) for field in ('title', 'topics') if _trusted_text(item, field))
+    classification = classify_topics(_trusted_text(item, 'title'), evidence, profile.get('preferred_topics', []))
+    return classification.primary + classification.secondary
+
+
+def _merge_topic_evidence(candidate: Candidate, item: dict[str, Any], profile: dict[str, Any]) -> None:
+    evidence = ' '.join(_evidence(item, field) for field in ('title', 'topics') if _trusted_text(item, field))
+    if not evidence:
+        return
+    classification = classify_topics(candidate.title, ' '.join([*candidate.topic_evidence.values(), evidence]), profile.get('preferred_topics', []))
+    # Legacy snapshots may have no topic provenance. Keep those existing tags,
+    # but never let an ungrounded AI tag enter via a generated summary.
+    legacy = [topic for topic in candidate.topic_keywords if topic not in candidate.topic_evidence]
+    candidate.primary_topics = list(dict.fromkeys([*classification.primary,
+        *(topic for topic in legacy if topic not in candidate.secondary_topics and topic not in classification.secondary)]))
+    candidate.secondary_topics = classification.secondary
+    candidate.topic_evidence = classification.evidence
+    candidate.topic_keywords = list(dict.fromkeys([*classification.primary, *classification.secondary, *legacy]))
 
 
 def _funding_types(text: str) -> list[str]:

@@ -8,6 +8,8 @@ from .models import Candidate
 
 TOPIC_ZH = {
     "AI": "人工智能",
+    "AI governance": "人工智能治理",
+    "mathematical physics": "数学物理",
     "GIS": "地理信息系统",
     "agriculture": "农业",
     "archaeology": "考古学",
@@ -82,6 +84,8 @@ TOPIC_ZH = {
     "phonetics": "语音学",
     "phonology": "音系学",
     "physics": "物理学",
+    "neutron science": "中子科学",
+    "muon science": "μ子科学",
     "political science": "政治学",
     "probability": "概率论",
     "programming languages": "程序设计语言",
@@ -137,7 +141,8 @@ FUNDING_TYPE_ZH = {
 STATUS_ZH = {
     "Fully qualified": "完全符合",
     "High quality": "高质量",
-    "Funded / low fee": "资助优选",
+    "Funded / low fee": "资助或低费用",
+    "Self-funded · fee provisional": "自费 · 价格待确认",
     "Verified self-funded": "官网核实自费",
     "Official listing": "官网项目",
     "Internal review": "内部审核",
@@ -223,6 +228,20 @@ def duration_zh(candidate: Candidate) -> str:
 
 
 def financial_summary_zh(candidate: Candidate) -> str:
+    if (candidate.fee and candidate.funding_available is True and candidate.fee_eur != 0
+            and candidate.funding_scope != "registration fee covered"
+            and not candidate.funding_scope.startswith("Fee GBP 0 for STFC")):
+        from .financial_normalization import financial_terms
+        scope = _support_scope_zh(candidate.funding_scope)
+        if not scope:
+            scope = "、".join(FUNDING_TYPE_ZH.get(item, item) for item in candidate.funding_type) or "资助范围待核实"
+            if financial_terms(candidate).support_status == "conditional":
+                scope += "（有条件申请，不保证获得）"
+        return f"费用：{_tiered_fee_zh(candidate.fee)} · {scope}"
+    if candidate.funding_available is True and candidate.funding_scope.startswith("Accommodation and meals covered"):
+        return _support_scope_zh(candidate.funding_scope)
+    if candidate.funding_available is not True and candidate.fee and any(word in candidate.fee.lower() for word in ('confirmed', 'includes', 'included', 'no additional')):
+        return f"费用：{_tiered_fee_zh(candidate.fee)}"
     if candidate.funding_available is True:
         if candidate.funding_scope == "registration fee covered":
             if candidate.fee:
@@ -260,6 +279,25 @@ def financial_summary_zh(candidate: Candidate) -> str:
             return f"费用 EUR {candidate.fee_eur:.0f}（未含增值税）"
         return f"费用约 EUR {candidate.fee_eur:.0f}"
     return "资助或费用未说明"
+
+
+def _support_scope_zh(scope: str) -> str:
+    if scope.startswith("SYSTA:"):
+        return "录取后符合条件者可申请 SYSTA 差旅资助，不保证获得"
+    if scope.startswith("Possible domestic travel assistance"):
+        return "学生、博士后及学术界青年研究者可能获得日本国内差旅补助，不保证获得"
+    if scope.startswith("Accommodation and meals covered"):
+        if "travel support may be requested" in scope:
+            return "住宿及餐食全额覆盖；可申请差旅资助，金额以录取通知为准"
+        return "住宿及餐食全额覆盖；差旅资助未说明"
+    if scope.startswith("Limited scholarships:"):
+        match = re.search(r'(\d+) full and (\d+) partial; recipients still pay EUR ([\d.]+)', scope)
+        if match:
+            amount = match[3].rstrip('.')
+            return f"最多 {match[1]} 个全额及 {match[2]} 个部分奖学金名额；获奖者仍需支付 EUR {amount}；全额奖学金含住宿、早餐及少量差旅补贴，部分奖学金含住宿及早餐"
+    if scope == "registration fee covered":
+        return "入选者可获注册费奖学金"
+    return ""
 
 
 def recommendation_reason_zh(reasons: list[str], limit: int = 4) -> str:
@@ -310,6 +348,13 @@ def _tiered_fee_zh(value: str) -> str:
         flags=re.IGNORECASE,
     )
     replacements = (
+        (r"\(general fee\)", "（常规费用）"),
+        (r"for participants from Financially Disadvantaged Countries", "（适用于官方指定的经济困难国家参与者）"),
+        (r"\(meals and accommodation require no additional payment\)", "（住宿和餐食无需另付）"),
+        (r"\(to be confirmed; includes accommodation and full board\)", "（价格待确认；含住宿及全食宿）"),
+        (r"academic non-students", "非学生学术界参与者"),
+        (r"industry and independents", "产业界及独立参与者"),
+        (r"participation fee, excluding accommodation", "参与费用，不含住宿"),
         (r"\bnon-students?\b", "非学生"),
         (r"\bstudents?\b", "学生"),
         (r"\bnon-members?\b", "非会员"),

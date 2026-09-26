@@ -33,6 +33,7 @@ from .collector_us_modules import sismid, sisg
 from .collector_acspri import acspri
 from .collector_asia import icts_schools
 from .collector_neutron_japan import neutron_japan
+from .collector_ncts import ncts_qft
 from .http_cache import HttpCache
 from .models import Candidate
 from .render import render_page_data
@@ -123,4 +124,5 @@ _COLLECTORS: dict[
     "acspri": acspri,
     "icts_schools": icts_schools,
     "neutron_japan": neutron_japan,
+    "ncts_qft": ncts_qft,
 }

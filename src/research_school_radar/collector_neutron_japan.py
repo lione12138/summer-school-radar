@@ -6,6 +6,7 @@ import re
 from .collect import fetch_source
 from .extract import extract_candidate
 from .models import Page, Source
+from .topic_taxonomy import classify_topics
 
 ROOT = "https://conference-indico.kek.jp/event/378/"
 ABOUT = ROOT + "page/781-about-the-school"
@@ -46,6 +47,12 @@ def neutron_candidate(about, application, profile):
     candidate.application_link = APPLICATION
     candidate.programme_key = "jparc-neutron-muon-school"
     candidate.identity_key = "jparc-neutron-muon-school:2026"
+    topics = classify_topics(about.title, about.title + ' ' + about.text,
+                             ['physics', 'neutron science', 'muon science'])
+    candidate.primary_topics = topics.primary
+    candidate.secondary_topics = topics.secondary
+    candidate.topic_keywords = [topic for topic in ['physics', 'neutron science', 'muon science'] if topic in topics.evidence]
+    candidate.topic_evidence = topics.evidence
     candidate.fee = f"JPY {fee[1]}"
     if "これらの費用が別途必要になることはありません" in application.text:
         candidate.fee += " (meals and accommodation require no additional payment)"
@@ -57,6 +64,7 @@ def neutron_candidate(about, application, profile):
         candidate.funding_scope = "Possible domestic travel assistance for students, postdocs and academic early-career researchers; not guaranteed."
     candidate.evidence_sources = {field: ABOUT for field in ("start_date", "end_date", "duration_days", "location", "mode")}
     candidate.evidence_sources.update({field: APPLICATION for field in ("deadline", "fee", "eligibility", "funding_available", "funding_scope")})
+    candidate.evidence_sources['topic_evidence'] = ABOUT
     return candidate
 
 

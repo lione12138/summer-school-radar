@@ -430,3 +430,34 @@ Enabled ICTS Schools and AstroAI Asian Network after live verification (three re
 ## Asian source expansion, second batch — 2026-09-23
 
 Enabled VIASM-IAMP Probability and Mathematical Physics 2027 and J-PARC Neutron and Muon School 2026. Both pass local hard-filter replay. VIASM needed scoped body/title/venue and explicit free-registration extraction. The Japanese school needed multi-page evidence, the extended rather than old deadline, language and radiation-worker requirements, and conditional domestic travel support. Its adapter fails on missing required evidence rather than claiming a generic international school. GAB2026 was deferred because dates are absent. No production snapshots or deployment changed.
+## Further Asian onboarding after deployment — 2026-09-23
+
+Added recurring IISER Pune CAMP and edition-scoped NCTS QFT locally. Both live pages returned candidates; 2026 editions have ended. CAMP's generic extraction confused the course start with the application deadline, fixed by the explicit extended-deadline label. NCTS requires fifteen teaching days rather than the nineteen-day outer window, hybrid mode for a final typhoon-related online class, and retained dormitory restrictions. Network-independent fixtures validate these distinctions. Published snapshots remain unchanged.
+
+## CSHA course onboarding — 2026-09-24
+
+Added two official Asian neuroscience courses with scoped banner/title/date/price extraction. Live verification found and fixed a paragraph-title vs location-heading error and a dual-currency amount pairing error. Optional stipend requests remain conditional. Both editions ended; no current recommendation increase or snapshot replacement.
+
+
+## 2026-09-25 — Homepage semantic field corrections and normalization
+
+- Reproduced hidden IAHS fees, conditional travel support receiving funded status, VIASM's satellite-event false topic, and lost Japanese fee/coverage details in Chinese rendering.
+- Verified IAHS, ALPS, Eurac, VIASM and Al-Nour official pages. J-PARC's browser fetch timed out; its existing official-page HTTP cache confirmed the fee, domestic-only possible assistance, Japanese language and radiation-worker/health-check conditions. No deadline changed.
+- Added a pure financial projection and evidence-scoped topic classifier, with source evidence retained separately. Ordinary scholarship mentions no longer erase participant fees. Known conditional support affects recommendation status, not the existence of the programme. IAHS therefore moves to the self-funded directory; low-fee courses can remain recommended on their price merits.
+- Added same-edition ALPS page joins and edition-scoped maintainer corrections for the current homepage. Preserved price uncertainty, award limits and residual participant payments. Existing source snapshots are not rewritten by this repair.
+- Added offline regression coverage for financial tiers, provisional-fee review, negative inclusion statements, topic context, AI evidence gates, cross-page merging, serialization and edition guards. The UI fixture now uses accepted-participant coverage to test the funded state; selected-only awards are tested separately as conditional.
+- Scope: this introduces the requested normalization seam using existing cached documents, candidate evidence and review/audit infrastructure. It does not create a separate fact database or replace all domain adapters with an LLM. Coverage remains conservative and unknown values stay unknown.
+
+Validation: `python -m pytest -q` — 523 passed. No-network status refresh completed; generated site integrity passed with build artifacts allowed. Bilingual homepage and public API assertions confirm the four priority programmes appear once with corrected topics, costs and support conditions.
+
+
+## 2026-09-25 — Follow-up evidence and refresh validation
+
+Reproduced three boundary errors: negative coverage interpreted as positive; included-course-materials clauses swallowing excluded accommodation/meals; AI topic enrichment dropping the primary role of legacy tags. Added per-benefit facts, conservative contradiction checks, and legacy-role preservation. Provisional fees now have an explicit card/detail label and cannot justify low-fee recommendations. Status refresh attaches a current normalization-review view to the private site queue while retaining the original full-scan queue and AI evidence without modifying the source queue. No publishing action was performed.
+`python -m pytest -q`: 531 passed; after the final negative-claim hard-gate adjustment, 90 targeted tests passed. Site integrity, provisional card labels, live ALPS review entry, and preservation of the historical AI review queue were verified.
+
+## 2026-09-25 — Topic filter boundaries and missing disciplines
+
+Separated adjacent topic option text nodes while retaining independent option values. Added hydrology morphology and Japanese neutron/muon aliases with explicit related discipline mappings; corrected the existing IAHS/J-PARC editions and the future collector path. A counterfactual regression verifies Federalism qualifies as low-fee at EUR 400 but not at EUR 200; its limited scholarship never qualifies as recommendation funding.
+
+Validation: 142 extraction/normalization tests passed, followed by 56 focused topic, localization, collector and UI tests. Rebuilt the bilingual site; public API and rendered Chinese DOM confirm both discipline sets and separate mathematics options. Federalism data-funding is low-fee. Site integrity passed.

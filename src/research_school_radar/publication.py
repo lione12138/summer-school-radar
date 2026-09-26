@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 
 from .models import Candidate
+from .financial_normalization import recommendation_funding
 from .urls import safe_external_url
 from .utils import DISPLAY_MIN_DURATION_DAYS, is_too_short
 
@@ -69,7 +70,7 @@ def is_high_quality(candidate: Candidate) -> bool:
 def is_verified_self_funded(candidate: Candidate) -> bool:
     if candidate.fully_qualified or not is_public_candidate(candidate):
         return False
-    if candidate.funding_available is True or candidate.fee_eur is None:
+    if recommendation_funding(candidate) or candidate.fee_eur is None:
         return False
     if candidate.financial_access_status != "self-funded":
         return False

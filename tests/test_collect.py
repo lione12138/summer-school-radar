@@ -184,6 +184,7 @@ def test_dedicated_collectors_use_the_same_enabled_source_registry() -> None:
         "ACSPRI": "acspri",
         "ICTS Schools": "icts_schools",
         "J-PARC Neutron and Muon School": "neutron_japan",
+        "NCTS QFT School": "ncts_qft",
         "ELLIS": "ellis",
         "IHE Delft": "ihe_delft",
         "SICSS": "sicss",

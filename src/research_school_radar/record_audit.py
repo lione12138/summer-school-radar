@@ -12,6 +12,7 @@ from .ai_cache import AICache
 from .atomic_io import write_text_atomic
 from .llm_client import BaseLLMClient, LLMUnavailableError
 from .models import Candidate, Page
+from .financial_normalization import financial_terms
 from .rank import canonical_url
 from .utils import clean_space, content_hash, load_yaml
 
@@ -125,9 +126,13 @@ def record_context(candidate: Candidate) -> dict[str, Any]:
         "funding_type": candidate.funding_type,
         "funding_scope": candidate.funding_scope,
         "funding_evidence": candidate.funding_evidence,
+        "financial_terms": financial_terms(candidate).public_dict(),
         "eligibility": candidate.eligibility,
         "summary": candidate.summary,
         "topics": candidate.topic_keywords,
+        "primary_topics": candidate.primary_topics,
+        "secondary_topics": candidate.secondary_topics,
+        "topic_evidence": candidate.topic_evidence,
         "application_link": candidate.application_link,
         "source_url": candidate.source_url,
     }
@@ -233,6 +238,11 @@ def deterministic_record_issues(candidate: Candidate, *, today: date | None = No
         issues.append(_rule_issue("summary", "medium", "Summary may contain navigation or cookie text."))
     if candidate.funding_available is False and (candidate.funding_type or candidate.funding_scope.strip()):
         issues.append(_rule_issue("funding", "high", "Funding is marked unavailable but funding benefits are populated."))
+    if financial_terms(candidate).support_status == "conditional" and candidate.financial_access_status == "funded":
+        issues.append(_rule_issue("funding", "high", "Conditional support alone is incorrectly classified as funded."))
+    terms = financial_terms(candidate)
+    if 'conflicting' in {terms.support_status, terms.accommodation, terms.meals, terms.travel_support}:
+        issues.append(_rule_issue("funding", "high", "Official benefit evidence contains conflicting coverage statements."))
     return issues
 
 

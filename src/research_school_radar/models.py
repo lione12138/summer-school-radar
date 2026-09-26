@@ -114,6 +114,9 @@ class Candidate:
     eligibility_zh: str = ""
     recommendation_reason_zh: str = ""
     risk_points_zh: str = ""
+    primary_topics: list[str] = field(default_factory=list)
+    secondary_topics: list[str] = field(default_factory=list)
+    topic_evidence: dict[str, str] = field(default_factory=dict)
 
     @property
     def is_new(self) -> bool:
@@ -159,6 +162,19 @@ class Candidate:
 
     @property
     def financial_summary(self) -> str:
+        # Preserve the official currency, tiers and conditions even when an
+        # award is advertised. Never substitute an award amount for the fee.
+        if (self.fee and self.funding_available is True and self.fee_eur != 0
+                and self.funding_scope != "registration fee covered"
+                and not self.funding_scope.startswith("Fee GBP 0 for STFC")):
+            from .financial_normalization import financial_terms
+            terms = financial_terms(self)
+            scope = self.funding_scope or ", ".join(self.funding_type) or "Support advertised"
+            if terms.support_status == "conditional" and not self.funding_scope:
+                scope += " (conditional; not guaranteed)"
+            return f"{self.fee} · {scope} · Apply on official page"
+        if self.funding_available is not True and self.fee and any(word in self.fee.lower() for word in ('confirmed', 'includes', 'included', 'no additional')):
+            return f"{self.fee} · Apply on official page"
         if self.funding_available is True:
             if self.funding_scope == "registration fee covered":
                 if self.fee:

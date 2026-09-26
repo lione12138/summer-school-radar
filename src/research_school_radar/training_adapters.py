@@ -27,6 +27,10 @@ def iahs_academy(page: Page) -> dict:
         result.update(fee=f"EUR {general[1]} (general fee)", fee_eur=float(general[1].replace(',', '')))
         if reduced:
             result['fee'] += f"; EUR {reduced[1]} for participants from Financially Disadvantaged Countries"
+    support = re.search(r'Applicants who have been notified of their acceptance.+?if they meet the requirements[^.]*\.', page.text, re.I)
+    if support and 'SYSTA' in support[0]:
+        result.update(funding_available=True, funding_type=['travel grant'], funding_evidence=support[0],
+                      funding_scope='SYSTA: accepted applicants who meet the award requirements may apply; not guaranteed.')
     return result
 
 
@@ -58,6 +62,41 @@ def eurac_winter_school(page: Page) -> dict:
         if fee:
             amount = float(fee[1].replace('.', '').replace(',', '.'))
             result.update(fee=f"EUR {amount:g} participation fee, excluding accommodation", fee_eur=amount)
+        full = re.search(r'Full scholarships.{0,350}?Max\.\s*(\d+) scholarships', page.text, re.I)
+        partial = re.search(r'Partial scholarships.{0,350}?Max\.\s*(\d+) scholarships', page.text, re.I)
+        residual = re.search(r'holders of these scholarships are still required to pay a participation fee of\s*([\d,.]+)\s*€', page.text, re.I)
+        if full and partial and residual:
+            amount = float(residual[1].replace('.', '').replace(',', '.'))
+            result['funding_scope'] = (f'Limited scholarships: {full[1]} full and {partial[1]} partial; recipients still pay EUR {amount:g}. '
+                'Full: accommodation, breakfast and a small travel contribution; partial: accommodation and breakfast.')
+            result['funding_evidence'] = page.text[full.start():residual.end()]
+    return result
+
+
+def alps(page: Page) -> dict:
+    """Identity and fee terms from the programme's own labelled content."""
+    result = {}
+    year = re.search(r'ALPS\s+(20\d{2})', page.text)
+    if year and 'Advanced Language Processing' in page.text:
+        result['title'] = f'ALPS {year[1]} — Advanced Language Processing Winter School'
+    organizers = re.search(r'ALPS is co-organized by\s+(.+?)\s+and consists', page.text, re.I)
+    if organizers:
+        result['organizer'] = organizers[1].strip(' ,')
+    elif year:
+        result['organizer'] = ''
+    fees = re.search(r'Fees\s*\(to be confirmed\)\s*:\s*[–—-]?\s*students:\s*(\d+) euros', page.text, re.I)
+    if fees:
+        result['fee'] = f'EUR {fees[1]} students'
+        for label, output in [('academic non student', 'academic non-students'), ('industry & independents', 'industry and independents')]:
+            match = re.search(re.escape(label) + r':\s*(\d+) euros', page.text, re.I)
+            if match:
+                result['fee'] += f'; EUR {match[1]} {output}'
+        suffix = 'to be confirmed'
+        if re.search(r'fees.+?encompass accommodation and full board', page.text, re.I):
+            suffix += '; includes accommodation and full board'
+        result['fee'] += f' ({suffix})'
+        result['fee_eur'] = float(fees[1])
+        result['fee_evidence'] = page.text[fees.start():]
     return result
 
 

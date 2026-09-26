@@ -33,7 +33,7 @@ from .publication import is_archive_candidate, is_display_candidate
 from .rank import rank_candidates
 from .record_audit import filter_display_candidates_by_audit
 from .report import update_readme, write_report
-from .review import apply_overrides, load_overrides, write_review_queue
+from .review import apply_overrides, load_overrides, write_review_queue, with_current_normalization_review
 from .search import official_resolution_queries, run_discovery_queries
 from .scan_health import (
     SourceCoverage,
@@ -438,6 +438,7 @@ def run_status_refresh(
         # are deliberately left untouched.
         write_review_queue(data_dir / "review_queue.json", scanner_ranked, ai_items=None)
         review_queue_payload = _load_existing_review_queue(data_dir / "review_queue.json")
+    review_queue_payload = with_current_normalization_review(review_queue_payload or {}, scanner_ranked)
     site_path = write_site(
         display_ranked,
         [],

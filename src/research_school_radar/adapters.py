@@ -27,10 +27,11 @@ from dateutil import parser as date_parser
 
 from .models import Page, ProgrammeSession
 from .utils import clean_space
-from .training_adapters import iahs_academy, eurac_winter_school, esslli_tartu, trisep
+from .training_adapters import iahs_academy, eurac_winter_school, esslli_tartu, trisep, alps
 from .us_school_adapters import dl4sci, neutron_school
 from .australia_adapters import amsi_winter, acan, ansto_neutron, unsw_economics
-from .asia_adapters import astroai, viasm
+from .asia_adapters import astroai, viasm, camp
+from .csha_adapter import csha_course
 
 
 def resolve_overrides(page: Page) -> dict[str, Any]:
@@ -369,7 +370,10 @@ _ADAPTERS: dict[str, Callable[[Page], dict[str, Any]]] = {
     "unsw.edu.au": unsw_economics,
     "cd3.ipmu.jp": astroai,
     "viasm.edu.vn": viasm,
+    "camp.iiserpune.ac.in": camp,
+    "csh-asia.org": csha_course,
     "iahs.info": iahs_academy,
+    "lig-alps.imag.fr": alps,
     "winterschool.eurac.edu": eurac_winter_school,
     "icimod.org": _icimod,
     "essex.ac.uk": _essex_summer_school,

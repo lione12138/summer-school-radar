@@ -7,6 +7,7 @@ from difflib import SequenceMatcher
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
 from .filter import apply_hard_filters
+from .financial_normalization import recommendation_funding, financial_terms
 from .models import Candidate
 from .utils import DISPLAY_MIN_DURATION_DAYS
 
@@ -38,7 +39,7 @@ def score_candidate(candidate: Candidate, profile: dict | None = None) -> tuple[
     score = 0.0
     reasons: list[str] = []
 
-    if candidate.funding_available:
+    if recommendation_funding(candidate):
         funding_score = 20
         if "travel grant" in candidate.funding_type:
             funding_score += 5
@@ -47,7 +48,8 @@ def score_candidate(candidate: Candidate, profile: dict | None = None) -> tuple[
         score += funding_score
         reasons.append(f"funding evidence: {', '.join(candidate.funding_type)}")
     maximum_fee = float((profile or {}).get("financial_access", {}).get("maximum_unfunded_fee_eur", 400))
-    if candidate.funding_available is not True and candidate.fee_eur is not None and candidate.fee_eur <= maximum_fee:
+    if (not recommendation_funding(candidate) and candidate.fee_eur is not None
+            and candidate.fee_eur <= maximum_fee and financial_terms(candidate).fee_status != 'provisional'):
         score += 12
         reasons.append(f"low fee: approximately EUR {candidate.fee_eur:.0f}")
 

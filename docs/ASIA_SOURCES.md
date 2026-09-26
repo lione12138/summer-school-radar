@@ -1,6 +1,6 @@
 # Asian source onboarding — 2026-09-23
 
-Four sources are enabled across two batches; NUS IMS is retained disabled pending access repair.
+Eight sources are enabled across four batches; NUS IMS is retained disabled pending access repair.
 
 | Source | Official entry | Result |
 | --- | --- | --- |
@@ -22,3 +22,16 @@ Live replay: local `logs/asia-onboarding-2026-09-23.json`, three candidates and 
 - [J-PARC Neutron and Muon School 2026](https://conference-indico.kek.jp/event/378/), Tokai: 9–13 November 2026. Registry-controlled `neutron_japan` joins the official About and Application pages. The extended deadline is 30 September, with possible early closure at capacity; the old 31 August date remains on the page and must not win. Fee JPY 40,000; meals and accommodation require no extra payment. The school is taught in Japanese in 2026. Radiation-worker registration and associated medical/training conditions are preserved in eligibility. Domestic travel assistance is conditional and restricted to the named student/academic categories; international flights are not promised. Required evidence changes fail collection rather than silently using obsolete values. Review the edition URLs and collector each year.
 
 Both candidates pass current deterministic hard filters in local replay (`logs/asia-expansion-2026-09-23.json`). This is not a production publication: a gated full scan and final audit still precede snapshot replacement. VIASM's GAB2026 winter-school detail was investigated but not added because its date field is empty; ISSP and APCTP search results did not provide a comparably verified additional school in this batch.
+
+## Third batch, after the 23 September deployment
+
+- [IISER Pune CAMP](https://camp.iiserpune.ac.in/): recurring official computational-neuroscience training entry, also linked by the [institute's announcement](https://www.iiserpune.ac.in/events/5143/computational-approaches-to-memory-and-plasticity-camp-2026). The 2026 course ran 2–16 July, with an extended 7 May deadline; accommodation and meals are covered, while travel support is unstated. A scoped adapter confirms the intensive research course despite its lack of generic school keywords and keeps the course dates separate from the application deadline.
+- [NCTS QFT School](https://phys.ncts.ntu.edu.tw/act/actnews/2026-43406217/home/introduction): edition-specific official course, 22 June–10 July 2026, application deadline 20 May. `ncts_qft` preserves fifteen explicit weekday teaching days rather than the nineteen-day outer window, free tuition, the final class's typhoon-related online move, and dormitory exclusions for third-year and younger undergraduate auditors. Required edition/date/fee/lesson-count evidence must remain present; URL and collector need annual review. The broader NCTS Schools directory also includes internships and semester courses, so it is not indiscriminately ingested.
+
+Live fetches produced two candidate records; both editions have ended, so neither adds a current recommendation. Tests cover CAMP's extended deadline, NCTS duration/mode and accommodation restrictions. These post-deployment additions remain local until the next publication; they do not alter the published 23 September snapshots.
+
+## Fourth batch — 2026-09-24
+
+Added two official Cold Spring Harbor Asia programme entries: Computational and Cognitive Neuroscience (`https://www.csh-asia.org/?content/3046`), 28 June–19 July 2026, deadline 8 April, USD 1,950 including tuition/board/lodging; and The Brain Enlightened — Advanced Imaging Techniques in Neuroscience (`https://www.csh-asia.org/?content/2964`), 11–26 June, deadline 15 April, USD 1,650 including tuition/board/lodging/symposium fee. Both editions have ended. Stipends may be requested during application, but awards and amounts are not guaranteed.
+
+The source-scoped adapter accepts only these verified course IDs, uses the programme banner for title/dates/deadline and edition-labelled pricing for fees. The imaging title is a paragraph, so selecting the first h2 incorrectly produced Suzhou as the title. Dual USD/CNY pricing also exposed amount/currency mispairing; the adapter now retains the official USD option for deterministic conversion and points readers to the official CNY option without mixing numeric amounts. Sponsor logos alone do not set participant funding. Both edition URLs need annual review; explicit programme keys retain recurring identity. Live replay is in local `logs/csha-onboarding-2026-09-24.json`. No production snapshots or deployment changed.

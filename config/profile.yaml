@@ -86,6 +86,8 @@ preferred_topics:
   - computational biology
   # Physics, astronomy, and quantum
   - physics
+  - neutron science
+  - muon science
   - astrophysics
   - astronomy
   - cosmology
@@ -96,6 +98,7 @@ preferred_topics:
   - quantum information
   # Mathematics and statistics
   - mathematics
+  - mathematical physics
   - applied mathematics
   - statistics
   - probability

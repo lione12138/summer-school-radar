@@ -4,6 +4,7 @@ from datetime import date
 from typing import Any
 
 from .models import Candidate
+from .financial_normalization import financial_terms
 from .programme_catalog import edition_identity, programme_path
 from .publication import (
     is_archive_candidate,
@@ -86,7 +87,10 @@ def _public_record(candidate: Candidate, programme: dict[str, Any] | None) -> di
         "funding_available": candidate.funding_available,
         "funding_type": candidate.funding_type,
         "funding_scope": candidate.funding_scope,
+        "financial_terms": financial_terms(candidate).public_dict(),
         "topics": candidate.topic_keywords,
+        "primary_topics": candidate.primary_topics,
+        "secondary_topics": candidate.secondary_topics,
         "summary": candidate.summary,
         "summary_zh": candidate.summary_zh,
         "eligibility": candidate.eligibility,

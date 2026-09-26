@@ -60,11 +60,15 @@ def coerce_date(value: Any) -> date | None:
 
 
 def _coerce_candidate_value(name: str, value: Any) -> Any:
+    if name == "topic_evidence":
+        return {str(key): str(text) for key, text in value.items()} if isinstance(value, dict) else {}
     if name in {"start_date", "end_date", "deadline", "first_seen"}:
         return coerce_date(value)
     if name in {
         "funding_type",
         "topic_keywords",
+        "primary_topics",
+        "secondary_topics",
         "failed_hard_conditions",
         "failed_recommendation_conditions",
         "score_explanation",

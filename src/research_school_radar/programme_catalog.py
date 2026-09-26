@@ -6,6 +6,7 @@ from datetime import date
 from typing import Any
 
 from .models import Candidate
+from .topic_taxonomy import primary_topic_keywords
 from .localization import financial_summary_zh
 from .site_components import financial_summary_short, public_location
 from .site_paths import candidate_detail_href, slug
@@ -61,6 +62,8 @@ def build_programme_catalog(
         record["edition_count"] = len(editions)
         record["latest_edition"] = editions[0] if editions else None
         record["topics"] = _unique([str(topic) for edition in editions for topic in edition.get("topics", [])])
+        record["primary_topics"] = _unique([str(topic) for edition in editions
+                                             for topic in edition.get("primary_topics", edition.get("topics", []))])
         result.append(record)
     result.sort(key=_programme_sort_key)
     return {
@@ -135,6 +138,7 @@ def _new_programme(candidate: Candidate, key: str) -> dict[str, Any]:
         "summary": candidate.summary,
         "summary_zh": candidate.summary_zh,
         "topics": list(candidate.topic_keywords),
+        "primary_topics": primary_topic_keywords(candidate),
         "editions": [],
     }
 
@@ -173,6 +177,8 @@ def _edition_record(candidate: Candidate) -> dict[str, Any]:
         "funding_available": candidate.funding_available,
         "fee_eur": candidate.fee_eur,
         "topics": list(candidate.topic_keywords),
+        "primary_topics": primary_topic_keywords(candidate),
+        "secondary_topics": list(candidate.secondary_topics),
         "summary": candidate.summary,
         "summary_zh": candidate.summary_zh,
         "sessions": [

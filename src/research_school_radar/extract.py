@@ -17,6 +17,7 @@ from .location_extraction import _extract_location, _html_label_value as _html_l
 from .models import Candidate, Page, Source
 from .parse import OPPORTUNITY_TERMS, has_programme_signal, is_excluded_programme, is_workshop_title
 from .session_extraction import extract_programme_sessions
+from .topic_taxonomy import classify_topics, topic_match
 from .utils import clean_space, evidence_window, first_match, sanitize_location
 
 
@@ -299,6 +300,8 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     title = str(overrides.get("title") or "") or _extract_title(page) or _clean_title(str(overrides.get("jsonld_name", "")))
     if not title or is_workshop_title(title):
         return None
+    classification = classify_topics(title, topic_text, preferred_topics)
+    topics = classification.primary + classification.secondary
     eligibility = first_match(
         text,
         [
@@ -328,8 +331,8 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     )
 
     # Transparent confidence: the fraction of the four high-risk fields that were
-    # resolved. It measures how sure we are of the extraction, not how good the
-    # opportunity is.
+    # resolved. This is field completeness, not a calibrated probability that
+    # the values are correct or a measure of opportunity quality.
     resolved = sum(
         [
             deadline is not None,
@@ -342,7 +345,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     return Candidate(
         title=title,
         type=programme_type,
-        organizer=str(overrides.get("organizer") or _extract_organizer(page)),
+        organizer=str(overrides["organizer"] if "organizer" in overrides else _extract_organizer(page)),
         source_layer=str(page.source.layer),
         region_priority=_region_priority(page.source.region, profile),
         location=location,
@@ -356,7 +359,10 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         funding_type=funding_types,
         funding_evidence=funding_evidence,
         topic_keywords=topics,
-        eligibility=eligibility,
+        primary_topics=classification.primary,
+        secondary_topics=classification.secondary,
+        topic_evidence=classification.evidence,
+        eligibility=str(overrides.get("eligibility") or eligibility),
         target_level=_target_level(text),
         fee=fee,
         fee_eur=fee_eur,
@@ -371,6 +377,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         duration_evidence=duration_evidence,
         mode_evidence=overrides.get("mode_evidence") or _mode_evidence(text),
         extraction_confidence=round(resolved / 4, 2),
+        fee_evidence=str(overrides.get("fee_evidence") or fee),
     )
 
 
@@ -419,6 +426,11 @@ def _funding_is_offered(text: str, pattern: str) -> bool:
 
 
 def _funding_scope(text: str) -> str:
+    if re.search(r'For the accepted applicants, the total cost of accommodation and meals will be covered', text, re.I):
+        scope = 'Accommodation and meals covered'
+        if re.search(r'possible to ask for financial support to cover travel', text, re.I):
+            return scope + '; travel support may be requested; amount specified in acceptance letter.'
+        return scope + '; travel support is not stated.'
     if REGISTRATION_FEE_COVERAGE_RE.search(text):
         return "registration fee covered"
     return ""
@@ -431,6 +443,10 @@ def _funding_offer_evidence(text: str) -> str:
     Reuse the same nearby-offer requirement used for classification, preferring
     an explicit coverage statement when one is available.
     """
+    board = re.search(r'For the accepted applicants, the total cost of accommodation and meals will be covered\.', text, re.I)
+    if board:
+        travel = re.search(r'It is possible to ask for financial support to cover travel[^.]*\.', text, re.I)
+        return ' '.join(part for part in (board[0], travel[0] if travel else '') if part)
     scope_match = REGISTRATION_FEE_COVERAGE_RE.search(text)
     if scope_match:
         return _sentence_window(text, scope_match.start(), scope_match.end())
@@ -561,6 +577,8 @@ def _topic_source_text(page: Page, *, title_hint: str = "") -> str:
     root = soup.find("main") or soup.find("article") or soup.body or soup
     for element in root.find_all(["nav", "header", "footer", "aside", "script", "style", "noscript"]):
         element.decompose()
+    for element in root.select('.related-events, .related-posts, .sidebar, [role="navigation"], [role="complementary"]'):
+        element.decompose()
     content = clean_space(root.get_text(" "))
     return clean_space(f"{title_hint} {page.title} {content}")
 
@@ -652,10 +670,7 @@ def _extract_mode(text: str) -> str:
 
 
 def _topic_in_text(topic: str, text: str) -> bool:
-    flags = re.IGNORECASE
-    if len(topic) <= 3:
-        return re.search(rf"\b{re.escape(topic)}\b", text, flags=flags) is not None
-    return re.search(re.escape(topic), text, flags=flags) is not None
+    return topic_match(topic, text) is not None
 
 
 def _target_level(text: str) -> str:

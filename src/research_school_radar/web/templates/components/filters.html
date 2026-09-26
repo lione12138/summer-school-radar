@@ -12,7 +12,9 @@
       <label for="filter-topic" data-i18n="filter.topic">Topic</label>
       <select id="filter-topic">
         <option value="" data-i18n="filter.all.topic">All topics</option>
-        {% for topic in topics %}<option value="{{ topic.value }}" data-label-en="{{ topic.en }}" data-label-zh="{{ topic.zh }}">{{ topic.en }}</option>{% endfor %}
+        {% for topic in topics %}
+        <option value="{{ topic.value }}" data-label-en="{{ topic.en }}" data-label-zh="{{ topic.zh }}">{{ topic.en }}</option>
+        {% endfor %}
       </select>
     </div>
     <div class="filter-group">

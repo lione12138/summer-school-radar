@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+from copy import deepcopy
 from dataclasses import asdict
 from datetime import date
 from pathlib import Path
@@ -8,6 +9,8 @@ from typing import Any
 
 from .ai_review import ai_advisory_for_candidate
 from .models import Candidate
+from .financial_normalization import financial_review_reasons, financial_terms
+from .financial_evidence import benefit_facts
 from .rank import canonical_url
 from .atomic_io import write_text_atomic
 from .utils import is_too_short
@@ -30,6 +33,10 @@ FIELD_NAMES = {
     "funding_scope",
     "funding_evidence",
     "topic_keywords",
+    "primary_topics",
+    "secondary_topics",
+    "topic_evidence",
+    "evidence_sources",
     "eligibility",
     "target_level",
     "fee",
@@ -143,7 +150,23 @@ def write_review_queue(path: Path, candidates: list[Candidate], ai_items: list[d
     write_text_atomic(path, json.dumps(payload, indent=2, ensure_ascii=False, default=str) + "\n")
 
 
+def with_current_normalization_review(payload: dict[str, Any], candidates: list[Candidate]) -> dict[str, Any]:
+    """Add a live view without rewriting the historical scan or AI review."""
+    result = deepcopy(payload)
+    result['normalization_review'] = {
+        'generated': date.today().isoformat(),
+        'basis': 'current snapshot fields after maintainer corrections',
+        'records': [_review_item(candidate) for candidate in candidates
+                    if not candidate.is_past and not candidate.is_online_only
+                    and financial_review_reasons(candidate)],
+    }
+    return result
+
+
 def _matches(candidate: Candidate, override: dict[str, Any]) -> bool:
+    if "edition_year" in override:
+        if candidate.start_date is None or str(candidate.start_date.year) != str(override["edition_year"]):
+            return False
     identity_key = str(override.get("identity_key", "")).strip()
     if identity_key and identity_key == candidate.identity_key:
         return True
@@ -165,8 +188,18 @@ def _apply_override(candidate: Candidate, override: dict[str, Any]) -> None:
     for key, value in fields.items():
         if key not in FIELD_NAMES:
             continue
+        if key == "evidence_sources" and isinstance(value, dict):
+            candidate.evidence_sources = {**candidate.evidence_sources, **value}
+            continue
         setattr(candidate, key, _coerce_value(key, value))
     changed = {key for key, previous in before.items() if getattr(candidate, key) != previous}
+    if "topic_keywords" in changed:
+        if "primary_topics" not in fields:
+            candidate.primary_topics = []
+        if "secondary_topics" not in fields:
+            candidate.secondary_topics = []
+        if "topic_evidence" not in fields:
+            candidate.topic_evidence = {}
     for canonical, translated in _TRANSLATED_CANONICAL_FIELDS.items():
         if canonical in changed and translated not in fields:
             setattr(candidate, translated, "")
@@ -193,7 +226,7 @@ def _coerce_value(key: str, value: Any) -> Any:
         return float(value) if value not in {None, ""} else None
     if key in {"funding_available"}:
         return bool(value) if value is not None else None
-    if key in {"funding_type", "topic_keywords"}:
+    if key in {"funding_type", "topic_keywords", "primary_topics", "secondary_topics"}:
         if isinstance(value, list):
             return [str(item) for item in value if str(item).strip()]
         if isinstance(value, str) and value.strip():
@@ -213,6 +246,8 @@ def _parse_date(value: Any) -> date | None:
 
 
 def _needs_review(candidate: Candidate) -> bool:
+    if not candidate.is_past and not candidate.is_online_only and financial_review_reasons(candidate):
+        return True
     if candidate.fully_qualified or candidate.is_online_only:
         return False
     if candidate.deadline_status in {"closed", "not_open"}:
@@ -261,10 +296,21 @@ def _review_item(candidate: Candidate, ai_items: list[dict[str, Any]] | None = N
         "fee_eur": candidate.fee_eur,
         "topics": candidate.topic_keywords,
         "needs_review": [
+            *financial_review_reasons(candidate),
             *candidate.failed_hard_conditions,
             *candidate.failed_recommendation_conditions,
         ],
         "confidence": candidate.extraction_confidence,
+        "confidence_kind": "heuristic_not_calibrated_probability",
+        "field_completeness": sum((candidate.deadline is not None, candidate.duration_days is not None,
+                                   candidate.fee_eur is not None or bool(candidate.funding_evidence),
+                                   candidate.mode in {"in-person", "hybrid", "online"})) / 4,
+        "financial_terms": financial_terms(candidate).public_dict(),
+        "benefit_facts": [
+            {**asdict(fact), "source_url": candidate.evidence_sources.get("funding_evidence", candidate.source_url)}
+            for fact in benefit_facts(candidate.funding_evidence)
+        ],
+        "topic_evidence": candidate.topic_evidence,
         "evidence": {
             "deadline": candidate.deadline_evidence,
             "duration": candidate.duration_evidence,
