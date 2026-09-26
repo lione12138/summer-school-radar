@@ -103,9 +103,6 @@
       "topics": [
         "natural language processing"
       ],
-      "primary_topics": [
-        "natural language processing"
-      ],
       "editions": [
         {
           "id": "edition:3909b0afb0d1256d",
@@ -166,7 +163,10 @@
         "summary": "Application – Advanced Language Processing Winter School Skip to content Advanced Language Processing Winter School ALPS, 28th March – 2nd April 2027 Home Speakers Schedule Organizers Sponsors Application Venue Participant Voices Back Application The intended audience of ALPS 202",
         "summary_zh": "申请——高级语言处理冬季学校 跳至内容 高级语言处理冬季学校 ALPS，2027年3月28日至4月2日 首页 演讲嘉宾 日程 组织者 赞助方 申请 场地 参与者感言 返回 申请 ALPS 202 的目标受众",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "natural language processing"
+      ]
     },
     {
       "id": "programme:a7de8577eaec8d69",
