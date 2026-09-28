@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-09-27",
+  "generated": "2026-09-28",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -344,89 +344,6 @@
         "physics",
         "neutron science",
         "muon science"
-      ]
-    },
-    {
-      "id": "programme:7b9a68f3cc984b4a",
-      "slug": "training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assi-9d9a2282",
-      "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
-      "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
-      "organizer": "ECMWF Events (Indico)",
-      "organizer_zh": "ECMWF Events (Indico)",
-      "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
-      "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
-      "topics": [
-        "satellite",
-        "machine learning"
-      ],
-      "editions": [
-        {
-          "id": "edition:7f64cb13dd224bca",
-          "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
-          "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
-          "detail_path": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
-          "official_url": "https://events.ecmwf.int/event/577/",
-          "location": "ECMWF, Reading",
-          "location_zh": "ECMWF，雷丁",
-          "start_date": "2027-01-18",
-          "end_date": "2027-01-22",
-          "deadline": "2026-09-27",
-          "deadline_status": "open",
-          "duration_days": 5,
-          "mode": "in-person",
-          "financial_summary": "Fee EUR 0",
-          "financial_summary_zh": "费用 EUR 0",
-          "funding_available": null,
-          "fee_eur": 0.0,
-          "topics": [
-            "satellite",
-            "machine learning"
-          ],
-          "primary_topics": [
-            "satellite",
-            "machine learning"
-          ],
-          "secondary_topics": [],
-          "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
-          "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "edition:7f64cb13dd224bca",
-        "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
-        "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
-        "detail_path": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
-        "official_url": "https://events.ecmwf.int/event/577/",
-        "location": "ECMWF, Reading",
-        "location_zh": "ECMWF，雷丁",
-        "start_date": "2027-01-18",
-        "end_date": "2027-01-22",
-        "deadline": "2026-09-27",
-        "deadline_status": "open",
-        "duration_days": 5,
-        "mode": "in-person",
-        "financial_summary": "Fee EUR 0",
-        "financial_summary_zh": "费用 EUR 0",
-        "funding_available": null,
-        "fee_eur": 0.0,
-        "topics": [
-          "satellite",
-          "machine learning"
-        ],
-        "primary_topics": [
-          "satellite",
-          "machine learning"
-        ],
-        "secondary_topics": [],
-        "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
-        "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
-        "sessions": []
-      },
-      "primary_topics": [
-        "satellite",
-        "machine learning"
       ]
     },
     {
@@ -2583,6 +2500,178 @@
       ]
     },
     {
+      "id": "programme:ccbe33f932ca480b",
+      "slug": "training-course-data-assimilation-machine-learning-9bd61f9e",
+      "title": "Training course: Data assimilation & Machine Learning",
+      "title_zh": "培训课程：资料同化与机器学习",
+      "organizer": "ECMWF Events (Indico)",
+      "organizer_zh": "ECMWF Events (Indico)",
+      "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
+      "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
+      "topics": [
+        "satellite",
+        "AI",
+        "machine learning"
+      ],
+      "primary_topics": [
+        "satellite",
+        "AI",
+        "machine learning"
+      ],
+      "editions": [
+        {
+          "id": "edition:d31fd98a1919cefb",
+          "title": "Training course: Data assimilation & Machine Learning",
+          "title_zh": "培训课程：资料同化与机器学习",
+          "detail_path": "opportunities/training-course-data-assimilation-machine-learning-681b10c7.html",
+          "official_url": "https://events.ecmwf.int/event/578/",
+          "location": "ECMWF, Reading",
+          "location_zh": "ECMWF，雷丁",
+          "start_date": "2027-01-11",
+          "end_date": "2027-01-15",
+          "deadline": "2026-09-27",
+          "deadline_status": "closed",
+          "duration_days": 5,
+          "mode": "hybrid",
+          "financial_summary": "Fee about EUR 1176",
+          "financial_summary_zh": "费用约 EUR 1176",
+          "funding_available": null,
+          "fee_eur": 1176.0,
+          "topics": [
+            "satellite",
+            "AI",
+            "machine learning"
+          ],
+          "primary_topics": [
+            "satellite",
+            "AI",
+            "machine learning"
+          ],
+          "secondary_topics": [],
+          "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
+          "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:d31fd98a1919cefb",
+        "title": "Training course: Data assimilation & Machine Learning",
+        "title_zh": "培训课程：资料同化与机器学习",
+        "detail_path": "opportunities/training-course-data-assimilation-machine-learning-681b10c7.html",
+        "official_url": "https://events.ecmwf.int/event/578/",
+        "location": "ECMWF, Reading",
+        "location_zh": "ECMWF，雷丁",
+        "start_date": "2027-01-11",
+        "end_date": "2027-01-15",
+        "deadline": "2026-09-27",
+        "deadline_status": "closed",
+        "duration_days": 5,
+        "mode": "hybrid",
+        "financial_summary": "Fee about EUR 1176",
+        "financial_summary_zh": "费用约 EUR 1176",
+        "funding_available": null,
+        "fee_eur": 1176.0,
+        "topics": [
+          "satellite",
+          "AI",
+          "machine learning"
+        ],
+        "primary_topics": [
+          "satellite",
+          "AI",
+          "machine learning"
+        ],
+        "secondary_topics": [],
+        "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
+        "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
+        "sessions": []
+      }
+    },
+    {
+      "id": "programme:7b9a68f3cc984b4a",
+      "slug": "training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assi-9d9a2282",
+      "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
+      "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
+      "organizer": "ECMWF Events (Indico)",
+      "organizer_zh": "ECMWF Events (Indico)",
+      "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
+      "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
+      "topics": [
+        "satellite",
+        "machine learning"
+      ],
+      "editions": [
+        {
+          "id": "edition:7f64cb13dd224bca",
+          "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
+          "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
+          "detail_path": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
+          "official_url": "https://events.ecmwf.int/event/577/",
+          "location": "ECMWF, Reading",
+          "location_zh": "ECMWF，雷丁",
+          "start_date": "2027-01-18",
+          "end_date": "2027-01-22",
+          "deadline": "2026-09-27",
+          "deadline_status": "closed",
+          "duration_days": 5,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 0",
+          "financial_summary_zh": "费用 EUR 0",
+          "funding_available": null,
+          "fee_eur": 0.0,
+          "topics": [
+            "satellite",
+            "machine learning"
+          ],
+          "primary_topics": [
+            "satellite",
+            "machine learning"
+          ],
+          "secondary_topics": [],
+          "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
+          "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:7f64cb13dd224bca",
+        "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
+        "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
+        "detail_path": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
+        "official_url": "https://events.ecmwf.int/event/577/",
+        "location": "ECMWF, Reading",
+        "location_zh": "ECMWF，雷丁",
+        "start_date": "2027-01-18",
+        "end_date": "2027-01-22",
+        "deadline": "2026-09-27",
+        "deadline_status": "closed",
+        "duration_days": 5,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 0",
+        "financial_summary_zh": "费用 EUR 0",
+        "funding_available": null,
+        "fee_eur": 0.0,
+        "topics": [
+          "satellite",
+          "machine learning"
+        ],
+        "primary_topics": [
+          "satellite",
+          "machine learning"
+        ],
+        "secondary_topics": [],
+        "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
+        "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
+        "sessions": []
+      },
+      "primary_topics": [
+        "satellite",
+        "machine learning"
+      ]
+    },
+    {
       "id": "programme:fda9812e418fd1d6",
       "slug": "training-course-machine-learning-based-weather-forecasting-0c04d3ec",
       "title": "Training course: Machine Learning-based weather forecasting",
@@ -2746,9 +2835,44 @@
       "summary": "Training course: Use and interpretation of ECMWF products (5-October 8, 2026): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products O",
       "summary_zh": "培训课程：ECMWF产品的使用与解读（2026年10月5日至8日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读 O",
       "topics": [
+        "machine learning",
+        "physics",
         "design"
       ],
       "editions": [
+        {
+          "id": "edition:568fd82f77341813",
+          "title": "Training course: Use and interpretation of ECMWF products",
+          "title_zh": "培训课程：ECMWF产品的使用与解读",
+          "detail_path": "opportunities/training-course-use-and-interpretation-of-ecmwf-products-c6af8cd6.html",
+          "official_url": "https://events.ecmwf.int/event/576/",
+          "location": "ECMWF, Reading",
+          "location_zh": "ECMWF，雷丁",
+          "start_date": "2027-01-25",
+          "end_date": "2027-01-28",
+          "deadline": "2026-09-27",
+          "deadline_status": "closed",
+          "duration_days": 4,
+          "mode": "in-person",
+          "financial_summary": "Fee about EUR 936",
+          "financial_summary_zh": "费用约 EUR 936",
+          "funding_available": null,
+          "fee_eur": 936.0,
+          "topics": [
+            "machine learning",
+            "physics",
+            "design"
+          ],
+          "primary_topics": [
+            "machine learning",
+            "physics",
+            "design"
+          ],
+          "secondary_topics": [],
+          "summary": "Training course: Use and interpretation of ECMWF products (25-January 28, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products",
+          "summary_zh": "培训课程：ECMWF产品的使用与解读（2027年1月25日至28日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读",
+          "sessions": []
+        },
         {
           "id": "edition:45042ad358d74f1a",
           "title": "Training course: Use and interpretation of ECMWF products",
@@ -2779,18 +2903,18 @@
           "sessions": []
         }
       ],
-      "edition_count": 1,
+      "edition_count": 2,
       "latest_edition": {
-        "id": "edition:45042ad358d74f1a",
+        "id": "edition:568fd82f77341813",
         "title": "Training course: Use and interpretation of ECMWF products",
         "title_zh": "培训课程：ECMWF产品的使用与解读",
-        "detail_path": "opportunities/training-course-use-and-interpretation-of-ecmwf-products-c8cc5108.html",
-        "official_url": "https://events.ecmwf.int/event/543/",
+        "detail_path": "opportunities/training-course-use-and-interpretation-of-ecmwf-products-c6af8cd6.html",
+        "official_url": "https://events.ecmwf.int/event/576/",
         "location": "ECMWF, Reading",
         "location_zh": "ECMWF，雷丁",
-        "start_date": "2026-10-05",
-        "end_date": "2026-10-08",
-        "deadline": "2026-06-28",
+        "start_date": "2027-01-25",
+        "end_date": "2027-01-28",
+        "deadline": "2026-09-27",
         "deadline_status": "closed",
         "duration_days": 4,
         "mode": "in-person",
@@ -2799,17 +2923,23 @@
         "funding_available": null,
         "fee_eur": 936.0,
         "topics": [
+          "machine learning",
+          "physics",
           "design"
         ],
         "primary_topics": [
+          "machine learning",
+          "physics",
           "design"
         ],
         "secondary_topics": [],
-        "summary": "Training course: Use and interpretation of ECMWF products (5-October 8, 2026): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products O",
-        "summary_zh": "培训课程：ECMWF产品的使用与解读（2026年10月5日至8日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读 O",
+        "summary": "Training course: Use and interpretation of ECMWF products (25-January 28, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products",
+        "summary_zh": "培训课程：ECMWF产品的使用与解读（2027年1月25日至28日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读",
         "sessions": []
       },
       "primary_topics": [
+        "machine learning",
+        "physics",
         "design"
       ]
     },
