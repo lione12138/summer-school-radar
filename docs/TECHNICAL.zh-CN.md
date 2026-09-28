@@ -237,9 +237,8 @@ python -m research_school_radar.cli scan --include-discovery --enable-semantic -
 Serper 与 Brave 也可以分别启用；不传 `--include-discovery` 时，不会进行
 跨站广搜。
 
-GitHub Actions 的 `discovery` 开关只对手动 `audit` 模式生效，并从仓库
-Secret 读取 `SERPER_API_KEY`。发布型 `ai`、云端定时刷新和本地定时扫描
-都不会运行 Serper。
+GitHub Actions 的 `discovery` 开关适用于手动 `audit` 和 `ai` 模式，从仓库
+Secret 读取 `SERPER_API_KEY`。本地完整扫描自动启用 discovery；仅刷新状态时不搜索。
 现有仓库也可以使用兼容名称 `SERPER_SEARCH_API_KEY`。
 
 语义阶段仍可保留最多 150 页；进入 DeepSeek 前再排除 listing/通用页、
@@ -478,3 +477,24 @@ ALPS 仅合并来源配置中明确登记且属于同届的主页、申请页和
 后续校验：`financial_evidence.py` 提取住宿、餐食和差旅各自的证据事实，先识别否定与转折，再判断覆盖范围。覆盖声明互相矛盾时触发公开展示硬门禁，并进入整条记录审计。待确认价格不能作为低费用推荐或排序加分依据；自费卡片和详情明确显示“价格待确认”。无网络状态刷新为站点内部复核文件增加 `normalization_review` 当前视图，同时保留完整扫描的历史队列及 AI 审计信息，不改写源数据队列。当前视图每次重新计算，已经解决的问题会消失。AI 补充主题时保留旧快照标签的主分类身份，但不会为旧标签伪造证据。
 
 主题词表新增 hydrologists/hydrological 及日文中性子、ミュオン别名。维护的关联学科将水文学关联到水资源、地球科学，将中子/μ子科学关联到物理学；关联标签属于基于原文证据的 taxonomy 归类，不表示原文逐字列出了全部标签。
+
+
+GGI 来源接入（2026-09-26）：新增四个明确登记的学校年度详情页，由 `ggi_adapter.py` 读取学校标记、标题、课程日期和申请截止日。适配器不处理会议或目录页；限额住宿资助与学费分开，未明确的费用和授课形式继续遵守发布门槛。Imbizo 暂以禁用状态登记，待 2027 年 1 月开放申请及完成解析验证后启用。新增来源须经后续完整扫描及质量门槛，才可能产生公开记录。
+
+
+## Discovery 发布与运行隔离（2026-09-28）
+
+定时任务通过 `run_scheduled_scan.ps1` 使用独立的持久 clone 和文件锁，运行已提交 main，
+生成状态与开发目录分离，本地密钥仅复制到忽略文件。开发修改不会复制、重置或阻断任务。
+原有健康、AI 输出、快照保留率门槛、推送重试及唯一 Pages 发布者保持不变；运行目录脏时返回非零。
+
+Discovery 只增加普通 Page 输入，保留 discovery 来源标记。每次最多 24 条基础查询、
+8 条官方页解析查询、40 个新结果页。抓取前和每次重定向检查公网 DNS，限制时间、HTML 大小和跳转次数。
+搜索异常可见并安全降级，固定源继续工作；不自动改写来源表。现有 record audit 必须明确确认
+官方来源、科研训练身份、已抓取的申请入口，并引用有效 evidence ID 和原文。缺失、失败或预算外
+未审核的发现记录不得发布。批准仅保存在展示副本的 discovery_verified 字段中，供无网络刷新复用；
+原始 scanner/RSS 记录仍不获批准，最终发布继续遵守硬规则。审核 sidecar 保存拒绝原因，后续扫描通过
+现有证据缓存重试，不新增 quarantine 状态机。
+
+离线 benchmark 固定日期，回放 30 个官方页案例和 10 个合成边界，区分抽取召回与发布 precision/recall，
+并在 pytest 中检查总指标和逐案例回退。这不是全网搜索召回率，限制见 benchmarks/README.md。

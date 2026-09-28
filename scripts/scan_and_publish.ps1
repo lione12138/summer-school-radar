@@ -405,7 +405,7 @@ try {
     }
     if ($repoChanges) {
         Log "Working tree has uncommitted or untracked changes. Skipping to protect user work."
-        exit 0
+        exit 1
     }
 
     $currentBranch = (& git branch --show-current).ToString().Trim()
@@ -480,7 +480,7 @@ try {
         Run { python -m research_school_radar.search_healthcheck --provider brave --strict }
         Log "Running AI-assisted full source scan from the local residential connection"
         $generatedRunStarted = $true
-        Run { python -m research_school_radar.cli scan --enable-semantic --enable-llm-extraction --no-readme-update }
+        Run { python -m research_school_radar.cli scan --include-discovery --enable-semantic --enable-llm-extraction --no-readme-update }
         Run { python -m research_school_radar.ai_output_validation --site-dir site }
     } else {
         Log "Running no-network status refresh from latest generated candidates"

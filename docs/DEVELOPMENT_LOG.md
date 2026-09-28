@@ -461,3 +461,37 @@ Reproduced three boundary errors: negative coverage interpreted as positive; inc
 Separated adjacent topic option text nodes while retaining independent option values. Added hydrology morphology and Japanese neutron/muon aliases with explicit related discipline mappings; corrected the existing IAHS/J-PARC editions and the future collector path. A counterfactual regression verifies Federalism qualifies as low-fee at EUR 400 but not at EUR 200; its limited scholarship never qualifies as recommendation funding.
 
 Validation: 142 extraction/normalization tests passed, followed by 56 focused topic, localization, collector and UI tests. Rebuilt the bilingual site; public API and rendered Chinese DOM confirm both discipline sets and separate mathematics options. Federalism data-funding is low-fee. Site integrity passed.
+
+
+## 2026-09-26 — GGI source expansion
+
+Added four official edition roots: Theory Meets Experiment 2026 (id 571), Fundamental Interactions 2027 (572), Statistical Field Theories 2027 (570), and Nuclear and Hadronic Physics 2027 (579). All four pages fetched successfully in the local collector replay. The generic extractor previously returned no candidate for these school titles; a path/markup-scoped adapter now reads their identity and dates. Real-page replay exposed a false zero-fee inference from limited free accommodation; the adapter removes that benefit sentence before participant-fee parsing and retains the quota/request evidence. Other fees, delivery mode and venue are not invented. Edition URLs require annual review.
+
+Imbizo (https://imbizo.africa/, application/fee evidence https://imbizo.africa/apply/) is a disabled watch source: 2027 applications open on 5 January, EUR 1650 with conditional bursaries. The African School of Physics website returned an anti-bot page during verification and was not enabled. No curated records, source snapshots or production deployment were changed in this batch.
+
+
+## 2026-09-28 — Scheduled scanning, bounded discovery and pilot benchmark
+
+Evidence: `logs/scan-2026-09-25.log` and `logs/scan-2026-09-28.log` both show the
+scheduler started, then exited before scanning because the developer working tree
+was dirty. Task Scheduler reported success (0), masking the missed scans. This was
+not a 70% source-coverage, Playwright, retention or network failure. The solution is
+an independent persistent production clone with a file lock, not weaker dirty-tree
+protection or per-source snapshot reconstruction. An integration test modifies a
+tracked script and adds an untracked file, then proves the production runner uses
+committed code and leaves both developer changes intact.
+
+Scheduled full scans now opt into Serper discovery, bounded to 24 base queries,
+8 official-resolution queries and 40 result pages. Results remain ordinary Page
+inputs. The existing final audit additionally validates discovery provenance and
+research-training identity against literal fetched evidence, and confirms the
+fetched application route. Missing or failed audit cannot authorize discovery
+publication. AI-only candidates preserve discovery provenance; raw scanner/RSS
+records do not inherit display approval. No registry promotion or extra LLM stage.
+
+The 40-case pilot benchmark contains 30 cached official pages (29 programmes) and
+10 synthetic boundaries, at fixed reference date 2026-09-28. Baseline: 35/38 known
+extractable pages, 6/9 eligible publication cases, 0 false positives. The three
+ECMWF misses remain visible. This is an offline extraction/publication benchmark,
+not a measurement of whole-web search recall or independently human-labelled gold.
+Full suite: 557 passed; two subsequent AI-origin preservation cases also passed.

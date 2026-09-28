@@ -298,10 +298,12 @@ Broad cross-site discovery is a separate opt-in stage. When
 controlled queries in `config/queries.yaml` run through Serper. Those results
 first pass deterministic social-domain, aggregator, programme-type, date, and
 official-signal filters before any result page is fetched. Accepted results
-remain labelled as discovery sources. Project automation does not use Serper
-in normal or publishing runs; the GitHub workflow permits it only in
-non-publishing manual `audit` mode. Brave remains responsible for precise
-same-domain follow-up.
+remain labelled as discovery sources. Scheduled full scans enable bounded Serper
+discovery; GitHub manual `ai` and `audit` runs can enable it too. New records
+require evidence-backed official-source, research-training and application-link
+verification in the existing final audit, plus deterministic publication gates.
+No domain is automatically added to the fixed source registry. Brave remains
+responsible for precise same-domain follow-up.
 
 The follow-up prompt distinguishes application/registration deadlines from
 payment, accommodation, scholarship, travel-grant, and abstract deadlines. It
@@ -454,8 +456,7 @@ single-writer job. `BRAVE_SEARCH_API_KEY` and `HF_TOKEN` remain optional.
 `SERPER_API_KEY` is separately optional and is used only by explicitly enabled
 broad discovery; it is not part of the normal trusted-source scan.
 `SERPER_SEARCH_API_KEY` is accepted as a compatibility alias.
-The `discovery` input is honored only when manually dispatching `mode=audit`;
-publishing `mode=ai` always remains fixed-source plus Brave refinement. Use
+The `discovery` input is honored in manual `mode=audit` and `mode=ai`. Use
 `mode=audit` first when evaluating search or prompt changes. It runs the
 same source, Serper, Brave, semantic, DeepSeek, translation, and validation
 stages, but never commits snapshots or publishes Pages. The workflow uploads a
@@ -510,3 +511,10 @@ This project uses two licenses:
 
 The underlying opportunity details are public facts gathered from the organisers' own pages; always confirm dates, deadlines, and funding on the official page before applying. If you republish the listings, attribution and a link back are required under CC BY 4.0, and a visible canonical-source marker is embedded in the generated output.
 
+
+
+Scheduled scans now run through `scripts/run_scheduled_scan.ps1` in a persistent
+isolated clone under `%LOCALAPPDATA%/Summa`. Uncommitted developer changes do not
+block production scans. Runtime failures return nonzero for scheduler retries.
+The 40-case offline benchmark is documented in [benchmarks/README.md](benchmarks/README.md);
+run `python -m research_school_radar.benchmark` for precision and recall baselines.

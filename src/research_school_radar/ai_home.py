@@ -244,7 +244,7 @@ def _candidate_from_ai(item: dict[str, Any], profile: dict[str, Any]) -> Candida
         title=title,
         type=event_type,
         organizer=clean_space(str(item.get("source_name", ""))) or "Official source",
-        source_layer="AI",
+        source_layer="discovery" if item.get("source_layer") == "discovery" or str(item.get("source_name", "")).startswith("Discovery:") else "AI",
         region_priority="global",
         location=sanitize_location(location, fallback=location),
         mode=mode,

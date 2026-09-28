@@ -20,7 +20,7 @@ $ErrorActionPreference = "Stop"
 # scheduled task instead of creating a duplicate.
 $taskName = "SummerSchoolRadar-DailyScan"
 $repo = Split-Path -Parent $PSScriptRoot
-$script = Join-Path $repo "scripts\scan_and_publish.ps1"
+$script = Join-Path $repo "scripts\run_scheduled_scan.ps1"
 
 if (-not (Test-Path $script)) {
     throw "Cannot find scan script at $script"

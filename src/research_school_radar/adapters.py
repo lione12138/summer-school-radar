@@ -32,6 +32,7 @@ from .us_school_adapters import dl4sci, neutron_school
 from .australia_adapters import amsi_winter, acan, ansto_neutron, unsw_economics
 from .asia_adapters import astroai, viasm, camp
 from .csha_adapter import csha_course
+from .ggi_adapter import ggi_school
 
 
 def resolve_overrides(page: Page) -> dict[str, Any]:
@@ -359,6 +360,7 @@ def _iso_or_none(value: Any) -> date | None:
 
 
 _ADAPTERS: dict[str, Callable[[Page], dict[str, Any]]] = {
+    "ggi.infn.it": ggi_school,
     "digits.ut.ee": esslli_tartu,
     "trisep.ca": trisep,
     "dl4sci-school.lbl.gov": dl4sci,

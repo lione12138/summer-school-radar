@@ -152,3 +152,29 @@ def _run(command: list[str], *, cwd: Path) -> subprocess.CompletedProcess[str]:
         timeout=20,
         check=True,
     )
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Windows scheduler isolation")
+def test_runtime_runs_committed_code_while_developer_tree_is_dirty(tmp_path):
+    repo = tmp_path / "development"
+    repo.mkdir()
+    (repo / "scripts").mkdir()
+    launcher = SCRIPT.with_name("run_scheduled_scan.ps1")
+    shutil.copy2(launcher, repo / "scripts" / launcher.name)
+    (repo / "scripts" / SCRIPT.name).write_text(
+        'param([string]$Mode)\nWrite-Output "ISOLATED:$Mode"\nexit 0\n', encoding="utf-8")
+    _run(["git", "init", "-b", "main"], cwd=repo)
+    _run(["git", "config", "user.name", "Test"], cwd=repo)
+    _run(["git", "config", "user.email", "test@example.invalid"], cwd=repo)
+    _run(["git", "add", "."], cwd=repo)
+    _run(["git", "commit", "-m", "Production runner"], cwd=repo)
+    _run(["git", "remote", "add", "origin", str(tmp_path / "remote.git")], cwd=repo)
+    (repo / "scripts" / SCRIPT.name).write_text('throw "Developer edits must not run"', encoding="utf-8")
+    (repo / "untracked.txt").write_text("Keep this", encoding="utf-8")
+    before = _run(["git", "status", "--porcelain"], cwd=repo).stdout
+    result = _run(["powershell.exe", "-NoProfile", "-ExecutionPolicy", "Bypass", "-File",
+                   str(repo / "scripts" / launcher.name), "-RuntimePath", str(tmp_path / "runtime"),
+                   "-Mode", "Full"], cwd=repo)
+    assert "ISOLATED:Full" in result.stdout
+    assert _run(["git", "status", "--porcelain"], cwd=repo).stdout == before
+    assert (repo / "untracked.txt").read_text() == "Keep this"

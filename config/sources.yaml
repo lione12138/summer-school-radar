@@ -1,4 +1,48 @@
 sources:
+  - name: GGI Theory Meets Experiment
+    url: https://www.ggi.infn.it/single-school.php?id=571
+    layer: 1
+    region: continental Europe
+    source_type: summer_school
+    programme_key: ggi-theory-meets-experiment
+    keywords: [gravitational waves, physics, astrophysics]
+    notes: Official 2026 research school detail page; annual edition URL review required. Do not inherit fees or support from another GGI school.
+  - name: GGI Fundamental Interactions
+    url: https://www.ggi.infn.it/single-school.php?id=572
+    layer: 1
+    region: continental Europe
+    source_type: summer_school
+    programme_key: ggi-fundamental-interactions
+    keywords: [particle physics, quantum field theory, cosmology]
+    notes: Official 2027 PhD school; annual edition URL review required. Fees and funding remain unknown unless this edition explicitly states them.
+  - name: GGI Statistical Field Theories
+    url: https://www.ggi.infn.it/single-school.php?id=570
+    layer: 1
+    region: continental Europe
+    source_type: summer_school
+    programme_key: ggi-statistical-field-theories
+    keywords: [statistical physics, quantum field theory, condensed matter]
+    notes: Official 2027 PhD school; annual edition URL review required. Free accommodation is limited to about thirty of fifty students upon request, not universal funding or free tuition.
+  - name: GGI Nuclear and Hadronic Physics
+    url: https://www.ggi.infn.it/single-school.php?id=579
+    layer: 1
+    region: continental Europe
+    source_type: summer_school
+    programme_key: ggi-nuclear-hadronic-physics
+    keywords: [nuclear physics, hadronic physics, nuclear astrophysics]
+    notes: Official 2027 PhD research school; annual edition URL review required. Preserve missing fee and support information as unknown.
+  - name: Simons Computational Neuroscience Imbizo
+    url: https://imbizo.africa/
+    enabled: false
+    layer: 1
+    region: Africa
+    source_type: research_training_provider
+    programme_key: simons-computational-neuroscience-imbizo
+    evidence_urls:
+      application: https://imbizo.africa/apply/
+      fees: https://imbizo.africa/apply/
+    keywords: [computational neuroscience, neuroscience, neural networks]
+    notes: Verified 2027 school, application opens 5 January 2027. Disabled pending opening and extraction validation; EUR 1650 fee and conditional bursaries must remain separate. Sponsor logos are not participant funding evidence.
   - name: CSHA Computational and Cognitive Neuroscience
     url: https://www.csh-asia.org/?content/3046
     layer: 1

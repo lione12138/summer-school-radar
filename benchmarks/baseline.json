@@ -1,0 +1,339 @@
+{
+  "as_of": "2026-09-28",
+  "cases": 40,
+  "known_pages": 38,
+  "found": 35,
+  "extraction_recall": 0.9210526315789473,
+  "eligible": 9,
+  "correctly_published": 6,
+  "false_positives": 0,
+  "publication_precision": 1.0,
+  "publication_recall": 0.6666666666666666,
+  "misses": [
+    "official-003",
+    "official-055",
+    "official-058"
+  ],
+  "results": [
+    {
+      "id": "official-002",
+      "found": true,
+      "published": true,
+      "expected_found": true,
+      "expected_publish": true,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-003",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": true,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-011",
+      "found": true,
+      "published": true,
+      "expected_found": true,
+      "expected_publish": true,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-012",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-014",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-015",
+      "found": false,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-033",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-037",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-039",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-043",
+      "found": true,
+      "published": true,
+      "expected_found": true,
+      "expected_publish": true,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-050",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-051",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-052",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-053",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-055",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": true,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-058",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": true,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-060",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-061",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-063",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-064",
+      "found": false,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-067",
+      "found": false,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-068",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-069",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-070",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-071",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-072",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-073",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-074",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-075",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "official-076",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "official_capture"
+    },
+    {
+      "id": "boundary-free",
+      "found": true,
+      "published": true,
+      "expected_found": true,
+      "expected_publish": true,
+      "kind": "synthetic_boundary"
+    },
+    {
+      "id": "boundary-low-fee",
+      "found": true,
+      "published": true,
+      "expected_found": true,
+      "expected_publish": true,
+      "kind": "synthetic_boundary"
+    },
+    {
+      "id": "boundary-expensive",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "synthetic_boundary"
+    },
+    {
+      "id": "boundary-conditional",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "synthetic_boundary"
+    },
+    {
+      "id": "boundary-closed",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "synthetic_boundary"
+    },
+    {
+      "id": "boundary-online",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "synthetic_boundary"
+    },
+    {
+      "id": "boundary-short",
+      "found": true,
+      "published": false,
+      "expected_found": true,
+      "expected_publish": false,
+      "kind": "synthetic_boundary"
+    },
+    {
+      "id": "boundary-conference",
+      "found": false,
+      "published": false,
+      "expected_found": false,
+      "expected_publish": false,
+      "kind": "synthetic_boundary"
+    },
+    {
+      "id": "boundary-degree",
+      "found": false,
+      "published": false,
+      "expected_found": false,
+      "expected_publish": false,
+      "kind": "synthetic_boundary"
+    },
+    {
+      "id": "boundary-multi-session",
+      "found": true,
+      "published": true,
+      "expected_found": true,
+      "expected_publish": true,
+      "kind": "synthetic_boundary"
+    }
+  ]
+}

@@ -79,6 +79,7 @@ class Candidate:
     # deliberately separate from source/application URLs: one catalogue page
     # can describe many distinct opportunities.
     identity_key: str = ""
+    discovery_verified: bool = False
     # Stable recurring-programme identity. One programme can have multiple
     # dated editions; collectors/overrides may provide this explicitly, while
     # the site catalogue derives a conservative fallback when it is absent.

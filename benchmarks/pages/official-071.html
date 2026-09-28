@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="University of Exeter" name="author"/><title>Exeter Machine Learning Summer School | Computer Science | University of Exeter</title><meta content="Exeter Machine Learning Summer School | Computer Science | University of Exeter" property="og:title"/><meta content="https://www.exeter.ac.uk/v8media/global/images/opengraph-logo.jpg" property="og:image"/><meta content="website" property="og:type"/><meta content="en_GB" property="og:locale"/><meta content="University of Exeter" property="og:site_name"/><link href="/v8media/global/images/favicon.ico" rel="shortcut icon"/>
+<!-- navigation object : Monsido deep linking nav object --><meta name="pageid" value="91424">
+<link href="https://computerscience.exeter.ac.uk/machine-learning-summer-school/" rel="canonical">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"CollegeOrUniversity","url":"https://www.exeter.ac.uk/","name":"University of Exeter","logo":"https://www.exeter.ac.uk/v8media/global/images/UOE-green.svg","description":"The University of Exeter combines world-class research with excellent student satisfaction, from our campuses in the South West of England, in Exeter and Cornwall.","contactPoint":[{"@type":"ContactPoint","telephone":"+44 (0) 1392 661000","contactType":"customer service"}],"sameAs":["https://www.facebook.com/exeteruni","https://twitter.com/uniofexeter","https://www.youtube.com/user/universityofexeter","https://www.linkedin.com/school/university-of-exeter","https://www.instagram.com/uniofexeter/","https://bsky.app/profile/exeter.ac.uk","https://www.tiktok.com/@uniofexeter","https://www.threads.com/@uniofexeter","https://www.weibo.com/exeteruni","https://en.wikipedia.org/wiki/University_of_Exeter","https://www.ucas.com/explore/unis/91fd2fa0/university-of-exeter","https://www.russellgroup.ac.uk/our-universities/university-exeter","https://www.topuniversities.com/universities/university-exeter","https://www.thecompleteuniversityguide.co.uk/universities/university-of-exeter","https://www.timeshighereducation.com/world-university-rankings/university-exeter"]},{"@type":"WebPage","name":"Exeter Machine Learning Summer School | Computer Science | University of Exeter","url":"https://computerscience.exeter.ac.uk/machine-learning-summer-school/","dateModified":"2026-05-22","lastReviewed":"2026-05-22","mainEntity":{"@type":"CollegeOrUniversity","name":"University of Exeter","url":"https://www.exeter.ac.uk/"}},{"@type":"BreadcrumbList","name":null,"itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":{"@id":"https://www.exeter.ac.uk/","@type":"WebPage","name":"Home"}},{"@type":"ListItem","position":2,"name":"Faculties","item":{"@id":"https://www.exeter.ac.uk/faculties/","@type":"WebPage","name":"Faculties"}},{"@type":"ListItem","position":3,"name":"Faculty of Environment, Science and Economy","item":{"@id":"https://www.exeter.ac.uk/faculties/ese/","@type":"WebPage","name":"Faculty of Environment, Science and Economy"}},{"@type":"ListItem","position":4,"name":"Our departments","item":{"@id":"https://www.exeter.ac.uk/faculties/ese/departments/","@type":"WebPage","name":"Our departments"}},{"@type":"ListItem","position":5,"name":"Department of Computer Science","item":{"@id":"https://computerscience.exeter.ac.uk/","@type":"WebPage","name":"Department of Computer Science"}},{"@type":"ListItem","position":6,"name":"Exeter Machine Learning Summer School","item":{"@id":"https://computerscience.exeter.ac.uk/machine-learning-summer-school/","@type":"WebPage","name":"Exeter Machine Learning Summer School"}}]}]}</script>
+<link href="https://www.googletagmanager.com" rel="preconnect"/><link href="https://cdn-ukwest.onetrust.com" rel="preconnect"/>
+
+
+<link as="font" crossorigin="anonymous" href="/v8media/global/css/fonts/outfit-v11-latin_latin-ext-regular.woff2" rel="preload" type="font/woff2"/><link as="font" crossorigin="anonymous" href="/v8media/global/css/fonts/outfit-v11-latin_latin-ext-700.woff2" rel="preload" type="font/woff2"/>
+<link href="/v8media/global/css/global-stylesheet-v1.2.8.css" media="screen" rel="stylesheet" type="text/css">
+<link href="" rel="stylesheet"/>
+
+
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://www.exeter.ac.uk/v8media/codebox/profiles/staff-profiles.css" rel="stylesheet"/>
+
+
+</link></link></meta></head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+
+<!-- End Google Tag Manager (noscript) -->
+<header id="site-header">
+<a aria-label="Skip to main content" class="sr-only sr-only-focusable" href="#main-col" id="skip-to-content">Skip to main content</a>
+<!-- header starts -->
+<div aria-label="Site search" id="site-search" role="search">
+<div class="panel-collapse collapse container" id="site-search-collapse">
+<div class="panel-body">
+<form action="https://search.exeter.ac.uk/s/search.html" autocomplete="off" method="GET">
+<input id="globalcollection" name="collection" type="hidden" value="uoe~sp-search"/>
+<div class="input-group">
+<input class="input-lg" id="search_param" name="search_param" type="hidden" value="all"/>
+<input aria-label="Search website" autofocus="" class="form-control input-lg" id="global-search" name="query" placeholder="Search the website" type="text"/>
+<span class="input-group-btn">
+<button aria-label="search all" class="btn button btn-lg input-lg" type="submit">Search all</button>
+</span> </div>
+</form>
+</div>
+</div>
+</div>
+<nav aria-label="Global navigation" class="navbar" id="header"><div class="container"><div class="row">
+<a href="https://www.exeter.ac.uk" id="logo">
+<img alt="University of Exeter" src="https://www.exeter.ac.uk/v8media/recruitmentsites/images/homepage/uoe-logo.svg"/>
+</a>
+
+<div id="site-nav" style="display: flex;align-items: center;gap: 5px;">
+<button aria-label="Quick links" class="fa fa-bars btn btn-link visible-xs hidden-sm hidden-md hidden-lg" data-parent="#accordion" data-target="#header-navbar" data-toggle="collapse" id="quick-links-but" type="button"></button>
+<button aria-label="Website search" class="fa fa-search btn btn-link" data-parent="#accordion" data-target="#site-search-collapse" data-toggle="collapse" type="button"></button>
+</div>
+<div class="navbar-collapse collapse" data-animations="fadeInDown" data-hover="dropdown" id="header-navbar">
+<ul class="nav navbar-nav">
+<li class="dropdown dropdown-megamenu"><button class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button">Study <span class="caret"></span></button>
+<div class="dropdown-container dropdown-menu dropdownhover-bottom">
+<div class="container">
+<div class="col-sm-6 col-md-4">
+<p class="col-title"><a href="https://www.exeter.ac.uk/study/">Studying at Exeter <i class="fas fa-chevron-right"></i></a></p>
+<ul>
+<li><a href="https://www.exeter.ac.uk/study/chooseexeter/">Why choose Exeter?</a></li>
+<li><a href="https://www.exeter.ac.uk/our-campuses/">Our campuses</a></li>
+<li><a href="https://www.exeter.ac.uk/study/accommodation/">Accommodation</a></li>
+<li><a href="https://www.exeter.ac.uk/student-life/">Student life</a></li>
+<li><a href="https://voices.exeter.ac.uk/" target="_blank">Student Voices blog</a></li>
+<li><a href="https://www.exeter.ac.uk/study/careers/">Careers</a></li>
+<li><a href="https://www.exeter.ac.uk/study/funding/">Funding and scholarships</a></li>
+<li><a href="https://www.exeter.ac.uk/international-students/">International students</a></li>
+</ul>
+</div>
+<div class="col-sm-6 col-md-4">
+<p class="col-title">Levels of study</p>
+<ul>
+<li><a href="https://www.exeter.ac.uk/undergraduate-degrees/">Undergraduate courses</a></li>
+<li><a href="https://www.exeter.ac.uk/masters-degrees/">Masters courses</a></li>
+<li><a href="https://www.exeter.ac.uk/study/pg-research/degrees/">PhDs and research degrees</a></li>
+<li><a href="https://www.exeter.ac.uk/online-courses/">Online degrees and courses</a></li>
+<li><a href="https://www.exeter.ac.uk/degree-apprenticeships/">Degree Apprenticeships</a></li>
+<li><a href="https://www.exeter.ac.uk/study/professional-education/">Professional Education</a></li>
+<li><a href="https://www.exeter.ac.uk/teacher-training/">Teacher Training (PGCE)</a></li>
+<li><a href="https://www.exeter.ac.uk/subjects/">Browse by subject area</a></li>
+</ul>
+</div>
+<div class="col-sm-6 col-md-4 dark-link">
+<p><a class="call-to-action button arrow-icon" href="https://www.exeter.ac.uk/open-days/">Come to an Open Day</a></p>
+<p><a class="call-to-action button arrow-icon" href="https://www.exeter.ac.uk/study/sign-up/">Register your interest</a></p>
+<p class="col-title">Find a course</p>
+<form action="https://search.exeter.ac.uk/s/search.html" method="GET">
+<input id="collection" name="collection" type="hidden" value="uoe~sp-search"/>
+<input name="f.Tabs|uoe~ds-courses" type="hidden" value="Courses"/>
+<div class="input-group">
+<input aria-label="Search courses" autocomplete="off" class="form-control input-lg" id="query" name="query" placeholder="Search courses" style="color:#003b3c;" type="text"/>
+<span class="input-group-btn">
+<button aria-label="search" class="btn button btn-lg input-lg" type="submit"><span class="fa fa-search"></span></button>
+</span>
+</div>
+</form>
+</div>
+</div>
+</div>
+<!-- /dropdown-container -->
+</li>
+<li class="dropdown dropdown-megamenu"><button class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button">Research <span class="caret"></span></button>
+<div class="dropdown-container dropdown-menu dropdownhover-bottom">
+<div class="container">
+<div class="col-sm-6 col-md-4">
+<a href="https://www.exeter.ac.uk/research/">
+<p class="col-title">Our world-leading research <i class="fas fa-chevron-right"></i></p>
+<p><img alt="Research" decoding="async" fetchpriority="low" loading="lazy" src="https://www.exeter.ac.uk/v8media/global/images/webp/clinic.webp"/></p>
+<p>Our research is changing the world - making it greener, healthier and fairer.</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4">
+<a href="https://www.exeter.ac.uk/study/pg-research/">
+<p class="col-title">PhDs and research degrees  <i class="fas fa-chevron-right"></i></p>
+<p><img alt="Students" decoding="async" fetchpriority="low" loading="lazy" src="https://www.exeter.ac.uk/v8media/global/images/webp/phd.webp"/></p>
+<p>We are committed to nurturing talent and encouraging new ideas, making Exeter a great place to pursue Postgraduate Research.</p>
+</a>
+</div>
+<div class="col-sm-6 col-md-4">
+<a href="https://www.exeterinnovation.com/">
+<p class="col-title">Exeter Innovation <i class="fas fa-chevron-right"></i></p>
+<p><img alt="Hand holding pencil" decoding="async" fetchpriority="low" loading="lazy" src="https://www.exeter.ac.uk/v8media/global/images/webp/transformational-change930x400.webp"/>
+</p>
+<p>Exeter Innovation is a partner for transformative innovation. We harness the world leading research and education of the University of Exeter to create real and lasting impact, by working with organisations of all types and sizes on their innovation journey.</p>
+</a> </div>
+</div>
+</div>
+<!-- /dropdown-container -->
+</li>
+<li><a href="https://www.exeterinnovation.com/" target="_blank">For business</a></li>
+<li><a href="https://www.exeter.ac.uk/global/">Global</a></li>
+<li> <a href="https://www.exeter.ac.uk/departments/">Our departments</a> </li>
+<li class="dropdown dropdown-megamenu"> <button class="dropdown-toggle btn btn-link" data-toggle="dropdown" id="about-us-dropdown" type="button">About us <span class="caret"></span></button>
+<div class="dropdown-container dropdown-menu dropdownhover-bottom">
+<div class="container">
+<div class="col-sm-6 col-md-3">
+<p class="col-title"><a href="https://www.exeter.ac.uk/about/">About the University <i class="fas fa-chevron-right"></i></a></p>
+<ul>
+<li><a href="https://www.exeter.ac.uk/about/governance/">Organisation</a></li>
+<li><a href="https://www.exeter.ac.uk/about/strategy2030/delivering/">Strategies</a></li>
+<li><a href="https://www.exeter.ac.uk/about/community/">Local community</a></li>
+<li><a href="https://www.exeter.ac.uk/about/term-dates/">Term dates</a></li>
+<li><a href="https://www.exeter.ac.uk/alumnisupporters/">Alumni and supporters</a></li>
+<li><a href="https://fundraising.exeter.ac.uk">Fundraising campaign</a></li>
+<li><a href="https://www.exeter.ac.uk/about/prospective/">Prospective staff</a></li>
+</ul>
+</div>
+<div class="col-sm-6 col-md-3">
+<p class="col-title"><a href="https://www.exeter.ac.uk/contact/">Contact us <i class="fas fa-chevron-right"></i></a></p>
+<ul>
+<li><a href="https://www.exeter.ac.uk/contact/">General enquiries</a></li>
+<li><a href="https://www.exeter.ac.uk/about/socialmedia/">Social Media</a></li>
+<li><a href="https://news.exeter.ac.uk/contact/">Press and media</a></li>
+</ul>
+<p class="col-title">Business and partnerships</p>
+<ul>
+<li><a href="https://www.exeterinnovation.com/">Exeter Innovation</a></li>
+<li><a href="https://greenfuturessolutions.com/">Green Future Solutions</a></li>
+<li><a href="https://www.exeter.ac.uk/about/regionalengagement/">Regional Engagement</a></li>
+<li><a href="https://business-school.exeter.ac.uk/executive-education/">Executive Education</a></li>
+<li><a href="https://www.exeter.ac.uk/degree-apprenticeships/">Degree Apprenticeships</a></li>
+</ul>
+</div>
+<div class="col-sm-6 col-md-3">
+<p class="col-title"><a href="https://www.exeter.ac.uk/our-campuses/">Campuses and visitors <i class="fas fa-chevron-right"></i></a></p>
+<ul>
+<li><a href="https://www.exeter.ac.uk/our-campuses/">Campuses, maps and directions</a></li>
+<li><a href="https://virtualtourcompany.co.uk/exeter_university/index.html">Virtual tours</a></li>
+<li><a href="https://www.artsandcultureexeter.co.uk">Arts and culture</a></li>
+<li><a href="https://sport.exeter.ac.uk">Sports facilities</a></li>
+<li><a href="https://event.exeter.ac.uk">Events and conferences</a></li>
+<li><a href="https://bookings.eventexeter.com/">Holiday accommodation</a></li>
+<li><a href="https://www.exeter.ac.uk/departments/campusservices/eatandshop/">Eat and shop</a></li>
+</ul>
+<p class="col-title">University of Exeter, Cornwall</p>
+<ul>
+<li><a href="https://www.exeter.ac.uk/about/cornwall/">Discover the University of Exeter, Cornwall: world-class education in a unique coastal setting.</a></li>
+</ul>
+</div>
+<div class="col-sm-6 col-md-3">
+<p class="col-title"><a href="https://news.exeter.ac.uk/">News <i class="fas fa-chevron-right"></i></a></p>
+<div id="display-feed-mega-menu"></div>
+<ul>
+<li><a href="https://news.exeter.ac.uk/">View all news</a></li>
+<li><a href="https://www.exeter.ac.uk/events/">View all events</a></li>
+</ul>
+</div>
+</div>
+</div>
+<!-- /dropdown-container -->
+</li>
+<li class="dropdown dropdown-megamenu nav-item-right"><button class="dropdown-toggle btn btn-link" data-toggle="dropdown" type="button">Quick links <span class="caret"></span></button>
+<div class="dropdown-container dropdown-menu dropdownhover-bottom">
+<div class="container">
+<div class="col-xs-12 col-sm-4">
+<p class="col-title">Popular links</p>
+<ul>
+<li><a href="https://outlook.com/owa/exeter.ac.uk" rel="nofollow" target="_blank">Email web access</a></li>
+<li><a href="https://ele.exeter.ac.uk/" rel="nofollow" target="_blank">ELE</a></li>
+<li><a href="https://sid.exeter.ac.uk/" rel="nofollow" target="_blank">SID</a></li>
+<li><a href="https://sport.exeter.ac.uk/">Sport</a></li>
+<li><a href="https://www.exeter.ac.uk/alumnisupporters/">Alumni and supporters</a></li>
+<li><a href="https://www.exeter.ac.uk/about/term-dates/">Term dates</a></li>
+<li><a href="https://careers.exeter.ac.uk/" rel="nofollow" target="_blank">Job vacancies</a></li>
+<li><a href="https://www.exeter.ac.uk/departments/inclusion/">Equality, diversity, and inclusion</a></li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-4">
+<p class="col-title"><a href="https://www.exeter.ac.uk/students/">Students <i class="fas fa-chevron-right"></i></a></p>
+<ul>
+<li><a href="https://www.exeter.ac.uk/departments/library/">Library</a></li>
+<li><a href="https://www.exeter.ac.uk/students/myexeter/">MyExeter (student app)</a></li>
+<li><a href="https://www.exeter.ac.uk/students/finance/makeapayment/">Make a payment</a></li>
+<li><a href="https://mytimetable.exeter.ac.uk" rel="nofollow" target="_blank">Timetable</a></li>
+<li><a href="https://www.exeter.ac.uk/study/studyinformation/">Programme and module information</a></li>
+<li><a href="https://www.exeter.ac.uk/students/graduation/">Graduation</a></li>
+<li><a href="https://www.exeter.ac.uk/students/newstudents/">New students</a></li>
+<!--<li><a href="https://www.exeter.ac.uk/students/returning-students/">Returning students</a></li>-->
+</ul>
+</div>
+<div class="col-xs-12 col-sm-4">
+<p class="col-title"><a href="https://www.exeter.ac.uk/staff/">Staff <i class="fas fa-chevron-right"></i></a></p>
+<ul>
+<li><a href="https://psconnect.exeter.ac.uk/" rel="nofollow" target="_blank">PS Connect Portal</a></li>
+<li><a href="https://staff.exeter.ac.uk/hrpr_ess/ess/dist/#/login?page=login" rel="nofollow" target="_blank">Trent</a></li>
+<li><a href="https://www.exeter.ac.uk/departments/finance/contact/">Finance Helpdesk</a></li>
+<li><a href="https://uoeitservicedesk-apps.easyvista.com/s/selfservice" rel="nofollow" target="_blank">IT Service Desk</a></li>
+<li><a href="https://www.exeter.ac.uk/departments/timetable/">Room Bookings</a></li>
+<li><a href="https://srs.exeter.ac.uk/urd/sits.urd/run/siw_lgn" rel="nofollow" target="_blank">SRS</a></li>
+<li><a href="https://universityofexeteruk.sharepoint.com/sites/DataConnect/SitePages/Portal.aspx" rel="nofollow" target="_blank">Data Connect</a></li>
+<li><a href="https://universityofexeteruk.sharepoint.com/sites/Profiles" rel="nofollow" target="_blank">Staff profiles</a></li>
+</ul>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</div>
+</div>
+<!-- /.container -->
+</nav>
+</header>
+<section id="section-title">
+<div class="container">
+<div class="row">
+<div class="col-md-12">
+<p>Computer Science</p>
+</div>
+</div>
+</div>
+</section>
+<div class="container" id="main-container">
+<div class="row">
+<div class="col-md-12">
+<!--undefined--><ul class="breadcrumb"><li><a href="/">Department of Computer Science</a></li><li>Exeter Machine Learning Summer School</li></ul>
+</div>
+<div class="col-md-3" id="side-nav-col">
+<!-- navigation object : Config PLv2: Get main Navigation --><div class="navbar-header" id="sidebar-navbar-toggle"><button aria-expanded="true" class="navbar-toggle" data-target="#sidebar-navbar" data-toggle="collapse" type="button">Website links <i class="fas fa-bars"></i></button></div><div aria-expanded="true" class="navbar-collapse collapse" data-animations="fadeInDown" data-hover="dropdown" id="sidebar-navbar"><ul class="nav navbar-nav" id="sidebar"><li id="top-section"><a href="/">Department of Computer Science</a></li><li><a href="/about/">About us</a></li><li><a href="/research/">Research</a></li><li><a href="https://www.exeter.ac.uk/subjects/computer-science/">Computer Science degrees</a></li><li><a href="https://www.exeter.ac.uk/subjects/data-science/">Data Science degrees</a></li><li><a href="https://www.exeter.ac.uk/subjects/artificial-intelligence/">Artificial Intelligence (AI) degrees</a></li><li><a href="https://www.exeter.ac.uk/research/projectada/">Accelerating Data Science and Artificial Intelligence (ADA)</a></li><li><a href="/deepmind-internships/">Google DeepMind Summer Internships</a></li><li><span class="currentbranch0"><a href="/machine-learning-summer-school/">Exeter Machine Learning Summer School</a></span></li><li><a href="/facilities/">Facilities</a></li><li><a href="/people/">People</a></li><li><a href="/events/">Events</a></li><li><a href="/contact/">Contact us</a></li></ul></div>
+</div>
+<!-- /#side-nav-col -->
+<div class="col-md-9" id="main-col">
+<h1>Exeter Machine Learning Summer School</h1>
+<span id="d.en.751286"></span>
+<div class="carousel slide carousel-fade" data-ride="carousel" id="carouselUI">
+<div class="carousel-inner">
+<div class="item active">
+<img alt="Group of six students working together in computer science lab with a display monitor overhead" src="/v8media/recruitmentsites/images/Students-laughing-comp-lab.webp">
+</img></div>
+</div>
+<a aria-label="previous image" class="left carousel-control" data-slide="prev" href="#carouselUI" role="button"><i class="fas fa-angle-left"></i></a> <a aria-label="next image" class="right carousel-control" data-slide="next" href="#carouselUI" role="button"><i class="fas fa-angle-right"></i></a>
+<ol class="carousel-indicators" role="tablist">
+<li class="active" data-slide-to="" data-target="#carouselUI" role="tab" tabindex=""></li>
+</ol>
+</div><h3>Your gateway to AI innovation and excellence</h3>
+<p>We are pleased to present the Exeter Machine Learning Summer School, an intensive two-week programme designed to give students a strong foundation in modern machine learning, from core principles through to current research directions.</p>
+<p>Over two weeks, participants will work through topic areas spanning the full breadth of modern machine learning, from foundational methods such as supervised and unsupervised learning, through to cutting-edge subjects including large language models, generative AI, and ethical and explainable AI. Each topic is delivered through a combination of lectures and hands-on practical sessions, giving participants both the conceptual grounding and the applied skills to tackle real-world problems.</p><!-- highlight section template -->
+<span id="d.en.751288"></span>
+<div class="highlight-section" id="highlight-0">
+<div class="container"><span id="d.en.751284"></span>
+<!-- start of panel set --><div class="feature-box-set">
+<!-- panel template -->
+<div class="col-md-6 feature-box">
+<h2>Programme timeline</h2>
+<p><strong>Application deadline:</strong>  Friday 12 June 2026 (11:59pm)</p>
+<p><strong>Programme duration:</strong> Tuesday, 23 June 2026 to Friday, 3 July 2026.</p>
+<p><strong>Location:</strong> Streatham Campus, Stocker Rd, University of Exeter, Exeter, Devon, EX4 4PY</p>
+</div>
+<!-- /panel template -->
+<span id="d.en.751285"></span>
+<!-- panel template -->
+<div class="col-md-6 feature-box">
+<p> <img alt="Close up of a fold down computer monitor with keyboard in the computer science lab" src="/v8media/recruitmentsites/images/Computer-screens-lab.webp"/></p>
+</div>
+<!-- /panel template -->
+</div><!-- end of panel set --> </div>
+</div>
+<!-- /highlight section template --><span id="d.en.751287"></span>
+<h2>Programme details</h2><!-- Accordion starts -->
+<span id="d.en.751282"></span>
+<div class="panel-group accordion" id="accordion0"><!-- accordion pane -->
+<div class="panel panel-default">
+<div class="panel-heading collapsed" data-parent="#accordion0" data-target="#accordion0-1" data-toggle="collapse">
+<p class="panel-title"> <i class="fas fa-plus-circle"></i><a class="accordion-toggle"> 1. What you will learn </a> </p>
+</div>
+<div class="panel-collapse collapse" id="accordion0-1">
+<div class="panel-body">
+<p>The summer school covers core and advanced topics in machine learning through a mix of lectures and hands-on practical sessions, including:</p>
+<ul>
+<li>Data Analysis</li>
+<li>Supervised Learning</li>
+<li>Unsupervised Learning</li>
+<li>Prompt Engineering</li>
+<li>Artificial Neural Networks</li>
+<li>Network Analysis</li>
+<li>Natural Language Processing</li>
+<li>Computer Vision</li>
+<li>Reinforcement Learning</li>
+<li>Large Language Models</li>
+<li>Generative AI</li>
+<li>Bayesian Statistics</li>
+<li>Ethical and Explainable AI</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- /accordion pane -->
+<!-- accordion pane -->
+<div class="panel panel-default">
+<div class="panel-heading collapsed" data-parent="#accordion0" data-target="#accordion0-2" data-toggle="collapse">
+<p class="panel-title"> <i class="fas fa-plus-circle"></i><a class="accordion-toggle"> 2. Who is this for? </a> </p>
+</div>
+<div class="panel-collapse collapse" id="accordion0-2">
+<div class="panel-body">
+<p>The summer school is primarily aimed at UK-based undergraduate students in their penultimate or final year, though we welcome applications from anyone based in the UK with a relevant background or a strong interest in machine learning, including recent graduates, postgraduates, and working professionals.</p>
+<p>To be eligible, you must:</p>
+<ul>
+<li>be aged 18 or over and based in the UK</li>
+<li>have prior programming experience, ideally in Python</li>
+<li>have a background or strong interest in a relevant subject including Computer Science, Data Science, Mathematics, Physics, Statistics, Economics, Engineering, or a related technical or scientific field</li>
+<li>prior exposure to machine learning concepts is helpful but not required</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- /accordion pane -->
+<!-- accordion pane -->
+<div class="panel panel-default">
+<div class="panel-heading collapsed" data-parent="#accordion0" data-target="#accordion0-3" data-toggle="collapse">
+<p class="panel-title"> <i class="fas fa-plus-circle"></i><a class="accordion-toggle"> 3. How to register </a> </p>
+</div>
+<div class="panel-collapse collapse" id="accordion0-3">
+<div class="panel-body">
+<p>Places are limited and offered on a first-come, first-served basis to applicants meeting the eligibility criteria.</p>
+<p class="button"><a href="https://forms.cloud.microsoft/e/zjiHaNm1X8">Apply here</a></p>
+</div>
+</div>
+</div>
+<!-- /accordion pane -->
+</div>
+<!-- Accordion ends --><span id="d.en.751338"></span>
+<h2>Fees</h2>
+<p>£1,250</p>
+<p>This covers tuition and access to all lectures and practical sessions only. Accommodation, food, and travel to Exeter are not included and are the responsibility of participants.</p><!-- highlight section template -->
+<span id="d.en.751298"></span>
+<div class="highlight-section" id="highlight-1">
+<div class="container"><span id="d.en.751294"></span>
+<!-- start of panel set --><div class="feature-box-set">
+<!-- panel template -->
+<div class="col-md-12 feature-box">
+<h2><a id="eligibility"></a>Eligibility criteria</h2>
+<p>The summer school is primarily aimed at UK-based undergraduate students in their penultimate or final year, though we welcome applications from anyone based in the UK with a relevant background or a strong interest in machine learning, including recent graduates, postgraduates, and working professionals.</p>
+<p><strong>Please make sure you meet the following criteria before applying:</strong></p>
+<h3>Essential criteria </h3>
+<p>You must: </p>
+<ul>
+<li>be aged 18 or over and based in the UK</li>
+<li>have prior programming experience, ideally in Python</li>
+<li>have a background or strong interest in a relevant subject including Computer Science, Data Science, Mathematics, Physics, Statistics, Economics, Engineering, or a related technical or scientific field</li>
+<li>prior exposure to machine learning concepts is helpful but not required</li>
+</ul>
+</div>
+<!-- /panel template -->
+</div><!-- end of panel set --> </div>
+</div>
+<!-- /highlight section template --><span id="d.en.751295"></span>
+<h2>How we evaluate applications</h2>
+<p>Candidates passing all the essential criteria will be then evaluated across the following categories:</p>
+<ul>
+<li>academic and professional background</li>
+<li>motivation and potential: Scored based on the personal statement to identify strong personal drive and commitment to research in AI and alignment with Exeter’s AI research</li>
+</ul><!-- highlight section template -->
+<span id="d.en.751300"></span>
+<div class="highlight-section" id="highlight-2">
+<div class="container"><span id="d.en.751296"></span>
+<!-- start of panel set --><div class="feature-box-set">
+<!-- panel template -->
+<div class="col-md-6 feature-box">
+<h2>Apply now</h2>
+<p>Take your first step toward a future in AI. Please fill out the application below for consideration. The application requires your personal details, a personal statement of a maximum of 4000 characters.</p>
+</div>
+<!-- /panel template -->
+<span id="d.en.751303"></span>
+<!-- panel template -->
+<div class="col-md-6 feature-box">
+<p> <img alt="Two students in discussion sat next to each other in the computer science lab" src="/v8media/recruitmentsites/images/Two-Students-comp-lab.webp"/></p>
+</div>
+<!-- /panel template -->
+</div><!-- end of panel set --><span id="d.en.751867"></span>
+<p>Spaces are limited - apply now to join this transformative programme. Let’s shape the future of AI together!</p><span id="d.en.751307"></span>
+<!-- start of panel set --><div class="feature-box-set">
+<!-- panel template -->
+<div class="col-md-12 feature-box">
+<p class="button"><a href="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fforms.cloud.microsoft%2Fe%2FzjiHaNm1X8&amp;data=05%7C02%7CH.H.Francis%40exeter.ac.uk%7C878ad6ee88104094530608deb7304e4c%7C912a5d77fb984eeeaf321334d8f04a53%7C0%7C0%7C639149615274251534%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=8spvAubIA8yWkURY3Ytk4SiqG8MDM%2FLyPB9UZOC9OI8%3D&amp;reserved=0">2026 Exeter Machine Learning Summer School - Registration Form – Fill in form</a></p>
+</div>
+<!-- /panel template -->
+</div><!-- end of panel set --> </div>
+</div>
+<!-- /highlight section template --><span id="d.en.751297"></span>
+<h2>Contact</h2>
+<p style="text-align: left;">For any administrative queries, please contact <a href="mailto:computerscience-admin@exeter.ac.uk">computerscience-admin@exeter.ac.uk</a></p>
+<p style="text-align: left;">For other queries, please contact the Programme Lead: Dr Chico Camargo <a href="mailto:F.Camargo@exeter.ac.uk">F.Camargo@exeter.ac.uk</a> </p>
+</div>
+<!-- /#main-col --><!-- <span id="d.en.751286"></span> --><!-- <span id="d.en.751288"></span> --><span id="d.en.751284"></span><span id="d.en.751285"></span><span id="d.en.751287"></span><!-- <span id="d.en.751282"></span> --><span id="d.en.751283"></span> <span id="d.en.751290"></span> <span id="d.en.751291"></span> <span id="d.en.751338"></span><!-- <span id="d.en.751298"></span> --><span id="d.en.751294"></span><span id="d.en.751295"></span><!-- <span id="d.en.751300"></span> --><span id="d.en.751296"></span><span id="d.en.751303"></span><span id="d.en.751867"></span><span id="d.en.751307"></span><span id="d.en.751297"></span></div>
+</div>
+<!-- footer -->
+<footer id="footer">
+<div class="container">
+<div class="row">
+<div class="col-xs-6 col-sm-4 col-lg-4">
+<p><a aria-label="University homepage" href="https://www.exeter.ac.uk/"><img alt="University of Exeter logo" id="footer-logo" src="https://www.exeter.ac.uk/v8media/recruitmentsites/images/homepage/uoe-logo.svg"/></a></p>
+<div id="sm-icons">
+<p class="col-title">Connect with us</p>
+<a aria-label="Facebook link" class="fab fa-facebook" href="https://www.facebook.com/exeteruni" rel="noopener noreferrer" target="_blank"></a> <a aria-label="Youtube link" class="fab fa-youtube" href="https://www.youtube.com/user/universityofexeter" rel="noopener noreferrer" target="_blank"></a> <a aria-label="LinkedIn link" class="fab fa-linkedin" href="https://www.linkedin.com/school/11826?pathWildcard=11826" rel="noopener noreferrer" target="_blank"></a> <a href="https://www.tiktok.com/@uniofexeter" rel="noopener noreferrer" target="_blank"><img alt="Tiktok link" class="tiktok-link" decoding="async" fetchpriority="low" loading="lazy" src="https://www.exeter.ac.uk/v8media/global/images/tiktok-icon-white.webp"/></a> <a href="https://www.threads.net/@uniofexeter" rel="noopener noreferrer" target="_blank"><img alt="Threads link" class="threads-link" decoding="async" fetchpriority="low" loading="lazy" src="https://www.exeter.ac.uk/v8media/global/images/threads-icon-white.webp"/></a> <a aria-label="Instagram link" class="fab fa-instagram" href="https://instagram.com/uniofexeter" rel="noopener noreferrer" target="_blank"></a> <a aria-label="WeChat link" class="fab fa-weixin" href="https://www.exeter.ac.uk/about/socialmedia/#tab7" target="_blank"></a> <a aria-label="Weibo link" class="fab fa-weibo" href="https://www.weibo.com/exeteruni" rel="noopener noreferrer" target="_blank"></a> <a aria-label="中文网" href="https://www.universityofexeter.cn/" onclick="_gaq.push(['_trackEvent', 'Utility links', 'Chinese link clicked'])" target="_blank">中文网</a>
+</div>
+<p id="logos"><a href="https://russellgroup.ac.uk/our-universities/university-exeter" target="_blank"><img alt="The University of Exeter is a member of the Russell Group; the UK's 24 leading research-intensive universities." decoding="async" fetchpriority="low" loading="lazy" src="https://www.exeter.ac.uk/v8media/global/images/footer-russell-group.webp"/></a><a href="https://www.exeter.ac.uk/departments/inclusion/accreditations/athenaswan/" target="_blank"><img alt="Athena Swan Silver Award - Gender Equality Recognition." decoding="async" fetchpriority="low" loading="lazy" src="https://www.exeter.ac.uk/v8media/global/images/footer-athena.webp"/></a><a href="https://www.exeter.ac.uk/about/tef/"><img alt="2023 Teaching Excellence Framework Gold - Teaching Excellence, Student Outcomes &amp; Student Experience." decoding="async" fetchpriority="low" loading="lazy" src="https://www.exeter.ac.uk/v8media/global/images/TEF-gold-gold-gold-120x.webp"/></a><a href="https://www.exeter.ac.uk/about/armedforcescovenant/"><img alt="HM Armed Forces Covenant" decoding="async" fetchpriority="low" loading="lazy" src="https://www.exeter.ac.uk/v8media/global/images/armedforcescovenant.png" style="width: 140px;"/></a></p>
+<p id="copyright-notice">Copyright © 2026 University of Exeter. All rights reserved.</p>
+</div>
+<div class="col-xs-6 col-sm-4 col-lg-2">
+<p class="col-title">Information for:</p>
+<ul class="list list-links">
+<li><a href="https://www.exeter.ac.uk/students/">Current students</a></li>
+<li><a href="https://www.exeter.ac.uk/staff/">Staff</a></li>
+<li><a href="https://www.exeter.ac.uk/alumnisupporters/">Alumni and supporters</a></li>
+</ul>
+<p class="col-title">Quick links</p>
+<ul class="list list-links">
+<li><a href="https://www.exeter.ac.uk/contact/">Contact us</a></li>
+<li><a href="https://outlook.com/owa/exeter.ac.uk" rel="nofollow" target="_blank">Email</a></li>
+<li><a href="https://careers.exeter.ac.uk" rel="nofollow" target="_blank">Job vacancies</a></li>
+<li><a href="https://www.exeter.ac.uk/departments/library/">Library</a></li>
+<li><a href="https://psconnect.exeter.ac.uk/" rel="nofollow" target="_blank">PS Connect Portal</a></li>
+<li><a href="https://sid.exeter.ac.uk/" rel="nofollow" target="_blank">SID</a></li>
+</ul>
+</div>
+<div class="col-sm-4 col-lg-2 hidden-xs">
+<p class="col-title">Campuses</p>
+<div id="streatham-campus"><p>Streatham Campus</p>
+<a href="https://www.exeter.ac.uk/our-campuses/streatham-campus/"><i class="fas fa-map-marker-alt"></i> Find us</a> <a href="https://www.exeter.ac.uk/contact/"><i class="fas fa-phone"></i> Contact</a> </div>
+<div id="stlukes-campus"><p>St Luke's Campus</p>
+<a href="https://www.exeter.ac.uk/our-campuses/st-lukes-campus/"><i class="fas fa-map-marker-alt"></i> Find us</a> <a href="https://www.exeter.ac.uk/contact/"><i class="fas fa-phone"></i> Contact</a> </div>
+<div id="penryn-campus"><p>Penryn Campus</p>
+<a href="https://www.exeter.ac.uk/our-campuses/penryn-campus/"><i class="fas fa-map-marker-alt"></i> Find us</a> <a href="https://www.exeter.ac.uk/contact/"><i class="fas fa-phone"></i> Contact</a> </div>
+<div id="truro-campus"><p>Truro Campus</p>
+<a href="https://www.exeter.ac.uk/our-campuses/truro-campus/"><i class="fas fa-map-marker-alt"></i> Find us</a> <a href="https://www.exeter.ac.uk/contact/"><i class="fas fa-phone"></i> Contact</a> </div>
+</div>
+<div class="col-md-4 hidden-xs hidden-sm hidden-md">
+<div id="footer-map">
+<i class="fas fa-map-marker-alt" id="stlukes-marker"></i>
+<i class="fas fa-map-marker-alt" id="streatham-marker"></i>
+<i class="fas fa-map-marker-alt" id="penryn-marker"></i>
+<i class="fas fa-map-marker-alt" id="truro-marker"></i>
+</div>
+</div>
+</div>
+</div>
+<div id="footer-bot-links">
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="navbar-header">
+<button aria-expanded="true" class="navbar-toggle" data-target="#footer-navbar" data-toggle="collapse" type="button">Footer links <i class="fas fa-bars"></i></button>
+</div>
+<div class="navbar-collapse collapse" data-animations="fadeInDown" data-hover="dropdown" id="footer-navbar">
+<ul class="nav navbar-nav">
+<li><a href="https://www.exeter.ac.uk/about/oursite/">Using our site</a></li>
+<li><a href="https://www.exeter.ac.uk/about/oursite/accessibility/">Accessibility</a></li>
+<li><a href="https://www.exeter.ac.uk/about/oursite/dataprotection/foi/">Freedom of Information</a></li>
+<li><a href="https://www.exeter.ac.uk/about/modern-slavery-act/">Modern Slavery Act Statement</a></li>
+<li><a href="https://www.exeter.ac.uk/about/oursite/dataprotection/request/">Data Protection</a></li>
+<li><a href="https://www.exeter.ac.uk/about/oursite/copyright/">Copyright &amp; disclaimer</a></li>
+<li><a href="https://www.exeter.ac.uk/about/oursite/privacy/">Privacy</a></li>
+<li><a href="https://www.exeter.ac.uk/about/sitemap/">Site map</a></li>
+<li><a class="ot-sdk-show-settings" href="javascript:" onclick="Optanon.ToggleInfoDisplay()">Cookie settings</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+
+
+
+
+
+
+
+
+<!-- navigation object : Siteimprove deep linking nav object --><!-- 91424 -->
+<!-- get text/endbody from universal config -->
+</body>
+</html>

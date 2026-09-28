@@ -34,6 +34,15 @@ _GENERIC_TITLE_RE = re.compile(
 
 
 def is_public_candidate(candidate: Candidate) -> bool:
+    if candidate.source_layer == "discovery" and candidate.discovery_verified is not True:
+        return False
+    if candidate.source_layer == "discovery":
+        if not candidate.start_date or not candidate.end_date or not candidate.deadline:
+            return False
+        if candidate.end_date < candidate.start_date or candidate.deadline > candidate.status_reference_start:
+            return False
+        if candidate.fee_eur is not None and not candidate.fee_evidence.strip():
+            return False
     if candidate.is_past or candidate.is_online_only:
         return False
     if not has_meaningful_title(candidate.title):

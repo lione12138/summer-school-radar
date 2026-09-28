@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+
+<html dir="ltr" lang="en" xml:lang="en">
+<head>
+<title>Learning Geoscience: Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends | LG</title>
+<link href="https://learninggeoscience.org/theme/image.php/aveticalms_geoscience/theme/1782846986/favicon" rel="shortcut icon"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<meta content="moodle, Learning Geoscience: Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends | LG" name="keywords"/>
+<link href="https://learninggeoscience.org/theme/yui_combo.php?rollup/3.18.1/yui-moodlesimple-min.css" rel="stylesheet" type="text/css"/><link href="https://learninggeoscience.org/theme/styles.php/aveticalms_geoscience/1782846986_1782847536/all" rel="stylesheet" type="text/css"/>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Poppins&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&amp;family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+</head>
+<body class="format-topics limitedwidth path-mod path-mod-page chrome dir-ltr lang-en yui-skin-sam yui3-skin-sam learninggeoscience-org pagelayout-incourse course-155 context-14999 cmid-7307 cm-type-page category-9 theme uses-drawers drawer-open-index" id="page-mod-page-view">
+<div aria-live="polite" class="toast-wrapper mx-auto py-0 fixed-top" role="status"></div>
+<div class="d-print-block" id="page-wrapper">
+<div>
+<a class="sr-only sr-only-focusable" href="#maincontent">Skip to main content</a>
+</div>
+
+
+
+<nav aria-label="Site navigation" class="navbar fixed-top navbar-light bg-white navbar-expand">
+<div class="container-fluid">
+<button class="navbar-toggler aabtn d-block d-md-none px-1 my-1 border-0" data-action="toggle" data-target="theme_boost-drawers-primary" data-toggler="drawers">
+<span class="navbar-toggler-icon"></span>
+<span class="sr-only">Side panel</span>
+</button>
+<a class="navbar-brand d-none d-md-flex align-items-center m-0 me-4 p-0 aabtn" href="https://learninggeoscience.org/">
+<img alt="LG" class="logo me-1" src="https://learninggeoscience.org/pluginfile.php/1/core_admin/logocompact/300x300/1782846986/logo%20%282%29.png"/>
+</a>
+<div class="primary-navigation">
+<nav class="moremenu navigation">
+<ul class="nav more-nav navbar-nav" id="moremenu-6ab36e2a0ee25-navbar-nav" role="menubar">
+<li class="nav-item" data-forceintomoremenu="false" data-key="home" role="none">
+<a class="nav-link" data-disableactive="true" href="https://learninggeoscience.org/" role="menuitem" tabindex="-1">
+Home
+</a>
+</li>
+<li class="nav-item" data-forceintomoremenu="false" data-key="calendar" role="none">
+<a class="nav-link" data-disableactive="true" href="https://learninggeoscience.org/calendar/view.php?view=month" role="menuitem" tabindex="-1">
+Calendar
+</a>
+</li>
+<li class="nav-item" data-forceintomoremenu="false" data-key="" role="none">
+<a class="nav-link" data-disableactive="true" href="https://learninggeoscience.org/mod/page/view.php?id=6203" role="menuitem" tabindex="-1">
+Calendar
+</a>
+</li>
+<li class="dropdown nav-item" data-forceintomoremenu="false" role="none">
+<a aria-controls="drop-down-menu-6ab36e2a0eb77" aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" id="drop-down-6ab36e2a0eb77" role="menuitem" tabindex="-1">
+FREE Learning
+</a>
+<div aria-labelledby="drop-down-6ab36e2a0eb77" class="dropdown-menu" id="drop-down-menu-6ab36e2a0eb77" role="menu">
+<a class="dropdown-item" data-disableactive="true" href="https://learninggeoscience.org/mod/page/view.php?id=6485" role="menuitem" tabindex="-1">
+E-Lectures
+</a>
+<a class="dropdown-item" data-disableactive="true" href="https://learninggeoscience.org/mod/page/view.php?id=6487" role="menuitem" tabindex="-1">
+Student E-Lectures
+</a>
+<a class="dropdown-item" data-disableactive="true" href="https://learninggeoscience.org/mod/page/view.php?id=6489" role="menuitem" tabindex="-1">
+Distinguished Lecturer Webinars
+</a>
+<a class="dropdown-item" data-disableactive="true" href="https://learninggeoscience.org/mod/page/view.php?id=6655" role="menuitem" tabindex="-1">
+How-to-Videos
+</a>
+</div>
+</li>
+<li class="dropdown nav-item" data-forceintomoremenu="false" role="none">
+<a aria-controls="drop-down-menu-6ab36e2a0ebfa" aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" id="drop-down-6ab36e2a0ebfa" role="menuitem" tabindex="-1">
+EAGE Courses
+</a>
+<div aria-labelledby="drop-down-6ab36e2a0ebfa" class="dropdown-menu" id="drop-down-menu-6ab36e2a0ebfa" role="menu">
+<a class="dropdown-item" data-disableactive="true" href="https://learninggeoscience.org/mod/page/view.php?id=6615" role="menuitem" tabindex="-1">
+Self-paced Courses
+</a>
+<a class="dropdown-item" data-disableactive="true" href="https://learninggeoscience.org/mod/page/view.php?id=6629" role="menuitem" tabindex="-1">
+Extensive Courses
+</a>
+<a class="dropdown-item" data-disableactive="true" href="https://learninggeoscience.org/mod/page/view.php?id=6651" role="menuitem" tabindex="-1">
+Interactive Online Short Courses
+</a>
+<a class="dropdown-item" data-disableactive="true" href="https://eage.eventsair.com/edupack23" role="menuitem" tabindex="-1">
+EAGE Education Packages
+</a>
+<a class="dropdown-item" data-disableactive="true" href="https://eage.org/membership/hardship-programme/" role="menuitem" tabindex="-1">
+EAGE Hardship Programme
+</a>
+</div>
+</li>
+<li class="nav-item" data-forceintomoremenu="false" data-key="" role="none">
+<a class="nav-link" data-disableactive="true" href="https://learninggeoscience.org/mod/page/view.php?id=6699" role="menuitem" tabindex="-1">
+PARTNER COURSES
+</a>
+</li>
+<li class="nav-item" data-forceintomoremenu="false" data-key="" role="none">
+<a class="nav-link" data-disableactive="true" href="https://eage.org/education/short-course-catalogue/" role="menuitem" tabindex="-1">
+Course Catalogue
+</a>
+</li>
+<li class="nav-item" data-forceintomoremenu="false" data-key="" role="none">
+<a class="nav-link" data-disableactive="true" href="https://learninggeoscience.org/mod/page/view.php?id=6653" role="menuitem" tabindex="-1">
+Contact us
+</a>
+</li>
+<li class="nav-item dropdown dropdownmoremenu d-none" data-region="morebutton" role="none">
+<a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle nav-link" data-toggle="dropdown" href="#" id="moremenu-dropdown-6ab36e2a0ee25" role="menuitem" tabindex="-1">
+More
+</a>
+<ul aria-labelledby="moremenu-dropdown-6ab36e2a0ee25" class="dropdown-menu dropdown-menu-left" data-region="moredropdown" role="menu">
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+<div class="navbar-nav ms-auto h-100" id="usernavigation">
+<div class="simplesearchform" id="searchinput-navbar-6ab36e2a1ffd86ab36e2a14ffe3">
+<div class="collapse" id="searchform-navbar">
+<form accept-charset="utf-8" action="https://learninggeoscience.org/search/index.php" autocomplete="off" class="mform d-flex flex-wrap align-items-center searchform-navbar" method="get">
+<input name="context" type="hidden" value="14999"/>
+<div aria-labelledby="searchgrouplabel-6ab36e2a1ffd86ab36e2a14ffe3" class="input-group" role="group">
+<span class="sr-only" id="searchgrouplabel-6ab36e2a1ffd86ab36e2a14ffe3">Site-wide search</span>
+<label for="searchinput-6ab36e2a1ffd86ab36e2a14ffe3">
+<span class="sr-only">Search</span>
+</label>
+<input aria-label="Search" autocomplete="off" class="form-control withclear" data-region="input" id="searchinput-6ab36e2a1ffd86ab36e2a14ffe3" name="q" placeholder="Search" type="text"/>
+<a class="btn btn-close" data-action="closesearch" data-toggle="collapse" href="#searchform-navbar" role="button" title="Close">
+<i aria-hidden="true" class="icon fa fa-xmark fa-fw"></i>
+<span class="sr-only">Close</span>
+</a>
+<div class="input-group-append">
+<button class="btn btn-submit" data-action="submit" title="Perform search" type="submit">
+<i aria-hidden="true" class="icon fa fa-magnifying-glass fa-fw"></i>
+<span class="sr-only">Perform search</span>
+</button>
+</div>
+</div>
+</form>
+</div>
+<a aria-controls="searchform-navbar" aria-expanded="false" class="btn btn-open rounded-0 nav-link" data-action="opensearch" data-toggle="collapse" href="#searchform-navbar" role="button" title="Toggle search input">
+<i aria-hidden="true" class="icon fa fa-magnifying-glass fa-fw"></i>
+<span class="sr-only">Toggle search input</span>
+</a>
+</div>
+<div class="divider border-start h-75 align-self-center mx-1"></div>
+<div class="d-flex align-items-stretch usermenu-container" data-region="usermenu">
+<div class="usermenu">
+<span class="login ps-2">
+You are currently using guest access
+<div class="divider border-start h-75 align-self-center mx-2"></div>
+<a href="https://learninggeoscience.org/login/index.php">Log in</a>
+</span>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="drawer drawer-left drawer-primary d-print-none not-initialized" data-close-on-resize="1" data-forceopen="0" data-preference="" data-region="fixed-drawer" data-state="show-drawer-primary" id="theme_boost-drawers-primary">
+<div class="drawerheader">
+<button class="btn drawertoggle icon-no-margin hidden" data-action="closedrawer" data-placement="right" data-target="theme_boost-drawers-primary" data-toggle="tooltip" data-toggler="drawers" title="Close drawer">
+<i aria-hidden="true" class="icon fa fa-xmark fa-fw"></i>
+</button>
+<a class="aabtn text-reset d-flex align-items-center py-1 h-100" data-region="site-home-link" href="https://learninggeoscience.org/" title="LG">
+<img alt="LG" class="logo py-1 h-100" src="https://learninggeoscience.org/pluginfile.php/1/core_admin/logocompact/300x300/1782846986/logo%20%282%29.png"/>
+</a>
+<div class="drawerheadercontent hidden">
+</div>
+</div>
+<div class="drawercontent drag-container" data-usertour="scroller">
+<div class="list-group">
+<a class="list-group-item list-group-item-action" href="https://learninggeoscience.org/">
+Home
+</a>
+<a class="list-group-item list-group-item-action" href="https://learninggeoscience.org/calendar/view.php?view=month">
+Calendar
+</a>
+<a class="list-group-item list-group-item-action" href="https://learninggeoscience.org/mod/page/view.php?id=6203">
+Calendar
+</a>
+<a aria-controls="drop-down-menu-2" aria-expanded="false" class="list-group-item list-group-item-action icons-collapse-expand collapsed d-flex" data-target="#drop-down-menu-2" data-toggle="collapse" href="#" id="drop-down-2">
+FREE Learning
+<span class="ms-auto expanded-icon icon-no-margin mx-2">
+<i aria-hidden="true" class="icon fa fa-chevron-down fa-fw"></i>
+<span class="sr-only">
+Collapse
+</span>
+</span>
+<span class="ms-auto collapsed-icon icon-no-margin mx-2">
+<i aria-hidden="true" class="icon fa fa-chevron-right fa-fw"></i>
+<span class="sr-only">
+Expand
+</span>
+</span>
+</a>
+<div aria-labelledby="drop-down-2" class="collapse list-group-item p-0 border-0" id="drop-down-menu-2" role="menu">
+<a class="ps-5 bg-light list-group-item list-group-item-action" href="https://learninggeoscience.org/mod/page/view.php?id=6485">E-Lectures</a>
+<a class="ps-5 bg-light list-group-item list-group-item-action" href="https://learninggeoscience.org/mod/page/view.php?id=6487">Student E-Lectures</a>
+<a class="ps-5 bg-light list-group-item list-group-item-action" href="https://learninggeoscience.org/mod/page/view.php?id=6489">Distinguished Lecturer Webinars</a>
+<a class="ps-5 bg-light list-group-item list-group-item-action" href="https://learninggeoscience.org/mod/page/view.php?id=6655">How-to-Videos</a>
+</div>
+<a aria-controls="drop-down-menu-7" aria-expanded="false" class="list-group-item list-group-item-action icons-collapse-expand collapsed d-flex" data-target="#drop-down-menu-7" data-toggle="collapse" href="#" id="drop-down-7">
+EAGE Courses
+<span class="ms-auto expanded-icon icon-no-margin mx-2">
+<i aria-hidden="true" class="icon fa fa-chevron-down fa-fw"></i>
+<span class="sr-only">
+Collapse
+</span>
+</span>
+<span class="ms-auto collapsed-icon icon-no-margin mx-2">
+<i aria-hidden="true" class="icon fa fa-chevron-right fa-fw"></i>
+<span class="sr-only">
+Expand
+</span>
+</span>
+</a>
+<div aria-labelledby="drop-down-7" class="collapse list-group-item p-0 border-0" id="drop-down-menu-7" role="menu">
+<a class="ps-5 bg-light list-group-item list-group-item-action" href="https://learninggeoscience.org/mod/page/view.php?id=6615">Self-paced Courses</a>
+<a class="ps-5 bg-light list-group-item list-group-item-action" href="https://learninggeoscience.org/mod/page/view.php?id=6629">Extensive Courses</a>
+<a class="ps-5 bg-light list-group-item list-group-item-action" href="https://learninggeoscience.org/mod/page/view.php?id=6651">Interactive Online Short Courses</a>
+<a class="ps-5 bg-light list-group-item list-group-item-action" href="https://eage.eventsair.com/edupack23">EAGE Education Packages</a>
+<a class="ps-5 bg-light list-group-item list-group-item-action" href="https://eage.org/membership/hardship-programme/">EAGE Hardship Programme</a>
+</div>
+<a class="list-group-item list-group-item-action" href="https://learninggeoscience.org/mod/page/view.php?id=6699">
+PARTNER COURSES
+</a>
+<a class="list-group-item list-group-item-action" href="https://eage.org/education/short-course-catalogue/">
+Course Catalogue
+</a>
+<a class="list-group-item list-group-item-action" href="https://learninggeoscience.org/mod/page/view.php?id=6653">
+Contact us
+</a>
+</div>
+</div>
+</div>
+<div class="drawer drawer-left show d-print-none not-initialized" data-close-on-resize="0" data-forceopen="0" data-preference="drawer-open-index" data-region="fixed-drawer" data-state="show-drawer-left" id="theme_boost-drawers-courseindex">
+<div class="drawerheader">
+<button class="btn drawertoggle icon-no-margin hidden" data-action="closedrawer" data-placement="right" data-target="theme_boost-drawers-courseindex" data-toggle="tooltip" data-toggler="drawers" title="Close course index">
+<i aria-hidden="true" class="icon fa fa-xmark fa-fw"></i>
+</button>
+<div class="drawerheadercontent hidden">
+<div class="dropdown" id="courseindexdrawercontrols">
+<button aria-controls="courseindexdrawercontrolsmenu" aria-expanded="false" aria-haspopup="true" aria-label="Course index options" class="btn btn-icon rounded-circle mx-2" data-toggle="dropdown" id="courseindexdrawercontrolsmenubutton" title="Course index options" type="button">
+<i aria-hidden="true" class="icon fa fa-ellipsis-v fa-fw m-0"></i>
+</button>
+<div aria-labelledby="courseindexdrawercontrolsmenubutton" class="dropdown-menu dropdown-menu-right" id="courseindexdrawercontrolsmenu" role="menu">
+<a class="dropdown-item" data-action="expandallcourseindexsections" href="#" role="menuitem">
+<i aria-hidden="true" class="icon fa fa-angles-down fa-fw"></i>
+Expand all
+</a>
+<a class="dropdown-item" data-action="collapseallcourseindexsections" href="#" role="menuitem">
+<span class="dir-rtl-hide"><i aria-hidden="true" class="icon fa fa-angles-right fa-fw"></i></span>
+<span class="dir-ltr-hide"><i aria-hidden="true" class="icon fa fa-angles-left fa-fw"></i></span>
+Collapse all
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="drawercontent drag-container" data-usertour="scroller">
+<nav class="courseindex" id="courseindex">
+<div id="courseindex-content">
+<div aria-hidden="true" data-region="loading-placeholder-content" id="course-index-placeholder">
+<ul class="placeholders list-unstyled px-5">
+<li>
+<div class="col-md-6 p-0 d-flex align-items-center">
+<div class="bg-pulse-grey rounded-circle me-2"></div>
+<div class="bg-pulse-grey w-100"></div>
+</div>
+</li>
+<li>
+<div class="col-md-6 p-0 d-flex align-items-center">
+<div class="bg-pulse-grey rounded-circle me-2"></div>
+<div class="bg-pulse-grey w-100"></div>
+</div>
+</li>
+<li>
+<div class="col-md-6 p-0 d-flex align-items-center">
+<div class="bg-pulse-grey rounded-circle me-2"></div>
+<div class="bg-pulse-grey w-100"></div>
+</div>
+</li>
+<li>
+<div class="col-md-6 p-0 d-flex align-items-center">
+<div class="bg-pulse-grey rounded-circle me-2"></div>
+<div class="bg-pulse-grey w-100"></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+</div>
+</div>
+<div class="drawers show-drawer-left drag-container" data-region="mainpage" data-usertour="scroller" id="page">
+<div id="index-welcome-banner">
+<div class="welcome-message">
+Welcome to
+<br/>
+<span>Learning Geoscience</span>
+</div>
+</div>
+<div class="main-inner" id="topofscroll">
+<div class="drawer-toggles d-flex">
+<div class="drawer-toggler drawer-left-toggle open-nav d-print-none">
+<button class="btn icon-no-margin" data-action="toggle" data-placement="right" data-target="theme_boost-drawers-courseindex" data-toggle="tooltip" data-toggler="drawers" title="Open course index">
+<span class="sr-only">Open course index</span>
+<i aria-hidden="true" class="icon fa fa-list fa-fw"></i>
+</button>
+</div>
+</div>
+<header class="header-maxwidth d-print-none" id="page-header">
+<div class="w-100">
+<div class="d-flex flex-wrap">
+<div id="page-navbar">
+<nav aria-label="Breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item">
+<a href="https://learninggeoscience.org/course/view.php?id=155" title="Learning Geoscience">
+Learning Geoscience
+</a>
+</li>
+<li class="breadcrumb-item">
+<a data-section-name-for="1217" href="https://learninggeoscience.org/course/section.php?id=1217">
+EAGE Short Course Catalogue
+</a>
+</li>
+<li class="breadcrumb-item">
+<span>
+Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends
+</span>
+</li>
+</ol>
+</nav>
+</div>
+<div class="ml-auto d-flex">
+</div>
+<div id="course-header">
+</div>
+</div>
+<div class="d-flex align-items-center">
+<div class="mr-auto">
+<div class="page-context-header d-flex flex-wrap align-items-center mb-2">
+<div class="page-header-image">
+<div class="content activityiconcontainer icon-size-6 modicon_page"><img alt="" aria-hidden="true" class="icon activityicon" src="https://learninggeoscience.org/theme/image.php/aveticalms_geoscience/page/1782846986/monologo?filtericon=1"/></div>
+</div>
+<div class="page-header-headings">
+<h1 class="h2 mb-0">Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends</h1>
+</div>
+</div>
+</div>
+<div class="header-actions-container ml-auto" data-region="header-actions-container">
+</div>
+</div>
+</div>
+</header>
+<div class="pb-3 d-print-block" id="page-content">
+<div id="region-main-box">
+<div id="region-main">
+<span class="notifications" id="user-notifications"></span>
+<span id="maincontent"></span>
+<div class="activity-header" data-for="page-activity-header">
+<span class="sr-only">Completion requirements</span>
+<div class="activity-information" data-activityname="Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends" data-region="activity-information">
+</div>
+</div>
+<div role="main"><div class="box py-3 generalbox center clearfix"><div class="no-overflow"><div class="data-science-machine-learning"> </div>
+<h2 class="course-title">Processing Techniques for Multiples in Seismic Data; Concepts, Applications, Trends</h2>
+<hr class="course-metadata-start"/>
+<div class="course-keywords" style="display: none;"> </div>
+<div class="course-metadata-row">
+<table class="course-intro-table" style="width: 100%; height: 138px;">
+<tbody>
+<tr style="height: 27px;">
+<td>Instructor:</td>
+<td>Dirk J. Verschuur and Clément Kostov</td>
+</tr>
+<tr style="height: 27px;">
+<td>Language:</td>
+<td>English</td>
+</tr>
+<tr style="height: 27px;">
+<td>Level:</td>
+<td>Intermediate</td>
+</tr>
+<tr style="height: 57px;">
+<td>Duration and formats:</td>
+<td>
+<table class="duration-and-formats" style="width: 100%; height: 54px;">
+<tbody>
+<tr style="height: 27px;">
+<td>Extensive Online Short Course (EOSC): 10 hours</td>
+<td>CPD Points: 10</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="course-icons" style="display: none;">
+<div class="button-new-on"> </div>
+<div class="button-inhouse-on"> </div>
+<div class="button-book-off"> </div>
+<div class="button-video-off"> </div>
+</div>
+</div>
+<hr class="course-metadata-end"/>
+<div class="course-description-container">
+<h4 class="section-title">Next edition: 12 October - 12 December 2026</h4>
+</div>
+<p><a class="btn btn-primary" href="https://learninggeoscience.org/enrol/index.php?id=167" target="_self" title="Register"> Register now </a></p>
+<p></p>
+<h3 class="section-title"> </h3>
+<h3 class="section-title">Course Description</h3>
+<p dir="ltr">Seismic data processing has traditionally used a subset of the data, the primaries, as the  signal part of the data from which to create images of the subsurface and to estimate  subsurface properties. Seismic multiples are another subset of the data, which are considered in most cases as noise to be removed, and in some cases as signal that  complements the primaries.  </p>
+<p dir="ltr">In this course we cover a broad range of techniques that are used in seismic data  processing to remove multiples or to use multiples in imaging. For each of these  techniques we present the concepts, the key applications, the recent development  trends and we provide reading suggestions and exercises for self-study. </p>
+<p>By focusing on seismic multiples – their relation to primaries, their challenges and  opportunities in data processing - we provide an opportunity for students to gain a  deeper understanding of their data (primaries, multiples and other events) and of the  techniques they could use in processing to improve results.</p>
+<h3 class="section-title"> </h3>
+<h3 class="section-title">Course Outline</h3>
+<p dir="ltr">The course is divided into 10 lectures, each of them being approximately 30-45  minutes. Within each lecture, concepts will be illustrated with synthetic and field data, and exercises and reading suggestions will be provided for further study. </p>
+<p><strong>Lecture 1: Introduction (part 1) </strong><br/>• Summary of theoretical fundamentals <br/>o Acoustic and elastic media, free surfaces <br/>o Seismic wavefields in acoustic and elastic media <br/>o Scattering at different scales, and in particular at free surfaces o Classification of seismic events <br/>o Examples from seismology (videos and annotations)</p>
+<p><strong>Lecture 2: Introduction (part 2) </strong><br/>• Application domains and their datasets <br/>o Seismic surveys for oil and gas exploration, development, production o Seismic for CCUS <br/>o High-resolution shallow surveys for drilling hazards, windfarms, gas  hydrates <br/>o Seismology; global, local <br/>o Engineering applications</p>
+<p>• Seismic data processing methods <br/>o Separation of signal and noise <br/>o Parameter estimation problems <br/>o Imaging methods <br/>o Inversion methods</p>
+<p>• Canonical workflows and role of multiples</p>
+<p><strong>Lecture 3: Lecture Multiple removal based on move-out and dip discrimination </strong><br/>• Introduction and principles <br/>• Common transforms in seismic data processing <br/>• Multiple removal using the parabolic Radon transform <br/>• Dip-discrimination basic workflow <br/>• Higher-dimensional transforms (beyond 2D)</p>
+<p>• Advances and developments in transform methods <br/>o Amplitude preserving, high-resolution transforms <br/>o Time-domain transforms <br/>o Joint transforms (demultiple in combination with one or several of  interpolation, de-alias, designature, linear noise removal, other denoise)</p>
+<p><strong>Lecture 4: Predictive deconvolution </strong><br/>• Introduction, convolution and correlation concepts <br/>• Convolution and correlation concepts <br/>• Linear filtering, filter design techniques <br/>• Predictive deconvolution basics <br/>• Extending the predictive deconvolution concept </p>
+<p><strong>Exercices, part 1</strong></p>
+<p><strong>Lecture 5: Principles of surface-related multiple elimination </strong><br/>• Relations between primaries and multiples for 1D media, normal incidence • Huygens’ virtual sources, Reciprocity theorems</p>
+<p> • Iterative SRME <br/>o Cases of 1D, 2D, 3D media</p>
+<p>• Other multiple prediction methods <br/>o Data-driven, model-based, or hybrid </p>
+<p>• Wavefield extrapolation methods <br/>o Classes of water-bottom related multiples <br/>o Model-based predictions of water-bottom related multiples <br/>o Relation to SRME </p>
+<p><strong>Lecture 6: Practical aspects of surface-related multiple elimination (part 1) </strong><br/>• Data conditioning for SRME <br/>• Adaptive subtraction of predicted surface-related multiples</p>
+<p><strong>Lecture 7: Practical aspects of surface-related multiple  elimination (part 2) </strong><br/>• Shallow water case</p>
+<p>• Sea-bed acquisitions case <br/>o Up/down, down/down deconvolutions (1D media case) <br/>▪ P waves, pressure and Vz components <br/>▪ PS waves, pressure and radial components <br/>o SRME predictions using seabed and streamer data </p>
+<p>• Land data case<br/><br/><strong>Lecture 8: Internal multiples </strong><br/>• Introduction, historical perspective <br/>• Problem description <br/>• Extending the SRME concept to some classes of internal multiples and to 3D  data <br/>• Predicting all internal multiples using the Inverse Scattering Series • Novel approaches and perspectives using Marchenko theory <br/>• Model-based approaches to handling internal multiples </p>
+<p><strong>Lecture 9: Using multiples as signal: concepts, synthetic  examples, state-of-art </strong><br/>• Imaging primaries, imaging with multiples <br/>o Heuristic concepts <br/>o Notions of extended areal source, of crosstalk noise <br/>o Synthetic data examples <br/>o Further examples: VSP</p>
+<p>• The early imaging with multiples applications <br/>o Extended illuminations  <br/>o Transforming multiples into primaries</p>
+<p>• SWIM (separated wavefield imaging with multiples) <br/>• Concepts/heuristics of multiples in VMB (tomography) and inversion </p>
+<p><strong>Lecture 10: Using multiples as signal: recent advances </strong><br/>• Scope (assumptions, advances, challenges and limitations for) <br/>o LS-RTM, free-surface multiples, joint primaries and FSM <br/>o FWI, high-frequency FWI <br/>o FWMOD, JMI (internal multiples reflections) <br/>o Marchenko redatuming, imaging, inversion </p>
+<p><strong>Exercises, part 3 </strong></p>
+<h3 class="section-title">Participants’ Profile</h3>
+<p dir="ltr">This course is intended for professionals or advanced degree students who are looking  for a refresher on the topic of multiples in seismic processing and for an introduction to  the latest research and technology developments. Also, it is expected that the students  would be willing to deepen their knowledge of the subject through self-study readings, exercises and interactions with the instructors during online sessions. </p>
+<h3 class="section-title"> </h3>
+<h3 class="section-title">Prerequisites</h3>
+<p dir="ltr">Participants should have a basic knowledge of:  </p>
+<p dir="ltr">• Signal processing (convolution, correlation, Fourier transform);  </p>
+<p dir="ltr">• Seismic processing (preprocessing, imaging);  </p>
+<p>• Properties of acoustic waves, wave propagation, wave equations.</p>
+<h3 class="section-title"> </h3>
+<h3 class="section-title">About the Instructors</h3>
+<p>Dirk J. (Eric) Verschuur received his M.Sc. degree in 1986 and his Ph. D degree (honors)  in 1991 from the Delft University of Technology (DUT), both in applied physics.</p>
+<p dir="ltr">Clément Kostov is currently a Consulting research geophysicist, based in France.</p>
+<p dir="ltr">He joined Schlumberger (now SLB) in 1990 and worked at SLB in research and  technology development as technical expert and as research manager until 2020.  Clément's interest in geosciences started at the Ecole des Mines de Paris and developed  through graduate studies at Stanford University (PhD in Geophysics '90). </p>
+<p>Clément is a member of the SEG, EAGE and IEEE professional societies and currently  volunteers in editorial roles for EAGE’s First Break and Geophysical Prospecting journals.</p>
+<p></p>
+<p></p>
+<div class="course-description-container">
+<h4 class="section-title"> </h4>
+<h4 class="section-title">Next edition: 12 October - 12 December 2026</h4>
+</div>
+<p><a class="btn btn-primary" href="https://learninggeoscience.org/enrol/index.php?id=167" target="_self" title="Register"> Register now</a></p></div></div></div>
+</div>
+</div>
+</div>
+</div>
+<footer class="footer-popover bg-white" id="page-footer">
+<div data-region="footer-container-popover">
+<button aria-label="Show footer" class="btn btn-icon bg-secondary icon-no-margin btn-footer-popover" data-action="footer-popover">
+<i aria-hidden="true" class="icon fa fa-question fa-fw"></i>
+</button>
+</div>
+<div class="footer-content-popover container" data-region="footer-content-popover">
+<div class="footer-section p-3 border-bottom">
+<div class="logininfo">
+<div class="logininfo">You are currently using guest access (<a href="https://learninggeoscience.org/login/index.php">Log in</a>)</div>
+</div>
+<div class="tool_usertours-resettourcontainer">
+</div>
+<div style="margin-left: 50px;">
+<p>© 2025 EAGE Publications BV</p>
+<p>All rights reserved. This course or part hereof may not be reproduced or transmitted in any form or by any means, electronic or mechanical, including recording, or any information storage and retrieval system, without the prior written permission of the publisher.</p>
+<p><a href="https://eage.org/about_eage/eage-privacy-and-cookie-statement/" target="_blank">Privacy &amp; Cookie Statement</a></p>
+</div>
+
+
+
+
+
+
+</div>
+<div class="footer-section p-3">
+<div>Powered by <a href="https://moodle.com">Moodle</a></div>
+</div>
+</div>
+<div class="footer-wrapper">
+<img alt="EAGE Logo" class="footer-logo" src="/theme/aveticalms_geoscience/pix/eage-wit.png"/>
+<div class="socials">
+<a alt="https://nl-nl.facebook.com/pages/category/Nonprofit-Organization/EAGE-Students-116643985025755/" class="socialicon blog" href="https://nl-nl.facebook.com/pages/category/Nonprofit-Organization/EAGE-Students-116643985025755/" target="_blank" title="https://nl-nl.facebook.com/pages/category/Nonprofit-Organization/EAGE-Students-116643985025755/">
+<span class="fa-stack fa-1x">
+<i class="fa fa-square fa-stack-2x"></i>
+<i class="fa fa-facebook fa-inverse fa-stack-1x"></i>
+</span>
+<span class="sr-only">https://nl-nl.facebook.com/pages/category/Nonprofit-Organization/EAGE-Students-116643985025755/</span>
+</a>
+<a alt="https://x.com/eage_global" class="socialicon blog" href="https://x.com/eage_global" target="_blank" title="https://x.com/eage_global">
+<span class="fa-stack fa-1x">
+<i class="fa fa-square fa-stack-2x"></i>
+<i class="fa fa-brands fa-x-twitter fa-inverse fa-stack-1x"></i>
+</span>
+<span class="sr-only">https://x.com/eage_global</span>
+</a>
+<a alt="https://www.linkedin.com/company/eagelinkedin/" class="socialicon blog" href="https://www.linkedin.com/company/eagelinkedin/" target="_blank" title="https://www.linkedin.com/company/eagelinkedin/">
+<span class="fa-stack fa-1x">
+<i class="fa fa-square fa-stack-2x"></i>
+<i class="fa fa-linkedin fa-inverse fa-stack-1x"></i>
+</span>
+<span class="sr-only">https://www.linkedin.com/company/eagelinkedin/</span>
+</a>
+<a alt="https://www.eage.org/" class="socialicon blog" href="https://www.eage.org/" target="_blank" title="https://www.eage.org/">
+<span class="fa-stack fa-1x">
+<i class="fa fa-square fa-stack-2x"></i>
+<i class="fa fa-globe fa-inverse fa-stack-1x"></i>
+</span>
+<span class="sr-only">https://www.eage.org/</span>
+</a>
+</div>
+<p>© 2026 EAGE Publications BV</p>
+<p>All rights reserved. This course or part hereof may not be reproduced or transmitted in any form or by any means, electronic or mechanical, including recording, or any information storage and retrieval system, without the prior written permission of the publisher.</p>
+<p><a href="https://eage.org/about_eage/eage-privacy-and-cookie-statement/" target="_blank">Privacy &amp; Cookie Statement</a></p>
+</div>
+<div class="footer-content-debugging footer-dark bg-dark text-light">
+<div class="container-fluid footer-dark-inner">
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

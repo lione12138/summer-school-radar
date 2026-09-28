@@ -23,6 +23,7 @@ from .ai_home import merge_ai_for_homepage
 from .candidate_io import candidate_from_mapping, coerce_date
 from .collect import DEFAULT_MAX_WORKERS, collect_sources, fetch_source
 from .discovery_filter import aggregator_discovery_leads, filter_discovery_results
+from .discovery_input import fetch_discovery_page
 from .extract import extract_candidate, sample_candidate
 from .filter import apply_hard_filters
 from .http_cache import HttpCache
@@ -218,7 +219,8 @@ def run_scan(
 
         if include_discovery:
             query_config = load_yaml(config_dir / "queries.yaml")
-            queries = _flatten_queries(query_config.get("queries", {}))
+            queries = [q.replace("{year}", str(date.today().year)).replace("{next_year}", str(date.today().year + 1))
+                       for q in _flatten_queries(query_config.get("queries", {}))][:24]
             search_results, search_errors = run_discovery_queries(queries)
             leads = aggregator_discovery_leads(search_results)
             resolution_queries = official_resolution_queries(leads)
@@ -231,7 +233,8 @@ def run_scan(
             discovery_stats["results"] = len(search_results)
             discovery_stats["unique_results"] = len({result.url for result in search_results if result.url})
             filtered_discovery = filter_discovery_results(search_results)
-            search_results = filtered_discovery.accepted
+            known_urls = {page.url.rstrip("/") for page in semantic_pages}
+            search_results = [r for r in filtered_discovery.accepted if r.url.rstrip("/") not in known_urls][:40]
             discovery_stats["results_accepted"] = len(search_results)
             discovery_stats["results_rejected"] = sum(filtered_discovery.rejected.values())
             discovery_stats.update(
@@ -317,11 +320,30 @@ def run_scan(
                 max_workers=max_workers,
             )
     if enable_llm_extraction and not offline_sample:
+        discovery_urls = {page.url for page in semantic_pages if page.source.layer == "discovery"}
+        for item in ai_items or []:
+            if item.get("page_url") in discovery_urls:
+                item["source_layer"] = "discovery"
         audit_candidates = [
             candidate
             for candidate in merge_ai_for_homepage(ranked, ai_items, profile)
             if is_display_candidate(candidate) or is_archive_candidate(candidate)
+            or (candidate.source_layer == "discovery" and not candidate.failed_hard_conditions)
         ]
+        # An application destination must be fetched successfully before an
+        # unregistered programme can pass the same final evidence audit.
+        fetched_urls = {page.url for page in semantic_pages}
+        for candidate in audit_candidates:
+            if candidate.source_layer != "discovery" or candidate.application_link in fetched_urls:
+                continue
+            try:
+                page = fetch_discovery_page(Source(
+                    name="Discovery: application evidence", url=candidate.application_link,
+                    layer="discovery", region="global", source_type="search_result"))
+                semantic_pages.append(page)
+                fetched_urls.add(page.url)
+            except Exception as exc:
+                errors.append(f"Discovery application unavailable: {candidate.application_link}: {exc}")
         record_audit_items = _write_record_audit_outputs(
             ai_config_path,
             audit_candidates,
@@ -665,7 +687,7 @@ def _collect_discovery_sources(sources: list[Source], *, http_cache: HttpCache |
     errors = []
     for source in sources:
         try:
-            pages.append(_fetch_source_with_optional_cache(source, http_cache))
+            pages.append(fetch_discovery_page(source))
         except Exception as exc:  # noqa: BLE001 - keep scan resilient to arbitrary result pages.
             errors.append(f"{source.name}: {exc}")
     return pages, errors

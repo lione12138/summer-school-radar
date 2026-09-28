@@ -129,7 +129,7 @@ Multi-session extraction accepts explicitly labelled prose, table rows, and sche
 - `DEEPSEEK_API_KEY` is used for optional LLM extraction, final record audit, and build-time Chinese translation.
 - The model receives selected evidence snippets, not whole webpages and not browser control.
 - Non-unknown model fields must cite valid evidence IDs and pass deterministic validation before being used in homepage copies.
-- Search is not performed by DeepSeek. `SERPER_API_KEY` may power explicitly requested broad discovery in non-publishing manual audits only; `BRAVE_SEARCH_API_KEY` may power same-domain follow-up refinement. Missing search keys must degrade safely.
+- Search is not performed by DeepSeek. `SERPER_API_KEY` powers bounded full-scan discovery (24 queries plus up to 8 official-resolution queries, 40 new pages); new records must pass evidence-backed record audit and deterministic publication gates, without modifying the source registry; `BRAVE_SEARCH_API_KEY` may power same-domain follow-up refinement. Missing search keys must degrade safely.
 
 ## Important configuration files
 
@@ -255,7 +255,7 @@ If full-suite failures are unrelated to the current change, state the exact fail
 
 ## Publishing model
 
-- `scripts/scan_and_publish.ps1` runs daily on the maintainer's Windows machine. On Monday/Wednesday/Friday it performs a residential-network, DeepSeek-assisted full scan; on other days it performs a no-network `refresh-status` rebuild from the latest snapshots.
+- `scripts/run_scheduled_scan.ps1` runs daily on the maintainer's Windows machine in an independent persistent clone, calling `scripts/scan_and_publish.ps1`. Development edits must not prevent scheduled scanning. On Monday/Wednesday/Friday it performs a residential-network, DeepSeek-assisted full scan; on other days it performs a no-network `refresh-status` rebuild from the latest snapshots.
 - A full local scan must pass strict DeepSeek and Brave Search health checks, `scan_health.py`, `ai_output_validation.py`, and `snapshot_validation.py` before replacing snapshots.
 - Only successful full scans update the three source snapshots on `main`; status refreshes rebuild presentation without overwriting source-scan snapshots. Full scans may also commit generated seen/review/report state. The local task never writes `gh-pages`.
 - Scheduled Git operations may reuse a reachable Windows user proxy through process-scoped Git configuration and retry transient failures. If generation finishes while GitHub is unavailable, the automation records the generated commit under `.git/`, restores the clean pre-run branch, and retries that exact generated output after connectivity returns.

@@ -775,8 +775,8 @@ The default scan does not scrape Google or other search-result pages. Broad
 discovery is optional and uses Serper only when `--include-discovery` is passed.
 Before fetching, social domains, excluded programme types, explicit past years,
 missing programme signals, and missing official signals are rejected. A small
-set of commercial collection domains can contribute title leads only during a
-manual audit: their pages are never fetched, and Serper performs a second query
+set of commercial collection domains can contribute title leads within the
+discovery budget: their pages are never fetched, and Serper performs a second query
 to locate a canonical university or institute page. Accepted official results remain labelled as discovery sources
 and still pass normal extraction and hard filters. Serper discovery is separate
 from Brave's same-domain field refinement in the AI follow-up stage.
@@ -801,9 +801,9 @@ python -m research_school_radar.cli scan --enable-semantic --enable-llm-extracti
 Without either key, the project still runs normally using fixed sources and
 links already present on official pages.
 
-The GitHub Actions `discovery` checkbox applies only to manual `audit` mode and
-reads `SERPER_API_KEY` from repository secrets. Publishing `ai` runs, scheduled
-cloud refreshes, and local scheduled scans never enable Serper. The workflow
+The GitHub Actions `discovery` checkbox applies to manual `audit` and `ai` modes and
+reads `SERPER_API_KEY` from repository secrets. Local full scans enable discovery;
+status-only local/cloud refreshes never search. The workflow
 also accepts the compatibility secret name `SERPER_SEARCH_API_KEY`.
 
 Semantic ranking may retain up to 150 pages for evidence analysis. Before the
@@ -998,3 +998,32 @@ ALPS joins only explicitly registered same-edition root/application/fee pages. C
 Follow-up validation: `financial_evidence.py` extracts per-benefit evidence facts for accommodation, meals and travel. Negative and contrasting clauses are handled before positive coverage; contradictory coverage fails the public hard gate and enters the record audit. Provisional prices cannot supply a low-fee recommendation or ranking bonus. Self-funded cards/details explicitly label provisional fees. No-network refresh adds `normalization_review` to the private site's review payload; the historical full-scan queue and its AI advisory data are retained, and the source data queue is unchanged. The live view is recomputed so resolved issues disappear. AI enrichment preserves primary classification for legacy tags without inventing supporting evidence for them.
 
 Topic vocabulary now recognizes hydrologists/hydrological and Japanese neutron/muon names. Maintained related facets map hydrology to water resources and geoscience, and neutron/muon science to physics. These facets are taxonomy inferences from the retained source excerpt, not verbatim source labels.
+
+
+GGI source onboarding (2026-09-26): four explicitly registered school edition pages use `ggi_adapter.py` to read the school marker, heading, event dates and application deadline. Workshop/listing URLs do not activate this adapter. Limited accommodation support is retained separately from tuition; unknown fees and delivery mode remain subject to normal publication gates. Imbizo is registered disabled pending its January 2027 application opening and extraction validation. Registry additions require a subsequent gated full scan before they can contribute public records.
+
+
+## Discovery publication and runtime isolation (2026-09-28)
+
+Scheduled full scans use an independent persistent clone via `run_scheduled_scan.ps1`;
+its file lock prevents overlapping runners. The checkout uses committed main, separate
+generated state and local ignored credentials. Developer edits are neither copied nor reset.
+The existing publishing script retains all health, AI-output and retention gates, pending
+push recovery and the sole GitHub Pages writer. A dirty runtime exits nonzero.
+
+Discovery adds ordinary Page inputs with layer `discovery`, capped at 24 base queries,
+8 resolution queries and 40 new result pages. URLs and every redirect are checked for
+public DNS addresses; HTML fetches have time/size/redirect bounds. Search errors remain
+visible and fixed-source scanning can continue. The registry is never mutated.
+The existing record audit must affirm official source, research-training identity and
+the fetched application route using valid evidence IDs and literal fetched-page excerpts.
+Missing/failed/budget-skipped audits cannot publish discovery records. Approval is retained
+only on display copies as `discovery_verified`, serialized for no-network refresh; raw
+scanner/RSS copies remain unapproved. Hard rules still determine final publication.
+Existing audit sidecars serve as the private rejection record; subsequent scans retry
+through the existing evidence cache. No separate quarantine state machine is introduced.
+
+The offline benchmark fixes the date, replays 30 captured official-page cases and ten
+synthetic boundaries, and reports extraction recall separately from publication precision
+and recall. CI checks both aggregate and per-case regressions. It is not a measurement
+of whole-web discovery recall; see `benchmarks/README.md` for limitations.
