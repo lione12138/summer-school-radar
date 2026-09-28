@@ -2513,11 +2513,6 @@
         "AI",
         "machine learning"
       ],
-      "primary_topics": [
-        "satellite",
-        "AI",
-        "machine learning"
-      ],
       "editions": [
         {
           "id": "edition:d31fd98a1919cefb",
@@ -2586,7 +2581,12 @@
         "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
         "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "satellite",
+        "AI",
+        "machine learning"
+      ]
     },
     {
       "id": "programme:7b9a68f3cc984b4a",
