@@ -129,7 +129,7 @@ Multi-session extraction accepts explicitly labelled prose, table rows, and sche
 - `DEEPSEEK_API_KEY` is used for optional LLM extraction, final record audit, and build-time Chinese translation.
 - The model receives selected evidence snippets, not whole webpages and not browser control.
 - Non-unknown model fields must cite valid evidence IDs and pass deterministic validation before being used in homepage copies.
-- Search is not performed by DeepSeek. `SERPER_API_KEY` powers bounded full-scan discovery (24 queries plus up to 8 official-resolution queries, 40 new pages); new records must pass evidence-backed record audit and deterministic publication gates, without modifying the source registry; `BRAVE_SEARCH_API_KEY` may power same-domain follow-up refinement. Missing search keys must degrade safely.
+- Search is not performed by DeepSeek. `SERPER_API_KEY` powers bounded full-scan discovery (24 queries plus up to 8 official-resolution queries, 40 new pages); new records must pass evidence-backed record audit and deterministic publication gates, without modifying the source registry; `BRAVE_SEARCH_API_KEY` may power same-domain follow-up refinement. Discovery falls back to the configured Brave client when Serper is absent; missing both keys must degrade safely.
 
 ## Important configuration files
 

@@ -30,6 +30,9 @@ def run_discovery_queries(queries: list[str], max_results_per_query: int = 5) ->
     """
     api_key = _api_key("SERPER_API_KEY") or _api_key("SERPER_SEARCH_API_KEY")
     if not api_key:
+        if _api_key("BRAVE_SEARCH_API_KEY"):
+            results, errors = run_refinement_queries(queries, max_results_per_query)
+            return results, ["Discovery used Brave fallback: SERPER_API_KEY is not set.", *errors]
         return [], [
             "Broad discovery skipped: SERPER_API_KEY is not set."
         ]

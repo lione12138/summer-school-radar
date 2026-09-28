@@ -518,3 +518,8 @@ isolated clone under `%LOCALAPPDATA%/Summa`. Uncommitted developer changes do no
 block production scans. Runtime failures return nonzero for scheduler retries.
 The 40-case offline benchmark is documented in [benchmarks/README.md](benchmarks/README.md);
 run `python -m research_school_radar.benchmark` for precision and recall baselines.
+
+Discovery prefers Serper; if its key is absent, the configured Brave client runs
+the same bounded queries and records that fallback explicitly. Missing both keys
+skips discovery with a visible warning; it never relaxes publication validation.
+Search result captures in `reports/*.discovery.json` remain private and ignored.

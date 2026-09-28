@@ -19,6 +19,7 @@ from .ai_pipeline import (
     _write_semantic_outputs as _write_semantic_outputs,
 )
 from .api_sources import CollectorOutcome, collect_api_candidates
+from .atomic_io import write_text_atomic
 from .ai_home import merge_ai_for_homepage
 from .candidate_io import candidate_from_mapping, coerce_date
 from .collect import DEFAULT_MAX_WORKERS, collect_sources, fetch_source
@@ -233,6 +234,13 @@ def run_scan(
             discovery_stats["results"] = len(search_results)
             discovery_stats["unique_results"] = len({result.url for result in search_results if result.url})
             filtered_discovery = filter_discovery_results(search_results)
+            write_text_atomic(reports_dir / f"{date.today().isoformat()}.discovery.json", json.dumps({
+                "generated": date.today().isoformat(), "queries": queries,
+                "search_errors": [*search_errors, *resolution_errors],
+                "results": [{"url": r.url, "title": r.title, "query": r.query} for r in search_results],
+                "accepted_urls": [r.url for r in filtered_discovery.accepted],
+                "rejected_counts": filtered_discovery.rejected,
+            }, ensure_ascii=False, indent=2))
             known_urls = {page.url.rstrip("/") for page in semantic_pages}
             search_results = [r for r in filtered_discovery.accepted if r.url.rstrip("/") not in known_urls][:40]
             discovery_stats["results_accepted"] = len(search_results)
@@ -354,6 +362,13 @@ def run_scan(
             cache=cache,
         )
     update_seen(data_dir / "seen.json", ranked)
+    if include_discovery:
+        approved_display = filter_display_candidates_by_audit(
+            merge_ai_for_homepage(ranked, ai_items, profile), record_audit_items)
+        discovery_stats["candidates_audit_verified"] = sum(
+            c.source_layer == "discovery" and c.discovery_verified for c in approved_display)
+        discovery_stats["candidates_published"] = sum(
+            c.source_layer == "discovery" and is_display_candidate(c) for c in approved_display)
     write_review_queue(data_dir / "review_queue.json", ranked, ai_items=ai_items)
     report_path = write_report(ranked, reports_dir, errors)
     if update_readme_latest and not offline_sample and update_readme(ROOT / "README.md", ranked):

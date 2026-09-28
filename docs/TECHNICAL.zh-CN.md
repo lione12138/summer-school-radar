@@ -498,3 +498,6 @@ Discovery 只增加普通 Page 输入，保留 discovery 来源标记。每次�
 
 离线 benchmark 固定日期，回放 30 个官方页案例和 10 个合成边界，区分抽取召回与发布 precision/recall，
 并在 pytest 中检查总指标和逐案例回退。这不是全网搜索召回率，限制见 benchmarks/README.md。
+
+Discovery 优先使用 Serper；未配置时使用已有 Brave 客户端执行同一预算内的查询，明确记录回退。
+两者均缺失时警告并跳过发现，不放宽发布门槛。reports/*.discovery.json 搜索结果摘要私有且忽略提交。

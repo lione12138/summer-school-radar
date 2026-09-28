@@ -495,3 +495,9 @@ extractable pages, 6/9 eligible publication cases, 0 false positives. The three
 ECMWF misses remain visible. This is an offline extraction/publication benchmark,
 not a measurement of whole-web search recall or independently human-labelled gold.
 Full suite: 557 passed; two subsequent AI-origin preservation cases also passed.
+
+Live verification: installed the isolated launcher as the existing Windows task action, preserving its trigger.
+DeepSeek and Brave health checks passed. Serper was not configured, so the initial catch-up was deliberately
+interrupted before AI extraction and restarted with bounded Brave discovery fallback. No API keys were printed.
+Added private search-result capture and optional benchmark comparison of known URLs against raw search hits
+and prefilter-retained URLs. Missing discovery verification now has an explicit private rejection reason.

@@ -12,6 +12,7 @@ from .extract import extract_candidate
 from .filter import apply_hard_filters
 from .models import Page, Source
 from .publication import is_display_candidate
+from .rank import canonical_url
 from .utils import load_yaml
 
 
@@ -55,12 +56,29 @@ def evaluate(gold_path: Path, profile: dict) -> dict:
             "results": results}
 
 
+def evaluate_discovery(gold_path: Path, capture_path: Path) -> dict:
+    gold = json.loads(gold_path.read_text(encoding="utf-8"))
+    captured = json.loads(capture_path.read_text(encoding="utf-8"))
+    known = {canonical_url(c["url"]) for c in gold["cases"]
+             if c["kind"] == "official_capture" and c["expected_publish"]}
+    raw = {canonical_url(r["url"]) for r in captured["results"]}
+    accepted = {canonical_url(url) for url in captured["accepted_urls"]}
+    return {"capture_date": captured.get("generated"), "gold_date": gold["as_of"],
+            "known_eligible_urls": len(known), "search_found": len(known & raw),
+            "prefilter_retained": len(known & accepted),
+            "search_recall_on_gold_urls": len(known & raw) / len(known) if known else None,
+            "search_errors": captured.get("search_errors", []), "missing_urls": sorted(known - raw)}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--gold", type=Path, default=Path("benchmarks/gold.json"))
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--discovery-results", type=Path)
     args = parser.parse_args()
     result = evaluate(args.gold, load_yaml(Path("config/profile.yaml")))
+    if args.discovery_results:
+        result["discovery"] = evaluate_discovery(args.gold, args.discovery_results)
     text = json.dumps(result, indent=2)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)

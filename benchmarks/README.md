@@ -34,3 +34,11 @@ requires frozen Serper result sets or a dated live run compared against a larger
 independently assembled set of known programmes. Add such captures as the next
 evaluation layer. Do not lower the baseline automatically; explain intentional
 label/policy changes in the development log.
+
+Each discovery-enabled scan writes an ignored private
+`reports/YYYY-MM-DD.discovery.json` with raw result URLs, accepted URLs and query
+errors. Compare a real capture using
+`python -m research_school_radar.benchmark --discovery-results reports/YYYY-MM-DD.discovery.json`.
+This adds known-eligible-URL search coverage and prefilter retention separately.
+The current eligible subset is small; it is a pilot indicator, not population
+recall. Match capture/gold dates when interpreting closed-call changes.

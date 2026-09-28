@@ -407,6 +407,9 @@ def _audit_item(
     )
     warnings = [str(value) for value in model_result.get("warnings", [])]
     discovery_verified = model_result.get("discovery_verified") is True and verdict == "pass" and not warnings
+    if candidate.source_layer == "discovery" and not discovery_verified:
+        verdict = "reject"
+        warnings.append("discovery_verification_missing_or_unsubstantiated")
     return {
         "discovery_verified": discovery_verified,
         "audit_key": audit_key(candidate),

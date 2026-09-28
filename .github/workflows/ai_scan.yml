@@ -165,12 +165,12 @@ jobs:
             exit 1
           fi
 
-      - name: Check Serper secret
+      - name: Check discovery search secret
         if: steps.build.outputs.discovery == 'true'
         shell: bash
         run: |
-          if [ -z "${SERPER_API_KEY}" ]; then
-            echo "SERPER_API_KEY repository secret is required when discovery is enabled." >&2
+          if [ -z "${SERPER_API_KEY}" ] && [ -z "${BRAVE_SEARCH_API_KEY}" ]; then
+            echo "SERPER_API_KEY or BRAVE_SEARCH_API_KEY is required when discovery is enabled." >&2
             exit 1
           fi
 

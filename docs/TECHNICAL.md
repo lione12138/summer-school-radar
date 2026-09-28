@@ -1027,3 +1027,8 @@ The offline benchmark fixes the date, replays 30 captured official-page cases an
 synthetic boundaries, and reports extraction recall separately from publication precision
 and recall. CI checks both aggregate and per-case regressions. It is not a measurement
 of whole-web discovery recall; see `benchmarks/README.md` for limitations.
+
+Discovery prefers Serper; if its key is absent, the configured Brave client runs
+the same bounded queries and records that fallback explicitly. Missing both keys
+skips discovery with a visible warning; it never relaxes publication validation.
+Search result captures in `reports/*.discovery.json` remain private and ignored.

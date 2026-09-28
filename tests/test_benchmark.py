@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from research_school_radar.benchmark import evaluate
+from research_school_radar.benchmark import evaluate, evaluate_discovery
 from research_school_radar.utils import load_yaml
 
 
@@ -19,3 +19,17 @@ def test_fixed_date_gold_benchmark_does_not_regress():
             assert item["found"], item["id"]
         if old["published"] and old["expected_publish"]:
             assert item["published"], item["id"]
+
+
+def test_discovery_coverage_distinguishes_search_and_prefilter_losses(tmp_path):
+    gold = tmp_path / "gold.json"
+    captured = tmp_path / "capture.json"
+    gold.write_text(json.dumps({"as_of": "2026-09-28", "cases": [
+        {"kind": "official_capture", "expected_publish": True, "url": f"https://example.edu/{name}"}
+        for name in ("a", "b", "c")]}))
+    captured.write_text(json.dumps({"results": [{"url": "https://example.edu/a"}, {"url": "https://example.edu/b"}],
+                                    "accepted_urls": ["https://example.edu/a"]}))
+    result = evaluate_discovery(gold, captured)
+    assert result["known_eligible_urls"] == 3
+    assert result["search_found"] == 2 and result["prefilter_retained"] == 1
+    assert result["missing_urls"] == ["https://example.edu/c"]

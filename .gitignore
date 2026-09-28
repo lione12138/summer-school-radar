@@ -24,6 +24,7 @@ reports/*.ai.json
 reports/*.semantic.json
 reports/*.record-audit.json
 reports/*.record-audit.md
+reports/*.discovery.json
 reports/*.provider-comparison.json
 reports/*.ai-run-comparison.md
 reports/*.ai-evaluation-template.csv

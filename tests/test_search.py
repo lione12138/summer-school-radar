@@ -24,6 +24,17 @@ _API_PROFILE = {
 
 
 @responses.activate
+def test_discovery_uses_configured_brave_when_serper_is_absent(monkeypatch):
+    monkeypatch.setattr("research_school_radar.search._api_key", lambda name: "stub" if name == "BRAVE_SEARCH_API_KEY" else "")
+    responses.add(responses.GET, BRAVE_ENDPOINT, json={"web": {"results": [
+        {"title": "Research Summer School", "url": "https://example.edu/school", "description": "PhD training"}]}}, status=200)
+    results, errors = run_discovery_queries(["research summer school"], max_results_per_query=3)
+    assert len(results) == 1 and results[0].provider == "brave"
+    assert "fallback" in errors[0]
+    assert len(responses.calls) == 1
+
+
+@responses.activate
 def test_ihe_delft_api_maps_courses_to_candidates() -> None:
     api_start = date.today() + timedelta(days=60)
     api_end = date.today() + timedelta(days=72)
