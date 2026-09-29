@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-09-28",
+  "generated": "2026-09-29",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -92,6 +92,83 @@
       ]
     },
     {
+      "id": "alps-language-processing",
+      "slug": "alps-advanced-language-processing-winter-school-fecc81c5",
+      "title": "ALPS — Advanced Language Processing Winter School",
+      "title_zh": "ALPS 高级语言处理冬季学校",
+      "organizer": "LIG (Université Grenoble Alpes) and NAVER Labs Europe",
+      "organizer_zh": "LIG（格勒诺布尔阿尔卑斯大学）与 NAVER Labs Europe",
+      "summary": "Advanced Language Processing Winter School – ALPS, 28th March – 2nd April 2027 Skip to content Advanced Language Processing Winter School ALPS, 28th March – 2nd April 2027 Home Speakers Schedule Organizers Sponsors Application Venue Participant Voices Back Welcome to ALPS 2027, t",
+      "summary_zh": "高级语言处理冬季学校 – ALPS，2027年3月28日至4月2日 跳至内容 高级语言处理冬季学校 ALPS，2027年3月28日至4月2日 首页 演讲嘉宾 日程 组织者 赞助商 申请 场地 参与者感言 返回 欢迎参加ALPS 2027，t",
+      "topics": [
+        "natural language processing"
+      ],
+      "primary_topics": [
+        "natural language processing"
+      ],
+      "editions": [
+        {
+          "id": "alps-language-processing:2027",
+          "title": "ALPS 2027 — Advanced Language Processing Winter School",
+          "title_zh": "ALPS 2027 高级语言处理冬季学校",
+          "detail_path": "opportunities/alps-language-processing-2027-1984e1b8.html",
+          "official_url": "https://framaforms.org/alps-2027-application-form-1789055166-0",
+          "location": "Centre Paul Langevin",
+          "location_zh": "保罗·朗之万中心",
+          "start_date": "2027-03-28",
+          "end_date": "2027-04-02",
+          "deadline": "2026-10-11",
+          "deadline_status": "open",
+          "duration_days": 6,
+          "mode": "in-person",
+          "financial_summary": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
+          "financial_summary_zh": "费用：学生 EUR 700; EUR 900 非学生学术界参与者; EUR 1300 产业界及独立参与者 （价格待确认；含住宿及全食宿）",
+          "funding_available": null,
+          "fee_eur": 700.0,
+          "topics": [
+            "natural language processing"
+          ],
+          "primary_topics": [
+            "natural language processing"
+          ],
+          "secondary_topics": [],
+          "summary": "Advanced Language Processing Winter School – ALPS, 28th March – 2nd April 2027 Skip to content Advanced Language Processing Winter School ALPS, 28th March – 2nd April 2027 Home Speakers Schedule Organizers Sponsors Application Venue Participant Voices Back Welcome to ALPS 2027, t",
+          "summary_zh": "高级语言处理冬季学校 – ALPS，2027年3月28日至4月2日 跳至内容 高级语言处理冬季学校 ALPS，2027年3月28日至4月2日 首页 演讲嘉宾 日程 组织者 赞助商 申请 场地 参与者感言 返回 欢迎参加ALPS 2027，t",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "alps-language-processing:2027",
+        "title": "ALPS 2027 — Advanced Language Processing Winter School",
+        "title_zh": "ALPS 2027 高级语言处理冬季学校",
+        "detail_path": "opportunities/alps-language-processing-2027-1984e1b8.html",
+        "official_url": "https://framaforms.org/alps-2027-application-form-1789055166-0",
+        "location": "Centre Paul Langevin",
+        "location_zh": "保罗·朗之万中心",
+        "start_date": "2027-03-28",
+        "end_date": "2027-04-02",
+        "deadline": "2026-10-11",
+        "deadline_status": "open",
+        "duration_days": 6,
+        "mode": "in-person",
+        "financial_summary": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
+        "financial_summary_zh": "费用：学生 EUR 700; EUR 900 非学生学术界参与者; EUR 1300 产业界及独立参与者 （价格待确认；含住宿及全食宿）",
+        "funding_available": null,
+        "fee_eur": 700.0,
+        "topics": [
+          "natural language processing"
+        ],
+        "primary_topics": [
+          "natural language processing"
+        ],
+        "secondary_topics": [],
+        "summary": "Advanced Language Processing Winter School – ALPS, 28th March – 2nd April 2027 Skip to content Advanced Language Processing Winter School ALPS, 28th March – 2nd April 2027 Home Speakers Schedule Organizers Sponsors Application Venue Participant Voices Back Welcome to ALPS 2027, t",
+        "summary_zh": "高级语言处理冬季学校 – ALPS，2027年3月28日至4月2日 跳至内容 高级语言处理冬季学校 ALPS，2027年3月28日至4月2日 首页 演讲嘉宾 日程 组织者 赞助商 申请 场地 参与者感言 返回 欢迎参加ALPS 2027，t",
+        "sessions": []
+      }
+    },
+    {
       "id": "programme:baa721d513bed714",
       "slug": "alps-advanced-language-processing-winter-school-655f99c2",
       "title": "ALPS — Advanced Language Processing Winter School",
@@ -176,7 +253,7 @@
       "organizer": "IAHS",
       "organizer_zh": "IAHS",
       "summary": "Building on the success of the first IAHS Academy (Ningbo, January 2026), the second edition aims to further strengthen IAHS capacity-building activities by expanding the scientific offer, enlarging participation, and consolidating the Academy as a flagship global training initiative for early-career hydrologists.",
-      "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，扩大科学内容、增加参与规模，并将该学院巩固为面向早期职业水文学家的全球旗舰培训项目。",
+      "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，通过扩大科学内容、增加参与规模，并将该学院巩固为面向早期职业水文学家的全球旗舰培训项目。",
       "topics": [
         "hydrology",
         "water resources",
@@ -213,7 +290,7 @@
           ],
           "secondary_topics": [],
           "summary": "Building on the success of the first IAHS Academy (Ningbo, January 2026), the second edition aims to further strengthen IAHS capacity-building activities by expanding the scientific offer, enlarging participation, and consolidating the Academy as a flagship global training initiative for early-career hydrologists.",
-          "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，扩大科学内容、增加参与规模，并将该学院巩固为面向早期职业水文学家的全球旗舰培训项目。",
+          "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，通过扩大科学内容、增加参与规模，并将该学院巩固为面向早期职业水文学家的全球旗舰培训项目。",
           "sessions": []
         }
       ],
@@ -248,7 +325,7 @@
         ],
         "secondary_topics": [],
         "summary": "Building on the success of the first IAHS Academy (Ningbo, January 2026), the second edition aims to further strengthen IAHS capacity-building activities by expanding the scientific offer, enlarging participation, and consolidating the Academy as a flagship global training initiative for early-career hydrologists.",
-        "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，扩大科学内容、增加参与规模，并将该学院巩固为面向早期职业水文学家的全球旗舰培训项目。",
+        "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，通过扩大科学内容、增加参与规模，并将该学院巩固为面向早期职业水文学家的全球旗舰培训项目。",
         "sessions": []
       },
       "primary_topics": [
@@ -265,7 +342,7 @@
       "organizer": "J-PARC Neutron and Muon School",
       "organizer_zh": "J-PARC中子与μ子学校",
       "summary": "Research school: Neutron and Muon School 2026. Dates: 09 November 2026 to 13 November 2026. Application deadline: 30 September 2026. In-person. Fee: JPY 40,000. Teaching language: Japanese.",
-      "summary_zh": "研究学校：中子与μ子学校2026。日期：2026年11月9日至2026年11月13日。申请截止日期：2026年9月30日。线下进行。费用：40,000日元。教学语言：日语。",
+      "summary_zh": "研究培训：中子与μ子学校2026。日期：2026年11月9日至2026年11月13日。申请截止日期：2026年9月30日。线下进行。费用：40,000日元。授课语言：日语。",
       "topics": [
         "physics",
         "neutron science",
@@ -302,7 +379,7 @@
           ],
           "secondary_topics": [],
           "summary": "Research school: Neutron and Muon School 2026. Dates: 09 November 2026 to 13 November 2026. Application deadline: 30 September 2026. In-person. Fee: JPY 40,000. Teaching language: Japanese.",
-          "summary_zh": "研究学校：中子与μ子学校2026。日期：2026年11月9日至2026年11月13日。申请截止日期：2026年9月30日。线下进行。费用：40,000日元。教学语言：日语。",
+          "summary_zh": "研究培训：中子与μ子学校2026。日期：2026年11月9日至2026年11月13日。申请截止日期：2026年9月30日。线下进行。费用：40,000日元。授课语言：日语。",
           "sessions": []
         }
       ],
@@ -337,7 +414,7 @@
         ],
         "secondary_topics": [],
         "summary": "Research school: Neutron and Muon School 2026. Dates: 09 November 2026 to 13 November 2026. Application deadline: 30 September 2026. In-person. Fee: JPY 40,000. Teaching language: Japanese.",
-        "summary_zh": "研究学校：中子与μ子学校2026。日期：2026年11月9日至2026年11月13日。申请截止日期：2026年9月30日。线下进行。费用：40,000日元。教学语言：日语。",
+        "summary_zh": "研究培训：中子与μ子学校2026。日期：2026年11月9日至2026年11月13日。申请截止日期：2026年9月30日。线下进行。费用：40,000日元。授课语言：日语。",
         "sessions": []
       },
       "primary_topics": [
@@ -449,7 +526,7 @@
       "organizer": "Eurac Research and University of Innsbruck",
       "organizer_zh": "Eurac Research与因斯布鲁克大学",
       "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-      "summary_zh": "冬季学校从法律和政治学角度分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
       "topics": [
         "law",
         "political science",
@@ -487,7 +564,7 @@
             "AI governance"
           ],
           "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-          "summary_zh": "冬季学校从法律和政治学角度分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+          "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
           "sessions": []
         }
       ],
@@ -523,7 +600,7 @@
           "AI governance"
         ],
         "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-        "summary_zh": "冬季学校从法律和政治学角度分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+        "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
         "sessions": []
       },
       "primary_topics": [
@@ -630,8 +707,8 @@
         "data science",
         "physics",
         "mathematics",
-        "engineering",
-        "design"
+        "mathematical physics",
+        "engineering"
       ],
       "editions": [
         {
@@ -657,16 +734,16 @@
             "data science",
             "physics",
             "mathematics",
-            "engineering",
-            "design"
+            "mathematical physics",
+            "engineering"
           ],
           "primary_topics": [
             "AI",
             "data science",
             "physics",
             "mathematics",
-            "engineering",
-            "design"
+            "mathematical physics",
+            "engineering"
           ],
           "secondary_topics": [],
           "summary": "Home - Winter School 2026 A FLAGSHIP EVENT OF About Timetable Public Lecture Venue Grants Apply About Timetable Public Lecture Venue Grants Apply Develop your mathematical science skills and national networks AMSI Winter School is an annual two-week event designed for postgraduat",
@@ -698,16 +775,16 @@
           "data science",
           "physics",
           "mathematics",
-          "engineering",
-          "design"
+          "mathematical physics",
+          "engineering"
         ],
         "primary_topics": [
           "AI",
           "data science",
           "physics",
           "mathematics",
-          "engineering",
-          "design"
+          "mathematical physics",
+          "engineering"
         ],
         "secondary_topics": [],
         "summary": "Home - Winter School 2026 A FLAGSHIP EVENT OF About Timetable Public Lecture Venue Grants Apply About Timetable Public Lecture Venue Grants Apply Develop your mathematical science skills and national networks AMSI Winter School is an annual two-week event designed for postgraduat",
@@ -719,8 +796,8 @@
         "data science",
         "physics",
         "mathematics",
-        "engineering",
-        "design"
+        "mathematical physics",
+        "engineering"
       ]
     },
     {
@@ -731,9 +808,11 @@
       "organizer": "ANSTO-HZB-AONSA Neutron School",
       "organizer_zh": "ANSTO-HZB-AONSA 中子学校",
       "summary": "ANSTO-HZB-AONSA Neutron School 2026 | ANSTO Skip to main content Open Menu Careers Shop User access Media Centre Contact Search About Expand Locations Expand Sydney Melbourne What we do Expand Vision Our history Nuclear stewardship Partnerships FAQs Aboriginal cultural heritage H",
-      "summary_zh": "ANSTO-HZB-AONSA 中子学校 2026 | ANSTO 跳至主要内容 打开菜单 职业 商店 用户访问 媒体中心 联系 搜索 关于 展开 地点 展开 悉尼 墨尔本 我们的工作 展开 愿景 我们的历史 核管理 合作伙伴关系 常见问题 原住民文化遗产 H",
+      "summary_zh": "ANSTO-HZB-AONSA 中子学校 2026 | ANSTO 跳至主要内容 打开菜单 招聘 商店 用户访问 媒体中心 联系 搜索 关于 展开 地点 展开 悉尼 墨尔本 我们的工作 展开 愿景 我们的历史 核管理 合作伙伴 常见问题 原住民文化遗产 H",
       "topics": [
-        "sustainability"
+        "neutron science",
+        "sustainability",
+        "physics"
       ],
       "editions": [
         {
@@ -755,14 +834,19 @@
           "funding_available": true,
           "fee_eur": 465.0,
           "topics": [
-            "sustainability"
+            "neutron science",
+            "sustainability",
+            "physics"
           ],
           "primary_topics": [
-            "sustainability"
+            "neutron science"
           ],
-          "secondary_topics": [],
+          "secondary_topics": [
+            "sustainability",
+            "physics"
+          ],
           "summary": "ANSTO-HZB-AONSA Neutron School 2026 | ANSTO Skip to main content Open Menu Careers Shop User access Media Centre Contact Search About Expand Locations Expand Sydney Melbourne What we do Expand Vision Our history Nuclear stewardship Partnerships FAQs Aboriginal cultural heritage H",
-          "summary_zh": "ANSTO-HZB-AONSA 中子学校 2026 | ANSTO 跳至主要内容 打开菜单 职业 商店 用户访问 媒体中心 联系 搜索 关于 展开 地点 展开 悉尼 墨尔本 我们的工作 展开 愿景 我们的历史 核管理 合作伙伴关系 常见问题 原住民文化遗产 H",
+          "summary_zh": "ANSTO-HZB-AONSA 中子学校 2026 | ANSTO 跳至主要内容 打开菜单 招聘 商店 用户访问 媒体中心 联系 搜索 关于 展开 地点 展开 悉尼 墨尔本 我们的工作 展开 愿景 我们的历史 核管理 合作伙伴 常见问题 原住民文化遗产 H",
           "sessions": []
         }
       ],
@@ -786,18 +870,23 @@
         "funding_available": true,
         "fee_eur": 465.0,
         "topics": [
-          "sustainability"
+          "neutron science",
+          "sustainability",
+          "physics"
         ],
         "primary_topics": [
-          "sustainability"
+          "neutron science"
         ],
-        "secondary_topics": [],
+        "secondary_topics": [
+          "sustainability",
+          "physics"
+        ],
         "summary": "ANSTO-HZB-AONSA Neutron School 2026 | ANSTO Skip to main content Open Menu Careers Shop User access Media Centre Contact Search About Expand Locations Expand Sydney Melbourne What we do Expand Vision Our history Nuclear stewardship Partnerships FAQs Aboriginal cultural heritage H",
-        "summary_zh": "ANSTO-HZB-AONSA 中子学校 2026 | ANSTO 跳至主要内容 打开菜单 职业 商店 用户访问 媒体中心 联系 搜索 关于 展开 地点 展开 悉尼 墨尔本 我们的工作 展开 愿景 我们的历史 核管理 合作伙伴关系 常见问题 原住民文化遗产 H",
+        "summary_zh": "ANSTO-HZB-AONSA 中子学校 2026 | ANSTO 跳至主要内容 打开菜单 招聘 商店 用户访问 媒体中心 联系 搜索 关于 展开 地点 展开 悉尼 墨尔本 我们的工作 展开 愿景 我们的历史 核管理 合作伙伴 常见问题 原住民文化遗产 H",
         "sessions": []
       },
       "primary_topics": [
-        "sustainability"
+        "neutron science"
       ]
     },
     {
@@ -813,7 +902,6 @@
         "AI",
         "artificial intelligence",
         "machine learning",
-        "physics",
         "astrophysics",
         "astronomy",
         "cosmology"
@@ -826,7 +914,7 @@
           "detail_path": "opportunities/astroai-asian-network-school-2026-6769381f.html",
           "official_url": "https://cd3.ipmu.jp/a3n_Aug2026/",
           "location": "LeCosPA Auditorium, NTU (Chee-Chun Leung Cosmology Hall, No. 1, Sec. 4, Roosevelt Rd. Taipei 10617, Taiwan, map )",
-          "location_zh": "LeCosPA 报告厅，NTU（Chee-Chun Leung 宇宙学馆，台湾台北市罗斯福路四段1号，10617，地图）",
+          "location_zh": "台湾台北市罗斯福路四段1号 国立台湾大学 Chee-Chun Leung 宇宙学馆 LeCosPA 报告厅，邮编10617（地图）",
           "start_date": "2026-08-24",
           "end_date": "2026-08-28",
           "deadline": "2026-06-01",
@@ -841,7 +929,6 @@
             "AI",
             "artificial intelligence",
             "machine learning",
-            "physics",
             "astrophysics",
             "astronomy",
             "cosmology"
@@ -850,7 +937,6 @@
             "AI",
             "artificial intelligence",
             "machine learning",
-            "physics",
             "astrophysics",
             "astronomy",
             "cosmology"
@@ -869,7 +955,7 @@
         "detail_path": "opportunities/astroai-asian-network-school-2026-6769381f.html",
         "official_url": "https://cd3.ipmu.jp/a3n_Aug2026/",
         "location": "LeCosPA Auditorium, NTU (Chee-Chun Leung Cosmology Hall, No. 1, Sec. 4, Roosevelt Rd. Taipei 10617, Taiwan, map )",
-        "location_zh": "LeCosPA 报告厅，NTU（Chee-Chun Leung 宇宙学馆，台湾台北市罗斯福路四段1号，10617，地图）",
+        "location_zh": "台湾台北市罗斯福路四段1号 国立台湾大学 Chee-Chun Leung 宇宙学馆 LeCosPA 报告厅，邮编10617（地图）",
         "start_date": "2026-08-24",
         "end_date": "2026-08-28",
         "deadline": "2026-06-01",
@@ -884,7 +970,6 @@
           "AI",
           "artificial intelligence",
           "machine learning",
-          "physics",
           "astrophysics",
           "astronomy",
           "cosmology"
@@ -893,7 +978,6 @@
           "AI",
           "artificial intelligence",
           "machine learning",
-          "physics",
           "astrophysics",
           "astronomy",
           "cosmology"
@@ -907,11 +991,204 @@
         "AI",
         "artificial intelligence",
         "machine learning",
-        "physics",
         "astrophysics",
         "astronomy",
         "cosmology"
       ]
+    },
+    {
+      "id": "csha-computational-cognitive-neuroscience",
+      "slug": "computational-and-cognitive-neuroscience-csha-course-01cd14bb",
+      "title": "Computational and Cognitive Neuroscience — CSHA Course",
+      "title_zh": "计算与认知神经科学 — CSHA 课程",
+      "organizer": "Cold Spring Harbor Asia",
+      "organizer_zh": "冷泉港亚洲",
+      "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
+      "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
+      "topics": [
+        "neuroscience",
+        "artificial intelligence",
+        "physics",
+        "mathematics",
+        "engineering"
+      ],
+      "primary_topics": [
+        "neuroscience"
+      ],
+      "editions": [
+        {
+          "id": "csha-computational-cognitive-neuroscience:2026",
+          "title": "Computational and Cognitive Neuroscience — CSHA Course 2026",
+          "title_zh": "计算与认知神经科学 — CSHA 课程 2026",
+          "detail_path": "opportunities/csha-computational-cognitive-neuroscience-2026-f318dfa9.html",
+          "official_url": "https://www.csh-asia.org/?content/3046",
+          "location": "Suzhou, China",
+          "location_zh": "中国苏州",
+          "start_date": "2026-06-28",
+          "end_date": "2026-07-19",
+          "deadline": "2026-04-08",
+          "deadline_status": "closed",
+          "duration_days": 22,
+          "mode": "in-person",
+          "financial_summary": "USD 1950 (including tuition, board and lodging; official page also offers CNY pricing) · Financial support may be requested with the application; amount and award are not guaranteed.",
+          "financial_summary_zh": "费用：USD 1950 (including tuition, board and lodging; official page also offers CNY pricing) · 津贴（有条件申请，不保证获得）",
+          "funding_available": true,
+          "fee_eur": 1852.5,
+          "topics": [
+            "neuroscience",
+            "artificial intelligence",
+            "physics",
+            "mathematics",
+            "engineering"
+          ],
+          "primary_topics": [
+            "neuroscience"
+          ],
+          "secondary_topics": [
+            "artificial intelligence",
+            "physics",
+            "mathematics",
+            "engineering"
+          ],
+          "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
+          "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "csha-computational-cognitive-neuroscience:2026",
+        "title": "Computational and Cognitive Neuroscience — CSHA Course 2026",
+        "title_zh": "计算与认知神经科学 — CSHA 课程 2026",
+        "detail_path": "opportunities/csha-computational-cognitive-neuroscience-2026-f318dfa9.html",
+        "official_url": "https://www.csh-asia.org/?content/3046",
+        "location": "Suzhou, China",
+        "location_zh": "中国苏州",
+        "start_date": "2026-06-28",
+        "end_date": "2026-07-19",
+        "deadline": "2026-04-08",
+        "deadline_status": "closed",
+        "duration_days": 22,
+        "mode": "in-person",
+        "financial_summary": "USD 1950 (including tuition, board and lodging; official page also offers CNY pricing) · Financial support may be requested with the application; amount and award are not guaranteed.",
+        "financial_summary_zh": "费用：USD 1950 (including tuition, board and lodging; official page also offers CNY pricing) · 津贴（有条件申请，不保证获得）",
+        "funding_available": true,
+        "fee_eur": 1852.5,
+        "topics": [
+          "neuroscience",
+          "artificial intelligence",
+          "physics",
+          "mathematics",
+          "engineering"
+        ],
+        "primary_topics": [
+          "neuroscience"
+        ],
+        "secondary_topics": [
+          "artificial intelligence",
+          "physics",
+          "mathematics",
+          "engineering"
+        ],
+        "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
+        "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
+        "sessions": []
+      }
+    },
+    {
+      "id": "iiser-pune-camp",
+      "slug": "computational-approaches-to-memory-and-plasticity-camp-a57f3fe7",
+      "title": "Computational Approaches to Memory and Plasticity (CAMP",
+      "title_zh": "记忆与可塑性计算方法（CAMP）",
+      "organizer": "IISER Pune",
+      "organizer_zh": "IISER浦那",
+      "summary": "CAMP | Computational Approaches to Memory and Plasticity CAMP Home Speakers Previous CAMP Schools FAQs Schedule Wiki Contact Us Menu Computational Approaches to Memory and Plasticity We invite Ph.D. students, master’s students, final-year undergraduates, and postdocs worldwide fr",
+      "summary_zh": "CAMP | 记忆与可塑性计算方法 CAMP主页 演讲者 往届CAMP学校 常见问题 日程 Wiki 联系我们 菜单 记忆与可塑性计算方法 我们邀请全球的博士生、硕士生、最后一年本科生和博士后参加",
+      "topics": [
+        "design",
+        "computational neuroscience",
+        "neuroscience",
+        "history"
+      ],
+      "primary_topics": [
+        "design",
+        "computational neuroscience",
+        "neuroscience",
+        "history"
+      ],
+      "editions": [
+        {
+          "id": "iiser-pune-camp:2026",
+          "title": "Computational Approaches to Memory and Plasticity (CAMP) 2026",
+          "title_zh": "记忆与可塑性计算方法（CAMP）2026",
+          "detail_path": "opportunities/iiser-pune-camp-2026-ce4806a1.html",
+          "official_url": "https://camp.iiserpune.ac.in/",
+          "location": "IISER Pune, India",
+          "location_zh": "印度IISER浦那",
+          "start_date": "2026-07-02",
+          "end_date": "2026-07-16",
+          "deadline": "2026-05-07",
+          "deadline_status": "closed",
+          "duration_days": 15,
+          "mode": "in-person",
+          "financial_summary": "Fee not stated · Accommodation and meals covered; travel support is not stated.",
+          "financial_summary_zh": "住宿及餐食全额覆盖；差旅资助未说明",
+          "funding_available": true,
+          "fee_eur": null,
+          "topics": [
+            "design",
+            "computational neuroscience",
+            "neuroscience",
+            "history"
+          ],
+          "primary_topics": [
+            "design",
+            "computational neuroscience",
+            "neuroscience",
+            "history"
+          ],
+          "secondary_topics": [],
+          "summary": "CAMP | Computational Approaches to Memory and Plasticity CAMP Home Speakers Previous CAMP Schools FAQs Schedule Wiki Contact Us Menu Computational Approaches to Memory and Plasticity We invite Ph.D. students, master’s students, final-year undergraduates, and postdocs worldwide fr",
+          "summary_zh": "CAMP | 记忆与可塑性计算方法 CAMP主页 演讲者 往届CAMP学校 常见问题 日程 Wiki 联系我们 菜单 记忆与可塑性计算方法 我们邀请全球的博士生、硕士生、最后一年本科生和博士后参加",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "iiser-pune-camp:2026",
+        "title": "Computational Approaches to Memory and Plasticity (CAMP) 2026",
+        "title_zh": "记忆与可塑性计算方法（CAMP）2026",
+        "detail_path": "opportunities/iiser-pune-camp-2026-ce4806a1.html",
+        "official_url": "https://camp.iiserpune.ac.in/",
+        "location": "IISER Pune, India",
+        "location_zh": "印度IISER浦那",
+        "start_date": "2026-07-02",
+        "end_date": "2026-07-16",
+        "deadline": "2026-05-07",
+        "deadline_status": "closed",
+        "duration_days": 15,
+        "mode": "in-person",
+        "financial_summary": "Fee not stated · Accommodation and meals covered; travel support is not stated.",
+        "financial_summary_zh": "住宿及餐食全额覆盖；差旅资助未说明",
+        "funding_available": true,
+        "fee_eur": null,
+        "topics": [
+          "design",
+          "computational neuroscience",
+          "neuroscience",
+          "history"
+        ],
+        "primary_topics": [
+          "design",
+          "computational neuroscience",
+          "neuroscience",
+          "history"
+        ],
+        "secondary_topics": [],
+        "summary": "CAMP | Computational Approaches to Memory and Plasticity CAMP Home Speakers Previous CAMP Schools FAQs Schedule Wiki Contact Us Menu Computational Approaches to Memory and Plasticity We invite Ph.D. students, master’s students, final-year undergraduates, and postdocs worldwide fr",
+        "summary_zh": "CAMP | 记忆与可塑性计算方法 CAMP主页 演讲者 往届CAMP学校 常见问题 日程 Wiki 联系我们 菜单 记忆与可塑性计算方法 我们邀请全球的博士生、硕士生、最后一年本科生和博士后参加",
+        "sessions": []
+      }
     },
     {
       "id": "programme:21ea41829cac43f3",
@@ -955,11 +1232,12 @@
           ],
           "primary_topics": [
             "linguistics",
-            "computational linguistics",
+            "computational linguistics"
+          ],
+          "secondary_topics": [
             "natural language processing",
             "corpus linguistics"
           ],
-          "secondary_topics": [],
           "summary": "A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.",
           "summary_zh": "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。",
           "sessions": []
@@ -992,20 +1270,19 @@
         ],
         "primary_topics": [
           "linguistics",
-          "computational linguistics",
+          "computational linguistics"
+        ],
+        "secondary_topics": [
           "natural language processing",
           "corpus linguistics"
         ],
-        "secondary_topics": [],
         "summary": "A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.",
         "summary_zh": "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。",
         "sessions": []
       },
       "primary_topics": [
         "linguistics",
-        "computational linguistics",
-        "natural language processing",
-        "corpus linguistics"
+        "computational linguistics"
       ]
     },
     {
@@ -1016,10 +1293,10 @@
       "organizer": "Berkeley Lab DL4SCI",
       "organizer_zh": "Berkeley Lab DL4SCI",
       "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
-      "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由Berkeley Lab计算科学部主办，2026科学深度学习（DL4SCI）暑期学校是一个为期五天的密集型项目，汇集研究人员和工程师，探索深度学习的最新进展",
+      "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由Berkeley Lab计算科学部主办，2026科学深度学习（DL4SCI）暑期学校是为期五天的密集型项目，汇聚研究人员和工程师，探讨深度学习的最新进展",
       "topics": [
-        "AI",
         "deep learning",
+        "AI",
         "design"
       ],
       "editions": [
@@ -1042,18 +1319,19 @@
           "funding_available": true,
           "fee_eur": 237.5,
           "topics": [
-            "AI",
             "deep learning",
+            "AI",
             "design"
           ],
           "primary_topics": [
+            "deep learning"
+          ],
+          "secondary_topics": [
             "AI",
-            "deep learning",
             "design"
           ],
-          "secondary_topics": [],
           "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
-          "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由Berkeley Lab计算科学部主办，2026科学深度学习（DL4SCI）暑期学校是一个为期五天的密集型项目，汇集研究人员和工程师，探索深度学习的最新进展",
+          "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由Berkeley Lab计算科学部主办，2026科学深度学习（DL4SCI）暑期学校是为期五天的密集型项目，汇聚研究人员和工程师，探讨深度学习的最新进展",
           "sessions": []
         }
       ],
@@ -1077,24 +1355,23 @@
         "funding_available": true,
         "fee_eur": 237.5,
         "topics": [
-          "AI",
           "deep learning",
+          "AI",
           "design"
         ],
         "primary_topics": [
+          "deep learning"
+        ],
+        "secondary_topics": [
           "AI",
-          "deep learning",
           "design"
         ],
-        "secondary_topics": [],
         "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
-        "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由Berkeley Lab计算科学部主办，2026科学深度学习（DL4SCI）暑期学校是一个为期五天的密集型项目，汇集研究人员和工程师，探索深度学习的最新进展",
+        "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由Berkeley Lab计算科学部主办，2026科学深度学习（DL4SCI）暑期学校是为期五天的密集型项目，汇聚研究人员和工程师，探讨深度学习的最新进展",
         "sessions": []
       },
       "primary_topics": [
-        "AI",
-        "deep learning",
-        "design"
+        "deep learning"
       ]
     },
     {
@@ -1354,7 +1631,7 @@
       "title": "Exploring Your Eco – Exploring the living, cultural, and eco-tourism recreational environments of Konitsa, in northern Greece",
       "title_zh": "探索你的生态——探索希腊北部科尼察的生活、文化和生态旅游休闲环境",
       "organizer": "Czech University of Life Sciences Prague, with Vikos-Aoos UNESCO Global Geopark and Trace Your Eco",
-      "organizer_zh": "捷克布拉格生命科学大学，与维科斯-阿奥斯联合国教科文组织世界地质公园和Trace Your Eco合作",
+      "organizer_zh": "布拉格捷克生命科学大学，与维科斯-阿奥斯联合国教科文组织世界地质公园及 Trace Your Eco 合作",
       "summary": "A nine-day on-site summer school in Konitsa examining the living, cultural, and eco-tourism environments of the Vikos-Aoos UNESCO Geopark through research, field activities, and participant recommendations.",
       "summary_zh": "在希腊科尼察举办的九天线下暑期学校，通过研究、田野活动和学员建议考察维科斯－奥奥斯世界地质公园的生活、文化与生态旅游环境。",
       "topics": [
@@ -1368,7 +1645,7 @@
         {
           "id": "edition:8ccb1e26f1c6a822",
           "title": "Exploring Your Eco 2026 – Exploring the living, cultural, and eco-tourism recreational environments of Konitsa, in northern Greece",
-          "title_zh": "探索你的生态2026——探索希腊北部科尼察的生活、文化和生态旅游休闲环境",
+          "title_zh": "探索你的生态 2026——探索希腊北部科尼察的生活、文化与生态旅游休闲环境",
           "detail_path": "opportunities/exploring-your-eco-2026-exploring-the-living-cultural-and-eco-tourism--80a3833c.html",
           "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/exploring-your-eco-2026-exploring-the-living-cultural-and-ec.html",
           "location": "Konitsa, Vikos-Aoos UNESCO Global Geopark, Greece",
@@ -1407,7 +1684,7 @@
       "latest_edition": {
         "id": "edition:8ccb1e26f1c6a822",
         "title": "Exploring Your Eco 2026 – Exploring the living, cultural, and eco-tourism recreational environments of Konitsa, in northern Greece",
-        "title_zh": "探索你的生态2026——探索希腊北部科尼察的生活、文化和生态旅游休闲环境",
+        "title_zh": "探索你的生态 2026——探索希腊北部科尼察的生活、文化与生态旅游休闲环境",
         "detail_path": "opportunities/exploring-your-eco-2026-exploring-the-living-cultural-and-eco-tourism--80a3833c.html",
         "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/exploring-your-eco-2026-exploring-the-living-cultural-and-ec.html",
         "location": "Konitsa, Vikos-Aoos UNESCO Global Geopark, Greece",
@@ -1455,12 +1732,12 @@
       "title": "Genome bioinformatics: from short- to long-read sequencing",
       "title_zh": "基因组生物信息学：从短读到长读测序",
       "organizer": "EMBL-EBI Training",
-      "organizer_zh": "EMBL-EBI Training",
+      "organizer_zh": "EMBL-EBI 培训",
       "summary": "Genome bioinformatics: from short- to long-read sequencing | EMBL-EBI Training EMBL-EBI Training Live training Course at EMBL-EBI Genome bioinformatics: from short- to long-read sequencing Login Register John doe My learning My playlists My account Contact us Logout Course at EMB",
-      "summary_zh": "基因组生物信息学：从短读到长读测序 | EMBL-EBI Training EMBL-EBI Training 在 EMBL-EBI 举办的线下培训课程 基因组生物信息学：从短读到长读测序 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出 在 EMB 举办的课程",
+      "summary_zh": "基因组生物信息学：从短读到长读测序 | EMBL-EBI 培训 EMBL-EBI 培训 在 EMBL-EBI 举办的线下培训课程 基因组生物信息学：从短读到长读测序 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出 在 EMB 举办的课程",
       "topics": [
-        "data analysis",
-        "bioinformatics"
+        "bioinformatics",
+        "data analysis"
       ],
       "editions": [
         {
@@ -1482,16 +1759,17 @@
           "funding_available": true,
           "fee_eur": null,
           "topics": [
-            "data analysis",
-            "bioinformatics"
+            "bioinformatics",
+            "data analysis"
           ],
           "primary_topics": [
-            "data analysis",
             "bioinformatics"
           ],
-          "secondary_topics": [],
+          "secondary_topics": [
+            "data analysis"
+          ],
           "summary": "Genome bioinformatics: from short- to long-read sequencing | EMBL-EBI Training EMBL-EBI Training Live training Course at EMBL-EBI Genome bioinformatics: from short- to long-read sequencing Login Register John doe My learning My playlists My account Contact us Logout Course at EMB",
-          "summary_zh": "基因组生物信息学：从短读到长读测序 | EMBL-EBI Training EMBL-EBI Training 在 EMBL-EBI 举办的线下培训课程 基因组生物信息学：从短读到长读测序 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出 在 EMB 举办的课程",
+          "summary_zh": "基因组生物信息学：从短读到长读测序 | EMBL-EBI 培训 EMBL-EBI 培训 在 EMBL-EBI 举办的线下培训课程 基因组生物信息学：从短读到长读测序 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出 在 EMB 举办的课程",
           "sessions": []
         }
       ],
@@ -1515,20 +1793,20 @@
         "funding_available": true,
         "fee_eur": null,
         "topics": [
-          "data analysis",
-          "bioinformatics"
+          "bioinformatics",
+          "data analysis"
         ],
         "primary_topics": [
-          "data analysis",
           "bioinformatics"
         ],
-        "secondary_topics": [],
+        "secondary_topics": [
+          "data analysis"
+        ],
         "summary": "Genome bioinformatics: from short- to long-read sequencing | EMBL-EBI Training EMBL-EBI Training Live training Course at EMBL-EBI Genome bioinformatics: from short- to long-read sequencing Login Register John doe My learning My playlists My account Contact us Logout Course at EMB",
-        "summary_zh": "基因组生物信息学：从短读到长读测序 | EMBL-EBI Training EMBL-EBI Training 在 EMBL-EBI 举办的线下培训课程 基因组生物信息学：从短读到长读测序 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出 在 EMB 举办的课程",
+        "summary_zh": "基因组生物信息学：从短读到长读测序 | EMBL-EBI 培训 EMBL-EBI 培训 在 EMBL-EBI 举办的线下培训课程 基因组生物信息学：从短读到长读测序 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出 在 EMB 举办的课程",
         "sessions": []
       },
       "primary_topics": [
-        "data analysis",
         "bioinformatics"
       ]
     },
@@ -1623,7 +1901,7 @@
       "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
       "title_zh": "IEEE RAS德国暑期学校：人工智能与机器人技术的融合",
       "organizer": "IEEE Robotics and Automation Society (IEEE RAS)",
-      "organizer_zh": "IEEE机器人与自动化学会（IEEE RAS）",
+      "organizer_zh": "IEEE 机器人与自动化学会（IEEE RAS）",
       "summary": "A five-day in-person IEEE RAS summer school on cognitive robotics, bridging artificial intelligence, machine learning, perception, planning, and intelligent robotic systems.",
       "summary_zh": "IEEE RAS 举办的五天线下认知机器人暑期学校，连接人工智能、机器学习、感知、规划与智能机器人系统。",
       "topics": [
@@ -1638,11 +1916,11 @@
         {
           "id": "edition:e496622f769510db",
           "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
-          "title_zh": "IEEE RAS德国暑期学校：连接人工智能与机器人",
+          "title_zh": "IEEE RAS 德国暑期学校：连接人工智能与机器人技术",
           "detail_path": "opportunities/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-40f851a3.html",
           "official_url": "https://events.vtools.ieee.org/m/564683",
           "location": "Abtei Frauenwörth, Chiemsee, Germany",
-          "location_zh": "德国基姆湖弗劳恩沃特修道院",
+          "location_zh": "德国基姆湖 Frauenwörth 修道院",
           "start_date": "2026-09-07",
           "end_date": "2026-09-11",
           "deadline": "2026-07-13",
@@ -1679,11 +1957,11 @@
       "latest_edition": {
         "id": "edition:e496622f769510db",
         "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
-        "title_zh": "IEEE RAS德国暑期学校：连接人工智能与机器人",
+        "title_zh": "IEEE RAS 德国暑期学校：连接人工智能与机器人技术",
         "detail_path": "opportunities/ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-40f851a3.html",
         "official_url": "https://events.vtools.ieee.org/m/564683",
         "location": "Abtei Frauenwörth, Chiemsee, Germany",
-        "location_zh": "德国基姆湖弗劳恩沃特修道院",
+        "location_zh": "德国基姆湖 Frauenwörth 修道院",
         "start_date": "2026-09-07",
         "end_date": "2026-09-11",
         "deadline": "2026-07-13",
@@ -1826,6 +2104,71 @@
       ]
     },
     {
+      "id": "ncts-qft-school",
+      "slug": "ncts-summer-school-on-qft-b29deb7c",
+      "title": "NCTS Summer School on QFT",
+      "title_zh": "NCTS 量子场论暑期学校",
+      "organizer": "NCTS QFT School",
+      "organizer_zh": "NCTS 量子场论暑期学校",
+      "summary": "Summer school. Dates: 22 June 2026 to 10 July 2026. Application deadline: 20 May 2026. Free registration. In-person at NTU, Taipei.",
+      "summary_zh": "暑期学校。日期：2026年6月22日至2026年7月10日。申请截止日期：2026年5月20日。免费注册。在台北NTU线下举行。",
+      "topics": [],
+      "primary_topics": [],
+      "editions": [
+        {
+          "id": "ncts-qft-school:2026",
+          "title": "NCTS Summer School on QFT 2026",
+          "title_zh": "NCTS 2026 量子场论暑期学校",
+          "detail_path": "opportunities/ncts-qft-school-2026-413c4c4d.html",
+          "official_url": "https://phys.ncts.ntu.edu.tw/act/actnews/2026-43406217/home/introduction",
+          "location": "National Taiwan University, Taipei (Cosmology Hall and Physics Building)",
+          "location_zh": "国立台湾大学，台北（宇宙学馆与物理学馆）",
+          "start_date": "2026-06-22",
+          "end_date": "2026-07-10",
+          "deadline": "2026-05-20",
+          "deadline_status": "closed",
+          "duration_days": 15,
+          "mode": "hybrid",
+          "financial_summary": "Fee EUR 0 · Free campus dormitory registration; third-year and younger undergraduate auditors are excluded.",
+          "financial_summary_zh": "住宿资助 · 覆盖条件以官网为准",
+          "funding_available": true,
+          "fee_eur": 0.0,
+          "topics": [],
+          "primary_topics": [],
+          "secondary_topics": [],
+          "summary": "Summer school. Dates: 22 June 2026 to 10 July 2026. Application deadline: 20 May 2026. Free registration. In-person at NTU, Taipei.",
+          "summary_zh": "暑期学校。日期：2026年6月22日至2026年7月10日。申请截止日期：2026年5月20日。免费注册。在台北NTU线下举行。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "ncts-qft-school:2026",
+        "title": "NCTS Summer School on QFT 2026",
+        "title_zh": "NCTS 2026 量子场论暑期学校",
+        "detail_path": "opportunities/ncts-qft-school-2026-413c4c4d.html",
+        "official_url": "https://phys.ncts.ntu.edu.tw/act/actnews/2026-43406217/home/introduction",
+        "location": "National Taiwan University, Taipei (Cosmology Hall and Physics Building)",
+        "location_zh": "国立台湾大学，台北（宇宙学馆与物理学馆）",
+        "start_date": "2026-06-22",
+        "end_date": "2026-07-10",
+        "deadline": "2026-05-20",
+        "deadline_status": "closed",
+        "duration_days": 15,
+        "mode": "hybrid",
+        "financial_summary": "Fee EUR 0 · Free campus dormitory registration; third-year and younger undergraduate auditors are excluded.",
+        "financial_summary_zh": "住宿资助 · 覆盖条件以官网为准",
+        "funding_available": true,
+        "fee_eur": 0.0,
+        "topics": [],
+        "primary_topics": [],
+        "secondary_topics": [],
+        "summary": "Summer school. Dates: 22 June 2026 to 10 July 2026. Application deadline: 20 May 2026. Free registration. In-person at NTU, Taipei.",
+        "summary_zh": "暑期学校。日期：2026年6月22日至2026年7月10日。申请截止日期：2026年5月20日。免费注册。在台北NTU线下举行。",
+        "sessions": []
+      }
+    },
+    {
       "id": "programme:87a15dbd83b65288",
       "slug": "prob-ai-hub-winter-school-5b77f225",
       "title": "Prob_AI Hub Winter School",
@@ -1846,7 +2189,7 @@
         {
           "id": "edition:d6b60f7163195ea3",
           "title": "Prob_AI Hub Winter School 2027",
-          "title_zh": "Prob_AI Hub 2027冬季学校",
+          "title_zh": "Prob_AI Hub 2027年冬季学校",
           "detail_path": "opportunities/prob-ai-hub-winter-school-2027-cee177c1.html",
           "official_url": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
           "location": "Fry Building, University of Bristol, Bristol, UK",
@@ -1887,7 +2230,7 @@
       "latest_edition": {
         "id": "edition:d6b60f7163195ea3",
         "title": "Prob_AI Hub Winter School 2027",
-        "title_zh": "Prob_AI Hub 2027冬季学校",
+        "title_zh": "Prob_AI Hub 2027年冬季学校",
         "detail_path": "opportunities/prob-ai-hub-winter-school-2027-cee177c1.html",
         "official_url": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
         "location": "Fry Building, University of Bristol, Bristol, UK",
@@ -2339,7 +2682,7 @@
         {
           "id": "edition:6f6669516bdd22ce",
           "title": "STFC Summer School",
-          "title_zh": "STFC暑期学校",
+          "title_zh": "STFC 暑期学校",
           "detail_path": "opportunities/stfc-summer-school-767dea8d.html",
           "official_url": "https://www.keele.ac.uk/astronomy-summer-school/",
           "location": "Keele University, Staffordshire, UK",
@@ -2374,7 +2717,7 @@
       "latest_edition": {
         "id": "edition:6f6669516bdd22ce",
         "title": "STFC Summer School",
-        "title_zh": "STFC暑期学校",
+        "title_zh": "STFC 暑期学校",
         "detail_path": "opportunities/stfc-summer-school-767dea8d.html",
         "official_url": "https://www.keele.ac.uk/astronomy-summer-school/",
         "location": "Keele University, Staffordshire, UK",
@@ -2416,7 +2759,7 @@
       "title": "Summer school DS-FOOD Design of sustainable food systems",
       "title_zh": "可持续食品系统设计暑期学校（）",
       "organizer": "Euroleague for Life Sciences (ELLS)",
-      "organizer_zh": "欧洲生命科学联盟（ELLS）",
+      "organizer_zh": "生命科学欧洲联盟（ELLS）",
       "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
       "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
       "topics": [
@@ -2428,11 +2771,11 @@
         {
           "id": "edition:736b6cbf96f90a6f",
           "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-          "title_zh": "可持续食品系统设计暑期学校（第六届）",
+          "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
           "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
           "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
           "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-          "location_zh": "阿尔卑斯学习中心，位于意大利特伦托省Pieve Tesino，Via Rovigo, 7, 38050, TN",
+          "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
           "start_date": "2026-07-05",
           "end_date": "2026-07-12",
           "deadline": "2026-05-01",
@@ -2463,11 +2806,11 @@
       "latest_edition": {
         "id": "edition:736b6cbf96f90a6f",
         "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-        "title_zh": "可持续食品系统设计暑期学校（第六届）",
+        "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
         "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
         "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
         "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-        "location_zh": "阿尔卑斯学习中心，位于意大利特伦托省Pieve Tesino，Via Rovigo, 7, 38050, TN",
+        "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
         "start_date": "2026-07-05",
         "end_date": "2026-07-12",
         "deadline": "2026-05-01",
@@ -2500,93 +2843,88 @@
       ]
     },
     {
-      "id": "programme:ccbe33f932ca480b",
-      "slug": "training-course-data-assimilation-machine-learning-9bd61f9e",
-      "title": "Training course: Data assimilation & Machine Learning",
-      "title_zh": "培训课程：资料同化与机器学习",
-      "organizer": "ECMWF Events (Indico)",
-      "organizer_zh": "ECMWF Events (Indico)",
-      "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
-      "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
+      "id": "csha-advanced-neuroimaging",
+      "slug": "the-brain-enlightened-advanced-imaging-techniques-in-neuro-67dfe751",
+      "title": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course",
+      "title_zh": "脑之启迪——神经科学先进成像技术 — CSHA课程",
+      "organizer": "Cold Spring Harbor Asia",
+      "organizer_zh": "冷泉港亚洲",
+      "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
+      "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先链 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
       "topics": [
-        "satellite",
-        "AI",
-        "machine learning"
+        "neuroscience",
+        "engineering"
+      ],
+      "primary_topics": [
+        "neuroscience"
       ],
       "editions": [
         {
-          "id": "edition:d31fd98a1919cefb",
-          "title": "Training course: Data assimilation & Machine Learning",
-          "title_zh": "培训课程：资料同化与机器学习",
-          "detail_path": "opportunities/training-course-data-assimilation-machine-learning-681b10c7.html",
-          "official_url": "https://events.ecmwf.int/event/578/",
-          "location": "ECMWF, Reading",
-          "location_zh": "ECMWF，雷丁",
-          "start_date": "2027-01-11",
-          "end_date": "2027-01-15",
-          "deadline": "2026-09-27",
+          "id": "csha-advanced-neuroimaging:2026",
+          "title": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course 2026",
+          "title_zh": "脑之启迪——神经科学先进成像技术 — CSHA课程2026",
+          "detail_path": "opportunities/csha-advanced-neuroimaging-2026-4c2bc256.html",
+          "official_url": "https://www.csh-asia.org/?content/2964",
+          "location": "Suzhou, China",
+          "location_zh": "中国苏州",
+          "start_date": "2026-06-11",
+          "end_date": "2026-06-26",
+          "deadline": "2026-04-15",
           "deadline_status": "closed",
-          "duration_days": 5,
-          "mode": "hybrid",
-          "financial_summary": "Fee about EUR 1176",
-          "financial_summary_zh": "费用约 EUR 1176",
-          "funding_available": null,
-          "fee_eur": 1176.0,
+          "duration_days": 16,
+          "mode": "in-person",
+          "financial_summary": "USD 1650 (including tuition, board, lodging & symposium fee; official page also offers CNY pricing) · Financial support may be requested with the application; amount and award are not guaranteed.",
+          "financial_summary_zh": "费用：USD 1650 (including tuition, board, lodging & symposium fee; official page also offers CNY pricing) · 津贴（有条件申请，不保证获得）",
+          "funding_available": true,
+          "fee_eur": 1567.5,
           "topics": [
-            "satellite",
-            "AI",
-            "machine learning"
+            "neuroscience",
+            "engineering"
           ],
           "primary_topics": [
-            "satellite",
-            "AI",
-            "machine learning"
+            "neuroscience"
           ],
-          "secondary_topics": [],
-          "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
-          "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
+          "secondary_topics": [
+            "engineering"
+          ],
+          "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
+          "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先链 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
           "sessions": []
         }
       ],
       "edition_count": 1,
       "latest_edition": {
-        "id": "edition:d31fd98a1919cefb",
-        "title": "Training course: Data assimilation & Machine Learning",
-        "title_zh": "培训课程：资料同化与机器学习",
-        "detail_path": "opportunities/training-course-data-assimilation-machine-learning-681b10c7.html",
-        "official_url": "https://events.ecmwf.int/event/578/",
-        "location": "ECMWF, Reading",
-        "location_zh": "ECMWF，雷丁",
-        "start_date": "2027-01-11",
-        "end_date": "2027-01-15",
-        "deadline": "2026-09-27",
+        "id": "csha-advanced-neuroimaging:2026",
+        "title": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course 2026",
+        "title_zh": "脑之启迪——神经科学先进成像技术 — CSHA课程2026",
+        "detail_path": "opportunities/csha-advanced-neuroimaging-2026-4c2bc256.html",
+        "official_url": "https://www.csh-asia.org/?content/2964",
+        "location": "Suzhou, China",
+        "location_zh": "中国苏州",
+        "start_date": "2026-06-11",
+        "end_date": "2026-06-26",
+        "deadline": "2026-04-15",
         "deadline_status": "closed",
-        "duration_days": 5,
-        "mode": "hybrid",
-        "financial_summary": "Fee about EUR 1176",
-        "financial_summary_zh": "费用约 EUR 1176",
-        "funding_available": null,
-        "fee_eur": 1176.0,
+        "duration_days": 16,
+        "mode": "in-person",
+        "financial_summary": "USD 1650 (including tuition, board, lodging & symposium fee; official page also offers CNY pricing) · Financial support may be requested with the application; amount and award are not guaranteed.",
+        "financial_summary_zh": "费用：USD 1650 (including tuition, board, lodging & symposium fee; official page also offers CNY pricing) · 津贴（有条件申请，不保证获得）",
+        "funding_available": true,
+        "fee_eur": 1567.5,
         "topics": [
-          "satellite",
-          "AI",
-          "machine learning"
+          "neuroscience",
+          "engineering"
         ],
         "primary_topics": [
-          "satellite",
-          "AI",
-          "machine learning"
+          "neuroscience"
         ],
-        "secondary_topics": [],
-        "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
-        "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
+        "secondary_topics": [
+          "engineering"
+        ],
+        "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
+        "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先链 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
         "sessions": []
-      },
-      "primary_topics": [
-        "satellite",
-        "AI",
-        "machine learning"
-      ]
+      }
     },
     {
       "id": "programme:7b9a68f3cc984b4a",
@@ -2625,10 +2963,11 @@
             "machine learning"
           ],
           "primary_topics": [
-            "satellite",
+            "satellite"
+          ],
+          "secondary_topics": [
             "machine learning"
           ],
-          "secondary_topics": [],
           "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
           "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
           "sessions": []
@@ -2658,17 +2997,17 @@
           "machine learning"
         ],
         "primary_topics": [
-          "satellite",
+          "satellite"
+        ],
+        "secondary_topics": [
           "machine learning"
         ],
-        "secondary_topics": [],
         "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
         "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
         "sessions": []
       },
       "primary_topics": [
-        "satellite",
-        "machine learning"
+        "satellite"
       ]
     },
     {
@@ -2681,8 +3020,8 @@
       "summary": "Training course: Machine Learning-based weather forecasting (16-November 20, 2026): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Machine Learning-based weather foreca",
       "summary_zh": "培训课程：基于机器学习的天气预报（2026年11月16日至20日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：基于机器学习的天气预",
       "topics": [
-        "climate",
         "machine learning",
+        "climate",
         "deep learning"
       ],
       "editions": [
@@ -2705,16 +3044,17 @@
           "funding_available": null,
           "fee_eur": 936.0,
           "topics": [
-            "climate",
             "machine learning",
+            "climate",
             "deep learning"
           ],
           "primary_topics": [
+            "machine learning"
+          ],
+          "secondary_topics": [
             "climate",
-            "machine learning",
             "deep learning"
           ],
-          "secondary_topics": [],
           "summary": "Training course: Machine Learning-based weather forecasting (16-November 20, 2026): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Machine Learning-based weather foreca",
           "summary_zh": "培训课程：基于机器学习的天气预报（2026年11月16日至20日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：基于机器学习的天气预",
           "sessions": []
@@ -2740,24 +3080,23 @@
         "funding_available": null,
         "fee_eur": 936.0,
         "topics": [
-          "climate",
           "machine learning",
+          "climate",
           "deep learning"
         ],
         "primary_topics": [
+          "machine learning"
+        ],
+        "secondary_topics": [
           "climate",
-          "machine learning",
           "deep learning"
         ],
-        "secondary_topics": [],
         "summary": "Training course: Machine Learning-based weather forecasting (16-November 20, 2026): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Machine Learning-based weather foreca",
         "summary_zh": "培训课程：基于机器学习的天气预报（2026年11月16日至20日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：基于机器学习的天气预",
         "sessions": []
       },
       "primary_topics": [
-        "climate",
-        "machine learning",
-        "deep learning"
+        "machine learning"
       ]
     },
     {
@@ -2832,12 +3171,11 @@
       "title_zh": "培训课程：ECMWF产品的使用与解读",
       "organizer": "ECMWF Events (Indico)",
       "organizer_zh": "ECMWF Events (Indico)",
-      "summary": "Training course: Use and interpretation of ECMWF products (5-October 8, 2026): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products O",
-      "summary_zh": "培训课程：ECMWF产品的使用与解读（2026年10月5日至8日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读 O",
+      "summary": "Training course: Use and interpretation of ECMWF products (25-January 28, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products",
+      "summary_zh": "培训课程：ECMWF产品的使用与解读（2027年1月25日至28日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读",
       "topics": [
         "machine learning",
-        "physics",
-        "design"
+        "physics"
       ],
       "editions": [
         {
@@ -2860,13 +3198,11 @@
           "fee_eur": 936.0,
           "topics": [
             "machine learning",
-            "physics",
-            "design"
+            "physics"
           ],
           "primary_topics": [
             "machine learning",
-            "physics",
-            "design"
+            "physics"
           ],
           "secondary_topics": [],
           "summary": "Training course: Use and interpretation of ECMWF products (25-January 28, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products",
@@ -2891,12 +3227,8 @@
           "financial_summary_zh": "费用约 EUR 936",
           "funding_available": null,
           "fee_eur": 936.0,
-          "topics": [
-            "design"
-          ],
-          "primary_topics": [
-            "design"
-          ],
+          "topics": [],
+          "primary_topics": [],
           "secondary_topics": [],
           "summary": "Training course: Use and interpretation of ECMWF products (5-October 8, 2026): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products O",
           "summary_zh": "培训课程：ECMWF产品的使用与解读（2026年10月5日至8日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读 O",
@@ -2924,13 +3256,11 @@
         "fee_eur": 936.0,
         "topics": [
           "machine learning",
-          "physics",
-          "design"
+          "physics"
         ],
         "primary_topics": [
           "machine learning",
-          "physics",
-          "design"
+          "physics"
         ],
         "secondary_topics": [],
         "summary": "Training course: Use and interpretation of ECMWF products (25-January 28, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products",
@@ -2939,8 +3269,7 @@
       },
       "primary_topics": [
         "machine learning",
-        "physics",
-        "design"
+        "physics"
       ]
     },
     {
@@ -3146,7 +3475,9 @@
             "engineering"
           ],
           "primary_topics": [
-            "physics",
+            "physics"
+          ],
+          "secondary_topics": [
             "astrophysics",
             "cosmology",
             "condensed matter",
@@ -3155,7 +3486,6 @@
             "dynamical systems",
             "engineering"
           ],
-          "secondary_topics": [],
           "summary": "Winter School on Biological Physics ORGANIZERS Vijay Balasubramaniam (University of Pennsylvania, Philadelphia, USA) , Sanjay Jain (University of Delhi and Santa Fe Institute) , Vijaykumar Krishnamurthy (ICTS-TIFR, Bengaluru, India) and Mukund Thattai (NCBS, Bengaluru, India) DAT",
           "summary_zh": "生物物理冬季学校 组织者：Vijay Balasubramaniam（宾夕法尼亚大学，美国费城）、Sanjay Jain（德里大学和圣塔菲研究所）、Vijaykumar Krishnamurthy（ICTS-TIFR，印度班加罗尔）和 Mukund Thattai（NCBS，印度班加罗尔）DAT",
           "sessions": []
@@ -3191,7 +3521,9 @@
           "engineering"
         ],
         "primary_topics": [
-          "physics",
+          "physics"
+        ],
+        "secondary_topics": [
           "astrophysics",
           "cosmology",
           "condensed matter",
@@ -3200,20 +3532,12 @@
           "dynamical systems",
           "engineering"
         ],
-        "secondary_topics": [],
         "summary": "Winter School on Biological Physics ORGANIZERS Vijay Balasubramaniam (University of Pennsylvania, Philadelphia, USA) , Sanjay Jain (University of Delhi and Santa Fe Institute) , Vijaykumar Krishnamurthy (ICTS-TIFR, Bengaluru, India) and Mukund Thattai (NCBS, Bengaluru, India) DAT",
         "summary_zh": "生物物理冬季学校 组织者：Vijay Balasubramaniam（宾夕法尼亚大学，美国费城）、Sanjay Jain（德里大学和圣塔菲研究所）、Vijaykumar Krishnamurthy（ICTS-TIFR，印度班加罗尔）和 Mukund Thattai（NCBS，印度班加罗尔）DAT",
         "sessions": []
       },
       "primary_topics": [
-        "physics",
-        "astrophysics",
-        "cosmology",
-        "condensed matter",
-        "particle physics",
-        "mathematics",
-        "dynamical systems",
-        "engineering"
+        "physics"
       ]
     }
   ],
