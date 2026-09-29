@@ -103,9 +103,6 @@
       "topics": [
         "natural language processing"
       ],
-      "primary_topics": [
-        "natural language processing"
-      ],
       "editions": [
         {
           "id": "alps-language-processing:2027",
@@ -166,7 +163,10 @@
         "summary": "Advanced Language Processing Winter School – ALPS, 28th March – 2nd April 2027 Skip to content Advanced Language Processing Winter School ALPS, 28th March – 2nd April 2027 Home Speakers Schedule Organizers Sponsors Application Venue Participant Voices Back Welcome to ALPS 2027, t",
         "summary_zh": "高级语言处理冬季学校 – ALPS，2027年3月28日至4月2日 跳至内容 高级语言处理冬季学校 ALPS，2027年3月28日至4月2日 首页 演讲嘉宾 日程 组织者 赞助商 申请 场地 参与者感言 返回 欢迎参加ALPS 2027，t",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "natural language processing"
+      ]
     },
     {
       "id": "programme:baa721d513bed714",
@@ -1012,9 +1012,6 @@
         "mathematics",
         "engineering"
       ],
-      "primary_topics": [
-        "neuroscience"
-      ],
       "editions": [
         {
           "id": "csha-computational-cognitive-neuroscience:2026",
@@ -1093,7 +1090,10 @@
         "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
         "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "neuroscience"
+      ]
     },
     {
       "id": "iiser-pune-camp",
@@ -1105,12 +1105,6 @@
       "summary": "CAMP | Computational Approaches to Memory and Plasticity CAMP Home Speakers Previous CAMP Schools FAQs Schedule Wiki Contact Us Menu Computational Approaches to Memory and Plasticity We invite Ph.D. students, master’s students, final-year undergraduates, and postdocs worldwide fr",
       "summary_zh": "CAMP | 记忆与可塑性计算方法 CAMP主页 演讲者 往届CAMP学校 常见问题 日程 Wiki 联系我们 菜单 记忆与可塑性计算方法 我们邀请全球的博士生、硕士生、最后一年本科生和博士后参加",
       "topics": [
-        "design",
-        "computational neuroscience",
-        "neuroscience",
-        "history"
-      ],
-      "primary_topics": [
         "design",
         "computational neuroscience",
         "neuroscience",
@@ -1188,7 +1182,13 @@
         "summary": "CAMP | Computational Approaches to Memory and Plasticity CAMP Home Speakers Previous CAMP Schools FAQs Schedule Wiki Contact Us Menu Computational Approaches to Memory and Plasticity We invite Ph.D. students, master’s students, final-year undergraduates, and postdocs worldwide fr",
         "summary_zh": "CAMP | 记忆与可塑性计算方法 CAMP主页 演讲者 往届CAMP学校 常见问题 日程 Wiki 联系我们 菜单 记忆与可塑性计算方法 我们邀请全球的博士生、硕士生、最后一年本科生和博士后参加",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "design",
+        "computational neuroscience",
+        "neuroscience",
+        "history"
+      ]
     },
     {
       "id": "programme:21ea41829cac43f3",
@@ -2113,7 +2113,6 @@
       "summary": "Summer school. Dates: 22 June 2026 to 10 July 2026. Application deadline: 20 May 2026. Free registration. In-person at NTU, Taipei.",
       "summary_zh": "暑期学校。日期：2026年6月22日至2026年7月10日。申请截止日期：2026年5月20日。免费注册。在台北NTU线下举行。",
       "topics": [],
-      "primary_topics": [],
       "editions": [
         {
           "id": "ncts-qft-school:2026",
@@ -2166,7 +2165,8 @@
         "summary": "Summer school. Dates: 22 June 2026 to 10 July 2026. Application deadline: 20 May 2026. Free registration. In-person at NTU, Taipei.",
         "summary_zh": "暑期学校。日期：2026年6月22日至2026年7月10日。申请截止日期：2026年5月20日。免费注册。在台北NTU线下举行。",
         "sessions": []
-      }
+      },
+      "primary_topics": []
     },
     {
       "id": "programme:87a15dbd83b65288",
@@ -2855,9 +2855,6 @@
         "neuroscience",
         "engineering"
       ],
-      "primary_topics": [
-        "neuroscience"
-      ],
       "editions": [
         {
           "id": "csha-advanced-neuroimaging:2026",
@@ -2924,7 +2921,10 @@
         "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
         "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先链 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "neuroscience"
+      ]
     },
     {
       "id": "programme:7b9a68f3cc984b4a",
