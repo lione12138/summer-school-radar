@@ -347,6 +347,13 @@ def _request_translation(
             return _validate_translation(source, _parse_json_object(client.complete(_translation_prompt(source))))
         except Exception as exc:  # noqa: BLE001 - retry malformed or incomplete model output.
             last_error = exc
+    if isinstance(last_error, json.JSONDecodeError) and len(source) > 1:
+        # A large combined JSON response can be truncated or malformed. Retry
+        # smaller complete objects; never salvage partial JSON or relax tokens.
+        translated = {}
+        for key, value in source.items():
+            translated.update(_request_translation(client, {key: value}, max_attempts))
+        return _validate_translation(source, translated)
     if last_error is not None:
         raise last_error
     raise ValueError("translation request produced no result")

@@ -381,6 +381,7 @@ def run_scan(
         semantic_enabled=enable_semantic,
         llm_enabled=enable_llm_extraction,
         discovery_enabled=include_discovery,
+        discovery_provider=("+".join(sorted({r.provider for r in search_results})) or "none") if include_discovery and not offline_sample else "none",
         discovery_stats=discovery_stats if include_discovery else None,
         source_health=source_health,
     )

@@ -9,7 +9,9 @@ $developmentRepo = Split-Path -Parent $PSScriptRoot
 if (-not $RuntimePath) {
     $hash = [BitConverter]::ToString([Security.Cryptography.SHA256]::Create().ComputeHash(
         [Text.Encoding]::UTF8.GetBytes($developmentRepo.ToLowerInvariant()))).Replace("-", "").Substring(0, 12)
-    $RuntimePath = Join-Path $env:LOCALAPPDATA "Summa\scan-$hash"
+    # USERPROFILE avoids MSIX LocalAppData virtualization: the desktop app
+    # and Task Scheduler must operate on the very same checkout and lock.
+    $RuntimePath = Join-Path $env:USERPROFILE ".summa\scan-$hash"
 }
 $RuntimePath = [IO.Path]::GetFullPath($RuntimePath)
 if ($RuntimePath -eq $developmentRepo -or $RuntimePath.StartsWith($developmentRepo + "\", [StringComparison]::OrdinalIgnoreCase)) {
@@ -29,6 +31,12 @@ try {
     }
     $runtimeRemote = & git -C $RuntimePath remote get-url origin
     if ($LASTEXITCODE -ne 0 -or $runtimeRemote -ne $remote) { throw "Unexpected runtime repository." }
+    foreach ($identityKey in @('user.name', 'user.email')) {
+        $identityValue = & git -C $developmentRepo config --get $identityKey
+        if ($LASTEXITCODE -ne 0 -or -not $identityValue) { throw "Missing Git $identityKey in development repository." }
+        & git -C $RuntimePath config --local $identityKey $identityValue
+        if ($LASTEXITCODE -ne 0) { throw "Cannot configure runtime Git $identityKey." }
+    }
     # Keys remain local ignored files; never emit their contents or commit them.
     foreach ($name in @('.env', '.env.local')) {
         $inputFile = Join-Path $developmentRepo $name

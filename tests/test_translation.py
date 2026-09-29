@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 from pathlib import Path
+import json
+import pytest
 
 from bs4 import BeautifulSoup
 
@@ -14,11 +16,41 @@ from research_school_radar.translation import (
     load_translation_config,
     translate_candidates,
     translate_source_metadata,
+    _request_translation,
 )
 from research_school_radar.utils import load_yaml
 
 
 PROFILE = load_yaml(Path("config/profile.yaml"))
+
+
+def test_malformed_combined_translation_retries_complete_field_objects():
+    class SplitClient:
+        calls = 0
+
+        def complete(self, prompt):
+            self.calls += 1
+            return ['{"title":', '{"title":', '{"title":"研究学校"}',
+                    '{"summary":"学费 EUR 300"}'][self.calls - 1]
+
+    client = SplitClient()
+    translated = _request_translation(client, {"title": "Research School", "summary": "Fee EUR 300"}, 2)
+    assert translated == {"title": "研究学校", "summary": "学费 EUR 300"}
+    assert client.calls == 4
+
+
+def test_malformed_single_field_still_fails_after_bounded_retries():
+    class BrokenClient:
+        calls = 0
+
+        def complete(self, prompt):
+            self.calls += 1
+            return '{"summary":'
+
+    client = BrokenClient()
+    with pytest.raises(json.JSONDecodeError):
+        _request_translation(client, {"summary": "Fee EUR 300"}, 2)
+    assert client.calls == 2
 
 
 class FakeTranslationClient:

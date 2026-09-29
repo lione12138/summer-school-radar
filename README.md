@@ -514,7 +514,7 @@ The underlying opportunity details are public facts gathered from the organisers
 
 
 Scheduled scans now run through `scripts/run_scheduled_scan.ps1` in a persistent
-isolated clone under `%LOCALAPPDATA%/Summa`. Uncommitted developer changes do not
+isolated clone under `%USERPROFILE%/.summa`. Uncommitted developer changes do not
 block production scans. Runtime failures return nonzero for scheduler retries.
 The 40-case offline benchmark is documented in [benchmarks/README.md](benchmarks/README.md);
 run `python -m research_school_radar.benchmark` for precision and recall baselines.

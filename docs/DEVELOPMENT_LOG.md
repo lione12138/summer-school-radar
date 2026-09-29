@@ -501,3 +501,25 @@ DeepSeek and Brave health checks passed. Serper was not configured, so the initi
 interrupted before AI extraction and restarted with bounded Brave discovery fallback. No API keys were printed.
 Added private search-result capture and optional benchmark comparison of known URLs against raw search hits
 and prefilter-retained URLs. Missing discovery verification now has an explicit private rejection reason.
+
+
+## 2026-09-29 — Real-run recovery findings
+
+The 28 September full scan actually passed source coverage (170/182), AI output
+and snapshot retention, but the isolated clone lacked repository-local Git author
+identity and failed at commit. The launcher now copies user.name/user.email from
+the development repository and fails before scanning if either is unavailable.
+The MSIX desktop environment virtualized LocalAppData while Task Scheduler used
+the physical directory, yielding two runtimes and cold caches. Runtime now lives
+under USERPROFILE/.summa, shared by both contexts.
+
+The scheduled 29 September scan likewise reached generation with 170/182 sources,
+but one IHE Delft record (Organizing Water) failed translation with JSONDecodeError.
+The exact saved artifacts reproduce the AI-output gate failure. Multi-field JSON
+translation now retries per-field only after malformed JSON exhausts its normal
+attempts; single-field retries remain bounded and protected values still validate.
+No malformed JSON is salvaged and no output gate is bypassed. Rebuild the saved
+29 September generation with the existing record audit and scanner/display split,
+translate the missing record, and rerun AI-output, retention and site-integrity
+checks before publishing. The manifest now records the actual discovery provider
+rather than unconditionally labelling Brave fallback as Serper.

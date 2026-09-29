@@ -178,3 +178,11 @@ def test_runtime_runs_committed_code_while_developer_tree_is_dirty(tmp_path):
     assert "ISOLATED:Full" in result.stdout
     assert _run(["git", "status", "--porcelain"], cwd=repo).stdout == before
     assert (repo / "untracked.txt").read_text() == "Keep this"
+    assert _run(["git", "config", "user.name"], cwd=tmp_path / "runtime").stdout.strip() == "Test"
+    assert _run(["git", "config", "user.email"], cwd=tmp_path / "runtime").stdout.strip() == "test@example.invalid"
+
+
+def test_runtime_path_is_shared_with_task_scheduler():
+    source = SCRIPT.with_name("run_scheduled_scan.ps1").read_text(encoding="utf-8")
+    assert 'Join-Path $env:USERPROFILE' in source
+    assert 'Join-Path $env:LOCALAPPDATA' not in source

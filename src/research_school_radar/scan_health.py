@@ -70,6 +70,7 @@ def full_scan_manifest(
     semantic_enabled: bool,
     llm_enabled: bool,
     discovery_enabled: bool = False,
+    discovery_provider: str = "serper",
     discovery_stats: Mapping[str, int] | None = None,
     source_health: list[Mapping[str, Any]] | None = None,
 ) -> dict[str, Any]:
@@ -88,7 +89,7 @@ def full_scan_manifest(
             "semantic_enabled": bool(semantic_enabled),
             "llm_extraction_enabled": bool(llm_enabled),
             "broad_discovery_enabled": bool(discovery_enabled),
-            "broad_discovery_provider": "serper",
+            "broad_discovery_provider": discovery_provider,
             "refinement_provider": "brave",
         },
     }
