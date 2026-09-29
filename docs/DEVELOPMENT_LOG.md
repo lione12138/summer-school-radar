@@ -523,3 +523,11 @@ No malformed JSON is salvaged and no output gate is bypassed. Rebuild the saved
 translate the missing record, and rerun AI-output, retention and site-integrity
 checks before publishing. The manifest now records the actual discovery provider
 rather than unconditionally labelling Brave fallback as Serper.
+
+Recovery validation succeeded: the missing translation was available in the desktop-side validated
+cache, so no new API request was needed. Rebuilt 29 September output has zero translation warnings,
+passes the 53-item DeepSeek output gate, retains all 196 scanner records unchanged as JSON values,
+and passes snapshot retention and site integrity. Source scan date is the original 29 September.
+Discovery used 20 base queries and 6 resolution queries: 43 hits, 13 URLs accepted, 11 pages fetched,
+6 extracted candidates, no new qualified publication. None of the six eligible pilot-gold URLs were
+returned; the search capture has not yet demonstrated a recall improvement.
