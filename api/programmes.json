@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-09-29",
+  "generated": "2026-09-30",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -246,95 +246,6 @@
       ]
     },
     {
-      "id": "programme:a7de8577eaec8d69",
-      "slug": "iahs-academy-fec0513d",
-      "title": "IAHS Academy",
-      "title_zh": "IAHS Academy",
-      "organizer": "IAHS",
-      "organizer_zh": "IAHS",
-      "summary": "Building on the success of the first IAHS Academy (Ningbo, January 2026), the second edition aims to further strengthen IAHS capacity-building activities by expanding the scientific offer, enlarging participation, and consolidating the Academy as a flagship global training initiative for early-career hydrologists.",
-      "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，通过扩大科学内容、增加参与规模，并将该学院巩固为面向早期职业水文学家的全球旗舰培训项目。",
-      "topics": [
-        "hydrology",
-        "water resources",
-        "geoscience"
-      ],
-      "editions": [
-        {
-          "id": "edition:5b2622fab46bbe12",
-          "title": "IAHS Academy 2027",
-          "title_zh": "IAHS Academy 2027",
-          "detail_path": "opportunities/iahs-academy-2027-2df41880.html",
-          "official_url": "https://iahs.info/News/news/iahs-academy-2027-closing-date/",
-          "location": "宁波东方理工大学 Eastern Institute of Technology, Ningbo (EIT)",
-          "location_zh": "宁波东方理工大学 Eastern Institute of Technology, Ningbo (EIT)",
-          "start_date": "2027-01-11",
-          "end_date": "2027-01-17",
-          "deadline": "2026-09-30",
-          "deadline_status": "open",
-          "duration_days": 7,
-          "mode": "in-person",
-          "financial_summary": "EUR 650 (general fee); EUR 350 for participants from Financially Disadvantaged Countries · SYSTA: accepted applicants who meet the award requirements may apply; not guaranteed.",
-          "financial_summary_zh": "费用：EUR 650 （常规费用）; EUR 350 （适用于官方指定的经济困难国家参与者） · 录取后符合条件者可申请 SYSTA 差旅资助，不保证获得",
-          "funding_available": true,
-          "fee_eur": 650.0,
-          "topics": [
-            "hydrology",
-            "water resources",
-            "geoscience"
-          ],
-          "primary_topics": [
-            "hydrology",
-            "water resources",
-            "geoscience"
-          ],
-          "secondary_topics": [],
-          "summary": "Building on the success of the first IAHS Academy (Ningbo, January 2026), the second edition aims to further strengthen IAHS capacity-building activities by expanding the scientific offer, enlarging participation, and consolidating the Academy as a flagship global training initiative for early-career hydrologists.",
-          "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，通过扩大科学内容、增加参与规模，并将该学院巩固为面向早期职业水文学家的全球旗舰培训项目。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "edition:5b2622fab46bbe12",
-        "title": "IAHS Academy 2027",
-        "title_zh": "IAHS Academy 2027",
-        "detail_path": "opportunities/iahs-academy-2027-2df41880.html",
-        "official_url": "https://iahs.info/News/news/iahs-academy-2027-closing-date/",
-        "location": "宁波东方理工大学 Eastern Institute of Technology, Ningbo (EIT)",
-        "location_zh": "宁波东方理工大学 Eastern Institute of Technology, Ningbo (EIT)",
-        "start_date": "2027-01-11",
-        "end_date": "2027-01-17",
-        "deadline": "2026-09-30",
-        "deadline_status": "open",
-        "duration_days": 7,
-        "mode": "in-person",
-        "financial_summary": "EUR 650 (general fee); EUR 350 for participants from Financially Disadvantaged Countries · SYSTA: accepted applicants who meet the award requirements may apply; not guaranteed.",
-        "financial_summary_zh": "费用：EUR 650 （常规费用）; EUR 350 （适用于官方指定的经济困难国家参与者） · 录取后符合条件者可申请 SYSTA 差旅资助，不保证获得",
-        "funding_available": true,
-        "fee_eur": 650.0,
-        "topics": [
-          "hydrology",
-          "water resources",
-          "geoscience"
-        ],
-        "primary_topics": [
-          "hydrology",
-          "water resources",
-          "geoscience"
-        ],
-        "secondary_topics": [],
-        "summary": "Building on the success of the first IAHS Academy (Ningbo, January 2026), the second edition aims to further strengthen IAHS capacity-building activities by expanding the scientific offer, enlarging participation, and consolidating the Academy as a flagship global training initiative for early-career hydrologists.",
-        "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，通过扩大科学内容、增加参与规模，并将该学院巩固为面向早期职业水文学家的全球旗舰培训项目。",
-        "sessions": []
-      },
-      "primary_topics": [
-        "hydrology",
-        "water resources",
-        "geoscience"
-      ]
-    },
-    {
       "id": "jparc-neutron-muon-school",
       "slug": "neutron-and-muon-school-japanese-language-aa1f5139",
       "title": "Neutron and Muon School (Japanese-language",
@@ -526,7 +437,7 @@
       "organizer": "Eurac Research and University of Innsbruck",
       "organizer_zh": "Eurac Research与因斯布鲁克大学",
       "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务工作者深入探讨。",
       "topics": [
         "law",
         "political science",
@@ -564,7 +475,7 @@
             "AI governance"
           ],
           "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-          "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+          "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务工作者深入探讨。",
           "sessions": []
         }
       ],
@@ -600,7 +511,7 @@
           "AI governance"
         ],
         "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-        "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+        "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务工作者深入探讨。",
         "sessions": []
       },
       "primary_topics": [
@@ -994,105 +905,6 @@
         "astrophysics",
         "astronomy",
         "cosmology"
-      ]
-    },
-    {
-      "id": "csha-computational-cognitive-neuroscience",
-      "slug": "computational-and-cognitive-neuroscience-csha-course-01cd14bb",
-      "title": "Computational and Cognitive Neuroscience — CSHA Course",
-      "title_zh": "计算与认知神经科学 — CSHA 课程",
-      "organizer": "Cold Spring Harbor Asia",
-      "organizer_zh": "冷泉港亚洲",
-      "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
-      "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
-      "topics": [
-        "neuroscience",
-        "artificial intelligence",
-        "physics",
-        "mathematics",
-        "engineering"
-      ],
-      "editions": [
-        {
-          "id": "csha-computational-cognitive-neuroscience:2026",
-          "title": "Computational and Cognitive Neuroscience — CSHA Course 2026",
-          "title_zh": "计算与认知神经科学 — CSHA 课程 2026",
-          "detail_path": "opportunities/csha-computational-cognitive-neuroscience-2026-f318dfa9.html",
-          "official_url": "https://www.csh-asia.org/?content/3046",
-          "location": "Suzhou, China",
-          "location_zh": "中国苏州",
-          "start_date": "2026-06-28",
-          "end_date": "2026-07-19",
-          "deadline": "2026-04-08",
-          "deadline_status": "closed",
-          "duration_days": 22,
-          "mode": "in-person",
-          "financial_summary": "USD 1950 (including tuition, board and lodging; official page also offers CNY pricing) · Financial support may be requested with the application; amount and award are not guaranteed.",
-          "financial_summary_zh": "费用：USD 1950 (including tuition, board and lodging; official page also offers CNY pricing) · 津贴（有条件申请，不保证获得）",
-          "funding_available": true,
-          "fee_eur": 1852.5,
-          "topics": [
-            "neuroscience",
-            "artificial intelligence",
-            "physics",
-            "mathematics",
-            "engineering"
-          ],
-          "primary_topics": [
-            "neuroscience"
-          ],
-          "secondary_topics": [
-            "artificial intelligence",
-            "physics",
-            "mathematics",
-            "engineering"
-          ],
-          "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
-          "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "csha-computational-cognitive-neuroscience:2026",
-        "title": "Computational and Cognitive Neuroscience — CSHA Course 2026",
-        "title_zh": "计算与认知神经科学 — CSHA 课程 2026",
-        "detail_path": "opportunities/csha-computational-cognitive-neuroscience-2026-f318dfa9.html",
-        "official_url": "https://www.csh-asia.org/?content/3046",
-        "location": "Suzhou, China",
-        "location_zh": "中国苏州",
-        "start_date": "2026-06-28",
-        "end_date": "2026-07-19",
-        "deadline": "2026-04-08",
-        "deadline_status": "closed",
-        "duration_days": 22,
-        "mode": "in-person",
-        "financial_summary": "USD 1950 (including tuition, board and lodging; official page also offers CNY pricing) · Financial support may be requested with the application; amount and award are not guaranteed.",
-        "financial_summary_zh": "费用：USD 1950 (including tuition, board and lodging; official page also offers CNY pricing) · 津贴（有条件申请，不保证获得）",
-        "funding_available": true,
-        "fee_eur": 1852.5,
-        "topics": [
-          "neuroscience",
-          "artificial intelligence",
-          "physics",
-          "mathematics",
-          "engineering"
-        ],
-        "primary_topics": [
-          "neuroscience"
-        ],
-        "secondary_topics": [
-          "artificial intelligence",
-          "physics",
-          "mathematics",
-          "engineering"
-        ],
-        "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
-        "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
-        "sessions": []
-      },
-      "primary_topics": [
-        "neuroscience"
       ]
     },
     {

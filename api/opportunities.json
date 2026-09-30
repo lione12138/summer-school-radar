@@ -3,7 +3,7 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-09-29",
+  "generated": "2026-09-30",
   "opportunities": [
     {
       "id": "opportunities/al-nour-winter-school-on-fusion-science-a5413f47",
@@ -144,9 +144,9 @@
         "AI governance"
       ],
       "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
-      "eligibility": "Open to young researchers and academics, post-docs and post-graduate students, civil servants from local, regional or national government, and employees of international organizations or NGOs.",
-      "eligibility_zh": "面向青年研究人员和学者、博士后和研究生、地方、地区或国家政府公务员，以及国际组织或非政府组织员工。",
+      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+      "eligibility": "The postgraduate program welcomes an international audience: young researchers and academics, post-docs and post-graduate students, civil servants from a local, regional or national government as well as employees of international organizations or NGOs.",
+      "eligibility_zh": "该研究生项目面向国际受众：青年研究人员和学者、博士后和研究生、地方、地区或国家政府公务员，以及国际组织或非政府组织雇员。",
       "sessions": []
     },
     {
@@ -1081,164 +1081,6 @@
       "summary_zh": "Prob_AI Hub 举办的四天冬季学校，内容包括因果推断、计算最优传输、算子学习、强化学习、偏微分方程机器学习和神经过程。项目免费参加；交通和住宿通常自理，符合条件的英国参与者可申请有限的 Access Fund。",
       "eligibility": "Open to applicants worldwide, with priority given to UK-based applicants.",
       "eligibility_zh": "面向全球申请者，英国申请者优先。",
-      "sessions": []
-    },
-    {
-      "id": "opportunities/iahs-academy-2027-2df41880",
-      "edition_id": "edition:5b2622fab46bbe12",
-      "programme_id": "programme:a7de8577eaec8d69",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/iahs-academy-fec0513d.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/iahs-academy-fec0513d.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/iahs-academy-fec0513d.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/iahs-academy-fec0513d.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/iahs-academy-2027-2df41880.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/iahs-academy-2027-2df41880.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/iahs-academy-2027-2df41880.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/iahs-academy-2027-2df41880.html"
-      },
-      "official_url": "https://iahs.info/News/news/iahs-academy-2027-closing-date/",
-      "title": "IAHS Academy 2027",
-      "title_zh": "IAHS Academy 2027",
-      "type": "short course",
-      "organizer": "IAHS",
-      "organizer_zh": "IAHS",
-      "location": "宁波东方理工大学 Eastern Institute of Technology, Ningbo (EIT)",
-      "location_zh": "宁波东方理工大学 Eastern Institute of Technology, Ningbo (EIT)",
-      "mode": "in-person",
-      "start_date": "2027-01-11",
-      "end_date": "2027-01-17",
-      "duration_days": 7,
-      "application_deadline": "2026-09-30",
-      "application_status": "open",
-      "directory_tier": "verified-self-funded",
-      "financial_summary": "EUR 650 (general fee); EUR 350 for participants from Financially Disadvantaged Countries · SYSTA: accepted applicants who meet the award requirements may apply; not guaranteed.",
-      "fee": "EUR 650 (general fee); EUR 350 for participants from Financially Disadvantaged Countries",
-      "fee_eur": 650.0,
-      "funding_available": true,
-      "funding_type": [
-        "travel grant"
-      ],
-      "funding_scope": "SYSTA: accepted applicants who meet the award requirements may apply; not guaranteed.",
-      "financial_terms": {
-        "participation_fee": "EUR 650 (general fee); EUR 350 for participants from Financially Disadvantaged Countries",
-        "fee_eur": 650.0,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "SYSTA: accepted applicants who meet the award requirements may apply; not guaranteed.",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": [
-          {
-            "amount": 650.0,
-            "currency": "EUR",
-            "conditions": "(general fee)"
-          },
-          {
-            "amount": 350.0,
-            "currency": "EUR",
-            "conditions": "for participants from Financially Disadvantaged Countries"
-          }
-        ]
-      },
-      "topics": [
-        "hydrology",
-        "water resources",
-        "geoscience"
-      ],
-      "primary_topics": [
-        "hydrology",
-        "water resources",
-        "geoscience"
-      ],
-      "secondary_topics": [],
-      "summary": "Building on the success of the first IAHS Academy (Ningbo, January 2026), the second edition aims to further strengthen IAHS capacity-building activities by expanding the scientific offer, enlarging participation, and consolidating the Academy as a flagship global training initiative for early-career hydrologists.",
-      "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，通过扩大科学内容、增加参与规模，并将该学院巩固为面向早期职业水文学家的全球旗舰培训项目。",
-      "eligibility": "early-career hydrologists",
-      "eligibility_zh": "早期职业水文学家",
-      "sessions": []
-    },
-    {
-      "id": "csha-computational-cognitive-neuroscience:2026",
-      "edition_id": "csha-computational-cognitive-neuroscience:2026",
-      "programme_id": "csha-computational-cognitive-neuroscience",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/computational-and-cognitive-neuroscience-csha-course-01cd14bb.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/computational-and-cognitive-neuroscience-csha-course-01cd14bb.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/computational-and-cognitive-neuroscience-csha-course-01cd14bb.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/computational-and-cognitive-neuroscience-csha-course-01cd14bb.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/csha-computational-cognitive-neuroscience-2026-f318dfa9.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/csha-computational-cognitive-neuroscience-2026-f318dfa9.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/csha-computational-cognitive-neuroscience-2026-f318dfa9.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/csha-computational-cognitive-neuroscience-2026-f318dfa9.html"
-      },
-      "official_url": "https://www.csh-asia.org/?content/3046",
-      "title": "Computational and Cognitive Neuroscience — CSHA Course 2026",
-      "title_zh": "计算与认知神经科学 — CSHA 课程 2026",
-      "type": "research training",
-      "organizer": "Cold Spring Harbor Asia",
-      "organizer_zh": "冷泉港亚洲",
-      "location": "Suzhou, China",
-      "location_zh": "中国苏州",
-      "mode": "in-person",
-      "start_date": "2026-06-28",
-      "end_date": "2026-07-19",
-      "duration_days": 22,
-      "application_deadline": "2026-04-08",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "USD 1950 (including tuition, board and lodging; official page also offers CNY pricing) · Financial support may be requested with the application; amount and award are not guaranteed.",
-      "fee": "USD 1950 (including tuition, board and lodging; official page also offers CNY pricing)",
-      "fee_eur": 1852.5,
-      "funding_available": true,
-      "funding_type": [
-        "stipend"
-      ],
-      "funding_scope": "Financial support may be requested with the application; amount and award are not guaranteed.",
-      "financial_terms": {
-        "participation_fee": "USD 1950 (including tuition, board and lodging; official page also offers CNY pricing)",
-        "fee_eur": 1852.5,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "Financial support may be requested with the application; amount and award are not guaranteed.",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": [
-          {
-            "amount": 1950.0,
-            "currency": "USD",
-            "conditions": "(including tuition, board and lodging; official page also offers CNY pricing)"
-          }
-        ]
-      },
-      "topics": [
-        "neuroscience",
-        "artificial intelligence",
-        "physics",
-        "mathematics",
-        "engineering"
-      ],
-      "primary_topics": [
-        "neuroscience"
-      ],
-      "secondary_topics": [
-        "artificial intelligence",
-        "physics",
-        "mathematics",
-        "engineering"
-      ],
-      "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
-      "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
-      "eligibility": "postdoctoral fellows from Asia and around the world",
-      "eligibility_zh": "来自亚洲及世界各地的博士后研究员",
       "sessions": []
     },
     {
