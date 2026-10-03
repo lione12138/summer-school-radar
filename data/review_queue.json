@@ -1,5 +1,5 @@
 {
-  "generated": "2026-09-30",
+  "generated": "2026-10-03",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -477,6 +477,7 @@
         "physics",
         "mathematics",
         "engineering",
+        "epidemiology",
         "economics"
       ],
       "needs_review": [
@@ -505,6 +506,7 @@
         "physics": "supply chains. Through our complexity science approaches linking physics, mathematics, and computational modeling with data and network science, we develop the capacity to",
         "mathematics": "uantitative discipline (social, natural or information sciences, mathematics, engineering) and/or practical experience working in a quantitative domain related to the Winter Sc",
         "engineering": "iscipline (social, natural or information sciences, mathematics, engineering) and/or practical experience working in a quantitative domain related to the Winter School theme. A",
+        "epidemiology": "omes in later life: medication and nutrition. Topics include the epidemiology and clinical patterns of multimorbidity, learning disease trajectories and comorbidity networks fro",
         "economics": "stems. We derive meaning from data from a range of disciplines – economics, medicine, ecology, and the social sciences – as a basis for actionable solutions for a better worl"
       },
       "evidence": {
@@ -518,7 +520,7 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [],
-        "chinese_summary": "Complexity Science Hub 每年举办的 Winter School，面向希望加入跨学科网络的早期职业研究人员，共同探索复杂性科学。申请者需具备定量学科的硕士水平课程背景和/或相关实践经验，课程全程英语授课。2027年冬季学校的申请信息将于2026年10月公布。",
+        "chinese_summary": "Complexity Science Hub 每年举办的 Winter School，面向研究生、博士后、早期职业教师和研究专业人员，以跨学科方式协作探索复杂性科学。申请者需具备定量学科硕士水平课程或相关实践经验，并具备英语工作能力。2027 年 Winter School 的申请将于 2026 年 10 月在此公布。",
         "extracted_deadline": "",
         "extracted_fee": "",
         "extracted_funding": "",
@@ -770,19 +772,16 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "llm_chunk_truncated:6",
-          "llm_request_truncated:max_total_chars_per_llm_request",
-          "index_or_listing_page",
           "conflicting_evidence"
         ],
-        "chinese_summary": "莱顿语言与语言学暑期学校（LLL）由LOT相关页面介绍。LOT可能为LOT附属RM学生参加LLL提供费用资助，但设有条件：最多资助一门课程、需线下参加、完成额外作业、人数上限，且博士生不符合资格。旅行和住宿报销规则与LOT暑期/冬季学校相同；同一暑期同时参加LOT暑期学校和LLL时，只能就其中一所申请报销。成功完成课程者可获证书，RM学生可获5个LOT学分。页面未提供具体日期、费用、地点或申请截止日期。",
+        "chinese_summary": "",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "LOT may cover the fee for participation in LLL by LOT RM students within a scheme; LOT will pay for a maximum of one LLL course per LOT-affiliated RM student; conditions apply, including taking two or three different courses, on-campus participation, completing an additional assignment, and a maximum number of students; PhD candidates are not eligible; travel and accommodation reimbursement follows the same rules as for the LOT Summer and Winter Schools, and if participating in both the LOT Summ",
+        "extracted_funding": "LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). PhD candidates are not eligible for this scheme.",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
-          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | For travel and accommodation costs, the same rules apply as for the LOT Summer and Winter Schools. | The fee for the participation LLL by LOT RM students within this scheme is covered by LOT. | For travel and accommodation costs the same rules apply as f"
+          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). | PhD candidates are not eligible for this scheme."
         }
       }
     },
@@ -1134,7 +1133,7 @@
         "statistics": "e lecturer was so effective that every session was the best math/statistics class I have ever attended. After a comprehensive week-long input on theory and coupled by practice",
         "design": "usal Inference 1: Social Science Experiments Causal Inference 2: Design-Based Approaches Text Analysis Data Analysis for the Social Sciences Large Language Models Tutor Ma",
         "philosophy of science": "d' in a week is super useful and makes you think a lot about the philosophy of science etc. The deep dive kind of teaching methodology is really helpful. The lecturers were good too and",
-        "social science": "and abroad a unique opportunity to learn cutting-edge methods in social science. The course includes multiple course options in quantitative and qualitative methods. Oxford Spring",
+        "social science": "Oxford Spring School in Advanced Social Science Research Methods | DPIR Oxford Spring School in Advanced Social Research Methods Our Oxford Spring",
         "philosophy": "d' in a week is super useful and makes you think a lot about the philosophy of science etc. The deep dive kind of teaching methodology is really helpful. The lecturers were go"
       },
       "evidence": {
@@ -1441,7 +1440,7 @@
       "deadline": null,
       "deadline_status": "uncertain",
       "financial_access_status": "unresolved",
-      "fee": "Registrations for the 2027 Winter Courses Closing of Full-Fee Registrations for the 2027 Winter Cour",
+      "fee": "Registrations – 2027 Winter Courses Extension of the Deadline for Full-Fee Registrations – 2027 Wint",
       "fee_eur": null,
       "topics": [
         "climate",
@@ -1458,7 +1457,7 @@
       "confidence_kind": "heuristic_not_calibrated_probability",
       "field_completeness": 0.0,
       "financial_terms": {
-        "participation_fee": "Registrations for the 2027 Winter Courses Closing of Full-Fee Registrations for the 2027 Winter Cour",
+        "participation_fee": "Registrations – 2027 Winter Courses Extension of the Deadline for Full-Fee Registrations – 2027 Wint",
         "fee_eur": null,
         "fee_status": "stated",
         "support_status": "unknown",
@@ -1471,14 +1470,71 @@
       },
       "benefit_facts": [],
       "topic_evidence": {
-        "climate": "ni, B.S. International Law and Global Justice: The Imperative of Climate Justice Order at Brill - April 2026 - Pinto, M. Le droit international au temps de la mondialisatio",
+        "climate": "ni, B.S. International Law and Global Justice: The Imperative of Climate Justice Order at Brill The Summer Courses The Winter Courses About the Academy Publications Join th",
         "law": "The Hague Academy of International Law Truly the experience of a lifetime Explore Watch videos The Summer Courses The Winter Courses Publi",
         "international law": "The Hague Academy of International Law Truly the experience of a lifetime Explore Watch videos The Summer Courses The Winter Courses Publi"
       },
       "evidence": {
         "deadline": "",
         "duration": "",
-        "fee": "Registrations for the 2027 Winter Courses Closing of Full-Fee Registrations for the 2027 Winter Cour",
+        "fee": "Registrations – 2027 Winter Courses Extension of the Deadline for Full-Fee Registrations – 2027 Wint",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Extension of the Deadline for Full-Fee Registrations – 2027 Winter Courses",
+      "url": "https://www.hagueacademy.nl/events/extension-of-the-deadline-for-full-fee-registrations-2027-winter-courses/",
+      "organizer": "The Hague Academy of International Law",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "Registrations – 2027 Winter Courses | The Hague Academy of International Law Created with Sketch",
+      "fee_eur": null,
+      "topics": [
+        "law",
+        "international law"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is uncertain",
+        "in-person status is uncertain",
+        "funding is not explicit and fee equivalence is uncertain"
+      ],
+      "confidence": 0.0,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.0,
+      "financial_terms": {
+        "participation_fee": "Registrations – 2027 Winter Courses | The Hague Academy of International Law Created with Sketch",
+        "fee_eur": null,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "law": "tions – 2027 Winter Courses | The Hague Academy of International Law 1 Nov 2026 Extension of the Deadline for Full-Fee Registrations – 2027 Winter Courses The deadline",
+        "international law": "l-Fee Registrations – 2027 Winter Courses | The Hague Academy of International Law 1 Nov 2026 Extension of the Deadline for Full-Fee Registrations – 2027 Winter Courses The deadline"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "fee": "Registrations – 2027 Winter Courses | The Hague Academy of International Law Created with Sketch",
         "funding": "",
         "mode": ""
       },
