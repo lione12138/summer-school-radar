@@ -891,7 +891,7 @@
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
   "_canary": "SSR-CANON-7q3v9x2k8m4w",
   "schema_version": 2,
-  "generated": "2026-10-03",
+  "generated": "2026-10-05",
   "opportunities": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -5356,7 +5356,7 @@
       ],
       "secondary_topics": [],
       "topic_evidence": {
-        "linguistics": "Leiden Summer School in Languages and Linguistics – LOT Leiden Summer School in Languages and Linguistics Register now | LOT Summer School 2026 | LOT"
+        "linguistics": "Leiden Summer School in Languages and Linguistics – LOT Leiden Summer School in Languages and Linguistics The fee for the participation LLL by LOT RM"
       },
       "is_new": false
     },
@@ -9226,7 +9226,7 @@
         "sociology": "Educational, Business Studies, Communication, Political Science, Sociology, Health Sciences, and many others. Browse the 2026 programme here Find about the General Schedule h",
         "psychology": "her countries working in a wide range of scientific disciplines: Psychology, Educational, Business Studies, Communication, Political Science, Sociology, Health Sciences, and m"
       },
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Summer School in Social Sciences Methods 2026",
@@ -9761,7 +9761,7 @@
       "source_url": "https://events.ecmwf.int/event/543/",
       "summary": "Training course: Use and interpretation of ECMWF products (5-October 8, 2026): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products O",
       "recommendation_reason": "4 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "programme has already started; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
       "discovery_verified": false,
@@ -9770,7 +9770,7 @@
       "funding_scope": "",
       "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
@@ -9781,7 +9781,7 @@
         "priority region",
         "trusted source layer 1",
         "in-person",
-        "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding"
+        "near-match only: programme has already started; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-09-21",
       "deadline_evidence": "Application deadline: Sunday 28 June 2026",
@@ -9795,7 +9795,7 @@
       "summary_zh": "培训课程：ECMWF产品的使用与解读（2026年10月5日至8日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读 O",
       "eligibility_zh": "",
       "recommendation_reason_zh": "为期4天；优先地区；可信来源第1层；线下",
-      "risk_points_zh": "申请截止日期已过；费用超过400欧元且无明确资助",
+      "risk_points_zh": "课程已经开始；费用超过400欧元，且无明确资助",
       "primary_topics": [],
       "secondary_topics": [],
       "topic_evidence": {},
@@ -10455,7 +10455,7 @@
       "source_url": "https://ellis.eu/events/ellis-career-compass-2026",
       "summary": "05/10/26 - 06/10/26 • Tübingen ELLIS Career Compass 2026 A two-day career event targeting PhD students at the late stages. Conference Read More",
       "recommendation_reason": "priority region; trusted source layer 1; in-person; target level: PhD",
-      "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "discovery_verified": false,
@@ -10464,7 +10464,7 @@
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "duration is below 4 days"
       ],
       "failed_recommendation_conditions": [
@@ -10476,7 +10476,7 @@
         "trusted source layer 1",
         "in-person",
         "target level: PhD",
-        "near-match only: application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-08-26",
       "deadline_evidence": "ELLIS detail/registration page: registration deadline 2026-09-15",
@@ -10490,7 +10490,7 @@
       "summary_zh": "2026年10月5日至6日 • 图宾根 ELLIS Career Compass 2026 面向博士后期阶段学生的为期两天的职业活动。会议 阅读更多",
       "eligibility_zh": "",
       "recommendation_reason_zh": "优先地区；可信来源第1层；线下；目标层次：博士",
-      "risk_points_zh": "申请截止日期已过；时长不足4天；资助情况不明确，费用不确定",
+      "risk_points_zh": "项目已开始；时长不足4天；资助情况不明确，费用不确定",
       "primary_topics": [],
       "secondary_topics": [],
       "topic_evidence": {},
@@ -10618,8 +10618,8 @@
         "artificial intelligence": "ICTP-IAEA Workshop on the Clinical Application of Imaging-Based Artificial Intelligence Systems for Medical Physicists | (smr 4246) ICTP Kastler Lecture Hall (AGH) smr4246 November 2026 N",
         "machine learning": "sed scientific activity PWF Honduras: Theory and Applications of Machine Learning Universidad Nacional Autónoma de Honduras (UNAH) November 2026 November 24 sti 24 Nov 2026 08 Apr 2",
         "data science": "0 Nov 2026 Application Closed school smr4320 CODATA-RDA Research Data Science Summer School and Advanced workshops | (smr 4320) ICTP Denardo Lecture Hall (AGH) smr4320 November",
-        "data analysis": "7 Application Closed school smr4373 Summer School on Topological Data Analysis and Applications | (smr 4373) Lusaka - Zambia Mathematics smr4373 July 2027 July 20 math 20 Jul 202",
-        "high performance computing": "May 2027 Application Closed workshop smr4352 African Workshop on High Performance Computing for Sustainable Development | (smr 4352) Benin City, Edo State, Nigeria - Nigeria smr4352 cmsp 10 M",
+        "data analysis": "7 Application Closed school smr4373 Summer School on Topological Data Analysis and Applications | (smr 4373) Lusaka - Zambia Mathematics smr4373 hecap 19 Jul 2027 30 Jul 2027 App",
+        "high performance computing": "May 2027 Application Closed workshop smr4352 African Workshop on High Performance Computing for Sustainable Development | (smr 4352) Benin City, Edo State, Nigeria - Nigeria smr4352 May 2027",
         "physics": "workshop Sections Home High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Science",
         "cosmology": "scientific activity seminars workshop Sections Home High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics",
         "condensed matter": "p Sections Home High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Techno",
@@ -10627,14 +10627,14 @@
         "statistical physics": "Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Technology and Innovation Othe",
         "quantum information": "n Closed scientific activity smr4204 Open Quantum Systems - from Quantum Information to Condensed Matter | (smr 4204) Singapore - Singapore Condensed Matter and Statistical Physics smr",
         "mathematics": "d Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Technology and Innovation Other Show only",
-        "statistics": "imensions: Recent Progress in Machine Learning, High-Dimensional Statistics and Inference | (smr 4360) ICTP Budinich Lecture Hall (LB) Quantitative Life Sciences smr4360 hecap",
-        "probability": "ember 07 07:00 21:00 07 Dec 2026 Hosted Activity Workshop of the Probability and Stochastic Analysis Trimester Programme | (smr H737) Physical Organizers cmsp 07 Dec 2026 18 De",
-        "chemistry": "EA–ICTP Advanced School on Integrated Design, Materials and Fuel Chemistry of Molten Salt Reactors | (smr 4344) ICTP Giambiagi Lecture Hall (AGH) smr4344 hecap 05 Apr 2027 09",
+        "statistics": "imensions: Recent Progress in Machine Learning, High-Dimensional Statistics and Inference | (smr 4360) ICTP Budinich Lecture Hall (LB) Quantitative Life Sciences smr4360 June",
+        "probability": "smr4203 07:00 21:00 07 Dec 2026 Hosted Activity Workshop of the Probability and Stochastic Analysis Trimester Programme | (smr H737) Physical Organizers December 2026 December",
+        "chemistry": "EA–ICTP Advanced School on Integrated Design, Materials and Fuel Chemistry of Molten Salt Reactors | (smr 4344) ICTP Giambiagi Lecture Hall (AGH) smr4344 April 2027 April 12",
         "materials science": "smr4335 23rd International Workshop on Computational Physics and Materials Science: Total Energy and Force Methods | (smr 4335) ICTP Budinich Lecture Hall (LB) Condensed Matter and S",
         "engineering": "rtificial Intelligence and Machine Learning in Advancing Nuclear Engineering and Technology: from Theory to Practice | (smr 4364) ICTP Giambiagi Lecture Hall (AGH) Science, Tec",
         "design": "Joint ICTP-MSA-COMSTECH-SESAME School on AI-Driven Biomaterials Design: from Characterization to Additive Manufacturing - Bringing Lab to Market | (smr 4343) Allan - Jord",
-        "neuroscience": "r4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 July 2027 July 14 esp",
-        "theoretical neuroscience": "workshop smr4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 July 2027 July 14 esp"
+        "neuroscience": "r4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 esp 12 Jul 2027 23 Jul",
+        "theoretical neuroscience": "workshop smr4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 esp 12 Jul 2027 23 Jul"
       },
       "is_new": false
     },
@@ -10875,7 +10875,7 @@
         "AI": "for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language Technologies, Responsible AI,",
         "artificial intelligence": "tracks covering today's most impactful areas of data science and artificial intelligence. Participants will explore topics ranging from Python for Data Science and Machine Learning Fundame",
         "machine learning": "nts will explore topics ranging from Python for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language",
-        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 3839 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
+        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 3853 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
         "language technology": "earch Labs AirQo - IoT & AI for Environment Sunbird AI - African Language Technology Busitema AI - AI for Agriculture Makerere AI Labs DSAIL - IoT & AI for Environment - AirQo Sunbird",
         "high performance computing": "orking - - 11:00 - 13:00 Parallel Julia programming language and High Performance Computing Track A Dr. Adeleke Bankole, University of Cambridge, 11:00 - 13:00 Parallel Multimodal AI & LLMs &",
         "design": "h & Networking - - 14:30 - 16:00 Parallel AirQo DevCon: Hardware Design and Development for Air Quality Sensing Track A AirQo 14:30 - 16:00 Parallel NLP & African Language",
@@ -10952,166 +10952,6 @@
       "secondary_topics": [],
       "topic_evidence": {
         "data analysis": "Summer School on Topological Data Analysis and Applications | (smr 4373) (19-30 July 2027) Europe/Rome English Administration Search Search in"
-      },
-      "is_new": false
-    },
-    {
-      "title": "Summer School of Linguistics",
-      "type": "summer school",
-      "organizer": "Charles University Summer School of Linguistics",
-      "source_layer": "AI",
-      "region_priority": "global",
-      "location": "uncertain",
-      "mode": "in-person",
-      "start_date": null,
-      "end_date": null,
-      "duration_days": null,
-      "deadline": null,
-      "deadline_status": "open",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "linguistics"
-      ],
-      "eligibility": "Primarily intended for graduate students of linguistics, psycholinguistics and related areas. Advanced BA or MA students interested in language and its use, as well as faculty members, often also find the school inspiring and useful. Participants who do not want to use the offered accommodation or would like to come only for a few days are also welcome, but they need to find their own accommodation.",
-      "target_level": "uncertain",
-      "fee": "Participation fee: 2000 CZK (approximately 80 EUR). Accommodation options: 5325 CZK for the whole school including the participation fee; single bedroom sharing a bathroom and fridge with two other single bedrooms: 565 CZK per person/night; 5955 CZK for the whole school including the participation fee. After a certain date, the fee is not refundable.",
-      "fee_eur": 5955.0,
-      "application_link": "https://ssol.ff.cuni.cz/ssol-2026/to-apply/",
-      "source_url": "https://ssol.ff.cuni.cz/",
-      "summary": "语言学暑期学校（Summer School of Linguistics）2026年申请已开放，主要面向语言学、心理语言学及相关领域的 graduate students，也欢迎 advanced BA/MA students 和 faculty members。参与费为2000 CZK（约80 EUR），提供含住宿的注册选项，费用分别为5325 CZK或5955 CZK（含参与费），单人间与他人共用浴室和冰箱为565 CZK/人/晚。活动旨在让对语言及其使用感兴趣的学生和年轻研究者了解语言学研究的最新成果，并设有海报展示环节。",
-      "recommendation_reason": "deadline appears open; in-person; topics: linguistics; near-match only: duration is uncertain; fee exceeds EUR 400 without explicit funding",
-      "risk_points": "duration is uncertain; fee exceeds EUR 400 without explicit funding",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "funding_scope": "",
-      "financial_access_status": "self-funded",
-      "failed_hard_conditions": [
-        "duration is uncertain"
-      ],
-      "failed_recommendation_conditions": [
-        "fee exceeds EUR 400 without explicit funding"
-      ],
-      "score": 14.0,
-      "score_explanation": [
-        "deadline appears open",
-        "in-person",
-        "topics: linguistics",
-        "near-match only: duration is uncertain; fee exceeds EUR 400 without explicit funding"
-      ],
-      "first_seen": null,
-      "deadline_evidence": "",
-      "duration_evidence": "",
-      "fee_evidence": "Also, we ask them to pay a participation fee of 2000 CZK (approximately 80 EUR) to complete the registration. 5325 CZK for the whole school including the participation fee) and a single bedroom sharing a bathroom and fridge with two other single bedrooms (565 CZK person/night; i.e. 5955 CZK for the whole school including the participation fee). After this date, the fee is not refundable.",
-      "mode_evidence": "We offer nice and cheap accommodation in the dormitory of the University of South Bohemia in the same campus just about 500 m from the main venue.",
-      "extraction_confidence": 0.35,
-      "title_zh": "语言学暑期学校",
-      "organizer_zh": "查理大学语言学暑期学校",
-      "location_zh": "不确定",
-      "summary_zh": "语言学暑期学校（Summer School of Linguistics）2026年申请已开放，主要面向语言学、心理语言学及相关领域的 graduate students，也欢迎 advanced BA/MA students 和 faculty members。参与费为2000 CZK（约80 EUR），提供含住宿的注册选项，费用分别为5325 CZK或5955 CZK（含参与费），单人间与他人共用浴室和冰箱为565 CZK/人/晚。活动旨在让对语言及其使用感兴趣的学生和年轻研究者了解语言学研究的最新成果，并设有海报展示环节。",
-      "eligibility_zh": "主要面向语言学、心理语言学及相关领域的研究生。对语言及其使用感兴趣的高年级本科生或硕士生，以及教师，通常也会觉得该校富有启发性且有用。不想使用所提供的住宿或只想参加几天的参与者同样欢迎，但需自行安排住宿。",
-      "recommendation_reason_zh": "截止日期似乎开放；线下；主题：语言学；仅部分匹配：时长不确定；费用超过400欧元且无明确资助",
-      "risk_points_zh": "时长不确定；费用超过400欧元且无明确资助",
-      "primary_topics": [
-        "linguistics"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "linguistics": "Summer School of Linguistics – Official website of the Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 20"
-      },
-      "is_new": false
-    },
-    {
-      "title": "Explore CISPA",
-      "type": "summer school",
-      "organizer": "CISPA",
-      "source_layer": "2",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "in-person",
-      "start_date": "2026-10-02",
-      "end_date": "2026-10-04",
-      "duration_days": 3,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "AI",
-        "artificial intelligence",
-        "machine learning",
-        "cybersecurity",
-        "cryptography",
-        "mathematics",
-        "design"
-      ],
-      "eligibility": "Postdoctorate PhD at CISPA Other Career Paths FAQ Technology Transfer Overview Transferring our research into applications and products is one of CISPA's core tasks",
-      "target_level": "PhD, postdoc",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://cispa.de/en",
-      "source_url": "https://cispa.de/en",
-      "summary": "Home CISPA Helmholtz Center for Information Security Send email Copy Email Address Home Overview About CISPA Overview The CISPA Helmholtz Center for Information Security is a German national Big Science Institution within the Helmholtz Association. Its research agenda encompasses",
-      "recommendation_reason": "priority region; in-person; target level: PhD, postdoc; topics: AI, artificial intelligence, machine learning, cybersecurity",
-      "risk_points": "programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "programme has already started",
-        "duration is below 4 days"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 12.5,
-      "score_explanation": [
-        "priority region",
-        "in-person",
-        "target level: PhD, postdoc",
-        "topics: AI, artificial intelligence, machine learning, cybersecurity",
-        "near-match only: programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-06-16",
-      "deadline_evidence": "",
-      "duration_evidence": "Oct 2, 2026 to Oct 4, 2026",
-      "fee_evidence": "",
-      "mode_evidence": "venues of security, privacy & cryptography alone RESEAR",
-      "extraction_confidence": 0.5,
-      "title_zh": "探索CISPA",
-      "organizer_zh": "CISPA",
-      "location_zh": "欧洲",
-      "summary_zh": "首页 CISPA 亥姆霍兹信息安全中心 发送邮件 复制邮箱地址 首页 概览 关于CISPA 概览 CISPA亥姆霍兹信息安全中心是德国亥姆霍兹联合会旗下的国家大科学机构。其研究议程涵盖",
-      "eligibility_zh": "博士后 CISPA博士 其他职业路径 常见问题 技术转移 概览 将我们的研究转化为应用和产品是CISPA的核心任务之一",
-      "recommendation_reason_zh": "优先地区；线下；目标层次：博士、博士后；主题：AI、人工智能、机器学习、网络安全",
-      "risk_points_zh": "项目已开始；时长不足4天；资助情况不明确，费用不确定",
-      "primary_topics": [
-        "AI",
-        "artificial intelligence",
-        "machine learning",
-        "cybersecurity",
-        "cryptography",
-        "mathematics",
-        "design"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "AI": ". Sep 21, 2026 When Stubbornness Becomes a Security Problem: How AI Agents Can Manipulate Others Samira Abedini is researching how individual AI agents can influence t",
-        "artificial intelligence": "ion Security, we explore cybersecurity, privacy, and trustworthy artificial intelligence in all their many facets. A national Big Science institution within the Helmholtz Association, CISP",
-        "machine learning": "for their action. Recent advances in Artificial Intelligence and Machine Learning offer great benefits to industry and society in general. While we are advancing the state of the ar",
-        "cybersecurity": "the CISPA Helmholtz Center for Information Security, we explore cybersecurity, privacy, and trustworthy artificial intelligence in all their many facets. A national Big Science",
-        "cryptography": "nd Privacy Coexist?” More At the Intersection of Mathematics and Cryptography: Meet Our New Faculty Pierre Meyer More What Remains When New Paths Begin More all News ©HPP Archit",
-        "mathematics": "Can Innovation and Privacy Coexist?” More At the Intersection of Mathematics and Cryptography: Meet Our New Faculty Pierre Meyer More What Remains When New Paths Begin More all",
-        "design": "ve mobile system security from hardware primitives to middleware design to the user's central role in the data protection. Our research explores the boundaries of what is"
       },
       "is_new": false
     },
@@ -13989,95 +13829,6 @@
       "is_new": false
     },
     {
-      "title": "Autumn School - Advanced methods in epidemiological modeling and computational biology - Part II",
-      "type": "autumn school",
-      "organizer": "CRM Schools",
-      "source_layer": "1",
-      "region_priority": "supplementary",
-      "location": "North America",
-      "mode": "in-person",
-      "start_date": "2026-10-07",
-      "end_date": "2026-10-09",
-      "duration_days": 3,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "data science",
-        "bioinformatics",
-        "computational biology",
-        "statistics",
-        "epidemiology",
-        "public health",
-        "biostatistics"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.crmath.ca/en/activities/#/type/activity/id/4095",
-      "source_url": "https://www.crmath.ca/en/activities/#/type/activity/id/4095",
-      "summary": "",
-      "recommendation_reason": "trusted source layer 1; in-person; topics: data science, bioinformatics, computational biology, statistics; near-match only: application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "crm:activity:4095",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "duration is below 4 days"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 2.5,
-      "score_explanation": [
-        "trusted source layer 1",
-        "in-person",
-        "topics: data science, bioinformatics, computational biology, statistics",
-        "near-match only: application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-09-23",
-      "deadline_evidence": "",
-      "duration_evidence": "October 7 - 9, 2026",
-      "fee_evidence": "",
-      "mode_evidence": "Venue Contact Français Thematic program Back Back to ca",
-      "extraction_confidence": 0.5,
-      "title_zh": "秋季学校 - 流行病学建模与计算生物学高级方法 - 第二部分",
-      "organizer_zh": "CRM Schools",
-      "location_zh": "北美",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "可信来源第1层；线下；主题：数据科学、生物信息学、计算生物学、统计学；仅为近似匹配：申请截止日期已过；时长不足4天；资助情况不明确，费用不确定",
-      "risk_points_zh": "申请截止日期已过；时长不足4天；资助情况不明确，费用不确定",
-      "primary_topics": [
-        "data science",
-        "bioinformatics",
-        "computational biology",
-        "statistics",
-        "epidemiology",
-        "public health",
-        "biostatistics"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "data science": "eir knowledge of the most current methods at the intersection of data science and the life sciences. Participants should make their own accommodation arrangements in advance. (S",
-        "bioinformatics": "school is intended for individuals with training in statistics, bioinformatics, or public health who wish to deepen their knowledge of the most current methods at the intersectio",
-        "computational biology": "Autumn School - Advanced methods in epidemiological modeling and computational biology - Part II Autumn School - Advanced methods in epidemiological modeling and computational biology -",
-        "statistics": "al age. This school is intended for individuals with training in statistics, bioinformatics, or public health who wish to deepen their knowledge of the most current methods at",
-        "epidemiology": "ical and computational methods that are transforming research in epidemiology and biology today. It begins with the computing foundations and data resources that underpin modern",
-        "public health": "for individuals with training in statistics, bioinformatics, or public health who wish to deepen their knowledge of the most current methods at the intersection of data science",
-        "biostatistics": "he computing foundations and data resources that underpin modern biostatistics, and then addresses key methodological challenges, including the analysis of rare events in materna"
-      },
-      "is_new": false
-    },
-    {
       "title": "Application Process",
       "type": "training course",
       "organizer": "HIDA - Helmholtz Information and Data Science Academy",
@@ -14178,7 +13929,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/resources/templates/summer-school-application-form/",
       "source_url": "https://www.isprs.org/resources/templates/summer-school-application-form/",
-      "summary": "Summer School Application Form October 03, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissio",
+      "summary": "Summer School Application Form October 05, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissio",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, AI, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -14208,13 +13959,13 @@
       "fee_evidence": "",
       "mode_evidence": "Webinar Records Textbook Tutorial Slides Software/Hardwar",
       "extraction_confidence": 0.5,
-      "title_zh": "实用链接",
+      "title_zh": "相关链接",
       "organizer_zh": "ISPRS",
       "location_zh": "全球",
-      "summary_zh": "暑期学校申请表 2026年10月3日 | 首页 | 网站地图 | ISPRS基金会 | 𝕏 登录 首页 学会 学会概览与组织 概览 组织 历史背景 百年视频 组织间活动 目标与活动 官员 理事会 委员会",
+      "summary_zh": "暑期学校申请表 2026年10月5日 | 首页 | 网站地图 | ISPRS基金会 | 𝕏 登录 首页 学会 学会概览与组织 概览 组织 历史背景 百年视频 组织间活动 目标与活动 官员 理事会 委员会",
       "eligibility_zh": "",
-      "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、人工智能、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
-      "risk_points_zh": "申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
+      "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、人工智能、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况未明确，费用不确定",
+      "risk_points_zh": "申请截止日期不确定；仅线上；资助情况未明确，费用不确定",
       "primary_topics": [
         "remote sensing",
         "geospatial",
@@ -14257,7 +14008,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/society/awards/torlegard.aspx",
       "source_url": "https://www.isprs.org/society/awards/torlegard.aspx",
-      "summary": "ISPRS WEC Kennert Torlegård Travel Grant October 03, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council",
+      "summary": "ISPRS WEC Kennert Torlegård Travel Grant October 05, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -14287,13 +14038,13 @@
       "fee_evidence": "",
       "mode_evidence": "Webinar Records Textbook Tutorial Slides Software/Hardwar",
       "extraction_confidence": 0.5,
-      "title_zh": "获奖契约",
+      "title_zh": "获奖证书",
       "organizer_zh": "ISPRS",
       "location_zh": "全球",
-      "summary_zh": "ISPRS WEC Kennert Torlegård 旅行资助 2026年10月3日 | 首页 | 网站地图 | ISPRS 基金会 | 𝕏 登录 首页 学会 学会概览与组织 概览 组织 历史背景 百年视频 跨组织活动 目标与活动 官员 理事会",
-      "eligibility_zh": "该奖项授予一位年轻科学家，其资格由下文第四条所定义的选择委员会确定",
-      "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资金未明确且费用不确定",
-      "risk_points_zh": "申请截止日期不确定；仅线上；资金未明确且费用不确定",
+      "summary_zh": "ISPRS WEC Kennert Torlegård 旅行资助 2026年10月5日 | 首页 | 网站地图 | ISPRS基金会 | 𝕏 登录 首页 学会 学会概览与组织 概览 组织 历史背景 百年视频 组织间活动 目标与活动 官员 理事会",
+      "eligibility_zh": "该奖项授予一名青年科学家，其资格由下文第四条所定义的选择委员会确定",
+      "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确且费用不确定",
+      "risk_points_zh": "申请截止日期不确定；仅线上；资助情况不明确且费用不确定",
       "primary_topics": [
         "remote sensing",
         "geospatial",
@@ -14755,7 +14506,7 @@
         "law": "tions – 2027 Winter Courses | The Hague Academy of International Law 1 Nov 2026 Extension of the Deadline for Full-Fee Registrations – 2027 Winter Courses The deadline",
         "international law": "l-Fee Registrations – 2027 Winter Courses | The Hague Academy of International Law 1 Nov 2026 Extension of the Deadline for Full-Fee Registrations – 2027 Winter Courses The deadline"
       },
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "International Summer Schools BENTACS",
@@ -16111,8 +15862,8 @@
       "organizer": "UNICRI AI Ethics Winter School",
       "source_layer": "AI",
       "region_priority": "global",
-      "location": "Rome City Institute Campus in Rome, Italy",
-      "mode": "in-person",
+      "location": "uncertain",
+      "mode": "uncertain",
       "start_date": null,
       "end_date": null,
       "duration_days": null,
@@ -16122,47 +15873,47 @@
       "funding_type": [],
       "funding_evidence": "",
       "topic_keywords": [],
-      "eligibility": "Applicants must be enrolled in, or have completed, a first university degree programme (bachelor’s level or equivalent).",
+      "eligibility": "",
       "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
+      "fee": "regular_fee: unknown; reduced_fee_eligibility: unknown; included_costs: unknown; provisional_prices: unknown; accommodation_fee: €350 per person for double rooms in shared apartments; accommodation_fee_evidence_ids: E15",
+      "fee_eur": 350.0,
       "application_link": "https://unicri.org/training-summer-school-sport-governance-and-ethics-integrity-2026",
       "source_url": "https://unicri.org/training-summer-school-sport-governance-and-ethics-integrity-2026",
-      "summary": "联合国区域间犯罪和司法研究所（UNICRI）与罗马城市学院联合举办的“体育治理与伦理：实践中的诚信”暑期学校，2027年春季在意大利罗马举行，采用线下授课模式。申请者需已就读或完成本科阶段学习，通过联合国INDICO平台在线申请。完成全部课程后可获得由联合国和罗马城市学院联合颁发的参与证书。住宿费为每人350欧元（合租公寓双人间）。",
-      "recommendation_reason": "in-person; near-match only: application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain",
+      "summary": "这是一个关于体育治理与伦理的暑期学校，主题为实践中的诚信。申请截止日期为2027年春季，具体日期待公布。参与者可通过联合国INDICO平台在线申请。成功完成课程后可获得由联合国和罗马城市学院联合颁发的参与证书。住宿费用为每人350欧元，适用于共享公寓的双人间。",
+      "recommendation_reason": "near-match only: application deadline is uncertain; duration is uncertain; in-person status is uncertain; participation fee is provisional",
+      "risk_points": "application deadline is uncertain; duration is uncertain; in-person status is uncertain; participation fee is provisional",
       "sessions": [],
       "identity_key": "",
       "discovery_verified": false,
       "programme_key": "",
       "evidence_sources": {},
       "funding_scope": "",
-      "financial_access_status": "unresolved",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
         "application deadline is uncertain",
-        "duration is uncertain"
+        "duration is uncertain",
+        "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
+        "participation fee is provisional"
       ],
       "score": 0.0,
       "score_explanation": [
-        "in-person",
-        "near-match only: application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain"
+        "near-match only: application deadline is uncertain; duration is uncertain; in-person status is uncertain; participation fee is provisional"
       ],
       "first_seen": null,
       "deadline_evidence": "",
       "duration_evidence": "",
-      "fee_evidence": "",
-      "mode_evidence": "Course Methodology and Attendance Classes take place at the Rome City Institute Campus in Rome (Italy), Monday to Friday from 9:30 am to 4:30 pm CEST.",
+      "fee_evidence": "Accommodation fees €350 per person The fee applies to double rooms in shared apartments.",
+      "mode_evidence": "",
       "extraction_confidence": 0.35,
       "title_zh": "体育治理与伦理暑期学校：实践中的诚信",
-      "organizer_zh": "UNICRI AI伦理冬季学校",
-      "location_zh": "意大利罗马，罗马城市学院校区",
-      "summary_zh": "联合国区域间犯罪和司法研究所（UNICRI）与罗马城市学院联合举办的“体育治理与伦理：实践中的诚信”暑期学校，2027年春季在意大利罗马举行，采用线下授课模式。申请者需已就读或完成本科阶段学习，通过联合国INDICO平台在线申请。完成全部课程后可获得由联合国和罗马城市学院联合颁发的参与证书。住宿费为每人350欧元（合租公寓双人间）。",
-      "eligibility_zh": "申请人须已注册或已完成首个大学学位课程（学士学位或同等学历）。",
-      "recommendation_reason_zh": "线下；仅部分匹配：申请截止日期不确定；时长不确定；资助情况不明确，费用不确定",
-      "risk_points_zh": "申请截止日期不确定；时长不确定；资助情况不明确，费用不确定",
+      "organizer_zh": "联合国区域间犯罪和司法研究所（UNICRI）人工智能伦理冬季学校",
+      "location_zh": "不确定",
+      "summary_zh": "这是一个关于体育治理与伦理的暑期学校，主题为实践中的诚信。申请截止日期为2027年春季，具体日期待公布。参与者可通过联合国INDICO平台在线申请。成功完成课程后可获得由联合国和罗马城市学院联合颁发的参与证书。住宿费用为每人350欧元，适用于共享公寓的双人间。",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "仅为近似匹配：申请截止日期不确定；时长不确定；是否为线下不确定；参与费用为暂定",
+      "risk_points_zh": "申请截止日期不确定；时长不确定；是否为线下不确定；参与费用为暂定",
       "primary_topics": [],
       "secondary_topics": [],
       "topic_evidence": {},
@@ -16298,6 +16049,76 @@
       "secondary_topics": [],
       "topic_evidence": {
         "deep learning": "udy of several emerging topics of high relevance within advanced deep learning, from a basic understanding of the techniques to the latest state-of-the-art developments in the fi"
+      },
+      "is_new": false
+    },
+    {
+      "title": "Summer School of Linguistics",
+      "type": "summer school",
+      "organizer": "Charles University Summer School of Linguistics",
+      "source_layer": "AI",
+      "region_priority": "global",
+      "location": "uncertain",
+      "mode": "uncertain",
+      "start_date": null,
+      "end_date": null,
+      "duration_days": null,
+      "deadline": null,
+      "deadline_status": "open",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "linguistics"
+      ],
+      "eligibility": "Primarily intended for graduate students of linguistics, psycholinguistics and related areas; advanced BA or MA students interested in language and its use, as well as faculty members, often also find the school inspiring and useful.",
+      "target_level": "uncertain",
+      "fee": "Participation fee: 2000 CZK (approximately 80 EUR). Registration with accommodation: 5325 CZK for the whole school including the participation fee (shared bedroom sharing a bathroom and fridge with two other single bedrooms; 565 CZK per person/night); 5955 CZK for the whole school including the participation fee (single bedroom sharing a bathroom and fridge with two other single bedrooms).",
+      "fee_eur": 5955.0,
+      "application_link": "https://ssol.ff.cuni.cz/",
+      "source_url": "https://ssol.ff.cuni.cz/",
+      "summary": "语言学暑期学校（Summer School of Linguistics）旨在为对语言及其使用感兴趣的学生和青年研究者提供了解语言学研究当前成果的机会。主要面向语言学、心理语言学及相关领域的 graduate students，也欢迎高年级 BA/MA 学生和教师。设有海报环节供参与者展示研究。参与费为 2000 CZK（约 80 EUR）；含住宿的注册费为 5325 CZK 或 5955 CZK（均含参与费）。申请开放中。",
+      "recommendation_reason": "deadline appears open; topics: linguistics; near-match only: duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [
+        "duration is uncertain",
+        "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "score": 0.0,
+      "score_explanation": [
+        "deadline appears open",
+        "topics: linguistics",
+        "near-match only: duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
+      ],
+      "first_seen": null,
+      "deadline_evidence": "",
+      "duration_evidence": "",
+      "fee_evidence": "Also, we ask them to pay a participation fee of 2000 CZK (approximately 80 EUR) to complete the registration. 5325 CZK for the whole school including the participation fee) and a single bedroom sharing a bathroom and fridge with two other single bedrooms (565 CZK person/night; i.e. 5955 CZK for the whole school including the participation fee).",
+      "mode_evidence": "",
+      "extraction_confidence": 0.35,
+      "title_zh": "语言学暑期学校",
+      "organizer_zh": "查理大学语言学暑期学校",
+      "location_zh": "不确定",
+      "summary_zh": "语言学暑期学校（Summer School of Linguistics）旨在为对语言及其使用感兴趣的学生和青年研究者提供了解语言学研究当前成果的机会。主要面向语言学、心理语言学及相关领域的 graduate students，也欢迎高年级 BA/MA 学生和教师。设有海报环节供参与者展示研究。参与费为 2000 CZK（约 80 EUR）；含住宿的注册费为 5325 CZK 或 5955 CZK（均含参与费）。申请开放中。",
+      "eligibility_zh": "主要面向语言学、心理语言学及相关领域的研究生；对语言及其使用感兴趣的高年级本科生或硕士生，以及教师，通常也会觉得该暑期学校富有启发性且有用。",
+      "recommendation_reason_zh": "截止日期似乎开放；主题：语言学；仅为近似匹配：时长不确定；是否线下不确定；费用超过400欧元且无明确资助",
+      "risk_points_zh": "时长不确定；是否线下不确定；费用超过400欧元且无明确资助",
+      "primary_topics": [
+        "linguistics"
+      ],
+      "secondary_topics": [],
+      "topic_evidence": {
+        "linguistics": "To apply – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts"
       },
       "is_new": false
     },
@@ -24980,7 +24801,7 @@
         "sociology": "Educational, Business Studies, Communication, Political Science, Sociology, Health Sciences, and many others. Browse the 2026 programme here Find about the General Schedule h",
         "psychology": "her countries working in a wide range of scientific disciplines: Psychology, Educational, Business Studies, Communication, Political Science, Sociology, Health Sciences, and m"
       },
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Winter School in Network Data Science and Artificial Intelligence",
@@ -25679,7 +25500,7 @@
       "source_url": "https://events.ecmwf.int/event/543/",
       "summary": "Training course: Use and interpretation of ECMWF products (5-October 8, 2026): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products O",
       "recommendation_reason": "4 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "programme has already started; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
       "discovery_verified": false,
@@ -25688,7 +25509,7 @@
       "funding_scope": "",
       "financial_access_status": "self-funded",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [
         "fee exceeds EUR 400 without explicit funding"
@@ -25699,7 +25520,7 @@
         "priority region",
         "trusted source layer 1",
         "in-person",
-        "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding"
+        "near-match only: programme has already started; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-09-21",
       "deadline_evidence": "Application deadline: Sunday 28 June 2026",
@@ -26354,7 +26175,7 @@
       "source_url": "https://ellis.eu/events/ellis-career-compass-2026",
       "summary": "05/10/26 - 06/10/26 • Tübingen ELLIS Career Compass 2026 A two-day career event targeting PhD students at the late stages. Conference Read More",
       "recommendation_reason": "priority region; trusted source layer 1; in-person; target level: PhD",
-      "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
+      "risk_points": "programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "discovery_verified": false,
@@ -26363,7 +26184,7 @@
       "funding_scope": "",
       "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline has passed",
+        "programme has already started",
         "duration is below 4 days"
       ],
       "failed_recommendation_conditions": [
@@ -26375,7 +26196,7 @@
         "trusted source layer 1",
         "in-person",
         "target level: PhD",
-        "near-match only: application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain"
+        "near-match only: programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-08-26",
       "deadline_evidence": "ELLIS detail/registration page: registration deadline 2026-09-15",
@@ -26517,8 +26338,8 @@
         "artificial intelligence": "ICTP-IAEA Workshop on the Clinical Application of Imaging-Based Artificial Intelligence Systems for Medical Physicists | (smr 4246) ICTP Kastler Lecture Hall (AGH) smr4246 November 2026 N",
         "machine learning": "sed scientific activity PWF Honduras: Theory and Applications of Machine Learning Universidad Nacional Autónoma de Honduras (UNAH) November 2026 November 24 sti 24 Nov 2026 08 Apr 2",
         "data science": "0 Nov 2026 Application Closed school smr4320 CODATA-RDA Research Data Science Summer School and Advanced workshops | (smr 4320) ICTP Denardo Lecture Hall (AGH) smr4320 November",
-        "data analysis": "7 Application Closed school smr4373 Summer School on Topological Data Analysis and Applications | (smr 4373) Lusaka - Zambia Mathematics smr4373 July 2027 July 20 math 20 Jul 202",
-        "high performance computing": "May 2027 Application Closed workshop smr4352 African Workshop on High Performance Computing for Sustainable Development | (smr 4352) Benin City, Edo State, Nigeria - Nigeria smr4352 cmsp 10 M",
+        "data analysis": "7 Application Closed school smr4373 Summer School on Topological Data Analysis and Applications | (smr 4373) Lusaka - Zambia Mathematics smr4373 hecap 19 Jul 2027 30 Jul 2027 App",
+        "high performance computing": "May 2027 Application Closed workshop smr4352 African Workshop on High Performance Computing for Sustainable Development | (smr 4352) Benin City, Edo State, Nigeria - Nigeria smr4352 May 2027",
         "physics": "workshop Sections Home High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Science",
         "cosmology": "scientific activity seminars workshop Sections Home High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics",
         "condensed matter": "p Sections Home High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Techno",
@@ -26526,14 +26347,14 @@
         "statistical physics": "Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Technology and Innovation Othe",
         "quantum information": "n Closed scientific activity smr4204 Open Quantum Systems - from Quantum Information to Condensed Matter | (smr 4204) Singapore - Singapore Condensed Matter and Statistical Physics smr",
         "mathematics": "d Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Technology and Innovation Other Show only",
-        "statistics": "imensions: Recent Progress in Machine Learning, High-Dimensional Statistics and Inference | (smr 4360) ICTP Budinich Lecture Hall (LB) Quantitative Life Sciences smr4360 hecap",
-        "probability": "ember 07 07:00 21:00 07 Dec 2026 Hosted Activity Workshop of the Probability and Stochastic Analysis Trimester Programme | (smr H737) Physical Organizers cmsp 07 Dec 2026 18 De",
-        "chemistry": "EA–ICTP Advanced School on Integrated Design, Materials and Fuel Chemistry of Molten Salt Reactors | (smr 4344) ICTP Giambiagi Lecture Hall (AGH) smr4344 hecap 05 Apr 2027 09",
+        "statistics": "imensions: Recent Progress in Machine Learning, High-Dimensional Statistics and Inference | (smr 4360) ICTP Budinich Lecture Hall (LB) Quantitative Life Sciences smr4360 June",
+        "probability": "smr4203 07:00 21:00 07 Dec 2026 Hosted Activity Workshop of the Probability and Stochastic Analysis Trimester Programme | (smr H737) Physical Organizers December 2026 December",
+        "chemistry": "EA–ICTP Advanced School on Integrated Design, Materials and Fuel Chemistry of Molten Salt Reactors | (smr 4344) ICTP Giambiagi Lecture Hall (AGH) smr4344 April 2027 April 12",
         "materials science": "smr4335 23rd International Workshop on Computational Physics and Materials Science: Total Energy and Force Methods | (smr 4335) ICTP Budinich Lecture Hall (LB) Condensed Matter and S",
         "engineering": "rtificial Intelligence and Machine Learning in Advancing Nuclear Engineering and Technology: from Theory to Practice | (smr 4364) ICTP Giambiagi Lecture Hall (AGH) Science, Tec",
         "design": "Joint ICTP-MSA-COMSTECH-SESAME School on AI-Driven Biomaterials Design: from Characterization to Additive Manufacturing - Bringing Lab to Market | (smr 4343) Allan - Jord",
-        "neuroscience": "r4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 July 2027 July 14 esp",
-        "theoretical neuroscience": "workshop smr4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 July 2027 July 14 esp"
+        "neuroscience": "r4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 esp 12 Jul 2027 23 Jul",
+        "theoretical neuroscience": "workshop smr4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 esp 12 Jul 2027 23 Jul"
       },
       "is_new": false
     },
@@ -26774,7 +26595,7 @@
         "AI": "for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language Technologies, Responsible AI,",
         "artificial intelligence": "tracks covering today's most impactful areas of data science and artificial intelligence. Participants will explore topics ranging from Python for Data Science and Machine Learning Fundame",
         "machine learning": "nts will explore topics ranging from Python for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language",
-        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 3839 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
+        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 3853 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
         "language technology": "earch Labs AirQo - IoT & AI for Environment Sunbird AI - African Language Technology Busitema AI - AI for Agriculture Makerere AI Labs DSAIL - IoT & AI for Environment - AirQo Sunbird",
         "high performance computing": "orking - - 11:00 - 13:00 Parallel Julia programming language and High Performance Computing Track A Dr. Adeleke Bankole, University of Cambridge, 11:00 - 13:00 Parallel Multimodal AI & LLMs &",
         "design": "h & Networking - - 14:30 - 16:00 Parallel AirQo DevCon: Hardware Design and Development for Air Quality Sensing Track A AirQo 14:30 - 16:00 Parallel NLP & African Language",
@@ -26924,96 +26745,6 @@
       "topic_evidence": {
         "psychology": "realms of leadership and organizational studies from a positive psychology perspective. Scholars in positive psychology examine people, groups, and organizations when they ar",
         "history": "udents. This course will challenge students to consider the long history of character education in America, to compare several theories/models that are used to frame and gu"
-      },
-      "is_new": false
-    },
-    {
-      "title": "Explore CISPA",
-      "type": "summer school",
-      "organizer": "CISPA",
-      "source_layer": "2",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "in-person",
-      "start_date": "2026-10-02",
-      "end_date": "2026-10-04",
-      "duration_days": 3,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "AI",
-        "artificial intelligence",
-        "machine learning",
-        "cybersecurity",
-        "cryptography",
-        "mathematics",
-        "design"
-      ],
-      "eligibility": "Postdoctorate PhD at CISPA Other Career Paths FAQ Technology Transfer Overview Transferring our research into applications and products is one of CISPA's core tasks",
-      "target_level": "PhD, postdoc",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://cispa.de/en",
-      "source_url": "https://cispa.de/en",
-      "summary": "Home CISPA Helmholtz Center for Information Security Send email Copy Email Address Home Overview About CISPA Overview The CISPA Helmholtz Center for Information Security is a German national Big Science Institution within the Helmholtz Association. Its research agenda encompasses",
-      "recommendation_reason": "priority region; in-person; target level: PhD, postdoc; topics: AI, artificial intelligence, machine learning, cybersecurity",
-      "risk_points": "programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "programme has already started",
-        "duration is below 4 days"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 12.5,
-      "score_explanation": [
-        "priority region",
-        "in-person",
-        "target level: PhD, postdoc",
-        "topics: AI, artificial intelligence, machine learning, cybersecurity",
-        "near-match only: programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-06-16",
-      "deadline_evidence": "",
-      "duration_evidence": "Oct 2, 2026 to Oct 4, 2026",
-      "fee_evidence": "",
-      "mode_evidence": "venues of security, privacy & cryptography alone RESEAR",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "primary_topics": [
-        "AI",
-        "artificial intelligence",
-        "machine learning",
-        "cybersecurity",
-        "cryptography",
-        "mathematics",
-        "design"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "AI": ". Sep 21, 2026 When Stubbornness Becomes a Security Problem: How AI Agents Can Manipulate Others Samira Abedini is researching how individual AI agents can influence t",
-        "artificial intelligence": "ion Security, we explore cybersecurity, privacy, and trustworthy artificial intelligence in all their many facets. A national Big Science institution within the Helmholtz Association, CISP",
-        "machine learning": "for their action. Recent advances in Artificial Intelligence and Machine Learning offer great benefits to industry and society in general. While we are advancing the state of the ar",
-        "cybersecurity": "the CISPA Helmholtz Center for Information Security, we explore cybersecurity, privacy, and trustworthy artificial intelligence in all their many facets. A national Big Science",
-        "cryptography": "nd Privacy Coexist?” More At the Intersection of Mathematics and Cryptography: Meet Our New Faculty Pierre Meyer More What Remains When New Paths Begin More all News ©HPP Archit",
-        "mathematics": "Can Innovation and Privacy Coexist?” More At the Intersection of Mathematics and Cryptography: Meet Our New Faculty Pierre Meyer More What Remains When New Paths Begin More all",
-        "design": "ve mobile system security from hardware primitives to middleware design to the user's central role in the data protection. Our research explores the boundaries of what is"
       },
       "is_new": false
     },
@@ -29893,95 +29624,6 @@
       "is_new": false
     },
     {
-      "title": "Autumn School - Advanced methods in epidemiological modeling and computational biology - Part II",
-      "type": "autumn school",
-      "organizer": "CRM Schools",
-      "source_layer": "1",
-      "region_priority": "supplementary",
-      "location": "North America",
-      "mode": "in-person",
-      "start_date": "2026-10-07",
-      "end_date": "2026-10-09",
-      "duration_days": 3,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "data science",
-        "bioinformatics",
-        "computational biology",
-        "statistics",
-        "epidemiology",
-        "public health",
-        "biostatistics"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.crmath.ca/en/activities/#/type/activity/id/4095",
-      "source_url": "https://www.crmath.ca/en/activities/#/type/activity/id/4095",
-      "summary": "",
-      "recommendation_reason": "trusted source layer 1; in-person; topics: data science, bioinformatics, computational biology, statistics; near-match only: application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "crm:activity:4095",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline has passed",
-        "duration is below 4 days"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 2.5,
-      "score_explanation": [
-        "trusted source layer 1",
-        "in-person",
-        "topics: data science, bioinformatics, computational biology, statistics",
-        "near-match only: application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-09-23",
-      "deadline_evidence": "",
-      "duration_evidence": "October 7 - 9, 2026",
-      "fee_evidence": "",
-      "mode_evidence": "Venue Contact Français Thematic program Back Back to ca",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "primary_topics": [
-        "data science",
-        "bioinformatics",
-        "computational biology",
-        "statistics",
-        "epidemiology",
-        "public health",
-        "biostatistics"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "data science": "eir knowledge of the most current methods at the intersection of data science and the life sciences. Participants should make their own accommodation arrangements in advance. (S",
-        "bioinformatics": "school is intended for individuals with training in statistics, bioinformatics, or public health who wish to deepen their knowledge of the most current methods at the intersectio",
-        "computational biology": "Autumn School - Advanced methods in epidemiological modeling and computational biology - Part II Autumn School - Advanced methods in epidemiological modeling and computational biology -",
-        "statistics": "al age. This school is intended for individuals with training in statistics, bioinformatics, or public health who wish to deepen their knowledge of the most current methods at",
-        "epidemiology": "ical and computational methods that are transforming research in epidemiology and biology today. It begins with the computing foundations and data resources that underpin modern",
-        "public health": "for individuals with training in statistics, bioinformatics, or public health who wish to deepen their knowledge of the most current methods at the intersection of data science",
-        "biostatistics": "he computing foundations and data resources that underpin modern biostatistics, and then addresses key methodological challenges, including the analysis of rare events in materna"
-      },
-      "is_new": false
-    },
-    {
       "title": "Application Process",
       "type": "training course",
       "organizer": "HIDA - Helmholtz Information and Data Science Academy",
@@ -30082,7 +29724,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/resources/templates/summer-school-application-form/",
       "source_url": "https://www.isprs.org/resources/templates/summer-school-application-form/",
-      "summary": "Summer School Application Form October 03, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissio",
+      "summary": "Summer School Application Form October 05, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissio",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, AI, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -30161,7 +29803,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/society/awards/torlegard.aspx",
       "source_url": "https://www.isprs.org/society/awards/torlegard.aspx",
-      "summary": "ISPRS WEC Kennert Torlegård Travel Grant October 03, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council",
+      "summary": "ISPRS WEC Kennert Torlegård Travel Grant October 05, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -30821,7 +30463,7 @@
         "law": "tions – 2027 Winter Courses | The Hague Academy of International Law 1 Nov 2026 Extension of the Deadline for Full-Fee Registrations – 2027 Winter Courses The deadline",
         "international law": "l-Fee Registrations – 2027 Winter Courses | The Hague Academy of International Law 1 Nov 2026 Extension of the Deadline for Full-Fee Registrations – 2027 Winter Courses The deadline"
       },
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "International Summer Schools BENTACS",

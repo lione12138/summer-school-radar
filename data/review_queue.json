@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-03",
+  "generated": "2026-10-05",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -519,8 +519,11 @@
       "ai_advisory": {
         "available": true,
         "validated_confidence": "low",
-        "validation_warnings": [],
-        "chinese_summary": "Complexity Science Hub 每年举办的 Winter School，面向研究生、博士后、早期职业教师和研究专业人员，以跨学科方式协作探索复杂性科学。申请者需具备定量学科硕士水平课程或相关实践经验，并具备英语工作能力。2027 年 Winter School 的申请将于 2026 年 10 月在此公布。",
+        "validation_warnings": [
+          "llm_chunk_truncated:6",
+          "llm_request_truncated:max_total_chars_per_llm_request"
+        ],
+        "chinese_summary": "复杂性科学中心每年举办的冬季学校，面向希望加入跨学科网络的早期职业研究人员，共同探索复杂性科学。申请者需具备定量学科硕士水平课程或相关实践经验，课程全英文进行。2027年冬季学校的申请信息将于2026年10月公布。",
         "extracted_deadline": "",
         "extracted_fee": "",
         "extracted_funding": "",
@@ -772,16 +775,17 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
+          "llm_chunk_truncated:6",
           "conflicting_evidence"
         ],
         "chinese_summary": "",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). PhD candidates are not eligible for this scheme.",
+        "extracted_funding": "LOT will pay for a maximum of one LLL course per LOT-affiliated RM student; the student participates in the course on campus, even if the course is offered in a hybrid form; after the end of the two-week course, the student completes an additional assignment for the course; it is mandatory to complete both the course and the extra assignment, and it is not possible to get a LOT certificate if the extra assignment is not completed; there is a maximum number of students who may participate in LLL",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
-          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). | PhD candidates are not eligible for this scheme."
+          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | The fee for the participation LLL by LOT RM students within this scheme is covered by LOT. | LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). | It is mandatory to complete both"
         }
       }
     },
