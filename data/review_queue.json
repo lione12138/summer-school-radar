@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-05",
+  "generated": "2026-10-07",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -523,7 +523,7 @@
           "llm_chunk_truncated:6",
           "llm_request_truncated:max_total_chars_per_llm_request"
         ],
-        "chinese_summary": "复杂性科学中心每年举办的冬季学校，面向希望加入跨学科网络的早期职业研究人员，共同探索复杂性科学。申请者需具备定量学科硕士水平课程或相关实践经验，课程全英文进行。2027年冬季学校的申请信息将于2026年10月公布。",
+        "chinese_summary": "Complexity Science Hub 每年举办的 Winter School，面向希望加入跨学科网络的早期职业研究人员，共同探索复杂性科学。申请者需提交简历和动机信。2027年冬季学校的申请将于2026年10月在此页面公布。",
         "extracted_deadline": "",
         "extracted_fee": "",
         "extracted_funding": "",
@@ -775,18 +775,110 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "llm_chunk_truncated:6",
-          "conflicting_evidence"
+          "llm_chunk_truncated:6"
         ],
-        "chinese_summary": "",
+        "chinese_summary": "莱顿语言与语言学暑期学校（LLL）由LOT组织，为期两周，面向语言学学生与爱好者，提供深入学习与拓展知识的机会。LOT附属RMA学生可能获得旅费与住宿报销（有条件），LOT最多支付一门LLL课程费用，需到校参加并完成额外作业；博士生不符合该资助计划。",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "LOT will pay for a maximum of one LLL course per LOT-affiliated RM student; the student participates in the course on campus, even if the course is offered in a hybrid form; after the end of the two-week course, the student completes an additional assignment for the course; it is mandatory to complete both the course and the extra assignment, and it is not possible to get a LOT certificate if the extra assignment is not completed; there is a maximum number of students who may participate in LLL",
+        "extracted_funding": "LOT-affiliated RMA students may be eligible for travel and accommodation reimbursements (conditions apply); LOT will pay for a maximum of one LLL course per LOT-affiliated RM student; the student must participate on campus even if the course is offered in hybrid form; after the two-week course the student completes an additional assignment; PhD candidates are not eligible for this scheme; if a student participates in both the LOT Summer School and the LLL in the same summer, reimbursement of tra",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
           "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | The fee for the participation LLL by LOT RM students within this scheme is covered by LOT. | LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). | It is mandatory to complete both"
         }
+      }
+    },
+    {
+      "title": "LOT Winter School 2027",
+      "url": "https://lotschool.nl/events/lot-winter-school-2027/",
+      "organizer": "LOT – Netherlands Graduate School of Linguistics",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-01-11",
+        "end": "2027-01-22",
+        "duration_days": 12
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "AI",
+        "machine learning",
+        "data science",
+        "linguistics",
+        "computational linguistics",
+        "natural language processing",
+        "speech processing",
+        "phonetics",
+        "phonology",
+        "syntax",
+        "semantics",
+        "morphology",
+        "psycholinguistics",
+        "language documentation",
+        "data analysis",
+        "cognitive science",
+        "design",
+        "neuroscience",
+        "psychology",
+        "history",
+        "literature"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "AI": "/2020/file/92d1e1eb1cd6f9fba3227870bb6d7f07-Paper.pdf OR https://ai.meta.com/blog/wav2vec-unsupervised-speech-recognition-without-supervision/ OR https://ai.meta.com/b",
+        "machine learning": "ech Recognition via Large-Scale Weak Supervision. Proceedings of Machine Learning Research, 202, 28492–28518. https://proceedings.mlr.press/v202/radford23a/radford23a.pdf OR https:/",
+        "data science": "e sampling practices in psycholinguistics and apply reproducible data science methods to support more inclusive and robust research. Day-to-day programme: Before Monday Kidd, E.",
+        "linguistics": "LOT Winter School 2027 | LOT – Netherlands Graduate School of Linguistics LOT Winter School 2027 | University of Amsterdam The LOT Winter School 2027 is co-organised with th",
+        "computational linguistics": "uage Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition, with Language Models (3rd ed.). https://web.stanford.edu/~jurafsky/slp3/16",
+        "natural language processing": "cognition. In Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition, with Language Models (3rd ed.). https://web.sta",
+        "speech processing": "rg/10.1017/S1366728921000523 Tuesday | Orthography and bilingual speech processing Prepare for Wednesday’s class: Costa, A., Santesteban, M., & Caño, A. (2005). On the facilitatory e",
+        "phonetics": "| Rowena Garcia & Jens Roeser (Hybrid) 11:15-13:15 Experimental phonetics (Intermediate) | Brechtje Post The Representation of Agentivity in Discourse and Argumentation (Adv",
+        "phonology": "sner (Hybrid) 14:15-16:15 Understanding L2 Speech through Formal Phonology (Intermediate) | Chao Zhou (Hybrid) Arguing to know. The epistemic function of argumentation. (Inte",
+        "syntax": "prerequisites: Participants should have a basic understanding of syntax and sign language linguistics. Students without prior knowledge of sign language linguistics are ex",
+        "semantics": "the topic. Course prerequisites: Familiarity with compositional semantics – working through a book like Semantics in Generative Grammar by Irene Heim & Angelika Kratzer, Wil",
+        "morphology": "j, Christian Lehmann, Joachim Mugdan & Stavros Skopeteas (eds.), Morphology: A Handbook on Inflection and Word Formation, Volume II . Berlin: Mouton de Gruyter. Whole paper. Z",
+        "psycholinguistics": "non-manuals in sign languages (Intermediate) | Marloes Oomen The Psycholinguistics of Bilingualism (Advanced) | Antje Stoehr 11:15-13:15 Computational Models of Early Language Develo",
+        "language documentation": "tic-phonetic information plays in acquisition, bilingualism, and language documentation. Each class will contain a practical component, addressing questions of design, procedure and analy",
+        "data analysis": "ing psycholinguistics: Inclusive research practices and hands-on data analysis in R/RStudio (Intermediate) | Rowena Garcia & Jens Roeser (Hybrid) 11:15-13:15 Experimental phoneti",
+        "cognitive science": "e-specific patterns in co-speech gesture but not silent gesture. Cognitive Science, 42(3), 1001–1014. https://doi.org/10.1111/cogs.12502 Perniss, P., Özyürek, A., & Morgan, G. (2015)",
+        "design": "ou will review relevant research, identify an open question, and design a study that could address it. You are not expected to collect data. Develop a topic (see examples",
+        "neuroscience": "7FRF4YJDW Vallet, W., & Van Wassenhove, V. (2023). Can cognitive neuroscience solve the lab-dilemma by going wild?. Neuroscience & Biobehavioral Reviews , 155 , 105463. https://",
+        "psychology": "s in adolescents with specific language impairment. Frontiers in psychology , 5 , 75. https://doi.org/10.3389/fpsyg.2014.00175 Saffran, J. R. (2018). Statistical learning as a",
+        "history": "iterature, I would suggest Hoppmann, M. (2025). Landmarks in the History of Argumentation Theory. In S. Aikin, J. Casey, & K. Stevens (Eds.), The Routledge Handbook on Argu",
+        "literature": "children: discussing internal and external factors. Based on the literature read before the course, you will discuss how child internal and external factors influence language"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "11 to 22 January 2027",
+        "fee": "",
+        "funding": "",
+        "mode": "hybrid form, and can be attended online,but you will not"
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
@@ -1262,36 +1354,36 @@
       }
     },
     {
-      "title": "LOT Winter School 2027",
-      "url": "https://lotschool.nl/lot-winter-school-2027-preliminary-programme-available/",
-      "organizer": "LOT – Netherlands Graduate School of Linguistics",
+      "title": "Useful Information",
+      "url": "https://ecpr.eu/MethodsSchool",
+      "organizer": "ECPR Methods School",
       "source_layer": "1.5",
       "location": "Europe",
       "dates": {
-        "start": "2027-01-11",
-        "end": "2027-01-22",
+        "start": "2027-02-15",
+        "end": "2027-02-26",
         "duration_days": 12
       },
       "deadline": null,
       "deadline_status": "uncertain",
       "financial_access_status": "unresolved",
-      "fee": "",
+      "fee": "and offers Find pricing details and special offers, including 50% off for scholars affiliated with E",
       "fee_eur": null,
       "topics": [
-        "linguistics"
+        "AI"
       ],
       "needs_review": [
         "application deadline is uncertain",
         "in-person status is uncertain",
-        "funding is not explicit and fee is uncertain"
+        "funding is not explicit and fee equivalence is uncertain"
       ],
       "confidence": 0.25,
       "confidence_kind": "heuristic_not_calibrated_probability",
       "field_completeness": 0.25,
       "financial_terms": {
-        "participation_fee": "",
+        "participation_fee": "and offers Find pricing details and special offers, including 50% off for scholars affiliated with E",
         "fee_eur": null,
-        "fee_status": "unknown",
+        "fee_status": "stated",
         "support_status": "unknown",
         "support_scope": "",
         "accommodation": "unknown",
@@ -1302,12 +1394,12 @@
       },
       "benefit_facts": [],
       "topic_evidence": {
-        "linguistics": "y programme now available | LOT – Netherlands Graduate School of Linguistics LOT is pleased to announce that the preliminary programme for the LOT Winter School is now availabl"
+        "AI": "amme Browse courses by training track Computational, Digital and AI Methods For researchers working with text, visual, multimodal, or network data, and computational w"
       },
       "evidence": {
         "deadline": "",
-        "duration": "January 11, 2027 - January 22, 2027",
-        "fee": "",
+        "duration": "15 – 26 February 2027",
+        "fee": "and offers Find pricing details and special offers, including 50% off for scholars affiliated with E",
         "funding": "",
         "mode": ""
       },
