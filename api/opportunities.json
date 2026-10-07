@@ -3,7 +3,7 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-09-30",
+  "generated": "2026-10-07",
   "opportunities": [
     {
       "id": "opportunities/al-nour-winter-school-on-fusion-science-a5413f47",
@@ -72,6 +72,71 @@
       "summary_zh": "阿尔努尔聚变科学冬季学校将于2027年1月4日至8日在约旦阿兰举行，面向学生和青年科研人员介绍聚变科学。录取者的住宿和餐食费用由项目承担，旅行资助可另行申请。",
       "eligibility": "early-career scientists from a v​​ariety of backgrounds, like mathematics, physics, and engineering, to learn about this cutting-edge field from Arab and non-Arab experts i",
       "eligibility_zh": "面向数学、物理和工程等不同背景的早期职业科研人员，由阿拉伯和非阿拉伯专家讲授这一前沿领域。",
+      "sessions": []
+    },
+    {
+      "id": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7",
+      "edition_id": "edition:7f64cb13dd224bca",
+      "programme_id": "programme:7b9a68f3cc984b4a",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assi-9d9a2282.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assi-9d9a2282.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assi-9d9a2282.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assi-9d9a2282.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html"
+      },
+      "official_url": "https://events.ecmwf.int/event/577/",
+      "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
+      "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星数据同化",
+      "type": "training course",
+      "organizer": "ECMWF Events (Indico)",
+      "organizer_zh": "ECMWF Events (Indico)",
+      "location": "ECMWF, Reading",
+      "location_zh": "ECMWF，雷丁",
+      "mode": "in-person",
+      "start_date": "2027-01-18",
+      "end_date": "2027-01-22",
+      "duration_days": 5,
+      "application_deadline": "2026-10-11",
+      "application_status": "open",
+      "directory_tier": "funded-or-low-fee",
+      "financial_summary": "Fee EUR 0",
+      "fee": "no course fee",
+      "fee_eur": 0.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "no course fee",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "topics": [
+        "satellite",
+        "machine learning"
+      ],
+      "primary_topics": [
+        "satellite"
+      ],
+      "secondary_topics": [
+        "machine learning"
+      ],
+      "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
+      "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星数据同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 主页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
+      "eligibility": "PhD students with relevant experience",
+      "eligibility_zh": "具有相关经验的博士生",
       "sessions": []
     },
     {
@@ -216,80 +281,6 @@
       "summary_zh": "VIASM-IAMP 2027年概率与数学物理暑期学校 时间： 地点：越南数学高等研究院（VIASM），河内 目标 概率与数学物理暑期学校是越南数学高等研究院（VIASM）主办的长期计划的一部分",
       "eligibility": "",
       "eligibility_zh": "",
-      "sessions": []
-    },
-    {
-      "id": "jparc-neutron-muon-school:2026",
-      "edition_id": "jparc-neutron-muon-school:2026",
-      "programme_id": "jparc-neutron-muon-school",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/neutron-and-muon-school-japanese-language-aa1f5139.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/neutron-and-muon-school-japanese-language-aa1f5139.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/neutron-and-muon-school-japanese-language-aa1f5139.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/neutron-and-muon-school-japanese-language-aa1f5139.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/jparc-neutron-muon-school-2026-4a7a91e8.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/jparc-neutron-muon-school-2026-4a7a91e8.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/jparc-neutron-muon-school-2026-4a7a91e8.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/jparc-neutron-muon-school-2026-4a7a91e8.html"
-      },
-      "official_url": "https://conference-indico.kek.jp/event/378/page/782-application",
-      "title": "Neutron and Muon School 2026 (Japanese-language)",
-      "title_zh": "中子与μ子学校2026（日语授课）",
-      "type": "research school",
-      "organizer": "J-PARC Neutron and Muon School",
-      "organizer_zh": "J-PARC中子与μ子学校",
-      "location": "Tokai, Ibaraki, Japan (AQBRC, J-PARC and JRR-3)",
-      "location_zh": "日本茨城县东海村（AQBRC、J-PARC和JRR-3）",
-      "mode": "in-person",
-      "start_date": "2026-11-09",
-      "end_date": "2026-11-13",
-      "duration_days": 5,
-      "application_deadline": "2026-09-30",
-      "application_status": "open",
-      "directory_tier": "funded-or-low-fee",
-      "financial_summary": "JPY 40,000 (meals and accommodation require no additional payment) · Possible domestic travel assistance for students, postdocs and academic early-career researchers; not guaranteed.",
-      "fee": "JPY 40,000 (meals and accommodation require no additional payment)",
-      "fee_eur": 240.0,
-      "funding_available": true,
-      "funding_type": [
-        "travel grant"
-      ],
-      "funding_scope": "Possible domestic travel assistance for students, postdocs and academic early-career researchers; not guaranteed.",
-      "financial_terms": {
-        "participation_fee": "JPY 40,000 (meals and accommodation require no additional payment)",
-        "fee_eur": 240.0,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "Possible domestic travel assistance for students, postdocs and academic early-career researchers; not guaranteed.",
-        "accommodation": "included",
-        "meals": "included",
-        "travel_support": "conditional",
-        "cost_status": "paid",
-        "fee_options": [
-          {
-            "amount": 40000.0,
-            "currency": "JPY",
-            "conditions": "(meals and accommodation require no additional payment)"
-          }
-        ]
-      },
-      "topics": [
-        "physics",
-        "neutron science",
-        "muon science"
-      ],
-      "primary_topics": [
-        "physics",
-        "neutron science",
-        "muon science"
-      ],
-      "secondary_topics": [],
-      "summary": "Research school: Neutron and Muon School 2026. Dates: 09 November 2026 to 13 November 2026. Application deadline: 30 September 2026. In-person. Fee: JPY 40,000. Teaching language: Japanese.",
-      "summary_zh": "研究培训：中子与μ子学校2026。日期：2026年11月9日至2026年11月13日。申请截止日期：2026年9月30日。线下进行。费用：40,000日元。授课语言：日语。",
-      "eligibility": "Teaching language: Japanese. 大学生、大学院生、研究員等 各所属機関で放射線業務従事者として登録されている、または予定の方 ※ J-PARCおよびJRR-3の指定登録の上で、特殊健康診断から半年以内（学生、および、国外機関所属の研究者は1年以内）、教育訓練実施日から1年以内であることが必須です。 特殊健康診断、教育訓練の実施日の条件については こちら もご確認ください。 Applications may close earlier when capacity is reached.",
-      "eligibility_zh": "日语授课。面向大学生、研究生和研究人员等；须已在所属机构登记为放射线工作人员，或计划完成登记。须完成 J-PARC/JRR-3 指定登记；特殊健康检查须在半年内（学生及境外机构研究人员为一年内），教育培训须在一年内。名额满时可能提前截止。",
       "sessions": []
     },
     {
@@ -873,144 +864,6 @@
       "sessions": []
     },
     {
-      "id": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373",
-      "edition_id": "edition:736b6cbf96f90a6f",
-      "programme_id": "programme:6d05e72313fdb49c",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html"
-      },
-      "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
-      "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-      "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
-      "type": "summer school",
-      "organizer": "Euroleague for Life Sciences (ELLS)",
-      "organizer_zh": "生命科学欧洲联盟（ELLS）",
-      "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-      "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
-      "mode": "in-person",
-      "start_date": "2026-07-05",
-      "end_date": "2026-07-12",
-      "duration_days": 8,
-      "application_deadline": "2026-05-01",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-      "fee": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-      "fee_eur": 90.0,
-      "funding_available": false,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-        "fee_eur": 90.0,
-        "fee_status": "stated",
-        "support_status": "not_offered",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": [
-          {
-            "amount": 90.0,
-            "currency": "EUR",
-            "conditions": "mandatory dinner contribution"
-          },
-          {
-            "amount": 250.0,
-            "currency": "EUR",
-            "conditions": "registration fee for other participants"
-          }
-        ]
-      },
-      "topics": [
-        "sustainable food systems",
-        "food systems design",
-        "sustainability"
-      ],
-      "primary_topics": [],
-      "secondary_topics": [],
-      "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
-      "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
-      "eligibility": "Students at the listed non-Italian ELLS promoting universities; other participants may attend for the stated registration fee.",
-      "eligibility_zh": "面向官网列出的非意大利 ELLS 合作大学学生；其他参与者可按官网所列费用参加。",
-      "sessions": []
-    },
-    {
-      "id": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7",
-      "edition_id": "edition:7f64cb13dd224bca",
-      "programme_id": "programme:7b9a68f3cc984b4a",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assi-9d9a2282.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assi-9d9a2282.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assi-9d9a2282.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assi-9d9a2282.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html"
-      },
-      "official_url": "https://events.ecmwf.int/event/577/",
-      "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
-      "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
-      "type": "training course",
-      "organizer": "ECMWF Events (Indico)",
-      "organizer_zh": "ECMWF Events (Indico)",
-      "location": "ECMWF, Reading",
-      "location_zh": "ECMWF，雷丁",
-      "mode": "in-person",
-      "start_date": "2027-01-18",
-      "end_date": "2027-01-22",
-      "duration_days": 5,
-      "application_deadline": "2026-09-27",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee EUR 0",
-      "fee": "no course fee",
-      "fee_eur": 0.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "no course fee",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "topics": [
-        "satellite",
-        "machine learning"
-      ],
-      "primary_topics": [
-        "satellite"
-      ],
-      "secondary_topics": [
-        "machine learning"
-      ],
-      "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
-      "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
-      "eligibility": "PhD students with relevant experience, as well as others with a relevant interest and background in the field",
-      "eligibility_zh": "具有相关经验的博士生，以及对该领域有相关兴趣和背景的其他人员",
-      "sessions": []
-    },
-    {
       "id": "opportunities/prob-ai-hub-winter-school-2027-cee177c1",
       "edition_id": "edition:d6b60f7163195ea3",
       "programme_id": "programme:87a15dbd83b65288",
@@ -1084,6 +937,85 @@
       "sessions": []
     },
     {
+      "id": "csha-computational-cognitive-neuroscience:2026",
+      "edition_id": "csha-computational-cognitive-neuroscience:2026",
+      "programme_id": "csha-computational-cognitive-neuroscience",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/computational-and-cognitive-neuroscience-csha-course-01cd14bb.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/computational-and-cognitive-neuroscience-csha-course-01cd14bb.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/computational-and-cognitive-neuroscience-csha-course-01cd14bb.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/computational-and-cognitive-neuroscience-csha-course-01cd14bb.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/csha-computational-cognitive-neuroscience-2026-f318dfa9.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/csha-computational-cognitive-neuroscience-2026-f318dfa9.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/csha-computational-cognitive-neuroscience-2026-f318dfa9.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/csha-computational-cognitive-neuroscience-2026-f318dfa9.html"
+      },
+      "official_url": "https://www.csh-asia.org/?content/3046",
+      "title": "Computational and Cognitive Neuroscience — CSHA Course 2026",
+      "title_zh": "计算与认知神经科学 — CSHA 课程 2026",
+      "type": "research training",
+      "organizer": "Cold Spring Harbor Asia",
+      "organizer_zh": "冷泉港亚洲",
+      "location": "Suzhou, China",
+      "location_zh": "中国苏州",
+      "mode": "in-person",
+      "start_date": "2026-06-28",
+      "end_date": "2026-07-19",
+      "duration_days": 22,
+      "application_deadline": "2026-04-08",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "USD 1950 (including tuition, board and lodging; official page also offers CNY pricing) · Financial support may be requested with the application; amount and award are not guaranteed.",
+      "fee": "USD 1950 (including tuition, board and lodging; official page also offers CNY pricing)",
+      "fee_eur": 1852.5,
+      "funding_available": true,
+      "funding_type": [
+        "stipend"
+      ],
+      "funding_scope": "Financial support may be requested with the application; amount and award are not guaranteed.",
+      "financial_terms": {
+        "participation_fee": "USD 1950 (including tuition, board and lodging; official page also offers CNY pricing)",
+        "fee_eur": 1852.5,
+        "fee_status": "stated",
+        "support_status": "conditional",
+        "support_scope": "Financial support may be requested with the application; amount and award are not guaranteed.",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 1950.0,
+            "currency": "USD",
+            "conditions": "(including tuition, board and lodging; official page also offers CNY pricing)"
+          }
+        ]
+      },
+      "topics": [
+        "neuroscience",
+        "artificial intelligence",
+        "physics",
+        "mathematics",
+        "engineering"
+      ],
+      "primary_topics": [
+        "neuroscience"
+      ],
+      "secondary_topics": [
+        "artificial intelligence",
+        "physics",
+        "mathematics",
+        "engineering"
+      ],
+      "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
+      "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
+      "eligibility": "postdoctoral fellows from Asia and around the world",
+      "eligibility_zh": "来自亚洲及世界各地的博士后研究员",
+      "sessions": []
+    },
+    {
       "id": "berkeley-dl4sci:2026",
       "edition_id": "berkeley-dl4sci:2026",
       "programme_id": "berkeley-dl4sci",
@@ -1150,6 +1082,80 @@
       "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由Berkeley Lab计算科学部主办，2026科学深度学习（DL4SCI）暑期学校是为期五天的密集型项目，汇聚研究人员和工程师，探讨深度学习的最新进展",
       "eligibility": "Designed for advanced graduate students, postdoctoral researchers, academics, domain scientists, and engineers. Ideal participants have a strong interest in applying deep learning to scientific problems on high-performance computing (HPC) systems. Applicants selected based on merit. Limited registration waivers for select applicants currently enrolled in an undergraduate, graduate, or PhD program at a university.",
       "eligibility_zh": "面向高年级研究生、博士后研究人员、学者、领域科学家和工程师。理想参与者对在高性能计算（HPC）系统上将深度学习应用于科学问题有浓厚兴趣。申请人择优录取。为目前就读于大学本科、研究生或博士项目的部分申请人提供有限的注册费减免。",
+      "sessions": []
+    },
+    {
+      "id": "jparc-neutron-muon-school:2026",
+      "edition_id": "jparc-neutron-muon-school:2026",
+      "programme_id": "jparc-neutron-muon-school",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/neutron-and-muon-school-japanese-language-aa1f5139.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/neutron-and-muon-school-japanese-language-aa1f5139.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/neutron-and-muon-school-japanese-language-aa1f5139.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/neutron-and-muon-school-japanese-language-aa1f5139.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/jparc-neutron-muon-school-2026-4a7a91e8.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/jparc-neutron-muon-school-2026-4a7a91e8.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/jparc-neutron-muon-school-2026-4a7a91e8.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/jparc-neutron-muon-school-2026-4a7a91e8.html"
+      },
+      "official_url": "https://conference-indico.kek.jp/event/378/page/782-application",
+      "title": "Neutron and Muon School 2026 (Japanese-language)",
+      "title_zh": "2026年中子与μ子学校（日语授课）",
+      "type": "research school",
+      "organizer": "J-PARC Neutron and Muon School",
+      "organizer_zh": "J-PARC中子与μ子学校",
+      "location": "Tokai, Ibaraki, Japan (AQBRC, J-PARC and JRR-3)",
+      "location_zh": "日本茨城县东海村（AQBRC、J-PARC和JRR-3）",
+      "mode": "in-person",
+      "start_date": "2026-11-09",
+      "end_date": "2026-11-13",
+      "duration_days": 5,
+      "application_deadline": "2026-09-30",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "JPY 40,000 (meals and accommodation require no additional payment) · Possible domestic travel assistance for students, postdocs and academic early-career researchers; not guaranteed.",
+      "fee": "JPY 40,000 (meals and accommodation require no additional payment)",
+      "fee_eur": 240.0,
+      "funding_available": true,
+      "funding_type": [
+        "travel grant"
+      ],
+      "funding_scope": "Possible domestic travel assistance for students, postdocs and academic early-career researchers; not guaranteed.",
+      "financial_terms": {
+        "participation_fee": "JPY 40,000 (meals and accommodation require no additional payment)",
+        "fee_eur": 240.0,
+        "fee_status": "stated",
+        "support_status": "conditional",
+        "support_scope": "Possible domestic travel assistance for students, postdocs and academic early-career researchers; not guaranteed.",
+        "accommodation": "included",
+        "meals": "included",
+        "travel_support": "conditional",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 40000.0,
+            "currency": "JPY",
+            "conditions": "(meals and accommodation require no additional payment)"
+          }
+        ]
+      },
+      "topics": [
+        "physics",
+        "neutron science",
+        "muon science"
+      ],
+      "primary_topics": [
+        "physics",
+        "neutron science",
+        "muon science"
+      ],
+      "secondary_topics": [],
+      "summary": "Research school: Neutron and Muon School 2026. Dates: 09 November 2026 to 13 November 2026. Application deadline: 30 September 2026. In-person. Fee: JPY 40,000. Teaching language: Japanese.",
+      "summary_zh": "研究培训：2026年中子与μ子学校。日期：2026年11月9日至2026年11月13日。申请截止日期：2026年9月30日。线下进行。费用：40000日元。授课语言：日语。",
+      "eligibility": "Teaching language: Japanese. 大学生、大学院生、研究員等 各所属機関で放射線業務従事者として登録されている、または予定の方 ※ J-PARCおよびJRR-3の指定登録の上で、特殊健康診断から半年以内（学生、および、国外機関所属の研究者は1年以内）、教育訓練実施日から1年以内であることが必須です。 特殊健康診断、教育訓練の実施日の条件については こちら もご確認ください。 Applications may close earlier when capacity is reached.",
+      "eligibility_zh": "日语授课。面向大学生、研究生和研究人员等；须已在所属机构登记为放射线工作人员，或计划完成登记。须完成 J-PARC/JRR-3 指定登记；特殊健康检查须在半年内（学生及境外机构研究人员为一年内），教育培训须在一年内。名额满时可能提前截止。",
       "sessions": []
     },
     {
@@ -1472,6 +1478,85 @@
       "summary_zh": "生物物理冬季学校 组织者：Vijay Balasubramaniam（宾夕法尼亚大学，美国费城）、Sanjay Jain（德里大学和圣塔菲研究所）、Vijaykumar Krishnamurthy（ICTS-TIFR，印度班加罗尔）和 Mukund Thattai（NCBS，印度班加罗尔）DAT",
       "eligibility": "criteria: This winter School invites PhD students and postdoctoral researchers",
       "eligibility_zh": "标准：本次冬季学校面向博士生和博士后研究人员",
+      "sessions": []
+    },
+    {
+      "id": "opportunities/iahs-academy-2027-2df41880",
+      "edition_id": "edition:5b2622fab46bbe12",
+      "programme_id": "programme:a7de8577eaec8d69",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/iahs-academy-fec0513d.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/iahs-academy-fec0513d.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/iahs-academy-fec0513d.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/iahs-academy-fec0513d.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/iahs-academy-2027-2df41880.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/iahs-academy-2027-2df41880.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/iahs-academy-2027-2df41880.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/iahs-academy-2027-2df41880.html"
+      },
+      "official_url": "https://iahs.info/News/news/iahs-academy-2027-closing-date/",
+      "title": "IAHS Academy 2027",
+      "title_zh": "IAHS Academy 2027",
+      "type": "short course",
+      "organizer": "IAHS",
+      "organizer_zh": "IAHS",
+      "location": "宁波东方理工大学 Eastern Institute of Technology, Ningbo (EIT)",
+      "location_zh": "宁波东方理工大学 Eastern Institute of Technology, Ningbo (EIT)",
+      "mode": "in-person",
+      "start_date": "2027-01-11",
+      "end_date": "2027-01-17",
+      "duration_days": 7,
+      "application_deadline": "2026-09-30",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "EUR 650 (general fee); EUR 350 for participants from Financially Disadvantaged Countries · SYSTA: accepted applicants who meet the award requirements may apply; not guaranteed.",
+      "fee": "EUR 650 (general fee); EUR 350 for participants from Financially Disadvantaged Countries",
+      "fee_eur": 650.0,
+      "funding_available": true,
+      "funding_type": [
+        "travel grant"
+      ],
+      "funding_scope": "SYSTA: accepted applicants who meet the award requirements may apply; not guaranteed.",
+      "financial_terms": {
+        "participation_fee": "EUR 650 (general fee); EUR 350 for participants from Financially Disadvantaged Countries",
+        "fee_eur": 650.0,
+        "fee_status": "stated",
+        "support_status": "conditional",
+        "support_scope": "SYSTA: accepted applicants who meet the award requirements may apply; not guaranteed.",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 650.0,
+            "currency": "EUR",
+            "conditions": "(general fee)"
+          },
+          {
+            "amount": 350.0,
+            "currency": "EUR",
+            "conditions": "for participants from Financially Disadvantaged Countries"
+          }
+        ]
+      },
+      "topics": [
+        "hydrology",
+        "water resources",
+        "geoscience"
+      ],
+      "primary_topics": [
+        "hydrology",
+        "water resources",
+        "geoscience"
+      ],
+      "secondary_topics": [],
+      "summary": "Building on the success of the first IAHS Academy (Ningbo, January 2026), the second edition aims to further strengthen IAHS capacity-building activities by expanding the scientific offer, enlarging participation, and consolidating the Academy as a flagship global training initiative for early-career hydrologists.",
+      "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在通过扩大科学内容、增加参与规模，进一步强化IAHS的能力建设活动，并将该学院打造为面向早期职业水文学家的全球旗舰培训项目。",
+      "eligibility": "early-career hydrologists",
+      "eligibility_zh": "早期职业水文学家",
       "sessions": []
     },
     {
