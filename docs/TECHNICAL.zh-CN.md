@@ -501,5 +501,10 @@ Discovery 只增加普通 Page 输入，保留 discovery 来源标记。每次�
 案例也可指定 `expected_fields`；不匹配的字段计入 `field_errors` 并使回归测试失败。
 VIASM 案例单独检查联合主办方、注册费语义、日期、证据、概览及资格说明，不只检查是否发布。
 
+详情页支持可选的 `Candidate.detail_sections`，与首页短摘要独立。每节必须包含中英文标题、
+正文和安全的官方来源 URL。当前项目通过有届次限制的 overrides 补充经核对的课程内容、申请方式
+与费用说明。快照读取和 override 应用时规范化字段，模板转义正文并保留分段。这些说明不影响
+排名或资格判断，也不由 advisory LLM 自动生成；没有官方信息的内容不凭空扩写。
+
 Discovery 优先使用 Serper；未配置时使用已有 Brave 客户端执行同一预算内的查询，明确记录回退。
 两者均缺失时警告并跳过发现，不放宽发布门槛。reports/*.discovery.json 搜索结果摘要私有且忽略提交。

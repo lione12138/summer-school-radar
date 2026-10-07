@@ -572,3 +572,23 @@ The official VIASM benchmark now checks 13 field values as well as publication.
 Focused tests pass and the rebuilt snapshot passes site integrity. Historical
 scan reports and source-scan timestamps are preserved; future scans use the
 corrected extraction and overrides.
+
+## 2026-10-07 — Useful programme detail beyond card summaries
+
+Separate source-linked bilingual detail sections from short homepage summaries.
+Rechecked the current five open programmes' official overview, programme and
+application pages. Added specific curriculum/lecturer information for VIASM,
+ALPS teaching and application requirements, ECMWF curriculum/prerequisites and
+explicit absence of attendance funding, Federalism full-programme attendance,
+essay and real-budget requirements, and Al-Nour selection/support conditions.
+The ICTP page was fetched directly when the web reader timed out. Copy is
+edition-scoped and explicitly distinguishes provisional, conditional and unstated
+information. Existing short-summary navigation contamination was corrected for
+ALPS and ECMWF, along with truncated eligibility text.
+
+Optional detail sections survive snapshot round trips and status refreshes;
+they require bilingual content and a safe source link, render as escaped
+paragraphs, and do not change public qualification. Tests exercise malformed
+sections, HTML escaping, localization, year guards and distinct programme vs
+application links. Historical pages without reviewed sections remain honest
+about the information actually available rather than receiving padded prose.

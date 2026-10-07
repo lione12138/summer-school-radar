@@ -60,6 +60,9 @@ def coerce_date(value: Any) -> date | None:
 
 
 def _coerce_candidate_value(name: str, value: Any) -> Any:
+    if name == 'detail_sections':
+        from .detail_content import normalize_detail_sections
+        return normalize_detail_sections(value)
     if name == "topic_evidence":
         return {str(key): str(text) for key, text in value.items()} if isinstance(value, dict) else {}
     if name in {"start_date", "end_date", "deadline", "first_seen"}:

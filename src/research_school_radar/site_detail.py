@@ -5,6 +5,7 @@ from typing import Any
 
 from .localization import date_zh, financial_summary_zh, mode_zh, status_zh, topics_label_zh
 from .models import Candidate
+from .detail_content import normalize_detail_sections
 from .publication import is_archive_candidate
 from .site_assets import render_template
 from .site_components import (
@@ -107,6 +108,10 @@ def render_opportunity_detail(
         qualification=bilingual(qualification, candidate.recommendation_reason_zh),
         qualification_class="" if archived else "qualified",
         evidence_items=evidence_items,
+        detail_sections=[dict(section, paragraphs=list(zip(section['text'].split('\n\n'),
+                                                          section['text_zh'].split('\n\n'))))
+                         for section in normalize_detail_sections(candidate.detail_sections)],
+        source_url=safe_external_url(candidate.source_url),
         official_url=official,
         financial_summary=bilingual(financial_summary_short(candidate), financial_summary_zh(candidate)),
         session_schedule=session_schedule,

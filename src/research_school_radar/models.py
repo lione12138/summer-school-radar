@@ -118,6 +118,8 @@ class Candidate:
     primary_topics: list[str] = field(default_factory=list)
     secondary_topics: list[str] = field(default_factory=list)
     topic_evidence: dict[str, str] = field(default_factory=dict)
+    # Edition-scoped, source-checked editorial detail; separate from card summary.
+    detail_sections: list[dict[str, str]] = field(default_factory=list)
 
     @property
     def is_new(self) -> bool:

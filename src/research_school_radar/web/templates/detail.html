@@ -32,6 +32,13 @@
       <div class="detail-stack">
         <section class="detail-panel anchor" id="overview"><h2 data-i18n="detail.overview">Overview</h2><p>{{ summary|safe }}</p></section>
         <section class="detail-panel"><h2 data-i18n="detail.eligibility">Who should apply</h2><p>{{ eligibility|safe }}</p></section>
+        {% for section in detail_sections %}
+        <section class="detail-panel programme-content">
+          <h2><span class="lang-en">{{ section.heading }}</span><span class="lang-zh">{{ section.heading_zh }}</span></h2>
+          {% for english, chinese in section.paragraphs %}<p><span class="lang-en">{{ english }}</span><span class="lang-zh">{{ chinese }}</span></p>{% endfor %}
+          <a class="source-link" href="{{ section.source_url }}" target="_blank" rel="noopener" data-i18n="detail.content.source">Read the official details ↗</a>
+        </section>
+        {% endfor %}
         <details class="detail-panel"><summary data-i18n="detail.why">Why this status</summary><p>{{ qualification|safe }}</p></details>
         <section class="detail-panel">
           <h2 data-i18n="detail.source">Official source</h2>
@@ -39,8 +46,8 @@
           {% for item in evidence_items %}
           <details class="evidence-item" open><summary data-i18n="{{ item.label }}">{{ item.title }}</summary><blockquote>{{ item.text }}</blockquote></details>
           {% endfor %}
-          {% if official_url %}
-          <a class="source-link" href="{{ official_url }}" target="_blank" rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>
+          {% if source_url %}
+          <a class="source-link" href="{{ source_url }}" target="_blank" rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>
           {% else %}
           <p class="muted" data-i18n="detail.source.unavailable">No safe official URL is available for this record.</p>
           {% endif %}

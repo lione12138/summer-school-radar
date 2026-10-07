@@ -17,6 +17,7 @@ from .utils import is_too_short
 
 
 FIELD_NAMES = {
+    "detail_sections",
     "title",
     "programme_key",
     "type",
@@ -218,6 +219,9 @@ def _apply_override(candidate: Candidate, override: dict[str, Any]) -> None:
 
 
 def _coerce_value(key: str, value: Any) -> Any:
+    if key == 'detail_sections':
+        from .detail_content import normalize_detail_sections
+        return normalize_detail_sections(value)
     if key in {"start_date", "end_date", "deadline"}:
         return _parse_date(value)
     if key == "duration_days":

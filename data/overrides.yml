@@ -421,3 +421,169 @@ overrides:
         organizer: https://lig-alps.imag.fr/
         fee: https://lig-alps.imag.fr/index.php/application/
         fee_evidence: https://lig-alps.imag.fr/index.php/application/
+
+  # Expanded, edition-scoped detail copy checked against official pages on 2026-10-07.
+  - url: https://www.viasm.edu.vn/en/hdkh/VIASM-IAMP-PMP-27
+    edition_year: 2027
+    status: update
+    fields:
+      detail_sections:
+      - heading: Courses and lecturers
+        heading_zh: 课程内容与讲者
+        text: 'Four mini-courses are announced: Frédéric Faure on dynamical Laplacians and Anosov manifolds; Thierry
+          Lévy on determinantal methods; Satya Majumdar and Grégory Schehr on first-passage problems and stochastic
+          resetting; Oanh Nguyen on random functions and their geometric and statistical behaviour.'
+        text_zh: 官网公布四门短课：Frédéric Faure 讲授 Anosov 流形上的动力学拉普拉斯算子；Thierry Lévy 讲授行列式相关专题；Satya Majumdar 与 Grégory Schehr
+          讨论首达时间、随机重置及其统计物理方法；Oanh Nguyen 介绍随机函数的几何与统计性质。
+        source_url: https://www.viasm.edu.vn/en/hdkh/VIASM-IAMP-PMP-27
+      - heading: Teaching and participation
+        heading_zh: 授课与参与方式
+        text: The school is taught in English, on site in Hanoi. Alongside the mini-courses, ten contributed talks
+          are planned for young participants. The page does not specify how these speakers are selected or how to
+          submit a talk.
+        text_zh: 课程在河内线下进行，使用英语授课。除四门短课外，计划安排 10 场青年参与者报告，可用于介绍参与者自己的研究。官网尚未说明报告遴选方式或单独的投稿流程。
+        source_url: https://www.viasm.edu.vn/en/hdkh/VIASM-IAMP-PMP-27
+      - heading: Registration and costs
+        heading_zh: 报名方式与费用边界
+        text: Registration is compulsory even though it is free; use the registration form linked from the official
+          page. No accommodation, meal or travel support is stated. General registration restrictions and a required-document
+          checklist are also not explicitly listed.
+        text_zh: 免注册费不等于无需报名：必须通过官网链接的报名表注册。页面没有承诺住宿、餐饮或差旅支持，申请预算中不能把这些项目视为已获资助。官网也未明确列出一般注册者的资格限制或申请材料清单。
+        source_url: https://www.viasm.edu.vn/en/hdkh/VIASM-IAMP-PMP-27
+  - url: https://lig-alps.imag.fr/
+    edition_year: 2027
+    status: update
+    fields:
+      detail_sections:
+      - heading: Learning and research exchange
+        heading_zh: 学习内容与科研交流
+        text: The residential school combines advanced NLP lectures with participant poster presentations and opportunities
+          for research discussion. Social and mountain activities are also part of the programme. Attendance is limited
+          to roughly 50 people, primarily research-oriented master and PhD students, with some places for academic
+          and industry researchers.
+        text_zh: 这是住宿制的自然语言处理研究冬校，结合进阶讲座、参与者海报展示和研究讨论，也安排社交与山地活动。规模约 50 人，主要面向研究型硕士生和博士生，并为学术界及产业界研究人员保留部分名额。
+        source_url: https://lig-alps.imag.fr/
+      - heading: Announced teaching topics
+        heading_zh: 已公布的授课专题
+        text: The speaker page lists Anne-Laure Ligozat on assessing the environmental footprint of NLP, and Carlos
+          Ramisch with Manon Scholivet on research methodology in NLP. Other announced speakers include Dirk Hovy,
+          Eiso Kant, Roger K. Moore and Tatiana Shavrina; their lecture titles are still to be announced.
+        text_zh: 已公布的专题包括 Anne-Laure Ligozat 的 NLP 环境影响评估，以及 Carlos Ramisch 与 Manon Scholivet 的自然语言处理研究方法。讲者名单还包括
+          Dirk Hovy、Eiso Kant、Roger K. Moore 和 Tatiana Shavrina，其具体授课题目尚待公布。
+        source_url: https://lig-alps.imag.fr/index.php/speakers/
+      - heading: Application materials and selection
+        heading_zh: 申请材料与录取
+        text: Apply through the form on the application page with a CV of no more than two pages and an English motivation
+          letter. Explain why you want to attend this advanced school. Selection is competitive, and the organisers
+          use the letter when assembling the participant group. Acceptance notices are scheduled for 13 November.
+        text_zh: 通过官方申请页面链接的表单提交材料：不超过两页的简历，以及用英语撰写的动机信。动机信应解释参加这所进阶研究冬校的原因，也是录取的重要依据。主办方不能录取所有申请者，计划于 11 月 13 日发送录取通知。
+        source_url: https://lig-alps.imag.fr/index.php/application/
+      - heading: Budget and provisional fees
+        heading_zh: 预算与待确认费用
+        text: The provisional fees are EUR 700 for students, EUR 900 for academic non-students, and EUR 1,300 for
+          industry participants or independents. They include accommodation and full board at Centre Paul Langevin.
+          These prices are not yet confirmed; the page does not promise travel reimbursement.
+        text_zh: 官网暂列学生 700 欧元、非学生学术人员 900 欧元、产业界及独立参与者 1,300 欧元，费用包含 Centre Paul Langevin 会场住宿和全膳。这些金额仍标注待确认；页面没有承诺报销往返差旅。
+        source_url: https://lig-alps.imag.fr/index.php/application/
+      summary: A residential advanced NLP school in Aussois, combining research lectures, participant posters and
+        discussion in a small group.
+      summary_zh: 在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。
+  - url: https://events.ecmwf.int/event/577/
+    edition_year: 2027
+    status: update
+    fields:
+      detail_sections:
+      - heading: What the course covers
+        heading_zh: 课程具体学什么
+        text: 'Lectures and practicals cover satellite observations in numerical weather prediction: assimilation
+          and error modelling, bias correction, coupled methods, radiative transfer and observation operators. Sensor
+          examples include microwave, infrared, visible, radio-occultation and scatterometer observations. Machine
+          learning applications to satellite data are also included.'
+        text_zh: 课程围绕数值天气预报中的卫星观测资料应用，结合讲授与实践，涉及资料同化、背景场与观测误差、偏差订正、耦合方法、辐射传输及观测算子。传感器案例包括微波、红外、可见光、无线电掩星和散射计，也涵盖卫星资料的机器学习应用。
+        source_url: https://events.ecmwf.int/event/577/
+      - heading: Background and teaching format
+        heading_zh: 建议背景与授课形式
+        text: The intended audience is early-career researchers entering satellite data assimilation or related fields,
+          including suitably experienced PhD students. Quantitative satellite-data experience or knowledge of optimal
+          estimation is desirable. All teaching is in English and attendance is in person in Reading.
+        text_zh: 主要面向刚进入卫星资料同化及相关领域的青年科研人员，包括具备相关经验的博士生。官方建议申请者了解卫星资料的定量应用或最优估计概念；这不是只凭年级即可判断适合度的入门课程。课程在英国 Reading
+          线下开展，全程使用英语。
+        source_url: https://events.ecmwf.int/event/577/
+      - heading: How to apply and plan the budget
+        heading_zh: 如何申请与准备预算
+        text: An account and login are required to access the application form. There is no course fee, but the application
+          page explicitly states that ECMWF cannot fund participants to attend. Plan accommodation, transport and
+          other attendance costs accordingly. Application enquiries can be sent to training@ecmwf.int.
+        text_zh: 申请需先登录官方活动系统账户。课程本身免学费，但申请页明确说明 ECMWF 不提供支持参与者出席培训的经费，因此仍需自行安排住宿、交通和其他参训开销。申请相关问题可联系 training@ecmwf.int。
+        source_url: https://events.ecmwf.int/event/577/registrations/445/
+      summary: A five-day satellite-data assimilation course combining lectures and practical work for researchers
+        in numerical weather prediction.
+      summary_zh: 面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。
+      eligibility: Early-career researchers in satellite data assimilation or related fields, including PhD students
+        with relevant experience. Quantitative satellite-data knowledge or optimal-estimation experience is desirable.
+      eligibility_zh: 主要面向卫星资料同化及相关领域的青年科研人员，包括有相关经验的博士生；建议具备卫星资料定量应用或最优估计知识。
+  - url: https://winterschool.eurac.edu/en
+    edition_year: 2027
+    status: update
+    fields:
+      detail_sections:
+      - heading: The 2027 academic focus
+        heading_zh: 2027 年课程重点
+        text: 'This edition examines federalism under a changing international order: constitutional resilience, security
+          alliances, democratic backsliding and shifts in power between levels of government. Comparative cases include
+          the EU and examples from several continents. Teaching combines lectures, workshops, questions and discussion;
+          the working language is English.'
+        text_zh: 本届主题是变化中的世界秩序与联邦制，讨论宪政韧性、安全联盟、民主倒退，以及不同层级政府之间的权力变化。案例涉及欧盟和多个洲的多层级治理制度。教学结合讲座、专题工作坊、问答与讨论，全程使用英语。
+        source_url: https://winterschool.eurac.edu/en/program
+      - heading: Two cities and full attendance
+        heading_zh: 两地安排与出席要求
+        text: 'The first week takes place in Innsbruck and the second in Bolzano/Bozen. This is a single two-week
+          programme: applicants cannot choose only one week, and online attendance is unavailable.'
+        text_zh: 第一周在奥地利 Innsbruck，第二周在意大利 Bolzano/Bozen。两周构成一个完整项目，不能只参加其中一周，也不提供线上参加方式；规划行程与住宿时需同时考虑两座城市。
+        source_url: https://winterschool.eurac.edu/en/how-to-apply
+      - heading: Prepare the application before submitting
+        heading_zh: 提交前要准备什么
+        text: Submit the online form, not the preview PDF. It asks for education, experience, a motivation statement
+          of at most 1,500 characters including spaces, and an academic essay of at most 3,500 characters. The essay
+          must answer a listed question for one selected workshop. No additional documents are required.
+        text_zh: 必须提交在线表单，填写预览 PDF 不算申请。表单包含教育与工作经历、最多 1,500 字符（含空格）的动机陈述，以及最多 3,500 字符的学术短文。短文需选择一个工作坊并回答对应问题；官网同时用
+          500 词说明篇幅，应兼顾字符限制。无需另附其他文件。建议先准备文稿，再一次性完成表单。
+        source_url: https://winterschool.eurac.edu/en/how-to-apply
+      - heading: Actual costs and limited scholarships
+        heading_zh: 实际费用与有限奖学金
+        text: The EUR 300 participation fee includes materials, specified welcome meals and the inter-city transfer,
+          but not accommodation, most meals or travel to the school. Optional 13-night room-and-breakfast packages
+          cost an additional EUR 1,170 for a single room or EUR 962 for a twin room. A maximum of two full and three
+          partial scholarships is advertised; even recipients pay EUR 150. Awards depend on merit and need.
+        text_zh: 300 欧元参与费包含课程材料、官网列出的欢迎餐饮及两城间接驳，不含住宿、大部分餐饮和往返学校的差旅。主办方可安排 13 晚含早餐住宿，单人间另付 1,170 欧元，双人间另付 962 欧元。官网最多提供
+          2 个全额及 3 个部分奖学金名额，按学术表现与经济需要评选；获奖者仍需支付 150 欧元参与费，不能将奖学金视为人人可得。
+        source_url: https://winterschool.eurac.edu/en/fees-scholarships
+  - url: https://indico.ictp.it/event/11407
+    edition_year: 2027
+    status: update
+    fields:
+      detail_sections:
+      - heading: Academic purpose and intended audience
+        heading_zh: 学习目标与适合人群
+        text: The school introduces fusion science to students and early-career scientists from mathematics, physics
+          and engineering. It brings together experts from Arab countries and elsewhere and aims to develop knowledge
+          and collaboration in the region. The overview does not yet provide a detailed lecture-by-lecture syllabus.
+        text_zh: 课程旨在向数学、物理和工程等背景的学生及青年科研人员介绍聚变科学，由阿拉伯地区及其他地区的专家参与授课与交流，促进相关知识传播和科研合作。官方概览尚未给出逐讲课程表，因此目前不将具体子领域或实践训练列为已确认安排。
+        source_url: https://indico.ictp.it/event/11407
+      - heading: Selection and application documents
+        heading_zh: 遴选与申请材料
+        text: Up to 50 participants will be selected on merit. Use the application link provided on the official event
+          page and include a CV and a motivation letter in the form. The stated application deadline is 15 November
+          2026.
+        text_zh: 计划按择优原则录取最多 50 名参与者。通过官方活动页提供的申请链接提交表单，并附简历与动机信。官网列出的申请截止日为 2026 年 11 月 15 日；提交申请不等于已获录取或差旅资助。
+        source_url: https://indico.ictp.it/event/11407
+      - heading: What support does and does not cover
+        heading_zh: 住宿餐饮与差旅分别如何承担
+        text: Accommodation and meals are covered for accepted applicants. Participants must arrange and pay for travel
+          themselves, although they may request travel assistance. Any offered travel support and its amount will
+          be stated in the acceptance letter; it is not a guaranteed full reimbursement.
+        text_zh: 录取者的住宿和餐饮费用由项目承担。往返差旅原则上需要参与者自行安排并支付，但可以申请差旅补助；是否提供以及具体金额会在录取信中说明。不要把“可以申请补助”理解成已经获得全额报销。
+        source_url: https://indico.ictp.it/event/11407
+      eligibility: Students and early-career scientists in mathematics, physics, engineering and related backgrounds;
+        up to 50 participants selected on merit.
+      eligibility_zh: 面向数学、物理、工程及相关背景的学生和青年科研人员，按择优原则录取，最多 50 人。
