@@ -531,3 +531,22 @@ and passes snapshot retention and site integrity. Source scan date is the origin
 Discovery used 20 base queries and 6 resolution queries: 43 hits, 13 URLs accepted, 11 pages fetched,
 6 extracted candidates, no new qualified publication. None of the six eligible pilot-gold URLs were
 returned; the search capture has not yet demonstrated a recall improvement.
+
+## 2026-10-07 — Date-dependent tests blocked Pages deployment
+
+The 7 October workflow failed six tests in test_semantic_normalization.py,
+reproduced locally without network calls. Its shared school fixture had an
+explicit 30 September 2026 deadline, but extraction, filtering and publication
+read the real clock. From 1 October the school correctly became closed while
+financial-normalization assertions still expected an open self-funded listing
+or review record. Scans continued committing snapshots; the required test job
+blocked site integrity and publication.
+
+Use a module-local, automatically restored pytest clock fixed to 25 September
+for this fixture's extraction-to-rendering path. Do not advance the deadline,
+freeze production time, bypass CI, or rerun the scanner. Explicit boundary cases
+exercise 30 September, 1 October, 7 October and the programme start date through
+extraction, hard filtering and publication, preserving closure behavior.
+The original module now passes all 31 cases, including the four new boundaries.
+Full local validation: 568 tests passed; Ruff passed. Publication is rebuilt
+from the existing 7 October source snapshots through the normal required CI gates.

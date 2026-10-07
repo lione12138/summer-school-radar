@@ -1,10 +1,34 @@
 from datetime import date
 
+import pytest
+
 from research_school_radar.extract import extract_candidate
 from research_school_radar.filter import apply_hard_filters
 from research_school_radar.localization import financial_summary_zh
 from research_school_radar.models import Page, Source
 from research_school_radar.publication import is_verified_self_funded
+
+
+@pytest.fixture(autouse=True)
+def normalization_clock(monkeypatch):
+    """Keep the September fixtures open independently of the runner's date.
+
+    Patch each clock used by this module's extraction-to-rendering path, rather
+    than changing deadlines or freezing production/status-refresh behavior.
+    """
+    class FixtureDate(date):
+        current = date(2026, 9, 25)
+
+        @classmethod
+        def today(cls):
+            return cls.current
+
+    for module in (
+        'extract', 'models', 'filter', 'ai_home', 'review',
+        'site_components', 'site_home_page',
+    ):
+        monkeypatch.setattr(f'research_school_radar.{module}.date', FixtureDate)
+    return FixtureDate
 
 
 def candidate(text='', html='', title='Research School', profile=None):
@@ -13,6 +37,23 @@ def candidate(text='', html='', title='Research School', profile=None):
     source = Source('Institute', 'https://example.org/school', '1', 'global', 'school')
     profile = {'financial_access': {'approximate_currency_to_eur': {'EUR': 1, 'JPY': 0.006}}, **(profile or {})}
     return extract_candidate(Page(source.url, title, text, html, source, date(2026, 9, 25)), profile)
+
+
+@pytest.mark.parametrize('as_of, is_open', [
+    (date(2026, 9, 30), True),
+    (date(2026, 10, 1), False),
+    (date(2026, 10, 7), False),
+    (date(2027, 1, 11), False),
+])
+def test_normalized_course_publication_across_deadline(normalization_clock, as_of, is_open):
+    # Exercise the same extraction/filter/publication path that blocked CI.
+    normalization_clock.current = as_of
+    c = candidate('Fee: EUR 650. Travel support may be available to selected participants.')
+    apply_hard_filters(c, {})
+    assert c.deadline_status == ('open' if is_open else 'closed')
+    assert c.is_past is not is_open
+    assert is_verified_self_funded(c) is is_open
+    assert c.financial_access_status == 'self-funded'
 
 
 def test_known_fee_is_not_hidden_by_scholarship_in_either_language():
