@@ -98,8 +98,8 @@
       "title_zh": "ALPS 高级语言处理冬季学校",
       "organizer": "LIG (Université Grenoble Alpes) and NAVER Labs Europe",
       "organizer_zh": "LIG（格勒诺布尔阿尔卑斯大学）与 NAVER Labs Europe",
-      "summary": "Advanced Language Processing Winter School – ALPS, 28th March – 2nd April 2027 Skip to content Advanced Language Processing Winter School ALPS, 28th March – 2nd April 2027 Home Speakers Schedule Organizers Sponsors Application Venue Participant Voices Back Welcome to ALPS 2027, t",
-      "summary_zh": "高级语言处理冬季学校 – ALPS，2027年3月28日至4月2日 跳至内容 高级语言处理冬季学校 ALPS，2027年3月28日至4月2日 首页 演讲嘉宾 日程 组织者 赞助商 申请 场地 参与者感言 返回 欢迎参加ALPS 2027，t",
+      "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
+      "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
       "topics": [
         "natural language processing"
       ],
@@ -129,8 +129,8 @@
             "natural language processing"
           ],
           "secondary_topics": [],
-          "summary": "Advanced Language Processing Winter School – ALPS, 28th March – 2nd April 2027 Skip to content Advanced Language Processing Winter School ALPS, 28th March – 2nd April 2027 Home Speakers Schedule Organizers Sponsors Application Venue Participant Voices Back Welcome to ALPS 2027, t",
-          "summary_zh": "高级语言处理冬季学校 – ALPS，2027年3月28日至4月2日 跳至内容 高级语言处理冬季学校 ALPS，2027年3月28日至4月2日 首页 演讲嘉宾 日程 组织者 赞助商 申请 场地 参与者感言 返回 欢迎参加ALPS 2027，t",
+          "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
+          "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
           "sessions": []
         }
       ],
@@ -160,8 +160,8 @@
           "natural language processing"
         ],
         "secondary_topics": [],
-        "summary": "Advanced Language Processing Winter School – ALPS, 28th March – 2nd April 2027 Skip to content Advanced Language Processing Winter School ALPS, 28th March – 2nd April 2027 Home Speakers Schedule Organizers Sponsors Application Venue Participant Voices Back Welcome to ALPS 2027, t",
-        "summary_zh": "高级语言处理冬季学校 – ALPS，2027年3月28日至4月2日 跳至内容 高级语言处理冬季学校 ALPS，2027年3月28日至4月2日 首页 演讲嘉宾 日程 组织者 赞助商 申请 场地 参与者感言 返回 欢迎参加ALPS 2027，t",
+        "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
+        "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
         "sessions": []
       },
       "primary_topics": [
@@ -252,8 +252,8 @@
       "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
       "organizer": "ECMWF Events (Indico)",
       "organizer_zh": "ECMWF Events (Indico)",
-      "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
-      "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星数据同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 主页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
+      "summary": "A five-day satellite-data assimilation course combining lectures and practical work for researchers in numerical weather prediction.",
+      "summary_zh": "面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。",
       "topics": [
         "satellite",
         "machine learning"
@@ -287,8 +287,8 @@
           "secondary_topics": [
             "machine learning"
           ],
-          "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
-          "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星数据同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 主页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
+          "summary": "A five-day satellite-data assimilation course combining lectures and practical work for researchers in numerical weather prediction.",
+          "summary_zh": "面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。",
           "sessions": []
         }
       ],
@@ -321,8 +321,8 @@
         "secondary_topics": [
           "machine learning"
         ],
-        "summary": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation (18-January 22, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: EUMETSAT/ECMWF NWP-SAF satelli",
-        "summary_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星数据同化（2027年1月18日至22日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 主页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：EUMETSAT/ECMWF NWP-SAF 卫星",
+        "summary": "A five-day satellite-data assimilation course combining lectures and practical work for researchers in numerical weather prediction.",
+        "summary_zh": "面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。",
         "sessions": []
       },
       "primary_topics": [
