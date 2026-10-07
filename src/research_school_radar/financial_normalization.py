@@ -115,6 +115,18 @@ def recommendation_funding(candidate: Candidate) -> bool:
     return financial_terms(candidate).support_status == 'offered'
 
 
+def registration_only_free(candidate: Candidate) -> bool:
+    """Free registration with no stated support must not imply zero total cost."""
+    if candidate.fee_eur != 0 or candidate.funding_available is True:
+        return False
+    if not re.search(r'free registration|registration (?:is )?free',
+                     f'{candidate.fee} {candidate.fee_evidence}', re.I):
+        return False
+    terms = financial_terms(candidate)
+    return all(value == 'unknown' for value in
+               (terms.accommodation, terms.meals, terms.travel_support))
+
+
 def financial_review_reasons(candidate: Candidate) -> list[str]:
     terms = financial_terms(candidate)
     reasons = []

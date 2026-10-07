@@ -50,10 +50,11 @@ def test_localized_cards_keep_readable_status_and_separate_library(ui_site):
         assert soup.select_one("#how").find_parent("details", class_="home-information") is not None
 
 
-def test_detail_preserves_escaped_evidence_in_closed_field_sections(ui_site):
+def test_detail_preserves_escaped_evidence_in_open_field_sections(ui_site):
     output, current = ui_site
     soup = BeautifulSoup((output / "zh" / candidate_detail_href(current)).read_text(encoding="utf-8"), "html.parser")
-    assert soup.select_one(".evidence-item[open]") is None
+    assert soup.select(".evidence-item")
+    assert all(item.has_attr("open") for item in soup.select(".evidence-item"))
     evidence = soup.select(".evidence-item")[-1].select_one("blockquote")
     assert evidence.get_text() == current.funding_evidence
     assert evidence.find("script") is None

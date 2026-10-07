@@ -117,6 +117,9 @@ def financial_summary_short(candidate: Candidate) -> str:
 
 def candidate_status(candidate: Candidate) -> tuple[str, str]:
     if candidate.fully_qualified:
+        from .financial_normalization import registration_only_free
+        if registration_only_free(candidate):
+            return "Free registration", "qualified"
         return "Funded / low fee", "qualified"
     if is_high_quality(candidate):
         if financial_terms(candidate).fee_status == "provisional":

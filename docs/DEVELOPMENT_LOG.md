@@ -550,3 +550,25 @@ extraction, hard filtering and publication, preserving closure behavior.
 The original module now passes all 31 cases, including the four new boundaries.
 Full local validation: 568 tests passed; Ruff passed. Publication is rebuilt
 from the existing 7 October source snapshots through the normal required CI gates.
+
+## 2026-10-07 — VIASM registration semantics and record presentation
+
+Verified the VIASM-IAMP 2027 official page against the live record. The adapter
+hard-coded VIASM as sole organizer, generic summaries truncated headings and
+navigation into prose, and financial presentation reduced free registration to
+EUR 0. Extract the labeled organizing-institutions section and objective/talks
+sentences, retain the exact registration evidence, and explicitly describe the
+edition's unstated general-registration restrictions. Edition-scoped bilingual
+overrides correct the existing snapshot at the next no-network refresh.
+
+Free-registration records with unknown board/travel support now say precisely
+that in both languages, with a free-registration badge. Existing funded/low-fee
+qualification rules stay unchanged; actual support is not hidden by this label.
+The reported empty evidence was not reproduced: live HTML and stored candidate
+fields already contained three quotations. Evidence details now default open,
+with tests preserving nonempty quotations through both localized page builds.
+
+The official VIASM benchmark now checks 13 field values as well as publication.
+Focused tests pass and the rebuilt snapshot passes site integrity. Historical
+scan reports and source-scan timestamps are preserved; future scans use the
+corrected extraction and overrides.

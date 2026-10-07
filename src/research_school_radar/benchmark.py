@@ -9,6 +9,7 @@ from unittest.mock import patch
 from bs4 import BeautifulSoup
 
 from .extract import extract_candidate
+from .candidate_io import candidate_to_dict
 from .filter import apply_hard_filters
 from .models import Page, Source
 from .publication import is_display_candidate
@@ -39,15 +40,19 @@ def evaluate(gold_path: Path, profile: dict) -> dict:
                         soup.get_text(" ", strip=True), html, source, reference)
             c = extract_candidate(page, profile, as_of=reference)
             published = is_display_candidate(apply_hard_filters(c, profile)) if c else False
+            actual_fields = candidate_to_dict(c) if c else {}
+            field_errors = [field for field, expected_value in case.get('expected_fields', {}).items()
+                            if actual_fields.get(field) != expected_value]
             results.append({"id": case["id"], "found": c is not None, "published": published,
                             "expected_found": case["expected_found"], "expected_publish": case["expected_publish"],
-                            "kind": case["kind"]})
+                            "kind": case["kind"], "field_errors": field_errors})
     expected = sum(r["expected_publish"] for r in results)
     tp = sum(r["published"] and r["expected_publish"] for r in results)
     fp = sum(r["published"] and not r["expected_publish"] for r in results)
     known = sum(r["expected_found"] for r in results)
     found = sum(r["found"] and r["expected_found"] for r in results)
     return {"as_of": gold["as_of"], "cases": len(results), "known_pages": known,
+            "field_errors": sum(len(r['field_errors']) for r in results),
             "found": found, "extraction_recall": found / known if known else 0,
             "eligible": expected, "correctly_published": tp, "false_positives": fp,
             "publication_precision": tp / (tp + fp) if tp + fp else None,

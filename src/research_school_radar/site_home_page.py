@@ -584,7 +584,9 @@ def _row_attrs(candidate: Candidate, status: str | None = None) -> dict[str, str
         "found": ("Official listing", "官网项目"),
     }
     status_en, status_cn = status_labels.get(status, (status, status))
-    from .financial_normalization import financial_terms
+    from .financial_normalization import financial_terms, registration_only_free
+    if status == "qualified" and registration_only_free(candidate):
+        status_en, status_cn = "Free registration", "免费注册"
     if status == "high-quality" and financial_terms(candidate).fee_status == "provisional":
         status_en, status_cn = "Self-funded · fee provisional", "自费 · 价格待确认"
     funding = candidate.financial_access_status

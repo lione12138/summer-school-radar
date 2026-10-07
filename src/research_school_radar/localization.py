@@ -142,6 +142,7 @@ STATUS_ZH = {
     "Fully qualified": "完全符合",
     "High quality": "高质量",
     "Funded / low fee": "资助或低费用",
+    "Free registration": "免费注册",
     "Self-funded · fee provisional": "自费 · 价格待确认",
     "Verified self-funded": "官网核实自费",
     "Official listing": "官网项目",
@@ -228,6 +229,9 @@ def duration_zh(candidate: Candidate) -> str:
 
 
 def financial_summary_zh(candidate: Candidate) -> str:
+    from .financial_normalization import registration_only_free
+    if registration_only_free(candidate):
+        return '注册费：免费 · 住宿、餐饮和差旅支持：官网未说明'
     if (candidate.fee and candidate.funding_available is True and candidate.fee_eur != 0
             and candidate.funding_scope != "registration fee covered"
             and not candidate.funding_scope.startswith("Fee GBP 0 for STFC")):

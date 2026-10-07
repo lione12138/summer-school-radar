@@ -37,7 +37,7 @@
           <h2 data-i18n="detail.source">Official source</h2>
           <p class="muted" data-i18n="detail.source.original">Original source evidence is retained below for verification.</p>
           {% for item in evidence_items %}
-          <details class="evidence-item"><summary data-i18n="{{ item.label }}">{{ item.title }}</summary><blockquote>{{ item.text }}</blockquote></details>
+          <details class="evidence-item" open><summary data-i18n="{{ item.label }}">{{ item.title }}</summary><blockquote>{{ item.text }}</blockquote></details>
           {% endfor %}
           {% if official_url %}
           <a class="source-link" href="{{ official_url }}" target="_blank" rel="noopener" data-i18n="action.official.programme">Open official programme page &nearr;</a>

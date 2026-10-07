@@ -54,8 +54,23 @@ def viasm(page):
         if text.startswith("Venue/Location:"):
             result['location'] = text.split(":", 1)[1].strip()
     if "Registration is free but compulsory" in page.text:
-        result.update(fee="Free registration", fee_eur=0.0)
-    result['organizer'] = "Vietnam Institute for Advanced Study in Mathematics (VIASM)"
+        result.update(fee="Free registration", fee_eur=0.0,
+                      fee_evidence="Registration is free but compulsory.")
+    institutions = re.search(r'Organizing Institutions\s+(.+?)\s+Scientific Committee', page.text, re.S)
+    if institutions:
+        result['organizer'] = institutions[1].strip().rstrip('.')
+    else:
+        result['organizer'] = "Vietnam Institute for Advanced Study in Mathematics (VIASM)"
+    goal = re.search(r'The goal of the summer school is[^.]+\.', page.text)
+    talks = re.search(r'In addition, the programme will include[^.]+\.', page.text)
+    if goal:
+        result['summary'] = goal[0] + (" " + talks[0] if talks else "")
+    # This absence statement was verified for this edition, not all VIASM events.
+    if urlparse(page.url).path.rstrip('/') == '/en/hdkh/VIASM-IAMP-PMP-27' and talks and goal:
+        result['eligibility'] = (
+            'General registration eligibility restrictions are not explicitly stated on the official page. '
+            'The programme covers probability and mathematical physics and includes contributed talks by young participants.'
+        )
     return result
 
 

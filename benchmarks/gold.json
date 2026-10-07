@@ -35,7 +35,22 @@
       "captured_at": "2026-09-23T06:12:59.167746+00:00",
       "expected_found": true,
       "expected_publish": true,
-      "rationale": "Eligible open research training; fees within directory limits or evidenced support."
+      "rationale": "Eligible open research training; fees within directory limits or evidenced support.",
+      "expected_fields": {
+        "organizer": "International Research Laboratory France-Vietnam in Mathematics and its Applications, University of Tours; Vietnam Institute for Advanced Study in Mathematics (VIASM)",
+        "fee": "Free registration",
+        "fee_eur": 0.0,
+        "funding_available": null,
+        "fee_evidence": "Registration is free but compulsory.",
+        "deadline_evidence": "Deadline for general registration: July 01, 2027",
+        "duration_evidence": "July 23 to July 28, 2027",
+        "start_date": "2027-07-23",
+        "end_date": "2027-07-28",
+        "deadline": "2027-07-01",
+        "duration_days": 6,
+        "summary": "The goal of the summer school is to introduce selected topics from current research in probability and mathematical physics. In addition, the programme will include 10 contributed talks by young participants.",
+        "eligibility": "General registration eligibility restrictions are not explicitly stated on the official page. The programme covers probability and mathematical physics and includes contributed talks by young participants."
+      }
     },
     {
       "id": "official-012",

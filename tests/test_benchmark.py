@@ -9,6 +9,7 @@ def test_fixed_date_gold_benchmark_does_not_regress():
     current = evaluate(Path("benchmarks/gold.json"), load_yaml(Path("config/profile.yaml")))
     baseline = json.loads(Path("benchmarks/baseline.json").read_text(encoding="utf-8"))
     assert current["cases"] >= 30
+    assert current['field_errors'] == 0, [r for r in current['results'] if r['field_errors']]
     assert current["false_positives"] <= baseline["false_positives"]
     assert current["found"] >= baseline["found"]
     assert current["correctly_published"] >= baseline["correctly_published"]

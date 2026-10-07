@@ -1027,6 +1027,9 @@ The offline benchmark fixes the date, replays 30 captured official-page cases an
 synthetic boundaries, and reports extraction recall separately from publication precision
 and recall. CI checks both aggregate and per-case regressions. It is not a measurement
 of whole-web discovery recall; see `benchmarks/README.md` for limitations.
+Cases may also specify `expected_fields`; mismatches are reported as `field_errors`
+and fail the regression test. VIASM covers organizer, registration-fee scope,
+dates, evidence, summary and eligibility independently of publication counts.
 
 Discovery prefers Serper; if its key is absent, the configured Brave client runs
 the same bounded queries and records that fallback explicitly. Missing both keys

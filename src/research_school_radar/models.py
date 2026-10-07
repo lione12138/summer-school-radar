@@ -163,6 +163,9 @@ class Candidate:
 
     @property
     def financial_summary(self) -> str:
+        from .financial_normalization import registration_only_free
+        if registration_only_free(self):
+            return 'Registration: free · Accommodation, meals and travel support: not stated'
         # Preserve the official currency, tiers and conditions even when an
         # award is advertised. Never substitute an award amount for the fee.
         if (self.fee and self.funding_available is True and self.fee_eur != 0
