@@ -918,9 +918,6 @@
         "mathematics",
         "engineering"
       ],
-      "primary_topics": [
-        "neuroscience"
-      ],
       "editions": [
         {
           "id": "csha-computational-cognitive-neuroscience:2026",
@@ -999,7 +996,10 @@
         "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
         "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "neuroscience"
+      ]
     },
     {
       "id": "iiser-pune-camp",
@@ -1815,11 +1815,6 @@
         "water resources",
         "geoscience"
       ],
-      "primary_topics": [
-        "hydrology",
-        "water resources",
-        "geoscience"
-      ],
       "editions": [
         {
           "id": "edition:5b2622fab46bbe12",
@@ -1888,7 +1883,12 @@
         "summary": "Building on the success of the first IAHS Academy (Ningbo, January 2026), the second edition aims to further strengthen IAHS capacity-building activities by expanding the scientific offer, enlarging participation, and consolidating the Academy as a flagship global training initiative for early-career hydrologists.",
         "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在通过扩大科学内容、增加参与规模，进一步强化IAHS的能力建设活动，并将该学院打造为面向早期职业水文学家的全球旗舰培训项目。",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "hydrology",
+        "water resources",
+        "geoscience"
+      ]
     },
     {
       "id": "programme:551a5648d92c46be",
