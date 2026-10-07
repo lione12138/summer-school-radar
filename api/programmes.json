@@ -334,10 +334,10 @@
       "slug": "viasm-iamp-summer-school-on-probability-and-mathematical-p-f8d3ac61",
       "title": "VIASM-IAMP Summer School on Probability and Mathematical Physics",
       "title_zh": "VIASM-IAMP 概率与数学物理暑期学校",
-      "organizer": "Vietnam Institute for Advanced Study in Mathematics (VIASM)",
-      "organizer_zh": "越南数学高等研究院（VIASM）",
-      "summary": "VIASM-IAMP Summer School 2027 on Probability and Mathematical Physics Time : Venue/Location: Vietnam Institute for Advanced Study in Mathematics (VIASM), Hanoi Objective The Summer School in Probability and Mathematical Physics is part of a long-term initiative hosted by the Viet",
-      "summary_zh": "VIASM-IAMP 2027年概率与数学物理暑期学校 时间： 地点：越南数学高等研究院（VIASM），河内 目标 概率与数学物理暑期学校是越南数学高等研究院（VIASM）主办的长期计划的一部分",
+      "organizer": "International Research Laboratory France-Vietnam in Mathematics and its Applications, University of Tours; Vietnam Institute for Advanced Study in Mathematics (VIASM)",
+      "organizer_zh": "法国图尔大学法越数学及其应用国际研究实验室；越南数学高等研究院（VIASM）",
+      "summary": "The goal of the summer school is to introduce selected topics from current research in probability and mathematical physics. In addition, the programme will include 10 contributed talks by young participants.",
+      "summary_zh": "暑校介绍概率与数学物理领域当前研究的若干专题，并安排 10 场由青年参与者贡献的报告。",
       "topics": [
         "probability",
         "mathematical physics",
@@ -359,8 +359,8 @@
           "deadline_status": "open",
           "duration_days": 6,
           "mode": "in-person",
-          "financial_summary": "Fee EUR 0",
-          "financial_summary_zh": "费用 EUR 0",
+          "financial_summary": "Registration: free · Accommodation, meals and travel support: not stated",
+          "financial_summary_zh": "注册费：免费 · 住宿、餐饮和差旅支持：官网未说明",
           "funding_available": null,
           "fee_eur": 0.0,
           "topics": [
@@ -377,8 +377,8 @@
             "statistical physics",
             "mathematics"
           ],
-          "summary": "VIASM-IAMP Summer School 2027 on Probability and Mathematical Physics Time : Venue/Location: Vietnam Institute for Advanced Study in Mathematics (VIASM), Hanoi Objective The Summer School in Probability and Mathematical Physics is part of a long-term initiative hosted by the Viet",
-          "summary_zh": "VIASM-IAMP 2027年概率与数学物理暑期学校 时间： 地点：越南数学高等研究院（VIASM），河内 目标 概率与数学物理暑期学校是越南数学高等研究院（VIASM）主办的长期计划的一部分",
+          "summary": "The goal of the summer school is to introduce selected topics from current research in probability and mathematical physics. In addition, the programme will include 10 contributed talks by young participants.",
+          "summary_zh": "暑校介绍概率与数学物理领域当前研究的若干专题，并安排 10 场由青年参与者贡献的报告。",
           "sessions": []
         }
       ],
@@ -397,8 +397,8 @@
         "deadline_status": "open",
         "duration_days": 6,
         "mode": "in-person",
-        "financial_summary": "Fee EUR 0",
-        "financial_summary_zh": "费用 EUR 0",
+        "financial_summary": "Registration: free · Accommodation, meals and travel support: not stated",
+        "financial_summary_zh": "注册费：免费 · 住宿、餐饮和差旅支持：官网未说明",
         "funding_available": null,
         "fee_eur": 0.0,
         "topics": [
@@ -415,8 +415,8 @@
           "statistical physics",
           "mathematics"
         ],
-        "summary": "VIASM-IAMP Summer School 2027 on Probability and Mathematical Physics Time : Venue/Location: Vietnam Institute for Advanced Study in Mathematics (VIASM), Hanoi Objective The Summer School in Probability and Mathematical Physics is part of a long-term initiative hosted by the Viet",
-        "summary_zh": "VIASM-IAMP 2027年概率与数学物理暑期学校 时间： 地点：越南数学高等研究院（VIASM），河内 目标 概率与数学物理暑期学校是越南数学高等研究院（VIASM）主办的长期计划的一部分",
+        "summary": "The goal of the summer school is to introduce selected topics from current research in probability and mathematical physics. In addition, the programme will include 10 contributed talks by young participants.",
+        "summary_zh": "暑校介绍概率与数学物理领域当前研究的若干专题，并安排 10 场由青年参与者贡献的报告。",
         "sessions": []
       },
       "primary_topics": [
