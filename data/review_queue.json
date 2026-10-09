@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-07",
+  "generated": "2026-10-09",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -775,16 +775,16 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "llm_chunk_truncated:6"
+          "conflicting_evidence"
         ],
-        "chinese_summary": "莱顿语言与语言学暑期学校（LLL）由LOT组织，为期两周，面向语言学学生与爱好者，提供深入学习与拓展知识的机会。LOT附属RMA学生可能获得旅费与住宿报销（有条件），LOT最多支付一门LLL课程费用，需到校参加并完成额外作业；博士生不符合该资助计划。",
+        "chinese_summary": "",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "LOT-affiliated RMA students may be eligible for travel and accommodation reimbursements (conditions apply); LOT will pay for a maximum of one LLL course per LOT-affiliated RM student; the student must participate on campus even if the course is offered in hybrid form; after the two-week course the student completes an additional assignment; PhD candidates are not eligible for this scheme; if a student participates in both the LOT Summer School and the LLL in the same summer, reimbursement of tra",
+        "extracted_funding": "LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). PhD candidates are not eligible for this scheme.",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
-          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | The fee for the participation LLL by LOT RM students within this scheme is covered by LOT. | LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). | It is mandatory to complete both"
+          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). | PhD candidates are not eligible for this scheme."
         }
       }
     },
@@ -1063,6 +1063,67 @@
       }
     },
     {
+      "title": "Training course fees",
+      "url": "https://www.ecmwf.int/en/learning/training/training-course-fees",
+      "organizer": "ECMWF",
+      "source_layer": "1",
+      "location": "Forecasts",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "low-fee",
+      "fee": "free of charge",
+      "fee_eur": 0.0,
+      "topics": [
+        "hydrology",
+        "satellite",
+        "machine learning",
+        "water resources",
+        "geoscience"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "free of charge",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "hydrology": "e, participants from WMO or from WMO National Meteorological and Hydrological Services (WMO NMHS) are eligible for a 50% reduction in course fees. Applicants from International",
+        "satellite": "& Machine Learning £980 Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation free of charge Training course: Numerical methods for weather prediction £980 Onl",
+        "machine learning": ") Use and interpretation of ECMWF Products £780 Training course: Machine learning and Destination Earth free of charge Machine Learning for weather prediction £780 Training course:",
+        "water resources": "e, participants from WMO or from WMO National Meteorological and Hydrological Services (WMO NMHS) are eligible for a 50% reduction in course fees. Applicants from International",
+        "geoscience": "e, participants from WMO or from WMO National Meteorological and Hydrological Services (WMO NMHS) are eligible for a 50% reduction in course fees. Applicants from International"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "fee": "free of charge",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "Digital Humanities Summer Institute",
       "url": "https://dhsi.org/scholarships/",
       "organizer": "Digital Humanities Summer Institute",
@@ -1229,7 +1290,7 @@
         "statistics": "e lecturer was so effective that every session was the best math/statistics class I have ever attended. After a comprehensive week-long input on theory and coupled by practice",
         "design": "usal Inference 1: Social Science Experiments Causal Inference 2: Design-Based Approaches Text Analysis Data Analysis for the Social Sciences Large Language Models Tutor Ma",
         "philosophy of science": "d' in a week is super useful and makes you think a lot about the philosophy of science etc. The deep dive kind of teaching methodology is really helpful. The lecturers were good too and",
-        "social science": "Oxford Spring School in Advanced Social Science Research Methods | DPIR Oxford Spring School in Advanced Social Research Methods Our Oxford Spring",
+        "social science": "Spring School in Advanced Social Science Research Methods | DPIR Oxford Spring School in Advanced Social Research Methods Our Oxford Spring",
         "philosophy": "d' in a week is super useful and makes you think a lot about the philosophy of science etc. The deep dive kind of teaching methodology is really helpful. The lecturers were go"
       },
       "evidence": {
