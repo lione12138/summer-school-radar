@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-10-08",
+  "generated": "2026-10-09",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -251,7 +251,7 @@
       "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
       "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
       "organizer": "ECMWF Events (Indico)",
-      "organizer_zh": "ECMWF Events (Indico)",
+      "organizer_zh": "ECMWF 活动（Indico）",
       "summary": "A five-day satellite-data assimilation course combining lectures and practical work for researchers in numerical weather prediction.",
       "summary_zh": "面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。",
       "topics": [
@@ -262,7 +262,7 @@
         {
           "id": "edition:7f64cb13dd224bca",
           "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
-          "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星数据同化",
+          "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
           "detail_path": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
           "official_url": "https://events.ecmwf.int/event/577/",
           "location": "ECMWF, Reading",
@@ -296,7 +296,7 @@
       "latest_edition": {
         "id": "edition:7f64cb13dd224bca",
         "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
-        "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星数据同化",
+        "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
         "detail_path": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
         "official_url": "https://events.ecmwf.int/event/577/",
         "location": "ECMWF, Reading",
@@ -2836,6 +2836,95 @@
         "astrophysics",
         "physics"
       ]
+    },
+    {
+      "id": "programme:6d05e72313fdb49c",
+      "slug": "summer-school-ds-food-design-of-sustainable-food-systems-1990bf33",
+      "title": "Summer school DS-FOOD Design of sustainable food systems",
+      "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+      "organizer": "Euroleague for Life Sciences (ELLS)",
+      "organizer_zh": "生命科学欧洲联盟（ELLS）",
+      "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
+      "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
+      "topics": [
+        "sustainable food systems",
+        "food systems design",
+        "sustainability"
+      ],
+      "primary_topics": [
+        "sustainable food systems",
+        "food systems design",
+        "sustainability"
+      ],
+      "editions": [
+        {
+          "id": "edition:736b6cbf96f90a6f",
+          "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
+          "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+          "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
+          "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
+          "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
+          "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
+          "start_date": "2026-07-05",
+          "end_date": "2026-07-12",
+          "deadline": "2026-05-01",
+          "deadline_status": "closed",
+          "duration_days": 8,
+          "mode": "in-person",
+          "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
+          "financial_summary_zh": "费用：EUR 90 强制晚宴费用; EUR 250 其他参与者注册费",
+          "funding_available": false,
+          "fee_eur": 90.0,
+          "topics": [
+            "sustainable food systems",
+            "food systems design",
+            "sustainability"
+          ],
+          "primary_topics": [
+            "sustainable food systems",
+            "food systems design",
+            "sustainability"
+          ],
+          "secondary_topics": [],
+          "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
+          "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:736b6cbf96f90a6f",
+        "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
+        "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+        "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
+        "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
+        "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
+        "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
+        "start_date": "2026-07-05",
+        "end_date": "2026-07-12",
+        "deadline": "2026-05-01",
+        "deadline_status": "closed",
+        "duration_days": 8,
+        "mode": "in-person",
+        "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
+        "financial_summary_zh": "费用：EUR 90 强制晚宴费用; EUR 250 其他参与者注册费",
+        "funding_available": false,
+        "fee_eur": 90.0,
+        "topics": [
+          "sustainable food systems",
+          "food systems design",
+          "sustainability"
+        ],
+        "primary_topics": [
+          "sustainable food systems",
+          "food systems design",
+          "sustainability"
+        ],
+        "secondary_topics": [],
+        "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
+        "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
+        "sessions": []
+      }
     },
     {
       "id": "csha-advanced-neuroimaging",
