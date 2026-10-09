@@ -2851,11 +2851,6 @@
         "food systems design",
         "sustainability"
       ],
-      "primary_topics": [
-        "sustainable food systems",
-        "food systems design",
-        "sustainability"
-      ],
       "editions": [
         {
           "id": "edition:736b6cbf96f90a6f",
@@ -2924,7 +2919,12 @@
         "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
         "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "sustainable food systems",
+        "food systems design",
+        "sustainability"
+      ]
     },
     {
       "id": "csha-advanced-neuroimaging",
