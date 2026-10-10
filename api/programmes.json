@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -3425,6 +3425,83 @@
         "biomaterials",
         "materials science"
       ]
+    },
+    {
+      "id": "programme:7a88df2ca1095426",
+      "slug": "water-conflict-cooperation-and-diplomacy-245f06e3",
+      "title": "Water Conflict, Cooperation and Diplomacy",
+      "title_zh": "水冲突、合作与外交",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
+      "summary_zh": "本课程将帮助学员了解水与冲突之间的复杂关联，以及如何以合作方式应对共享水资源治理中的挑战。",
+      "topics": [
+        "engineering"
+      ],
+      "primary_topics": [
+        "engineering"
+      ],
+      "editions": [
+        {
+          "id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
+          "title": "Water Conflict, Cooperation and Diplomacy",
+          "title_zh": "水冲突、合作与外交",
+          "detail_path": "opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
+          "official_url": "https://www.un-ihe.org/short-courses",
+          "location": "Delft, Netherlands",
+          "location_zh": "荷兰代尔夫特",
+          "start_date": "2026-11-09",
+          "end_date": "2026-11-20",
+          "deadline": "2026-10-09",
+          "deadline_status": "closed",
+          "duration_days": 12,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 3670 excl. VAT",
+          "financial_summary_zh": "费用 EUR 3670（未含增值税）",
+          "funding_available": null,
+          "fee_eur": 3670.0,
+          "topics": [
+            "engineering"
+          ],
+          "primary_topics": [
+            "engineering"
+          ],
+          "secondary_topics": [],
+          "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
+          "summary_zh": "本课程将帮助学员了解水与冲突之间的复杂关联，以及如何以合作方式应对共享水资源治理中的挑战。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
+        "title": "Water Conflict, Cooperation and Diplomacy",
+        "title_zh": "水冲突、合作与外交",
+        "detail_path": "opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
+        "official_url": "https://www.un-ihe.org/short-courses",
+        "location": "Delft, Netherlands",
+        "location_zh": "荷兰代尔夫特",
+        "start_date": "2026-11-09",
+        "end_date": "2026-11-20",
+        "deadline": "2026-10-09",
+        "deadline_status": "closed",
+        "duration_days": 12,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 3670 excl. VAT",
+        "financial_summary_zh": "费用 EUR 3670（未含增值税）",
+        "funding_available": null,
+        "fee_eur": 3670.0,
+        "topics": [
+          "engineering"
+        ],
+        "primary_topics": [
+          "engineering"
+        ],
+        "secondary_topics": [],
+        "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
+        "summary_zh": "本课程将帮助学员了解水与冲突之间的复杂关联，以及如何以合作方式应对共享水资源治理中的挑战。",
+        "sessions": []
+      }
     },
     {
       "id": "programme:8750854b0d569859",

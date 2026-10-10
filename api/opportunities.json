@@ -3,7 +3,7 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-10-09",
+  "generated": "2026-10-10",
   "opportunities": [
     {
       "id": "opportunities/al-nour-winter-school-on-fusion-science-a5413f47",
@@ -1551,6 +1551,72 @@
       "summary_zh": "生物物理冬季学校 组织者：Vijay Balasubramaniam（宾夕法尼亚大学，美国费城）、Sanjay Jain（德里大学和圣塔菲研究所）、Vijaykumar Krishnamurthy（ICTS-TIFR，印度班加罗尔）和 Mukund Thattai（NCBS，印度班加罗尔）DAT",
       "eligibility": "criteria: This winter School invites PhD students and postdoctoral researchers",
       "eligibility_zh": "标准：本次冬季学校面向博士生和博士后研究人员",
+      "sessions": []
+    },
+    {
+      "id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
+      "edition_id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
+      "programme_id": "programme:7a88df2ca1095426",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/water-conflict-cooperation-and-diplomacy-245f06e3.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/water-conflict-cooperation-and-diplomacy-245f06e3.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/water-conflict-cooperation-and-diplomacy-245f06e3.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/water-conflict-cooperation-and-diplomacy-245f06e3.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html"
+      },
+      "official_url": "https://www.un-ihe.org/short-courses",
+      "title": "Water Conflict, Cooperation and Diplomacy",
+      "title_zh": "水冲突、合作与外交",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "location": "Delft, Netherlands",
+      "location_zh": "荷兰代尔夫特",
+      "mode": "in-person",
+      "start_date": "2026-11-09",
+      "end_date": "2026-11-20",
+      "duration_days": 12,
+      "application_deadline": "2026-10-09",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 3670 excl. VAT",
+      "fee": "EUR 3670 excl. VAT",
+      "fee_eur": 3670.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "EUR 3670 excl. VAT",
+        "fee_eur": 3670.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 3670.0,
+            "currency": "EUR",
+            "conditions": "excl. VAT"
+          }
+        ]
+      },
+      "topics": [
+        "engineering"
+      ],
+      "primary_topics": [],
+      "secondary_topics": [],
+      "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
+      "summary_zh": "本课程将帮助学员了解水与冲突之间的复杂关联，以及如何以合作方式应对共享水资源治理中的挑战。",
+      "eligibility": "Mid-career water professionals with a technical/engineering/natural science background interested in advancing their skills on water conflict, cooperation and diplomacy.",
+      "eligibility_zh": "面向具有技术、工程或自然科学背景、希望提升水冲突、合作与外交方面能力的水领域中期职业人士。",
       "sessions": []
     },
     {
