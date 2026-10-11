@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-10-10",
+  "generated": "2026-10-11",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -3438,9 +3438,6 @@
       "topics": [
         "engineering"
       ],
-      "primary_topics": [
-        "engineering"
-      ],
       "editions": [
         {
           "id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
@@ -3501,7 +3498,10 @@
         "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
         "summary_zh": "本课程将帮助学员了解水与冲突之间的复杂关联，以及如何以合作方式应对共享水资源治理中的挑战。",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "engineering"
+      ]
     },
     {
       "id": "programme:8750854b0d569859",
