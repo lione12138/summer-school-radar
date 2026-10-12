@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-10-11",
+  "generated": "2026-10-12",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -92,83 +92,6 @@
       ]
     },
     {
-      "id": "alps-language-processing",
-      "slug": "alps-advanced-language-processing-winter-school-fecc81c5",
-      "title": "ALPS — Advanced Language Processing Winter School",
-      "title_zh": "ALPS 高级语言处理冬季学校",
-      "organizer": "LIG (Université Grenoble Alpes) and NAVER Labs Europe",
-      "organizer_zh": "LIG（格勒诺布尔阿尔卑斯大学）与 NAVER Labs Europe",
-      "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
-      "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
-      "topics": [
-        "natural language processing"
-      ],
-      "editions": [
-        {
-          "id": "alps-language-processing:2027",
-          "title": "ALPS 2027 — Advanced Language Processing Winter School",
-          "title_zh": "ALPS 2027 高级语言处理冬季学校",
-          "detail_path": "opportunities/alps-language-processing-2027-1984e1b8.html",
-          "official_url": "https://framaforms.org/alps-2027-application-form-1789055166-0",
-          "location": "Centre Paul Langevin",
-          "location_zh": "保罗·朗之万中心",
-          "start_date": "2027-03-28",
-          "end_date": "2027-04-02",
-          "deadline": "2026-10-11",
-          "deadline_status": "open",
-          "duration_days": 6,
-          "mode": "in-person",
-          "financial_summary": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
-          "financial_summary_zh": "费用：学生 EUR 700; EUR 900 非学生学术界参与者; EUR 1300 产业界及独立参与者 （价格待确认；含住宿及全食宿）",
-          "funding_available": null,
-          "fee_eur": 700.0,
-          "topics": [
-            "natural language processing"
-          ],
-          "primary_topics": [
-            "natural language processing"
-          ],
-          "secondary_topics": [],
-          "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
-          "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "alps-language-processing:2027",
-        "title": "ALPS 2027 — Advanced Language Processing Winter School",
-        "title_zh": "ALPS 2027 高级语言处理冬季学校",
-        "detail_path": "opportunities/alps-language-processing-2027-1984e1b8.html",
-        "official_url": "https://framaforms.org/alps-2027-application-form-1789055166-0",
-        "location": "Centre Paul Langevin",
-        "location_zh": "保罗·朗之万中心",
-        "start_date": "2027-03-28",
-        "end_date": "2027-04-02",
-        "deadline": "2026-10-11",
-        "deadline_status": "open",
-        "duration_days": 6,
-        "mode": "in-person",
-        "financial_summary": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
-        "financial_summary_zh": "费用：学生 EUR 700; EUR 900 非学生学术界参与者; EUR 1300 产业界及独立参与者 （价格待确认；含住宿及全食宿）",
-        "funding_available": null,
-        "fee_eur": 700.0,
-        "topics": [
-          "natural language processing"
-        ],
-        "primary_topics": [
-          "natural language processing"
-        ],
-        "secondary_topics": [],
-        "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
-        "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
-        "sessions": []
-      },
-      "primary_topics": [
-        "natural language processing"
-      ]
-    },
-    {
       "id": "programme:baa721d513bed714",
       "slug": "alps-advanced-language-processing-winter-school-655f99c2",
       "title": "ALPS — Advanced Language Processing Winter School",
@@ -243,90 +166,6 @@
       },
       "primary_topics": [
         "natural language processing"
-      ]
-    },
-    {
-      "id": "programme:7b9a68f3cc984b4a",
-      "slug": "training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assi-9d9a2282",
-      "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
-      "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
-      "organizer": "ECMWF Events (Indico)",
-      "organizer_zh": "ECMWF 活动（Indico）",
-      "summary": "A five-day satellite-data assimilation course combining lectures and practical work for researchers in numerical weather prediction.",
-      "summary_zh": "面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。",
-      "topics": [
-        "satellite",
-        "machine learning"
-      ],
-      "editions": [
-        {
-          "id": "edition:7f64cb13dd224bca",
-          "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
-          "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
-          "detail_path": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
-          "official_url": "https://events.ecmwf.int/event/577/",
-          "location": "ECMWF, Reading",
-          "location_zh": "ECMWF，雷丁",
-          "start_date": "2027-01-18",
-          "end_date": "2027-01-22",
-          "deadline": "2026-10-11",
-          "deadline_status": "open",
-          "duration_days": 5,
-          "mode": "in-person",
-          "financial_summary": "Fee EUR 0",
-          "financial_summary_zh": "费用 EUR 0",
-          "funding_available": null,
-          "fee_eur": 0.0,
-          "topics": [
-            "satellite",
-            "machine learning"
-          ],
-          "primary_topics": [
-            "satellite"
-          ],
-          "secondary_topics": [
-            "machine learning"
-          ],
-          "summary": "A five-day satellite-data assimilation course combining lectures and practical work for researchers in numerical weather prediction.",
-          "summary_zh": "面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "edition:7f64cb13dd224bca",
-        "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
-        "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
-        "detail_path": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
-        "official_url": "https://events.ecmwf.int/event/577/",
-        "location": "ECMWF, Reading",
-        "location_zh": "ECMWF，雷丁",
-        "start_date": "2027-01-18",
-        "end_date": "2027-01-22",
-        "deadline": "2026-10-11",
-        "deadline_status": "open",
-        "duration_days": 5,
-        "mode": "in-person",
-        "financial_summary": "Fee EUR 0",
-        "financial_summary_zh": "费用 EUR 0",
-        "funding_available": null,
-        "fee_eur": 0.0,
-        "topics": [
-          "satellite",
-          "machine learning"
-        ],
-        "primary_topics": [
-          "satellite"
-        ],
-        "secondary_topics": [
-          "machine learning"
-        ],
-        "summary": "A five-day satellite-data assimilation course combining lectures and practical work for researchers in numerical weather prediction.",
-        "summary_zh": "面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。",
-        "sessions": []
-      },
-      "primary_topics": [
-        "satellite"
       ]
     },
     {
@@ -432,7 +271,7 @@
       "organizer": "Eurac Research and University of Innsbruck",
       "organizer_zh": "Eurac Research与因斯布鲁克大学",
       "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
       "topics": [
         "law",
         "political science",
@@ -470,7 +309,7 @@
             "AI governance"
           ],
           "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-          "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+          "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
           "sessions": []
         }
       ],
@@ -506,7 +345,7 @@
           "AI governance"
         ],
         "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-        "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+        "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
         "sessions": []
       },
       "primary_topics": [
@@ -597,6 +436,83 @@
         "data analysis",
         "statistics",
         "design"
+      ]
+    },
+    {
+      "id": "alps-language-processing",
+      "slug": "alps-advanced-language-processing-winter-school-fecc81c5",
+      "title": "ALPS — Advanced Language Processing Winter School",
+      "title_zh": "ALPS 高级语言处理冬季学校",
+      "organizer": "LIG (Université Grenoble Alpes) and NAVER Labs Europe",
+      "organizer_zh": "LIG（格勒诺布尔阿尔卑斯大学）与 NAVER Labs Europe",
+      "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
+      "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
+      "topics": [
+        "natural language processing"
+      ],
+      "editions": [
+        {
+          "id": "alps-language-processing:2027",
+          "title": "ALPS 2027 — Advanced Language Processing Winter School",
+          "title_zh": "ALPS 2027 高级语言处理冬季学校",
+          "detail_path": "opportunities/alps-language-processing-2027-1984e1b8.html",
+          "official_url": "https://lig-alps.imag.fr/index.php/application/",
+          "location": "Europe",
+          "location_zh": "欧洲",
+          "start_date": "2027-03-28",
+          "end_date": "2027-04-02",
+          "deadline": "2026-10-11",
+          "deadline_status": "closed",
+          "duration_days": 6,
+          "mode": "in-person",
+          "financial_summary": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
+          "financial_summary_zh": "费用：学生 EUR 700; EUR 900 非学生学术界参与者; EUR 1300 产业界及独立参与者 （价格待确认；含住宿及全食宿）",
+          "funding_available": null,
+          "fee_eur": 700.0,
+          "topics": [
+            "natural language processing"
+          ],
+          "primary_topics": [
+            "natural language processing"
+          ],
+          "secondary_topics": [],
+          "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
+          "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "alps-language-processing:2027",
+        "title": "ALPS 2027 — Advanced Language Processing Winter School",
+        "title_zh": "ALPS 2027 高级语言处理冬季学校",
+        "detail_path": "opportunities/alps-language-processing-2027-1984e1b8.html",
+        "official_url": "https://lig-alps.imag.fr/index.php/application/",
+        "location": "Europe",
+        "location_zh": "欧洲",
+        "start_date": "2027-03-28",
+        "end_date": "2027-04-02",
+        "deadline": "2026-10-11",
+        "deadline_status": "closed",
+        "duration_days": 6,
+        "mode": "in-person",
+        "financial_summary": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
+        "financial_summary_zh": "费用：学生 EUR 700; EUR 900 非学生学术界参与者; EUR 1300 产业界及独立参与者 （价格待确认；含住宿及全食宿）",
+        "funding_available": null,
+        "fee_eur": 700.0,
+        "topics": [
+          "natural language processing"
+        ],
+        "primary_topics": [
+          "natural language processing"
+        ],
+        "secondary_topics": [],
+        "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
+        "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
+        "sessions": []
+      },
+      "primary_topics": [
+        "natural language processing"
       ]
     },
     {
@@ -2838,95 +2754,6 @@
       ]
     },
     {
-      "id": "programme:6d05e72313fdb49c",
-      "slug": "summer-school-ds-food-design-of-sustainable-food-systems-1990bf33",
-      "title": "Summer school DS-FOOD Design of sustainable food systems",
-      "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
-      "organizer": "Euroleague for Life Sciences (ELLS)",
-      "organizer_zh": "生命科学欧洲联盟（ELLS）",
-      "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
-      "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
-      "topics": [
-        "sustainable food systems",
-        "food systems design",
-        "sustainability"
-      ],
-      "editions": [
-        {
-          "id": "edition:736b6cbf96f90a6f",
-          "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-          "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
-          "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-          "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
-          "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-          "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
-          "start_date": "2026-07-05",
-          "end_date": "2026-07-12",
-          "deadline": "2026-05-01",
-          "deadline_status": "closed",
-          "duration_days": 8,
-          "mode": "in-person",
-          "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-          "financial_summary_zh": "费用：EUR 90 强制晚宴费用; EUR 250 其他参与者注册费",
-          "funding_available": false,
-          "fee_eur": 90.0,
-          "topics": [
-            "sustainable food systems",
-            "food systems design",
-            "sustainability"
-          ],
-          "primary_topics": [
-            "sustainable food systems",
-            "food systems design",
-            "sustainability"
-          ],
-          "secondary_topics": [],
-          "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
-          "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "edition:736b6cbf96f90a6f",
-        "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-        "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
-        "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-        "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
-        "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-        "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
-        "start_date": "2026-07-05",
-        "end_date": "2026-07-12",
-        "deadline": "2026-05-01",
-        "deadline_status": "closed",
-        "duration_days": 8,
-        "mode": "in-person",
-        "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-        "financial_summary_zh": "费用：EUR 90 强制晚宴费用; EUR 250 其他参与者注册费",
-        "funding_available": false,
-        "fee_eur": 90.0,
-        "topics": [
-          "sustainable food systems",
-          "food systems design",
-          "sustainability"
-        ],
-        "primary_topics": [
-          "sustainable food systems",
-          "food systems design",
-          "sustainability"
-        ],
-        "secondary_topics": [],
-        "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
-        "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
-        "sessions": []
-      },
-      "primary_topics": [
-        "sustainable food systems",
-        "food systems design",
-        "sustainability"
-      ]
-    },
-    {
       "id": "csha-advanced-neuroimaging",
       "slug": "the-brain-enlightened-advanced-imaging-techniques-in-neuro-67dfe751",
       "title": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course",
@@ -3008,6 +2835,90 @@
       },
       "primary_topics": [
         "neuroscience"
+      ]
+    },
+    {
+      "id": "programme:7b9a68f3cc984b4a",
+      "slug": "training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assi-9d9a2282",
+      "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
+      "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
+      "organizer": "ECMWF Events (Indico)",
+      "organizer_zh": "ECMWF 活动（Indico）",
+      "summary": "A five-day satellite-data assimilation course combining lectures and practical work for researchers in numerical weather prediction.",
+      "summary_zh": "面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。",
+      "topics": [
+        "satellite",
+        "machine learning"
+      ],
+      "editions": [
+        {
+          "id": "edition:7f64cb13dd224bca",
+          "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
+          "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
+          "detail_path": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
+          "official_url": "https://events.ecmwf.int/event/577/",
+          "location": "ECMWF, Reading",
+          "location_zh": "ECMWF，雷丁",
+          "start_date": "2027-01-18",
+          "end_date": "2027-01-22",
+          "deadline": "2026-10-11",
+          "deadline_status": "closed",
+          "duration_days": 5,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 0",
+          "financial_summary_zh": "费用 EUR 0",
+          "funding_available": null,
+          "fee_eur": 0.0,
+          "topics": [
+            "satellite",
+            "machine learning"
+          ],
+          "primary_topics": [
+            "satellite"
+          ],
+          "secondary_topics": [
+            "machine learning"
+          ],
+          "summary": "A five-day satellite-data assimilation course combining lectures and practical work for researchers in numerical weather prediction.",
+          "summary_zh": "面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:7f64cb13dd224bca",
+        "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
+        "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
+        "detail_path": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
+        "official_url": "https://events.ecmwf.int/event/577/",
+        "location": "ECMWF, Reading",
+        "location_zh": "ECMWF，雷丁",
+        "start_date": "2027-01-18",
+        "end_date": "2027-01-22",
+        "deadline": "2026-10-11",
+        "deadline_status": "closed",
+        "duration_days": 5,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 0",
+        "financial_summary_zh": "费用 EUR 0",
+        "funding_available": null,
+        "fee_eur": 0.0,
+        "topics": [
+          "satellite",
+          "machine learning"
+        ],
+        "primary_topics": [
+          "satellite"
+        ],
+        "secondary_topics": [
+          "machine learning"
+        ],
+        "summary": "A five-day satellite-data assimilation course combining lectures and practical work for researchers in numerical weather prediction.",
+        "summary_zh": "面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。",
+        "sessions": []
+      },
+      "primary_topics": [
+        "satellite"
       ]
     },
     {
@@ -3424,83 +3335,6 @@
         "molecular science",
         "biomaterials",
         "materials science"
-      ]
-    },
-    {
-      "id": "programme:7a88df2ca1095426",
-      "slug": "water-conflict-cooperation-and-diplomacy-245f06e3",
-      "title": "Water Conflict, Cooperation and Diplomacy",
-      "title_zh": "水冲突、合作与外交",
-      "organizer": "IHE Delft",
-      "organizer_zh": "IHE Delft",
-      "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
-      "summary_zh": "本课程将帮助学员了解水与冲突之间的复杂关联，以及如何以合作方式应对共享水资源治理中的挑战。",
-      "topics": [
-        "engineering"
-      ],
-      "editions": [
-        {
-          "id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
-          "title": "Water Conflict, Cooperation and Diplomacy",
-          "title_zh": "水冲突、合作与外交",
-          "detail_path": "opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
-          "official_url": "https://www.un-ihe.org/short-courses",
-          "location": "Delft, Netherlands",
-          "location_zh": "荷兰代尔夫特",
-          "start_date": "2026-11-09",
-          "end_date": "2026-11-20",
-          "deadline": "2026-10-09",
-          "deadline_status": "closed",
-          "duration_days": 12,
-          "mode": "in-person",
-          "financial_summary": "Fee EUR 3670 excl. VAT",
-          "financial_summary_zh": "费用 EUR 3670（未含增值税）",
-          "funding_available": null,
-          "fee_eur": 3670.0,
-          "topics": [
-            "engineering"
-          ],
-          "primary_topics": [
-            "engineering"
-          ],
-          "secondary_topics": [],
-          "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
-          "summary_zh": "本课程将帮助学员了解水与冲突之间的复杂关联，以及如何以合作方式应对共享水资源治理中的挑战。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
-        "title": "Water Conflict, Cooperation and Diplomacy",
-        "title_zh": "水冲突、合作与外交",
-        "detail_path": "opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
-        "official_url": "https://www.un-ihe.org/short-courses",
-        "location": "Delft, Netherlands",
-        "location_zh": "荷兰代尔夫特",
-        "start_date": "2026-11-09",
-        "end_date": "2026-11-20",
-        "deadline": "2026-10-09",
-        "deadline_status": "closed",
-        "duration_days": 12,
-        "mode": "in-person",
-        "financial_summary": "Fee EUR 3670 excl. VAT",
-        "financial_summary_zh": "费用 EUR 3670（未含增值税）",
-        "funding_available": null,
-        "fee_eur": 3670.0,
-        "topics": [
-          "engineering"
-        ],
-        "primary_topics": [
-          "engineering"
-        ],
-        "secondary_topics": [],
-        "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
-        "summary_zh": "本课程将帮助学员了解水与冲突之间的复杂关联，以及如何以合作方式应对共享水资源治理中的挑战。",
-        "sessions": []
-      },
-      "primary_topics": [
-        "engineering"
       ]
     },
     {
