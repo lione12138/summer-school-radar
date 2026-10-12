@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-09",
+  "generated": "2026-10-12",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -97,91 +97,6 @@
       }
     },
     {
-      "title": "ALPS 2027 — Advanced Language Processing Winter School",
-      "url": "https://lig-alps.imag.fr/",
-      "organizer": "LIG (Université Grenoble Alpes) and NAVER Labs Europe",
-      "source_layer": "1.5",
-      "location": "Europe",
-      "dates": {
-        "start": "2027-03-28",
-        "end": "2027-04-02",
-        "duration_days": 6
-      },
-      "deadline": "2026-10-11",
-      "deadline_status": "open",
-      "financial_access_status": "self-funded",
-      "fee": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
-      "fee_eur": 700.0,
-      "topics": [
-        "natural language processing"
-      ],
-      "needs_review": [
-        "participation fee is provisional",
-        "participation fee is provisional"
-      ],
-      "confidence": 0.5,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 1.0,
-      "financial_terms": {
-        "participation_fee": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
-        "fee_eur": 700.0,
-        "fee_status": "provisional",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "included",
-        "meals": "included",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": [
-          {
-            "amount": 700.0,
-            "currency": "EUR",
-            "conditions": "students"
-          },
-          {
-            "amount": 900.0,
-            "currency": "EUR",
-            "conditions": "academic non-students"
-          },
-          {
-            "amount": 1300.0,
-            "currency": "EUR",
-            "conditions": "industry and independents (to be confirmed; includes accommodation and full board)"
-          }
-        ]
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "natural language processing": "graduate students (PhD students or advanced master students) in natural language processing or related fields. We also welcome other NLP practitioners working in industry or academia. Applica"
-      },
-      "evidence": {
-        "deadline": "Application deadline: 11th October",
-        "duration": "28th March – 2nd April 2027",
-        "fee": "Fees (to be confirmed): students 700 euros; academic non student 900 euros; industry & independents 1300 euros. Registration fees encompass accommodation and full board.",
-        "funding": "",
-        "mode": "Venue Participant Voices Back Application The intended"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "missing_evidence_id:other_deadlines",
-          "start_date_value_not_in_evidence",
-          "end_date_value_not_in_evidence",
-          "application_deadline_value_not_in_evidence"
-        ],
-        "chinese_summary": "ALPS 2027（Advanced Language Processing Winter School）将于2027年3月28日至4月2日在Centre Paul Langevin举办，面向自然语言处理及相关领域的博士生或高年级硕士生。申请截止日期为2026年10月11日，录取通知日期为2026年11月13日。注册费待确认：学生700欧元，学术非学生900欧元，产业界及独立人士1300欧元，费用包含会议场地的住宿和全食宿。申请需提交最多2页的简历和求职信。",
-        "extracted_deadline": "2026-10-11",
-        "extracted_fee": "Registration fees (to be confirmed): students EUR 700; academic non-students EUR 900; industry and independents EUR 1300. Fees encompass accommodation and full board at the conference venue, the Centre Paul Langevin.",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "Important dates : Application deadline: 11th October Acceptance notification: 13th November Winter School: 28th March to 2nd April 2027 The registration fees for the event encompass accommodation and full board at the conference venue, the Centre Paul Langevin .",
-          "fee": "Important dates : Application deadline: 11th October Acceptance notification: 13th November Winter School: 28th March to 2nd April 2027 The registration fees for the event encompass accommodation and full board at the conference venue, the Centre Paul Langevin . | Fees (to be confirmed): – students: 700 euros – academic non student: 900 euros – industry & independents: 1300 euros Advanced Language Processing Winter School , Proudly powered by WordPress.",
-          "funding": ""
-        }
-      }
-    },
-    {
       "title": "Deadlines",
       "url": "https://tinbergen.nl/deadlines",
       "organizer": "Tinbergen Institute",
@@ -221,8 +136,8 @@
       },
       "benefit_facts": [],
       "topic_evidence": {
-        "data science": "cil All Placement Records PhD Vacancies Research Master Business Data Science Education for external participants Summer School Tinbergen Institute Lectures PhD Vacancies When a",
-        "economics": "ome | Graduate Programs | Tinbergen Institute Research Master in Economics | Admissions | Deadlines Deadlines Graduate Programs Tinbergen Institute Research Master in Economi"
+        "data science": "cil All Placement Records PhD Vacancies Research Master Business Data Science Courses for external participants Summer School Tinbergen Institute Lectures PhD Vacancies When are",
+        "economics": "me | Graduate Education | Tinbergen Institute Research Master in Economics | Admissions | Deadlines Deadlines Graduate Education Tinbergen Institute Research Master in Econom"
       },
       "evidence": {
         "deadline": "application deadlines? EEA students EEA students December 1, 2026",
@@ -235,17 +150,16 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "funding_context_weak",
           "index_or_listing_page"
         ],
-        "chinese_summary": "该页面为 Tinbergen Institute 的截止日期索引页。EEA 学生第一轮入学申请截止日期为 2026 年 12 月 1 日；该轮次推荐给希望申请 Program 和 Unive 奖学金的申请者。",
+        "chinese_summary": "该页面为 Tinbergen Institute 的截止日期页面，其中提到 EEA 学生第一轮入学申请的截止日期为 2026 年 12 月 1 日。",
         "extracted_deadline": "2026-12-01",
         "extracted_fee": "",
-        "extracted_funding": "Scholarships offered by the Program and the Unive are mentioned; this round is highly recommended for students wishing to apply for these scholarships.",
+        "extracted_funding": "",
         "evidence_fields": {
           "deadline": "EEA students EEA students December 1, 2026 : Deadline for the first admission round.",
           "fee": "",
-          "funding": "This round is highly recommended for students wishing to apply for scholarships offered by the Program and the Unive"
+          "funding": ""
         }
       }
     },
@@ -535,64 +449,6 @@
       }
     },
     {
-      "title": "2026 Advanced Course on International Criminal Law",
-      "url": "https://www.hagueacademy.nl/the-advanced-courses-on-international-law/",
-      "organizer": "The Hague Academy of International Law",
-      "source_layer": "1.5",
-      "location": "Europe",
-      "dates": {
-        "start": "2026-10-26",
-        "end": "2026-10-30",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "self-funded",
-      "fee": "€900 for on‑site participation (this amount covers course fees only) €275 for online participation",
-      "fee_eur": 900.0,
-      "topics": [
-        "law",
-        "AI governance",
-        "international law"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "in-person status is uncertain",
-        "fee exceeds EUR 400 without explicit funding"
-      ],
-      "confidence": 0.5,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.5,
-      "financial_terms": {
-        "participation_fee": "€900 for on‑site participation (this amount covers course fees only) €275 for online participation",
-        "fee_eur": 900.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "registration fee covered",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "law": "2026 Advanced Course on International Criminal Law | The Hague Academy of International Law 2026 Advanced Course on International Criminal Law Interna",
-        "international law": "nced Course on International Criminal Law | The Hague Academy of International Law 2026 Advanced Course on International Criminal Law International criminal law is a young—and theref",
-        "AI governance": "ecosystem involving multiple actors is taking shape, the role of artificial intelligence is under debate, the elements of crimes and modes of liability are being clarified through several"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "26 to 30 October 2026",
-        "fee": "€900 for on‑site participation (this amount covers course fees only) €275 for online participation",
-        "funding": "BROCHURE Registration Form Registration Form online session Registration fees: €900 for on‑site participation (this amount covers course fees only) €275 for online participation.",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
       "title": "Search",
       "url": "https://www.colorado.edu/conference/bss/",
       "organizer": "Boulder School",
@@ -654,10 +510,10 @@
         "validation_warnings": [
           "location_context_weak"
         ],
-        "chinese_summary": "科罗拉多大学博尔德分校举办的凝聚态物质与材料物理暑期学校，面向凝聚态物理、材料科学及相关领域的高年级研究生和博士后，提供前沿科学技术的专家培训。2027年学校申请已开放，申请截止日期为2027年1月15日。学校由美国国家科学基金会资助，科罗拉多大学提供额外资助；较短出席无差旅支持，美国境外大学学生需自行承担机票。",
+        "chinese_summary": "博尔德凝聚态物质与材料物理暑期学校面向凝聚态物理、材料科学及相关领域的 advanced graduate students 和 postdocs，提供前沿专家培训。2027 年学校申请已开放，截止日期为 2027-01-15。学校由美国国家科学基金会支持，科罗拉多大学提供额外资助；缩短参会时间不提供差旅支持，美国境外大学的学生需自行承担机票。",
         "extracted_deadline": "2027-01-15",
         "extracted_fee": "",
-        "extracted_funding": "Supported by the National Science Foundation, with additional funding provided by the University of Colorado. No travel support for shorter attendance. Students at universities outside the United States must supply their own airfare per NSF grant terms.",
+        "extracted_funding": "The School is supported by the National Science Foundation, with additional funding provided by the University of Colorado. There will be no travel support for shorter attendance. The terms of the NSF grant require that students at universities outside the United States need to supply their own airfare.",
         "evidence_fields": {
           "deadline": "Deadline: January 15, 2027 All students are strongly urged to plan on staying for the duration of the School. | Deadline: January 15, 2027 All students are s",
           "fee": "",
@@ -993,8 +849,8 @@
       },
       "benefit_facts": [],
       "topic_evidence": {
-        "data science": "cil All Placement Records PhD Vacancies Research Master Business Data Science Education for external participants Summer School Tinbergen Institute Lectures PhD Vacancies Instit",
-        "economics": "ome | Graduate Programs | Tinbergen Institute Research Master in Economics | Admissions | Tuition fees, scholarships and financial support Tuition fees, scholarships and fina"
+        "data science": "cil All Placement Records PhD Vacancies Research Master Business Data Science Courses for external participants Summer School Tinbergen Institute Lectures PhD Vacancies Institut",
+        "economics": "me | Graduate Education | Tinbergen Institute Research Master in Economics | Admissions | Tuition fees, scholarships and financial support Tuition fees, scholarships and fina"
       },
       "evidence": {
         "deadline": "",
@@ -1354,61 +1210,6 @@
         "fee": "",
         "funding": "",
         "mode": "will be hosted at the Appart’City Ferney-Voltaire . Academic progra"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "Previous Summer School",
-      "url": "https://www.cs.cityu.edu.hk/~gtsc/",
-      "organizer": "Discovery: Summer School on Game Theory and Social Choice",
-      "source_layer": "discovery",
-      "location": "global",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "low-fee",
-      "fee": "no registration fee",
-      "fee_eur": 0.0,
-      "topics": [
-        "mathematics",
-        "economics"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "duration is uncertain"
-      ],
-      "confidence": 0.5,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.5,
-      "financial_terms": {
-        "participation_fee": "no registration fee",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "mathematics": "er school are students within computer science, or students with mathematics or economics background interested in game theory and social choice. Keynote Speaker List: Xiaotie",
-        "economics": "tudents within computer science, or students with mathematics or economics background interested in game theory and social choice. Keynote Speaker List: Xiaotie Deng , Peking"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "",
-        "fee": "no registration fee",
-        "funding": "",
-        "mode": "onsite sessions are hosted and sponsored by School of Ma"
       },
       "ai_advisory": {
         "available": false
