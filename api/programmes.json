@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-10-12",
+  "generated": "2026-10-13",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -261,96 +261,6 @@
       "primary_topics": [
         "probability",
         "mathematical physics"
-      ]
-    },
-    {
-      "id": "eurac-winter-school-federalism-governance",
-      "slug": "winter-school-on-federalism-and-governance-236eaa2c",
-      "title": "Winter School on Federalism and Governance",
-      "title_zh": "联邦制与治理冬季学校",
-      "organizer": "Eurac Research and University of Innsbruck",
-      "organizer_zh": "Eurac Research与因斯布鲁克大学",
-      "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
-      "topics": [
-        "law",
-        "political science",
-        "AI governance"
-      ],
-      "editions": [
-        {
-          "id": "eurac-winter-school-federalism-governance:2027",
-          "title": "Winter School on Federalism and Governance 2027",
-          "title_zh": "2027年联邦制与治理冬季学校",
-          "detail_path": "opportunities/eurac-winter-school-federalism-governance-2027-dddcdbdc.html",
-          "official_url": "https://winterschool.eurac.edu/en/how-to-apply",
-          "location": "Innsbruck / Bolzano/Bozen",
-          "location_zh": "因斯布鲁克 / 博尔扎诺/博岑",
-          "start_date": "2027-02-01",
-          "end_date": "2027-02-12",
-          "deadline": "2026-10-12",
-          "deadline_status": "open",
-          "duration_days": 12,
-          "mode": "in-person",
-          "financial_summary": "EUR 300 participation fee, excluding accommodation · Limited scholarships: 2 full and 3 partial; recipients still pay EUR 150. Full: accommodation, breakfast and a small travel contribution; partial: accommodation and breakfast.",
-          "financial_summary_zh": "费用：EUR 300 参与费用，不含住宿 · 最多 2 个全额及 3 个部分奖学金名额；获奖者仍需支付 EUR 150；全额奖学金含住宿、早餐及少量差旅补贴，部分奖学金含住宿及早餐",
-          "funding_available": true,
-          "fee_eur": 300.0,
-          "topics": [
-            "law",
-            "political science",
-            "AI governance"
-          ],
-          "primary_topics": [
-            "law",
-            "political science"
-          ],
-          "secondary_topics": [
-            "AI governance"
-          ],
-          "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-          "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "eurac-winter-school-federalism-governance:2027",
-        "title": "Winter School on Federalism and Governance 2027",
-        "title_zh": "2027年联邦制与治理冬季学校",
-        "detail_path": "opportunities/eurac-winter-school-federalism-governance-2027-dddcdbdc.html",
-        "official_url": "https://winterschool.eurac.edu/en/how-to-apply",
-        "location": "Innsbruck / Bolzano/Bozen",
-        "location_zh": "因斯布鲁克 / 博尔扎诺/博岑",
-        "start_date": "2027-02-01",
-        "end_date": "2027-02-12",
-        "deadline": "2026-10-12",
-        "deadline_status": "open",
-        "duration_days": 12,
-        "mode": "in-person",
-        "financial_summary": "EUR 300 participation fee, excluding accommodation · Limited scholarships: 2 full and 3 partial; recipients still pay EUR 150. Full: accommodation, breakfast and a small travel contribution; partial: accommodation and breakfast.",
-        "financial_summary_zh": "费用：EUR 300 参与费用，不含住宿 · 最多 2 个全额及 3 个部分奖学金名额；获奖者仍需支付 EUR 150；全额奖学金含住宿、早餐及少量差旅补贴，部分奖学金含住宿及早餐",
-        "funding_available": true,
-        "fee_eur": 300.0,
-        "topics": [
-          "law",
-          "political science",
-          "AI governance"
-        ],
-        "primary_topics": [
-          "law",
-          "political science"
-        ],
-        "secondary_topics": [
-          "AI governance"
-        ],
-        "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-        "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
-        "sessions": []
-      },
-      "primary_topics": [
-        "law",
-        "political science"
       ]
     },
     {
@@ -3449,6 +3359,96 @@
       },
       "primary_topics": [
         "physics"
+      ]
+    },
+    {
+      "id": "eurac-winter-school-federalism-governance",
+      "slug": "winter-school-on-federalism-and-governance-236eaa2c",
+      "title": "Winter School on Federalism and Governance",
+      "title_zh": "联邦制与治理冬季学校",
+      "organizer": "Eurac Research and University of Innsbruck",
+      "organizer_zh": "Eurac Research与因斯布鲁克大学",
+      "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
+      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+      "topics": [
+        "law",
+        "political science",
+        "AI governance"
+      ],
+      "editions": [
+        {
+          "id": "eurac-winter-school-federalism-governance:2027",
+          "title": "Winter School on Federalism and Governance 2027",
+          "title_zh": "2027年联邦制与治理冬季学校",
+          "detail_path": "opportunities/eurac-winter-school-federalism-governance-2027-dddcdbdc.html",
+          "official_url": "https://winterschool.eurac.edu/en/how-to-apply",
+          "location": "Innsbruck / Bolzano/Bozen",
+          "location_zh": "因斯布鲁克 / 博尔扎诺/博岑",
+          "start_date": "2027-02-01",
+          "end_date": "2027-02-12",
+          "deadline": "2026-10-12",
+          "deadline_status": "closed",
+          "duration_days": 12,
+          "mode": "in-person",
+          "financial_summary": "EUR 300 participation fee, excluding accommodation · Limited scholarships: 2 full and 3 partial; recipients still pay EUR 150. Full: accommodation, breakfast and a small travel contribution; partial: accommodation and breakfast.",
+          "financial_summary_zh": "费用：EUR 300 参与费用，不含住宿 · 最多 2 个全额及 3 个部分奖学金名额；获奖者仍需支付 EUR 150；全额奖学金含住宿、早餐及少量差旅补贴，部分奖学金含住宿及早餐",
+          "funding_available": true,
+          "fee_eur": 300.0,
+          "topics": [
+            "law",
+            "political science",
+            "AI governance"
+          ],
+          "primary_topics": [
+            "law",
+            "political science"
+          ],
+          "secondary_topics": [
+            "AI governance"
+          ],
+          "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
+          "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "eurac-winter-school-federalism-governance:2027",
+        "title": "Winter School on Federalism and Governance 2027",
+        "title_zh": "2027年联邦制与治理冬季学校",
+        "detail_path": "opportunities/eurac-winter-school-federalism-governance-2027-dddcdbdc.html",
+        "official_url": "https://winterschool.eurac.edu/en/how-to-apply",
+        "location": "Innsbruck / Bolzano/Bozen",
+        "location_zh": "因斯布鲁克 / 博尔扎诺/博岑",
+        "start_date": "2027-02-01",
+        "end_date": "2027-02-12",
+        "deadline": "2026-10-12",
+        "deadline_status": "closed",
+        "duration_days": 12,
+        "mode": "in-person",
+        "financial_summary": "EUR 300 participation fee, excluding accommodation · Limited scholarships: 2 full and 3 partial; recipients still pay EUR 150. Full: accommodation, breakfast and a small travel contribution; partial: accommodation and breakfast.",
+        "financial_summary_zh": "费用：EUR 300 参与费用，不含住宿 · 最多 2 个全额及 3 个部分奖学金名额；获奖者仍需支付 EUR 150；全额奖学金含住宿、早餐及少量差旅补贴，部分奖学金含住宿及早餐",
+        "funding_available": true,
+        "fee_eur": 300.0,
+        "topics": [
+          "law",
+          "political science",
+          "AI governance"
+        ],
+        "primary_topics": [
+          "law",
+          "political science"
+        ],
+        "secondary_topics": [
+          "AI governance"
+        ],
+        "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
+        "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+        "sessions": []
+      },
+      "primary_topics": [
+        "law",
+        "political science"
       ]
     }
   ],
