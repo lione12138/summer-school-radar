@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-10-13",
+  "generated": "2026-10-14",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -1015,95 +1015,6 @@
       "primary_topics": [
         "linguistics",
         "computational linguistics"
-      ]
-    },
-    {
-      "id": "berkeley-dl4sci",
-      "slug": "deep-learning-for-science-summer-school-30a8f1b9",
-      "title": "Deep Learning for Science Summer School",
-      "title_zh": "科学深度学习暑期学校",
-      "organizer": "Berkeley Lab DL4SCI",
-      "organizer_zh": "Berkeley Lab DL4SCI",
-      "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
-      "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由Berkeley Lab计算科学部主办，2026科学深度学习（DL4SCI）暑期学校是为期五天的密集型项目，汇聚研究人员和工程师，探讨深度学习的最新进展",
-      "topics": [
-        "deep learning",
-        "AI",
-        "design"
-      ],
-      "editions": [
-        {
-          "id": "berkeley-dl4sci:2026",
-          "title": "Deep Learning for Science Summer School 2026",
-          "title_zh": "2026科学深度学习暑期学校",
-          "detail_path": "opportunities/berkeley-dl4sci-2026-c1272d60.html",
-          "official_url": "https://forms.gle/eGX8XzTHJp4FLkg59",
-          "location": "Berkeley, CA",
-          "location_zh": "加州伯克利",
-          "start_date": "2026-07-20",
-          "end_date": "2026-07-24",
-          "deadline": null,
-          "deadline_status": "closed",
-          "duration_days": 5,
-          "mode": "in-person",
-          "financial_summary": "and Financial Support The registration fee for the school will not exceed $250 · Limited registration waivers for selected enrolled students",
-          "financial_summary_zh": "费用：and Financial Support The registration fee for the school will not exceed $250 · 费用减免（有条件申请，不保证获得）",
-          "funding_available": true,
-          "fee_eur": 237.5,
-          "topics": [
-            "deep learning",
-            "AI",
-            "design"
-          ],
-          "primary_topics": [
-            "deep learning"
-          ],
-          "secondary_topics": [
-            "AI",
-            "design"
-          ],
-          "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
-          "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由Berkeley Lab计算科学部主办，2026科学深度学习（DL4SCI）暑期学校是为期五天的密集型项目，汇聚研究人员和工程师，探讨深度学习的最新进展",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "berkeley-dl4sci:2026",
-        "title": "Deep Learning for Science Summer School 2026",
-        "title_zh": "2026科学深度学习暑期学校",
-        "detail_path": "opportunities/berkeley-dl4sci-2026-c1272d60.html",
-        "official_url": "https://forms.gle/eGX8XzTHJp4FLkg59",
-        "location": "Berkeley, CA",
-        "location_zh": "加州伯克利",
-        "start_date": "2026-07-20",
-        "end_date": "2026-07-24",
-        "deadline": null,
-        "deadline_status": "closed",
-        "duration_days": 5,
-        "mode": "in-person",
-        "financial_summary": "and Financial Support The registration fee for the school will not exceed $250 · Limited registration waivers for selected enrolled students",
-        "financial_summary_zh": "费用：and Financial Support The registration fee for the school will not exceed $250 · 费用减免（有条件申请，不保证获得）",
-        "funding_available": true,
-        "fee_eur": 237.5,
-        "topics": [
-          "deep learning",
-          "AI",
-          "design"
-        ],
-        "primary_topics": [
-          "deep learning"
-        ],
-        "secondary_topics": [
-          "AI",
-          "design"
-        ],
-        "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
-        "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由Berkeley Lab计算科学部主办，2026科学深度学习（DL4SCI）暑期学校是为期五天的密集型项目，汇聚研究人员和工程师，探讨深度学习的最新进展",
-        "sessions": []
-      },
-      "primary_topics": [
-        "deep learning"
       ]
     },
     {
@@ -2498,6 +2409,95 @@
       ]
     },
     {
+      "id": "programme:e61e8d2de11922c1",
+      "slug": "sicss-uruguay-b9c16539",
+      "title": "SICSS-Uruguay",
+      "title_zh": "SICSS-乌拉圭",
+      "organizer": "Summer Institutes in Computational Social Science",
+      "organizer_zh": "计算社会科学暑期学院",
+      "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
+      "summary_zh": "一个计算社会科学密集型学院，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
+      "topics": [
+        "data science",
+        "social science",
+        "social science methods"
+      ],
+      "primary_topics": [
+        "data science",
+        "social science",
+        "social science methods"
+      ],
+      "editions": [
+        {
+          "id": "sicss:2026:uruguay",
+          "title": "SICSS-Uruguay",
+          "title_zh": "SICSS-乌拉圭",
+          "detail_path": "opportunities/sicss-2026-uruguay-6edbc1e1.html",
+          "official_url": "https://new.sicss.io/apply",
+          "location": "University of the Republic (Udelar), Montevideo, Uruguay",
+          "location_zh": "乌拉圭共和国大学（Udelar），乌拉圭蒙得维的亚",
+          "start_date": "2026-10-29",
+          "end_date": "2026-11-06",
+          "deadline": null,
+          "deadline_status": "closed",
+          "duration_days": 9,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 0",
+          "financial_summary_zh": "费用 EUR 0",
+          "funding_available": null,
+          "fee_eur": 0.0,
+          "topics": [
+            "data science",
+            "social science",
+            "social science methods"
+          ],
+          "primary_topics": [
+            "data science",
+            "social science",
+            "social science methods"
+          ],
+          "secondary_topics": [],
+          "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
+          "summary_zh": "一个计算社会科学密集型学院，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "sicss:2026:uruguay",
+        "title": "SICSS-Uruguay",
+        "title_zh": "SICSS-乌拉圭",
+        "detail_path": "opportunities/sicss-2026-uruguay-6edbc1e1.html",
+        "official_url": "https://new.sicss.io/apply",
+        "location": "University of the Republic (Udelar), Montevideo, Uruguay",
+        "location_zh": "乌拉圭共和国大学（Udelar），乌拉圭蒙得维的亚",
+        "start_date": "2026-10-29",
+        "end_date": "2026-11-06",
+        "deadline": null,
+        "deadline_status": "closed",
+        "duration_days": 9,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 0",
+        "financial_summary_zh": "费用 EUR 0",
+        "funding_available": null,
+        "fee_eur": 0.0,
+        "topics": [
+          "data science",
+          "social science",
+          "social science methods"
+        ],
+        "primary_topics": [
+          "data science",
+          "social science",
+          "social science methods"
+        ],
+        "secondary_topics": [],
+        "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
+        "summary_zh": "一个计算社会科学密集型学院，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
+        "sessions": []
+      }
+    },
+    {
       "id": "programme:9f4af1e2646a3f9e",
       "slug": "sicss-wits-standrews-dc99ce7f",
       "title": "SICSS-WITS-StAndrews",
@@ -2662,6 +2662,95 @@
         "astrophysics",
         "physics"
       ]
+    },
+    {
+      "id": "programme:6d05e72313fdb49c",
+      "slug": "summer-school-ds-food-design-of-sustainable-food-systems-1990bf33",
+      "title": "Summer school DS-FOOD Design of sustainable food systems",
+      "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+      "organizer": "Euroleague for Life Sciences (ELLS)",
+      "organizer_zh": "生命科学欧洲联盟（ELLS）",
+      "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
+      "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
+      "topics": [
+        "sustainable food systems",
+        "food systems design",
+        "sustainability"
+      ],
+      "primary_topics": [
+        "sustainable food systems",
+        "food systems design",
+        "sustainability"
+      ],
+      "editions": [
+        {
+          "id": "edition:736b6cbf96f90a6f",
+          "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
+          "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+          "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
+          "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
+          "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
+          "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
+          "start_date": "2026-07-05",
+          "end_date": "2026-07-12",
+          "deadline": "2026-05-01",
+          "deadline_status": "closed",
+          "duration_days": 8,
+          "mode": "in-person",
+          "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
+          "financial_summary_zh": "费用：EUR 90 强制晚宴费用; EUR 250 其他参与者注册费",
+          "funding_available": false,
+          "fee_eur": 90.0,
+          "topics": [
+            "sustainable food systems",
+            "food systems design",
+            "sustainability"
+          ],
+          "primary_topics": [
+            "sustainable food systems",
+            "food systems design",
+            "sustainability"
+          ],
+          "secondary_topics": [],
+          "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
+          "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:736b6cbf96f90a6f",
+        "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
+        "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+        "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
+        "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
+        "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
+        "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
+        "start_date": "2026-07-05",
+        "end_date": "2026-07-12",
+        "deadline": "2026-05-01",
+        "deadline_status": "closed",
+        "duration_days": 8,
+        "mode": "in-person",
+        "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
+        "financial_summary_zh": "费用：EUR 90 强制晚宴费用; EUR 250 其他参与者注册费",
+        "funding_available": false,
+        "fee_eur": 90.0,
+        "topics": [
+          "sustainable food systems",
+          "food systems design",
+          "sustainability"
+        ],
+        "primary_topics": [
+          "sustainable food systems",
+          "food systems design",
+          "sustainability"
+        ],
+        "secondary_topics": [],
+        "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
+        "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
+        "sessions": []
+      }
     },
     {
       "id": "csha-advanced-neuroimaging",
@@ -3369,7 +3458,7 @@
       "organizer": "Eurac Research and University of Innsbruck",
       "organizer_zh": "Eurac Research与因斯布鲁克大学",
       "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层级治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务人士深入探讨。",
       "topics": [
         "law",
         "political science",
@@ -3407,7 +3496,7 @@
             "AI governance"
           ],
           "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-          "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+          "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层级治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务人士深入探讨。",
           "sessions": []
         }
       ],
@@ -3443,7 +3532,7 @@
           "AI governance"
         ],
         "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-        "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+        "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层级治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务人士深入探讨。",
         "sessions": []
       },
       "primary_topics": [

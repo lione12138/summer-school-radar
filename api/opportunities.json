@@ -3,7 +3,7 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-10-13",
+  "generated": "2026-10-14",
   "opportunities": [
     {
       "id": "opportunities/al-nour-winter-school-on-fusion-science-a5413f47",
@@ -646,6 +646,79 @@
       "sessions": []
     },
     {
+      "id": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373",
+      "edition_id": "edition:736b6cbf96f90a6f",
+      "programme_id": "programme:6d05e72313fdb49c",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html"
+      },
+      "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
+      "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
+      "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+      "type": "summer school",
+      "organizer": "Euroleague for Life Sciences (ELLS)",
+      "organizer_zh": "生命科学欧洲联盟（ELLS）",
+      "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
+      "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
+      "mode": "in-person",
+      "start_date": "2026-07-05",
+      "end_date": "2026-07-12",
+      "duration_days": 8,
+      "application_deadline": "2026-05-01",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
+      "fee": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
+      "fee_eur": 90.0,
+      "funding_available": false,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
+        "fee_eur": 90.0,
+        "fee_status": "stated",
+        "support_status": "not_offered",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 90.0,
+            "currency": "EUR",
+            "conditions": "mandatory dinner contribution"
+          },
+          {
+            "amount": 250.0,
+            "currency": "EUR",
+            "conditions": "registration fee for other participants"
+          }
+        ]
+      },
+      "topics": [
+        "sustainable food systems",
+        "food systems design",
+        "sustainability"
+      ],
+      "primary_topics": [],
+      "secondary_topics": [],
+      "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
+      "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
+      "eligibility": "Students at the listed non-Italian ELLS promoting universities; other participants may attend for the stated registration fee.",
+      "eligibility_zh": "面向官网列出的非意大利 ELLS 合作大学学生；其他参与者可按官网所列费用参加。",
+      "sessions": []
+    },
+    {
       "id": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7",
       "edition_id": "edition:7f64cb13dd224bca",
       "programme_id": "programme:7b9a68f3cc984b4a",
@@ -708,81 +781,6 @@
       "summary_zh": "面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。",
       "eligibility": "Early-career researchers in satellite data assimilation or related fields, including PhD students with relevant experience. Quantitative satellite-data knowledge or optimal-estimation experience is desirable.",
       "eligibility_zh": "主要面向卫星资料同化及相关领域的青年科研人员，包括有相关经验的博士生；建议具备卫星资料定量应用或最优估计知识。",
-      "sessions": []
-    },
-    {
-      "id": "eurac-winter-school-federalism-governance:2027",
-      "edition_id": "eurac-winter-school-federalism-governance:2027",
-      "programme_id": "eurac-winter-school-federalism-governance",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/winter-school-on-federalism-and-governance-236eaa2c.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/winter-school-on-federalism-and-governance-236eaa2c.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/winter-school-on-federalism-and-governance-236eaa2c.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/winter-school-on-federalism-and-governance-236eaa2c.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/eurac-winter-school-federalism-governance-2027-dddcdbdc.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/eurac-winter-school-federalism-governance-2027-dddcdbdc.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/eurac-winter-school-federalism-governance-2027-dddcdbdc.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/eurac-winter-school-federalism-governance-2027-dddcdbdc.html"
-      },
-      "official_url": "https://winterschool.eurac.edu/en/how-to-apply",
-      "title": "Winter School on Federalism and Governance 2027",
-      "title_zh": "2027年联邦制与治理冬季学校",
-      "type": "winter school",
-      "organizer": "Eurac Research and University of Innsbruck",
-      "organizer_zh": "Eurac Research与因斯布鲁克大学",
-      "location": "Innsbruck / Bolzano/Bozen",
-      "location_zh": "因斯布鲁克 / 博尔扎诺/博岑",
-      "mode": "in-person",
-      "start_date": "2027-02-01",
-      "end_date": "2027-02-12",
-      "duration_days": 12,
-      "application_deadline": "2026-10-12",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "EUR 300 participation fee, excluding accommodation · Limited scholarships: 2 full and 3 partial; recipients still pay EUR 150. Full: accommodation, breakfast and a small travel contribution; partial: accommodation and breakfast.",
-      "fee": "EUR 300 participation fee, excluding accommodation",
-      "fee_eur": 300.0,
-      "funding_available": true,
-      "funding_type": [
-        "scholarship"
-      ],
-      "funding_scope": "Limited scholarships: 2 full and 3 partial; recipients still pay EUR 150. Full: accommodation, breakfast and a small travel contribution; partial: accommodation and breakfast.",
-      "financial_terms": {
-        "participation_fee": "EUR 300 participation fee, excluding accommodation",
-        "fee_eur": 300.0,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "Limited scholarships: 2 full and 3 partial; recipients still pay EUR 150. Full: accommodation, breakfast and a small travel contribution; partial: accommodation and breakfast.",
-        "accommodation": "covered",
-        "meals": "unknown",
-        "travel_support": "offered",
-        "cost_status": "paid",
-        "fee_options": [
-          {
-            "amount": 300.0,
-            "currency": "EUR",
-            "conditions": "participation fee, excluding accommodation"
-          }
-        ]
-      },
-      "topics": [
-        "law",
-        "political science",
-        "AI governance"
-      ],
-      "primary_topics": [
-        "law",
-        "political science"
-      ],
-      "secondary_topics": [
-        "AI governance"
-      ],
-      "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
-      "eligibility": "Open to young researchers and academics, post-docs and post-graduate students, civil servants from local, regional or national government, and employees of international organizations or NGOs.",
-      "eligibility_zh": "面向青年研究人员和学者、博士后和研究生、地方、地区或国家政府公务员，以及国际组织或非政府组织员工。",
       "sessions": []
     },
     {
@@ -856,6 +854,143 @@
       "summary_zh": "Prob_AI Hub 举办的四天冬季学校，内容包括因果推断、计算最优传输、算子学习、强化学习、偏微分方程机器学习和神经过程。项目免费参加；交通和住宿通常自理，符合条件的英国参与者可申请有限的 Access Fund。",
       "eligibility": "Open to applicants worldwide, with priority given to UK-based applicants.",
       "eligibility_zh": "面向全球申请者，英国申请者优先。",
+      "sessions": []
+    },
+    {
+      "id": "eurac-winter-school-federalism-governance:2027",
+      "edition_id": "eurac-winter-school-federalism-governance:2027",
+      "programme_id": "eurac-winter-school-federalism-governance",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/winter-school-on-federalism-and-governance-236eaa2c.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/winter-school-on-federalism-and-governance-236eaa2c.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/winter-school-on-federalism-and-governance-236eaa2c.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/winter-school-on-federalism-and-governance-236eaa2c.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/eurac-winter-school-federalism-governance-2027-dddcdbdc.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/eurac-winter-school-federalism-governance-2027-dddcdbdc.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/eurac-winter-school-federalism-governance-2027-dddcdbdc.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/eurac-winter-school-federalism-governance-2027-dddcdbdc.html"
+      },
+      "official_url": "https://winterschool.eurac.edu/en/how-to-apply",
+      "title": "Winter School on Federalism and Governance 2027",
+      "title_zh": "2027年联邦制与治理冬季学校",
+      "type": "winter school",
+      "organizer": "Eurac Research and University of Innsbruck",
+      "organizer_zh": "Eurac Research与因斯布鲁克大学",
+      "location": "Innsbruck / Bolzano/Bozen",
+      "location_zh": "因斯布鲁克 / 博尔扎诺/博岑",
+      "mode": "in-person",
+      "start_date": "2027-02-01",
+      "end_date": "2027-02-12",
+      "duration_days": 12,
+      "application_deadline": "2026-10-12",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "EUR 300 participation fee, excluding accommodation · Limited scholarships: 2 full and 3 partial; recipients still pay EUR 150. Full: accommodation, breakfast and a small travel contribution; partial: accommodation and breakfast.",
+      "fee": "EUR 300 participation fee, excluding accommodation",
+      "fee_eur": 300.0,
+      "funding_available": true,
+      "funding_type": [
+        "scholarship"
+      ],
+      "funding_scope": "Limited scholarships: 2 full and 3 partial; recipients still pay EUR 150. Full: accommodation, breakfast and a small travel contribution; partial: accommodation and breakfast.",
+      "financial_terms": {
+        "participation_fee": "EUR 300 participation fee, excluding accommodation",
+        "fee_eur": 300.0,
+        "fee_status": "stated",
+        "support_status": "conditional",
+        "support_scope": "Limited scholarships: 2 full and 3 partial; recipients still pay EUR 150. Full: accommodation, breakfast and a small travel contribution; partial: accommodation and breakfast.",
+        "accommodation": "covered",
+        "meals": "unknown",
+        "travel_support": "offered",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 300.0,
+            "currency": "EUR",
+            "conditions": "participation fee, excluding accommodation"
+          }
+        ]
+      },
+      "topics": [
+        "law",
+        "political science",
+        "AI governance"
+      ],
+      "primary_topics": [
+        "law",
+        "political science"
+      ],
+      "secondary_topics": [
+        "AI governance"
+      ],
+      "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
+      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层级治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务人士深入探讨。",
+      "eligibility": "",
+      "eligibility_zh": "",
+      "sessions": []
+    },
+    {
+      "id": "sicss:2026:uruguay",
+      "edition_id": "sicss:2026:uruguay",
+      "programme_id": "programme:e61e8d2de11922c1",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/sicss-uruguay-b9c16539.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/sicss-uruguay-b9c16539.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/sicss-uruguay-b9c16539.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/sicss-uruguay-b9c16539.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/sicss-2026-uruguay-6edbc1e1.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/sicss-2026-uruguay-6edbc1e1.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/sicss-2026-uruguay-6edbc1e1.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/sicss-2026-uruguay-6edbc1e1.html"
+      },
+      "official_url": "https://new.sicss.io/apply",
+      "title": "SICSS-Uruguay",
+      "title_zh": "SICSS-乌拉圭",
+      "type": "summer institute",
+      "organizer": "Summer Institutes in Computational Social Science",
+      "organizer_zh": "计算社会科学暑期学院",
+      "location": "University of the Republic (Udelar), Montevideo, Uruguay",
+      "location_zh": "乌拉圭共和国大学（Udelar），乌拉圭蒙得维的亚",
+      "mode": "in-person",
+      "start_date": "2026-10-29",
+      "end_date": "2026-11-06",
+      "duration_days": 9,
+      "application_deadline": null,
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 0",
+      "fee": "No tuition required",
+      "fee_eur": 0.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "No tuition required",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "topics": [
+        "data science",
+        "social science",
+        "social science methods"
+      ],
+      "primary_topics": [],
+      "secondary_topics": [],
+      "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
+      "summary_zh": "一个计算社会科学密集型学院，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
+      "eligibility": "Graduate students, postdoctoral researchers, and junior faculty.",
+      "eligibility_zh": "研究生、博士后研究人员和初级教师。",
       "sessions": []
     },
     {
@@ -935,75 +1070,6 @@
       "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
       "eligibility": "postdoctoral fellows from Asia and around the world",
       "eligibility_zh": "来自亚洲及世界各地的博士后研究员",
-      "sessions": []
-    },
-    {
-      "id": "berkeley-dl4sci:2026",
-      "edition_id": "berkeley-dl4sci:2026",
-      "programme_id": "berkeley-dl4sci",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/deep-learning-for-science-summer-school-30a8f1b9.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/deep-learning-for-science-summer-school-30a8f1b9.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/deep-learning-for-science-summer-school-30a8f1b9.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/deep-learning-for-science-summer-school-30a8f1b9.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/berkeley-dl4sci-2026-c1272d60.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/berkeley-dl4sci-2026-c1272d60.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/berkeley-dl4sci-2026-c1272d60.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/berkeley-dl4sci-2026-c1272d60.html"
-      },
-      "official_url": "https://forms.gle/eGX8XzTHJp4FLkg59",
-      "title": "Deep Learning for Science Summer School 2026",
-      "title_zh": "2026科学深度学习暑期学校",
-      "type": "summer school",
-      "organizer": "Berkeley Lab DL4SCI",
-      "organizer_zh": "Berkeley Lab DL4SCI",
-      "location": "Berkeley, CA",
-      "location_zh": "加州伯克利",
-      "mode": "in-person",
-      "start_date": "2026-07-20",
-      "end_date": "2026-07-24",
-      "duration_days": 5,
-      "application_deadline": null,
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "and Financial Support The registration fee for the school will not exceed $250 · Limited registration waivers for selected enrolled students",
-      "fee": "and Financial Support The registration fee for the school will not exceed $250",
-      "fee_eur": 237.5,
-      "funding_available": true,
-      "funding_type": [
-        "fee waiver"
-      ],
-      "funding_scope": "Limited registration waivers for selected enrolled students",
-      "financial_terms": {
-        "participation_fee": "and Financial Support The registration fee for the school will not exceed $250",
-        "fee_eur": 237.5,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "Limited registration waivers for selected enrolled students",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": []
-      },
-      "topics": [
-        "deep learning",
-        "AI",
-        "design"
-      ],
-      "primary_topics": [
-        "deep learning"
-      ],
-      "secondary_topics": [
-        "AI",
-        "design"
-      ],
-      "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
-      "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由Berkeley Lab计算科学部主办，2026科学深度学习（DL4SCI）暑期学校是为期五天的密集型项目，汇聚研究人员和工程师，探讨深度学习的最新进展",
-      "eligibility": "Designed for advanced graduate students, postdoctoral researchers, academics, domain scientists, and engineers. Ideal participants have a strong interest in applying deep learning to scientific problems on high-performance computing (HPC) systems. Applicants selected based on merit. Limited registration waivers for select applicants currently enrolled in an undergraduate, graduate, or PhD program at a university.",
-      "eligibility_zh": "面向高年级研究生、博士后研究人员、学者、领域科学家和工程师。理想参与者对在高性能计算（HPC）系统上将深度学习应用于科学问题有浓厚兴趣。申请人择优录取。为目前就读于大学本科、研究生或博士项目的部分申请人提供有限的注册费减免。",
       "sessions": []
     },
     {
