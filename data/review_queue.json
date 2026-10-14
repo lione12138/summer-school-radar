@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-12",
+  "generated": "2026-10-14",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -319,58 +319,6 @@
       }
     },
     {
-      "title": "SICSS-Uruguay",
-      "url": "https://new.sicss.io/2026/uruguay",
-      "organizer": "Summer Institutes in Computational Social Science",
-      "source_layer": "1",
-      "location": "University of the Republic (Udelar), Montevideo, Uruguay",
-      "dates": {
-        "start": "2026-10-29",
-        "end": "2026-11-06",
-        "duration_days": 9
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "low-fee",
-      "fee": "No tuition required",
-      "fee_eur": 0.0,
-      "topics": [
-        "data science",
-        "social science",
-        "social science methods"
-      ],
-      "needs_review": [
-        "application deadline is uncertain"
-      ],
-      "confidence": 0.75,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.75,
-      "financial_terms": {
-        "participation_fee": "No tuition required",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {},
-      "evidence": {
-        "deadline": "",
-        "duration": "SICSS locations catalogue: October 29 to November 6, 2026",
-        "fee": "",
-        "funding": "The official SICSS programme overview states that no tuition is required; travel, accommodation, and meal policies vary by location.",
-        "mode": "SICSS location card: University of the Republic (Udelar), Montevideo, Uruguay"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
       "title": "Winter School​",
       "url": "https://csh.ac.at/education/winterschool/",
       "organizer": "Complexity Science Hub",
@@ -510,10 +458,10 @@
         "validation_warnings": [
           "location_context_weak"
         ],
-        "chinese_summary": "博尔德凝聚态物质与材料物理暑期学校面向凝聚态物理、材料科学及相关领域的 advanced graduate students 和 postdocs，提供前沿专家培训。2027 年学校申请已开放，截止日期为 2027-01-15。学校由美国国家科学基金会支持，科罗拉多大学提供额外资助；缩短参会时间不提供差旅支持，美国境外大学的学生需自行承担机票。",
+        "chinese_summary": "科罗拉多大学博尔德分校举办的凝聚态物质与材料物理暑期学校，面向凝聚态物理、材料科学及相关领域的高年级研究生和博士后，提供前沿科学技术的专家培训。2027年学校申请已开放，申请截止日期为2027年1月15日。学校由美国国家科学基金会资助，科罗拉多大学提供额外资助；较短出席无差旅支持，美国境外大学学生需自行承担机票。",
         "extracted_deadline": "2027-01-15",
         "extracted_fee": "",
-        "extracted_funding": "The School is supported by the National Science Foundation, with additional funding provided by the University of Colorado. There will be no travel support for shorter attendance. The terms of the NSF grant require that students at universities outside the United States need to supply their own airfare.",
+        "extracted_funding": "Supported by the National Science Foundation, with additional funding provided by the University of Colorado. No travel support for shorter attendance. Students at universities outside the United States must supply their own airfare per NSF grant terms.",
         "evidence_fields": {
           "deadline": "Deadline: January 15, 2027 All students are strongly urged to plan on staying for the duration of the School. | Deadline: January 15, 2027 All students are s",
           "fee": "",
@@ -661,6 +609,7 @@
       "fee": "",
       "fee_eur": null,
       "topics": [
+        "sustainability",
         "AI",
         "machine learning",
         "data science",
@@ -673,9 +622,11 @@
         "syntax",
         "semantics",
         "morphology",
+        "corpus linguistics",
         "psycholinguistics",
         "language documentation",
         "data analysis",
+        "statistics",
         "cognitive science",
         "design",
         "neuroscience",
@@ -704,21 +655,24 @@
       },
       "benefit_facts": [],
       "topic_evidence": {
+        "sustainability": "ists’ discourse about the public controversy surrounding fashion sustainability. Topoi , 42 (2), 635-650. https://doi.org/10.1007/s11245-023-09909-2 Thursday | The roots of confli",
         "AI": "/2020/file/92d1e1eb1cd6f9fba3227870bb6d7f07-Paper.pdf OR https://ai.meta.com/blog/wav2vec-unsupervised-speech-recognition-without-supervision/ OR https://ai.meta.com/b",
         "machine learning": "ech Recognition via Large-Scale Weak Supervision. Proceedings of Machine Learning Research, 202, 28492–28518. https://proceedings.mlr.press/v202/radford23a/radford23a.pdf OR https:/",
         "data science": "e sampling practices in psycholinguistics and apply reproducible data science methods to support more inclusive and robust research. Day-to-day programme: Before Monday Kidd, E.",
         "linguistics": "LOT Winter School 2027 | LOT – Netherlands Graduate School of Linguistics LOT Winter School 2027 | University of Amsterdam The LOT Winter School 2027 is co-organised with th",
         "computational linguistics": "uage Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition, with Language Models (3rd ed.). https://web.stanford.edu/~jurafsky/slp3/16",
-        "natural language processing": "cognition. In Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition, with Language Models (3rd ed.). https://web.sta",
+        "natural language processing": "e. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (pp. 30632–30647). What it adds: An application beyond traditional dynamic time-course data, combin",
         "speech processing": "rg/10.1017/S1366728921000523 Tuesday | Orthography and bilingual speech processing Prepare for Wednesday’s class: Costa, A., Santesteban, M., & Caño, A. (2005). On the facilitatory e",
-        "phonetics": "| Rowena Garcia & Jens Roeser (Hybrid) 11:15-13:15 Experimental phonetics (Intermediate) | Brechtje Post The Representation of Agentivity in Discourse and Argumentation (Adv",
+        "phonetics": "| Rowena Garcia & Jens Roeser (Hybrid) 11:15-13:15 Experimental phonetics (Intermediate) | Brechtje Post Discourse and argumentation in conflict resolution (Advanced) | Sara",
         "phonology": "sner (Hybrid) 14:15-16:15 Understanding L2 Speech through Formal Phonology (Intermediate) | Chao Zhou (Hybrid) Arguing to know. The epistemic function of argumentation. (Inte",
         "syntax": "prerequisites: Participants should have a basic understanding of syntax and sign language linguistics. Students without prior knowledge of sign language linguistics are ex",
         "semantics": "the topic. Course prerequisites: Familiarity with compositional semantics – working through a book like Semantics in Generative Grammar by Irene Heim & Angelika Kratzer, Wil",
         "morphology": "j, Christian Lehmann, Joachim Mugdan & Stavros Skopeteas (eds.), Morphology: A Handbook on Inflection and Word Formation, Volume II . Berlin: Mouton de Gruyter. Whole paper. Z",
+        "corpus linguistics": "odel. In M. Paquot & S. T. Gries (Eds.), A Practical Handbook of Corpus Linguistics . Springer. PDF link: https://quantling.org/~hbaayen/publications/BaayenLinke2020.pdf Korenar, M.,",
         "psycholinguistics": "non-manuals in sign languages (Intermediate) | Marloes Oomen The Psycholinguistics of Bilingualism (Advanced) | Antje Stoehr 11:15-13:15 Computational Models of Early Language Develo",
         "language documentation": "tic-phonetic information plays in acquisition, bilingualism, and language documentation. Each class will contain a practical component, addressing questions of design, procedure and analy",
         "data analysis": "ing psycholinguistics: Inclusive research practices and hands-on data analysis in R/RStudio (Intermediate) | Rowena Garcia & Jens Roeser (Hybrid) 11:15-13:15 Experimental phoneti",
+        "statistics": "ariable selection for generalized additive models. Computational Statistics & Data Analysis, 55 , 2372–2387. What it adds: A more advanced treatment of penalisation, shrinkage",
         "cognitive science": "e-specific patterns in co-speech gesture but not silent gesture. Cognitive Science, 42(3), 1001–1014. https://doi.org/10.1111/cogs.12502 Perniss, P., Özyürek, A., & Morgan, G. (2015)",
         "design": "ou will review relevant research, identify an open question, and design a study that could address it. You are not expected to collect data. Develop a topic (see examples",
         "neuroscience": "7FRF4YJDW Vallet, W., & Van Wassenhove, V. (2023). Can cognitive neuroscience solve the lab-dilemma by going wild?. Neuroscience & Biobehavioral Reviews , 155 , 105463. https://",
@@ -1401,7 +1355,6 @@
       "fee": "Registrations – 2027 Winter Courses Extension of the Deadline for Full-Fee Registrations – 2027 Wint",
       "fee_eur": null,
       "topics": [
-        "climate",
         "law",
         "international law"
       ],
@@ -1428,7 +1381,6 @@
       },
       "benefit_facts": [],
       "topic_evidence": {
-        "climate": "ni, B.S. International Law and Global Justice: The Imperative of Climate Justice Order at Brill The Summer Courses The Winter Courses About the Academy Publications Join th",
         "law": "The Hague Academy of International Law Truly the experience of a lifetime Explore Watch videos The Summer Courses The Winter Courses Publi",
         "international law": "The Hague Academy of International Law Truly the experience of a lifetime Explore Watch videos The Summer Courses The Winter Courses Publi"
       },
