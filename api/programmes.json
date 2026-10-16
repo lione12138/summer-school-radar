@@ -1031,9 +1031,6 @@
         "AI",
         "design"
       ],
-      "primary_topics": [
-        "deep learning"
-      ],
       "editions": [
         {
           "id": "berkeley-dl4sci:2026",
@@ -1104,7 +1101,10 @@
         "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
         "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由伯克利实验室计算科学部主办，2026年科学深度学习（DL4SCI）暑期学校是一个为期五天的密集型项目，汇集研究人员和工程师，探索深度学习的最新进展",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "deep learning"
+      ]
     },
     {
       "id": "programme:005729e641c21ccf",
@@ -1369,9 +1369,6 @@
       "topics": [
         "flood"
       ],
-      "primary_topics": [
-        "flood"
-      ],
       "editions": [
         {
           "id": "ihe-delft:edition:1F6DDF05-4DF0-11F1-B159-0050561F03F5",
@@ -1432,7 +1429,10 @@
         "summary": "This short course&nbsp;promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the second component of a two-part series,",
         "summary_zh": "本短期课程推动《防洪应急管理手册》的实际应用，同时为来自政府、产业界和学术界的专业人士创造学习与交流机会。该课程是两部分系列中的第二部分，",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "flood"
+      ]
     },
     {
       "id": "programme:623edd7abf46af11",
@@ -1444,9 +1444,6 @@
       "summary": "This short course promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the first component of a two-part series, while",
       "summary_zh": "本短期课程推广《防洪应急管理手册》的实际应用，同时为政府、产业界和学术界的专业人士创造学习和交流机会。该课程是两部分系列课程的第一部分，而",
       "topics": [
-        "flood"
-      ],
-      "primary_topics": [
         "flood"
       ],
       "editions": [
@@ -1509,7 +1506,10 @@
         "summary": "This short course promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the first component of a two-part series, while",
         "summary_zh": "本短期课程推广《防洪应急管理手册》的实际应用，同时为政府、产业界和学术界的专业人士创造学习和交流机会。该课程是两部分系列课程的第一部分，而",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "flood"
+      ]
     },
     {
       "id": "programme:0315b5fbacd204a7",
@@ -3502,9 +3502,6 @@
       "topics": [
         "engineering"
       ],
-      "primary_topics": [
-        "engineering"
-      ],
       "editions": [
         {
           "id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
@@ -3565,7 +3562,10 @@
         "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
         "summary_zh": "在本课程中，学员将了解水与冲突之间的复杂关联，以及如何以合作方式克服共享水资源治理中的挑战。",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "engineering"
+      ]
     },
     {
       "id": "programme:8750854b0d569859",
