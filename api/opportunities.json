@@ -3,7 +3,7 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-10-15",
+  "generated": "2026-10-16",
   "opportunities": [
     {
       "id": "opportunities/al-nour-winter-school-on-fusion-science-a5413f47",
@@ -646,79 +646,6 @@
       "sessions": []
     },
     {
-      "id": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373",
-      "edition_id": "edition:736b6cbf96f90a6f",
-      "programme_id": "programme:6d05e72313fdb49c",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html"
-      },
-      "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
-      "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-      "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
-      "type": "summer school",
-      "organizer": "Euroleague for Life Sciences (ELLS)",
-      "organizer_zh": "生命科学欧洲联盟（ELLS）",
-      "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-      "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
-      "mode": "in-person",
-      "start_date": "2026-07-05",
-      "end_date": "2026-07-12",
-      "duration_days": 8,
-      "application_deadline": "2026-05-01",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-      "fee": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-      "fee_eur": 90.0,
-      "funding_available": false,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-        "fee_eur": 90.0,
-        "fee_status": "stated",
-        "support_status": "not_offered",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": [
-          {
-            "amount": 90.0,
-            "currency": "EUR",
-            "conditions": "mandatory dinner contribution"
-          },
-          {
-            "amount": 250.0,
-            "currency": "EUR",
-            "conditions": "registration fee for other participants"
-          }
-        ]
-      },
-      "topics": [
-        "sustainable food systems",
-        "food systems design",
-        "sustainability"
-      ],
-      "primary_topics": [],
-      "secondary_topics": [],
-      "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
-      "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
-      "eligibility": "Students at the listed non-Italian ELLS promoting universities; other participants may attend for the stated registration fee.",
-      "eligibility_zh": "面向官网列出的非意大利 ELLS 合作大学学生；其他参与者可按官网所列费用参加。",
-      "sessions": []
-    },
-    {
       "id": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7",
       "edition_id": "edition:7f64cb13dd224bca",
       "programme_id": "programme:7b9a68f3cc984b4a",
@@ -1070,6 +997,75 @@
       "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
       "eligibility": "postdoctoral fellows from Asia and around the world",
       "eligibility_zh": "来自亚洲及世界各地的博士后研究员",
+      "sessions": []
+    },
+    {
+      "id": "berkeley-dl4sci:2026",
+      "edition_id": "berkeley-dl4sci:2026",
+      "programme_id": "berkeley-dl4sci",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/deep-learning-for-science-summer-school-30a8f1b9.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/deep-learning-for-science-summer-school-30a8f1b9.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/deep-learning-for-science-summer-school-30a8f1b9.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/deep-learning-for-science-summer-school-30a8f1b9.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/berkeley-dl4sci-2026-c1272d60.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/berkeley-dl4sci-2026-c1272d60.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/berkeley-dl4sci-2026-c1272d60.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/berkeley-dl4sci-2026-c1272d60.html"
+      },
+      "official_url": "https://forms.gle/eGX8XzTHJp4FLkg59",
+      "title": "Deep Learning for Science Summer School 2026",
+      "title_zh": "2026年科学深度学习暑期学校",
+      "type": "summer school",
+      "organizer": "Berkeley Lab DL4SCI",
+      "organizer_zh": "伯克利实验室 DL4SCI",
+      "location": "Berkeley, CA",
+      "location_zh": "加州伯克利",
+      "mode": "in-person",
+      "start_date": "2026-07-20",
+      "end_date": "2026-07-24",
+      "duration_days": 5,
+      "application_deadline": null,
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "and Financial Support The registration fee for the school will not exceed $250 · Limited registration waivers for selected enrolled students",
+      "fee": "and Financial Support The registration fee for the school will not exceed $250",
+      "fee_eur": 237.5,
+      "funding_available": true,
+      "funding_type": [
+        "fee waiver"
+      ],
+      "funding_scope": "Limited registration waivers for selected enrolled students",
+      "financial_terms": {
+        "participation_fee": "and Financial Support The registration fee for the school will not exceed $250",
+        "fee_eur": 237.5,
+        "fee_status": "stated",
+        "support_status": "conditional",
+        "support_scope": "Limited registration waivers for selected enrolled students",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": []
+      },
+      "topics": [
+        "deep learning",
+        "AI",
+        "design"
+      ],
+      "primary_topics": [
+        "deep learning"
+      ],
+      "secondary_topics": [
+        "AI",
+        "design"
+      ],
+      "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
+      "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由伯克利实验室计算科学部主办，2026年科学深度学习（DL4SCI）暑期学校是一个为期五天的密集型项目，汇集研究人员和工程师，探索深度学习的最新进展",
+      "eligibility": "Designed for advanced graduate students, postdoctoral researchers, academics, domain scientists, and engineers. Ideal participants have a strong interest in applying deep learning to scientific problems on high-performance computing (HPC) systems. Applicants selected based on merit.",
+      "eligibility_zh": "面向高年级研究生、博士后研究人员、学者、领域科学家和工程师。理想参与者对在高性能计算（HPC）系统上将深度学习应用于科学问题有浓厚兴趣。申请人根据择优原则选拔。",
       "sessions": []
     },
     {
@@ -1547,6 +1543,72 @@
       "sessions": []
     },
     {
+      "id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
+      "edition_id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
+      "programme_id": "programme:7a88df2ca1095426",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/water-conflict-cooperation-and-diplomacy-245f06e3.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/water-conflict-cooperation-and-diplomacy-245f06e3.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/water-conflict-cooperation-and-diplomacy-245f06e3.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/water-conflict-cooperation-and-diplomacy-245f06e3.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html"
+      },
+      "official_url": "https://www.un-ihe.org/short-courses",
+      "title": "Water Conflict, Cooperation and Diplomacy",
+      "title_zh": "水冲突、合作与外交",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "location": "Delft, Netherlands",
+      "location_zh": "荷兰代尔夫特",
+      "mode": "in-person",
+      "start_date": "2026-11-09",
+      "end_date": "2026-11-20",
+      "duration_days": 12,
+      "application_deadline": "2026-10-15",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 3670 excl. VAT",
+      "fee": "EUR 3670 excl. VAT",
+      "fee_eur": 3670.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "EUR 3670 excl. VAT",
+        "fee_eur": 3670.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 3670.0,
+            "currency": "EUR",
+            "conditions": "excl. VAT"
+          }
+        ]
+      },
+      "topics": [
+        "engineering"
+      ],
+      "primary_topics": [],
+      "secondary_topics": [],
+      "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
+      "summary_zh": "在本课程中，学员将了解水与冲突之间的复杂关联，以及如何以合作方式克服共享水资源治理中的挑战。",
+      "eligibility": "Mid-career water professionals with a technical/engineering/natural science background interested in advancing their skills on water conflict, cooperation and diplomacy.",
+      "eligibility_zh": "具有技术/工程/自然科学背景、希望提升水冲突、合作与外交方面技能的水行业中后期职业人士。",
+      "sessions": []
+    },
+    {
       "id": "opportunities/iahs-academy-2027-2df41880",
       "edition_id": "edition:5b2622fab46bbe12",
       "programme_id": "programme:a7de8577eaec8d69",
@@ -1748,6 +1810,138 @@
       "summary_zh": "培训课程：基于机器学习的天气预报（2026年11月16日至20日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：基于机器学习的天气预",
       "eligibility": "",
       "eligibility_zh": "",
+      "sessions": []
+    },
+    {
+      "id": "ihe-delft:edition:13763E13-4DED-11F1-B159-0050561F03F5",
+      "edition_id": "ihe-delft:edition:13763E13-4DED-11F1-B159-0050561F03F5",
+      "programme_id": "programme:623edd7abf46af11",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/emergency-management-for-flood-defences-general-concepts-e917e5be.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/emergency-management-for-flood-defences-general-concepts-e917e5be.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/emergency-management-for-flood-defences-general-concepts-e917e5be.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/emergency-management-for-flood-defences-general-concepts-e917e5be.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-13763e13-4ded-11f1-b159-0050561f03f5-95e07349.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-13763e13-4ded-11f1-b159-0050561f03f5-95e07349.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-13763e13-4ded-11f1-b159-0050561f03f5-95e07349.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-13763e13-4ded-11f1-b159-0050561f03f5-95e07349.html"
+      },
+      "official_url": "https://www.un-ihe.org/short-courses",
+      "title": "Emergency Management for Flood Defences – General Concepts",
+      "title_zh": "防洪应急管理——基本概念",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "location": "Delft, Netherlands",
+      "location_zh": "荷兰代尔夫特",
+      "mode": "in-person",
+      "start_date": "2026-11-02",
+      "end_date": "2026-11-06",
+      "duration_days": 5,
+      "application_deadline": "2026-10-15",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 1000 excl. VAT",
+      "fee": "EUR 1000 excl. VAT",
+      "fee_eur": 1000.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "EUR 1000 excl. VAT",
+        "fee_eur": 1000.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 1000.0,
+            "currency": "EUR",
+            "conditions": "excl. VAT"
+          }
+        ]
+      },
+      "topics": [
+        "flood"
+      ],
+      "primary_topics": [],
+      "secondary_topics": [],
+      "summary": "This short course promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the first component of a two-part series, while",
+      "summary_zh": "本短期课程推广《防洪应急管理手册》的实际应用，同时为政府、产业界和学术界的专业人士创造学习和交流机会。该课程是两部分系列课程的第一部分，而",
+      "eligibility": "Professionals and academics active in flood risk and emergency management (coastal, river and estuarine managers and engineers, flood defence owners, civil/hydraulic/geotechnical engineers, crisis managers, crisis commun",
+      "eligibility_zh": "活跃于洪水风险和应急管理领域的专业人士和学者（沿海、河流和河口管理者和工程师、防洪设施所有者、土木/水利/岩土工程师、危机管理者、危机沟通",
+      "sessions": []
+    },
+    {
+      "id": "ihe-delft:edition:1F6DDF05-4DF0-11F1-B159-0050561F03F5",
+      "edition_id": "ihe-delft:edition:1F6DDF05-4DF0-11F1-B159-0050561F03F5",
+      "programme_id": "programme:9c734e62216b9eea",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/emergency-management-for-flood-defences-operations-in-prac-6bd68304.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/emergency-management-for-flood-defences-operations-in-prac-6bd68304.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/emergency-management-for-flood-defences-operations-in-prac-6bd68304.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/emergency-management-for-flood-defences-operations-in-prac-6bd68304.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-1f6ddf05-4df0-11f1-b159-0050561f03f5-31c5a455.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-1f6ddf05-4df0-11f1-b159-0050561f03f5-31c5a455.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-1f6ddf05-4df0-11f1-b159-0050561f03f5-31c5a455.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-1f6ddf05-4df0-11f1-b159-0050561f03f5-31c5a455.html"
+      },
+      "official_url": "https://www.un-ihe.org/short-courses",
+      "title": "Emergency Management for Flood Defences - Operations in Practice",
+      "title_zh": "防洪应急管理——实践中的行动",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "location": "Delft, Netherlands",
+      "location_zh": "荷兰代尔夫特",
+      "mode": "in-person",
+      "start_date": "2026-11-09",
+      "end_date": "2026-11-13",
+      "duration_days": 5,
+      "application_deadline": "2026-10-15",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 1000 excl. VAT",
+      "fee": "EUR 1000 excl. VAT",
+      "fee_eur": 1000.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "EUR 1000 excl. VAT",
+        "fee_eur": 1000.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 1000.0,
+            "currency": "EUR",
+            "conditions": "excl. VAT"
+          }
+        ]
+      },
+      "topics": [
+        "flood"
+      ],
+      "primary_topics": [],
+      "secondary_topics": [],
+      "summary": "This short course&nbsp;promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the second component of a two-part series,",
+      "summary_zh": "本短期课程推动《防洪应急管理手册》的实际应用，同时为来自政府、产业界和学术界的专业人士创造学习与交流机会。该课程是两部分系列中的第二部分，",
+      "eligibility": "Professionals and academics active in flood risk and emergency management (coastal, river and estuarine managers and engineers, flood defence owners, civil/hydraulic/geotechnical engineers, crisis managers, crisis commun",
+      "eligibility_zh": "活跃于洪水风险与应急管理领域的专业人士和学者（海岸、河流及河口管理者与工程师、防洪设施业主、土木/水利/岩土工程师、危机管理者、危机沟通",
       "sessions": []
     },
     {

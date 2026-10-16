@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-10-15",
+  "generated": "2026-10-16",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -1018,6 +1018,95 @@
       ]
     },
     {
+      "id": "berkeley-dl4sci",
+      "slug": "deep-learning-for-science-summer-school-30a8f1b9",
+      "title": "Deep Learning for Science Summer School",
+      "title_zh": "科学深度学习暑期学校",
+      "organizer": "Berkeley Lab DL4SCI",
+      "organizer_zh": "伯克利实验室 DL4SCI",
+      "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
+      "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由伯克利实验室计算科学部主办，2026年科学深度学习（DL4SCI）暑期学校是一个为期五天的密集型项目，汇集研究人员和工程师，探索深度学习的最新进展",
+      "topics": [
+        "deep learning",
+        "AI",
+        "design"
+      ],
+      "primary_topics": [
+        "deep learning"
+      ],
+      "editions": [
+        {
+          "id": "berkeley-dl4sci:2026",
+          "title": "Deep Learning for Science Summer School 2026",
+          "title_zh": "2026年科学深度学习暑期学校",
+          "detail_path": "opportunities/berkeley-dl4sci-2026-c1272d60.html",
+          "official_url": "https://forms.gle/eGX8XzTHJp4FLkg59",
+          "location": "Berkeley, CA",
+          "location_zh": "加州伯克利",
+          "start_date": "2026-07-20",
+          "end_date": "2026-07-24",
+          "deadline": null,
+          "deadline_status": "closed",
+          "duration_days": 5,
+          "mode": "in-person",
+          "financial_summary": "and Financial Support The registration fee for the school will not exceed $250 · Limited registration waivers for selected enrolled students",
+          "financial_summary_zh": "费用：and Financial Support The registration fee for the school will not exceed $250 · 费用减免（有条件申请，不保证获得）",
+          "funding_available": true,
+          "fee_eur": 237.5,
+          "topics": [
+            "deep learning",
+            "AI",
+            "design"
+          ],
+          "primary_topics": [
+            "deep learning"
+          ],
+          "secondary_topics": [
+            "AI",
+            "design"
+          ],
+          "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
+          "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由伯克利实验室计算科学部主办，2026年科学深度学习（DL4SCI）暑期学校是一个为期五天的密集型项目，汇集研究人员和工程师，探索深度学习的最新进展",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "berkeley-dl4sci:2026",
+        "title": "Deep Learning for Science Summer School 2026",
+        "title_zh": "2026年科学深度学习暑期学校",
+        "detail_path": "opportunities/berkeley-dl4sci-2026-c1272d60.html",
+        "official_url": "https://forms.gle/eGX8XzTHJp4FLkg59",
+        "location": "Berkeley, CA",
+        "location_zh": "加州伯克利",
+        "start_date": "2026-07-20",
+        "end_date": "2026-07-24",
+        "deadline": null,
+        "deadline_status": "closed",
+        "duration_days": 5,
+        "mode": "in-person",
+        "financial_summary": "and Financial Support The registration fee for the school will not exceed $250 · Limited registration waivers for selected enrolled students",
+        "financial_summary_zh": "费用：and Financial Support The registration fee for the school will not exceed $250 · 费用减免（有条件申请，不保证获得）",
+        "funding_available": true,
+        "fee_eur": 237.5,
+        "topics": [
+          "deep learning",
+          "AI",
+          "design"
+        ],
+        "primary_topics": [
+          "deep learning"
+        ],
+        "secondary_topics": [
+          "AI",
+          "design"
+        ],
+        "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
+        "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由伯克利实验室计算科学部主办，2026年科学深度学习（DL4SCI）暑期学校是一个为期五天的密集型项目，汇集研究人员和工程师，探索深度学习的最新进展",
+        "sessions": []
+      }
+    },
+    {
       "id": "programme:005729e641c21ccf",
       "slug": "elias-hpi-engine-how-to-be-a-startup-cto-summer-school-74f36bb2",
       "title": "ELIAS & HPI Engine \"How to Be a (Startup-) CTO\" Summer School",
@@ -1267,6 +1356,160 @@
         "cheminformatics",
         "bioinformatics"
       ]
+    },
+    {
+      "id": "programme:9c734e62216b9eea",
+      "slug": "emergency-management-for-flood-defences-operations-in-prac-6bd68304",
+      "title": "Emergency Management for Flood Defences - Operations in Practice",
+      "title_zh": "防洪应急管理——实践中的行动",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "summary": "This short course&nbsp;promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the second component of a two-part series,",
+      "summary_zh": "本短期课程推动《防洪应急管理手册》的实际应用，同时为来自政府、产业界和学术界的专业人士创造学习与交流机会。该课程是两部分系列中的第二部分，",
+      "topics": [
+        "flood"
+      ],
+      "primary_topics": [
+        "flood"
+      ],
+      "editions": [
+        {
+          "id": "ihe-delft:edition:1F6DDF05-4DF0-11F1-B159-0050561F03F5",
+          "title": "Emergency Management for Flood Defences - Operations in Practice",
+          "title_zh": "防洪应急管理——实践中的行动",
+          "detail_path": "opportunities/ihe-delft-edition-1f6ddf05-4df0-11f1-b159-0050561f03f5-31c5a455.html",
+          "official_url": "https://www.un-ihe.org/short-courses",
+          "location": "Delft, Netherlands",
+          "location_zh": "荷兰代尔夫特",
+          "start_date": "2026-11-09",
+          "end_date": "2026-11-13",
+          "deadline": "2026-10-15",
+          "deadline_status": "closed",
+          "duration_days": 5,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 1000 excl. VAT",
+          "financial_summary_zh": "费用 EUR 1000（未含增值税）",
+          "funding_available": null,
+          "fee_eur": 1000.0,
+          "topics": [
+            "flood"
+          ],
+          "primary_topics": [
+            "flood"
+          ],
+          "secondary_topics": [],
+          "summary": "This short course&nbsp;promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the second component of a two-part series,",
+          "summary_zh": "本短期课程推动《防洪应急管理手册》的实际应用，同时为来自政府、产业界和学术界的专业人士创造学习与交流机会。该课程是两部分系列中的第二部分，",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "ihe-delft:edition:1F6DDF05-4DF0-11F1-B159-0050561F03F5",
+        "title": "Emergency Management for Flood Defences - Operations in Practice",
+        "title_zh": "防洪应急管理——实践中的行动",
+        "detail_path": "opportunities/ihe-delft-edition-1f6ddf05-4df0-11f1-b159-0050561f03f5-31c5a455.html",
+        "official_url": "https://www.un-ihe.org/short-courses",
+        "location": "Delft, Netherlands",
+        "location_zh": "荷兰代尔夫特",
+        "start_date": "2026-11-09",
+        "end_date": "2026-11-13",
+        "deadline": "2026-10-15",
+        "deadline_status": "closed",
+        "duration_days": 5,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 1000 excl. VAT",
+        "financial_summary_zh": "费用 EUR 1000（未含增值税）",
+        "funding_available": null,
+        "fee_eur": 1000.0,
+        "topics": [
+          "flood"
+        ],
+        "primary_topics": [
+          "flood"
+        ],
+        "secondary_topics": [],
+        "summary": "This short course&nbsp;promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the second component of a two-part series,",
+        "summary_zh": "本短期课程推动《防洪应急管理手册》的实际应用，同时为来自政府、产业界和学术界的专业人士创造学习与交流机会。该课程是两部分系列中的第二部分，",
+        "sessions": []
+      }
+    },
+    {
+      "id": "programme:623edd7abf46af11",
+      "slug": "emergency-management-for-flood-defences-general-concepts-e917e5be",
+      "title": "Emergency Management for Flood Defences – General Concepts",
+      "title_zh": "防洪应急管理——基本概念",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "summary": "This short course promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the first component of a two-part series, while",
+      "summary_zh": "本短期课程推广《防洪应急管理手册》的实际应用，同时为政府、产业界和学术界的专业人士创造学习和交流机会。该课程是两部分系列课程的第一部分，而",
+      "topics": [
+        "flood"
+      ],
+      "primary_topics": [
+        "flood"
+      ],
+      "editions": [
+        {
+          "id": "ihe-delft:edition:13763E13-4DED-11F1-B159-0050561F03F5",
+          "title": "Emergency Management for Flood Defences – General Concepts",
+          "title_zh": "防洪应急管理——基本概念",
+          "detail_path": "opportunities/ihe-delft-edition-13763e13-4ded-11f1-b159-0050561f03f5-95e07349.html",
+          "official_url": "https://www.un-ihe.org/short-courses",
+          "location": "Delft, Netherlands",
+          "location_zh": "荷兰代尔夫特",
+          "start_date": "2026-11-02",
+          "end_date": "2026-11-06",
+          "deadline": "2026-10-15",
+          "deadline_status": "closed",
+          "duration_days": 5,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 1000 excl. VAT",
+          "financial_summary_zh": "费用 EUR 1000（未含增值税）",
+          "funding_available": null,
+          "fee_eur": 1000.0,
+          "topics": [
+            "flood"
+          ],
+          "primary_topics": [
+            "flood"
+          ],
+          "secondary_topics": [],
+          "summary": "This short course promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the first component of a two-part series, while",
+          "summary_zh": "本短期课程推广《防洪应急管理手册》的实际应用，同时为政府、产业界和学术界的专业人士创造学习和交流机会。该课程是两部分系列课程的第一部分，而",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "ihe-delft:edition:13763E13-4DED-11F1-B159-0050561F03F5",
+        "title": "Emergency Management for Flood Defences – General Concepts",
+        "title_zh": "防洪应急管理——基本概念",
+        "detail_path": "opportunities/ihe-delft-edition-13763e13-4ded-11f1-b159-0050561f03f5-95e07349.html",
+        "official_url": "https://www.un-ihe.org/short-courses",
+        "location": "Delft, Netherlands",
+        "location_zh": "荷兰代尔夫特",
+        "start_date": "2026-11-02",
+        "end_date": "2026-11-06",
+        "deadline": "2026-10-15",
+        "deadline_status": "closed",
+        "duration_days": 5,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 1000 excl. VAT",
+        "financial_summary_zh": "费用 EUR 1000（未含增值税）",
+        "funding_available": null,
+        "fee_eur": 1000.0,
+        "topics": [
+          "flood"
+        ],
+        "primary_topics": [
+          "flood"
+        ],
+        "secondary_topics": [],
+        "summary": "This short course promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the first component of a two-part series, while",
+        "summary_zh": "本短期课程推广《防洪应急管理手册》的实际应用，同时为政府、产业界和学术界的专业人士创造学习和交流机会。该课程是两部分系列课程的第一部分，而",
+        "sessions": []
+      }
     },
     {
       "id": "programme:0315b5fbacd204a7",
@@ -2664,95 +2907,6 @@
       ]
     },
     {
-      "id": "programme:6d05e72313fdb49c",
-      "slug": "summer-school-ds-food-design-of-sustainable-food-systems-1990bf33",
-      "title": "Summer school DS-FOOD Design of sustainable food systems",
-      "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
-      "organizer": "Euroleague for Life Sciences (ELLS)",
-      "organizer_zh": "生命科学欧洲联盟（ELLS）",
-      "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
-      "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
-      "topics": [
-        "sustainable food systems",
-        "food systems design",
-        "sustainability"
-      ],
-      "editions": [
-        {
-          "id": "edition:736b6cbf96f90a6f",
-          "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-          "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
-          "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-          "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
-          "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-          "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
-          "start_date": "2026-07-05",
-          "end_date": "2026-07-12",
-          "deadline": "2026-05-01",
-          "deadline_status": "closed",
-          "duration_days": 8,
-          "mode": "in-person",
-          "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-          "financial_summary_zh": "费用：EUR 90 强制晚宴费用; EUR 250 其他参与者注册费",
-          "funding_available": false,
-          "fee_eur": 90.0,
-          "topics": [
-            "sustainable food systems",
-            "food systems design",
-            "sustainability"
-          ],
-          "primary_topics": [
-            "sustainable food systems",
-            "food systems design",
-            "sustainability"
-          ],
-          "secondary_topics": [],
-          "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
-          "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "edition:736b6cbf96f90a6f",
-        "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-        "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
-        "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-        "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
-        "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-        "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
-        "start_date": "2026-07-05",
-        "end_date": "2026-07-12",
-        "deadline": "2026-05-01",
-        "deadline_status": "closed",
-        "duration_days": 8,
-        "mode": "in-person",
-        "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-        "financial_summary_zh": "费用：EUR 90 强制晚宴费用; EUR 250 其他参与者注册费",
-        "funding_available": false,
-        "fee_eur": 90.0,
-        "topics": [
-          "sustainable food systems",
-          "food systems design",
-          "sustainability"
-        ],
-        "primary_topics": [
-          "sustainable food systems",
-          "food systems design",
-          "sustainability"
-        ],
-        "secondary_topics": [],
-        "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
-        "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
-        "sessions": []
-      },
-      "primary_topics": [
-        "sustainable food systems",
-        "food systems design",
-        "sustainability"
-      ]
-    },
-    {
       "id": "csha-advanced-neuroimaging",
       "slug": "the-brain-enlightened-advanced-imaging-techniques-in-neuro-67dfe751",
       "title": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course",
@@ -3335,6 +3489,83 @@
         "biomaterials",
         "materials science"
       ]
+    },
+    {
+      "id": "programme:7a88df2ca1095426",
+      "slug": "water-conflict-cooperation-and-diplomacy-245f06e3",
+      "title": "Water Conflict, Cooperation and Diplomacy",
+      "title_zh": "水冲突、合作与外交",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
+      "summary_zh": "在本课程中，学员将了解水与冲突之间的复杂关联，以及如何以合作方式克服共享水资源治理中的挑战。",
+      "topics": [
+        "engineering"
+      ],
+      "primary_topics": [
+        "engineering"
+      ],
+      "editions": [
+        {
+          "id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
+          "title": "Water Conflict, Cooperation and Diplomacy",
+          "title_zh": "水冲突、合作与外交",
+          "detail_path": "opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
+          "official_url": "https://www.un-ihe.org/short-courses",
+          "location": "Delft, Netherlands",
+          "location_zh": "荷兰代尔夫特",
+          "start_date": "2026-11-09",
+          "end_date": "2026-11-20",
+          "deadline": "2026-10-15",
+          "deadline_status": "closed",
+          "duration_days": 12,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 3670 excl. VAT",
+          "financial_summary_zh": "费用 EUR 3670（未含增值税）",
+          "funding_available": null,
+          "fee_eur": 3670.0,
+          "topics": [
+            "engineering"
+          ],
+          "primary_topics": [
+            "engineering"
+          ],
+          "secondary_topics": [],
+          "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
+          "summary_zh": "在本课程中，学员将了解水与冲突之间的复杂关联，以及如何以合作方式克服共享水资源治理中的挑战。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
+        "title": "Water Conflict, Cooperation and Diplomacy",
+        "title_zh": "水冲突、合作与外交",
+        "detail_path": "opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
+        "official_url": "https://www.un-ihe.org/short-courses",
+        "location": "Delft, Netherlands",
+        "location_zh": "荷兰代尔夫特",
+        "start_date": "2026-11-09",
+        "end_date": "2026-11-20",
+        "deadline": "2026-10-15",
+        "deadline_status": "closed",
+        "duration_days": 12,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 3670 excl. VAT",
+        "financial_summary_zh": "费用 EUR 3670（未含增值税）",
+        "funding_available": null,
+        "fee_eur": 3670.0,
+        "topics": [
+          "engineering"
+        ],
+        "primary_topics": [
+          "engineering"
+        ],
+        "secondary_topics": [],
+        "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
+        "summary_zh": "在本课程中，学员将了解水与冲突之间的复杂关联，以及如何以合作方式克服共享水资源治理中的挑战。",
+        "sessions": []
+      }
     },
     {
       "id": "programme:8750854b0d569859",
