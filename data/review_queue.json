@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-19",
+  "generated": "2026-10-21",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -244,9 +244,9 @@
       },
       "deadline": null,
       "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "Details will be provided when applications open on 17 October 2026",
-      "fee_eur": null,
+      "financial_access_status": "self-funded",
+      "fee": "Double-room occupancy : EUR 875 Single-room occupancy : EUR 1125 No accommodations : EUR 475 The pro",
+      "fee_eur": 1125.0,
       "topics": [
         "ecology",
         "physics",
@@ -258,22 +258,38 @@
       "needs_review": [
         "conditional support needs coverage and eligibility review",
         "application deadline is uncertain",
-        "funding is not explicit and fee equivalence is uncertain"
+        "fee exceeds EUR 400 without explicit funding"
       ],
       "confidence": 0.75,
       "confidence_kind": "heuristic_not_calibrated_probability",
       "field_completeness": 0.75,
       "financial_terms": {
-        "participation_fee": "Details will be provided when applications open on 17 October 2026",
-        "fee_eur": null,
+        "participation_fee": "Double-room occupancy : EUR 875 Single-room occupancy : EUR 1125 No accommodations : EUR 475 The pro",
+        "fee_eur": 1125.0,
         "fee_status": "stated",
         "support_status": "conditional",
         "support_scope": "",
         "accommodation": "unknown",
         "meals": "unknown",
         "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 875.0,
+            "currency": "EUR",
+            "conditions": "Single-room occupancy :"
+          },
+          {
+            "amount": 1125.0,
+            "currency": "EUR",
+            "conditions": "No accommodations :"
+          },
+          {
+            "amount": 475.0,
+            "currency": "EUR",
+            "conditions": "The pro"
+          }
+        ]
       },
       "benefit_facts": [],
       "topic_evidence": {
@@ -287,26 +303,24 @@
       "evidence": {
         "deadline": "",
         "duration": "01–05 March 2027",
-        "fee": "Details will be provided when applications open on 17 October 2026",
-        "funding": "Partial tuition scholarships may be available for participants with financial need; instructions will be provided to accepted students.",
+        "fee": "Double-room occupancy : EUR 875 Single-room occupancy : EUR 1125 No accommodations : EUR 475 The pro",
+        "funding": "Partial tuition scholarships may be available for participants with financial need; instructions will be provided to students after they are accepted into the program.",
         "mode": "residential experience and should be considered a full-time c"
       },
       "ai_advisory": {
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "llm_chunk_truncated:6",
-          "llm_request_truncated:max_total_chars_per_llm_request",
           "funding_context_weak"
         ],
-        "chinese_summary": "复杂性科学中心每年举办的冬季学校，面向希望加入跨学科网络的早期职业研究人员，围绕复杂性科学开展协作学习，并使用在线招聘信息、GitHub 仓库和历史资料等新数据源。申请者需具备定量学科硕士水平课程或相关实践经验，并具备英语工作能力。2027 年冬季学校的申请信息将于 2026 年 10 月 17 日公布。",
+        "chinese_summary": "Complexity Science Hub 年度冬季学校，面向早期职业研究人员，围绕复杂性科学开展跨学科协作学习，包含讲座、讨论和小组项目/实践实验室，全英文授课。",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "Financial need support mentioned for accepted students; instructions provided to accepted students",
+        "extracted_funding": "Financial need-based support may be available; instructions provided after acceptance.",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
-          "funding": "pants with financial need; instructions will be provided to accepted students."
+          "funding": "be available for participants with financial need; instructions will be provided to students after they are accepted into the program."
         }
       }
     },
@@ -372,10 +386,10 @@
         "validation_warnings": [
           "location_context_weak"
         ],
-        "chinese_summary": "科罗拉多大学博尔德分校举办的凝聚态物质与材料物理暑期学校，面向凝聚态物理、材料科学及相关领域的高年级研究生和博士后，提供前沿科学技术的专家培训。2027年学校申请已开放，申请截止日期为2027年1月15日。学校由美国国家科学基金会资助，科罗拉多大学提供额外资助；较短出席无差旅支持，美国境外大学学生需自行承担机票。",
+        "chinese_summary": "博尔德凝聚态物质与材料物理暑期学校面向凝聚态物理、材料科学及相关领域的 advanced graduate students 和 postdocs，提供前沿专家培训。2027 年学校申请已开放，截止日期为 2027-01-15。学校由美国国家科学基金会支持，科罗拉多大学提供额外资助；缩短参会时间不提供差旅支持，美国境外大学的学生需自行承担机票。",
         "extracted_deadline": "2027-01-15",
         "extracted_fee": "",
-        "extracted_funding": "Supported by the National Science Foundation, with additional funding provided by the University of Colorado. No travel support for shorter attendance. Students at universities outside the United States must supply their own airfare per NSF grant terms.",
+        "extracted_funding": "The School is supported by the National Science Foundation, with additional funding provided by the University of Colorado. There will be no travel support for shorter attendance. The terms of the NSF grant require that students at universities outside the United States need to supply their own airfare.",
         "evidence_fields": {
           "deadline": "Deadline: January 15, 2027 All students are strongly urged to plan on staying for the duration of the School. | Deadline: January 15, 2027 All students are s",
           "fee": "",
@@ -493,16 +507,17 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "conflicting_evidence"
+          "llm_chunk_truncated:6",
+          "index_or_listing_page"
         ],
-        "chinese_summary": "",
+        "chinese_summary": "莱顿语言与语言学暑期学校（Leiden Summer School in Languages and Linguistics）由LOT组织，面向语言学学生和爱好者。LOT附属RMA学生和博士生可能获得差旅与住宿报销（有条件限制），LOT可为LOT附属RM学生支付最多一门LLL课程费用，但博士生不符合该计划资格。RM学生参加LLL可获得5个LOT学分。",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). PhD candidates are not eligible for this scheme.",
+        "extracted_funding": "LOT covers the fee for participation in LLL by LOT RM students within this scheme; LOT pays for a maximum of one LLL course per LOT-affiliated RM student; travel and accommodation reimbursements may be available for LOT-affiliated RMA students and PhD candidates (conditions apply); PhD candidates are not eligible for this scheme; if a student participates in both the LOT Summer School and the LLL in the same summer, reimbursement of travel and/or accommodation costs may be claimed for only one o",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
-          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). | PhD candidates are not eligible for this scheme."
+          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | The fee for the participation LLL by LOT RM students within this scheme is covered by LOT. | LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). | It is mandatory to complete both"
         }
       }
     },
@@ -1130,6 +1145,66 @@
         "deadline": "",
         "duration": "15 – 26 February 2027",
         "fee": "and offers Find pricing details and special offers, including 50% off for scholars affiliated with E",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Extended deadline: Call for papers 14th Conference on Frisian linguistics",
+      "url": "https://lotschool.nl/extended-deadline-call-for-papers-14th-conference-on-frisian-linguistics/",
+      "organizer": "LOT – Netherlands Graduate School of Linguistics",
+      "source_layer": "1.5",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-01-11",
+        "end": "2027-01-22",
+        "duration_days": 12
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "linguistics",
+        "phonetics",
+        "phonology",
+        "design"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.25,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.25,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "linguistics": "Extended deadline: Call for papers 14th Conference on Frisian linguistics | LOT – Netherlands Graduate School of Linguistics The Frisian Academy (Fryske Akademy) organizes i",
+        "phonetics": "ively or passively participates in Frisian linguistics: grammar, phonetics/phonology, onomastics, lexicology, sociolinguistics, historical linguistics. Papers may focus on th",
+        "phonology": "assively participates in Frisian linguistics: grammar, phonetics/phonology, onomastics, lexicology, sociolinguistics, historical linguistics. Papers may focus on the results",
+        "design": "cted] . https://lotschool.nl/wp-content/uploads/2023/12/Untitled-design-65.png 457 1200 Jan Martin https://lotschool.nl/wp-content/uploads/2018/10/lot.png Jan Martin 2026-"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "January 11, 2027 - January 22, 2027",
+        "fee": "",
         "funding": "",
         "mode": ""
       },

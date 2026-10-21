@@ -13,10 +13,6 @@
       "detail_path": "opportunities/acspri-offering-276-a10d330f.html"
     },
     {
-      "id": "berkeley-dl4sci:2026",
-      "detail_path": "opportunities/berkeley-dl4sci-2026-c1272d60.html"
-    },
-    {
       "id": "crm-pims-probability:2027-07-12:2027-08-06",
       "detail_path": "opportunities/crm-pims-probability-2027-07-12-2027-08-06-fc8f94b2.html"
     },
@@ -413,6 +409,10 @@
       "detail_path": "opportunities/cern-school-of-computing-ed1d3180.html"
     },
     {
+      "id": "edition:93d8cc55738c51a5",
+      "detail_path": "opportunities/extended-deadline-call-for-papers-14th-conference-on-frisian-linguisti-389116a0.html"
+    },
+    {
       "id": "edition:947841ef5a6931c2",
       "detail_path": "opportunities/codata-rda-research-data-science-summer-school-and-advanced-workshops-7c849625.html"
     },
@@ -475,6 +475,10 @@
     {
       "id": "edition:aae30745ae6c0fbd",
       "detail_path": "opportunities/climate-change-ai-summer-school-2022-7749bc2f.html"
+    },
+    {
+      "id": "edition:ab9248b6be0ed1ed",
+      "detail_path": "opportunities/venture-sprint-0b4add22.html"
     },
     {
       "id": "edition:adb0ae41bc6d8e5a",
@@ -947,7 +951,7 @@
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
   "_canary": "SSR-CANON-7q3v9x2k8m4w",
   "schema_version": 2,
-  "generated": "2026-10-19",
+  "generated": "2026-10-21",
   "opportunities": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -1930,7 +1934,7 @@
       "is_new": false
     },
     {
-      "title": "Mila's Community of Practice: Agentic AI",
+      "title": "Venture Sprint",
       "type": "summer school",
       "organizer": "Mila",
       "source_layer": "2",
@@ -1962,7 +1966,7 @@
       "fee_eur": 237.5,
       "application_link": "https://mila.quebec/en/continuing-education/summer-school-in-responsible-ai-and-human-rights",
       "source_url": "https://mila.quebec/en/continuing-education/summer-school-in-responsible-ai-and-human-rights",
-      "summary": "Summer School in Responsible AI and Human Rights | Mila Skip to main content Top menu Directory Insights News Careers Français Event Mila's Community of Practice: Agentic AI The upcoming meeting, taking place on November 10 at Mila, will explore how we can collectively develop, g",
+      "summary": "Summer School in Responsible AI and Human Rights | Mila Skip to main content Top menu Directory Insights News Careers Français Mila Venture Venture Sprint This part-time program is built for Venture Scientists who are testing their appetite for entrepreneurship. You have until Oc",
       "recommendation_reason": "funding evidence: scholarship, bursary; 35 days; in-person; target level: MSc, PhD, postdoc, early-career researcher",
       "risk_points": "programme has already started",
       "sessions": [],
@@ -1991,23 +1995,22 @@
       "fee_evidence": "$250",
       "mode_evidence": "in-person event. It is offered only on-site. We do not offe",
       "extraction_confidence": 0.75,
-      "title_zh": "Mila实践社区：智能体AI",
+      "title_zh": "创业冲刺",
       "organizer_zh": "Mila",
       "location_zh": "北美",
-      "summary_zh": "负责任AI与人权暑期学校 | Mila 跳至主要内容 顶部菜单 目录 洞察 新闻 招聘 法语 活动 Mila实践社区：智能体AI 即将于11月10日在Mila举行的会议将探讨我们如何共同开发、g",
+      "summary_zh": "负责任人工智能与人权暑期学校 | Mila 跳至主要内容 顶部菜单 目录 洞察 新闻 招聘 法语 Mila 创业 创业冲刺 这个非全日制项目面向正在试探自身创业兴趣的创业科学家。截止日期为10月",
       "eligibility_zh": "可能来自欠发达国家、社会经济弱势环境和/或边缘化社区",
-      "recommendation_reason_zh": "资助证据：奖学金、助学金；35天；线下；目标层次：硕士、博士、博士后、早期职业研究者",
+      "recommendation_reason_zh": "资助证据：奖学金、助学金；35天；线下；目标人群：硕士、博士、博士后、早期职业研究人员",
       "risk_points_zh": "项目已经开始",
       "primary_topics": [
-        "AI"
-      ],
-      "secondary_topics": [
+        "AI",
         "artificial intelligence",
         "machine learning",
         "law",
         "social science",
         "digital humanities"
       ],
+      "secondary_topics": [],
       "topic_evidence": {
         "AI": "Summer School in Responsible AI and Human Rights | Mila We use cookies to analyze the browsing and usage of our website and to pers",
         "artificial intelligence": "plied research scientist at Mila Luis Aranda Senior Economist in Artificial Intelligence at the OECD Alex Hernandez-Garcia Assistant professor at the Université de Montréal, a core academi",
@@ -4893,6 +4896,108 @@
       "is_new": false
     },
     {
+      "title": "Deep Learning for Science Summer School 2026",
+      "type": "summer school",
+      "organizer": "Berkeley Lab DL4SCI",
+      "source_layer": "1",
+      "region_priority": "supplementary",
+      "location": "Berkeley, CA",
+      "mode": "in-person",
+      "start_date": "2026-07-20",
+      "end_date": "2026-07-24",
+      "duration_days": 5,
+      "deadline": null,
+      "deadline_status": "closed",
+      "funding_available": true,
+      "funding_type": [
+        "fee waiver"
+      ],
+      "funding_evidence": "We will have limited registration waivers for select applicants who are currently enrolled in an undergraduate, graduate, or PhD program at a university.",
+      "topic_keywords": [
+        "deep learning",
+        "AI",
+        "design"
+      ],
+      "eligibility": "Designed for advanced graduate students, postdoctoral researchers, academics, domain scientists, and engineers. Ideal participants have a strong interest in applying deep learning to scientific problems on high-performance computing (HPC) systems. Applicants selected based on merit.",
+      "target_level": "postdoc",
+      "fee": "and Financial Support The registration fee for the school will not exceed $250",
+      "fee_eur": 237.5,
+      "application_link": "https://forms.gle/eGX8XzTHJp4FLkg59",
+      "source_url": "https://dl4sci-school.lbl.gov/",
+      "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
+      "recommendation_reason": "low fee: approximately EUR 238; 5 days; trusted source layer 1; in-person",
+      "risk_points": "programme has already started",
+      "sessions": [],
+      "identity_key": "berkeley-dl4sci:2026",
+      "discovery_verified": false,
+      "programme_key": "berkeley-dl4sci",
+      "evidence_sources": {
+        "start_date": "https://dl4sci-school.lbl.gov/",
+        "end_date": "https://dl4sci-school.lbl.gov/",
+        "duration_days": "https://dl4sci-school.lbl.gov/",
+        "duration_evidence": "https://dl4sci-school.lbl.gov/",
+        "sessions": "https://dl4sci-school.lbl.gov/",
+        "deadline": "https://dl4sci-school.lbl.gov/",
+        "deadline_status": "https://dl4sci-school.lbl.gov/",
+        "deadline_evidence": "https://dl4sci-school.lbl.gov/",
+        "mode": "https://dl4sci-school.lbl.gov/",
+        "mode_evidence": "https://dl4sci-school.lbl.gov/",
+        "eligibility": "https://dl4sci-school.lbl.gov/",
+        "target_level": "https://dl4sci-school.lbl.gov/",
+        "application_link": "https://dl4sci-school.lbl.gov/",
+        "fee": "https://dl4sci-school.lbl.gov/apply",
+        "fee_eur": "https://dl4sci-school.lbl.gov/apply",
+        "fee_evidence": "https://dl4sci-school.lbl.gov/apply",
+        "funding_available": "https://dl4sci-school.lbl.gov/apply",
+        "funding_type": "https://dl4sci-school.lbl.gov/apply",
+        "funding_evidence": "https://dl4sci-school.lbl.gov/apply",
+        "funding_scope": "https://dl4sci-school.lbl.gov/apply"
+      },
+      "funding_scope": "Limited registration waivers for selected enrolled students",
+      "financial_access_status": "low-fee",
+      "failed_hard_conditions": [
+        "programme has already started"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 42.0,
+      "score_explanation": [
+        "low fee: approximately EUR 238",
+        "5 days",
+        "trusted source layer 1",
+        "in-person",
+        "target level: postdoc",
+        "topics: deep learning, AI, design",
+        "near-match only: programme has already started"
+      ],
+      "first_seen": "2026-09-23",
+      "deadline_evidence": "",
+      "duration_evidence": "es and Deadlines Application open Application deadline Application decision notification Final decisions for applicants on waiting-list First day of school Last day of school February 4, 2026 April 26 , 202 6 (Anywhere on Earth) May 4, 2026 May 10, 2026 May 20, 2026 May 30, 2026 July 2 0 , 202 6 July 24, 2026 Report ab es and Deadlines Application open Application deadline Application decision notification Final decisions for applicants on waiting-list First day of school Last day of school February 4, 2026 April 26 , 202 6 (Anywhere on Earth) May 4, 2026 May 10, 2026 May 20, 2026 May 30, 2026 July 2 0 , 202 6 July 24, 2026 Report ab",
+      "fee_evidence": "and Financial Support The registration fee for the school will not exceed $250",
+      "mode_evidence": "",
+      "extraction_confidence": 0.5,
+      "title_zh": "2026年科学深度学习暑期学校",
+      "organizer_zh": "伯克利实验室 DL4SCI",
+      "location_zh": "加州伯克利",
+      "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由伯克利实验室计算科学部主办，2026年科学深度学习（DL4SCI）暑期学校是一个为期五天的密集型项目，汇集研究人员和工程师，探索深度学习的最新进展",
+      "eligibility_zh": "面向高年级研究生、博士后研究人员、学者、领域科学家和工程师。理想参与者对在高性能计算（HPC）系统上将深度学习应用于科学问题有浓厚兴趣。申请人根据择优原则选拔。",
+      "recommendation_reason_zh": "低费用：约238欧元；5天；可信来源第1层；线下",
+      "risk_points_zh": "项目已经开始",
+      "primary_topics": [
+        "deep learning"
+      ],
+      "secondary_topics": [
+        "AI",
+        "design"
+      ],
+      "topic_evidence": {
+        "AI": "s to explore the latest advances in deep learning and generative AI (GenAI), with a special emphasis this year on foundation models, reasoning, and agentic AI for scie",
+        "deep learning": "s to explore the latest advances in deep learning and generative AI (GenAI), with a special emphasis this year on foundation models, reasoning, and a",
+        "design": "rovide modern code and content. Attendees will gain the tools to design and deploy robust model- and agent-based approaches for scientific problems. The Summer School will"
+      },
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
       "title": "Neutron and Muon School 2026 (Japanese-language)",
       "type": "research school",
       "organizer": "J-PARC Neutron and Muon School",
@@ -5086,7 +5191,7 @@
       "target_level": "PhD",
       "fee": "",
       "fee_eur": null,
-      "application_link": "https://lotschool.nl/leiden-summer-school/",
+      "application_link": "https://lotschool.nl/register-now-lot-summer-school-2026/",
       "source_url": "https://lotschool.nl/leiden-summer-school/",
       "summary": "Leiden Summer School in Languages and Linguistics – LOT News & Events Education Graduate Programme in Linguistics in the Netherlands LOT Summer and Winter Schools Experimental Methods in Language Acquisition Research (EMLAR) The Leiden Summer School in Languages and Linguistics L",
       "recommendation_reason": "12 days; priority region; trusted source layer 1.5; hybrid",
@@ -5132,7 +5237,7 @@
       ],
       "secondary_topics": [],
       "topic_evidence": {
-        "linguistics": "Leiden Summer School in Languages and Linguistics – LOT Leiden Summer School in Languages and Linguistics Register now | LOT Summer School 2026 | LOT"
+        "linguistics": "Leiden Summer School in Languages and Linguistics – LOT Leiden Summer School in Languages and Linguistics The fee for the participation LLL by LOT RM"
       },
       "detail_sections": [],
       "is_new": false
@@ -5848,6 +5953,97 @@
       "is_new": false
     },
     {
+      "title": "Winter School​",
+      "type": "winter school",
+      "organizer": "Complexity Science Hub",
+      "source_layer": "1.5",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "in-person",
+      "start_date": "2027-03-01",
+      "end_date": "2027-03-05",
+      "duration_days": 5,
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "funding_available": true,
+      "funding_type": [
+        "scholarship"
+      ],
+      "funding_evidence": "Partial tuition scholarships may be available for participants with financial need; instructions will be provided to students after they are accepted into the program.",
+      "topic_keywords": [
+        "ecology",
+        "physics",
+        "mathematics",
+        "engineering",
+        "epidemiology",
+        "economics"
+      ],
+      "eligibility": "Requirements Applicants should have Masters-level coursework in quantitative discipline (social, natural or information sciences, mathematics, engineering) and/or practical experience working in a quantitative domain rel",
+      "target_level": "MSc, PhD, postdoc, early-career researcher",
+      "fee": "Double-room occupancy : EUR 875 Single-room occupancy : EUR 1125 No accommodations : EUR 475 The pro",
+      "fee_eur": 1125.0,
+      "application_link": "https://csh.ac.at/education/winterschool/",
+      "source_url": "https://csh.ac.at/education/winterschool/",
+      "summary": "Winter School * Complexity Science Hub Skip to content Research Close Research Open Research Research Research Topics Publications Funded Projects Research Research Topics Publications Funded Projects Education Close Education Open Education Education PostDoc Program Graduate Pro",
+      "recommendation_reason": "5 days; priority region; trusted source layer 1.5; in-person",
+      "risk_points": "application deadline is uncertain; fee exceeds EUR 400 without explicit funding",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "score": 33.0,
+      "score_explanation": [
+        "5 days",
+        "priority region",
+        "trusted source layer 1.5",
+        "in-person",
+        "target level: MSc, PhD, postdoc, early-career researcher",
+        "topics: ecology, physics, mathematics, engineering",
+        "near-match only: application deadline is uncertain; fee exceeds EUR 400 without explicit funding"
+      ],
+      "first_seen": "2026-08-03",
+      "deadline_evidence": "",
+      "duration_evidence": "",
+      "fee_evidence": "Double-room occupancy : EUR 875 Single-room occupancy : EUR 1125 No accommodations : EUR 475 The pro",
+      "mode_evidence": "residential experience and should be considered a full-time c",
+      "extraction_confidence": 0.75,
+      "title_zh": "冬季学校",
+      "organizer_zh": "复杂性科学中心",
+      "location_zh": "欧洲",
+      "summary_zh": "冬季学校 * 复杂性科学中心 跳至内容 研究 关闭 研究 打开 研究 研究 研究主题 出版物 资助项目 研究 研究主题 出版物 资助项目 教育 关闭 教育 打开 教育 教育 博士后项目 研究生项目",
+      "eligibility_zh": "要求 申请人应具备定量学科（社会科学、自然科学或信息科学、数学、工程学）的硕士水平课程学习，和/或在定量领域工作的实践经验",
+      "recommendation_reason_zh": "5天；优先地区；可信来源层级1.5；线下",
+      "risk_points_zh": "申请截止日期不确定；费用超过400欧元且无明确资助",
+      "primary_topics": [
+        "ecology",
+        "physics",
+        "mathematics",
+        "engineering",
+        "epidemiology",
+        "economics"
+      ],
+      "secondary_topics": [],
+      "topic_evidence": {
+        "ecology": "ing from data from a range of disciplines – economics, medicine, ecology, and the social sciences – as a basis for actionable solutions for a better world. Established in 2",
+        "physics": "supply chains. Through our complexity science approaches linking physics, mathematics, and computational modeling with data and network science, we develop the capacity to",
+        "mathematics": "uantitative discipline (social, natural or information sciences, mathematics, engineering) and/or practical experience working in a quantitative domain related to the Winter Sc",
+        "engineering": "iscipline (social, natural or information sciences, mathematics, engineering) and/or practical experience working in a quantitative domain related to the Winter School theme. A",
+        "epidemiology": "omes in later life: medication and nutrition. Topics include the epidemiology and clinical patterns of multimorbidity, learning disease trajectories and comorbidity networks fro",
+        "economics": "stems. We derive meaning from data from a range of disciplines – economics, medicine, ecology, and the social sciences – as a basis for actionable solutions for a better worl"
+      },
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
       "title": "Data Science and AI Summer School",
       "type": "summer school",
       "organizer": "Data Science and AI Summer School",
@@ -6176,6 +6372,7 @@
         "data analysis",
         "social science",
         "sustainability",
+        "AI",
         "data science",
         "mathematics",
         "statistics",
@@ -6190,7 +6387,7 @@
       "fee_eur": null,
       "application_link": "https://essexsummerschool.com/new-application/",
       "source_url": "https://www.essex.ac.uk/short-courses/social-science-data-analysis",
-      "summary": "Social Science Data Analysis | University of Essex Skip to content Students Staff Jobs Home Study Campus life Research About us Events News and blog Visit us Contact Business Alumni Schools and colleges Search Essex Our next Open Day - 17 October 2026 Whether you're just starting",
+      "summary": "Social Science Data Analysis | University of Essex Skip to content Students Staff Jobs Home Study Campus life Research About us Events News and blog Visit us Contact Business Alumni Schools and colleges Search Essex Our next Open Day - 7 November 2026 Whether you're just starting",
       "recommendation_reason": "12 days; priority region; hybrid; target level: MSc, PhD, postdoc",
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [
@@ -6237,7 +6434,7 @@
         "priority region",
         "hybrid",
         "target level: MSc, PhD, postdoc",
-        "topics: data analysis, social science, sustainability, data science",
+        "topics: data analysis, social science, sustainability, AI",
         "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-18",
@@ -6249,9 +6446,9 @@
       "title_zh": "社会科学数据分析",
       "organizer_zh": "埃塞克斯暑期学校",
       "location_zh": "英国科尔切斯特",
-      "summary_zh": "社会科学数据分析 | 埃塞克斯大学 跳至内容 学生 教职工 招聘 首页 学习 校园生活 研究 关于我们 活动 新闻与博客 来访 联系我们 商务 校友 学院与系部 搜索 埃塞克斯 下一次开放日——2026年10月17日 无论你是刚刚开始",
+      "summary_zh": "社会科学数据分析 | 埃塞克斯大学 跳至内容 学生 教职工 招聘 首页 学习 校园生活 研究 关于我们 活动 新闻与博客 来访 联系我们 商务 校友 学院与学部 搜索 埃塞克斯 下一场开放日——2026年11月7日 无论你刚刚开始",
       "eligibility_zh": "课程在上午或下午进行，英国夏令时（BST）",
-      "recommendation_reason_zh": "12天；优先地区；混合形式；目标层次：硕士、博士、博士后",
+      "recommendation_reason_zh": "12天；优先地区；混合形式；目标层次：MSc、PhD、博士后",
       "risk_points_zh": "申请截止日期已过；资助情况不明确，费用不确定",
       "primary_topics": [
         "data analysis",
@@ -6259,6 +6456,7 @@
       ],
       "secondary_topics": [
         "sustainability",
+        "AI",
         "data science",
         "mathematics",
         "statistics",
@@ -6268,14 +6466,15 @@
         "history"
       ],
       "topic_evidence": {
-        "sustainability": "University strategy Executive Summary Key performance indicators Sustainability Wivenhoe Park We Are Essex Support us What's on How can I master my interview? Monday 19 October 12",
+        "sustainability": "University strategy Executive Summary Key performance indicators Sustainability Wivenhoe Park We Are Essex Support us What's on Visibilising (out) violence in academia through spi",
+        "AI": "t news Essex cements top 30 ranking in Complete University Guide AI-assisted creative work linked to increased 'existential ick' emotions Essex blog Essex Law Clinic p",
         "data science": "matics. \"If you're interested in deepening your understanding of data science or social science methodologies, I highly recommend the The Essex Summer School - it's been a fanta",
-        "data analysis": "Social Science Data Analysis Social Science Data Analysis | University of Essex Search Essex Our next Open Day - 17 October 2026",
+        "data analysis": "Social Science Data Analysis Social Science Data Analysis | University of Essex Search Essex Our next Open Day - 7 November 2026",
         "mathematics": "esign, techniques for data collection and measurement as well as mathematics. \"If you're interested in deepening your understanding of data science or social science methodolog",
         "statistics": "research area About Essex Our University Our University Our key statistics Our history Faculties Schools and departments Key dates Global engagement Our values Our values Our",
-        "law": "helped by scientists ahead of 24-hour challenge Essex blog Essex Law Clinic projects 2026-2027: gaining practical legal experience Essex Law Clinic You don't have to st",
+        "law": "linked to increased 'existential ick' emotions Essex blog Essex Law Clinic projects 2026-2027: gaining practical legal experience Essex Law Clinic The Sustainability R",
         "design": "types of quantitative and qualitative research methods, research design, techniques for data collection and measurement as well as mathematics. \"If you're interested in de",
-        "social science": "Social Science Data Analysis Social Science Data Analysis | University of Essex Search Essex Our next Open Day - 1",
+        "social science": "Social Science Data Analysis Social Science Data Analysis | University of Essex Search Essex Our next Open Day - 7",
         "social science methods": "er School in Social Science Data Analysis provides world-leading social science methods training to postgraduate research students by offering instruction from an internationally renowned",
         "history": "About Essex Our University Our University Our key statistics Our history Faculties Schools and departments Key dates Global engagement Our values Our values Our Manifesto E"
       },
@@ -7037,97 +7236,6 @@
           "source_url": "https://lig-alps.imag.fr/index.php/application/"
         }
       ],
-      "is_new": false
-    },
-    {
-      "title": "Winter School​",
-      "type": "winter school",
-      "organizer": "Complexity Science Hub",
-      "source_layer": "1.5",
-      "region_priority": "priority",
-      "location": "Europe",
-      "mode": "in-person",
-      "start_date": "2027-03-01",
-      "end_date": "2027-03-05",
-      "duration_days": 5,
-      "deadline": null,
-      "deadline_status": "not_open",
-      "funding_available": true,
-      "funding_type": [
-        "scholarship"
-      ],
-      "funding_evidence": "Partial tuition scholarships may be available for participants with financial need; instructions will be provided to accepted students.",
-      "topic_keywords": [
-        "ecology",
-        "physics",
-        "mathematics",
-        "engineering",
-        "epidemiology",
-        "economics"
-      ],
-      "eligibility": "Requirements Applicants should have Masters-level coursework in quantitative discipline (social, natural or information sciences, mathematics, engineering) and/or practical experience working in a quantitative domain rel",
-      "target_level": "MSc, PhD, postdoc, early-career researcher",
-      "fee": "Details will be provided when applications open on 17 October 2026",
-      "fee_eur": null,
-      "application_link": "https://csh.ac.at/education/winterschool/",
-      "source_url": "https://csh.ac.at/education/winterschool/",
-      "summary": "Winter School * Complexity Science Hub Skip to content Research Close Research Open Research Research Research Topics Publications Funded Projects Research Research Topics Publications Funded Projects Education Close Education Open Education Education PostDoc Program Graduate Pro",
-      "recommendation_reason": "5 days; priority region; trusted source layer 1.5; in-person",
-      "risk_points": "applications are not open yet; funding is not explicit and fee equivalence is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "applications are not open yet"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee equivalence is uncertain"
-      ],
-      "score": 29.0,
-      "score_explanation": [
-        "5 days",
-        "priority region",
-        "trusted source layer 1.5",
-        "in-person",
-        "target level: MSc, PhD, postdoc, early-career researcher",
-        "topics: ecology, physics, mathematics, engineering",
-        "near-match only: applications are not open yet; funding is not explicit and fee equivalence is uncertain"
-      ],
-      "first_seen": "2026-08-03",
-      "deadline_evidence": "",
-      "duration_evidence": "",
-      "fee_evidence": "Details will be provided when applications open on 17 October 2026",
-      "mode_evidence": "residential experience and should be considered a full-time c",
-      "extraction_confidence": 0.75,
-      "title_zh": "冬季学校",
-      "organizer_zh": "复杂性科学中心",
-      "location_zh": "欧洲",
-      "summary_zh": "冬季学校 * 复杂性科学中心 跳至内容 研究 关闭 研究 打开 研究 研究 研究主题 出版物 资助项目 研究 研究 研究主题 出版物 资助项目 教育 关闭 教育 打开 教育 教育 博士后项目 研究生项目",
-      "eligibility_zh": "要求 申请人应具备定量学科（社会科学、自然科学或信息科学、数学、工程学）的硕士水平课程学习，和/或在定量领域工作的实践经验",
-      "recommendation_reason_zh": "5天；优先地区；可信来源层级1.5；线下",
-      "risk_points_zh": "申请尚未开放；资助情况不明确，费用对等性不确定",
-      "primary_topics": [
-        "ecology",
-        "physics",
-        "mathematics",
-        "engineering",
-        "epidemiology",
-        "economics"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "ecology": "ing from data from a range of disciplines – economics, medicine, ecology, and the social sciences – as a basis for actionable solutions for a better world. Established in 2",
-        "physics": "supply chains. Through our complexity science approaches linking physics, mathematics, and computational modeling with data and network science, we develop the capacity to",
-        "mathematics": "uantitative discipline (social, natural or information sciences, mathematics, engineering) and/or practical experience working in a quantitative domain related to the Winter Sc",
-        "engineering": "iscipline (social, natural or information sciences, mathematics, engineering) and/or practical experience working in a quantitative domain related to the Winter School theme. A",
-        "epidemiology": "omes in later life: medication and nutrition. Topics include the epidemiology and clinical patterns of multimorbidity, learning disease trajectories and comorbidity networks fro",
-        "economics": "stems. We derive meaning from data from a range of disciplines – economics, medicine, ecology, and the social sciences – as a basis for actionable solutions for a better worl"
-      },
-      "detail_sections": [],
       "is_new": false
     },
     {
@@ -9591,6 +9699,90 @@
       "is_new": false
     },
     {
+      "title": "Extended deadline: Call for papers 14th Conference on Frisian linguistics",
+      "type": "summer school",
+      "organizer": "LOT – Netherlands Graduate School of Linguistics",
+      "source_layer": "1.5",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "uncertain",
+      "start_date": "2027-01-11",
+      "end_date": "2027-01-22",
+      "duration_days": 12,
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "linguistics",
+        "phonetics",
+        "phonology",
+        "design"
+      ],
+      "eligibility": "PhD students who work at a LOT institute",
+      "target_level": "PhD",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://lotschool.nl/extended-deadline-call-for-papers-14th-conference-on-frisian-linguistics/",
+      "source_url": "https://lotschool.nl/extended-deadline-call-for-papers-14th-conference-on-frisian-linguistics/",
+      "summary": "Extended deadline: Call for papers 14th Conference on Frisian linguistics | LOT – Netherlands Graduate School of Linguistics News & Events Education Graduate Programme in Linguistics in the Netherlands LOT Summer and Winter Schools Experimental Methods in Language Acquisition Res",
+      "recommendation_reason": "12 days; priority region; trusted source layer 1.5; target level: PhD",
+      "risk_points": "application deadline is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "funding_scope": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline is uncertain",
+        "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "score": 22.0,
+      "score_explanation": [
+        "12 days",
+        "priority region",
+        "trusted source layer 1.5",
+        "target level: PhD",
+        "topics: linguistics, phonetics, phonology, design",
+        "near-match only: application deadline is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain"
+      ],
+      "first_seen": "2026-10-21",
+      "deadline_evidence": "",
+      "duration_evidence": "January 11, 2027 - January 22, 2027",
+      "fee_evidence": "",
+      "mode_evidence": "",
+      "extraction_confidence": 0.25,
+      "title_zh": "延期截止：第14届弗里斯兰语言学会议征稿",
+      "organizer_zh": "LOT——荷兰语言学研究生院",
+      "location_zh": "欧洲",
+      "summary_zh": "延期截止：第14届弗里斯兰语言学会议征稿 | LOT——荷兰语言学研究生院 新闻与活动 教育 荷兰语言学研究生项目 LOT暑期与冬季学校 语言习得实验方法 Res",
+      "eligibility_zh": "在LOT成员机构工作的博士生",
+      "recommendation_reason_zh": "12天；优先地区；可信来源层级1.5；目标层次：博士",
+      "risk_points_zh": "申请截止日期不确定；线下形式状态不确定；资助情况未明确，费用不确定",
+      "primary_topics": [
+        "linguistics"
+      ],
+      "secondary_topics": [
+        "phonetics",
+        "phonology",
+        "design"
+      ],
+      "topic_evidence": {
+        "linguistics": "Extended deadline: Call for papers 14th Conference on Frisian linguistics | LOT – Netherlands Graduate School of Linguistics The Frisian Academy (Fryske Akademy) organizes i",
+        "phonetics": "ively or passively participates in Frisian linguistics: grammar, phonetics/phonology, onomastics, lexicology, sociolinguistics, historical linguistics. Papers may focus on th",
+        "phonology": "assively participates in Frisian linguistics: grammar, phonetics/phonology, onomastics, lexicology, sociolinguistics, historical linguistics. Papers may focus on the results",
+        "design": "cted] . https://lotschool.nl/wp-content/uploads/2023/12/Untitled-design-65.png 457 1200 Jan Martin https://lotschool.nl/wp-content/uploads/2018/10/lot.png Jan Martin 2026-"
+      },
+      "detail_sections": [],
+      "is_new": true
+    },
+    {
       "title": "ELIXIR-GOBLET Train-the-Trainer",
       "type": "short course",
       "organizer": "SIB Swiss Institute of Bioinformatics",
@@ -11054,7 +11246,7 @@
         "climate": "ummer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes | (smr 4370) ICTP Giambiagi Lecture Hall (AGH) and Kastler L",
         "climate change": "7 27 Aug 2027 Application Closed school smr4363 Summer School in Climate Change and Infectious Diseases Modelling | (smr 4363) Medellin - Colombia Earth System Physics smr4363 Aug",
         "geophysics": "kshop on Open Hardware and Open Science in Engineering and Hydro-Geophysics: Technical Standards for Global Citizen Science | (smr 4394) ICTP Giambiagi Lecture Hall (AGH) Scie",
-        "AI": "ECAP Seminar by Kausik Ghosh - Conformal Bootstrap in the Age of AI November 2026 November 02 02 Nov 2026 06 Nov 2026 Application Closed workshop smr4244 Joint ICTP-IA",
+        "AI": "ECAP Seminar by Kausik Ghosh - Conformal Bootstrap in the Age of AI October 2026 October 28 28 Oct 2026 28 Oct 2026 Application Closed scientific activity PWF Professi",
         "artificial intelligence": "ICTP-IAEA Workshop on the Clinical Application of Imaging-Based Artificial Intelligence Systems for Medical Physicists | (smr 4246) ICTP Kastler Lecture Hall (AGH) smr4246 cmsp 16 Nov 202",
         "machine learning": "scientific activity ICTP Ghana Mastering Statistical Models and Machine Learning: A Hands-On Workshop in Machine Learning with R/Python V Ghana November 2026 November 17 hecap 16:0",
         "data science": "0 Nov 2026 Application Closed school smr4320 CODATA-RDA Research Data Science Summer School and Advanced workshops | (smr 4320) ICTP Denardo Lecture Hall (AGH) smr4320 November",
@@ -11068,7 +11260,7 @@
         "quantum information": "n Closed scientific activity smr4204 Open Quantum Systems - from Quantum Information to Condensed Matter | (smr 4204) Singapore - Singapore Condensed Matter and Statistical Physics smr",
         "mathematics": "d Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Technology and Innovation Other Show only",
         "statistics": "imensions: Recent Progress in Machine Learning, High-Dimensional Statistics and Inference | (smr 4360) ICTP Budinich Lecture Hall (LB) Quantitative Life Sciences smr4360 hecap",
-        "probability": "smr4203 07:00 21:00 07 Dec 2026 Hosted Activity Workshop of the Probability and Stochastic Analysis Trimester Programme | (smr H737) Physical Organizers cmsp 07 Dec 2026 18 De",
+        "probability": "ember 07 07:00 21:00 07 Dec 2026 Hosted Activity Workshop of the Probability and Stochastic Analysis Trimester Programme | (smr H737) Physical Organizers cmsp 07 Dec 2026 18 De",
         "chemistry": "EA–ICTP Advanced School on Integrated Design, Materials and Fuel Chemistry of Molten Salt Reactors | (smr 4344) ICTP Giambiagi Lecture Hall (AGH) smr4344 hecap 05 Apr 2027 09",
         "materials science": "smr4335 23rd International Workshop on Computational Physics and Materials Science: Total Energy and Force Methods | (smr 4335) ICTP Budinich Lecture Hall (LB) Condensed Matter and S",
         "engineering": "rtificial Intelligence and Machine Learning in Advancing Nuclear Engineering and Technology: from Theory to Practice | (smr 4364) ICTP Giambiagi Lecture Hall (AGH) Science, Tec",
@@ -11237,7 +11429,7 @@
         "AI": "for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language Technologies, Responsible AI,",
         "artificial intelligence": "tracks covering today's most impactful areas of data science and artificial intelligence. Participants will explore topics ranging from Python for Data Science and Machine Learning Fundame",
         "machine learning": "nts will explore topics ranging from Python for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language",
-        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 4094 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
+        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 4129 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
         "language technology": "earch Labs AirQo - IoT & AI for Environment Sunbird AI - African Language Technology Busitema AI - AI for Agriculture Makerere AI Labs DSAIL - IoT & AI for Environment - AirQo Sunbird",
         "high performance computing": "orking - - 11:00 - 13:00 Parallel Julia programming language and High Performance Computing Track A Dr. Adeleke Bankole, University of Cambridge, 11:00 - 13:00 Parallel Multimodal AI & LLMs &",
         "design": "h & Networking - - 14:30 - 16:00 Parallel AirQo DevCon: Hardware Design and Development for Air Quality Sensing Track A AirQo 14:30 - 16:00 Parallel NLP & African Language",
@@ -11387,72 +11579,6 @@
       "topic_evidence": {
         "linguistics": "To apply – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts"
       },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "Joint Meeting of ELLIS Units Berlin and Warsaw",
-      "type": "summer school",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Berlin",
-      "mode": "in-person",
-      "start_date": "2026-11-04",
-      "end_date": "2026-11-05",
-      "duration_days": 2,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://ellis.eu/events/joint-meeting-of-ellis-units-berlin-and-warsaw",
-      "source_url": "https://ellis.eu/events/joint-meeting-of-ellis-units-berlin-and-warsaw",
-      "summary": "04/11/26 - 05/11/26 • Berlin Joint Meeting of ELLIS Units Berlin and Warsaw Members of the ELLIS Units Berlin and Warsaw will meet on 4–5 November 2026 at the Polish Embassy in Berlin to exchange ideas and explore opportunities for collaboration between the two units. Read More",
-      "recommendation_reason": "priority region; trusted source layer 1; in-person; near-match only: application deadline is uncertain; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline is uncertain; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline is uncertain",
-        "duration is below 4 days"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 13.0,
-      "score_explanation": [
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "near-match only: application deadline is uncertain; duration is below 4 days; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-10-14",
-      "deadline_evidence": "",
-      "duration_evidence": "ELLIS events listing: 2026-11-04 to 2026-11-05",
-      "fee_evidence": "",
-      "mode_evidence": "ELLIS listing location: Berlin",
-      "extraction_confidence": 0.5,
-      "title_zh": "ELLIS柏林与华沙单位联合会议",
-      "organizer_zh": "ELLIS",
-      "location_zh": "柏林",
-      "summary_zh": "2026年11月4日至5日 • 柏林 ELLIS柏林与华沙单位联合会议。ELLIS柏林与华沙单位的成员将于2026年11月4日至5日在柏林波兰大使馆会面，交流想法并探索两个单位之间的合作机会。阅读更多",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "优先地区；可信来源第1层；线下；仅为近似匹配：申请截止日期不确定；时长不足4天；资助情况不明确，费用不确定",
-      "risk_points_zh": "申请截止日期不确定；时长不足4天；资助情况不明确，费用不确定",
-      "primary_topics": [],
-      "secondary_topics": [],
-      "topic_evidence": {},
       "detail_sections": [],
       "is_new": false
     },
@@ -12773,6 +12899,72 @@
       "is_new": false
     },
     {
+      "title": "Joint Meeting of ELLIS Units Berlin and Warsaw",
+      "type": "summer school",
+      "organizer": "ELLIS",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Berlin",
+      "mode": "in-person",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-05",
+      "duration_days": 2,
+      "deadline": null,
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://ellis.eu/events/joint-meeting-of-ellis-units-berlin-and-warsaw",
+      "source_url": "https://ellis.eu/events/joint-meeting-of-ellis-units-berlin-and-warsaw",
+      "summary": "04/11/26 - 05/11/26 • Berlin Joint Meeting of ELLIS Units Berlin and Warsaw Members of the ELLIS Units Berlin and Warsaw will meet on 4–5 November 2026 at the Polish Embassy in Berlin to exchange ideas and explore opportunities for collaboration between the two units. Read More",
+      "recommendation_reason": "priority region; trusted source layer 1; in-person; near-match only: application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
+      "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "funding_scope": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline has passed",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "score": 9.0,
+      "score_explanation": [
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "near-match only: application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain"
+      ],
+      "first_seen": "2026-10-14",
+      "deadline_evidence": "",
+      "duration_evidence": "ELLIS events listing: 2026-11-04 to 2026-11-05",
+      "fee_evidence": "",
+      "mode_evidence": "ELLIS listing location: Berlin",
+      "extraction_confidence": 0.5,
+      "title_zh": "柏林与华沙ELLIS单位联合会议",
+      "organizer_zh": "ELLIS",
+      "location_zh": "柏林",
+      "summary_zh": "2026年11月4日至5日 • 柏林 柏林与华沙ELLIS单位联合会议 柏林与华沙ELLIS单位的成员将于2026年11月4日至5日在柏林波兰大使馆会面，交流想法并探讨两个单位之间的合作机会。阅读更多",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "优先地区；可信来源第1层；线下；仅为近似匹配：申请截止日期已过；时长不足4天；资助情况不明确，费用不确定",
+      "risk_points_zh": "申请截止日期已过；时长不足4天；资助情况不明确，费用不确定",
+      "primary_topics": [],
+      "secondary_topics": [],
+      "topic_evidence": {},
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
       "title": "Winter School on Environmental Crimes",
       "type": "winter school",
       "organizer": "UNICRI AI Ethics Winter School",
@@ -12788,17 +12980,15 @@
       "funding_available": null,
       "funding_type": [],
       "funding_evidence": "",
-      "topic_keywords": [
-        "law"
-      ],
-      "eligibility": "Intended for university and post-graduate students, Ph.D.; participants need a computer (recommended) or a mobile device; required documents include a recent photograph and scanned valid passport or other valid identification document",
+      "topic_keywords": [],
+      "eligibility": "Intended for university and post-graduate students, Ph.D.",
       "target_level": "uncertain",
       "fee": "Registration fee: 800 Euro; includes tuition and course material in electronic version",
       "fee_eur": 800.0,
       "application_link": "https://www.unicri.org/index.php/winter-school-environmental-crimes-2026",
       "source_url": "https://www.unicri.org/index.php/winter-school-environmental-crimes-2026",
-      "summary": "联合国区域间犯罪与司法研究所（UNICRI）与意大利国际组织协会（SIOI）举办的2026年环境犯罪冬季学校，于2026年11月30日至12月4日在线举行，申请截止日期为2026年11月16日，注册费800欧元。",
-      "recommendation_reason": "deadline appears open; 5 days; topics: law; near-match only: online-only; fee exceeds EUR 400 without explicit funding",
+      "summary": "联合国区域间犯罪与司法研究所（UNICRI）将于2026年11月30日至12月4日在线举办环境犯罪冬季学校，申请截止日期为2026年11月16日，注册费800欧元。",
+      "recommendation_reason": "deadline appears open; 5 days; near-match only: online-only; fee exceeds EUR 400 without explicit funding",
       "risk_points": "online-only; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
@@ -12817,29 +13007,24 @@
       "score_explanation": [
         "deadline appears open",
         "5 days",
-        "topics: law",
         "near-match only: online-only; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": null,
       "deadline_evidence": "Relevant information Dates 30 November – 4 December 2026 Venue Online Application deadline 16 November 2026 (rolling basis) Confirmation of acceptance Within 1 week following receipt of the application Payment deadline Within 1 week following confirmation of acceptance Contacts UNICRI: unicri.courses@un.org | (+39) 06 6789.907 SIOI: formint@sioi.org | +39 06 6920781 : (please indicate “Environmental Crimes\" in the subject of the e-mail) 1. Application deadline: Applications must be completed and submitted through the INDICO platform by 16 November 2026 .",
       "duration_evidence": "Relevant information Dates 30 November – 4 December 2026 Venue Online Application deadline 16 November 2026 (rolling basis) Confirmation of acceptance Within 1 week following receipt of the application Payment deadline Within 1 week following confirmation of acceptance Contacts UNICRI: unicri.courses@un.org | (+39) 06 6789.907 SIOI: formint@sioi.org | +39 06 6920781 : (please indicate “Environmental Crimes\" in the subject of the e-mail) 1. Relevant information Dates 30 November – 4 December 2026 Venue Online Application deadline 16 November 2026 (rolling basis) Confirmation of acceptance Within 1 week following receipt of the application Payment deadline Within 1 week following confirmation of acceptance Contacts UNICRI: unicri.courses@un.org | (+39) 06 6789.907 SIOI: formint@sioi.org | +39 06 6920781 : (please indicate “Environmental Crimes\" in the subject of the e-mail) 1.",
       "fee_evidence": "Registration Fee Registration fee amounts to 800 Euro. Registration fee includes: Tuition Course material on electronic version 7.",
-      "mode_evidence": "Relevant information Dates 30 November – 4 December 2026 Venue Online Application deadline 16 November 2026 (rolling basis) Confirmation of acceptance Within 1 week following receipt of the application Payment deadline Within 1 week following confirmation of acceptance Contacts UNICRI: unicri.courses@un.org | (+39) 06 6789.907 SIOI: formint@sioi.org | +39 06 6920781 : (please indicate “Environmental Crimes\" in the subject of the e-mail) 1. Course Methodology This course adopts an online learning model , allowing participants to attend interactive online classes through their own devices.",
+      "mode_evidence": "Relevant information Dates 30 November – 4 December 2026 Venue Online Application deadline 16 November 2026 (rolling basis) Confirmation of acceptance Within 1 week following receipt of the application Payment deadline Within 1 week following confirmation of acceptance Contacts UNICRI: unicri.courses@un.org | (+39) 06 6789.907 SIOI: formint@sioi.org | +39 06 6920781 : (please indicate “Environmental Crimes\" in the subject of the e-mail) 1. Course Methodology This course adopts an online learning model , allowing participants to attend interactive online classes through their own devices. The live training sessions are conducted on a dedicated online platform.",
       "extraction_confidence": 0.35,
       "title_zh": "环境犯罪冬季学校",
-      "organizer_zh": "UNICRI AI Ethics Winter School",
+      "organizer_zh": "联合国区域间犯罪和司法研究所（UNICRI）人工智能伦理冬季学校",
       "location_zh": "线上",
-      "summary_zh": "联合国区域间犯罪与司法研究所（UNICRI）与意大利国际组织协会（SIOI）举办的2026年环境犯罪冬季学校，于2026年11月30日至12月4日在线举行，申请截止日期为2026年11月16日，注册费800欧元。",
-      "eligibility_zh": "面向大学生、研究生和博士生；参与者需要一台电脑（推荐）或移动设备；所需文件包括近期照片和有效护照或其他有效身份证件的扫描件",
-      "recommendation_reason_zh": "截止日期似乎未定；为期5天；主题：法律；仅为近似匹配：仅线上；费用超过400欧元且未明确说明资助",
-      "risk_points_zh": "仅线上；费用超过400欧元且未明确说明资助",
-      "primary_topics": [
-        "law"
-      ],
+      "summary_zh": "联合国区域间犯罪与司法研究所（UNICRI）将于2026年11月30日至12月4日在线举办环境犯罪冬季学校，申请截止日期为2026年11月16日，注册费800欧元。",
+      "eligibility_zh": "面向大学本科生和研究生、博士生",
+      "recommendation_reason_zh": "截止日期似乎仍开放；为期5天；仅为近似匹配：仅线上；费用超过400欧元且无明确资助",
+      "risk_points_zh": "仅线上；费用超过400欧元且无明确资助",
+      "primary_topics": [],
       "secondary_topics": [],
-      "topic_evidence": {
-        "law": "a solid foundation in understanding environmental crimes and how law enforcement and judicial systems are responding to these complex challenges. Participants will expl"
-      },
+      "topic_evidence": {},
       "detail_sections": [],
       "is_new": false
     },
@@ -13018,78 +13203,6 @@
         "physics": "pants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and panel discussio",
         "cosmology": "Quantum Fields and Strings Valerio Faraoni, Bishop's University, Cosmology Stefanie Czischek , University of Ottawa, Artificial Intelligence and Quantum Matter Ren Yeats , Un",
         "particle physics": "rers are expected to include: Junwu Huang , Perimeter Institute, Particle Physics A.W. Peet , University of Toronto, Quantum Fields and Strings Valerio Faraoni, Bishop's University,"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "Winter School on Artificial Intelligence (AI), Ethics and Human Rights",
-      "type": "winter school",
-      "organizer": "UNICRI AI Ethics Winter School",
-      "source_layer": "AI",
-      "region_priority": "global",
-      "location": "Online",
-      "mode": "hybrid",
-      "start_date": null,
-      "end_date": null,
-      "duration_days": null,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "AI"
-      ],
-      "eligibility": "The course is intended for university and post-graduate students, PhD candidates, including United Nations (UN) personnel, and AI enthusiasts interested in exploring the intersection of AI, ethics, and human rights.",
-      "target_level": "PhD",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.unicri.org/index.php/advanced-education-artificial-intelligence-ai-ethics-human-rights-2026",
-      "source_url": "https://www.unicri.org/index.php/advanced-education-artificial-intelligence-ai-ethics-human-rights-2026",
-      "summary": "联合国区域间犯罪和司法研究所（UNICRI）与LUMSA Human Academy联合举办的“人工智能、伦理与人权”冬季学校，2026年12月14日至18日以混合形式进行，地点为意大利罗马并可在线参加。课程面向大学生、研究生、博士生（包括联合国人员）及对AI伦理与人权交叉领域感兴趣的爱好者。完成全部课程后可获得由联合国和LUMSA Human Academy联合颁发的参与证书。",
-      "recommendation_reason": "hybrid; target level: PhD; topics: AI; near-match only: application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline is uncertain",
-        "duration is uncertain"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 3.0,
-      "score_explanation": [
-        "hybrid",
-        "target level: PhD",
-        "topics: AI",
-        "near-match only: application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": null,
-      "deadline_evidence": "",
-      "duration_evidence": "Participants who do not complete the course will not be entitled to a certificate, refunds, or reductions in registration fees. Participants who do not complete the course will not be entitled to a certificate, refunds, or reductions in registration fees.",
-      "fee_evidence": "",
-      "mode_evidence": "Course Methodology The Winter School adopts a hybrid model of learning, which allows participants to attend lectures either in person or virtually through their own devices to accommodate individual needs. | Course Methodology The Winter School adopts a hybrid model of learning, which allows participants to attend lectures either in person or virtually through their own devices to accommodate individual needs. In-person modality Classes will take place at LUMSA Human Academy in Rome (Italy) from Monday to Friday from 9:30 am to 4:00 pm CET. Online modality Classes will be streamed via a dedicated online platform from 9:30 am to 4:00 pm CET from Monday to Friday.",
-      "extraction_confidence": 0.35,
-      "title_zh": "人工智能（AI）、伦理与人权冬季学校",
-      "organizer_zh": "UNICRI AI伦理冬季学校",
-      "location_zh": "线上",
-      "summary_zh": "联合国区域间犯罪和司法研究所（UNICRI）与LUMSA Human Academy联合举办的“人工智能、伦理与人权”冬季学校，2026年12月14日至18日以混合形式进行，地点为意大利罗马并可在线参加。课程面向大学生、研究生、博士生（包括联合国人员）及对AI伦理与人权交叉领域感兴趣的爱好者。完成全部课程后可获得由联合国和LUMSA Human Academy联合颁发的参与证书。",
-      "eligibility_zh": "本课程面向大学生和研究生、博士生，包括联合国（UN）人员，以及对探索AI、伦理与人权交叉领域感兴趣的AI爱好者。",
-      "recommendation_reason_zh": "混合形式；目标层次：博士；主题：AI；仅为近似匹配：申请截止日期不确定；时长不确定；资助情况不明确，费用不确定",
-      "risk_points_zh": "申请截止日期不确定；时长不确定；资助情况不明确，费用不确定",
-      "primary_topics": [
-        "AI"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "AI": "ts, PhD candidates, including United Nations (UN) personnel, and AI enthusiasts interested in exploring the intersection of AI, ethics, and human rights."
       },
       "detail_sections": [],
       "is_new": false
@@ -14389,7 +14502,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/resources/templates/summer-school-application-form/",
       "source_url": "https://www.isprs.org/resources/templates/summer-school-application-form/",
-      "summary": "Summer School Application Form October 19, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissio",
+      "summary": "Summer School Application Form October 21, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissio",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, AI, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -14422,9 +14535,9 @@
       "title_zh": "相关链接",
       "organizer_zh": "ISPRS",
       "location_zh": "全球",
-      "summary_zh": "暑期学校申请表 2026年10月19日 | 首页 | 网站地图 | ISPRS基金会 | 𝕏 登录 首页 学会 学会概览与组织概览 组织 历史背景 百年视频 跨组织活动 目标与活动 官员 理事会 委员会",
+      "summary_zh": "暑期学校申请表 2026年10月21日 | 首页 | 网站地图 | ISPRS基金会 | 𝕏 登录 首页 学会 学会概览与组织 概览 组织 历史背景 百年视频 组织间活动 目标与活动 官员 理事会 委员会",
       "eligibility_zh": "",
-      "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、AI、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
+      "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、人工智能、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
       "risk_points_zh": "申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
       "primary_topics": [
         "remote sensing",
@@ -14469,7 +14582,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/society/awards/torlegard.aspx",
       "source_url": "https://www.isprs.org/society/awards/torlegard.aspx",
-      "summary": "ISPRS WEC Kennert Torlegård Travel Grant October 19, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council",
+      "summary": "ISPRS WEC Kennert Torlegård Travel Grant October 21, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -14502,9 +14615,9 @@
       "title_zh": "获奖证书",
       "organizer_zh": "ISPRS",
       "location_zh": "全球",
-      "summary_zh": "ISPRS WEC Kennert Torlegård 旅行资助 2026年10月19日 | 首页 | 网站地图 | ISPRS 基金会 | 𝕏 登录 首页 学会 学会概览与组织 概览 组织 历史背景 百年视频 组织间活动 目标与活动 官员 理事会",
+      "summary_zh": "ISPRS WEC Kennert Torlegård 旅行资助 2026年10月21日 | 首页 | 网站地图 | ISPRS 基金会 | 𝕏 登录 首页 学会 学会概览与组织 概览 组织 历史背景 百年视频 跨组织活动 目标与活动 官员 理事会",
       "eligibility_zh": "该奖项授予一名年轻科学家，其资格由下文第四条所定义的选择委员会确定",
-      "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确且费用不确定",
+      "recommendation_reason_zh": "6天；可信来源层级1；主题：遥感、地理空间、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确且费用不确定",
       "risk_points_zh": "申请截止日期不确定；仅线上；资助情况不明确且费用不确定",
       "primary_topics": [
         "remote sensing",
@@ -16437,14 +16550,80 @@
       "funding_type": [],
       "funding_evidence": "",
       "topic_keywords": [],
-      "eligibility": "Applicants must be enrolled in, or have completed, a first university degree programme (bachelor’s level or equivalent). Post-graduate students in Sports Management, Law, Political Science, International Relations, Economics, Social Sciences, and other related fields. Professionals working in governmental bodies, local authorities, as well as international and non-governmental organizations, who wish to deepen their understanding of sport governance, integrity, and ethical challenges, including",
+      "eligibility": "Intended for university and post-graduate students in Sports Management, Law, Political Science, International Relations, Economics, Social Sciences and related fields; professionals in governmental bodies, local authorities, international and non-governmental organizations; applicants must be enrolled in or have completed a first university degree (bachelor's level or equivalent)",
+      "target_level": "uncertain",
+      "fee": "Registration fee €1,000, includes tuition and course materials; no refunds or reductions for non-completion or cancellation",
+      "fee_eur": 1000.0,
+      "application_link": "https://unicri.org/training-summer-school-sport-governance-and-ethics-integrity-2026",
+      "source_url": "https://unicri.org/training-summer-school-sport-governance-and-ethics-integrity-2026",
+      "summary": "联合国UNICRI与罗马城市学院合办的体育治理与伦理暑期学校（2027年春季），主题为实践中的诚信，涵盖体育治理、诚信及腐败、假球、金融犯罪和问责等伦理挑战。线下在罗马举办，注册费1000欧元含学费和课程材料，面向相关专业学生及从业人员，申请截止日期待公布。",
+      "recommendation_reason": "in-person; near-match only: application deadline is uncertain; duration is uncertain; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "application deadline is uncertain; duration is uncertain; fee exceeds EUR 400 without explicit funding",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [
+        "application deadline is uncertain",
+        "duration is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "score": 0.0,
+      "score_explanation": [
+        "in-person",
+        "near-match only: application deadline is uncertain; duration is uncertain; fee exceeds EUR 400 without explicit funding"
+      ],
+      "first_seen": null,
+      "deadline_evidence": "",
+      "duration_evidence": "",
+      "fee_evidence": "Registration Fee and Payment The registration fee is €1,000 and includes tuition and course materials. Participants who do not complete the course will not be entitled to the certificate award, refunds, or reductions in the registration fee. Refund and Cancellation Policy In the event of a participant cancellation for any reason, including visa denial, the registration fee will not be refunded.",
+      "mode_evidence": "Course Methodology and Attendance Classes take place at the Rome City Institute Campus in Rome (Italy), Monday to Friday from 9:30 am to 4:30 pm CEST.",
+      "extraction_confidence": 0.35,
+      "title_zh": "体育治理与伦理暑期学校：实践中的诚信",
+      "organizer_zh": "UNICRI 人工智能伦理冬季学校",
+      "location_zh": "意大利罗马，罗马城市学院校区",
+      "summary_zh": "联合国UNICRI与罗马城市学院合办的体育治理与伦理暑期学校（2027年春季），主题为实践中的诚信，涵盖体育治理、诚信及腐败、假球、金融犯罪和问责等伦理挑战。线下在罗马举办，注册费1000欧元含学费和课程材料，面向相关专业学生及从业人员，申请截止日期待公布。",
+      "eligibility_zh": "面向体育管理、法律、政治学、国际关系、经济学、社会科学及相关领域的大学本科生和研究生；政府机构、地方当局、国际组织和非政府组织的专业人士；申请人须已注册或已完成首个大学学位（学士水平或同等学历）",
+      "recommendation_reason_zh": "线下；仅为近似匹配：申请截止日期不确定；时长不确定；费用超过400欧元且无明确资助",
+      "risk_points_zh": "申请截止日期不确定；时长不确定；费用超过400欧元且无明确资助",
+      "primary_topics": [],
+      "secondary_topics": [],
+      "topic_evidence": {},
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
+      "title": "Winter School on Artificial Intelligence (AI), Ethics and Human Rights",
+      "type": "winter school",
+      "organizer": "UNICRI AI Ethics Winter School",
+      "source_layer": "AI",
+      "region_priority": "global",
+      "location": "Online",
+      "mode": "hybrid",
+      "start_date": null,
+      "end_date": null,
+      "duration_days": null,
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "AI"
+      ],
+      "eligibility": "Applicants requiring a visa wishing to attend in person are advised to submit an early application and notify the Administrative Office; online participants must adjust schedules to fully participate regardless of time zone; participants need a computer or mobile device with audio/video, headset with microphone, and reliable internet connection; certificate requires successful completion of the entire programme",
       "target_level": "uncertain",
       "fee": "",
       "fee_eur": null,
-      "application_link": "https://unicri.org/training-summer-school-sport-governance-and-ethics-integrity-2026",
-      "source_url": "https://unicri.org/training-summer-school-sport-governance-and-ethics-integrity-2026",
-      "summary": "联合国区域间犯罪和司法研究所（UNICRI）与罗马城市学院联合举办的“体育治理与伦理：实践中的诚信”暑期学校，2027年春季开班，具体日期待定。课程在意大利罗马城市学院校区线下进行，周一至周五9:30至16:30（CEST）。注册费为1000欧元，包含学费和课程材料。申请者需通过联合国INDICO平台在线申请，申请截止日期为2027年春季（具体日期待公布）。申请者须已注册或完成本科课程，适合体育管理、法律、政治学、国际关系、经济学、社会科学等相关领域的研究生，以及希望深入了解体育治理、诚信和伦理挑战（包括腐败、假球、金融犯罪和问责）的政府、地方当局、国际和非政府组织专业人士。成功完成全部课程后可获得联合国和罗马城市学院联合颁发的参与证书。住宿为罗马城市学院宿舍双人间，8晚，入住和退房日期待公布。",
-      "recommendation_reason": "in-person; near-match only: application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain",
+      "application_link": "https://www.unicri.org/index.php/advanced-education-artificial-intelligence-ai-ethics-human-rights-2026",
+      "source_url": "https://www.unicri.org/index.php/advanced-education-artificial-intelligence-ai-ethics-human-rights-2026",
+      "summary": "联合国区域犯罪与司法研究所（UNICRI）举办的“人工智能、伦理与人权”冬季学校，采用线上线下混合模式，在罗马及线上进行，课程涵盖AI伦理原则、算法偏见与歧视风险以及国际人权法的应用。",
+      "recommendation_reason": "hybrid; topics: AI; near-match only: application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -16462,25 +16641,30 @@
       ],
       "score": 0.0,
       "score_explanation": [
-        "in-person",
+        "hybrid",
+        "topics: AI",
         "near-match only: application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": null,
       "deadline_evidence": "",
       "duration_evidence": "",
       "fee_evidence": "",
-      "mode_evidence": "Course Methodology and Attendance Classes take place at the Rome City Institute Campus in Rome (Italy), Monday to Friday from 9:30 am to 4:30 pm CEST.",
+      "mode_evidence": "Course Methodology The Winter School adopts a hybrid model of learning, which allows participants to attend lectures either in person or virtually through their own devices to accommodate individual needs.",
       "extraction_confidence": 0.35,
-      "title_zh": "体育治理与伦理暑期学校：实践中的诚信",
-      "organizer_zh": "UNICRI 人工智能伦理冬季学校",
-      "location_zh": "意大利罗马，罗马城市学院校园",
-      "summary_zh": "联合国区域间犯罪和司法研究所（UNICRI）与罗马城市学院联合举办的“体育治理与伦理：实践中的诚信”暑期学校，2027年春季开班，具体日期待定。课程在意大利罗马城市学院校区线下进行，周一至周五9:30至16:30（CEST）。注册费为1000欧元，包含学费和课程材料。申请者需通过联合国INDICO平台在线申请，申请截止日期为2027年春季（具体日期待公布）。申请者须已注册或完成本科课程，适合体育管理、法律、政治学、国际关系、经济学、社会科学等相关领域的研究生，以及希望深入了解体育治理、诚信和伦理挑战（包括腐败、假球、金融犯罪和问责）的政府、地方当局、国际和非政府组织专业人士。成功完成全部课程后可获得联合国和罗马城市学院联合颁发的参与证书。住宿为罗马城市学院宿舍双人间，8晚，入住和退房日期待公布。",
-      "eligibility_zh": "申请人须已注册或已完成首个大学学位课程（学士水平或同等学历）。面向体育管理、法律、政治学、国际关系、经济学、社会科学及其他相关领域的研究生。在政府机构、地方当局以及国际和非政府组织工作，希望加深对体育治理、诚信和伦理挑战理解的专业人士，包括",
-      "recommendation_reason_zh": "线下；仅近似匹配：申请截止日期不确定；时长不确定；资助情况不明确，费用不确定",
+      "title_zh": "人工智能（AI）、伦理与人权冬季学校",
+      "organizer_zh": "UNICRI AI伦理冬季学校",
+      "location_zh": "线上",
+      "summary_zh": "联合国区域犯罪与司法研究所（UNICRI）举办的“人工智能、伦理与人权”冬季学校，采用线上线下混合模式，在罗马及线上进行，课程涵盖AI伦理原则、算法偏见与歧视风险以及国际人权法的应用。",
+      "eligibility_zh": "需要签证并希望线下参加的申请人建议尽早提交申请并通知行政办公室；线上参与者必须调整时间安排，确保无论所在时区均能全程参与；参与者需配备带音频/视频功能的电脑或移动设备、带麦克风的耳机以及稳定的网络连接；证书需成功完成整个项目方可获得",
+      "recommendation_reason_zh": "混合形式；主题：AI；仅为近似匹配：申请截止日期不确定；时长不确定；资助情况不明确，费用不确定",
       "risk_points_zh": "申请截止日期不确定；时长不确定；资助情况不明确，费用不确定",
-      "primary_topics": [],
+      "primary_topics": [
+        "AI"
+      ],
       "secondary_topics": [],
-      "topic_evidence": {},
+      "topic_evidence": {
+        "AI": "ghts), participants will examine: Key ethical principles guiding AI development and deployment Risks such as algorithmic bias, discrimination, and inequality The appli"
+      },
       "detail_sections": [],
       "is_new": false
     },
@@ -16501,16 +16685,17 @@
       "funding_type": [],
       "funding_evidence": "",
       "topic_keywords": [
+        "AI",
         "deep learning"
       ],
-      "eligibility": "Students; Academia; ordinary participants",
+      "eligibility": "",
       "target_level": "uncertain",
       "fee": "",
       "fee_eur": null,
       "application_link": "https://www.nldl.org/program/winter-school",
       "source_url": "https://www.nldl.org/program/winter-school",
-      "summary": "NLDL 2027 冬季学校将于2027年1月11日至15日举行，目前正在筹备中。课程由专家授课，涵盖高级深度学习的新兴主题，从基础到最新进展，并与主会议的口头与海报展示相结合。费用方面，学生为2900挪威克朗（免增值税），学术界为3780挪威克朗（不含增值税）；2026年11月10日后注册需加收延迟费。完成课程后可获得证书。",
-      "recommendation_reason": "topics: deep learning; near-match only: application deadline is uncertain; duration is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "summary": "NLDL 2027冬季学校将于2027年1月11日至15日举行，由专家提供高级深度学习相关新兴主题的教程，并与NORA Research School合作举办。",
+      "recommendation_reason": "topics: AI, deep learning; near-match only: application deadline is uncertain; duration is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; duration is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -16529,28 +16714,30 @@
       ],
       "score": 0.0,
       "score_explanation": [
-        "topics: deep learning",
+        "topics: AI, deep learning",
         "near-match only: application deadline is uncertain; duration is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
       "first_seen": null,
       "deadline_evidence": "",
-      "duration_evidence": "Previous PCs & reviewers 2024 Committee 2025 Committee 2026 Committee Registration Register here Registration fees NLDL 2027 Conference and Winter School (11th - 15th January) Students: 2 900 NOK (VAT exempt) Academia: 3 780 NOK (excl. Previous PCs & reviewers 2024 Committee 2025 Committee 2026 Committee Registration Register here Registration fees NLDL 2027 Conference and Winter School (11th - 15th January) Students: 2 900 NOK (VAT exempt) Academia: 3 780 NOK (excl.",
+      "duration_evidence": "Previous PCs & reviewers 2024 Committee 2025 Committee 2026 Committee Registration Register here Registration fees NLDL 2027 Conference and Winter School (11th - 15th January) Students: 2 900 NOK (VAT exempt) Academia: 3 780 NOK (excl. Monday, January 11th 08:00 - 08:45 Registration 08:45 - 09:00 Welcome 09:00 - 11:30 Tutorial: Agentic AI and AI-Assisted Research 11:30 - 12:30 Group Photo & Lunch 12:30 - 13:30 Winter School Poster Session 13:30 - 16:00 Tutorial : Learning with Order: Deep Ordinal Representations for Trustworthy AI 16:00 - 18:00 Program Break 18:00 - 21:00 Icebreaker at Polaria Tuesday - Thursday , January 1 2 th - January 1 4 th -- NLDL Conference -- Friday, Previous PCs & reviewers 2024 Committee 2025 Committee 2026 Committee Registration Register here Registration fees NLDL 2027 Conference and Winter School (11th - 15th January) Students: 2 900 NOK (VAT exempt) Academia: 3 780 NOK (excl.",
       "fee_evidence": "Previous PCs & reviewers 2024 Committee 2025 Committee 2026 Committee Registration Register here Registration fees NLDL 2027 Conference and Winter School (11th - 15th January) Students: 2 900 NOK (VAT exempt) Academia: 3 780 NOK (excl. VAT) Late registration fee for students (after November 10th 2026): + 250 NOK (excl. VAT) Late registration fee ordinary participants (after November 10th 2026): + 500 NOK (excl. VAT) Conference only (12th - 14th January) Students: 2 6 00 NOK (excl.",
       "mode_evidence": "",
       "extraction_confidence": 0.35,
       "title_zh": "NLDL 2027 冬季学校",
       "organizer_zh": "NLDL 冬季学校",
       "location_zh": "不确定",
-      "summary_zh": "NLDL 2027 冬季学校将于2027年1月11日至15日举行，目前正在筹备中。课程由专家授课，涵盖高级深度学习的新兴主题，从基础到最新进展，并与主会议的口头与海报展示相结合。费用方面，学生为2900挪威克朗（免增值税），学术界为3780挪威克朗（不含增值税）；2026年11月10日后注册需加收延迟费。完成课程后可获得证书。",
-      "eligibility_zh": "学生；学术界人士；普通参与者",
-      "recommendation_reason_zh": "主题：深度学习；仅为近似匹配：申请截止日期不确定；时长不确定；是否为线下活动不确定；资助情况未明确，费用不确定",
-      "risk_points_zh": "申请截止日期不确定；时长不确定；是否为线下活动不确定；资助情况未明确，费用不确定",
+      "summary_zh": "NLDL 2027冬季学校将于2027年1月11日至15日举行，由专家提供高级深度学习相关新兴主题的教程，并与NORA Research School合作举办。",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "主题：人工智能、深度学习；仅为近似匹配：申请截止日期不确定；时长不确定；是否为线下形式不确定；资助情况未明确，费用不确定",
+      "risk_points_zh": "申请截止日期不确定；时长不确定；是否为线下形式不确定；资助情况未明确，费用不确定",
       "primary_topics": [
+        "AI",
         "deep learning"
       ],
       "secondary_topics": [],
       "topic_evidence": {
-        "deep learning": "pants will be exposed to the latest advances and applications in deep learning by the oral presentations and poster presentations in the main conference program. T he Winter Scho"
+        "AI": "gistration 08:45 - 09:00 Welcome 09:00 - 11:30 Tutorial: Agentic AI and AI-Assisted Research 11:30 - 12:30 Group Photo & Lunch 12:30 - 13:30 Winter School Poster Sessi",
+        "deep learning": "udy of several emerging topics of high relevance within advanced deep learning, from a basic understanding of the techniques to the latest state-of-the-a"
       },
       "detail_sections": [],
       "is_new": false
@@ -16581,7 +16768,7 @@
       "fee_eur": 1395.0,
       "application_link": "https://www.unsw.edu.au/business/study-with-us/economics-summer-school",
       "source_url": "https://www.unsw.edu.au/business/study-with-us/economics-summer-school",
-      "summary": "UNSW商学院经济学暑期学校2027年项目，时间为2027年2月8日至12日。课程包括前半周的“企业动态宏观经济学”和后半周的“气候计量经济学”。费用：全程（两门课程，五天）常规价2,250澳元，学生价1,350澳元；半程（仅一门课程，半周）常规价每门1,250澳元，学生价每门750澳元。注册页面称没有严格的注册截止日期。",
+      "summary": "UNSW经济学暑期学校，2027年2月8日至12日举行，包含“企业动态宏观经济学”和“气候计量经济学”两门课程，提供全程或半程（单门课程）报名，费用按常规/学生分档。",
       "recommendation_reason": "topics: economics, climate; near-match only: application deadline is uncertain; duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
       "risk_points": "application deadline is uncertain; duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
@@ -16613,7 +16800,7 @@
       "title_zh": "经济学暑期学校",
       "organizer_zh": "UNSW经济学暑期学校",
       "location_zh": "不确定",
-      "summary_zh": "UNSW商学院经济学暑期学校2027年项目，时间为2027年2月8日至12日。课程包括前半周的“企业动态宏观经济学”和后半周的“气候计量经济学”。费用：全程（两门课程，五天）常规价2,250澳元，学生价1,350澳元；半程（仅一门课程，半周）常规价每门1,250澳元，学生价每门750澳元。注册页面称没有严格的注册截止日期。",
+      "summary_zh": "UNSW经济学暑期学校，2027年2月8日至12日举行，包含“企业动态宏观经济学”和“气候计量经济学”两门课程，提供全程或半程（单门课程）报名，费用按常规/学生分档。",
       "eligibility_zh": "",
       "recommendation_reason_zh": "主题：经济学、气候；仅为近似匹配：申请截止日期不确定；时长不确定；是否为线下活动不确定；费用超过400欧元且未明确说明资助",
       "risk_points_zh": "申请截止日期不确定；时长不确定；是否为线下活动不确定；费用超过400欧元且未明确说明资助",
@@ -16625,7 +16812,7 @@
       ],
       "topic_evidence": {
         "climate": "conomics of Business Dynamism Learn more Second half of the week Climate Econometrics Learn more Key dates 8–12 February, 2027 Prices Full program (both courses) Regular: $",
-        "economics": "gram provides an opportunity to explore the latest approaches in economics while developing practical skills for independent economic analysis. Meet the lecturers 2027 progra"
+        "economics": "gram provides an opportunity to explore the latest approaches in economics while developing practical skills for independent economic analysis."
       },
       "detail_sections": [],
       "is_new": false
@@ -17322,7 +17509,7 @@
       "start_date": "2027-01-19",
       "end_date": "2027-01-23",
       "duration_days": 5,
-      "deadline": "2026-11-15",
+      "deadline": "2026-11-30",
       "deadline_status": "open",
       "funding_available": true,
       "funding_type": [
@@ -17340,7 +17527,7 @@
         "economics",
         "psychology"
       ],
-      "eligibility": "PhD Scholarships 2027 in the UK: Funding, Eligibility, Application Process and Deadline Oct 15, 2026 | Africa , America , Asia , Australia and Oceania , Continent",
+      "eligibility": "PhD in Higher Education Policy in Austria Oct 18, 2026 | Continent , Africa , America , Asia , Australia and Oceania , Europe , Latin America and the Caribbean , M",
       "target_level": "MSc, PhD, postdoc, early-career researcher",
       "fee": "free of charge",
       "fee_eur": 0.0,
@@ -17368,7 +17555,7 @@
         "topics: climate, climate change, sustainability, design"
       ],
       "first_seen": "2026-10-07",
-      "deadline_evidence": "Application Deadline The application deadline is: November 15, 2026 (other dates listed: 2026-10-15)",
+      "deadline_evidence": "Apply by November 30 (other dates listed: 2026-10-17, 2026-11-15)",
       "duration_evidence": "January 19–23, 2027",
       "fee_evidence": "free of charge",
       "mode_evidence": "in-person programme bringing together researchers, policyma",
@@ -17768,7 +17955,7 @@
       "is_new": false
     },
     {
-      "title": "Mila's Community of Practice: Agentic AI",
+      "title": "Venture Sprint",
       "type": "summer school",
       "organizer": "Mila",
       "source_layer": "2",
@@ -17800,7 +17987,7 @@
       "fee_eur": 237.5,
       "application_link": "https://mila.quebec/en/continuing-education/summer-school-in-responsible-ai-and-human-rights",
       "source_url": "https://mila.quebec/en/continuing-education/summer-school-in-responsible-ai-and-human-rights",
-      "summary": "Summer School in Responsible AI and Human Rights | Mila Skip to main content Top menu Directory Insights News Careers Français Event Mila's Community of Practice: Agentic AI The upcoming meeting, taking place on November 10 at Mila, will explore how we can collectively develop, g",
+      "summary": "Summer School in Responsible AI and Human Rights | Mila Skip to main content Top menu Directory Insights News Careers Français Mila Venture Venture Sprint This part-time program is built for Venture Scientists who are testing their appetite for entrepreneurship. You have until Oc",
       "recommendation_reason": "funding evidence: scholarship, bursary; 35 days; in-person; target level: MSc, PhD, postdoc, early-career researcher",
       "risk_points": "programme has already started",
       "sessions": [],
@@ -17837,15 +18024,14 @@
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
       "primary_topics": [
-        "AI"
-      ],
-      "secondary_topics": [
+        "AI",
         "artificial intelligence",
         "machine learning",
         "law",
         "social science",
         "digital humanities"
       ],
+      "secondary_topics": [],
       "topic_evidence": {
         "AI": "Summer School in Responsible AI and Human Rights | Mila We use cookies to analyze the browsing and usage of our website and to pers",
         "artificial intelligence": "plied research scientist at Mila Luis Aranda Senior Economist in Artificial Intelligence at the OECD Alex Hernandez-Garcia Assistant professor at the Université de Montréal, a core academi",
@@ -21748,7 +21934,7 @@
       "funding_type": [
         "scholarship"
       ],
-      "funding_evidence": "Partial tuition scholarships may be available for participants with financial need; instructions will be provided to accepted students.",
+      "funding_evidence": "Partial tuition scholarships may be available for participants with financial need; instructions will be provided to students after they are accepted into the program.",
       "topic_keywords": [
         "ecology",
         "physics",
@@ -21759,25 +21945,25 @@
       ],
       "eligibility": "Requirements Applicants should have Masters-level coursework in quantitative discipline (social, natural or information sciences, mathematics, engineering) and/or practical experience working in a quantitative domain rel",
       "target_level": "MSc, PhD, postdoc, early-career researcher",
-      "fee": "Details will be provided when applications open on 17 October 2026",
-      "fee_eur": null,
+      "fee": "Double-room occupancy : EUR 875 Single-room occupancy : EUR 1125 No accommodations : EUR 475 The pro",
+      "fee_eur": 1125.0,
       "application_link": "https://csh.ac.at/education/winterschool/",
       "source_url": "https://csh.ac.at/education/winterschool/",
       "summary": "Winter School * Complexity Science Hub Skip to content Research Close Research Open Research Research Research Topics Publications Funded Projects Research Research Topics Publications Funded Projects Education Close Education Open Education Education PostDoc Program Graduate Pro",
       "recommendation_reason": "5 days; priority region; trusted source layer 1.5; in-person",
-      "risk_points": "application deadline is uncertain; funding is not explicit and fee equivalence is uncertain",
+      "risk_points": "application deadline is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
       "discovery_verified": false,
       "programme_key": "",
       "evidence_sources": {},
       "funding_scope": "",
-      "financial_access_status": "unresolved",
+      "financial_access_status": "self-funded",
       "failed_hard_conditions": [
         "application deadline is uncertain"
       ],
       "failed_recommendation_conditions": [
-        "funding is not explicit and fee equivalence is uncertain"
+        "fee exceeds EUR 400 without explicit funding"
       ],
       "score": 33.0,
       "score_explanation": [
@@ -21787,12 +21973,12 @@
         "in-person",
         "target level: MSc, PhD, postdoc, early-career researcher",
         "topics: ecology, physics, mathematics, engineering",
-        "near-match only: application deadline is uncertain; funding is not explicit and fee equivalence is uncertain"
+        "near-match only: application deadline is uncertain; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": "2026-08-03",
       "deadline_evidence": "",
       "duration_evidence": "01–05 March 2027",
-      "fee_evidence": "Details will be provided when applications open on 17 October 2026",
+      "fee_evidence": "Double-room occupancy : EUR 875 Single-room occupancy : EUR 1125 No accommodations : EUR 475 The pro",
       "mode_evidence": "residential experience and should be considered a full-time c",
       "extraction_confidence": 0.75,
       "title_zh": "",
@@ -22151,6 +22337,7 @@
         "data analysis",
         "social science",
         "sustainability",
+        "AI",
         "data science",
         "mathematics",
         "statistics",
@@ -22165,7 +22352,7 @@
       "fee_eur": null,
       "application_link": "https://essexsummerschool.com/new-application/",
       "source_url": "https://www.essex.ac.uk/short-courses/social-science-data-analysis",
-      "summary": "Social Science Data Analysis | University of Essex Skip to content Students Staff Jobs Home Study Campus life Research About us Events News and blog Visit us Contact Business Alumni Schools and colleges Search Essex Our next Open Day - 17 October 2026 Whether you're just starting",
+      "summary": "Social Science Data Analysis | University of Essex Skip to content Students Staff Jobs Home Study Campus life Research About us Events News and blog Visit us Contact Business Alumni Schools and colleges Search Essex Our next Open Day - 7 November 2026 Whether you're just starting",
       "recommendation_reason": "12 days; priority region; hybrid; target level: MSc, PhD, postdoc",
       "risk_points": "application deadline has passed; funding is not explicit and fee is uncertain",
       "sessions": [
@@ -22212,7 +22399,7 @@
         "priority region",
         "hybrid",
         "target level: MSc, PhD, postdoc",
-        "topics: data analysis, social science, sustainability, data science",
+        "topics: data analysis, social science, sustainability, AI",
         "near-match only: application deadline has passed; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-18",
@@ -22234,6 +22421,7 @@
       ],
       "secondary_topics": [
         "sustainability",
+        "AI",
         "data science",
         "mathematics",
         "statistics",
@@ -22243,14 +22431,15 @@
         "history"
       ],
       "topic_evidence": {
-        "sustainability": "University strategy Executive Summary Key performance indicators Sustainability Wivenhoe Park We Are Essex Support us What's on How can I master my interview? Monday 19 October 12",
+        "sustainability": "University strategy Executive Summary Key performance indicators Sustainability Wivenhoe Park We Are Essex Support us What's on Visibilising (out) violence in academia through spi",
+        "AI": "t news Essex cements top 30 ranking in Complete University Guide AI-assisted creative work linked to increased 'existential ick' emotions Essex blog Essex Law Clinic p",
         "data science": "matics. \"If you're interested in deepening your understanding of data science or social science methodologies, I highly recommend the The Essex Summer School - it's been a fanta",
-        "data analysis": "Social Science Data Analysis Social Science Data Analysis | University of Essex Search Essex Our next Open Day - 17 October 2026",
+        "data analysis": "Social Science Data Analysis Social Science Data Analysis | University of Essex Search Essex Our next Open Day - 7 November 2026",
         "mathematics": "esign, techniques for data collection and measurement as well as mathematics. \"If you're interested in deepening your understanding of data science or social science methodolog",
         "statistics": "research area About Essex Our University Our University Our key statistics Our history Faculties Schools and departments Key dates Global engagement Our values Our values Our",
-        "law": "helped by scientists ahead of 24-hour challenge Essex blog Essex Law Clinic projects 2026-2027: gaining practical legal experience Essex Law Clinic You don't have to st",
+        "law": "linked to increased 'existential ick' emotions Essex blog Essex Law Clinic projects 2026-2027: gaining practical legal experience Essex Law Clinic The Sustainability R",
         "design": "types of quantitative and qualitative research methods, research design, techniques for data collection and measurement as well as mathematics. \"If you're interested in de",
-        "social science": "Social Science Data Analysis Social Science Data Analysis | University of Essex Search Essex Our next Open Day - 1",
+        "social science": "Social Science Data Analysis Social Science Data Analysis | University of Essex Search Essex Our next Open Day - 7",
         "social science methods": "er School in Social Science Data Analysis provides world-leading social science methods training to postgraduate research students by offering instruction from an internationally renowned",
         "history": "About Essex Our University Our University Our key statistics Our history Faculties Schools and departments Key dates Global engagement Our values Our values Our Manifesto E"
       },
@@ -25548,6 +25737,90 @@
       "is_new": false
     },
     {
+      "title": "Extended deadline: Call for papers 14th Conference on Frisian linguistics",
+      "type": "summer school",
+      "organizer": "LOT – Netherlands Graduate School of Linguistics",
+      "source_layer": "1.5",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "uncertain",
+      "start_date": "2027-01-11",
+      "end_date": "2027-01-22",
+      "duration_days": 12,
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "linguistics",
+        "phonetics",
+        "phonology",
+        "design"
+      ],
+      "eligibility": "PhD students who work at a LOT institute",
+      "target_level": "PhD",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://lotschool.nl/extended-deadline-call-for-papers-14th-conference-on-frisian-linguistics/",
+      "source_url": "https://lotschool.nl/extended-deadline-call-for-papers-14th-conference-on-frisian-linguistics/",
+      "summary": "Extended deadline: Call for papers 14th Conference on Frisian linguistics | LOT – Netherlands Graduate School of Linguistics News & Events Education Graduate Programme in Linguistics in the Netherlands LOT Summer and Winter Schools Experimental Methods in Language Acquisition Res",
+      "recommendation_reason": "12 days; priority region; trusted source layer 1.5; target level: PhD",
+      "risk_points": "application deadline is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "funding_scope": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline is uncertain",
+        "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "score": 22.0,
+      "score_explanation": [
+        "12 days",
+        "priority region",
+        "trusted source layer 1.5",
+        "target level: PhD",
+        "topics: linguistics, phonetics, phonology, design",
+        "near-match only: application deadline is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain"
+      ],
+      "first_seen": "2026-10-21",
+      "deadline_evidence": "",
+      "duration_evidence": "January 11, 2027 - January 22, 2027",
+      "fee_evidence": "",
+      "mode_evidence": "",
+      "extraction_confidence": 0.25,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "primary_topics": [
+        "linguistics"
+      ],
+      "secondary_topics": [
+        "phonetics",
+        "phonology",
+        "design"
+      ],
+      "topic_evidence": {
+        "linguistics": "Extended deadline: Call for papers 14th Conference on Frisian linguistics | LOT – Netherlands Graduate School of Linguistics The Frisian Academy (Fryske Akademy) organizes i",
+        "phonetics": "ively or passively participates in Frisian linguistics: grammar, phonetics/phonology, onomastics, lexicology, sociolinguistics, historical linguistics. Papers may focus on th",
+        "phonology": "assively participates in Frisian linguistics: grammar, phonetics/phonology, onomastics, lexicology, sociolinguistics, historical linguistics. Papers may focus on the results",
+        "design": "cted] . https://lotschool.nl/wp-content/uploads/2023/12/Untitled-design-65.png 457 1200 Jan Martin https://lotschool.nl/wp-content/uploads/2018/10/lot.png Jan Martin 2026-"
+      },
+      "detail_sections": [],
+      "is_new": true
+    },
+    {
       "title": "ELIXIR-GOBLET Train-the-Trainer",
       "type": "short course",
       "organizer": "SIB Swiss Institute of Bioinformatics",
@@ -27158,7 +27431,7 @@
         "climate": "ummer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes | (smr 4370) ICTP Giambiagi Lecture Hall (AGH) and Kastler L",
         "climate change": "7 27 Aug 2027 Application Closed school smr4363 Summer School in Climate Change and Infectious Diseases Modelling | (smr 4363) Medellin - Colombia Earth System Physics smr4363 Aug",
         "geophysics": "kshop on Open Hardware and Open Science in Engineering and Hydro-Geophysics: Technical Standards for Global Citizen Science | (smr 4394) ICTP Giambiagi Lecture Hall (AGH) Scie",
-        "AI": "ECAP Seminar by Kausik Ghosh - Conformal Bootstrap in the Age of AI November 2026 November 02 02 Nov 2026 06 Nov 2026 Application Closed workshop smr4244 Joint ICTP-IA",
+        "AI": "ECAP Seminar by Kausik Ghosh - Conformal Bootstrap in the Age of AI October 2026 October 28 28 Oct 2026 28 Oct 2026 Application Closed scientific activity PWF Professi",
         "artificial intelligence": "ICTP-IAEA Workshop on the Clinical Application of Imaging-Based Artificial Intelligence Systems for Medical Physicists | (smr 4246) ICTP Kastler Lecture Hall (AGH) smr4246 cmsp 16 Nov 202",
         "machine learning": "scientific activity ICTP Ghana Mastering Statistical Models and Machine Learning: A Hands-On Workshop in Machine Learning with R/Python V Ghana November 2026 November 17 hecap 16:0",
         "data science": "0 Nov 2026 Application Closed school smr4320 CODATA-RDA Research Data Science Summer School and Advanced workshops | (smr 4320) ICTP Denardo Lecture Hall (AGH) smr4320 November",
@@ -27172,7 +27445,7 @@
         "quantum information": "n Closed scientific activity smr4204 Open Quantum Systems - from Quantum Information to Condensed Matter | (smr 4204) Singapore - Singapore Condensed Matter and Statistical Physics smr",
         "mathematics": "d Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Technology and Innovation Other Show only",
         "statistics": "imensions: Recent Progress in Machine Learning, High-Dimensional Statistics and Inference | (smr 4360) ICTP Budinich Lecture Hall (LB) Quantitative Life Sciences smr4360 hecap",
-        "probability": "smr4203 07:00 21:00 07 Dec 2026 Hosted Activity Workshop of the Probability and Stochastic Analysis Trimester Programme | (smr H737) Physical Organizers cmsp 07 Dec 2026 18 De",
+        "probability": "ember 07 07:00 21:00 07 Dec 2026 Hosted Activity Workshop of the Probability and Stochastic Analysis Trimester Programme | (smr H737) Physical Organizers cmsp 07 Dec 2026 18 De",
         "chemistry": "EA–ICTP Advanced School on Integrated Design, Materials and Fuel Chemistry of Molten Salt Reactors | (smr 4344) ICTP Giambiagi Lecture Hall (AGH) smr4344 hecap 05 Apr 2027 09",
         "materials science": "smr4335 23rd International Workshop on Computational Physics and Materials Science: Total Energy and Force Methods | (smr 4335) ICTP Budinich Lecture Hall (LB) Condensed Matter and S",
         "engineering": "rtificial Intelligence and Machine Learning in Advancing Nuclear Engineering and Technology: from Theory to Practice | (smr 4364) ICTP Giambiagi Lecture Hall (AGH) Science, Tec",
@@ -27341,7 +27614,7 @@
         "AI": "for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language Technologies, Responsible AI,",
         "artificial intelligence": "tracks covering today's most impactful areas of data science and artificial intelligence. Participants will explore topics ranging from Python for Data Science and Machine Learning Fundame",
         "machine learning": "nts will explore topics ranging from Python for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language",
-        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 4094 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
+        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 4129 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
         "language technology": "earch Labs AirQo - IoT & AI for Environment Sunbird AI - African Language Technology Busitema AI - AI for Agriculture Makerere AI Labs DSAIL - IoT & AI for Environment - AirQo Sunbird",
         "high performance computing": "orking - - 11:00 - 13:00 Parallel Julia programming language and High Performance Computing Track A Dr. Adeleke Bankole, University of Cambridge, 11:00 - 13:00 Parallel Multimodal AI & LLMs &",
         "design": "h & Networking - - 14:30 - 16:00 Parallel AirQo DevCon: Hardware Design and Development for Air Quality Sensing Track A AirQo 14:30 - 16:00 Parallel NLP & African Language",
@@ -27420,72 +27693,6 @@
       "topic_evidence": {
         "data analysis": "Summer School on Topological Data Analysis and Applications | (smr 4373) (19-30 July 2027) Europe/Rome English Administration Search Search in"
       },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "Joint Meeting of ELLIS Units Berlin and Warsaw",
-      "type": "summer school",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Berlin",
-      "mode": "in-person",
-      "start_date": "2026-11-04",
-      "end_date": "2026-11-05",
-      "duration_days": 2,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://ellis.eu/events/joint-meeting-of-ellis-units-berlin-and-warsaw",
-      "source_url": "https://ellis.eu/events/joint-meeting-of-ellis-units-berlin-and-warsaw",
-      "summary": "04/11/26 - 05/11/26 • Berlin Joint Meeting of ELLIS Units Berlin and Warsaw Members of the ELLIS Units Berlin and Warsaw will meet on 4–5 November 2026 at the Polish Embassy in Berlin to exchange ideas and explore opportunities for collaboration between the two units. Read More",
-      "recommendation_reason": "priority region; trusted source layer 1; in-person; near-match only: application deadline is uncertain; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline is uncertain; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline is uncertain",
-        "duration is below 4 days"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 13.0,
-      "score_explanation": [
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "near-match only: application deadline is uncertain; duration is below 4 days; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-10-14",
-      "deadline_evidence": "",
-      "duration_evidence": "ELLIS events listing: 2026-11-04 to 2026-11-05",
-      "fee_evidence": "",
-      "mode_evidence": "ELLIS listing location: Berlin",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "primary_topics": [],
-      "secondary_topics": [],
-      "topic_evidence": {},
       "detail_sections": [],
       "is_new": false
     },
@@ -28883,6 +29090,72 @@
         "history": "Ischia Summer School on the History of the Life Sciences, 28 June – 5 July 2026 - Stazione Zoologica Anton Dohrn XIX Ischia Summer Scho",
         "philosophy": "owth scholarship? Hannah Landecker (UCLA) Lecture: The butcher’s philosophy: Transmuting knowledge of life into knowledge of growth in modern agriculture and medicine Seminar:"
       },
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
+      "title": "Joint Meeting of ELLIS Units Berlin and Warsaw",
+      "type": "summer school",
+      "organizer": "ELLIS",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Berlin",
+      "mode": "in-person",
+      "start_date": "2026-11-04",
+      "end_date": "2026-11-05",
+      "duration_days": 2,
+      "deadline": null,
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://ellis.eu/events/joint-meeting-of-ellis-units-berlin-and-warsaw",
+      "source_url": "https://ellis.eu/events/joint-meeting-of-ellis-units-berlin-and-warsaw",
+      "summary": "04/11/26 - 05/11/26 • Berlin Joint Meeting of ELLIS Units Berlin and Warsaw Members of the ELLIS Units Berlin and Warsaw will meet on 4–5 November 2026 at the Polish Embassy in Berlin to exchange ideas and explore opportunities for collaboration between the two units. Read More",
+      "recommendation_reason": "priority region; trusted source layer 1; in-person; near-match only: application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
+      "risk_points": "application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "funding_scope": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline has passed",
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "score": 9.0,
+      "score_explanation": [
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "near-match only: application deadline has passed; duration is below 4 days; funding is not explicit and fee is uncertain"
+      ],
+      "first_seen": "2026-10-14",
+      "deadline_evidence": "",
+      "duration_evidence": "ELLIS events listing: 2026-11-04 to 2026-11-05",
+      "fee_evidence": "",
+      "mode_evidence": "ELLIS listing location: Berlin",
+      "extraction_confidence": 0.5,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "primary_topics": [],
+      "secondary_topics": [],
+      "topic_evidence": {},
       "detail_sections": [],
       "is_new": false
     },
@@ -30360,7 +30633,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/resources/templates/summer-school-application-form/",
       "source_url": "https://www.isprs.org/resources/templates/summer-school-application-form/",
-      "summary": "Summer School Application Form October 19, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissio",
+      "summary": "Summer School Application Form October 21, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissio",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, AI, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -30440,7 +30713,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/society/awards/torlegard.aspx",
       "source_url": "https://www.isprs.org/society/awards/torlegard.aspx",
-      "summary": "ISPRS WEC Kennert Torlegård Travel Grant October 19, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council",
+      "summary": "ISPRS WEC Kennert Torlegård Travel Grant October 21, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -30730,7 +31003,7 @@
       ],
       "secondary_topics": [],
       "topic_evidence": {
-        "natural hazards": "essional Learning Community (PLC) . Program Information Hands-on natural hazards proposal writing experience. The NHERI Summer Institute is a free event for early-career faculty an",
+        "natural hazards": "Career Research Professional Learning Community (PLC): Impactful Natural Hazards Research and Broader Impacts. If you missed the previous PLC sessions, we encourage you to watch al",
         "engineering": "faculty and researchers to learn more about the Natural Hazards Engineering Research Infrastructure (NHERI) community. This year, the Institute will include Professional Learn"
       },
       "detail_sections": [],
