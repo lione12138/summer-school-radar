@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-10-20",
+  "generated": "2026-10-21",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -1016,6 +1016,95 @@
         "linguistics",
         "computational linguistics"
       ]
+    },
+    {
+      "id": "berkeley-dl4sci",
+      "slug": "deep-learning-for-science-summer-school-30a8f1b9",
+      "title": "Deep Learning for Science Summer School",
+      "title_zh": "科学深度学习暑期学校",
+      "organizer": "Berkeley Lab DL4SCI",
+      "organizer_zh": "伯克利实验室 DL4SCI",
+      "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
+      "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由伯克利实验室计算科学部主办，2026年科学深度学习（DL4SCI）暑期学校是一个为期五天的密集型项目，汇集研究人员和工程师，探索深度学习的最新进展",
+      "topics": [
+        "deep learning",
+        "AI",
+        "design"
+      ],
+      "primary_topics": [
+        "deep learning"
+      ],
+      "editions": [
+        {
+          "id": "berkeley-dl4sci:2026",
+          "title": "Deep Learning for Science Summer School 2026",
+          "title_zh": "2026年科学深度学习暑期学校",
+          "detail_path": "opportunities/berkeley-dl4sci-2026-c1272d60.html",
+          "official_url": "https://forms.gle/eGX8XzTHJp4FLkg59",
+          "location": "Berkeley, CA",
+          "location_zh": "加州伯克利",
+          "start_date": "2026-07-20",
+          "end_date": "2026-07-24",
+          "deadline": null,
+          "deadline_status": "closed",
+          "duration_days": 5,
+          "mode": "in-person",
+          "financial_summary": "and Financial Support The registration fee for the school will not exceed $250 · Limited registration waivers for selected enrolled students",
+          "financial_summary_zh": "费用：and Financial Support The registration fee for the school will not exceed $250 · 费用减免（有条件申请，不保证获得）",
+          "funding_available": true,
+          "fee_eur": 237.5,
+          "topics": [
+            "deep learning",
+            "AI",
+            "design"
+          ],
+          "primary_topics": [
+            "deep learning"
+          ],
+          "secondary_topics": [
+            "AI",
+            "design"
+          ],
+          "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
+          "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由伯克利实验室计算科学部主办，2026年科学深度学习（DL4SCI）暑期学校是一个为期五天的密集型项目，汇集研究人员和工程师，探索深度学习的最新进展",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "berkeley-dl4sci:2026",
+        "title": "Deep Learning for Science Summer School 2026",
+        "title_zh": "2026年科学深度学习暑期学校",
+        "detail_path": "opportunities/berkeley-dl4sci-2026-c1272d60.html",
+        "official_url": "https://forms.gle/eGX8XzTHJp4FLkg59",
+        "location": "Berkeley, CA",
+        "location_zh": "加州伯克利",
+        "start_date": "2026-07-20",
+        "end_date": "2026-07-24",
+        "deadline": null,
+        "deadline_status": "closed",
+        "duration_days": 5,
+        "mode": "in-person",
+        "financial_summary": "and Financial Support The registration fee for the school will not exceed $250 · Limited registration waivers for selected enrolled students",
+        "financial_summary_zh": "费用：and Financial Support The registration fee for the school will not exceed $250 · 费用减免（有条件申请，不保证获得）",
+        "funding_available": true,
+        "fee_eur": 237.5,
+        "topics": [
+          "deep learning",
+          "AI",
+          "design"
+        ],
+        "primary_topics": [
+          "deep learning"
+        ],
+        "secondary_topics": [
+          "AI",
+          "design"
+        ],
+        "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
+        "summary_zh": "科学深度学习学校，2026年7月20日至24日，加州伯克利。由伯克利实验室计算科学部主办，2026年科学深度学习（DL4SCI）暑期学校是一个为期五天的密集型项目，汇集研究人员和工程师，探索深度学习的最新进展",
+        "sessions": []
+      }
     },
     {
       "id": "programme:005729e641c21ccf",
