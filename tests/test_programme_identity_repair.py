@@ -98,3 +98,13 @@ def test_url_change_within_fallback_programme_keeps_one_edition():
     assert catalog["programmes"][0]["id"] == programme_identity(current)
     assert catalog["programmes"][0]["edition_count"] == 1
     assert programme_lookup(catalog)[edition_identity(old)] is programme_lookup(catalog)[edition_identity(current)]
+
+
+def test_explicit_migration_handles_legacy_region_only_location():
+    old, current = alps(), alps(explicit=True)
+    old.location = "Centre Paul Langevin"
+    current.location = "Europe"
+    catalog = build_programme_catalog([current], build_programme_catalog([old]))
+    assert len(catalog["programmes"]) == 1
+    assert programme_lookup(catalog)[edition_identity(old)]["id"] == current.programme_key
+    assert catalog["programmes"][0]["edition_count"] == 1

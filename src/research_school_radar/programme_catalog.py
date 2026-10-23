@@ -100,12 +100,25 @@ def _same_edition(programme: dict, edition: dict, candidate: Candidate) -> bool:
         return False
     if not candidate.start_date or not candidate.end_date:
         return False
+    prior_location = str(edition.get("location", "")).casefold().strip()
+    current_location = public_location(candidate.location).casefold().strip()
+    # Old snapshots sometimes stored the source's continent as the venue.
+    # It is not conflicting venue evidence. Only an explicit/fallback identity
+    # migration can use this exception, still requiring every other fact below.
+    regions = {"europe", "asia", "africa", "north america", "south america", "oceania", "global"}
+    explicit_migration = (
+        bool(candidate.programme_key) != (not str(programme.get("id", "")).startswith("programme:"))
+        or bool(candidate.identity_key) != (not str(edition.get("id", "")).startswith("edition:"))
+    )
+    location_matches = prior_location == current_location or (
+        explicit_migration and (prior_location in regions or current_location in regions)
+    )
     title = normalized_programme_title(candidate.title).casefold()
     return (
         title == normalized_programme_title(str(edition.get("title", ""))).casefold()
         and edition.get("start_date") == candidate.start_date.isoformat()
         and edition.get("end_date") == candidate.end_date.isoformat()
-        and str(edition.get("location", "")).casefold() == public_location(candidate.location).casefold()
+        and location_matches
         and edition.get("sessions", []) == _edition_record(candidate)["sessions"]
     )
 

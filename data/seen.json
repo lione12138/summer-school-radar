@@ -63,6 +63,22 @@
     "status": "near_match",
     "title": "Deep Learning for Science Summer School 2026"
   },
+  "bup-comade:2027": {
+    "deadline": "2026-10-26",
+    "first_seen": "2026-10-23",
+    "last_seen": "2026-10-23",
+    "source_url": "https://www.uu.se/en/collaboration-innovation/the-baltic-university-programme/events-and-announcements/comade-science-on-the-island",
+    "status": "near_match",
+    "title": "CoMaDe Science on the Island"
+  },
+  "cmu-myclimate:2027": {
+    "deadline": "2026-10-30",
+    "first_seen": "2026-10-23",
+    "last_seen": "2026-10-23",
+    "source_url": "https://rcsd.soc.cmu.ac.th/news-announcements/call-for-applications-myclimate-winter-school-january-2027/",
+    "status": "qualified",
+    "title": "Call for Applications: MyClimate Winter School January 2027"
+  },
   "crm-pims-probability:2027-07-12:2027-08-06": {
     "deadline": null,
     "first_seen": "2026-09-23",
@@ -944,6 +960,14 @@
     "status": "near_match",
     "title": "Al-Nour Winter School on Fusion Science"
   },
+  "https://indico.ictp.it/event/11412": {
+    "deadline": "2026-11-01",
+    "first_seen": "2026-10-23",
+    "last_seen": "2026-10-23",
+    "source_url": "https://indico.ictp.it/event/11412",
+    "status": "qualified",
+    "title": "Spring College in the Physics of Complex Systems"
+  },
   "https://indico.ictp.it/event/11447": {
     "deadline": null,
     "first_seen": "2026-07-23",
@@ -1362,6 +1386,14 @@
     "status": "near_match",
     "title": "Scholarships & Travel Grants"
   },
+  "https://www.archaeological.org/programs/professionals/grants-awards/": {
+    "deadline": "2027-06-30",
+    "first_seen": "2026-10-23",
+    "last_seen": "2026-10-23",
+    "source_url": "https://www.archaeological.org/programs/professionals/grants-awards/",
+    "status": "near_match",
+    "title": "Grants & Awards"
+  },
   "https://www.climatechange.ai/events/summer_school2022": {
     "deadline": "2021-12-17",
     "first_seen": "2026-06-15",
@@ -1729,6 +1761,14 @@
     "last_seen": "2026-06-15",
     "status": "near_match",
     "title": "Events: GFZ"
+  },
+  "https://www.gfz.de/en/events/detail/default-d5ed6f7a2eeb3cf67626075e2fec6707": {
+    "deadline": "2026-03-31",
+    "first_seen": "2026-10-23",
+    "last_seen": "2026-10-23",
+    "source_url": "https://www.gfz.de/en/events/detail/default-d5ed6f7a2eeb3cf67626075e2fec6707",
+    "status": "near_match",
+    "title": "Potsdam Summer School 2026"
   },
   "https://www.grss-ieee.org/event/ieee-grss-summer-school-on-uas-based-gnss-r-remote-sensing/": {
     "deadline": null,
@@ -2486,6 +2526,14 @@
     "status": "near_match",
     "title": "Computational Approaches to Memory and Plasticity (CAMP) 2026"
   },
+  "imiscoe-phd-school:2027": {
+    "deadline": "2026-11-15",
+    "first_seen": "2026-10-23",
+    "last_seen": "2026-10-23",
+    "source_url": "https://www.imiscoe.org/events/2739-2027-phd-school",
+    "status": "near_match",
+    "title": "IMISCOE PhD School 2027 — Regional Migration Studies: Dynamics of Human Mobility, Governance and Socioeconomic Transformations"
+  },
   "jparc-neutron-muon-school:2026": {
     "deadline": "2026-09-30",
     "first_seen": "2026-09-23",
@@ -2501,6 +2549,14 @@
     "source_url": "https://phys.ncts.ntu.edu.tw/act/actnews/2026-43406217/home/introduction",
     "status": "near_match",
     "title": "NCTS Summer School on QFT 2026"
+  },
+  "princeton-climate-behavior:2027": {
+    "deadline": "2026-11-15",
+    "first_seen": "2026-10-23",
+    "last_seen": "2026-10-23",
+    "source_url": "https://www.princetonclimateschool.com/",
+    "status": "qualified",
+    "title": "Princeton Winter School in Behavioral Science for Climate Action"
   },
   "seminaire-mathematiques-superieures:2027-06-14:2027-06-25": {
     "deadline": null,

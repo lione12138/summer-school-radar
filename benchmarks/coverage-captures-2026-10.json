@@ -106,5 +106,14 @@
     "kind": "official_http_cache",
     "original_sha256": "cf7b5b3c22b8c373582542d1fb8caa4577f86f449053d01c357879a32e058133",
     "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  },
+  {
+    "id": "ictp-college",
+    "url": "https://indico.ictp.it/event/11412",
+    "html": "pages/coverage-ictp-college.html",
+    "captured_at": "2026-10-23",
+    "kind": "official_capture",
+    "original_sha256": "51230907f3d3722bb20266efd7a6085e7bc09c32bb585b6288a5e7dcaad54185",
+    "normalization": "Scripts, styles, noscript, SVG and images removed; page structure and text retained."
   }
 ]

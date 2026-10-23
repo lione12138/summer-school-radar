@@ -13,6 +13,8 @@ from research_school_radar.record_audit import _audit_prompt, record_context
 from research_school_radar.record_audit import _relevant_page_windows, RecordAuditConfig
 from research_school_radar.publication import is_found_opportunity
 from research_school_radar.review import _needs_review
+from research_school_radar.models import Source, Page
+from research_school_radar.extract import extract_candidate
 
 
 def test_real_coverage_captures_have_correct_fields_and_keep_discovery_closed():
@@ -66,3 +68,18 @@ def test_evidence_windows_include_team_instead_of_repeated_introduction():
     text = BeautifulSoup(html, "html.parser").get_text(" ", strip=True)
     windows = _relevant_page_windows(text, "Princeton Winter School", RecordAuditConfig())
     assert any("Elke Weber" in window and "Organizers Anandita" in window for window in windows[:3])
+
+
+def test_ictp_college_live_capture_preserves_hosts_venue_and_conditional_grants():
+    html = Path("benchmarks/pages/coverage-ictp-college.html").read_text(encoding="utf-8")
+    soup = BeautifulSoup(html, "html.parser")
+    source = Source("ICTP", "https://indico.ictp.it/event/11412", "1", "Europe", "research_institute")
+    page = Page(source.url, soup.title.get_text(), soup.get_text(" ", strip=True), html, source, date(2026, 10, 23))
+    c = extract_candidate(page, {})
+    assert c.organizer == "ICTP and SISSA"
+    assert "Trieste (Italy)" in c.location and "Kastler Lecture Hall" in c.location
+    assert (c.start_date, c.end_date, c.deadline) == (date(2027, 2, 15), date(2027, 3, 12), date(2026, 11, 1))
+    assert c.fee_eur == 0 and "limited" in c.funding_evidence
+    assert "qualified Master and PhD students" in c.eligibility
+    assert "aims to expose students" in c.summary
+    assert c.application_link == "https://e-applications.ictp.it/applicant/login/4338"

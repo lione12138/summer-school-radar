@@ -33,7 +33,7 @@ from .australia_adapters import amsi_winter, acan, ansto_neutron, unsw_economics
 from .asia_adapters import astroai, viasm, camp
 from .csha_adapter import csha_course
 from .ggi_adapter import ggi_school
-from .coverage_adapters import myclimate, imiscoe, princeton_climate, polito_iam, comade
+from .coverage_adapters import myclimate, imiscoe, princeton_climate, polito_iam, comade, ictp_college
 
 
 def resolve_overrides(page: Page) -> dict[str, Any]:
@@ -382,6 +382,7 @@ _ADAPTERS: dict[str, Callable[[Page], dict[str, Any]]] = {
     "csh-asia.org": csha_course,
     "iahs.info": iahs_academy,
     "lig-alps.imag.fr": alps,
+    "indico.ictp.it": ictp_college,
     "winterschool.eurac.edu": eurac_winter_school,
     "icimod.org": _icimod,
     "essex.ac.uk": _essex_summer_school,

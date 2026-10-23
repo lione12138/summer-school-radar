@@ -619,3 +619,11 @@ the reusable cache. Retries now request valid JSON explicitly; failed cached
 extractions are retried on subsequent scans. Overlapping evidence windows also
 hid Princeton's organizers. Diversified excerpts and plural organizer matching
 restore that evidence; the targeted Princeton record now passes the audit.
+
+23 October release follow-up: the real ALPS catalogue had a legacy continent-only
+venue, unlike the initial fixtures. Added a regression and an explicit-ID migration
+exception for region-only values, while continuing to reject differing concrete
+venues. The ICTP detail endpoint eventually responded; a captured-page adapter
+now preserves its hosts, venue, eligibility and competitive grants. One Eurac
+extraction also emitted unquoted evidence IDs; a single prompted retry resolved
+the format error without heuristic JSON repairs or changing public facts.

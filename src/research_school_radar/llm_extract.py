@@ -154,6 +154,18 @@ def run_llm_extraction(
         if raw_response:
             parsed = parse_llm_json(raw_response)
             if parsed is None:
+                # One bounded retry, retaining the evidence and strict parser.
+                # Do not "repair" unquoted IDs or guess missing JSON members.
+                try:
+                    parsed = parse_llm_json(client.complete(prompt + (
+                        '\nThe previous response was invalid JSON and was discarded. '
+                        'Repeat extraction as valid JSON. Quote every object key and every evidence ID: '
+                        '"evidence_ids":["E1","E2"], never [E1,E2]. '
+                        'Return the complete object without markdown.'
+                    )))
+                except Exception as exc:  # noqa: BLE001 - keep production failure visible.
+                    warnings.append(f"llm_unavailable:{exc}")
+            if parsed is None:
                 warnings.append("llm_json_parse_failed")
             else:
                 extraction = _with_schema_defaults(parsed)
@@ -253,6 +265,7 @@ def build_llm_prompt_from_snippets(
         "A satellite event is not satellite remote sensing; an AI governance workshop within a law school is a secondary topic.\n"
         "For each non-unknown field, cite one or more evidence_ids from the provided snippets.\n"
         "Only use evidence_ids that appear in the input. If no evidence ID supports a field, return value=\"unknown\" and evidence_ids=[].\n"
+        'Evidence IDs must be JSON strings: "evidence_ids":["E1","E2"], never unquoted [E1,E2].\n'
         "Do not output evidence_text. Do not output thinking, reasoning, or chain-of-thought. Return JSON only.\n"
         "First classify page_type as opportunity|application|fees|funding|index|other|unknown.\n"
         "For index/listing pages, do not synthesize event date ranges or locations; add warning index_or_listing_page.\n"

@@ -1,7 +1,49 @@
 """Evidence-bound repairs for the October coverage regression pages."""
 import re
+from urllib.parse import urlsplit
+
+from bs4 import BeautifulSoup
 
 from .date_extraction import _safe_parse_date, _date_ranges
+from .utils import clean_space
+
+
+def ictp_college(page):
+    """Read the official Indico description, excluding platform navigation."""
+    soup = BeautifulSoup(page.html, "html.parser")
+    description = soup.select_one('.description[itemprop="description"]')
+    if not description:
+        return {}
+    text = clean_space(description.get_text(" "))
+    if not re.search(r"\bSpring College\b", text):
+        return {}
+    result = {}
+    if re.search(r"ICTP and SISSA,.+?are organizing the Spring College", text):
+        result["organizer"] = "ICTP and SISSA"
+    venue = soup.select_one(".info_line.location")
+    if venue:
+        result["location"] = clean_space(venue.get_text(" "))
+    summary = re.search(r"The Spring College on .+?aims to .+?programme\.", text)
+    eligibility = re.search(r"The Spring College is part of .+?young researchers\.", text)
+    if summary:
+        result["summary"] = summary[0]
+    if eligibility:
+        result["eligibility"] = eligibility[0]
+    grant = re.search(r"A limited number of grants are available.+?developing countries\.", text)
+    if grant:
+        result.update(funding_available=True, funding_type=["competitive grant"],
+                      funding_scope=grant[0], funding_evidence=grant[0])
+    if "There is no registration fee." in text:
+        result.update(fee="Free registration; competitive grants for selected participants",
+                      fee_eur=0, fee_evidence="There is no registration fee.")
+    for anchor in soup.find_all("a", href=True):
+        if clean_space(anchor.get_text(" ")).casefold() != "apply here":
+            continue
+        url = anchor["href"]
+        if urlsplit(url).scheme == "https" and urlsplit(url).hostname == "e-applications.ictp.it":
+            result["application_link"] = url
+            break
+    return result
 
 
 def polito_iam(page):

@@ -194,7 +194,7 @@ def test_failed_extraction_cache_is_retried_then_success_is_reused(tmp_path) -> 
 
         def complete(self, prompt: str) -> str:
             self.calls += 1
-            return "malformed JSON" if self.calls == 1 else '{"confidence":"low","warnings":[]}'
+            return "malformed JSON" if self.calls <= 2 else '{"confidence":"low","warnings":[]}'
 
     client = RecoveringClient()
     def extract():
@@ -206,4 +206,4 @@ def test_failed_extraction_cache_is_retried_then_success_is_reused(tmp_path) -> 
     assert "llm_json_parse_failed" in extract()["validation_warnings"]
     assert "llm_json_parse_failed" not in extract()["validation_warnings"]
     extract()
-    assert client.calls == 2
+    assert client.calls == 3

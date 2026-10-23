@@ -23,8 +23,9 @@ These are small, agent-reviewed regression fixtures, not a population recall or
 production precision estimate. Both versions receive the newly registered
 sources, isolating extraction improvements from registry expansion. Princeton
 is intentionally a negative publication case until its discovery audit passes.
-ICTP's official listing is captured, but its detail endpoint timed out during
-this investigation; a listing-link success is not counted as a published record.
+ICTP's official listing is captured. Its detail endpoint initially timed out;
+a 23 October retry succeeded and is covered by a separate live-capture regression.
+It is not retroactively included in the original five-record comparison.
 
 ## Findings and repairs
 
@@ -63,6 +64,31 @@ this investigation; a listing-link success is not counted as a published record.
   same edition across URL/identity migrations. Prefer explicit programme IDs,
   retain prior editions and edition lookup aliases, and never merge distinct
   explicit programme keys solely by text similarity.
+  Live catalogue replay additionally exposed a legacy region-only venue (`Europe`)
+  versus a concrete venue. Such a region is not contradictory location evidence
+  during an explicit/fallback ID migration; two different concrete venues still
+  prevent a merge. The real ALPS catalogue now resolves to one programme/edition.
+
+## 23 October release validation
+
+The full scan attempted 187 sources, with 166 successful fetches. Retrying the
+official ICTP detail page added its Spring College through extraction, hard
+filters and evidence audit. The page's own description and location markup now
+identify ICTP/SISSA, the Trieste venue, master/PhD eligibility and limited grants;
+Indico's platform name and time-zone navigation are excluded from these fields.
+
+The validated output contains five current public opportunities: VIASM,
+MyClimate, Princeton, ICTP Spring College and IMISCOE. IMISCOE remains self-funded;
+the other four qualify through free registration/low fees, without a promise of
+universal travel or accommodation support. CoMaDe remains held for contradictory
+official years. PoliTO's captured fields pass regression and audit, but fresh
+root/application requests are refused, so this release does not claim it was
+successfully scanned or add it from an unreachable current endpoint.
+
+One Eurac extraction returned unquoted evidence IDs. A bounded retry explicitly
+requests valid JSON; the strict parser and evidence validator remain unchanged.
+The repaired extraction changed no public candidate facts. The entire batch then
+passed AI output, snapshot-retention and site-integrity validation.
 
 ## Healthy sources with no extracted records
 

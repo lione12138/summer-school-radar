@@ -56,6 +56,25 @@ def test_invalid_llm_json_does_not_crash() -> None:
     assert "llm_json_parse_failed" in items[0]["validation_warnings"]
 
 
+def test_malformed_evidence_ids_retry_without_repairing_model_facts():
+    class RetryClient:
+        prompts = []
+
+        def complete(self, prompt):
+            self.prompts.append(prompt)
+            if len(self.prompts) == 1:
+                return '{"fee":{"value":"EUR 300","evidence_ids":[E1]}}'
+            assert 'previous response was invalid JSON' in prompt
+            return '{"fee":{"value":"EUR 300","evidence_ids":["E1"]}}'
+
+    client = RetryClient()
+    item = run_llm_extraction([_chunk()], candidates=[], client=client,
+                             max_pages_for_llm=1, max_chunks_per_page=1)[0]
+    assert len(client.prompts) == 2
+    assert "llm_json_parse_failed" not in item["validation_warnings"]
+    assert item["llm_extraction"]["fee"]["value"] == "EUR 300"
+
+
 def test_llm_timeout_is_recorded_as_warning() -> None:
     class TimeoutClient:
         def complete(self, prompt: str) -> str:
