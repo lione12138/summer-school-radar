@@ -38,6 +38,8 @@ def build_programme_catalog(
             record = _clean_previous_programme(raw)
             programmes[record["id"]] = record
 
+    _repair_previous_programmes(programmes)
+
     for candidate in candidates:
         key = programme_identity(candidate)
         identity = edition_identity(candidate)
@@ -93,34 +95,63 @@ def _same_edition(programme: dict, edition: dict, candidate: Candidate) -> bool:
     A year alone is insufficient: separate sessions and similarly named schools
     must retain their identities. Unknown organizers cannot establish identity.
     """
-    organizer = " ".join(candidate.organizer.casefold().split())
+    return _same_edition_records(programme, edition,
+                                 {"id": programme_identity(candidate), "organizer": candidate.organizer},
+                                 _edition_record(candidate))
+
+
+def _same_edition_records(programme: dict, edition: dict, current: dict, new_edition: dict) -> bool:
+    organizer = " ".join(str(current.get("organizer", "")).casefold().split())
     if not organizer or organizer in {"unknown", "uncertain"}:
         return False
     if organizer != " ".join(str(programme.get("organizer", "")).casefold().split()):
         return False
-    if not candidate.start_date or not candidate.end_date:
+    if not new_edition.get("start_date") or not new_edition.get("end_date"):
         return False
     prior_location = str(edition.get("location", "")).casefold().strip()
-    current_location = public_location(candidate.location).casefold().strip()
+    current_location = str(new_edition.get("location", "")).casefold().strip()
     # Old snapshots sometimes stored the source's continent as the venue.
     # It is not conflicting venue evidence. Only an explicit/fallback identity
     # migration can use this exception, still requiring every other fact below.
     regions = {"europe", "asia", "africa", "north america", "south america", "oceania", "global"}
     explicit_migration = (
-        bool(candidate.programme_key) != (not str(programme.get("id", "")).startswith("programme:"))
-        or bool(candidate.identity_key) != (not str(edition.get("id", "")).startswith("edition:"))
+        str(current.get("id", "")).startswith("programme:") != str(programme.get("id", "")).startswith("programme:")
+        or str(new_edition.get("id", "")).startswith("edition:") != str(edition.get("id", "")).startswith("edition:")
     )
     location_matches = prior_location == current_location or (
         explicit_migration and (prior_location in regions or current_location in regions)
     )
-    title = normalized_programme_title(candidate.title).casefold()
+    title = normalized_programme_title(str(new_edition.get("title", ""))).casefold()
     return (
         title == normalized_programme_title(str(edition.get("title", ""))).casefold()
-        and edition.get("start_date") == candidate.start_date.isoformat()
-        and edition.get("end_date") == candidate.end_date.isoformat()
+        and edition.get("start_date") == new_edition["start_date"]
+        and edition.get("end_date") == new_edition["end_date"]
         and location_matches
-        and edition.get("sessions", []) == _edition_record(candidate)["sessions"]
+        and edition.get("sessions", []) == new_edition.get("sessions", [])
     )
+
+
+def _repair_previous_programmes(programmes: dict[str, dict]) -> None:
+    """Repair retained history even if its current source failed this scan."""
+    explicit = [p for p in programmes.values() if not p["id"].startswith("programme:")]
+    for fallback in [p for p in programmes.values() if p["id"].startswith("programme:")]:
+        matches = [p for p in explicit if any(
+            _same_edition_records(fallback, old, p, new)
+            for old in fallback["editions"] for new in p["editions"]
+        )]
+        if len(matches) != 1:
+            continue
+        target = matches[0]
+        for old in fallback["editions"]:
+            matching = [new for new in target["editions"]
+                        if _same_edition_records(fallback, old, target, new)]
+            if len(matching) == 1:
+                new = matching[0]
+                aliases = {old["id"], *old.get("identity_aliases", []), *new.get("identity_aliases", [])}
+                new["identity_aliases"] = sorted(aliases - {new["id"]})
+            else:
+                target["editions"].append(old)
+        fallback["editions"] = []
 
 
 def programme_identity(candidate: Candidate) -> str:

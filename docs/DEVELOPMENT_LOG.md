@@ -627,3 +627,9 @@ venues. The ICTP detail endpoint eventually responded; a captured-page adapter
 now preserves its hosts, venue, eligibility and competitive grants. One Eurac
 extraction also emitted unquoted evidence IDs; a single prompted retry resolved
 the format error without heuristic JSON repairs or changing public facts.
+
+The first live post-deployment check showed that ALPS was absent from the latest
+scan, leaving both records only in retained history. Catalogue reconciliation
+must therefore also compare historical fallback/explicit records, independently
+of current candidates. A no-current-edition regression now covers this path and
+preserves the prior edition alias and historical page files.

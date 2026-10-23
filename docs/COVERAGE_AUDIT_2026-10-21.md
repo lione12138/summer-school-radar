@@ -68,6 +68,8 @@ It is not retroactively included in the original five-record comparison.
   versus a concrete venue. Such a region is not contradictory location evidence
   during an explicit/fallback ID migration; two different concrete venues still
   prevent a merge. The real ALPS catalogue now resolves to one programme/edition.
+  This repair also runs over retained history when no current candidate was
+  fetched; otherwise the persisted duplicate would survive every status refresh.
 
 ## 23 October release validation
 

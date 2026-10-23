@@ -108,3 +108,17 @@ def test_explicit_migration_handles_legacy_region_only_location():
     assert len(catalog["programmes"]) == 1
     assert programme_lookup(catalog)[edition_identity(old)]["id"] == current.programme_key
     assert catalog["programmes"][0]["edition_count"] == 1
+
+
+def test_historical_duplicates_merge_even_when_latest_scan_has_no_edition():
+    old, explicit = alps(), alps(explicit=True)
+    old.location, explicit.location = "Centre Paul Langevin", "Europe"
+    previous = {"programmes": [*build_programme_catalog([old])["programmes"],
+                               *build_programme_catalog([explicit])["programmes"]]}
+    untouched = deepcopy(previous)
+    catalog = build_programme_catalog([], previous)
+    assert previous == untouched
+    assert len(catalog["programmes"]) == 1
+    assert catalog["programmes"][0]["edition_count"] == 1
+    assert programme_lookup(catalog)[edition_identity(old)]["id"] == explicit.programme_key
+    assert build_programme_catalog([], catalog) == catalog
