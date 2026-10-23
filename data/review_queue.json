@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-21",
+  "generated": "2026-10-23",
   "review_queue": [
     {
       "title": "Al-Nour Winter School on Fusion Science",
@@ -507,13 +507,12 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "llm_chunk_truncated:6",
-          "index_or_listing_page"
+          "llm_chunk_truncated:6"
         ],
-        "chinese_summary": "莱顿语言与语言学暑期学校（Leiden Summer School in Languages and Linguistics）由LOT组织，面向语言学学生和爱好者。LOT附属RMA学生和博士生可能获得差旅与住宿报销（有条件限制），LOT可为LOT附属RM学生支付最多一门LLL课程费用，但博士生不符合该计划资格。RM学生参加LLL可获得5个LOT学分。",
+        "chinese_summary": "莱顿语言与语言学暑期学校（LLL）由LOT组织，为期两周，面向语言学学生与爱好者，提供深入学习与拓展知识的机会。LOT附属RMA学生可能获得旅费与住宿报销（有条件），LOT最多支付一门LLL课程费用，需到校参加并完成额外作业；博士生不符合该资助计划。",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "LOT covers the fee for participation in LLL by LOT RM students within this scheme; LOT pays for a maximum of one LLL course per LOT-affiliated RM student; travel and accommodation reimbursements may be available for LOT-affiliated RMA students and PhD candidates (conditions apply); PhD candidates are not eligible for this scheme; if a student participates in both the LOT Summer School and the LLL in the same summer, reimbursement of travel and/or accommodation costs may be claimed for only one o",
+        "extracted_funding": "LOT-affiliated RMA students may be eligible for travel and accommodation reimbursements (conditions apply); LOT will pay for a maximum of one LLL course per LOT-affiliated RM student; the student must participate on campus even if the course is offered in hybrid form; after the two-week course the student completes an additional assignment; PhD candidates are not eligible for this scheme; if a student participates in both the LOT Summer School and the LLL in the same summer, reimbursement of tra",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
@@ -1029,7 +1028,7 @@
         "statistics": "e lecturer was so effective that every session was the best math/statistics class I have ever attended. After a comprehensive week-long input on theory and coupled by practice",
         "design": "usal Inference 1: Social Science Experiments Causal Inference 2: Design-Based Approaches Text Analysis Data Analysis for the Social Sciences Large Language Models Tutor Ma",
         "philosophy of science": "d' in a week is super useful and makes you think a lot about the philosophy of science etc. The deep dive kind of teaching methodology is really helpful. The lecturers were good too and",
-        "social science": "Spring School in Advanced Social Science Research Methods | DPIR Oxford Spring School in Advanced Social Research Methods Our Oxford Spring",
+        "social science": "Spring School in Advanced Social Science Research Methods | DPIR Oxford Spring School in Advanced Social Research Methods Subscribe to recei",
         "philosophy": "d' in a week is super useful and makes you think a lot about the philosophy of science etc. The deep dive kind of teaching methodology is really helpful. The lecturers were go"
       },
       "evidence": {
@@ -1264,6 +1263,71 @@
       },
       "ai_advisory": {
         "available": false
+      }
+    },
+    {
+      "title": "Perimeter Undergraduate Summer School",
+      "url": "https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school",
+      "organizer": "Perimeter Undergraduate Summer School",
+      "source_layer": "1",
+      "location": "North America",
+      "dates": {
+        "start": "2027-06-14",
+        "end": "2027-06-25",
+        "duration_days": 12
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "physics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.25,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.25,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "physics": "pants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and panel discussio"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "June 14-25, 2027",
+        "fee": "",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [],
+        "chinese_summary": "Perimeter Institute 将于2027年6月14日至25日举办为期两周的本科生暑期学校，内容涵盖现代理论物理前沿主题、研究人员报告、小组讨论及协作解题等主动学习活动。申请尚未开放。",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
       }
     },
     {
