@@ -3140,6 +3140,9 @@
       "school",
       "workshop"
     ],
+    "evidence_urls": {
+      "spring_college": "https://indico.ictp.it/event/11412"
+    },
     "notes": "Abdus Salam ICTP runs many funded schools in geophysics, climate, and scientific ML. The /scientific-calendar path 404s; /home/scientific-calendar works for scripted requests.",
     "notes_zh": "\u963f\u535c\u675c\u52d2\u00b7\u8428\u62c9\u59c6\u56fd\u9645\u7406\u8bba\u7269\u7406\u4e2d\u5fc3\uff08ICTP\uff09\u5728\u5730\u7403\u7269\u7406\u5b66\u3001\u6c14\u5019\u548c\u79d1\u5b66\u673a\u5668\u5b66\u4e60\u9886\u57df\u5f00\u8bbe\u4e86\u8bb8\u591a\u63d0\u4f9b\u8d44\u52a9\u7684\u5b66\u6821\u3002/scientific-calendar \u8def\u5f84\u8fd4\u56de 404\uff1b/home/scientific-calendar \u53ef\u7528\u4e8e\u811a\u672c\u5316\u8bf7\u6c42\u3002",
     "health": {
@@ -5326,5 +5329,85 @@
       "extraction_health": "no_records",
       "consecutive_empty_scans": 15
     }
+  },
+  {
+    "name": "IAM at Politecnico di Torino",
+    "url": "https://iam.polito.it/winter-school-2027/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "university_institute",
+    "programme_key": "polito-iam-winter-school",
+    "evidence_urls": {
+      "application": "https://iam.polito.it/apply/",
+      "fees": "https://iam.polito.it/apply/"
+    },
+    "keywords": [
+      "additive manufacturing",
+      "materials science",
+      "engineering",
+      "automation"
+    ],
+    "notes": "Official IAM winter school. EUR 150 registration does not cover travel or accommodation."
+  },
+  {
+    "name": "Chiang Mai University RCSD",
+    "url": "https://rcsd.soc.cmu.ac.th/news-announcements/call-for-applications-myclimate-winter-school-january-2027/",
+    "layer": 1,
+    "region": "Southeast Asia",
+    "source_type": "university_institute",
+    "programme_key": "cmu-myclimate",
+    "keywords": [
+      "climate change",
+      "social science",
+      "land governance"
+    ],
+    "notes": "Myanmar and Thailand eligibility; need-based travel and accommodation. The published acceptance-announcement year conflicts with course dates and must not be silently corrected."
+  },
+  {
+    "name": "Uppsala University Baltic University Programme",
+    "url": "https://www.uu.se/en/collaboration-innovation/the-baltic-university-programme/events-and-announcements/comade-science-on-the-island",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "university_institute",
+    "programme_key": "bup-comade",
+    "keywords": [
+      "coastal sustainability",
+      "marine environment",
+      "interdisciplinary research"
+    ],
+    "notes": "CoMaDe school for students at BUP participating universities; participation is free, travel is self-funded."
+  },
+  {
+    "name": "IMISCOE",
+    "url": "https://www.imiscoe.org/events/2739-2027-phd-school",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "research_network",
+    "programme_key": "imiscoe-phd-school",
+    "keywords": [
+      "migration studies",
+      "regional studies",
+      "social science"
+    ],
+    "notes": "Registration varies by institution and country. Competitive scholarships and fee waivers do not imply universal funding."
+  },
+  {
+    "name": "Princeton Winter School in Behavioral Science for Climate Action",
+    "url": "https://www.princetonclimateschool.com/",
+    "layer": "discovery",
+    "region": "North America",
+    "source_type": "research_training_provider",
+    "programme_key": "princeton-climate-behavior",
+    "evidence_urls": {
+      "application": "https://www.princetonclimateschool.com/apply",
+      "fees": "https://www.princetonclimateschool.com/apply",
+      "venue": "https://www.princetonclimateschool.com/practical-information"
+    },
+    "keywords": [
+      "behavioral science",
+      "climate action",
+      "public policy"
+    ],
+    "notes": "Independently hosted programme site linking to the matching princetonsurvey.az1.qualtrics.com application. Retain discovery trust until evidence-backed record audit verifies official status; no automatic domain promotion."
   }
 ]
