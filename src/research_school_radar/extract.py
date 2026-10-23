@@ -115,7 +115,7 @@ GENERIC_TITLES = {
     "apply", "register", "registration", "read more", "skip to main content",
     "student support", "opportunities", "vacancies", "about", "about us",
     "contact", "contact us", "events archive", "upcoming events", "our events",
-    "mobile menu", "our use of cookies", "newsletter",
+    "mobile menu", "our use of cookies", "newsletter", "featured", "featured posts",
 }
 
 # Substrings that mark a title as a section, archive, or navigation label
@@ -371,6 +371,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         summary=str(overrides.get("summary") or _summary(text)),
         recommendation_reason="",
         risk_points="",
+        source_conflicts=list(overrides.get("source_conflicts", [])),
         funding_scope=funding_scope,
         sessions=sessions,
         deadline_evidence=deadline_evidence,

@@ -70,6 +70,24 @@ def _candidate():
     return apply_hard_filters(candidate, PROFILE)
 
 
+def test_invalid_json_retry_requests_fresh_schema_compliant_audit():
+    class RecoveringClient(StubClient):
+        def complete(self, prompt: str) -> str:
+            self.calls += 1
+            self.prompts.append(prompt)
+            if self.calls == 1:
+                return '{"verdict":"pass",{"verified":true}}'
+            return '{"verdict":"pass","issues":[]}'
+
+    client = RecoveringClient({})
+    item = run_record_audit([_candidate()], [_page()], client=client,
+                            config=RecordAuditConfig(max_workers=1))[0]
+    assert client.calls == 2
+    assert client.prompts[0] != client.prompts[1]
+    assert "invalid JSON" in client.prompts[1]
+    assert item["validation_warnings"] == []
+
+
 def _page(text: str = "") -> Page:
     source = Source(
         name="Official school",

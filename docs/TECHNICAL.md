@@ -1044,3 +1044,22 @@ Discovery prefers Serper; if its key is absent, the configured Brave client runs
 the same bounded queries and records that fallback explicitly. Missing both keys
 skips discovery with a visible warning; it never relaxes publication validation.
 Search result captures in `reports/*.discovery.json` remain private and ignored.
+
+Malformed programme leads may contribute one additional official-link hop (two
+links per lead, eight requests per scan). Recovered pages use the safe discovery
+fetcher and retain discovery trust through extraction and record audit. Aggregator
+pages cannot publish by inheriting a registered parent's source layer. ICTP's
+structured calendar prioritizes open, future training calls within the existing
+link budget. Registered programme evidence also supports an explicit `venue` role.
+
+`python -m research_school_radar.coverage_benchmark` replays the October official
+captures at a fixed date, checking field semantics, publication tiers and bounded
+link discovery separately. See `docs/COVERAGE_AUDIT_2026-10-21.md` for limitations.
+Programme identity repair requires matching organizer, title, dates, location and
+sessions; explicit IDs win over fallback IDs, and edition aliases preserve lookups.
+
+`Candidate.source_conflicts` preserves contradictory official facts across snapshot
+refreshes. Such records enter review and cannot appear in any public tier. Audit
+evidence selection retains distinct windows and organizer/eligibility signals.
+Provider/JSON extraction failures are not reused as successful cache entries;
+record-audit JSON retries keep the same evidence and request a valid named schema.

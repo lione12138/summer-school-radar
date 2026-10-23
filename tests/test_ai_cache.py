@@ -184,3 +184,26 @@ def test_cache_failure_does_not_crash(tmp_path) -> None:
 
     assert cache.warnings
     assert cache.get("semantic", "abc") is None
+
+
+def test_failed_extraction_cache_is_retried_then_success_is_reused(tmp_path) -> None:
+    cache = AICache(enabled=True, directory=tmp_path / "cache")
+
+    class RecoveringClient:
+        calls = 0
+
+        def complete(self, prompt: str) -> str:
+            self.calls += 1
+            return "malformed JSON" if self.calls == 1 else '{"confidence":"low","warnings":[]}'
+
+    client = RecoveringClient()
+    def extract():
+        return run_llm_extraction(
+            [_chunk()], candidates=[], client=client, max_pages_for_llm=1,
+            max_chunks_per_page=1, cache=cache, model_name="test",
+        )[0]
+
+    assert "llm_json_parse_failed" in extract()["validation_warnings"]
+    assert "llm_json_parse_failed" not in extract()["validation_warnings"]
+    extract()
+    assert client.calls == 2

@@ -1,0 +1,121 @@
+{
+  "as_of": "2026-10-21",
+  "captures": "coverage-captures-2026-10.json",
+  "cases": [
+    {
+      "id": "polito",
+      "source": "IAM at Politecnico di Torino",
+      "pages": [
+        "polito",
+        "polito-apply"
+      ],
+      "expected_publish": true,
+      "fields": {
+        "start_date": "2027-01-18",
+        "end_date": "2027-01-29",
+        "deadline": "2026-11-15",
+        "fee_eur": 150.0,
+        "location": "Turin, Italy"
+      },
+      "contains": {
+        "eligibility": "PhD candidates worldwide",
+        "summary": "hands-on laboratories"
+      }
+    },
+    {
+      "id": "myclimate",
+      "source": "Chiang Mai University RCSD",
+      "pages": [
+        "myclimate"
+      ],
+      "expected_publish": true,
+      "fields": {
+        "start_date": "2027-01-14",
+        "end_date": "2027-01-22",
+        "deadline": "2026-10-30",
+        "fee_eur": 0,
+        "mode": "in-person",
+        "financial_access_status": "low-fee"
+      },
+      "contains": {
+        "eligibility": "Myanmar and Thailand",
+        "summary": "15 November 2027: Acceptance Announcements",
+        "funding_scope": "depending on financial need"
+      }
+    },
+    {
+      "id": "comade",
+      "source": "Uppsala University Baltic University Programme",
+      "pages": [
+        "comade"
+      ],
+      "expected_publish": false,
+      "fields": {
+        "start_date": "2027-01-31",
+        "end_date": "2027-02-06",
+        "deadline": "2026-10-26",
+        "fee_eur": 0,
+        "location": "Uppsala University, Campus Gotland, Sweden"
+      },
+      "contains": {
+        "eligibility": "from BUP participating universities",
+        "fee": "travel",
+        "source_conflicts": "2026"
+      }
+    },
+    {
+      "id": "imiscoe",
+      "source": "IMISCOE",
+      "pages": [
+        "imiscoe"
+      ],
+      "expected_publish": true,
+      "fields": {
+        "start_date": "2027-09-13",
+        "end_date": "2027-09-17",
+        "deadline": "2026-11-15",
+        "fee_eur": 600,
+        "financial_access_status": "self-funded"
+      },
+      "contains": {
+        "title": "Regional Migration Studies",
+        "organizer": "GRITIM-UPF",
+        "funding_scope": "Competitive awards; not guaranteed"
+      }
+    },
+    {
+      "id": "princeton",
+      "source": "Princeton Winter School in Behavioral Science for Climate Action",
+      "pages": [
+        "princeton",
+        "princeton-apply"
+      ],
+      "expected_publish": false,
+      "fields": {
+        "start_date": "2027-01-19",
+        "end_date": "2027-01-23",
+        "deadline": "2026-11-15",
+        "fee_eur": 0,
+        "source_layer": "discovery",
+        "discovery_verified": false,
+        "financial_access_status": "low-fee"
+      },
+      "contains": {
+        "title": "Behavioral Science for Climate Action",
+        "funding_scope": "students demonstrating financial need"
+      }
+    }
+  ],
+  "links": [
+    {
+      "id": "ictp-open-college",
+      "capture": "ictp-list",
+      "target": "https://indico.ictp.it/event/11412"
+    },
+    {
+      "id": "gfz-card-heading",
+      "capture": "gfz",
+      "target": "https://www.gfz-potsdam.de/en/events/detail/default-d5ed6f7a2eeb3cf67626075e2fec6707"
+    }
+  ]
+}

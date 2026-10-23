@@ -21,6 +21,7 @@ _BLOCKED_HOSTS = {
     "youtube.com",
 }
 _AGGREGATOR_HOSTS = {
+    "opportunitiesforyouth.org",
     "opportunitiescorners.com",
     "opportunitydesk.org",
     "scholarshippositions.com",
@@ -33,12 +34,16 @@ _AGGREGATOR_HOSTS = {
 }
 _PROGRAMME_RE = re.compile(
     r"\b(summer|winter|spring|autumn|fall|seasonal|training|field|doctoral|research) school\b|"
-    r"\b(short|advanced) course\b|\b(summer|winter) institute\b",
+    r"\b(short|advanced) course\b|\b(summer|winter) institute\b|\bspring college\b|\bphd school\b",
     flags=re.IGNORECASE,
 )
 _EXCLUDED_TYPE_RE = re.compile(
     r"\b(phd studentships?|phd positions?|doctoral positions?|degree programmes?|"
-    r"bachelors?|masters?|webinars?|conferences?|calls? for papers?)\b",
+    r"webinars?|conferences?|calls? for papers?)\b",
+    flags=re.IGNORECASE,
+)
+_DEGREE_TITLE_RE = re.compile(
+    r"\b(?:bachelor|master)(?:['’]s|s)?\b.{0,35}\b(?:degrees?|programmes?|programs?|admissions?|scholarships?)\b",
     flags=re.IGNORECASE,
 )
 _INSTITUTION_RE = re.compile(
@@ -115,7 +120,10 @@ def discovery_rejection_reason(result: SearchResult, *, current_year: int) -> st
     if _host_matches(hostname, _AGGREGATOR_HOSTS):
         return "aggregator_domain"
     combined = f"{result.title} {result.snippet} {url}"
-    if _EXCLUDED_TYPE_RE.search(combined):
+    # Degree level in an eligibility snippet is not degree recruitment: e.g.
+    # ICTP's short Spring College explicitly invites masters and PhD students.
+    if (_EXCLUDED_TYPE_RE.search(combined)
+            or (_DEGREE_TITLE_RE.search(result.title) and not _PROGRAMME_RE.search(result.title))):
         return "excluded_programme_type"
     if not _PROGRAMME_RE.search(combined):
         return "missing_programme_signal"

@@ -19,7 +19,7 @@ from .utils import clean_space, content_hash, load_yaml
 
 
 AUDIT_SCHEMA_VERSION = "record-audit-v1"
-PROMPT_VERSION = "record-audit-prompt-v5-discovery"
+PROMPT_VERSION = "record-audit-prompt-v6-discovery-schema"
 
 _ALLOWED_FIELDS = {
     "title",
@@ -50,11 +50,12 @@ _LOCATION_CONTAMINATION_RE = re.compile(
     flags=re.IGNORECASE,
 )
 _RELEVANT_RE = re.compile(
-    r"\b(?:organis(?:e|ed|er|ing)|organiz(?:e|ed|er|ing)|host(?:ed|ing)?|run by|"
+    r"\b(?:organis(?:e|ed|ers?|ing)|organiz(?:e|ed|ers?|ing)|host(?:ed|ing)?|run by|faculty advisor|"
     r"venue|location|held at|take place|deadline|apply|application|registration|"
     r"fee|tuition|cost|free|fund(?:ed|ing)?|grant|scholarship|bursary|stipend|"
     r"travel|accommodation|access fund|eligible|eligibility|open to|who can apply|"
-    r"master'?s|phd|postdoc|doctoral|start date|end date|programme dates?|session)\b",
+    r"master'?s|phd|postdoc|doctoral|graduate students|welcome applications|who should attend|"
+    r"start date|end date|programme dates?|session)\b",
     flags=re.IGNORECASE,
 )
 
@@ -137,6 +138,7 @@ def record_context(candidate: Candidate) -> dict[str, Any]:
         "application_link": candidate.application_link,
         "source_url": candidate.source_url,
         "source_layer": candidate.source_layer,
+        "source_conflicts": candidate.source_conflicts,
     }
 
 
@@ -218,6 +220,9 @@ def build_evidence_packet(
 def deterministic_record_issues(candidate: Candidate, *, today: date | None = None) -> list[dict[str, Any]]:
     today = today or date.today()
     issues: list[dict[str, Any]] = []
+    if candidate.source_conflicts:
+        issues.append(_rule_issue("start_date", "high", "Official source contains contradictory programme facts: "
+                                  + "; ".join(candidate.source_conflicts)))
     if candidate.start_date and candidate.end_date and candidate.end_date < candidate.start_date:
         issues.append(_rule_issue("end_date", "critical", "Programme end date precedes its start date."))
     if candidate.deadline and candidate.status_reference_start and candidate.deadline > candidate.status_reference_start:
@@ -293,6 +298,12 @@ def run_record_audit(
                 break
             parsed = _parse_json_object(raw)
             if parsed is None:
+                prompt = _audit_prompt(context, evidence) + (
+                    "\nYour previous response was invalid JSON and was discarded. "
+                    "Repeat the audit using the schema above. Every object member must have a quoted key. "
+                    "For discovery include all three named keys: official_source, research_training, application_link. "
+                    "Return a complete JSON object, without commentary or markdown."
+                )
                 continue
             validated = _validated_model_result(parsed, candidate, evidence)
             if cache is not None:
@@ -601,23 +612,29 @@ def _relevant_page_windows(text: str, title: str, config: RecordAuditConfig) -> 
         return []
     matches = list(_RELEVANT_RE.finditer(cleaned))
     title_terms = [term.casefold() for term in re.findall(r"[A-Za-z][A-Za-z0-9_-]{3,}", title)[:8]]
-    windows: list[tuple[int, str]] = []
+    windows: list[tuple[int, int, int, str]] = []
     for match in matches[:80]:
         start = max(0, match.start() - 450)
         end = min(len(cleaned), match.end() + 520)
         snippet = cleaned[start:end].strip()
         score = len(_RELEVANT_RE.findall(snippet)) * 3
         score += sum(term in snippet.casefold() for term in title_terms)
-        windows.append((score, snippet))
+        windows.append((score, start, end, snippet))
     if not windows:
-        windows.append((0, cleaned[: config.max_chars_per_snippet]))
+        windows.append((0, 0, min(len(cleaned), config.max_chars_per_snippet), cleaned[: config.max_chars_per_snippet]))
     selected: list[str] = []
     seen: set[str] = set()
-    for _score, snippet in sorted(windows, key=lambda item: item[0], reverse=True):
+    spans: list[tuple[int, int]] = []
+    for _score, start, end, snippet in sorted(windows, key=lambda item: item[0], reverse=True):
+        # Near-identical high-scoring windows must not crowd out other facts.
+        if any(max(0, min(end, right) - max(start, left)) > .6 * min(end - start, right - left)
+               for left, right in spans):
+            continue
         fingerprint = content_hash(snippet[:400].casefold())
         if fingerprint in seen:
             continue
         seen.add(fingerprint)
+        spans.append((start, end))
         selected.append(snippet[: config.max_chars_per_snippet])
         if len(selected) >= config.max_evidence_snippets:
             break
@@ -625,6 +642,12 @@ def _relevant_page_windows(text: str, title: str, config: RecordAuditConfig) -> 
 
 
 def _audit_prompt(context: dict[str, Any], evidence: Sequence[dict[str, str]]) -> str:
+    discovery_schema = (
+        ',"discovery_verification":{' + ','.join(
+            f'"{field}":{{"verified":false,"evidence_ids":["E1"],"quote":"literal official_page excerpt"}}'
+            for field in ("official_source", "research_training", "application_link")
+        ) + '}'
+    ) if context.get("source_layer") == "discovery" else ""
     return (
         "You are the final evidence auditor for Summa, an academic research-training directory.\n"
         "Audit the complete record for factual consistency and source fidelity. The record is a claim, not evidence.\n"
@@ -647,7 +670,8 @@ def _audit_prompt(context: dict[str, Any], evidence: Sequence[dict[str, str]]) -
         "Return one JSON object only with this schema:\n"
         '{"verdict":"pass|needs_correction|reject","issues":['
         '{"field":"allowed field","severity":"low|medium|high|critical",'
-        '"current_value":"...","suggested_value":"...","evidence_ids":["E1"],"reason":"..."}]}\n'
+        '"current_value":"...","suggested_value":"...","evidence_ids":["E1"],"reason":"..."}]'
+        + discovery_schema + '}\n'
         f"Allowed fields: {', '.join(sorted(_ALLOWED_FIELDS))}.\n"
         f"RECORD:\n{json.dumps(context, ensure_ascii=False, default=str)}\n"
         f"EVIDENCE:\n{json.dumps(list(evidence), ensure_ascii=False)}"

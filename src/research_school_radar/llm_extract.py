@@ -91,7 +91,13 @@ def run_llm_extraction(
             schema_version=AI_EXTRACTION_SCHEMA_VERSION,
         )
         cached = cache.get("llm", cache_key) if cache is not None else None
-        if isinstance(cached, dict):
+        # Transient provider/JSON failures must not poison every later scan.
+        # Budget truncation warnings still belong to otherwise reusable records.
+        retryable_failure = isinstance(cached, dict) and any(
+            warning.startswith(("llm_unavailable:", "llm_json_parse_failed", "deepseek_"))
+            for warning in _cached_operational_warnings(cached)
+        )
+        if isinstance(cached, dict) and not retryable_failure:
             item = dict(cached)
             cached_extraction = item.get("llm_extraction", {})
             if isinstance(cached_extraction, dict):

@@ -136,7 +136,9 @@ def programme_body(page: Page) -> Page:
             html = '<h1>Perimeter Undergraduate Summer School</h1>' + str(body)
             return replace(page, text="Undergraduate Summer School. " + body.get_text(" ", strip=True), html=html)
     prefix = "/it/formazione/advanced-courses-summer-schools/"
-    if parsed.hostname not in {"szn.it", "www.szn.it"} or not parsed.path.startswith(prefix):
+    szn_course = parsed.hostname in {"szn.it", "www.szn.it"} and parsed.path.startswith(prefix)
+    imiscoe_school = parsed.hostname in {"imiscoe.org", "www.imiscoe.org"} and "phd-school" in parsed.path
+    if not (szn_course or imiscoe_school):
         return page
     soup = BeautifulSoup(page.html, "html.parser")
     article = soup.select_one(".item-page")

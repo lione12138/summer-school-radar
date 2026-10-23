@@ -862,6 +862,8 @@ sources:
     region: continental Europe
     source_type: research_institute
     keywords: [climate, geophysics, physics, AI, school, workshop]
+    evidence_urls:
+      spring_college: https://indico.ictp.it/event/11412
     notes: Abdus Salam ICTP runs many funded schools in geophysics, climate, and scientific ML. The /scientific-calendar path 404s; /home/scientific-calendar works for scripted requests.
   - name: LxMLS
     url: https://lxmls.github.io/2026/
@@ -1412,3 +1414,50 @@ sources:
     source_type: university_institute
     keywords: [architecture, urban design, design, summer school]
     notes: The Berlage Center for Advanced Studies in Architecture and Urban Design (TU Delft); architecture and urbanism programmes.
+  - name: IAM at Politecnico di Torino
+    url: https://iam.polito.it/winter-school-2027/
+    layer: 1
+    region: continental Europe
+    source_type: university_institute
+    programme_key: polito-iam-winter-school
+    evidence_urls:
+      application: https://iam.polito.it/apply/
+      fees: https://iam.polito.it/apply/
+    keywords: [additive manufacturing, materials science, engineering, automation]
+    notes: Official IAM winter school. EUR 150 registration does not cover travel or accommodation.
+  - name: Chiang Mai University RCSD
+    url: https://rcsd.soc.cmu.ac.th/news-announcements/call-for-applications-myclimate-winter-school-january-2027/
+    layer: 1
+    region: Southeast Asia
+    source_type: university_institute
+    programme_key: cmu-myclimate
+    keywords: [climate change, social science, land governance]
+    notes: Myanmar and Thailand eligibility; need-based travel and accommodation. The published acceptance-announcement year conflicts with course dates and must not be silently corrected.
+  - name: Uppsala University Baltic University Programme
+    url: https://www.uu.se/en/collaboration-innovation/the-baltic-university-programme/events-and-announcements/comade-science-on-the-island
+    layer: 1
+    region: continental Europe
+    source_type: university_institute
+    programme_key: bup-comade
+    keywords: [coastal sustainability, marine environment, interdisciplinary research]
+    notes: CoMaDe school for students at BUP participating universities; participation is free, travel is self-funded.
+  - name: IMISCOE
+    url: https://www.imiscoe.org/events/2739-2027-phd-school
+    layer: 1
+    region: continental Europe
+    source_type: research_network
+    programme_key: imiscoe-phd-school
+    keywords: [migration studies, regional studies, social science]
+    notes: Registration varies by institution and country. Competitive scholarships and fee waivers do not imply universal funding.
+  - name: Princeton Winter School in Behavioral Science for Climate Action
+    url: https://www.princetonclimateschool.com/
+    layer: discovery
+    region: North America
+    source_type: research_training_provider
+    programme_key: princeton-climate-behavior
+    evidence_urls:
+      application: https://www.princetonclimateschool.com/apply
+      fees: https://www.princetonclimateschool.com/apply
+      venue: https://www.princetonclimateschool.com/practical-information
+    keywords: [behavioral science, climate action, public policy]
+    notes: Independently hosted programme site linking to the matching princetonsurvey.az1.qualtrics.com application. Retain discovery trust until evidence-backed record audit verifies official status; no automatic domain promotion.

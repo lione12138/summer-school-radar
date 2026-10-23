@@ -592,3 +592,30 @@ paragraphs, and do not change public qualification. Tests exercise malformed
 sections, HTML escaping, localization, year guards and distinct programme vs
 application links. Historical pages without reviewed sections remain honest
 about the information actually available rather than receiving padded prose.
+
+# 2026-10-22: bounded coverage recovery and field regression
+
+Replayed the reported omissions against captured official pages. ICTP missed
+Spring College both in vocabulary and link-budget ordering; Princeton's aggregator
+lead used `Featured`; IMISCOE included unrelated calendar dates; MyClimate's
+date-first milestone list incorrectly attached the deadline label to a later
+acceptance announcement. Fixed these independently without relaxing publication
+or fee gates. Added five scoped programme sources, including one that deliberately
+retains discovery trust, and an explicit ICTP detail follow-up.
+
+The additional fixed-date benchmark measures link retention, extraction and
+semantic field correctness separately. On identical supplied pages: 4/5 to 5/5
+records extracted, 0/5 to 5/5 annotated fields fully correct, 1/3 to 3/3 eligible
+records correctly published, and one false positive reduced to zero. CoMaDe has
+contradictory official years (2026/2027), retained as a hard publication failure.
+Princeton needs
+live audit; ICTP detail access is not inferred from listing discovery. ALPS history
+merges only with complete same-edition identity evidence. See the dated coverage
+audit for zero-output source findings and programme-specific limitations.
+
+Live audit replay on 23 October exposed two operational problems: invalid JSON
+was retried with an identical prompt, and failed extraction results remained in
+the reusable cache. Retries now request valid JSON explicitly; failed cached
+extractions are retried on subsequent scans. Overlapping evidence windows also
+hid Princeton's organizers. Diversified excerpts and plural organizer matching
+restore that evidence; the targeted Princeton record now passes the audit.

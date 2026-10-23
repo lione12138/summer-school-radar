@@ -15,6 +15,7 @@ from .topic_taxonomy import classify_topics
 
 
 ROLE_FIELDS = {
+    "venue": ("location", "mode", "mode_evidence"),
     "programme": ("start_date", "end_date", "duration_days", "duration_evidence", "sessions"),
     "application": ("deadline", "deadline_status", "deadline_evidence", "mode", "mode_evidence",
                     "eligibility", "target_level", "application_link"),
@@ -66,7 +67,7 @@ def extract_with_programme_evidence(pages: list[Page], profile: dict) -> list[Ca
                 setattr(primary, field, deepcopy(value))
                 primary.evidence_sources[field] = page.url
             if role == "fees" and donor.fee:
-                primary.fee_evidence = donor.fee
+                primary.fee_evidence = donor.fee_evidence or donor.fee
                 primary.evidence_sources['fee_evidence'] = page.url
             if role in {"programme", "application"}:
                 evidence = {**primary.topic_evidence, **donor.topic_evidence}

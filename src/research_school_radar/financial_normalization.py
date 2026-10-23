@@ -42,7 +42,8 @@ class FinancialTerms:
 
 _CONDITIONAL = re.compile(
     r"\b(?:may|might|possible|possibly|limited|competitive|selected participants|"
-    r"eligible|not guaranteed|subject to|if they meet)\b|可能な場合", re.I,
+    r"eligible|not guaranteed|subject to|if they meet|depending on financial need|"
+    r"demonstrating financial need|needs?[- ]based|will (?:also )?be considered)\b|可能な場合", re.I,
 )
 
 _CURRENCY = r'EUR|USD|GBP|CHF|CNY|RMB|JPY|INR|KRW|SGD|AUD|CAD'

@@ -272,7 +272,20 @@ def _all_deadlines(text: str, event_start: date | None = None) -> list[tuple[dat
     list an early-bird and a regular deadline; the regular one is the latest."""
     found: list[tuple[date, str]] = []
     seen: set[date] = set()
+    # Date-first milestone lists: do not attach "Application Deadline" to
+    # the following acceptance-announcement date after HTML whitespace folding.
+    date_first = list(re.finditer(
+        rf"({_SINGLE_DATE})\s*[:–—-]\s*(?:application|registration)\s+deadline\b",
+        text, flags=re.IGNORECASE,
+    ))
+    for match in date_first:
+        parsed = _safe_parse_date(match.group(1))
+        if parsed and parsed not in seen:
+            seen.add(parsed)
+            found.append((parsed, clean_space(match.group(0))))
     for match in re.finditer(_DEADLINE_PATTERN, text, flags=re.IGNORECASE):
+        if any(item.start() <= match.start() < item.end() for item in date_first):
+            continue
         parsed = _safe_parse_date(match.group(1))
         if parsed and parsed not in seen:
             seen.add(parsed)

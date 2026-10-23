@@ -60,6 +60,7 @@ FIELD_NAMES = {
 }
 
 REVIEWABLE_FAILURES = {
+    "official source contains conflicting programme facts",
     "application deadline is after programme start",
     "application deadline is uncertain",
     "duration is uncertain",

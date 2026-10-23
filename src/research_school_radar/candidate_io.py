@@ -69,6 +69,7 @@ def _coerce_candidate_value(name: str, value: Any) -> Any:
         return coerce_date(value)
     if name in {
         "funding_type",
+        "source_conflicts",
         "topic_keywords",
         "primary_topics",
         "secondary_topics",

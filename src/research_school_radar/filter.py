@@ -11,6 +11,8 @@ def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
     hard = profile.get("hard_filters", {})
     failed: list[str] = []
     recommendation_failed: list[str] = []
+    if candidate.source_conflicts:
+        failed.append("official source contains conflicting programme facts")
 
     event_start = candidate.status_reference_start
     programme_started = event_start is not None and event_start <= date.today()

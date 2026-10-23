@@ -1,0 +1,94 @@
+{
+  "as_of": "2026-10-21",
+  "cases": 5,
+  "found": 4,
+  "fields_correct": 0,
+  "correctly_published": 1,
+  "false_positives": 1,
+  "results": [
+    {
+      "id": "polito",
+      "found": true,
+      "fields_correct": false,
+      "field_errors": [
+        "location",
+        "summary"
+      ],
+      "published": true,
+      "expected_publish": true,
+      "self_funded": false
+    },
+    {
+      "id": "myclimate",
+      "found": true,
+      "fields_correct": false,
+      "field_errors": [
+        "deadline",
+        "fee_eur",
+        "mode",
+        "financial_access_status",
+        "eligibility",
+        "summary",
+        "funding_scope"
+      ],
+      "published": false,
+      "expected_publish": true,
+      "self_funded": false
+    },
+    {
+      "id": "comade",
+      "found": true,
+      "fields_correct": false,
+      "field_errors": [
+        "location",
+        "eligibility",
+        "fee",
+        "source_conflicts"
+      ],
+      "published": true,
+      "expected_publish": false,
+      "self_funded": false
+    },
+    {
+      "id": "imiscoe",
+      "found": false,
+      "fields_correct": false,
+      "field_errors": [
+        "start_date",
+        "end_date",
+        "deadline",
+        "fee_eur",
+        "financial_access_status",
+        "title",
+        "organizer",
+        "funding_scope"
+      ],
+      "published": false,
+      "expected_publish": true,
+      "self_funded": false
+    },
+    {
+      "id": "princeton",
+      "found": true,
+      "fields_correct": false,
+      "field_errors": [
+        "financial_access_status",
+        "funding_scope"
+      ],
+      "published": false,
+      "expected_publish": false,
+      "self_funded": false
+    }
+  ],
+  "link_discovery": [
+    {
+      "id": "ictp-open-college",
+      "found": false
+    },
+    {
+      "id": "gfz-card-heading",
+      "found": false
+    }
+  ],
+  "limits": "Fixture extraction/publication only. Princeton requires live evidence audit; ICTP detail fetch not captured."
+}

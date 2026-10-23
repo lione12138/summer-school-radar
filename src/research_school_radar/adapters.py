@@ -33,6 +33,7 @@ from .australia_adapters import amsi_winter, acan, ansto_neutron, unsw_economics
 from .asia_adapters import astroai, viasm, camp
 from .csha_adapter import csha_course
 from .ggi_adapter import ggi_school
+from .coverage_adapters import myclimate, imiscoe, princeton_climate, polito_iam, comade
 
 
 def resolve_overrides(page: Page) -> dict[str, Any]:
@@ -360,6 +361,11 @@ def _iso_or_none(value: Any) -> date | None:
 
 
 _ADAPTERS: dict[str, Callable[[Page], dict[str, Any]]] = {
+    "iam.polito.it": polito_iam,
+    "uu.se": comade,
+    "rcsd.soc.cmu.ac.th": myclimate,
+    "imiscoe.org": imiscoe,
+    "princetonclimateschool.com": princeton_climate,
     "ggi.infn.it": ggi_school,
     "digits.ut.ee": esslli_tartu,
     "trisep.ca": trisep,

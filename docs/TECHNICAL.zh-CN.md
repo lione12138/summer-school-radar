@@ -508,3 +508,16 @@ VIASM 案例单独检查联合主办方、注册费语义、日期、证据、�
 
 Discovery 优先使用 Serper；未配置时使用已有 Brave 客户端执行同一预算内的查询，明确记录回退。
 两者均缺失时警告并跳过发现，不放宽发布门槛。reports/*.discovery.json 搜索结果摘要私有且忽略提交。
+
+标题异常的项目线索可以补跟一次明确的官方链接，每条线索最多 2 页、每次扫描最多 8 次请求。
+恢复页面使用安全 discovery 抓取器，抽取和 record audit 全程保留 discovery 信任等级；聚合网站
+不能通过继承注册来源的 layer 获得发布资格。ICTP 按日历卡片中的日期优先跟进尚未截止、尚未
+开始的培训，仍遵守原链接数量上限。注册项目的 evidence_urls 另支持明确的 venue 角色。
+
+`python -m research_school_radar.coverage_benchmark` 固定日期回放十月官方页面，分别检查字段语义、
+发布类别与有限链接发现，限制见 `docs/COVERAGE_AUDIT_2026-10-21.md`。Programme 身份修复要求
+主办方、名称、完整日期、地点及 sessions 匹配，显式 ID 优先于 fallback，并保留旧 edition 查询别名。
+
+`Candidate.source_conflicts` 跨快照刷新保留官方信息矛盾，相关记录进入待核实队列，不能出现在任何
+公开类别。审核证据选取避免重复窗口，并识别主办团队及资格信号。提供方或 JSON 抽取失败不再
+作为成功缓存重复使用；record audit 重试沿用原证据并明确要求有效的具名 JSON 字段。

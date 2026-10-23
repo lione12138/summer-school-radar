@@ -1,0 +1,66 @@
+{
+  "as_of": "2026-10-21",
+  "cases": 5,
+  "found": 5,
+  "fields_correct": 5,
+  "correctly_published": 3,
+  "false_positives": 0,
+  "results": [
+    {
+      "id": "polito",
+      "found": true,
+      "fields_correct": true,
+      "field_errors": [],
+      "published": true,
+      "expected_publish": true,
+      "self_funded": false
+    },
+    {
+      "id": "myclimate",
+      "found": true,
+      "fields_correct": true,
+      "field_errors": [],
+      "published": true,
+      "expected_publish": true,
+      "self_funded": false
+    },
+    {
+      "id": "comade",
+      "found": true,
+      "fields_correct": true,
+      "field_errors": [],
+      "published": false,
+      "expected_publish": false,
+      "self_funded": false
+    },
+    {
+      "id": "imiscoe",
+      "found": true,
+      "fields_correct": true,
+      "field_errors": [],
+      "published": true,
+      "expected_publish": true,
+      "self_funded": true
+    },
+    {
+      "id": "princeton",
+      "found": true,
+      "fields_correct": true,
+      "field_errors": [],
+      "published": false,
+      "expected_publish": false,
+      "self_funded": false
+    }
+  ],
+  "link_discovery": [
+    {
+      "id": "ictp-open-college",
+      "found": true
+    },
+    {
+      "id": "gfz-card-heading",
+      "found": true
+    }
+  ],
+  "limits": "Fixture extraction/publication only. Princeton requires live evidence audit; ICTP detail fetch not captured."
+}

@@ -275,6 +275,16 @@ def run_scan(
             discovery_stats["candidates_extracted"] = len(discovery_candidates)
             candidates.extend(discovery_candidates)
 
+        # Recovered targets remain untrusted discovery inputs and undergo the
+        # same evidence audit and deterministic gates as search results.
+        from .lead_recovery import recover_lead_pages
+        recovered_pages, recovery_errors = recover_lead_pages(semantic_pages)
+        semantic_pages = unique_pages([*semantic_pages, *recovered_pages])
+        candidates.extend(candidate for page in recovered_pages
+                          if (candidate := extract_candidate(page, profile)))
+        errors.extend(recovery_errors)
+        discovery_stats["recovered_pages"] = len(recovered_pages)
+
         for warning in http_cache.warnings:
             print(f"HTTP cache warning: {warning}")
 

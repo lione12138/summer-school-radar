@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 
 from .models import Page
 from .utils import clean_space
+from .date_extraction import _safe_parse_date
 
 
 # The radar targets seasonal schools and short courses. Generic conference
@@ -16,12 +17,14 @@ OPPORTUNITY_TERMS = [
     "summerschool",
     "winter school",
     "spring school",
+    "spring college",
     "autumn school",
     "fall school",
     "seasonal school",
     "training school",
     "training course",
     "doctoral school",
+    "phd school",
     "field school",
     "research school",
     "summer institute",
@@ -137,6 +140,27 @@ def candidate_links(page: Page, limit: int = 25, blocked_domains: list[str] | No
         lowered = f"{label} {href}".lower()
         score = sum(2 for term in OPPORTUNITY_TERMS if term in lowered)
         score += sum(1 for term in APPLICATION_TERMS if term in lowered)
+        # Compact event cards often label their link only "read more". Use
+        # the nearest event's heading, never the surrounding calendar text.
+        if label.casefold() in {"read more", "learn more", "details", "more information"}:
+            card = anchor.find_parent(lambda tag: tag.name in {"article", "li"}
+                                      or (tag.name == "section" and "eventItem" in tag.get("class", [])))
+            heading = card.find(["h2", "h3", "h4"]) if card else None
+            if heading and has_programme_signal(heading.get_text(" ")):
+                score += 4
+        # ICTP exposes real application dates in each card. Upcoming schools
+        # with open applications must not lose the eight-link budget to old
+        # events appearing earlier in the annual calendar.
+        if urlparse(page.url).hostname in {"www.ictp.it", "ictp.it"} and score:
+            card = anchor.find_parent("article")
+            deadline_node = card.select_one(".dead-date") if card else None
+            start_node = card.select_one(".start-date") if card else None
+            deadline = _safe_parse_date(deadline_node.get_text(" ", strip=True)) if deadline_node else None
+            start = _safe_parse_date(start_node.get_text(" ", strip=True)) if start_node else None
+            if deadline and start and deadline >= page.fetched_at and start > page.fetched_at:
+                score += 10
+            elif (deadline and deadline < page.fetched_at) or (card and "Application Closed" in card.get_text(" ")):
+                score -= 4
         if (urlparse(page.url).hostname in {"trisep.ca", "www.trisep.ca"}
                 and re.search(r"Registration.{0,150}" + re.escape(href), page.text, re.I)
                 and urlparse(href).hostname in {"events.perimeterinstitute.ca", "indico.triumf.ca", "indico.snolab.ca"}

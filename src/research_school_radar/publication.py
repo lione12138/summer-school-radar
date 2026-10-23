@@ -1,17 +1,21 @@
 from __future__ import annotations
 
 import re
+from urllib.parse import urlsplit
 
 from .models import Candidate
 from .financial_normalization import recommendation_funding
 from .urls import safe_external_url
 from .utils import DISPLAY_MIN_DURATION_DAYS, is_too_short
+from .discovery_filter import _AGGREGATOR_HOSTS, _host_matches
 
 
 DIRECTORY_MAX_TOTAL_FEE_EUR = 1500
 DIRECTORY_MAX_FEE_EUR_PER_DAY = 150
 
 GENERIC_FOUND_TITLES = {
+    "featured",
+    "featured posts",
     "application process",
     "application",
     "apply",
@@ -34,6 +38,8 @@ _GENERIC_TITLE_RE = re.compile(
 
 
 def is_public_candidate(candidate: Candidate) -> bool:
+    if candidate.source_conflicts or _aggregator_source(candidate):
+        return False
     if candidate.source_layer == "discovery" and candidate.discovery_verified is not True:
         return False
     if candidate.source_layer == "discovery":
@@ -95,7 +101,7 @@ def is_found_opportunity(candidate: Candidate) -> bool:
     courses to bypass the self-funded affordability ceiling. It is deliberately
     excluded from recommendation counts and RSS.
     """
-    if candidate.fully_qualified or is_verified_self_funded(candidate):
+    if candidate.source_conflicts or _aggregator_source(candidate) or candidate.fully_qualified or is_verified_self_funded(candidate):
         return False
     if candidate.is_past or candidate.is_online_only:
         return False
@@ -130,7 +136,7 @@ def is_archive_candidate(candidate: Candidate) -> bool:
     The event itself may be upcoming, ongoing, or past; only the application is
     necessarily closed. Entries never enter current counts or RSS.
     """
-    if not candidate.is_past or candidate.deadline_status == "not_open" or candidate.is_online_only:
+    if candidate.source_conflicts or _aggregator_source(candidate) or not candidate.is_past or candidate.deadline_status == "not_open" or candidate.is_online_only:
         return False
     if not has_meaningful_title(candidate.title):
         return False
@@ -150,6 +156,11 @@ def has_meaningful_title(title: str) -> bool:
     if len(value) < 8 or value.casefold() in GENERIC_FOUND_TITLES:
         return False
     return _GENERIC_TITLE_RE.search(value) is None
+
+
+def _aggregator_source(candidate: Candidate) -> bool:
+    host = (urlsplit(candidate.source_url).hostname or "").lower().removeprefix("www.")
+    return _host_matches(host, _AGGREGATOR_HOSTS)
 
 
 def fee_per_day(candidate: Candidate) -> float:

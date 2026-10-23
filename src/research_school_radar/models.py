@@ -85,6 +85,9 @@ class Candidate:
     # the site catalogue derives a conservative fallback when it is absent.
     programme_key: str = ""
     evidence_sources: dict[str, str] = field(default_factory=dict)
+    # Literal contradictory official facts; retained through advisory copies
+    # and snapshot refreshes so AI cannot silently resolve an ambiguous edition.
+    source_conflicts: list[str] = field(default_factory=list)
     # A non-numeric benefit can be precise even when no single currency amount
     # applies, e.g. a scholarship that covers each selected participant's
     # applicable registration fee.

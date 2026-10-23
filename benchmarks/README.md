@@ -42,3 +42,11 @@ errors. Compare a real capture using
 This adds known-eligible-URL search coverage and prefilter retention separately.
 The current eligible subset is small; it is a pilot indicator, not population
 recall. Match capture/gold dates when interpreting closed-call changes.
+
+October coverage cases are separate from the original gold set. Run
+`python -m research_school_radar.coverage_benchmark --output logs/coverage.json`.
+Five programme cases test actual multi-page joins, fees/eligibility and a
+discovery record that must remain unpublished without an audit. Two listing
+cases test ICTP/GFZ links within the production eight-link budget. The committed
+before/after results compare identical supplied pages and source configuration;
+they do not claim whole-web recall. See `docs/COVERAGE_AUDIT_2026-10-21.md`.

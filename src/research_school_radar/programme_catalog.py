@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import re
+from copy import deepcopy
 from datetime import date
 from typing import Any
 
@@ -40,16 +41,29 @@ def build_programme_catalog(
     for candidate in candidates:
         key = programme_identity(candidate)
         identity = edition_identity(candidate)
+        matches = [record for record in programmes.values()
+                   if (key.startswith("programme:") or record["id"].startswith("programme:")
+                       or record["id"] == key)
+                   and any(_same_edition(record, edition, candidate) for edition in record.get("editions", []))]
+        explicit_matches = [record for record in matches if not record["id"].startswith("programme:")]
+        if not candidate.programme_key and len(explicit_matches) == 1:
+            key = explicit_matches[0]["id"]
+        record = programmes.get(key)
+        if record is None:
+            record = _new_programme(candidate, key)
+            programmes[key] = record
+        # A matching edition proves that a URL-derived fallback catalogue is
+        # the same programme. Carry its older editions with it, not just today.
+        for matched in matches:
+            if matched["id"] != key and matched["id"].startswith("programme:"):
+                record["editions"].extend(matched["editions"])
+                matched["editions"] = []
         # An organizer correction may change the fallback programme key.
         # Move the edition instead of retaining the old, incorrect copy too.
         for existing_key, existing in programmes.items():
             if existing_key != key:
                 existing["editions"] = [edition for edition in existing.get("editions", [])
                                         if edition.get("id") != identity]
-        record = programmes.get(key)
-        if record is None:
-            record = _new_programme(candidate, key)
-            programmes[key] = record
         _merge_candidate(record, candidate)
 
     result = []
@@ -71,6 +85,29 @@ def build_programme_catalog(
         "generated": date.today().isoformat(),
         "programmes": result,
     }
+
+
+def _same_edition(programme: dict, edition: dict, candidate: Candidate) -> bool:
+    """Repair URL/identity migrations only with matching organizer, title and dates.
+
+    A year alone is insufficient: separate sessions and similarly named schools
+    must retain their identities. Unknown organizers cannot establish identity.
+    """
+    organizer = " ".join(candidate.organizer.casefold().split())
+    if not organizer or organizer in {"unknown", "uncertain"}:
+        return False
+    if organizer != " ".join(str(programme.get("organizer", "")).casefold().split()):
+        return False
+    if not candidate.start_date or not candidate.end_date:
+        return False
+    title = normalized_programme_title(candidate.title).casefold()
+    return (
+        title == normalized_programme_title(str(edition.get("title", ""))).casefold()
+        and edition.get("start_date") == candidate.start_date.isoformat()
+        and edition.get("end_date") == candidate.end_date.isoformat()
+        and str(edition.get("location", "")).casefold() == public_location(candidate.location).casefold()
+        and edition.get("sessions", []) == _edition_record(candidate)["sessions"]
+    )
 
 
 def programme_identity(candidate: Candidate) -> str:
@@ -109,6 +146,8 @@ def programme_lookup(catalogue: dict[str, Any]) -> dict[str, dict[str, Any]]:
         for edition in programme.get("editions", []):
             if isinstance(edition, dict) and edition.get("id"):
                 lookup[str(edition["id"])] = programme
+                for alias in edition.get("identity_aliases", []):
+                    lookup[str(alias)] = programme
     return lookup
 
 
@@ -154,7 +193,20 @@ def _merge_candidate(record: dict[str, Any], candidate: Candidate) -> None:
         record["summary_zh"] = candidate.summary_zh
     if candidate.title_zh and not record.get("title_zh"):
         record["title_zh"] = normalized_programme_title_zh(candidate.title_zh)
-    record.setdefault("editions", []).append(_edition_record(candidate))
+    replacement = _edition_record(candidate)
+    matching = [edition for edition in record.get("editions", [])
+                if edition.get("id") == replacement["id"] or _same_edition(record, edition, candidate)]
+    aliases = [str(value) for edition in matching
+               for value in [edition["id"], *edition.get("identity_aliases", [])]]
+    explicit_editions = [edition for edition in matching if not str(edition["id"]).startswith("edition:")]
+    if not candidate.identity_key and len({edition["id"] for edition in explicit_editions}) == 1:
+        aliases.append(replacement["id"])
+        replacement["id"] = explicit_editions[0]["id"]
+    aliases = sorted(set(aliases) - {replacement["id"]})
+    if aliases:
+        replacement["identity_aliases"] = aliases
+    record["editions"] = [edition for edition in record.get("editions", []) if edition not in matching]
+    record["editions"].append(replacement)
 
 
 def _edition_record(candidate: Candidate) -> dict[str, Any]:
@@ -205,7 +257,7 @@ def _clean_previous_programme(raw: dict[str, Any]) -> dict[str, Any]:
         "summary": str(raw.get("summary", "")).strip(),
         "summary_zh": str(raw.get("summary_zh", "")).strip(),
         "topics": [str(item) for item in raw.get("topics", []) if str(item).strip()],
-        "editions": [item for item in editions if isinstance(item, dict)] if isinstance(editions, list) else [],
+        "editions": [deepcopy(item) for item in editions if isinstance(item, dict)] if isinstance(editions, list) else [],
     }
 
 

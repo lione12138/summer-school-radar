@@ -1,0 +1,110 @@
+[
+  {
+    "id": "polito",
+    "url": "https://iam.polito.it/winter-school-2027/",
+    "html": "pages/coverage-polito.html",
+    "captured_at": "2026-10-21",
+    "kind": "official_capture",
+    "original_sha256": "80b5ab97aca2b301d3d3c2c99fc274c3da519651f29b6a5ebb7a9841081c1a46",
+    "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  },
+  {
+    "id": "polito-apply",
+    "url": "https://iam.polito.it/apply/",
+    "html": "pages/coverage-polito-apply.html",
+    "captured_at": "2026-10-21",
+    "kind": "official_capture",
+    "original_sha256": "2b5808d0fe0ed5ad8b69a5b4c1b3bea06ca38c310cdf7e221eca57c7adf1d08c",
+    "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  },
+  {
+    "id": "myclimate",
+    "url": "https://rcsd.soc.cmu.ac.th/news-announcements/call-for-applications-myclimate-winter-school-january-2027/",
+    "html": "pages/coverage-myclimate.html",
+    "captured_at": "2026-10-21",
+    "kind": "official_capture",
+    "original_sha256": "4abc010e0f4d6431a55fbbb373db9de6b45a7d7238bd63ecd251383484b4fd23",
+    "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  },
+  {
+    "id": "comade",
+    "url": "https://www.uu.se/en/collaboration-innovation/the-baltic-university-programme/events-and-announcements/comade-science-on-the-island",
+    "html": "pages/coverage-comade.html",
+    "captured_at": "2026-10-21",
+    "kind": "official_capture",
+    "original_sha256": "fec653184b91871fd3f0bad215dce2aa1effd79a55724e36f69f75e9ffd39072",
+    "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  },
+  {
+    "id": "imiscoe",
+    "url": "https://www.imiscoe.org/events/2739-2027-phd-school",
+    "html": "pages/coverage-imiscoe.html",
+    "captured_at": "2026-10-21",
+    "kind": "official_capture",
+    "original_sha256": "df66c5c7138f9a006979766e47b8145cf98c223dbeddb1d42998acf55b477549",
+    "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  },
+  {
+    "id": "princeton",
+    "url": "https://www.princetonclimateschool.com/",
+    "html": "pages/coverage-princeton.html",
+    "captured_at": "2026-10-21",
+    "kind": "programme_site_capture_pending_provenance_audit",
+    "original_sha256": "cb636c29ffd54d105dd55449c6f9f47fd2ed545242804c35c73a398e2d146250",
+    "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  },
+  {
+    "id": "princeton-apply",
+    "url": "https://www.princetonclimateschool.com/apply",
+    "html": "pages/coverage-princeton-apply.html",
+    "captured_at": "2026-10-21",
+    "kind": "programme_site_capture_pending_provenance_audit",
+    "original_sha256": "65932cec7051429cdfb5e93e6be4a7aecea8a622380ae13783be470e71bfac4c",
+    "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  },
+  {
+    "id": "cost",
+    "url": "https://www.cost.eu/events/?cat=cost-action-event",
+    "html": "pages/coverage-cost.html",
+    "captured_at": "2026-10-21",
+    "kind": "official_capture",
+    "original_sha256": "c6607cd13bc15fc832b9fd86c633a1d0b988c4f39ec3eed3295a144d6fd395fd",
+    "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  },
+  {
+    "id": "iah",
+    "url": "https://iah.org/",
+    "html": "pages/coverage-iah.html",
+    "captured_at": "2026-10-21",
+    "kind": "official_capture",
+    "original_sha256": "d7e858ec6922c9bbab3bf38842c87714e03fe06b1fa76e093d248afc779109f9",
+    "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  },
+  {
+    "id": "gfz",
+    "url": "https://www.gfz-potsdam.de/en/events",
+    "html": "pages/coverage-gfz.html",
+    "captured_at": "2026-10-21",
+    "kind": "official_capture",
+    "original_sha256": "1fed373f48d315c78567113c852c705ba7bc4270c5e9f700f4d319de9386873b",
+    "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  },
+  {
+    "id": "ukceh",
+    "url": "https://www.ceh.ac.uk/filtered-training-listing",
+    "html": "pages/coverage-ukceh.html",
+    "captured_at": "2026-10-21",
+    "kind": "official_capture",
+    "original_sha256": "62bad8be3d891d142c3b1da8aa7d1df23b019cc170cfc0cbdc2023eaef0375ab",
+    "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  },
+  {
+    "id": "ictp-list",
+    "url": "https://www.ictp.it/home/scientific-calendar",
+    "html": "pages/coverage-ictp-list.html",
+    "captured_at": "2026-09-23T06:13:17.850054+00:00",
+    "kind": "official_http_cache",
+    "original_sha256": "cf7b5b3c22b8c373582542d1fb8caa4577f86f449053d01c357879a32e058133",
+    "normalization": "Scripts (except JSON-LD), styles, media, controls, comments and non-semantic attributes removed; text, headings, links and structural classes retained."
+  }
+]
