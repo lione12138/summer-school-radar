@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-23",
+  "generated": "2026-10-26",
   "review_queue": [
     {
       "title": "CoMaDe Science on the Island",
@@ -16,7 +16,7 @@
       "deadline_status": "open",
       "financial_access_status": "low-fee",
       "fee": "Free participation; travel to and from Gotland is self-funded",
-      "fee_eur": 0.0,
+      "fee_eur": 0,
       "topics": [
         "environmental science",
         "sustainability",
@@ -32,7 +32,7 @@
       "field_completeness": 1.0,
       "financial_terms": {
         "participation_fee": "Free participation; travel to and from Gotland is self-funded",
-        "fee_eur": 0.0,
+        "fee_eur": 0,
         "fee_status": "stated",
         "support_status": "unknown",
         "support_scope": "",
@@ -64,13 +64,13 @@
           "llm_chunk_truncated:6",
           "llm_request_truncated:max_total_chars_per_llm_request"
         ],
-        "chinese_summary": "乌普萨拉大学波罗的海大学项目（BUP）举办的“CoMaDe Science on the Island”冬季学校，在瑞典哥特兰岛（维斯比）线下举行，面向本科、硕士和博士生，申请截止2026年10月26日。冬季学校免费，但参与者需自行承担往返维斯比的旅费；2026年11月30日后取消或缺席可能被收取320欧元参与费用。",
+        "chinese_summary": "由波罗的海大学项目（BUP）在瑞典哥特兰岛举办的冬季学校，面向本科、硕士和博士生，免费参加，但需自行承担往返维斯比等交通费用，申请截止日期为2026年10月26日。",
         "extracted_deadline": "2026-10-26",
-        "extracted_fee": "Winter school is free of charge; participants must cover travel expenses to and from Visby, Gotland; if a student does not attend or cancels after 30 November 2026, the participant or their university may be charged the cost of participation (€320)",
-        "extracted_funding": "Students are encouraged to explore funding options through their home universities, such as Erasmus+ mobility grants; BUP does not award ECTS credits but encourages home universities to recognise and award credits",
+        "extracted_fee": "The winter school is free of charge; participants must cover travel expenses to and from Visby, Gotland, and travel to Stockholm on 31 January and from Visby on 6 February; if a student does not attend or cancels after 30 November 2026, the participant or their university may be charged the cost of participation (€320)",
+        "extracted_funding": "Students are encouraged to explore funding options through their home universities, such as Erasmus+ mobility grants; the BUP does not award ECTS credits but encourages home universities to recognise and award credits",
         "evidence_fields": {
           "deadline": "Selection of students After the application deadline on 26 October 2026 , participants will be selected based on motivation, field of study, and background. | Kurt - Webbaserade enkäter Uppsala universitet The BUP Winter School: Science on the Island 2027 (Bachelor- & Master Students) Available 2026-09-24 – 2026-10-26 Contact person Lara Kerschl , employed at The Baltic University Programme The last application day is 26 October 2026, 23:59 (CEST). | Kurt - Webbaserade enkäter Uppsala universite",
-          "fee": "Practical information Conference cost and location The winter school is free of charge and will take place on Gotland, Sweden. | Travel expenses to and from Visby, Gotland, must be covered by the participants. | However, if a student does not attend or cancels after 30 November 2026 , we reserve the right to charge the participant or their university the cost of participation (€320).",
+          "fee": "However, if a student does not attend or cancels after 30 November 2026 , we reserve the right to charge the participant or their university the cost of participation (€320). | Participants are required to cover their travel costs to Stockholm on 31 January and from Visby on 6 February . | Practical information Conference cost and location The winter school is free of charge and will take place on Gotland, Sweden. | Travel expenses to and from Visby, Gotland, must be covered by the participants.",
           "funding": "Students are encouraged to explore funding options through their home universities, such as Erasmus+ mobility grants. | The BUP does not award ECTS credits; however, we encourage the participants' home university to recognise and award the credits."
         }
       }
@@ -131,7 +131,7 @@
         "validation_warnings": [
           "index_or_listing_page"
         ],
-        "chinese_summary": "该页面为Tinbergen Institute的截止日期页面，列出EEA学生第一轮入学申请截止日期为2026年12月1日。",
+        "chinese_summary": "该页面为Tinbergen Institute的截止日期页面，其中提到EEA学生2026年12月1日为第一轮录取申请截止日期。",
         "extracted_deadline": "2026-12-01",
         "extracted_fee": "",
         "extracted_funding": "",
@@ -257,7 +257,7 @@
           "end_date_value_not_in_evidence",
           "application_deadline_value_not_in_evidence"
         ],
-        "chinese_summary": "MiNaPOLL 2027冬季学校聚焦微塑料和纳米塑料污染新前沿，于2027年2月23日至26日在意大利那不勒斯Stazione Zoologica Anton Dohrn举办，面向博士生、博士后和青年研究人员，申请截止日期为2026年12月10日。",
+        "chinese_summary": "MiNaPOLL 2027冬季学校聚焦微塑料和纳米塑料污染新前沿，将于2027年2月23日至26日在意大利那不勒斯Stazione Zoologica Anton Dohrn举办。面向博士生、博士后和年轻研究人员，申请截止日期为2026年12月10日。课程结合理论讲座与实践环节，涵盖水生环境中微纳米塑料的分析与定量、对海洋生物的影响以及污染管理等内容。",
         "extracted_deadline": "2026-12-10",
         "extracted_fee": "",
         "extracted_funding": "",
@@ -266,6 +266,54 @@
           "fee": "",
           "funding": ""
         }
+      }
+    },
+    {
+      "title": "ELLIS Winter School at Unit Trento",
+      "url": "https://ellis.eu/events/ellis-winter-school-at-unit-trento-2027",
+      "organizer": "ELLIS",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-01-25",
+        "end": "2027-01-29",
+        "duration_days": 5
+      },
+      "deadline": "2027-01-24",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [],
+      "needs_review": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {},
+      "evidence": {
+        "deadline": "ELLIS detail/registration page: registration deadline 2027-01-24",
+        "duration": "ELLIS events listing: 2027-01-25 to 2027-01-29",
+        "fee": "",
+        "funding": "",
+        "mode": "ELLIS listing location: Europe"
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
@@ -350,10 +398,10 @@
         "validation_warnings": [
           "funding_context_weak"
         ],
-        "chinese_summary": "Complexity Science Hub 每年举办的冬季学校，面向早期职业研究人员，通过讲座、讨论和小组项目/实践实验室协作探索复杂性科学。申请需通过在线门户提交个人简历和动机信。",
+        "chinese_summary": "Complexity Science Hub 年度冬季学校，面向早期职业研究人员，围绕复杂性科学开展跨学科协作学习，包含讲座、讨论和小组项目/实践实验室，全英文授课。",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "Support may be available for participants with financial need; instructions will be provided to students after they are accepted into the program.",
+        "extracted_funding": "Financial need-based support may be available; instructions provided after acceptance.",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
@@ -423,10 +471,10 @@
         "validation_warnings": [
           "location_context_weak"
         ],
-        "chinese_summary": "博尔德凝聚态与材料物理暑期学校面向凝聚态物理、材料科学及相关领域的高年级研究生和博士后，提供前沿专家培训，每年七月在科罗拉多大学博尔德分校物理系举办。2027年学校申请已开放，截止日期为2027年1月15日。",
+        "chinese_summary": "科罗拉多大学博尔德分校举办的凝聚态物质与材料物理暑期学校，面向凝聚态物理、材料科学及相关领域的高年级研究生和博士后，提供前沿科学技术的专家培训。2027年学校申请已开放，申请截止日期为2027年1月15日。学校由美国国家科学基金会资助，科罗拉多大学提供额外资助；较短出席无差旅支持，美国境外大学学生需自行承担机票。",
         "extracted_deadline": "2027-01-15",
         "extracted_fee": "",
-        "extracted_funding": "Supported by the National Science Foundation with additional funding from the University of Colorado; no travel support for shorter attendance; students at universities outside the United States must supply their own airfare under the NSF grant terms.",
+        "extracted_funding": "Supported by the National Science Foundation, with additional funding provided by the University of Colorado. No travel support for shorter attendance. Students at universities outside the United States must supply their own airfare per NSF grant terms.",
         "evidence_fields": {
           "deadline": "Deadline: January 15, 2027 All students are strongly urged to plan on staying for the duration of the School. | Deadline: January 15, 2027 All students are s",
           "fee": "",
@@ -543,15 +591,17 @@
       "ai_advisory": {
         "available": true,
         "validated_confidence": "low",
-        "validation_warnings": [],
+        "validation_warnings": [
+          "conflicting_evidence"
+        ],
         "chinese_summary": "",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply); students participating in both the LOT Summer School and the LL in the same summer may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply).",
+        "extracted_funding": "LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). PhD candidates are not eligible for this scheme.",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
-          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply)."
+          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). | PhD candidates are not eligible for this scheme."
         }
       }
     },
@@ -708,18 +758,19 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
+          "application_deadline_value_not_in_evidence",
           "fee_value_not_in_evidence",
           "deadline_past",
           "registration_status_corrected_from_past_deadline"
         ],
-        "chinese_summary": "克里特语言学暑期学校（CSSL26）申请页面，早期申请截止2026年4月5日，常规申请截止2026年5月8日；学费分档，早期截止费用较低；提供Van Riemsdijk基金会奖学金。",
+        "chinese_summary": "克里特语言学暑期学校（第7届）申请页面，提供早鸟（4月5日）和常规（5月8日）申请截止日期，学费在注册付款后完成，提供Van Riemsdijk基金会奖学金。",
         "extracted_deadline": "2026-05-08",
-        "extracted_fee": "Tuition fees apply; early deadline fees are lower than regular deadline fees; exact amounts not stated",
-        "extracted_funding": "Van Riemsdijk Foundation fellowship available; applicants with financial support from home institution asked to consider not applying",
+        "extracted_fee": "Tuition fees; early deadline tuition fees are lower than regular application deadline tuition fees; registration completed only after payment of tuition fees",
+        "extracted_funding": "Van Riemsdijk Foundation fellowships available; funds to award such fellowships are limited; applicants with financial support from home institution asked to consider not applying; fellowships equally distributed among undergraduate and graduate students",
         "evidence_fields": {
-          "deadline": "For more information about these please check the LinguistList Important dates Deadline for early application: 5 April 2026 → Notification of acceptance for early registration: 19 April 2026 Deadline for regular application: 8 May 2026 → Notification of acceptance for regular registration: 24 May 2026 The instructors Adam Albright , Massachusetts Institute of Technology Elena Anagnostopoulou , University of Crete Athulya Aravind , Yale | Application deadline Acceptance letter Payment Login Early",
-          "fee": "The tuition fees associated with this early deadline are lower than the tuition fees associated with the regular application deadline ( May 8 ). | Registration is completed only after payment of the tuition fees has gone through .",
-          "funding": "Kind Request We would like to ask for your discretion on the following matter: If you receive financial support from your home institution to attend CreteLing, please consider not applying for a Van Riemsdijk Foundation fellowship."
+          "deadline": "The tuition fees associated with this early deadline are lower than the tuition fees associated with the regular application deadline ( May 8 ). | Application deadline Acceptance letter Payment Login Early registration April 5 by April 19 deadline mentioned in the letter of acceptance letter with password after payment Regular registration May 8 by May 24 Ways of Payment : will be described in your acceptance letter . | May 8 ) will be notified about their admission to the school by May 24, at t",
+          "fee": "The tuition fees associated with this early deadline are lower than the tuition fees associated with the regular application deadline ( May 8 ). | Registration is completed only after payment of the tuition fees has gone through . | y after payment of the tuition fees has gone through .",
+          "funding": "Kind Request We would like to ask for your discretion on the following matter: If you receive financial support from your home institution to attend CreteLing, please consider not applying for a Van Riemsdijk Foundation fellowship. | letter) and will be equally distributed among undergraduate and graduate students. | Our funds to award such fellowships are limited."
         }
       }
     },
@@ -957,61 +1008,6 @@
       }
     },
     {
-      "title": "CERN School of Computing",
-      "url": "https://csc.web.cern.ch/",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "location": "Liverpool, UK",
-      "dates": {
-        "start": "2026-11-09",
-        "end": "2026-11-13",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "physics",
-        "particle physics"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.5,
-      "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "physics": "covering various aspects of scientific computing for high-energy physics and other data-intensive sciences. These schools are aimed at postgraduate (minimum of Bachelor deg",
-        "particle physics": "king at CERN or at other research institutes, with experience in particle physics, computing or related fields. Learn more . Upcoming schools: CSC 2026 The 48 th edition of the CSC"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "November 9-13, 2026",
-        "fee": "",
-        "funding": "",
-        "mode": "will take place in Liverpool, UK from 23 August to 5 September. Appli"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
       "title": "Oxford Spring School in Advanced Social Research Methods",
       "url": "https://www.politics.ox.ac.uk/spring-school",
       "organizer": "Oxford Spring School",
@@ -1071,61 +1067,6 @@
         "fee": "",
         "funding": "",
         "mode": "in-person and online formats every year. The experience inc"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "CERN School of Computing on IT Services",
-      "url": "https://csc.web.cern.ch/tcsc-on-it-services-2026/",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "location": "Ferney-Voltaire, France",
-      "dates": {
-        "start": "2026-11-09",
-        "end": "2026-11-13",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "physics",
-        "engineering"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.5,
-      "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "physics": "he computing services delivered by the CERN IT Department to the physics community. The school is recommended for any person that is using the CERN IT services either to de",
-        "engineering": "to deliver information, analyze data, automate tasks or work in engineering projects. We expect participation from both active users who would like to be more proficient and n"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "9 – 13 November 2026",
-        "fee": "",
-        "funding": "",
-        "mode": "will be hosted at the Appart’City Ferney-Voltaire . Academic progra"
       },
       "ai_advisory": {
         "available": false
@@ -1298,14 +1239,8 @@
       "ai_advisory": {
         "available": true,
         "validated_confidence": "low",
-        "validation_warnings": [
-          "unknown_field_has_evidence_id:registration_status",
-          "location_not_supported",
-          "mode_not_supported",
-          "application_deadline_unknown",
-          "registration_status_unknown"
-        ],
-        "chinese_summary": "Perimeter Institute 将于2027年6月14日至25日举办为期两周的本科生暑期学校，内容包括现代理论物理前沿课程、研究人员报告、小组讨论及协作解题等主动学习活动。",
+        "validation_warnings": [],
+        "chinese_summary": "Perimeter Institute 将于2027年6月14日至25日举办为期两周的本科生暑期学校，内容涵盖现代理论物理前沿主题、研究人员报告、小组讨论及协作解题等主动学习活动。申请尚未开放。",
         "extracted_deadline": "",
         "extracted_fee": "",
         "extracted_funding": "",
@@ -1366,7 +1301,7 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [],
-        "chinese_summary": "莱顿大学人口健康管理暑期学校，2027年7月5日开始，为期5天，在海牙Health Campus举办，面向医疗健康领域的专业人士和学生，健康相关专业硕士生免费。",
+        "chinese_summary": "莱顿大学人口健康管理暑期学校，2027年7月5日开始，为期5天，在海牙健康校区线下举办，面向硕士生、专业人士和博士生，健康相关专业硕士生免费。",
         "extracted_deadline": "",
         "extracted_fee": "Master’s students in health related studies: free",
         "extracted_funding": "",
