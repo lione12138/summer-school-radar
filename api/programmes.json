@@ -713,9 +713,6 @@
       "topics": [
         "natural language processing"
       ],
-      "primary_topics": [
-        "natural language processing"
-      ],
       "editions": [
         {
           "id": "alps-language-processing:2027",
@@ -776,7 +773,10 @@
         "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
         "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "natural language processing"
+      ]
     },
     {
       "id": "amsi-winter-school",
@@ -3357,9 +3357,6 @@
         "satellite",
         "AI"
       ],
-      "primary_topics": [
-        "machine learning"
-      ],
       "editions": [
         {
           "id": "edition:d31fd98a1919cefb",
@@ -3430,7 +3427,10 @@
         "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
         "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "machine learning"
+      ]
     },
     {
       "id": "programme:7b9a68f3cc984b4a",
