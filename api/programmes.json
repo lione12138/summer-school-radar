@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-10-27",
+  "generated": "2026-10-28",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -446,7 +446,7 @@
           "detail_path": "opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
           "official_url": "https://e-applications.ictp.it/applicant/login/4338",
           "location": "ICTP Kastler Lecture Hall (AGH) Adriatico Guest House - Kastler Lecture Hall Riva Massimiliano e Carlotta, Grignano I - 34151 Trieste (Italy)",
-          "location_zh": "ICTP Kastler报告厅（AGH）Adriatico宾馆 - Kastler报告厅，Riva Massimiliano e Carlotta, Grignano I - 34151 的里雅斯特（意大利）",
+          "location_zh": "ICTP Kastler报告厅（AGH）Adriatico宾馆 - Kastler报告厅 Riva Massimiliano e Carlotta, Grignano I - 34151 的里雅斯特（意大利）",
           "start_date": "2027-02-15",
           "end_date": "2027-03-12",
           "deadline": "2026-11-01",
@@ -486,7 +486,7 @@
         "detail_path": "opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
         "official_url": "https://e-applications.ictp.it/applicant/login/4338",
         "location": "ICTP Kastler Lecture Hall (AGH) Adriatico Guest House - Kastler Lecture Hall Riva Massimiliano e Carlotta, Grignano I - 34151 Trieste (Italy)",
-        "location_zh": "ICTP Kastler报告厅（AGH）Adriatico宾馆 - Kastler报告厅，Riva Massimiliano e Carlotta, Grignano I - 34151 的里雅斯特（意大利）",
+        "location_zh": "ICTP Kastler报告厅（AGH）Adriatico宾馆 - Kastler报告厅 Riva Massimiliano e Carlotta, Grignano I - 34151 的里雅斯特（意大利）",
         "start_date": "2027-02-15",
         "end_date": "2027-03-12",
         "deadline": "2026-11-01",
@@ -700,6 +700,83 @@
         "statistics",
         "design"
       ]
+    },
+    {
+      "id": "alps-language-processing",
+      "slug": "alps-advanced-language-processing-winter-school-fecc81c5",
+      "title": "ALPS — Advanced Language Processing Winter School",
+      "title_zh": "ALPS 高级语言处理冬季学校",
+      "organizer": "LIG (Université Grenoble Alpes) and NAVER Labs Europe",
+      "organizer_zh": "LIG（格勒诺布尔阿尔卑斯大学）与 NAVER Labs Europe",
+      "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
+      "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
+      "topics": [
+        "natural language processing"
+      ],
+      "primary_topics": [
+        "natural language processing"
+      ],
+      "editions": [
+        {
+          "id": "alps-language-processing:2027",
+          "title": "ALPS 2027 — Advanced Language Processing Winter School",
+          "title_zh": "ALPS 2027 高级语言处理冬季学校",
+          "detail_path": "opportunities/alps-language-processing-2027-1984e1b8.html",
+          "official_url": "https://lig-alps.imag.fr/index.php/application/",
+          "location": "Europe",
+          "location_zh": "欧洲",
+          "start_date": "2027-03-28",
+          "end_date": "2027-04-02",
+          "deadline": "2026-10-11",
+          "deadline_status": "closed",
+          "duration_days": 6,
+          "mode": "in-person",
+          "financial_summary": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
+          "financial_summary_zh": "费用：学生 EUR 700; EUR 900 非学生学术界参与者; EUR 1300 产业界及独立参与者 （价格待确认；含住宿及全食宿）",
+          "funding_available": null,
+          "fee_eur": 700.0,
+          "topics": [
+            "natural language processing"
+          ],
+          "primary_topics": [
+            "natural language processing"
+          ],
+          "secondary_topics": [],
+          "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
+          "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "alps-language-processing:2027",
+        "title": "ALPS 2027 — Advanced Language Processing Winter School",
+        "title_zh": "ALPS 2027 高级语言处理冬季学校",
+        "detail_path": "opportunities/alps-language-processing-2027-1984e1b8.html",
+        "official_url": "https://lig-alps.imag.fr/index.php/application/",
+        "location": "Europe",
+        "location_zh": "欧洲",
+        "start_date": "2027-03-28",
+        "end_date": "2027-04-02",
+        "deadline": "2026-10-11",
+        "deadline_status": "closed",
+        "duration_days": 6,
+        "mode": "in-person",
+        "financial_summary": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
+        "financial_summary_zh": "费用：学生 EUR 700; EUR 900 非学生学术界参与者; EUR 1300 产业界及独立参与者 （价格待确认；含住宿及全食宿）",
+        "funding_available": null,
+        "fee_eur": 700.0,
+        "topics": [
+          "natural language processing"
+        ],
+        "primary_topics": [
+          "natural language processing"
+        ],
+        "secondary_topics": [],
+        "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
+        "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
+        "sessions": []
+      }
     },
     {
       "id": "amsi-winter-school",
@@ -3265,6 +3342,95 @@
       "primary_topics": [
         "neuroscience"
       ]
+    },
+    {
+      "id": "programme:ccbe33f932ca480b",
+      "slug": "training-course-data-assimilation-machine-learning-9bd61f9e",
+      "title": "Training course: Data assimilation & Machine Learning",
+      "title_zh": "培训课程：资料同化与机器学习",
+      "organizer": "ECMWF Events (Indico)",
+      "organizer_zh": "ECMWF Events (Indico)",
+      "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
+      "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
+      "topics": [
+        "machine learning",
+        "satellite",
+        "AI"
+      ],
+      "primary_topics": [
+        "machine learning"
+      ],
+      "editions": [
+        {
+          "id": "edition:d31fd98a1919cefb",
+          "title": "Training course: Data assimilation & Machine Learning",
+          "title_zh": "培训课程：资料同化与机器学习",
+          "detail_path": "opportunities/training-course-data-assimilation-machine-learning-681b10c7.html",
+          "official_url": "https://events.ecmwf.int/event/578/",
+          "location": "ECMWF, Reading",
+          "location_zh": "ECMWF，雷丁",
+          "start_date": "2027-01-11",
+          "end_date": "2027-01-15",
+          "deadline": "2026-09-27",
+          "deadline_status": "closed",
+          "duration_days": 5,
+          "mode": "hybrid",
+          "financial_summary": "Fee about EUR 1176",
+          "financial_summary_zh": "费用约 EUR 1176",
+          "funding_available": null,
+          "fee_eur": 1176.0,
+          "topics": [
+            "machine learning",
+            "satellite",
+            "AI"
+          ],
+          "primary_topics": [
+            "machine learning"
+          ],
+          "secondary_topics": [
+            "satellite",
+            "AI"
+          ],
+          "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
+          "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:d31fd98a1919cefb",
+        "title": "Training course: Data assimilation & Machine Learning",
+        "title_zh": "培训课程：资料同化与机器学习",
+        "detail_path": "opportunities/training-course-data-assimilation-machine-learning-681b10c7.html",
+        "official_url": "https://events.ecmwf.int/event/578/",
+        "location": "ECMWF, Reading",
+        "location_zh": "ECMWF，雷丁",
+        "start_date": "2027-01-11",
+        "end_date": "2027-01-15",
+        "deadline": "2026-09-27",
+        "deadline_status": "closed",
+        "duration_days": 5,
+        "mode": "hybrid",
+        "financial_summary": "Fee about EUR 1176",
+        "financial_summary_zh": "费用约 EUR 1176",
+        "funding_available": null,
+        "fee_eur": 1176.0,
+        "topics": [
+          "machine learning",
+          "satellite",
+          "AI"
+        ],
+        "primary_topics": [
+          "machine learning"
+        ],
+        "secondary_topics": [
+          "satellite",
+          "AI"
+        ],
+        "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
+        "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
+        "sessions": []
+      }
     },
     {
       "id": "programme:7b9a68f3cc984b4a",

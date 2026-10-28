@@ -3,8 +3,81 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-10-27",
+  "generated": "2026-10-28",
   "opportunities": [
+    {
+      "id": "opportunities/spring-college-in-the-physics-of-complex-systems-223446f8",
+      "edition_id": "edition:6024ea4de6c2efb5",
+      "programme_id": "programme:45fcb50a3b1593be",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/spring-college-in-the-physics-of-complex-systems-701c4578.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/spring-college-in-the-physics-of-complex-systems-701c4578.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/spring-college-in-the-physics-of-complex-systems-701c4578.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/spring-college-in-the-physics-of-complex-systems-701c4578.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html"
+      },
+      "official_url": "https://e-applications.ictp.it/applicant/login/4338",
+      "title": "Spring College in the Physics of Complex Systems",
+      "title_zh": "复杂系统物理学春季学院",
+      "type": "spring college",
+      "organizer": "ICTP and SISSA",
+      "organizer_zh": "ICTP与SISSA",
+      "location": "ICTP Kastler Lecture Hall (AGH) Adriatico Guest House - Kastler Lecture Hall Riva Massimiliano e Carlotta, Grignano I - 34151 Trieste (Italy)",
+      "location_zh": "ICTP Kastler报告厅（AGH）Adriatico宾馆 - Kastler报告厅 Riva Massimiliano e Carlotta, Grignano I - 34151 的里雅斯特（意大利）",
+      "mode": "in-person",
+      "start_date": "2027-02-15",
+      "end_date": "2027-03-12",
+      "duration_days": 26,
+      "application_deadline": "2026-11-01",
+      "application_status": "open",
+      "directory_tier": "funded-or-low-fee",
+      "financial_summary": "Fee EUR 0 · A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
+      "fee": "Free registration; competitive grants for selected participants",
+      "fee_eur": 0.0,
+      "funding_available": true,
+      "funding_type": [
+        "competitive grant"
+      ],
+      "funding_scope": "A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
+      "financial_terms": {
+        "participation_fee": "Free registration; competitive grants for selected participants",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "conditional",
+        "support_scope": "A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "topics": [
+        "physics",
+        "statistical physics",
+        "engineering",
+        "neuroscience",
+        "economics"
+      ],
+      "primary_topics": [
+        "physics"
+      ],
+      "secondary_topics": [
+        "statistical physics",
+        "engineering",
+        "neuroscience",
+        "economics"
+      ],
+      "summary": "The Spring College on the Physics of Complex Systems aims to expose students to a selection of topics at the forefront of research during an intensive, 4-week programme.",
+      "summary_zh": "复杂系统物理学春季学院旨在通过为期4周的密集课程，让学生接触研究前沿的精选课题。",
+      "eligibility": "The Spring College is part of the PCS Master programme and it is open to qualified Master and PhD students, and to young researchers.",
+      "eligibility_zh": "春季学院是PCS硕士项目的一部分，面向合格的硕士生、博士生和年轻研究人员开放。",
+      "sessions": []
+    },
     {
       "id": "cmu-myclimate:2027",
       "edition_id": "cmu-myclimate:2027",
@@ -1231,64 +1304,6 @@
       "sessions": []
     },
     {
-      "id": "opportunities/ellis-winter-school-at-unit-trento-834b34d3",
-      "edition_id": "edition:b3812d6f118b5e60",
-      "programme_id": "programme:59f0e91b39117381",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/ellis-winter-school-at-unit-trento-bb3afd56.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/ellis-winter-school-at-unit-trento-bb3afd56.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/ellis-winter-school-at-unit-trento-bb3afd56.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/ellis-winter-school-at-unit-trento-bb3afd56.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ellis-winter-school-at-unit-trento-834b34d3.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ellis-winter-school-at-unit-trento-834b34d3.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ellis-winter-school-at-unit-trento-834b34d3.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ellis-winter-school-at-unit-trento-834b34d3.html"
-      },
-      "official_url": "https://ellis.eu/events/ellis-winter-school-at-unit-trento-2027",
-      "title": "ELLIS Winter School at Unit Trento",
-      "title_zh": "特伦托大学ELLIS冬季学校",
-      "type": "summer school",
-      "organizer": "ELLIS",
-      "organizer_zh": "ELLIS",
-      "location": "Europe",
-      "location_zh": "欧洲",
-      "mode": "in-person",
-      "start_date": "2027-01-25",
-      "end_date": "2027-01-29",
-      "duration_days": 5,
-      "application_deadline": "2027-01-24",
-      "application_status": "open",
-      "directory_tier": "official-listing",
-      "financial_summary": "Funding or fee not stated",
-      "fee": "",
-      "fee_eur": null,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "topics": [],
-      "primary_topics": [],
-      "secondary_topics": [],
-      "summary": "25/01/27 - 29/01/27 • NOBIS, Brunico/Bruneck ELLIS Winter School at Unit Trento Topic: Multimodal Learning Winter School Read More",
-      "summary_zh": "27/01/25 - 27/01/29 • NOBIS，布鲁尼科/布鲁内克 特伦托大学ELLIS冬季学校 主题：多模态学习冬季学校 阅读更多",
-      "eligibility": "",
-      "eligibility_zh": "",
-      "sessions": []
-    },
-    {
       "id": "jparc-neutron-muon-school:2026",
       "edition_id": "jparc-neutron-muon-school:2026",
       "programme_id": "jparc-neutron-muon-school",
@@ -1433,6 +1448,84 @@
       "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先链 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
       "eligibility": "PhD students, post-doctoral fellows, research scientists, and early-career faculty members from diverse backgrounds who are interested in neuroscience",
       "eligibility_zh": "来自不同背景、对神经科学感兴趣的博士生、博士后研究员、科研人员及早期职业教职人员",
+      "sessions": []
+    },
+    {
+      "id": "alps-language-processing:2027",
+      "edition_id": "alps-language-processing:2027",
+      "programme_id": "alps-language-processing",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/alps-advanced-language-processing-winter-school-fecc81c5.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/alps-advanced-language-processing-winter-school-fecc81c5.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/alps-advanced-language-processing-winter-school-fecc81c5.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/alps-advanced-language-processing-winter-school-fecc81c5.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/alps-language-processing-2027-1984e1b8.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/alps-language-processing-2027-1984e1b8.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/alps-language-processing-2027-1984e1b8.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/alps-language-processing-2027-1984e1b8.html"
+      },
+      "official_url": "https://lig-alps.imag.fr/index.php/application/",
+      "title": "ALPS 2027 — Advanced Language Processing Winter School",
+      "title_zh": "ALPS 2027 高级语言处理冬季学校",
+      "type": "winter school",
+      "organizer": "LIG (Université Grenoble Alpes) and NAVER Labs Europe",
+      "organizer_zh": "LIG（格勒诺布尔阿尔卑斯大学）与 NAVER Labs Europe",
+      "location": "Europe",
+      "location_zh": "欧洲",
+      "mode": "in-person",
+      "start_date": "2027-03-28",
+      "end_date": "2027-04-02",
+      "duration_days": 6,
+      "application_deadline": "2026-10-11",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
+      "fee": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
+      "fee_eur": 700.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "EUR 700 students; EUR 900 academic non-students; EUR 1300 industry and independents (to be confirmed; includes accommodation and full board)",
+        "fee_eur": 700.0,
+        "fee_status": "provisional",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "included",
+        "meals": "included",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 700.0,
+            "currency": "EUR",
+            "conditions": "students"
+          },
+          {
+            "amount": 900.0,
+            "currency": "EUR",
+            "conditions": "academic non-students"
+          },
+          {
+            "amount": 1300.0,
+            "currency": "EUR",
+            "conditions": "industry and independents (to be confirmed; includes accommodation and full board)"
+          }
+        ]
+      },
+      "topics": [
+        "natural language processing"
+      ],
+      "primary_topics": [
+        "natural language processing"
+      ],
+      "secondary_topics": [],
+      "summary": "A residential advanced NLP school in Aussois, combining research lectures, participant posters and discussion in a small group.",
+      "summary_zh": "在法国 Aussois 举办的住宿制进阶自然语言处理冬校，通过研究讲座、参与者海报和小规模讨论开展学习与交流。",
+      "eligibility": "PhD students or advanced master students) in natural language processing or related fields",
+      "eligibility_zh": "自然语言处理或相关领域的博士生或高年级硕士生",
       "sessions": []
     },
     {
@@ -1892,6 +1985,73 @@
       ],
       "summary": "Training course: Machine Learning-based weather forecasting (16-November 20, 2026): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Machine Learning-based weather foreca",
       "summary_zh": "培训课程：基于机器学习的天气预报（2026年11月16日至20日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：基于机器学习的天气预",
+      "eligibility": "",
+      "eligibility_zh": "",
+      "sessions": []
+    },
+    {
+      "id": "opportunities/training-course-data-assimilation-machine-learning-681b10c7",
+      "edition_id": "edition:d31fd98a1919cefb",
+      "programme_id": "programme:ccbe33f932ca480b",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/training-course-data-assimilation-machine-learning-9bd61f9e.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/training-course-data-assimilation-machine-learning-9bd61f9e.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/training-course-data-assimilation-machine-learning-9bd61f9e.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/training-course-data-assimilation-machine-learning-9bd61f9e.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/training-course-data-assimilation-machine-learning-681b10c7.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/training-course-data-assimilation-machine-learning-681b10c7.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/training-course-data-assimilation-machine-learning-681b10c7.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/training-course-data-assimilation-machine-learning-681b10c7.html"
+      },
+      "official_url": "https://events.ecmwf.int/event/578/",
+      "title": "Training course: Data assimilation & Machine Learning",
+      "title_zh": "培训课程：资料同化与机器学习",
+      "type": "training course",
+      "organizer": "ECMWF Events (Indico)",
+      "organizer_zh": "ECMWF Events (Indico)",
+      "location": "ECMWF, Reading",
+      "location_zh": "ECMWF，雷丁",
+      "mode": "hybrid",
+      "start_date": "2027-01-11",
+      "end_date": "2027-01-15",
+      "duration_days": 5,
+      "application_deadline": "2026-09-27",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee about EUR 1176",
+      "fee": "£980",
+      "fee_eur": 1176.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "£980",
+        "fee_eur": 1176.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": []
+      },
+      "topics": [
+        "machine learning",
+        "satellite",
+        "AI"
+      ],
+      "primary_topics": [
+        "machine learning"
+      ],
+      "secondary_topics": [
+        "satellite",
+        "AI"
+      ],
+      "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
+      "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
       "eligibility": "",
       "eligibility_zh": "",
       "sessions": []
