@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-28",
+  "generated": "2026-10-30",
   "review_queue": [
     {
       "title": "Deadlines",
@@ -66,6 +66,62 @@
           "fee": "",
           "funding": ""
         }
+      }
+    },
+    {
+      "title": "Footer Ranking Menu",
+      "url": "https://www.politics.ox.ac.uk/how-apply-and-fees",
+      "organizer": "Oxford Spring School",
+      "source_layer": "1.5",
+      "location": "UK",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2027-01-15",
+      "deadline_status": "open",
+      "financial_access_status": "funded",
+      "fee": "free of charge",
+      "fee_eur": 0.0,
+      "topics": [
+        "AI",
+        "data analysis",
+        "social science"
+      ],
+      "needs_review": [
+        "duration is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "free of charge",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "offered",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "AI": "afternoon teaching sessions (depending on the course selected), AI in Social Research Seminars, Academic Talk, lunch and refreshments throughout the week, informal pu",
+        "data analysis": "ence background to apply. We also offer a non-advanced course - ‘Data Analysis for the Social Sciences’ - for those with little or no experience in quantitative methods. Once you",
+        "social science": "iety of research skills; therefore, we welcome students from any social science background to apply. We also offer a non-advanced course - ‘Data Analysis for the Social Sciences’"
+      },
+      "evidence": {
+        "deadline": "application deadline is 23:59 (GMT) Friday 15 January 2027",
+        "duration": "",
+        "fee": "free of charge",
+        "funding": "We are unable to offer bursaries, except for current DPIR DPhil students.",
+        "mode": "In Person In-person: The fee for a single course is £1,075"
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
@@ -221,6 +277,226 @@
           "fee": "",
           "funding": ""
         }
+      }
+    },
+    {
+      "title": "ELLIS Winter School at Unit Trento",
+      "url": "https://ellis.eu/events/ellis-winter-school-at-unit-trento-2027",
+      "organizer": "ELLIS",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-01-25",
+        "end": "2027-01-29",
+        "duration_days": 5
+      },
+      "deadline": "2027-01-24",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [],
+      "needs_review": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {},
+      "evidence": {
+        "deadline": "ELLIS detail/registration page: registration deadline 2027-01-24",
+        "duration": "ELLIS events listing: 2027-01-25 to 2027-01-29",
+        "fee": "",
+        "funding": "",
+        "mode": "ELLIS listing location: Europe"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Oxford Spring School in Advanced Research Methods 2027",
+      "url": "https://web.cvent.com/event/d36404aa-8342-4105-8a2f-177855f2db17/register?rp=33182c4a-2476-43e3-8972-8929bbd1fb5d",
+      "organizer": "Oxford Spring School",
+      "source_layer": "1.5",
+      "location": "UK",
+      "dates": {
+        "start": "2027-04-05",
+        "end": "2027-04-09",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "AI",
+        "history"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "offered",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "AI": "rganisation / Institution Other * Will you be attending the free AI in Social Research Seminars? (Monday-Wednesday 12:30 - 13:25) This question is required. Yes No Nex",
+        "history": "udent web profile page, please paste the URL below * Educational history and achievements. Please provide your educational history (subject, course, institution, dates, att"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "5 April 2027 – 9 April 2027",
+        "fee": "",
+        "funding": "Personal Information - Oxford Spring School in Advanced Research Methods 2027 Skip to main content Oxford Spring School in Advanced Research Methods 2027 5 April 2027 – 9 April 2027 Manor Road Building Manor Road Oxford, OX1 3UQ Note that for Spring School 2027, bursaries are not available except for DPIR DPhil students , who have a separate bursary scheme and application process.",
+        "mode": "In-person course Online course Tell us about yourself Who y | in person at the University of Oxford or participate live o"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Introduction to metabolomics analysis",
+      "url": "https://www.ebi.ac.uk/training/events/introduction-metabolomics-analysis-2027/",
+      "organizer": "EMBL-EBI Training",
+      "source_layer": "1",
+      "location": "United Kingdom",
+      "dates": {
+        "start": "2027-05-17",
+        "end": "2027-05-21",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "programming languages",
+        "data analysis",
+        "bioinformatics",
+        "design"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "offered",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "offered",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [
+        {
+          "benefit": "travel",
+          "status": "covered",
+          "evidence": "travel grants, and financial assistance.",
+          "source_url": "https://www.ebi.ac.uk/training/events/introduction-metabolomics-analysis-2027/"
+        }
+      ],
+      "topic_evidence": {
+        "programming languages": "using a predesigned LC-MS analysis workflow. Basic knowledge of programming languages can be an advantage (e.g. you understand the basic command line functioning, you can navigate Galax",
+        "data analysis": "rn through hands-on tutorials how to use the tools available for data analysis and data submission. The course will conclude with the use of case studies to cement the learning y",
+        "bioinformatics": "rest Applications open 2 November 2026 17 – 21 May 2027 European Bioinformatics Institute United Kingdom £975.00 (academia) / £1,275.00 (industry) Contact Toke Labiyi Open applica",
+        "design": "ised workflows as well as with the current state of experimental design, data acquisition (LC-MS, MS imaging), data processing and compound annotation, and modelling. In a"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "17 – 21 May 2027",
+        "fee": "",
+        "funding": "For full details, please refer to our dedicated support page for information on available fee waivers, travel grants, and financial assistance.",
+        "mode": "onsite or virtually. Please read our dedicated support p"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Graduate Research School Scholarships (UQGRSS) – includes Research Training Program (RTP)",
+      "url": "https://scholarships.uq.edu.au/scholarship/graduate-school-scholarships-uqgss-%E2%80%93-includes-rtp",
+      "organizer": "Scholarships",
+      "source_layer": "discovery",
+      "location": "global",
+      "dates": {
+        "start": "2026-11-18",
+        "end": "2027-02-19",
+        "duration_days": 94
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "Scholarship value Living stipend of $39,220 per annum tax free (2026 rate), indexed annually, Single",
+      "fee_eur": 37259.0,
+      "topics": [
+        "philosophy"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "Scholarship value Living stipend of $39,220 per annum tax free (2026 rate), indexed annually, Single",
+        "fee_eur": 37259.0,
+        "fee_status": "stated",
+        "support_status": "offered",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "philosophy": "upport you as you complete a research project for your Doctor of Philosophy, Master of Philosophy or a research-focused professional doctorate at UQ. Eligibility You're eligib"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "18 November 2026 to Friday 19 February 2027",
+        "fee": "Scholarship value Living stipend of $39,220 per annum tax free (2026 rate), indexed annually, Single",
+        "funding": "Graduate Research School Scholarships (UQGRSS) – includes Research Training Program (RTP) - Scholarships - The University of Queensland Skip to menu Skip to content Skip to footer Menu Study Research Partners and community About Search Scholarships Find a scholarship Scholarships explained Support and resources Support and resources High school students PhD and MPhil students International students Aboriginal and/or Torres Strait Islanders Definitions Contact Study Research Partners and community About UQ home News Events Give Contact Search term UQ home News Events Give Contact UQ home Scholarships Graduate Research School Scholarships (UQGRSS) – includes Research Training Program (RTP) Graduate Research School Scholarships (UQGRSS) – includes Research Training Program (RTP) Enrolment status Future UQ student, Current UQ student Student type Domestic, International Study level Postgraduate research (HDR) Study area All study areas Scholarship focus Academic excellence Funding type Living stipend, Tuition fees Scholarship value Living stipend of $39,220 per annum tax free (2026 rate), indexed annually, Single Overseas Student Health Cover (OSHC) Scholarship duration 3.",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
@@ -502,16 +778,16 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "llm_chunk_truncated:6"
+          "conflicting_evidence"
         ],
-        "chinese_summary": "莱顿语言与语言学暑期学校（Leiden Summer School in Languages and Linguistics）由LOT组织，为期两周，面向全球语言学学生与爱好者，提供深入学习与拓展语言学知识的机会。LOT附属RMA学生与博士生可能获得差旅和住宿报销（有条件），LOT RM学生的参与费由LOT承担，但博士生不符合该报销计划。",
+        "chinese_summary": "",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply); the participation fee for LLL by LOT RM students is covered by LOT; RM students must take two or three different courses at the LLL; PhD candidates are not eligible for this scheme; if a student participates in both the LOT Summer School and the LL in the same summer, reimbursement of travel and/or accommodation costs may only be applied for one of the two summer schools",
+        "extracted_funding": "LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). PhD candidates are not eligible for this scheme.",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
-          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | The fee for the participation LLL by LOT RM students is covered by LOT. | The following conditions apply: RM students take two or three different courses at the LLL. | LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommod"
+          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | LOT-affiliated RMA students and PhD candidates may be eligible for travel and accommodation reimbursements (conditions apply). | PhD candidates are not eligible for this scheme."
         }
       }
     },
@@ -685,7 +961,7 @@
       }
     },
     {
-      "title": "Tuition fees, scholarships and financial support",
+      "title": "Tuition fees, scholarships, and financial support",
       "url": "https://tinbergen.nl/tuition-fees-scholarships-and-financial-support",
       "organizer": "Tinbergen Institute",
       "source_layer": "2",
@@ -727,7 +1003,7 @@
       "benefit_facts": [],
       "topic_evidence": {
         "data science": "cil All Placement Records PhD Vacancies Research Master Business Data Science Courses for external participants Summer School Tinbergen Institute Lectures PhD Vacancies Institut",
-        "economics": "me | Graduate Education | Tinbergen Institute Research Master in Economics | Admissions | Tuition fees, scholarships and financial support Tuition fees, scholarships and fina"
+        "economics": "me | Graduate Education | Tinbergen Institute Research Master in Economics | Admissions | Tuition fees, scholarships and financial support Tuition fees, scholarships, and fin"
       },
       "evidence": {
         "deadline": "",
@@ -857,132 +1133,6 @@
       }
     },
     {
-      "title": "Digital Humanities Summer Institute",
-      "url": "https://dhsi.org/scholarships/",
-      "organizer": "Digital Humanities Summer Institute",
-      "source_layer": "2",
-      "location": "North America",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "funded",
-      "fee": "$150",
-      "fee_eur": 142.5,
-      "topics": [
-        "digital humanities"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "duration is uncertain",
-        "in-person status is uncertain"
-      ],
-      "confidence": 0.25,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.25,
-      "financial_terms": {
-        "participation_fee": "$150",
-        "fee_eur": 142.5,
-        "fee_status": "stated",
-        "support_status": "offered",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "offered",
-        "cost_status": "paid",
-        "fee_options": []
-      },
-      "benefit_facts": [
-        {
-          "benefit": "travel",
-          "status": "covered",
-          "evidence": "The travel grants are awarded as partial reimbursement of travel costs (e.",
-          "source_url": "https://dhsi.org/scholarships/"
-        }
-      ],
-      "topic_evidence": {
-        "digital humanities": "Scholarships & Bursaries | Digital Humanities Summer Institute Scholarships & Bursaries Ray Siemens DHSI Bursaries In honour of DHSI Founder and"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "",
-        "fee": "$150",
-        "funding": "The travel grants are awarded as partial reimbursement of travel costs (e.",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "Oxford Spring School in Advanced Social Research Methods",
-      "url": "https://www.politics.ox.ac.uk/spring-school",
-      "organizer": "Oxford Spring School",
-      "source_layer": "1.5",
-      "location": "UK",
-      "dates": {
-        "start": "2027-04-05",
-        "end": "2027-04-09",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "machine learning",
-        "data analysis",
-        "statistics",
-        "design",
-        "philosophy of science",
-        "social science",
-        "philosophy"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.5,
-      "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "machine learning": "e Methods: Interviews and Fieldwork Advanced Qualitative Methods Machine Learning Causal Inference 1: Social Science Experiments Causal Inference 2: Design-Based Approaches Text Ana",
-        "data analysis": "iments Causal Inference 2: Design-Based Approaches Text Analysis Data Analysis for the Social Sciences Large Language Models Tutor Marnie Howlett on her experience this year Stud",
-        "statistics": "e lecturer was so effective that every session was the best math/statistics class I have ever attended. After a comprehensive week-long input on theory and coupled by practice",
-        "design": "usal Inference 1: Social Science Experiments Causal Inference 2: Design-Based Approaches Text Analysis Data Analysis for the Social Sciences Large Language Models Tutor Ma",
-        "philosophy of science": "d' in a week is super useful and makes you think a lot about the philosophy of science etc. The deep dive kind of teaching methodology is really helpful. The lecturers were good too and",
-        "social science": "Spring School in Advanced Social Science Research Methods | DPIR Oxford Spring School in Advanced Social Research Methods Subscribe to recei",
-        "philosophy": "d' in a week is super useful and makes you think a lot about the philosophy of science etc. The deep dive kind of teaching methodology is really helpful. The lecturers were go"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "5 - 9 April 2027",
-        "fee": "",
-        "funding": "",
-        "mode": "in-person and online formats every year. The experience inc"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
       "title": "Useful Information",
       "url": "https://ecpr.eu/MethodsSchool",
       "organizer": "ECPR Methods School",
@@ -1091,6 +1241,65 @@
         "fee": "",
         "funding": "",
         "mode": ""
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Data science for life scientists",
+      "url": "https://www.ebi.ac.uk/training/events/data-science-life-scientists-2027/",
+      "organizer": "EMBL-EBI Training",
+      "source_layer": "1",
+      "location": "United Kingdom",
+      "dates": {
+        "start": "2027-06-14",
+        "end": "2027-06-18",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "data science",
+        "machine learning",
+        "deep learning",
+        "bioinformatics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "machine learning": "ing Course at EMBL-EBI Data science for life scientists Hands-on machine learning for biological data 2027 Course overview How to apply Fees and additional information Competencies",
+        "deep learning": "alisation in Python Core machine learning methods and evaluation Deep learning approaches, including neural networks and transformers Large language models and their potential ap",
+        "data science": "Data science for life scientists | EMBL-EBI Training Course at EMBL-EBI Data science for life scientists Hands-o",
+        "bioinformatics": "st Applications open 30 November 2026 14 – 18 June 2027 European Bioinformatics Institute United Kingdom £975.00 (academia) / £1,275.00 (industry) Contact Charlotte Courtney Open"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "14 – 18 June 2027",
+        "fee": "",
+        "funding": "",
+        "mode": "onsite or virtually. Please read our dedicated support p"
       },
       "ai_advisory": {
         "available": false
