@@ -3,7 +3,7 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-10-29",
+  "generated": "2026-10-30",
   "opportunities": [
     {
       "id": "opportunities/spring-college-in-the-physics-of-complex-systems-223446f8",
@@ -791,79 +791,6 @@
       "sessions": []
     },
     {
-      "id": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373",
-      "edition_id": "edition:736b6cbf96f90a6f",
-      "programme_id": "programme:6d05e72313fdb49c",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/summer-school-ds-food-design-of-sustainable-food-systems-1990bf33.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html"
-      },
-      "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
-      "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-      "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
-      "type": "summer school",
-      "organizer": "Euroleague for Life Sciences (ELLS)",
-      "organizer_zh": "生命科学欧洲联盟（ELLS）",
-      "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-      "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
-      "mode": "in-person",
-      "start_date": "2026-07-05",
-      "end_date": "2026-07-12",
-      "duration_days": 8,
-      "application_deadline": "2026-05-01",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-      "fee": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-      "fee_eur": 90.0,
-      "funding_available": false,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
-        "fee_eur": 90.0,
-        "fee_status": "stated",
-        "support_status": "not_offered",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": [
-          {
-            "amount": 90.0,
-            "currency": "EUR",
-            "conditions": "mandatory dinner contribution"
-          },
-          {
-            "amount": 250.0,
-            "currency": "EUR",
-            "conditions": "registration fee for other participants"
-          }
-        ]
-      },
-      "topics": [
-        "sustainable food systems",
-        "food systems design",
-        "sustainability"
-      ],
-      "primary_topics": [],
-      "secondary_topics": [],
-      "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
-      "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
-      "eligibility": "Students at the listed non-Italian ELLS promoting universities; other participants may attend for the stated registration fee.",
-      "eligibility_zh": "面向官网列出的非意大利 ELLS 合作大学学生；其他参与者可按官网所列费用参加。",
-      "sessions": []
-    },
-    {
       "id": "imiscoe-phd-school:2027",
       "edition_id": "imiscoe-phd-school:2027",
       "programme_id": "imiscoe-phd-school",
@@ -1108,7 +1035,7 @@
       "title_zh": "2027年联邦制与治理冬季学校",
       "type": "winter school",
       "organizer": "Eurac Research and University of Innsbruck",
-      "organizer_zh": "Eurac Research与因斯布鲁克大学",
+      "organizer_zh": "Eurac Research 与因斯布鲁克大学",
       "location": "Innsbruck / Bolzano/Bozen",
       "location_zh": "因斯布鲁克 / 博尔扎诺/博岑",
       "mode": "in-person",
@@ -1157,9 +1084,9 @@
         "AI governance"
       ],
       "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层级治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务人士深入探讨。",
-      "eligibility": "",
-      "eligibility_zh": "",
+      "summary_zh": "该冬季学校从法学和政治学角度分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
+      "eligibility": "Open to young researchers and academics, post-docs and post-graduate students, civil servants from local, regional or national government, and employees of international organizations or NGOs; international audience",
+      "eligibility_zh": "面向青年研究人员和学者、博士后和研究生、地方、地区或国家政府公务员，以及国际组织或非政府组织雇员；国际受众",
       "sessions": []
     },
     {
@@ -1185,7 +1112,7 @@
       "organizer": "Summer Institutes in Computational Social Science",
       "organizer_zh": "计算社会科学暑期学院",
       "location": "University of the Republic (Udelar), Montevideo, Uruguay",
-      "location_zh": "乌拉圭共和国大学（Udelar），乌拉圭蒙得维的亚",
+      "location_zh": "乌拉圭蒙得维的亚共和国大学（Udelar）",
       "mode": "in-person",
       "start_date": "2026-10-29",
       "end_date": "2026-11-06",
@@ -1219,9 +1146,9 @@
       "primary_topics": [],
       "secondary_topics": [],
       "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
-      "summary_zh": "一个计算社会科学密集型学院，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
+      "summary_zh": "一个计算社会科学强化训练营，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
       "eligibility": "Graduate students, postdoctoral researchers, and junior faculty.",
-      "eligibility_zh": "研究生、博士后研究人员和初级教师。",
+      "eligibility_zh": "研究生、博士后研究人员和初级教职人员。",
       "sessions": []
     },
     {
@@ -1301,6 +1228,64 @@
       "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
       "eligibility": "postdoctoral fellows from Asia and around the world",
       "eligibility_zh": "来自亚洲及世界各地的博士后研究员",
+      "sessions": []
+    },
+    {
+      "id": "opportunities/ellis-winter-school-at-unit-trento-834b34d3",
+      "edition_id": "edition:b3812d6f118b5e60",
+      "programme_id": "programme:59f0e91b39117381",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/ellis-winter-school-at-unit-trento-bb3afd56.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/ellis-winter-school-at-unit-trento-bb3afd56.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/ellis-winter-school-at-unit-trento-bb3afd56.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/ellis-winter-school-at-unit-trento-bb3afd56.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ellis-winter-school-at-unit-trento-834b34d3.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ellis-winter-school-at-unit-trento-834b34d3.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ellis-winter-school-at-unit-trento-834b34d3.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ellis-winter-school-at-unit-trento-834b34d3.html"
+      },
+      "official_url": "https://ellis.eu/events/ellis-winter-school-at-unit-trento-2027",
+      "title": "ELLIS Winter School at Unit Trento",
+      "title_zh": "特伦托大学ELLIS冬季学校",
+      "type": "summer school",
+      "organizer": "ELLIS",
+      "organizer_zh": "ELLIS",
+      "location": "Europe",
+      "location_zh": "欧洲",
+      "mode": "in-person",
+      "start_date": "2027-01-25",
+      "end_date": "2027-01-29",
+      "duration_days": 5,
+      "application_deadline": "2027-01-24",
+      "application_status": "open",
+      "directory_tier": "official-listing",
+      "financial_summary": "Funding or fee not stated",
+      "fee": "",
+      "fee_eur": null,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "topics": [],
+      "primary_topics": [],
+      "secondary_topics": [],
+      "summary": "25/01/27 - 29/01/27 • NOBIS, Brunico/Bruneck ELLIS Winter School at Unit Trento Topic: Multimodal Learning Winter School Read More",
+      "summary_zh": "27/01/25 - 27/01/29 • NOBIS，布鲁尼科/布鲁内克 特伦托大学ELLIS冬季学校 主题：多模态学习冬季学校 阅读更多",
+      "eligibility": "",
+      "eligibility_zh": "",
       "sessions": []
     },
     {
