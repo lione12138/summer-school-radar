@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-10-30",
+  "generated": "2026-11-01",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -89,101 +89,6 @@
         "physics",
         "mathematics",
         "engineering"
-      ]
-    },
-    {
-      "id": "cmu-myclimate",
-      "slug": "call-for-applications-myclimate-winter-school-january-05aeb27b",
-      "title": "Call for Applications: MyClimate Winter School January",
-      "title_zh": "申请征集：MyClimate 冬季学校 1月",
-      "organizer": "Danish Institute for International Studies (DIIS) and Chiang Mai University",
-      "organizer_zh": "丹麦国际问题研究所（DIIS）与清迈大学",
-      "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
-      "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包含讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
-      "topics": [
-        "climate",
-        "climate change",
-        "social science",
-        "literature"
-      ],
-      "editions": [
-        {
-          "id": "cmu-myclimate:2027",
-          "title": "Call for Applications: MyClimate Winter School January 2027",
-          "title_zh": "申请征集：MyClimate 冬季学校 2027年1月",
-          "detail_path": "opportunities/cmu-myclimate-2027-c612597b.html",
-          "official_url": "https://rcsd.soc.cmu.ac.th/news-announcements/call-for-applications-myclimate-winter-school-january-2027/",
-          "location": "Chiang Mai, Thailand",
-          "location_zh": "泰国清迈",
-          "start_date": "2027-01-14",
-          "end_date": "2027-01-22",
-          "deadline": "2026-10-30",
-          "deadline_status": "open",
-          "duration_days": 9,
-          "mode": "in-person",
-          "financial_summary": "Fee EUR 0 · Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
-          "financial_summary_zh": "conditional travel and accommodation · 金额未说明",
-          "funding_available": true,
-          "fee_eur": 0.0,
-          "topics": [
-            "climate",
-            "climate change",
-            "social science",
-            "literature"
-          ],
-          "primary_topics": [
-            "climate",
-            "climate change",
-            "social science",
-            "literature"
-          ],
-          "secondary_topics": [],
-          "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
-          "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包含讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "cmu-myclimate:2027",
-        "title": "Call for Applications: MyClimate Winter School January 2027",
-        "title_zh": "申请征集：MyClimate 冬季学校 2027年1月",
-        "detail_path": "opportunities/cmu-myclimate-2027-c612597b.html",
-        "official_url": "https://rcsd.soc.cmu.ac.th/news-announcements/call-for-applications-myclimate-winter-school-january-2027/",
-        "location": "Chiang Mai, Thailand",
-        "location_zh": "泰国清迈",
-        "start_date": "2027-01-14",
-        "end_date": "2027-01-22",
-        "deadline": "2026-10-30",
-        "deadline_status": "open",
-        "duration_days": 9,
-        "mode": "in-person",
-        "financial_summary": "Fee EUR 0 · Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
-        "financial_summary_zh": "conditional travel and accommodation · 金额未说明",
-        "funding_available": true,
-        "fee_eur": 0.0,
-        "topics": [
-          "climate",
-          "climate change",
-          "social science",
-          "literature"
-        ],
-        "primary_topics": [
-          "climate",
-          "climate change",
-          "social science",
-          "literature"
-        ],
-        "secondary_topics": [],
-        "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
-        "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包含讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
-        "sessions": []
-      },
-      "primary_topics": [
-        "climate",
-        "climate change",
-        "social science",
-        "literature"
       ]
     },
     {
@@ -1080,6 +985,166 @@
         "astronomy",
         "cosmology"
       ]
+    },
+    {
+      "id": "cmu-myclimate",
+      "slug": "call-for-applications-myclimate-winter-school-january-05aeb27b",
+      "title": "Call for Applications: MyClimate Winter School January",
+      "title_zh": "申请征集：MyClimate 冬季学校 1月",
+      "organizer": "Danish Institute for International Studies (DIIS) and Chiang Mai University",
+      "organizer_zh": "丹麦国际问题研究所（DIIS）与清迈大学",
+      "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
+      "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包含讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
+      "topics": [
+        "climate",
+        "climate change",
+        "social science",
+        "literature"
+      ],
+      "editions": [
+        {
+          "id": "cmu-myclimate:2027",
+          "title": "Call for Applications: MyClimate Winter School January 2027",
+          "title_zh": "申请征集：MyClimate 冬季学校 2027年1月",
+          "detail_path": "opportunities/cmu-myclimate-2027-c612597b.html",
+          "official_url": "https://rcsd.soc.cmu.ac.th/news-announcements/call-for-applications-myclimate-winter-school-january-2027/",
+          "location": "Chiang Mai, Thailand",
+          "location_zh": "泰国清迈",
+          "start_date": "2027-01-14",
+          "end_date": "2027-01-22",
+          "deadline": "2026-10-30",
+          "deadline_status": "closed",
+          "duration_days": 9,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 0 · Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
+          "financial_summary_zh": "conditional travel and accommodation · 金额未说明",
+          "funding_available": true,
+          "fee_eur": 0.0,
+          "topics": [
+            "climate",
+            "climate change",
+            "social science",
+            "literature"
+          ],
+          "primary_topics": [
+            "climate",
+            "climate change",
+            "social science",
+            "literature"
+          ],
+          "secondary_topics": [],
+          "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
+          "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包含讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "cmu-myclimate:2027",
+        "title": "Call for Applications: MyClimate Winter School January 2027",
+        "title_zh": "申请征集：MyClimate 冬季学校 2027年1月",
+        "detail_path": "opportunities/cmu-myclimate-2027-c612597b.html",
+        "official_url": "https://rcsd.soc.cmu.ac.th/news-announcements/call-for-applications-myclimate-winter-school-january-2027/",
+        "location": "Chiang Mai, Thailand",
+        "location_zh": "泰国清迈",
+        "start_date": "2027-01-14",
+        "end_date": "2027-01-22",
+        "deadline": "2026-10-30",
+        "deadline_status": "closed",
+        "duration_days": 9,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 0 · Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
+        "financial_summary_zh": "conditional travel and accommodation · 金额未说明",
+        "funding_available": true,
+        "fee_eur": 0.0,
+        "topics": [
+          "climate",
+          "climate change",
+          "social science",
+          "literature"
+        ],
+        "primary_topics": [
+          "climate",
+          "climate change",
+          "social science",
+          "literature"
+        ],
+        "secondary_topics": [],
+        "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
+        "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包含讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
+        "sessions": []
+      },
+      "primary_topics": [
+        "climate",
+        "climate change",
+        "social science",
+        "literature"
+      ]
+    },
+    {
+      "id": "programme:403e68ad316bb3ff",
+      "slug": "city-wide-inclusive-sanitation-87e363cb",
+      "title": "City-Wide Inclusive Sanitation",
+      "title_zh": "全市包容性环境卫生",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "summary": "This course aims to enhance understanding and application of the City-Wide Inclusive Sanitation (CWIS) approach in addressing urban sanitation challenges, promoting a paradigm shift towards sustainable sanitation service provision.",
+      "summary_zh": "本课程旨在加深对全市包容性环境卫生（CWIS）方法的理解与应用，以应对城市环境卫生挑战，推动向可持续环境卫生服务供给的模式转变。",
+      "topics": [],
+      "primary_topics": [],
+      "editions": [
+        {
+          "id": "ihe-delft:edition:7415606A-115B-11F1-BB1B-0050561F03F5",
+          "title": "City-Wide Inclusive Sanitation",
+          "title_zh": "全市包容性环境卫生",
+          "detail_path": "opportunities/ihe-delft-edition-7415606a-115b-11f1-bb1b-0050561f03f5-31d9b11a.html",
+          "official_url": "https://www.un-ihe.org/short-courses",
+          "location": "Delft, Netherlands",
+          "location_zh": "荷兰代尔夫特",
+          "start_date": "2026-11-30",
+          "end_date": "2026-12-18",
+          "deadline": "2026-10-31",
+          "deadline_status": "closed",
+          "duration_days": 19,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 2500 excl. VAT",
+          "financial_summary_zh": "费用 EUR 2500（未含增值税）",
+          "funding_available": null,
+          "fee_eur": 2500.0,
+          "topics": [],
+          "primary_topics": [],
+          "secondary_topics": [],
+          "summary": "This course aims to enhance understanding and application of the City-Wide Inclusive Sanitation (CWIS) approach in addressing urban sanitation challenges, promoting a paradigm shift towards sustainable sanitation service provision.",
+          "summary_zh": "本课程旨在加深对全市包容性环境卫生（CWIS）方法的理解与应用，以应对城市环境卫生挑战，推动向可持续环境卫生服务供给的模式转变。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "ihe-delft:edition:7415606A-115B-11F1-BB1B-0050561F03F5",
+        "title": "City-Wide Inclusive Sanitation",
+        "title_zh": "全市包容性环境卫生",
+        "detail_path": "opportunities/ihe-delft-edition-7415606a-115b-11f1-bb1b-0050561f03f5-31d9b11a.html",
+        "official_url": "https://www.un-ihe.org/short-courses",
+        "location": "Delft, Netherlands",
+        "location_zh": "荷兰代尔夫特",
+        "start_date": "2026-11-30",
+        "end_date": "2026-12-18",
+        "deadline": "2026-10-31",
+        "deadline_status": "closed",
+        "duration_days": 19,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 2500 excl. VAT",
+        "financial_summary_zh": "费用 EUR 2500（未含增值税）",
+        "funding_available": null,
+        "fee_eur": 2500.0,
+        "topics": [],
+        "primary_topics": [],
+        "secondary_topics": [],
+        "summary": "This course aims to enhance understanding and application of the City-Wide Inclusive Sanitation (CWIS) approach in addressing urban sanitation challenges, promoting a paradigm shift towards sustainable sanitation service provision.",
+        "summary_zh": "本课程旨在加深对全市包容性环境卫生（CWIS）方法的理解与应用，以应对城市环境卫生挑战，推动向可持续环境卫生服务供给的模式转变。",
+        "sessions": []
+      }
     },
     {
       "id": "csha-computational-cognitive-neuroscience",
@@ -3171,6 +3236,89 @@
       ]
     },
     {
+      "id": "programme:74877aabb7876c4e",
+      "slug": "surface-water-treatment-345bbf64",
+      "title": "Surface Water Treatment",
+      "title_zh": "地表水处理",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "summary": "Surface water quality is under increasing pressure from physical, chemical and biological pollutants, making treatment essential to ensure safe and reliable water supplies. This course provides an understanding of the key principles and processes involved in surface water treatme",
+      "summary_zh": "地表水水质正日益受到物理、化学和生物污染物的压力，因此处理对于确保安全可靠的水供应至关重要。本课程帮助理解地表水处理所涉及的关键原理和工艺。",
+      "topics": [
+        "water quality",
+        "design"
+      ],
+      "primary_topics": [
+        "water quality",
+        "design"
+      ],
+      "editions": [
+        {
+          "id": "ihe-delft:edition:10180031-3F14-11F1-9A59-0050561F03F5",
+          "title": "Surface Water Treatment",
+          "title_zh": "地表水处理",
+          "detail_path": "opportunities/ihe-delft-edition-10180031-3f14-11f1-9a59-0050561f03f5-8c5a79d5.html",
+          "official_url": "https://www.un-ihe.org/short-courses",
+          "location": "Delft, Netherlands",
+          "location_zh": "荷兰代尔夫特",
+          "start_date": "2026-11-30",
+          "end_date": "2026-12-18",
+          "deadline": "2026-10-30",
+          "deadline_status": "closed",
+          "duration_days": 19,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 2600 excl. VAT",
+          "financial_summary_zh": "费用 EUR 2600（未含增值税）",
+          "funding_available": null,
+          "fee_eur": 2600.0,
+          "topics": [
+            "water quality",
+            "design"
+          ],
+          "primary_topics": [
+            "water quality",
+            "design"
+          ],
+          "secondary_topics": [],
+          "summary": "Surface water quality is under increasing pressure from physical, chemical and biological pollutants, making treatment essential to ensure safe and reliable water supplies. This course provides an understanding of the key principles and processes involved in surface water treatme",
+          "summary_zh": "地表水水质正日益受到物理、化学和生物污染物的压力，因此处理对于确保安全可靠的水供应至关重要。本课程帮助理解地表水处理所涉及的关键原理和工艺。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "ihe-delft:edition:10180031-3F14-11F1-9A59-0050561F03F5",
+        "title": "Surface Water Treatment",
+        "title_zh": "地表水处理",
+        "detail_path": "opportunities/ihe-delft-edition-10180031-3f14-11f1-9a59-0050561f03f5-8c5a79d5.html",
+        "official_url": "https://www.un-ihe.org/short-courses",
+        "location": "Delft, Netherlands",
+        "location_zh": "荷兰代尔夫特",
+        "start_date": "2026-11-30",
+        "end_date": "2026-12-18",
+        "deadline": "2026-10-30",
+        "deadline_status": "closed",
+        "duration_days": 19,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 2600 excl. VAT",
+        "financial_summary_zh": "费用 EUR 2600（未含增值税）",
+        "funding_available": null,
+        "fee_eur": 2600.0,
+        "topics": [
+          "water quality",
+          "design"
+        ],
+        "primary_topics": [
+          "water quality",
+          "design"
+        ],
+        "secondary_topics": [],
+        "summary": "Surface water quality is under increasing pressure from physical, chemical and biological pollutants, making treatment essential to ensure safe and reliable water supplies. This course provides an understanding of the key principles and processes involved in surface water treatme",
+        "summary_zh": "地表水水质正日益受到物理、化学和生物污染物的压力，因此处理对于确保安全可靠的水供应至关重要。本课程帮助理解地表水处理所涉及的关键原理和工艺。",
+        "sessions": []
+      }
+    },
+    {
       "id": "csha-advanced-neuroimaging",
       "slug": "the-brain-enlightened-advanced-imaging-techniques-in-neuro-67dfe751",
       "title": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course",
@@ -3919,6 +4067,95 @@
       "primary_topics": [
         "engineering"
       ]
+    },
+    {
+      "id": "programme:f2c4545bf282b938",
+      "slug": "water-energy-food-nexus-approaches-for-river-basin-managem-d2a49142",
+      "title": "Water-Energy-Food Nexus: Approaches for River Basin Management",
+      "title_zh": "水-能源-粮食纽带：流域管理方法",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "summary": "This course explores how water, energy, and food resources are used and interconnected within a river basin context. It combines theory with practical applications from real-world river basins and uses modelling tools to illustrate key concepts and their interactions.",
+      "summary_zh": "本课程探讨流域范围内水、能源和粮食资源的使用方式及其相互联系。课程将理论与真实流域的实际应用相结合，并使用建模工具说明关键概念及其相互作用。",
+      "topics": [
+        "hydrology",
+        "water management",
+        "engineering"
+      ],
+      "primary_topics": [
+        "hydrology",
+        "water management",
+        "engineering"
+      ],
+      "editions": [
+        {
+          "id": "ihe-delft:edition:D92BB7F7-3F15-11F1-9A59-0050561F03F5",
+          "title": "Water-Energy-Food Nexus: Approaches for River Basin Management",
+          "title_zh": "水-能源-粮食纽带：流域管理方法",
+          "detail_path": "opportunities/ihe-delft-edition-d92bb7f7-3f15-11f1-9a59-0050561f03f5-46057854.html",
+          "official_url": "https://www.un-ihe.org/short-courses",
+          "location": "Delft, Netherlands",
+          "location_zh": "荷兰代尔夫特",
+          "start_date": "2026-11-30",
+          "end_date": "2026-12-18",
+          "deadline": "2026-10-30",
+          "deadline_status": "closed",
+          "duration_days": 19,
+          "mode": "in-person",
+          "financial_summary": "Fee EUR 2500 excl. VAT",
+          "financial_summary_zh": "费用 EUR 2500（未含增值税）",
+          "funding_available": null,
+          "fee_eur": 2500.0,
+          "topics": [
+            "hydrology",
+            "water management",
+            "engineering"
+          ],
+          "primary_topics": [
+            "hydrology",
+            "water management",
+            "engineering"
+          ],
+          "secondary_topics": [],
+          "summary": "This course explores how water, energy, and food resources are used and interconnected within a river basin context. It combines theory with practical applications from real-world river basins and uses modelling tools to illustrate key concepts and their interactions.",
+          "summary_zh": "本课程探讨流域范围内水、能源和粮食资源的使用方式及其相互联系。课程将理论与真实流域的实际应用相结合，并使用建模工具说明关键概念及其相互作用。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "ihe-delft:edition:D92BB7F7-3F15-11F1-9A59-0050561F03F5",
+        "title": "Water-Energy-Food Nexus: Approaches for River Basin Management",
+        "title_zh": "水-能源-粮食纽带：流域管理方法",
+        "detail_path": "opportunities/ihe-delft-edition-d92bb7f7-3f15-11f1-9a59-0050561f03f5-46057854.html",
+        "official_url": "https://www.un-ihe.org/short-courses",
+        "location": "Delft, Netherlands",
+        "location_zh": "荷兰代尔夫特",
+        "start_date": "2026-11-30",
+        "end_date": "2026-12-18",
+        "deadline": "2026-10-30",
+        "deadline_status": "closed",
+        "duration_days": 19,
+        "mode": "in-person",
+        "financial_summary": "Fee EUR 2500 excl. VAT",
+        "financial_summary_zh": "费用 EUR 2500（未含增值税）",
+        "funding_available": null,
+        "fee_eur": 2500.0,
+        "topics": [
+          "hydrology",
+          "water management",
+          "engineering"
+        ],
+        "primary_topics": [
+          "hydrology",
+          "water management",
+          "engineering"
+        ],
+        "secondary_topics": [],
+        "summary": "This course explores how water, energy, and food resources are used and interconnected within a river basin context. It combines theory with practical applications from real-world river basins and uses modelling tools to illustrate key concepts and their interactions.",
+        "summary_zh": "本课程探讨流域范围内水、能源和粮食资源的使用方式及其相互联系。课程将理论与真实流域的实际应用相结合，并使用建模工具说明关键概念及其相互作用。",
+        "sessions": []
+      }
     },
     {
       "id": "programme:8750854b0d569859",

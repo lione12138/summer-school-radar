@@ -3,7 +3,7 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-10-30",
+  "generated": "2026-11-01",
   "opportunities": [
     {
       "id": "opportunities/spring-college-in-the-physics-of-complex-systems-223446f8",
@@ -76,76 +76,6 @@
       "summary_zh": "复杂系统物理学春季学院旨在通过为期4周的密集课程，让学生接触研究前沿的精选课题。",
       "eligibility": "The Spring College is part of the PCS Master programme and it is open to qualified Master and PhD students, and to young researchers.",
       "eligibility_zh": "春季学院是PCS硕士项目的一部分，面向合格的硕士生、博士生和年轻研究人员开放。",
-      "sessions": []
-    },
-    {
-      "id": "cmu-myclimate:2027",
-      "edition_id": "cmu-myclimate:2027",
-      "programme_id": "cmu-myclimate",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/cmu-myclimate-2027-c612597b.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/cmu-myclimate-2027-c612597b.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/cmu-myclimate-2027-c612597b.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/cmu-myclimate-2027-c612597b.html"
-      },
-      "official_url": "https://rcsd.soc.cmu.ac.th/news-announcements/call-for-applications-myclimate-winter-school-january-2027/",
-      "title": "Call for Applications: MyClimate Winter School January 2027",
-      "title_zh": "申请征集：MyClimate 冬季学校 2027年1月",
-      "type": "winter school",
-      "organizer": "Danish Institute for International Studies (DIIS) and Chiang Mai University",
-      "organizer_zh": "丹麦国际问题研究所（DIIS）与清迈大学",
-      "location": "Chiang Mai, Thailand",
-      "location_zh": "泰国清迈",
-      "mode": "in-person",
-      "start_date": "2027-01-14",
-      "end_date": "2027-01-22",
-      "duration_days": 9,
-      "application_deadline": "2026-10-30",
-      "application_status": "open",
-      "directory_tier": "funded-or-low-fee",
-      "financial_summary": "Fee EUR 0 · Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
-      "fee": "Course, meals and field expenses free",
-      "fee_eur": 0.0,
-      "funding_available": true,
-      "funding_type": [
-        "conditional travel and accommodation"
-      ],
-      "funding_scope": "Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
-      "financial_terms": {
-        "participation_fee": "Course, meals and field expenses free",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "topics": [
-        "climate",
-        "climate change",
-        "social science",
-        "literature"
-      ],
-      "primary_topics": [
-        "climate",
-        "climate change",
-        "social science",
-        "literature"
-      ],
-      "secondary_topics": [],
-      "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
-      "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包含讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
-      "eligibility": "Graduate students, emerging and independent scholars, researchers and activists from Myanmar and Thailand. Good working knowledge of English is required.",
-      "eligibility_zh": "面向缅甸和泰国的研究生、青年学者、独立学者、研究人员和活动人士。要求具备良好的英语工作能力。",
       "sessions": []
     },
     {
@@ -727,6 +657,76 @@
       "sessions": []
     },
     {
+      "id": "cmu-myclimate:2027",
+      "edition_id": "cmu-myclimate:2027",
+      "programme_id": "cmu-myclimate",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/cmu-myclimate-2027-c612597b.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/cmu-myclimate-2027-c612597b.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/cmu-myclimate-2027-c612597b.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/cmu-myclimate-2027-c612597b.html"
+      },
+      "official_url": "https://rcsd.soc.cmu.ac.th/news-announcements/call-for-applications-myclimate-winter-school-january-2027/",
+      "title": "Call for Applications: MyClimate Winter School January 2027",
+      "title_zh": "申请征集：MyClimate 冬季学校 2027年1月",
+      "type": "winter school",
+      "organizer": "Danish Institute for International Studies (DIIS) and Chiang Mai University",
+      "organizer_zh": "丹麦国际问题研究所（DIIS）与清迈大学",
+      "location": "Chiang Mai, Thailand",
+      "location_zh": "泰国清迈",
+      "mode": "in-person",
+      "start_date": "2027-01-14",
+      "end_date": "2027-01-22",
+      "duration_days": 9,
+      "application_deadline": "2026-10-30",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 0 · Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
+      "fee": "Course, meals and field expenses free",
+      "fee_eur": 0.0,
+      "funding_available": true,
+      "funding_type": [
+        "conditional travel and accommodation"
+      ],
+      "funding_scope": "Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
+      "financial_terms": {
+        "participation_fee": "Course, meals and field expenses free",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "conditional",
+        "support_scope": "Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "topics": [
+        "climate",
+        "climate change",
+        "social science",
+        "literature"
+      ],
+      "primary_topics": [
+        "climate",
+        "climate change",
+        "social science",
+        "literature"
+      ],
+      "secondary_topics": [],
+      "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
+      "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包含讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
+      "eligibility": "Graduate students, emerging and independent scholars, researchers and activists from Myanmar and Thailand. Good working knowledge of English is required.",
+      "eligibility_zh": "面向缅甸和泰国的研究生、青年学者、独立学者、研究人员和活动人士。要求具备良好的英语工作能力。",
+      "sessions": []
+    },
+    {
       "id": "opportunities/exploring-your-eco-2026-exploring-the-living-cultural-and-eco-tourism--80a3833c",
       "edition_id": "edition:8ccb1e26f1c6a822",
       "programme_id": "programme:0315b5fbacd204a7",
@@ -1289,6 +1289,74 @@
       "sessions": []
     },
     {
+      "id": "ihe-delft:edition:D92BB7F7-3F15-11F1-9A59-0050561F03F5",
+      "edition_id": "ihe-delft:edition:D92BB7F7-3F15-11F1-9A59-0050561F03F5",
+      "programme_id": "programme:f2c4545bf282b938",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/water-energy-food-nexus-approaches-for-river-basin-managem-d2a49142.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/water-energy-food-nexus-approaches-for-river-basin-managem-d2a49142.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/water-energy-food-nexus-approaches-for-river-basin-managem-d2a49142.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/water-energy-food-nexus-approaches-for-river-basin-managem-d2a49142.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-d92bb7f7-3f15-11f1-9a59-0050561f03f5-46057854.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-d92bb7f7-3f15-11f1-9a59-0050561f03f5-46057854.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-d92bb7f7-3f15-11f1-9a59-0050561f03f5-46057854.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-d92bb7f7-3f15-11f1-9a59-0050561f03f5-46057854.html"
+      },
+      "official_url": "https://www.un-ihe.org/short-courses",
+      "title": "Water-Energy-Food Nexus: Approaches for River Basin Management",
+      "title_zh": "水-能源-粮食纽带：流域管理方法",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "location": "Delft, Netherlands",
+      "location_zh": "荷兰代尔夫特",
+      "mode": "in-person",
+      "start_date": "2026-11-30",
+      "end_date": "2026-12-18",
+      "duration_days": 19,
+      "application_deadline": "2026-10-30",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 2500 excl. VAT",
+      "fee": "EUR 2500 excl. VAT",
+      "fee_eur": 2500.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "EUR 2500 excl. VAT",
+        "fee_eur": 2500.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 2500.0,
+            "currency": "EUR",
+            "conditions": "excl. VAT"
+          }
+        ]
+      },
+      "topics": [
+        "hydrology",
+        "water management",
+        "engineering"
+      ],
+      "primary_topics": [],
+      "secondary_topics": [],
+      "summary": "This course explores how water, energy, and food resources are used and interconnected within a river basin context. It combines theory with practical applications from real-world river basins and uses modelling tools to illustrate key concepts and their interactions.",
+      "summary_zh": "本课程探讨流域范围内水、能源和粮食资源的使用方式及其相互联系。课程将理论与真实流域的实际应用相结合，并使用建模工具说明关键概念及其相互作用。",
+      "eligibility": "The course is designed for professionals representing science, policy and practice domains related to water, food, energy and environment. The course is suitable for junior to mid-career professionals, MSc students and P",
+      "eligibility_zh": "本课程面向从事水、粮食、能源和环境相关科学、政策与实践领域的专业人士。课程适合初级至中期职业专业人士、理学硕士学生和P",
+      "sessions": []
+    },
+    {
       "id": "jparc-neutron-muon-school:2026",
       "edition_id": "jparc-neutron-muon-school:2026",
       "programme_id": "jparc-neutron-muon-school",
@@ -1433,6 +1501,137 @@
       "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先链 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
       "eligibility": "PhD students, post-doctoral fellows, research scientists, and early-career faculty members from diverse backgrounds who are interested in neuroscience",
       "eligibility_zh": "来自不同背景、对神经科学感兴趣的博士生、博士后研究员、科研人员及早期职业教职人员",
+      "sessions": []
+    },
+    {
+      "id": "ihe-delft:edition:7415606A-115B-11F1-BB1B-0050561F03F5",
+      "edition_id": "ihe-delft:edition:7415606A-115B-11F1-BB1B-0050561F03F5",
+      "programme_id": "programme:403e68ad316bb3ff",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/city-wide-inclusive-sanitation-87e363cb.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/city-wide-inclusive-sanitation-87e363cb.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/city-wide-inclusive-sanitation-87e363cb.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/city-wide-inclusive-sanitation-87e363cb.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-7415606a-115b-11f1-bb1b-0050561f03f5-31d9b11a.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-7415606a-115b-11f1-bb1b-0050561f03f5-31d9b11a.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-7415606a-115b-11f1-bb1b-0050561f03f5-31d9b11a.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-7415606a-115b-11f1-bb1b-0050561f03f5-31d9b11a.html"
+      },
+      "official_url": "https://www.un-ihe.org/short-courses",
+      "title": "City-Wide Inclusive Sanitation",
+      "title_zh": "全市包容性环境卫生",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "location": "Delft, Netherlands",
+      "location_zh": "荷兰代尔夫特",
+      "mode": "in-person",
+      "start_date": "2026-11-30",
+      "end_date": "2026-12-18",
+      "duration_days": 19,
+      "application_deadline": "2026-10-31",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 2500 excl. VAT",
+      "fee": "EUR 2500 excl. VAT",
+      "fee_eur": 2500.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "EUR 2500 excl. VAT",
+        "fee_eur": 2500.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 2500.0,
+            "currency": "EUR",
+            "conditions": "excl. VAT"
+          }
+        ]
+      },
+      "topics": [],
+      "primary_topics": [],
+      "secondary_topics": [],
+      "summary": "This course aims to enhance understanding and application of the City-Wide Inclusive Sanitation (CWIS) approach in addressing urban sanitation challenges, promoting a paradigm shift towards sustainable sanitation service provision.",
+      "summary_zh": "本课程旨在加深对全市包容性环境卫生（CWIS）方法的理解与应用，以应对城市环境卫生挑战，推动向可持续环境卫生服务供给的模式转变。",
+      "eligibility": "Professionals working or aspiring to work in the urban sanitation sector, particularly those involved in projects promoting the Citywide Inclusive Sanitation (CWIS) approach. The course is also relevant for organizations",
+      "eligibility_zh": "在城市环境卫生领域工作或有意从事该领域工作的专业人士，尤其是参与推动全市包容性环境卫生（CWIS）方法项目的人员。本课程也适合相关组织",
+      "sessions": []
+    },
+    {
+      "id": "ihe-delft:edition:10180031-3F14-11F1-9A59-0050561F03F5",
+      "edition_id": "ihe-delft:edition:10180031-3F14-11F1-9A59-0050561F03F5",
+      "programme_id": "programme:74877aabb7876c4e",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/surface-water-treatment-345bbf64.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/surface-water-treatment-345bbf64.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/surface-water-treatment-345bbf64.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/surface-water-treatment-345bbf64.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-10180031-3f14-11f1-9a59-0050561f03f5-8c5a79d5.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-10180031-3f14-11f1-9a59-0050561f03f5-8c5a79d5.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-10180031-3f14-11f1-9a59-0050561f03f5-8c5a79d5.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-10180031-3f14-11f1-9a59-0050561f03f5-8c5a79d5.html"
+      },
+      "official_url": "https://www.un-ihe.org/short-courses",
+      "title": "Surface Water Treatment",
+      "title_zh": "地表水处理",
+      "type": "short course",
+      "organizer": "IHE Delft",
+      "organizer_zh": "IHE Delft",
+      "location": "Delft, Netherlands",
+      "location_zh": "荷兰代尔夫特",
+      "mode": "in-person",
+      "start_date": "2026-11-30",
+      "end_date": "2026-12-18",
+      "duration_days": 19,
+      "application_deadline": "2026-10-30",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 2600 excl. VAT",
+      "fee": "EUR 2600 excl. VAT",
+      "fee_eur": 2600.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "EUR 2600 excl. VAT",
+        "fee_eur": 2600.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 2600.0,
+            "currency": "EUR",
+            "conditions": "excl. VAT"
+          }
+        ]
+      },
+      "topics": [
+        "water quality",
+        "design"
+      ],
+      "primary_topics": [],
+      "secondary_topics": [],
+      "summary": "Surface water quality is under increasing pressure from physical, chemical and biological pollutants, making treatment essential to ensure safe and reliable water supplies. This course provides an understanding of the key principles and processes involved in surface water treatme",
+      "summary_zh": "地表水水质正日益受到物理、化学和生物污染物的压力，因此处理对于确保安全可靠的水供应至关重要。本课程帮助理解地表水处理所涉及的关键原理和工艺。",
+      "eligibility": "The course is particularly attractive to professionals and students seeking to strengthen their expertise in drinking water treatment processes and play a role in addressing today’s global water challenges.",
+      "eligibility_zh": "本课程特别适合希望加强饮用水处理工艺专业知识、并在应对当今全球水挑战中发挥作用的专业人士和学生。",
       "sessions": []
     },
     {
