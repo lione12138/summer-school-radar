@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-02",
+  "generated": "2026-11-05",
   "review_queue": [
     {
       "title": "Deadlines",
@@ -69,6 +69,64 @@
       }
     },
     {
+      "title": "Semester in Biological Discovery (SBD)",
+      "url": "https://www.mbl.edu/education/undergraduate-programs/semester-biological-discovery",
+      "organizer": "Marine Biological Laboratory",
+      "source_layer": "1.5",
+      "location": "North America",
+      "dates": {
+        "start": "2027-02-28",
+        "end": "2027-05-22",
+        "duration_days": 84
+      },
+      "deadline": "2026-12-15",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "environmental science",
+        "philosophy of science",
+        "history",
+        "philosophy"
+      ],
+      "needs_review": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "environmental science": "The SBD will be administered similarly to the MBL’s Semester in Environmental Science, which has been running for almost 25 years. After the first module the SBD program welcomes quarte",
+        "philosophy of science": "dules and explores topics such as visual arts or the history and philosophy of science. SBD students will also get the opportunity to visit Pekinese Island, a wildlife sanctuary, part of",
+        "history": "s several modules and explores topics such as visual arts or the history and philosophy of science. SBD students will also get the opportunity to visit Pekinese Island, a w",
+        "philosophy": "dules and explores topics such as visual arts or the history and philosophy of science. SBD students will also get the opportunity to visit Pekinese Island, a wildlife sanctua"
+      },
+      "evidence": {
+        "deadline": "Application due date: Dec 15, 2026 (other dates listed: 2026-09-15, 2026-10-15)",
+        "duration": "Feb 28, 2027 - May 22, 2027",
+        "fee": "",
+        "funding": "",
+        "mode": "Venues Dietary Accommodations Swope Cafe Menu Swope Caf"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "Footer Ranking Menu",
       "url": "https://www.politics.ox.ac.uk/how-apply-and-fees",
       "organizer": "Oxford Spring School",
@@ -82,8 +140,8 @@
       "deadline": "2027-01-15",
       "deadline_status": "open",
       "financial_access_status": "funded",
-      "fee": "free of charge",
-      "fee_eur": 0.0,
+      "fee": "",
+      "fee_eur": null,
       "topics": [
         "AI",
         "data analysis",
@@ -96,15 +154,15 @@
       "confidence_kind": "heuristic_not_calibrated_probability",
       "field_completeness": 0.75,
       "financial_terms": {
-        "participation_fee": "free of charge",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
         "support_status": "offered",
         "support_scope": "",
         "accommodation": "unknown",
         "meals": "unknown",
         "travel_support": "unknown",
-        "cost_status": "free",
+        "cost_status": "unknown",
         "fee_options": []
       },
       "benefit_facts": [],
@@ -116,7 +174,7 @@
       "evidence": {
         "deadline": "application deadline is 23:59 (GMT) Friday 15 January 2027",
         "duration": "",
-        "fee": "free of charge",
+        "fee": "",
         "funding": "We are unable to offer bursaries, except for current DPIR DPhil students.",
         "mode": "In Person In-person: The fee for a single course is £1,075"
       },
@@ -519,10 +577,9 @@
         "validation_warnings": [
           "llm_chunk_truncated:6",
           "llm_request_truncated:max_total_chars_per_llm_request",
-          "funding_context_weak",
-          "conflicting_evidence"
+          "funding_context_weak"
         ],
-        "chinese_summary": "复杂科学中心年度冬季学校，面向早期职业研究人员，围绕复杂科学开展跨学科协作学习，申请需通过在线门户提交。",
+        "chinese_summary": "Complexity Science Hub 年度冬季学校，面向早期职业研究人员，围绕复杂性科学开展跨学科协作学习，全英文授课，需具备定量学科硕士课程背景或相关实践经验。",
         "extracted_deadline": "",
         "extracted_fee": "",
         "extracted_funding": "Financial need support may be available for participants; instructions provided after acceptance.",
@@ -1371,11 +1428,11 @@
       }
     },
     {
-      "title": "Truly the experience of a lifetime",
-      "url": "https://www.hagueacademy.nl/",
-      "organizer": "The Hague Academy of International Law",
-      "source_layer": "1.5",
-      "location": "Europe",
+      "title": "Registration and Trans-YTF Grants",
+      "url": "https://www.febs.org/events/advanced-courses/febs-youth-travel-fund-grants/",
+      "organizer": "FEBS",
+      "source_layer": "discovery",
+      "location": "global",
       "dates": {
         "start": null,
         "end": null,
@@ -1383,101 +1440,39 @@
       },
       "deadline": null,
       "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "Registrations – 2027 Winter Courses Extension of the Deadline for Full-Fee Registrations – 2027 Wint",
-      "fee_eur": null,
-      "topics": [
-        "law",
-        "international law"
-      ],
+      "financial_access_status": "self-funded",
+      "fee": "and will not exceed €800 per person",
+      "fee_eur": 800.0,
+      "topics": [],
       "needs_review": [
+        "conditional support needs coverage and eligibility review",
         "application deadline is uncertain",
         "duration is uncertain",
         "in-person status is uncertain",
-        "funding is not explicit and fee equivalence is uncertain"
+        "fee exceeds EUR 400 without explicit funding"
       ],
-      "confidence": 0.0,
+      "confidence": 0.25,
       "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.0,
+      "field_completeness": 0.25,
       "financial_terms": {
-        "participation_fee": "Registrations – 2027 Winter Courses Extension of the Deadline for Full-Fee Registrations – 2027 Wint",
-        "fee_eur": null,
+        "participation_fee": "and will not exceed €800 per person",
+        "fee_eur": 800.0,
         "fee_status": "stated",
-        "support_status": "unknown",
+        "support_status": "conditional",
         "support_scope": "",
         "accommodation": "unknown",
         "meals": "unknown",
         "travel_support": "unknown",
-        "cost_status": "unknown",
+        "cost_status": "paid",
         "fee_options": []
       },
       "benefit_facts": [],
-      "topic_evidence": {
-        "law": "The Hague Academy of International Law Truly the experience of a lifetime Explore Watch videos The Summer Courses The Winter Courses Publi",
-        "international law": "The Hague Academy of International Law Truly the experience of a lifetime Explore Watch videos The Summer Courses The Winter Courses Publi"
-      },
+      "topic_evidence": {},
       "evidence": {
         "deadline": "",
         "duration": "",
-        "fee": "Registrations – 2027 Winter Courses Extension of the Deadline for Full-Fee Registrations – 2027 Wint",
-        "funding": "",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
-      "title": "Extension of the Deadline for Full-Fee Registrations – 2027 Winter Courses",
-      "url": "https://www.hagueacademy.nl/events/extension-of-the-deadline-for-full-fee-registrations-2027-winter-courses/",
-      "organizer": "The Hague Academy of International Law",
-      "source_layer": "1.5",
-      "location": "Europe",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "Registrations – 2027 Winter Courses | The Hague Academy of International Law Created with Sketch",
-      "fee_eur": null,
-      "topics": [
-        "law",
-        "international law"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "duration is uncertain",
-        "in-person status is uncertain",
-        "funding is not explicit and fee equivalence is uncertain"
-      ],
-      "confidence": 0.0,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.0,
-      "financial_terms": {
-        "participation_fee": "Registrations – 2027 Winter Courses | The Hague Academy of International Law Created with Sketch",
-        "fee_eur": null,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "law": "tions – 2027 Winter Courses | The Hague Academy of International Law 1 Nov 2026 Extension of the Deadline for Full-Fee Registrations – 2027 Winter Courses The deadline",
-        "international law": "l-Fee Registrations – 2027 Winter Courses | The Hague Academy of International Law 1 Nov 2026 Extension of the Deadline for Full-Fee Registrations – 2027 Winter Courses The deadline"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "",
-        "fee": "Registrations – 2027 Winter Courses | The Hague Academy of International Law Created with Sketch",
-        "funding": "",
+        "fee": "and will not exceed €800 per person",
+        "funding": "Please note that the total number of meeting awards the applicant has previously received from FEBS (FEBS Congress bursary, FEBS YSF grant, and FEBS YTF award for previous FEBS AC) may also be taken into consideration in the nomination approval.",
         "mode": ""
       },
       "ai_advisory": {
