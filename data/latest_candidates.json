@@ -293,6 +293,10 @@
       "detail_path": "opportunities/winter-school-on-artificial-intelligence-ai-ethics-and-human-rights-78fcd263.html"
     },
     {
+      "id": "edition:4f42af2903e79891",
+      "detail_path": "opportunities/2027-nmd4c-rare-qc-basic-science-research-summer-school-7de7b60d.html"
+    },
+    {
       "id": "edition:4f87e76c049b429a",
       "detail_path": "opportunities/48th-cern-school-of-computing-58e058ec.html"
     },
@@ -355,6 +359,10 @@
     {
       "id": "edition:63863945360a1540",
       "detail_path": "opportunities/fraunhofer-cimd-winter-school-2026-ffa6105c.html"
+    },
+    {
+      "id": "edition:639285b67a43d2cb",
+      "detail_path": "opportunities/summer-school-ee58c673.html"
     },
     {
       "id": "edition:6551c7df342df9ff",
@@ -489,6 +497,10 @@
       "detail_path": "opportunities/cern-school-of-computing-ed1d3180.html"
     },
     {
+      "id": "edition:93b7daa1bf39e412",
+      "detail_path": "opportunities/iaifi-summer-school-f91860e3.html"
+    },
+    {
       "id": "edition:93d8cc55738c51a5",
       "detail_path": "opportunities/extended-deadline-call-for-papers-14th-conference-on-frisian-linguisti-389116a0.html"
     },
@@ -539,6 +551,10 @@
     {
       "id": "edition:a0ec279bbec6d03f",
       "detail_path": "opportunities/oxford-spring-school-in-advanced-research-methods-2027-d2843d58.html"
+    },
+    {
+      "id": "edition:a11b3517431b0473",
+      "detail_path": "opportunities/8th-summer-school-on-theory-mechanisms-and-hierarchical-modelling-of-c-dce73604.html"
     },
     {
       "id": "edition:a1539a6434adb766",
@@ -653,6 +669,10 @@
       "detail_path": "opportunities/mila-s-community-of-practice-agentic-ai-0b4add22.html"
     },
     {
+      "id": "edition:be5bc1839dd7b9ba",
+      "detail_path": "opportunities/pathways-to-engineering-bde30b3f.html"
+    },
+    {
       "id": "edition:bf261e4e63bcff39",
       "detail_path": "opportunities/oxford-spring-school-in-advanced-social-research-methods-e957da9e.html"
     },
@@ -675,6 +695,10 @@
     {
       "id": "edition:c5207a34d5123ddc",
       "detail_path": "opportunities/call-for-grants-applications-related-to-cell-senescence-to-prevent-age-acdf8228.html"
+    },
+    {
+      "id": "edition:cb418998b3ba03fb",
+      "detail_path": "opportunities/top-11-summer-school-scholarships-in-november-2026-c180c753.html"
     },
     {
       "id": "edition:cbb473c6a69ffb02",
@@ -703,10 +727,6 @@
     {
       "id": "edition:d0492d49485e3c14",
       "detail_path": "opportunities/graduate-research-school-scholarships-uqgrss-includes-research-trainin-5ba20a80.html"
-    },
-    {
-      "id": "edition:d31fd98a1919cefb",
-      "detail_path": "opportunities/training-course-data-assimilation-machine-learning-681b10c7.html"
     },
     {
       "id": "edition:d372798a22dc8d4a",
@@ -745,6 +765,10 @@
       "detail_path": "opportunities/nldl-2027-winter-school-bd35d20a.html"
     },
     {
+      "id": "edition:e55dfc5623cfd37c",
+      "detail_path": "opportunities/2026-trainee-summer-school-789a58cb.html"
+    },
+    {
       "id": "edition:ea09f79b56000dd0",
       "detail_path": "opportunities/una-europa-winter-school-2027-for-doctoral-researchers-rethinking-cult-4eebe43b.html"
     },
@@ -767,6 +791,10 @@
     {
       "id": "edition:f48b4577b14b828d",
       "detail_path": "opportunities/ai-in-science-summit-2026-ais26-309e3e9b.html"
+    },
+    {
+      "id": "edition:f5aa4b1a6502bed9",
+      "detail_path": "opportunities/novacella-winter-school-2027-9442512a.html"
     },
     {
       "id": "edition:f971705875f1c434",
@@ -1091,7 +1119,7 @@
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
   "_canary": "SSR-CANON-7q3v9x2k8m4w",
   "schema_version": 2,
-  "generated": "2026-11-05",
+  "generated": "2026-11-06",
   "opportunities": [
     {
       "title": "Coastal Processes & Morphology",
@@ -1913,7 +1941,7 @@
         "history": "ntryside and the vibrancy of a big city. You can experience both history and modern living during a visit to Uppsala . How to get here: Uppsala is easily reached by train i"
       },
       "detail_sections": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Deadlines",
@@ -2342,7 +2370,7 @@
         "philosophy": "dules and explores topics such as visual arts or the history and philosophy of science. SBD students will also get the opportunity to visit Pekinese Island, a wildlife sanctua"
       },
       "detail_sections": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Computational Approaches to Memory and Plasticity (CAMP) 2026",
@@ -4359,6 +4387,86 @@
       "is_new": false
     },
     {
+      "title": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes",
+      "type": "summer school",
+      "organizer": "Indico - Conferences and Events",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "uncertain",
+      "start_date": "2027-07-12",
+      "end_date": "2027-07-23",
+      "duration_days": 12,
+      "deadline": "2027-03-05",
+      "deadline_status": "open",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "climate",
+        "climate change",
+        "climate extremes"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "no registration fee",
+      "fee_eur": 0.0,
+      "application_link": "https://indico.ictp.it/event/11444",
+      "source_url": "https://indico.ictp.it/event/11444",
+      "summary": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes | (smr 4370) (12-23 July 2027) Scientific Calendar Event GO TO SCIENTIFIC CALENDAR Europe/Rome English Administration Search Search in Conferences: Overview Scient",
+      "recommendation_reason": "low fee: approximately EUR 0; deadline appears open; 12 days; priority region",
+      "risk_points": "in-person status is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "low-fee",
+      "failed_hard_conditions": [
+        "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 53.0,
+      "score_explanation": [
+        "low fee: approximately EUR 0",
+        "deadline appears open",
+        "12 days",
+        "priority region",
+        "trusted source layer 1",
+        "topics: climate, climate change, climate extremes",
+        "near-match only: in-person status is uncertain"
+      ],
+      "first_seen": "2026-11-06",
+      "deadline_evidence": "DEADLINE: 05/03/2027",
+      "duration_evidence": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes | (smr 4370) (12-23 July 2027) Scientific Calendar Event GO TO SCIENTIFIC CALENDAR Europe/Rome English Administration Search Search in Conferences: Overview Scientific Programme Programme Contribution List Author List Apply here Secretariat: smr4370@ictp.it Home 8th Summer School on Theory, Mechanisms and Hierarchical Modelling of 8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes | (smr 4370) (12-23 July 2027) Scientific Calendar Event GO TO SCIENTIFIC CALENDAR Europe/Rome English Administration Search Search in Conferences: Overview Scientific Programme Programme Contribution List Author List Apply here Secretariat: smr4370@ictp.it Home 8th Summer School on Theory, Mechanisms and Hierarchical Modelling of",
+      "fee_evidence": "no registration fee",
+      "mode_evidence": "",
+      "extraction_confidence": 0.75,
+      "title_zh": "第八届气候动力学理论、机制与分层建模暑期学校：全球波与局地极端事件",
+      "organizer_zh": "Indico - 会议与活动",
+      "location_zh": "欧洲",
+      "summary_zh": "第八届气候动力学理论、机制与分层建模暑期学校：全球波与局地极端事件 | (smr 4370)（2027年7月12日至23日）科学日历活动 前往科学日历 欧洲/罗马 英语 管理 搜索 在会议中搜索：概览 科学",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "费用低：约EUR 0；截止日期似乎开放；12天；优先地区",
+      "risk_points_zh": "线下形式尚不确定",
+      "primary_topics": [
+        "climate"
+      ],
+      "secondary_topics": [
+        "climate change",
+        "climate extremes"
+      ],
+      "topic_evidence": {
+        "climate": "ummer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes | (smr 4370) (12-23 July 2027) Europe/Rome English Administr",
+        "climate change": "-tropics, yet key questions about their dynamics and response to climate change remain open. The school will introduce the fundamentals of atmospheric wave dynamics and explore th",
+        "climate extremes": "es and tropical waves play a central role in shaping weather and climate extremes in the tropics and extra-tropics, yet key questions about their dynamics and response to climate ch"
+      },
+      "detail_sections": [],
+      "is_new": true
+    },
+    {
       "title": "Call for Applications: MyClimate Winter School January 2027",
       "type": "winter school",
       "organizer": "Danish Institute for International Studies (DIIS) and Chiang Mai University",
@@ -5070,7 +5178,7 @@
         "political science",
         "AI governance"
       ],
-      "eligibility": "Open to young researchers and academics, post-docs and post-graduate students, civil servants from local, regional or national government, and employees of international organizations or NGOs; international audience",
+      "eligibility": "",
       "target_level": "uncertain",
       "fee": "EUR 300 participation fee, excluding accommodation",
       "fee_eur": 300.0,
@@ -5130,11 +5238,11 @@
       "mode_evidence": "in person . There is no possibility to attend the course on",
       "extraction_confidence": 0.75,
       "title_zh": "2027年联邦制与治理冬季学校",
-      "organizer_zh": "Eurac Research 与因斯布鲁克大学",
+      "organizer_zh": "Eurac Research与因斯布鲁克大学",
       "location_zh": "因斯布鲁克 / 博尔扎诺/博岑",
-      "summary_zh": "该冬季学校从法学和政治学角度分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
-      "eligibility_zh": "面向青年研究人员和学者、博士后和研究生、地方、地区或国家政府公务员，以及国际组织或非政府组织雇员；国际受众",
-      "recommendation_reason_zh": "低费用：约300欧元；12天；优先地区；可信来源层级1.5",
+      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层级治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务人士深入探讨。",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "费用低：约300欧元；12天；优先地区；可信来源层级1.5",
       "risk_points_zh": "申请截止日期已过",
       "primary_topics": [
         "law",
@@ -7871,7 +7979,7 @@
       "secondary_topics": [],
       "topic_evidence": {},
       "detail_sections": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "48th CERN School of Computing 2026",
@@ -10664,6 +10772,87 @@
       "is_new": false
     },
     {
+      "title": "Training course: Data assimilation & Machine Learning",
+      "type": "training course",
+      "organizer": "ECMWF Events (Indico)",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "ECMWF, Reading",
+      "mode": "hybrid",
+      "start_date": "2027-01-11",
+      "end_date": "2027-01-15",
+      "duration_days": 5,
+      "deadline": "2026-09-27",
+      "deadline_status": "closed",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "machine learning",
+        "satellite",
+        "AI"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "£980",
+      "fee_eur": 1176.0,
+      "application_link": "https://events.ecmwf.int/event/578/",
+      "source_url": "https://events.ecmwf.int/event/578/",
+      "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
+      "recommendation_reason": "5 days; priority region; trusted source layer 1; hybrid",
+      "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [
+        "application deadline has passed"
+      ],
+      "failed_recommendation_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "score": 21.0,
+      "score_explanation": [
+        "5 days",
+        "priority region",
+        "trusted source layer 1",
+        "hybrid",
+        "topics: machine learning, satellite, AI",
+        "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding"
+      ],
+      "first_seen": "2026-09-21",
+      "deadline_evidence": "Application deadline: 27 September 2026",
+      "duration_evidence": "11-15 January 2027",
+      "fee_evidence": "£980",
+      "mode_evidence": "in-person, and all lectures will be given in English. 11 Ja",
+      "extraction_confidence": 1.0,
+      "title_zh": "培训课程：资料同化与机器学习",
+      "organizer_zh": "ECMWF Events (Indico)",
+      "location_zh": "ECMWF，雷丁",
+      "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "5天；优先地区；可信来源第1层；混合形式",
+      "risk_points_zh": "申请截止日期已过；费用超过400欧元且未明确说明资助",
+      "primary_topics": [
+        "machine learning"
+      ],
+      "secondary_topics": [
+        "satellite",
+        "AI"
+      ],
+      "topic_evidence": {
+        "satellite": "delling The global observing system, with emphasis on how to use satellite observations Bias correction, quality control and diagnostics Applications of data assimilation met",
+        "AI": "arning for DA: model error estimation and correction, generative AI applications, hybrid modelling The global observing system, with emphasis on how to use satellite o",
+        "machine learning": "Training course: Data assimilation & Machine Learning Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Event"
+      },
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
       "title": "Unite! Summer School: What Computers and AI can't do. (June 2024)",
       "type": "summer school",
       "organizer": "Institut für Geschichte – TU Darmstadt",
@@ -11369,7 +11558,7 @@
         "bursary",
         "tuition waiver"
       ],
-      "funding_evidence": "Scholarships & Bursaries | Digital Humanities Summer Institute Digital Humanities Summer Institute About Archive Course Offerings Registration & Fees Scholarships & Bursaries Sponsors & Partners Timetable Aligned Events Participant Guide Accommodations People Our Team Contact Rechercher : Rechercher x Scholarships & Bursaries Ray Siemens DHSI Bursaries In honour of DHSI Founder and Director Emeritus Ray Siemens we offer 4 bursaries, reserved for students.",
+      "funding_evidence": "Scholarships & Bursaries | Digital Humanities Summer Institute Digital Humanities Summer Institute Institut d'été sur les humanités numériques About Archive Course Offerings Registration & Fees Scholarships & Bursaries Sponsors & Partners Timetable Aligned Events Participant Guide Accommodations People Our Team Contact Rechercher : Rechercher x Scholarships & Bursaries Ray Siemens DHSI Bursaries In honour of DHSI Founder and Director Emeritus Ray Siemens we offer 4 bursaries, reserved for students.",
       "topic_keywords": [
         "digital humanities"
       ],
@@ -11379,7 +11568,7 @@
       "fee_eur": 126.0,
       "application_link": "https://dhsi.org/scholarships/",
       "source_url": "https://dhsi.org/scholarships/",
-      "summary": "Scholarships & Bursaries | Digital Humanities Summer Institute Digital Humanities Summer Institute About Archive Course Offerings Registration & Fees Scholarships & Bursaries Sponsors & Partners Timetable Aligned Events Participant Guide Accommodations People Our Team Contact Rec",
+      "summary": "Scholarships & Bursaries | Digital Humanities Summer Institute Digital Humanities Summer Institute Institut d'été sur les humanités numériques About Archive Course Offerings Registration & Fees Scholarships & Bursaries Sponsors & Partners Timetable Aligned Events Participant Guid",
       "recommendation_reason": "funding evidence: scholarship, bursary, tuition waiver; target level: early-career researcher; topics: digital humanities; near-match only: applications are not open yet; duration is uncertain; in-person status is uncertain",
       "risk_points": "applications are not open yet; duration is uncertain; in-person status is uncertain",
       "sessions": [],
@@ -11412,9 +11601,9 @@
       "title_zh": "数字人文暑期学院",
       "organizer_zh": "数字人文暑期学院",
       "location_zh": "北美",
-      "summary_zh": "奖学金与助学金 | 数字人文暑期学院 数字人文暑期学院 关于 档案 课程设置 注册与费用 奖学金与助学金 赞助商与合作伙伴 时间表 相关活动 参与者指南 住宿 人员 我们的团队 联系 推荐",
+      "summary_zh": "奖学金与助学金 | 数字人文暑期学院 Digital Humanities Summer Institute Institut d'été sur les humanités numériques 关于 档案 课程设置 注册与费用 奖学金与助学金 赞助商与合作伙伴 时间表 相关活动 参与者指南",
       "eligibility_zh": "早期职业研究人员和非学生",
-      "recommendation_reason_zh": "资助证据：奖学金、助学金、学费减免；目标层次：早期职业研究人员；主题：数字人文；仅为近似匹配：申请尚未开放；时长不确定；线下状态不确定",
+      "recommendation_reason_zh": "资助证据：奖学金、助学金、学费减免；目标层级：早期职业研究人员；主题：数字人文；仅为近似匹配：申请尚未开放；时长不确定；线下状态不确定",
       "risk_points_zh": "申请尚未开放；时长不确定；线下状态不确定",
       "primary_topics": [
         "digital humanities"
@@ -11903,7 +12092,7 @@
       "deadline_evidence": "",
       "duration_evidence": "",
       "fee_evidence": "Effective Strategies for a Low-Carbon World, Including Nuclear Power and Fusion | (smr 4397) ICTP Eu",
-      "mode_evidence": "Hybrid workshop 02 Nov 2026 06 Nov 2026 Joint ICTP-IAEA",
+      "mode_evidence": "Hybrid Discover all events Opportunities Overview ICTP:",
       "extraction_confidence": 0.25,
       "title_zh": "面包屑导航",
       "organizer_zh": "ICTP",
@@ -11944,11 +12133,11 @@
         "climate change": "7 27 Aug 2027 Application Closed school smr4363 Summer School in Climate Change and Infectious Diseases Modelling | (smr 4363) Medellin - Colombia Earth System Physics smr4363 Aug",
         "geophysics": "kshop on Open Hardware and Open Science in Engineering and Hydro-Geophysics: Technical Standards for Global Citizen Science | (smr 4394) ICTP Giambiagi Lecture Hall (AGH) Scie",
         "AI": "p smr4202 *** CANCELLED *** Workshop on Scientific Computing and AI | (smr 4202) Kuwait City - Kuwait Science, Technology and Innovation smr4202 November 2026 November",
-        "artificial intelligence": "ICTP-IAEA Workshop on the Clinical Application of Imaging-Based Artificial Intelligence Systems for Medical Physicists | (smr 4246) ICTP Kastler Lecture Hall (AGH) smr4246 16 Nov 2026 20",
+        "artificial intelligence": "ICTP-IAEA Workshop on the Clinical Application of Imaging-Based Artificial Intelligence Systems for Medical Physicists | (smr 4246) ICTP Kastler Lecture Hall (AGH) smr4246 cmsp 16 Nov 202",
         "machine learning": "scientific activity ICTP Ghana Mastering Statistical Models and Machine Learning: A Hands-On Workshop in Machine Learning with R/Python V Ghana November 2026 November 17 14:00 16:0",
         "data science": "0 Nov 2026 Application Closed school smr4320 CODATA-RDA Research Data Science Summer School and Advanced workshops | (smr 4320) ICTP Denardo Lecture Hall (AGH) smr4320 09 Nov 20",
-        "data analysis": "7 Application Closed school smr4373 Summer School on Topological Data Analysis and Applications | (smr 4373) Lusaka - Zambia Mathematics smr4373 hecap 19 Jul 2027 30 Jul 2027 App",
-        "high performance computing": "May 2027 Application Closed workshop smr4352 African Workshop on High Performance Computing for Sustainable Development | (smr 4352) Benin City, Edo State, Nigeria - Nigeria smr4352 May 2027",
+        "data analysis": "7 Application Closed school smr4373 Summer School on Topological Data Analysis and Applications | (smr 4373) Lusaka - Zambia Mathematics smr4373 July 2027 July 20 math 20 Jul 202",
+        "high performance computing": "May 2027 Application Closed workshop smr4352 African Workshop on High Performance Computing for Sustainable Development | (smr 4352) Benin City, Edo State, Nigeria - Nigeria smr4352 cmsp 10 M",
         "physics": "workshop Sections Home High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Science",
         "cosmology": "scientific activity seminars workshop Sections Home High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics",
         "condensed matter": "p Sections Home High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Techno",
@@ -11957,13 +12146,13 @@
         "quantum information": "n Closed scientific activity smr4204 Open Quantum Systems - from Quantum Information to Condensed Matter | (smr 4204) Singapore - Singapore Condensed Matter and Statistical Physics smr",
         "mathematics": "d Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Technology and Innovation Other Show only",
         "statistics": "imensions: Recent Progress in Machine Learning, High-Dimensional Statistics and Inference | (smr 4360) ICTP Budinich Lecture Hall (LB) Quantitative Life Sciences smr4360 hecap",
-        "probability": "smr4186 07:00 21:00 07 Dec 2026 Hosted Activity Workshop of the Probability and Stochastic Analysis Trimester Programme | (smr H737) Physical Organizers December 2026 December",
+        "probability": "smr4186 07:00 21:00 07 Dec 2026 Hosted Activity Workshop of the Probability and Stochastic Analysis Trimester Programme | (smr H737) Physical Organizers hecap 07 Dec 2026 12 D",
         "chemistry": "EA–ICTP Advanced School on Integrated Design, Materials and Fuel Chemistry of Molten Salt Reactors | (smr 4344) ICTP Giambiagi Lecture Hall (AGH) smr4344 hecap 05 Apr 2027 09",
         "materials science": "smr4335 23rd International Workshop on Computational Physics and Materials Science: Total Energy and Force Methods | (smr 4335) ICTP Budinich Lecture Hall (LB) Condensed Matter and S",
         "engineering": "rtificial Intelligence and Machine Learning in Advancing Nuclear Engineering and Technology: from Theory to Practice | (smr 4364) ICTP Giambiagi Lecture Hall (AGH) Science, Tec",
         "design": "Joint ICTP-MSA-COMSTECH-SESAME School on AI-Driven Biomaterials Design: from Characterization to Additive Manufacturing - Bringing Lab to Market | (smr 4343) Allan - Jord",
-        "neuroscience": "r4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 esp 12 Jul 2027 23 Jul",
-        "theoretical neuroscience": "workshop smr4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 esp 12 Jul 2027 23 Jul"
+        "neuroscience": "r4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 July 2027 July 14 esp",
+        "theoretical neuroscience": "workshop smr4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 July 2027 July 14 esp"
       },
       "detail_sections": [],
       "is_new": false
@@ -12128,7 +12317,7 @@
         "AI": "for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language Technologies, Responsible AI,",
         "artificial intelligence": "tracks covering today's most impactful areas of data science and artificial intelligence. Participants will explore topics ranging from Python for Data Science and Machine Learning Fundame",
         "machine learning": "nts will explore topics ranging from Python for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language",
-        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 4373 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
+        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 4389 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
         "language technology": "earch Labs AirQo - IoT & AI for Environment Sunbird AI - African Language Technology Busitema AI - AI for Agriculture Makerere AI Labs DSAIL - IoT & AI for Environment - AirQo Sunbird",
         "high performance computing": "orking - - 11:00 - 13:00 Parallel Julia programming language and High Performance Computing Track A Dr. Adeleke Bankole, University of Cambridge, 11:00 - 13:00 Parallel Multimodal AI & LLMs &",
         "design": "h & Networking - - 14:30 - 16:00 Parallel AirQo DevCon: Hardware Design and Development for Air Quality Sensing Track A AirQo 14:30 - 16:00 Parallel NLP & African Language",
@@ -13624,73 +13813,6 @@
       "is_new": false
     },
     {
-      "title": "Joint Meeting of ELLIS Units Berlin and Warsaw",
-      "type": "summer school",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Berlin",
-      "mode": "in-person",
-      "start_date": "2026-11-04",
-      "end_date": "2026-11-05",
-      "duration_days": 2,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://ellis.eu/events/joint-meeting-of-ellis-units-berlin-and-warsaw",
-      "source_url": "https://ellis.eu/events/joint-meeting-of-ellis-units-berlin-and-warsaw",
-      "summary": "04/11/26 - 05/11/26 • Berlin Joint Meeting of ELLIS Units Berlin and Warsaw Members of the ELLIS Units Berlin and Warsaw will meet on 4–5 November 2026 at the Polish Embassy in Berlin to exchange ideas and explore opportunities for collaboration between the two units. Read More",
-      "recommendation_reason": "priority region; trusted source layer 1; in-person; near-match only: programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "risk_points": "programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "programme has already started",
-        "duration is below 4 days"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 9.0,
-      "score_explanation": [
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "near-match only: programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-10-14",
-      "deadline_evidence": "",
-      "duration_evidence": "ELLIS events listing: 2026-11-04 to 2026-11-05",
-      "fee_evidence": "",
-      "mode_evidence": "ELLIS listing location: Berlin",
-      "extraction_confidence": 0.5,
-      "title_zh": "柏林与华沙ELLIS单位联合会议",
-      "organizer_zh": "ELLIS",
-      "location_zh": "柏林",
-      "summary_zh": "2026年11月4日至5日 • 柏林 柏林与华沙ELLIS单位联合会议 柏林与华沙ELLIS单位的成员将于2026年11月4日至5日在柏林波兰大使馆会面，交流想法并探讨两个单位之间的合作机会。阅读更多",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "优先地区；可信来源第1层；线下；仅为近似匹配：项目已开始；时长不足4天；资助情况不明确，费用不确定",
-      "risk_points_zh": "项目已开始；时长不足4天；资助情况不明确，费用不确定",
-      "primary_topics": [],
-      "secondary_topics": [],
-      "topic_evidence": {},
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
       "title": "Winter School on Environmental Crimes",
       "type": "winter school",
       "organizer": "UNICRI AI Ethics Winter School",
@@ -14000,7 +14122,7 @@
       "secondary_topics": [],
       "topic_evidence": {},
       "detail_sections": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "LOT Winter School 2027",
@@ -15460,7 +15582,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/resources/templates/summer-school-application-form/",
       "source_url": "https://www.isprs.org/resources/templates/summer-school-application-form/",
-      "summary": "Summer School Application Form November 05, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissi",
+      "summary": "Summer School Application Form November 06, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissi",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, AI, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -15494,7 +15616,7 @@
       "title_zh": "相关链接",
       "organizer_zh": "ISPRS",
       "location_zh": "全球",
-      "summary_zh": "暑期学校申请表 2026年11月05日 | 首页 | 网站地图 | ISPRS基金会 | 𝕏 登录 首页 学会 学会概览与组织概览 组织 历史背景 百年视频 组织间活动 目标与活动 官员 理事会 委员会",
+      "summary_zh": "暑期学校申请表 2026年11月06日 | 首页 | 网站地图 | ISPRS基金会 | 𝕏 登录 首页 学会 学会概览与组织概览 组织 历史背景 百年视频 组织间活动 目标与活动 官员 理事会 委员会",
       "eligibility_zh": "",
       "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、人工智能、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
       "risk_points_zh": "申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
@@ -15541,7 +15663,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/society/awards/torlegard.aspx",
       "source_url": "https://www.isprs.org/society/awards/torlegard.aspx",
-      "summary": "ISPRS WEC Kennert Torlegård Travel Grant November 05, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Counci",
+      "summary": "ISPRS WEC Kennert Torlegård Travel Grant November 06, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Counci",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -15575,10 +15697,10 @@
       "title_zh": "获奖证书",
       "organizer_zh": "ISPRS",
       "location_zh": "全球",
-      "summary_zh": "ISPRS WEC Kennert Torlegård 旅行资助 2026年11月05日 | 首页 | 网站地图 | ISPRS 基金会 | 𝕏 登录 首页 学会 学会概览与组织 概览 组织 历史背景 百年视频 组织间活动 目标与活动 官员 理事会",
-      "eligibility_zh": "该奖项授予一名青年科学家，其资格由下文第四条所定义的评选委员会确定",
-      "recommendation_reason_zh": "6天；可信来源层级1；主题：遥感、地理空间、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确且费用不确定",
-      "risk_points_zh": "申请截止日期不确定；仅线上；资助情况不明确且费用不确定",
+      "summary_zh": "ISPRS WEC Kennert Torlegård 旅行资助 2026年11月6日 | 首页 | 网站地图 | ISPRS 基金会 | 𝕏 登录 首页 学会 学会概览与组织 概览 组织 历史背景 百年视频 跨组织活动 目标与活动 官员 理事会",
+      "eligibility_zh": "该奖项授予一名青年科学家，其资格由下文第四条所定义的选择委员会确定",
+      "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
+      "risk_points_zh": "申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
       "primary_topics": [
         "remote sensing",
         "geospatial",
@@ -17370,7 +17492,7 @@
       "fee_eur": null,
       "application_link": "https://www.unicri.org/index.php/advanced-education-artificial-intelligence-ai-ethics-human-rights-2026",
       "source_url": "https://www.unicri.org/index.php/advanced-education-artificial-intelligence-ai-ethics-human-rights-2026",
-      "summary": "联合国区域间犯罪与司法研究所（UNICRI）主办的“人工智能、伦理与人权”冬季学校，2026年12月14日至18日以罗马线下与线上混合形式举行，面向学生、研究人员、专业人士及联合国人员等，探讨AI伦理原则、算法偏见、国际人权法适用及神经技术等议题。",
+      "summary": "联合国区域间犯罪与司法研究所（UNICRI）举办的“人工智能、伦理与人权”冬季学校，2026年12月14日至18日以罗马线下与线上混合形式举行，面向学生、研究人员、专业人士及联合国人员等，探讨AI伦理原则、算法偏见、国际人权法在AI中的应用、医疗/劳工/刑事司法领域的AI以及神经技术等议题。",
       "recommendation_reason": "hybrid; topics: AI, law; near-match only: application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; duration is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -17403,7 +17525,7 @@
       "title_zh": "人工智能（AI）、伦理与人权冬季学校",
       "organizer_zh": "UNICRI AI伦理冬季学校",
       "location_zh": "线上",
-      "summary_zh": "联合国区域间犯罪与司法研究所（UNICRI）主办的“人工智能、伦理与人权”冬季学校，2026年12月14日至18日以罗马线下与线上混合形式举行，面向学生、研究人员、专业人士及联合国人员等，探讨AI伦理原则、算法偏见、国际人权法适用及神经技术等议题。",
+      "summary_zh": "联合国区域间犯罪与司法研究所（UNICRI）举办的“人工智能、伦理与人权”冬季学校，2026年12月14日至18日以罗马线下与线上混合形式举行，面向学生、研究人员、专业人士及联合国人员等，探讨AI伦理原则、算法偏见、国际人权法在AI中的应用、医疗/劳工/刑事司法领域的AI以及神经技术等议题。",
       "eligibility_zh": "面向学生、研究人员、专业人士、联合国人员，以及对人工智能、伦理与人权交叉领域感兴趣的任何人",
       "recommendation_reason_zh": "混合形式；主题：人工智能、法律；仅为近似匹配：申请截止日期不确定；时长不确定；资助情况不明确，费用不确定",
       "risk_points_zh": "申请截止日期不确定；时长不确定；资助情况不明确，费用不确定",
@@ -17439,13 +17561,13 @@
       "topic_keywords": [
         "AI"
       ],
-      "eligibility": "",
+      "eligibility": "Student and academia fee tiers; conference-only student tier",
       "target_level": "uncertain",
       "fee": "",
       "fee_eur": null,
       "application_link": "https://www.nldl.org/program/winter-school",
       "source_url": "https://www.nldl.org/program/winter-school",
-      "summary": "NLDL 2027冬季学校将于2027年1月11日至15日举行，包含专家教程，主题涉及智能体AI与AI辅助研究、有序学习与可信AI等。学生费用2900 NOK（免VAT），学术界3780 NOK（不含VAT），2026年11月10日后迟注册需加收费用。",
+      "summary": "NLDL 2027冬季学校（2027年1月11日至15日）由专家提供辅导课程，并与NORA研究学校共同举办；包含Agentic AI与AI辅助研究、深度序数表示等教程及海报环节。学生费用2900 NOK（免VAT），学术界3780 NOK（不含VAT），2026年11月10日后迟注册需加收费用。",
       "recommendation_reason": "topics: AI; near-match only: application deadline is uncertain; duration is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; duration is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -17478,10 +17600,10 @@
       "title_zh": "NLDL 2027 冬季学校",
       "organizer_zh": "NLDL 冬季学校",
       "location_zh": "不确定",
-      "summary_zh": "NLDL 2027冬季学校将于2027年1月11日至15日举行，包含专家教程，主题涉及智能体AI与AI辅助研究、有序学习与可信AI等。学生费用2900 NOK（免VAT），学术界3780 NOK（不含VAT），2026年11月10日后迟注册需加收费用。",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "主题：人工智能；仅为近似匹配：申请截止日期不确定；时长不确定；是否为线下活动不确定；资助情况未明确，费用不确定",
-      "risk_points_zh": "申请截止日期不确定；时长不确定；是否为线下活动不确定；资助情况未明确，费用不确定",
+      "summary_zh": "NLDL 2027冬季学校（2027年1月11日至15日）由专家提供辅导课程，并与NORA研究学校共同举办；包含Agentic AI与AI辅助研究、深度序数表示等教程及海报环节。学生费用2900 NOK（免VAT），学术界3780 NOK（不含VAT），2026年11月10日后迟注册需加收费用。",
+      "eligibility_zh": "学生与学术界费率档；仅参会学生档",
+      "recommendation_reason_zh": "主题：人工智能；仅为近似匹配：申请截止日期不确定；时长不确定；线下状态不确定；资助未明确且费用不确定",
+      "risk_points_zh": "申请截止日期不确定；时长不确定；线下状态不确定；资助未明确且费用不确定",
       "primary_topics": [
         "AI"
       ],
@@ -18553,7 +18675,7 @@
         "history": "ntryside and the vibrancy of a big city. You can experience both history and modern living during a visit to Uppsala . How to get here: Uppsala is easily reached by train i"
       },
       "detail_sections": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Deadlines",
@@ -18979,7 +19101,7 @@
         "philosophy": "dules and explores topics such as visual arts or the history and philosophy of science. SBD students will also get the opportunity to visit Pekinese Island, a wildlife sanctua"
       },
       "detail_sections": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Computational Approaches to Memory and Plasticity (CAMP) 2026",
@@ -20914,6 +21036,86 @@
       "is_new": false
     },
     {
+      "title": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes",
+      "type": "summer school",
+      "organizer": "Indico - Conferences and Events",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Europe",
+      "mode": "uncertain",
+      "start_date": "2027-07-12",
+      "end_date": "2027-07-23",
+      "duration_days": 12,
+      "deadline": "2027-03-05",
+      "deadline_status": "open",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "climate",
+        "climate change",
+        "climate extremes"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "no registration fee",
+      "fee_eur": 0.0,
+      "application_link": "https://indico.ictp.it/event/11444",
+      "source_url": "https://indico.ictp.it/event/11444",
+      "summary": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes | (smr 4370) (12-23 July 2027) Scientific Calendar Event GO TO SCIENTIFIC CALENDAR Europe/Rome English Administration Search Search in Conferences: Overview Scient",
+      "recommendation_reason": "low fee: approximately EUR 0; deadline appears open; 12 days; priority region",
+      "risk_points": "in-person status is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "low-fee",
+      "failed_hard_conditions": [
+        "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 53.0,
+      "score_explanation": [
+        "low fee: approximately EUR 0",
+        "deadline appears open",
+        "12 days",
+        "priority region",
+        "trusted source layer 1",
+        "topics: climate, climate change, climate extremes",
+        "near-match only: in-person status is uncertain"
+      ],
+      "first_seen": "2026-11-06",
+      "deadline_evidence": "DEADLINE: 05/03/2027",
+      "duration_evidence": "12-23 July 2027",
+      "fee_evidence": "no registration fee",
+      "mode_evidence": "",
+      "extraction_confidence": 0.75,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "primary_topics": [
+        "climate"
+      ],
+      "secondary_topics": [
+        "climate change",
+        "climate extremes"
+      ],
+      "topic_evidence": {
+        "climate": "ummer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes | (smr 4370) (12-23 July 2027) Europe/Rome English Administr",
+        "climate change": "-tropics, yet key questions about their dynamics and response to climate change remain open. The school will introduce the fundamentals of atmospheric wave dynamics and explore th",
+        "climate extremes": "es and tropical waves play a central role in shaping weather and climate extremes in the tropics and extra-tropics, yet key questions about their dynamics and response to climate ch"
+      },
+      "detail_sections": [],
+      "is_new": true
+    },
+    {
       "title": "Call for Applications: MyClimate Winter School January 2027",
       "type": "winter school",
       "organizer": "Danish Institute for International Studies (DIIS) and Chiang Mai University",
@@ -21423,7 +21625,7 @@
       "is_new": false
     },
     {
-      "title": "Scholarships & Travel Grants",
+      "title": "Grants & Awards",
       "type": "field school",
       "organizer": "Archaeological Institute of America",
       "source_layer": "discovery",
@@ -21433,38 +21635,28 @@
       "start_date": null,
       "end_date": null,
       "duration_days": null,
-      "deadline": "2027-03-01",
+      "deadline": "2027-06-30",
       "deadline_status": "open",
       "funding_available": true,
       "funding_type": [
-        "scholarship"
+        "scholarship",
+        "fellowship"
       ],
-      "funding_evidence": "Archaeological Field School Scholarships - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Scholarships & Travel Grants Archaeological Field School Scholarships Archaeological Institute of America Deadline: March 1, 2027 Announced: In April Amount: $2,000 per winner Purpose: These scholarships support students participating in archaeological fieldwork for the first time.",
+      "funding_evidence": "Fellowships, Grants, Scholarships, and Awards - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Grants & Awards Professionals Annual Meeting Fieldwork Grants & Awards AIA Fellowship Guidelines Application: AIA Fellowships Nomination Form: Pomerance Award Awards Ceremony Sitting Down with our Award Winners Follow-Ups for Fellowship, Grant, & Scholarship Winners Research Grant Final Report Form AIA Fellowships Report Form AIA Awards Citation Form Non-AIA Grants Careers American Journal of Archaeology Research Opportunities Network (RON) Beta Tester Sign Up The AIA’s mission includes supporting and promoting archaeological research and its dissemination.",
       "topic_keywords": [
-        "remote sensing",
-        "GIS",
-        "ecology",
         "artificial intelligence",
-        "mathematics",
-        "applied mathematics",
-        "public health",
-        "cognitive science",
-        "marine biology",
-        "geography",
-        "anthropology",
+        "architecture",
         "history",
-        "philosophy",
-        "archaeology",
-        "literature"
+        "archaeology"
       ],
-      "eligibility": "Applicants must: Have begun their junior/third year of undergraduate studies at the time of application and have not yet completed their first year of graduate school Be enrolled at a college or university in the United",
+      "eligibility": "doctoral fellows",
       "target_level": "MSc, PhD",
       "fee": "",
       "fee_eur": null,
-      "application_link": "https://www.archaeological.org/grant/waldbaum-scholarship/",
-      "source_url": "https://www.archaeological.org/grant/waldbaum-scholarship/",
-      "summary": "Archaeological Field School Scholarships - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers Am",
-      "recommendation_reason": "funding evidence: scholarship; deadline appears open; in-person; target level: MSc, PhD",
+      "application_link": "https://www.archaeological.org/programs/professionals/grants-awards/",
+      "source_url": "https://www.archaeological.org/programs/professionals/grants-awards/",
+      "summary": "Fellowships, Grants, Scholarships, and Awards - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Caree",
+      "recommendation_reason": "funding evidence: scholarship, fellowship; deadline appears open; in-person; target level: MSc, PhD",
       "risk_points": "duration is uncertain",
       "sessions": [],
       "identity_key": "",
@@ -21480,18 +21672,18 @@
       "failed_recommendation_conditions": [],
       "score": 50.0,
       "score_explanation": [
-        "funding evidence: scholarship",
+        "funding evidence: scholarship, fellowship",
         "deadline appears open",
         "in-person",
         "target level: MSc, PhD",
-        "topics: remote sensing, GIS, ecology, artificial intelligence",
+        "topics: artificial intelligence, architecture, history, archaeology",
         "near-match only: duration is uncertain"
       ],
-      "first_seen": "2026-09-30",
-      "deadline_evidence": "Deadline: March 1, 2027",
+      "first_seen": "2026-10-23",
+      "deadline_evidence": "Deadline: June 30, 2027 (other dates listed: 2023-11-01, 2025-12-15, 2026-09-15)",
       "duration_evidence": "",
       "fee_evidence": "",
-      "mode_evidence": "Field School Scholarships - Archaeological Institute of Americ",
+      "mode_evidence": "in-person) support Us The AIA is North America's largest an",
       "extraction_confidence": 0.75,
       "title_zh": "",
       "organizer_zh": "",
@@ -21501,39 +21693,17 @@
       "recommendation_reason_zh": "",
       "risk_points_zh": "",
       "primary_topics": [
-        "remote sensing",
-        "GIS",
-        "ecology",
         "artificial intelligence",
-        "mathematics",
-        "applied mathematics",
-        "public health",
-        "cognitive science",
-        "marine biology",
-        "geography",
-        "anthropology",
+        "architecture",
         "history",
-        "philosophy",
-        "archaeology",
-        "literature"
+        "archaeology"
       ],
       "secondary_topics": [],
       "topic_evidence": {
-        "remote sensing": "lleley is a junior at Boston University studying Archaeology and Remote Sensing. She will attend the Belize Valley Archeological Reconnaissance Project. Read about Elisha Valleley",
-        "GIS": "dents are trained in a variety of excavation techniques, such as GIS mapping and materials processing. Skye is especially excited to document a set of Etruscan tombs lo",
-        "ecology": "dkey (Purdue University West Lafayette; Zooarchaeology and Field Ecology Program Eagle Lake, CA), Mahmoud Samori (Columbia University, Stabiae Field School), Ann Vassar (Ce",
         "artificial intelligence": "erved, including rights for text and data mining and training of artificial intelligence or similar technologies. | Privacy Policy | Website by Yelling Mule , ongoing development by Castle",
-        "mathematics": "June. At Brown, she studied Biological Anthropology and Applied Mathematics-Biology. She’s especially excited to be working in the Caribbean: her home region. Read about Madel",
-        "applied mathematics": "ool this June. At Brown, she studied Biological Anthropology and Applied Mathematics-Biology. She’s especially excited to be working in the Caribbean: her home region. Read about Madel",
-        "public health": "er is a junior at Boston University, studying Health Science and Public Health, with a minor in Anthropology. She plans to attend the Apollonia Project in Bulgaria (deferred to 2",
-        "cognitive science": "ccalaueate at the University of California, Santa Cruz, studying Cognitive Science and Anthropology. She plans to attend the Roca dels Bous Project in Spain. Read about Lindsay Alaha",
-        "marine biology": "Obolensky Field School Scholarship Audrey Urbach is a third-year marine biology major with a minor in cultural anthropology at Northeastern University. This May, she will be parti",
-        "geography": "a Senior at Texas State University, majoring in Anthropology and Geography. She plans to attend the Aditu Arkeologia Field School in Spain. Read about Veronica Flores-Guillen",
-        "anthropology": "cum laude from Colorado College, earning a Bachelor’s degree in Anthropology and Classics. She is joining the Astypalaia Bioarchaeology field school which studies the human rem",
+        "architecture": ". Kress Grants for Research and Publication in Classical Art and Architecture - On Hiatus Deadline: December 15, 2025 These grants fund publication preparation, or research lead",
         "history": "ct Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Care",
-        "philosophy": "versity of Houston studying Anthropology, Classical Studies, and Philosophy. She is eager to broaden her global perspective through the Antiochia ad Cragum Archaeological Rese",
-        "archaeology": "al Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public Internat",
-        "literature": "is a junior at Davidson College studying Classical Languages and Literature, and this summer he will be attending the Cosa Excavations in Ansedonia, Italy. He is excited to le"
+        "archaeology": "al Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public Internat"
       },
       "detail_sections": [],
       "is_new": false
@@ -22231,7 +22401,7 @@
         "sociology": "odology. Cambridge, UK: Polity Press. Marres, N. (2017). Digital Sociology: The Reinvention of Social Research. London: Polity Press. Ruppert, E., Law, J., & Savage, M. (Eds."
       },
       "detail_sections": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Industrial Panel",
@@ -22537,7 +22707,7 @@
       "fee_eur": 0.0,
       "application_link": "https://scholarshipunion.com/digital-human-rights-summer-school-2026/",
       "source_url": "https://scholarshipunion.com/digital-human-rights-summer-school-2026/",
-      "summary": "Digital Human Rights Summer School 2026 in Sweden | Fully Funded Skip to content We're hiring — join the Scholarship Union team. View open roles Scholarships For You — your scholarship feed New Personalized picks matched to what you browse — private to your device. By Education L",
+      "summary": "Digital Human Rights Summer School 2026 in Sweden | Fully Funded Skip to content Scholarships For You — your scholarship feed New Personalized picks matched to what you browse — private to your device. By Education Level High School Bachelor Undergraduate Diploma Masters PhD Post",
       "recommendation_reason": "low fee: approximately EUR 0; 17 days; in-person; target level: MSc, PhD, postdoc",
       "risk_points": "programme has already started",
       "sessions": [],
@@ -22585,6 +22755,73 @@
         "law": "weden | Fully Funded At a glance Host Lund University Faculty of Law and Raoul Wallenberg Institute for Human Rights Country Sweden Level Master’s , PhD , Postdoctoral",
         "international law": "urrently enrolled) with knowledge of human rights law and public international law Bachelors degree in a relevant field with minimum 2 years of relevant work experience (e.g., legal"
       },
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
+      "title": "2027 NMD4C–RARE.Qc Basic Science Research Summer School",
+      "type": "summer school",
+      "organizer": "NMD4C",
+      "source_layer": "discovery",
+      "region_priority": "global",
+      "location": "global",
+      "mode": "in-person",
+      "start_date": "2027-05-12",
+      "end_date": "2027-05-14",
+      "duration_days": 3,
+      "deadline": "2026-12-01",
+      "deadline_status": "open",
+      "funding_available": true,
+      "funding_type": [
+        "travel grant"
+      ],
+      "funding_evidence": "Apply Here Accommodation, Meals & Travel Support Accommodation: We will provide accommodation for non-local attendees for three nights (May 11-13th) at UQTR residences.",
+      "topic_keywords": [],
+      "eligibility": "Criteria How to Apply Accommodation & Travel Support Past Summer Schools View Gallery Summer School Program and Themes NMD4C will host our fourth Basic Science Research Summer School for neuromuscular research trainees f",
+      "target_level": "PhD, postdoc, early-career researcher",
+      "fee": "no registration fee",
+      "fee_eur": 0.0,
+      "application_link": "https://neuromuscularnetwork.ca/basic-research-summer-school-2027/",
+      "source_url": "https://neuromuscularnetwork.ca/basic-research-summer-school-2027/",
+      "summary": "2027 NMD4C–RARE.Qc Basic Science Research Summer School - NMD4C: The Neuromuscular Disease Network for Canada - NMD4C Skip to content NMD4C: The Neuromuscular Disease Network for Canada About Meet the Team Meet Collaborators Network Grant: 2023-2028 Join Us Our Work Pillar 1: Pre",
+      "recommendation_reason": "low fee: approximately EUR 0; deadline appears open; in-person; target level: PhD, postdoc, early-career researcher",
+      "risk_points": "duration is below 4 days",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "low-fee",
+      "failed_hard_conditions": [
+        "duration is below 4 days"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 43.5,
+      "score_explanation": [
+        "low fee: approximately EUR 0",
+        "deadline appears open",
+        "in-person",
+        "target level: PhD, postdoc, early-career researcher",
+        "near-match only: duration is below 4 days"
+      ],
+      "first_seen": "2026-11-06",
+      "deadline_evidence": "Application Deadline: December 1, 2026 (other dates listed: 2026-10-06)",
+      "duration_evidence": "May 12–14, 2027",
+      "fee_evidence": "no registration fee",
+      "mode_evidence": "in-person with colleagues and senior investigators from acr",
+      "extraction_confidence": 1.0,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "primary_topics": [],
+      "secondary_topics": [],
+      "topic_evidence": {},
       "detail_sections": [],
       "is_new": true
     },
@@ -23345,6 +23582,110 @@
       },
       "detail_sections": [],
       "is_new": false
+    },
+    {
+      "title": "IAIFI Summer School",
+      "type": "summer school",
+      "organizer": "Discovery: IAIFI Summer School - NSF IAIFI",
+      "source_layer": "discovery",
+      "region_priority": "global",
+      "location": "global",
+      "mode": "in-person",
+      "start_date": "2026-08-03",
+      "end_date": "2026-08-07",
+      "duration_days": 5,
+      "deadline": null,
+      "deadline_status": "closed",
+      "funding_available": true,
+      "funding_type": [
+        "financial support"
+      ],
+      "funding_evidence": "Is there funding available to support my attendance at the Summer School? IAIFI is covering the cost of the Summer School, including lunch each day.",
+      "topic_keywords": [
+        "AI",
+        "artificial intelligence",
+        "machine learning",
+        "deep learning",
+        "computer vision",
+        "physics",
+        "astrophysics",
+        "astronomy",
+        "optimization",
+        "mechanics",
+        "law"
+      ],
+      "eligibility": "PhD Student, MIT Topic: Generative Modeling/Diffusion Tutorial Lead: Mathis Gerdes , IAIFI Fellow Topic: Computer Vision Tutorial Leads: Aneel Damaraju, PhD Studen",
+      "target_level": "MSc, PhD, early-career researcher",
+      "fee": "no registration fee",
+      "fee_eur": 0.0,
+      "application_link": "https://iaifi.org/phd-summer-school.html",
+      "source_url": "https://iaifi.org/phd-summer-school.html",
+      "summary": "IAIFI Summer School - NSF IAIFI NSF IAIFI About Overview Code of Conduct News FAQ Events Calendar Summer School Summer Workshop Hackathons & Workshops Colloquia Seminars Lunch Discussions (fka. Journal Club) Thematic Discussions Industry Lunches Social Events Related External Peo",
+      "recommendation_reason": "funding evidence: financial support; 5 days; in-person; target level: MSc, PhD, early-career researcher",
+      "risk_points": "programme has already started",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "funded",
+      "failed_hard_conditions": [
+        "programme has already started"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 40.0,
+      "score_explanation": [
+        "funding evidence: financial support",
+        "5 days",
+        "in-person",
+        "target level: MSc, PhD, early-career researcher",
+        "topics: AI, artificial intelligence, machine learning, deep learning",
+        "near-match only: programme has already started"
+      ],
+      "first_seen": "2026-11-06",
+      "deadline_evidence": "",
+      "duration_evidence": "August 3–7, 2026",
+      "fee_evidence": "no registration fee",
+      "mode_evidence": "residential Lecture) 12:00–1:00 pm ET Lunch 1:00–3:30 pm ET T",
+      "extraction_confidence": 0.75,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "primary_topics": [
+        "AI",
+        "artificial intelligence",
+        "machine learning",
+        "deep learning",
+        "computer vision",
+        "physics",
+        "astrophysics",
+        "astronomy",
+        "optimization",
+        "mechanics",
+        "law"
+      ],
+      "secondary_topics": [],
+      "topic_evidence": {
+        "AI": "AIFI) is enabling physics discoveries and advancing foundational AI through the development of novel AI approaches that incorporate first principles, best practices, a",
+        "artificial intelligence": "al Leads Costs Sponsors FAQ Past Schools About The Institute for Artificial Intelligence and Fundamental Interactions (IAIFI) is enabling physics discoveries and advancing foundational AI",
+        "machine learning": "niversity of Cambridge) Would Kepler have discovered his laws if machine learning had been around in 1609? Or would he have settled for the accuracy of a black box regression model,",
+        "deep learning": "I will cover symbolic regression as an interpretability tool for deep learning. The afternoon tutorial will provide hands-on practice with the full pipeline. Resources: PySR docs",
+        "computer vision": "Yan Zhu , Assistant Professor, Carnegie Mellon University Topic: Computer Vision Lecturer: Berthy Feng , IAIFI/Tayebati Fellow, Incoming NYU Assistant Professor starting September",
+        "physics": "al Intelligence and Fundamental Interactions (IAIFI) is enabling physics discoveries and advancing foundational AI through the development of novel AI approaches that incor",
+        "astrophysics": "nd physics assumptions to solve this highly ill-posed problem in astrophysics. Resources: It is recommended to set up a Google account if you don’t already have one, for the pur",
+        "astronomy": "regions that matter. Examples are drawn from gravitational-wave astronomy. We discuss the FALCON framework for distributed dynamic SBI, which enables simultaneous inference",
+        "optimization": "motion processing with solid mechanics, we apply a physics-based optimization approach to extract physical information that is hidden in plain sight. In Part 2, we learn how to",
+        "mechanics": "os. Combining classical phase-based motion processing with solid mechanics, we apply a physics-based optimization approach to extract physical information that is hidden in p",
+        "law": "ession model, leaving Newton without the inspiration to find the law of gravitation? In this lecture I will introduce symbolic regression: a machine learning task with"
+      },
+      "detail_sections": [],
+      "is_new": true
     },
     {
       "title": "Summer School: Frontiers of Modern Physics",
@@ -24485,6 +24826,85 @@
       "is_new": false
     },
     {
+      "title": "Top 11 Summer School Scholarships in November 2026",
+      "type": "summer school",
+      "organizer": "Scholarships360",
+      "source_layer": "discovery",
+      "region_priority": "global",
+      "location": "global",
+      "mode": "uncertain",
+      "start_date": null,
+      "end_date": null,
+      "duration_days": null,
+      "deadline": "2027-06-30",
+      "deadline_status": "open",
+      "funding_available": true,
+      "funding_type": [
+        "scholarship",
+        "fellowship",
+        "stipend"
+      ],
+      "funding_evidence": "Top 11 Summer School Scholarships in November 2026 - Scholarships360 Get matched with vetted scholarships and enter our $10,000 No-Essay Scholarship Please select whichever best describes you for the 2026 - 2027 academic year.",
+      "topic_keywords": [
+        "ecology",
+        "sociology"
+      ],
+      "eligibility": "requirements, interest rates, fees, and partner offers may change after publication",
+      "target_level": "MSc",
+      "fee": "free of charge",
+      "fee_eur": 0.0,
+      "application_link": "https://scholarships360.org/scholarships/summer-school-scholarships/",
+      "source_url": "https://scholarships360.org/scholarships/summer-school-scholarships/",
+      "summary": "Top 11 Summer School Scholarships in November 2026 - Scholarships360 Get matched with vetted scholarships and enter our $10,000 No-Essay Scholarship Please select whichever best describes you for the 2026 - 2027 academic year. Apply as student Sign up as parent/guardian Sign up a",
+      "recommendation_reason": "funding evidence: scholarship, fellowship, stipend; deadline appears open; target level: MSc; topics: ecology, sociology",
+      "risk_points": "duration is uncertain; in-person status is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "funded",
+      "failed_hard_conditions": [
+        "duration is uncertain",
+        "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 32.0,
+      "score_explanation": [
+        "funding evidence: scholarship, fellowship, stipend",
+        "deadline appears open",
+        "target level: MSc",
+        "topics: ecology, sociology",
+        "near-match only: duration is uncertain; in-person status is uncertain"
+      ],
+      "first_seen": "2026-11-06",
+      "deadline_evidence": "Deadline Jun 30, 2027 (other dates listed: 2026-11-30, 2026-12-31)",
+      "duration_evidence": "",
+      "fee_evidence": "free of charge",
+      "mode_evidence": "",
+      "extraction_confidence": 0.5,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "primary_topics": [
+        "ecology",
+        "sociology"
+      ],
+      "secondary_topics": [],
+      "topic_evidence": {
+        "ecology": "science, energy, plant resources in the tropics, barrier island ecology, and oil spill cleanup and control. This scholarship was established by Clara Carter Higgins, a mem",
+        "sociology": "resource. Gabriel graduated from Kenyon College with a degree in sociology. Full Bio Learn about our editorial policies Updated: November 1st, 2026 If you’re looking for summ"
+      },
+      "detail_sections": [],
+      "is_new": true
+    },
+    {
       "title": "Social Science Data Analysis",
       "type": "summer school",
       "organizer": "Essex Summer School",
@@ -24883,6 +25303,133 @@
       "primary_topics": [],
       "secondary_topics": [],
       "topic_evidence": {},
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
+      "title": "Pathways to Engineering",
+      "type": "summer institute",
+      "organizer": "Discovery: Funding and Research Opportunities in Engineering",
+      "source_layer": "discovery",
+      "region_priority": "global",
+      "location": "global",
+      "mode": "hybrid",
+      "start_date": null,
+      "end_date": null,
+      "duration_days": null,
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "funding_available": true,
+      "funding_type": [
+        "scholarship",
+        "fellowship"
+      ],
+      "funding_evidence": "read more NASA Kennedy Space Center (Kennedy Space Center, FL) NASA Internships and Fellowships NASA offers a wide variety of paid summer, spring, and fall semester internships, as well as some graduate fellowships and undergraduate scholarships .",
+      "topic_keywords": [
+        "engineering",
+        "natural hazards",
+        "sustainability",
+        "AI",
+        "artificial intelligence",
+        "robotics",
+        "physics",
+        "neutron science",
+        "mathematics",
+        "optimization",
+        "chemistry",
+        "materials science",
+        "mechanics",
+        "public health",
+        "design",
+        "agriculture",
+        "food science",
+        "philosophy"
+      ],
+      "eligibility": "Postdocs Faculty & Admin Sign up! Donate Programs Search Resource Library Webinars Partners Directory About us Pathways to Engineering Browse our database of paid summ",
+      "target_level": "MSc, PhD, postdoc, early-career researcher",
+      "fee": "$60,000",
+      "fee_eur": 57000.0,
+      "application_link": "https://www.pathwaystoscience.org/engineering.aspx?sort=region&subsort=Southeast",
+      "source_url": "https://www.pathwaystoscience.org/engineering.aspx?sort=region&subsort=Southeast",
+      "summary": "Funding and Research Opportunities in Engineering Skip to Main Content Menu Home K-12 Undergrads Grad Students Postdocs Faculty & Admin Sign up! Donate Programs Search Resource Library Webinars Partners Directory About us Pathways to Engineering Browse our database of paid summer",
+      "recommendation_reason": "funding evidence: scholarship, fellowship; hybrid; target level: MSc, PhD, postdoc, early-career researcher; topics: engineering, natural hazards, sustainability, AI",
+      "risk_points": "application deadline is uncertain; duration is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "funded",
+      "failed_hard_conditions": [
+        "application deadline is uncertain",
+        "duration is uncertain"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 31.0,
+      "score_explanation": [
+        "funding evidence: scholarship, fellowship",
+        "hybrid",
+        "target level: MSc, PhD, postdoc, early-career researcher",
+        "topics: engineering, natural hazards, sustainability, AI",
+        "near-match only: application deadline is uncertain; duration is uncertain"
+      ],
+      "first_seen": "2026-11-06",
+      "deadline_evidence": "",
+      "duration_evidence": "",
+      "fee_evidence": "$60,000",
+      "mode_evidence": "in-person infectious diseases-targeted summer research expe",
+      "extraction_confidence": 0.5,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "primary_topics": [
+        "engineering"
+      ],
+      "secondary_topics": [
+        "natural hazards",
+        "sustainability",
+        "AI",
+        "artificial intelligence",
+        "robotics",
+        "physics",
+        "neutron science",
+        "mathematics",
+        "optimization",
+        "chemistry",
+        "materials science",
+        "mechanics",
+        "public health",
+        "design",
+        "agriculture",
+        "food science",
+        "philosophy"
+      ],
+      "topic_evidence": {
+        "natural hazards": "a, on ... read more Florida International University (Miami, FL) Natural Hazards Engineering Research Infrastructure (NHERI) Summer Institute The NHERI Summer Institute is a free e",
+        "sustainability": "e for Future Farmers The Science and Technologies for Phosphorus Sustainability (STEPS) Center will support 15 students for ten weeks during the summer through a multi-ins ... rea",
+        "AI": "duate ... read more Duke University (Durham, NC) NSF Accelerated AI Algorithms for Data-Driven Discovery Institute Postbaccalaureate Fellowship Program The Accelerated",
+        "artificial intelligence": "am (REU) The Department of Biomedical Engineering and Center for Artificial Intelligence Research at Wake Forest University School of Medicine invite current ... read more Post-Baccalaurea",
+        "robotics": "a facu ... read more Summer Undergraduate Research Experience in Robotics The overall goal of SURE Robotics is to expose undergraduate students to robotics research, and as",
+        "physics": "Space Weather Camp (ISWC) is an opportunity to learn about space physics in the context of meeting a very practical need — to unders ... read more Alabama State University",
+        "neutron science": "read more Hendrix College (Conway, AR) IRES: Development of the Neutron Optics Parity and Time Violation Experiment in Japan A summer internship at Nagoya University, Japa",
+        "mathematics": "ung Scholars Program (YSP) is a six-week residential science and mathematics summer program for Florida high school students with significant po ... read more Museum of Discove",
+        "optimization": "during the summer through a multi-ins ... read more POETS (Power Optimization of Electro-Thermo Systems) REU The Center for Power Optimization of Electro-Thermal Systems (POETS)",
+        "chemistry": "f materials physics; wor ... read more The US/France REU Site in Chemistry The International Research Experiences for Undergraduates (REU) program is a 12 week program based",
+        "materials science": "for Undergraduates - Computational Methods with Applications in Materials Science The Center for Computational Sciences at Mississippi State University will be hosting a summer REU",
+        "engineering": "Funding and Research Opportunities in Engineering Skip to Main Content Programs Search Resource Library Webinars Partners Directory About us Pathways",
+        "mechanics": "th Carolina Central University (Durham, NC) Cellular & Molecular Mechanics and Bio-Nanotechnology IGERT The goal of this Integrative Graduate Education and Research Training",
+        "public health": "Center for Disease Control (CDC) (Atlanta, GA) CDC Undergraduate Public Health Scholars (CUPS) Program and the Dr. James A. Ferguson Emerging Infectious Diseases RISE Fellowship",
+        "design": "tte, NC) Summer REU in Computing; Infrastructure and Interaction Design for CyberPhysical Systems Our Research Experiences for Undergraduates (REU) program engages undergr",
+        "agriculture": "ty of Florida (Gainesville, FL) Internet of Things for Precision Agriculture (IoT4Ag) Pathway to PhD Program Are you interested in pursuing a Doctor of Philosophy (PhD) in scie",
+        "food science": "-ins ... read more North Carolina State University (Raleigh, NC) Food Science Summer Scholars Program NC State University's Summer Scholars program recruits top students from ac",
+        "philosophy": "athway to PhD Program Are you interested in pursuing a Doctor of Philosophy (PhD) in science and engineering? If yes, the IoT4Ag ERC Pathway to PhD Program (PPP) may be for .."
+      },
       "detail_sections": [],
       "is_new": true
     },
@@ -26091,97 +26638,6 @@
       "is_new": false
     },
     {
-      "title": "Early Career Researchers Spring School 2026 in South Africa: Fully Funded Climate, Peace and Security Training at the University of Fort...",
-      "type": "spring school",
-      "organizer": "Global South Opportunities",
-      "source_layer": "discovery",
-      "region_priority": "global",
-      "location": "University of Fort Hare, East London Campus, South Africa",
-      "mode": "in-person",
-      "start_date": "2026-09-02",
-      "end_date": "2026-09-04",
-      "duration_days": 3,
-      "deadline": "2026-08-14",
-      "deadline_status": "closed",
-      "funding_available": true,
-      "funding_type": [
-        "scholarship",
-        "financial support"
-      ],
-      "funding_evidence": "Early Career Researchers Spring School 2026 in South Africa: Fully Funded Climate, Peace and Security Training at the University of Fort Hare - Global South Opportunities Thursday, November 5 2026 Home About Us Facebook X LinkedIn YouTube Instagram Telegram TikTok WhatsApp Log In Random Article Sidebar Search for Menu Search for Scholarships Jobs Internships Funding fellowships Opinion Articles Global South Indaba Home / Scholarships / Early Career Researchers Spring School 2026 in South Africa: Fully Funded Climate, Peace and Security Training at the University of Fort Hare Scholarships Trending Early Career Researchers Spring School 2026 in South Africa: Fully Funded Climate, Peace and Security Training at the University of Fort Hare Early Career Researchers Spring School 2026 GSO Plug 2 Send an email August 4, 2026 4 minutes read Facebook X LinkedIn WhatsApp Telegram Share via Email Print Early career researchers in South Africa have an exciting opportunity to participate in a fully funded three-day Spring School on Climate, Peace and Security , taking place from 2–4 September 2026 at the University of Fort Hare’s East London Campus .",
-      "topic_keywords": [
-        "climate",
-        "climate change",
-        "environmental science",
-        "geography",
-        "political science",
-        "sociology"
-      ],
-      "eligibility": "requirements and understand the programme expectations",
-      "target_level": "MSc, PhD, postdoc, early-career researcher",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.globalsouthopportunities.com/2026/08/04/spring/",
-      "source_url": "https://www.globalsouthopportunities.com/2026/08/04/spring/",
-      "summary": "Early Career Researchers Spring School 2026 in South Africa: Fully Funded Climate, Peace and Security Training at the University of Fort Hare - Global South Opportunities Thursday, November 5 2026 Home About Us Facebook X LinkedIn YouTube Instagram Telegram TikTok WhatsApp Log In",
-      "recommendation_reason": "funding evidence: scholarship, financial support; in-person; target level: MSc, PhD, postdoc, early-career researcher; topics: climate, climate change, environmental science, geography",
-      "risk_points": "programme has already started; duration is below 4 days",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "funded",
-      "failed_hard_conditions": [
-        "programme has already started",
-        "duration is below 4 days"
-      ],
-      "failed_recommendation_conditions": [],
-      "score": 28.5,
-      "score_explanation": [
-        "funding evidence: scholarship, financial support",
-        "in-person",
-        "target level: MSc, PhD, postdoc, early-career researcher",
-        "topics: climate, climate change, environmental science, geography",
-        "near-match only: programme has already started; duration is below 4 days"
-      ],
-      "first_seen": "2026-11-05",
-      "deadline_evidence": "Applications close on 14 August 2026",
-      "duration_evidence": "2–4 September 2026",
-      "fee_evidence": "",
-      "mode_evidence": "Venue and Dates The Spring School will take place at: U",
-      "extraction_confidence": 1.0,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "primary_topics": [
-        "climate"
-      ],
-      "secondary_topics": [
-        "climate change",
-        "environmental science",
-        "geography",
-        "political science",
-        "sociology"
-      ],
-      "topic_evidence": {
-        "climate": "eer Researchers Spring School 2026 in South Africa: Fully Funded Climate, Peace and Security Training at the University of Fort Hare - Global South Opportunities Facebook X",
-        "climate change": "oking to deepen their understanding of the growing links between climate change, peace, security, migration, and sustainable development. Applications close on 14 August 2026 . Ab",
-        "environmental science": "s should be working in one or more of the following disciplines: Environmental Science Peace and Conflict Studies Political Science Migration Studies Sociology Development Studies Climat",
-        "geography": "ation Studies Sociology Development Studies Climate Change Human Geography International Development Related interdisciplinary fields Women and applicants from underrepresent",
-        "political science": "ng disciplines: Environmental Science Peace and Conflict Studies Political Science Migration Studies Sociology Development Studies Climate Change Human Geography International Develo",
-        "sociology": "e Peace and Conflict Studies Political Science Migration Studies Sociology Development Studies Climate Change Human Geography International Development Related interdisciplin"
-      },
-      "detail_sections": [],
-      "is_new": true
-    },
-    {
       "title": "MiNaPOLL Winter School 2027 on New Frontiers in Micro- and Nanoplastic Pollution",
       "type": "winter school",
       "organizer": "Stazione Zoologica",
@@ -26324,6 +26780,74 @@
       "topic_evidence": {},
       "detail_sections": [],
       "is_new": false
+    },
+    {
+      "title": "2026 Trainee Summer School",
+      "type": "summer school",
+      "organizer": "Canadian MSK Rehab Research Network",
+      "source_layer": "discovery",
+      "region_priority": "global",
+      "location": "global",
+      "mode": "online",
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-10",
+      "duration_days": 5,
+      "deadline": "2026-04-07",
+      "deadline_status": "closed",
+      "funding_available": true,
+      "funding_type": [
+        "travel grant",
+        "financial support"
+      ],
+      "funding_evidence": "Supervisors are expected to provide additional funding to help cover travel costs for their students.",
+      "topic_keywords": [],
+      "eligibility": "postdoctoral fellows registered and attending a Canadian post-secondary institution",
+      "target_level": "PhD, postdoc, early-career researcher",
+      "fee": "no registration fee",
+      "fee_eur": 0.0,
+      "application_link": "https://mskrehabnet.com/2026-trainee-summer-school/",
+      "source_url": "https://mskrehabnet.com/2026-trainee-summer-school/",
+      "summary": "2026 Trainee Summer School – Canadian MSK Rehab Research Network Skip to the content Canadian MSK Rehab Research Network Canadian MSK Rehab Research Network Menu Home About Us What We Do Working Groups Membership GaitNET Land Acknowledgement News Research Support Team Development",
+      "recommendation_reason": "funding evidence: travel grant, financial support; 5 days; target level: PhD, postdoc, early-career researcher; near-match only: programme has already started; online-only",
+      "risk_points": "programme has already started; online-only",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "funded",
+      "failed_hard_conditions": [
+        "programme has already started",
+        "online-only"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 27.0,
+      "score_explanation": [
+        "funding evidence: travel grant, financial support",
+        "5 days",
+        "target level: PhD, postdoc, early-career researcher",
+        "near-match only: programme has already started; online-only"
+      ],
+      "first_seen": "2026-11-06",
+      "deadline_evidence": "Application deadline: April 7, 2026",
+      "duration_evidence": "July 6-10, 2026",
+      "fee_evidence": "no registration fee",
+      "mode_evidence": "Webinars From Experience to Evidence: Partnering with Pat",
+      "extraction_confidence": 1.0,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "primary_topics": [],
+      "secondary_topics": [],
+      "topic_evidence": {},
+      "detail_sections": [],
+      "is_new": true
     },
     {
       "title": "Mobility Funding Opportunities for Master’s Students at TU Graz",
@@ -28700,7 +29224,7 @@
         "bursary",
         "tuition waiver"
       ],
-      "funding_evidence": "Scholarships & Bursaries | Digital Humanities Summer Institute Digital Humanities Summer Institute About Archive Course Offerings Registration & Fees Scholarships & Bursaries Sponsors & Partners Timetable Aligned Events Participant Guide Accommodations People Our Team Contact Rechercher : Rechercher x Scholarships & Bursaries Ray Siemens DHSI Bursaries In honour of DHSI Founder and Director Emeritus Ray Siemens we offer 4 bursaries, reserved for students.",
+      "funding_evidence": "Scholarships & Bursaries | Digital Humanities Summer Institute Digital Humanities Summer Institute Institut d'été sur les humanités numériques About Archive Course Offerings Registration & Fees Scholarships & Bursaries Sponsors & Partners Timetable Aligned Events Participant Guide Accommodations People Our Team Contact Rechercher : Rechercher x Scholarships & Bursaries Ray Siemens DHSI Bursaries In honour of DHSI Founder and Director Emeritus Ray Siemens we offer 4 bursaries, reserved for students.",
       "topic_keywords": [
         "digital humanities"
       ],
@@ -28710,7 +29234,7 @@
       "fee_eur": 126.0,
       "application_link": "https://dhsi.org/scholarships/",
       "source_url": "https://dhsi.org/scholarships/",
-      "summary": "Scholarships & Bursaries | Digital Humanities Summer Institute Digital Humanities Summer Institute About Archive Course Offerings Registration & Fees Scholarships & Bursaries Sponsors & Partners Timetable Aligned Events Participant Guide Accommodations People Our Team Contact Rec",
+      "summary": "Scholarships & Bursaries | Digital Humanities Summer Institute Digital Humanities Summer Institute Institut d'été sur les humanités numériques About Archive Course Offerings Registration & Fees Scholarships & Bursaries Sponsors & Partners Timetable Aligned Events Participant Guid",
       "recommendation_reason": "funding evidence: scholarship, bursary, tuition waiver; target level: early-career researcher; topics: digital humanities; near-match only: applications are not open yet; duration is uncertain; in-person status is uncertain",
       "risk_points": "applications are not open yet; duration is uncertain; in-person status is uncertain",
       "sessions": [],
@@ -29215,7 +29739,7 @@
       "deadline_evidence": "",
       "duration_evidence": "",
       "fee_evidence": "Effective Strategies for a Low-Carbon World, Including Nuclear Power and Fusion | (smr 4397) ICTP Eu",
-      "mode_evidence": "Hybrid workshop 02 Nov 2026 06 Nov 2026 Joint ICTP-IAEA",
+      "mode_evidence": "Hybrid Discover all events Opportunities Overview ICTP:",
       "extraction_confidence": 0.25,
       "title_zh": "",
       "organizer_zh": "",
@@ -29256,11 +29780,11 @@
         "climate change": "7 27 Aug 2027 Application Closed school smr4363 Summer School in Climate Change and Infectious Diseases Modelling | (smr 4363) Medellin - Colombia Earth System Physics smr4363 Aug",
         "geophysics": "kshop on Open Hardware and Open Science in Engineering and Hydro-Geophysics: Technical Standards for Global Citizen Science | (smr 4394) ICTP Giambiagi Lecture Hall (AGH) Scie",
         "AI": "p smr4202 *** CANCELLED *** Workshop on Scientific Computing and AI | (smr 4202) Kuwait City - Kuwait Science, Technology and Innovation smr4202 November 2026 November",
-        "artificial intelligence": "ICTP-IAEA Workshop on the Clinical Application of Imaging-Based Artificial Intelligence Systems for Medical Physicists | (smr 4246) ICTP Kastler Lecture Hall (AGH) smr4246 16 Nov 2026 20",
+        "artificial intelligence": "ICTP-IAEA Workshop on the Clinical Application of Imaging-Based Artificial Intelligence Systems for Medical Physicists | (smr 4246) ICTP Kastler Lecture Hall (AGH) smr4246 cmsp 16 Nov 202",
         "machine learning": "scientific activity ICTP Ghana Mastering Statistical Models and Machine Learning: A Hands-On Workshop in Machine Learning with R/Python V Ghana November 2026 November 17 14:00 16:0",
         "data science": "0 Nov 2026 Application Closed school smr4320 CODATA-RDA Research Data Science Summer School and Advanced workshops | (smr 4320) ICTP Denardo Lecture Hall (AGH) smr4320 09 Nov 20",
-        "data analysis": "7 Application Closed school smr4373 Summer School on Topological Data Analysis and Applications | (smr 4373) Lusaka - Zambia Mathematics smr4373 hecap 19 Jul 2027 30 Jul 2027 App",
-        "high performance computing": "May 2027 Application Closed workshop smr4352 African Workshop on High Performance Computing for Sustainable Development | (smr 4352) Benin City, Edo State, Nigeria - Nigeria smr4352 May 2027",
+        "data analysis": "7 Application Closed school smr4373 Summer School on Topological Data Analysis and Applications | (smr 4373) Lusaka - Zambia Mathematics smr4373 July 2027 July 20 math 20 Jul 202",
+        "high performance computing": "May 2027 Application Closed workshop smr4352 African Workshop on High Performance Computing for Sustainable Development | (smr 4352) Benin City, Edo State, Nigeria - Nigeria smr4352 cmsp 10 M",
         "physics": "workshop Sections Home High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Science",
         "cosmology": "scientific activity seminars workshop Sections Home High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics",
         "condensed matter": "p Sections Home High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Techno",
@@ -29269,13 +29793,13 @@
         "quantum information": "n Closed scientific activity smr4204 Open Quantum Systems - from Quantum Information to Condensed Matter | (smr 4204) Singapore - Singapore Condensed Matter and Statistical Physics smr",
         "mathematics": "d Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Technology and Innovation Other Show only",
         "statistics": "imensions: Recent Progress in Machine Learning, High-Dimensional Statistics and Inference | (smr 4360) ICTP Budinich Lecture Hall (LB) Quantitative Life Sciences smr4360 hecap",
-        "probability": "smr4186 07:00 21:00 07 Dec 2026 Hosted Activity Workshop of the Probability and Stochastic Analysis Trimester Programme | (smr H737) Physical Organizers December 2026 December",
+        "probability": "smr4186 07:00 21:00 07 Dec 2026 Hosted Activity Workshop of the Probability and Stochastic Analysis Trimester Programme | (smr H737) Physical Organizers hecap 07 Dec 2026 12 D",
         "chemistry": "EA–ICTP Advanced School on Integrated Design, Materials and Fuel Chemistry of Molten Salt Reactors | (smr 4344) ICTP Giambiagi Lecture Hall (AGH) smr4344 hecap 05 Apr 2027 09",
         "materials science": "smr4335 23rd International Workshop on Computational Physics and Materials Science: Total Energy and Force Methods | (smr 4335) ICTP Budinich Lecture Hall (LB) Condensed Matter and S",
         "engineering": "rtificial Intelligence and Machine Learning in Advancing Nuclear Engineering and Technology: from Theory to Practice | (smr 4364) ICTP Giambiagi Lecture Hall (AGH) Science, Tec",
         "design": "Joint ICTP-MSA-COMSTECH-SESAME School on AI-Driven Biomaterials Design: from Characterization to Additive Manufacturing - Bringing Lab to Market | (smr 4343) Allan - Jord",
-        "neuroscience": "r4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 esp 12 Jul 2027 23 Jul",
-        "theoretical neuroscience": "workshop smr4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 esp 12 Jul 2027 23 Jul"
+        "neuroscience": "r4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 July 2027 July 14 esp",
+        "theoretical neuroscience": "workshop smr4404 Junior Scientists Workshop: Recent advances in Theoretical Neuroscience | (smr 4404) ICTP Euler Lecture Hall (LB) Quantitative Life Sciences smr4404 July 2027 July 14 esp"
       },
       "detail_sections": [],
       "is_new": false
@@ -29440,7 +29964,7 @@
         "AI": "for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language Technologies, Responsible AI,",
         "artificial intelligence": "tracks covering today's most impactful areas of data science and artificial intelligence. Participants will explore topics ranging from Python for Data Science and Machine Learning Fundame",
         "machine learning": "nts will explore topics ranging from Python for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language",
-        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 4373 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
+        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 4389 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
         "language technology": "earch Labs AirQo - IoT & AI for Environment Sunbird AI - African Language Technology Busitema AI - AI for Agriculture Makerere AI Labs DSAIL - IoT & AI for Environment - AirQo Sunbird",
         "high performance computing": "orking - - 11:00 - 13:00 Parallel Julia programming language and High Performance Computing Track A Dr. Adeleke Bankole, University of Cambridge, 11:00 - 13:00 Parallel Multimodal AI & LLMs &",
         "design": "h & Networking - - 14:30 - 16:00 Parallel AirQo DevCon: Hardware Design and Development for Air Quality Sensing Track A AirQo 14:30 - 16:00 Parallel NLP & African Language",
@@ -29812,6 +30336,97 @@
         "engineering": "to them. We then continue with a brief introduction to software engineering from the perspective of the individual contributor, both as a formal process and how it actually af",
         "law": "tion of transistors on chips continues like predicted by Moore's law, computer hardware starts to face scaling issues, so-called performance 'walls'. Probably, the best",
         "design": "simulation techniques and analysis techniques. 9:45 AM Software Design L1: Parallelism in a Modern HEP Data Processing Framework - Andrei Gheata ( CERN ) Stephan Gisbert"
+      },
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
+      "title": "Registration for the Winter Institute is coming soon!",
+      "type": "winter institute",
+      "organizer": "Center for Indigenous Health",
+      "source_layer": "discovery",
+      "region_priority": "global",
+      "location": "global",
+      "mode": "hybrid",
+      "start_date": "2027-01-11",
+      "end_date": "2027-01-15",
+      "duration_days": 5,
+      "deadline": null,
+      "deadline_status": "not_open",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "AI",
+        "epidemiology",
+        "public health",
+        "biostatistics",
+        "design",
+        "sociology",
+        "history"
+      ],
+      "eligibility": "Masters Work Experience Requirement None Minimum of 2 years full-time post-baccalaureate work in a health related field Minimum of 3 years full-time professional expe",
+      "target_level": "MSc",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://cih.jhu.edu/education-training/graduate-programming/",
+      "source_url": "https://cih.jhu.edu/education-training/graduate-programming/",
+      "summary": "Graduate Programming - Center for Indigenous Health Skip to the content Search Jobs Facebook Bluesky Instagram Youtube TikTok LinkedIn DONATE About Us Mission, Vision, and History Our Team Locations Governance News Careers Partners Daisy Chain Festival Events 35th Anniversary Cel",
+      "recommendation_reason": "5 days; hybrid; target level: MSc; topics: AI, epidemiology, public health, biostatistics",
+      "risk_points": "applications are not open yet; funding is not explicit and fee is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "applications are not open yet"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "score": 12.0,
+      "score_explanation": [
+        "5 days",
+        "hybrid",
+        "target level: MSc",
+        "topics: AI, epidemiology, public health, biostatistics",
+        "near-match only: applications are not open yet; funding is not explicit and fee is uncertain"
+      ],
+      "first_seen": "2026-11-02",
+      "deadline_evidence": "",
+      "duration_evidence": "January 11-15, 2027",
+      "fee_evidence": "",
+      "mode_evidence": "in person Part-time, online, or onsite Degree Requirement F",
+      "extraction_confidence": 0.5,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "primary_topics": [
+        "AI",
+        "epidemiology",
+        "public health",
+        "biostatistics",
+        "design",
+        "sociology",
+        "history"
+      ],
+      "secondary_topics": [],
+      "topic_evidence": {
+        "AI": "s for treatment and prevention interventions in American Indian (AI) communities. Examines differences between western and traditional AI approaches to mental health.",
+        "epidemiology": "nd through the lens of various public health disciplines such as epidemiology, mental health, environmental health, policy, and sociology. Emphasizes serving Indigenous populati",
+        "public health": "el training programs designed to support Indigenous scholars and public health professionals in achieving their educational and career goals. Registration for the Winter Institut",
+        "biostatistics": "o might not have had previous formal training in epidemiology or biostatistics, but might be working to determine or to address tribal priorities for health care, or working/inte",
+        "design": "applied practice, and research, students will gain the skills to design culturally grounded interventions, generate actionable evidence, and lead initiatives that strength",
+        "sociology": "s epidemiology, mental health, environmental health, policy, and sociology. Emphasizes serving Indigenous populations and empowering community-driven, culturally sensitive pu",
+        "history": "27, (Monday-Friday), 11am-3:30pm ET Credits: 2 Focuses on 1) the history of mental health service delivery 2) current status of mental health problems, and 3) strategies fo"
       },
       "detail_sections": [],
       "is_new": false
@@ -31018,73 +31633,6 @@
       "is_new": false
     },
     {
-      "title": "Joint Meeting of ELLIS Units Berlin and Warsaw",
-      "type": "summer school",
-      "organizer": "ELLIS",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Berlin",
-      "mode": "in-person",
-      "start_date": "2026-11-04",
-      "end_date": "2026-11-05",
-      "duration_days": 2,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://ellis.eu/events/joint-meeting-of-ellis-units-berlin-and-warsaw",
-      "source_url": "https://ellis.eu/events/joint-meeting-of-ellis-units-berlin-and-warsaw",
-      "summary": "04/11/26 - 05/11/26 • Berlin Joint Meeting of ELLIS Units Berlin and Warsaw Members of the ELLIS Units Berlin and Warsaw will meet on 4–5 November 2026 at the Polish Embassy in Berlin to exchange ideas and explore opportunities for collaboration between the two units. Read More",
-      "recommendation_reason": "priority region; trusted source layer 1; in-person; near-match only: programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "risk_points": "programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "programme has already started",
-        "duration is below 4 days"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 9.0,
-      "score_explanation": [
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "near-match only: programme has already started; duration is below 4 days; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-10-14",
-      "deadline_evidence": "",
-      "duration_evidence": "ELLIS events listing: 2026-11-04 to 2026-11-05",
-      "fee_evidence": "",
-      "mode_evidence": "ELLIS listing location: Berlin",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "primary_topics": [],
-      "secondary_topics": [],
-      "topic_evidence": {},
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
       "title": "Graduate Research School Scholarships (UQGRSS) – includes Research Training Program (RTP)",
       "type": "research school",
       "organizer": "Scholarships",
@@ -31470,7 +32018,7 @@
       "secondary_topics": [],
       "topic_evidence": {},
       "detail_sections": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Mathematical Models of Infectious Diseases",
@@ -32784,7 +33332,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/resources/templates/summer-school-application-form/",
       "source_url": "https://www.isprs.org/resources/templates/summer-school-application-form/",
-      "summary": "Summer School Application Form November 05, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissi",
+      "summary": "Summer School Application Form November 06, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissi",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, AI, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -32865,7 +33413,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/society/awards/torlegard.aspx",
       "source_url": "https://www.isprs.org/society/awards/torlegard.aspx",
-      "summary": "ISPRS WEC Kennert Torlegård Travel Grant November 05, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Counci",
+      "summary": "ISPRS WEC Kennert Torlegård Travel Grant November 06, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Counci",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -34604,9 +35152,9 @@
       "is_new": false
     },
     {
-      "title": "Registration and Trans-YTF Grants",
-      "type": "advanced course",
-      "organizer": "FEBS",
+      "title": "Summer School",
+      "type": "summer school",
+      "organizer": "University Cashier",
       "source_layer": "discovery",
       "region_priority": "global",
       "location": "global",
@@ -34614,23 +35162,24 @@
       "start_date": null,
       "end_date": null,
       "duration_days": null,
-      "deadline": null,
-      "deadline_status": "uncertain",
+      "deadline": "2026-05-15",
+      "deadline_status": "closed",
       "funding_available": true,
       "funding_type": [
-        "bursary"
+        "tuition waiver",
+        "fee waiver"
       ],
-      "funding_evidence": "Please note that the total number of meeting awards the applicant has previously received from FEBS (FEBS Congress bursary, FEBS YSF grant, and FEBS YTF award for previous FEBS AC) may also be taken into consideration in the nomination approval.",
+      "funding_evidence": "Tuition/Fee Waiver Deadlines Summer Session I 2026: Friday, May 15, 2026 Summer Session II 2026: Wednesday, June 24, 2026 Employee Tuition Waivers Employee tuition waivers are only available for UNC-Chapel Hill and UNC Health employees enrolled at UNC-Chapel Hill.",
       "topic_keywords": [],
-      "eligibility": "criteria The eligibility criteria for FEBS Registration Grants and IUBMB Trans-YTF Grants are listed below for reference, but please check the website of the course you are interested in",
-      "target_level": "PhD, postdoc, early-career researcher",
-      "fee": "and will not exceed €800 per person",
-      "fee_eur": 800.0,
-      "application_link": "https://www.febs.org/events/advanced-courses/febs-youth-travel-fund-grants/",
-      "source_url": "https://www.febs.org/events/advanced-courses/febs-youth-travel-fund-grants/",
-      "summary": "Registration and Trans-YTF Grants - FEBS FEBS Research Academy Milan Declaration Contact Search Milan Declaration Home Journals FEBS Press journal overviews FEBS Press topic collections FEBS Press awards Events Advanced Courses For Advanced Courses organizers Registration and Tra",
-      "recommendation_reason": "target level: PhD, postdoc, early-career researcher; near-match only: application deadline is uncertain; duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
-      "risk_points": "application deadline is uncertain; duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://cashier.unc.edu/tuition-fees/summer-school/",
+      "source_url": "https://cashier.unc.edu/tuition-fees/summer-school/",
+      "summary": "Summer School - University Cashier skip to the end of the global utility bar The University of North Carolina at Chapel Hill Accessibility Events Libraries Maps Departments ConnectCarolina UNC Search Skip to main content University Cashier Finance and Operations Submit Search Tog",
+      "recommendation_reason": "near-match only: application deadline has passed; duration is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
+      "risk_points": "application deadline has passed; duration is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
       "identity_key": "",
       "discovery_verified": false,
@@ -34638,26 +35187,25 @@
       "evidence_sources": {},
       "source_conflicts": [],
       "funding_scope": "",
-      "financial_access_status": "self-funded",
+      "financial_access_status": "unresolved",
       "failed_hard_conditions": [
-        "application deadline is uncertain",
+        "application deadline has passed",
         "duration is uncertain",
         "in-person status is uncertain"
       ],
       "failed_recommendation_conditions": [
-        "fee exceeds EUR 400 without explicit funding"
+        "funding is not explicit and fee is uncertain"
       ],
       "score": 0.0,
       "score_explanation": [
-        "target level: PhD, postdoc, early-career researcher",
-        "near-match only: application deadline is uncertain; duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
+        "near-match only: application deadline has passed; duration is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain"
       ],
-      "first_seen": "2026-11-05",
-      "deadline_evidence": "",
+      "first_seen": "2026-11-06",
+      "deadline_evidence": "Deadlines Summer Session I 2026: Friday, May 15, 2026",
       "duration_evidence": "",
-      "fee_evidence": "and will not exceed €800 per person",
+      "fee_evidence": "",
       "mode_evidence": "",
-      "extraction_confidence": 0.25,
+      "extraction_confidence": 0.5,
       "title_zh": "",
       "organizer_zh": "",
       "location_zh": "",

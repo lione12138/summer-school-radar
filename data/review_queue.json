@@ -1,6 +1,158 @@
 {
-  "generated": "2026-11-05",
+  "generated": "2026-11-06",
   "review_queue": [
+    {
+      "title": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes",
+      "url": "https://indico.ictp.it/event/11444",
+      "organizer": "Indico - Conferences and Events",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-07-12",
+        "end": "2027-07-23",
+        "duration_days": 12
+      },
+      "deadline": "2027-03-05",
+      "deadline_status": "open",
+      "financial_access_status": "low-fee",
+      "fee": "no registration fee",
+      "fee_eur": 0.0,
+      "topics": [
+        "climate",
+        "climate change",
+        "climate extremes"
+      ],
+      "needs_review": [
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "no registration fee",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "climate": "ummer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes | (smr 4370) (12-23 July 2027) Europe/Rome English Administr",
+        "climate change": "-tropics, yet key questions about their dynamics and response to climate change remain open. The school will introduce the fundamentals of atmospheric wave dynamics and explore th",
+        "climate extremes": "es and tropical waves play a central role in shaping weather and climate extremes in the tropics and extra-tropics, yet key questions about their dynamics and response to climate ch"
+      },
+      "evidence": {
+        "deadline": "DEADLINE: 05/03/2027",
+        "duration": "12-23 July 2027",
+        "fee": "no registration fee",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "funding_context_weak"
+        ],
+        "chinese_summary": "第八届气候动力学理论、机制与分层建模暑期学校，主题为全球波与局地极端事件，2027年7月12日至23日举行，无注册费，申请截止日期为2027年3月5日，提供有限资助名额。",
+        "extracted_deadline": "2027-03-05",
+        "extracted_fee": "no registration fee",
+        "extracted_funding": "A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
+        "evidence_fields": {
+          "deadline": "**DEADLINE: 05/03/2027** Organizers Simona Bordoni (University of Trento, Italy), Daniela Domeisen (University of Lausanne, Switzerland), Vera Melinda Galfi (VU Amsterdam, The Netherlands), Valerio Lembo (ISAC, Italy), Jacopo Riboldi (ETH Zurich, Switzerland), Local Organiser: Adrian Mark Tompkins (ICTP) GO TO SCIENTIFIC CALENDAR Facebook Twitter Youtu",
+          "fee": "There is no registration fee.",
+          "funding": "Grants: A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries."
+        }
+      }
+    },
+    {
+      "title": "2027 NMD4C–RARE.Qc Basic Science Research Summer School",
+      "url": "https://neuromuscularnetwork.ca/basic-research-summer-school-2027/",
+      "organizer": "NMD4C",
+      "source_layer": "discovery",
+      "location": "global",
+      "dates": {
+        "start": "2027-05-12",
+        "end": "2027-05-14",
+        "duration_days": 3
+      },
+      "deadline": "2026-12-01",
+      "deadline_status": "open",
+      "financial_access_status": "low-fee",
+      "fee": "no registration fee",
+      "fee_eur": 0.0,
+      "topics": [],
+      "needs_review": [
+        "conditional support needs coverage and eligibility review",
+        "duration is below 4 days"
+      ],
+      "confidence": 1.0,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 1.0,
+      "financial_terms": {
+        "participation_fee": "no registration fee",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "conditional",
+        "support_scope": "",
+        "accommodation": "conditional",
+        "meals": "conditional",
+        "travel_support": "conditional",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "benefit_facts": [
+        {
+          "benefit": "accommodation",
+          "status": "conditional",
+          "evidence": "Meals & Travel Support Accommodation: We will provide accommodation for non-local attendees for three nights (May 11-13th) at UQTR residences.",
+          "source_url": "https://neuromuscularnetwork.ca/basic-research-summer-school-2027/"
+        },
+        {
+          "benefit": "meals",
+          "status": "conditional",
+          "evidence": "Meals & Travel Support Accommodation: We will provide accommodation for non-local attendees for three nights (May 11-13th) at UQTR residences.",
+          "source_url": "https://neuromuscularnetwork.ca/basic-research-summer-school-2027/"
+        },
+        {
+          "benefit": "travel",
+          "status": "conditional",
+          "evidence": "Meals & Travel Support Accommodation: We will provide accommodation for non-local attendees for three nights (May 11-13th) at UQTR residences.",
+          "source_url": "https://neuromuscularnetwork.ca/basic-research-summer-school-2027/"
+        }
+      ],
+      "topic_evidence": {},
+      "evidence": {
+        "deadline": "Application Deadline: December 1, 2026 (other dates listed: 2026-10-06)",
+        "duration": "May 12–14, 2027",
+        "fee": "no registration fee",
+        "funding": "Apply Here Accommodation, Meals & Travel Support Accommodation: We will provide accommodation for non-local attendees for three nights (May 11-13th) at UQTR residences.",
+        "mode": "in-person with colleagues and senior investigators from acr"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "llm_chunk_truncated:6",
+          "llm_request_truncated:max_total_chars_per_llm_request",
+          "location_context_weak"
+        ],
+        "chinese_summary": "2027 NMD4C–RARE.Qc基础科学研究暑期学校，2027年5月12日至14日在UQTR举办，申请于2026年10月6日开放，截止2026年12月1日，提供差旅资助及非本地参会者住宿。",
+        "extracted_deadline": "2026-12-01",
+        "extracted_fee": "",
+        "extracted_funding": "Travel support sufficient to cover travel to and from summer school; accommodation provided for non-local attendees for three nights (May 11-13) at UQTR residences; applicants may indicate interest in university accommodation and travel bursary; placements subject to competitive application process",
+        "evidence_fields": {
+          "deadline": "Travel Support: We will provide financial support (sufficient to cover your travel to and from summer school) Row wavy Shape Decorative svg added to top Deadlines Application Opens: October 6, 2026 Application Deadline: December 1, 2026 Anticipated Notice of Decision: Mid December 2026 Program Dates: May 12 to 14, 2027 Past NMD4C Summer Schools 2026 Summer School (uOttawa) 2025 Summer School (York University) 2024 Summer School (McGill",
+          "fee": "",
+          "funding": "Travel Support: We will provide financial support (sufficient to cover your travel to and from summer school) Row wavy Shape Decorative svg added to top Deadlines Application Opens: October 6, 2026 Application Deadline: December 1, 2026 Anticipated Notice of Decision: Mid December 2026 Program Dates: May 12 to 14, 2027 Past NMD4C Summer Schools 2026 Summer School (uOttawa) 2025 Summer School (York University) 2024 Summer School (McGill | Accommodation and Travel Bursaries : Applicants will need "
+        }
+      }
+    },
     {
       "title": "Deadlines",
       "url": "https://tinbergen.nl/deadlines",
@@ -183,8 +335,8 @@
       }
     },
     {
-      "title": "Scholarships & Travel Grants",
-      "url": "https://www.archaeological.org/grant/waldbaum-scholarship/",
+      "title": "Grants & Awards",
+      "url": "https://www.archaeological.org/programs/professionals/grants-awards/",
       "organizer": "Archaeological Institute of America",
       "source_layer": "discovery",
       "location": "global",
@@ -193,27 +345,16 @@
         "end": null,
         "duration_days": null
       },
-      "deadline": "2027-03-01",
+      "deadline": "2027-06-30",
       "deadline_status": "open",
       "financial_access_status": "funded",
       "fee": "",
       "fee_eur": null,
       "topics": [
-        "remote sensing",
-        "GIS",
-        "ecology",
         "artificial intelligence",
-        "mathematics",
-        "applied mathematics",
-        "public health",
-        "cognitive science",
-        "marine biology",
-        "geography",
-        "anthropology",
+        "architecture",
         "history",
-        "philosophy",
-        "archaeology",
-        "literature"
+        "archaeology"
       ],
       "needs_review": [
         "duration is uncertain"
@@ -229,41 +370,78 @@
         "support_scope": "",
         "accommodation": "unknown",
         "meals": "unknown",
-        "travel_support": "offered",
+        "travel_support": "unknown",
         "cost_status": "unknown",
         "fee_options": []
       },
-      "benefit_facts": [
-        {
-          "benefit": "travel",
-          "status": "covered",
-          "evidence": "Archaeological Field School Scholarships - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Scholarships & Travel Grants Archaeological Field School Scholarships Archaeological Institute of America Deadline: March 1, 2027 Announced: In April Amount: $2,000 per winner Purpose: These scholarships support students participating in archaeological fieldwork for the first time.",
-          "source_url": "https://www.archaeological.org/grant/waldbaum-scholarship/"
-        }
-      ],
+      "benefit_facts": [],
       "topic_evidence": {
-        "remote sensing": "lleley is a junior at Boston University studying Archaeology and Remote Sensing. She will attend the Belize Valley Archeological Reconnaissance Project. Read about Elisha Valleley",
-        "GIS": "dents are trained in a variety of excavation techniques, such as GIS mapping and materials processing. Skye is especially excited to document a set of Etruscan tombs lo",
-        "ecology": "dkey (Purdue University West Lafayette; Zooarchaeology and Field Ecology Program Eagle Lake, CA), Mahmoud Samori (Columbia University, Stabiae Field School), Ann Vassar (Ce",
         "artificial intelligence": "erved, including rights for text and data mining and training of artificial intelligence or similar technologies. | Privacy Policy | Website by Yelling Mule , ongoing development by Castle",
-        "mathematics": "June. At Brown, she studied Biological Anthropology and Applied Mathematics-Biology. She’s especially excited to be working in the Caribbean: her home region. Read about Madel",
-        "applied mathematics": "ool this June. At Brown, she studied Biological Anthropology and Applied Mathematics-Biology. She’s especially excited to be working in the Caribbean: her home region. Read about Madel",
-        "public health": "er is a junior at Boston University, studying Health Science and Public Health, with a minor in Anthropology. She plans to attend the Apollonia Project in Bulgaria (deferred to 2",
-        "cognitive science": "ccalaueate at the University of California, Santa Cruz, studying Cognitive Science and Anthropology. She plans to attend the Roca dels Bous Project in Spain. Read about Lindsay Alaha",
-        "marine biology": "Obolensky Field School Scholarship Audrey Urbach is a third-year marine biology major with a minor in cultural anthropology at Northeastern University. This May, she will be parti",
-        "geography": "a Senior at Texas State University, majoring in Anthropology and Geography. She plans to attend the Aditu Arkeologia Field School in Spain. Read about Veronica Flores-Guillen",
-        "anthropology": "cum laude from Colorado College, earning a Bachelor’s degree in Anthropology and Classics. She is joining the Astypalaia Bioarchaeology field school which studies the human rem",
+        "architecture": ". Kress Grants for Research and Publication in Classical Art and Architecture - On Hiatus Deadline: December 15, 2025 These grants fund publication preparation, or research lead",
         "history": "ct Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Care",
-        "philosophy": "versity of Houston studying Anthropology, Classical Studies, and Philosophy. She is eager to broaden her global perspective through the Antiochia ad Cragum Archaeological Rese",
-        "archaeology": "al Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public Internat",
-        "literature": "is a junior at Davidson College studying Classical Languages and Literature, and this summer he will be attending the Cosa Excavations in Ansedonia, Italy. He is excited to le"
+        "archaeology": "al Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public Internat"
       },
       "evidence": {
-        "deadline": "Deadline: March 1, 2027",
+        "deadline": "Deadline: June 30, 2027 (other dates listed: 2023-11-01, 2025-12-15, 2026-09-15)",
         "duration": "",
         "fee": "",
-        "funding": "Archaeological Field School Scholarships - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Scholarships & Travel Grants Archaeological Field School Scholarships Archaeological Institute of America Deadline: March 1, 2027 Announced: In April Amount: $2,000 per winner Purpose: These scholarships support students participating in archaeological fieldwork for the first time.",
-        "mode": "Field School Scholarships - Archaeological Institute of Americ"
+        "funding": "Fellowships, Grants, Scholarships, and Awards - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Grants & Awards Professionals Annual Meeting Fieldwork Grants & Awards AIA Fellowship Guidelines Application: AIA Fellowships Nomination Form: Pomerance Award Awards Ceremony Sitting Down with our Award Winners Follow-Ups for Fellowship, Grant, & Scholarship Winners Research Grant Final Report Form AIA Fellowships Report Form AIA Awards Citation Form Non-AIA Grants Careers American Journal of Archaeology Research Opportunities Network (RON) Beta Tester Sign Up The AIA’s mission includes supporting and promoting archaeological research and its dissemination.",
+        "mode": "in-person) support Us The AIA is North America's largest an"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Top 11 Summer School Scholarships in November 2026",
+      "url": "https://scholarships360.org/scholarships/summer-school-scholarships/",
+      "organizer": "Scholarships360",
+      "source_layer": "discovery",
+      "location": "global",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2027-06-30",
+      "deadline_status": "open",
+      "financial_access_status": "funded",
+      "fee": "free of charge",
+      "fee_eur": 0.0,
+      "topics": [
+        "ecology",
+        "sociology"
+      ],
+      "needs_review": [
+        "duration is uncertain",
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "free of charge",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "offered",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "ecology": "science, energy, plant resources in the tropics, barrier island ecology, and oil spill cleanup and control. This scholarship was established by Clara Carter Higgins, a mem",
+        "sociology": "resource. Gabriel graduated from Kenyon College with a degree in sociology. Full Bio Learn about our editorial policies Updated: November 1st, 2026 If you’re looking for summ"
+      },
+      "evidence": {
+        "deadline": "Deadline Jun 30, 2027 (other dates listed: 2026-11-30, 2026-12-31)",
+        "duration": "",
+        "fee": "free of charge",
+        "funding": "Top 11 Summer School Scholarships in November 2026 - Scholarships360 Get matched with vetted scholarships and enter our $10,000 No-Essay Scholarship Please select whichever best describes you for the 2026 - 2027 academic year.",
+        "mode": ""
       },
       "ai_advisory": {
         "available": false
@@ -575,14 +753,12 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "llm_chunk_truncated:6",
-          "llm_request_truncated:max_total_chars_per_llm_request",
           "funding_context_weak"
         ],
-        "chinese_summary": "Complexity Science Hub 年度冬季学校，面向早期职业研究人员，围绕复杂性科学开展跨学科协作学习，全英文授课，需具备定量学科硕士课程背景或相关实践经验。",
+        "chinese_summary": "Complexity Science Hub 年度冬季学校，面向早期职业研究人员，围绕复杂性科学开展跨学科协作学习，包含讲座、讨论和小组项目/实践实验室，全英文授课。",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "Financial need support may be available for participants; instructions provided after acceptance.",
+        "extracted_funding": "Financial need-based support may be available; instructions provided after acceptance.",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
@@ -1129,6 +1305,93 @@
       }
     },
     {
+      "title": "Pathways to Engineering",
+      "url": "https://www.pathwaystoscience.org/engineering.aspx?sort=region&subsort=Southeast",
+      "organizer": "Discovery: Funding and Research Opportunities in Engineering",
+      "source_layer": "discovery",
+      "location": "global",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "$60,000",
+      "fee_eur": 57000.0,
+      "topics": [
+        "engineering",
+        "natural hazards",
+        "sustainability",
+        "AI",
+        "artificial intelligence",
+        "robotics",
+        "physics",
+        "neutron science",
+        "mathematics",
+        "optimization",
+        "chemistry",
+        "materials science",
+        "mechanics",
+        "public health",
+        "design",
+        "agriculture",
+        "food science",
+        "philosophy"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "$60,000",
+        "fee_eur": 57000.0,
+        "fee_status": "stated",
+        "support_status": "offered",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "natural hazards": "a, on ... read more Florida International University (Miami, FL) Natural Hazards Engineering Research Infrastructure (NHERI) Summer Institute The NHERI Summer Institute is a free e",
+        "sustainability": "e for Future Farmers The Science and Technologies for Phosphorus Sustainability (STEPS) Center will support 15 students for ten weeks during the summer through a multi-ins ... rea",
+        "AI": "duate ... read more Duke University (Durham, NC) NSF Accelerated AI Algorithms for Data-Driven Discovery Institute Postbaccalaureate Fellowship Program The Accelerated",
+        "artificial intelligence": "am (REU) The Department of Biomedical Engineering and Center for Artificial Intelligence Research at Wake Forest University School of Medicine invite current ... read more Post-Baccalaurea",
+        "robotics": "a facu ... read more Summer Undergraduate Research Experience in Robotics The overall goal of SURE Robotics is to expose undergraduate students to robotics research, and as",
+        "physics": "Space Weather Camp (ISWC) is an opportunity to learn about space physics in the context of meeting a very practical need — to unders ... read more Alabama State University",
+        "neutron science": "read more Hendrix College (Conway, AR) IRES: Development of the Neutron Optics Parity and Time Violation Experiment in Japan A summer internship at Nagoya University, Japa",
+        "mathematics": "ung Scholars Program (YSP) is a six-week residential science and mathematics summer program for Florida high school students with significant po ... read more Museum of Discove",
+        "optimization": "during the summer through a multi-ins ... read more POETS (Power Optimization of Electro-Thermo Systems) REU The Center for Power Optimization of Electro-Thermal Systems (POETS)",
+        "chemistry": "f materials physics; wor ... read more The US/France REU Site in Chemistry The International Research Experiences for Undergraduates (REU) program is a 12 week program based",
+        "materials science": "for Undergraduates - Computational Methods with Applications in Materials Science The Center for Computational Sciences at Mississippi State University will be hosting a summer REU",
+        "engineering": "Funding and Research Opportunities in Engineering Skip to Main Content Programs Search Resource Library Webinars Partners Directory About us Pathways",
+        "mechanics": "th Carolina Central University (Durham, NC) Cellular & Molecular Mechanics and Bio-Nanotechnology IGERT The goal of this Integrative Graduate Education and Research Training",
+        "public health": "Center for Disease Control (CDC) (Atlanta, GA) CDC Undergraduate Public Health Scholars (CUPS) Program and the Dr. James A. Ferguson Emerging Infectious Diseases RISE Fellowship",
+        "design": "tte, NC) Summer REU in Computing; Infrastructure and Interaction Design for CyberPhysical Systems Our Research Experiences for Undergraduates (REU) program engages undergr",
+        "agriculture": "ty of Florida (Gainesville, FL) Internet of Things for Precision Agriculture (IoT4Ag) Pathway to PhD Program Are you interested in pursuing a Doctor of Philosophy (PhD) in scie",
+        "food science": "-ins ... read more North Carolina State University (Raleigh, NC) Food Science Summer Scholars Program NC State University's Summer Scholars program recruits top students from ac",
+        "philosophy": "athway to PhD Program Are you interested in pursuing a Doctor of Philosophy (PhD) in science and engineering? If yes, the IoT4Ag ERC Pathway to PhD Program (PPP) may be for .."
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "fee": "$60,000",
+        "funding": "read more NASA Kennedy Space Center (Kennedy Space Center, FL) NASA Internships and Fellowships NASA offers a wide variety of paid summer, spring, and fall semester internships, as well as some graduate fellowships and undergraduate scholarships .",
+        "mode": "in-person infectious diseases-targeted summer research expe"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "Useful Information",
       "url": "https://ecpr.eu/MethodsSchool",
       "organizer": "ECPR Methods School",
@@ -1425,58 +1688,6 @@
           "fee": "Facts & Figures Start date 5-7-2027 Duration 5 days Level Master | Professionals | PhD Location The Hague Course fee Master’s students in health related studies: free.",
           "funding": ""
         }
-      }
-    },
-    {
-      "title": "Registration and Trans-YTF Grants",
-      "url": "https://www.febs.org/events/advanced-courses/febs-youth-travel-fund-grants/",
-      "organizer": "FEBS",
-      "source_layer": "discovery",
-      "location": "global",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "self-funded",
-      "fee": "and will not exceed €800 per person",
-      "fee_eur": 800.0,
-      "topics": [],
-      "needs_review": [
-        "conditional support needs coverage and eligibility review",
-        "application deadline is uncertain",
-        "duration is uncertain",
-        "in-person status is uncertain",
-        "fee exceeds EUR 400 without explicit funding"
-      ],
-      "confidence": 0.25,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.25,
-      "financial_terms": {
-        "participation_fee": "and will not exceed €800 per person",
-        "fee_eur": 800.0,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {},
-      "evidence": {
-        "deadline": "",
-        "duration": "",
-        "fee": "and will not exceed €800 per person",
-        "funding": "Please note that the total number of meeting awards the applicant has previously received from FEBS (FEBS Congress bursary, FEBS YSF grant, and FEBS YTF award for previous FEBS AC) may also be taken into consideration in the nomination approval.",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": false
       }
     }
   ]
