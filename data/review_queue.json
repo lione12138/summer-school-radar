@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-06",
+  "generated": "2026-11-09",
   "review_queue": [
     {
       "title": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes",
@@ -67,89 +67,6 @@
           "deadline": "**DEADLINE: 05/03/2027** Organizers Simona Bordoni (University of Trento, Italy), Daniela Domeisen (University of Lausanne, Switzerland), Vera Melinda Galfi (VU Amsterdam, The Netherlands), Valerio Lembo (ISAC, Italy), Jacopo Riboldi (ETH Zurich, Switzerland), Local Organiser: Adrian Mark Tompkins (ICTP) GO TO SCIENTIFIC CALENDAR Facebook Twitter Youtu",
           "fee": "There is no registration fee.",
           "funding": "Grants: A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries."
-        }
-      }
-    },
-    {
-      "title": "2027 NMD4C–RARE.Qc Basic Science Research Summer School",
-      "url": "https://neuromuscularnetwork.ca/basic-research-summer-school-2027/",
-      "organizer": "NMD4C",
-      "source_layer": "discovery",
-      "location": "global",
-      "dates": {
-        "start": "2027-05-12",
-        "end": "2027-05-14",
-        "duration_days": 3
-      },
-      "deadline": "2026-12-01",
-      "deadline_status": "open",
-      "financial_access_status": "low-fee",
-      "fee": "no registration fee",
-      "fee_eur": 0.0,
-      "topics": [],
-      "needs_review": [
-        "conditional support needs coverage and eligibility review",
-        "duration is below 4 days"
-      ],
-      "confidence": 1.0,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 1.0,
-      "financial_terms": {
-        "participation_fee": "no registration fee",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "",
-        "accommodation": "conditional",
-        "meals": "conditional",
-        "travel_support": "conditional",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "benefit_facts": [
-        {
-          "benefit": "accommodation",
-          "status": "conditional",
-          "evidence": "Meals & Travel Support Accommodation: We will provide accommodation for non-local attendees for three nights (May 11-13th) at UQTR residences.",
-          "source_url": "https://neuromuscularnetwork.ca/basic-research-summer-school-2027/"
-        },
-        {
-          "benefit": "meals",
-          "status": "conditional",
-          "evidence": "Meals & Travel Support Accommodation: We will provide accommodation for non-local attendees for three nights (May 11-13th) at UQTR residences.",
-          "source_url": "https://neuromuscularnetwork.ca/basic-research-summer-school-2027/"
-        },
-        {
-          "benefit": "travel",
-          "status": "conditional",
-          "evidence": "Meals & Travel Support Accommodation: We will provide accommodation for non-local attendees for three nights (May 11-13th) at UQTR residences.",
-          "source_url": "https://neuromuscularnetwork.ca/basic-research-summer-school-2027/"
-        }
-      ],
-      "topic_evidence": {},
-      "evidence": {
-        "deadline": "Application Deadline: December 1, 2026 (other dates listed: 2026-10-06)",
-        "duration": "May 12–14, 2027",
-        "fee": "no registration fee",
-        "funding": "Apply Here Accommodation, Meals & Travel Support Accommodation: We will provide accommodation for non-local attendees for three nights (May 11-13th) at UQTR residences.",
-        "mode": "in-person with colleagues and senior investigators from acr"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "llm_chunk_truncated:6",
-          "llm_request_truncated:max_total_chars_per_llm_request",
-          "location_context_weak"
-        ],
-        "chinese_summary": "2027 NMD4C–RARE.Qc基础科学研究暑期学校，2027年5月12日至14日在UQTR举办，申请于2026年10月6日开放，截止2026年12月1日，提供差旅资助及非本地参会者住宿。",
-        "extracted_deadline": "2026-12-01",
-        "extracted_fee": "",
-        "extracted_funding": "Travel support sufficient to cover travel to and from summer school; accommodation provided for non-local attendees for three nights (May 11-13) at UQTR residences; applicants may indicate interest in university accommodation and travel bursary; placements subject to competitive application process",
-        "evidence_fields": {
-          "deadline": "Travel Support: We will provide financial support (sufficient to cover your travel to and from summer school) Row wavy Shape Decorative svg added to top Deadlines Application Opens: October 6, 2026 Application Deadline: December 1, 2026 Anticipated Notice of Decision: Mid December 2026 Program Dates: May 12 to 14, 2027 Past NMD4C Summer Schools 2026 Summer School (uOttawa) 2025 Summer School (York University) 2024 Summer School (McGill",
-          "fee": "",
-          "funding": "Travel Support: We will provide financial support (sufficient to cover your travel to and from summer school) Row wavy Shape Decorative svg added to top Deadlines Application Opens: October 6, 2026 Application Deadline: December 1, 2026 Anticipated Notice of Decision: Mid December 2026 Program Dates: May 12 to 14, 2027 Past NMD4C Summer Schools 2026 Summer School (uOttawa) 2025 Summer School (York University) 2024 Summer School (McGill | Accommodation and Travel Bursaries : Applicants will need "
         }
       }
     },
@@ -335,8 +252,8 @@
       }
     },
     {
-      "title": "Grants & Awards",
-      "url": "https://www.archaeological.org/programs/professionals/grants-awards/",
+      "title": "Scholarships & Travel Grants",
+      "url": "https://www.archaeological.org/grant/waldbaum-scholarship/",
       "organizer": "Archaeological Institute of America",
       "source_layer": "discovery",
       "location": "global",
@@ -345,16 +262,27 @@
         "end": null,
         "duration_days": null
       },
-      "deadline": "2027-06-30",
+      "deadline": "2027-03-01",
       "deadline_status": "open",
       "financial_access_status": "funded",
       "fee": "",
       "fee_eur": null,
       "topics": [
+        "remote sensing",
+        "GIS",
+        "ecology",
         "artificial intelligence",
-        "architecture",
+        "mathematics",
+        "applied mathematics",
+        "public health",
+        "cognitive science",
+        "marine biology",
+        "geography",
+        "anthropology",
         "history",
-        "archaeology"
+        "philosophy",
+        "archaeology",
+        "literature"
       ],
       "needs_review": [
         "duration is uncertain"
@@ -370,23 +298,41 @@
         "support_scope": "",
         "accommodation": "unknown",
         "meals": "unknown",
-        "travel_support": "unknown",
+        "travel_support": "offered",
         "cost_status": "unknown",
         "fee_options": []
       },
-      "benefit_facts": [],
+      "benefit_facts": [
+        {
+          "benefit": "travel",
+          "status": "covered",
+          "evidence": "Archaeological Field School Scholarships - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Scholarships & Travel Grants Archaeological Field School Scholarships Archaeological Institute of America Deadline: March 1, 2027 Announced: In April Amount: $2,000 per winner Purpose: These scholarships support students participating in archaeological fieldwork for the first time.",
+          "source_url": "https://www.archaeological.org/grant/waldbaum-scholarship/"
+        }
+      ],
       "topic_evidence": {
+        "remote sensing": "lleley is a junior at Boston University studying Archaeology and Remote Sensing. She will attend the Belize Valley Archeological Reconnaissance Project. Read about Elisha Valleley",
+        "GIS": "dents are trained in a variety of excavation techniques, such as GIS mapping and materials processing. Skye is especially excited to document a set of Etruscan tombs lo",
+        "ecology": "dkey (Purdue University West Lafayette; Zooarchaeology and Field Ecology Program Eagle Lake, CA), Mahmoud Samori (Columbia University, Stabiae Field School), Ann Vassar (Ce",
         "artificial intelligence": "erved, including rights for text and data mining and training of artificial intelligence or similar technologies. | Privacy Policy | Website by Yelling Mule , ongoing development by Castle",
-        "architecture": ". Kress Grants for Research and Publication in Classical Art and Architecture - On Hiatus Deadline: December 15, 2025 These grants fund publication preparation, or research lead",
+        "mathematics": "June. At Brown, she studied Biological Anthropology and Applied Mathematics-Biology. She’s especially excited to be working in the Caribbean: her home region. Read about Madel",
+        "applied mathematics": "ool this June. At Brown, she studied Biological Anthropology and Applied Mathematics-Biology. She’s especially excited to be working in the Caribbean: her home region. Read about Madel",
+        "public health": "er is a junior at Boston University, studying Health Science and Public Health, with a minor in Anthropology. She plans to attend the Apollonia Project in Bulgaria (deferred to 2",
+        "cognitive science": "ccalaueate at the University of California, Santa Cruz, studying Cognitive Science and Anthropology. She plans to attend the Roca dels Bous Project in Spain. Read about Lindsay Alaha",
+        "marine biology": "Obolensky Field School Scholarship Audrey Urbach is a third-year marine biology major with a minor in cultural anthropology at Northeastern University. This May, she will be parti",
+        "geography": "a Senior at Texas State University, majoring in Anthropology and Geography. She plans to attend the Aditu Arkeologia Field School in Spain. Read about Veronica Flores-Guillen",
+        "anthropology": "cum laude from Colorado College, earning a Bachelor’s degree in Anthropology and Classics. She is joining the Astypalaia Bioarchaeology field school which studies the human rem",
         "history": "ct Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Care",
-        "archaeology": "al Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public Internat"
+        "philosophy": "versity of Houston studying Anthropology, Classical Studies, and Philosophy. She is eager to broaden her global perspective through the Antiochia ad Cragum Archaeological Rese",
+        "archaeology": "al Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public Internat",
+        "literature": "is a junior at Davidson College studying Classical Languages and Literature, and this summer he will be attending the Cosa Excavations in Ansedonia, Italy. He is excited to le"
       },
       "evidence": {
-        "deadline": "Deadline: June 30, 2027 (other dates listed: 2023-11-01, 2025-12-15, 2026-09-15)",
+        "deadline": "Deadline: March 1, 2027",
         "duration": "",
         "fee": "",
-        "funding": "Fellowships, Grants, Scholarships, and Awards - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Grants & Awards Professionals Annual Meeting Fieldwork Grants & Awards AIA Fellowship Guidelines Application: AIA Fellowships Nomination Form: Pomerance Award Awards Ceremony Sitting Down with our Award Winners Follow-Ups for Fellowship, Grant, & Scholarship Winners Research Grant Final Report Form AIA Fellowships Report Form AIA Awards Citation Form Non-AIA Grants Careers American Journal of Archaeology Research Opportunities Network (RON) Beta Tester Sign Up The AIA’s mission includes supporting and promoting archaeological research and its dissemination.",
-        "mode": "in-person) support Us The AIA is North America's largest an"
+        "funding": "Archaeological Field School Scholarships - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Scholarships & Travel Grants Archaeological Field School Scholarships Archaeological Institute of America Deadline: March 1, 2027 Announced: In April Amount: $2,000 per winner Purpose: These scholarships support students participating in archaeological fieldwork for the first time.",
+        "mode": "Field School Scholarships - Archaeological Institute of Americ"
       },
       "ai_advisory": {
         "available": false
@@ -674,6 +620,79 @@
       }
     },
     {
+      "title": "Ongoing events",
+      "url": "https://www.ictp.it/",
+      "organizer": "EGU Training Schools",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2026-11-30",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "climate",
+        "AI",
+        "artificial intelligence",
+        "data science",
+        "physics",
+        "cosmology",
+        "condensed matter",
+        "statistical physics",
+        "mathematics",
+        "materials science",
+        "design"
+      ],
+      "needs_review": [
+        "duration is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "climate": "damental interactions and the theory of neutrino oscillations to climate modeling. More recently, cross disciplinary research is paving the way for advances in quantum tech",
+        "AI": "ow water molecules move Condensed Matter and Statistical Physics AI for Scientific Discovery Colloquia Series AI experts to discuss how Artificial Intelligence is tran",
+        "artificial intelligence": "Scientific Discovery Colloquia Series AI experts to discuss how Artificial Intelligence is transforming scientific research High Energy, Cosmology and Astroparticle Physics Condensed Matt",
+        "data science": "M... Physical school 09 Nov 2026 20 Nov 2026 CODATA-RDA Research Data Science Summer School and Advanced workshops ... Physical scientific activity 26 Oct 2026 30 Dec 2026 PWF Y",
+        "physics": "09 Nov 2026 13 Nov 2026 High Energy, Cosmology and Astroparticle Physics ATLAS Trigger Workshop | (smr H732) Physical workshop 09 Nov 2026 13 Nov 2026 Joint ICTP-IAEA Works",
+        "cosmology": "events scientific activity 09 Nov 2026 13 Nov 2026 High Energy, Cosmology and Astroparticle Physics ATLAS Trigger Workshop | (smr H732) Physical workshop 09 Nov 2026 13 Nov",
+        "condensed matter": "itas Chanda talks about his work at the intersection of quantum… Condensed Matter and Statistical Physics Decoding the Complexity of Water Researchers at ICTP and SISSA use causalit",
+        "statistical physics": "ut his work at the intersection of quantum… Condensed Matter and Statistical Physics Decoding the Complexity of Water Researchers at ICTP and SISSA use causality to investigate how wat",
+        "mathematics": "d Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Technology and Innovation ICTP Prize 2026:",
+        "materials science": "Physics 23rd International Workshop on Computational Physics and Materials Science:… workshop 13 Jan 2027 15 Jan 2027 15 Nov 2026 Event Mathematics School and Workshop on Birational",
+        "design": "Joint ICTP-MSA-COMSTECH-SESAME School on AI-Driven Biomaterials Design: from… school 14 Mar 2027 25 Mar 2027 03 Dec 2026 Opportunity Mathematics Mathematics Postdoctoral"
+      },
+      "evidence": {
+        "deadline": "deadline is 30 November 2026",
+        "duration": "",
+        "fee": "",
+        "funding": "",
+        "mode": "Hybrid seminars 09 Oct 2026 26 Feb 2027 Earth System Phy"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "Winter School​",
       "url": "https://csh.ac.at/education/winterschool/",
       "organizer": "Complexity Science Hub",
@@ -753,12 +772,15 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "funding_context_weak"
+          "llm_chunk_truncated:6",
+          "llm_request_truncated:max_total_chars_per_llm_request",
+          "funding_context_weak",
+          "conflicting_evidence"
         ],
-        "chinese_summary": "Complexity Science Hub 年度冬季学校，面向早期职业研究人员，围绕复杂性科学开展跨学科协作学习，包含讲座、讨论和小组项目/实践实验室，全英文授课。",
+        "chinese_summary": "复杂科学中心年度冬季学校，面向早期职业研究人员，围绕复杂科学开展跨学科协作学习，申请需通过在线门户提交。",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "Financial need-based support may be available; instructions provided after acceptance.",
+        "extracted_funding": "Financial need support may be available for participants; instructions provided after acceptance.",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
