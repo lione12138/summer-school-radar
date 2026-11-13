@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-11",
+  "generated": "2026-11-13",
   "review_queue": [
     {
       "title": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes",
@@ -761,36 +761,23 @@
         "AI": "ow water molecules move Condensed Matter and Statistical Physics AI for Scientific Discovery Colloquia Series AI experts to discuss how Artificial Intelligence is tran",
         "artificial intelligence": "Scientific Discovery Colloquia Series AI experts to discuss how Artificial Intelligence is transforming scientific research High Energy, Cosmology and Astroparticle Physics Condensed Matt",
         "data science": "M... Physical school 09 Nov 2026 20 Nov 2026 CODATA-RDA Research Data Science Summer School and Advanced workshops ... Physical scientific activity 26 Oct 2026 30 Dec 2026 PWF Y",
-        "physics": "ing events seminars 11 Nov 2026 Condensed Matter and Statistical Physics CMSP Seminar (Atomistic Simulation Seminar Series): Computational Inve... Physical scientific activ",
+        "physics": "Ongoing events seminars 13 Nov 2026 International Day of Medical Physics Physical scientific activity 09 Nov 2026 13 Nov 2026 High Energy, Cosmology and Astroparticle Physi",
         "cosmology": "hysical scientific activity 09 Nov 2026 13 Nov 2026 High Energy, Cosmology and Astroparticle Physics ATLAS Trigger Workshop | (smr H732) Physical workshop 09 Nov 2026 13 Nov",
-        "condensed matter": "rchers from the Global South Ongoing events seminars 11 Nov 2026 Condensed Matter and Statistical Physics CMSP Seminar (Atomistic Simulation Seminar Series): Computational Inve... P",
-        "statistical physics": "l South Ongoing events seminars 11 Nov 2026 Condensed Matter and Statistical Physics CMSP Seminar (Atomistic Simulation Seminar Series): Computational Inve... Physical scientific activ",
+        "condensed matter": "SESAME premises High Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Techno",
+        "statistical physics": "Energy, Cosmology and Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Technology and Innovation Call",
         "mathematics": "d Astroparticle Physics Condensed Matter and Statistical Physics Mathematics Earth System Physics Quantitative Life Sciences Science, Technology and Innovation Call for Applica",
         "materials science": "Physics 23rd International Workshop on Computational Physics and Materials Science:… workshop 13 Jan 2027 15 Jan 2027 15 Nov 2026 Event Mathematics School and Workshop on Birational",
         "design": "Joint ICTP-MSA-COMSTECH-SESAME School on AI-Driven Biomaterials Design: from… school 14 Mar 2027 25 Mar 2027 03 Dec 2026 Opportunity Mathematics Mathematics Postdoctoral"
       },
       "evidence": {
-        "deadline": "deadline is 28 February 2027 (other dates listed: 2026-11-30)",
+        "deadline": "deadline is 28 February 2027",
         "duration": "",
         "fee": "",
         "funding": "",
         "mode": "Hybrid Discover all events Opportunities Overview ICTP:"
       },
       "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "index_or_listing_page"
-        ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
+        "available": false
       }
     },
     {
@@ -873,14 +860,12 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [
-          "llm_chunk_truncated:6",
-          "llm_request_truncated:max_total_chars_per_llm_request",
           "funding_context_weak"
         ],
-        "chinese_summary": "Complexity Science Hub 年度冬季学校，面向希望加入跨学科网络、协作探索复杂性科学的早期职业研究人员。申请需通过在线门户提交，申请者应具备定量学科硕士水平课程或相关实践经验，课程全程英语。",
+        "chinese_summary": "Complexity Science Hub 年度冬季学校，面向早期职业研究人员，围绕复杂性科学开展跨学科协作学习，包含讲座、讨论和小组项目/实践实验室，全英文授课。",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "Financial need support may be available for participants; instructions provided after acceptance.",
+        "extracted_funding": "Financial need-based support may be available; instructions provided after acceptance.",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
@@ -959,63 +944,6 @@
           "fee": "",
           "funding": "There will be no travel support for shorter attendance. | Please also note that the terms of our NSF grant require that students at universities outside the United States need to supply their own airfare. | The School is supported by the National Science Foundation, with additional funding provided by the University of Colorado, and meets annually during July at CU Physics Department, Boulder, Colorado."
         }
-      }
-    },
-    {
-      "title": "GESIS Spring Seminar – Cutting-Edge Methods",
-      "url": "https://www.gesis.org/en/gesis-training/what-we-offer/spring-seminar-cutting-edge-methods",
-      "organizer": "GESIS Spring Seminar",
-      "source_layer": "1.5",
-      "location": "Europe",
-      "dates": {
-        "start": "2027-02-18",
-        "end": "2027-04-02",
-        "duration_days": 44
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "data analysis",
-        "design",
-        "social science"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.5,
-      "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "data analysis": "quality training in state-of-the-art techniques in quantitative data analysis taught by leading experts in the field. The Spring Seminar covers a different topic each year, pick",
-        "design": "& 5 online; days 2–4 hybrid] Replication in Practice: From Study Design to Publication 👥 Lecturers: Cassie Ann Short (Carl von Ossietzky Universität Oldenburg) & Nate Brez",
-        "social science": "each year, picking up on recent developments and innovations in social science research methodology. The Spring Seminar will provide you with in-depth knowledge of state-of-the-a"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "18 Feb – 02 April 2027",
-        "fee": "",
-        "funding": "",
-        "mode": "onsite) an exciting time in Cologne, complemented by an"
-      },
-      "ai_advisory": {
-        "available": false
       }
     },
     {
@@ -1484,53 +1412,59 @@
       }
     },
     {
-      "title": "Useful Information",
-      "url": "https://ecpr.eu/MethodsSchool",
-      "organizer": "ECPR Methods School",
-      "source_layer": "1.5",
-      "location": "Europe",
+      "title": "Digital Humanities Summer Institute",
+      "url": "https://dhsi.org/scholarships/",
+      "organizer": "Digital Humanities Summer Institute",
+      "source_layer": "2",
+      "location": "North America",
       "dates": {
-        "start": "2027-02-15",
-        "end": "2027-02-26",
-        "duration_days": 12
+        "start": null,
+        "end": null,
+        "duration_days": null
       },
       "deadline": null,
       "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "and offers Find pricing details and special offers, including 50% off for scholars affiliated with E",
-      "fee_eur": null,
+      "financial_access_status": "funded",
+      "fee": "CAD 180",
+      "fee_eur": 126.0,
       "topics": [
-        "AI"
+        "digital humanities"
       ],
       "needs_review": [
         "application deadline is uncertain",
-        "in-person status is uncertain",
-        "funding is not explicit and fee equivalence is uncertain"
+        "duration is uncertain",
+        "in-person status is uncertain"
       ],
       "confidence": 0.25,
       "confidence_kind": "heuristic_not_calibrated_probability",
       "field_completeness": 0.25,
       "financial_terms": {
-        "participation_fee": "and offers Find pricing details and special offers, including 50% off for scholars affiliated with E",
-        "fee_eur": null,
+        "participation_fee": "CAD 180",
+        "fee_eur": 126.0,
         "fee_status": "stated",
-        "support_status": "unknown",
+        "support_status": "offered",
         "support_scope": "",
         "accommodation": "unknown",
         "meals": "unknown",
         "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 180.0,
+            "currency": "CAD",
+            "conditions": ""
+          }
+        ]
       },
       "benefit_facts": [],
       "topic_evidence": {
-        "AI": "amme Browse courses by training track Computational, Digital and AI Methods For researchers working with text, visual, multimodal, or network data, and computational w"
+        "digital humanities": "Scholarships & Bursaries | Digital Humanities Summer Institute Scholarships & Bursaries Ray Siemens DHSI Bursaries In honour of DHSI Founder and"
       },
       "evidence": {
         "deadline": "",
-        "duration": "15 – 26 February 2027",
-        "fee": "and offers Find pricing details and special offers, including 50% off for scholars affiliated with E",
-        "funding": "",
+        "duration": "",
+        "fee": "CAD 180",
+        "funding": "Scholarships & Bursaries | Digital Humanities Summer Institute Digital Humanities Summer Institute Institut d'été sur les humanités numériques About Archive Course Offerings Registration & Fees Scholarships & Bursaries Sponsors & Partners Timetable Aligned Events Participant Guide Accommodations People Our Team Contact Rechercher : Rechercher x Scholarships & Bursaries Ray Siemens DHSI Bursaries In honour of DHSI Founder and Director Emeritus Ray Siemens we offer 4 bursaries, reserved for students.",
         "mode": ""
       },
       "ai_advisory": {
@@ -1710,7 +1644,7 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [],
-        "chinese_summary": "Perimeter Institute 将于2027年6月14日至25日举办为期两周的本科生暑期学校，内容涵盖现代理论物理前沿主题、研究人员报告、小组讨论及协作解题等主动学习活动。申请尚未开放。",
+        "chinese_summary": "Perimeter Institute 将于2027年6月14日至25日举办为期两周的本科暑期学校，内容涵盖现代理论物理前沿课程、研究者报告、专题讨论及小组协作学习。",
         "extracted_deadline": "",
         "extracted_fee": "",
         "extracted_funding": "",
@@ -1780,58 +1714,6 @@
           "fee": "Facts & Figures Start date 5-7-2027 Duration 5 days Level Master | Professionals | PhD Location The Hague Course fee Master’s students in health related studies: free.",
           "funding": ""
         }
-      }
-    },
-    {
-      "title": "Registration and Trans-YTF Grants",
-      "url": "https://www.febs.org/events/advanced-courses/febs-youth-travel-fund-grants/",
-      "organizer": "FEBS",
-      "source_layer": "discovery",
-      "location": "global",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "self-funded",
-      "fee": "and will not exceed €800 per person",
-      "fee_eur": 800.0,
-      "topics": [],
-      "needs_review": [
-        "conditional support needs coverage and eligibility review",
-        "application deadline is uncertain",
-        "duration is uncertain",
-        "in-person status is uncertain",
-        "fee exceeds EUR 400 without explicit funding"
-      ],
-      "confidence": 0.25,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.25,
-      "financial_terms": {
-        "participation_fee": "and will not exceed €800 per person",
-        "fee_eur": 800.0,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {},
-      "evidence": {
-        "deadline": "",
-        "duration": "",
-        "fee": "and will not exceed €800 per person",
-        "funding": "Please note that the total number of meeting awards the applicant has previously received from FEBS (FEBS Congress bursary, FEBS YSF grant, and FEBS YTF award for previous FEBS AC) may also be taken into consideration in the nomination approval.",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": false
       }
     }
   ]
