@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-17",
+  "generated": "2026-11-18",
   "review_queue": [
     {
       "title": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes",
@@ -67,71 +67,6 @@
           "deadline": "**DEADLINE: 05/03/2027** Organizers Simona Bordoni (University of Trento, Italy), Daniela Domeisen (University of Lausanne, Switzerland), Vera Melinda Galfi (VU Amsterdam, The Netherlands), Valerio Lembo (ISAC, Italy), Jacopo Riboldi (ETH Zurich, Switzerland), Local Organiser: Adrian Mark Tompkins (ICTP) GO TO SCIENTIFIC CALENDAR Facebook Twitter Youtu",
           "fee": "There is no registration fee.",
           "funding": "Grants: A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries."
-        }
-      }
-    },
-    {
-      "title": "Breadcrumb",
-      "url": "https://www4.uib.no/en/research/research-schools/bergen-summer-research-school/apply-to-participate",
-      "organizer": "Discovery: Application Bergen Summer Research School",
-      "source_layer": "discovery",
-      "location": "global",
-      "dates": {
-        "start": "2027-06-07",
-        "end": "2027-06-17",
-        "duration_days": 11
-      },
-      "deadline": "2027-02-01",
-      "deadline_status": "open",
-      "financial_access_status": "low-fee",
-      "fee": "no registration fee",
-      "fee_eur": 0.0,
-      "topics": [],
-      "needs_review": [
-        "conditional support needs coverage and eligibility review"
-      ],
-      "confidence": 1.0,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 1.0,
-      "financial_terms": {
-        "participation_fee": "no registration fee",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {},
-      "evidence": {
-        "deadline": "application until the deadline, 1 February 2027",
-        "duration": "7-17 June 2027",
-        "fee": "no registration fee",
-        "funding": "Stipends A limited number of compeditive stipends are available to support participation in BSRS.",
-        "mode": "residential address selected a course(s) uploaded all the req"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "conflicting_evidence",
-          "rule_based_candidate_deadline_2027-02-01_not_supported_by_evidence",
-          "rule_based_candidate_fee_no_registration_fee_not_supported_by_evidence",
-          "rule_based_candidate_location_global_not_supported_by_evidence",
-          "rule_based_candidate_title_breadcrumb_not_supported_by_evidence"
-        ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "A limited number of competitive stipends are available to support participation in BSRS. Full stipend covers travel and accommodation at Bergen Hostel Montana; partial stipend covers either travel OR accommodation at Bergen Hostel Montana. Stipends are fixed amounts intended to help offset the cost of attending the summer school; the exact amount depends on your country of residence and will be stated in your acceptance letter. Participants are responsible for arranging and paying for their own",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": "Stipends are fixed amounts intended to help offset the cost of attending the summer school. | Full stipend : covers travel and accommodation at Bergen Hostel Montana Partial stipend : covers either travel OR accommodation at Bergen Hostel Montana Please note that you are responsible for arranging and paying for your ow | Stipends A limited number of compeditive stipends are available to support participation in BSRS. | The exact amount depends on your country of residence and will be stated in y"
         }
       }
     },
@@ -765,12 +700,13 @@
         "validation_warnings": [
           "llm_chunk_truncated:6",
           "llm_request_truncated:max_total_chars_per_llm_request",
-          "funding_context_weak"
+          "funding_context_weak",
+          "conflicting_evidence"
         ],
-        "chinese_summary": "Complexity Science Hub 年度冬季学校，面向希望加入跨学科网络、协作探索复杂性科学的早期职业研究人员。申请需通过在线门户提交，申请者应具备定量学科硕士水平课程或相关实践经验，课程全程英语。",
+        "chinese_summary": "Complexity Science Hub 每年举办的 Winter School，面向希望加入跨学科网络的早期职业研究人员，协作探索复杂性科学。申请需通过在线门户提交，申请材料包括个人简历和动机信。申请者应具备定量学科（社会科学、自然科学或信息科学、数学、工程）的硕士水平课程学习和/或相关定量领域的实践经验，并具备英语工作能力。项目期间安排自由时间供参与者探索地点并继续非正式讨论与合作。有经济需求的参与者可能获得支持，具体说明将在录取后提供。",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "Financial need support may be available for participants; instructions provided after acceptance.",
+        "extracted_funding": "Financial need support may be available for participants; instructions will be provided to students after they are accepted into the program.",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
@@ -1331,6 +1267,61 @@
       }
     },
     {
+      "title": "CERN School of Computing",
+      "url": "https://csc.web.cern.ch/",
+      "organizer": "CERN School of Computing",
+      "source_layer": "1",
+      "location": "Mexico City, Mexico",
+      "dates": {
+        "start": "2027-05-16",
+        "end": "2027-05-29",
+        "duration_days": 14
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "physics",
+        "particle physics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "physics": "covering various aspects of scientific computing for high-energy physics and other data-intensive sciences. These schools are aimed at postgraduate (minimum of Bachelor deg",
+        "particle physics": "king at CERN or at other research institutes, with experience in particle physics, computing or related fields. Learn more . Upcoming schools: CSC Latin America 2027 The 49 th editi"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "16 to 29 May 2027",
+        "fee": "",
+        "funding": "",
+        "mode": "will take place in Mexico City, Mexico from 16 to 29 May 2027. Applic"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "Training course fees",
       "url": "https://www.ecmwf.int/en/learning/training/training-course-fees",
       "organizer": "ECMWF",
@@ -1449,6 +1440,70 @@
       },
       "ai_advisory": {
         "available": false
+      }
+    },
+    {
+      "title": "REGISTRATION – XIII Lisbon Summer School for the Study of Culture",
+      "url": "https://futuresummerschool.wordpress.com/registration/",
+      "organizer": "XIII Lisbon Summer School for the Study of Culture",
+      "source_layer": "discovery",
+      "location": "global",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "low-fee",
+      "fee": "no registration fee",
+      "fee_eur": 0.0,
+      "topics": [
+        "cultural studies"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "no registration fee",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "cultural studies": "from institutions affiliated with the European Summer School in Cultural Studies (ESSCS), members of the Excellence Network in Cultural Studies and members of the Critical Humaniti"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "fee": "no registration fee",
+        "funding": "",
+        "mode": "VENUES ABOUT REGISTRATION REGISTRATION FEES Participant"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [],
+        "chinese_summary": "XIII Lisbon Summer School for the Study of Culture 的注册页面，列出参会费用：提交论文者整周300€（含讲座、大师课、博士课程、午餐和闭幕晚宴）；无论文者每天60€（不含午餐和闭幕晚宴）；ESSCS附属机构学生及特定网络成员80€。",
+        "extracted_deadline": "",
+        "extracted_fee": "Participants with paper: 300€ for the entire week (includes lectures, master classes, doctoral sessions, lunches and closing dinner); Participants without paper: 60€ per day (lunches and closing dinner not included); students from institutions affiliated with the European Summer School in Cultural Studies (ESSCS), members of the Excellence Network in Cultural Studies and members of the Critical Humanities Network: 80€",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "REGISTRATION – XIII Lisbon Summer School for the Study of Culture Skip to content XIII Lisbon Summer School for the Study of Culture PROGRAM MASTER CLASSES KEYNOTE SPEAKERS VENUES ABOUT REGISTRATION REGISTRATION FEES Participants with paper – 300€ for the entire week (includes lectures, master classes, doctoral sessions, lunches and closing dinner) Participants without paper – 60€ per day (lunches and closing dinner not included) FEE WAIVERS For | For students from institutions affiliated with t",
+          "funding": ""
+        }
       }
     },
     {
@@ -1697,12 +1752,12 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [],
-        "chinese_summary": "Perimeter Institute 将于2027年6月14日至25日举办为期两周的本科暑期学校，内容涵盖现代理论物理前沿课程、研究者报告、专题讨论及小组协作学习。",
-        "extracted_deadline": "",
+        "chinese_summary": "Perimeter Institute 将于2027年6月14日至25日举办为期两周的本科生暑期学校，申请现已开放，截止日期为2027年1月17日。参与者将通过课程、研究人员报告、小组讨论以及小组协作解题等主动学习活动，学习现代理论物理的前沿主题。",
+        "extracted_deadline": "2027-01-17",
         "extracted_fee": "",
         "extracted_funding": "",
         "evidence_fields": {
-          "deadline": "",
+          "deadline": "t in many-body systems Perimeter Circle - Alumni Listings Perimeter Circle - Stay Connected Perimeter Circle Awards Perimeter Circle Awards Academic Leadership Excellence Award Industry Trailblazer Award Pathfinder Award Nominate Perimeter Circle Award Event Perimeter Circle: Alumni Stories Applications are now OPEN Deadline: Jan 17, 2027 Apply today!",
           "fee": "",
           "funding": ""
         }

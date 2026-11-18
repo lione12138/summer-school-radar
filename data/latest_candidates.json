@@ -189,6 +189,10 @@
       "detail_path": "opportunities/potsdam-summer-school-2026-f5ce0595.html"
     },
     {
+      "id": "edition:32e6f0d169cec965",
+      "detail_path": "opportunities/cern-school-of-computing-ed1d3180.html"
+    },
+    {
       "id": "edition:3381d9dfb9c9b804",
       "detail_path": "opportunities/useful-links-3d7e85f7.html"
     },
@@ -391,10 +395,6 @@
     {
       "id": "edition:6736f6d36f073af8",
       "detail_path": "opportunities/foundations-of-machine-learning-with-applications-in-python-19d543b7.html"
-    },
-    {
-      "id": "edition:679c254e979b78a3",
-      "detail_path": "opportunities/perimeter-undergraduate-summer-school-05e10293.html"
     },
     {
       "id": "edition:6b1d236a9ad3ef93",
@@ -785,6 +785,10 @@
       "detail_path": "opportunities/graduate-research-school-scholarships-uqgrss-includes-research-trainin-5ba20a80.html"
     },
     {
+      "id": "edition:d31fd98a1919cefb",
+      "detail_path": "opportunities/training-course-data-assimilation-machine-learning-681b10c7.html"
+    },
+    {
       "id": "edition:d372798a22dc8d4a",
       "detail_path": "opportunities/application-process-ae2a0460.html"
     },
@@ -863,6 +867,10 @@
     {
       "id": "edition:f971705875f1c434",
       "detail_path": "opportunities/search-bf47210b.html"
+    },
+    {
+      "id": "edition:f9f800e860a49432",
+      "detail_path": "opportunities/registration-xiii-lisbon-summer-school-for-the-study-of-culture-47951bfe.html"
     },
     {
       "id": "edition:fc2455d2a0ca5d0b",
@@ -1183,7 +1191,7 @@
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
   "_canary": "SSR-CANON-7q3v9x2k8m4w",
   "schema_version": 2,
-  "generated": "2026-11-17",
+  "generated": "2026-11-18",
   "opportunities": [
     {
       "title": "Coastal Processes & Morphology",
@@ -4021,7 +4029,7 @@
       "source_url": "https://ellis.eu/events/ellis-sites-neurips-fest-2026",
       "summary": "18/11/26 - 23/12/26 • Multiple Locations ELLIS Sites NeurIPS Fest 2026: Celebrate, Connect, Collaborate Discover the latest research from top AI minds at multiple locations across Europe during the weeks around the NeurIPS conference. Fest , Poster Session Read More",
       "recommendation_reason": "low fee: approximately EUR 130; 36 days; priority region; trusted source layer 1",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "",
       "discovery_verified": false,
@@ -4031,7 +4039,7 @@
       "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 56.0,
@@ -4042,7 +4050,7 @@
         "trusted source layer 1",
         "in-person",
         "topics: AI",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-11-17",
       "deadline_evidence": "ELLIS detail/registration page: registration deadline 2026-10-30",
@@ -4050,18 +4058,18 @@
       "fee_evidence": "",
       "mode_evidence": "ELLIS listing location: Multiple Locations",
       "extraction_confidence": 1.0,
-      "title_zh": "ELLIS Sites NeurIPS Fest 2026：庆祝、交流、合作",
+      "title_zh": "ELLIS Sites NeurIPS Fest 2026：庆祝、连接、合作",
       "organizer_zh": "ELLIS",
       "location_zh": "多地",
-      "summary_zh": "26/11/18 - 26/12/23 • 多地 ELLIS Sites NeurIPS Fest 2026：庆祝、交流、合作 在NeurIPS会议前后数周内，于欧洲多地了解顶尖AI研究者的最新研究。庆典、海报展示 阅读更多",
+      "summary_zh": "26/11/18 - 26/12/23 • 多地 ELLIS Sites NeurIPS Fest 2026：庆祝、连接、合作 在NeurIPS会议前后数周内，于欧洲多地了解顶尖AI人才的最新研究。Fest，海报展示 阅读更多",
       "eligibility_zh": "",
       "recommendation_reason_zh": "低费用：约130欧元；36天；优先地区；可信来源第1层",
-      "risk_points_zh": "申请截止日期已过",
+      "risk_points_zh": "项目已开始",
       "primary_topics": [],
       "secondary_topics": [],
       "topic_evidence": {},
       "detail_sections": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ANSTO-HZB-AONSA Neutron School 2026",
@@ -5723,6 +5731,78 @@
       "is_new": false
     },
     {
+      "title": "Perimeter Undergraduate Summer School",
+      "type": "summer school",
+      "organizer": "Perimeter Undergraduate Summer School",
+      "source_layer": "1",
+      "region_priority": "supplementary",
+      "location": "North America",
+      "mode": "in-person",
+      "start_date": "2027-06-14",
+      "end_date": "2027-06-25",
+      "duration_days": 12,
+      "deadline": "2027-01-17",
+      "deadline_status": "open",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "physics"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school",
+      "source_url": "https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school",
+      "summary": "Undergraduate Summer School. Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 . Participants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and p",
+      "recommendation_reason": "deadline appears open; 12 days; trusted source layer 1; in-person",
+      "risk_points": "funding is not explicit and fee is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "score": 44.0,
+      "score_explanation": [
+        "deadline appears open",
+        "12 days",
+        "trusted source layer 1",
+        "in-person",
+        "topics: physics",
+        "near-match only: funding is not explicit and fee is uncertain"
+      ],
+      "first_seen": "2026-09-23",
+      "deadline_evidence": "t in many-body systems Perimeter Circle - Alumni Listings Perimeter Circle - Stay Connected Perimeter Circle Awards Perimeter Circle Awards Academic Leadership Excellence Award Industry Trailblazer Award Pathfinder Award Nominate Perimeter Circle Award Event Perimeter Circle: Alumni Stories Applications are now OPEN Deadline: Jan 17, 2027 Apply today!",
+      "duration_evidence": "Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 . Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 .",
+      "fee_evidence": "",
+      "mode_evidence": "Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 .",
+      "extraction_confidence": 0.35,
+      "title_zh": "周界本科生暑期学校",
+      "organizer_zh": "周界本科生暑期学校",
+      "location_zh": "北美",
+      "summary_zh": "本科生暑期学校。周界研究所将于2027年6月14日至25日举办为期两周的本科生学校。参与者将通过课程及其他特别活动（如研究人员的报告和p）了解现代理论物理的前沿课题",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "截止日期似乎仍开放；12天；可信来源第1层；线下",
+      "risk_points_zh": "资助情况不明确，费用不确定",
+      "primary_topics": [
+        "physics"
+      ],
+      "secondary_topics": [],
+      "topic_evidence": {
+        "physics": "pants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and panel discussio"
+      },
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
       "title": "CoMaDe Science on the Island",
       "type": "winter school",
       "organizer": "Uppsala University Baltic University Programme",
@@ -6027,7 +6107,7 @@
       "fee_eur": 0.0,
       "application_link": "https://www.nora.ai/nora-research-school/education-programs/index.html",
       "source_url": "https://www.nora.ai/nora-research-school/education-programs/index.html",
-      "summary": "Research Schools and Conferences - NORA - Norwegian Artificial Intelligence Research Consortium Jump to main content Norwegian Artificial Intelligence Research Consortium en no Search Menu Search in NORA - Norwegian Artificial Intelligence Research Consortium Search Search in NOR",
+      "summary": "Research Schools and Conferences - NORA - Norwegian Artificial Intelligence Research Consortium Skip to main content Norwegian Artificial Intelligence Research Consortium en no Search Menu Search in NORA - Norwegian Artificial Intelligence Research Consortium Search Search in NOR",
       "recommendation_reason": "low fee: approximately EUR 0; priority region; trusted source layer 1.5; in-person",
       "risk_points": "application deadline is uncertain; duration is uncertain",
       "sessions": [],
@@ -6060,11 +6140,11 @@
       "mode_evidence": "residential program that takes place in serene and beautiful",
       "extraction_confidence": 0.5,
       "title_zh": "研究学校与会议",
-      "organizer_zh": "NLDL 冬季学校",
+      "organizer_zh": "NLDL冬季学校",
       "location_zh": "欧洲",
-      "summary_zh": "研究学校与会议 - NORA - 挪威人工智能研究联盟 跳至主要内容 挪威人工智能研究联盟 en no 搜索 菜单 在 NORA - 挪威人工智能研究联盟中搜索 搜索 在 NOR 中搜索",
+      "summary_zh": "研究学校与会议 - NORA - 挪威人工智能研究联盟 跳至主要内容 挪威人工智能研究联盟 en no 搜索 菜单 在NORA - 挪威人工智能研究联盟中搜索 在NOR中搜索",
       "eligibility_zh": "博士生，但也向更广泛的受众开放",
-      "recommendation_reason_zh": "低费用：约 EUR 0；优先地区；可信来源层级 1.5；线下",
+      "recommendation_reason_zh": "低费用：约EUR 0；优先地区；可信来源层级1.5；线下",
       "risk_points_zh": "申请截止日期不确定；时长不确定",
       "primary_topics": [
         "AI",
@@ -7090,6 +7170,83 @@
       "is_new": false
     },
     {
+      "title": "CERN School of Computing",
+      "type": "school of computing",
+      "organizer": "CERN School of Computing",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Mexico City, Mexico",
+      "mode": "in-person",
+      "start_date": "2027-05-16",
+      "end_date": "2027-05-29",
+      "duration_days": 14,
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "physics",
+        "particle physics"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://csc.web.cern.ch/",
+      "source_url": "https://csc.web.cern.ch/",
+      "summary": "CERN School of Computing – Creating common culture in scientific computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a Schoo",
+      "recommendation_reason": "14 days; priority region; trusted source layer 1; in-person",
+      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "score": 34.0,
+      "score_explanation": [
+        "14 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "topics: physics, particle physics",
+        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain"
+      ],
+      "first_seen": "2026-09-04",
+      "deadline_evidence": "",
+      "duration_evidence": "16 to 29 May 2027",
+      "fee_evidence": "",
+      "mode_evidence": "will take place in Mexico City, Mexico from 16 to 29 May 2027. Applic",
+      "extraction_confidence": 0.5,
+      "title_zh": "CERN计算学校",
+      "organizer_zh": "CERN计算学校",
+      "location_zh": "墨西哥墨西哥城",
+      "summary_zh": "CERN计算学校——在科学计算领域建立共同文化 跳至内容 CERN 加速科学 CERN计算学校 在科学计算领域建立共同文化 菜单 欢迎 关于 学校 主学校 专题学校 反向学校 人员 承办学校",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "14天；优先地区；可信来源第1层；线下",
+      "risk_points_zh": "申请截止日期不确定；资助情况不明确，费用不确定",
+      "primary_topics": [
+        "physics",
+        "particle physics"
+      ],
+      "secondary_topics": [],
+      "topic_evidence": {
+        "physics": "covering various aspects of scientific computing for high-energy physics and other data-intensive sciences. These schools are aimed at postgraduate (minimum of Bachelor deg",
+        "particle physics": "king at CERN or at other research institutes, with experience in particle physics, computing or related fields. Learn more . Upcoming schools: CSC Latin America 2027 The 49 th editi"
+      },
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
       "title": "Winter School​",
       "type": "winter school",
       "organizer": "Complexity Science Hub",
@@ -7466,7 +7623,6 @@
       "funding_evidence": "",
       "topic_keywords": [
         "linguistics",
-        "language documentation",
         "literature"
       ],
       "eligibility": "Master | PhD Location Leiden Area of interest Languages & Linguistics Address Study programmes Bachelor's programmes Master's programmes PhD programmes Education for",
@@ -7498,7 +7654,7 @@
         "priority region",
         "hybrid",
         "target level: MSc, PhD",
-        "topics: linguistics, language documentation, literature",
+        "topics: linguistics, literature",
         "near-match only: applications are not open yet; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-18",
@@ -7518,13 +7674,11 @@
         "linguistics"
       ],
       "secondary_topics": [
-        "language documentation",
         "literature"
       ],
       "topic_evidence": {
         "linguistics": "Summer School in Languages and Linguistics - Leiden University Summer School in Languages and Linguistics The Leiden Summer School in Language",
-        "language documentation": "dvanced courses in Anatolian, Classics, Descriptive Linguistics, Language Documentation, Eastern Christianity, Germanic, General Linguistics, Historical Linguistics, Indo-European, Indolo",
-        "literature": "nguistics, Indo-European, Indology, Iranian, Papyrology, Russian Literature, Semitic, and Sino-Tibetan. The Summer School takes place from Monday 5 July to Friday 16 July 2027"
+        "literature": "e of English is a basic requirement. Only the courses on Russian Literature are taught in Russian. Most courses will be hybrid; they will be simultaneously be taught on campus"
       },
       "detail_sections": [],
       "is_new": false
@@ -7863,89 +8017,6 @@
       "secondary_topics": [],
       "topic_evidence": {
         "linguistics": "The 7th Crete Summer School of Linguistics Home Venue Courses Events Application Useful info FAQs Contact Log in The 7th Crete Summer School o"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "48th CERN School of Computing",
-      "type": "school of computing",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "University of Liverpool, Liverpool, United Kingdom",
-      "mode": "in-person",
-      "start_date": "2026-08-23",
-      "end_date": "2026-09-05",
-      "duration_days": 14,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "software engineering",
-        "physics",
-        "particle physics",
-        "engineering"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://csc.web.cern.ch/csc-2026/",
-      "source_url": "https://csc.web.cern.ch/csc-2026/",
-      "summary": "CSC 2026 – CERN School of Computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a School History Past schools Photo gallery Al",
-      "recommendation_reason": "14 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "programme has already started"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 30.0,
-      "score_explanation": [
-        "14 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "topics: software engineering, physics, particle physics, engineering",
-        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "23 August – 5 September 2026",
-      "fee_evidence": "",
-      "mode_evidence": "",
-      "extraction_confidence": 0.5,
-      "title_zh": "第48届CERN计算学校",
-      "organizer_zh": "CERN计算学校",
-      "location_zh": "英国利物浦大学，利物浦，英国",
-      "summary_zh": "CSC 2026 – CERN计算学校 跳至内容 CERN 加速科学 CERN计算学校 在科学计算中创建共同文化 菜单 欢迎 关于 学校 主学校 专题学校 反向学校 人员 承办学校 历史 过往学校 照片库 Al",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "14天；优先地区；可信来源第1层；线下",
-      "risk_points_zh": "项目已经开始；资金不明确，费用不确定",
-      "primary_topics": [
-        "software engineering",
-        "physics",
-        "particle physics",
-        "engineering"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "software engineering": "nds-on exercises, covering three main themes: physics computing, software engineering, and data technologies. The School is aimed at postgraduate (minimum bachelor degree or equivalent)",
-        "physics": "of lectures and hands-on exercises, covering three main themes: physics computing, software engineering, and data technologies. The School is aimed at postgraduate (minimu",
-        "particle physics": "king at CERN or at other research institutes, with experience in particle physics, computing or related fields. We welcome applicants of all nationalities, and encourage all qualifi",
-        "engineering": "ercises, covering three main themes: physics computing, software engineering, and data technologies. The School is aimed at postgraduate (minimum bachelor degree or equivalent)"
       },
       "detail_sections": [],
       "is_new": false
@@ -9736,80 +9807,6 @@
       "is_new": false
     },
     {
-      "title": "Thematic CERN School of Computing",
-      "type": "school of computing",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Cosener’s House – Abingdon, UK",
-      "mode": "in-person",
-      "start_date": "2026-09-27",
-      "end_date": "2026-10-03",
-      "duration_days": 7,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "architecture"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://csc.web.cern.ch/scsc-2026/",
-      "source_url": "https://csc.web.cern.ch/scsc-2026/",
-      "summary": "sCSC 2026 – CERN School of Computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a School History Past schools Photo gallery A",
-      "recommendation_reason": "7 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "programme has already started"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 23.0,
-      "score_explanation": [
-        "7 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "topics: architecture",
-        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "27 September – 3 October 2026",
-      "fee_evidence": "",
-      "mode_evidence": "will be hosted at the Cosener’s House located in the grounds of the",
-      "extraction_confidence": 0.5,
-      "title_zh": "CERN计算专题学校",
-      "organizer_zh": "CERN计算学校",
-      "location_zh": "Cosener's House – 英国阿宾登",
-      "summary_zh": "sCSC 2026 – CERN计算学校 跳至内容 CERN 加速科学 CERN计算学校 在科学计算中创建共同文化 菜单 欢迎 关于 学校 主学校 专题学校 反向学校 人员 承办学校 历史 过往学校 照片库 A",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "7天；优先地区；可信来源第1层；线下",
-      "risk_points_zh": "项目已开始；资金未明确，费用不确定",
-      "primary_topics": [
-        "architecture"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "architecture": "ty in research and scientific computing Risk management Security architecture Application security Identity, authentication, authorisation Virtualisation and cloud security Cont"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
       "title": "Digital Humanities Summer Institute",
       "type": "summer institute",
       "organizer": "Digital Humanities Summer Institute",
@@ -10109,83 +10106,6 @@
       "is_new": false
     },
     {
-      "title": "CERN School of Computing",
-      "type": "school of computing",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Liverpool, UK",
-      "mode": "in-person",
-      "start_date": "2026-11-09",
-      "end_date": "2026-11-13",
-      "duration_days": 5,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "physics",
-        "particle physics"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://csc.web.cern.ch/",
-      "source_url": "https://csc.web.cern.ch/",
-      "summary": "CERN School of Computing – Creating common culture in scientific computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a Schoo",
-      "recommendation_reason": "5 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "programme has already started"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 21.0,
-      "score_explanation": [
-        "5 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "topics: physics, particle physics",
-        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-09-04",
-      "deadline_evidence": "",
-      "duration_evidence": "November 9-13, 2026",
-      "fee_evidence": "",
-      "mode_evidence": "will take place in Liverpool, UK from 23 August to 5 September. Appli",
-      "extraction_confidence": 0.5,
-      "title_zh": "CERN计算学校",
-      "organizer_zh": "CERN计算学校",
-      "location_zh": "英国利物浦",
-      "summary_zh": "CERN计算学校——在科学计算领域建立共同文化。跳至内容。CERN 加速科学。CERN计算学校。在科学计算领域建立共同文化。菜单。欢迎。关于。学校。主学校。专题学校。倒置学校。人员。承办学校。",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "5天；优先地区；可信来源第1层；线下",
-      "risk_points_zh": "项目已开始；资金情况不明确，费用不确定",
-      "primary_topics": [
-        "physics",
-        "particle physics"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "physics": "covering various aspects of scientific computing for high-energy physics and other data-intensive sciences. These schools are aimed at postgraduate (minimum of Bachelor deg",
-        "particle physics": "king at CERN or at other research institutes, with experience in particle physics, computing or related fields. Learn more . Upcoming schools: CSC 2026 The 48 th edition of the CSC"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
       "title": "Training course: Machine Learning-based weather forecasting",
       "type": "training course",
       "organizer": "ECMWF Events (Indico)",
@@ -10262,87 +10182,6 @@
         "climate": "nd the European Commission) An Introduction to ML in Weather and Climate - a MOOC-style course introducing many key concepts in machine learning (note this course ran in 20",
         "machine learning": "Training course: Machine Learning-based weather forecasting Training course: Machine Learning-based weather forecasting (16-November",
         "deep learning": "a deep dive into Earth system forecasting using state-of-the-art deep learning approaches, the Anemoi framework, and other modern machine learning tools. This in an advanced cour"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "Training course: Data assimilation & Machine Learning",
-      "type": "training course",
-      "organizer": "ECMWF Events (Indico)",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "ECMWF, Reading",
-      "mode": "hybrid",
-      "start_date": "2027-01-11",
-      "end_date": "2027-01-15",
-      "duration_days": 5,
-      "deadline": "2026-09-27",
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "machine learning",
-        "satellite",
-        "AI"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "£980",
-      "fee_eur": 1176.0,
-      "application_link": "https://events.ecmwf.int/event/578/",
-      "source_url": "https://events.ecmwf.int/event/578/",
-      "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
-      "recommendation_reason": "5 days; priority region; trusted source layer 1; hybrid",
-      "risk_points": "application deadline has passed; fee exceeds EUR 400 without explicit funding",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "self-funded",
-      "failed_hard_conditions": [
-        "application deadline has passed"
-      ],
-      "failed_recommendation_conditions": [
-        "fee exceeds EUR 400 without explicit funding"
-      ],
-      "score": 21.0,
-      "score_explanation": [
-        "5 days",
-        "priority region",
-        "trusted source layer 1",
-        "hybrid",
-        "topics: machine learning, satellite, AI",
-        "near-match only: application deadline has passed; fee exceeds EUR 400 without explicit funding"
-      ],
-      "first_seen": "2026-09-21",
-      "deadline_evidence": "Application deadline: 27 September 2026",
-      "duration_evidence": "11-15 January 2027",
-      "fee_evidence": "£980",
-      "mode_evidence": "in-person, and all lectures will be given in English. 11 Ja",
-      "extraction_confidence": 1.0,
-      "title_zh": "培训课程：资料同化与机器学习",
-      "organizer_zh": "ECMWF Events (Indico)",
-      "location_zh": "ECMWF，雷丁",
-      "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "5天；优先地区；可信来源第1层；混合形式",
-      "risk_points_zh": "申请截止日期已过；费用超过400欧元且未明确说明资助",
-      "primary_topics": [
-        "machine learning"
-      ],
-      "secondary_topics": [
-        "satellite",
-        "AI"
-      ],
-      "topic_evidence": {
-        "satellite": "delling The global observing system, with emphasis on how to use satellite observations Bias correction, quality control and diagnostics Applications of data assimilation met",
-        "AI": "arning for DA: model error estimation and correction, generative AI applications, hybrid modelling The global observing system, with emphasis on how to use satellite o",
-        "machine learning": "Training course: Data assimilation & Machine Learning Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Event"
       },
       "detail_sections": [],
       "is_new": false
@@ -10436,83 +10275,6 @@
         "sociology": "invite students and Ph.D. students of history, STS, philosophy, sociology, and neighboring humanities disciplines, as well as students and Ph.D. students of engineering scie",
         "history": "Scientific Culture of Error Errors have long been a topic in the history of science. The role of errors in the production of knowledge has been studied, and the productive",
         "philosophy": "r School? We invite students and Ph.D. students of history, STS, philosophy, sociology, and neighboring humanities disciplines, as well as students and Ph.D. students of engin"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "CERN School of Computing on IT Services",
-      "type": "school of computing",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Ferney-Voltaire, France",
-      "mode": "in-person",
-      "start_date": "2026-11-09",
-      "end_date": "2026-11-13",
-      "duration_days": 5,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "physics",
-        "engineering"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://csc.web.cern.ch/tcsc-on-it-services-2026/",
-      "source_url": "https://csc.web.cern.ch/tcsc-on-it-services-2026/",
-      "summary": "tCSC on IT Services 2026 – CERN School of Computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a School History Past schools",
-      "recommendation_reason": "5 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "programme has already started"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 21.0,
-      "score_explanation": [
-        "5 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "topics: physics, engineering",
-        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-09-04",
-      "deadline_evidence": "",
-      "duration_evidence": "9 – 13 November 2026",
-      "fee_evidence": "",
-      "mode_evidence": "will be hosted at the Appart’City Ferney-Voltaire . Academic progra",
-      "extraction_confidence": 0.5,
-      "title_zh": "CERN计算学院信息技术服务方向",
-      "organizer_zh": "CERN计算学院",
-      "location_zh": "法国费内-伏尔泰",
-      "summary_zh": "tCSC on IT Services 2026 – CERN计算学院 跳至内容 CERN 加速科学 CERN计算学院 在科学计算中建立共同文化 菜单 欢迎 关于 学院 主学院 专题学院 反向学院 人员 承办学院 历史 往届学院",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "5天；优先地区；可信来源第1层；线下",
-      "risk_points_zh": "项目已开始；资金情况不明确，费用不确定",
-      "primary_topics": [
-        "physics",
-        "engineering"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "physics": "he computing services delivered by the CERN IT Department to the physics community. The school is recommended for any person that is using the CERN IT services either to de",
-        "engineering": "to deliver information, analyze data, automate tasks or work in engineering projects. We expect participation from both active users who would like to be more proficient and n"
       },
       "detail_sections": [],
       "is_new": false
@@ -11435,7 +11197,7 @@
       "deadline_evidence": "",
       "duration_evidence": "",
       "fee_evidence": "Effective Strategies for a Low-Carbon World, Including Nuclear Power and Fusion | (smr 4397) ICTP Eu",
-      "mode_evidence": "Hybrid seminars 17 Nov 2026 19 Nov 2026 PWF: Introductio",
+      "mode_evidence": "Hybrid Discover all events Opportunities Overview ICTP:",
       "extraction_confidence": 0.25,
       "title_zh": "面包屑导航",
       "organizer_zh": "ICTP",
@@ -11476,8 +11238,8 @@
         "climate change": "7 27 Aug 2027 Application Closed school smr4363 Summer School in Climate Change and Infectious Diseases Modelling | (smr 4363) Medellin - Colombia Earth System Physics smr4363 Aug",
         "geophysics": "kshop on Open Hardware and Open Science in Engineering and Hydro-Geophysics: Technical Standards for Global Citizen Science | (smr 4394) ICTP Giambiagi Lecture Hall (AGH) Scie",
         "AI": "p smr4202 *** CANCELLED *** Workshop on Scientific Computing and AI | (smr 4202) Kuwait City - Kuwait Science, Technology and Innovation smr4202 November 2026 November",
-        "artificial intelligence": "FTs 14:00 16:00 17 Nov 2026 seminars Online PWF: Introduction to Artificial Intelligence for Physicists November 2026 November 16 cmsp 16 Nov 2026 20 Nov 2026 Application Closed scientific",
-        "machine learning": "scientific activity PWF Ghana: Mastering Statistical Models and Machine Learning: A Hands-On Workshop in Machine Learning with R/Python V Ghana 16 Nov 2026 20 Nov 2026 Application",
+        "artificial intelligence": "17 14:00 16:00 17 Nov 2026 seminars Online PWF: Introduction to Artificial Intelligence for Physicists November 2026 November 16 16 Nov 2026 20 Nov 2026 Application Closed scientific acti",
+        "machine learning": "scientific activity PWF Ghana: Mastering Statistical Models and Machine Learning: A Hands-On Workshop in Machine Learning with R/Python V Ghana cmsp 16 Nov 2026 20 Nov 2026 Applica",
         "data science": "0 Nov 2026 Application Closed school smr4320 CODATA-RDA Research Data Science Summer School and Advanced workshops | (smr 4320) ICTP Denardo Lecture Hall (AGH) smr4320 October 2",
         "data analysis": "7 Application Closed school smr4373 Summer School on Topological Data Analysis and Applications | (smr 4373) Lusaka - Zambia Mathematics smr4373 hecap 19 Jul 2027 30 Jul 2027 App",
         "high performance computing": "May 2027 Application Closed workshop smr4352 African Workshop on High Performance Computing for Sustainable Development | (smr 4352) Benin City, Edo State, Nigeria - Nigeria smr4352 May 2027",
@@ -11660,83 +11422,11 @@
         "AI": "for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language Technologies, Responsible AI,",
         "artificial intelligence": "tracks covering today's most impactful areas of data science and artificial intelligence. Participants will explore topics ranging from Python for Data Science and Machine Learning Fundame",
         "machine learning": "nts will explore topics ranging from Python for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language",
-        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 4518 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
+        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 4530 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
         "language technology": "earch Labs AirQo - IoT & AI for Environment Sunbird AI - African Language Technology Busitema AI - AI for Agriculture Makerere AI Labs DSAIL - IoT & AI for Environment - AirQo Sunbird",
         "high performance computing": "orking - - 11:00 - 13:00 Parallel Julia programming language and High Performance Computing Track A Dr. Adeleke Bankole, University of Cambridge, 11:00 - 13:00 Parallel Multimodal AI & LLMs &",
         "design": "h & Networking - - 14:30 - 16:00 Parallel AirQo DevCon: Hardware Design and Development for Air Quality Sensing Track A AirQo 14:30 - 16:00 Parallel NLP & African Language",
         "agriculture": "nt Sunbird AI - African Language Technology Busitema AI - AI for Agriculture Makerere AI Labs DSAIL - IoT & AI for Environment - AirQo Sunbird AI Busitema AI Lab Makerere AI La"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "Summer School of Linguistics 2026",
-      "type": "summer school",
-      "organizer": "Charles University Summer School of Linguistics",
-      "source_layer": "AI",
-      "region_priority": "global",
-      "location": "České Budějovice, Czech Republic",
-      "mode": "in-person",
-      "start_date": null,
-      "end_date": null,
-      "duration_days": null,
-      "deadline": null,
-      "deadline_status": "open",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "linguistics"
-      ],
-      "eligibility": "Primarily intended for graduate students of linguistics, psycholinguistics and related areas; advanced BA or MA students interested in language and its use, as well as faculty members, often also find the school inspiring and useful. Participants who do not want to use accommodation or come only for a few days are welcome but must find their own accommodation.",
-      "target_level": "uncertain",
-      "fee": "Participation fee: 2000 CZK (approximately 80 EUR). Accommodation options: 5325 CZK for the whole school including the participation fee; single bedroom sharing bathroom and fridge: 565 CZK per person/night; 5955 CZK for the whole school including the participation fee. After a certain date, the fee is not refundable.",
-      "fee_eur": 5955.0,
-      "application_link": "https://ssol.ff.cuni.cz/ssol-2026/to-apply/",
-      "source_url": "https://ssol.ff.cuni.cz/",
-      "summary": "查理大学语言学暑期学校2026（SSoL 2026）现正开放申请，截止日期为3月15日（已延长至3月）。该项目主要面向语言学、心理语言学及相关领域的 graduate 学生，也欢迎高年级 BA/MA 学生和教师参加。活动将在捷克共和国南部的捷克布杰约维采举行，提供校内宿舍住宿。参与费为2000 CZK（约80 EUR），含住宿的注册选项费用为5325 CZK或5955 CZK。",
-      "recommendation_reason": "deadline appears open; in-person; topics: linguistics; near-match only: duration is uncertain; fee exceeds EUR 400 without explicit funding",
-      "risk_points": "duration is uncertain; fee exceeds EUR 400 without explicit funding",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "self-funded",
-      "failed_hard_conditions": [
-        "duration is uncertain"
-      ],
-      "failed_recommendation_conditions": [
-        "fee exceeds EUR 400 without explicit funding"
-      ],
-      "score": 14.0,
-      "score_explanation": [
-        "deadline appears open",
-        "in-person",
-        "topics: linguistics",
-        "near-match only: duration is uncertain; fee exceeds EUR 400 without explicit funding"
-      ],
-      "first_seen": null,
-      "deadline_evidence": "",
-      "duration_evidence": "",
-      "fee_evidence": "Also, we ask them to pay a participation fee of 2000 CZK (approximately 80 EUR) to complete the registration. 5325 CZK for the whole school including the participation fee) and a single bedroom sharing a bathroom and fridge with two other single bedrooms (565 CZK person/night; i.e. 5955 CZK for the whole school including the participation fee). After this date, the fee is not refundable.",
-      "mode_evidence": "We offer nice and cheap accommodation in the dormitory of the University of South Bohemia in the same campus just about 500 m from the main venue. The school will be held in the city of České Budějovice in the south of the Czech Republic.",
-      "extraction_confidence": 0.35,
-      "title_zh": "2026年语言学暑期学校",
-      "organizer_zh": "查理大学语言学暑期学校",
-      "location_zh": "捷克共和国捷克布杰约维采",
-      "summary_zh": "查理大学语言学暑期学校2026（SSoL 2026）现正开放申请，截止日期为3月15日（已延长至3月）。该项目主要面向语言学、心理语言学及相关领域的 graduate 学生，也欢迎高年级 BA/MA 学生和教师参加。活动将在捷克共和国南部的捷克布杰约维采举行，提供校内宿舍住宿。参与费为2000 CZK（约80 EUR），含住宿的注册选项费用为5325 CZK或5955 CZK。",
-      "eligibility_zh": "主要面向语言学、心理语言学及相关领域的研究生；对语言及其使用感兴趣的高年级本科生或硕士生，以及教师，通常也会觉得该校有启发性和实用性。不想使用住宿或只来几天的参与者欢迎参加，但必须自行安排住宿。",
-      "recommendation_reason_zh": "截止日期似乎开放；线下；主题：语言学；仅近似匹配：时长不确定；费用超过400欧元且无明确资助",
-      "risk_points_zh": "时长不确定；费用超过400欧元且无明确资助",
-      "primary_topics": [
-        "linguistics"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "linguistics": "To apply – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts"
       },
       "detail_sections": [],
       "is_new": false
@@ -13369,79 +13059,6 @@
       "is_new": false
     },
     {
-      "title": "Perimeter Undergraduate Summer School",
-      "type": "summer school",
-      "organizer": "Perimeter Undergraduate Summer School",
-      "source_layer": "1",
-      "region_priority": "supplementary",
-      "location": "North America",
-      "mode": "uncertain",
-      "start_date": "2027-06-14",
-      "end_date": "2027-06-25",
-      "duration_days": 12,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "physics"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school",
-      "source_url": "https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school",
-      "summary": "Undergraduate Summer School. Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 . Participants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and p",
-      "recommendation_reason": "12 days; trusted source layer 1; topics: physics; near-match only: application deadline is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline is uncertain",
-        "in-person status is uncertain"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 7.0,
-      "score_explanation": [
-        "12 days",
-        "trusted source layer 1",
-        "topics: physics",
-        "near-match only: application deadline is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-09-23",
-      "deadline_evidence": "",
-      "duration_evidence": "Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 . Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 .",
-      "fee_evidence": "",
-      "mode_evidence": "",
-      "extraction_confidence": 0.35,
-      "title_zh": "周界本科生暑期学校",
-      "organizer_zh": "周界本科生暑期学校",
-      "location_zh": "北美",
-      "summary_zh": "本科生暑期学校。周界研究所将于2027年6月14日至25日举办为期两周的本科生学校。参与者将通过课程及其他特别活动（如研究人员报告等）了解现代理论物理的前沿课题。",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "12天；可信来源第1层；主题：物理学；仅为近似匹配：申请截止日期不确定；线下状态不确定；资助情况未明确，费用不确定",
-      "risk_points_zh": "申请截止日期不确定；线下状态不确定；资助情况未明确，费用不确定",
-      "primary_topics": [
-        "physics"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "physics": "pants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and panel discussio"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
       "title": "MaSAG27 Summer School and Conference",
       "type": "summer school",
       "organizer": "EGU Training Schools",
@@ -13527,13 +13144,13 @@
       "topic_keywords": [
         "linguistics"
       ],
-      "eligibility": "Regular courses (intermediate or advanced) are open to second-year LOT-affiliated RM students as well as PhD candidates from around the world. RM1 courses (introductory) are specifically designed for first-year Research Master (RM) students enrolled in one of the RM programmes; non-first-year RM students wishing to participate in an RM1 course must contact the organizers to be put on a waiting list. A course can be attended by up to 30 participants.",
+      "eligibility": "Regular courses (intermediate or advanced) are open to second-year LOT-affiliated RM students as well as PhD candidates from around the world. RM1 courses (introductory) are specifically designed for first-year Research Master (RM) students enrolled in one of the RM programmes. A course can be attended by up to 30 participants.",
       "target_level": "PhD, MSc",
       "fee": "",
       "fee_eur": null,
       "application_link": "https://lotschool.nl/remember-to-register-for-the-lot-winter-school-2027/",
       "source_url": "https://lotschool.nl/remember-to-register-for-the-lot-winter-school-2027/",
-      "summary": "LOT 2027冬季语言学学校，注册通过LOT网站进行，截止日期为2026年12月6日23:59。课程包括面向一年级研究型硕士的入门RM1课程，以及面向二年级LOT附属研究型硕士和全球博士生的中高级常规课程，每门课程最多30人，每门课周一至周五每天一次共五次课。",
+      "summary": "LOT 2027冬季学校，面向语言学相关研究硕士生和博士生，提供RM1入门课程及中高级常规课程，每门课最多30人，课程为期五天。",
       "recommendation_reason": "deadline appears open; target level: PhD, MSc; topics: linguistics; near-match only: duration is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "risk_points": "duration is uncertain; in-person status is uncertain; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -13564,11 +13181,11 @@
       "fee_evidence": "",
       "mode_evidence": "",
       "extraction_confidence": 0.35,
-      "title_zh": "LOT 2027年冬季学校",
+      "title_zh": "LOT Winter School 2027",
       "organizer_zh": "LOT School",
       "location_zh": "不确定",
-      "summary_zh": "LOT 2027冬季语言学学校，注册通过LOT网站进行，截止日期为2026年12月6日23:59。课程包括面向一年级研究型硕士的入门RM1课程，以及面向二年级LOT附属研究型硕士和全球博士生的中高级常规课程，每门课程最多30人，每门课周一至周五每天一次共五次课。",
-      "eligibility_zh": "常规课程（中级或高级）面向LOT附属RM项目的二年级学生以及全球各地的博士候选人开放。RM1课程（入门级）专为已注册其中一个RM项目的一年级研究型硕士（RM）学生设计；希望参加RM1课程的非一年级RM学生须联系组织方以列入候补名单。每门课程最多可容纳30名参与者。",
+      "summary_zh": "LOT 2027冬季学校，面向语言学相关研究硕士生和博士生，提供RM1入门课程及中高级常规课程，每门课最多30人，课程为期五天。",
+      "eligibility_zh": "常规课程（中级或高级）面向LOT附属RM项目的二年级学生以及全球博士生开放。RM1课程（入门级）专为就读于RM项目之一的一年级研究型硕士（RM）学生设计。每门课程最多可容纳30名参与者。",
       "recommendation_reason_zh": "截止日期似乎仍开放；目标层次：博士、硕士；主题：语言学；仅为近似匹配：时长不确定；线下状态不确定；资助情况不明确，费用不确定",
       "risk_points_zh": "时长不确定；线下状态不确定；资助情况不明确，费用不确定",
       "primary_topics": [
@@ -14893,7 +14510,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/resources/templates/summer-school-application-form/",
       "source_url": "https://www.isprs.org/resources/templates/summer-school-application-form/",
-      "summary": "Summer School Application Form November 17, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissi",
+      "summary": "Summer School Application Form November 18, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissi",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, AI, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -14927,9 +14544,9 @@
       "title_zh": "相关链接",
       "organizer_zh": "ISPRS",
       "location_zh": "全球",
-      "summary_zh": "暑期学校申请表 2026年11月17日 | 首页 | 网站地图 | ISPRS基金会 | 𝕏 登录 首页 学会 学会概览与组织概览 组织 历史背景 百年视频 组织间活动 目标与活动 官员 理事会 委员会",
+      "summary_zh": "暑期学校申请表 2026年11月18日 | 首页 | 网站地图 | ISPRS基金会 | 𝕏 登录 首页 学会 学会概览与组织概览 组织 历史背景 百年视频 组织间活动 目标与活动 官员 理事会 委员会",
       "eligibility_zh": "",
-      "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、人工智能、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
+      "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、AI、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
       "risk_points_zh": "申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
       "primary_topics": [
         "remote sensing",
@@ -14974,7 +14591,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/society/awards/torlegard.aspx",
       "source_url": "https://www.isprs.org/society/awards/torlegard.aspx",
-      "summary": "ISPRS WEC Kennert Torlegård Travel Grant November 17, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Counci",
+      "summary": "ISPRS WEC Kennert Torlegård Travel Grant November 18, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Counci",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -15008,10 +14625,10 @@
       "title_zh": "获奖证书",
       "organizer_zh": "ISPRS",
       "location_zh": "全球",
-      "summary_zh": "ISPRS WEC Kennert Torlegård 旅行资助 2026年11月17日 | 首页 | 网站地图 | ISPRS 基金会 | 𝕏 登录 首页 学会 学会概览与组织 概览 组织 历史背景 百年视频 组织间活动 目标与活动 官员 理事会",
+      "summary_zh": "ISPRS WEC Kennert Torlegård 旅行资助 2026年11月18日 | 首页 | 网站地图 | ISPRS 基金会 | 𝕏 登录 首页 学会 学会概览与组织 概览 组织 历史背景 百年视频 组织间活动 目标与活动 官员 理事会",
       "eligibility_zh": "该奖项授予一名青年科学家，其资格由下文第四条所定义的选择委员会确定",
-      "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确且费用不确定",
-      "risk_points_zh": "申请截止日期不确定；仅线上；资助情况不明确且费用不确定",
+      "recommendation_reason_zh": "6天；可信来源第1层；主题：遥感、地理空间、哲学；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
+      "risk_points_zh": "申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
       "primary_topics": [
         "remote sensing",
         "geospatial",
@@ -15104,82 +14721,6 @@
         "syntax": "mpa) Marek Bajger: The sentence constituent “attribute” in Czech syntax teaching Justīne Bondare: Cross-Linguistic Influence in Latvian-English Bilingual Children: Evidenc",
         "psycholinguistics": "Knowledge-based Validation Limor Raviv (Max Planck Institute for Psycholinguistics): (1) Studying language evolution in the lab I; (2) Studying language evolution in the lab II; (3)",
         "law": "da Matoušková: Concretisation of the term of “democratic rule of law” Milada Matoušková & Tomáš Ondřich: Does the factual portion of operative part of judgements in cri"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "Meetings & Events",
-      "type": "short course",
-      "organizer": "American Meteorological Society",
-      "source_layer": "1",
-      "region_priority": "supplementary",
-      "location": "North America",
-      "mode": "online",
-      "start_date": "2027-01-10",
-      "end_date": "2027-01-14",
-      "duration_days": 5,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "climate",
-        "AI"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.ametsoc.org/ams/meetings-events/",
-      "source_url": "https://www.ametsoc.org/ams/meetings-events/",
-      "summary": "Meetings & Events - American Meteorological Society JOIN NEWSROOM DONATE YOUR ACCOUNT Hi, {{ memberDetails.firstName }}! My Account AMS Community AMS Code of Conduct Log out LOG IN Search Search About About AMS AMS Leadership Commissions, Boards, and Committees Explore AMS Conten",
-      "recommendation_reason": "5 days; trusted source layer 1; topics: climate, AI; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline is uncertain",
-        "online-only"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 0.0,
-      "score_explanation": [
-        "5 days",
-        "trusted source layer 1",
-        "topics: climate, AI",
-        "near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-06-13",
-      "deadline_evidence": "",
-      "duration_evidence": "10-14 January 2027",
-      "fee_evidence": "",
-      "mode_evidence": "Webinar Get Certified Advocate for Science Policy Corpora",
-      "extraction_confidence": 0.5,
-      "title_zh": "会议与活动",
-      "organizer_zh": "美国气象学会",
-      "location_zh": "北美",
-      "summary_zh": "会议与活动 - 美国气象学会 加入 新闻中心 捐赠 您的账户 您好，{{ memberDetails.firstName }}！我的账户 AMS 社区 AMS 行为准则 退出登录 登录 搜索 搜索 关于 关于 AMS AMS 领导层 委员会、董事会和理事会 探索 AMS 内容",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "5天；可信来源第1层；主题：气候、人工智能；仅为近似匹配：申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
-      "risk_points_zh": "申请截止日期不确定；仅线上；资助情况不明确，费用不确定",
-      "primary_topics": [
-        "climate",
-        "AI"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "climate": "the world’s largest yearly gathering for the weather, water, and climate community—to our specialty conferences , short courses , and events , AMS brings together atmospher",
-        "AI": "Career Success Short Course: January 10 Harnessing SI (formally AI) for Advanced Weather Prediction with NOAA's Project EAGLE Short Course: January 10 Co-producing En"
       },
       "detail_sections": [],
       "is_new": false
@@ -16794,7 +16335,7 @@
       "organizer": "UNICRI AI Ethics Winter School",
       "source_layer": "AI",
       "region_priority": "global",
-      "location": "Rome City Institute Campus, Rome, Italy",
+      "location": "Rome City Institute Campus in Rome (Italy)",
       "mode": "in-person",
       "start_date": null,
       "end_date": null,
@@ -16804,15 +16345,17 @@
       "funding_available": null,
       "funding_type": [],
       "funding_evidence": "",
-      "topic_keywords": [],
-      "eligibility": "Applicants must be enrolled in, or have completed, a first university degree programme (bachelor's level or equivalent); professionals in governmental bodies, local authorities, international and non-governmental organizations may benefit",
+      "topic_keywords": [
+        "AI governance"
+      ],
+      "eligibility": "Applicants must be enrolled in, or have completed, a first university degree programme (bachelor's level or equivalent).",
       "target_level": "uncertain",
-      "fee": "Registration fee €1,000, includes tuition and course materials; no refunds or reductions for non-completion or cancellation",
+      "fee": "Registration fee: €1,000, includes tuition and course materials.",
       "fee_eur": 1000.0,
       "application_link": "https://unicri.org/training-summer-school-sport-governance-and-ethics-integrity-2026",
       "source_url": "https://unicri.org/training-summer-school-sport-governance-and-ethics-integrity-2026",
-      "summary": "联合国UNICRI举办的体育治理与伦理暑期学校（2027年春季），主题为实践中的诚信，在意大利罗马Rome City Institute Campus线下授课，学费1000欧元含学费和课程材料，申请者需具备或正在攻读本科学位。",
-      "recommendation_reason": "in-person; near-match only: application deadline is uncertain; duration is uncertain; fee exceeds EUR 400 without explicit funding",
+      "summary": "联合国UNICRI举办的体育治理与伦理暑期学校（2027年春季），主题为“实践中的诚信”，在意大利罗马的Rome City Institute Campus线下授课，注册费1000欧元，含学费和课程材料。申请者需在读或已完成本科（学士）学位。申请截止日期待公布。",
+      "recommendation_reason": "in-person; topics: AI governance; near-match only: application deadline is uncertain; duration is uncertain; fee exceeds EUR 400 without explicit funding",
       "risk_points": "application deadline is uncertain; duration is uncertain; fee exceeds EUR 400 without explicit funding",
       "sessions": [],
       "identity_key": "",
@@ -16832,24 +16375,29 @@
       "score": 0.0,
       "score_explanation": [
         "in-person",
+        "topics: AI governance",
         "near-match only: application deadline is uncertain; duration is uncertain; fee exceeds EUR 400 without explicit funding"
       ],
       "first_seen": null,
       "deadline_evidence": "",
       "duration_evidence": "",
-      "fee_evidence": "Registration Fee and Payment The registration fee is €1,000 and includes tuition and course materials. Participants who do not complete the course will not be entitled to the certificate award, refunds, or reductions in the registration fee. Refund and Cancellation Policy In the event of a participant cancellation for any reason, including visa denial, the registration fee will not be refunded.",
+      "fee_evidence": "Registration Fee and Payment The registration fee is €1,000 and includes tuition and course materials.",
       "mode_evidence": "Course Methodology and Attendance Classes take place at the Rome City Institute Campus in Rome (Italy), Monday to Friday from 9:30 am to 4:30 pm CEST.",
       "extraction_confidence": 0.35,
       "title_zh": "体育治理与伦理暑期学校：实践中的诚信",
       "organizer_zh": "UNICRI AI伦理冬季学校",
-      "location_zh": "意大利罗马，罗马城市学院校区",
-      "summary_zh": "联合国UNICRI举办的体育治理与伦理暑期学校（2027年春季），主题为实践中的诚信，在意大利罗马Rome City Institute Campus线下授课，学费1000欧元含学费和课程材料，申请者需具备或正在攻读本科学位。",
-      "eligibility_zh": "申请人须已注册或已完成首个大学学位课程（学士水平或同等学历）；政府机构、地方当局、国际组织和非政府组织的专业人士亦可受益",
-      "recommendation_reason_zh": "线下授课；仅为近似匹配：申请截止日期不确定；时长不确定；费用超过400欧元且无明确资助",
+      "location_zh": "意大利罗马市罗马城市学院校区",
+      "summary_zh": "联合国UNICRI举办的体育治理与伦理暑期学校（2027年春季），主题为“实践中的诚信”，在意大利罗马的Rome City Institute Campus线下授课，注册费1000欧元，含学费和课程材料。申请者需在读或已完成本科（学士）学位。申请截止日期待公布。",
+      "eligibility_zh": "申请人须正在就读或已完成第一个大学学位课程（学士学位或同等学历）。",
+      "recommendation_reason_zh": "线下进行；主题：AI治理；仅为近似匹配：申请截止日期不确定；时长不确定；费用超过400欧元且无明确资助",
       "risk_points_zh": "申请截止日期不确定；时长不确定；费用超过400欧元且无明确资助",
       "primary_topics": [],
-      "secondary_topics": [],
-      "topic_evidence": {},
+      "secondary_topics": [
+        "AI governance"
+      ],
+      "topic_evidence": {
+        "AI governance": "December 2026, Online Winter School on Artificial Intelligence (AI), Ethics and Human Rights, 14-18 December 2026, Hybrid Format: Rome (Italy) and online Summer Schoo"
+      },
       "detail_sections": [],
       "is_new": false
     },
@@ -16915,6 +16463,78 @@
       "primary_topics": [],
       "secondary_topics": [],
       "topic_evidence": {},
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
+      "title": "Summer School of Linguistics 2026",
+      "type": "summer school",
+      "organizer": "Charles University Summer School of Linguistics",
+      "source_layer": "AI",
+      "region_priority": "global",
+      "location": "uncertain",
+      "mode": "uncertain",
+      "start_date": null,
+      "end_date": null,
+      "duration_days": null,
+      "deadline": null,
+      "deadline_status": "open",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "linguistics"
+      ],
+      "eligibility": "Primarily intended for graduate students of linguistics, psycholinguistics and related areas; advanced BA or MA students interested in language and its use, as well as faculty members, may also find the school useful.",
+      "target_level": "uncertain",
+      "fee": "Participation fee 2000 CZK (approximately 80 EUR); accommodation options: 5325 CZK for the whole school including the participation fee; single bedroom sharing bathroom and fridge with two other single bedrooms at 565 CZK per person/night; 5955 CZK for the whole school including the participation fee.",
+      "fee_eur": 5955.0,
+      "application_link": "https://ssol.ff.cuni.cz/",
+      "source_url": "https://ssol.ff.cuni.cz/",
+      "summary": "语言学暑期学校2026面向语言学、心理语言学及相关领域的研究生，也欢迎高年级本科/硕士生和教师参加，旨在让学员了解语言学研究的最新成果。申请开放至3月15日（已延期），参与费为2000 CZK（约80 EUR），并提供含住宿的注册选项。",
+      "recommendation_reason": "deadline appears open; topics: linguistics; near-match only: duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
+      "risk_points": "duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "self-funded",
+      "failed_hard_conditions": [
+        "duration is uncertain",
+        "in-person status is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "score": 0.0,
+      "score_explanation": [
+        "deadline appears open",
+        "topics: linguistics",
+        "near-match only: duration is uncertain; in-person status is uncertain; fee exceeds EUR 400 without explicit funding"
+      ],
+      "first_seen": null,
+      "deadline_evidence": "To apply – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts Past years Past speakers SSoL 2025 SSoL 2024 SSoL 2023 SSoL 2022 SSoL 2019 SSoL 2018 SSoL 2017 SSoL 2016 SSoL 2015 SSoL 2014 SSoL 2013 SSoL 2012 SSoL 2011 SSoL 2010 SSoL 2009 SSoL 2008 SSoL 2007 Contact Partners Facebook Search for: To apply APPLICATIONS TO SSoL2026 ARE OPEN TILL MARCH 15 [extended to MARCH",
+      "duration_evidence": "",
+      "fee_evidence": "Also, we ask them to pay a participation fee of 2000 CZK (approximately 80 EUR) to complete the registration. 5325 CZK for the whole school including the participation fee) and a single bedroom sharing a bathroom and fridge with two other single bedrooms (565 CZK person/night; i.e. 5955 CZK for the whole school including the participation fee).",
+      "mode_evidence": "",
+      "extraction_confidence": 0.35,
+      "title_zh": "2026年语言学暑期学校",
+      "organizer_zh": "查理大学语言学暑期学校",
+      "location_zh": "不确定",
+      "summary_zh": "语言学暑期学校2026面向语言学、心理语言学及相关领域的研究生，也欢迎高年级本科/硕士生和教师参加，旨在让学员了解语言学研究的最新成果。申请开放至3月15日（已延期），参与费为2000 CZK（约80 EUR），并提供含住宿的注册选项。",
+      "eligibility_zh": "主要面向语言学、心理语言学及相关领域的研究生；对语言及其使用感兴趣的高年级本科生或硕士生以及教师也可能从中受益。",
+      "recommendation_reason_zh": "截止日期似乎仍开放；主题：语言学；仅为近似匹配：时长不确定；是否为线下形式不确定；费用超过400欧元且无明确资助",
+      "risk_points_zh": "时长不确定；是否为线下形式不确定；费用超过400欧元且无明确资助",
+      "primary_topics": [
+        "linguistics"
+      ],
+      "secondary_topics": [],
+      "topic_evidence": {
+        "linguistics": "To apply – Summer School of Linguistics Skip to content Menu Home About SSoL SSoL 2026 To apply Travel details SSoL 2026: lecture abstracts"
+      },
       "detail_sections": [],
       "is_new": false
     },
@@ -18362,71 +17982,6 @@
         "AI": "rganisation / Institution Other * Will you be attending the free AI in Social Research Seminars? (Monday-Wednesday 12:30 - 13:25) This question is required. Yes No Nex",
         "history": "udent web profile page, please paste the URL below * Educational history and achievements. Please provide your educational history (subject, course, institution, dates, att"
       },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "Breadcrumb",
-      "type": "summer school",
-      "organizer": "Discovery: Application Bergen Summer Research School",
-      "source_layer": "discovery",
-      "region_priority": "global",
-      "location": "global",
-      "mode": "in-person",
-      "start_date": "2027-06-07",
-      "end_date": "2027-06-17",
-      "duration_days": 11,
-      "deadline": "2027-02-01",
-      "deadline_status": "open",
-      "funding_available": true,
-      "funding_type": [
-        "stipend"
-      ],
-      "funding_evidence": "Stipends A limited number of compeditive stipends are available to support participation in BSRS.",
-      "topic_keywords": [],
-      "eligibility": "Before starting your application, please ensure you meet the academic requirements",
-      "target_level": "MSc, PhD, postdoc",
-      "fee": "no registration fee",
-      "fee_eur": 0.0,
-      "application_link": "https://www4.uib.no/en/research/research-schools/bergen-summer-research-school/apply-to-participate",
-      "source_url": "https://www4.uib.no/en/research/research-schools/bergen-summer-research-school/apply-to-participate",
-      "summary": "Apply to participate | UiB Skip to main content Studies Research About UiB Museum Library For students For employees Menu Studies Research About UiB Museum Library For students For employees Breadcrumb Home Research Research schools Bergen Summer Research School Apply to particip",
-      "recommendation_reason": "low fee: approximately EUR 0; deadline appears open; 11 days; in-person",
-      "risk_points": "Funding may be competitive or partial. Fee noted: no registration fee.",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "low-fee",
-      "failed_hard_conditions": [],
-      "failed_recommendation_conditions": [],
-      "score": 61.0,
-      "score_explanation": [
-        "low fee: approximately EUR 0",
-        "deadline appears open",
-        "11 days",
-        "in-person",
-        "target level: MSc, PhD, postdoc"
-      ],
-      "first_seen": "2026-11-11",
-      "deadline_evidence": "application until the deadline, 1 February 2027",
-      "duration_evidence": "7-17 June 2027",
-      "fee_evidence": "no registration fee",
-      "mode_evidence": "residential address selected a course(s) uploaded all the req",
-      "extraction_confidence": 1.0,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "primary_topics": [],
-      "secondary_topics": [],
-      "topic_evidence": {},
       "detail_sections": [],
       "is_new": false
     },
@@ -20180,7 +19735,7 @@
       "source_url": "https://ellis.eu/events/ellis-sites-neurips-fest-2026",
       "summary": "18/11/26 - 23/12/26 • Multiple Locations ELLIS Sites NeurIPS Fest 2026: Celebrate, Connect, Collaborate Discover the latest research from top AI minds at multiple locations across Europe during the weeks around the NeurIPS conference. Fest , Poster Session Read More",
       "recommendation_reason": "low fee: approximately EUR 130; 36 days; priority region; trusted source layer 1",
-      "risk_points": "application deadline has passed",
+      "risk_points": "programme has already started",
       "sessions": [],
       "identity_key": "",
       "discovery_verified": false,
@@ -20190,7 +19745,7 @@
       "funding_scope": "",
       "financial_access_status": "low-fee",
       "failed_hard_conditions": [
-        "application deadline has passed"
+        "programme has already started"
       ],
       "failed_recommendation_conditions": [],
       "score": 56.0,
@@ -20201,7 +19756,7 @@
         "trusted source layer 1",
         "in-person",
         "topics: AI",
-        "near-match only: application deadline has passed"
+        "near-match only: programme has already started"
       ],
       "first_seen": "2026-11-17",
       "deadline_evidence": "ELLIS detail/registration page: registration deadline 2026-10-30",
@@ -20220,7 +19775,7 @@
       "secondary_topics": [],
       "topic_evidence": {},
       "detail_sections": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "ANSTO-HZB-AONSA Neutron School 2026",
@@ -22235,7 +21790,7 @@
       "fee_eur": 0.0,
       "application_link": "https://www.nora.ai/nora-research-school/education-programs/index.html",
       "source_url": "https://www.nora.ai/nora-research-school/education-programs/index.html",
-      "summary": "Research Schools and Conferences - NORA - Norwegian Artificial Intelligence Research Consortium Jump to main content Norwegian Artificial Intelligence Research Consortium en no Search Menu Search in NORA - Norwegian Artificial Intelligence Research Consortium Search Search in NOR",
+      "summary": "Research Schools and Conferences - NORA - Norwegian Artificial Intelligence Research Consortium Skip to main content Norwegian Artificial Intelligence Research Consortium en no Search Menu Search in NORA - Norwegian Artificial Intelligence Research Consortium Search Search in NOR",
       "recommendation_reason": "low fee: approximately EUR 0; priority region; trusted source layer 1.5; in-person",
       "risk_points": "application deadline is uncertain; duration is uncertain",
       "sessions": [],
@@ -23254,7 +22809,7 @@
         "mechanics": "l signal propagation, and cellular- and tissue-level contractile mechanics in the heart. Since the final part of the course will be a small research project, the students wil"
       },
       "detail_sections": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "Tuition fees, scholarships, and financial support",
@@ -23548,6 +23103,83 @@
       "primary_topics": [],
       "secondary_topics": [],
       "topic_evidence": {},
+      "detail_sections": [],
+      "is_new": false
+    },
+    {
+      "title": "CERN School of Computing",
+      "type": "school of computing",
+      "organizer": "CERN School of Computing",
+      "source_layer": "1",
+      "region_priority": "priority",
+      "location": "Mexico City, Mexico",
+      "mode": "in-person",
+      "start_date": "2027-05-16",
+      "end_date": "2027-05-29",
+      "duration_days": 14,
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "physics",
+        "particle physics"
+      ],
+      "eligibility": "",
+      "target_level": "uncertain",
+      "fee": "",
+      "fee_eur": null,
+      "application_link": "https://csc.web.cern.ch/",
+      "source_url": "https://csc.web.cern.ch/",
+      "summary": "CERN School of Computing – Creating common culture in scientific computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a Schoo",
+      "recommendation_reason": "14 days; priority region; trusted source layer 1; in-person",
+      "risk_points": "application deadline is uncertain; funding is not explicit and fee is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "unresolved",
+      "failed_hard_conditions": [
+        "application deadline is uncertain"
+      ],
+      "failed_recommendation_conditions": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "score": 34.0,
+      "score_explanation": [
+        "14 days",
+        "priority region",
+        "trusted source layer 1",
+        "in-person",
+        "topics: physics, particle physics",
+        "near-match only: application deadline is uncertain; funding is not explicit and fee is uncertain"
+      ],
+      "first_seen": "2026-09-04",
+      "deadline_evidence": "",
+      "duration_evidence": "16 to 29 May 2027",
+      "fee_evidence": "",
+      "mode_evidence": "will take place in Mexico City, Mexico from 16 to 29 May 2027. Applic",
+      "extraction_confidence": 0.5,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "primary_topics": [
+        "physics",
+        "particle physics"
+      ],
+      "secondary_topics": [],
+      "topic_evidence": {
+        "physics": "covering various aspects of scientific computing for high-energy physics and other data-intensive sciences. These schools are aimed at postgraduate (minimum of Bachelor deg",
+        "particle physics": "king at CERN or at other research institutes, with experience in particle physics, computing or related fields. Learn more . Upcoming schools: CSC Latin America 2027 The 49 th editi"
+      },
       "detail_sections": [],
       "is_new": false
     },
@@ -24202,7 +23834,6 @@
       "funding_evidence": "",
       "topic_keywords": [
         "linguistics",
-        "language documentation",
         "literature"
       ],
       "eligibility": "Master | PhD Location Leiden Area of interest Languages & Linguistics Address Study programmes Bachelor's programmes Master's programmes PhD programmes Education for",
@@ -24234,7 +23865,7 @@
         "priority region",
         "hybrid",
         "target level: MSc, PhD",
-        "topics: linguistics, language documentation, literature",
+        "topics: linguistics, literature",
         "near-match only: applications are not open yet; funding is not explicit and fee is uncertain"
       ],
       "first_seen": "2026-06-18",
@@ -24254,13 +23885,11 @@
         "linguistics"
       ],
       "secondary_topics": [
-        "language documentation",
         "literature"
       ],
       "topic_evidence": {
         "linguistics": "Summer School in Languages and Linguistics - Leiden University Summer School in Languages and Linguistics The Leiden Summer School in Language",
-        "language documentation": "dvanced courses in Anatolian, Classics, Descriptive Linguistics, Language Documentation, Eastern Christianity, Germanic, General Linguistics, Historical Linguistics, Indo-European, Indolo",
-        "literature": "nguistics, Indo-European, Indology, Iranian, Papyrology, Russian Literature, Semitic, and Sino-Tibetan. The Summer School takes place from Monday 5 July to Friday 16 July 2027"
+        "literature": "e of English is a basic requirement. Only the courses on Russian Literature are taught in Russian. Most courses will be hybrid; they will be simultaneously be taught on campus"
       },
       "detail_sections": [],
       "is_new": false
@@ -24599,89 +24228,6 @@
       "secondary_topics": [],
       "topic_evidence": {
         "linguistics": "The 7th Crete Summer School of Linguistics Home Venue Courses Events Application Useful info FAQs Contact Log in The 7th Crete Summer School o"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "48th CERN School of Computing",
-      "type": "school of computing",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "University of Liverpool, Liverpool, United Kingdom",
-      "mode": "in-person",
-      "start_date": "2026-08-23",
-      "end_date": "2026-09-05",
-      "duration_days": 14,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "software engineering",
-        "physics",
-        "particle physics",
-        "engineering"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://csc.web.cern.ch/csc-2026/",
-      "source_url": "https://csc.web.cern.ch/csc-2026/",
-      "summary": "CSC 2026 – CERN School of Computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a School History Past schools Photo gallery Al",
-      "recommendation_reason": "14 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "programme has already started"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 30.0,
-      "score_explanation": [
-        "14 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "topics: software engineering, physics, particle physics, engineering",
-        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "23 August – 5 September 2026",
-      "fee_evidence": "",
-      "mode_evidence": "",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "primary_topics": [
-        "software engineering",
-        "physics",
-        "particle physics",
-        "engineering"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "software engineering": "nds-on exercises, covering three main themes: physics computing, software engineering, and data technologies. The School is aimed at postgraduate (minimum bachelor degree or equivalent)",
-        "physics": "of lectures and hands-on exercises, covering three main themes: physics computing, software engineering, and data technologies. The School is aimed at postgraduate (minimu",
-        "particle physics": "king at CERN or at other research institutes, with experience in particle physics, computing or related fields. We welcome applicants of all nationalities, and encourage all qualifi",
-        "engineering": "ercises, covering three main themes: physics computing, software engineering, and data technologies. The School is aimed at postgraduate (minimum bachelor degree or equivalent)"
       },
       "detail_sections": [],
       "is_new": false
@@ -26546,80 +26092,6 @@
       "is_new": false
     },
     {
-      "title": "Thematic CERN School of Computing",
-      "type": "school of computing",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Cosener’s House – Abingdon, UK",
-      "mode": "in-person",
-      "start_date": "2026-09-27",
-      "end_date": "2026-10-03",
-      "duration_days": 7,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "architecture"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://csc.web.cern.ch/scsc-2026/",
-      "source_url": "https://csc.web.cern.ch/scsc-2026/",
-      "summary": "sCSC 2026 – CERN School of Computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a School History Past schools Photo gallery A",
-      "recommendation_reason": "7 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "programme has already started"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 23.0,
-      "score_explanation": [
-        "7 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "topics: architecture",
-        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-07-16",
-      "deadline_evidence": "",
-      "duration_evidence": "27 September – 3 October 2026",
-      "fee_evidence": "",
-      "mode_evidence": "will be hosted at the Cosener’s House located in the grounds of the",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "primary_topics": [
-        "architecture"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "architecture": "ty in research and scientific computing Risk management Security architecture Application security Identity, authentication, authorisation Virtualisation and cloud security Cont"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
       "title": "Digital Humanities Summer Institute",
       "type": "summer institute",
       "organizer": "Digital Humanities Summer Institute",
@@ -26694,6 +26166,78 @@
       },
       "detail_sections": [],
       "is_new": false
+    },
+    {
+      "title": "REGISTRATION – XIII Lisbon Summer School for the Study of Culture",
+      "type": "summer school",
+      "organizer": "XIII Lisbon Summer School for the Study of Culture",
+      "source_layer": "discovery",
+      "region_priority": "global",
+      "location": "global",
+      "mode": "in-person",
+      "start_date": null,
+      "end_date": null,
+      "duration_days": null,
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "funding_available": null,
+      "funding_type": [],
+      "funding_evidence": "",
+      "topic_keywords": [
+        "cultural studies"
+      ],
+      "eligibility": "MASTER CLASSES KEYNOTE SPEAKERS VENUES ABOUT REGISTRATION REGISTRATION FEES Participants with paper – 300€ for the entire week (includes lectures, master classes, doc",
+      "target_level": "MSc, PhD",
+      "fee": "no registration fee",
+      "fee_eur": 0.0,
+      "application_link": "https://futuresummerschool.wordpress.com/registration/",
+      "source_url": "https://futuresummerschool.wordpress.com/registration/",
+      "summary": "REGISTRATION – XIII Lisbon Summer School for the Study of Culture Skip to content XIII Lisbon Summer School for the Study of Culture PROGRAM MASTER CLASSES KEYNOTE SPEAKERS VENUES ABOUT REGISTRATION REGISTRATION FEES Participants with paper – 300€ for the entire week (includes le",
+      "recommendation_reason": "low fee: approximately EUR 0; in-person; target level: MSc, PhD; topics: cultural studies",
+      "risk_points": "application deadline is uncertain; duration is uncertain",
+      "sessions": [],
+      "identity_key": "",
+      "discovery_verified": false,
+      "programme_key": "",
+      "evidence_sources": {},
+      "source_conflicts": [],
+      "funding_scope": "",
+      "financial_access_status": "low-fee",
+      "failed_hard_conditions": [
+        "application deadline is uncertain",
+        "duration is uncertain"
+      ],
+      "failed_recommendation_conditions": [],
+      "score": 23.0,
+      "score_explanation": [
+        "low fee: approximately EUR 0",
+        "in-person",
+        "target level: MSc, PhD",
+        "topics: cultural studies",
+        "near-match only: application deadline is uncertain; duration is uncertain"
+      ],
+      "first_seen": "2026-11-18",
+      "deadline_evidence": "",
+      "duration_evidence": "",
+      "fee_evidence": "no registration fee",
+      "mode_evidence": "VENUES ABOUT REGISTRATION REGISTRATION FEES Participant",
+      "extraction_confidence": 0.5,
+      "title_zh": "",
+      "organizer_zh": "",
+      "location_zh": "",
+      "summary_zh": "",
+      "eligibility_zh": "",
+      "recommendation_reason_zh": "",
+      "risk_points_zh": "",
+      "primary_topics": [
+        "cultural studies"
+      ],
+      "secondary_topics": [],
+      "topic_evidence": {
+        "cultural studies": "from institutions affiliated with the European Summer School in Cultural Studies (ESSCS), members of the Excellence Network in Cultural Studies and members of the Critical Humaniti"
+      },
+      "detail_sections": [],
+      "is_new": true
     },
     {
       "title": "Critical and transformative perspectives on sustainability: a doctoral winter school",
@@ -26775,7 +26319,7 @@
         "sociology": "tices, together with experts from eco-linguistics, politicology, sociology, linguistics, and literary studies. By covering political speeches, novels, legal texts, movies, an"
       },
       "detail_sections": [],
-      "is_new": true
+      "is_new": false
     },
     {
       "title": "MaSAG25 Summer School and Conference",
@@ -26997,83 +26541,6 @@
       "primary_topics": [],
       "secondary_topics": [],
       "topic_evidence": {},
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "CERN School of Computing",
-      "type": "school of computing",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Liverpool, UK",
-      "mode": "in-person",
-      "start_date": "2026-11-09",
-      "end_date": "2026-11-13",
-      "duration_days": 5,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "physics",
-        "particle physics"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://csc.web.cern.ch/",
-      "source_url": "https://csc.web.cern.ch/",
-      "summary": "CERN School of Computing – Creating common culture in scientific computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a Schoo",
-      "recommendation_reason": "5 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "programme has already started"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 21.0,
-      "score_explanation": [
-        "5 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "topics: physics, particle physics",
-        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-09-04",
-      "deadline_evidence": "",
-      "duration_evidence": "November 9-13, 2026",
-      "fee_evidence": "",
-      "mode_evidence": "will take place in Liverpool, UK from 23 August to 5 September. Appli",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "primary_topics": [
-        "physics",
-        "particle physics"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "physics": "covering various aspects of scientific computing for high-energy physics and other data-intensive sciences. These schools are aimed at postgraduate (minimum of Bachelor deg",
-        "particle physics": "king at CERN or at other research institutes, with experience in particle physics, computing or related fields. Learn more . Upcoming schools: CSC 2026 The 48 th edition of the CSC"
-      },
       "detail_sections": [],
       "is_new": false
     },
@@ -27333,83 +26800,6 @@
       "is_new": false
     },
     {
-      "title": "CERN School of Computing on IT Services",
-      "type": "school of computing",
-      "organizer": "CERN School of Computing",
-      "source_layer": "1",
-      "region_priority": "priority",
-      "location": "Ferney-Voltaire, France",
-      "mode": "in-person",
-      "start_date": "2026-11-09",
-      "end_date": "2026-11-13",
-      "duration_days": 5,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "physics",
-        "engineering"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://csc.web.cern.ch/tcsc-on-it-services-2026/",
-      "source_url": "https://csc.web.cern.ch/tcsc-on-it-services-2026/",
-      "summary": "tCSC on IT Services 2026 – CERN School of Computing Skip to content CERN Accelerating science CERN School of Computing Creating common culture in scientific computing Menu Welcome About Schools Main school Thematic school Inverted school People Host a School History Past schools",
-      "recommendation_reason": "5 days; priority region; trusted source layer 1; in-person",
-      "risk_points": "programme has already started; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "programme has already started"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 21.0,
-      "score_explanation": [
-        "5 days",
-        "priority region",
-        "trusted source layer 1",
-        "in-person",
-        "topics: physics, engineering",
-        "near-match only: programme has already started; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-09-04",
-      "deadline_evidence": "",
-      "duration_evidence": "9 – 13 November 2026",
-      "fee_evidence": "",
-      "mode_evidence": "will be hosted at the Appart’City Ferney-Voltaire . Academic progra",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "primary_topics": [
-        "physics",
-        "engineering"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "physics": "he computing services delivered by the CERN IT Department to the physics community. The school is recommended for any person that is using the CERN IT services either to de",
-        "engineering": "to deliver information, analyze data, automate tasks or work in engineering projects. We expect participation from both active users who would like to be more proficient and n"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
       "title": "Data science for life scientists",
       "type": "training course",
       "organizer": "EMBL-EBI Training",
@@ -27605,78 +26995,6 @@
         "agriculture": "oom 1 Speakers: David Dao TAs: Maria João Sousa and Jeremy Irvin Agriculture Details: (click to expand) Location: Zoom Room 1 Speakers: Catherine Nakalembe TAs: Maria João Sous",
         "social science": "ate-relevant topics within: Agriculture and food Behavioural and social science Buildings Carbon capture and sequestration Cities and urban planning Climate finance and economics",
         "economics": "and sequestration Cities and urban planning Climate finance and economics Climate justice Climate science and climate modeling Disaster management and relief Earth observati"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "Fraunhofer CIMD Winter School 2026",
-      "type": "winter school",
-      "organizer": "Fraunhofer Cluster of Excellence Immune-Mediated Diseases",
-      "source_layer": "discovery",
-      "region_priority": "global",
-      "location": "Frankfurt",
-      "mode": "in-person",
-      "start_date": "2026-11-03",
-      "end_date": "2026-11-05",
-      "duration_days": 3,
-      "deadline": null,
-      "deadline_status": "closed",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "design"
-      ],
-      "eligibility": "PhD candidates, early-career researchers, and medical professionals",
-      "target_level": "PhD, early-career researcher",
-      "fee": "Participation is free",
-      "fee_eur": 0.0,
-      "application_link": "https://www.cimd.fraunhofer.de/en/events/winterschool2026.html",
-      "source_url": "https://www.cimd.fraunhofer.de/en/events/winterschool2026.html",
-      "summary": "Winter School 2026 Search Fraunhofer Cluster of Excellence Immune-Mediated Diseases Fraunhofer Cluster of Excellence Immune-Mediated Diseases Fraunhofer Gesellschaft Newsletter registration Contact Sitemap Deutsch Contact Young Talent Program Events [X] Events Fraunhofer CIMD Sym",
-      "recommendation_reason": "low fee: approximately EUR 0; in-person; target level: PhD, early-career researcher; topics: design",
-      "risk_points": "programme has already started; duration is below 4 days",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "low-fee",
-      "failed_hard_conditions": [
-        "programme has already started",
-        "duration is below 4 days"
-      ],
-      "failed_recommendation_conditions": [],
-      "score": 20.5,
-      "score_explanation": [
-        "low fee: approximately EUR 0",
-        "in-person",
-        "target level: PhD, early-career researcher",
-        "topics: design",
-        "near-match only: programme has already started; duration is below 4 days"
-      ],
-      "first_seen": "2026-10-28",
-      "deadline_evidence": "",
-      "duration_evidence": "November 03, 2026 - November 05, 2026",
-      "fee_evidence": "Participation is free",
-      "mode_evidence": "",
-      "extraction_confidence": 0.75,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "primary_topics": [
-        "design"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "design": "ose existing knowledge gaps How real-world data and robust study design can improve the evidence base How we can make science more understandable and accessible …and much"
       },
       "detail_sections": [],
       "is_new": false
@@ -28380,7 +27698,7 @@
       "deadline_evidence": "",
       "duration_evidence": "",
       "fee_evidence": "Effective Strategies for a Low-Carbon World, Including Nuclear Power and Fusion | (smr 4397) ICTP Eu",
-      "mode_evidence": "Hybrid seminars 17 Nov 2026 19 Nov 2026 PWF: Introductio",
+      "mode_evidence": "Hybrid Discover all events Opportunities Overview ICTP:",
       "extraction_confidence": 0.25,
       "title_zh": "",
       "organizer_zh": "",
@@ -28421,8 +27739,8 @@
         "climate change": "7 27 Aug 2027 Application Closed school smr4363 Summer School in Climate Change and Infectious Diseases Modelling | (smr 4363) Medellin - Colombia Earth System Physics smr4363 Aug",
         "geophysics": "kshop on Open Hardware and Open Science in Engineering and Hydro-Geophysics: Technical Standards for Global Citizen Science | (smr 4394) ICTP Giambiagi Lecture Hall (AGH) Scie",
         "AI": "p smr4202 *** CANCELLED *** Workshop on Scientific Computing and AI | (smr 4202) Kuwait City - Kuwait Science, Technology and Innovation smr4202 November 2026 November",
-        "artificial intelligence": "FTs 14:00 16:00 17 Nov 2026 seminars Online PWF: Introduction to Artificial Intelligence for Physicists November 2026 November 16 cmsp 16 Nov 2026 20 Nov 2026 Application Closed scientific",
-        "machine learning": "scientific activity PWF Ghana: Mastering Statistical Models and Machine Learning: A Hands-On Workshop in Machine Learning with R/Python V Ghana 16 Nov 2026 20 Nov 2026 Application",
+        "artificial intelligence": "17 14:00 16:00 17 Nov 2026 seminars Online PWF: Introduction to Artificial Intelligence for Physicists November 2026 November 16 16 Nov 2026 20 Nov 2026 Application Closed scientific acti",
+        "machine learning": "scientific activity PWF Ghana: Mastering Statistical Models and Machine Learning: A Hands-On Workshop in Machine Learning with R/Python V Ghana cmsp 16 Nov 2026 20 Nov 2026 Applica",
         "data science": "0 Nov 2026 Application Closed school smr4320 CODATA-RDA Research Data Science Summer School and Advanced workshops | (smr 4320) ICTP Denardo Lecture Hall (AGH) smr4320 October 2",
         "data analysis": "7 Application Closed school smr4373 Summer School on Topological Data Analysis and Applications | (smr 4373) Lusaka - Zambia Mathematics smr4373 hecap 19 Jul 2027 30 Jul 2027 App",
         "high performance computing": "May 2027 Application Closed workshop smr4352 African Workshop on High Performance Computing for Sustainable Development | (smr 4352) Benin City, Edo State, Nigeria - Nigeria smr4352 May 2027",
@@ -28605,7 +27923,7 @@
         "AI": "for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language Technologies, Responsible AI,",
         "artificial intelligence": "tracks covering today's most impactful areas of data science and artificial intelligence. Participants will explore topics ranging from Python for Data Science and Machine Learning Fundame",
         "machine learning": "nts will explore topics ranging from Python for Data Science and Machine Learning Fundamentals to Generative AI, Large Language Models, Agentic AI, AI on the Edge, African Language",
-        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 4518 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
+        "data science": "DSA 2026 Summer School Schedule DSA 2026 Summer School Schedule Data Science Africa (DSA) 20 June 2026 Hits: 4530 Rating: ( 3 Ratings ) User Rating: 5 / 5 Total Votes: 3 Please",
         "language technology": "earch Labs AirQo - IoT & AI for Environment Sunbird AI - African Language Technology Busitema AI - AI for Agriculture Makerere AI Labs DSAIL - IoT & AI for Environment - AirQo Sunbird",
         "high performance computing": "orking - - 11:00 - 13:00 Parallel Julia programming language and High Performance Computing Track A Dr. Adeleke Bankole, University of Cambridge, 11:00 - 13:00 Parallel Multimodal AI & LLMs &",
         "design": "h & Networking - - 14:30 - 16:00 Parallel AirQo DevCon: Hardware Design and Development for Air Quality Sensing Track A AirQo 14:30 - 16:00 Parallel NLP & African Language",
@@ -32037,7 +31355,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/resources/templates/summer-school-application-form/",
       "source_url": "https://www.isprs.org/resources/templates/summer-school-application-form/",
-      "summary": "Summer School Application Form November 17, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissi",
+      "summary": "Summer School Application Form November 18, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Council Commissi",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, AI, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -32118,7 +31436,7 @@
       "fee_eur": null,
       "application_link": "https://www.isprs.org/society/awards/torlegard.aspx",
       "source_url": "https://www.isprs.org/society/awards/torlegard.aspx",
-      "summary": "ISPRS WEC Kennert Torlegård Travel Grant November 17, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Counci",
+      "summary": "ISPRS WEC Kennert Torlegård Travel Grant November 18, 2026 | Home | Sitemap | The ISPRS Foundation | 𝕏 Login Home Society Society Overview & Organization Overview Organization Historical Background Centenary Video Interorganis. Activities Objectives and Activities Officers Counci",
       "recommendation_reason": "6 days; trusted source layer 1; topics: remote sensing, geospatial, philosophy; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
       "sessions": [],
@@ -32248,82 +31566,6 @@
         "syntax": "mpa) Marek Bajger: The sentence constituent “attribute” in Czech syntax teaching Justīne Bondare: Cross-Linguistic Influence in Latvian-English Bilingual Children: Evidenc",
         "psycholinguistics": "Knowledge-based Validation Limor Raviv (Max Planck Institute for Psycholinguistics): (1) Studying language evolution in the lab I; (2) Studying language evolution in the lab II; (3)",
         "law": "da Matoušková: Concretisation of the term of “democratic rule of law” Milada Matoušková & Tomáš Ondřich: Does the factual portion of operative part of judgements in cri"
-      },
-      "detail_sections": [],
-      "is_new": false
-    },
-    {
-      "title": "Meetings & Events",
-      "type": "short course",
-      "organizer": "American Meteorological Society",
-      "source_layer": "1",
-      "region_priority": "supplementary",
-      "location": "North America",
-      "mode": "online",
-      "start_date": "2027-01-10",
-      "end_date": "2027-01-14",
-      "duration_days": 5,
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "funding_available": null,
-      "funding_type": [],
-      "funding_evidence": "",
-      "topic_keywords": [
-        "climate",
-        "AI"
-      ],
-      "eligibility": "",
-      "target_level": "uncertain",
-      "fee": "",
-      "fee_eur": null,
-      "application_link": "https://www.ametsoc.org/ams/meetings-events/",
-      "source_url": "https://www.ametsoc.org/ams/meetings-events/",
-      "summary": "Meetings & Events - American Meteorological Society JOIN NEWSROOM DONATE YOUR ACCOUNT Hi, {{ memberDetails.firstName }}! My Account AMS Community AMS Code of Conduct Log out LOG IN Search Search About About AMS AMS Leadership Commissions, Boards, and Committees Explore AMS Conten",
-      "recommendation_reason": "5 days; trusted source layer 1; topics: climate, AI; near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
-      "risk_points": "application deadline is uncertain; online-only; funding is not explicit and fee is uncertain",
-      "sessions": [],
-      "identity_key": "",
-      "discovery_verified": false,
-      "programme_key": "",
-      "evidence_sources": {},
-      "source_conflicts": [],
-      "funding_scope": "",
-      "financial_access_status": "unresolved",
-      "failed_hard_conditions": [
-        "application deadline is uncertain",
-        "online-only"
-      ],
-      "failed_recommendation_conditions": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "score": 0.0,
-      "score_explanation": [
-        "5 days",
-        "trusted source layer 1",
-        "topics: climate, AI",
-        "near-match only: application deadline is uncertain; online-only; funding is not explicit and fee is uncertain"
-      ],
-      "first_seen": "2026-06-13",
-      "deadline_evidence": "",
-      "duration_evidence": "10-14 January 2027",
-      "fee_evidence": "",
-      "mode_evidence": "Webinar Get Certified Advocate for Science Policy Corpora",
-      "extraction_confidence": 0.5,
-      "title_zh": "",
-      "organizer_zh": "",
-      "location_zh": "",
-      "summary_zh": "",
-      "eligibility_zh": "",
-      "recommendation_reason_zh": "",
-      "risk_points_zh": "",
-      "primary_topics": [
-        "climate",
-        "AI"
-      ],
-      "secondary_topics": [],
-      "topic_evidence": {
-        "climate": "the world’s largest yearly gathering for the weather, water, and climate community—to our specialty conferences , short courses , and events , AMS brings together atmospher",
-        "AI": "Career Success Short Course: January 10 Harnessing SI (formally AI) for Advanced Weather Prediction with NOAA's Project EAGLE Short Course: January 10 Co-producing En"
       },
       "detail_sections": [],
       "is_new": false
