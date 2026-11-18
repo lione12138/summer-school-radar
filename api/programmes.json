@@ -171,12 +171,6 @@
         "bioinformatics",
         "design"
       ],
-      "primary_topics": [
-        "programming languages",
-        "data analysis",
-        "bioinformatics",
-        "design"
-      ],
       "editions": [
         {
           "id": "edition:95fe8f3c01e7aa23",
@@ -249,7 +243,13 @@
         "summary": "Introduction to metabolomics analysis | EMBL-EBI Training EMBL-EBI Training Live training Course at EMBL-EBI Introduction to metabolomics analysis Login Register John doe My learning My playlists My account Contact us Logout Course at EMBL-EBI Introduction to metabolomics analysi",
         "summary_zh": "代谢组学分析入门 | EMBL-EBI 培训 EMBL-EBI 培训 在 EMBL-EBI 举办的线下培训课程 代谢组学分析入门 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出登录 在 EMBL-EBI 举办的课程 代谢组学分析入门",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "programming languages",
+        "data analysis",
+        "bioinformatics",
+        "design"
+      ]
     },
     {
       "id": "programme:74280eccf50ca905",
@@ -261,9 +261,6 @@
       "summary": "Undergraduate Summer School. Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 . Participants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and p",
       "summary_zh": "本科生暑期学校。周界研究所将于2027年6月14日至25日举办为期两周的本科生学校。参与者将通过课程及其他特别活动（如研究人员的报告和p）了解现代理论物理的前沿课题",
       "topics": [
-        "physics"
-      ],
-      "primary_topics": [
         "physics"
       ],
       "editions": [
@@ -326,7 +323,10 @@
         "summary": "Undergraduate Summer School. Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 . Participants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and p",
         "summary_zh": "本科生暑期学校。周界研究所将于2027年6月14日至25日举办为期两周的本科生学校。参与者将通过课程及其他特别活动（如研究人员的报告和p）了解现代理论物理的前沿课题",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "physics"
+      ]
     },
     {
       "id": "programme:071bb60dcbcda689",
@@ -338,12 +338,6 @@
       "summary": "Semester in Biological Discovery (SBD) | Marine Biological Laboratory Skip to main content Close Calling Undergrads! Semester in Biological Discovery (SBD) Applications Due December 15! The University of Chicago Marine Biological Laboratory MENU Utility Visit The MBL Contact Care",
       "summary_zh": "生物发现学期项目（SBD）| 海洋生物实验室 跳至主要内容 关闭 本科生召集！生物发现学期项目（SBD）申请截止日期为12月15日！芝加哥大学海洋生物实验室 菜单 实用链接 访问MBL 联系方式 关怀",
       "topics": [
-        "environmental science",
-        "philosophy of science",
-        "history",
-        "philosophy"
-      ],
-      "primary_topics": [
         "environmental science",
         "philosophy of science",
         "history",
@@ -421,7 +415,13 @@
         "summary": "Semester in Biological Discovery (SBD) | Marine Biological Laboratory Skip to main content Close Calling Undergrads! Semester in Biological Discovery (SBD) Applications Due December 15! The University of Chicago Marine Biological Laboratory MENU Utility Visit The MBL Contact Care",
         "summary_zh": "生物发现学期项目（SBD）| 海洋生物实验室 跳至主要内容 关闭 本科生召集！生物发现学期项目（SBD）申请截止日期为12月15日！芝加哥大学海洋生物实验室 菜单 实用链接 访问MBL 联系方式 关怀",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "environmental science",
+        "philosophy of science",
+        "history",
+        "philosophy"
+      ]
     },
     {
       "id": "viasm-iamp-probability-mathematical-physics",
@@ -1163,17 +1163,6 @@
         "engineering",
         "history"
       ],
-      "primary_topics": [
-        "flood",
-        "drought",
-        "climate",
-        "climate change",
-        "disaster risk",
-        "natural hazards",
-        "data science",
-        "engineering",
-        "history"
-      ],
       "editions": [
         {
           "id": "edition:297a23348808799d",
@@ -1266,7 +1255,18 @@
         "summary": "CNDS/EGU Summer School - CNDS Svenska Menu About us Research CNDS/EGU Summer School CNDS Forum for Natural Hazards and Disasters Ongoing research projects Completed research projects CNDS Research Framework Research portraits Publications Contact Media Library CNDS Research CNDS/",
         "summary_zh": "CNDS/EGU暑期学校——CNDS Svenska 菜单 关于我们 研究 CNDS/EGU暑期学校 CNDS自然灾害与灾难论坛 进行中的研究项目 已完成的研究项目 CNDS研究框架 研究人物介绍 出版物 联系我们 媒体库 CNDS研究 CNDS/",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "flood",
+        "drought",
+        "climate",
+        "climate change",
+        "disaster risk",
+        "natural hazards",
+        "data science",
+        "engineering",
+        "history"
+      ]
     },
     {
       "id": "csha-computational-cognitive-neuroscience",
@@ -1650,9 +1650,6 @@
       "topics": [
         "AI"
       ],
-      "primary_topics": [
-        "AI"
-      ],
       "editions": [
         {
           "id": "edition:8ec862ebd417adbb",
@@ -1713,7 +1710,10 @@
         "summary": "18/11/26 - 23/12/26 • Multiple Locations ELLIS Sites NeurIPS Fest 2026: Celebrate, Connect, Collaborate Discover the latest research from top AI minds at multiple locations across Europe during the weeks around the NeurIPS conference. Fest , Poster Session Read More",
         "summary_zh": "26/11/18 - 26/12/23 • 多地 ELLIS Sites NeurIPS Fest 2026：庆祝、连接、合作 在NeurIPS会议前后数周内，于欧洲多地了解顶尖AI人才的最新研究。Fest，海报展示 阅读更多",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "AI"
+      ]
     },
     {
       "id": "programme:0752d3a16b0fdcba",
@@ -2696,10 +2696,6 @@
         "engineering",
         "design"
       ],
-      "primary_topics": [
-        "engineering",
-        "design"
-      ],
       "editions": [
         {
           "id": "polito-iam-winter-school:2027",
@@ -2764,7 +2760,11 @@
         "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
         "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "engineering",
+        "design"
+      ]
     },
     {
       "id": "ncts-qft-school",
