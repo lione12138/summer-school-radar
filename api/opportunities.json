@@ -3,79 +3,77 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-11-01",
+  "generated": "2026-11-18",
   "opportunities": [
     {
-      "id": "opportunities/spring-college-in-the-physics-of-complex-systems-223446f8",
-      "edition_id": "edition:6024ea4de6c2efb5",
-      "programme_id": "programme:45fcb50a3b1593be",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/spring-college-in-the-physics-of-complex-systems-701c4578.html",
+      "id": "opportunities/introduction-to-metabolomics-analysis-ca5054c1",
+      "edition_id": "edition:95fe8f3c01e7aa23",
+      "programme_id": "programme:6cf4be91ec7187f3",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/introduction-to-metabolomics-analysis-b52d9d3c.html",
       "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/spring-college-in-the-physics-of-complex-systems-701c4578.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/spring-college-in-the-physics-of-complex-systems-701c4578.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/spring-college-in-the-physics-of-complex-systems-701c4578.html"
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/introduction-to-metabolomics-analysis-b52d9d3c.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/introduction-to-metabolomics-analysis-b52d9d3c.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/introduction-to-metabolomics-analysis-b52d9d3c.html"
       },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/introduction-to-metabolomics-analysis-ca5054c1.html",
       "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html"
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/introduction-to-metabolomics-analysis-ca5054c1.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/introduction-to-metabolomics-analysis-ca5054c1.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/introduction-to-metabolomics-analysis-ca5054c1.html"
       },
-      "official_url": "https://e-applications.ictp.it/applicant/login/4338",
-      "title": "Spring College in the Physics of Complex Systems",
-      "title_zh": "复杂系统物理学春季学院",
-      "type": "spring college",
-      "organizer": "ICTP and SISSA",
-      "organizer_zh": "ICTP与SISSA",
-      "location": "ICTP Kastler Lecture Hall (AGH) Adriatico Guest House - Kastler Lecture Hall Riva Massimiliano e Carlotta, Grignano I - 34151 Trieste (Italy)",
-      "location_zh": "ICTP Kastler报告厅（AGH）Adriatico宾馆 - Kastler报告厅 Riva Massimiliano e Carlotta, Grignano I - 34151 的里雅斯特（意大利）",
+      "official_url": "https://www.ebi.ac.uk/training/events/introduction-metabolomics-analysis-2027/",
+      "title": "Introduction to metabolomics analysis",
+      "title_zh": "代谢组学分析入门",
+      "type": "training course",
+      "organizer": "EMBL-EBI Training",
+      "organizer_zh": "EMBL-EBI 培训",
+      "location": "United Kingdom",
+      "location_zh": "英国",
       "mode": "in-person",
-      "start_date": "2027-02-15",
-      "end_date": "2027-03-12",
-      "duration_days": 26,
-      "application_deadline": "2026-11-01",
+      "start_date": "2027-05-17",
+      "end_date": "2027-05-21",
+      "duration_days": 5,
+      "application_deadline": "2027-01-31",
       "application_status": "open",
       "directory_tier": "funded-or-low-fee",
-      "financial_summary": "Fee EUR 0 · A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
-      "fee": "Free registration; competitive grants for selected participants",
-      "fee_eur": 0.0,
+      "financial_summary": "travel grant, fee waiver · amount not stated",
+      "fee": "",
+      "fee_eur": null,
       "funding_available": true,
       "funding_type": [
-        "competitive grant"
+        "travel grant",
+        "fee waiver"
       ],
-      "funding_scope": "A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
+      "funding_scope": "",
       "financial_terms": {
-        "participation_fee": "Free registration; competitive grants for selected participants",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "offered",
+        "support_scope": "",
         "accommodation": "unknown",
         "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
+        "travel_support": "offered",
+        "cost_status": "unknown",
         "fee_options": []
       },
       "topics": [
-        "physics",
-        "statistical physics",
-        "engineering",
-        "neuroscience",
-        "economics"
+        "programming languages",
+        "data analysis",
+        "bioinformatics",
+        "design"
       ],
       "primary_topics": [
-        "physics"
+        "programming languages",
+        "data analysis",
+        "bioinformatics",
+        "design"
       ],
-      "secondary_topics": [
-        "statistical physics",
-        "engineering",
-        "neuroscience",
-        "economics"
-      ],
-      "summary": "The Spring College on the Physics of Complex Systems aims to expose students to a selection of topics at the forefront of research during an intensive, 4-week programme.",
-      "summary_zh": "复杂系统物理学春季学院旨在通过为期4周的密集课程，让学生接触研究前沿的精选课题。",
-      "eligibility": "The Spring College is part of the PCS Master programme and it is open to qualified Master and PhD students, and to young researchers.",
-      "eligibility_zh": "春季学院是PCS硕士项目的一部分，面向合格的硕士生、博士生和年轻研究人员开放。",
+      "secondary_topics": [],
+      "summary": "Introduction to metabolomics analysis | EMBL-EBI Training EMBL-EBI Training Live training Course at EMBL-EBI Introduction to metabolomics analysis Login Register John doe My learning My playlists My account Contact us Logout Course at EMBL-EBI Introduction to metabolomics analysi",
+      "summary_zh": "代谢组学分析入门 | EMBL-EBI 培训 EMBL-EBI 培训 在 EMBL-EBI 举办的线下培训课程 代谢组学分析入门 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出登录 在 EMBL-EBI 举办的课程 代谢组学分析入门",
+      "eligibility": "",
+      "eligibility_zh": "",
       "sessions": []
     },
     {
@@ -145,6 +143,159 @@
       "summary_zh": "暑校介绍概率与数学物理领域当前研究的若干专题，并安排 10 场由青年参与者贡献的报告。",
       "eligibility": "General registration eligibility restrictions are not explicitly stated on the official page. The programme covers probability and mathematical physics and includes contributed talks by young participants.",
       "eligibility_zh": "官网未明确列出一般注册者的资格限制。课程内容涵盖概率与数学物理，并安排青年参与者贡献的报告。",
+      "sessions": []
+    },
+    {
+      "id": "opportunities/spring-college-in-the-physics-of-complex-systems-223446f8",
+      "edition_id": "edition:6024ea4de6c2efb5",
+      "programme_id": "programme:45fcb50a3b1593be",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/spring-college-in-the-physics-of-complex-systems-701c4578.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/spring-college-in-the-physics-of-complex-systems-701c4578.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/spring-college-in-the-physics-of-complex-systems-701c4578.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/spring-college-in-the-physics-of-complex-systems-701c4578.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html"
+      },
+      "official_url": "https://e-applications.ictp.it/applicant/login/4338",
+      "title": "Spring College in the Physics of Complex Systems",
+      "title_zh": "复杂系统物理学春季学院",
+      "type": "spring college",
+      "organizer": "ICTP and SISSA",
+      "organizer_zh": "ICTP 与 SISSA",
+      "location": "ICTP Kastler Lecture Hall (AGH) Adriatico Guest House - Kastler Lecture Hall Riva Massimiliano e Carlotta, Grignano I - 34151 Trieste (Italy)",
+      "location_zh": "ICTP Kastler 报告厅 (AGH) Adriatico 宾馆 - Kastler 报告厅 Riva Massimiliano e Carlotta, Grignano I - 34151 的里雅斯特（意大利）",
+      "mode": "in-person",
+      "start_date": "2027-02-15",
+      "end_date": "2027-03-12",
+      "duration_days": 26,
+      "application_deadline": "2026-11-16",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 0 · A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
+      "fee": "Free registration; competitive grants for selected participants",
+      "fee_eur": 0.0,
+      "funding_available": true,
+      "funding_type": [
+        "competitive grant"
+      ],
+      "funding_scope": "A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
+      "financial_terms": {
+        "participation_fee": "Free registration; competitive grants for selected participants",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "conditional",
+        "support_scope": "A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "topics": [
+        "physics",
+        "statistical physics",
+        "engineering",
+        "neuroscience",
+        "economics"
+      ],
+      "primary_topics": [
+        "physics"
+      ],
+      "secondary_topics": [
+        "statistical physics",
+        "engineering",
+        "neuroscience",
+        "economics"
+      ],
+      "summary": "The Spring College on the Physics of Complex Systems aims to expose students to a selection of topics at the forefront of research during an intensive, 4-week programme.",
+      "summary_zh": "复杂系统物理学春季学院旨在通过为期4周的密集课程，让学生接触研究前沿的一系列专题。",
+      "eligibility": "The Spring College is part of the PCS Master programme and it is open to qualified Master and PhD students, and to young researchers.",
+      "eligibility_zh": "春季学院是 PCS 硕士项目的一部分，面向符合条件的硕士生、博士生和年轻研究人员开放。",
+      "sessions": []
+    },
+    {
+      "id": "opportunities/cnds-egu-summer-school-2026-e1686dbc",
+      "edition_id": "edition:297a23348808799d",
+      "programme_id": "programme:5fa7fffe5505e666",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/cnds-egu-summer-school-2c2d249d.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/cnds-egu-summer-school-2c2d249d.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/cnds-egu-summer-school-2c2d249d.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/cnds-egu-summer-school-2c2d249d.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/cnds-egu-summer-school-2026-e1686dbc.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/cnds-egu-summer-school-2026-e1686dbc.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/cnds-egu-summer-school-2026-e1686dbc.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/cnds-egu-summer-school-2026-e1686dbc.html"
+      },
+      "official_url": "https://www.cnds.se/w/cn/research/cnds-egu-summer-school",
+      "title": "CNDS/EGU Summer School 2026",
+      "title_zh": "CNDS/EGU 2026年暑期学校",
+      "type": "summer school",
+      "organizer": "EGU Training Schools",
+      "organizer_zh": "EGU培训学校",
+      "location": "Europe",
+      "location_zh": "欧洲",
+      "mode": "in-person",
+      "start_date": "2026-08-24",
+      "end_date": "2026-08-28",
+      "duration_days": 5,
+      "application_deadline": "2026-05-17",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "travel grant · amount not stated",
+      "fee": "participation is free",
+      "fee_eur": 0.0,
+      "funding_available": true,
+      "funding_type": [
+        "travel grant"
+      ],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "participation is free",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "offered",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "conditional",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "topics": [
+        "flood",
+        "drought",
+        "climate",
+        "climate change",
+        "disaster risk",
+        "natural hazards",
+        "data science",
+        "engineering",
+        "history"
+      ],
+      "primary_topics": [
+        "flood",
+        "drought",
+        "climate",
+        "climate change",
+        "disaster risk",
+        "natural hazards",
+        "data science",
+        "engineering",
+        "history"
+      ],
+      "secondary_topics": [],
+      "summary": "CNDS/EGU Summer School - CNDS Svenska Menu About us Research CNDS/EGU Summer School CNDS Forum for Natural Hazards and Disasters Ongoing research projects Completed research projects CNDS Research Framework Research portraits Publications Contact Media Library CNDS Research CNDS/",
+      "summary_zh": "CNDS/EGU暑期学校——CNDS Svenska 菜单 关于我们 研究 CNDS/EGU暑期学校 CNDS自然灾害与灾难论坛 进行中的研究项目 已完成的研究项目 CNDS研究框架 研究人物介绍 出版物 联系我们 媒体库 CNDS研究 CNDS/",
+      "eligibility": "PhD students in Earth-, Engineering- and Social sciences for an introduction to the dynamics and impacts of natural hazards (e",
+      "eligibility_zh": "面向地球科学、工程科学和社会科学博士生，介绍自然灾害的动态与影响（e",
       "sessions": []
     },
     {
@@ -296,6 +447,74 @@
       "summary_zh": "由基尔大学主办、面向研究生研究人员的入门级住宿制天文学暑期学校。",
       "eligibility": "PhD students in astrophysics",
       "eligibility_zh": "天体物理学博士生",
+      "sessions": []
+    },
+    {
+      "id": "opportunities/semester-in-biological-discovery-sbd-1cdf3028",
+      "edition_id": "edition:ce1a6eaef10cb9a8",
+      "programme_id": "programme:071bb60dcbcda689",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/semester-in-biological-discovery-sbd-b50fa5dd.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/semester-in-biological-discovery-sbd-b50fa5dd.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/semester-in-biological-discovery-sbd-b50fa5dd.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/semester-in-biological-discovery-sbd-b50fa5dd.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/semester-in-biological-discovery-sbd-1cdf3028.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/semester-in-biological-discovery-sbd-1cdf3028.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/semester-in-biological-discovery-sbd-1cdf3028.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/semester-in-biological-discovery-sbd-1cdf3028.html"
+      },
+      "official_url": "https://www.mbl.edu/education/undergraduate-programs/semester-biological-discovery",
+      "title": "Semester in Biological Discovery (SBD)",
+      "title_zh": "生物发现学期项目（SBD）",
+      "type": "training course",
+      "organizer": "Marine Biological Laboratory",
+      "organizer_zh": "海洋生物实验室",
+      "location": "North America",
+      "location_zh": "北美",
+      "mode": "in-person",
+      "start_date": "2027-02-28",
+      "end_date": "2027-05-22",
+      "duration_days": 84,
+      "application_deadline": "2026-12-15",
+      "application_status": "open",
+      "directory_tier": "official-listing",
+      "financial_summary": "Funding or fee not stated",
+      "fee": "",
+      "fee_eur": null,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "topics": [
+        "environmental science",
+        "philosophy of science",
+        "history",
+        "philosophy"
+      ],
+      "primary_topics": [
+        "environmental science",
+        "philosophy of science",
+        "history",
+        "philosophy"
+      ],
+      "secondary_topics": [],
+      "summary": "Semester in Biological Discovery (SBD) | Marine Biological Laboratory Skip to main content Close Calling Undergrads! Semester in Biological Discovery (SBD) Applications Due December 15! The University of Chicago Marine Biological Laboratory MENU Utility Visit The MBL Contact Care",
+      "summary_zh": "生物发现学期项目（SBD）| 海洋生物实验室 跳至主要内容 关闭 本科生召集！生物发现学期项目（SBD）申请截止日期为12月15日！芝加哥大学海洋生物实验室 菜单 实用链接 访问MBL 联系方式 关怀",
+      "eligibility": "Biomedical Course Biomedical Course Expand Submenu BACK Biomedical Course - Overview 2026 Schedule Environmental Course Environmental Course Expand Submenu BACK Environmental Course - Overview 2026 Schedule Alumni and Te",
+      "eligibility_zh": "生物医学课程 生物医学课程 展开子菜单 返回 生物医学课程 - 概览 2026年日程 环境课程 环境课程 展开子菜单 返回 环境课程 - 概览 2026年日程 校友与教",
       "sessions": []
     },
     {
@@ -511,6 +730,136 @@
       "sessions": []
     },
     {
+      "id": "polito-iam-winter-school:2027",
+      "edition_id": "polito-iam-winter-school:2027",
+      "programme_id": "polito-iam-winter-school",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/international-winter-school-on-additive-manufacturing-from-c28f1262.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/international-winter-school-on-additive-manufacturing-from-c28f1262.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/international-winter-school-on-additive-manufacturing-from-c28f1262.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/international-winter-school-on-additive-manufacturing-from-c28f1262.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/polito-iam-winter-school-2027-321cc19b.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/polito-iam-winter-school-2027-321cc19b.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/polito-iam-winter-school-2027-321cc19b.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/polito-iam-winter-school-2027-321cc19b.html"
+      },
+      "official_url": "https://iam.polito.it/apply/",
+      "title": "International Winter School on Additive Manufacturing — From Theory to Practice",
+      "title_zh": "增材制造国际冬季学校——从理论到实践",
+      "type": "winter school",
+      "organizer": "IAM at Politecnico di Torino",
+      "organizer_zh": "都灵理工大学IAM",
+      "location": "Turin, Italy",
+      "location_zh": "意大利都灵",
+      "mode": "in-person",
+      "start_date": "2027-01-18",
+      "end_date": "2027-01-29",
+      "duration_days": 12,
+      "application_deadline": "2026-11-15",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
+      "fee": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
+      "fee_eur": 150.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
+        "fee_eur": 150.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": []
+      },
+      "topics": [
+        "engineering",
+        "design"
+      ],
+      "primary_topics": [
+        "engineering",
+        "design"
+      ],
+      "secondary_topics": [],
+      "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
+      "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
+      "eligibility": "PhD candidates worldwide in additive manufacturing, materials, engineering, design, automation and related fields",
+      "eligibility_zh": "全球增材制造、材料、工程、设计、自动化及相关领域的博士生",
+      "sessions": []
+    },
+    {
+      "id": "opportunities/ellis-sites-neurips-fest-2026-celebrate-connect-collaborate-5f2de67f",
+      "edition_id": "edition:8ec862ebd417adbb",
+      "programme_id": "programme:34f90936915e33db",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/ellis-sites-neurips-fest-celebrate-connect-collaborate-3dac278e.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/ellis-sites-neurips-fest-celebrate-connect-collaborate-3dac278e.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/ellis-sites-neurips-fest-celebrate-connect-collaborate-3dac278e.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/ellis-sites-neurips-fest-celebrate-connect-collaborate-3dac278e.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ellis-sites-neurips-fest-2026-celebrate-connect-collaborate-5f2de67f.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ellis-sites-neurips-fest-2026-celebrate-connect-collaborate-5f2de67f.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ellis-sites-neurips-fest-2026-celebrate-connect-collaborate-5f2de67f.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ellis-sites-neurips-fest-2026-celebrate-connect-collaborate-5f2de67f.html"
+      },
+      "official_url": "https://ellis.eu/events/ellis-sites-neurips-fest-2026",
+      "title": "ELLIS Sites NeurIPS Fest 2026: Celebrate, Connect, Collaborate",
+      "title_zh": "ELLIS Sites NeurIPS Fest 2026：庆祝、连接、合作",
+      "type": "summer school",
+      "organizer": "ELLIS",
+      "organizer_zh": "ELLIS",
+      "location": "Multiple Locations",
+      "location_zh": "多地",
+      "mode": "in-person",
+      "start_date": "2026-11-18",
+      "end_date": "2026-12-23",
+      "duration_days": 36,
+      "application_deadline": "2026-10-30",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee about EUR 130",
+      "fee": "Student/PhD EUR 130",
+      "fee_eur": 130.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "Student/PhD EUR 130",
+        "fee_eur": 130.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 130.0,
+            "currency": "EUR",
+            "conditions": ""
+          }
+        ]
+      },
+      "topics": [
+        "AI"
+      ],
+      "primary_topics": [],
+      "secondary_topics": [],
+      "summary": "18/11/26 - 23/12/26 • Multiple Locations ELLIS Sites NeurIPS Fest 2026: Celebrate, Connect, Collaborate Discover the latest research from top AI minds at multiple locations across Europe during the weeks around the NeurIPS conference. Fest , Poster Session Read More",
+      "summary_zh": "26/11/18 - 26/12/23 • 多地 ELLIS Sites NeurIPS Fest 2026：庆祝、连接、合作 在NeurIPS会议前后数周内，于欧洲多地了解顶尖AI人才的最新研究。Fest，海报展示 阅读更多",
+      "eligibility": "",
+      "eligibility_zh": "",
+      "sessions": []
+    },
+    {
       "id": "ansto-hzb-aonsa-neutron-school:2026",
       "edition_id": "ansto-hzb-aonsa-neutron-school:2026",
       "programme_id": "ansto-hzb-aonsa-neutron-school",
@@ -580,150 +929,9 @@
         "physics"
       ],
       "summary": "ANSTO-HZB-AONSA Neutron School 2026 | ANSTO Skip to main content Open Menu Careers Shop User access Media Centre Contact Search About Expand Locations Expand Sydney Melbourne What we do Expand Vision Our history Nuclear stewardship Partnerships FAQs Aboriginal cultural heritage H",
-      "summary_zh": "ANSTO-HZB-AONSA 中子学校 2026 | ANSTO 跳至主要内容 打开菜单 招聘 商店 用户访问 媒体中心 联系 搜索 关于 展开 地点 展开 悉尼 墨尔本 我们的工作 展开 愿景 我们的历史 核管理 合作伙伴 常见问题 原住民文化遗产 H",
+      "summary_zh": "ANSTO-HZB-AONSA 中子学校 2026 | ANSTO 跳至主要内容 打开菜单 招聘 商店 用户访问 媒体中心 联系 搜索 关于 展开 地点 展开 悉尼 墨尔本 我们的工作 展开 愿景 我们的历史 核管理 合作伙伴关系 常见问题 原住民文化遗产 H",
       "eligibility": "Masters and PhD students as well as early career researchers from both Australia and internationally, especially welcoming applications from Germany, and the Asia and",
-      "eligibility_zh": "硕士和博士生以及来自澳大利亚和国际的早期职业研究人员，尤其欢迎来自德国以及亚洲和",
-      "sessions": []
-    },
-    {
-      "id": "princeton-climate-behavior:2027",
-      "edition_id": "princeton-climate-behavior:2027",
-      "programme_id": "princeton-climate-behavior",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/princeton-winter-school-in-behavioral-science-for-climate--eaae9b8d.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/princeton-winter-school-in-behavioral-science-for-climate--eaae9b8d.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/princeton-winter-school-in-behavioral-science-for-climate--eaae9b8d.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/princeton-winter-school-in-behavioral-science-for-climate--eaae9b8d.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/princeton-climate-behavior-2027-97524503.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/princeton-climate-behavior-2027-97524503.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/princeton-climate-behavior-2027-97524503.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/princeton-climate-behavior-2027-97524503.html"
-      },
-      "official_url": "https://www.princetonclimateschool.com/apply",
-      "title": "Princeton Winter School in Behavioral Science for Climate Action",
-      "title_zh": "普林斯顿气候行动行为科学冬季学校",
-      "type": "winter school",
-      "organizer": "Anandita Sabherwal and Danielle Goldwert; faculty advisor Elke Weber",
-      "organizer_zh": "Anandita Sabherwal 和 Danielle Goldwert；指导教师 Elke Weber",
-      "location": "Princeton University Louis A. Simpson International Building Princeton, NJ 08544, USA",
-      "location_zh": "普林斯顿大学 Louis A. Simpson 国际大楼，美国新泽西州普林斯顿，邮编 08544",
-      "mode": "in-person",
-      "start_date": "2027-01-19",
-      "end_date": "2027-01-23",
-      "duration_days": 5,
-      "application_deadline": "2026-11-15",
-      "application_status": "open",
-      "directory_tier": "funded-or-low-fee",
-      "financial_summary": "Fee EUR 0 · Limited travel stipends and campus lodging are available for students demonstrating financial need.",
-      "fee": "Free registration, tuition and programme materials",
-      "fee_eur": 0.0,
-      "funding_available": true,
-      "funding_type": [
-        "need-based travel and accommodation"
-      ],
-      "funding_scope": "Limited travel stipends and campus lodging are available for students demonstrating financial need.",
-      "financial_terms": {
-        "participation_fee": "Free registration, tuition and programme materials",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "Limited travel stipends and campus lodging are available for students demonstrating financial need.",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "topics": [
-        "climate",
-        "climate change",
-        "sustainability",
-        "design"
-      ],
-      "primary_topics": [
-        "climate"
-      ],
-      "secondary_topics": [
-        "climate change",
-        "sustainability",
-        "design"
-      ],
-      "summary": "A five-day winter school bringing together early-career researchers, policymakers, and practitioners to turn behavioral science into practical interventions for climate action. Learn from leading researchers, work across disciplines and sectors, and develop an intervention addressing a real climate challenge.",
-      "summary_zh": "为期五天的冬季学校，汇聚早期职业研究人员、政策制定者和实践者，将行为科学转化为气候行动的实际干预措施。向顶尖研究者学习，跨学科和跨部门合作，并针对真实的气候挑战制定一项干预方案。",
-      "eligibility": "We welcome applications from graduate students and professionals across the public- and private-sector who want to connect behavioral science with practical efforts to advance climate action.",
-      "eligibility_zh": "欢迎希望将行为科学与推进气候行动的实际工作相结合的研究生以及公共和私营部门的专业人士申请。",
-      "sessions": []
-    },
-    {
-      "id": "cmu-myclimate:2027",
-      "edition_id": "cmu-myclimate:2027",
-      "programme_id": "cmu-myclimate",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/cmu-myclimate-2027-c612597b.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/cmu-myclimate-2027-c612597b.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/cmu-myclimate-2027-c612597b.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/cmu-myclimate-2027-c612597b.html"
-      },
-      "official_url": "https://rcsd.soc.cmu.ac.th/news-announcements/call-for-applications-myclimate-winter-school-january-2027/",
-      "title": "Call for Applications: MyClimate Winter School January 2027",
-      "title_zh": "申请征集：MyClimate 冬季学校 2027年1月",
-      "type": "winter school",
-      "organizer": "Danish Institute for International Studies (DIIS) and Chiang Mai University",
-      "organizer_zh": "丹麦国际问题研究所（DIIS）与清迈大学",
-      "location": "Chiang Mai, Thailand",
-      "location_zh": "泰国清迈",
-      "mode": "in-person",
-      "start_date": "2027-01-14",
-      "end_date": "2027-01-22",
-      "duration_days": 9,
-      "application_deadline": "2026-10-30",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee EUR 0 · Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
-      "fee": "Course, meals and field expenses free",
-      "fee_eur": 0.0,
-      "funding_available": true,
-      "funding_type": [
-        "conditional travel and accommodation"
-      ],
-      "funding_scope": "Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
-      "financial_terms": {
-        "participation_fee": "Course, meals and field expenses free",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "conditional",
-        "support_scope": "Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "topics": [
-        "climate",
-        "climate change",
-        "social science",
-        "literature"
-      ],
-      "primary_topics": [
-        "climate",
-        "climate change",
-        "social science",
-        "literature"
-      ],
-      "secondary_topics": [],
-      "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
-      "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包含讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
-      "eligibility": "Graduate students, emerging and independent scholars, researchers and activists from Myanmar and Thailand. Good working knowledge of English is required.",
-      "eligibility_zh": "面向缅甸和泰国的研究生、青年学者、独立学者、研究人员和活动人士。要求具备良好的英语工作能力。",
+      "eligibility_zh": "面向澳大利亚及国际的硕士生、博士生和早期职业研究人员，尤其欢迎来自德国以及亚洲和",
       "sessions": []
     },
     {
@@ -791,89 +999,73 @@
       "sessions": []
     },
     {
-      "id": "imiscoe-phd-school:2027",
-      "edition_id": "imiscoe-phd-school:2027",
-      "programme_id": "imiscoe-phd-school",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/imiscoe-phd-school-regional-migration-studies-dynamics-of--fcee1b77.html",
+      "id": "cmu-myclimate:2027",
+      "edition_id": "cmu-myclimate:2027",
+      "programme_id": "cmu-myclimate",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html",
       "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/imiscoe-phd-school-regional-migration-studies-dynamics-of--fcee1b77.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/imiscoe-phd-school-regional-migration-studies-dynamics-of--fcee1b77.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/imiscoe-phd-school-regional-migration-studies-dynamics-of--fcee1b77.html"
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/call-for-applications-myclimate-winter-school-january-05aeb27b.html"
       },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/imiscoe-phd-school-2027-dfd6e21c.html",
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/cmu-myclimate-2027-c612597b.html",
       "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/imiscoe-phd-school-2027-dfd6e21c.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/imiscoe-phd-school-2027-dfd6e21c.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/imiscoe-phd-school-2027-dfd6e21c.html"
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/cmu-myclimate-2027-c612597b.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/cmu-myclimate-2027-c612597b.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/cmu-myclimate-2027-c612597b.html"
       },
-      "official_url": "https://www.imiscoe.org/events/2739-2027-phd-school",
-      "title": "IMISCOE PhD School 2027 — Regional Migration Studies: Dynamics of Human Mobility, Governance and Socioeconomic Transformations",
-      "title_zh": "IMISCOE 博士学校 2027 — 区域移民研究：人口流动动态、治理与社会经济转型",
-      "type": "phd school",
-      "organizer": "GRITIM-UPF at Universitat Pompeu Fabra in collaboration with the EuroMedMig Marie Skłodowska-Curie PhD Project",
-      "organizer_zh": "庞培法布拉大学 GRITIM-UPF 与 EuroMedMig Marie Skłodowska-Curie 博士项目合作",
-      "location": "Ciutadella Campus, Universitat Pompeu Fabra (UPF) in Barcelona, Spain",
-      "location_zh": "西班牙巴塞罗那庞培法布拉大学（UPF）Ciutadella 校区",
+      "official_url": "https://rcsd.soc.cmu.ac.th/news-announcements/call-for-applications-myclimate-winter-school-january-2027/",
+      "title": "Call for Applications: MyClimate Winter School January 2027",
+      "title_zh": "申请征集：MyClimate 冬季学校 2027年1月",
+      "type": "winter school",
+      "organizer": "Danish Institute for International Studies (DIIS) and Chiang Mai University",
+      "organizer_zh": "丹麦国际问题研究所（DIIS）与清迈大学",
+      "location": "Chiang Mai, Thailand",
+      "location_zh": "泰国清迈",
       "mode": "in-person",
-      "start_date": "2027-09-13",
-      "end_date": "2027-09-17",
-      "duration_days": 5,
-      "application_deadline": "2026-11-15",
-      "application_status": "open",
-      "directory_tier": "verified-self-funded",
-      "financial_summary": "IMISCOE member institutes: EUR 400 (EU/OECD), EUR 200 (non-EU/non-OECD); non-member institutes: EUR 600 (EU/OECD), EUR 300 (non-EU/non-OECD) · Competitive awards; not guaranteed. Two (2) full scholarships , covering the registration fee, plus travel and accommodation expenses up to a combined maximum of €800 per scholarship. Two (2) registration fee waivers , covering the registration fee only.",
-      "fee": "IMISCOE member institutes: EUR 400 (EU/OECD), EUR 200 (non-EU/non-OECD); non-member institutes: EUR 600 (EU/OECD), EUR 300 (non-EU/non-OECD)",
-      "fee_eur": 600.0,
+      "start_date": "2027-01-14",
+      "end_date": "2027-01-22",
+      "duration_days": 9,
+      "application_deadline": "2026-10-30",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "Fee EUR 0 · Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
+      "fee": "Course, meals and field expenses free",
+      "fee_eur": 0.0,
       "funding_available": true,
       "funding_type": [
-        "competitive scholarship",
-        "fee waiver"
+        "conditional travel and accommodation"
       ],
-      "funding_scope": "Competitive awards; not guaranteed. Two (2) full scholarships , covering the registration fee, plus travel and accommodation expenses up to a combined maximum of €800 per scholarship. Two (2) registration fee waivers , covering the registration fee only.",
+      "funding_scope": "Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
       "financial_terms": {
-        "participation_fee": "IMISCOE member institutes: EUR 400 (EU/OECD), EUR 200 (non-EU/non-OECD); non-member institutes: EUR 600 (EU/OECD), EUR 300 (non-EU/non-OECD)",
-        "fee_eur": 600.0,
+        "participation_fee": "Course, meals and field expenses free",
+        "fee_eur": 0.0,
         "fee_status": "stated",
         "support_status": "conditional",
-        "support_scope": "Competitive awards; not guaranteed. Two (2) full scholarships , covering the registration fee, plus travel and accommodation expenses up to a combined maximum of €800 per scholarship. Two (2) registration fee waivers , covering the registration fee only.",
+        "support_scope": "Funding will also be considered for participants who live outside of Chiang Mai for travel and accommodation depending on financial need.",
         "accommodation": "unknown",
         "meals": "unknown",
         "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": [
-          {
-            "amount": 400.0,
-            "currency": "EUR",
-            "conditions": "(EU/OECD),"
-          },
-          {
-            "amount": 200.0,
-            "currency": "EUR",
-            "conditions": "(non-EU/non-OECD); non-member institutes:"
-          },
-          {
-            "amount": 600.0,
-            "currency": "EUR",
-            "conditions": "(EU/OECD),"
-          },
-          {
-            "amount": 300.0,
-            "currency": "EUR",
-            "conditions": "(non-EU/non-OECD)"
-          }
-        ]
+        "cost_status": "free",
+        "fee_options": []
       },
       "topics": [
-        "geography"
+        "climate",
+        "climate change",
+        "social science",
+        "literature"
       ],
       "primary_topics": [
-        "geography"
+        "climate",
+        "climate change",
+        "social science",
+        "literature"
       ],
       "secondary_topics": [],
-      "summary": "Research training on regional migration studies, examining human mobility, governance and socioeconomic transformations through regional and comparative perspectives.",
-      "summary_zh": "区域移民研究的研究培训，通过区域和比较视角考察人口流动、治理与社会经济转型。",
-      "eligibility": "The PhD School welcomes applications from doctoral researchers working on migration and human mobility from the disciplines of social sciences and all geographical areas.",
-      "eligibility_zh": "博士学校欢迎社会科学各学科、研究各地理区域移民与人口流动的博士研究人员申请。",
+      "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
+      "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包括讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
+      "eligibility": "Graduate students, emerging and independent scholars, researchers and activists from Myanmar and Thailand. Good working knowledge of English is required.",
+      "eligibility_zh": "面向缅甸和泰国的研究生、新兴及独立学者、研究人员和活动人士。要求具备良好的英语工作能力。",
       "sessions": []
     },
     {
@@ -1035,7 +1227,7 @@
       "title_zh": "2027年联邦制与治理冬季学校",
       "type": "winter school",
       "organizer": "Eurac Research and University of Innsbruck",
-      "organizer_zh": "Eurac Research 与因斯布鲁克大学",
+      "organizer_zh": "Eurac Research与因斯布鲁克大学",
       "location": "Innsbruck / Bolzano/Bozen",
       "location_zh": "因斯布鲁克 / 博尔扎诺/博岑",
       "mode": "in-person",
@@ -1084,71 +1276,9 @@
         "AI governance"
       ],
       "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-      "summary_zh": "该冬季学校从法学和政治学角度分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
-      "eligibility": "Open to young researchers and academics, post-docs and post-graduate students, civil servants from local, regional or national government, and employees of international organizations or NGOs; international audience",
-      "eligibility_zh": "面向青年研究人员和学者、博士后和研究生、地方、地区或国家政府公务员，以及国际组织或非政府组织雇员；国际受众",
-      "sessions": []
-    },
-    {
-      "id": "sicss:2026:uruguay",
-      "edition_id": "sicss:2026:uruguay",
-      "programme_id": "programme:e61e8d2de11922c1",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/sicss-uruguay-b9c16539.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/sicss-uruguay-b9c16539.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/sicss-uruguay-b9c16539.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/sicss-uruguay-b9c16539.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/sicss-2026-uruguay-6edbc1e1.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/sicss-2026-uruguay-6edbc1e1.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/sicss-2026-uruguay-6edbc1e1.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/sicss-2026-uruguay-6edbc1e1.html"
-      },
-      "official_url": "https://new.sicss.io/apply",
-      "title": "SICSS-Uruguay",
-      "title_zh": "SICSS-乌拉圭",
-      "type": "summer institute",
-      "organizer": "Summer Institutes in Computational Social Science",
-      "organizer_zh": "计算社会科学暑期学院",
-      "location": "University of the Republic (Udelar), Montevideo, Uruguay",
-      "location_zh": "乌拉圭蒙得维的亚共和国大学（Udelar）",
-      "mode": "in-person",
-      "start_date": "2026-10-29",
-      "end_date": "2026-11-06",
-      "duration_days": 9,
-      "application_deadline": null,
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee EUR 0",
-      "fee": "No tuition required",
-      "fee_eur": 0.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "No tuition required",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "topics": [
-        "data science",
-        "social science",
-        "social science methods"
-      ],
-      "primary_topics": [],
-      "secondary_topics": [],
-      "summary": "An intensive institute in computational social science covering text analysis, web data, experiments, research ethics, and collaborative research.",
-      "summary_zh": "一个计算社会科学强化训练营，涵盖文本分析、网络数据、实验、研究伦理和合作研究。",
-      "eligibility": "Graduate students, postdoctoral researchers, and junior faculty.",
-      "eligibility_zh": "研究生、博士后研究人员和初级教职人员。",
+      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层级治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务人士深入探讨。",
+      "eligibility": "",
+      "eligibility_zh": "",
       "sessions": []
     },
     {
@@ -1289,6 +1419,68 @@
       "sessions": []
     },
     {
+      "id": "opportunities/perimeter-undergraduate-summer-school-05e10293",
+      "edition_id": "edition:679c254e979b78a3",
+      "programme_id": "programme:74280eccf50ca905",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/perimeter-undergraduate-summer-school-28ca08b8.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/perimeter-undergraduate-summer-school-28ca08b8.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/perimeter-undergraduate-summer-school-28ca08b8.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/perimeter-undergraduate-summer-school-28ca08b8.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/perimeter-undergraduate-summer-school-05e10293.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/perimeter-undergraduate-summer-school-05e10293.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/perimeter-undergraduate-summer-school-05e10293.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/perimeter-undergraduate-summer-school-05e10293.html"
+      },
+      "official_url": "https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school",
+      "title": "Perimeter Undergraduate Summer School",
+      "title_zh": "周界本科生暑期学校",
+      "type": "summer school",
+      "organizer": "Perimeter Undergraduate Summer School",
+      "organizer_zh": "周界本科生暑期学校",
+      "location": "North America",
+      "location_zh": "北美",
+      "mode": "in-person",
+      "start_date": "2027-06-14",
+      "end_date": "2027-06-25",
+      "duration_days": 12,
+      "application_deadline": "2027-01-17",
+      "application_status": "open",
+      "directory_tier": "official-listing",
+      "financial_summary": "Funding or fee not stated",
+      "fee": "",
+      "fee_eur": null,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "topics": [
+        "physics"
+      ],
+      "primary_topics": [
+        "physics"
+      ],
+      "secondary_topics": [],
+      "summary": "Undergraduate Summer School. Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 . Participants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and p",
+      "summary_zh": "本科生暑期学校。周界研究所将于2027年6月14日至25日举办为期两周的本科生学校。参与者将通过课程及其他特别活动（如研究人员的报告和p）了解现代理论物理的前沿课题",
+      "eligibility": "",
+      "eligibility_zh": "",
+      "sessions": []
+    },
+    {
       "id": "ihe-delft:edition:D92BB7F7-3F15-11F1-9A59-0050561F03F5",
       "edition_id": "ihe-delft:edition:D92BB7F7-3F15-11F1-9A59-0050561F03F5",
       "programme_id": "programme:f2c4545bf282b938",
@@ -1351,9 +1543,9 @@
       "primary_topics": [],
       "secondary_topics": [],
       "summary": "This course explores how water, energy, and food resources are used and interconnected within a river basin context. It combines theory with practical applications from real-world river basins and uses modelling tools to illustrate key concepts and their interactions.",
-      "summary_zh": "本课程探讨流域范围内水、能源和粮食资源的使用方式及其相互联系。课程将理论与真实流域的实际应用相结合，并使用建模工具说明关键概念及其相互作用。",
+      "summary_zh": "本课程探讨流域背景下水、能源和粮食资源的使用方式及其相互联系。课程将理论与真实流域的实际应用相结合，并使用建模工具说明关键概念及其相互作用。",
       "eligibility": "The course is designed for professionals representing science, policy and practice domains related to water, food, energy and environment. The course is suitable for junior to mid-career professionals, MSc students and P",
-      "eligibility_zh": "本课程面向从事水、粮食、能源和环境相关科学、政策与实践领域的专业人士。课程适合初级至中期职业专业人士、理学硕士学生和P",
+      "eligibility_zh": "本课程面向代表与水、粮食、能源和环境相关的科学、政策和实践领域的专业人士。课程适合初级至中级专业人士、理学硕士学生和P",
       "sessions": []
     },
     {
@@ -1374,12 +1566,12 @@
       },
       "official_url": "https://conference-indico.kek.jp/event/378/page/782-application",
       "title": "Neutron and Muon School 2026 (Japanese-language)",
-      "title_zh": "2026年中子与μ子学校（日语授课）",
+      "title_zh": "中子与μ子学校 2026（日语授课）",
       "type": "research school",
       "organizer": "J-PARC Neutron and Muon School",
-      "organizer_zh": "J-PARC中子与μ子学校",
+      "organizer_zh": "J-PARC 中子与μ子学校",
       "location": "Tokai, Ibaraki, Japan (AQBRC, J-PARC and JRR-3)",
-      "location_zh": "日本茨城县东海村（AQBRC、J-PARC和JRR-3）",
+      "location_zh": "日本茨城县东海村（AQBRC、J-PARC 和 JRR-3）",
       "mode": "in-person",
       "start_date": "2026-11-09",
       "end_date": "2026-11-13",
@@ -1425,7 +1617,7 @@
       ],
       "secondary_topics": [],
       "summary": "Research school: Neutron and Muon School 2026. Dates: 09 November 2026 to 13 November 2026. Application deadline: 30 September 2026. In-person. Fee: JPY 40,000. Teaching language: Japanese.",
-      "summary_zh": "研究培训：2026年中子与μ子学校。日期：2026年11月9日至2026年11月13日。申请截止日期：2026年9月30日。线下进行。费用：40000日元。授课语言：日语。",
+      "summary_zh": "研究培训：中子与μ子学校 2026。日期：2026年11月9日至2026年11月13日。申请截止日期：2026年9月30日。线下进行。费用：40,000日元。授课语言：日语。",
       "eligibility": "Teaching language: Japanese. 大学生、大学院生、研究員等 各所属機関で放射線業務従事者として登録されている、または予定の方 ※ J-PARCおよびJRR-3の指定登録の上で、特殊健康診断から半年以内（学生、および、国外機関所属の研究者は1年以内）、教育訓練実施日から1年以内であることが必須です。 特殊健康診断、教育訓練の実施日の条件については こちら もご確認ください。 Applications may close earlier when capacity is reached.",
       "eligibility_zh": "日语授课。面向大学生、研究生和研究人员等；须已在所属机构登记为放射线工作人员，或计划完成登记。须完成 J-PARC/JRR-3 指定登记；特殊健康检查须在半年内（学生及境外机构研究人员为一年内），教育培训须在一年内。名额满时可能提前截止。",
       "sessions": []
@@ -1562,9 +1754,9 @@
       "primary_topics": [],
       "secondary_topics": [],
       "summary": "This course aims to enhance understanding and application of the City-Wide Inclusive Sanitation (CWIS) approach in addressing urban sanitation challenges, promoting a paradigm shift towards sustainable sanitation service provision.",
-      "summary_zh": "本课程旨在加深对全市包容性环境卫生（CWIS）方法的理解与应用，以应对城市环境卫生挑战，推动向可持续环境卫生服务供给的模式转变。",
+      "summary_zh": "本课程旨在加深对全市包容性环境卫生（CWIS）方法的理解与应用，以应对城市环境卫生挑战，推动向可持续环境卫生服务提供的范式转变。",
       "eligibility": "Professionals working or aspiring to work in the urban sanitation sector, particularly those involved in projects promoting the Citywide Inclusive Sanitation (CWIS) approach. The course is also relevant for organizations",
-      "eligibility_zh": "在城市环境卫生领域工作或有意从事该领域工作的专业人士，尤其是参与推动全市包容性环境卫生（CWIS）方法项目的人员。本课程也适合相关组织",
+      "eligibility_zh": "在城市环境卫生领域工作或有意从事该领域工作的专业人士，尤其是参与推广全市包容性环境卫生（CWIS）方法项目的相关人员。本课程也适合相关组织",
       "sessions": []
     },
     {
@@ -1629,9 +1821,9 @@
       "primary_topics": [],
       "secondary_topics": [],
       "summary": "Surface water quality is under increasing pressure from physical, chemical and biological pollutants, making treatment essential to ensure safe and reliable water supplies. This course provides an understanding of the key principles and processes involved in surface water treatme",
-      "summary_zh": "地表水水质正日益受到物理、化学和生物污染物的压力，因此处理对于确保安全可靠的水供应至关重要。本课程帮助理解地表水处理所涉及的关键原理和工艺。",
+      "summary_zh": "地表水水质正日益受到物理、化学和生物污染物的压力，因此处理对于确保安全可靠的水供应至关重要。本课程帮助理解地表水处理的关键原理和过程。",
       "eligibility": "The course is particularly attractive to professionals and students seeking to strengthen their expertise in drinking water treatment processes and play a role in addressing today’s global water challenges.",
-      "eligibility_zh": "本课程特别适合希望加强饮用水处理工艺专业知识、并在应对当今全球水挑战中发挥作用的专业人士和学生。",
+      "eligibility_zh": "本课程尤其适合希望加强饮用水处理工艺专业知识、并在应对当今全球水挑战中发挥作用的专业人士和学生。",
       "sessions": []
     },
     {
@@ -1883,148 +2075,89 @@
       "sessions": []
     },
     {
-      "id": "icts:/program/wsbp:2026-12-21",
-      "edition_id": "icts:/program/wsbp:2026-12-21",
-      "programme_id": "programme:8750854b0d569859",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/winter-school-on-biological-physics-9f8ff781.html",
+      "id": "imiscoe-phd-school:2027",
+      "edition_id": "imiscoe-phd-school:2027",
+      "programme_id": "imiscoe-phd-school",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/imiscoe-phd-school-regional-migration-studies-dynamics-of--fcee1b77.html",
       "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/winter-school-on-biological-physics-9f8ff781.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/winter-school-on-biological-physics-9f8ff781.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/winter-school-on-biological-physics-9f8ff781.html"
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/imiscoe-phd-school-regional-migration-studies-dynamics-of--fcee1b77.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/imiscoe-phd-school-regional-migration-studies-dynamics-of--fcee1b77.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/imiscoe-phd-school-regional-migration-studies-dynamics-of--fcee1b77.html"
       },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/icts-program-wsbp-2026-12-21-6d7024e2.html",
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/imiscoe-phd-school-2027-dfd6e21c.html",
       "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/icts-program-wsbp-2026-12-21-6d7024e2.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/icts-program-wsbp-2026-12-21-6d7024e2.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/icts-program-wsbp-2026-12-21-6d7024e2.html"
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/imiscoe-phd-school-2027-dfd6e21c.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/imiscoe-phd-school-2027-dfd6e21c.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/imiscoe-phd-school-2027-dfd6e21c.html"
       },
-      "official_url": "https://www.icts.res.in/program/wsbp",
-      "title": "Winter School on Biological Physics",
-      "title_zh": "生物物理冬季学校",
-      "type": "winter school",
-      "organizer": "International Centre for Theoretical Sciences (ICTS-TIFR)",
-      "organizer_zh": "国际理论科学中心（ICTS-TIFR）",
-      "location": "Madhava Lecture Hall, Bengaluru",
-      "location_zh": "Madhava Lecture Hall，班加罗尔",
+      "official_url": "https://www.imiscoe.org/events/2739-2027-phd-school",
+      "title": "IMISCOE PhD School 2027 — Regional Migration Studies: Dynamics of Human Mobility, Governance and Socioeconomic Transformations",
+      "title_zh": "IMISCOE 博士学校 2027 — 区域移民研究：人口流动动态、治理与社会经济转型",
+      "type": "phd school",
+      "organizer": "GRITIM-UPF at Universitat Pompeu Fabra in collaboration with the EuroMedMig Marie Skłodowska-Curie PhD Project",
+      "organizer_zh": "庞培法布拉大学 GRITIM-UPF 与 EuroMedMig 玛丽·斯克沃多夫斯卡-居里博士项目合作举办",
+      "location": "Ciutadella Campus, Universitat Pompeu Fabra (UPF) in Barcelona, Spain",
+      "location_zh": "西班牙巴塞罗那庞培法布拉大学（UPF）Ciutadella 校区",
       "mode": "in-person",
-      "start_date": "2026-12-21",
-      "end_date": "2027-01-01",
-      "duration_days": 12,
-      "application_deadline": "2026-08-31",
+      "start_date": "2027-09-13",
+      "end_date": "2027-09-17",
+      "duration_days": 5,
+      "application_deadline": "2026-11-15",
       "application_status": "closed",
       "directory_tier": "programme-library",
-      "financial_summary": "Fee not stated · There may be limited travel support for participants from India.",
-      "fee": "",
-      "fee_eur": null,
+      "financial_summary": "IMISCOE member institutes: EUR 400 (EU/OECD), EUR 200 (non-EU/non-OECD); non-member institutes: EUR 600 (EU/OECD), EUR 300 (non-EU/non-OECD) · Competitive awards; not guaranteed. Two (2) full scholarships , covering the registration fee, plus travel and accommodation expenses up to a combined maximum of €800 per scholarship. Two (2) registration fee waivers , covering the registration fee only.",
+      "fee": "IMISCOE member institutes: EUR 400 (EU/OECD), EUR 200 (non-EU/non-OECD); non-member institutes: EUR 600 (EU/OECD), EUR 300 (non-EU/non-OECD)",
+      "fee_eur": 600.0,
       "funding_available": true,
       "funding_type": [
-        "travel grant"
+        "competitive scholarship",
+        "fee waiver"
       ],
-      "funding_scope": "There may be limited travel support for participants from India.",
+      "funding_scope": "Competitive awards; not guaranteed. Two (2) full scholarships , covering the registration fee, plus travel and accommodation expenses up to a combined maximum of €800 per scholarship. Two (2) registration fee waivers , covering the registration fee only.",
       "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "conditional",
-        "support_scope": "There may be limited travel support for participants from India.",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "conditional",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "topics": [
-        "physics",
-        "astrophysics",
-        "cosmology",
-        "condensed matter",
-        "particle physics",
-        "mathematics",
-        "dynamical systems",
-        "engineering"
-      ],
-      "primary_topics": [
-        "physics"
-      ],
-      "secondary_topics": [
-        "astrophysics",
-        "cosmology",
-        "condensed matter",
-        "particle physics",
-        "mathematics",
-        "dynamical systems",
-        "engineering"
-      ],
-      "summary": "Winter School on Biological Physics ORGANIZERS Vijay Balasubramaniam (University of Pennsylvania, Philadelphia, USA) , Sanjay Jain (University of Delhi and Santa Fe Institute) , Vijaykumar Krishnamurthy (ICTS-TIFR, Bengaluru, India) and Mukund Thattai (NCBS, Bengaluru, India) DAT",
-      "summary_zh": "生物物理冬季学校 组织者：Vijay Balasubramaniam（宾夕法尼亚大学，美国费城）、Sanjay Jain（德里大学和圣塔菲研究所）、Vijaykumar Krishnamurthy（ICTS-TIFR，印度班加罗尔）和 Mukund Thattai（NCBS，印度班加罗尔）DAT",
-      "eligibility": "criteria: This winter School invites PhD students and postdoctoral researchers",
-      "eligibility_zh": "标准：本次冬季学校面向博士生和博士后研究人员",
-      "sessions": []
-    },
-    {
-      "id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
-      "edition_id": "ihe-delft:edition:86942C24-0694-11F1-AD8C-0050561F03F5",
-      "programme_id": "programme:7a88df2ca1095426",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/water-conflict-cooperation-and-diplomacy-245f06e3.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/water-conflict-cooperation-and-diplomacy-245f06e3.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/water-conflict-cooperation-and-diplomacy-245f06e3.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/water-conflict-cooperation-and-diplomacy-245f06e3.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-86942c24-0694-11f1-ad8c-0050561f03f5-f9624340.html"
-      },
-      "official_url": "https://www.un-ihe.org/short-courses",
-      "title": "Water Conflict, Cooperation and Diplomacy",
-      "title_zh": "水冲突、合作与外交",
-      "type": "short course",
-      "organizer": "IHE Delft",
-      "organizer_zh": "IHE Delft",
-      "location": "Delft, Netherlands",
-      "location_zh": "荷兰代尔夫特",
-      "mode": "in-person",
-      "start_date": "2026-11-09",
-      "end_date": "2026-11-20",
-      "duration_days": 12,
-      "application_deadline": "2026-10-15",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee EUR 3670 excl. VAT",
-      "fee": "EUR 3670 excl. VAT",
-      "fee_eur": 3670.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "EUR 3670 excl. VAT",
-        "fee_eur": 3670.0,
+        "participation_fee": "IMISCOE member institutes: EUR 400 (EU/OECD), EUR 200 (non-EU/non-OECD); non-member institutes: EUR 600 (EU/OECD), EUR 300 (non-EU/non-OECD)",
+        "fee_eur": 600.0,
         "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
+        "support_status": "conditional",
+        "support_scope": "Competitive awards; not guaranteed. Two (2) full scholarships , covering the registration fee, plus travel and accommodation expenses up to a combined maximum of €800 per scholarship. Two (2) registration fee waivers , covering the registration fee only.",
         "accommodation": "unknown",
         "meals": "unknown",
         "travel_support": "unknown",
         "cost_status": "paid",
         "fee_options": [
           {
-            "amount": 3670.0,
+            "amount": 400.0,
             "currency": "EUR",
-            "conditions": "excl. VAT"
+            "conditions": "(EU/OECD),"
+          },
+          {
+            "amount": 200.0,
+            "currency": "EUR",
+            "conditions": "(non-EU/non-OECD); non-member institutes:"
+          },
+          {
+            "amount": 600.0,
+            "currency": "EUR",
+            "conditions": "(EU/OECD),"
+          },
+          {
+            "amount": 300.0,
+            "currency": "EUR",
+            "conditions": "(non-EU/non-OECD)"
           }
         ]
       },
       "topics": [
-        "engineering"
+        "geography"
       ],
-      "primary_topics": [],
+      "primary_topics": [
+        "geography"
+      ],
       "secondary_topics": [],
-      "summary": "In this course, participants will learn about the complex linkages between water and conflict, and how to overcome challenges of governing shared waters in a cooperative way.",
-      "summary_zh": "在本课程中，学员将了解水与冲突之间的复杂关联，以及如何以合作方式克服共享水资源治理中的挑战。",
-      "eligibility": "Mid-career water professionals with a technical/engineering/natural science background interested in advancing their skills on water conflict, cooperation and diplomacy.",
-      "eligibility_zh": "具有技术/工程/自然科学背景、希望提升水冲突、合作与外交方面技能的水行业中后期职业人士。",
+      "summary": "Research training on regional migration studies, examining human mobility, governance and socioeconomic transformations through regional and comparative perspectives.",
+      "summary_zh": "区域移民研究的研究培训，通过区域和比较视角考察人口流动、治理与社会经济转型。",
+      "eligibility": "The PhD School welcomes applications from doctoral researchers working on migration and human mobility from the disciplines of social sciences and all geographical areas.",
+      "eligibility_zh": "博士学校欢迎社会科学各学科、研究各地理区域移民与人口流动的博士研究人员申请。",
       "sessions": []
     },
     {
@@ -2168,208 +2301,9 @@
         "deep learning"
       ],
       "summary": "Training course: Machine Learning-based weather forecasting (16-November 20, 2026): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Machine Learning-based weather foreca",
-      "summary_zh": "培训课程：基于机器学习的天气预报（2026年11月16日至20日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：基于机器学习的天气预",
+      "summary_zh": "培训课程：基于机器学习的天气预报（2026年11月16日至20日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：基于机器学习的天气预",
       "eligibility": "",
       "eligibility_zh": "",
-      "sessions": []
-    },
-    {
-      "id": "opportunities/training-course-data-assimilation-machine-learning-681b10c7",
-      "edition_id": "edition:d31fd98a1919cefb",
-      "programme_id": "programme:ccbe33f932ca480b",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/training-course-data-assimilation-machine-learning-9bd61f9e.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/training-course-data-assimilation-machine-learning-9bd61f9e.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/training-course-data-assimilation-machine-learning-9bd61f9e.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/training-course-data-assimilation-machine-learning-9bd61f9e.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/training-course-data-assimilation-machine-learning-681b10c7.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/training-course-data-assimilation-machine-learning-681b10c7.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/training-course-data-assimilation-machine-learning-681b10c7.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/training-course-data-assimilation-machine-learning-681b10c7.html"
-      },
-      "official_url": "https://events.ecmwf.int/event/578/",
-      "title": "Training course: Data assimilation & Machine Learning",
-      "title_zh": "培训课程：资料同化与机器学习",
-      "type": "training course",
-      "organizer": "ECMWF Events (Indico)",
-      "organizer_zh": "ECMWF Events (Indico)",
-      "location": "ECMWF, Reading",
-      "location_zh": "ECMWF，雷丁",
-      "mode": "hybrid",
-      "start_date": "2027-01-11",
-      "end_date": "2027-01-15",
-      "duration_days": 5,
-      "application_deadline": "2026-09-27",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee about EUR 1176",
-      "fee": "£980",
-      "fee_eur": 1176.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "£980",
-        "fee_eur": 1176.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": []
-      },
-      "topics": [
-        "machine learning",
-        "satellite",
-        "AI"
-      ],
-      "primary_topics": [
-        "machine learning"
-      ],
-      "secondary_topics": [
-        "satellite",
-        "AI"
-      ],
-      "summary": "Training course: Data assimilation & Machine Learning (11-January 15, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Data assimilation & Machine Learning Overvie",
-      "summary_zh": "培训课程：资料同化与机器学习（2027年1月11日至15日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：资料同化与机器学习 概览",
-      "eligibility": "",
-      "eligibility_zh": "",
-      "sessions": []
-    },
-    {
-      "id": "ihe-delft:edition:13763E13-4DED-11F1-B159-0050561F03F5",
-      "edition_id": "ihe-delft:edition:13763E13-4DED-11F1-B159-0050561F03F5",
-      "programme_id": "programme:623edd7abf46af11",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/emergency-management-for-flood-defences-general-concepts-e917e5be.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/emergency-management-for-flood-defences-general-concepts-e917e5be.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/emergency-management-for-flood-defences-general-concepts-e917e5be.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/emergency-management-for-flood-defences-general-concepts-e917e5be.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-13763e13-4ded-11f1-b159-0050561f03f5-95e07349.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-13763e13-4ded-11f1-b159-0050561f03f5-95e07349.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-13763e13-4ded-11f1-b159-0050561f03f5-95e07349.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-13763e13-4ded-11f1-b159-0050561f03f5-95e07349.html"
-      },
-      "official_url": "https://www.un-ihe.org/short-courses",
-      "title": "Emergency Management for Flood Defences – General Concepts",
-      "title_zh": "防洪应急管理——基本概念",
-      "type": "short course",
-      "organizer": "IHE Delft",
-      "organizer_zh": "IHE Delft",
-      "location": "Delft, Netherlands",
-      "location_zh": "荷兰代尔夫特",
-      "mode": "in-person",
-      "start_date": "2026-11-02",
-      "end_date": "2026-11-06",
-      "duration_days": 5,
-      "application_deadline": "2026-10-15",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee EUR 1000 excl. VAT",
-      "fee": "EUR 1000 excl. VAT",
-      "fee_eur": 1000.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "EUR 1000 excl. VAT",
-        "fee_eur": 1000.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": [
-          {
-            "amount": 1000.0,
-            "currency": "EUR",
-            "conditions": "excl. VAT"
-          }
-        ]
-      },
-      "topics": [
-        "flood"
-      ],
-      "primary_topics": [],
-      "secondary_topics": [],
-      "summary": "This short course promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the first component of a two-part series, while",
-      "summary_zh": "本短期课程推广《防洪应急管理手册》的实际应用，同时为政府、产业界和学术界的专业人士创造学习和交流机会。该课程是两部分系列课程的第一部分，而",
-      "eligibility": "Professionals and academics active in flood risk and emergency management (coastal, river and estuarine managers and engineers, flood defence owners, civil/hydraulic/geotechnical engineers, crisis managers, crisis commun",
-      "eligibility_zh": "活跃于洪水风险和应急管理领域的专业人士和学者（沿海、河流和河口管理者和工程师、防洪设施所有者、土木/水利/岩土工程师、危机管理者、危机沟通",
-      "sessions": []
-    },
-    {
-      "id": "ihe-delft:edition:1F6DDF05-4DF0-11F1-B159-0050561F03F5",
-      "edition_id": "ihe-delft:edition:1F6DDF05-4DF0-11F1-B159-0050561F03F5",
-      "programme_id": "programme:9c734e62216b9eea",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/emergency-management-for-flood-defences-operations-in-prac-6bd68304.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/emergency-management-for-flood-defences-operations-in-prac-6bd68304.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/emergency-management-for-flood-defences-operations-in-prac-6bd68304.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/emergency-management-for-flood-defences-operations-in-prac-6bd68304.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-1f6ddf05-4df0-11f1-b159-0050561f03f5-31c5a455.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ihe-delft-edition-1f6ddf05-4df0-11f1-b159-0050561f03f5-31c5a455.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ihe-delft-edition-1f6ddf05-4df0-11f1-b159-0050561f03f5-31c5a455.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ihe-delft-edition-1f6ddf05-4df0-11f1-b159-0050561f03f5-31c5a455.html"
-      },
-      "official_url": "https://www.un-ihe.org/short-courses",
-      "title": "Emergency Management for Flood Defences - Operations in Practice",
-      "title_zh": "防洪应急管理——实践中的行动",
-      "type": "short course",
-      "organizer": "IHE Delft",
-      "organizer_zh": "IHE Delft",
-      "location": "Delft, Netherlands",
-      "location_zh": "荷兰代尔夫特",
-      "mode": "in-person",
-      "start_date": "2026-11-09",
-      "end_date": "2026-11-13",
-      "duration_days": 5,
-      "application_deadline": "2026-10-15",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee EUR 1000 excl. VAT",
-      "fee": "EUR 1000 excl. VAT",
-      "fee_eur": 1000.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "EUR 1000 excl. VAT",
-        "fee_eur": 1000.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": [
-          {
-            "amount": 1000.0,
-            "currency": "EUR",
-            "conditions": "excl. VAT"
-          }
-        ]
-      },
-      "topics": [
-        "flood"
-      ],
-      "primary_topics": [],
-      "secondary_topics": [],
-      "summary": "This short course&nbsp;promotes practical use of the Handbook on Emergency Management for Flood Defences while creating learning and networking opportunities for professionals from government, industry and academia. The course serves as the second component of a two-part series,",
-      "summary_zh": "本短期课程推动《防洪应急管理手册》的实际应用，同时为来自政府、产业界和学术界的专业人士创造学习与交流机会。该课程是两部分系列中的第二部分，",
-      "eligibility": "Professionals and academics active in flood risk and emergency management (coastal, river and estuarine managers and engineers, flood defence owners, civil/hydraulic/geotechnical engineers, crisis managers, crisis commun",
-      "eligibility_zh": "活跃于洪水风险与应急管理领域的专业人士和学者（海岸、河流及河口管理者与工程师、防洪设施业主、土木/水利/岩土工程师、危机管理者、危机沟通",
       "sessions": []
     },
     {
@@ -2434,74 +2368,6 @@
       "summary_zh": "培训课程：ECMWF产品的使用与解读（2027年1月25日至28日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读",
       "eligibility": "",
       "eligibility_zh": "",
-      "sessions": []
-    },
-    {
-      "id": "opportunities/genome-bioinformatics-from-short-to-long-read-sequencing-5ee575a0",
-      "edition_id": "edition:b261794a91b6469a",
-      "programme_id": "programme:88f5777479ec3fc8",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/genome-bioinformatics-from-short-to-long-read-sequencing-5fa4546a.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/genome-bioinformatics-from-short-to-long-read-sequencing-5fa4546a.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/genome-bioinformatics-from-short-to-long-read-sequencing-5fa4546a.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/genome-bioinformatics-from-short-to-long-read-sequencing-5fa4546a.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/genome-bioinformatics-from-short-to-long-read-sequencing-5ee575a0.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/genome-bioinformatics-from-short-to-long-read-sequencing-5ee575a0.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/genome-bioinformatics-from-short-to-long-read-sequencing-5ee575a0.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/genome-bioinformatics-from-short-to-long-read-sequencing-5ee575a0.html"
-      },
-      "official_url": "https://www.ebi.ac.uk/training/events/genome-bioinformatics-2026/",
-      "title": "Genome bioinformatics: from short- to long-read sequencing",
-      "title_zh": "基因组生物信息学：从短读到长读测序",
-      "type": "training course",
-      "organizer": "EMBL-EBI Training",
-      "organizer_zh": "EMBL-EBI 培训",
-      "location": "United Kingdom",
-      "location_zh": "英国",
-      "mode": "in-person",
-      "start_date": "2026-11-16",
-      "end_date": "2026-11-20",
-      "duration_days": 5,
-      "application_deadline": "2026-08-04",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Registration-fee scholarship for selected participants · fee otherwise not stated",
-      "fee": "",
-      "fee_eur": null,
-      "funding_available": true,
-      "funding_type": [
-        "travel grant",
-        "fee waiver"
-      ],
-      "funding_scope": "registration fee covered",
-      "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "conditional",
-        "support_scope": "registration fee covered",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "topics": [
-        "bioinformatics",
-        "data analysis"
-      ],
-      "primary_topics": [
-        "bioinformatics"
-      ],
-      "secondary_topics": [
-        "data analysis"
-      ],
-      "summary": "Genome bioinformatics: from short- to long-read sequencing | EMBL-EBI Training EMBL-EBI Training Live training Course at EMBL-EBI Genome bioinformatics: from short- to long-read sequencing Login Register John doe My learning My playlists My account Contact us Logout Course at EMB",
-      "summary_zh": "基因组生物信息学：从短读到长读测序 | EMBL-EBI 培训 EMBL-EBI 培训 在 EMBL-EBI 举办的线下培训课程 基因组生物信息学：从短读到长读测序 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出 在 EMB 举办的课程",
-      "eligibility": "PhD students and post-doctoral researchers who are starting to use high-throughput sequencing technologies and bioinformatics methods in their research",
-      "eligibility_zh": "刚开始在研究中使用高通量测序技术和生物信息学方法的博士生和博士后研究人员",
       "sessions": []
     }
   ]

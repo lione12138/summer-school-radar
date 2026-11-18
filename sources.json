@@ -16,15 +16,15 @@
     "health": {
       "name": "GGI Theory Meets Experiment",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 16
+      "consecutive_empty_scans": 24
     }
   },
   {
@@ -44,15 +44,15 @@
     "health": {
       "name": "GGI Fundamental Interactions",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 16
+      "consecutive_empty_scans": 24
     }
   },
   {
@@ -72,15 +72,15 @@
     "health": {
       "name": "GGI Statistical Field Theories",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 16
+      "consecutive_empty_scans": 24
     }
   },
   {
@@ -100,15 +100,15 @@
     "health": {
       "name": "GGI Nuclear and Hadronic Physics",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 16
+      "consecutive_empty_scans": 24
     }
   },
   {
@@ -148,8 +148,8 @@
     "health": {
       "name": "CSHA Computational and Cognitive Neuroscience",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -176,8 +176,8 @@
     "health": {
       "name": "CSHA Advanced Neuroimaging",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -204,8 +204,8 @@
     "health": {
       "name": "IISER Pune CAMP",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -231,8 +231,8 @@
     "health": {
       "name": "NCTS QFT School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -259,8 +259,8 @@
     "health": {
       "name": "VIASM-IAMP Probability and Mathematical Physics School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -287,8 +287,8 @@
     "health": {
       "name": "J-PARC Neutron and Muon School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -315,15 +315,15 @@
     "notes_zh": "\u5b98\u65b9\u5373\u5c06\u63a8\u51fa\u7684\u9879\u76ee\u76ee\u5f55\uff1b\u9650\u5b9a\u8303\u56f4\u7684\u5b66\u9662\u540d\u79f0\u53d1\u73b0\u4e0e\u9879\u76ee\u6b63\u6587\u63d0\u53d6\uff0c\u4e0d\u5305\u542b\u62db\u751f\u5bfc\u822a\u3001\u4e00\u822c\u6027\u4f1a\u8bae\u53ca\u9879\u76ee\u63d0\u6848\u5f81\u96c6\u3002",
     "health": {
       "name": "ICTS Schools",
-      "status": "healthy",
-      "last_attempt": "2026-10-30",
+      "status": "failed",
+      "last_attempt": "2026-11-18",
       "last_success": "2026-10-30",
-      "consecutive_failures": 0,
-      "fetch_health": "healthy",
-      "scanner_records": 2,
-      "extracted_records": 2,
+      "consecutive_failures": 8,
+      "fetch_health": "failed",
+      "scanner_records": 0,
+      "extracted_records": 0,
       "public_open_records": 0,
-      "extraction_health": "records_found",
+      "extraction_health": "unavailable",
       "consecutive_empty_scans": 0
     }
   },
@@ -344,8 +344,8 @@
     "health": {
       "name": "AstroAI Asian Network Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -389,8 +389,8 @@
     "health": {
       "name": "ANSTO-HZB-AONSA Neutron School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -417,15 +417,15 @@
     "health": {
       "name": "UNSW Economics Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 17
+      "consecutive_empty_scans": 25
     }
   },
   {
@@ -454,8 +454,8 @@
     "health": {
       "name": "AMSI Winter School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -481,8 +481,8 @@
     "health": {
       "name": "ACAN Neuroscience",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -510,8 +510,8 @@
     "health": {
       "name": "ACSPRI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 3,
@@ -558,8 +558,8 @@
     "health": {
       "name": "Berkeley Lab DL4SCI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -586,15 +586,15 @@
     "health": {
       "name": "ORNL National Neutron Scattering School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 17
+      "consecutive_empty_scans": 25
     }
   },
   {
@@ -615,8 +615,8 @@
     "health": {
       "name": "Emory SISMID",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 16,
@@ -643,8 +643,8 @@
     "health": {
       "name": "Georgia Tech SISG",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 17,
@@ -670,8 +670,8 @@
     "health": {
       "name": "SLMath Summer Graduate Schools",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 10,
@@ -698,8 +698,8 @@
     "health": {
       "name": "CRM Schools",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
@@ -725,15 +725,15 @@
     "health": {
       "name": "TRISEP",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 17
+      "consecutive_empty_scans": 25
     }
   },
   {
@@ -751,13 +751,13 @@
     "health": {
       "name": "Perimeter Undergraduate Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
       "extracted_records": 1,
-      "public_open_records": 0,
+      "public_open_records": 1,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
     }
@@ -779,12 +779,12 @@
     "health": {
       "name": "EGU Training Schools",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 1,
-      "extracted_records": 1,
+      "scanner_records": 3,
+      "extracted_records": 3,
       "public_open_records": 0,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
@@ -806,8 +806,8 @@
     "health": {
       "name": "IAHS",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -833,15 +833,15 @@
     "health": {
       "name": "IAH",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -877,15 +877,15 @@
     "health": {
       "name": "NASA ARSET",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -904,9 +904,9 @@
     "health": {
       "name": "DAAD Short Courses",
       "status": "failed",
-      "last_attempt": "2026-10-30",
+      "last_attempt": "2026-11-18",
       "last_success": "2026-07-15",
-      "consecutive_failures": 47,
+      "consecutive_failures": 55,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -932,8 +932,8 @@
     "health": {
       "name": "UKRI Short Courses and Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -960,15 +960,15 @@
     "health": {
       "name": "COST Action Events",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 16
+      "consecutive_empty_scans": 24
     }
   },
   {
@@ -988,8 +988,8 @@
     "health": {
       "name": "ELLIS",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 4,
@@ -1017,12 +1017,12 @@
     "health": {
       "name": "IHE Delft",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 30,
-      "extracted_records": 30,
+      "scanner_records": 27,
+      "extracted_records": 27,
       "public_open_records": 0,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
@@ -1060,15 +1060,15 @@
     "health": {
       "name": "GFZ Potsdam",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 2
+      "consecutive_empty_scans": 10
     }
   },
   {
@@ -1088,15 +1088,15 @@
     "health": {
       "name": "UKCEH",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -1119,15 +1119,15 @@
     "health": {
       "name": "ICIMOD",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -1147,9 +1147,9 @@
     "health": {
       "name": "Asian Institute of Technology",
       "status": "failed",
-      "last_attempt": "2026-10-30",
+      "last_attempt": "2026-11-18",
       "last_success": "2026-09-23",
-      "consecutive_failures": 16,
+      "consecutive_failures": 24,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -1175,8 +1175,8 @@
     "health": {
       "name": "ECMWF Training",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 6,
@@ -1203,8 +1203,8 @@
     "health": {
       "name": "ESA EO4Society Training",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -1230,15 +1230,15 @@
     "health": {
       "name": "NCAR ASP Colloquia",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -1258,15 +1258,15 @@
     "health": {
       "name": "PIK Potsdam Events",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -1286,8 +1286,8 @@
     "health": {
       "name": "HIDA Events",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -1315,9 +1315,9 @@
     "health": {
       "name": "GESIS Summer School",
       "status": "failed",
-      "last_attempt": "2026-10-30",
+      "last_attempt": "2026-11-18",
       "last_success": "2026-09-23",
-      "consecutive_failures": 16,
+      "consecutive_failures": 24,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -1344,9 +1344,9 @@
     "health": {
       "name": "GESIS Fall Seminar in Computational Social Science",
       "status": "failed",
-      "last_attempt": "2026-10-30",
+      "last_attempt": "2026-11-18",
       "last_success": "2026-09-11",
-      "consecutive_failures": 22,
+      "consecutive_failures": 30,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -1373,9 +1373,9 @@
     "health": {
       "name": "GESIS Spring Seminar",
       "status": "failed",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-09-08",
-      "consecutive_failures": 24,
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-11",
+      "consecutive_failures": 3,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -1402,15 +1402,15 @@
     "health": {
       "name": "IDESSAI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -1431,15 +1431,15 @@
     "health": {
       "name": "HiPEAC ACACES",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 4
+      "consecutive_empty_scans": 12
     }
   },
   {
@@ -1460,8 +1460,8 @@
     "health": {
       "name": "UTN Computational Linguistics Fall School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 2,
@@ -1489,8 +1489,8 @@
     "health": {
       "name": "TU Graz Summer and Winter Programmes",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 2,
@@ -1518,15 +1518,15 @@
     "health": {
       "name": "Institute for Qualitative and Multi-Method Research",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -1547,9 +1547,9 @@
     "health": {
       "name": "EITM Institute",
       "status": "failed",
-      "last_attempt": "2026-10-30",
+      "last_attempt": "2026-11-18",
       "last_success": null,
-      "consecutive_failures": 35,
+      "consecutive_failures": 43,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -1582,8 +1582,8 @@
     "health": {
       "name": "Eurac Winter School on Federalism and Governance",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -1611,8 +1611,8 @@
     "health": {
       "name": "Complexity Science Hub Winter School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -1640,8 +1640,8 @@
     "health": {
       "name": "Data Science Africa Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -1669,12 +1669,12 @@
     "health": {
       "name": "CERN School of Computing",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 4,
-      "extracted_records": 4,
+      "scanner_records": 1,
+      "extracted_records": 2,
       "public_open_records": 0,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
@@ -1697,8 +1697,8 @@
     "health": {
       "name": "CERN School of Computing 2026 application",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 2,
@@ -1726,13 +1726,13 @@
     "health": {
       "name": "EMBL-EBI Training",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 3,
-      "extracted_records": 3,
-      "public_open_records": 0,
+      "scanner_records": 2,
+      "extracted_records": 2,
+      "public_open_records": 1,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
     }
@@ -1756,12 +1756,12 @@
     "health": {
       "name": "SIB Training",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 2,
-      "extracted_records": 2,
+      "scanner_records": 4,
+      "extracted_records": 4,
       "public_open_records": 0,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
@@ -1785,15 +1785,15 @@
     "health": {
       "name": "ESS Data and Computing Schools",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -1814,8 +1814,8 @@
     "health": {
       "name": "Data Science and AI Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -1843,15 +1843,15 @@
     "health": {
       "name": "CODATA-RDA Data Schools",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -1871,15 +1871,15 @@
     "health": {
       "name": "IEEE RAS Technical Education Programs",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 1,
-      "extracted_records": 1,
+      "scanner_records": 0,
+      "extracted_records": 0,
       "public_open_records": 0,
-      "extraction_health": "records_found",
-      "consecutive_empty_scans": 0
+      "extraction_health": "no_records",
+      "consecutive_empty_scans": 5
     }
   },
   {
@@ -1900,8 +1900,8 @@
     "health": {
       "name": "IEEE RAS Cognitive Robotics Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -1929,15 +1929,15 @@
     "health": {
       "name": "EurAI ESSAI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -1959,15 +1959,15 @@
     "health": {
       "name": "ESSIR",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -1988,8 +1988,8 @@
     "health": {
       "name": "NLDL Winter School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -2017,8 +2017,8 @@
     "health": {
       "name": "Prob_AI Hub Winter School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -2046,8 +2046,8 @@
     "health": {
       "name": "Exeter Machine Learning Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -2075,15 +2075,15 @@
     "health": {
       "name": "UNICRI AI Ethics Winter School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2101,15 +2101,15 @@
     "health": {
       "name": "MLSS Index",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2128,8 +2128,8 @@
     "health": {
       "name": "EEML",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 2,
@@ -2155,15 +2155,15 @@
     "health": {
       "name": "Mediterranean ML Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2182,15 +2182,15 @@
     "health": {
       "name": "Nordic ProbAI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2209,15 +2209,15 @@
     "health": {
       "name": "Gaussian Process Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2236,15 +2236,15 @@
     "health": {
       "name": "Deep Learning Indaba",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2264,15 +2264,15 @@
     "health": {
       "name": "IWA",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2292,15 +2292,15 @@
     "health": {
       "name": "IAHR",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 1,
-      "extracted_records": 1,
+      "scanner_records": 0,
+      "extracted_records": 0,
       "public_open_records": 0,
-      "extraction_health": "records_found",
-      "consecutive_empty_scans": 0
+      "extraction_health": "no_records",
+      "consecutive_empty_scans": 7
     }
   },
   {
@@ -2319,15 +2319,15 @@
     "health": {
       "name": "SIWI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2347,15 +2347,15 @@
     "health": {
       "name": "GEWEX",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2375,15 +2375,15 @@
     "health": {
       "name": "AMS Meetings",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 1
     }
   },
   {
@@ -2403,15 +2403,15 @@
     "health": {
       "name": "WCRP",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2431,15 +2431,15 @@
     "health": {
       "name": "WMO ETRP",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2458,15 +2458,15 @@
     "health": {
       "name": "GFDL Events",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2501,15 +2501,15 @@
     "health": {
       "name": "CIDER",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 4
+      "consecutive_empty_scans": 12
     }
   },
   {
@@ -2530,15 +2530,15 @@
     "health": {
       "name": "Oxford ML Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2556,16 +2556,16 @@
     "notes_zh": "\u975e\u6d32\u673a\u5668\u667a\u80fd\u7855\u58eb\uff0c\u5168\u989d\u8d44\u52a9\u9879\u76ee\u3002",
     "health": {
       "name": "AMMI",
-      "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
-      "consecutive_failures": 0,
-      "fetch_health": "healthy",
+      "status": "failed",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-13",
+      "consecutive_failures": 2,
+      "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
-      "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "extraction_health": "unavailable",
+      "consecutive_empty_scans": 0
     }
   },
   {
@@ -2602,8 +2602,8 @@
     "health": {
       "name": "ISPRS",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 2,
@@ -2629,15 +2629,15 @@
     "health": {
       "name": "GSA",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 0,
-      "extracted_records": 0,
+      "scanner_records": 1,
+      "extracted_records": 1,
       "public_open_records": 0,
-      "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "extraction_health": "records_found",
+      "consecutive_empty_scans": 0
     }
   },
   {
@@ -2657,8 +2657,8 @@
     "health": {
       "name": "EAGE",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 3,
@@ -2685,8 +2685,8 @@
     "health": {
       "name": "EarthScope",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -2713,15 +2713,15 @@
     "health": {
       "name": "CIG Geodynamics",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 4
+      "consecutive_empty_scans": 12
     }
   },
   {
@@ -2742,15 +2742,15 @@
     "health": {
       "name": "EUMETSAT Training",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2771,8 +2771,8 @@
     "health": {
       "name": "ICOS",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -2800,15 +2800,15 @@
     "health": {
       "name": "ICTP-SAIFR",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2829,9 +2829,9 @@
     "health": {
       "name": "Lamont-Doherty",
       "status": "failed",
-      "last_attempt": "2026-10-30",
+      "last_attempt": "2026-11-18",
       "last_success": "2026-10-28",
-      "consecutive_failures": 1,
+      "consecutive_failures": 9,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -2857,15 +2857,15 @@
     "health": {
       "name": "IPAM",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2885,8 +2885,8 @@
     "health": {
       "name": "CLIVAR",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -2913,15 +2913,15 @@
     "health": {
       "name": "APECS",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2941,15 +2941,15 @@
     "health": {
       "name": "Barcelona Supercomputing Center",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -2971,8 +2971,8 @@
     "health": {
       "name": "Climate Change AI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 3,
@@ -3014,8 +3014,8 @@
     "health": {
       "name": "ELLS Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 3,
@@ -3043,15 +3043,15 @@
     "health": {
       "name": "Una Europa Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3072,15 +3072,15 @@
     "health": {
       "name": "EDUC Summer Schools",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3114,16 +3114,16 @@
     "notes_zh": "\u5185\u5bb9\u4e3a\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u8be5\u6765\u6e90\u4f7f\u7528\u53ef\u9009\u7684 Playwright \u65e0\u5934\u6d4f\u89c8\u5668\u3002\u82e5\u672a\u5b89\u88c5 Playwright\uff0c\u5219\u56de\u9000\u4e3a\u7a7a\u6293\u53d6\u3002",
     "health": {
       "name": "CERN Academic Training",
-      "status": "failed",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-28",
-      "consecutive_failures": 1,
-      "fetch_health": "failed",
+      "status": "healthy",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
+      "consecutive_failures": 0,
+      "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
-      "extraction_health": "unavailable",
-      "consecutive_empty_scans": 0
+      "extraction_health": "no_records",
+      "consecutive_empty_scans": 2
     }
   },
   {
@@ -3148,13 +3148,13 @@
     "health": {
       "name": "ICTP",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 2,
-      "extracted_records": 2,
-      "public_open_records": 1,
+      "scanner_records": 3,
+      "extracted_records": 3,
+      "public_open_records": 0,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
     }
@@ -3175,8 +3175,8 @@
     "health": {
       "name": "LxMLS",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -3204,8 +3204,8 @@
     "health": {
       "name": "Karthaus Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -3232,15 +3232,15 @@
     "health": {
       "name": "WHOI GFD Program",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3260,15 +3260,15 @@
     "health": {
       "name": "NCEO",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3288,15 +3288,15 @@
     "health": {
       "name": "POGO",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3317,15 +3317,15 @@
     "health": {
       "name": "Cyprus Institute",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3347,9 +3347,9 @@
     "health": {
       "name": "AGU",
       "status": "failed",
-      "last_attempt": "2026-10-30",
+      "last_attempt": "2026-11-18",
       "last_success": "2026-09-09",
-      "consecutive_failures": 23,
+      "consecutive_failures": 31,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -3375,15 +3375,15 @@
     "health": {
       "name": "NCAS",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3404,15 +3404,15 @@
     "health": {
       "name": "Les Houches Physics School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 4
     }
   },
   {
@@ -3433,8 +3433,8 @@
     "health": {
       "name": "ESSLLI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -3461,15 +3461,15 @@
     "health": {
       "name": "LSA Linguistic Institute",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3490,8 +3490,8 @@
     "health": {
       "name": "LOT School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 4,
@@ -3519,15 +3519,15 @@
     "health": {
       "name": "EGG School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3547,8 +3547,8 @@
     "health": {
       "name": "Leiden Linguistics Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 6,
@@ -3575,15 +3575,15 @@
     "health": {
       "name": "CLASP Gothenburg",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3603,8 +3603,8 @@
     "health": {
       "name": "CoLang",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -3632,8 +3632,8 @@
     "health": {
       "name": "CreteLing",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 2,
@@ -3665,8 +3665,8 @@
     "health": {
       "name": "Advanced Language Processing Winter School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -3693,8 +3693,8 @@
     "health": {
       "name": "Charles University Summer School of Linguistics",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 3,
@@ -3722,15 +3722,15 @@
     "health": {
       "name": "Methods in Language Sciences",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 3
+      "consecutive_empty_scans": 4
     }
   },
   {
@@ -3751,15 +3751,15 @@
     "health": {
       "name": "Edinburgh Theoretical Historical Linguistics",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3779,8 +3779,8 @@
     "health": {
       "name": "ICVSS",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 2,
@@ -3808,8 +3808,8 @@
     "health": {
       "name": "DS3 Data Science Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 2,
@@ -3836,15 +3836,15 @@
     "health": {
       "name": "Heidelberg Laureate Forum",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3864,8 +3864,8 @@
     "health": {
       "name": "OPLSS",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -3908,15 +3908,15 @@
     "health": {
       "name": "CISPA",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 13
+      "consecutive_empty_scans": 21
     }
   },
   {
@@ -3936,15 +3936,15 @@
     "health": {
       "name": "SBA Research",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3965,15 +3965,15 @@
     "health": {
       "name": "Santa Fe Institute",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -3994,15 +3994,15 @@
     "health": {
       "name": "DeepLearn",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4022,15 +4022,15 @@
     "health": {
       "name": "EurAI ACAI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4050,15 +4050,15 @@
     "health": {
       "name": "Friday Harbor Laboratories",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4079,8 +4079,8 @@
     "health": {
       "name": "SOLAS",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
@@ -4107,15 +4107,15 @@
     "health": {
       "name": "CSCS Summer School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4135,9 +4135,9 @@
     "health": {
       "name": "Argonne ATPESC",
       "status": "failed",
-      "last_attempt": "2026-10-30",
+      "last_attempt": "2026-11-18",
       "last_success": "2026-08-03",
-      "consecutive_failures": 33,
+      "consecutive_failures": 41,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -4163,15 +4163,15 @@
     "health": {
       "name": "CESM Tutorial",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4191,15 +4191,15 @@
     "health": {
       "name": "GEOMAR",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4219,15 +4219,15 @@
     "health": {
       "name": "CINECA HPC",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4247,15 +4247,15 @@
     "health": {
       "name": "Oxford Robotics Institute",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 15
+      "consecutive_empty_scans": 23
     }
   },
   {
@@ -4275,8 +4275,8 @@
     "health": {
       "name": "Mila",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -4303,15 +4303,15 @@
     "health": {
       "name": "OIST OCNC",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4331,15 +4331,15 @@
     "health": {
       "name": "MBL Courses",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 0,
-      "extracted_records": 0,
-      "public_open_records": 0,
-      "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "scanner_records": 1,
+      "extracted_records": 1,
+      "public_open_records": 1,
+      "extraction_health": "records_found",
+      "consecutive_empty_scans": 0
     }
   },
   {
@@ -4359,15 +4359,15 @@
     "health": {
       "name": "CSHL Courses",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4387,15 +4387,15 @@
     "health": {
       "name": "CAJAL Training",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4415,15 +4415,15 @@
     "health": {
       "name": "Bernstein Network",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 4
+      "consecutive_empty_scans": 12
     }
   },
   {
@@ -4443,9 +4443,9 @@
     "health": {
       "name": "CIFAR DLRL Summer School",
       "status": "failed",
-      "last_attempt": "2026-10-30",
+      "last_attempt": "2026-11-18",
       "last_success": "2026-10-21",
-      "consecutive_failures": 5,
+      "consecutive_failures": 13,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -4471,15 +4471,15 @@
     "health": {
       "name": "IBRO",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 17
+      "consecutive_empty_scans": 25
     }
   },
   {
@@ -4499,15 +4499,15 @@
     "health": {
       "name": "ECPR Methods School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 1,
-      "extracted_records": 1,
+      "scanner_records": 0,
+      "extracted_records": 0,
       "public_open_records": 0,
-      "extraction_health": "records_found",
-      "consecutive_empty_scans": 0
+      "extraction_health": "no_records",
+      "consecutive_empty_scans": 3
     }
   },
   {
@@ -4528,15 +4528,15 @@
     "health": {
       "name": "SICSS",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 1,
-      "extracted_records": 1,
+      "scanner_records": 0,
+      "extracted_records": 0,
       "public_open_records": 0,
-      "extraction_health": "records_found",
-      "consecutive_empty_scans": 0
+      "extraction_health": "no_records",
+      "consecutive_empty_scans": 5
     }
   },
   {
@@ -4556,15 +4556,15 @@
     "health": {
       "name": "ICPSR Summer Program",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4585,9 +4585,9 @@
     "health": {
       "name": "Summer School in Social Sciences Methods",
       "status": "failed",
-      "last_attempt": "2026-10-30",
+      "last_attempt": "2026-11-18",
       "last_success": "2026-10-14",
-      "consecutive_failures": 8,
+      "consecutive_failures": 16,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -4614,12 +4614,12 @@
     "health": {
       "name": "Oxford Spring School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 3,
-      "extracted_records": 5,
+      "extracted_records": 4,
       "public_open_records": 0,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
@@ -4644,15 +4644,15 @@
     "notes_zh": "\u57c3\u585e\u514b\u65af\u793e\u4f1a\u79d1\u5b66\u6570\u636e\u5206\u6790\u6691\u671f\u5b66\u6821\uff1b\u957f\u671f\u4e3e\u529e\u7684\u5b9a\u91cf\u793e\u4f1a\u79d1\u5b66\u65b9\u6cd5\u6691\u671f\u5b66\u6821\u3002",
     "health": {
       "name": "Essex Summer School",
-      "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
-      "consecutive_failures": 0,
-      "fetch_health": "healthy",
-      "scanner_records": 2,
-      "extracted_records": 3,
+      "status": "failed",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-09",
+      "consecutive_failures": 4,
+      "fetch_health": "failed",
+      "scanner_records": 0,
+      "extracted_records": 0,
       "public_open_records": 0,
-      "extraction_health": "records_found",
+      "extraction_health": "unavailable",
       "consecutive_empty_scans": 0
     }
   },
@@ -4673,15 +4673,15 @@
     "health": {
       "name": "CEU Summer University",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 4
+      "consecutive_empty_scans": 12
     }
   },
   {
@@ -4702,15 +4702,15 @@
     "health": {
       "name": "EUI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4730,8 +4730,8 @@
     "health": {
       "name": "DHSI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -4758,9 +4758,9 @@
     "health": {
       "name": "IHR History",
       "status": "failed",
-      "last_attempt": "2026-10-30",
+      "last_attempt": "2026-11-18",
       "last_success": "2026-08-03",
-      "consecutive_failures": 33,
+      "consecutive_failures": 41,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -4786,15 +4786,15 @@
     "health": {
       "name": "Khipu",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4814,15 +4814,15 @@
     "health": {
       "name": "Helmholtz AI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4842,15 +4842,15 @@
     "health": {
       "name": "Wellcome Connecting Science",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4870,15 +4870,15 @@
     "health": {
       "name": "Physalia Courses",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -4897,16 +4897,16 @@
     "notes_zh": "\u56fd\u9645\u673a\u68b0\u79d1\u5b66\u4e2d\u5fc3\uff08\u4e4c\u8fea\u5185\uff09\uff1b\u8ba1\u7b97\u4e0e\u5e94\u7528\u79d1\u5b66\u9ad8\u7ea7\u5b66\u6821\uff0c\u5305\u62ec\u9762\u5411\u5de5\u7a0b\u7684\u673a\u5668\u5b66\u4e60\u3002",
     "health": {
       "name": "CISM",
-      "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
-      "consecutive_failures": 0,
-      "fetch_health": "healthy",
+      "status": "failed",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-02",
+      "consecutive_failures": 7,
+      "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
-      "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "extraction_health": "unavailable",
+      "consecutive_empty_scans": 0
     }
   },
   {
@@ -4926,8 +4926,8 @@
     "health": {
       "name": "EARSeL",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -4954,9 +4954,9 @@
     "health": {
       "name": "Alan Turing Institute",
       "status": "failed",
-      "last_attempt": "2026-10-30",
+      "last_attempt": "2026-11-18",
       "last_success": "2026-09-14",
-      "consecutive_failures": 21,
+      "consecutive_failures": 29,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -4982,8 +4982,8 @@
     "health": {
       "name": "Tinbergen Institute",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 3,
@@ -5010,15 +5010,15 @@
     "health": {
       "name": "CECAM",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 4
+      "consecutive_empty_scans": 12
     }
   },
   {
@@ -5038,8 +5038,8 @@
     "health": {
       "name": "Boulder School",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -5066,15 +5066,15 @@
     "health": {
       "name": "Aspen Center for Physics",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -5094,15 +5094,15 @@
     "health": {
       "name": "KITP",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -5122,15 +5122,15 @@
     "health": {
       "name": "DESY Summer Student",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -5150,15 +5150,15 @@
     "health": {
       "name": "CIMPA",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -5178,12 +5178,12 @@
     "health": {
       "name": "Hague Academy of International Law",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 3,
-      "extracted_records": 3,
+      "scanner_records": 1,
+      "extracted_records": 1,
       "public_open_records": 0,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
@@ -5206,15 +5206,15 @@
     "health": {
       "name": "Asser Institute",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -5234,15 +5234,15 @@
     "health": {
       "name": "EARLI",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -5263,8 +5263,8 @@
     "health": {
       "name": "Stazione Zoologica",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 6,
@@ -5291,12 +5291,12 @@
     "health": {
       "name": "LSE Cities",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 2,
-      "extracted_records": 2,
+      "scanner_records": 1,
+      "extracted_records": 1,
       "public_open_records": 0,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
@@ -5319,15 +5319,15 @@
     "health": {
       "name": "The Berlage",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 19
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -5352,8 +5352,8 @@
     "health": {
       "name": "IAM at Politecnico di Torino",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -5380,13 +5380,13 @@
     "health": {
       "name": "Chiang Mai University RCSD",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
       "extracted_records": 1,
-      "public_open_records": 1,
+      "public_open_records": 0,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
     }
@@ -5408,8 +5408,8 @@
     "health": {
       "name": "Uppsala University Baltic University Programme",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
@@ -5436,13 +5436,13 @@
     "health": {
       "name": "IMISCOE",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
       "extracted_records": 1,
-      "public_open_records": 1,
+      "public_open_records": 0,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
     }
@@ -5469,15 +5469,66 @@
     "health": {
       "name": "Princeton Winter School in Behavioral Science for Climate Action",
       "status": "healthy",
-      "last_attempt": "2026-10-30",
-      "last_success": "2026-10-30",
+      "last_attempt": "2026-11-18",
+      "last_success": "2026-11-18",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
       "scanner_records": 1,
       "extracted_records": 1,
-      "public_open_records": 1,
+      "public_open_records": 0,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
     }
+  },
+  {
+    "name": "FEBS Advanced Courses",
+    "url": "https://www.febs.org/listings/advanced-courses/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "research_training_provider",
+    "blocked_link_domains": [
+      "network.febs.org"
+    ],
+    "keywords": [
+      "molecular biology",
+      "biochemistry",
+      "bioinformatics"
+    ],
+    "notes": "Official recurring advanced-course directory. Follow individual practical and lecture courses; workshops remain subject to exclusion. Participant grants are competitive and organizer funding is not participant support.",
+    "notes_zh": "\u5b98\u65b9\u957f\u671f\u9ad8\u7ea7\u8bfe\u7a0b\u76ee\u5f55\u3002\u8ddf\u8e2a\u5404\u9879\u5b9e\u8df5\u53ca\u8bb2\u6388\u8bfe\u7a0b\uff1b\u666e\u901a\u7814\u8ba8\u4f1a\u4ecd\u6309\u89c4\u5219\u6392\u9664\u3002\u5b66\u5458\u8d44\u52a9\u9700\u7ade\u4e89\u7533\u8bf7\uff0c\u4e3b\u529e\u65b9\u7ecf\u8d39\u4e0d\u80fd\u89c6\u4e3a\u5b66\u5458\u8d44\u52a9\u3002"
+  },
+  {
+    "name": "EMBL Practical Courses",
+    "url": "https://www.embl.org/events/",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "research_training_provider",
+    "blocked_link_domains": [
+      "ebi.ac.uk",
+      "content.embl.org"
+    ],
+    "keywords": [
+      "molecular biology",
+      "proteomics",
+      "microscopy",
+      "bioinformatics"
+    ],
+    "notes": "Official EMBL course listings complement the existing EBI source. Exclude editorial links and duplicate EBI follow-ups. Conferences, online-only events and leadership training do not automatically qualify; fees and competitive grants require edition-specific evidence.",
+    "notes_zh": "EMBL \u5b98\u65b9\u8bfe\u7a0b\u76ee\u5f55\uff0c\u8865\u5145\u5df2\u6709 EBI \u6765\u6e90\u3002\u6392\u9664\u7f16\u8f91\u94fe\u63a5\u53ca\u91cd\u590d\u7684 EBI \u8ddf\u8e2a\u3002\u4f1a\u8bae\u3001\u7eaf\u7ebf\u4e0a\u6d3b\u52a8\u548c\u9886\u5bfc\u529b\u57f9\u8bad\u4e0d\u4f1a\u81ea\u52a8\u7b26\u5408\u6536\u5f55\u6761\u4ef6\uff1b\u8d39\u7528\u53ca\u7ade\u4e89\u6027\u8d44\u52a9\u987b\u6709\u5f53\u5c4a\u8bc1\u636e\u3002"
+  },
+  {
+    "name": "IAC Summer and Winter Schools",
+    "url": "https://iac.es/en/postgraduate-training/summer-and-winter-schools",
+    "tls_trust": "system",
+    "layer": 1,
+    "region": "continental Europe",
+    "source_type": "research_training_provider",
+    "keywords": [
+      "astronomy",
+      "astrophysics",
+      "cosmology"
+    ],
+    "notes": "Official recurring Canary Islands astrophysics school directory. Follow the edition linked by IAC, keeping expired editions out of open listings. Use validated system certificate trust for the meetings host; fees and support must be established separately for each edition.",
+    "notes_zh": "\u52a0\u90a3\u5229\u7fa4\u5c9b\u5929\u4f53\u7269\u7406\u5b66\u6821\u5b98\u65b9\u957f\u671f\u76ee\u5f55\u3002\u8ddf\u8e2a IAC \u94fe\u63a5\u7684\u5f53\u5c4a\u9875\u9762\uff0c\u5df2\u622a\u6b62\u5c4a\u6b21\u4e0d\u8fdb\u5165\u5f00\u653e\u76ee\u5f55\u3002\u4f1a\u8bae\u4e3b\u673a\u4f7f\u7528\u7cfb\u7edf\u8bc1\u4e66\u4fe1\u4efb\u5e76\u4fdd\u7559\u8bc1\u4e66\u9a8c\u8bc1\uff1b\u5404\u5c4a\u8d39\u7528\u53ca\u8d44\u52a9\u5206\u522b\u6838\u5b9e\u3002"
   }
 ]
