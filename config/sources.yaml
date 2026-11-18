@@ -1461,3 +1461,30 @@ sources:
       venue: https://www.princetonclimateschool.com/practical-information
     keywords: [behavioral science, climate action, public policy]
     notes: Independently hosted programme site linking to the matching princetonsurvey.az1.qualtrics.com application. Retain discovery trust until evidence-backed record audit verifies official status; no automatic domain promotion.
+  - name: FEBS Advanced Courses
+    url: https://www.febs.org/listings/advanced-courses/
+    layer: 1
+    region: continental Europe
+    source_type: research_training_provider
+    blocked_link_domains: [network.febs.org]
+    keywords: [molecular biology, biochemistry, bioinformatics]
+    notes: Official recurring advanced-course directory. Follow individual practical and lecture courses; workshops remain subject to exclusion. Participant grants are competitive and organizer funding is not participant support.
+    notes_zh: 官方长期高级课程目录。跟踪各项实践及讲授课程；普通研讨会仍按规则排除。学员资助需竞争申请，主办方经费不能视为学员资助。
+  - name: EMBL Practical Courses
+    url: https://www.embl.org/events/
+    layer: 1
+    region: continental Europe
+    source_type: research_training_provider
+    blocked_link_domains: [ebi.ac.uk, content.embl.org]
+    keywords: [molecular biology, proteomics, microscopy, bioinformatics]
+    notes: Official EMBL course listings complement the existing EBI source. Exclude editorial links and duplicate EBI follow-ups. Conferences, online-only events and leadership training do not automatically qualify; fees and competitive grants require edition-specific evidence.
+    notes_zh: EMBL 官方课程目录，补充已有 EBI 来源。排除编辑链接及重复的 EBI 跟踪。会议、纯线上活动和领导力培训不会自动符合收录条件；费用及竞争性资助须有当届证据。
+  - name: IAC Summer and Winter Schools
+    url: https://iac.es/en/postgraduate-training/summer-and-winter-schools
+    tls_trust: system
+    layer: 1
+    region: continental Europe
+    source_type: research_training_provider
+    keywords: [astronomy, astrophysics, cosmology]
+    notes: Official recurring Canary Islands astrophysics school directory. Follow the edition linked by IAC, keeping expired editions out of open listings. Use validated system certificate trust for the meetings host; fees and support must be established separately for each edition.
+    notes_zh: 加那利群岛天体物理学校官方长期目录。跟踪 IAC 链接的当届页面，已截止届次不进入开放目录。会议主机使用系统证书信任并保留证书验证；各届费用及资助分别核实。

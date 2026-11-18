@@ -204,9 +204,16 @@ def test_record_audit_rejects_open_status_that_conflicts_with_past_deadline() ->
     assert date.today().isoformat() in client.prompts[0]
 
 
-def test_record_audit_rejects_open_status_that_conflicts_with_suggested_past_deadline() -> None:
+def test_record_audit_rejects_open_status_that_conflicts_with_suggested_past_deadline(monkeypatch) -> None:
+    class AuditDate(date):
+        @classmethod
+        def today(cls):
+            return cls(2026, 10, 23)
+
+    monkeypatch.setattr("research_school_radar.record_audit.date", AuditDate)
     candidate = _candidate()
     candidate.deadline = None
+    candidate.deadline_evidence = "Application deadline: 9 July 2026."
     candidate.deadline_status = "closed"
     client = StubClient(
         {

@@ -213,6 +213,8 @@ def _training_provider_link_score(page: Page, anchor, label: str, href: str) -> 
 
 
 def _is_fetchable_page(url: str, blocked_domains: list[str]) -> bool:
+    if "\\" in url:
+        return False
     parsed = urlparse(url)
     if parsed.scheme not in {"http", "https"}:
         return False

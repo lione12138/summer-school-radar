@@ -633,3 +633,26 @@ scan, leaving both records only in retained history. Catalogue reconciliation
 must therefore also compare historical fallback/explicit records, independently
 of current candidates. A no-current-edition regression now covers this path and
 preserves the prior edition alias and historical page files.
+
+# 2026-11-18: three verified recurring training sources
+
+Added FEBS Advanced Courses, EMBL Practical Courses and the IAC summer/winter
+school directory. Live root and detail requests were checked on 18 November.
+FEBS exposes named 2027 practical/lecture course links; EMBL complements EBI
+while excluding duplicate EBI and editorial domains. Reject backslash-containing
+URLs before link scoring so malformed EMBL edit links cannot consume the bounded
+eight-link budget. IAC detail TLS succeeds with validated Windows system trust.
+
+These checks establish source access and detail discovery, not programme
+qualification or complete coverage. Keep workshop, date, mode, duration, fee and
+funding gates. Competitive grants and organizer support are not universal
+participant funding. Do not replace full-scan snapshots with this source probe.
+IPSA navigation crowded out relevant links in the bounded probe; defer it until
+its school detail selection is reliable. CIRM's year-specific listing and mixed
+research calendar are also deferred rather than claimed as recurring coverage.
+
+Release validation also reproduced the pre-existing 18 November CI failure in
+`test_record_audit_rejects_open_status_that_conflicts_with_suggested_past_deadline`.
+The fixture inherited rolling sample evidence whose year changed, so its fixed
+2026 suggestion stopped citing a valid year. Supply explicit 2026 deadline
+evidence and a fixed audit date; keep production evidence-year validation intact.
