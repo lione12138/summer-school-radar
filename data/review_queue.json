@@ -1,75 +1,6 @@
 {
-  "generated": "2026-11-18",
+  "generated": "2026-11-20",
   "review_queue": [
-    {
-      "title": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes",
-      "url": "https://indico.ictp.it/event/11444",
-      "organizer": "Indico - Conferences and Events",
-      "source_layer": "1",
-      "location": "Europe",
-      "dates": {
-        "start": "2027-07-12",
-        "end": "2027-07-23",
-        "duration_days": 12
-      },
-      "deadline": "2027-03-05",
-      "deadline_status": "open",
-      "financial_access_status": "low-fee",
-      "fee": "no registration fee",
-      "fee_eur": 0.0,
-      "topics": [
-        "climate",
-        "climate change",
-        "climate extremes"
-      ],
-      "needs_review": [
-        "in-person status is uncertain"
-      ],
-      "confidence": 0.75,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.75,
-      "financial_terms": {
-        "participation_fee": "no registration fee",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "climate": "ummer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes | (smr 4370) (12-23 July 2027) Europe/Rome English Administr",
-        "climate change": "-tropics, yet key questions about their dynamics and response to climate change remain open. The school will introduce the fundamentals of atmospheric wave dynamics and explore th",
-        "climate extremes": "es and tropical waves play a central role in shaping weather and climate extremes in the tropics and extra-tropics, yet key questions about their dynamics and response to climate ch"
-      },
-      "evidence": {
-        "deadline": "DEADLINE: 05/03/2027",
-        "duration": "12-23 July 2027",
-        "fee": "no registration fee",
-        "funding": "",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "funding_context_weak"
-        ],
-        "chinese_summary": "第八届气候动力学理论、机制与分层建模暑期学校，主题为全球波与局地极端事件，2027年7月12日至23日举行，无注册费，申请截止日期为2027年3月5日，提供有限资助名额。",
-        "extracted_deadline": "2027-03-05",
-        "extracted_fee": "no registration fee",
-        "extracted_funding": "A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
-        "evidence_fields": {
-          "deadline": "**DEADLINE: 05/03/2027** Organizers Simona Bordoni (University of Trento, Italy), Daniela Domeisen (University of Lausanne, Switzerland), Vera Melinda Galfi (VU Amsterdam, The Netherlands), Valerio Lembo (ISAC, Italy), Jacopo Riboldi (ETH Zurich, Switzerland), Local Organiser: Adrian Mark Tompkins (ICTP) GO TO SCIENTIFIC CALENDAR Facebook Twitter Youtu",
-          "fee": "There is no registration fee.",
-          "funding": "Grants: A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries."
-        }
-      }
-    },
     {
       "title": "Deadlines",
       "url": "https://tinbergen.nl/deadlines",
@@ -252,8 +183,8 @@
       }
     },
     {
-      "title": "Scholarships & Travel Grants",
-      "url": "https://www.archaeological.org/grant/waldbaum-scholarship/",
+      "title": "Grants & Awards",
+      "url": "https://www.archaeological.org/programs/professionals/grants-awards/",
       "organizer": "Archaeological Institute of America",
       "source_layer": "discovery",
       "location": "global",
@@ -262,27 +193,16 @@
         "end": null,
         "duration_days": null
       },
-      "deadline": "2027-03-01",
+      "deadline": "2027-06-30",
       "deadline_status": "open",
       "financial_access_status": "funded",
       "fee": "",
       "fee_eur": null,
       "topics": [
-        "remote sensing",
-        "GIS",
-        "ecology",
         "artificial intelligence",
-        "mathematics",
-        "applied mathematics",
-        "public health",
-        "cognitive science",
-        "marine biology",
-        "geography",
-        "anthropology",
+        "architecture",
         "history",
-        "philosophy",
-        "archaeology",
-        "literature"
+        "archaeology"
       ],
       "needs_review": [
         "duration is uncertain"
@@ -298,41 +218,23 @@
         "support_scope": "",
         "accommodation": "unknown",
         "meals": "unknown",
-        "travel_support": "offered",
+        "travel_support": "unknown",
         "cost_status": "unknown",
         "fee_options": []
       },
-      "benefit_facts": [
-        {
-          "benefit": "travel",
-          "status": "covered",
-          "evidence": "Archaeological Field School Scholarships - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Scholarships & Travel Grants Archaeological Field School Scholarships Archaeological Institute of America Deadline: March 1, 2027 Announced: In April Amount: $2,000 per winner Purpose: These scholarships support students participating in archaeological fieldwork for the first time.",
-          "source_url": "https://www.archaeological.org/grant/waldbaum-scholarship/"
-        }
-      ],
+      "benefit_facts": [],
       "topic_evidence": {
-        "remote sensing": "lleley is a junior at Boston University studying Archaeology and Remote Sensing. She will attend the Belize Valley Archeological Reconnaissance Project. Read about Elisha Valleley",
-        "GIS": "dents are trained in a variety of excavation techniques, such as GIS mapping and materials processing. Skye is especially excited to document a set of Etruscan tombs lo",
-        "ecology": "dkey (Purdue University West Lafayette; Zooarchaeology and Field Ecology Program Eagle Lake, CA), Mahmoud Samori (Columbia University, Stabiae Field School), Ann Vassar (Ce",
         "artificial intelligence": "erved, including rights for text and data mining and training of artificial intelligence or similar technologies. | Privacy Policy | Website by Yelling Mule , ongoing development by Castle",
-        "mathematics": "June. At Brown, she studied Biological Anthropology and Applied Mathematics-Biology. She’s especially excited to be working in the Caribbean: her home region. Read about Madel",
-        "applied mathematics": "ool this June. At Brown, she studied Biological Anthropology and Applied Mathematics-Biology. She’s especially excited to be working in the Caribbean: her home region. Read about Madel",
-        "public health": "er is a junior at Boston University, studying Health Science and Public Health, with a minor in Anthropology. She plans to attend the Apollonia Project in Bulgaria (deferred to 2",
-        "cognitive science": "ccalaueate at the University of California, Santa Cruz, studying Cognitive Science and Anthropology. She plans to attend the Roca dels Bous Project in Spain. Read about Lindsay Alaha",
-        "marine biology": "Obolensky Field School Scholarship Audrey Urbach is a third-year marine biology major with a minor in cultural anthropology at Northeastern University. This May, she will be parti",
-        "geography": "a Senior at Texas State University, majoring in Anthropology and Geography. She plans to attend the Aditu Arkeologia Field School in Spain. Read about Veronica Flores-Guillen",
-        "anthropology": "cum laude from Colorado College, earning a Bachelor’s degree in Anthropology and Classics. She is joining the Astypalaia Bioarchaeology field school which studies the human rem",
+        "architecture": ". Kress Grants for Research and Publication in Classical Art and Architecture - On Hiatus Deadline: December 15, 2025 These grants fund publication preparation, or research lead",
         "history": "ct Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Care",
-        "philosophy": "versity of Houston studying Anthropology, Classical Studies, and Philosophy. She is eager to broaden her global perspective through the Antiochia ad Cragum Archaeological Rese",
-        "archaeology": "al Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public Internat",
-        "literature": "is a junior at Davidson College studying Classical Languages and Literature, and this summer he will be attending the Cosa Excavations in Ansedonia, Italy. He is excited to le"
+        "archaeology": "al Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public Internat"
       },
       "evidence": {
-        "deadline": "Deadline: March 1, 2027",
+        "deadline": "Deadline: June 30, 2027 (other dates listed: 2023-11-01, 2025-12-15, 2026-09-15)",
         "duration": "",
         "fee": "",
-        "funding": "Archaeological Field School Scholarships - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Scholarships & Travel Grants Archaeological Field School Scholarships Archaeological Institute of America Deadline: March 1, 2027 Announced: In April Amount: $2,000 per winner Purpose: These scholarships support students participating in archaeological fieldwork for the first time.",
-        "mode": "Field School Scholarships - Archaeological Institute of Americ"
+        "funding": "Fellowships, Grants, Scholarships, and Awards - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Grants & Awards Professionals Annual Meeting Fieldwork Grants & Awards AIA Fellowship Guidelines Application: AIA Fellowships Nomination Form: Pomerance Award Awards Ceremony Sitting Down with our Award Winners Follow-Ups for Fellowship, Grant, & Scholarship Winners Research Grant Final Report Form AIA Fellowships Report Form AIA Awards Citation Form Non-AIA Grants Careers American Journal of Archaeology Research Opportunities Network (RON) Beta Tester Sign Up The AIA’s mission includes supporting and promoting archaeological research and its dissemination.",
+        "mode": "in-person) support Us The AIA is North America's largest an"
       },
       "ai_advisory": {
         "available": false
@@ -458,6 +360,54 @@
           "fee": "",
           "funding": ""
         }
+      }
+    },
+    {
+      "title": "Advanced lipidomics technologies to study lipid biology",
+      "url": "https://advancedlipidomics2027.febsevents.org/",
+      "organizer": "FEBS Advanced Courses",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-05-24",
+        "end": "2027-05-28",
+        "duration_days": 5
+      },
+      "deadline": "2027-02-15",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [],
+      "needs_review": [
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {},
+      "evidence": {
+        "deadline": "Apply by 15 February 2027 (other dates listed: 2026-11-01)",
+        "duration": "24 – 28 May 2027",
+        "fee": "",
+        "funding": "",
+        "mode": "Venue/Accommodation Travel Travel Grants Sponsorship Co"
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
@@ -619,11 +569,11 @@
       }
     },
     {
-      "title": "Winter School​",
-      "url": "https://csh.ac.at/education/winterschool/",
-      "organizer": "Complexity Science Hub",
-      "source_layer": "1.5",
-      "location": "Europe",
+      "title": "ELLIS Winter School at Unit Jena",
+      "url": "https://ellis.eu/events/ellis-winter-school-at-unit-jena-2027",
+      "organizer": "ELLIS",
+      "source_layer": "1",
+      "location": "Friedrich-Schiller-University, Jena",
       "dates": {
         "start": "2027-03-01",
         "end": "2027-03-05",
@@ -631,28 +581,22 @@
       },
       "deadline": null,
       "deadline_status": "uncertain",
-      "financial_access_status": "self-funded",
-      "fee": "Double-room occupancy : EUR 875 Single-room occupancy : EUR 1125 No accommodations : EUR 475 The pro",
-      "fee_eur": 1125.0,
+      "financial_access_status": "low-fee",
+      "fee": "EUR 400-400",
+      "fee_eur": 400.0,
       "topics": [
-        "ecology",
-        "physics",
-        "mathematics",
-        "engineering",
-        "epidemiology",
-        "economics"
+        "AI"
       ],
       "needs_review": [
         "conditional support needs coverage and eligibility review",
-        "application deadline is uncertain",
-        "fee exceeds EUR 400 without explicit funding"
+        "application deadline is uncertain"
       ],
       "confidence": 0.75,
       "confidence_kind": "heuristic_not_calibrated_probability",
       "field_completeness": 0.75,
       "financial_terms": {
-        "participation_fee": "Double-room occupancy : EUR 875 Single-room occupancy : EUR 1125 No accommodations : EUR 475 The pro",
-        "fee_eur": 1125.0,
+        "participation_fee": "EUR 400-400",
+        "fee_eur": 400.0,
         "fee_status": "stated",
         "support_status": "conditional",
         "support_scope": "",
@@ -662,56 +606,23 @@
         "cost_status": "paid",
         "fee_options": [
           {
-            "amount": 875.0,
+            "amount": 400.0,
             "currency": "EUR",
-            "conditions": "Single-room occupancy :"
-          },
-          {
-            "amount": 1125.0,
-            "currency": "EUR",
-            "conditions": "No accommodations :"
-          },
-          {
-            "amount": 475.0,
-            "currency": "EUR",
-            "conditions": "The pro"
+            "conditions": "-400"
           }
         ]
       },
       "benefit_facts": [],
-      "topic_evidence": {
-        "ecology": "ing from data from a range of disciplines – economics, medicine, ecology, and the social sciences – as a basis for actionable solutions for a better world. Established in 2",
-        "physics": "supply chains. Through our complexity science approaches linking physics, mathematics, and computational modeling with data and network science, we develop the capacity to",
-        "mathematics": "uantitative discipline (social, natural or information sciences, mathematics, engineering) and/or practical experience working in a quantitative domain related to the Winter Sc",
-        "engineering": "iscipline (social, natural or information sciences, mathematics, engineering) and/or practical experience working in a quantitative domain related to the Winter School theme. A",
-        "epidemiology": "omes in later life: medication and nutrition. Topics include the epidemiology and clinical patterns of multimorbidity, learning disease trajectories and comorbidity networks fro",
-        "economics": "stems. We derive meaning from data from a range of disciplines – economics, medicine, ecology, and the social sciences – as a basis for actionable solutions for a better worl"
-      },
+      "topic_evidence": {},
       "evidence": {
         "deadline": "",
-        "duration": "01–05 March 2027",
+        "duration": "ELLIS events listing: 2027-03-01 to 2027-03-05",
         "fee": "Double-room occupancy : EUR 875 Single-room occupancy : EUR 1125 No accommodations : EUR 475 The pro",
         "funding": "Partial tuition scholarships may be available for participants with financial need; instructions will be provided to students after they are accepted into the program.",
-        "mode": "residential experience and should be considered a full-time c"
+        "mode": "ELLIS listing location: Friedrich-Schiller-University, Jena"
       },
       "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "llm_chunk_truncated:6",
-          "llm_request_truncated:max_total_chars_per_llm_request",
-          "funding_context_weak",
-          "conflicting_evidence"
-        ],
-        "chinese_summary": "Complexity Science Hub 每年举办的 Winter School，面向希望加入跨学科网络的早期职业研究人员，协作探索复杂性科学。申请需通过在线门户提交，申请材料包括个人简历和动机信。申请者应具备定量学科（社会科学、自然科学或信息科学、数学、工程）的硕士水平课程学习和/或相关定量领域的实践经验，并具备英语工作能力。项目期间安排自由时间供参与者探索地点并继续非正式讨论与合作。有经济需求的参与者可能获得支持，具体说明将在录取后提供。",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "Financial need support may be available for participants; instructions will be provided to students after they are accepted into the program.",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": "be available for participants with financial need; instructions will be provided to students after they are accepted into the program."
-        }
+        "available": false
       }
     },
     {
@@ -900,14 +811,14 @@
           "llm_chunk_truncated:6",
           "llm_request_truncated:max_total_chars_per_llm_request"
         ],
-        "chinese_summary": "莱顿语言与语言学暑期学校（LLL），为期两周的密集学习，面向语言学学生与爱好者。LOT为符合条件的RM学生承担LLL课程费用（每人最多一门），博士候选人不符合该资助方案；需在校参与并完成额外作业方可获得LOT证书。",
+        "chinese_summary": "莱顿语言与语言学暑期学校（LLL），面向LOT附属RM学生提供课程费用资助（每生最多一门课程），需选修两到三门课程并完成额外作业，博士生不符合该资助条件。",
         "extracted_deadline": "",
         "extracted_fee": "",
-        "extracted_funding": "LOT covers the participation fee for LLL by LOT RM students within this scheme; LOT pays for a maximum of one LLL course per LOT-affiliated RM student; reimbursement of travel and/or accommodation costs is possible for only one of the two summer schools if participating in both; conditions apply",
+        "extracted_funding": "LOT covers the LLL participation fee for LOT-affiliated RM students (maximum one LLL course per student); travel and accommodation reimbursement follows the same rules as for the LOT Summer and Winter Schools, and reimbursement is limited to one of the two summer schools if a student attends both; PhD candidates are not eligible.",
         "evidence_fields": {
           "deadline": "",
           "fee": "",
-          "funding": "The fee for the participation LLL by LOT RM students within this scheme is covered by LOT. | The following conditions apply: LOT will pay for a maximum of one LLL course per LOT-affiliated RM student; The student participates in the course on campus, even if the course is offered in a hybrid form; After the end of the two-week course, the student completes an additional assignment for the course. | If a student wishes to participate in both the LOT Summer School as well as the LL in the same sum"
+          "funding": "If a student wishes to participate in both the LOT Summer School as well as the LL in the same summer, then the student may only apply for reimbursement of travel and/or accommodation costs for one of the two summer schools (conditions apply). | For travel and accommodation costs, the same rules apply as for the LOT Summer and Winter Schools. | The fee for the participation LLL by LOT RM students within this scheme is covered by LOT. | The following conditions apply: LOT will pay for a maximum o"
         }
       }
     },
@@ -1144,10 +1055,10 @@
           "start_date_value_not_in_evidence",
           "end_date_value_not_in_evidence"
         ],
-        "chinese_summary": "Simula 计算生理学暑期学校，2027年6月14-25日在挪威奥斯陆进行讲座与项目工作，8月2-10日在美国加州圣迭戈进行工作坊与最终展示；无注册费，面向博士生和硕士生。",
+        "chinese_summary": "Simula 计算生理学暑期学校，2027年6月14-25日在挪威奥斯陆进行讲座，8月2-10日在美国圣地亚哥进行项目工作，无注册费，面向博士生和硕士生。",
         "extracted_deadline": "",
-        "extracted_fee": "There is no registration fee.",
-        "extracted_funding": "Students are expected to find funding for travel to Oslo and San Diego through their home institutions/research groups, but travel grants are available to those with exceptional need.",
+        "extracted_fee": "No registration fee",
+        "extracted_funding": "Students are expected to find funding for travel to Oslo and San Diego through their home institutions/research groups; travel grants are available to those with exceptional need.",
         "evidence_fields": {
           "deadline": "",
           "fee": "There is no registration fee. | There is no registration fee for the course.",
@@ -1568,13 +1479,13 @@
           "llm_chunk_truncated:6",
           "fee_value_not_in_evidence"
         ],
-        "chinese_summary": "根特大学举办的博士生冬季学校，主题为可持续性的批判性与变革性视角，面向跨学科博士研究人员，2027年2月1日至5日举行，注册费为0.00欧元。",
+        "chinese_summary": "根特大学举办的博士生冬季学校，主题为可持续性的批判性与变革性视角，面向UGent博士生为主，也保留名额给其他弗拉芒大学及研究机构的研究人员，注册费为0.00欧元。",
         "extracted_deadline": "2027-01-25",
-        "extracted_fee": "Registration cost 0.00 EUR for main affiliation Ghent University; 0.00 EUR for main affiliation VUB, KULeuven, UHasselt, UAntwerpen; other research institutes (non-academic, international, …) see website",
+        "extracted_fee": "Registration fee: 0.00 EUR for main affiliation Ghent University; 0.00 EUR for main affiliation VUB, KULeuven, UHasselt, UAntwerpen; 0.00 EUR for other research institutes (non-academic, international, …)",
         "extracted_funding": "",
         "evidence_fields": {
           "deadline": "Event Registration MENU Help In het Nederlands Event Registration Home Search Event: Critical and transformative perspectives on sustainability: a doctoral winter school Registration via https://event.ugent.be/registration/sustainabilitywinterschool27 from 07-09-2026 11:00 until 25-01-2027 23:00 Description The ecological crises we face today radically cut across boundaries.",
-          "fee": "Cost in EUR Available Seats Waiting list (only if other session is full) / 01-02-2027 09:00 - 05-02-2027 17:30 0.00 Registration - main affiliation Ghent University See website 01-02-2027 09:00 - 05-02-2027 17:30 0.00 33 Registration - main affiliation VUB, KULeuven, UHasselt, UAntwerpen See website 01-02-2027 09:00 - 05-02-2027 17:30 0.00 5 FULL Registration - other research institutes (non-academic, international, …) See website 01-02-2027 | Cost in EUR Available Seats Waiting list (only if ot",
+          "fee": "Cost in EUR Available Seats Waiting list (only if other session is full) / 01-02-2027 09:00 - 05-02-2027 17:30 0.00 Registration - main affiliation Ghent University See website 01-02-2027 09:00 - 05-02-2027 17:30 0.00 32 Registration - main affiliation VUB, KULeuven, UHasselt, UAntwerpen See website 01-02-2027 09:00 - 05-02-2027 17:30 0.00 5 FULL Registration - other research institutes (non-academic, international, …) See website 01-02-2027 | Cost in EUR Available Seats Waiting list (only if ot",
           "funding": ""
         }
       }
@@ -1626,7 +1537,7 @@
         "linguistics": "Extended deadline: Call for papers 14th Conference on Frisian linguistics | LOT – Netherlands Graduate School of Linguistics The Frisian Academy (Fryske Akademy) organizes i",
         "phonetics": "ively or passively participates in Frisian linguistics: grammar, phonetics/phonology, onomastics, lexicology, sociolinguistics, historical linguistics. Papers may focus on th",
         "phonology": "assively participates in Frisian linguistics: grammar, phonetics/phonology, onomastics, lexicology, sociolinguistics, historical linguistics. Papers may focus on the results",
-        "design": "cted] . https://lotschool.nl/wp-content/uploads/2023/12/Untitled-design-65.png 457 1200 Jan Martin https://lotschool.nl/wp-content/uploads/2018/10/lot.png Jan Martin 2026-"
+        "design": "my.nl . https://lotschool.nl/wp-content/uploads/2023/12/Untitled-design-65.png 457 1200 Jan Martin https://lotschool.nl/wp-content/uploads/2018/10/lot.png Jan Martin 2026-"
       },
       "evidence": {
         "deadline": "",
