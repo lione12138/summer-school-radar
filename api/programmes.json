@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-11-19",
+  "generated": "2026-11-20",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -90,6 +90,184 @@
         "mathematics",
         "engineering"
       ]
+    },
+    {
+      "id": "programme:eec7bec64ec8ab42",
+      "slug": "biological-organization-and-the-evolution-of-form-a9c6f263",
+      "title": "Biological organization and the evolution of form",
+      "title_zh": "生物组织与形态演化",
+      "organizer": "FEBS Advanced Courses",
+      "organizer_zh": "FEBS高级课程",
+      "summary": "Biological organization and the evolution of form Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological organization and the evolution of form 22 – 27 August 2027 | Venice, Italy C",
+      "summary_zh": "生物组织与形态演化。您的浏览器不支持或已禁用JavaScript。菜单：关于、讲者、日程、注册、联系、地点。EMBO|FEBS讲座课程：生物组织与形态演化，2027年8月22日至27日，意大利威尼斯。",
+      "topics": [
+        "AI",
+        "machine learning",
+        "physics",
+        "mechanics"
+      ],
+      "primary_topics": [
+        "AI",
+        "machine learning",
+        "physics",
+        "mechanics"
+      ],
+      "editions": [
+        {
+          "id": "edition:fd42c9aa98d9e3ad",
+          "title": "Biological organization and the evolution of form",
+          "title_zh": "生物组织与形态演化",
+          "detail_path": "opportunities/biological-organization-and-the-evolution-of-form-07f772dc.html",
+          "official_url": "https://meetings.embo.org/event/27-bio-organization",
+          "location": "Europe",
+          "location_zh": "欧洲",
+          "start_date": "2027-08-22",
+          "end_date": "2027-08-27",
+          "deadline": "2027-03-15",
+          "deadline_status": "open",
+          "duration_days": 6,
+          "mode": "in-person",
+          "financial_summary": "Fee about EUR 870",
+          "financial_summary_zh": "费用约 EUR 870",
+          "funding_available": null,
+          "fee_eur": 870.0,
+          "topics": [
+            "AI",
+            "machine learning",
+            "physics",
+            "mechanics"
+          ],
+          "primary_topics": [
+            "AI",
+            "machine learning",
+            "physics",
+            "mechanics"
+          ],
+          "secondary_topics": [],
+          "summary": "Biological organization and the evolution of form Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological organization and the evolution of form 22 – 27 August 2027 | Venice, Italy C",
+          "summary_zh": "生物组织与形态演化。您的浏览器不支持或已禁用JavaScript。菜单：关于、讲者、日程、注册、联系、地点。EMBO|FEBS讲座课程：生物组织与形态演化，2027年8月22日至27日，意大利威尼斯。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:fd42c9aa98d9e3ad",
+        "title": "Biological organization and the evolution of form",
+        "title_zh": "生物组织与形态演化",
+        "detail_path": "opportunities/biological-organization-and-the-evolution-of-form-07f772dc.html",
+        "official_url": "https://meetings.embo.org/event/27-bio-organization",
+        "location": "Europe",
+        "location_zh": "欧洲",
+        "start_date": "2027-08-22",
+        "end_date": "2027-08-27",
+        "deadline": "2027-03-15",
+        "deadline_status": "open",
+        "duration_days": 6,
+        "mode": "in-person",
+        "financial_summary": "Fee about EUR 870",
+        "financial_summary_zh": "费用约 EUR 870",
+        "funding_available": null,
+        "fee_eur": 870.0,
+        "topics": [
+          "AI",
+          "machine learning",
+          "physics",
+          "mechanics"
+        ],
+        "primary_topics": [
+          "AI",
+          "machine learning",
+          "physics",
+          "mechanics"
+        ],
+        "secondary_topics": [],
+        "summary": "Biological organization and the evolution of form Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological organization and the evolution of form 22 – 27 August 2027 | Venice, Italy C",
+        "summary_zh": "生物组织与形态演化。您的浏览器不支持或已禁用JavaScript。菜单：关于、讲者、日程、注册、联系、地点。EMBO|FEBS讲座课程：生物组织与形态演化，2027年8月22日至27日，意大利威尼斯。",
+        "sessions": []
+      }
+    },
+    {
+      "id": "programme:75035579dae161e6",
+      "slug": "biological-surfaces-and-interfaces-applications-challenges-08b829b9",
+      "title": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines",
+      "title_zh": "生物表面与界面：跨学科的应用、挑战与机遇",
+      "organizer": "FEBS Advanced Courses",
+      "organizer_zh": "FEBS高级课程",
+      "summary": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological surfaces and interfaces: ap",
+      "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 生物表面与界面：应用",
+      "topics": [
+        "sustainability",
+        "engineering"
+      ],
+      "primary_topics": [
+        "sustainability",
+        "engineering"
+      ],
+      "editions": [
+        {
+          "id": "edition:38a99e143fef798b",
+          "title": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines",
+          "title_zh": "生物表面与界面：跨学科的应用、挑战与机遇",
+          "detail_path": "opportunities/biological-surfaces-and-interfaces-applications-challenges-and-opportu-cf981dc5.html",
+          "official_url": "https://meetings.embo.org/event/27-bio-interfaces",
+          "location": "Europe",
+          "location_zh": "欧洲",
+          "start_date": "2027-06-20",
+          "end_date": "2027-06-25",
+          "deadline": "2027-03-31",
+          "deadline_status": "open",
+          "duration_days": 6,
+          "mode": "in-person",
+          "financial_summary": "Fee about EUR 840",
+          "financial_summary_zh": "费用约 EUR 840",
+          "funding_available": null,
+          "fee_eur": 840.0,
+          "topics": [
+            "sustainability",
+            "engineering"
+          ],
+          "primary_topics": [
+            "sustainability",
+            "engineering"
+          ],
+          "secondary_topics": [],
+          "summary": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological surfaces and interfaces: ap",
+          "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 生物表面与界面：应用",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:38a99e143fef798b",
+        "title": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines",
+        "title_zh": "生物表面与界面：跨学科的应用、挑战与机遇",
+        "detail_path": "opportunities/biological-surfaces-and-interfaces-applications-challenges-and-opportu-cf981dc5.html",
+        "official_url": "https://meetings.embo.org/event/27-bio-interfaces",
+        "location": "Europe",
+        "location_zh": "欧洲",
+        "start_date": "2027-06-20",
+        "end_date": "2027-06-25",
+        "deadline": "2027-03-31",
+        "deadline_status": "open",
+        "duration_days": 6,
+        "mode": "in-person",
+        "financial_summary": "Fee about EUR 840",
+        "financial_summary_zh": "费用约 EUR 840",
+        "funding_available": null,
+        "fee_eur": 840.0,
+        "topics": [
+          "sustainability",
+          "engineering"
+        ],
+        "primary_topics": [
+          "sustainability",
+          "engineering"
+        ],
+        "secondary_topics": [],
+        "summary": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological surfaces and interfaces: ap",
+        "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 生物表面与界面：应用",
+        "sessions": []
+      }
     },
     {
       "id": "programme:59f0e91b39117381",
@@ -327,6 +505,107 @@
       "primary_topics": [
         "physics"
       ]
+    },
+    {
+      "id": "programme:518691c63eff4815",
+      "slug": "physical-virology-from-form-to-function-372e48ed",
+      "title": "Physical virology: from form to function",
+      "title_zh": "物理病毒学：从形态到功能",
+      "organizer": "FEBS Advanced Courses",
+      "organizer_zh": "FEBS高级课程",
+      "summary": "Physical virology: from form to function Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Physical virology: from form to function 13 – 18 June 2027 | Sant Feliu de Guixols, Spain Childc",
+      "summary_zh": "物理病毒学：从形态到功能 您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 物理病毒学：从形态到功能 2027年6月13日至18日 | 西班牙圣费利乌德吉绍尔斯 儿童",
+      "topics": [
+        "AI",
+        "chemistry",
+        "engineering",
+        "mechanics",
+        "architecture"
+      ],
+      "primary_topics": [
+        "AI",
+        "chemistry",
+        "engineering",
+        "mechanics",
+        "architecture"
+      ],
+      "editions": [
+        {
+          "id": "edition:06beedd159e4717c",
+          "title": "Physical virology: from form to function",
+          "title_zh": "物理病毒学：从形态到功能",
+          "detail_path": "opportunities/physical-virology-from-form-to-function-ff0387c1.html",
+          "official_url": "https://meetings.embo.org/event/27-physical-virology",
+          "location": "Europe",
+          "location_zh": "欧洲",
+          "start_date": "2027-06-13",
+          "end_date": "2027-06-18",
+          "deadline": "2027-02-15",
+          "deadline_status": "open",
+          "duration_days": 6,
+          "mode": "in-person",
+          "financial_summary": "Fee about EUR 850",
+          "financial_summary_zh": "费用约 EUR 850",
+          "funding_available": null,
+          "fee_eur": 850.0,
+          "topics": [
+            "AI",
+            "chemistry",
+            "engineering",
+            "mechanics",
+            "architecture"
+          ],
+          "primary_topics": [
+            "AI",
+            "chemistry",
+            "engineering",
+            "mechanics",
+            "architecture"
+          ],
+          "secondary_topics": [],
+          "summary": "Physical virology: from form to function Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Physical virology: from form to function 13 – 18 June 2027 | Sant Feliu de Guixols, Spain Childc",
+          "summary_zh": "物理病毒学：从形态到功能 您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 物理病毒学：从形态到功能 2027年6月13日至18日 | 西班牙圣费利乌德吉绍尔斯 儿童",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:06beedd159e4717c",
+        "title": "Physical virology: from form to function",
+        "title_zh": "物理病毒学：从形态到功能",
+        "detail_path": "opportunities/physical-virology-from-form-to-function-ff0387c1.html",
+        "official_url": "https://meetings.embo.org/event/27-physical-virology",
+        "location": "Europe",
+        "location_zh": "欧洲",
+        "start_date": "2027-06-13",
+        "end_date": "2027-06-18",
+        "deadline": "2027-02-15",
+        "deadline_status": "open",
+        "duration_days": 6,
+        "mode": "in-person",
+        "financial_summary": "Fee about EUR 850",
+        "financial_summary_zh": "费用约 EUR 850",
+        "funding_available": null,
+        "fee_eur": 850.0,
+        "topics": [
+          "AI",
+          "chemistry",
+          "engineering",
+          "mechanics",
+          "architecture"
+        ],
+        "primary_topics": [
+          "AI",
+          "chemistry",
+          "engineering",
+          "mechanics",
+          "architecture"
+        ],
+        "secondary_topics": [],
+        "summary": "Physical virology: from form to function Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Physical virology: from form to function 13 – 18 June 2027 | Sant Feliu de Guixols, Spain Childc",
+        "summary_zh": "物理病毒学：从形态到功能 您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 物理病毒学：从形态到功能 2027年6月13日至18日 | 西班牙圣费利乌德吉绍尔斯 儿童",
+        "sessions": []
+      }
     },
     {
       "id": "programme:071bb60dcbcda689",
@@ -1636,83 +1915,6 @@
         "entrepreneurship",
         "startups",
         "technology strategy"
-      ]
-    },
-    {
-      "id": "programme:34f90936915e33db",
-      "slug": "ellis-sites-neurips-fest-celebrate-connect-collaborate-3dac278e",
-      "title": "ELLIS Sites NeurIPS Fest : Celebrate, Connect, Collaborate",
-      "title_zh": "ELLIS Sites NeurIPS Fest ：庆祝、连接、合作",
-      "organizer": "ELLIS",
-      "organizer_zh": "ELLIS",
-      "summary": "18/11/26 - 23/12/26 • Multiple Locations ELLIS Sites NeurIPS Fest 2026: Celebrate, Connect, Collaborate Discover the latest research from top AI minds at multiple locations across Europe during the weeks around the NeurIPS conference. Fest , Poster Session Read More",
-      "summary_zh": "26/11/18 - 26/12/23 • 多地 ELLIS Sites NeurIPS Fest 2026：庆祝、连接、合作 在NeurIPS会议前后数周内，于欧洲多地了解顶尖AI人才的最新研究。Fest，海报展示 阅读更多",
-      "topics": [
-        "AI"
-      ],
-      "editions": [
-        {
-          "id": "edition:8ec862ebd417adbb",
-          "title": "ELLIS Sites NeurIPS Fest 2026: Celebrate, Connect, Collaborate",
-          "title_zh": "ELLIS Sites NeurIPS Fest 2026：庆祝、连接、合作",
-          "detail_path": "opportunities/ellis-sites-neurips-fest-2026-celebrate-connect-collaborate-5f2de67f.html",
-          "official_url": "https://ellis.eu/events/ellis-sites-neurips-fest-2026",
-          "location": "Multiple Locations",
-          "location_zh": "多地",
-          "start_date": "2026-11-18",
-          "end_date": "2026-12-23",
-          "deadline": "2026-10-30",
-          "deadline_status": "closed",
-          "duration_days": 36,
-          "mode": "in-person",
-          "financial_summary": "Fee about EUR 130",
-          "financial_summary_zh": "费用约 EUR 130",
-          "funding_available": null,
-          "fee_eur": 130.0,
-          "topics": [
-            "AI"
-          ],
-          "primary_topics": [
-            "AI"
-          ],
-          "secondary_topics": [],
-          "summary": "18/11/26 - 23/12/26 • Multiple Locations ELLIS Sites NeurIPS Fest 2026: Celebrate, Connect, Collaborate Discover the latest research from top AI minds at multiple locations across Europe during the weeks around the NeurIPS conference. Fest , Poster Session Read More",
-          "summary_zh": "26/11/18 - 26/12/23 • 多地 ELLIS Sites NeurIPS Fest 2026：庆祝、连接、合作 在NeurIPS会议前后数周内，于欧洲多地了解顶尖AI人才的最新研究。Fest，海报展示 阅读更多",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "edition:8ec862ebd417adbb",
-        "title": "ELLIS Sites NeurIPS Fest 2026: Celebrate, Connect, Collaborate",
-        "title_zh": "ELLIS Sites NeurIPS Fest 2026：庆祝、连接、合作",
-        "detail_path": "opportunities/ellis-sites-neurips-fest-2026-celebrate-connect-collaborate-5f2de67f.html",
-        "official_url": "https://ellis.eu/events/ellis-sites-neurips-fest-2026",
-        "location": "Multiple Locations",
-        "location_zh": "多地",
-        "start_date": "2026-11-18",
-        "end_date": "2026-12-23",
-        "deadline": "2026-10-30",
-        "deadline_status": "closed",
-        "duration_days": 36,
-        "mode": "in-person",
-        "financial_summary": "Fee about EUR 130",
-        "financial_summary_zh": "费用约 EUR 130",
-        "funding_available": null,
-        "fee_eur": 130.0,
-        "topics": [
-          "AI"
-        ],
-        "primary_topics": [
-          "AI"
-        ],
-        "secondary_topics": [],
-        "summary": "18/11/26 - 23/12/26 • Multiple Locations ELLIS Sites NeurIPS Fest 2026: Celebrate, Connect, Collaborate Discover the latest research from top AI minds at multiple locations across Europe during the weeks around the NeurIPS conference. Fest , Poster Session Read More",
-        "summary_zh": "26/11/18 - 26/12/23 • 多地 ELLIS Sites NeurIPS Fest 2026：庆祝、连接、合作 在NeurIPS会议前后数周内，于欧洲多地了解顶尖AI人才的最新研究。Fest，海报展示 阅读更多",
-        "sessions": []
-      },
-      "primary_topics": [
-        "AI"
       ]
     },
     {

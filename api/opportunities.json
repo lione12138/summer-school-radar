@@ -3,7 +3,7 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-11-19",
+  "generated": "2026-11-20",
   "opportunities": [
     {
       "id": "opportunities/introduction-to-metabolomics-analysis-ca5054c1",
@@ -794,72 +794,6 @@
       "sessions": []
     },
     {
-      "id": "opportunities/ellis-sites-neurips-fest-2026-celebrate-connect-collaborate-5f2de67f",
-      "edition_id": "edition:8ec862ebd417adbb",
-      "programme_id": "programme:34f90936915e33db",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/ellis-sites-neurips-fest-celebrate-connect-collaborate-3dac278e.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/ellis-sites-neurips-fest-celebrate-connect-collaborate-3dac278e.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/ellis-sites-neurips-fest-celebrate-connect-collaborate-3dac278e.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/ellis-sites-neurips-fest-celebrate-connect-collaborate-3dac278e.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/ellis-sites-neurips-fest-2026-celebrate-connect-collaborate-5f2de67f.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/ellis-sites-neurips-fest-2026-celebrate-connect-collaborate-5f2de67f.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/ellis-sites-neurips-fest-2026-celebrate-connect-collaborate-5f2de67f.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/ellis-sites-neurips-fest-2026-celebrate-connect-collaborate-5f2de67f.html"
-      },
-      "official_url": "https://ellis.eu/events/ellis-sites-neurips-fest-2026",
-      "title": "ELLIS Sites NeurIPS Fest 2026: Celebrate, Connect, Collaborate",
-      "title_zh": "ELLIS Sites NeurIPS Fest 2026：庆祝、连接、合作",
-      "type": "summer school",
-      "organizer": "ELLIS",
-      "organizer_zh": "ELLIS",
-      "location": "Multiple Locations",
-      "location_zh": "多地",
-      "mode": "in-person",
-      "start_date": "2026-11-18",
-      "end_date": "2026-12-23",
-      "duration_days": 36,
-      "application_deadline": "2026-10-30",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee about EUR 130",
-      "fee": "Student/PhD EUR 130",
-      "fee_eur": 130.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "Student/PhD EUR 130",
-        "fee_eur": 130.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": [
-          {
-            "amount": 130.0,
-            "currency": "EUR",
-            "conditions": ""
-          }
-        ]
-      },
-      "topics": [
-        "AI"
-      ],
-      "primary_topics": [],
-      "secondary_topics": [],
-      "summary": "18/11/26 - 23/12/26 • Multiple Locations ELLIS Sites NeurIPS Fest 2026: Celebrate, Connect, Collaborate Discover the latest research from top AI minds at multiple locations across Europe during the weeks around the NeurIPS conference. Fest , Poster Session Read More",
-      "summary_zh": "26/11/18 - 26/12/23 • 多地 ELLIS Sites NeurIPS Fest 2026：庆祝、连接、合作 在NeurIPS会议前后数周内，于欧洲多地了解顶尖AI人才的最新研究。Fest，海报展示 阅读更多",
-      "eligibility": "",
-      "eligibility_zh": "",
-      "sessions": []
-    },
-    {
       "id": "ansto-hzb-aonsa-neutron-school:2026",
       "edition_id": "ansto-hzb-aonsa-neutron-school:2026",
       "programme_id": "ansto-hzb-aonsa-neutron-school",
@@ -996,6 +930,226 @@
       "summary_zh": "在希腊科尼察举办的九天线下暑期学校，通过研究、田野活动和学员建议考察维科斯－奥奥斯世界地质公园的生活、文化与生态旅游环境。",
       "eligibility": "",
       "eligibility_zh": "",
+      "sessions": []
+    },
+    {
+      "id": "opportunities/physical-virology-from-form-to-function-ff0387c1",
+      "edition_id": "edition:06beedd159e4717c",
+      "programme_id": "programme:518691c63eff4815",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/physical-virology-from-form-to-function-372e48ed.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/physical-virology-from-form-to-function-372e48ed.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/physical-virology-from-form-to-function-372e48ed.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/physical-virology-from-form-to-function-372e48ed.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/physical-virology-from-form-to-function-ff0387c1.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/physical-virology-from-form-to-function-ff0387c1.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/physical-virology-from-form-to-function-ff0387c1.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/physical-virology-from-form-to-function-ff0387c1.html"
+      },
+      "official_url": "https://meetings.embo.org/event/27-physical-virology",
+      "title": "Physical virology: from form to function",
+      "title_zh": "物理病毒学：从形态到功能",
+      "type": "advanced course",
+      "organizer": "FEBS Advanced Courses",
+      "organizer_zh": "FEBS高级课程",
+      "location": "Europe",
+      "location_zh": "欧洲",
+      "mode": "in-person",
+      "start_date": "2027-06-13",
+      "end_date": "2027-06-18",
+      "duration_days": 6,
+      "application_deadline": "2027-02-15",
+      "application_status": "open",
+      "directory_tier": "verified-self-funded",
+      "financial_summary": "Fee about EUR 850",
+      "fee": "EUR 850",
+      "fee_eur": 850.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "EUR 850",
+        "fee_eur": 850.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 850.0,
+            "currency": "EUR",
+            "conditions": ""
+          }
+        ]
+      },
+      "topics": [
+        "AI",
+        "chemistry",
+        "engineering",
+        "mechanics",
+        "architecture"
+      ],
+      "primary_topics": [
+        "AI",
+        "chemistry",
+        "engineering",
+        "mechanics",
+        "architecture"
+      ],
+      "secondary_topics": [],
+      "summary": "Physical virology: from form to function Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Physical virology: from form to function 13 – 18 June 2027 | Sant Feliu de Guixols, Spain Childc",
+      "summary_zh": "物理病毒学：从形态到功能 您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 物理病毒学：从形态到功能 2027年6月13日至18日 | 西班牙圣费利乌德吉绍尔斯 儿童",
+      "eligibility": "PhD students and postdoctoral researchers and combines advanced training with interaction among established investigators, early-career researchers and industry sc",
+      "eligibility_zh": "博士生和博士后研究人员，将高级培训与资深研究者、早期职业研究人员及产业界人士之间的交流相结合",
+      "sessions": []
+    },
+    {
+      "id": "opportunities/biological-surfaces-and-interfaces-applications-challenges-and-opportu-cf981dc5",
+      "edition_id": "edition:38a99e143fef798b",
+      "programme_id": "programme:75035579dae161e6",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/biological-surfaces-and-interfaces-applications-challenges-08b829b9.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/biological-surfaces-and-interfaces-applications-challenges-08b829b9.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/biological-surfaces-and-interfaces-applications-challenges-08b829b9.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/biological-surfaces-and-interfaces-applications-challenges-08b829b9.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/biological-surfaces-and-interfaces-applications-challenges-and-opportu-cf981dc5.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/biological-surfaces-and-interfaces-applications-challenges-and-opportu-cf981dc5.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/biological-surfaces-and-interfaces-applications-challenges-and-opportu-cf981dc5.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/biological-surfaces-and-interfaces-applications-challenges-and-opportu-cf981dc5.html"
+      },
+      "official_url": "https://meetings.embo.org/event/27-bio-interfaces",
+      "title": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines",
+      "title_zh": "生物表面与界面：跨学科的应用、挑战与机遇",
+      "type": "advanced course",
+      "organizer": "FEBS Advanced Courses",
+      "organizer_zh": "FEBS高级课程",
+      "location": "Europe",
+      "location_zh": "欧洲",
+      "mode": "in-person",
+      "start_date": "2027-06-20",
+      "end_date": "2027-06-25",
+      "duration_days": 6,
+      "application_deadline": "2027-03-31",
+      "application_status": "open",
+      "directory_tier": "verified-self-funded",
+      "financial_summary": "Fee about EUR 840",
+      "fee": "EUR 840",
+      "fee_eur": 840.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "EUR 840",
+        "fee_eur": 840.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 840.0,
+            "currency": "EUR",
+            "conditions": ""
+          }
+        ]
+      },
+      "topics": [
+        "sustainability",
+        "engineering"
+      ],
+      "primary_topics": [
+        "sustainability",
+        "engineering"
+      ],
+      "secondary_topics": [],
+      "summary": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological surfaces and interfaces: ap",
+      "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 生物表面与界面：应用",
+      "eligibility": "POSTDOCS (double occupancy) EUR 840 ACADEMIC (double occupancy) EUR 1000 ACADEMIC (single occupancy)* EUR 1550 INDUSTRY (double occupancy) EUR 1000 INDUSTRY (single oc",
+      "eligibility_zh": "博士后（双人间）840欧元；学术人员（双人间）1000欧元；学术人员（单人间）*1550欧元；产业界（双人间）1000欧元；产业界（单人间）",
+      "sessions": []
+    },
+    {
+      "id": "opportunities/biological-organization-and-the-evolution-of-form-07f772dc",
+      "edition_id": "edition:fd42c9aa98d9e3ad",
+      "programme_id": "programme:eec7bec64ec8ab42",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/biological-organization-and-the-evolution-of-form-a9c6f263.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/biological-organization-and-the-evolution-of-form-a9c6f263.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/biological-organization-and-the-evolution-of-form-a9c6f263.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/biological-organization-and-the-evolution-of-form-a9c6f263.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/biological-organization-and-the-evolution-of-form-07f772dc.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/biological-organization-and-the-evolution-of-form-07f772dc.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/biological-organization-and-the-evolution-of-form-07f772dc.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/biological-organization-and-the-evolution-of-form-07f772dc.html"
+      },
+      "official_url": "https://meetings.embo.org/event/27-bio-organization",
+      "title": "Biological organization and the evolution of form",
+      "title_zh": "生物组织与形态演化",
+      "type": "summer school",
+      "organizer": "FEBS Advanced Courses",
+      "organizer_zh": "FEBS高级课程",
+      "location": "Europe",
+      "location_zh": "欧洲",
+      "mode": "in-person",
+      "start_date": "2027-08-22",
+      "end_date": "2027-08-27",
+      "duration_days": 6,
+      "application_deadline": "2027-03-15",
+      "application_status": "open",
+      "directory_tier": "verified-self-funded",
+      "financial_summary": "Fee about EUR 870",
+      "fee": "EUR 870",
+      "fee_eur": 870.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "EUR 870",
+        "fee_eur": 870.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 870.0,
+            "currency": "EUR",
+            "conditions": ""
+          }
+        ]
+      },
+      "topics": [
+        "AI",
+        "machine learning",
+        "physics",
+        "mechanics"
+      ],
+      "primary_topics": [
+        "AI",
+        "machine learning",
+        "physics",
+        "mechanics"
+      ],
+      "secondary_topics": [],
+      "summary": "Biological organization and the evolution of form Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological organization and the evolution of form 22 – 27 August 2027 | Venice, Italy C",
+      "summary_zh": "生物组织与形态演化。您的浏览器不支持或已禁用JavaScript。菜单：关于、讲者、日程、注册、联系、地点。EMBO|FEBS讲座课程：生物组织与形态演化，2027年8月22日至27日，意大利威尼斯。",
+      "eligibility": "PhD students and postdoctoral researchers, both experimental and theoretical, who are interested in conceptual problems in development and evolution",
+      "eligibility_zh": "对发育与演化中的概念性问题感兴趣的博士生和博士后研究人员，涵盖实验与理论方向",
       "sessions": []
     },
     {
