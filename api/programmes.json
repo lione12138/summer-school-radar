@@ -106,12 +106,6 @@
         "physics",
         "mechanics"
       ],
-      "primary_topics": [
-        "AI",
-        "machine learning",
-        "physics",
-        "mechanics"
-      ],
       "editions": [
         {
           "id": "edition:fd42c9aa98d9e3ad",
@@ -184,7 +178,13 @@
         "summary": "Biological organization and the evolution of form Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological organization and the evolution of form 22 – 27 August 2027 | Venice, Italy C",
         "summary_zh": "生物组织与形态演化。您的浏览器不支持或已禁用JavaScript。菜单：关于、讲者、日程、注册、联系、地点。EMBO|FEBS讲座课程：生物组织与形态演化，2027年8月22日至27日，意大利威尼斯。",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "AI",
+        "machine learning",
+        "physics",
+        "mechanics"
+      ]
     },
     {
       "id": "programme:75035579dae161e6",
@@ -196,10 +196,6 @@
       "summary": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological surfaces and interfaces: ap",
       "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 生物表面与界面：应用",
       "topics": [
-        "sustainability",
-        "engineering"
-      ],
-      "primary_topics": [
         "sustainability",
         "engineering"
       ],
@@ -267,7 +263,11 @@
         "summary": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological surfaces and interfaces: ap",
         "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 生物表面与界面：应用",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "sustainability",
+        "engineering"
+      ]
     },
     {
       "id": "programme:59f0e91b39117381",
@@ -522,13 +522,6 @@
         "mechanics",
         "architecture"
       ],
-      "primary_topics": [
-        "AI",
-        "chemistry",
-        "engineering",
-        "mechanics",
-        "architecture"
-      ],
       "editions": [
         {
           "id": "edition:06beedd159e4717c",
@@ -605,7 +598,14 @@
         "summary": "Physical virology: from form to function Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Physical virology: from form to function 13 – 18 June 2027 | Sant Feliu de Guixols, Spain Childc",
         "summary_zh": "物理病毒学：从形态到功能 您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 物理病毒学：从形态到功能 2027年6月13日至18日 | 西班牙圣费利乌德吉绍尔斯 儿童",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "AI",
+        "chemistry",
+        "engineering",
+        "mechanics",
+        "architecture"
+      ]
     },
     {
       "id": "programme:071bb60dcbcda689",
