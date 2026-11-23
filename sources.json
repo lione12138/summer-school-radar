@@ -24,7 +24,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 26
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -52,7 +52,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 26
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -80,7 +80,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 26
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -108,7 +108,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 26
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -318,7 +318,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-10-30",
-      "consecutive_failures": 10,
+      "consecutive_failures": 11,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -425,7 +425,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 27
+      "consecutive_empty_scans": 28
     }
   },
   {
@@ -594,7 +594,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 27
+      "consecutive_empty_scans": 28
     }
   },
   {
@@ -729,11 +729,11 @@
       "last_success": "2026-11-23",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 0,
-      "extracted_records": 0,
+      "scanner_records": 1,
+      "extracted_records": 1,
       "public_open_records": 0,
-      "extraction_health": "no_records",
-      "consecutive_empty_scans": 27
+      "extraction_health": "records_found",
+      "consecutive_empty_scans": 0
     }
   },
   {
@@ -841,7 +841,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -885,7 +885,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -906,7 +906,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-07-15",
-      "consecutive_failures": 57,
+      "consecutive_failures": 58,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -968,7 +968,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 26
+      "consecutive_empty_scans": 27
     }
   },
   {
@@ -1068,7 +1068,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 12
+      "consecutive_empty_scans": 13
     }
   },
   {
@@ -1096,7 +1096,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -1127,7 +1127,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -1149,7 +1149,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-09-23",
-      "consecutive_failures": 26,
+      "consecutive_failures": 27,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -1238,7 +1238,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -1266,7 +1266,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -1317,7 +1317,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-09-23",
-      "consecutive_failures": 26,
+      "consecutive_failures": 27,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -1346,7 +1346,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-09-11",
-      "consecutive_failures": 32,
+      "consecutive_failures": 33,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -1375,7 +1375,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-11-11",
-      "consecutive_failures": 5,
+      "consecutive_failures": 6,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -1410,7 +1410,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -1439,7 +1439,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 14
+      "consecutive_empty_scans": 15
     }
   },
   {
@@ -1526,7 +1526,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -1549,7 +1549,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": null,
-      "consecutive_failures": 45,
+      "consecutive_failures": 46,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -1793,7 +1793,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -1851,7 +1851,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -1879,7 +1879,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 7
+      "consecutive_empty_scans": 8
     }
   },
   {
@@ -1937,7 +1937,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -1967,7 +1967,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2083,7 +2083,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2109,7 +2109,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2163,7 +2163,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2190,7 +2190,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2217,7 +2217,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2244,7 +2244,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2272,7 +2272,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2300,7 +2300,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 9
+      "consecutive_empty_scans": 10
     }
   },
   {
@@ -2327,7 +2327,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2355,7 +2355,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2383,7 +2383,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 3
+      "consecutive_empty_scans": 4
     }
   },
   {
@@ -2411,7 +2411,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2439,7 +2439,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2466,7 +2466,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2509,7 +2509,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 14
+      "consecutive_empty_scans": 15
     }
   },
   {
@@ -2538,7 +2538,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2559,7 +2559,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-11-13",
-      "consecutive_failures": 4,
+      "consecutive_failures": 5,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -2721,7 +2721,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 14
+      "consecutive_empty_scans": 15
     }
   },
   {
@@ -2750,7 +2750,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2808,7 +2808,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2831,7 +2831,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-10-28",
-      "consecutive_failures": 11,
+      "consecutive_failures": 12,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -2865,7 +2865,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2921,7 +2921,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -2949,7 +2949,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3051,7 +3051,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3080,7 +3080,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3114,16 +3114,16 @@
     "notes_zh": "\u5185\u5bb9\u4e3a\u5ba2\u6237\u7aef\u6e32\u67d3\uff0c\u56e0\u6b64\u8be5\u6765\u6e90\u4f7f\u7528\u53ef\u9009\u7684 Playwright \u65e0\u5934\u6d4f\u89c8\u5668\u3002\u82e5\u672a\u5b89\u88c5 Playwright\uff0c\u5219\u56de\u9000\u4e3a\u7a7a\u6293\u53d6\u3002",
     "health": {
       "name": "CERN Academic Training",
-      "status": "healthy",
+      "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-11-23",
-      "consecutive_failures": 0,
-      "fetch_health": "healthy",
+      "consecutive_failures": 1,
+      "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
       "public_open_records": 0,
-      "extraction_health": "no_records",
-      "consecutive_empty_scans": 4
+      "extraction_health": "unavailable",
+      "consecutive_empty_scans": 0
     }
   },
   {
@@ -3240,7 +3240,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3268,7 +3268,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3296,7 +3296,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3325,7 +3325,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3349,7 +3349,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-09-09",
-      "consecutive_failures": 33,
+      "consecutive_failures": 34,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -3371,6 +3371,7 @@
       "training"
     ],
     "notes": "UK National Centre for Atmospheric Science; runs funded atmospheric and climate science training courses and summer schools.",
+    "notes_zh": "\u82f1\u56fd\u56fd\u5bb6\u5927\u6c14\u79d1\u5b66\u4e2d\u5fc3\uff1b\u5f00\u8bbe\u7531\u8d44\u52a9\u652f\u6301\u7684\u5927\u6c14\u4e0e\u6c14\u5019\u79d1\u5b66\u57f9\u8bad\u8bfe\u7a0b\u53ca\u6691\u671f\u5b66\u6821\u3002",
     "health": {
       "name": "NCAS",
       "status": "healthy",
@@ -3378,11 +3379,11 @@
       "last_success": "2026-11-23",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 0,
-      "extracted_records": 0,
+      "scanner_records": 2,
+      "extracted_records": 2,
       "public_open_records": 0,
-      "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "extraction_health": "records_found",
+      "consecutive_empty_scans": 0
     }
   },
   {
@@ -3411,7 +3412,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 6
+      "consecutive_empty_scans": 7
     }
   },
   {
@@ -3468,7 +3469,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3526,7 +3527,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3582,7 +3583,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3729,7 +3730,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 6
+      "consecutive_empty_scans": 7
     }
   },
   {
@@ -3758,7 +3759,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3843,7 +3844,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3915,7 +3916,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 23
+      "consecutive_empty_scans": 24
     }
   },
   {
@@ -3943,7 +3944,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -3960,6 +3961,7 @@
       "summer school"
     ],
     "notes": "Santa Fe Institute Complex Systems Summer School (CSSS) and related schools; funded interdisciplinary training in complex systems, networks, and data science.",
+    "notes_zh": "\u5723\u5854\u83f2\u7814\u7a76\u6240\u590d\u6742\u7cfb\u7edf\u6691\u671f\u5b66\u6821\uff08CSSS\uff09\u53ca\u76f8\u5173\u5b66\u6821\uff1b\u7531\u8d44\u52a9\u652f\u6301\u7684\u590d\u6742\u7cfb\u7edf\u3001\u7f51\u7edc\u4e0e\u6570\u636e\u79d1\u5b66\u8de8\u5b66\u79d1\u57f9\u8bad\u3002",
     "health": {
       "name": "Santa Fe Institute",
       "status": "healthy",
@@ -3967,11 +3969,11 @@
       "last_success": "2026-11-23",
       "consecutive_failures": 0,
       "fetch_health": "healthy",
-      "scanner_records": 0,
-      "extracted_records": 0,
+      "scanner_records": 1,
+      "extracted_records": 1,
       "public_open_records": 0,
-      "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "extraction_health": "records_found",
+      "consecutive_empty_scans": 0
     }
   },
   {
@@ -4000,7 +4002,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4028,7 +4030,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4056,7 +4058,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4085,7 +4087,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 4
+      "consecutive_empty_scans": 5
     }
   },
   {
@@ -4113,7 +4115,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4135,7 +4137,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-08-03",
-      "consecutive_failures": 43,
+      "consecutive_failures": 44,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -4169,7 +4171,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4197,7 +4199,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4225,7 +4227,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4253,7 +4255,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 25
+      "consecutive_empty_scans": 26
     }
   },
   {
@@ -4309,7 +4311,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4337,7 +4339,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 1
+      "consecutive_empty_scans": 2
     }
   },
   {
@@ -4365,7 +4367,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4393,7 +4395,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4421,7 +4423,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 14
+      "consecutive_empty_scans": 15
     }
   },
   {
@@ -4443,7 +4445,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-10-21",
-      "consecutive_failures": 15,
+      "consecutive_failures": 16,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -4477,7 +4479,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 27
+      "consecutive_empty_scans": 28
     }
   },
   {
@@ -4505,7 +4507,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 5
+      "consecutive_empty_scans": 6
     }
   },
   {
@@ -4534,7 +4536,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 7
+      "consecutive_empty_scans": 8
     }
   },
   {
@@ -4562,7 +4564,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4585,7 +4587,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-10-14",
-      "consecutive_failures": 18,
+      "consecutive_failures": 19,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -4645,7 +4647,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-11-09",
-      "consecutive_failures": 6,
+      "consecutive_failures": 7,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -4679,7 +4681,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 14
+      "consecutive_empty_scans": 15
     }
   },
   {
@@ -4708,7 +4710,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4758,7 +4760,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-08-03",
-      "consecutive_failures": 43,
+      "consecutive_failures": 44,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -4792,7 +4794,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4820,7 +4822,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4848,7 +4850,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4876,7 +4878,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -4898,7 +4900,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-11-02",
-      "consecutive_failures": 9,
+      "consecutive_failures": 10,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -4954,7 +4956,7 @@
       "status": "failed",
       "last_attempt": "2026-11-23",
       "last_success": "2026-09-14",
-      "consecutive_failures": 31,
+      "consecutive_failures": 32,
       "fetch_health": "failed",
       "scanner_records": 0,
       "extracted_records": 0,
@@ -5016,7 +5018,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 14
+      "consecutive_empty_scans": 15
     }
   },
   {
@@ -5072,7 +5074,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -5100,7 +5102,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -5128,7 +5130,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -5156,7 +5158,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -5212,7 +5214,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -5240,7 +5242,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -5325,7 +5327,7 @@
       "extracted_records": 0,
       "public_open_records": 0,
       "extraction_health": "no_records",
-      "consecutive_empty_scans": 29
+      "consecutive_empty_scans": 30
     }
   },
   {
@@ -5356,7 +5358,7 @@
       "fetch_health": "healthy",
       "scanner_records": 1,
       "extracted_records": 1,
-      "public_open_records": 1,
+      "public_open_records": 0,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
     }
@@ -5581,7 +5583,20 @@
       "science"
     ],
     "notes": "Official seasonal research cohort. Applications open 7 January 2027; twelve-week research dates are flexible by group. Salary and limited travel bonus do not imply free housing.",
-    "notes_zh": "\u5b98\u65b9\u6691\u671f\u79d1\u7814\u6279\u6b21\u30022027 \u5e74 1 \u6708 7 \u65e5\u5f00\u653e\u7533\u8bf7\uff1b\u5341\u4e8c\u5468\u7814\u7a76\u65e5\u671f\u6309\u8bfe\u9898\u7ec4\u5b89\u6392\u3002\u85aa\u8d44\u53ca\u6709\u9650\u65c5\u884c\u8865\u8d34\u4e0d\u4ee3\u8868\u63d0\u4f9b\u514d\u8d39\u4f4f\u5bbf\u3002"
+    "notes_zh": "\u5b98\u65b9\u6691\u671f\u79d1\u7814\u6279\u6b21\u30022027 \u5e74 1 \u6708 7 \u65e5\u5f00\u653e\u7533\u8bf7\uff1b\u5341\u4e8c\u5468\u7814\u7a76\u65e5\u671f\u6309\u8bfe\u9898\u7ec4\u5b89\u6392\u3002\u85aa\u8d44\u53ca\u6709\u9650\u65c5\u884c\u8865\u8d34\u4e0d\u4ee3\u8868\u63d0\u4f9b\u514d\u8d39\u4f4f\u5bbf\u3002",
+    "health": {
+      "name": "Aalto AScI Summer Research Programme",
+      "status": "healthy",
+      "last_attempt": "2026-11-23",
+      "last_success": "2026-11-23",
+      "consecutive_failures": 0,
+      "fetch_health": "healthy",
+      "scanner_records": 1,
+      "extracted_records": 1,
+      "public_open_records": 0,
+      "extraction_health": "records_found",
+      "consecutive_empty_scans": 0
+    }
   },
   {
     "name": "HZDR Summer Student Program",
@@ -5602,6 +5617,19 @@
       "engineering"
     ],
     "notes": "Official eight-week seasonal research cohort. Join current application, dates and programme support evidence; never inherit historical daily allowances or infer travel reimbursement.",
-    "notes_zh": "\u5b98\u65b9\u516b\u5468\u6691\u671f\u79d1\u7814\u6279\u6b21\u3002\u7ed3\u5408\u5f53\u5c4a\u7533\u8bf7\u3001\u65e5\u671f\u548c\u9879\u76ee\u652f\u6301\u8bc1\u636e\u6838\u5b9e\uff1b\u4e0d\u5f97\u6cbf\u7528\u5f80\u5e74\u65e5\u6d25\u8d34\u6216\u63a8\u65ad\u62a5\u9500\u5dee\u65c5\u3002"
+    "notes_zh": "\u5b98\u65b9\u516b\u5468\u6691\u671f\u79d1\u7814\u6279\u6b21\u3002\u7ed3\u5408\u5f53\u5c4a\u7533\u8bf7\u3001\u65e5\u671f\u548c\u9879\u76ee\u652f\u6301\u8bc1\u636e\u6838\u5b9e\uff1b\u4e0d\u5f97\u6cbf\u7528\u5f80\u5e74\u65e5\u6d25\u8d34\u6216\u63a8\u65ad\u62a5\u9500\u5dee\u65c5\u3002",
+    "health": {
+      "name": "HZDR Summer Student Program",
+      "status": "healthy",
+      "last_attempt": "2026-11-23",
+      "last_success": "2026-11-23",
+      "consecutive_failures": 0,
+      "fetch_health": "healthy",
+      "scanner_records": 1,
+      "extracted_records": 1,
+      "public_open_records": 0,
+      "extraction_health": "records_found",
+      "consecutive_empty_scans": 0
+    }
   }
 ]

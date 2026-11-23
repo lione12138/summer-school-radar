@@ -335,89 +335,6 @@
       "primary_topics": []
     },
     {
-      "id": "polito-iam-winter-school",
-      "slug": "international-winter-school-on-additive-manufacturing-from-c28f1262",
-      "title": "International Winter School on Additive Manufacturing — From Theory to Practice",
-      "title_zh": "增材制造国际冬季学校——从理论到实践",
-      "organizer": "IAM at Politecnico di Torino",
-      "organizer_zh": "都灵理工大学IAM",
-      "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
-      "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
-      "topics": [
-        "engineering",
-        "design"
-      ],
-      "editions": [
-        {
-          "id": "polito-iam-winter-school:2027",
-          "title": "International Winter School on Additive Manufacturing — From Theory to Practice",
-          "title_zh": "增材制造国际冬季学校——从理论到实践",
-          "detail_path": "opportunities/polito-iam-winter-school-2027-321cc19b.html",
-          "official_url": "https://iam.polito.it/apply/",
-          "location": "Turin, Italy",
-          "location_zh": "意大利都灵",
-          "start_date": "2027-01-18",
-          "end_date": "2027-01-29",
-          "deadline": "2026-11-30",
-          "deadline_status": "open",
-          "duration_days": 12,
-          "mode": "in-person",
-          "financial_summary": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
-          "financial_summary_zh": "费用：The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
-          "funding_available": null,
-          "fee_eur": 150.0,
-          "topics": [
-            "engineering",
-            "design"
-          ],
-          "primary_topics": [
-            "engineering",
-            "design"
-          ],
-          "secondary_topics": [],
-          "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
-          "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "polito-iam-winter-school:2027",
-        "title": "International Winter School on Additive Manufacturing — From Theory to Practice",
-        "title_zh": "增材制造国际冬季学校——从理论到实践",
-        "detail_path": "opportunities/polito-iam-winter-school-2027-321cc19b.html",
-        "official_url": "https://iam.polito.it/apply/",
-        "location": "Turin, Italy",
-        "location_zh": "意大利都灵",
-        "start_date": "2027-01-18",
-        "end_date": "2027-01-29",
-        "deadline": "2026-11-30",
-        "deadline_status": "open",
-        "duration_days": 12,
-        "mode": "in-person",
-        "financial_summary": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
-        "financial_summary_zh": "费用：The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
-        "funding_available": null,
-        "fee_eur": 150.0,
-        "topics": [
-          "engineering",
-          "design"
-        ],
-        "primary_topics": [
-          "engineering",
-          "design"
-        ],
-        "secondary_topics": [],
-        "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
-        "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
-        "sessions": []
-      },
-      "primary_topics": [
-        "engineering",
-        "design"
-      ]
-    },
-    {
       "id": "programme:6cf4be91ec7187f3",
       "slug": "introduction-to-metabolomics-analysis-b52d9d3c",
       "title": "Introduction to metabolomics analysis",
@@ -3799,6 +3716,95 @@
         "astrophysics",
         "physics"
       ]
+    },
+    {
+      "id": "programme:6d05e72313fdb49c",
+      "slug": "summer-school-ds-food-design-of-sustainable-food-systems-1990bf33",
+      "title": "Summer school DS-FOOD Design of sustainable food systems",
+      "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+      "organizer": "Euroleague for Life Sciences (ELLS)",
+      "organizer_zh": "生命科学欧洲联盟（ELLS）",
+      "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
+      "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
+      "topics": [
+        "sustainable food systems",
+        "food systems design",
+        "sustainability"
+      ],
+      "primary_topics": [
+        "sustainable food systems",
+        "food systems design",
+        "sustainability"
+      ],
+      "editions": [
+        {
+          "id": "edition:736b6cbf96f90a6f",
+          "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
+          "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+          "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
+          "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
+          "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
+          "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
+          "start_date": "2026-07-05",
+          "end_date": "2026-07-12",
+          "deadline": "2026-05-01",
+          "deadline_status": "closed",
+          "duration_days": 8,
+          "mode": "in-person",
+          "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
+          "financial_summary_zh": "费用：EUR 90 强制晚宴费用; EUR 250 其他参与者注册费",
+          "funding_available": false,
+          "fee_eur": 90.0,
+          "topics": [
+            "sustainable food systems",
+            "food systems design",
+            "sustainability"
+          ],
+          "primary_topics": [
+            "sustainable food systems",
+            "food systems design",
+            "sustainability"
+          ],
+          "secondary_topics": [],
+          "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
+          "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:736b6cbf96f90a6f",
+        "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
+        "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+        "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
+        "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
+        "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
+        "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
+        "start_date": "2026-07-05",
+        "end_date": "2026-07-12",
+        "deadline": "2026-05-01",
+        "deadline_status": "closed",
+        "duration_days": 8,
+        "mode": "in-person",
+        "financial_summary": "EUR 90 mandatory dinner contribution; EUR 250 registration fee for other participants",
+        "financial_summary_zh": "费用：EUR 90 强制晚宴费用; EUR 250 其他参与者注册费",
+        "funding_available": false,
+        "fee_eur": 90.0,
+        "topics": [
+          "sustainable food systems",
+          "food systems design",
+          "sustainability"
+        ],
+        "primary_topics": [
+          "sustainable food systems",
+          "food systems design",
+          "sustainability"
+        ],
+        "secondary_topics": [],
+        "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
+        "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
+        "sessions": []
+      }
     },
     {
       "id": "programme:74877aabb7876c4e",
