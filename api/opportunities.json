@@ -3,8 +3,72 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-11-22",
+  "generated": "2026-11-23",
   "opportunities": [
+    {
+      "id": "polito-iam-winter-school:2027",
+      "edition_id": "polito-iam-winter-school:2027",
+      "programme_id": "polito-iam-winter-school",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/international-winter-school-on-additive-manufacturing-from-c28f1262.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/international-winter-school-on-additive-manufacturing-from-c28f1262.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/international-winter-school-on-additive-manufacturing-from-c28f1262.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/international-winter-school-on-additive-manufacturing-from-c28f1262.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/polito-iam-winter-school-2027-321cc19b.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/polito-iam-winter-school-2027-321cc19b.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/polito-iam-winter-school-2027-321cc19b.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/polito-iam-winter-school-2027-321cc19b.html"
+      },
+      "official_url": "https://iam.polito.it/apply/",
+      "title": "International Winter School on Additive Manufacturing — From Theory to Practice",
+      "title_zh": "增材制造国际冬季学校——从理论到实践",
+      "type": "winter school",
+      "organizer": "IAM at Politecnico di Torino",
+      "organizer_zh": "都灵理工大学IAM",
+      "location": "Turin, Italy",
+      "location_zh": "意大利都灵",
+      "mode": "in-person",
+      "start_date": "2027-01-18",
+      "end_date": "2027-01-29",
+      "duration_days": 12,
+      "application_deadline": "2026-11-30",
+      "application_status": "open",
+      "directory_tier": "funded-or-low-fee",
+      "financial_summary": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
+      "fee": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
+      "fee_eur": 150.0,
+      "funding_available": null,
+      "funding_type": [],
+      "funding_scope": "",
+      "financial_terms": {
+        "participation_fee": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
+        "fee_eur": 150.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": []
+      },
+      "topics": [
+        "engineering",
+        "design"
+      ],
+      "primary_topics": [
+        "engineering",
+        "design"
+      ],
+      "secondary_topics": [],
+      "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
+      "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
+      "eligibility": "PhD candidates worldwide in additive manufacturing, materials, engineering, design, automation and related fields",
+      "eligibility_zh": "面向全球增材制造、材料、工程、设计、自动化及相关领域的博士生",
+      "sessions": []
+    },
     {
       "id": "opportunities/introduction-to-metabolomics-analysis-ca5054c1",
       "edition_id": "edition:95fe8f3c01e7aa23",
@@ -173,7 +237,7 @@
       "start_date": "2027-02-15",
       "end_date": "2027-03-12",
       "duration_days": 26,
-      "application_deadline": "2026-11-16",
+      "application_deadline": "2026-11-01",
       "application_status": "closed",
       "directory_tier": "programme-library",
       "financial_summary": "Fee EUR 0 · A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
@@ -450,74 +514,6 @@
       "sessions": []
     },
     {
-      "id": "opportunities/semester-in-biological-discovery-sbd-1cdf3028",
-      "edition_id": "edition:ce1a6eaef10cb9a8",
-      "programme_id": "programme:071bb60dcbcda689",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/semester-in-biological-discovery-sbd-b50fa5dd.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/semester-in-biological-discovery-sbd-b50fa5dd.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/semester-in-biological-discovery-sbd-b50fa5dd.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/semester-in-biological-discovery-sbd-b50fa5dd.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/semester-in-biological-discovery-sbd-1cdf3028.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/semester-in-biological-discovery-sbd-1cdf3028.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/semester-in-biological-discovery-sbd-1cdf3028.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/semester-in-biological-discovery-sbd-1cdf3028.html"
-      },
-      "official_url": "https://www.mbl.edu/education/undergraduate-programs/semester-biological-discovery",
-      "title": "Semester in Biological Discovery (SBD)",
-      "title_zh": "生物发现学期项目（SBD）",
-      "type": "training course",
-      "organizer": "Marine Biological Laboratory",
-      "organizer_zh": "海洋生物实验室",
-      "location": "North America",
-      "location_zh": "北美",
-      "mode": "in-person",
-      "start_date": "2027-02-28",
-      "end_date": "2027-05-22",
-      "duration_days": 84,
-      "application_deadline": "2026-12-15",
-      "application_status": "open",
-      "directory_tier": "official-listing",
-      "financial_summary": "Funding or fee not stated",
-      "fee": "",
-      "fee_eur": null,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "topics": [
-        "environmental science",
-        "philosophy of science",
-        "history",
-        "philosophy"
-      ],
-      "primary_topics": [
-        "environmental science",
-        "philosophy of science",
-        "history",
-        "philosophy"
-      ],
-      "secondary_topics": [],
-      "summary": "Semester in Biological Discovery (SBD) | Marine Biological Laboratory Skip to main content Close Calling Undergrads! Semester in Biological Discovery (SBD) Applications Due December 15! The University of Chicago Marine Biological Laboratory MENU Utility Visit The MBL Contact Care",
-      "summary_zh": "生物发现学期项目（SBD）| 海洋生物实验室 跳至主要内容 关闭 本科生召集！生物发现学期项目（SBD）申请截止日期为12月15日！芝加哥大学海洋生物实验室 菜单 实用链接 访问MBL 联系方式 关怀",
-      "eligibility": "Biomedical Course Biomedical Course Expand Submenu BACK Biomedical Course - Overview 2026 Schedule Environmental Course Environmental Course Expand Submenu BACK Environmental Course - Overview 2026 Schedule Alumni and Te",
-      "eligibility_zh": "生物医学课程 生物医学课程 展开子菜单 返回 生物医学课程 - 概览 2026年日程 环境课程 环境课程 展开子菜单 返回 环境课程 - 概览 2026年日程 校友与教",
-      "sessions": []
-    },
-    {
       "id": "iiser-pune-camp:2026",
       "edition_id": "iiser-pune-camp:2026",
       "programme_id": "iiser-pune-camp",
@@ -727,70 +723,6 @@
       "summary_zh": "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。",
       "eligibility": "Master's students and early-stage PhD students from the humanities and computer science.",
       "eligibility_zh": "面向人文学科和计算机科学领域的硕士生及博士早期阶段学生。",
-      "sessions": []
-    },
-    {
-      "id": "polito-iam-winter-school:2027",
-      "edition_id": "polito-iam-winter-school:2027",
-      "programme_id": "polito-iam-winter-school",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/international-winter-school-on-additive-manufacturing-from-c28f1262.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/international-winter-school-on-additive-manufacturing-from-c28f1262.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/international-winter-school-on-additive-manufacturing-from-c28f1262.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/international-winter-school-on-additive-manufacturing-from-c28f1262.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/polito-iam-winter-school-2027-321cc19b.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/polito-iam-winter-school-2027-321cc19b.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/polito-iam-winter-school-2027-321cc19b.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/polito-iam-winter-school-2027-321cc19b.html"
-      },
-      "official_url": "https://iam.polito.it/apply/",
-      "title": "International Winter School on Additive Manufacturing — From Theory to Practice",
-      "title_zh": "增材制造国际冬季学校——从理论到实践",
-      "type": "winter school",
-      "organizer": "IAM at Politecnico di Torino",
-      "organizer_zh": "都灵理工大学IAM",
-      "location": "Turin, Italy",
-      "location_zh": "意大利都灵",
-      "mode": "in-person",
-      "start_date": "2027-01-18",
-      "end_date": "2027-01-29",
-      "duration_days": 12,
-      "application_deadline": "2026-11-15",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
-      "fee": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
-      "fee_eur": 150.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
-        "fee_eur": 150.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": []
-      },
-      "topics": [
-        "engineering",
-        "design"
-      ],
-      "primary_topics": [
-        "engineering",
-        "design"
-      ],
-      "secondary_topics": [],
-      "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
-      "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
-      "eligibility": "PhD candidates worldwide in additive manufacturing, materials, engineering, design, automation and related fields",
-      "eligibility_zh": "全球增材制造、材料、工程、设计、自动化及相关领域的博士生",
       "sessions": []
     },
     {
@@ -2391,73 +2323,6 @@
       "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在通过扩大科学内容、增加参与规模，进一步强化IAHS的能力建设活动，并将该学院打造为面向早期职业水文学家的全球旗舰培训项目。",
       "eligibility": "early-career hydrologists",
       "eligibility_zh": "早期职业水文学家",
-      "sessions": []
-    },
-    {
-      "id": "opportunities/training-course-machine-learning-based-weather-forecasting-47655713",
-      "edition_id": "edition:eb5744039a8865ef",
-      "programme_id": "programme:fda9812e418fd1d6",
-      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/training-course-machine-learning-based-weather-forecasting-0c04d3ec.html",
-      "programme_language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/training-course-machine-learning-based-weather-forecasting-0c04d3ec.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/training-course-machine-learning-based-weather-forecasting-0c04d3ec.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/training-course-machine-learning-based-weather-forecasting-0c04d3ec.html"
-      },
-      "url": "https://lione12138.github.io/summer-school-radar/opportunities/training-course-machine-learning-based-weather-forecasting-47655713.html",
-      "language_urls": {
-        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/training-course-machine-learning-based-weather-forecasting-47655713.html",
-        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/training-course-machine-learning-based-weather-forecasting-47655713.html",
-        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/training-course-machine-learning-based-weather-forecasting-47655713.html"
-      },
-      "official_url": "https://events.ecmwf.int/event/546/",
-      "title": "Training course: Machine Learning-based weather forecasting",
-      "title_zh": "培训课程：基于机器学习的天气预报",
-      "type": "training course",
-      "organizer": "ECMWF Events (Indico)",
-      "organizer_zh": "ECMWF Events (Indico)",
-      "location": "ECMWF, Reading",
-      "location_zh": "ECMWF，雷丁",
-      "mode": "in-person",
-      "start_date": "2026-11-16",
-      "end_date": "2026-11-20",
-      "duration_days": 5,
-      "application_deadline": "2026-06-28",
-      "application_status": "closed",
-      "directory_tier": "programme-library",
-      "financial_summary": "Fee about EUR 936",
-      "fee": "£780",
-      "fee_eur": 936.0,
-      "funding_available": null,
-      "funding_type": [],
-      "funding_scope": "",
-      "financial_terms": {
-        "participation_fee": "£780",
-        "fee_eur": 936.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "paid",
-        "fee_options": []
-      },
-      "topics": [
-        "machine learning",
-        "climate",
-        "deep learning"
-      ],
-      "primary_topics": [
-        "machine learning"
-      ],
-      "secondary_topics": [
-        "climate",
-        "deep learning"
-      ],
-      "summary": "Training course: Machine Learning-based weather forecasting (16-November 20, 2026): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Machine Learning-based weather foreca",
-      "summary_zh": "培训课程：基于机器学习的天气预报（2026年11月16日至20日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：基于机器学习的天气预",
-      "eligibility": "",
-      "eligibility_zh": "",
       "sessions": []
     },
     {

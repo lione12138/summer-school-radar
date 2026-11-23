@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-11-22",
+  "generated": "2026-11-23",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -333,6 +333,89 @@
         "sessions": []
       },
       "primary_topics": []
+    },
+    {
+      "id": "polito-iam-winter-school",
+      "slug": "international-winter-school-on-additive-manufacturing-from-c28f1262",
+      "title": "International Winter School on Additive Manufacturing — From Theory to Practice",
+      "title_zh": "增材制造国际冬季学校——从理论到实践",
+      "organizer": "IAM at Politecnico di Torino",
+      "organizer_zh": "都灵理工大学IAM",
+      "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
+      "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
+      "topics": [
+        "engineering",
+        "design"
+      ],
+      "editions": [
+        {
+          "id": "polito-iam-winter-school:2027",
+          "title": "International Winter School on Additive Manufacturing — From Theory to Practice",
+          "title_zh": "增材制造国际冬季学校——从理论到实践",
+          "detail_path": "opportunities/polito-iam-winter-school-2027-321cc19b.html",
+          "official_url": "https://iam.polito.it/apply/",
+          "location": "Turin, Italy",
+          "location_zh": "意大利都灵",
+          "start_date": "2027-01-18",
+          "end_date": "2027-01-29",
+          "deadline": "2026-11-30",
+          "deadline_status": "open",
+          "duration_days": 12,
+          "mode": "in-person",
+          "financial_summary": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
+          "financial_summary_zh": "费用：The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
+          "funding_available": null,
+          "fee_eur": 150.0,
+          "topics": [
+            "engineering",
+            "design"
+          ],
+          "primary_topics": [
+            "engineering",
+            "design"
+          ],
+          "secondary_topics": [],
+          "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
+          "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "polito-iam-winter-school:2027",
+        "title": "International Winter School on Additive Manufacturing — From Theory to Practice",
+        "title_zh": "增材制造国际冬季学校——从理论到实践",
+        "detail_path": "opportunities/polito-iam-winter-school-2027-321cc19b.html",
+        "official_url": "https://iam.polito.it/apply/",
+        "location": "Turin, Italy",
+        "location_zh": "意大利都灵",
+        "start_date": "2027-01-18",
+        "end_date": "2027-01-29",
+        "deadline": "2026-11-30",
+        "deadline_status": "open",
+        "duration_days": 12,
+        "mode": "in-person",
+        "financial_summary": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
+        "financial_summary_zh": "费用：The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
+        "funding_available": null,
+        "fee_eur": 150.0,
+        "topics": [
+          "engineering",
+          "design"
+        ],
+        "primary_topics": [
+          "engineering",
+          "design"
+        ],
+        "secondary_topics": [],
+        "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
+        "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
+        "sessions": []
+      },
+      "primary_topics": [
+        "engineering",
+        "design"
+      ]
     },
     {
       "id": "programme:6cf4be91ec7187f3",
@@ -2886,89 +2969,6 @@
       ]
     },
     {
-      "id": "polito-iam-winter-school",
-      "slug": "international-winter-school-on-additive-manufacturing-from-c28f1262",
-      "title": "International Winter School on Additive Manufacturing — From Theory to Practice",
-      "title_zh": "增材制造国际冬季学校——从理论到实践",
-      "organizer": "IAM at Politecnico di Torino",
-      "organizer_zh": "都灵理工大学IAM",
-      "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
-      "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
-      "topics": [
-        "engineering",
-        "design"
-      ],
-      "editions": [
-        {
-          "id": "polito-iam-winter-school:2027",
-          "title": "International Winter School on Additive Manufacturing — From Theory to Practice",
-          "title_zh": "增材制造国际冬季学校——从理论到实践",
-          "detail_path": "opportunities/polito-iam-winter-school-2027-321cc19b.html",
-          "official_url": "https://iam.polito.it/apply/",
-          "location": "Turin, Italy",
-          "location_zh": "意大利都灵",
-          "start_date": "2027-01-18",
-          "end_date": "2027-01-29",
-          "deadline": "2026-11-15",
-          "deadline_status": "closed",
-          "duration_days": 12,
-          "mode": "in-person",
-          "financial_summary": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
-          "financial_summary_zh": "费用：The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
-          "funding_available": null,
-          "fee_eur": 150.0,
-          "topics": [
-            "engineering",
-            "design"
-          ],
-          "primary_topics": [
-            "engineering",
-            "design"
-          ],
-          "secondary_topics": [],
-          "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
-          "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "polito-iam-winter-school:2027",
-        "title": "International Winter School on Additive Manufacturing — From Theory to Practice",
-        "title_zh": "增材制造国际冬季学校——从理论到实践",
-        "detail_path": "opportunities/polito-iam-winter-school-2027-321cc19b.html",
-        "official_url": "https://iam.polito.it/apply/",
-        "location": "Turin, Italy",
-        "location_zh": "意大利都灵",
-        "start_date": "2027-01-18",
-        "end_date": "2027-01-29",
-        "deadline": "2026-11-15",
-        "deadline_status": "closed",
-        "duration_days": 12,
-        "mode": "in-person",
-        "financial_summary": "The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
-        "financial_summary_zh": "费用：The €150 fee includes lectures, laboratories, teaching materials, listed lunches and technical visit",
-        "funding_available": null,
-        "fee_eur": 150.0,
-        "topics": [
-          "engineering",
-          "design"
-        ],
-        "primary_topics": [
-          "engineering",
-          "design"
-        ],
-        "secondary_topics": [],
-        "summary": "A two-week international programme for PhD candidates combining lectures, hands-on laboratories, a team project, technical visits and direct contact with academic and industrial experts.",
-        "summary_zh": "为期两周的国际项目，面向博士生，结合讲座、动手实验室、团队项目、技术参观以及与学术和工业专家的直接交流。",
-        "sessions": []
-      },
-      "primary_topics": [
-        "engineering",
-        "design"
-      ]
-    },
-    {
       "id": "ncts-qft-school",
       "slug": "ncts-summer-school-on-qft-b29deb7c",
       "title": "NCTS Summer School on QFT",
@@ -3734,7 +3734,7 @@
           "location_zh": "ICTP Kastler 报告厅 (AGH) Adriatico 宾馆 - Kastler 报告厅 Riva Massimiliano e Carlotta, Grignano I - 34151 的里雅斯特（意大利）",
           "start_date": "2027-02-15",
           "end_date": "2027-03-12",
-          "deadline": "2026-11-16",
+          "deadline": "2026-11-01",
           "deadline_status": "closed",
           "duration_days": 26,
           "mode": "in-person",
@@ -3774,7 +3774,7 @@
         "location_zh": "ICTP Kastler 报告厅 (AGH) Adriatico 宾馆 - Kastler 报告厅 Riva Massimiliano e Carlotta, Grignano I - 34151 的里雅斯特（意大利）",
         "start_date": "2027-02-15",
         "end_date": "2027-03-12",
-        "deadline": "2026-11-16",
+        "deadline": "2026-11-01",
         "deadline_status": "closed",
         "duration_days": 26,
         "mode": "in-person",
