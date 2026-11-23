@@ -335,6 +335,83 @@
       "primary_topics": []
     },
     {
+      "id": "hzdr-summer-student",
+      "slug": "hzdr-summer-student-program-d1a62200",
+      "title": "HZDR Summer Student Program",
+      "title_zh": "HZDR 暑期学生项目",
+      "organizer": "Helmholtz-Zentrum Dresden-Rossendorf (HZDR)",
+      "organizer_zh": "亥姆霍兹德累斯顿罗森多夫研究中心（HZDR）",
+      "summary": "Every summer, for eight weeks between July and September, the HZDR welcomes international students to join our research teams and contribute to their projects.",
+      "summary_zh": "每年夏季7月至9月期间，HZDR欢迎国际学生进行为期八周的交流，加入我们的研究团队并为项目作出贡献。",
+      "topics": [
+        "engineering"
+      ],
+      "primary_topics": [
+        "engineering"
+      ],
+      "editions": [
+        {
+          "id": "hzdr-summer-student:2027",
+          "title": "HZDR Summer Student Program 2027",
+          "title_zh": "HZDR 2027年暑期学生项目",
+          "detail_path": "opportunities/hzdr-summer-student-2027-b4415bbd.html",
+          "official_url": "https://www.hzdr.de/db/Cms?pNid=2914",
+          "location": "Dresden, Germany",
+          "location_zh": "德国德累斯顿",
+          "start_date": null,
+          "end_date": null,
+          "deadline": "2027-01-24",
+          "deadline_status": "open",
+          "duration_days": 56,
+          "mode": "in-person",
+          "financial_summary": "Fee not stated · Monthly salary covering daily expenses in Dresden; salary amount not stated.",
+          "financial_summary_zh": "salary · 金额未说明",
+          "funding_available": true,
+          "fee_eur": null,
+          "topics": [
+            "engineering"
+          ],
+          "primary_topics": [
+            "engineering"
+          ],
+          "secondary_topics": [],
+          "summary": "Every summer, for eight weeks between July and September, the HZDR welcomes international students to join our research teams and contribute to their projects.",
+          "summary_zh": "每年夏季7月至9月期间，HZDR欢迎国际学生进行为期八周的交流，加入我们的研究团队并为项目作出贡献。",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "hzdr-summer-student:2027",
+        "title": "HZDR Summer Student Program 2027",
+        "title_zh": "HZDR 2027年暑期学生项目",
+        "detail_path": "opportunities/hzdr-summer-student-2027-b4415bbd.html",
+        "official_url": "https://www.hzdr.de/db/Cms?pNid=2914",
+        "location": "Dresden, Germany",
+        "location_zh": "德国德累斯顿",
+        "start_date": null,
+        "end_date": null,
+        "deadline": "2027-01-24",
+        "deadline_status": "open",
+        "duration_days": 56,
+        "mode": "in-person",
+        "financial_summary": "Fee not stated · Monthly salary covering daily expenses in Dresden; salary amount not stated.",
+        "financial_summary_zh": "salary · 金额未说明",
+        "funding_available": true,
+        "fee_eur": null,
+        "topics": [
+          "engineering"
+        ],
+        "primary_topics": [
+          "engineering"
+        ],
+        "secondary_topics": [],
+        "summary": "Every summer, for eight weeks between July and September, the HZDR welcomes international students to join our research teams and contribute to their projects.",
+        "summary_zh": "每年夏季7月至9月期间，HZDR欢迎国际学生进行为期八周的交流，加入我们的研究团队并为项目作出贡献。",
+        "sessions": []
+      }
+    },
+    {
       "id": "programme:6cf4be91ec7187f3",
       "slug": "introduction-to-metabolomics-analysis-b52d9d3c",
       "title": "Introduction to metabolomics analysis",
@@ -3731,11 +3808,6 @@
         "food systems design",
         "sustainability"
       ],
-      "primary_topics": [
-        "sustainable food systems",
-        "food systems design",
-        "sustainability"
-      ],
       "editions": [
         {
           "id": "edition:736b6cbf96f90a6f",
@@ -3804,7 +3876,12 @@
         "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
         "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "sustainable food systems",
+        "food systems design",
+        "sustainability"
+      ]
     },
     {
       "id": "programme:74877aabb7876c4e",

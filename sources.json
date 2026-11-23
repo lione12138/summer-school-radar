@@ -5627,7 +5627,7 @@
       "fetch_health": "healthy",
       "scanner_records": 1,
       "extracted_records": 1,
-      "public_open_records": 0,
+      "public_open_records": 1,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
     }
