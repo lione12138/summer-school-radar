@@ -32,6 +32,11 @@ def page(text, url='https://www.aalto.fi/en/international-summer-research-progra
 
 
 def test_seasonal_vocabulary_requires_research_cohort_and_excludes_semesters():
+    from research_school_radar.semantic import useful_semantic_chunk
+    assert useful_semantic_chunk('Applications open. Salary and eligibility information.',
+                                 page_title='HZDR Summer Student Program 2027')
+    assert useful_semantic_chunk('Application deadline 31 January 2027. Research group projects.',
+                                 page_title='Aalto International Summer Research Programme')
     assert has_programme_signal('HZDR Summer Student Program 2027')
     assert research_cohort_evidence('University Summer Student Program 2027. Apply to research teams for 8 weeks.')
     assert not research_cohort_evidence('Company summer research program 2027 software sales internship apply')

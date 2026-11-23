@@ -2,7 +2,8 @@ semantic:
   enabled: false
   embedding_model: "BAAI/bge-m3"
   query: >
-    summer school or winter school application information, including deadline,
+    research school, seasonal training course, summer student program or university
+    summer research programme application information, including deadline,
     application, registration, dates, location, fee, funding, eligibility,
     topic, target participants, and application procedure
   chunk_size_chars: 1800
