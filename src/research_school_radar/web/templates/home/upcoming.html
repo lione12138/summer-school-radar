@@ -3,8 +3,8 @@
 <h2><span class="lang-en" lang="en">Opening soon</span><span class="lang-zh" lang="zh">即将开放</span></h2>
 <p><span class="lang-en" lang="en">Announced calls. Applications are not open; check the official page for updates.</span><span class="lang-zh" lang="zh">已公布的申请计划，目前尚未开放。请到官网核对最新安排。</span></p>
 {% for c in candidates %}<article>
-<h3><a href="{{ c.source_url }}" rel="noopener noreferrer">{{ c.title }}</a></h3>
+<h3><a href="{{ c.source_url }}" rel="noopener noreferrer"><span class="lang-en" lang="en">{{ c.title }}</span><span class="lang-zh" lang="zh">{{ c.title_zh or c.title }}</span></a></h3>
 <p><span class="lang-en" lang="en">Applications open</span><span class="lang-zh" lang="zh">申请开放</span>: {{ c.application_opens }} · <span class="lang-en" lang="en">Deadline</span><span class="lang-zh" lang="zh">截止日期</span>: {{ c.deadline }}</p>
-<p>{{ c.location }} · {{ c.duration_days }} <span class="lang-en" lang="en">days</span><span class="lang-zh" lang="zh">天</span></p>
+<p><span class="lang-en" lang="en">{{ c.location }} · {{ c.duration_days }} days</span><span class="lang-zh" lang="zh">{{ c.location_zh or c.location }} · {{ c.duration_days }} 天</span></p>
 <blockquote>{{ c.opening_evidence }}</blockquote>
 </article>{% endfor %}</section>{% endif %}
