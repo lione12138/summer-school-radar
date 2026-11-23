@@ -1,4 +1,12 @@
 {
+  "aalto-asci-summer-research:2027": {
+    "deadline": "2027-01-31",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "source_url": "https://www.aalto.fi/en/aalto-university-science-institute-asci/aalto-university-science-institute-international-summer-research-programme",
+    "status": "near_match",
+    "title": "Aalto International Summer Research Programme 2027"
+  },
   "acspri:offering:264": {
     "deadline": null,
     "first_seen": "2026-09-23",
@@ -1326,6 +1334,22 @@
     "status": "near_match",
     "title": "2026 S2S Land-atmosphere Interactions Workshop"
   },
+  "https://ncas.ac.uk/study-with-us/climate-modelling-summer-school/": {
+    "deadline": null,
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "source_url": "https://ncas.ac.uk/study-with-us/climate-modelling-summer-school/",
+    "status": "near_match",
+    "title": "Climate Modelling Summer School"
+  },
+  "https://ncas.ac.uk/study-with-us/summer-training-in-observation-research-and-modelling/": {
+    "deadline": "2027-01-31",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "source_url": "https://ncas.ac.uk/study-with-us/summer-training-in-observation-research-and-modelling/",
+    "status": "near_match",
+    "title": "STORM — Summer Training in Observation, Research and Modelling 2027"
+  },
   "https://neuromuscularnetwork.ca/basic-research-summer-school-2027/": {
     "deadline": "2026-12-01",
     "first_seen": "2026-11-06",
@@ -1522,6 +1546,14 @@
     "source_url": "https://training.gesis.org/?site=pDetails&pID=0xE1EA4A565CDF45FF8E7F597B6C89B91D",
     "status": "near_match",
     "title": "Summer School in Survey Methodology 2026"
+  },
+  "https://trisep.ca/": {
+    "deadline": null,
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "source_url": "https://trisep.ca/",
+    "status": "near_match",
+    "title": "TRISEP 2026 — Tri-Institute Summer School on Elementary Particles"
   },
   "https://unicri.org/training-summer-school-sport-governance-and-ethics-integrity-2026": {
     "deadline": null,
@@ -2482,6 +2514,14 @@
     "status": "near_match",
     "title": "Karthaus summerschool"
   },
+  "https://www.santafe.edu/engage/learn/programs/sfi-complex-systems-summer-school": {
+    "deadline": "2027-02-03",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "source_url": "https://www.santafe.edu/engage/learn/programs/sfi-complex-systems-summer-school",
+    "status": "near_match",
+    "title": "Complex Systems Summer School"
+  },
   "https://www.sba-research.org/": {
     "deadline": null,
     "first_seen": "2026-07-15",
@@ -2695,6 +2735,14 @@
     "status": "near_match",
     "title": "Summer School Science Communication"
   },
+  "https://www.unsw.edu.au/science/our-schools/maths/student-life-resources/honours-year/amsi-2026": {
+    "deadline": "2026-11-20",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "source_url": "https://www.unsw.edu.au/science/our-schools/maths/student-life-resources/honours-year/amsi-2026",
+    "status": "near_match",
+    "title": "Follow"
+  },
   "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/": {
     "deadline": "2026-09-06",
     "first_seen": "2026-08-03",
@@ -2726,6 +2774,14 @@
     "source_url": "https://zasb.unibas.ch/en/news/news-details/call-for-proposals-phd-graduate-programme",
     "status": "near_match",
     "title": "This site requires JavaScript to work properly."
+  },
+  "hzdr-summer-student:2027": {
+    "deadline": "2027-01-24",
+    "first_seen": "2026-11-23",
+    "last_seen": "2026-11-23",
+    "source_url": "https://www.hzdr.de/db/Cms?pNid=2519",
+    "status": "qualified",
+    "title": "HZDR Summer Student Program 2027"
   },
   "icts:/program/qmcgp:2026-12-07": {
     "deadline": "2026-09-01",
