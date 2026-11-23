@@ -4,6 +4,7 @@
     let activeView = "open";
     const controls = {
       search: document.getElementById("filter-search"),
+      kind: document.getElementById("filter-kind"),
       topic: document.getElementById("filter-topic"),
       funding: document.getElementById("filter-funding"),
       fresh: document.getElementById("filter-new"),
@@ -17,7 +18,7 @@
       previous: document.getElementById("pagination-previous"),
       next: document.getElementById("pagination-next")
     };
-    const params = {search: "q", topic: "topic", funding: "funding", fresh: "fresh"};
+    const params = {kind: "kind", search: "q", topic: "topic", funding: "funding", fresh: "fresh"};
     const filterControls = Object.keys(params).map(key => controls[key]);
     const openSection = document.getElementById("opportunities");
     const library = document.getElementById("programme-library");
@@ -62,6 +63,7 @@
       applyLibrarySearch();
     }
     function matches(row) {
+      if (controls.kind.value && row.dataset.programmeKind !== controls.kind.value) return false;
       const search = controls.search.value.trim().toLowerCase();
       if (search && !row.dataset.search.includes(search)) return false;
       if (controls.funding.value && row.dataset.funding !== controls.funding.value) return false;
