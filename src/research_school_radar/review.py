@@ -195,6 +195,10 @@ def _apply_override(candidate: Candidate, override: dict[str, Any]) -> None:
             continue
         setattr(candidate, key, _coerce_value(key, value))
     changed = {key for key, previous in before.items() if getattr(candidate, key) != previous}
+    if "organizer_zh" in fields:
+        candidate.organizer_zh_curated = bool(candidate.organizer_zh)
+    elif "organizer" in changed:
+        candidate.organizer_zh_curated = False
     if "topic_keywords" in changed:
         if "primary_topics" not in fields:
             candidate.primary_topics = []

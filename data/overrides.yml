@@ -16,6 +16,31 @@
 #       fee_eur: 300
 #       deadline_evidence: Application deadline is 15 October 2026.
 overrides:
+  - url: https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school
+    fields:
+      organizer: Perimeter Institute
+      organizer_zh: Perimeter Institute
+      title_zh: Perimeter Institute 本科生暑期学校
+      programme_key: "programme:74280eccf50ca905"
+  - url: https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school
+    edition_year: 2027
+    fields:
+      location: Waterloo, Ontario, Canada
+      location_zh: 加拿大安大略省滑铁卢
+      application_link: https://academicjobsonline.org/ajo/jobs/33186
+      summary: Perimeter Institute's two-week undergraduate school covers modern theoretical physics through short courses, independent study and collaborative problem solving.
+      summary_zh: Perimeter Institute 在加拿大滑铁卢举办为期两周的本科生暑期学校。参与者通过短课、自主学习和小组解题接触现代理论物理课题。
+      fee: Free summer school
+      fee_eur: 0
+      fee_evidence: There is no fee for the summer school.
+      funding_available: true
+      funding_type: [travel support, accommodation, meals]
+      funding_scope: Travel support, accommodation and meals for successful applicants.
+      funding_evidence: Travel support, accommodation, and food are provided for successful applicants.
+      evidence_sources:
+        fee: https://perimeterinstitute.ca/undergraduate-summer-programs
+        fee_evidence: https://perimeterinstitute.ca/undergraduate-summer-programs
+        funding_evidence: https://perimeterinstitute.ca/undergraduate-summer-programs
   - url: https://indico.ictp.it/event/11407
     status: update
     note: Official programme checked on 2026-09-12; the deadline is 15 Nov 2026 and the venue is Allan, Jordan. Indico is the publishing platform, not the organizer.

@@ -17,14 +17,45 @@ from .utils import ROOT, clean_space, content_hash, load_yaml
 
 TRANSLATION_FIELDS = (
     "title",
-    "organizer",
     "location",
     "summary",
     "eligibility",
     "recommendation_reason",
     "risk_points",
 )
-TRANSLATION_SCHEMA_VERSION = "candidate-zh-v2"
+TRANSLATION_SCHEMA_VERSION = "candidate-zh-v3"
+INSTITUTION_NAMES_ZH = {
+    "Perimeter Institute": "Perimeter Institute",
+    "Perimeter Institute for Theoretical Physics": "Perimeter Institute",
+    "Aalto University": "阿尔托大学",
+    "Santa Fe Institute": "圣塔菲研究所",
+    "VIASM": "越南数学高等研究院（VIASM）",
+    "Vietnam Institute for Advanced Study in Mathematics": "越南数学高等研究院（VIASM）",
+}
+
+
+def _organizer_zh(candidate: Candidate) -> str:
+    if candidate.organizer_zh_curated and candidate.organizer_zh:
+        return candidate.organizer_zh
+    name = clean_space(candidate.organizer)
+    return INSTITUTION_NAMES_ZH.get(name, name)
+
+
+def _protect_institution_names(candidate: Candidate, source: dict[str, str], translated: dict[str, str]) -> dict[str, str]:
+    # A failed name check affects only its field. English remains readable
+    # and avoids carrying a mistranslated proper name into the public site.
+    names = INSTITUTION_NAMES_ZH.copy()
+    organizer = clean_space(candidate.organizer)
+    if organizer and organizer.casefold() != "uncertain":
+        names[organizer] = _organizer_zh(candidate)
+    for key, original in source.items():
+        value = translated.get(key, "")
+        if any(name in original and name not in value and localized not in value
+               for name, localized in names.items() if localized):
+            translated[key] = original
+    return translated
+
+
 _CJK_RE = re.compile(r"[\u3400-\u9fff]")
 _EXACT_PROTECTED_RE = re.compile(
     r"https?://\S+|\b\d{4}-\d{2}-\d{2}\b",
@@ -153,6 +184,7 @@ def translate_candidates(
         refreshed = [
             replace(
                 candidate,
+                organizer_zh=_organizer_zh(candidate),
                 recommendation_reason_zh=(
                     recommendation_reason_zh(candidate.score_explanation)
                     if candidate.score_explanation
@@ -198,7 +230,7 @@ def translate_candidates(
             except ValueError:
                 translated = None
             if translated is not None:
-                current.update(translated)
+                current.update(_protect_institution_names(candidate, needed, translated))
                 result.candidates.append(_with_translations(candidate, current))
                 result.cache_hits += 1
                 continue
@@ -222,7 +254,7 @@ def translate_candidates(
             continue
 
         cache.set("candidate_zh", cache_key, translated)
-        current.update(translated)
+        current.update(_protect_institution_names(candidate, needed, translated))
         result.candidates.append(_with_translations(candidate, current))
         result.translated += 1
 
@@ -322,7 +354,7 @@ def _current_translations(candidate: Candidate) -> dict[str, str]:
 
 def _with_translations(candidate: Candidate, translated: dict[str, str]) -> Candidate:
     values = {f"{field}_zh": translated.get(field, "") for field in TRANSLATION_FIELDS}
-    return replace(candidate, **values)
+    return replace(candidate, organizer_zh=_organizer_zh(candidate), **values)
 
 
 def _translation_prompt(source: dict[str, str]) -> str:
@@ -330,7 +362,8 @@ def _translation_prompt(source: dict[str, str]) -> str:
     return (
         "You are translating official research-training listings into concise, natural Simplified Chinese. "
         "Return one valid json object only. Keep exactly the same keys as the input. Preserve URLs, dates, "
-        "currency amounts, institution names, programme acronyms, and factual uncertainty. Do not add claims, "
+        "currency amounts, programme acronyms, and factual uncertainty. Keep institution names verbatim, "
+        "including in titles and prose. Do not translate proper names literally. Do not add claims, "
         "advice, marketing language, or markdown. Translate prose by meaning, not word-for-word. Official titles "
         "may retain an established English acronym after the Chinese name.\n"
         f"Example json shape: {json.dumps(example, ensure_ascii=False)}\n"

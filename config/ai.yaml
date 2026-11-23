@@ -53,7 +53,7 @@ translation:
   cache_enabled: true
   cache_directory: "translation_cache"
   refresh_cache: false
-  prompt_version: "candidate-zh-v2"
+  prompt_version: "candidate-zh-v3"
 follow_up:
   enabled: true
   max_rounds: 2

@@ -61,7 +61,6 @@ class FakeTranslationClient:
         self.calls.append(prompt)
         return (
             '{"title":"示例水文学冬季学校",'
-            '"organizer":"示例研究所",'
             '"location":"德国",'
             '"summary":"面向研究人员的水文学训练项目。",'
             '"eligibility":"硕士生和博士生可以申请。",'
@@ -86,7 +85,7 @@ def test_translation_populates_bilingual_fields_and_reuses_cache(tmp_path) -> No
     first = translate_candidates([_candidate()], config, client=client)
     translated = first.candidates[0]
     assert translated.title_zh == "示例水文学冬季学校"
-    assert translated.organizer_zh == "示例研究所"
+    assert translated.organizer_zh == translated.organizer
     assert translated.location_zh == "德国"
     assert translated.summary_zh == "面向研究人员的水文学训练项目。"
     assert first.translated == 1
@@ -107,6 +106,44 @@ def test_translation_without_key_preserves_content_and_reports_one_warning(tmp_p
     assert result.warnings == ["translation_provider_unavailable:set_DEEPSEEK_API_KEY"]
 
 
+def test_organizer_names_use_dictionary_original_or_curated_value():
+    from research_school_radar.review import apply_overrides
+
+    unknown, known, curated = (_candidate() for _ in range(3))
+    unknown.organizer = "Perimeter Research Centre"
+    unknown.organizer_zh = "周界研究中心"  # An old machine translation.
+    known.organizer = "Aalto University"
+    apply_overrides([curated], [{"url": curated.source_url, "fields": {"organizer_zh": "维护的机构名称"}}])
+    translated = translate_candidates([unknown, known, curated], TranslationConfig()).candidates
+    assert [c.organizer_zh for c in translated] == [
+        "Perimeter Research Centre", "阿尔托大学", "维护的机构名称",
+    ]
+    assert unknown.organizer_zh == "周界研究中心"
+
+
+def test_perimeter_name_is_protected_in_generated_title_and_summary(tmp_path):
+    candidate = _candidate()
+    candidate.organizer = "Perimeter Institute"
+    candidate.title = "Perimeter Institute Undergraduate Summer School"
+    candidate.summary = "Perimeter Institute hosts a two-week school."
+
+    class BadNameClient:
+        def complete(self, prompt):
+            source = json.loads(prompt.split("Input json: ", 1)[1])
+            assert "organizer" not in source
+            return json.dumps({
+                **source,
+                "title": "周界本科生暑期学校",
+                "summary": "Perimeter Institute 举办为期两周的暑期学校。",
+            })
+
+    config = TranslationConfig(enabled=True, cache_directory=tmp_path)
+    [translated] = translate_candidates([candidate], config, client=BadNameClient()).candidates
+    assert translated.title_zh == candidate.title
+    assert translated.organizer_zh == "Perimeter Institute"
+    assert translated.summary_zh == "Perimeter Institute 举办为期两周的暑期学校。"
+
+
 def test_translation_rejects_changed_protected_values(tmp_path) -> None:
     candidate = _candidate()
     candidate.summary = "Apply by 2027-04-12 and verify https://example.org/apply."
@@ -115,7 +152,6 @@ def test_translation_rejects_changed_protected_values(tmp_path) -> None:
         def complete(self, prompt: str) -> str:
             return (
                 '{"title":"示例水文学冬季学校",'
-                '"organizer":"示例研究所",'
                 '"location":"德国",'
                 '"summary":"请在 2027-04-13 前申请。",'
                 '"eligibility":"硕士生和博士生可以申请。",'
@@ -141,7 +177,6 @@ def test_translation_allows_localized_currency_label_when_amount_is_preserved(tm
         def complete(self, prompt: str) -> str:
             return (
                 '{"title":"示例水文学冬季学校",'
-                '"organizer":"示例研究所",'
                 '"location":"德国",'
                 '"summary":"面向研究人员的水文学训练项目。",'
                 '"eligibility":"硕士生和博士生可以申请。",'

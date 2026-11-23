@@ -235,11 +235,11 @@ def _merge_candidate(record: dict[str, Any], candidate: Candidate) -> None:
         record["summary"] = candidate.summary
     if candidate.summary_zh:
         record["summary_zh"] = candidate.summary_zh
-    if candidate.title_zh and not record.get("title_zh"):
-        record["title_zh"] = normalized_programme_title_zh(candidate.title_zh)
     replacement = _edition_record(candidate)
     matching = [edition for edition in record.get("editions", [])
                 if edition.get("id") == replacement["id"] or _same_edition(record, edition, candidate)]
+    if candidate.title_zh and (matching or not record.get("title_zh")):
+        record["title_zh"] = normalized_programme_title_zh(candidate.title_zh)
     aliases = [str(value) for edition in matching
                for value in [edition["id"], *edition.get("identity_aliases", [])]]
     explicit_editions = [edition for edition in matching if not str(edition["id"]).startswith("edition:")]

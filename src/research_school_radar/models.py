@@ -116,6 +116,7 @@ class Candidate:
     # from the translation cache or an optional translation provider.
     title_zh: str = ""
     organizer_zh: str = ""
+    organizer_zh_curated: bool = False
     location_zh: str = ""
     summary_zh: str = ""
     eligibility_zh: str = ""
