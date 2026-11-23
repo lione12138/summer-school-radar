@@ -1,6 +1,127 @@
 {
-  "generated": "2026-11-20",
+  "generated": "2026-11-23",
   "review_queue": [
+    {
+      "title": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes",
+      "url": "https://indico.ictp.it/event/11444",
+      "organizer": "Indico - Conferences and Events",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-07-12",
+        "end": "2027-07-23",
+        "duration_days": 12
+      },
+      "deadline": "2027-03-05",
+      "deadline_status": "open",
+      "financial_access_status": "low-fee",
+      "fee": "no registration fee",
+      "fee_eur": 0.0,
+      "topics": [
+        "climate",
+        "climate change",
+        "climate extremes"
+      ],
+      "needs_review": [
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "no registration fee",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "climate": "ummer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes | (smr 4370) (12-23 July 2027) Europe/Rome English Administr",
+        "climate change": "-tropics, yet key questions about their dynamics and response to climate change remain open. The school will introduce the fundamentals of atmospheric wave dynamics and explore th",
+        "climate extremes": "es and tropical waves play a central role in shaping weather and climate extremes in the tropics and extra-tropics, yet key questions about their dynamics and response to climate ch"
+      },
+      "evidence": {
+        "deadline": "DEADLINE: 05/03/2027",
+        "duration": "12-23 July 2027",
+        "fee": "no registration fee",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "funding_context_weak"
+        ],
+        "chinese_summary": "第八届气候动力学理论、机制与分层建模暑期学校，主题为全球波与局地极端事件，2027年7月12日至23日举行，无注册费，申请截止日期为2027年3月5日，提供有限资助名额。",
+        "extracted_deadline": "2027-03-05",
+        "extracted_fee": "no registration fee",
+        "extracted_funding": "A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries.",
+        "evidence_fields": {
+          "deadline": "**DEADLINE: 05/03/2027** Organizers Simona Bordoni (University of Trento, Italy), Daniela Domeisen (University of Lausanne, Switzerland), Vera Melinda Galfi (VU Amsterdam, The Netherlands), Valerio Lembo (ISAC, Italy), Jacopo Riboldi (ETH Zurich, Switzerland), Local Organiser: Adrian Mark Tompkins (ICTP) GO TO SCIENTIFIC CALENDAR Facebook Twitter Youtu",
+          "fee": "There is no registration fee.",
+          "funding": "Grants: A limited number of grants are available to support the attendance of selected participants, with priority given to participants from developing countries."
+        }
+      }
+    },
+    {
+      "title": "Spring School on Superstring Theory and Related Topics",
+      "url": "https://indico.ictp.it/event/11419",
+      "organizer": "Indico - Conferences and Events",
+      "source_layer": "1",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-04-05",
+        "end": "2027-04-09",
+        "duration_days": 5
+      },
+      "deadline": "2027-02-15",
+      "deadline_status": "open",
+      "financial_access_status": "low-fee",
+      "fee": "no registration fee",
+      "fee_eur": 0.0,
+      "topics": [
+        "physics"
+      ],
+      "needs_review": [
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "no registration fee",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "physics": "rganised in collaboration with the Italian Institute for Nuclear Physics (INFN). ICTP's annual Spring School on Superstring Theory and Related Topics provides pedagogical t"
+      },
+      "evidence": {
+        "deadline": "deadline for all other applicants is 15 February 2027",
+        "duration": "05-9 April 2027",
+        "fee": "no registration fee",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
     {
       "title": "Deadlines",
       "url": "https://tinbergen.nl/deadlines",
@@ -69,64 +190,6 @@
       }
     },
     {
-      "title": "Semester in Biological Discovery (SBD)",
-      "url": "https://www.mbl.edu/education/undergraduate-programs/semester-biological-discovery",
-      "organizer": "Marine Biological Laboratory",
-      "source_layer": "1.5",
-      "location": "North America",
-      "dates": {
-        "start": "2027-02-28",
-        "end": "2027-05-22",
-        "duration_days": 84
-      },
-      "deadline": "2026-12-15",
-      "deadline_status": "open",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "environmental science",
-        "philosophy of science",
-        "history",
-        "philosophy"
-      ],
-      "needs_review": [
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.75,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.75,
-      "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "environmental science": "The SBD will be administered similarly to the MBL’s Semester in Environmental Science, which has been running for almost 25 years. After the first module the SBD program welcomes quarte",
-        "philosophy of science": "dules and explores topics such as visual arts or the history and philosophy of science. SBD students will also get the opportunity to visit Pekinese Island, a wildlife sanctuary, part of",
-        "history": "s several modules and explores topics such as visual arts or the history and philosophy of science. SBD students will also get the opportunity to visit Pekinese Island, a w",
-        "philosophy": "dules and explores topics such as visual arts or the history and philosophy of science. SBD students will also get the opportunity to visit Pekinese Island, a wildlife sanctua"
-      },
-      "evidence": {
-        "deadline": "Application due date: Dec 15, 2026 (other dates listed: 2026-09-15, 2026-10-15)",
-        "duration": "Feb 28, 2027 - May 22, 2027",
-        "fee": "",
-        "funding": "",
-        "mode": "Venues Dietary Accommodations Swope Cafe Menu Swope Caf"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
       "title": "Footer Ranking Menu",
       "url": "https://www.politics.ox.ac.uk/how-apply-and-fees",
       "organizer": "Oxford Spring School",
@@ -183,8 +246,8 @@
       }
     },
     {
-      "title": "Grants & Awards",
-      "url": "https://www.archaeological.org/programs/professionals/grants-awards/",
+      "title": "Scholarships & Travel Grants",
+      "url": "https://www.archaeological.org/grant/waldbaum-scholarship/",
       "organizer": "Archaeological Institute of America",
       "source_layer": "discovery",
       "location": "global",
@@ -193,16 +256,27 @@
         "end": null,
         "duration_days": null
       },
-      "deadline": "2027-06-30",
+      "deadline": "2027-03-01",
       "deadline_status": "open",
       "financial_access_status": "funded",
       "fee": "",
       "fee_eur": null,
       "topics": [
+        "remote sensing",
+        "GIS",
+        "ecology",
         "artificial intelligence",
-        "architecture",
+        "mathematics",
+        "applied mathematics",
+        "public health",
+        "cognitive science",
+        "marine biology",
+        "geography",
+        "anthropology",
         "history",
-        "archaeology"
+        "philosophy",
+        "archaeology",
+        "literature"
       ],
       "needs_review": [
         "duration is uncertain"
@@ -218,23 +292,41 @@
         "support_scope": "",
         "accommodation": "unknown",
         "meals": "unknown",
-        "travel_support": "unknown",
+        "travel_support": "offered",
         "cost_status": "unknown",
         "fee_options": []
       },
-      "benefit_facts": [],
+      "benefit_facts": [
+        {
+          "benefit": "travel",
+          "status": "covered",
+          "evidence": "Archaeological Field School Scholarships - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Scholarships & Travel Grants Archaeological Field School Scholarships Archaeological Institute of America Deadline: March 1, 2027 Announced: In April Amount: $2,000 per winner Purpose: These scholarships support students participating in archaeological fieldwork for the first time.",
+          "source_url": "https://www.archaeological.org/grant/waldbaum-scholarship/"
+        }
+      ],
       "topic_evidence": {
+        "remote sensing": "lleley is a junior at Boston University studying Archaeology and Remote Sensing. She will attend the Belize Valley Archeological Reconnaissance Project. Read about Elisha Valleley",
+        "GIS": "dents are trained in a variety of excavation techniques, such as GIS mapping and materials processing. Skye is especially excited to document a set of Etruscan tombs lo",
+        "ecology": "dkey (Purdue University West Lafayette; Zooarchaeology and Field Ecology Program Eagle Lake, CA), Mahmoud Samori (Columbia University, Stabiae Field School), Ann Vassar (Ce",
         "artificial intelligence": "erved, including rights for text and data mining and training of artificial intelligence or similar technologies. | Privacy Policy | Website by Yelling Mule , ongoing development by Castle",
-        "architecture": ". Kress Grants for Research and Publication in Classical Art and Architecture - On Hiatus Deadline: December 15, 2025 These grants fund publication preparation, or research lead",
+        "mathematics": "June. At Brown, she studied Biological Anthropology and Applied Mathematics-Biology. She’s especially excited to be working in the Caribbean: her home region. Read about Madel",
+        "applied mathematics": "ool this June. At Brown, she studied Biological Anthropology and Applied Mathematics-Biology. She’s especially excited to be working in the Caribbean: her home region. Read about Madel",
+        "public health": "er is a junior at Boston University, studying Health Science and Public Health, with a minor in Anthropology. She plans to attend the Apollonia Project in Bulgaria (deferred to 2",
+        "cognitive science": "ccalaueate at the University of California, Santa Cruz, studying Cognitive Science and Anthropology. She plans to attend the Roca dels Bous Project in Spain. Read about Lindsay Alaha",
+        "marine biology": "Obolensky Field School Scholarship Audrey Urbach is a third-year marine biology major with a minor in cultural anthropology at Northeastern University. This May, she will be parti",
+        "geography": "a Senior at Texas State University, majoring in Anthropology and Geography. She plans to attend the Aditu Arkeologia Field School in Spain. Read about Veronica Flores-Guillen",
+        "anthropology": "cum laude from Colorado College, earning a Bachelor’s degree in Anthropology and Classics. She is joining the Astypalaia Bioarchaeology field school which studies the human rem",
         "history": "ct Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Care",
-        "archaeology": "al Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public Internat"
+        "philosophy": "versity of Houston studying Anthropology, Classical Studies, and Philosophy. She is eager to broaden her global perspective through the Antiochia ad Cragum Archaeological Rese",
+        "archaeology": "al Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public Internat",
+        "literature": "is a junior at Davidson College studying Classical Languages and Literature, and this summer he will be attending the Cosa Excavations in Ansedonia, Italy. He is excited to le"
       },
       "evidence": {
-        "deadline": "Deadline: June 30, 2027 (other dates listed: 2023-11-01, 2025-12-15, 2026-09-15)",
+        "deadline": "Deadline: March 1, 2027",
         "duration": "",
         "fee": "",
-        "funding": "Fellowships, Grants, Scholarships, and Awards - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Grants & Awards Professionals Annual Meeting Fieldwork Grants & Awards AIA Fellowship Guidelines Application: AIA Fellowships Nomination Form: Pomerance Award Awards Ceremony Sitting Down with our Award Winners Follow-Ups for Fellowship, Grant, & Scholarship Winners Research Grant Final Report Form AIA Fellowships Report Form AIA Awards Citation Form Non-AIA Grants Careers American Journal of Archaeology Research Opportunities Network (RON) Beta Tester Sign Up The AIA’s mission includes supporting and promoting archaeological research and its dissemination.",
-        "mode": "in-person) support Us The AIA is North America's largest an"
+        "funding": "Archaeological Field School Scholarships - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Scholarships & Travel Grants Archaeological Field School Scholarships Archaeological Institute of America Deadline: March 1, 2027 Announced: In April Amount: $2,000 per winner Purpose: These scholarships support students participating in archaeological fieldwork for the first time.",
+        "mode": "Field School Scholarships - Archaeological Institute of Americ"
       },
       "ai_advisory": {
         "available": false
@@ -626,6 +718,85 @@
       }
     },
     {
+      "title": "2027 Winter School on Smoothed Particle Hydrodynamics Numerical Methods",
+      "url": "https://www.hylab.unipr.it/en/2026/08/25/2027-winter-school-on-smoothed-particle-hydrodynamics-numerical-methods/",
+      "organizer": "HyLab",
+      "source_layer": "discovery",
+      "location": "person only",
+      "dates": {
+        "start": "2027-01-18",
+        "end": "2027-01-22",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "low-fee",
+      "fee": "free of charge",
+      "fee_eur": 0.0,
+      "topics": [
+        "hydrology",
+        "physics",
+        "mathematics",
+        "engineering",
+        "mechanics",
+        "fluid dynamics",
+        "architecture",
+        "water resources",
+        "geoscience"
+      ],
+      "needs_review": [
+        "application deadline is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "free of charge",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "hydrology": "nato Vacondio is Associate Professor of Hydraulic Structures and Hydrology at the Department of Engineering and Architecture of the University of Parma. His research focuses",
+        "physics": "eal. His work focuses using meshless methods to simulate complex physics such as free-surface flow, flow through porous media and turbulence models as well as the implement",
+        "mathematics": "articularly suitable for: MSc graduates in Engineering, Physics, Mathematics, Computer Science or related disciplines; PhD students; postdoctoral and academic researchers; rese",
+        "engineering": "essor of Hydraulic Structures and Hydrology at the Department of Engineering and Architecture of the University of Parma. His research focuses on hydraulic and hydrological mod",
+        "mechanics": "nd now widely used for the simulation of complex fluid and solid mechanics problems. Its meshless nature makes SPH particularly attractive for problems involving large deform",
+        "fluid dynamics": "ster. His research focuses on meshless methods and computational fluid dynamics, including Lagrangian and Eulerian-Lagrangian SPH formulations, multiphase and non-Newtonian flows,",
+        "architecture": "ic Structures and Hydrology at the Department of Engineering and Architecture of the University of Parma. His research focuses on hydraulic and hydrological modelling and on the",
+        "water resources": "nato Vacondio is Associate Professor of Hydraulic Structures and Hydrology at the Department of Engineering and Architecture of the University of Parma. His research focuses",
+        "geoscience": "nato Vacondio is Associate Professor of Hydraulic Structures and Hydrology at the Department of Engineering and Architecture of the University of Parma. His research focuses"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "18–22 January 2027",
+        "fee": "free of charge",
+        "funding": "",
+        "mode": "In person only We are pleased to announce the 2027 Winter S"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [],
+        "chinese_summary": "2027年光滑粒子流体动力学（SPH）数值方法冬季学校，2027年1月18日至22日在意大利帕尔马大学工程与建筑系线下举办，对应5个ECTS学分。主题涵盖SPH插值基础、精度与一致性、控制方程离散、可压缩/弱可压缩/不可压缩SPH、流固耦合、多相与非牛顿流动、边界条件及高性能计算等。费用为博士生500欧元、其他参与者800欧元，帕尔马大学在读博士生免费；人数限50人。",
+        "extracted_deadline": "",
+        "extracted_fee": "PhD Students €500; Other Participants €800; free of charge for PhD students enrolled at the University of Parma",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "HTML “` Registration PhD Students €500 Other Participants €800 The course is free of charge for PhD students enrolled at the University of Parma.",
+          "funding": ""
+        }
+      }
+    },
+    {
       "title": "Search",
       "url": "https://www.colorado.edu/conference/bss/",
       "organizer": "Boulder School for Condensed Matter and Materials Physics",
@@ -992,81 +1163,6 @@
       }
     },
     {
-      "title": "Summer School in Computational Physiology",
-      "url": "https://www.simula.no/education/courses-summer-schools/summer-school-computational-physiology",
-      "organizer": "Discovery: Summer School in Computational Physiology | Simula",
-      "source_layer": "discovery",
-      "location": "San Diego",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "funded",
-      "fee": "no registration fee",
-      "fee_eur": 0.0,
-      "topics": [
-        "mechanics"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "duration is uncertain"
-      ],
-      "confidence": 0.5,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.5,
-      "financial_terms": {
-        "participation_fee": "no registration fee",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "offered",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "offered",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "benefit_facts": [
-        {
-          "benefit": "travel",
-          "status": "covered",
-          "evidence": "travel grants are available to those with exceptional need.",
-          "source_url": "https://www.simula.no/education/courses-summer-schools/summer-school-computational-physiology"
-        }
-      ],
-      "topic_evidence": {
-        "mechanics": "l signal propagation, and cellular- and tissue-level contractile mechanics in the heart. Since the final part of the course will be a small research project, the students wil"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "",
-        "fee": "no registration fee",
-        "funding": "It is expected that students will find funding for travel to Oslo and San Diego through their home institutions/research groups, but travel grants are available to those with exceptional need.",
-        "mode": "will be held in San Diego from 2 - 10 August. The material covered"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "location_context_weak",
-          "start_date_value_not_in_evidence",
-          "end_date_value_not_in_evidence"
-        ],
-        "chinese_summary": "Simula 计算生理学暑期学校，2027年6月14-25日在挪威奥斯陆进行讲座，8月2-10日在美国圣地亚哥进行项目工作，无注册费，面向博士生和硕士生。",
-        "extracted_deadline": "",
-        "extracted_fee": "No registration fee",
-        "extracted_funding": "Students are expected to find funding for travel to Oslo and San Diego through their home institutions/research groups; travel grants are available to those with exceptional need.",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "There is no registration fee. | There is no registration fee for the course.",
-          "funding": "It is expected that students will find funding for travel to Oslo and San Diego through their home institutions/research groups, but travel grants are available to those with exceptional need."
-        }
-      }
-    },
-    {
       "title": "Tuition fees, scholarships, and financial support",
       "url": "https://tinbergen.nl/tuition-fees-scholarships-and-financial-support",
       "organizer": "Tinbergen Institute",
@@ -1294,6 +1390,125 @@
       }
     },
     {
+      "title": "15 Stem Summer Schools for High School Students",
+      "url": "https://www.immerse.education/knowledge-base/15-stem-summer-schools-for-high-school-students",
+      "organizer": "Discovery: 15 Stem Summer Schools for High School Students | Immerse Education",
+      "source_layer": "discovery",
+      "location": "Toronto, Canada",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "CAD 1,111",
+      "fee_eur": 777.7,
+      "topics": [
+        "water resources",
+        "climate",
+        "climate change",
+        "remote sensing",
+        "satellite",
+        "GIS",
+        "sustainability",
+        "ecology",
+        "AI",
+        "artificial intelligence",
+        "machine learning",
+        "data science",
+        "linguistics",
+        "programming languages",
+        "cybersecurity",
+        "data analysis",
+        "databases",
+        "robotics",
+        "bioinformatics",
+        "physics",
+        "mathematics",
+        "chemistry",
+        "engineering",
+        "mechanics",
+        "urban planning",
+        "design",
+        "neuroscience",
+        "anthropology",
+        "psychology",
+        "philosophy",
+        "literature"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "CAD 1,111",
+        "fee_eur": 777.7,
+        "fee_status": "stated",
+        "support_status": "offered",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 1111.0,
+            "currency": "CAD",
+            "conditions": ""
+          }
+        ]
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "water resources": "tems, including climate change, urban heat islands, air quality, water resources, and environmental justice. Your time is split between technical workshops and hands-on lab researc",
+        "climate": "week immersed in a specific research stream like bioengineering, climate science, or chemical engineering at a top university. During the placement, you will perform hands-",
+        "climate change": "m, you will spend seven weeks exploring Earth systems, including climate change, urban heat islands, air quality, water resources, and environmental justice. Your time is split be",
+        "remote sensing": "Stanford clinicians and engineers. 11. High School Initiative in Remote Sensing of the Earth Systems Engineering and Sciences (HIRES) Location : The City College of New York, New",
+        "satellite": "nical workshops and hands-on lab research where you analyze real satellite data and join scientific field trips. Working alongside university mentors, you will design a resea",
+        "GIS": "g head start. Along the way, you’ll master tools like Python and GIS mapping while sharpening your public speaking skills. Why it stands out: It treats you like a profe",
+        "sustainability": "STEM career pathways in areas such as Engineering, Environment & Sustainability, Medicine, Software Development & Gaming, and Software Development & AI. The programme also include",
+        "ecology": "s program, you explore diverse topics like DNA analysis, aquatic ecology, and biomedical sciences while working alongside university faculty. You will engage in activities",
+        "AI": "gn processes, scientific methods, and emerging technologies like AI or biotechnology. You also develop essential skills like critical thinking, collaboration, and prob",
+        "artificial intelligence": "ife on a prestigious university campus. 15. NUS Youth Programme: Artificial Intelligence and Machine Learning Fundamentals Location: National University of Singapore Cost: SGD 5,450 – SGD",
+        "machine learning": "al students In this two-week virtual program, you’ll explore how machine learning improves healthcare by analyzing medical images and patient data. You spend your time attending tec",
+        "data science": "ersity campuses where you take advanced classes in subjects like data science or advanced math, often giving you a taste of what college life is like. Some even offer field-base",
+        "linguistics": "opics like information theory, communication, engineering, arts, linguistics, psychology, biology, neuroscience, computer science, mathematics, philosophy, and design. You will",
+        "programming languages": "rs. These programmes introduce you to tools and concepts such as programming languages, engineering design processes, scientific methods, and emerging technologies like AI or biotechnolo",
+        "cybersecurity": "o-week program, you study diverse topics like quantum mechanics, cybersecurity, and solar energy systems. You will participate in hands-on activities such as building remotely op",
+        "data analysis": "ow STEM works beyond textbooks, through experimentation, coding, data analysis, and real-world problem-solving. Imagine spending your summer working in a lab, building prototypes",
+        "databases": "atories. You will also learn to navigate professional scientific databases to conduct your own literature reviews. The program is unique because it offers college credits and",
+        "robotics": "n this program, you explore engineering disciplines like medical robotics, app development, and sustainable urban planning. Throughout the week, you will build physical prot",
+        "bioinformatics": "anford. 13. State University of New York at Albany’s High School Bioinformatics Summer Camp Location: Virtual + State University of New York at Albany, Albany, NY Cost: $1,450; an",
+        "physics": "ientists to tackle real-world problems in fields like biology or physics. If you prefer building things, there are hands-on workshops where you can design robots, code apps",
+        "mathematics": "S, you will dive into advanced topics like physics, higher-level mathematics, and computer science through a rigorous academic lens. During the program, you’ll attend college-l",
+        "chemistry": "have completed Grade 11 math and Grade 11 science courses (i.e. chemistry and physics) by June; international students are welcome to apply In this program, you explore engi",
+        "engineering": "troduce you to tools and concepts such as programming languages, engineering design processes, scientific methods, and emerging technologies like AI or biotechnology. You also",
+        "mechanics": "In this two-week program, you study diverse topics like quantum mechanics, cybersecurity, and solar energy systems. You will participate in hands-on activities such as build",
+        "urban planning": "ciplines like medical robotics, app development, and sustainable urban planning. Throughout the week, you will build physical prototypes, conduct lab experiments, and use 3D CAD s",
+        "design": "questions like how we build intelligent machines, cure diseases, design sustainable systems, or explore space, which is exactly why STEM summer schools for high school stu",
+        "neuroscience": "munication, engineering, arts, linguistics, psychology, biology, neuroscience, computer science, mathematics, philosophy, and design. You will spend eight weeks collaborating on",
+        "anthropology": "RISE program, you conduct authentic research in disciplines like anthropology, biology, computer science, and engineering fields such as biomedical, civil, and aerospace. You wi",
+        "psychology": "formation theory, communication, engineering, arts, linguistics, psychology, biology, neuroscience, computer science, mathematics, philosophy, and design. You will spend eight",
+        "philosophy": "sychology, biology, neuroscience, computer science, mathematics, philosophy, and design. You will spend eight weeks collaborating on a research project where you conduct liter",
+        "literature": "o navigate professional scientific databases to conduct your own literature reviews. The program is unique because it offers college credits and a monetary stipend while speci"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "fee": "CAD 1,111",
+        "funding": "Immerse Education’s Pre-University Summer School Location : Boston, Cambridge, London, Oxford, Singapore, Sydney, Tokyo, and Toronto Cost/Stipend : Varies by format; summer school scholarship available through our bursary programme Acceptance rate/cohort size : Selective; an average of 7 participants per cohort Dates : 2 weeks during the summer Application Deadline : Rolling admissions Eligibility : Students aged 13-18 currently enrolled in middle or high school, application open for worldwide students Among the more career-focused STEM summer schools for high school students, the Career Insights Programme is a STEM-focused, industry-led experience set in global innovation hubs.",
+        "mode": "In-person Career Insights Gain industry exposure and profes"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "Digital Humanities Summer Institute",
       "url": "https://dhsi.org/scholarships/",
       "organizer": "Digital Humanities Summer Institute",
@@ -1479,13 +1694,13 @@
           "llm_chunk_truncated:6",
           "fee_value_not_in_evidence"
         ],
-        "chinese_summary": "根特大学举办的博士生冬季学校，主题为可持续性的批判性与变革性视角，面向UGent博士生为主，也保留名额给其他弗拉芒大学及研究机构的研究人员，注册费为0.00欧元。",
+        "chinese_summary": "根特大学举办的博士生冬季学校，主题为可持续性的批判性与变革性视角，面向不同学科博士生，采用跨学科方式探讨生态危机。",
         "extracted_deadline": "2027-01-25",
-        "extracted_fee": "Registration fee: 0.00 EUR for main affiliation Ghent University; 0.00 EUR for main affiliation VUB, KULeuven, UHasselt, UAntwerpen; 0.00 EUR for other research institutes (non-academic, international, …)",
+        "extracted_fee": "0.00 EUR for all listed registration tiers (Ghent University; VUB, KULeuven, UHasselt, UAntwerpen; other research institutes)",
         "extracted_funding": "",
         "evidence_fields": {
           "deadline": "Event Registration MENU Help In het Nederlands Event Registration Home Search Event: Critical and transformative perspectives on sustainability: a doctoral winter school Registration via https://event.ugent.be/registration/sustainabilitywinterschool27 from 07-09-2026 11:00 until 25-01-2027 23:00 Description The ecological crises we face today radically cut across boundaries.",
-          "fee": "Cost in EUR Available Seats Waiting list (only if other session is full) / 01-02-2027 09:00 - 05-02-2027 17:30 0.00 Registration - main affiliation Ghent University See website 01-02-2027 09:00 - 05-02-2027 17:30 0.00 32 Registration - main affiliation VUB, KULeuven, UHasselt, UAntwerpen See website 01-02-2027 09:00 - 05-02-2027 17:30 0.00 5 FULL Registration - other research institutes (non-academic, international, …) See website 01-02-2027 | Cost in EUR Available Seats Waiting list (only if ot",
+          "fee": "Cost in EUR Available Seats Waiting list (only if other session is full) / 01-02-2027 09:00 - 05-02-2027 17:30 0.00 Registration - main affiliation Ghent University See website 01-02-2027 09:00 - 05-02-2027 17:30 0.00 31 Registration - main affiliation VUB, KULeuven, UHasselt, UAntwerpen See website 01-02-2027 09:00 - 05-02-2027 17:30 0.00 5 FULL Registration - other research institutes (non-academic, international, …) See website 01-02-2027 | Cost in EUR Available Seats Waiting list (only if ot",
           "funding": ""
         }
       }
