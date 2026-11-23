@@ -95,3 +95,14 @@ def test_retained_semester_history_is_withdrawn_even_without_current_candidate(t
     assert result['programmes'] == []
     assert old['programmes']  # leave the supplied catalogue untouched
     assert 'Listing withdrawn' in (tmp_path/'opportunities/mbl-semester.html').read_text(encoding='utf-8')
+
+
+def test_flexible_cohort_survives_registered_programme_grouping():
+    from research_school_radar.programme_evidence import extract_with_programme_evidence
+    p = page('Aalto University International Summer Research Programme 2027. Applications January 7–31, 2027. '
+             'Duration: 12 weeks June - August. Work in a research group as a research assistant. Salary 2000 EUR/month.')
+    p.source.programme_key = 'aalto-asci'
+    candidates = extract_with_programme_evidence([p], PROFILE)
+    assert len(candidates) == 1
+    assert candidates[0].identity_key == 'aalto-asci:2027'
+    assert candidates[0].start_date is None

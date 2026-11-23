@@ -40,9 +40,18 @@ def extract_with_programme_evidence(pages: list[Page], profile: dict) -> list[Ca
             continue
         root = roots[0]
         primary = extract_candidate(root, profile)
-        if primary is None or primary.start_date is None:
+        if primary is None:
             continue
-        edition = primary.start_date.year
+        if primary.start_date is not None:
+            edition = primary.start_date.year
+        else:
+            # Flexible research placements publish a cohort year and duration,
+            # rather than one shared arrival day. Preserve that explicit edition
+            # without fabricating dates or joining ambiguous/undated records.
+            years = set(re.findall(r"\b20\d{2}\b", primary.title))
+            if primary.type != "summer_research_programme" or len(years) != 1 or not primary.duration_days:
+                continue
+            edition = int(next(iter(years)))
         primary.programme_key = key
         primary.identity_key = f"{key}:{edition}"
         primary.evidence_sources = {field: root.url for fields in ROLE_FIELDS.values() for field in fields}
@@ -58,7 +67,7 @@ def extract_with_programme_evidence(pages: list[Page], profile: dict) -> list[Ca
                 continue
             if donor.end_date and primary.end_date and donor.end_date != primary.end_date:
                 continue
-            if donor.deadline and donor.deadline > primary.start_date:
+            if donor.deadline and primary.start_date and donor.deadline > primary.start_date:
                 continue
             for field in ROLE_FIELDS[role]:
                 value = getattr(donor, field)
