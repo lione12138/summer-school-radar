@@ -97,7 +97,7 @@
       "title": "Biological organization and the evolution of form",
       "title_zh": "生物组织与形态演化",
       "organizer": "FEBS Advanced Courses",
-      "organizer_zh": "FEBS高级课程",
+      "organizer_zh": "FEBS Advanced Courses",
       "summary": "Biological organization and the evolution of form Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological organization and the evolution of form 22 – 27 August 2027 | Venice, Italy C",
       "summary_zh": "生物组织与形态演化。您的浏览器不支持或已禁用JavaScript。菜单：关于、讲者、日程、注册、联系、地点。EMBO|FEBS讲座课程：生物组织与形态演化，2027年8月22日至27日，意大利威尼斯。",
       "topics": [
@@ -192,7 +192,7 @@
       "title": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines",
       "title_zh": "生物表面与界面：跨学科的应用、挑战与机遇",
       "organizer": "FEBS Advanced Courses",
-      "organizer_zh": "FEBS高级课程",
+      "organizer_zh": "FEBS Advanced Courses",
       "summary": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological surfaces and interfaces: ap",
       "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 生物表面与界面：应用",
       "topics": [
@@ -340,13 +340,10 @@
       "title": "HZDR Summer Student Program",
       "title_zh": "HZDR 暑期学生项目",
       "organizer": "Helmholtz-Zentrum Dresden-Rossendorf (HZDR)",
-      "organizer_zh": "亥姆霍兹德累斯顿罗森多夫研究中心（HZDR）",
+      "organizer_zh": "Helmholtz-Zentrum Dresden-Rossendorf (HZDR)",
       "summary": "Every summer, for eight weeks between July and September, the HZDR welcomes international students to join our research teams and contribute to their projects.",
       "summary_zh": "每年夏季7月至9月期间，HZDR欢迎国际学生进行为期八周的交流，加入我们的研究团队并为项目作出贡献。",
       "topics": [
-        "engineering"
-      ],
-      "primary_topics": [
         "engineering"
       ],
       "editions": [
@@ -409,7 +406,10 @@
         "summary": "Every summer, for eight weeks between July and September, the HZDR welcomes international students to join our research teams and contribute to their projects.",
         "summary_zh": "每年夏季7月至9月期间，HZDR欢迎国际学生进行为期八周的交流，加入我们的研究团队并为项目作出贡献。",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "engineering"
+      ]
     },
     {
       "id": "programme:6cf4be91ec7187f3",
@@ -417,7 +417,7 @@
       "title": "Introduction to metabolomics analysis",
       "title_zh": "代谢组学分析入门",
       "organizer": "EMBL-EBI Training",
-      "organizer_zh": "EMBL-EBI 培训",
+      "organizer_zh": "EMBL-EBI Training",
       "summary": "Introduction to metabolomics analysis | EMBL-EBI Training EMBL-EBI Training Live training Course at EMBL-EBI Introduction to metabolomics analysis Login Register John doe My learning My playlists My account Contact us Logout Course at EMBL-EBI Introduction to metabolomics analysi",
       "summary_zh": "代谢组学分析入门 | EMBL-EBI 培训 EMBL-EBI 培训 在 EMBL-EBI 举办的线下培训课程 代谢组学分析入门 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出登录 在 EMBL-EBI 举办的课程 代谢组学分析入门",
       "topics": [
@@ -510,11 +510,11 @@
       "id": "programme:74280eccf50ca905",
       "slug": "perimeter-undergraduate-summer-school-28ca08b8",
       "title": "Perimeter Undergraduate Summer School",
-      "title_zh": "周界本科生暑期学校",
-      "organizer": "Perimeter Undergraduate Summer School",
-      "organizer_zh": "周界本科生暑期学校",
-      "summary": "Undergraduate Summer School. Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 . Participants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and p",
-      "summary_zh": "本科生暑期学校。周界研究所将于2027年6月14日至25日举办为期两周的本科生学校。参与者将通过课程及其他特别活动（如研究人员的报告和p）了解现代理论物理的前沿课题",
+      "title_zh": "Perimeter Institute 本科生暑期学校",
+      "organizer": "Perimeter Institute",
+      "organizer_zh": "Perimeter Institute",
+      "summary": "Perimeter Institute's two-week undergraduate school covers modern theoretical physics through short courses, independent study and collaborative problem solving.",
+      "summary_zh": "Perimeter Institute 在加拿大滑铁卢举办为期两周的本科生暑期学校。参与者通过短课、自主学习和小组解题接触现代理论物理课题。",
       "topics": [
         "physics"
       ],
@@ -522,21 +522,21 @@
         {
           "id": "edition:679c254e979b78a3",
           "title": "Perimeter Undergraduate Summer School",
-          "title_zh": "周界本科生暑期学校",
+          "title_zh": "Perimeter Institute 本科生暑期学校",
           "detail_path": "opportunities/perimeter-undergraduate-summer-school-05e10293.html",
-          "official_url": "https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school",
-          "location": "North America",
-          "location_zh": "北美",
+          "official_url": "https://academicjobsonline.org/ajo/jobs/33186",
+          "location": "Waterloo, Ontario, Canada",
+          "location_zh": "加拿大安大略省滑铁卢",
           "start_date": "2027-06-14",
           "end_date": "2027-06-25",
           "deadline": "2027-01-17",
           "deadline_status": "open",
           "duration_days": 12,
           "mode": "in-person",
-          "financial_summary": "Funding or fee not stated",
-          "financial_summary_zh": "资助或费用未说明",
-          "funding_available": null,
-          "fee_eur": null,
+          "financial_summary": "Fee EUR 0 · Travel support, accommodation and meals for successful applicants.",
+          "financial_summary_zh": "差旅资助、住宿支持、餐食支持 · 金额未说明",
+          "funding_available": true,
+          "fee_eur": 0.0,
           "topics": [
             "physics"
           ],
@@ -544,8 +544,8 @@
             "physics"
           ],
           "secondary_topics": [],
-          "summary": "Undergraduate Summer School. Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 . Participants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and p",
-          "summary_zh": "本科生暑期学校。周界研究所将于2027年6月14日至25日举办为期两周的本科生学校。参与者将通过课程及其他特别活动（如研究人员的报告和p）了解现代理论物理的前沿课题",
+          "summary": "Perimeter Institute's two-week undergraduate school covers modern theoretical physics through short courses, independent study and collaborative problem solving.",
+          "summary_zh": "Perimeter Institute 在加拿大滑铁卢举办为期两周的本科生暑期学校。参与者通过短课、自主学习和小组解题接触现代理论物理课题。",
           "sessions": []
         }
       ],
@@ -553,21 +553,21 @@
       "latest_edition": {
         "id": "edition:679c254e979b78a3",
         "title": "Perimeter Undergraduate Summer School",
-        "title_zh": "周界本科生暑期学校",
+        "title_zh": "Perimeter Institute 本科生暑期学校",
         "detail_path": "opportunities/perimeter-undergraduate-summer-school-05e10293.html",
-        "official_url": "https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school",
-        "location": "North America",
-        "location_zh": "北美",
+        "official_url": "https://academicjobsonline.org/ajo/jobs/33186",
+        "location": "Waterloo, Ontario, Canada",
+        "location_zh": "加拿大安大略省滑铁卢",
         "start_date": "2027-06-14",
         "end_date": "2027-06-25",
         "deadline": "2027-01-17",
         "deadline_status": "open",
         "duration_days": 12,
         "mode": "in-person",
-        "financial_summary": "Funding or fee not stated",
-        "financial_summary_zh": "资助或费用未说明",
-        "funding_available": null,
-        "fee_eur": null,
+        "financial_summary": "Fee EUR 0 · Travel support, accommodation and meals for successful applicants.",
+        "financial_summary_zh": "差旅资助、住宿支持、餐食支持 · 金额未说明",
+        "funding_available": true,
+        "fee_eur": 0.0,
         "topics": [
           "physics"
         ],
@@ -575,8 +575,8 @@
           "physics"
         ],
         "secondary_topics": [],
-        "summary": "Undergraduate Summer School. Perimeter Institute will host a two-week undergraduate school from June 14-25, 2027 . Participants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and p",
-        "summary_zh": "本科生暑期学校。周界研究所将于2027年6月14日至25日举办为期两周的本科生学校。参与者将通过课程及其他特别活动（如研究人员的报告和p）了解现代理论物理的前沿课题",
+        "summary": "Perimeter Institute's two-week undergraduate school covers modern theoretical physics through short courses, independent study and collaborative problem solving.",
+        "summary_zh": "Perimeter Institute 在加拿大滑铁卢举办为期两周的本科生暑期学校。参与者通过短课、自主学习和小组解题接触现代理论物理课题。",
         "sessions": []
       },
       "primary_topics": [
@@ -589,7 +589,7 @@
       "title": "Physical virology: from form to function",
       "title_zh": "物理病毒学：从形态到功能",
       "organizer": "FEBS Advanced Courses",
-      "organizer_zh": "FEBS高级课程",
+      "organizer_zh": "FEBS Advanced Courses",
       "summary": "Physical virology: from form to function Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Physical virology: from form to function 13 – 18 June 2027 | Sant Feliu de Guixols, Spain Childc",
       "summary_zh": "物理病毒学：从形态到功能 您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 物理病毒学：从形态到功能 2027年6月13日至18日 | 西班牙圣费利乌德吉绍尔斯 儿童",
       "topics": [
@@ -947,7 +947,7 @@
       "title": "AMSI Winter School",
       "title_zh": "AMSI 冬季学校",
       "organizer": "Winter School 2026",
-      "organizer_zh": "2026年冬季学校",
+      "organizer_zh": "Winter School 2026",
       "summary": "Home - Winter School 2026 A FLAGSHIP EVENT OF About Timetable Public Lecture Venue Grants Apply About Timetable Public Lecture Venue Grants Apply Develop your mathematical science skills and national networks AMSI Winter School is an annual two-week event designed for postgraduat",
       "summary_zh": "首页 - 2026年冬季学校 旗舰活动 关于 日程 公开讲座 场地 资助 申请 关于 日程 公开讲座 场地 资助 申请 提升您的数学科学技能并建立全国网络 AMSI冬季学校是一年一度的为期两周的活动，面向研究生",
       "topics": [
@@ -1054,7 +1054,7 @@
       "title": "ANSTO-HZB-AONSA Neutron School",
       "title_zh": "ANSTO-HZB-AONSA 中子学校",
       "organizer": "ANSTO-HZB-AONSA Neutron School",
-      "organizer_zh": "ANSTO-HZB-AONSA 中子学校",
+      "organizer_zh": "ANSTO-HZB-AONSA Neutron School",
       "summary": "ANSTO-HZB-AONSA Neutron School 2026 | ANSTO Skip to main content Open Menu Careers Shop User access Media Centre Contact Search About Expand Locations Expand Sydney Melbourne What we do Expand Vision Our history Nuclear stewardship Partnerships FAQs Aboriginal cultural heritage H",
       "summary_zh": "ANSTO-HZB-AONSA 中子学校 2026 | ANSTO 跳至主要内容 打开菜单 招聘 商店 用户访问 媒体中心 联系 搜索 关于 展开 地点 展开 悉尼 墨尔本 我们的工作 展开 愿景 我们的历史 核管理 合作伙伴关系 常见问题 原住民文化遗产 H",
       "topics": [
@@ -1143,7 +1143,7 @@
       "title": "AstroAI Asian Network Summer School",
       "title_zh": "AstroAI 亚洲网络暑期学校",
       "organizer": "Center for Data-Driven Discovery",
-      "organizer_zh": "数据驱动发现中心",
+      "organizer_zh": "Center for Data-Driven Discovery",
       "summary": "Center for Data-Driven Discovery Skip to primary navigation Skip to content Skip to footer Center for Data-Driven Discovery Kavli IPMU, The University of Tokyo People Projects Data & Code Events Info Toggle menu On this page AstroAI Asian Network (A3 Net) Information and Registra",
       "summary_zh": "数据驱动发现中心 跳至主导航 跳至内容 跳至页脚 数据驱动发现中心 东京大学 Kavli IPMU 人员 项目 数据与代码 活动 信息 切换菜单 本页内容 AstroAI 亚洲网络（A3 Net）信息与注册",
       "topics": [
@@ -1250,7 +1250,7 @@
       "title": "Call for Applications: MyClimate Winter School January",
       "title_zh": "申请征集：MyClimate 冬季学校 1月",
       "organizer": "Danish Institute for International Studies (DIIS) and Chiang Mai University",
-      "organizer_zh": "丹麦国际问题研究所（DIIS）与清迈大学",
+      "organizer_zh": "Danish Institute for International Studies (DIIS) and Chiang Mai University",
       "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
       "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包括讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
       "topics": [
@@ -1410,7 +1410,7 @@
       "title": "CNDS/EGU Summer School",
       "title_zh": "CNDS/EGU 暑期学校",
       "organizer": "EGU Training Schools",
-      "organizer_zh": "EGU培训学校",
+      "organizer_zh": "EGU Training Schools",
       "summary": "CNDS/EGU Summer School - CNDS Svenska Menu About us Research CNDS/EGU Summer School CNDS Forum for Natural Hazards and Disasters Ongoing research projects Completed research projects CNDS Research Framework Research portraits Publications Contact Media Library CNDS Research CNDS/",
       "summary_zh": "CNDS/EGU暑期学校——CNDS Svenska 菜单 关于我们 研究 CNDS/EGU暑期学校 CNDS自然灾害与灾难论坛 进行中的研究项目 已完成的研究项目 CNDS研究框架 研究人物介绍 出版物 联系我们 媒体库 CNDS研究 CNDS/",
       "topics": [
@@ -1535,7 +1535,7 @@
       "title": "Computational and Cognitive Neuroscience — CSHA Course",
       "title_zh": "计算与认知神经科学 — CSHA 课程",
       "organizer": "Cold Spring Harbor Asia",
-      "organizer_zh": "冷泉港亚洲",
+      "organizer_zh": "Cold Spring Harbor Asia",
       "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
       "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
       "topics": [
@@ -1634,7 +1634,7 @@
       "title": "Computational Approaches to Memory and Plasticity (CAMP",
       "title_zh": "记忆与可塑性计算方法（CAMP）",
       "organizer": "IISER Pune",
-      "organizer_zh": "IISER浦那",
+      "organizer_zh": "IISER Pune",
       "summary": "CAMP | Computational Approaches to Memory and Plasticity CAMP Home Speakers Previous CAMP Schools FAQs Schedule Wiki Contact Us Menu Computational Approaches to Memory and Plasticity We invite Ph.D. students, master’s students, final-year undergraduates, and postdocs worldwide fr",
       "summary_zh": "CAMP | 记忆与可塑性计算方法 CAMP主页 演讲者 往届CAMP学校 常见问题 日程 Wiki 联系我们 菜单 记忆与可塑性计算方法 我们邀请全球的博士生、硕士生、最后一年本科生和博士后参加",
       "topics": [
@@ -1729,7 +1729,7 @@
       "title": "Computational Linguistics Fall School",
       "title_zh": "计算语言学秋季学校",
       "organizer": "University of Technology Nuremberg (UTN)",
-      "organizer_zh": "纽伦堡工业大学（UTN）",
+      "organizer_zh": "University of Technology Nuremberg (UTN)",
       "summary": "A biennial Computational Linguistics Fall School with two course weeks covering methodological and applied CL/NLP topics not typically offered in regular degree programmes.",
       "summary_zh": "一项两年一届的计算语言学秋季学校，为期两个课程周，涵盖常规学位课程中较少开设的计算语言学与自然语言处理方法及应用主题。",
       "topics": [
@@ -2227,9 +2227,9 @@
       "id": "programme:0315b5fbacd204a7",
       "slug": "exploring-your-eco-exploring-the-living-cultural-and-eco-t-fb556078",
       "title": "Exploring Your Eco – Exploring the living, cultural, and eco-tourism recreational environments of Konitsa, in northern Greece",
-      "title_zh": "探索你的生态——探索希腊北部科尼察的生活、文化和生态旅游休闲环境",
+      "title_zh": "探索你的生态 ——探索希腊北部科尼察的生活、文化与生态旅游休闲环境",
       "organizer": "Czech University of Life Sciences Prague, with Vikos-Aoos UNESCO Global Geopark and Trace Your Eco",
-      "organizer_zh": "布拉格捷克生命科学大学，与维科斯-阿奥斯联合国教科文组织世界地质公园及 Trace Your Eco 合作",
+      "organizer_zh": "Czech University of Life Sciences Prague, with Vikos-Aoos UNESCO Global Geopark and Trace Your Eco",
       "summary": "A nine-day on-site summer school in Konitsa examining the living, cultural, and eco-tourism environments of the Vikos-Aoos UNESCO Geopark through research, field activities, and participant recommendations.",
       "summary_zh": "在希腊科尼察举办的九天线下暑期学校，通过研究、田野活动和学员建议考察维科斯－奥奥斯世界地质公园的生活、文化与生态旅游环境。",
       "topics": [
@@ -2586,9 +2586,9 @@
       "id": "programme:551a5648d92c46be",
       "slug": "ieee-ras-summer-school-in-germany-bridging-ai-and-robotics-f01dd519",
       "title": "IEEE RAS Summer School in Germany: Bridging AI and Robotics",
-      "title_zh": "IEEE RAS德国暑期学校：人工智能与机器人技术的融合",
+      "title_zh": "IEEE RAS 德国暑期学校：连接人工智能与机器人技术",
       "organizer": "IEEE Robotics and Automation Society (IEEE RAS)",
-      "organizer_zh": "IEEE 机器人与自动化学会（IEEE RAS）",
+      "organizer_zh": "IEEE Robotics and Automation Society (IEEE RAS)",
       "summary": "A five-day in-person IEEE RAS summer school on cognitive robotics, bridging artificial intelligence, machine learning, perception, planning, and intelligent robotic systems.",
       "summary_zh": "IEEE RAS 举办的五天线下认知机器人暑期学校，连接人工智能、机器学习、感知、规划与智能机器人系统。",
       "topics": [
@@ -2695,7 +2695,7 @@
       "title": "IMISCOE PhD School — Regional Migration Studies: Dynamics of Human Mobility, Governance and Socioeconomic Transformations",
       "title_zh": "IMISCOE 博士学校 — 区域移民研究：人口流动动态、治理与社会经济转型",
       "organizer": "GRITIM-UPF at Universitat Pompeu Fabra in collaboration with the EuroMedMig Marie Skłodowska-Curie PhD Project",
-      "organizer_zh": "庞培法布拉大学 GRITIM-UPF 与 EuroMedMig 玛丽·斯克沃多夫斯卡-居里博士项目合作举办",
+      "organizer_zh": "GRITIM-UPF at Universitat Pompeu Fabra in collaboration with the EuroMedMig Marie Skłodowska-Curie PhD Project",
       "summary": "Research training on regional migration studies, examining human mobility, governance and socioeconomic transformations through regional and comparative perspectives.",
       "summary_zh": "区域移民研究的研究培训，通过区域和比较视角考察人口流动、治理与社会经济转型。",
       "topics": [
@@ -2873,7 +2873,7 @@
       "title": "NCTS Summer School on QFT",
       "title_zh": "NCTS 量子场论暑期学校",
       "organizer": "NCTS QFT School",
-      "organizer_zh": "NCTS 量子场论暑期学校",
+      "organizer_zh": "NCTS QFT School",
       "summary": "Summer school. Dates: 22 June 2026 to 10 July 2026. Application deadline: 20 May 2026. Free registration. In-person at NTU, Taipei.",
       "summary_zh": "暑期学校。日期：2026年6月22日至2026年7月10日。申请截止日期：2026年5月20日。免费注册。在台北NTU线下举行。",
       "topics": [],
@@ -2936,9 +2936,9 @@
       "id": "jparc-neutron-muon-school",
       "slug": "neutron-and-muon-school-japanese-language-aa1f5139",
       "title": "Neutron and Muon School (Japanese-language",
-      "title_zh": "中子与μ子学校（日语授课）",
+      "title_zh": "中子与μ子学校 （日语授课）",
       "organizer": "J-PARC Neutron and Muon School",
-      "organizer_zh": "J-PARC 中子与μ子学校",
+      "organizer_zh": "J-PARC Neutron and Muon School",
       "summary": "Research school: Neutron and Muon School 2026. Dates: 09 November 2026 to 13 November 2026. Application deadline: 30 September 2026. In-person. Fee: JPY 40,000. Teaching language: Japanese.",
       "summary_zh": "研究培训：中子与μ子学校 2026。日期：2026年11月9日至2026年11月13日。申请截止日期：2026年9月30日。线下进行。费用：40,000日元。授课语言：日语。",
       "topics": [
@@ -3612,7 +3612,7 @@
       "title": "Spring College in the Physics of Complex Systems",
       "title_zh": "复杂系统物理学春季学院",
       "organizer": "ICTP and SISSA",
-      "organizer_zh": "ICTP 与 SISSA",
+      "organizer_zh": "ICTP and SISSA",
       "summary": "The Spring College on the Physics of Complex Systems aims to expose students to a selection of topics at the forefront of research during an intensive, 4-week programme.",
       "summary_zh": "复杂系统物理学春季学院旨在通过为期4周的密集课程，让学生接触研究前沿的一系列专题。",
       "topics": [
@@ -3709,9 +3709,9 @@
       "id": "programme:387a5d8d79efdbf8",
       "slug": "stfc-summer-school-e084155d",
       "title": "STFC Summer School",
-      "title_zh": "STFC暑期学校",
+      "title_zh": "STFC 暑期学校",
       "organizer": "Keele University",
-      "organizer_zh": "基尔大学",
+      "organizer_zh": "Keele University",
       "summary": "An introductory residential astronomy summer school for postgraduate researchers, hosted by Keele University.",
       "summary_zh": "由基尔大学主办、面向研究生研究人员的入门级住宿制天文学暑期学校。",
       "topics": [
@@ -3800,7 +3800,7 @@
       "title": "Summer school DS-FOOD Design of sustainable food systems",
       "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
       "organizer": "Euroleague for Life Sciences (ELLS)",
-      "organizer_zh": "生命科学欧洲联盟（ELLS）",
+      "organizer_zh": "Euroleague for Life Sciences (ELLS)",
       "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
       "summary_zh": "在意大利 Pieve Tesino 高山研究中心举办的八天可持续食物系统设计暑期学校，包括课程、田野参访、住宿和部分补贴的晚餐。",
       "topics": [
@@ -3972,7 +3972,7 @@
       "title": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course",
       "title_zh": "脑之启迪——神经科学先进成像技术 — CSHA课程",
       "organizer": "Cold Spring Harbor Asia",
-      "organizer_zh": "冷泉港亚洲",
+      "organizer_zh": "Cold Spring Harbor Asia",
       "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
       "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先链 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
       "topics": [
@@ -4056,7 +4056,7 @@
       "title": "Training course: EUMETSAT/ECMWF NWP-SAF satellite data assimilation",
       "title_zh": "培训课程：EUMETSAT/ECMWF NWP-SAF 卫星资料同化",
       "organizer": "ECMWF Events (Indico)",
-      "organizer_zh": "ECMWF 活动（Indico）",
+      "organizer_zh": "ECMWF Events (Indico)",
       "summary": "A five-day satellite-data assimilation course combining lectures and practical work for researchers in numerical weather prediction.",
       "summary_zh": "面向数值天气预报相关科研人员的五天卫星资料同化课程，结合理论讲授和实际应用练习。",
       "topics": [
@@ -4836,7 +4836,7 @@
       "title": "Winter School on Federalism and Governance",
       "title_zh": "联邦制与治理冬季学校",
       "organizer": "Eurac Research and University of Innsbruck",
-      "organizer_zh": "Eurac Research与因斯布鲁克大学",
+      "organizer_zh": "Eurac Research and University of Innsbruck",
       "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
       "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层级治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务人士深入探讨。",
       "topics": [
