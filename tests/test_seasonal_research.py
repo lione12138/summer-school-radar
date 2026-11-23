@@ -23,7 +23,7 @@ def fixed_cohort_clock(monkeypatch):
         def today(cls):
             return cls(2026, 11, 23)
 
-    for module in ('extract', 'filter', 'models', 'publication', 'seasonal_adapters'):
+    for module in ('extract', 'filter', 'models', 'publication', 'seasonal_adapters', 'ai_home'):
         monkeypatch.setattr(f'research_school_radar.{module}.date', CohortDate)
 
 
@@ -133,6 +133,8 @@ def test_hzdr_registered_application_and_salary_evidence_are_joined():
     root = page('HZDR Summer Student Program 2027. Every summer, for eight weeks between July and September, '
                 'the HZDR welcomes students to join our research teams. Application information.', url)
     root.source.programme_key = 'hzdr-summer-student'
+    root.html = '<nav>Doctoral Researchers Toggle navigation</nav><div id="textobj">' + root.text + '</div>'
+    root.text = 'Doctoral Researchers Toggle navigation ' + root.text
     root.source.evidence_urls = {'application':'https://www.hzdr.de/db/Cms?pNid=2914',
                                 'support':'https://www.hzdr.de/db/Cms?pNid=2527'}
     app = replace(root, url=root.source.evidence_urls['application'], text='The application period starts 2 November 2026 and ends on 24 January 2027.', html='')
@@ -140,9 +142,50 @@ def test_hzdr_registered_application_and_salary_evidence_are_joined():
     c = extract_with_programme_evidence([root, app, support], PROFILE)[0]
     apply_hard_filters(c, PROFILE)
     assert c.deadline == date(2027,1,24) and c.deadline_status == 'open'
+    assert 'navigation' not in c.summary
     assert is_display_candidate(c)
     assert c.evidence_sources['deadline'] == app.url
     assert c.evidence_sources['funding_evidence'] == support.url
     assert '36' not in c.funding_evidence and 'travel' not in c.funding_scope
     no_evidence = extract_with_programme_evidence([root], PROFILE)[0]
     assert no_evidence.deadline is None and no_evidence.funding_available is None
+
+
+def test_ai_does_not_turn_flexible_research_into_a_continuous_summer_course():
+    from research_school_radar.ai_home import _enrich_candidate
+    from research_school_radar.extract import sample_candidate
+    c = sample_candidate(PROFILE)
+    c.flexible_research_dates = True
+    c.start_date = c.end_date = None
+    c.duration_days = 56
+    c.duration_evidence = 'Eight weeks between July and September.'
+    item = {'llm_extraction': {
+        'start_date': {'value':'2027-07-01','evidence_ids':['E1'],'resolved_evidence_texts':['July to September 2027']},
+        'end_date': {'value':'2027-09-30','evidence_ids':['E1'],'resolved_evidence_texts':['July to September 2027']}}}
+    from copy import deepcopy
+    ordinary = deepcopy(c)
+    ordinary.flexible_research_dates = False
+    _enrich_candidate(ordinary,item,PROFILE)
+    assert ordinary.start_date == date(2027,7,1)
+    _enrich_candidate(c,item,PROFILE)
+    assert c.start_date is None and c.end_date is None
+    assert c.duration_days == 56
+    assert c.duration_evidence == 'Eight weeks between July and September.'
+
+
+def test_advisory_status_cannot_override_an_evidenced_application_period():
+    from research_school_radar.ai_home import _enrich_candidate
+    from research_school_radar.extract import sample_candidate
+    c = sample_candidate(PROFILE)
+    c.start_date = c.end_date = None
+    c.application_opens = date(2026,11,2)
+    c.deadline = date(2027,1,24)
+    c.deadline_status = 'open'
+    c.opening_evidence = 'Application period starts 2 November 2026 and ends on 24 January 2027.'
+    item = {'llm_extraction': {'registration_status': {'value':'not_open','evidence_ids':['E1'],
+                                                      'resolved_evidence_texts':['Summer 2027 research programme.']}}}
+    _enrich_candidate(c,item,PROFILE)
+    assert c.deadline_status == 'open'
+    c.application_opens = None
+    _enrich_candidate(c,item,PROFILE)
+    assert c.deadline_status == 'not_open'

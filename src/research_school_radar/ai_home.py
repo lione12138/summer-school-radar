@@ -112,9 +112,9 @@ def _enrich_candidate(candidate: Candidate, item: dict[str, Any], profile: dict[
 
     start = _trusted_date(item, "start_date")
     end = _trusted_date(item, "end_date")
-    if candidate.start_date is None and start is not None:
+    if not candidate.flexible_research_dates and candidate.start_date is None and start is not None:
         candidate.start_date = start
-    if candidate.end_date is None and end is not None:
+    if not candidate.flexible_research_dates and candidate.end_date is None and end is not None:
         candidate.end_date = end
     if candidate.start_date is not None and candidate.end_date is not None:
         candidate.duration_days = (
@@ -137,7 +137,15 @@ def _enrich_candidate(candidate: Candidate, item: dict[str, Any], profile: dict[
     if deadline is not None and (candidate.deadline is None or candidate.deadline_status == "uncertain"):
         candidate.deadline = deadline
         candidate.deadline_evidence = _evidence(item, "application_deadline")
-    if status in {"closed", "not_open"}:
+    confirmed_application_period = (
+        candidate.application_opens is not None
+        and candidate.deadline is not None
+        and bool(candidate.opening_evidence.strip())
+        and candidate.application_opens <= candidate.deadline
+        and candidate.deadline >= date.today()
+        and candidate.deadline_status in {"open", "not_open"}
+    )
+    if status in {"closed", "not_open"} and not confirmed_application_period:
         candidate.deadline_status = status
     elif candidate.deadline_status == "uncertain" and status == "open":
         candidate.deadline_status = "open"

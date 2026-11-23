@@ -243,6 +243,8 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         )
     else:
         duration_evidence = ranges[0][2] if ranges else str(overrides.get("duration_evidence", ""))
+    if overrides.get("flexible_research_dates"):
+        duration_evidence = str(overrides.get("duration_evidence", ""))
     deadlines = _all_deadlines(text, event_start=start)
     chosen = _select_deadline(deadlines)
     override_deadline = overrides.get("deadline")
@@ -274,7 +276,9 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     topic_text = _topic_source_text(page, title_hint=str(overrides.get("jsonld_name", "")))
     topics = [topic for topic in preferred_topics if _topic_in_text(topic, topic_text)]
     from .programme_scope import is_summer_research, research_cohort_evidence
-    if is_summer_research(title_hint := (page.title + " " + text)) and not research_cohort_evidence(title_hint):
+    title_hint = page.title + " " + text
+    cohort_signals = title_hint + (" Application" if page.source.evidence_urls.get("application") else "")
+    if is_summer_research(title_hint) and not research_cohort_evidence(cohort_signals):
         return None
     programme_type = "summer_research_programme" if is_summer_research(title_hint) else _programme_type(text)
     if "funding_type" in overrides:
@@ -355,6 +359,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         title=str(overrides.get("title") or title),
         application_opens=overrides.get("application_opens"),
         opening_evidence=str(overrides.get("opening_evidence", "")),
+        flexible_research_dates=bool(overrides.get("flexible_research_dates")),
         type=programme_type,
         organizer=str(overrides["organizer"] if "organizer" in overrides else _extract_organizer(page)),
         source_layer=str(page.source.layer),

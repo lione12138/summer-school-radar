@@ -2544,14 +2544,14 @@
       "fetch_health": "healthy",
       "scanner_records": 1,
       "extracted_records": 1,
-      "public_open_records": 0,
+      "public_open_records": 1,
       "extraction_health": "records_found",
       "consecutive_empty_scans": 0
     }
   ],
   "quality": {
     "scanner_records": 223,
-    "public_open_records": 7,
+    "public_open_records": 8,
     "archive_records": 26,
     "review_records": 30,
     "missing_fields": {
@@ -3266,7 +3266,7 @@
       "HZDR Summer Student Program": {
         "scanner_records": 1,
         "extracted_records": 1,
-        "public_open_records": 0,
+        "public_open_records": 1,
         "extraction_health": "records_found"
       },
       "Hague Academy of International Law": {
@@ -3817,5 +3817,22 @@
       "Lamont-Doherty",
       "Summer School in Social Sciences Methods"
     ]
+  },
+  "release_reprocessing": {
+    "date": "2026-11-23",
+    "reason": "Re-extract HZDR/Aalto programme bodies, preserve flexible schedules and re-audit the same completed full-scan batch.",
+    "pages_fetched": [
+      "https://www.aalto.fi/en/aalto-university-science-institute-asci/aalto-university-science-institute-international-summer-research-programme",
+      "https://www.hzdr.de/db/Cms?pNid=2519",
+      "https://www.hzdr.de/db/Cms?pNid=2914",
+      "https://www.hzdr.de/db/Cms?pNid=2538",
+      "https://www.hzdr.de/db/Cms?pNid=2527"
+    ],
+    "fetched_at": "2026-11-23T15:39:16.128120+07:00",
+    "changed_identities": [
+      "aalto-asci-summer-research:2027",
+      "hzdr-summer-student:2027"
+    ],
+    "source_snapshot_commit": "8a599ec8"
   }
 }

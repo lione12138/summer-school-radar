@@ -39,6 +39,7 @@ def public_api_payload(
             {"title": c.title, "type": c.type, "application_status": "not_open",
              "application_opens": _iso(c.application_opens),
              "application_deadline": _iso(c.deadline), "duration_days": c.duration_days,
+             "flexible_research_dates": c.flexible_research_dates,
              "official_url": safe_external_url(c.source_url), "opening_evidence": c.opening_evidence}
             for c in (upcoming_candidates or []) if is_upcoming_candidate(c)
         ],
@@ -87,6 +88,7 @@ def _public_record(candidate: Candidate, programme: dict[str, Any] | None) -> di
         "start_date": _iso(candidate.start_date),
         "end_date": _iso(candidate.end_date),
         "duration_days": candidate.duration_days,
+        "flexible_research_dates": candidate.flexible_research_dates,
         "application_deadline": _iso(candidate.deadline),
         "application_status": "closed" if archived else candidate.deadline_status,
         "directory_tier": tier,

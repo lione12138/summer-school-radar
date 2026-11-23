@@ -686,3 +686,19 @@ retain evidenced seasonal cohorts, with regressions. HZDR merges its literal
 registered official application/support pages, retaining field-level source URLs.
 No support-page fetch means no financial completion; no application-page fetch
 means no invented deadline. Salary evidence does not promise full housing/travel.
+
+Final live-batch validation: the completed full scan (8a599ec8) attempted 192
+sources, fetched 175 successfully and retained 223 scanner/209 homepage records.
+After source-body cleaning and flexible-date protection, HZDR and Aalto were
+re-extracted from freshly fetched registered official pages and both passed
+whole-record DeepSeek audit without issues. The entire batch again passed AI
+output, snapshot retention and site integrity checks. Preserve the original full
+scan's coverage; release_reprocessing documents these two record corrections.
+The release contains eight open public entries and one announced Aalto call.
+The HZDR stipend amount remains unstated; only its current monthly salary offer
+is reported, with no historical daily allowance or full travel/housing promise.
+The full regression suite and added semantic/state tests pass. A dedicated regression prevents AI from turning a flexible
+summer window into a continuous course or substituting the application period
+for duration evidence.
+
+Explicit application-period evidence also takes precedence over an advisory not-open/closed suggestion while the verified call is current. A regression reproduces the HZDR status override; final verification reads the generated public API rather than an intermediate candidate list.

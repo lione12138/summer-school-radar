@@ -80,6 +80,7 @@ class Candidate:
     # can describe many distinct opportunities.
     application_opens: date | None = None
     opening_evidence: str = ""
+    flexible_research_dates: bool = False
     identity_key: str = ""
     discovery_verified: bool = False
     # Stable recurring-programme identity. One programme can have multiple

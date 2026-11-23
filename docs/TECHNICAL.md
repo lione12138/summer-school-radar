@@ -1086,3 +1086,8 @@ at least three consecutive empty scans. Daily rotation prevents starvation, and
 exact-host filtering rejects off-domain responses. These remain discovery records
 subject to normal extraction, audit and deterministic publication, with no source
 promotion. Missing search keys keep the normal safe degradation behavior.
+
+Flexible research schedules persist `flexible_research_dates`; advisory AI cannot
+fill precise start/end dates for such records. Duration evidence remains the
+literal research duration rather than an application-period date range. The
+public API exposes this date flexibility alongside the existing duration fields.

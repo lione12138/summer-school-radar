@@ -13,7 +13,11 @@ def aalto_asci(page):
     if not re.search(r"January 7[–−-]31,? 2027|7[–−-]31 Jan", t):
         return {}
     opening = "Application period: January 7–31, 2027 (strict deadline, UTC+2)"
+    summary = re.search(r"The Aalto University Science Institute.*?international community\.", t)
+    eligibility = re.search(r"Open to bachelor.{0,150}?worldwide\.", t)
     return {"title": "Aalto International Summer Research Programme 2027",
+            "summary": summary[0] if summary else "",
+            "eligibility": eligibility[0] if eligibility else "",
             "organizer": "Aalto University Science Institute (AScI)",
             "start_date": None, "end_date": None, "flexible_research_dates": True,
             "duration_days": 84, "duration_evidence": "Duration: 12 weeks June - August (flexible depending on the research group)",
@@ -30,6 +34,12 @@ def seasonal_body(page):
     from dataclasses import replace
     from bs4 import BeautifulSoup
     host = urlsplit(page.url).hostname or ""
+    if host in {"www.hzdr.de", "hzdr.de"}:
+        soup = BeautifulSoup(page.html, "html.parser")
+        body = soup.select_one("#textobj")
+        if body is not None:
+            return replace(page, html=str(body), text=body.get_text(" ", strip=True))
+        return page
     if host not in {"www.aalto.fi", "aalto.fi", "ncas.ac.uk", "www.santafe.edu", "santafe.edu"}:
         return page
     soup = BeautifulSoup(page.html, "html.parser")
@@ -71,7 +81,11 @@ def hzdr_summer(page):
     query = urlsplit(page.url).query
     if "pNid=2519" not in query or not all(x in page.text for x in ["2027", "eight weeks", "research teams"]):
         return {}
+    summary = re.search(r"Every summer,.*?their projects\.", page.text)
+    eligibility = re.search(r"The program is open to [^.]+\.", page.text)
     return {"title": "HZDR Summer Student Program 2027", "programme_confirmed": True,
+            "summary": summary[0] if summary else "",
+            "eligibility": eligibility[0] if eligibility else "",
             "organizer": "Helmholtz-Zentrum Dresden-Rossendorf (HZDR)",
             "flexible_research_dates": True, "duration_days": 56,
             "duration_evidence": "Every summer, for eight weeks between July and September, the HZDR welcomes international students to join our research teams.",
