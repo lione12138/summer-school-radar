@@ -78,3 +78,31 @@ def hzdr_summer(page):
             "location": "Dresden, Germany", "mode": "in-person",
             "fee": "", "fee_eur": None, "funding_available": None,
             "funding_type": [], "funding_scope": "", "funding_evidence": ""}
+
+
+def complete_hzdr_evidence(candidate, root, by_url):
+    """Only explicitly registered official HZDR pages may fill this cohort."""
+    if (urlsplit(root.url).hostname not in {"www.hzdr.de", "hzdr.de"}
+            or "pNid=2519" not in urlsplit(root.url).query
+            or candidate.title != "HZDR Summer Student Program 2027"):
+        return
+    app = by_url.get(root.source.evidence_urls.get("application", ""))
+    support = by_url.get(root.source.evidence_urls.get("support", ""))
+    if app:
+        match = re.search(r"application period starts (2 November 2026) and ends on (24 January 2027)", app.text, re.I)
+        if match:
+            candidate.deadline = date(2027, 1, 24)
+            candidate.application_opens = date(2026, 11, 2)
+            candidate.deadline_status = "open" if date.today() <= candidate.deadline else "closed"
+            candidate.deadline_evidence = candidate.opening_evidence = match[0]
+            candidate.application_link = app.url
+            for field in ("deadline", "deadline_status", "deadline_evidence", "application_opens", "opening_evidence", "application_link"):
+                candidate.evidence_sources[field] = app.url
+    salary = "A monthly salary, which is enough to cover your daily expenses in Dresden"
+    if support and salary in support.text:
+        candidate.funding_available = True
+        candidate.funding_type = ["salary"]
+        candidate.funding_scope = "Monthly salary covering daily expenses in Dresden; salary amount not stated."
+        candidate.funding_evidence = salary
+        for field in ("funding_available", "funding_type", "funding_scope", "funding_evidence"):
+            candidate.evidence_sources[field] = support.url

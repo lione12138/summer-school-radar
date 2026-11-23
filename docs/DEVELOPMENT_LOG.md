@@ -677,3 +677,12 @@ imported. Do not overwrite full-scan snapshots with partial probes.
 Opening-soon entries require an explicit future opening date. ESSAI/OxML notices
 without that evidence remain unresolved, so this release does not claim full
 coverage of every announced 2027 programme.
+
+Production-path replay exposed two additional narrow vocabulary/identity gates:
+semantic chunk selection still required a school/course token, and the explicit
+programme evidence join discarded cohorts without a shared start day. Both now
+retain evidenced seasonal cohorts, with regressions. HZDR merges its literal
+2026/2027 application period and non-numeric monthly-salary offer only from the
+registered official application/support pages, retaining field-level source URLs.
+No support-page fetch means no financial completion; no application-page fetch
+means no invented deadline. Salary evidence does not promise full housing/travel.

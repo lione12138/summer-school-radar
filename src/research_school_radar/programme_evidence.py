@@ -56,6 +56,8 @@ def extract_with_programme_evidence(pages: list[Page], profile: dict) -> list[Ca
         primary.identity_key = f"{key}:{edition}"
         primary.evidence_sources = {field: root.url for fields in ROLE_FIELDS.values() for field in fields}
         by_url = {p.url: p for p in group}
+        from .seasonal_adapters import complete_hzdr_evidence
+        complete_hzdr_evidence(primary, root, by_url)
         for role, url in root.source.evidence_urls.items():
             page = by_url.get(url)
             if role not in ROLE_FIELDS or page is None or not _same_edition(page, edition):

@@ -23,7 +23,7 @@ def fixed_cohort_clock(monkeypatch):
         def today(cls):
             return cls(2026, 11, 23)
 
-    for module in ('extract', 'filter', 'models', 'publication'):
+    for module in ('extract', 'filter', 'models', 'publication', 'seasonal_adapters'):
         monkeypatch.setattr(f'research_school_radar.{module}.date', CohortDate)
 
 
@@ -123,3 +123,26 @@ def test_flexible_cohort_survives_registered_programme_grouping():
     assert len(candidates) == 1
     assert candidates[0].identity_key == 'aalto-asci:2027'
     assert candidates[0].start_date is None
+
+
+
+def test_hzdr_registered_application_and_salary_evidence_are_joined():
+    from research_school_radar.programme_evidence import extract_with_programme_evidence
+    from dataclasses import replace
+    url = 'https://www.hzdr.de/db/Cms?pNid=2519'
+    root = page('HZDR Summer Student Program 2027. Every summer, for eight weeks between July and September, '
+                'the HZDR welcomes students to join our research teams. Application information.', url)
+    root.source.programme_key = 'hzdr-summer-student'
+    root.source.evidence_urls = {'application':'https://www.hzdr.de/db/Cms?pNid=2914',
+                                'support':'https://www.hzdr.de/db/Cms?pNid=2527'}
+    app = replace(root, url=root.source.evidence_urls['application'], text='The application period starts 2 November 2026 and ends on 24 January 2027.', html='')
+    support = replace(root, url=root.source.evidence_urls['support'], text='A monthly salary, which is enough to cover your daily expenses in Dresden', html='')
+    c = extract_with_programme_evidence([root, app, support], PROFILE)[0]
+    apply_hard_filters(c, PROFILE)
+    assert c.deadline == date(2027,1,24) and c.deadline_status == 'open'
+    assert is_display_candidate(c)
+    assert c.evidence_sources['deadline'] == app.url
+    assert c.evidence_sources['funding_evidence'] == support.url
+    assert '36' not in c.funding_evidence and 'travel' not in c.funding_scope
+    no_evidence = extract_with_programme_evidence([root], PROFILE)[0]
+    assert no_evidence.deadline is None and no_evidence.funding_available is None
