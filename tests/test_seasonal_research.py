@@ -1,5 +1,6 @@
 from datetime import date
 from pathlib import Path
+import pytest
 from research_school_radar.cli import _load_sources
 from research_school_radar.models import Page, Source
 from research_school_radar.extract import extract_candidate
@@ -13,6 +14,17 @@ from research_school_radar.search import SearchResult
 from research_school_radar.site_home_page import render_site
 
 PROFILE = {'hard_filters': {'minimum_duration_days': 4}, 'financial_access': {'maximum_unfunded_fee_eur': 400}}
+
+
+@pytest.fixture(autouse=True)
+def fixed_cohort_clock(monkeypatch):
+    class CohortDate(date):
+        @classmethod
+        def today(cls):
+            return cls(2026, 11, 23)
+
+    for module in ('extract', 'filter', 'models', 'publication'):
+        monkeypatch.setattr(f'research_school_radar.{module}.date', CohortDate)
 
 
 def page(text, url='https://www.aalto.fi/en/international-summer-research-programme'):

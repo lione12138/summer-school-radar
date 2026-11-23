@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from datetime import date
 from urllib.parse import urlsplit
 
 from .models import Candidate
@@ -180,7 +181,6 @@ def fee_per_day(candidate: Candidate) -> float:
 
 def is_upcoming_candidate(candidate: Candidate) -> bool:
     """A separate announced-call tier; never an open recommendation or RSS item."""
-    from datetime import date
     from .programme_scope import excluded_semester
     if (excluded_semester(candidate.title) or candidate.source_conflicts
             or _aggregator_source(candidate) or candidate.is_online_only

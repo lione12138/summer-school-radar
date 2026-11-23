@@ -365,7 +365,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         end_date=end,
         duration_days=duration_days,
         deadline=deadline,
-        deadline_status="not_open" if overrides.get("application_opens") and overrides["application_opens"] > date.today() else overrides.get("deadline_status") or _deadline_status_from_text(text, deadline, as_of=as_of),
+        deadline_status="not_open" if overrides.get("application_opens") and overrides["application_opens"] > (as_of or date.today()) else overrides.get("deadline_status") or _deadline_status_from_text(text, deadline, as_of=as_of),
         funding_available=funding_available,
         funding_type=funding_types,
         funding_evidence=funding_evidence,
