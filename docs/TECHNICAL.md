@@ -1063,3 +1063,26 @@ refreshes. Such records enter review and cannot appear in any public tier. Audit
 evidence selection retains distinct windows and organizer/eligibility signals.
 Provider/JSON extraction failures are not reused as successful cache entries;
 record-audit JSON retries keep the same evidence and request a valid named schema.
+
+## Seasonal research cohorts and announced calls (23 November 2026)
+
+`programme_scope.py` shares narrow summer student/research programme vocabulary.
+Generic internships remain outside discovery; extraction requires a seasonal
+cohort, research-group/project, institutional, duration and application signals.
+Semester programmes are excluded in extraction, filtering and public tiers.
+Aalto and HZDR have explicit source entries; flexible eight/twelve-week research
+placements retain stated duration without inventing exact event dates.
+
+Announced calls use `application_opens` and literal `opening_evidence`, preserving
+both in snapshot serialization. The separate homepage Opening soon section
+requires future opening/deadline evidence, official provenance, acceptable mode
+and duration, and no other hard failures. It does not change open counts or RSS.
+Only an explicitly evidenced opening date is supported in this release; an
+announcement without one stays in review. Status refresh never opens an old call
+solely because its expected opening date arrived; a fresh official scan confirms it.
+
+Bounded discovery reserves up to four of its existing 24 queries for sources with
+at least three consecutive empty scans. Daily rotation prevents starvation, and
+exact-host filtering rejects off-domain responses. These remain discovery records
+subject to normal extraction, audit and deterministic publication, with no source
+promotion. Missing search keys keep the normal safe degradation behavior.

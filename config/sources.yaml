@@ -915,7 +915,7 @@ sources:
     keywords: [geoscience, climate, hydrology, ocean, atmospheric science, short course]
     notes: American Geophysical Union. Direct event paths 404 for scripted requests; the homepage links current meetings and courses.
   - name: NCAS
-    url: https://ncas.ac.uk/
+    url: https://ncas.ac.uk/study-with-us/summer-training-in-observation-research-and-modelling/
     layer: 1.5
     region: UK
     source_type: research_centre
@@ -1068,7 +1068,7 @@ sources:
     keywords: [cybersecurity, security, privacy, network security]
     notes: Austrian research centre for information security; security training, schools, and events.
   - name: Santa Fe Institute
-    url: https://www.santafe.edu/engage/learn/schools
+    url: https://www.santafe.edu/engage/learn/programs/sfi-complex-systems-summer-school
     layer: 1.5
     region: North America
     source_type: research_institute
@@ -1488,3 +1488,27 @@ sources:
     keywords: [astronomy, astrophysics, cosmology]
     notes: Official recurring Canary Islands astrophysics school directory. Follow the edition linked by IAC, keeping expired editions out of open listings. Use validated system certificate trust for the meetings host; fees and support must be established separately for each edition.
     notes_zh: 加那利群岛天体物理学校官方长期目录。跟踪 IAC 链接的当届页面，已截止届次不进入开放目录。会议主机使用系统证书信任并保留证书验证；各届费用及资助分别核实。
+
+  - name: Aalto AScI Summer Research Programme
+    url: https://www.aalto.fi/en/aalto-university-science-institute-asci/aalto-university-science-institute-international-summer-research-programme
+    layer: 1
+    region: continental Europe
+    source_type: research_training_provider
+    programme_key: aalto-asci-summer-research
+    keywords: [interdisciplinary research, engineering, science]
+    notes: Official seasonal research cohort. Applications open 7 January 2027; twelve-week research dates are flexible by group. Salary and limited travel bonus do not imply free housing.
+    notes_zh: 官方暑期科研批次。2027 年 1 月 7 日开放申请；十二周研究日期按课题组安排。薪资及有限旅行补贴不代表提供免费住宿。
+
+  - name: HZDR Summer Student Program
+    url: https://www.hzdr.de/db/Cms?pNid=2519
+    layer: 1
+    region: continental Europe
+    source_type: research_training_provider
+    programme_key: hzdr-summer-student
+    evidence_urls:
+      application: https://www.hzdr.de/db/Cms?pNid=2914
+      schedule: https://www.hzdr.de/db/Cms?pNid=2538
+      support: https://www.hzdr.de/db/Cms?pNid=2527
+    keywords: [physics, materials science, life sciences, engineering]
+    notes: Official eight-week seasonal research cohort. Join current application, dates and programme support evidence; never inherit historical daily allowances or infer travel reimbursement.
+    notes_zh: 官方八周暑期科研批次。结合当届申请、日期和项目支持证据核实；不得沿用往年日津贴或推断报销差旅。

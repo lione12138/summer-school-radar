@@ -12,7 +12,9 @@ from .date_extraction import _safe_parse_date
 
 # The radar targets seasonal schools and short courses. Generic conference
 # workshops are intentionally excluded (see is_excluded_programme).
-OPPORTUNITY_TERMS = [
+from .programme_scope import SUMMER_RESEARCH_TERMS, excluded_semester
+
+OPPORTUNITY_TERMS = [*SUMMER_RESEARCH_TERMS, "summer training in observation",
     "summer school",
     "summerschool",
     "winter school",
@@ -94,6 +96,8 @@ def is_excluded_programme(text: str) -> bool:
     """True for programme types the radar never reports (degree recruitment,
     pure language courses)."""
     lowered = text.lower()
+    if excluded_semester(text):
+        return True
     if any(term in lowered for term in DEGREE_RECRUITMENT_TERMS):
         return True
     if re.search(r"\b(?:full[- ]time\s+)?degree programmes?\b|\b(?:full[- ]time\s+)?degree programs?\b", lowered):

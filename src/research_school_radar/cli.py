@@ -222,7 +222,21 @@ def run_scan(
             query_config = load_yaml(config_dir / "queries.yaml")
             queries = [q.replace("{year}", str(date.today().year)).replace("{next_year}", str(date.today().year + 1))
                        for q in _flatten_queries(query_config.get("queries", {}))][:24]
+            from .empty_source_recovery import recovery_queries, same_host_results
+            recovery_plan = recovery_queries(sources, previous_manifest)
+            # Share the existing 24-query budget; recovery never promotes a domain.
+            queries = queries[:24 - len(recovery_plan)]
             search_results, search_errors = run_discovery_queries(queries)
+            recovery_result_count = 0
+            for recovery_source, recovery_query in recovery_plan:
+                recovered, recovery_errors = run_discovery_queries([recovery_query])
+                recovered = same_host_results(recovery_source, recovered)
+                recovery_result_count += len(recovered)
+                search_results.extend(recovered)
+                search_errors.extend(recovery_errors)
+                queries.append(recovery_query)
+            discovery_stats["empty_source_recovery_queries"] = len(recovery_plan)
+            discovery_stats["empty_source_recovery_results"] = recovery_result_count
             leads = aggregator_discovery_leads(search_results)
             resolution_queries = official_resolution_queries(leads)
             resolved_results, resolution_errors = run_discovery_queries(resolution_queries)

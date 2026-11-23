@@ -33,6 +33,7 @@ _AGGREGATOR_HOSTS = {
     "study.eu",
 }
 _PROGRAMME_RE = re.compile(
+    r"\bsummer (?:student|research(?: internship)?) program(?:me)?\b|\bsummer training in observation\b|"
     r"\b(summer|winter|spring|autumn|fall|seasonal|training|field|doctoral|research) school\b|"
     r"\b(short|advanced) course\b|\b(summer|winter) institute\b|\bspring college\b|\bphd school\b",
     flags=re.IGNORECASE,

@@ -8,6 +8,7 @@ from .financial_normalization import financial_terms
 from .programme_catalog import edition_identity, programme_path
 from .publication import (
     is_archive_candidate,
+    is_upcoming_candidate,
     is_found_opportunity,
     is_verified_self_funded,
 )
@@ -21,6 +22,7 @@ from .urls import safe_external_url
 def public_api_payload(
     candidates: list[Candidate],
     programme_by_edition: dict[str, dict[str, Any]] | None = None,
+    *, upcoming_candidates: list[Candidate] | None = None,
 ) -> dict[str, Any]:
     """Return the stable, presentation-safe subset published as Summa's API.
 
@@ -33,6 +35,13 @@ def public_api_payload(
         "_attribution": "Summa",
         "_canonical": SITE_URL,
         "generated": date.today().isoformat(),
+        "upcoming_calls": [
+            {"title": c.title, "type": c.type, "application_status": "not_open",
+             "application_opens": _iso(c.application_opens),
+             "application_deadline": _iso(c.deadline), "duration_days": c.duration_days,
+             "official_url": safe_external_url(c.source_url), "opening_evidence": c.opening_evidence}
+            for c in (upcoming_candidates or []) if is_upcoming_candidate(c)
+        ],
         "opportunities": [
             _public_record(
                 candidate,

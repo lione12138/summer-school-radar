@@ -21,6 +21,7 @@ It targets short research-training formats such as:
 - field schools
 - doctoral/research schools
 - short or advanced courses
+- official fixed-cohort summer student/research programmes with research-group/project, application and schedule evidence
 
 It does **not** target:
 
@@ -29,6 +30,7 @@ It does **not** target:
 - PhD positions
 - full degree programmes
 - generic study-abroad marketing pages
+- ordinary company internships and semester programmes
 
 Precision is more important than recall. Near-matches must not be presented as fully qualified opportunities.
 

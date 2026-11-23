@@ -121,6 +121,8 @@ def record_context(candidate: Candidate) -> dict[str, Any]:
             for session in candidate.sessions
         ],
         "deadline": _iso(candidate.deadline),
+        "application_opens": candidate.application_opens.isoformat() if candidate.application_opens else None,
+        "opening_evidence": candidate.opening_evidence,
         "deadline_status": candidate.deadline_status,
         "fee": candidate.fee,
         "fee_eur": candidate.fee_eur,

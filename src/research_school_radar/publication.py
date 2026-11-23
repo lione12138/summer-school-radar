@@ -38,6 +38,9 @@ _GENERIC_TITLE_RE = re.compile(
 
 
 def is_public_candidate(candidate: Candidate) -> bool:
+    from .programme_scope import excluded_semester
+    if excluded_semester(candidate.title):
+        return False
     if candidate.source_conflicts or _aggregator_source(candidate):
         return False
     if candidate.source_layer == "discovery" and candidate.discovery_verified is not True:
@@ -101,6 +104,9 @@ def is_found_opportunity(candidate: Candidate) -> bool:
     courses to bypass the self-funded affordability ceiling. It is deliberately
     excluded from recommendation counts and RSS.
     """
+    from .programme_scope import excluded_semester
+    if excluded_semester(candidate.title):
+        return False
     if candidate.source_conflicts or _aggregator_source(candidate) or candidate.fully_qualified or is_verified_self_funded(candidate):
         return False
     if candidate.is_past or candidate.is_online_only:
@@ -136,6 +142,9 @@ def is_archive_candidate(candidate: Candidate) -> bool:
     The event itself may be upcoming, ongoing, or past; only the application is
     necessarily closed. Entries never enter current counts or RSS.
     """
+    from .programme_scope import excluded_semester
+    if excluded_semester(candidate.title):
+        return False
     if candidate.source_conflicts or _aggregator_source(candidate) or not candidate.is_past or candidate.deadline_status == "not_open" or candidate.is_online_only:
         return False
     if not has_meaningful_title(candidate.title):
@@ -167,3 +176,27 @@ def fee_per_day(candidate: Candidate) -> float:
     if candidate.fee_eur is None or not candidate.duration_days:
         return float("inf")
     return candidate.fee_eur / candidate.duration_days
+
+
+def is_upcoming_candidate(candidate: Candidate) -> bool:
+    """A separate announced-call tier; never an open recommendation or RSS item."""
+    from datetime import date
+    from .programme_scope import excluded_semester
+    if (excluded_semester(candidate.title) or candidate.source_conflicts
+            or _aggregator_source(candidate) or candidate.is_online_only
+            or candidate.deadline_status != "not_open"
+            or not has_meaningful_title(candidate.title)):
+        return False
+    if candidate.source_layer not in {"1", "1.5"}:
+        return False
+    if not candidate.application_opens or candidate.application_opens <= date.today() or not candidate.opening_evidence:
+        return False
+    if not candidate.deadline or candidate.deadline < candidate.application_opens:
+        return False
+    if candidate.start_date and candidate.deadline > candidate.start_date:
+        return False
+    if candidate.mode not in {"in-person", "hybrid"} or not candidate.duration_days or candidate.duration_days < 4:
+        return False
+    if any(f != "applications are not open yet" for f in candidate.failed_hard_conditions):
+        return False
+    return bool(safe_external_url(candidate.source_url))

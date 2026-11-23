@@ -41,6 +41,15 @@ def withdraw_previous_editions(
         write_withdrawn_page(output_dir, item["detail_path"], only_existing=True)
     if not previous:
         return previous
+    # Scope changes must also reach retained history when no current scan
+    # record exists; otherwise an excluded semester remains indexed forever.
+    from .programme_scope import excluded_semester
+    rejected.update(
+        str(edition.get("id"))
+        for programme in previous.get("programmes", [])
+        for edition in programme.get("editions", [])
+        if excluded_semester(str(edition.get("title", programme.get("title", ""))))
+    )
     payload = deepcopy(previous)
     kept = []
     for programme in payload.get("programmes", []):

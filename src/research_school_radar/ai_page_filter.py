@@ -12,6 +12,7 @@ from .utils import clean_space
 
 
 _PROGRAMME_RE = re.compile(
+    r"\bsummer (?:student|research(?: internship)?) program(?:me)?\b|\bsummer training in observation\b|"
     r"\b(summer|winter|spring|autumn|fall|seasonal|training|field|doctoral|research) school\b|"
     r"\b(short|advanced) course\b|\b(summer|winter) institute\b",
     flags=re.IGNORECASE,
@@ -108,7 +109,7 @@ def llm_page_rejection_reason(
 
 
 def _candidate_is_past(candidate: Candidate, today: date) -> bool:
-    if candidate.deadline_status in {"closed", "not_open"}:
+    if candidate.deadline_status == "closed":
         return True
     if candidate.deadline is not None:
         return candidate.deadline < today

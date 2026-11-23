@@ -656,3 +656,24 @@ Release validation also reproduced the pre-existing 18 November CI failure in
 The fixture inherited rolling sample evidence whose year changed, so its fixed
 2026 suggestion stopped citing a valid year. Supply explicit 2026 deadline
 evidence and a fixed audit date; keep production evidence-year validation intact.
+
+# 2026-11-23: seasonal programme recall and empty-source recovery
+
+Reproduced Aalto being rejected by doctoral-admission navigation; scope its body
+before classification. Add conservative summer research taxonomy, explicit opening
+metadata, an isolated announced-call section and two-category browsing. Sources
+with three empty scans get a rotating four-query same-host recovery allocation
+within the existing budget. Recovery responses are untrusted discovery inputs.
+
+Live official probes identified two affordability regressions: NCAS STORM parsed
+its GBP 50 cancellation fee as tuition; Santa Fe CSSS missed USD 4500/6000 tuition.
+Use specific evidence adapters and negative-publication regression cases. Point
+these existing sources at their dedicated programme pages. Aalto retains its
+flexible 12-week period rather than fabricating June/August dates; HZDR's official
+page states eight weeks, with application/schedule/support pages followed as
+registered evidence. No old EUR daily allowance or third-party travel claim is
+imported. Do not overwrite full-scan snapshots with partial probes.
+
+Opening-soon entries require an explicit future opening date. ESSAI/OxML notices
+without that evidence remain unresolved, so this release does not claim full
+coverage of every announced 2027 programme.

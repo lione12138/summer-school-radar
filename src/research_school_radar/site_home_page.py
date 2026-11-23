@@ -9,6 +9,7 @@ from .models import Candidate
 from .programme_catalog import edition_identity
 from .publication import (
     is_archive_candidate,
+    is_upcoming_candidate,
     is_found_opportunity,
     is_public_candidate,
     is_verified_self_funded,
@@ -308,6 +309,7 @@ def render_site(
         regular_section=_found_section(regular_rows) if regular_rows else "",
         archive_section=_archive_section(archive_rows, len(archive)) if archive_rows else "",
         topic_links=topic_links_html,
+        upcoming_section=render_template("home/upcoming.html", candidates=[c for c in candidates if is_upcoming_candidate(c)]),
         pagination=render_pagination(),
         notes_section=_notes_section(public_notes) if public_notes else "",
         subscribe_section=_subscribe_section(site_config or {}),
@@ -607,6 +609,7 @@ def _row_attrs(candidate: Candidate, status: str | None = None) -> dict[str, str
         ]
     ).lower()
     attrs = {
+        "data-programme-kind": "summer-research" if candidate.type == "summer_research_programme" else "research-school",
         "data-status": status,
         "data-status-label-en": status_en,
         "data-status-label-zh": status_cn,

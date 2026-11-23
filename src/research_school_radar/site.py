@@ -233,7 +233,7 @@ def write_site(
     write_text_atomic(
         public_api_dir / "opportunities.json",
         json.dumps(
-            public_api_payload(detail_candidates, programme_by_edition),
+            public_api_payload(detail_candidates, programme_by_edition, upcoming_candidates=homepage_candidates),
             indent=2,
             ensure_ascii=False,
         ),

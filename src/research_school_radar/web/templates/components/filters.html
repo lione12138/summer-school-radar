@@ -5,6 +5,14 @@
   </div>
   <section class="filters" id="opportunity-filters">
     <div class="filter-group">
+      <label for="filter-kind"><span class="lang-en" lang="en">Programme type</span><span class="lang-zh" lang="zh">项目类型</span></label>
+      <select id="filter-kind">
+        <option value="" data-label-en="All programme types" data-label-zh="所有项目类型">All programme types</option>
+        <option value="research-school" data-label-en="Research schools and courses" data-label-zh="科研学校与短期课程">Research schools and courses</option>
+        <option value="summer-research" data-label-en="Summer research programmes" data-label-zh="暑期科研项目">Summer research programmes</option>
+      </select>
+    </div>
+    <div class="filter-group">
       <label for="filter-search" data-i18n="filter.search">Search</label>
       <input id="filter-search" type="search" placeholder="Title, organizer, location" data-i18n-placeholder="filter.search.placeholder">
     </div>

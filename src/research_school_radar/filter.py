@@ -8,9 +8,12 @@ from .utils import DISPLAY_MIN_DURATION_DAYS
 
 
 def apply_hard_filters(candidate: Candidate, profile: dict) -> Candidate:
+    from .programme_scope import excluded_semester
     hard = profile.get("hard_filters", {})
     failed: list[str] = []
     recommendation_failed: list[str] = []
+    if excluded_semester(candidate.title):
+        failed.append("semester programme is outside research-training scope")
     if candidate.source_conflicts:
         failed.append("official source contains conflicting programme facts")
 

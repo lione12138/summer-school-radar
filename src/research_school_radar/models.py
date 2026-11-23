@@ -78,6 +78,8 @@ class Candidate:
     # Stable opportunity identity supplied by structured collectors. This is
     # deliberately separate from source/application URLs: one catalogue page
     # can describe many distinct opportunities.
+    application_opens: date | None = None
+    opening_evidence: str = ""
     identity_key: str = ""
     discovery_verified: bool = False
     # Stable recurring-programme identity. One programme can have multiple

@@ -4,9 +4,11 @@
 [![License: AGPL v3](https://img.shields.io/badge/Code-AGPL--3.0-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-green.svg)](#license--reuse)
 
-An open-source, discipline-agnostic scanner for high-quality research training opportunities — summer schools, winter schools, training schools, field schools, and short courses. Subject area is never an eligibility gate.
+An open-source, discipline-agnostic scanner for high-quality research training opportunities — summer schools, winter schools, training schools, field schools, short courses, and structured summer research cohorts. Subject area is never an eligibility gate.
 
 It is a fixed trusted-source scanner with rule-based extraction and transparent per-field evidence — not a fully automatic all-web radar. It scans a curated registry of trusted academic sources and extracts deadline / funding / fee / duration evidence together with the supporting text. Unresolved records remain available for maintainer audit; the public site is fail-closed on deadline, duration, mode, title, and link safety. Financial accessibility controls recommendation status, while a narrowly defined ordinary directory can list a current official programme without making a funding claim.
+
+Announced calls with verified future opening dates appear separately under **Opening soon**. Research-school and summer-research filters keep the two formats distinct; ordinary internships and semester programmes are excluded.
 
 **Live site:** <https://lione12138.github.io/summer-school-radar/>
 

@@ -16,7 +16,7 @@ def candidate_to_dict(candidate: Candidate) -> dict[str, Any]:
     raw = asdict(candidate)
     for key in _RICH_TEXT_FIELDS:
         raw[key] = html_to_text(str(raw.get(key, "")))
-    for key in ["start_date", "end_date", "deadline", "first_seen"]:
+    for key in ["start_date", "end_date", "deadline", "first_seen", "application_opens"]:
         value = raw[key]
         raw[key] = value.isoformat() if value else None
     raw["sessions"] = [
@@ -65,7 +65,7 @@ def _coerce_candidate_value(name: str, value: Any) -> Any:
         return normalize_detail_sections(value)
     if name == "topic_evidence":
         return {str(key): str(text) for key, text in value.items()} if isinstance(value, dict) else {}
-    if name in {"start_date", "end_date", "deadline", "first_seen"}:
+    if name in {"start_date", "end_date", "deadline", "first_seen", "application_opens"}:
         return coerce_date(value)
     if name in {
         "funding_type",

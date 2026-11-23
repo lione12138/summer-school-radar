@@ -199,6 +199,8 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     page = programme_body(page)
     from .us_school_adapters import school_body
     page = school_body(page)
+    from .seasonal_adapters import seasonal_body
+    page = seasonal_body(page)
     overrides = resolve_overrides(page)
     if (
         not _has_opportunity_signal(page.text)
@@ -232,6 +234,8 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     session_end = max((session.end_date for session in sessions), default=None)
     start = overrides.get("start_date") or session_start or (ranges[0][0] if ranges else None)
     end = overrides.get("end_date") or session_end or (ranges[0][1] if ranges else None)
+    if overrides.get("flexible_research_dates"):
+        start = end = None
     if sessions:
         duration_evidence = str(overrides.get("duration_evidence", "")) or "; ".join(
             f"{session.name}: {session.start_date.isoformat()} to {session.end_date.isoformat()}"
@@ -263,13 +267,16 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     # an exact single range looks like one opportunity.
     event_count = 1 if structured_dates else max(len(ranges), len(jsonld))
     supplemental_application_page = _applications_not_open(text) or bool(overrides.get("fee") or _extract_fee(text))
-    if event_count >= 3 or (deadline is None and event_count != 1 and not supplemental_application_page):
+    if (event_count >= 3 and not overrides.get("flexible_research_dates")) or (deadline is None and event_count != 1 and not supplemental_application_page and not overrides.get("flexible_research_dates")):
         return None
 
     preferred_topics = profile.get("preferred_topics", [])
     topic_text = _topic_source_text(page, title_hint=str(overrides.get("jsonld_name", "")))
     topics = [topic for topic in preferred_topics if _topic_in_text(topic, topic_text)]
-    programme_type = _programme_type(text)
+    from .programme_scope import is_summer_research, research_cohort_evidence
+    if is_summer_research(title_hint := (page.title + " " + text)) and not research_cohort_evidence(title_hint):
+        return None
+    programme_type = "summer_research_programme" if is_summer_research(title_hint) else _programme_type(text)
     if "funding_type" in overrides:
         funding_types = overrides["funding_type"]
     else:
@@ -330,6 +337,8 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         else _duration_days(start, end)
     )
 
+    duration_days = overrides.get("duration_days", duration_days)
+
     # Transparent confidence: the fraction of the four high-risk fields that were
     # resolved. This is field completeness, not a calibrated probability that
     # the values are correct or a measure of opportunity quality.
@@ -343,7 +352,9 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
     )
 
     return Candidate(
-        title=title,
+        title=str(overrides.get("title") or title),
+        application_opens=overrides.get("application_opens"),
+        opening_evidence=str(overrides.get("opening_evidence", "")),
         type=programme_type,
         organizer=str(overrides["organizer"] if "organizer" in overrides else _extract_organizer(page)),
         source_layer=str(page.source.layer),
@@ -354,7 +365,7 @@ def extract_candidate(page: Page, profile: dict, *, as_of: date | None = None) -
         end_date=end,
         duration_days=duration_days,
         deadline=deadline,
-        deadline_status=overrides.get("deadline_status") or _deadline_status_from_text(text, deadline, as_of=as_of),
+        deadline_status="not_open" if overrides.get("application_opens") and overrides["application_opens"] > date.today() else overrides.get("deadline_status") or _deadline_status_from_text(text, deadline, as_of=as_of),
         funding_available=funding_available,
         funding_type=funding_types,
         funding_evidence=funding_evidence,

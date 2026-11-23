@@ -4,6 +4,11 @@
 # must pass deterministic pre-fetch gates and remain labelled as discovery
 # sources until an official programme page is fetched and validated.
 queries:
+  seasonal_research:
+    - '"summer student program" research institute application salary'
+    - '"summer research programme" university application stipend'
+    - '"summer research program" undergraduate research group funded'
+    - '"summer research internship programme" university deadline'
   quality:
     - '"summer school" "applications open" "travel grant" PhD'
     - '"summer school" scholarship "application deadline" researchers'
