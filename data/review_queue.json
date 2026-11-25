@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-23",
+  "generated": "2026-11-25",
   "review_queue": [
     {
       "title": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes",
@@ -190,62 +190,6 @@
       }
     },
     {
-      "title": "Footer Ranking Menu",
-      "url": "https://www.politics.ox.ac.uk/how-apply-and-fees",
-      "organizer": "Oxford Spring School",
-      "source_layer": "1.5",
-      "location": "UK",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": "2027-01-15",
-      "deadline_status": "open",
-      "financial_access_status": "funded",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "AI",
-        "data analysis",
-        "social science"
-      ],
-      "needs_review": [
-        "duration is uncertain"
-      ],
-      "confidence": 0.75,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.75,
-      "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "offered",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "AI": "afternoon teaching sessions (depending on the course selected), AI in Social Research Seminars, Academic Talk, lunch and refreshments throughout the week, informal pu",
-        "data analysis": "ence background to apply. We also offer a non-advanced course - ‘Data Analysis for the Social Sciences’ - for those with little or no experience in quantitative methods. Once you",
-        "social science": "iety of research skills; therefore, we welcome students from any social science background to apply. We also offer a non-advanced course - ‘Data Analysis for the Social Sciences’"
-      },
-      "evidence": {
-        "deadline": "application deadline is 23:59 (GMT) Friday 15 January 2027",
-        "duration": "",
-        "fee": "",
-        "funding": "We are unable to offer bursaries, except for current DPIR DPhil students.",
-        "mode": "In Person In-person: The fee for a single course is £1,075"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
       "title": "Scholarships & Travel Grants",
       "url": "https://www.archaeological.org/grant/waldbaum-scholarship/",
       "organizer": "Archaeological Institute of America",
@@ -387,6 +331,64 @@
       }
     },
     {
+      "title": "Footer Ranking Menu",
+      "url": "https://www.politics.ox.ac.uk/how-apply-and-fees",
+      "organizer": "Oxford Spring School",
+      "source_layer": "1.5",
+      "location": "UK",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2027-01-15",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "AI",
+        "data analysis",
+        "social science"
+      ],
+      "needs_review": [
+        "conditional support needs coverage and eligibility review",
+        "duration is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "conditional",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "AI": "afternoon teaching sessions (depending on the course selected), AI in Social Research Seminars, Academic Talk, lunch and refreshments throughout the week, informal pu",
+        "data analysis": "ence background to apply. We also offer a non-advanced course - ‘Data Analysis for the Social Sciences’ - for those with little or no experience in quantitative methods. Once you",
+        "social science": "iety of research skills; therefore, we welcome students from any social science background to apply. We also offer a non-advanced course - ‘Data Analysis for the Social Sciences’"
+      },
+      "evidence": {
+        "deadline": "application deadline is 23:59 (GMT) Friday 15 January 2027",
+        "duration": "",
+        "fee": "",
+        "funding": "We were offering a limited number of bursaries to current DPhil students whose study would benefit from attending Oxford Spring School, however, please be advised these places have now been taken up.",
+        "mode": "In Person In-person: The fee for a single course is £1,075"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
       "title": "MiNaPOLL Winter School 2027 on New Frontiers in Micro- and Nanoplastic Pollution",
       "url": "https://szn.it/it/formazione/advanced-courses-summer-schools/minapoll-winter-school-2027",
       "organizer": "Stazione Zoologica",
@@ -431,6 +433,59 @@
       "evidence": {
         "deadline": "Application deadline: December 10th 2026",
         "duration": "February 23rd to 26th 2027",
+        "fee": "",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Join us at IBRO 2027 World Congress",
+      "url": "https://ibro.org/",
+      "organizer": "IBRO",
+      "source_layer": "2",
+      "location": "global",
+      "dates": {
+        "start": "2027-09-13",
+        "end": "2027-09-16",
+        "duration_days": 4
+      },
+      "deadline": "2027-01-25",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "neuroscience"
+      ],
+      "needs_review": [
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "neuroscience": "Home - IBRO Grants Browse our neuroscience-focused funding opportunities: benefit from IBRO’s support for career development and knowledge exc"
+      },
+      "evidence": {
+        "deadline": "Application deadline: 25 January 2027 (other dates listed: 2027-01-15)",
+        "duration": "13 Sep 2027 - 16 Sep 2027",
         "fee": "",
         "funding": "",
         "mode": ""
@@ -595,7 +650,7 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [],
-        "chinese_summary": "NCAS气候建模暑期学校，面向英国及国际博士后研究人员和博士生，提供气候模型科学原理、数值方法、Python与Julia建模实践及模拟分析等培训。申请即将开放。",
+        "chinese_summary": "NCAS气候建模暑期学校，面向英国及国际博士后研究人员和博士生，申请现已开放。课程涵盖气候模型科学原理、气候科学各领域联系、使用Julia模型运行和分析大气动力学模拟的实践经验，以及气候模型的设计、实现和运行。申请者需具备Python编程（含matplotlib和NumPy）及数学基础，熟悉Julia为加分项但非必需。",
         "extracted_deadline": "",
         "extracted_fee": "",
         "extracted_funding": "",
@@ -850,6 +905,137 @@
           "fee": "HTML “` Registration PhD Students €500 Other Participants €800 The course is free of charge for PhD students enrolled at the University of Parma.",
           "funding": ""
         }
+      }
+    },
+    {
+      "title": "Perimeter Undergraduate Summer School",
+      "url": "https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school",
+      "organizer": "Perimeter Institute",
+      "source_layer": "1",
+      "location": "Waterloo, Ontario, Canada",
+      "dates": {
+        "start": "2027-06-14",
+        "end": "2027-06-25",
+        "duration_days": 12
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "Free summer school",
+      "fee_eur": 0.0,
+      "topics": [
+        "physics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "in-person status is uncertain"
+      ],
+      "confidence": 0.25,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "Free summer school",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "offered",
+        "support_scope": "Travel support, accommodation and meals for successful applicants.",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "offered",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "benefit_facts": [
+        {
+          "benefit": "travel",
+          "status": "covered",
+          "evidence": "Travel support",
+          "source_url": "https://perimeterinstitute.ca/undergraduate-summer-programs"
+        }
+      ],
+      "topic_evidence": {
+        "physics": "pants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and panel discussio"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "June 14-25, 2027",
+        "fee": "There is no fee for the summer school.",
+        "funding": "Travel support, accommodation, and food are provided for successful applicants.",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [],
+        "chinese_summary": "Perimeter Institute 将于2027年6月14日至25日举办为期两周的本科暑期学校，申请现已开放，截止日期为2027年1月17日。参与者将通过课程、研究人员报告和小组讨论学习现代理论物理前沿主题，并参与小组协作解题等主动学习活动。",
+        "extracted_deadline": "2027-01-17",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "t in many-body systems Perimeter Circle - Alumni Listings Perimeter Circle - Stay Connected Perimeter Circle Awards Perimeter Circle Awards Academic Leadership Excellence Award Industry Trailblazer Award Pathfinder Award Nominate Perimeter Circle Award Event Perimeter Circle: Alumni Stories Applications are now OPEN Deadline: Jan 17, 2027 Apply today!",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
+      "title": "Mila's Community of Practice: Agentic AI",
+      "url": "https://mila.quebec/en",
+      "organizer": "Mila",
+      "source_layer": "2",
+      "location": "North America",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2026-12-01",
+      "deadline_status": "open",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "AI",
+        "artificial intelligence",
+        "machine learning",
+        "architecture"
+      ],
+      "needs_review": [
+        "duration is uncertain",
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.25,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.25,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "AI": "lligence for the benefit of all Located in the heart of Quebec’s AI ecosystem, Mila is a community of more than 1,400 researchers specializing in machine learning and",
+        "artificial intelligence": "Mila - Quebec Artificial Intelligence Institute We use cookies to analyze the browsing and usage of our website and to personalize your e",
+        "machine learning": "la is a community of more than 1,400 researchers specializing in machine learning and dedicated to scientific excellence and innovation. About Featured Prospective Students Supervis",
+        "architecture": "tinuous ones and require careful tuning of factors such as model architecture, data size, learning rate, and capacity. Semantic tokens generally outperform acoustic tokens, but"
+      },
+      "evidence": {
+        "deadline": "Deadline : December 1, 2026",
+        "duration": "",
+        "fee": "",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": false
       }
     },
     {
@@ -1115,7 +1301,7 @@
         "AI": "/2020/file/92d1e1eb1cd6f9fba3227870bb6d7f07-Paper.pdf OR https://ai.meta.com/blog/wav2vec-unsupervised-speech-recognition-without-supervision/ OR https://ai.meta.com/b",
         "machine learning": "ech Recognition via Large-Scale Weak Supervision. Proceedings of Machine Learning Research, 202, 28492–28518. https://proceedings.mlr.press/v202/radford23a/radford23a.pdf OR https:/",
         "data science": "e sampling practices in psycholinguistics and apply reproducible data science methods to support more inclusive and robust research. Day-to-day programme: Before Monday Kidd, E.",
-        "linguistics": "LOT Winter School 2027 | LOT – Netherlands Graduate School of Linguistics Click here to register for the LOT Winter School 2027 Registration for the LOT Winter School 2027 i",
+        "linguistics": "27 LOT Winter School 2027 | LOT – Netherlands Graduate School of Linguistics Click here to register for the LOT Winter School 2027 Registration for the LOT Winter School 2027 i",
         "computational linguistics": "uage Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition, with Language Models (3rd ed.). https://web.stanford.edu/~jurafsky/slp3/16",
         "natural language processing": "e. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing (pp. 30632–30647). What it adds: An application beyond traditional dynamic time-course data, combin",
         "speech processing": "rg/10.1017/S1366728921000523 Tuesday | Orthography and bilingual speech processing Prepare for Wednesday’s class: Costa, A., Santesteban, M., & Caño, A. (2005). On the facilitatory e",
@@ -1444,6 +1630,119 @@
       }
     },
     {
+      "title": "15 University Research Programs for High School Students",
+      "url": "https://www.immerse.education/knowledge-base/15-university-research-programs-for-high-school-students",
+      "organizer": "Discovery: 15 University Research Programs for High School Students | Immerse Education",
+      "source_layer": "discovery",
+      "location": "Stanford, California (University-based research program)",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "funded",
+      "fee": "No tuition fee",
+      "fee_eur": 0.0,
+      "topics": [
+        "climate",
+        "environmental science",
+        "remote sensing",
+        "ecology",
+        "AI",
+        "artificial intelligence",
+        "data science",
+        "linguistics",
+        "data analysis",
+        "physics",
+        "astronomy",
+        "mathematics",
+        "chemistry",
+        "materials science",
+        "engineering",
+        "law",
+        "architecture",
+        "design",
+        "neuroscience",
+        "social science",
+        "economics",
+        "psychology",
+        "philosophy",
+        "literature"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "duration is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "No tuition fee",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "offered",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "climate": "cer biology, artificial intelligence, public policy, psychology, climate science, economics, or another specialised field while learning how researchers approach complex qu",
+        "environmental science": "p working in fields such as biology, neuroscience, biochemistry, environmental science, and related disciplines. Throughout the summer, you’ll contribute to ongoing research while learni",
+        "remote sensing": "tion stands out for connecting data analysis with Earth science, remote sensing, environmental monitoring, and planetary research. Team meetings focus on analyzing data, developin",
+        "ecology": "e investigating a topic in fields such as biology, neuroscience, ecology, marine science, biochemistry, or environmental science. Alongside your project, you’ll learn how t",
+        "AI": "ridge. You can explore over 20 subjects, including Architecture, AI, Business Management, Computer Science, Economics, Medicine, Philosophy, and more. The courses are",
+        "artificial intelligence": "r on a topic that interests you. You might study cancer biology, artificial intelligence, public policy, psychology, climate science, economics, or another specialised field while learning",
+        "data science": "cago Data & Computing Summer Lab Location: University of Chicago Data Science Institute Cost: Paid program; participants receive a stipend of approximately $5,600 Acceptance rat",
+        "linguistics": "n combine areas such as neuroscience, data science, engineering, linguistics, computing, and social science. Most projects focus on computational research rather than laborator",
+        "data analysis": "for high school students, this option stands out for connecting data analysis with Earth science, remote sensing, environmental monitoring, and planetary research. Team meetings",
+        "physics": "he following subjects: English, Chemistry, Mathematics/Calculus, Physics, and Biology. International students may apply The Garcia Summer Research Program places you in a r",
+        "astronomy": "diverse array of fields, spanning everything from observational astronomy to digital research ethics. Join the Immerse Education 2027 Essay Competition Follow the instructio",
+        "mathematics": "in at least three of the following subjects: English, Chemistry, Mathematics/Calculus, Physics, and Biology. International students may apply The Garcia Summer Research Program",
+        "chemistry": "coursework in at least three of the following subjects: English, Chemistry, Mathematics/Calculus, Physics, and Biology. International students may apply The Garcia Summer Res",
+        "materials science": "you in a research team working on questions in polymer science, materials science, engineering, and related fields. You’ll help investigate a scientific problem alongside faculty me",
+        "engineering": "f conducting dissections in medicine, designing a robotic arm in engineering, participating in a moot court for law, or building creative writing portfolios and business case s",
+        "law": "a robotic arm in engineering, participating in a moot court for law, or building creative writing portfolios and business case studies. By the end of the program, you’",
+        "architecture": "xford and Cambridge. You can explore over 20 subjects, including Architecture, AI, Business Management, Computer Science, Economics, Medicine, Philosophy, and more. The courses",
+        "design": "rum. Throughout the programme, you’ll develop skills in research design, technical communication, and data analysis. The internship ends with a final paper, presentation,",
+        "neuroscience": "group for eight weeks. You’ll work on projects in areas such as neuroscience, cancer biology, stem cell research, genetics, bioengineering, immunology, and cardiovascular scien",
+        "social science": "oscience, data science, engineering, linguistics, computing, and social science. Most projects focus on computational research rather than laboratory experiments, so you’ll spend",
+        "economics": "ficial intelligence, public policy, psychology, climate science, economics, or another specialised field while learning how researchers approach complex questions. These expe",
+        "psychology": "ht study cancer biology, artificial intelligence, public policy, psychology, climate science, economics, or another specialised field while learning how researchers approach c",
+        "philosophy": "AI, Business Management, Computer Science, Economics, Medicine, Philosophy, and more. The courses are experiential and hands-on — you may find yourself conducting dissections",
+        "literature": ". Depending on your lab, you may analyze data, review scientific literature, assist with experiments, or contribute to ongoing investigations. Alongside research, you’ll atten"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "fee": "No tuition fee",
+        "funding": "Immerse Education’s Pre-University Summer School Location: Cambridge, London, Oxford, Singapore, Sydney, Tokyo, and Toronto Cost: Varies; summer school scholarship available through our bursary programme Application Deadline: Multiple summer cohorts; rolling admissions Program Dates: 2 weeks during the summer Eligibility: Students aged 13-18 currently enrolled in middle or high school; open to international students The Academic Insights Program lets high school students experience university life firsthand.",
+        "mode": "In-person Career Insights Gain industry exposure and profes"
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "index_or_listing_page",
+          "multiple_distinct_programs_in_evidence"
+        ],
+        "chinese_summary": "",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": ""
+        }
+      }
+    },
+    {
       "title": "Digital Humanities Summer Institute",
       "url": "https://dhsi.org/scholarships/",
       "organizer": "Digital Humanities Summer Institute",
@@ -1568,82 +1867,8 @@
       }
     },
     {
-      "title": "Critical and transformative perspectives on sustainability: a doctoral winter school",
-      "url": "https://www.ugent.be/en/ghentuniv/mission/sustainability/education/educational-activities-for-researchers/sustainability-winter-school",
-      "organizer": "Universiteit Gent",
-      "source_layer": "discovery",
-      "location": "global",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "low-fee",
-      "fee": "free of charge",
-      "fee_eur": 0.0,
-      "topics": [
-        "sustainability",
-        "ecology",
-        "linguistics",
-        "sociology"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "duration is uncertain"
-      ],
-      "confidence": 0.5,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.5,
-      "financial_terms": {
-        "participation_fee": "free of charge",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "sustainability": "Critical and transformative perspectives on sustainability: a doctoral winter school — Ghent University Theme of the winter school The ecological crises we fa",
-        "ecology": "Lecture 2: Ecological Boundaries & Economy Lecture 3: Decolonial Ecology Lecture 4: Post-growth Urbanism Lecture 5: Slow Research Lab 12-13 Lunch Lunch Lunch Lunch Lunch 13",
-        "linguistics": "environmental artistic practices, together with experts from eco-linguistics, politicology, sociology, linguistics, and literary studies. By covering political speeches, novels",
-        "sociology": "tices, together with experts from eco-linguistics, politicology, sociology, linguistics, and literary studies. By covering political speeches, novels, legal texts, movies, an"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "",
-        "fee": "free of charge",
-        "funding": "",
-        "mode": "venues for transformative and sustainable practices. Th"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "location_context_weak",
-          "start_date_value_not_in_evidence",
-          "end_date_value_not_in_evidence"
-        ],
-        "chinese_summary": "根特大学举办的博士生冬季学校，主题为可持续性的批判性与变革性视角，采用跨学科方法，面向博士生及多元背景研究者，2027年2月1日至5日在根特线下举行，免费并提供午餐。",
-        "extracted_deadline": "",
-        "extracted_fee": "free of charge; includes lunch",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "Cost This winter school is free of charge and includes lunch.",
-          "funding": ""
-        }
-      }
-    },
-    {
-      "title": "Extended deadline: Call for papers 14th Conference on Frisian linguistics",
-      "url": "https://lotschool.nl/extended-deadline-call-for-papers-14th-conference-on-frisian-linguistics/",
+      "title": "LOT – Netherlands Graduate School of Linguistics",
+      "url": "https://lotschool.nl/",
       "organizer": "LOT – Netherlands Graduate School of Linguistics",
       "source_layer": "1.5",
       "location": "Europe",
@@ -1658,10 +1883,7 @@
       "fee": "",
       "fee_eur": null,
       "topics": [
-        "linguistics",
-        "phonetics",
-        "phonology",
-        "design"
+        "linguistics"
       ],
       "needs_review": [
         "application deadline is uncertain",
@@ -1685,10 +1907,7 @@
       },
       "benefit_facts": [],
       "topic_evidence": {
-        "linguistics": "Extended deadline: Call for papers 14th Conference on Frisian linguistics | LOT – Netherlands Graduate School of Linguistics The Frisian Academy (Fryske Akademy) organizes i",
-        "phonetics": "ively or passively participates in Frisian linguistics: grammar, phonetics/phonology, onomastics, lexicology, sociolinguistics, historical linguistics. Papers may focus on th",
-        "phonology": "assively participates in Frisian linguistics: grammar, phonetics/phonology, onomastics, lexicology, sociolinguistics, historical linguistics. Papers may focus on the results",
-        "design": "my.nl . https://lotschool.nl/wp-content/uploads/2023/12/Untitled-design-65.png 457 1200 Jan Martin https://lotschool.nl/wp-content/uploads/2018/10/lot.png Jan Martin 2026-"
+        "linguistics": "LOT – Netherlands Graduate School of Linguistics LOT – Netherlands Graduate School of Linguistics Landelijke Onderzoekschool Taalwetenschap"
       },
       "evidence": {
         "deadline": "",
@@ -1719,9 +1938,12 @@
       "fee_eur": null,
       "topics": [
         "data science",
+        "AI",
+        "artificial intelligence",
         "machine learning",
         "deep learning",
-        "bioinformatics"
+        "bioinformatics",
+        "literature"
       ],
       "needs_review": [
         "application deadline is uncertain",
@@ -1744,10 +1966,13 @@
       },
       "benefit_facts": [],
       "topic_evidence": {
-        "machine learning": "ing Course at EMBL-EBI Data science for life scientists Hands-on machine learning for biological data 2027 Course overview How to apply Fees and additional information Competencies",
-        "deep learning": "alisation in Python Core machine learning methods and evaluation Deep learning approaches, including neural networks and transformers Large language models and their potential ap",
+        "AI": "n programming and machine learning, deep learning and generative AI. Using Python, you will learn practical principles and tools for collecting, manipulating, analysin",
+        "artificial intelligence": "an introduction to deep learning and sessions on how generative Artificial Intelligence (AI) can support research and coding. The course combines lectures with practical exercises, allowi",
+        "machine learning": "ing Course at EMBL-EBI Data science for life scientists Hands-on machine learning for biological data 2027 Course overview Programme How to apply Fees and additional information Com",
+        "deep learning": "d in research, with a focus on programming and machine learning, deep learning and generative AI. Using Python, you will learn practical principles and tools for collecting, mani",
         "data science": "Data science for life scientists | EMBL-EBI Training Course at EMBL-EBI Data science for life scientists Hands-o",
-        "bioinformatics": "st Applications open 30 November 2026 14 – 18 June 2027 European Bioinformatics Institute United Kingdom £975.00 (academia) / £1,275.00 (industry) Contact Charlotte Courtney Open"
+        "bioinformatics": "st Applications open 30 November 2026 14 – 18 June 2027 European Bioinformatics Institute United Kingdom £975.00 (academia) / £1,275.00 (industry) Contact Charlotte Courtney Open",
+        "literature": "the following data types and applications: Genomics (Bio)Imaging Literature processing Transcriptomics During the application process, you will be asked to indicate two prefer"
       },
       "evidence": {
         "deadline": "",
@@ -1761,15 +1986,15 @@
       }
     },
     {
-      "title": "Perimeter Undergraduate Summer School",
-      "url": "https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school",
-      "organizer": "Perimeter Undergraduate Summer School",
+      "title": "Methods for infectious disease modelling using genomics",
+      "url": "https://www.ebi.ac.uk/training/events/methods-infectious-disease-modelling-using-genomics-2027/",
+      "organizer": "EMBL-EBI Training",
       "source_layer": "1",
-      "location": "North America",
+      "location": "United Kingdom",
       "dates": {
-        "start": "2027-06-14",
-        "end": "2027-06-25",
-        "duration_days": 12
+        "start": "2027-10-11",
+        "end": "2027-10-15",
+        "duration_days": 5
       },
       "deadline": null,
       "deadline_status": "uncertain",
@@ -1777,7 +2002,66 @@
       "fee": "",
       "fee_eur": null,
       "topics": [
-        "physics"
+        "bioinformatics",
+        "public health",
+        "biostatistics"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "bioinformatics": "st Applications open 30 March 2027 11 – 15 October 2027 European Bioinformatics Institute United Kingdom £975.00 (academia) / £1,275.00 (industry) Contact Charlotte Courtney Open",
+        "public health": "carry out this type of research in policy making, charities, or public health settings. Basic knowledge of R, the command line, and biostatistics will be essential. We recommend",
+        "biostatistics": "lic health settings. Basic knowledge of R, the command line, and biostatistics will be essential. We recommend following these or other similar free tutorials prior to the course"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "11 – 15 October 2027",
+        "fee": "",
+        "funding": "",
+        "mode": "onsite or virtually. Please read our dedicated support p"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Summer school: Mathematical applications to climate change",
+      "url": "https://www.crmath.ca/en/activities/#/type/activity/id/4137",
+      "organizer": "CRM Schools",
+      "source_layer": "1",
+      "location": "North America",
+      "dates": {
+        "start": "2027-08-09",
+        "end": "2027-08-13",
+        "duration_days": 5
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "climate",
+        "climate change",
+        "mathematics"
       ],
       "needs_review": [
         "application deadline is uncertain",
@@ -1801,28 +2085,19 @@
       },
       "benefit_facts": [],
       "topic_evidence": {
-        "physics": "pants will learn about cutting-edge topics in modern theoretical physics through courses and other special events such as presentations from researchers and panel discussio"
+        "climate": "Summer school: Mathematical applications to climate change Summer school: Mathematical applications to climate change August 9 - 13, 2027 School Overvi",
+        "climate change": "Summer school: Mathematical applications to climate change Summer school: Mathematical applications to climate change August 9 - 13, 2027 School Overview Orga",
+        "mathematics": "toral fellows to the interdisciplinary nature of applications of mathematics to important issues related to climate change. The school will consist of lectures by international"
       },
       "evidence": {
         "deadline": "",
-        "duration": "June 14-25, 2027",
+        "duration": "August 9 - 13, 2027",
         "fee": "",
         "funding": "",
         "mode": ""
       },
       "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [],
-        "chinese_summary": "Perimeter Institute 将于2027年6月14日至25日举办为期两周的本科暑期学校，申请现已开放，截止日期为2027年1月17日。参与者将通过课程、研究人员报告和小组讨论学习现代理论物理前沿主题，并参与小组协作解题等主动学习活动。",
-        "extracted_deadline": "2027-01-17",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "t in many-body systems Perimeter Circle - Alumni Listings Perimeter Circle - Stay Connected Perimeter Circle Awards Perimeter Circle Awards Academic Leadership Excellence Award Industry Trailblazer Award Pathfinder Award Nominate Perimeter Circle Award Event Perimeter Circle: Alumni Stories Applications are now OPEN Deadline: Jan 17, 2027 Apply today!",
-          "fee": "",
-          "funding": ""
-        }
+        "available": false
       }
     },
     {
