@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-11-24",
+  "generated": "2026-11-25",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -99,7 +99,7 @@
       "organizer": "FEBS Advanced Courses",
       "organizer_zh": "FEBS Advanced Courses",
       "summary": "Biological organization and the evolution of form Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological organization and the evolution of form 22 – 27 August 2027 | Venice, Italy C",
-      "summary_zh": "生物组织与形态演化。您的浏览器不支持或已禁用JavaScript。菜单：关于、讲者、日程、注册、联系、地点。EMBO|FEBS讲座课程：生物组织与形态演化，2027年8月22日至27日，意大利威尼斯。",
+      "summary_zh": "生物组织与形态演化 您的浏览器不支持或已禁用 JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS Lecture Course 生物组织与形态演化 2027年8月22日至27日 | 意大利威尼斯 C",
       "topics": [
         "AI",
         "machine learning",
@@ -139,7 +139,7 @@
           ],
           "secondary_topics": [],
           "summary": "Biological organization and the evolution of form Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological organization and the evolution of form 22 – 27 August 2027 | Venice, Italy C",
-          "summary_zh": "生物组织与形态演化。您的浏览器不支持或已禁用JavaScript。菜单：关于、讲者、日程、注册、联系、地点。EMBO|FEBS讲座课程：生物组织与形态演化，2027年8月22日至27日，意大利威尼斯。",
+          "summary_zh": "生物组织与形态演化 您的浏览器不支持或已禁用 JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS Lecture Course 生物组织与形态演化 2027年8月22日至27日 | 意大利威尼斯 C",
           "sessions": []
         }
       ],
@@ -176,7 +176,7 @@
         ],
         "secondary_topics": [],
         "summary": "Biological organization and the evolution of form Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological organization and the evolution of form 22 – 27 August 2027 | Venice, Italy C",
-        "summary_zh": "生物组织与形态演化。您的浏览器不支持或已禁用JavaScript。菜单：关于、讲者、日程、注册、联系、地点。EMBO|FEBS讲座课程：生物组织与形态演化，2027年8月22日至27日，意大利威尼斯。",
+        "summary_zh": "生物组织与形态演化 您的浏览器不支持或已禁用 JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS Lecture Course 生物组织与形态演化 2027年8月22日至27日 | 意大利威尼斯 C",
         "sessions": []
       },
       "primary_topics": [
@@ -194,7 +194,7 @@
       "organizer": "FEBS Advanced Courses",
       "organizer_zh": "FEBS Advanced Courses",
       "summary": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological surfaces and interfaces: ap",
-      "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 生物表面与界面：应用",
+      "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用 JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS Lecture Course 生物表面与界面：应用",
       "topics": [
         "sustainability",
         "engineering"
@@ -228,7 +228,7 @@
           ],
           "secondary_topics": [],
           "summary": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological surfaces and interfaces: ap",
-          "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 生物表面与界面：应用",
+          "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用 JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS Lecture Course 生物表面与界面：应用",
           "sessions": []
         }
       ],
@@ -261,7 +261,7 @@
         ],
         "secondary_topics": [],
         "summary": "Biological surfaces and interfaces: applications, challenges, and opportunities across disciplines Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Biological surfaces and interfaces: ap",
-        "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 生物表面与界面：应用",
+        "summary_zh": "生物表面与界面：跨学科的应用、挑战与机遇。您的浏览器不支持或已禁用 JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS Lecture Course 生物表面与界面：应用",
         "sessions": []
       },
       "primary_topics": [
@@ -273,17 +273,17 @@
       "id": "programme:59f0e91b39117381",
       "slug": "ellis-winter-school-at-unit-trento-bb3afd56",
       "title": "ELLIS Winter School at Unit Trento",
-      "title_zh": "特伦托大学ELLIS冬季学校",
+      "title_zh": "ELLIS冬季学校在Unit Trento举办",
       "organizer": "ELLIS",
       "organizer_zh": "ELLIS",
       "summary": "25/01/27 - 29/01/27 • NOBIS, Brunico/Bruneck ELLIS Winter School at Unit Trento Topic: Multimodal Learning Winter School Read More",
-      "summary_zh": "27/01/25 - 27/01/29 • NOBIS，布鲁尼科/布鲁内克 特伦托大学ELLIS冬季学校 主题：多模态学习冬季学校 阅读更多",
+      "summary_zh": "27/01/25 - 27/01/29 • NOBIS, Brunico/Bruneck ELLIS冬季学校在Unit Trento举办 主题：多模态学习冬季学校 阅读更多",
       "topics": [],
       "editions": [
         {
           "id": "edition:b3812d6f118b5e60",
           "title": "ELLIS Winter School at Unit Trento",
-          "title_zh": "特伦托大学ELLIS冬季学校",
+          "title_zh": "ELLIS冬季学校在Unit Trento举办",
           "detail_path": "opportunities/ellis-winter-school-at-unit-trento-834b34d3.html",
           "official_url": "https://ellis.eu/events/ellis-winter-school-at-unit-trento-2027",
           "location": "Europe",
@@ -302,7 +302,7 @@
           "primary_topics": [],
           "secondary_topics": [],
           "summary": "25/01/27 - 29/01/27 • NOBIS, Brunico/Bruneck ELLIS Winter School at Unit Trento Topic: Multimodal Learning Winter School Read More",
-          "summary_zh": "27/01/25 - 27/01/29 • NOBIS，布鲁尼科/布鲁内克 特伦托大学ELLIS冬季学校 主题：多模态学习冬季学校 阅读更多",
+          "summary_zh": "27/01/25 - 27/01/29 • NOBIS, Brunico/Bruneck ELLIS冬季学校在Unit Trento举办 主题：多模态学习冬季学校 阅读更多",
           "sessions": []
         }
       ],
@@ -310,7 +310,7 @@
       "latest_edition": {
         "id": "edition:b3812d6f118b5e60",
         "title": "ELLIS Winter School at Unit Trento",
-        "title_zh": "特伦托大学ELLIS冬季学校",
+        "title_zh": "ELLIS冬季学校在Unit Trento举办",
         "detail_path": "opportunities/ellis-winter-school-at-unit-trento-834b34d3.html",
         "official_url": "https://ellis.eu/events/ellis-winter-school-at-unit-trento-2027",
         "location": "Europe",
@@ -329,7 +329,7 @@
         "primary_topics": [],
         "secondary_topics": [],
         "summary": "25/01/27 - 29/01/27 • NOBIS, Brunico/Bruneck ELLIS Winter School at Unit Trento Topic: Multimodal Learning Winter School Read More",
-        "summary_zh": "27/01/25 - 27/01/29 • NOBIS，布鲁尼科/布鲁内克 特伦托大学ELLIS冬季学校 主题：多模态学习冬季学校 阅读更多",
+        "summary_zh": "27/01/25 - 27/01/29 • NOBIS, Brunico/Bruneck ELLIS冬季学校在Unit Trento举办 主题：多模态学习冬季学校 阅读更多",
         "sessions": []
       },
       "primary_topics": []
@@ -342,7 +342,7 @@
       "organizer": "Helmholtz-Zentrum Dresden-Rossendorf (HZDR)",
       "organizer_zh": "Helmholtz-Zentrum Dresden-Rossendorf (HZDR)",
       "summary": "Every summer, for eight weeks between July and September, the HZDR welcomes international students to join our research teams and contribute to their projects.",
-      "summary_zh": "每年夏季7月至9月期间，HZDR欢迎国际学生进行为期八周的交流，加入我们的研究团队并为项目作出贡献。",
+      "summary_zh": "每年夏季7月至9月期间，HZDR欢迎国际学生进行为期八周的交流，加入我们的研究团队并为项目做出贡献。",
       "topics": [
         "engineering"
       ],
@@ -373,7 +373,7 @@
           ],
           "secondary_topics": [],
           "summary": "Every summer, for eight weeks between July and September, the HZDR welcomes international students to join our research teams and contribute to their projects.",
-          "summary_zh": "每年夏季7月至9月期间，HZDR欢迎国际学生进行为期八周的交流，加入我们的研究团队并为项目作出贡献。",
+          "summary_zh": "每年夏季7月至9月期间，HZDR欢迎国际学生进行为期八周的交流，加入我们的研究团队并为项目做出贡献。",
           "sessions": []
         }
       ],
@@ -404,7 +404,7 @@
         ],
         "secondary_topics": [],
         "summary": "Every summer, for eight weeks between July and September, the HZDR welcomes international students to join our research teams and contribute to their projects.",
-        "summary_zh": "每年夏季7月至9月期间，HZDR欢迎国际学生进行为期八周的交流，加入我们的研究团队并为项目作出贡献。",
+        "summary_zh": "每年夏季7月至9月期间，HZDR欢迎国际学生进行为期八周的交流，加入我们的研究团队并为项目做出贡献。",
         "sessions": []
       },
       "primary_topics": [
@@ -419,7 +419,7 @@
       "organizer": "EMBL-EBI Training",
       "organizer_zh": "EMBL-EBI Training",
       "summary": "Introduction to metabolomics analysis | EMBL-EBI Training EMBL-EBI Training Live training Course at EMBL-EBI Introduction to metabolomics analysis Login Register John doe My learning My playlists My account Contact us Logout Course at EMBL-EBI Introduction to metabolomics analysi",
-      "summary_zh": "代谢组学分析入门 | EMBL-EBI 培训 EMBL-EBI 培训 在 EMBL-EBI 举办的线下培训课程 代谢组学分析入门 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出登录 在 EMBL-EBI 举办的课程 代谢组学分析入门",
+      "summary_zh": "代谢组学分析入门 | EMBL-EBI Training EMBL-EBI Training 在 EMBL-EBI 举办的线下培训课程 代谢组学分析入门 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出登录 在 EMBL-EBI 举办的课程 代谢组学分析入门",
       "topics": [
         "programming languages",
         "data analysis",
@@ -459,7 +459,7 @@
           ],
           "secondary_topics": [],
           "summary": "Introduction to metabolomics analysis | EMBL-EBI Training EMBL-EBI Training Live training Course at EMBL-EBI Introduction to metabolomics analysis Login Register John doe My learning My playlists My account Contact us Logout Course at EMBL-EBI Introduction to metabolomics analysi",
-          "summary_zh": "代谢组学分析入门 | EMBL-EBI 培训 EMBL-EBI 培训 在 EMBL-EBI 举办的线下培训课程 代谢组学分析入门 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出登录 在 EMBL-EBI 举办的课程 代谢组学分析入门",
+          "summary_zh": "代谢组学分析入门 | EMBL-EBI Training EMBL-EBI Training 在 EMBL-EBI 举办的线下培训课程 代谢组学分析入门 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出登录 在 EMBL-EBI 举办的课程 代谢组学分析入门",
           "sessions": []
         }
       ],
@@ -496,7 +496,7 @@
         ],
         "secondary_topics": [],
         "summary": "Introduction to metabolomics analysis | EMBL-EBI Training EMBL-EBI Training Live training Course at EMBL-EBI Introduction to metabolomics analysis Login Register John doe My learning My playlists My account Contact us Logout Course at EMBL-EBI Introduction to metabolomics analysi",
-        "summary_zh": "代谢组学分析入门 | EMBL-EBI 培训 EMBL-EBI 培训 在 EMBL-EBI 举办的线下培训课程 代谢组学分析入门 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出登录 在 EMBL-EBI 举办的课程 代谢组学分析入门",
+        "summary_zh": "代谢组学分析入门 | EMBL-EBI Training EMBL-EBI Training 在 EMBL-EBI 举办的线下培训课程 代谢组学分析入门 登录 注册 John doe 我的学习 我的播放列表 我的账户 联系我们 退出登录 在 EMBL-EBI 举办的课程 代谢组学分析入门",
         "sessions": []
       },
       "primary_topics": [
@@ -591,7 +591,7 @@
       "organizer": "FEBS Advanced Courses",
       "organizer_zh": "FEBS Advanced Courses",
       "summary": "Physical virology: from form to function Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Physical virology: from form to function 13 – 18 June 2027 | Sant Feliu de Guixols, Spain Childc",
-      "summary_zh": "物理病毒学：从形态到功能 您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 物理病毒学：从形态到功能 2027年6月13日至18日 | 西班牙圣费利乌德吉绍尔斯 儿童",
+      "summary_zh": "物理病毒学：从形态到功能 您的浏览器不支持或已禁用 JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS 讲座课程 物理病毒学：从形态到功能 2027年6月13日至18日 | Sant Feliu de Guixols，西班牙 Childc",
       "topics": [
         "AI",
         "chemistry",
@@ -634,7 +634,7 @@
           ],
           "secondary_topics": [],
           "summary": "Physical virology: from form to function Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Physical virology: from form to function 13 – 18 June 2027 | Sant Feliu de Guixols, Spain Childc",
-          "summary_zh": "物理病毒学：从形态到功能 您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 物理病毒学：从形态到功能 2027年6月13日至18日 | 西班牙圣费利乌德吉绍尔斯 儿童",
+          "summary_zh": "物理病毒学：从形态到功能 您的浏览器不支持或已禁用 JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS 讲座课程 物理病毒学：从形态到功能 2027年6月13日至18日 | Sant Feliu de Guixols，西班牙 Childc",
           "sessions": []
         }
       ],
@@ -673,7 +673,7 @@
         ],
         "secondary_topics": [],
         "summary": "Physical virology: from form to function Your browser does not support or is disabling JavaScript. MENU About Speakers Programme Registration Contact Location EMBO|FEBS Lecture Course Physical virology: from form to function 13 – 18 June 2027 | Sant Feliu de Guixols, Spain Childc",
-        "summary_zh": "物理病毒学：从形态到功能 您的浏览器不支持或已禁用JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS讲座课程 物理病毒学：从形态到功能 2027年6月13日至18日 | 西班牙圣费利乌德吉绍尔斯 儿童",
+        "summary_zh": "物理病毒学：从形态到功能 您的浏览器不支持或已禁用 JavaScript。菜单 关于 讲者 日程 注册 联系 地点 EMBO|FEBS 讲座课程 物理病毒学：从形态到功能 2027年6月13日至18日 | Sant Feliu de Guixols，西班牙 Childc",
         "sessions": []
       },
       "primary_topics": [
@@ -707,7 +707,7 @@
           "detail_path": "opportunities/viasm-iamp-probability-mathematical-physics-2027-841b79c0.html",
           "official_url": "https://www.viasm.edu.vn/en/hdkh/VIASM-IAMP-PMP-27",
           "location": "Vietnam Institute for Advanced Study in Mathematics (VIASM), Hanoi",
-          "location_zh": "越南数学高等研究院（VIASM），河内",
+          "location_zh": "Vietnam Institute for Advanced Study in Mathematics (VIASM)，河内",
           "start_date": "2027-07-23",
           "end_date": "2027-07-28",
           "deadline": "2027-07-01",
@@ -745,7 +745,7 @@
         "detail_path": "opportunities/viasm-iamp-probability-mathematical-physics-2027-841b79c0.html",
         "official_url": "https://www.viasm.edu.vn/en/hdkh/VIASM-IAMP-PMP-27",
         "location": "Vietnam Institute for Advanced Study in Mathematics (VIASM), Hanoi",
-        "location_zh": "越南数学高等研究院（VIASM），河内",
+        "location_zh": "Vietnam Institute for Advanced Study in Mathematics (VIASM)，河内",
         "start_date": "2027-07-23",
         "end_date": "2027-07-28",
         "deadline": "2027-07-01",
@@ -942,121 +942,14 @@
       ]
     },
     {
-      "id": "amsi-winter-school",
-      "slug": "amsi-winter-school-d04a312e",
-      "title": "AMSI Winter School",
-      "title_zh": "AMSI 冬季学校",
-      "organizer": "Winter School 2026",
-      "organizer_zh": "Winter School 2026",
-      "summary": "Home - Winter School 2026 A FLAGSHIP EVENT OF About Timetable Public Lecture Venue Grants Apply About Timetable Public Lecture Venue Grants Apply Develop your mathematical science skills and national networks AMSI Winter School is an annual two-week event designed for postgraduat",
-      "summary_zh": "首页 - 2026年冬季学校 旗舰活动 关于 日程 公开讲座 场地 资助 申请 关于 日程 公开讲座 场地 资助 申请 提升您的数学科学技能并建立全国网络 AMSI冬季学校是一年一度的为期两周的活动，面向研究生",
-      "topics": [
-        "AI",
-        "data science",
-        "physics",
-        "mathematics",
-        "mathematical physics",
-        "engineering"
-      ],
-      "editions": [
-        {
-          "id": "amsi-winter-school:2026",
-          "title": "AMSI Winter School 2026",
-          "title_zh": "AMSI 2026年冬季学校",
-          "detail_path": "opportunities/amsi-winter-school-2026-b25255f0.html",
-          "official_url": "https://ws.amsi.org.au/apply/",
-          "location": "The University of Queensland",
-          "location_zh": "昆士兰大学",
-          "start_date": "2026-07-06",
-          "end_date": "2026-07-17",
-          "deadline": "2026-05-25",
-          "deadline_status": "closed",
-          "duration_days": 12,
-          "mode": "hybrid",
-          "financial_summary": "AUD 1200.00 (non-member general rate; conditional student/member discounts available) · Conditional travel and accommodation grants; eligibility restrictions apply",
-          "financial_summary_zh": "费用：AUD 1200.00 (非会员 general rate; conditional 学生/会员 discounts available) · 差旅资助",
-          "funding_available": true,
-          "fee_eur": 744.0,
-          "topics": [
-            "AI",
-            "data science",
-            "physics",
-            "mathematics",
-            "mathematical physics",
-            "engineering"
-          ],
-          "primary_topics": [
-            "AI",
-            "data science",
-            "physics",
-            "mathematics",
-            "mathematical physics",
-            "engineering"
-          ],
-          "secondary_topics": [],
-          "summary": "Home - Winter School 2026 A FLAGSHIP EVENT OF About Timetable Public Lecture Venue Grants Apply About Timetable Public Lecture Venue Grants Apply Develop your mathematical science skills and national networks AMSI Winter School is an annual two-week event designed for postgraduat",
-          "summary_zh": "首页 - 2026年冬季学校 旗舰活动 关于 日程 公开讲座 场地 资助 申请 关于 日程 公开讲座 场地 资助 申请 提升您的数学科学技能并建立全国网络 AMSI冬季学校是一年一度的为期两周的活动，面向研究生",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "amsi-winter-school:2026",
-        "title": "AMSI Winter School 2026",
-        "title_zh": "AMSI 2026年冬季学校",
-        "detail_path": "opportunities/amsi-winter-school-2026-b25255f0.html",
-        "official_url": "https://ws.amsi.org.au/apply/",
-        "location": "The University of Queensland",
-        "location_zh": "昆士兰大学",
-        "start_date": "2026-07-06",
-        "end_date": "2026-07-17",
-        "deadline": "2026-05-25",
-        "deadline_status": "closed",
-        "duration_days": 12,
-        "mode": "hybrid",
-        "financial_summary": "AUD 1200.00 (non-member general rate; conditional student/member discounts available) · Conditional travel and accommodation grants; eligibility restrictions apply",
-        "financial_summary_zh": "费用：AUD 1200.00 (非会员 general rate; conditional 学生/会员 discounts available) · 差旅资助",
-        "funding_available": true,
-        "fee_eur": 744.0,
-        "topics": [
-          "AI",
-          "data science",
-          "physics",
-          "mathematics",
-          "mathematical physics",
-          "engineering"
-        ],
-        "primary_topics": [
-          "AI",
-          "data science",
-          "physics",
-          "mathematics",
-          "mathematical physics",
-          "engineering"
-        ],
-        "secondary_topics": [],
-        "summary": "Home - Winter School 2026 A FLAGSHIP EVENT OF About Timetable Public Lecture Venue Grants Apply About Timetable Public Lecture Venue Grants Apply Develop your mathematical science skills and national networks AMSI Winter School is an annual two-week event designed for postgraduat",
-        "summary_zh": "首页 - 2026年冬季学校 旗舰活动 关于 日程 公开讲座 场地 资助 申请 关于 日程 公开讲座 场地 资助 申请 提升您的数学科学技能并建立全国网络 AMSI冬季学校是一年一度的为期两周的活动，面向研究生",
-        "sessions": []
-      },
-      "primary_topics": [
-        "AI",
-        "data science",
-        "physics",
-        "mathematics",
-        "mathematical physics",
-        "engineering"
-      ]
-    },
-    {
       "id": "ansto-hzb-aonsa-neutron-school",
       "slug": "ansto-hzb-aonsa-neutron-school-19f51aa0",
       "title": "ANSTO-HZB-AONSA Neutron School",
-      "title_zh": "ANSTO-HZB-AONSA 中子学校",
+      "title_zh": "ANSTO-HZB-AONSA Neutron School",
       "organizer": "ANSTO-HZB-AONSA Neutron School",
       "organizer_zh": "ANSTO-HZB-AONSA Neutron School",
       "summary": "ANSTO-HZB-AONSA Neutron School 2026 | ANSTO Skip to main content Open Menu Careers Shop User access Media Centre Contact Search About Expand Locations Expand Sydney Melbourne What we do Expand Vision Our history Nuclear stewardship Partnerships FAQs Aboriginal cultural heritage H",
-      "summary_zh": "ANSTO-HZB-AONSA 中子学校 2026 | ANSTO 跳至主要内容 打开菜单 招聘 商店 用户访问 媒体中心 联系 搜索 关于 展开 地点 展开 悉尼 墨尔本 我们的工作 展开 愿景 我们的历史 核管理 合作伙伴关系 常见问题 原住民文化遗产 H",
+      "summary_zh": "ANSTO-HZB-AONSA Neutron School 2026 | ANSTO Skip to main content Open Menu Careers Shop User access Media Centre Contact Search About Expand Locations Expand Sydney Melbourne What we do Expand Vision Our history Nuclear stewardship Partnerships FAQs Aboriginal cultural heritage H",
       "topics": [
         "neutron science",
         "sustainability",
@@ -1066,11 +959,11 @@
         {
           "id": "ansto-hzb-aonsa-neutron-school:2026",
           "title": "ANSTO-HZB-AONSA Neutron School 2026",
-          "title_zh": "ANSTO-HZB-AONSA 中子学校 2026",
+          "title_zh": "ANSTO-HZB-AONSA Neutron School 2026",
           "detail_path": "opportunities/ansto-hzb-aonsa-neutron-school-2026-dad9602f.html",
           "official_url": "https://www.ansto.gov.au/whats-on/ansto-hzb-aonsa-neutron-school-2026",
           "location": "ANSTO, Lucas Heights, NSW, Australia",
-          "location_zh": "澳大利亚新南威尔士州卢卡斯高地 ANSTO",
+          "location_zh": "ANSTO，澳大利亚新南威尔士州卢卡斯高地",
           "start_date": "2026-11-16",
           "end_date": "2026-11-20",
           "deadline": "2026-08-16",
@@ -1094,7 +987,7 @@
             "physics"
           ],
           "summary": "ANSTO-HZB-AONSA Neutron School 2026 | ANSTO Skip to main content Open Menu Careers Shop User access Media Centre Contact Search About Expand Locations Expand Sydney Melbourne What we do Expand Vision Our history Nuclear stewardship Partnerships FAQs Aboriginal cultural heritage H",
-          "summary_zh": "ANSTO-HZB-AONSA 中子学校 2026 | ANSTO 跳至主要内容 打开菜单 招聘 商店 用户访问 媒体中心 联系 搜索 关于 展开 地点 展开 悉尼 墨尔本 我们的工作 展开 愿景 我们的历史 核管理 合作伙伴关系 常见问题 原住民文化遗产 H",
+          "summary_zh": "ANSTO-HZB-AONSA Neutron School 2026 | ANSTO Skip to main content Open Menu Careers Shop User access Media Centre Contact Search About Expand Locations Expand Sydney Melbourne What we do Expand Vision Our history Nuclear stewardship Partnerships FAQs Aboriginal cultural heritage H",
           "sessions": []
         }
       ],
@@ -1102,11 +995,11 @@
       "latest_edition": {
         "id": "ansto-hzb-aonsa-neutron-school:2026",
         "title": "ANSTO-HZB-AONSA Neutron School 2026",
-        "title_zh": "ANSTO-HZB-AONSA 中子学校 2026",
+        "title_zh": "ANSTO-HZB-AONSA Neutron School 2026",
         "detail_path": "opportunities/ansto-hzb-aonsa-neutron-school-2026-dad9602f.html",
         "official_url": "https://www.ansto.gov.au/whats-on/ansto-hzb-aonsa-neutron-school-2026",
         "location": "ANSTO, Lucas Heights, NSW, Australia",
-        "location_zh": "澳大利亚新南威尔士州卢卡斯高地 ANSTO",
+        "location_zh": "ANSTO，澳大利亚新南威尔士州卢卡斯高地",
         "start_date": "2026-11-16",
         "end_date": "2026-11-20",
         "deadline": "2026-08-16",
@@ -1130,7 +1023,7 @@
           "physics"
         ],
         "summary": "ANSTO-HZB-AONSA Neutron School 2026 | ANSTO Skip to main content Open Menu Careers Shop User access Media Centre Contact Search About Expand Locations Expand Sydney Melbourne What we do Expand Vision Our history Nuclear stewardship Partnerships FAQs Aboriginal cultural heritage H",
-        "summary_zh": "ANSTO-HZB-AONSA 中子学校 2026 | ANSTO 跳至主要内容 打开菜单 招聘 商店 用户访问 媒体中心 联系 搜索 关于 展开 地点 展开 悉尼 墨尔本 我们的工作 展开 愿景 我们的历史 核管理 合作伙伴关系 常见问题 原住民文化遗产 H",
+        "summary_zh": "ANSTO-HZB-AONSA Neutron School 2026 | ANSTO Skip to main content Open Menu Careers Shop User access Media Centre Contact Search About Expand Locations Expand Sydney Melbourne What we do Expand Vision Our history Nuclear stewardship Partnerships FAQs Aboriginal cultural heritage H",
         "sessions": []
       },
       "primary_topics": [
@@ -1141,11 +1034,11 @@
       "id": "astroai-asian-network-school",
       "slug": "astroai-asian-network-summer-school-a24fd800",
       "title": "AstroAI Asian Network Summer School",
-      "title_zh": "AstroAI 亚洲网络暑期学校",
+      "title_zh": "AstroAI Asian Network 暑期学校",
       "organizer": "Center for Data-Driven Discovery",
       "organizer_zh": "Center for Data-Driven Discovery",
       "summary": "Center for Data-Driven Discovery Skip to primary navigation Skip to content Skip to footer Center for Data-Driven Discovery Kavli IPMU, The University of Tokyo People Projects Data & Code Events Info Toggle menu On this page AstroAI Asian Network (A3 Net) Information and Registra",
-      "summary_zh": "数据驱动发现中心 跳至主导航 跳至内容 跳至页脚 数据驱动发现中心 东京大学 Kavli IPMU 人员 项目 数据与代码 活动 信息 切换菜单 本页内容 AstroAI 亚洲网络（A3 Net）信息与注册",
+      "summary_zh": "Center for Data-Driven Discovery 跳至主导航 跳至内容 跳至页脚 Center for Data-Driven Discovery Kavli IPMU，东京大学 人员 项目 数据与代码 活动 信息 切换菜单 本页内容 AstroAI Asian Network（A3 Net）信息与注册",
       "topics": [
         "AI",
         "artificial intelligence",
@@ -1158,11 +1051,11 @@
         {
           "id": "astroai-asian-network-school:2026",
           "title": "AstroAI Asian Network Summer School 2026",
-          "title_zh": "AstroAI 亚洲网络暑期学校 2026",
+          "title_zh": "AstroAI Asian Network 2026年暑期学校",
           "detail_path": "opportunities/astroai-asian-network-school-2026-6769381f.html",
           "official_url": "https://cd3.ipmu.jp/a3n_Aug2026/",
           "location": "LeCosPA Auditorium, NTU (Chee-Chun Leung Cosmology Hall, No. 1, Sec. 4, Roosevelt Rd. Taipei 10617, Taiwan, map )",
-          "location_zh": "台湾台北市罗斯福路四段1号 国立台湾大学 Chee-Chun Leung 宇宙学馆 LeCosPA 报告厅，邮编10617（地图）",
+          "location_zh": "LeCosPA 报告厅，NTU（Chee-Chun Leung 宇宙学馆，台北市罗斯福路四段1号，邮编10617，台湾，地图）",
           "start_date": "2026-08-24",
           "end_date": "2026-08-28",
           "deadline": "2026-06-01",
@@ -1191,7 +1084,7 @@
           ],
           "secondary_topics": [],
           "summary": "Center for Data-Driven Discovery Skip to primary navigation Skip to content Skip to footer Center for Data-Driven Discovery Kavli IPMU, The University of Tokyo People Projects Data & Code Events Info Toggle menu On this page AstroAI Asian Network (A3 Net) Information and Registra",
-          "summary_zh": "数据驱动发现中心 跳至主导航 跳至内容 跳至页脚 数据驱动发现中心 东京大学 Kavli IPMU 人员 项目 数据与代码 活动 信息 切换菜单 本页内容 AstroAI 亚洲网络（A3 Net）信息与注册",
+          "summary_zh": "Center for Data-Driven Discovery 跳至主导航 跳至内容 跳至页脚 Center for Data-Driven Discovery Kavli IPMU，东京大学 人员 项目 数据与代码 活动 信息 切换菜单 本页内容 AstroAI Asian Network（A3 Net）信息与注册",
           "sessions": []
         }
       ],
@@ -1199,11 +1092,11 @@
       "latest_edition": {
         "id": "astroai-asian-network-school:2026",
         "title": "AstroAI Asian Network Summer School 2026",
-        "title_zh": "AstroAI 亚洲网络暑期学校 2026",
+        "title_zh": "AstroAI Asian Network 2026年暑期学校",
         "detail_path": "opportunities/astroai-asian-network-school-2026-6769381f.html",
         "official_url": "https://cd3.ipmu.jp/a3n_Aug2026/",
         "location": "LeCosPA Auditorium, NTU (Chee-Chun Leung Cosmology Hall, No. 1, Sec. 4, Roosevelt Rd. Taipei 10617, Taiwan, map )",
-        "location_zh": "台湾台北市罗斯福路四段1号 国立台湾大学 Chee-Chun Leung 宇宙学馆 LeCosPA 报告厅，邮编10617（地图）",
+        "location_zh": "LeCosPA 报告厅，NTU（Chee-Chun Leung 宇宙学馆，台北市罗斯福路四段1号，邮编10617，台湾，地图）",
         "start_date": "2026-08-24",
         "end_date": "2026-08-28",
         "deadline": "2026-06-01",
@@ -1232,7 +1125,7 @@
         ],
         "secondary_topics": [],
         "summary": "Center for Data-Driven Discovery Skip to primary navigation Skip to content Skip to footer Center for Data-Driven Discovery Kavli IPMU, The University of Tokyo People Projects Data & Code Events Info Toggle menu On this page AstroAI Asian Network (A3 Net) Information and Registra",
-        "summary_zh": "数据驱动发现中心 跳至主导航 跳至内容 跳至页脚 数据驱动发现中心 东京大学 Kavli IPMU 人员 项目 数据与代码 活动 信息 切换菜单 本页内容 AstroAI 亚洲网络（A3 Net）信息与注册",
+        "summary_zh": "Center for Data-Driven Discovery 跳至主导航 跳至内容 跳至页脚 Center for Data-Driven Discovery Kavli IPMU，东京大学 人员 项目 数据与代码 活动 信息 切换菜单 本页内容 AstroAI Asian Network（A3 Net）信息与注册",
         "sessions": []
       },
       "primary_topics": [
@@ -1252,7 +1145,7 @@
       "organizer": "Danish Institute for International Studies (DIIS) and Chiang Mai University",
       "organizer_zh": "Danish Institute for International Studies (DIIS) and Chiang Mai University",
       "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
-      "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包括讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
+      "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包括讲座、实地考察和参与者展示。官方页面写明“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显的日期错误需向主办方确认。",
       "topics": [
         "climate",
         "climate change",
@@ -1292,7 +1185,7 @@
           ],
           "secondary_topics": [],
           "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
-          "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包括讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
+          "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包括讲座、实地考察和参与者展示。官方页面写明“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显的日期错误需向主办方确认。",
           "sessions": []
         }
       ],
@@ -1329,7 +1222,7 @@
         ],
         "secondary_topics": [],
         "summary": "MyClimate winter school: qualitative social science research on climate change, with lectures, field visits and participant presentations. The official page states '15 November 2027: Acceptance Announcements', after the school dates; this apparent date error needs confirmation from the organisers.",
-        "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包括讲座、实地考察和参与者展示。官方页面写有“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显日期错误需向主办方确认。",
+        "summary_zh": "MyClimate 冬季学校：关于气候变化的定性社会科学研究，包括讲座、实地考察和参与者展示。官方页面写明“2027年11月15日：录取通知”，该日期晚于学校举办时间；这一明显的日期错误需向主办方确认。",
         "sessions": []
       },
       "primary_topics": [
@@ -1411,8 +1304,8 @@
       "title_zh": "CNDS/EGU 暑期学校",
       "organizer": "EGU Training Schools",
       "organizer_zh": "EGU Training Schools",
-      "summary": "CNDS/EGU Summer School - CNDS Svenska Menu About us Research CNDS/EGU Summer School CNDS Forum for Natural Hazards and Disasters Ongoing research projects Completed research projects CNDS Research Framework Research portraits Publications Contact Media Library CNDS Research CNDS/",
-      "summary_zh": "CNDS/EGU暑期学校——CNDS Svenska 菜单 关于我们 研究 CNDS/EGU暑期学校 CNDS自然灾害与灾难论坛 进行中的研究项目 已完成的研究项目 CNDS研究框架 研究人物介绍 出版物 联系我们 媒体库 CNDS研究 CNDS/",
+      "summary": "CNDS/EGU Summer School - CNDS Svenska Menu CNDS Research CNDS/EGU Summer School About us Research CNDS/EGU Summer School CNDS Forum for Natural Hazards and Disasters Ongoing research projects Completed research projects CNDS Research Framework Research portraits Publications Cont",
+      "summary_zh": "CNDS/EGU暑期学校 - CNDS Svenska 菜单 CNDS研究 CNDS/EGU暑期学校 关于我们 研究 CNDS/EGU暑期学校 CNDS自然灾害与灾难论坛 进行中的研究项目 已完成的研究项目 CNDS研究框架 研究简介 出版物 继续",
       "topics": [
         "flood",
         "drought",
@@ -1466,8 +1359,8 @@
             "history"
           ],
           "secondary_topics": [],
-          "summary": "CNDS/EGU Summer School - CNDS Svenska Menu About us Research CNDS/EGU Summer School CNDS Forum for Natural Hazards and Disasters Ongoing research projects Completed research projects CNDS Research Framework Research portraits Publications Contact Media Library CNDS Research CNDS/",
-          "summary_zh": "CNDS/EGU暑期学校——CNDS Svenska 菜单 关于我们 研究 CNDS/EGU暑期学校 CNDS自然灾害与灾难论坛 进行中的研究项目 已完成的研究项目 CNDS研究框架 研究人物介绍 出版物 联系我们 媒体库 CNDS研究 CNDS/",
+          "summary": "CNDS/EGU Summer School - CNDS Svenska Menu CNDS Research CNDS/EGU Summer School About us Research CNDS/EGU Summer School CNDS Forum for Natural Hazards and Disasters Ongoing research projects Completed research projects CNDS Research Framework Research portraits Publications Cont",
+          "summary_zh": "CNDS/EGU暑期学校 - CNDS Svenska 菜单 CNDS研究 CNDS/EGU暑期学校 关于我们 研究 CNDS/EGU暑期学校 CNDS自然灾害与灾难论坛 进行中的研究项目 已完成的研究项目 CNDS研究框架 研究简介 出版物 继续",
           "sessions": []
         }
       ],
@@ -1513,8 +1406,8 @@
           "history"
         ],
         "secondary_topics": [],
-        "summary": "CNDS/EGU Summer School - CNDS Svenska Menu About us Research CNDS/EGU Summer School CNDS Forum for Natural Hazards and Disasters Ongoing research projects Completed research projects CNDS Research Framework Research portraits Publications Contact Media Library CNDS Research CNDS/",
-        "summary_zh": "CNDS/EGU暑期学校——CNDS Svenska 菜单 关于我们 研究 CNDS/EGU暑期学校 CNDS自然灾害与灾难论坛 进行中的研究项目 已完成的研究项目 CNDS研究框架 研究人物介绍 出版物 联系我们 媒体库 CNDS研究 CNDS/",
+        "summary": "CNDS/EGU Summer School - CNDS Svenska Menu CNDS Research CNDS/EGU Summer School About us Research CNDS/EGU Summer School CNDS Forum for Natural Hazards and Disasters Ongoing research projects Completed research projects CNDS Research Framework Research portraits Publications Cont",
+        "summary_zh": "CNDS/EGU暑期学校 - CNDS Svenska 菜单 CNDS研究 CNDS/EGU暑期学校 关于我们 研究 CNDS/EGU暑期学校 CNDS自然灾害与灾难论坛 进行中的研究项目 已完成的研究项目 CNDS研究框架 研究简介 出版物 继续",
         "sessions": []
       },
       "primary_topics": [
@@ -1537,7 +1430,7 @@
       "organizer": "Cold Spring Harbor Asia",
       "organizer_zh": "Cold Spring Harbor Asia",
       "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
-      "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
+      "summary_zh": "WELCOME-Courses-Cold Spring Harbor Asia 注册 交通 往期活动 主要方向 津贴 政策 关于我们 Cold Spring Harbor Asia 思想交汇 Cold Spring Harbor Asia 思想交汇 Cold Spring Harbor Asia 思想交汇 Cold Spring Harbor Asia 思想交汇",
       "topics": [
         "neuroscience",
         "artificial intelligence",
@@ -1581,7 +1474,7 @@
             "engineering"
           ],
           "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
-          "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
+          "summary_zh": "WELCOME-Courses-Cold Spring Harbor Asia 注册 交通 往期活动 主要方向 津贴 政策 关于我们 Cold Spring Harbor Asia 思想交汇 Cold Spring Harbor Asia 思想交汇 Cold Spring Harbor Asia 思想交汇 Cold Spring Harbor Asia 思想交汇",
           "sessions": []
         }
       ],
@@ -1621,7 +1514,7 @@
           "engineering"
         ],
         "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
-        "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先方向 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
+        "summary_zh": "WELCOME-Courses-Cold Spring Harbor Asia 注册 交通 往期活动 主要方向 津贴 政策 关于我们 Cold Spring Harbor Asia 思想交汇 Cold Spring Harbor Asia 思想交汇 Cold Spring Harbor Asia 思想交汇 Cold Spring Harbor Asia 思想交汇",
         "sessions": []
       },
       "primary_topics": [
@@ -1632,11 +1525,11 @@
       "id": "iiser-pune-camp",
       "slug": "computational-approaches-to-memory-and-plasticity-camp-a57f3fe7",
       "title": "Computational Approaches to Memory and Plasticity (CAMP",
-      "title_zh": "记忆与可塑性计算方法（CAMP）",
+      "title_zh": "记忆与可塑性计算方法 (CAMP",
       "organizer": "IISER Pune",
       "organizer_zh": "IISER Pune",
       "summary": "CAMP | Computational Approaches to Memory and Plasticity CAMP Home Speakers Previous CAMP Schools FAQs Schedule Wiki Contact Us Menu Computational Approaches to Memory and Plasticity We invite Ph.D. students, master’s students, final-year undergraduates, and postdocs worldwide fr",
-      "summary_zh": "CAMP | 记忆与可塑性计算方法 CAMP主页 演讲者 往届CAMP学校 常见问题 日程 Wiki 联系我们 菜单 记忆与可塑性计算方法 我们邀请全球的博士生、硕士生、最后一年本科生和博士后参加",
+      "summary_zh": "CAMP | 记忆与可塑性计算方法 CAMP 主页 讲者 往届 CAMP 学校 常见问题 日程 Wiki 联系我们 菜单 记忆与可塑性计算方法 我们邀请全球的博士生、硕士生、本科毕业年级学生和博士后参加",
       "topics": [
         "design",
         "computational neuroscience",
@@ -1647,11 +1540,11 @@
         {
           "id": "iiser-pune-camp:2026",
           "title": "Computational Approaches to Memory and Plasticity (CAMP) 2026",
-          "title_zh": "记忆与可塑性计算方法（CAMP）2026",
+          "title_zh": "记忆与可塑性计算方法 (CAMP) 2026",
           "detail_path": "opportunities/iiser-pune-camp-2026-ce4806a1.html",
           "official_url": "https://camp.iiserpune.ac.in/",
           "location": "IISER Pune, India",
-          "location_zh": "印度IISER浦那",
+          "location_zh": "IISER Pune，印度",
           "start_date": "2026-07-02",
           "end_date": "2026-07-16",
           "deadline": "2026-05-07",
@@ -1676,7 +1569,7 @@
           ],
           "secondary_topics": [],
           "summary": "CAMP | Computational Approaches to Memory and Plasticity CAMP Home Speakers Previous CAMP Schools FAQs Schedule Wiki Contact Us Menu Computational Approaches to Memory and Plasticity We invite Ph.D. students, master’s students, final-year undergraduates, and postdocs worldwide fr",
-          "summary_zh": "CAMP | 记忆与可塑性计算方法 CAMP主页 演讲者 往届CAMP学校 常见问题 日程 Wiki 联系我们 菜单 记忆与可塑性计算方法 我们邀请全球的博士生、硕士生、最后一年本科生和博士后参加",
+          "summary_zh": "CAMP | 记忆与可塑性计算方法 CAMP 主页 讲者 往届 CAMP 学校 常见问题 日程 Wiki 联系我们 菜单 记忆与可塑性计算方法 我们邀请全球的博士生、硕士生、本科毕业年级学生和博士后参加",
           "sessions": []
         }
       ],
@@ -1684,11 +1577,11 @@
       "latest_edition": {
         "id": "iiser-pune-camp:2026",
         "title": "Computational Approaches to Memory and Plasticity (CAMP) 2026",
-        "title_zh": "记忆与可塑性计算方法（CAMP）2026",
+        "title_zh": "记忆与可塑性计算方法 (CAMP) 2026",
         "detail_path": "opportunities/iiser-pune-camp-2026-ce4806a1.html",
         "official_url": "https://camp.iiserpune.ac.in/",
         "location": "IISER Pune, India",
-        "location_zh": "印度IISER浦那",
+        "location_zh": "IISER Pune，印度",
         "start_date": "2026-07-02",
         "end_date": "2026-07-16",
         "deadline": "2026-05-07",
@@ -1713,7 +1606,7 @@
         ],
         "secondary_topics": [],
         "summary": "CAMP | Computational Approaches to Memory and Plasticity CAMP Home Speakers Previous CAMP Schools FAQs Schedule Wiki Contact Us Menu Computational Approaches to Memory and Plasticity We invite Ph.D. students, master’s students, final-year undergraduates, and postdocs worldwide fr",
-        "summary_zh": "CAMP | 记忆与可塑性计算方法 CAMP主页 演讲者 往届CAMP学校 常见问题 日程 Wiki 联系我们 菜单 记忆与可塑性计算方法 我们邀请全球的博士生、硕士生、最后一年本科生和博士后参加",
+        "summary_zh": "CAMP | 记忆与可塑性计算方法 CAMP 主页 讲者 往届 CAMP 学校 常见问题 日程 Wiki 联系我们 菜单 记忆与可塑性计算方法 我们邀请全球的博士生、硕士生、本科毕业年级学生和博士后参加",
         "sessions": []
       },
       "primary_topics": [
@@ -1742,7 +1635,7 @@
         {
           "id": "edition:be59b18304848f3b",
           "title": "Computational Linguistics Fall School 2026",
-          "title_zh": "2026年计算语言学秋季学校",
+          "title_zh": "计算语言学秋季学校 2026",
           "detail_path": "opportunities/computational-linguistics-fall-school-2026-50903ddb.html",
           "official_url": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
           "location": "University of Technology Nuremberg, Nuremberg, Germany",
@@ -1780,7 +1673,7 @@
       "latest_edition": {
         "id": "edition:be59b18304848f3b",
         "title": "Computational Linguistics Fall School 2026",
-        "title_zh": "2026年计算语言学秋季学校",
+        "title_zh": "计算语言学秋季学校 2026",
         "detail_path": "opportunities/computational-linguistics-fall-school-2026-50903ddb.html",
         "official_url": "https://www.utn.de/en/departments/department-computer-science-artificial-intelligence/nlu/computational-linguistics-fall-school-2026/",
         "location": "University of Technology Nuremberg, Nuremberg, Germany",
@@ -1817,6 +1710,95 @@
         "linguistics",
         "computational linguistics"
       ]
+    },
+    {
+      "id": "berkeley-dl4sci",
+      "slug": "deep-learning-for-science-summer-school-30a8f1b9",
+      "title": "Deep Learning for Science Summer School",
+      "title_zh": "科学深度学习暑期学校",
+      "organizer": "Berkeley Lab DL4SCI",
+      "organizer_zh": "Berkeley Lab DL4SCI",
+      "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
+      "summary_zh": "科学深度学习学校将于2026年7月20日至24日在加利福尼亚州伯克利举行。2026年科学深度学习（DL4SCI）暑期学校由Berkeley Lab计算科学部主办，是一个为期五天的强化项目，汇聚研究人员和工程师，共同探索深度学习的最新进展",
+      "topics": [
+        "deep learning",
+        "AI",
+        "design"
+      ],
+      "primary_topics": [
+        "deep learning"
+      ],
+      "editions": [
+        {
+          "id": "berkeley-dl4sci:2026",
+          "title": "Deep Learning for Science Summer School 2026",
+          "title_zh": "2026年科学深度学习暑期学校",
+          "detail_path": "opportunities/berkeley-dl4sci-2026-c1272d60.html",
+          "official_url": "https://forms.gle/eGX8XzTHJp4FLkg59",
+          "location": "Berkeley, CA",
+          "location_zh": "加利福尼亚州伯克利",
+          "start_date": "2026-07-20",
+          "end_date": "2026-07-24",
+          "deadline": null,
+          "deadline_status": "closed",
+          "duration_days": 5,
+          "mode": "in-person",
+          "financial_summary": "and Financial Support The registration fee for the school will not exceed $250 · Limited registration waivers for selected enrolled students",
+          "financial_summary_zh": "费用：and Financial Support The registration fee for the school will not exceed $250 · 费用减免（有条件申请，不保证获得）",
+          "funding_available": true,
+          "fee_eur": 237.5,
+          "topics": [
+            "deep learning",
+            "AI",
+            "design"
+          ],
+          "primary_topics": [
+            "deep learning"
+          ],
+          "secondary_topics": [
+            "AI",
+            "design"
+          ],
+          "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
+          "summary_zh": "科学深度学习学校将于2026年7月20日至24日在加利福尼亚州伯克利举行。2026年科学深度学习（DL4SCI）暑期学校由Berkeley Lab计算科学部主办，是一个为期五天的强化项目，汇聚研究人员和工程师，共同探索深度学习的最新进展",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "berkeley-dl4sci:2026",
+        "title": "Deep Learning for Science Summer School 2026",
+        "title_zh": "2026年科学深度学习暑期学校",
+        "detail_path": "opportunities/berkeley-dl4sci-2026-c1272d60.html",
+        "official_url": "https://forms.gle/eGX8XzTHJp4FLkg59",
+        "location": "Berkeley, CA",
+        "location_zh": "加利福尼亚州伯克利",
+        "start_date": "2026-07-20",
+        "end_date": "2026-07-24",
+        "deadline": null,
+        "deadline_status": "closed",
+        "duration_days": 5,
+        "mode": "in-person",
+        "financial_summary": "and Financial Support The registration fee for the school will not exceed $250 · Limited registration waivers for selected enrolled students",
+        "financial_summary_zh": "费用：and Financial Support The registration fee for the school will not exceed $250 · 费用减免（有条件申请，不保证获得）",
+        "funding_available": true,
+        "fee_eur": 237.5,
+        "topics": [
+          "deep learning",
+          "AI",
+          "design"
+        ],
+        "primary_topics": [
+          "deep learning"
+        ],
+        "secondary_topics": [
+          "AI",
+          "design"
+        ],
+        "summary": "Deep Learning for Science School July 20-24, 2026 Berkeley, CA Hosted by Computing Sciences at Berkeley Lab, the 2026 Deep Learning for Science (DL4SCI) Summer School is a five-day intensive program bringing together researchers and engineers to explore the latest advances in dee",
+        "summary_zh": "科学深度学习学校将于2026年7月20日至24日在加利福尼亚州伯克利举行。2026年科学深度学习（DL4SCI）暑期学校由Berkeley Lab计算科学部主办，是一个为期五天的强化项目，汇聚研究人员和工程师，共同探索深度学习的最新进展",
+        "sessions": []
+      }
     },
     {
       "id": "programme:005729e641c21ccf",
@@ -2227,7 +2209,7 @@
       "id": "programme:0315b5fbacd204a7",
       "slug": "exploring-your-eco-exploring-the-living-cultural-and-eco-t-fb556078",
       "title": "Exploring Your Eco – Exploring the living, cultural, and eco-tourism recreational environments of Konitsa, in northern Greece",
-      "title_zh": "探索你的生态 ——探索希腊北部科尼察的生活、文化与生态旅游休闲环境",
+      "title_zh": "探索你的生态 ——探索希腊北部 Konitsa 的生活、文化与生态旅游休闲环境",
       "organizer": "Czech University of Life Sciences Prague, with Vikos-Aoos UNESCO Global Geopark and Trace Your Eco",
       "organizer_zh": "Czech University of Life Sciences Prague, with Vikos-Aoos UNESCO Global Geopark and Trace Your Eco",
       "summary": "A nine-day on-site summer school in Konitsa examining the living, cultural, and eco-tourism environments of the Vikos-Aoos UNESCO Geopark through research, field activities, and participant recommendations.",
@@ -2243,7 +2225,7 @@
         {
           "id": "edition:8ccb1e26f1c6a822",
           "title": "Exploring Your Eco 2026 – Exploring the living, cultural, and eco-tourism recreational environments of Konitsa, in northern Greece",
-          "title_zh": "探索你的生态 2026——探索希腊北部科尼察的生活、文化与生态旅游休闲环境",
+          "title_zh": "探索你的生态 2026——探索希腊北部 Konitsa 的生活、文化与生态旅游休闲环境",
           "detail_path": "opportunities/exploring-your-eco-2026-exploring-the-living-cultural-and-eco-tourism--80a3833c.html",
           "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/exploring-your-eco-2026-exploring-the-living-cultural-and-ec.html",
           "location": "Konitsa, Vikos-Aoos UNESCO Global Geopark, Greece",
@@ -2282,7 +2264,7 @@
       "latest_edition": {
         "id": "edition:8ccb1e26f1c6a822",
         "title": "Exploring Your Eco 2026 – Exploring the living, cultural, and eco-tourism recreational environments of Konitsa, in northern Greece",
-        "title_zh": "探索你的生态 2026——探索希腊北部科尼察的生活、文化与生态旅游休闲环境",
+        "title_zh": "探索你的生态 2026——探索希腊北部 Konitsa 的生活、文化与生态旅游休闲环境",
         "detail_path": "opportunities/exploring-your-eco-2026-exploring-the-living-cultural-and-eco-tourism--80a3833c.html",
         "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/exploring-your-eco-2026-exploring-the-living-cultural-and-ec.html",
         "location": "Konitsa, Vikos-Aoos UNESCO Global Geopark, Greece",
@@ -2501,7 +2483,7 @@
       "organizer": "IAHS",
       "organizer_zh": "IAHS",
       "summary": "Building on the success of the first IAHS Academy (Ningbo, January 2026), the second edition aims to further strengthen IAHS capacity-building activities by expanding the scientific offer, enlarging participation, and consolidating the Academy as a flagship global training initiative for early-career hydrologists.",
-      "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在通过扩大科学内容、增加参与规模，进一步强化IAHS的能力建设活动，并将该学院打造为面向早期职业水文学家的全球旗舰培训项目。",
+      "summary_zh": "继首届IAHS Academy（宁波，2026年1月）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，通过扩大科学内容、增加参与规模，并将该学院打造为面向早期职业水文学家的旗舰全球培训项目。",
       "topics": [
         "hydrology",
         "water resources",
@@ -2538,7 +2520,7 @@
           ],
           "secondary_topics": [],
           "summary": "Building on the success of the first IAHS Academy (Ningbo, January 2026), the second edition aims to further strengthen IAHS capacity-building activities by expanding the scientific offer, enlarging participation, and consolidating the Academy as a flagship global training initiative for early-career hydrologists.",
-          "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在通过扩大科学内容、增加参与规模，进一步强化IAHS的能力建设活动，并将该学院打造为面向早期职业水文学家的全球旗舰培训项目。",
+          "summary_zh": "继首届IAHS Academy（宁波，2026年1月）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，通过扩大科学内容、增加参与规模，并将该学院打造为面向早期职业水文学家的旗舰全球培训项目。",
           "sessions": []
         }
       ],
@@ -2573,7 +2555,7 @@
         ],
         "secondary_topics": [],
         "summary": "Building on the success of the first IAHS Academy (Ningbo, January 2026), the second edition aims to further strengthen IAHS capacity-building activities by expanding the scientific offer, enlarging participation, and consolidating the Academy as a flagship global training initiative for early-career hydrologists.",
-        "summary_zh": "继首届IAHS Academy（2026年1月，宁波）成功举办后，第二届旨在通过扩大科学内容、增加参与规模，进一步强化IAHS的能力建设活动，并将该学院打造为面向早期职业水文学家的全球旗舰培训项目。",
+        "summary_zh": "继首届IAHS Academy（宁波，2026年1月）成功举办后，第二届旨在进一步强化IAHS的能力建设活动，通过扩大科学内容、增加参与规模，并将该学院打造为面向早期职业水文学家的旗舰全球培训项目。",
         "sessions": []
       },
       "primary_topics": [
@@ -2690,14 +2672,79 @@
       ]
     },
     {
+      "id": "programme:54ec82e1ae607b7a",
+      "slug": "imaging-based-spatial-omics-518e6630",
+      "title": "Imaging-based spatial-omics",
+      "title_zh": "基于成像的空间组学",
+      "organizer": "EMBL Practical Courses",
+      "organizer_zh": "EMBL Practical Courses",
+      "summary": "Imaging-based spatial-omics – Course and Conference Office European Molecular Biology Laboratory Home Directory Search Edit EMBO Practical Course Imaging-based spatial-omics Overview Speakers Practical information Sponsors Media kit Overview Applications for this event are not op",
+      "summary_zh": "基于成像的空间组学——课程与会议办公室 欧洲分子生物学实验室 主页 目录 搜索 编辑 EMBO 实践课程 基于成像的空间组学 概览 讲者 实用信息 赞助商 媒体资料包 概览 本次活动申请未开放",
+      "topics": [],
+      "primary_topics": [],
+      "editions": [
+        {
+          "id": "edition:71783f1c83838f35",
+          "title": "Imaging-based spatial-omics",
+          "title_zh": "基于成像的空间组学",
+          "detail_path": "opportunities/imaging-based-spatial-omics-0fabf33d.html",
+          "official_url": "https://www.embl.org/about/info/course-and-conference-office/events/iso27-01/",
+          "location": "EMBL Heidelberg",
+          "location_zh": "EMBL Heidelberg",
+          "start_date": "2027-08-29",
+          "end_date": "2027-09-03",
+          "deadline": null,
+          "deadline_status": "closed",
+          "duration_days": 6,
+          "mode": "in-person",
+          "financial_summary": "Registration-fee scholarship for selected participants · fee otherwise not stated",
+          "financial_summary_zh": "入选者可获注册费奖学金 · 其他参与者费用未说明",
+          "funding_available": true,
+          "fee_eur": null,
+          "topics": [],
+          "primary_topics": [],
+          "secondary_topics": [],
+          "summary": "Imaging-based spatial-omics – Course and Conference Office European Molecular Biology Laboratory Home Directory Search Edit EMBO Practical Course Imaging-based spatial-omics Overview Speakers Practical information Sponsors Media kit Overview Applications for this event are not op",
+          "summary_zh": "基于成像的空间组学——课程与会议办公室 欧洲分子生物学实验室 主页 目录 搜索 编辑 EMBO 实践课程 基于成像的空间组学 概览 讲者 实用信息 赞助商 媒体资料包 概览 本次活动申请未开放",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "edition:71783f1c83838f35",
+        "title": "Imaging-based spatial-omics",
+        "title_zh": "基于成像的空间组学",
+        "detail_path": "opportunities/imaging-based-spatial-omics-0fabf33d.html",
+        "official_url": "https://www.embl.org/about/info/course-and-conference-office/events/iso27-01/",
+        "location": "EMBL Heidelberg",
+        "location_zh": "EMBL Heidelberg",
+        "start_date": "2027-08-29",
+        "end_date": "2027-09-03",
+        "deadline": null,
+        "deadline_status": "closed",
+        "duration_days": 6,
+        "mode": "in-person",
+        "financial_summary": "Registration-fee scholarship for selected participants · fee otherwise not stated",
+        "financial_summary_zh": "入选者可获注册费奖学金 · 其他参与者费用未说明",
+        "funding_available": true,
+        "fee_eur": null,
+        "topics": [],
+        "primary_topics": [],
+        "secondary_topics": [],
+        "summary": "Imaging-based spatial-omics – Course and Conference Office European Molecular Biology Laboratory Home Directory Search Edit EMBO Practical Course Imaging-based spatial-omics Overview Speakers Practical information Sponsors Media kit Overview Applications for this event are not op",
+        "summary_zh": "基于成像的空间组学——课程与会议办公室 欧洲分子生物学实验室 主页 目录 搜索 编辑 EMBO 实践课程 基于成像的空间组学 概览 讲者 实用信息 赞助商 媒体资料包 概览 本次活动申请未开放",
+        "sessions": []
+      }
+    },
+    {
       "id": "imiscoe-phd-school",
       "slug": "imiscoe-phd-school-regional-migration-studies-dynamics-of--fcee1b77",
       "title": "IMISCOE PhD School — Regional Migration Studies: Dynamics of Human Mobility, Governance and Socioeconomic Transformations",
-      "title_zh": "IMISCOE 博士学校 — 区域移民研究：人口流动动态、治理与社会经济转型",
+      "title_zh": "IMISCOE PhD School — 区域移民研究：人口流动动态、治理与社会经济转型",
       "organizer": "GRITIM-UPF at Universitat Pompeu Fabra in collaboration with the EuroMedMig Marie Skłodowska-Curie PhD Project",
       "organizer_zh": "GRITIM-UPF at Universitat Pompeu Fabra in collaboration with the EuroMedMig Marie Skłodowska-Curie PhD Project",
       "summary": "Research training on regional migration studies, examining human mobility, governance and socioeconomic transformations through regional and comparative perspectives.",
-      "summary_zh": "区域移民研究的研究培训，通过区域和比较视角考察人口流动、治理与社会经济转型。",
+      "summary_zh": "区域移民研究的研究培训，通过区域与比较视角考察人口流动、治理与社会经济转型。",
       "topics": [
         "geography"
       ],
@@ -2705,11 +2752,11 @@
         {
           "id": "imiscoe-phd-school:2027",
           "title": "IMISCOE PhD School 2027 — Regional Migration Studies: Dynamics of Human Mobility, Governance and Socioeconomic Transformations",
-          "title_zh": "IMISCOE 博士学校 2027 — 区域移民研究：人口流动动态、治理与社会经济转型",
+          "title_zh": "IMISCOE PhD School 2027 — 区域移民研究：人口流动动态、治理与社会经济转型",
           "detail_path": "opportunities/imiscoe-phd-school-2027-dfd6e21c.html",
           "official_url": "https://www.imiscoe.org/events/2739-2027-phd-school",
           "location": "Ciutadella Campus, Universitat Pompeu Fabra (UPF) in Barcelona, Spain",
-          "location_zh": "西班牙巴塞罗那庞培法布拉大学（UPF）Ciutadella 校区",
+          "location_zh": "西班牙巴塞罗那，Universitat Pompeu Fabra (UPF) Ciutadella校区",
           "start_date": "2027-09-13",
           "end_date": "2027-09-17",
           "deadline": "2026-11-15",
@@ -2728,7 +2775,7 @@
           ],
           "secondary_topics": [],
           "summary": "Research training on regional migration studies, examining human mobility, governance and socioeconomic transformations through regional and comparative perspectives.",
-          "summary_zh": "区域移民研究的研究培训，通过区域和比较视角考察人口流动、治理与社会经济转型。",
+          "summary_zh": "区域移民研究的研究培训，通过区域与比较视角考察人口流动、治理与社会经济转型。",
           "sessions": []
         }
       ],
@@ -2736,11 +2783,11 @@
       "latest_edition": {
         "id": "imiscoe-phd-school:2027",
         "title": "IMISCOE PhD School 2027 — Regional Migration Studies: Dynamics of Human Mobility, Governance and Socioeconomic Transformations",
-        "title_zh": "IMISCOE 博士学校 2027 — 区域移民研究：人口流动动态、治理与社会经济转型",
+        "title_zh": "IMISCOE PhD School 2027 — 区域移民研究：人口流动动态、治理与社会经济转型",
         "detail_path": "opportunities/imiscoe-phd-school-2027-dfd6e21c.html",
         "official_url": "https://www.imiscoe.org/events/2739-2027-phd-school",
         "location": "Ciutadella Campus, Universitat Pompeu Fabra (UPF) in Barcelona, Spain",
-        "location_zh": "西班牙巴塞罗那庞培法布拉大学（UPF）Ciutadella 校区",
+        "location_zh": "西班牙巴塞罗那，Universitat Pompeu Fabra (UPF) Ciutadella校区",
         "start_date": "2027-09-13",
         "end_date": "2027-09-17",
         "deadline": "2026-11-15",
@@ -2759,7 +2806,7 @@
         ],
         "secondary_topics": [],
         "summary": "Research training on regional migration studies, examining human mobility, governance and socioeconomic transformations through regional and comparative perspectives.",
-        "summary_zh": "区域移民研究的研究培训，通过区域和比较视角考察人口流动、治理与社会经济转型。",
+        "summary_zh": "区域移民研究的研究培训，通过区域与比较视角考察人口流动、治理与社会经济转型。",
         "sessions": []
       },
       "primary_topics": [
@@ -2875,7 +2922,7 @@
       "organizer": "NCTS QFT School",
       "organizer_zh": "NCTS QFT School",
       "summary": "Summer school. Dates: 22 June 2026 to 10 July 2026. Application deadline: 20 May 2026. Free registration. In-person at NTU, Taipei.",
-      "summary_zh": "暑期学校。日期：2026年6月22日至2026年7月10日。申请截止日期：2026年5月20日。免费注册。在台北NTU线下举行。",
+      "summary_zh": "暑期学校。日期：2026年6月22日至2026年7月10日。申请截止日期：2026年5月20日。免费注册。在台北 NTU 线下举行。",
       "topics": [],
       "editions": [
         {
@@ -2885,7 +2932,7 @@
           "detail_path": "opportunities/ncts-qft-school-2026-413c4c4d.html",
           "official_url": "https://phys.ncts.ntu.edu.tw/act/actnews/2026-43406217/home/introduction",
           "location": "National Taiwan University, Taipei (Cosmology Hall and Physics Building)",
-          "location_zh": "国立台湾大学，台北（宇宙学馆与物理学馆）",
+          "location_zh": "National Taiwan University，台北（Cosmology Hall 与 Physics Building）",
           "start_date": "2026-06-22",
           "end_date": "2026-07-10",
           "deadline": "2026-05-20",
@@ -2900,7 +2947,7 @@
           "primary_topics": [],
           "secondary_topics": [],
           "summary": "Summer school. Dates: 22 June 2026 to 10 July 2026. Application deadline: 20 May 2026. Free registration. In-person at NTU, Taipei.",
-          "summary_zh": "暑期学校。日期：2026年6月22日至2026年7月10日。申请截止日期：2026年5月20日。免费注册。在台北NTU线下举行。",
+          "summary_zh": "暑期学校。日期：2026年6月22日至2026年7月10日。申请截止日期：2026年5月20日。免费注册。在台北 NTU 线下举行。",
           "sessions": []
         }
       ],
@@ -2912,7 +2959,7 @@
         "detail_path": "opportunities/ncts-qft-school-2026-413c4c4d.html",
         "official_url": "https://phys.ncts.ntu.edu.tw/act/actnews/2026-43406217/home/introduction",
         "location": "National Taiwan University, Taipei (Cosmology Hall and Physics Building)",
-        "location_zh": "国立台湾大学，台北（宇宙学馆与物理学馆）",
+        "location_zh": "National Taiwan University，台北（Cosmology Hall 与 Physics Building）",
         "start_date": "2026-06-22",
         "end_date": "2026-07-10",
         "deadline": "2026-05-20",
@@ -2927,7 +2974,7 @@
         "primary_topics": [],
         "secondary_topics": [],
         "summary": "Summer school. Dates: 22 June 2026 to 10 July 2026. Application deadline: 20 May 2026. Free registration. In-person at NTU, Taipei.",
-        "summary_zh": "暑期学校。日期：2026年6月22日至2026年7月10日。申请截止日期：2026年5月20日。免费注册。在台北NTU线下举行。",
+        "summary_zh": "暑期学校。日期：2026年6月22日至2026年7月10日。申请截止日期：2026年5月20日。免费注册。在台北 NTU 线下举行。",
         "sessions": []
       },
       "primary_topics": []
@@ -3042,7 +3089,7 @@
         {
           "id": "edition:d6b60f7163195ea3",
           "title": "Prob_AI Hub Winter School 2027",
-          "title_zh": "Prob_AI Hub 2027年冬季学校",
+          "title_zh": "Prob_AI Hub 2027冬季学校",
           "detail_path": "opportunities/prob-ai-hub-winter-school-2027-cee177c1.html",
           "official_url": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
           "location": "Fry Building, University of Bristol, Bristol, UK",
@@ -3083,7 +3130,7 @@
       "latest_edition": {
         "id": "edition:d6b60f7163195ea3",
         "title": "Prob_AI Hub Winter School 2027",
-        "title_zh": "Prob_AI Hub 2027年冬季学校",
+        "title_zh": "Prob_AI Hub 2027冬季学校",
         "detail_path": "opportunities/prob-ai-hub-winter-school-2027-cee177c1.html",
         "official_url": "https://www.lancaster.ac.uk/data-science-and-artificial-intelligence/about-us/events/probai-hub-winter-school-2027/",
         "location": "Fry Building, University of Bristol, Bristol, UK",
@@ -3630,7 +3677,7 @@
           "detail_path": "opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
           "official_url": "https://e-applications.ictp.it/applicant/login/4338",
           "location": "ICTP Kastler Lecture Hall (AGH) Adriatico Guest House - Kastler Lecture Hall Riva Massimiliano e Carlotta, Grignano I - 34151 Trieste (Italy)",
-          "location_zh": "ICTP Kastler 报告厅 (AGH) Adriatico 宾馆 - Kastler 报告厅 Riva Massimiliano e Carlotta, Grignano I - 34151 的里雅斯特（意大利）",
+          "location_zh": "ICTP Kastler Lecture Hall (AGH) Adriatico Guest House - Kastler Lecture Hall Riva Massimiliano e Carlotta, Grignano I - 34151 Trieste (Italy)",
           "start_date": "2027-02-15",
           "end_date": "2027-03-12",
           "deadline": "2026-11-01",
@@ -3670,7 +3717,7 @@
         "detail_path": "opportunities/spring-college-in-the-physics-of-complex-systems-223446f8.html",
         "official_url": "https://e-applications.ictp.it/applicant/login/4338",
         "location": "ICTP Kastler Lecture Hall (AGH) Adriatico Guest House - Kastler Lecture Hall Riva Massimiliano e Carlotta, Grignano I - 34151 Trieste (Italy)",
-        "location_zh": "ICTP Kastler 报告厅 (AGH) Adriatico 宾馆 - Kastler 报告厅 Riva Massimiliano e Carlotta, Grignano I - 34151 的里雅斯特（意大利）",
+        "location_zh": "ICTP Kastler Lecture Hall (AGH) Adriatico Guest House - Kastler Lecture Hall Riva Massimiliano e Carlotta, Grignano I - 34151 Trieste (Italy)",
         "start_date": "2027-02-15",
         "end_date": "2027-03-12",
         "deadline": "2026-11-01",
@@ -3709,7 +3756,7 @@
       "id": "programme:387a5d8d79efdbf8",
       "slug": "stfc-summer-school-e084155d",
       "title": "STFC Summer School",
-      "title_zh": "STFC 暑期学校",
+      "title_zh": "STFC Summer School",
       "organizer": "Keele University",
       "organizer_zh": "Keele University",
       "summary": "An introductory residential astronomy summer school for postgraduate researchers, hosted by Keele University.",
@@ -3723,7 +3770,7 @@
         {
           "id": "edition:6f6669516bdd22ce",
           "title": "STFC Summer School",
-          "title_zh": "STFC 暑期学校",
+          "title_zh": "STFC Summer School",
           "detail_path": "opportunities/stfc-summer-school-767dea8d.html",
           "official_url": "https://www.keele.ac.uk/astronomy-summer-school/",
           "location": "Keele University, Staffordshire, UK",
@@ -3758,7 +3805,7 @@
       "latest_edition": {
         "id": "edition:6f6669516bdd22ce",
         "title": "STFC Summer School",
-        "title_zh": "STFC 暑期学校",
+        "title_zh": "STFC Summer School",
         "detail_path": "opportunities/stfc-summer-school-767dea8d.html",
         "official_url": "https://www.keele.ac.uk/astronomy-summer-school/",
         "location": "Keele University, Staffordshire, UK",
@@ -3798,7 +3845,7 @@
       "id": "programme:6d05e72313fdb49c",
       "slug": "summer-school-ds-food-design-of-sustainable-food-systems-1990bf33",
       "title": "Summer school DS-FOOD Design of sustainable food systems",
-      "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+      "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第六期）",
       "organizer": "Euroleague for Life Sciences (ELLS)",
       "organizer_zh": "Euroleague for Life Sciences (ELLS)",
       "summary": "An eight-day summer school on designing sustainable food systems at the Alpine Study Centre in Pieve Tesino, including lectures, field visits, accommodation, and partially covered dinners.",
@@ -3812,11 +3859,11 @@
         {
           "id": "edition:736b6cbf96f90a6f",
           "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-          "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+          "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第六期）",
           "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
           "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
           "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-          "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
+          "location_zh": "位于意大利 Pieve Tesino, Via Rovigo, 7, 38050, TN 的 Alpine Study Centre",
           "start_date": "2026-07-05",
           "end_date": "2026-07-12",
           "deadline": "2026-05-01",
@@ -3847,11 +3894,11 @@
       "latest_edition": {
         "id": "edition:736b6cbf96f90a6f",
         "title": "Summer school DS-FOOD Design of sustainable food systems (6th edition)",
-        "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第6期）",
+        "title_zh": "暑期学校 DS-FOOD 可持续食品系统设计（第六期）",
         "detail_path": "opportunities/summer-school-ds-food-design-of-sustainable-food-systems-6th-edition-5273c373.html",
         "official_url": "https://www.euroleague-study.org/en/r-20338-study-offers/r-20351-summer-schools/r-21651-summer-schools-2026/summer-school-ds-food-design-of-sustainable-food-systems-6-t.html",
         "location": "Alpine Study Centre located in Pieve Tesino, Via Rovigo, 7, 38050, TN, Italy",
-        "location_zh": "阿尔卑斯研究中心，位于意大利特伦托省皮耶韦泰西诺，罗维戈路7号，邮编38050",
+        "location_zh": "位于意大利 Pieve Tesino, Via Rovigo, 7, 38050, TN 的 Alpine Study Centre",
         "start_date": "2026-07-05",
         "end_date": "2026-07-12",
         "deadline": "2026-05-01",
@@ -3891,7 +3938,7 @@
       "organizer": "IHE Delft",
       "organizer_zh": "IHE Delft",
       "summary": "Surface water quality is under increasing pressure from physical, chemical and biological pollutants, making treatment essential to ensure safe and reliable water supplies. This course provides an understanding of the key principles and processes involved in surface water treatme",
-      "summary_zh": "地表水水质正日益受到物理、化学和生物污染物的压力，因此处理对于确保安全可靠的水供应至关重要。本课程帮助理解地表水处理的关键原理和过程。",
+      "summary_zh": "地表水水质正日益受到物理、化学和生物污染物的压力，因此处理对于确保安全可靠的水供应至关重要。本课程帮助学员理解地表水处理所涉及的关键原理和过程。",
       "topics": [
         "water quality",
         "design"
@@ -3925,7 +3972,7 @@
           ],
           "secondary_topics": [],
           "summary": "Surface water quality is under increasing pressure from physical, chemical and biological pollutants, making treatment essential to ensure safe and reliable water supplies. This course provides an understanding of the key principles and processes involved in surface water treatme",
-          "summary_zh": "地表水水质正日益受到物理、化学和生物污染物的压力，因此处理对于确保安全可靠的水供应至关重要。本课程帮助理解地表水处理的关键原理和过程。",
+          "summary_zh": "地表水水质正日益受到物理、化学和生物污染物的压力，因此处理对于确保安全可靠的水供应至关重要。本课程帮助学员理解地表水处理所涉及的关键原理和过程。",
           "sessions": []
         }
       ],
@@ -3958,7 +4005,7 @@
         ],
         "secondary_topics": [],
         "summary": "Surface water quality is under increasing pressure from physical, chemical and biological pollutants, making treatment essential to ensure safe and reliable water supplies. This course provides an understanding of the key principles and processes involved in surface water treatme",
-        "summary_zh": "地表水水质正日益受到物理、化学和生物污染物的压力，因此处理对于确保安全可靠的水供应至关重要。本课程帮助理解地表水处理的关键原理和过程。",
+        "summary_zh": "地表水水质正日益受到物理、化学和生物污染物的压力，因此处理对于确保安全可靠的水供应至关重要。本课程帮助学员理解地表水处理所涉及的关键原理和过程。",
         "sessions": []
       },
       "primary_topics": [
@@ -3970,11 +4017,11 @@
       "id": "csha-advanced-neuroimaging",
       "slug": "the-brain-enlightened-advanced-imaging-techniques-in-neuro-67dfe751",
       "title": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course",
-      "title_zh": "脑之启迪——神经科学先进成像技术 — CSHA课程",
+      "title_zh": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course",
       "organizer": "Cold Spring Harbor Asia",
       "organizer_zh": "Cold Spring Harbor Asia",
       "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
-      "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先链 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
+      "summary_zh": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
       "topics": [
         "neuroscience",
         "engineering"
@@ -3983,7 +4030,7 @@
         {
           "id": "csha-advanced-neuroimaging:2026",
           "title": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course 2026",
-          "title_zh": "脑之启迪——神经科学先进成像技术 — CSHA课程2026",
+          "title_zh": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course 2026",
           "detail_path": "opportunities/csha-advanced-neuroimaging-2026-4c2bc256.html",
           "official_url": "https://www.csh-asia.org/?content/2964",
           "location": "Suzhou, China",
@@ -4009,7 +4056,7 @@
             "engineering"
           ],
           "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
-          "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先链 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
+          "summary_zh": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
           "sessions": []
         }
       ],
@@ -4017,7 +4064,7 @@
       "latest_edition": {
         "id": "csha-advanced-neuroimaging:2026",
         "title": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course 2026",
-        "title_zh": "脑之启迪——神经科学先进成像技术 — CSHA课程2026",
+        "title_zh": "The Brain Enlightened - Advanced Imaging Techniques in Neuroscience — CSHA Course 2026",
         "detail_path": "opportunities/csha-advanced-neuroimaging-2026-4c2bc256.html",
         "official_url": "https://www.csh-asia.org/?content/2964",
         "location": "Suzhou, China",
@@ -4043,7 +4090,7 @@
           "engineering"
         ],
         "summary": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
-        "summary_zh": "欢迎-课程-冷泉港亚洲 注册 交通 往期活动 领先链 津贴 政策 关于我们 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇 冷泉港亚洲 思想交汇",
+        "summary_zh": "WELCOME-Courses-Cold Spring Harbor Asia REGISTRATION TRANSPORTATION PAST EVENTS LEADING STRAND stipends POLICIES ABOUT US Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Meeting of Minds Cold Spring Harbor Asia A Mee",
         "sessions": []
       },
       "primary_topics": [
@@ -4071,7 +4118,7 @@
           "detail_path": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
           "official_url": "https://events.ecmwf.int/event/577/",
           "location": "ECMWF, Reading",
-          "location_zh": "ECMWF，雷丁",
+          "location_zh": "ECMWF，Reading",
           "start_date": "2027-01-18",
           "end_date": "2027-01-22",
           "deadline": "2026-10-11",
@@ -4105,7 +4152,7 @@
         "detail_path": "opportunities/training-course-eumetsat-ecmwf-nwp-saf-satellite-data-assimilation-097494a7.html",
         "official_url": "https://events.ecmwf.int/event/577/",
         "location": "ECMWF, Reading",
-        "location_zh": "ECMWF，雷丁",
+        "location_zh": "ECMWF，Reading",
         "start_date": "2027-01-18",
         "end_date": "2027-01-22",
         "deadline": "2026-10-11",
@@ -4296,7 +4343,7 @@
       "organizer": "ECMWF Events (Indico)",
       "organizer_zh": "ECMWF Events (Indico)",
       "summary": "Training course: Use and interpretation of ECMWF products (25-January 28, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products",
-      "summary_zh": "培训课程：ECMWF产品的使用与解读（2027年1月25日至28日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读",
+      "summary_zh": "培训课程：ECMWF产品的使用与解读（2027年1月25日至28日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读",
       "topics": [
         "machine learning",
         "physics"
@@ -4309,7 +4356,7 @@
           "detail_path": "opportunities/training-course-use-and-interpretation-of-ecmwf-products-c6af8cd6.html",
           "official_url": "https://events.ecmwf.int/event/576/",
           "location": "ECMWF, Reading",
-          "location_zh": "ECMWF，雷丁",
+          "location_zh": "ECMWF，Reading",
           "start_date": "2027-01-25",
           "end_date": "2027-01-28",
           "deadline": "2026-09-27",
@@ -4330,7 +4377,7 @@
           ],
           "secondary_topics": [],
           "summary": "Training course: Use and interpretation of ECMWF products (25-January 28, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products",
-          "summary_zh": "培训课程：ECMWF产品的使用与解读（2027年1月25日至28日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读",
+          "summary_zh": "培训课程：ECMWF产品的使用与解读（2027年1月25日至28日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读",
           "sessions": []
         },
         {
@@ -4367,7 +4414,7 @@
         "detail_path": "opportunities/training-course-use-and-interpretation-of-ecmwf-products-c6af8cd6.html",
         "official_url": "https://events.ecmwf.int/event/576/",
         "location": "ECMWF, Reading",
-        "location_zh": "ECMWF，雷丁",
+        "location_zh": "ECMWF，Reading",
         "start_date": "2027-01-25",
         "end_date": "2027-01-28",
         "deadline": "2026-09-27",
@@ -4388,7 +4435,7 @@
         ],
         "secondary_topics": [],
         "summary": "Training course: Use and interpretation of ECMWF products (25-January 28, 2027): Overview · ECMWF Events (Indico) Help Log In Search Home About Forecasts Computing Research Learning Publications Training Workshops Seminars Training course: Use and interpretation of ECMWF products",
-        "summary_zh": "培训课程：ECMWF产品的使用与解读（2027年1月25日至28日）：概述 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读",
+        "summary_zh": "培训课程：ECMWF产品的使用与解读（2027年1月25日至28日）：概览 · ECMWF Events (Indico) 帮助 登录 搜索 首页 关于 预报 计算 研究 学习 出版物 培训 研讨会 讲座 培训课程：ECMWF产品的使用与解读",
         "sessions": []
       },
       "primary_topics": [
@@ -4635,7 +4682,7 @@
       "organizer": "IHE Delft",
       "organizer_zh": "IHE Delft",
       "summary": "This course explores how water, energy, and food resources are used and interconnected within a river basin context. It combines theory with practical applications from real-world river basins and uses modelling tools to illustrate key concepts and their interactions.",
-      "summary_zh": "本课程探讨流域背景下水、能源和粮食资源的使用方式及其相互联系。课程将理论与真实流域的实际应用相结合，并使用建模工具说明关键概念及其相互作用。",
+      "summary_zh": "本课程探讨在流域背景下水资源、能源和粮食资源如何被使用及其相互联系。课程将理论与来自真实流域的实际应用相结合，并使用建模工具说明关键概念及其相互作用。",
       "topics": [
         "hydrology",
         "water management",
@@ -4672,7 +4719,7 @@
           ],
           "secondary_topics": [],
           "summary": "This course explores how water, energy, and food resources are used and interconnected within a river basin context. It combines theory with practical applications from real-world river basins and uses modelling tools to illustrate key concepts and their interactions.",
-          "summary_zh": "本课程探讨流域背景下水、能源和粮食资源的使用方式及其相互联系。课程将理论与真实流域的实际应用相结合，并使用建模工具说明关键概念及其相互作用。",
+          "summary_zh": "本课程探讨在流域背景下水资源、能源和粮食资源如何被使用及其相互联系。课程将理论与来自真实流域的实际应用相结合，并使用建模工具说明关键概念及其相互作用。",
           "sessions": []
         }
       ],
@@ -4707,7 +4754,7 @@
         ],
         "secondary_topics": [],
         "summary": "This course explores how water, energy, and food resources are used and interconnected within a river basin context. It combines theory with practical applications from real-world river basins and uses modelling tools to illustrate key concepts and their interactions.",
-        "summary_zh": "本课程探讨流域背景下水、能源和粮食资源的使用方式及其相互联系。课程将理论与真实流域的实际应用相结合，并使用建模工具说明关键概念及其相互作用。",
+        "summary_zh": "本课程探讨在流域背景下水资源、能源和粮食资源如何被使用及其相互联系。课程将理论与来自真实流域的实际应用相结合，并使用建模工具说明关键概念及其相互作用。",
         "sessions": []
       },
       "primary_topics": [
@@ -4838,7 +4885,7 @@
       "organizer": "Eurac Research and University of Innsbruck",
       "organizer_zh": "Eurac Research and University of Innsbruck",
       "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-      "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层级治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务人士深入探讨。",
+      "summary_zh": "该冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
       "topics": [
         "law",
         "political science",
@@ -4876,7 +4923,7 @@
             "AI governance"
           ],
           "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-          "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层级治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务人士深入探讨。",
+          "summary_zh": "该冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
           "sessions": []
         }
       ],
@@ -4912,7 +4959,7 @@
           "AI governance"
         ],
         "summary": "The Winter School analyzes the phenomena of federalism, regionalism and multilevel governance from legal and political science perspectives. Each edition focuses on a specific topic, which is then approached in detail by legal scholars, political scientists and practitioners.",
-        "summary_zh": "冬季学校从法学和政治学视角分析联邦制、地区主义和多层级治理现象。每届聚焦一个特定主题，由法律学者、政治学者和实务人士深入探讨。",
+        "summary_zh": "该冬季学校从法学和政治学视角分析联邦制、地区主义和多层次治理现象。每届聚焦特定主题，由法律学者、政治学者和实务工作者深入探讨。",
         "sessions": []
       },
       "primary_topics": [
