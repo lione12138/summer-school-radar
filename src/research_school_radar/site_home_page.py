@@ -634,6 +634,8 @@ def _curated_row_attrs(item: dict[str, Any]) -> dict[str, str]:
         funding_value = "funded"
     elif fee_eur is not None and float(fee_eur) <= 400:
         funding_value = "low-fee"
+    elif funding.get("available") is False and fee_eur is not None:
+        funding_value = "self-funded"
     else:
         funding_value = "unresolved"
     deadline_date = _parse_iso_date(item.get("application_deadline"))
@@ -656,6 +658,7 @@ def _curated_row_attrs(item: dict[str, Any]) -> dict[str, str]:
         ]
     ).lower()
     attrs = {
+        "data-programme-kind": "summer-research" if item.get("type") == "summer_research_programme" else "research-school",
         "data-status": "curated",
         "data-status-label-en": "Curated",
         "data-status-label-zh": "人工精选",
