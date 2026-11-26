@@ -1,1 +1,70 @@
-[]
+[
+  {
+    "title": "AIT International Training on Climate-Resilient Digital Agriculture (2027)",
+    "title_zh": "AIT \u6c14\u5019\u97e7\u6027\u6570\u5b57\u519c\u4e1a\u56fd\u9645\u57f9\u8bad\uff082027\uff09",
+    "type": "short course",
+    "organizer": "Asian Institute of Technology",
+    "organizer_zh": "\u4e9a\u6d32\u7406\u5de5\u5b66\u9662\uff08AIT\uff09",
+    "url": "https://ait.ac.th/event/3rd-international-training-on-climate-resilient-digital-agriculture-with-emerging-technologies/",
+    "location": "AIT campus, Thailand",
+    "location_zh": "\u6cf0\u56fd\u4e9a\u6d32\u7406\u5de5\u5b66\u9662\u6821\u533a",
+    "region": "Southeast Asia",
+    "mode": "in-person",
+    "start_date": "2027-03-15",
+    "end_date": "2027-03-26",
+    "duration_days": 12,
+    "application_deadline": "2027-02-15",
+    "funding": {
+      "available": false,
+      "evidence": "The official application form states that AIT provides no scholarships or financial assistance for this training.",
+      "url": "https://docs.google.com/forms/d/e/1FAIpQLScAw98EPuFxLiKFux_sWCeu5Q72l9kvQSn6jTJLi5P2T8iQ6Q/viewform"
+    },
+    "fee": "USD 1,350",
+    "fee_eur": 1282.5,
+    "topics": [
+      "digital agriculture",
+      "climate change",
+      "crop modeling"
+    ],
+    "eligibility": "Open to graduate students, researchers, faculty and agricultural practitioners, among others.",
+    "status": "confirmed",
+    "notes": "Self-funded, USD 1,350. The fee includes campus accommodation, meals, local transport and field visits. AIT's official page links to the registration form. The course includes practical exercises and field demonstrations.",
+    "notes_zh": "\u81ea\u8d39 1,350 \u7f8e\u5143\uff0c\u542b\u6821\u5185\u4f4f\u5bbf\u3001\u9910\u98df\u3001\u5f53\u5730\u4ea4\u901a\u548c\u5b9e\u5730\u53c2\u8bbf\u3002\u9762\u5411\u7814\u7a76\u751f\u3001\u7814\u7a76\u4eba\u5458\u3001\u6559\u5e08\u548c\u519c\u4e1a\u4ece\u4e1a\u8005\u7b49\uff0c\u5305\u542b\u5b9e\u8df5\u64cd\u4f5c\u4e0e\u7530\u95f4\u6f14\u793a\u3002\u62a5\u540d\u8868\u89c1\u5b98\u7f51\u3002",
+    "deadline_status": "open"
+  },
+  {
+    "title": "ACS Green and Sustainable Chemistry Summer School 2027",
+    "title_zh": "ACS \u7eff\u8272\u4e0e\u53ef\u6301\u7eed\u5316\u5b66\u6691\u671f\u5b66\u6821\uff082027\uff09",
+    "type": "summer school",
+    "organizer": "ACS Green Chemistry Institute",
+    "url": "https://www.acs.org/green-chemistry-sustainability/education/summer-school.html",
+    "location": "University of Vermont, Burlington, USA",
+    "location_zh": "\u7f8e\u56fd\u4f2f\u7075\u987f\uff0c\u4f5b\u8499\u7279\u5927\u5b66",
+    "region": "North America",
+    "mode": "in-person",
+    "start_date": "2027-07-23",
+    "end_date": "2027-07-30",
+    "duration_days": 8,
+    "application_deadline": "2026-12-15",
+    "funding": {
+      "available": true,
+      "type": [
+        "travel support",
+        "accommodation",
+        "meals"
+      ],
+      "evidence": "The American Chemical Society covers all eligible travel and program costs.",
+      "url": "https://www.acs.org/green-chemistry-sustainability/education/summer-school.html"
+    },
+    "topics": [
+      "green chemistry",
+      "sustainability",
+      "chemical engineering"
+    ],
+    "eligibility": "Graduate students and postdoctoral chemists and engineers studying at institutions in the Americas or Caribbean. A nomination letter is required.",
+    "status": "confirmed",
+    "notes": "For graduate students and postdocs at institutions in North, Central or South America or the Caribbean. A nomination letter is required. ACS covers eligible travel and programme costs, including campus accommodation and meals.",
+    "notes_zh": "\u9762\u5411\u5c31\u8bfb\u6216\u4efb\u804c\u4e8e\u5317\u7f8e\u3001\u4e2d\u7f8e\u3001\u5357\u7f8e\u6216\u52a0\u52d2\u6bd4\u5730\u533a\u673a\u6784\u7684\u76f8\u5173\u7814\u7a76\u751f\u548c\u535a\u58eb\u540e\uff0c\u9700\u63a8\u8350\u4fe1\u3002ACS \u627f\u62c5\u7b26\u5408\u6761\u4ef6\u7684\u5dee\u65c5\u548c\u9879\u76ee\u8d39\u7528\uff0c\u5305\u62ec\u6821\u5185\u4f4f\u5bbf\u548c\u9910\u98df\u3002",
+    "deadline_status": "open"
+  }
+]
