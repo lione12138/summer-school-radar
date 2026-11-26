@@ -26,4 +26,52 @@
 #     eligibility: MSc, PhD, early-career researchers
 #     status: confirmed
 #     notes: Funding is competitive.
-opportunities: []
+opportunities:
+  - title: "AIT International Training on Climate-Resilient Digital Agriculture (2027)"
+    title_zh: "AIT 气候韧性数字农业国际培训（2027）"
+    type: short course
+    organizer: Asian Institute of Technology
+    organizer_zh: 亚洲理工学院（AIT）
+    url: https://ait.ac.th/event/3rd-international-training-on-climate-resilient-digital-agriculture-with-emerging-technologies/
+    location: AIT campus, Thailand
+    location_zh: 泰国亚洲理工学院校区
+    region: Southeast Asia
+    mode: in-person
+    start_date: 2027-03-15
+    end_date: 2027-03-26
+    duration_days: 12
+    application_deadline: 2027-02-15
+    funding:
+      available: false
+      evidence: The official application form states that AIT provides no scholarships or financial assistance for this training.
+      url: https://docs.google.com/forms/d/e/1FAIpQLScAw98EPuFxLiKFux_sWCeu5Q72l9kvQSn6jTJLi5P2T8iQ6Q/viewform
+    fee: USD 1,350
+    fee_eur: 1282.5
+    topics: [digital agriculture, climate change, crop modeling]
+    eligibility: Open to graduate students, researchers, faculty and agricultural practitioners, among others.
+    status: confirmed
+    notes: "Self-funded, USD 1,350. The fee includes campus accommodation, meals, local transport and field visits. AIT's official page links to the registration form. The course includes practical exercises and field demonstrations."
+    notes_zh: "自费 1,350 美元，含校内住宿、餐食、当地交通和实地参访。面向研究生、研究人员、教师和农业从业者等，包含实践操作与田间演示。报名表见官网。"
+  - title: ACS Green and Sustainable Chemistry Summer School 2027
+    title_zh: "ACS 绿色与可持续化学暑期学校（2027）"
+    type: summer school
+    organizer: ACS Green Chemistry Institute
+    url: https://www.acs.org/green-chemistry-sustainability/education/summer-school.html
+    location: University of Vermont, Burlington, USA
+    location_zh: 美国伯灵顿，佛蒙特大学
+    region: North America
+    mode: in-person
+    start_date: 2027-07-23
+    end_date: 2027-07-30
+    duration_days: 8
+    application_deadline: 2026-12-15
+    funding:
+      available: true
+      type: [travel support, accommodation, meals]
+      evidence: The American Chemical Society covers all eligible travel and program costs.
+      url: https://www.acs.org/green-chemistry-sustainability/education/summer-school.html
+    topics: [green chemistry, sustainability, chemical engineering]
+    eligibility: Graduate students and postdoctoral chemists and engineers studying at institutions in the Americas or Caribbean. A nomination letter is required.
+    status: confirmed
+    notes: "For graduate students and postdocs at institutions in North, Central or South America or the Caribbean. A nomination letter is required. ACS covers eligible travel and programme costs, including campus accommodation and meals."
+    notes_zh: "面向就读或任职于北美、中美、南美或加勒比地区机构的相关研究生和博士后，需推荐信。ACS 承担符合条件的差旅和项目费用，包括校内住宿和餐食。"
