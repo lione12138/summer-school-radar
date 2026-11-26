@@ -5,10 +5,12 @@ from typing import Any
 from urllib.parse import quote
 
 from .localization import financial_summary_zh, region_zh, topic_zh, topics_label_zh
+from .financial_normalization import financial_terms
 from .models import Candidate
 from .programme_catalog import edition_identity
 from .publication import (
     is_archive_candidate,
+    is_competitive_funding_candidate,
     is_upcoming_candidate,
     is_found_opportunity,
     is_public_candidate,
@@ -59,79 +61,14 @@ def _collection_note_zh(note: str) -> str:
     return ""
 
 
-def _status_banner(
-    full_count: int,
-    near_count: int,
-    regular_count: int,
-    tracked_total: int,
-    tracked_sources: int,
-) -> str:
-    """The headline status line. Even with zero qualified results it stays
-    informative — emphasising coverage and the seasonal nature of deadlines so
-    the page never reads as empty or broken."""
-    opportunities = f"{tracked_total} opportunit{'ies' if tracked_total != 1 else 'y'}"
-    coverage = f"Tracking {opportunities} across {tracked_sources} trusted sources."
-    if full_count:
-        plural = "s" if full_count != 1 else ""
-        label = f"{full_count} funded or low-fee recommendation{plural} in the latest scan."
-        if near_count:
-            verb = "are" if near_count != 1 else "is"
-            extra = (
-                f" {near_count} verified self-funded school{'s' if near_count != 1 else ''} {verb} listed separately."
-            )
-        else:
-            extra = ""
-        if regular_count:
-            verb = "are" if regular_count != 1 else "is"
-            directory = (
-                f" {regular_count} additional official programme"
-                f"{'s' if regular_count != 1 else ''} {verb} listed without a financial recommendation."
-            )
-        else:
-            directory = ""
-        zh = (
-            f"最近一次扫描发现 {full_count} 个资助或低费用优选项目；另有 {near_count} 个官网已核实的自费项目和 "
-            f"{regular_count} 个更多官网项目。当前扫描 {tracked_sources} 个可信来源。"
-        )
-        return render_template(
-            "home/status_banner.html",
-            variant="",
-            message_en=f"{label}{extra}{directory} {coverage}",
-            message_zh=zh,
-        )
-    if near_count:
-        directory = (
-            f" {regular_count} additional official programme"
-            f"{'s are' if regular_count != 1 else ' is'} also listed without a financial recommendation."
-            if regular_count
-            else ""
-        )
-        message = (
-            "No funded or low-fee recommendations in the latest scan. "
-            f"{coverage} Verified self-funded schools are shown separately.{directory}"
-        )
-        zh = (
-            f"最近一次扫描没有资助或低费用优选项目。当前扫描 {tracked_sources} 个可信来源；"
-            f"下方另列官网费用明确的自费项目和 {regular_count} 个更多官网项目。"
-        )
-        return render_template("home/status_banner.html", variant="info", message_en=message, message_zh=zh)
-    if regular_count:
-        message = (
-            "No funded or verified self-funded recommendations in the latest scan. "
-            f"{regular_count} current official programme{'s are' if regular_count != 1 else ' is'} listed without a financial recommendation. "
-            f"{coverage}"
-        )
-        zh = (
-            f"最近一次扫描没有资助或低费用或费用明确的自费项目；下方收录 {regular_count} 个不作费用推荐的更多官网项目。"
-            f"当前扫描 {tracked_sources} 个可信来源。"
-        )
-        return render_template("home/status_banner.html", variant="info", message_en=message, message_zh=zh)
-    message = (
-        "No open opportunities matched every rule in the latest scan. "
-        f"{coverage} New schools surface as their deadlines open, typically December to April."
+def _status_banner(opportunity_count: int, tracked_sources: int) -> str:
+    noun = "opportunity" if opportunity_count == 1 else "opportunities"
+    return render_template(
+        "home/status_banner.html",
+        variant="" if opportunity_count else "info",
+        message_en=f"Browse {opportunity_count} {noun}. Summa tracks {tracked_sources} trusted sources.",
+        message_zh=f"当前目录共 {opportunity_count} 条，Summa 跟踪 {tracked_sources} 个可信来源。",
     )
-    zh = f"最近一次扫描没有符合全部规则且开放申请的项目。雷达仍在追踪 {tracked_sources} 个可信来源，新项目通常会在每年 12 月至次年 4 月陆续开放。"
-    return render_template("home/status_banner.html", variant="info", message_en=message, message_zh=zh)
 
 
 def _subscribe_action(site_config: dict[str, Any]) -> str:
@@ -221,11 +158,18 @@ def render_site(
     scan_manifest: dict[str, Any] | None = None,
 ) -> str:
     curated = curated or []
-    full = [item for item in candidates if item.fully_qualified and is_public_candidate(item)]
+    competitive = [item for item in candidates if is_competitive_funding_candidate(item)]
+    competitive_ids = {id(item) for item in competitive}
+    full = [
+        item for item in candidates
+        if item.fully_qualified and is_public_candidate(item) and id(item) not in competitive_ids
+    ]
+    funded = [item for item in full if financial_terms(item).support_status == "offered"]
+    low_fee = [item for item in full if item not in funded]
     # A separate, plainly labelled directory tier can include transparent
     # self-funded schools without describing them as Summa recommendations.
     near = _limit_by_organizer(
-        _interleave_by_organizer([item for item in candidates if is_verified_self_funded(item)]),
+        _interleave_by_organizer([item for item in candidates if is_verified_self_funded(item) and id(item) not in competitive_ids]),
         per_organizer=2,
     )
     regular = _limit_by_organizer(
@@ -240,14 +184,19 @@ def render_site(
     )
     # Count only opportunities that could actually be surfaced, so the
     # "tracking N" figure matches the page.
-    tracked_total = len(full) + len(near) + len(regular)
+    tracked_total = len(full) + len(competitive) + len(near) + len(regular)
     freshness = site_freshness(scan_manifest)
     updated = freshness.deadline_refresh_date.isoformat()
     source_scanned = (
         freshness.source_scan_date.isoformat() if freshness.source_scan_date else "Not available"
     )
-    curated_rows = "".join(_curated_row(item) for item in curated)
-    full_rows = "".join(_qualified_row(index, candidate) for index, candidate in enumerate(full, start=1))
+    curated_rows: dict[str, list[str]] = {}
+    for item in curated:
+        attrs = _curated_row_attrs(item)
+        curated_rows.setdefault(attrs["data-funding"], []).append(_curated_row(item, attrs))
+    funded_rows = "".join(_candidate_row(c, "funded", index=i) for i, c in enumerate(funded, 1))
+    competitive_rows = "".join(_candidate_row(c, "competitive") for c in competitive)
+    low_fee_rows = "".join(_qualified_row(i, c) for i, c in enumerate(low_fee, 1))
     near_rows = "".join(_near_row(candidate) for candidate in near)
     regular_rows = "".join(_found_row(candidate) for candidate in regular)
     programme_hrefs = programme_hrefs or {}
@@ -255,9 +204,8 @@ def render_site(
         _archive_row(candidate, programme_hrefs.get(edition_identity(candidate), "")) for candidate in archive
     )
     public_notes = [{"en": error, "zh": _collection_note_zh(error)} for error in _public_collection_notes(errors)[:12]]
-    filters = render_filters([*full, *near, *regular], curated)
+    filters = render_filters([*full, *competitive, *near, *regular], curated)
     analytics = _analytics_snippet(site_config or {})
-    status_banner = _status_banner(len(full), len(near), len(regular), tracked_total, tracked_sources)
     coverage_warning = ""
     if freshness.persistent_failure_count:
         count = freshness.persistent_failure_count
@@ -266,14 +214,17 @@ def render_site(
             message_en=f"Coverage is incomplete: {count} sources have failed at least 5 consecutive scans. See Sources & Coverage for details.",
             message_zh=f"来源覆盖不完整：{count} 个来源已连续至少 5 次扫描失败。详情见“来源与覆盖”。",
         )
-    if near:
-        near_block = _near_section(near_rows)
-    elif full or regular or curated:
-        # Other sections are shown; no empty-state needed.
-        near_block = ""
-    else:
-        near_block = _empty_opportunities_block(tracked_total, tracked_sources)
-    opportunity_count = len(curated) + len(full) + len(near) + len(regular)
+    tiers = (
+        ("funded", funded_rows, "".join(curated_rows.get("funded", []))),
+        ("competitive", competitive_rows, "".join(curated_rows.get("competitive", []))),
+        ("qualified", low_fee_rows, "".join(curated_rows.get("low-fee", []))),
+        ("high", near_rows, "".join(curated_rows.get("self-funded", []))),
+        ("found", regular_rows, "".join(curated_rows.get("unresolved", []))),
+    )
+    sections = "".join(_opportunity_section(rows, tier, reviewed) for tier, rows, reviewed in tiers if rows or reviewed)
+    opportunity_count = tracked_total + len(curated)
+    if not sections:
+        sections = _empty_opportunities_block(tracked_total, tracked_sources)
     return render_template(
         "home.html",
         page_title=_SITE_TITLE,
@@ -285,7 +236,7 @@ def render_site(
             image_alt="Summa funded summer schools, winter schools, and research training",
             alternates=language_urls(""),
         ),
-        jsonld=jsonld_block((full + near + regular)[:36], public_location=_public_location),
+        jsonld=jsonld_block((funded + competitive + low_fee + near + regular)[:36], public_location=_public_location),
         nav=_site_nav(),
         full_count=len(full),
         near_count=len(near),
@@ -296,17 +247,14 @@ def render_site(
         freshness_warning=_freshness_warning(freshness.source_scan_age_days)
         if freshness.source_scan_delayed
         else "",
-        status_banner=status_banner,
+        status_banner=_status_banner(opportunity_count, tracked_sources),
         coverage_warning=coverage_warning,
         opportunity_total=_bilingual(
             f"{opportunity_count} total · 15 per page · Deadline status refreshed {updated}",
             f"共 {opportunity_count} 条 · 每页 15 条 · 截止状态刷新于 {updated}",
         ),
         filters=filters,
-        curated_section=_curated_section(curated_rows) if curated else "",
-        qualified_section=_qualified_section(full_rows) if full else "",
-        near_block=near_block,
-        regular_section=_found_section(regular_rows) if regular_rows else "",
+        opportunity_sections=sections,
         archive_section=_archive_section(archive_rows, len(archive)) if archive_rows else "",
         topic_links=topic_links_html,
         upcoming_section=render_template("home/upcoming.html", candidates=[c for c in candidates if is_upcoming_candidate(c)]),
@@ -371,37 +319,22 @@ def _limit_by_organizer(
     return selected
 
 
-def _qualified_section(rows: str) -> str:
-    return _opportunity_section(rows, "qualified")
-
-
-def _curated_section(rows: str) -> str:
-    return _opportunity_section(rows, "curated")
-
-
-def _near_section(rows: str) -> str:
-    return _opportunity_section(rows, "high")
-
-
-def _found_section(rows: str) -> str:
-    return _opportunity_section(rows, "found")
-
-
-def _opportunity_section(rows: str, tier: str) -> str:
+def _opportunity_section(rows: str, tier: str, curated_rows: str = "") -> str:
     variants = {
-        "qualified": {
-            "title_key": "tier.qualified",
-            "title": "Funded and Accessible Recommendations",
-            "lead_key": "",
-            "lead": "",
+        "funded": {
+            "title_key": "tier.funded", "title": "Funded Recommendations",
+            "lead_key": "tier.funded.lead", "lead": "Programme support is available to admitted participants.",
             "table_class": "qualified-table",
         },
-        "curated": {
-            "title_key": "tier.curated",
-            "title": "Curated Opportunities",
-            "lead_key": "tier.curated.lead",
-            "lead": "Maintainer-reviewed records with source evidence.",
-            "table_class": "curated-table",
+        "competitive": {
+            "title_key": "tier.competitive", "title": "Competitive Funding",
+            "lead_key": "tier.competitive.lead", "lead": "Awards depend on selection or additional eligibility requirements.",
+            "table_class": "standard-table",
+        },
+        "qualified": {
+            "title_key": "tier.qualified", "title": "Low-Fee and Free Programmes",
+            "lead_key": "", "lead": "",
+            "table_class": "qualified-table",
         },
         "high": {
             "title_key": "tier.high",
@@ -421,8 +354,8 @@ def _opportunity_section(rows: str, tier: str) -> str:
     return render_template(
         "home/opportunity_section.html",
         rows=rows,
-        qualified=tier == "qualified",
-        curated=tier == "curated",
+        qualified=tier in {"funded", "qualified"},
+        curated_rows=curated_rows,
         **variants[tier],
     )
 
@@ -435,7 +368,7 @@ def _qualified_row(index: int, candidate: Candidate) -> str:
     return _candidate_row(candidate, "qualified", index=index)
 
 
-def _curated_row(item: dict[str, Any]) -> str:
+def _curated_row(item: dict[str, Any], attrs: dict[str, str]) -> str:
     funding = item.get("funding", {})
     if not isinstance(funding, dict):
         funding = {}
@@ -446,7 +379,7 @@ def _curated_row(item: dict[str, Any]) -> str:
     official_url = safe_external_url(item.get("url"))
     return render_template(
         "home/curated_row.html",
-        attrs=_curated_row_attrs(item),
+        attrs=attrs,
         official_url=official_url,
         title=_bilingual(str(item.get("title", "Untitled opportunity")), str(item.get("title_zh", ""))),
         organizer=_bilingual(organizer, str(item.get("organizer_zh", ""))),
@@ -581,17 +514,19 @@ def _parse_iso_date(value: Any) -> date | None:
 def _row_attrs(candidate: Candidate, status: str | None = None) -> dict[str, str]:
     status = status or ("qualified" if candidate.fully_qualified else "found")
     status_labels = {
-        "qualified": ("Funded / low fee", "资助或低费用"),
+        "qualified": ("Low fee", "低费用"),
+        "funded": ("Funding offered", "提供资助"),
+        "competitive": ("Competitive funding", "竞争性资助"),
         "high-quality": ("Verified self-funded", "官网核实自费"),
         "found": ("Official listing", "官网项目"),
     }
     status_en, status_cn = status_labels.get(status, (status, status))
-    from .financial_normalization import financial_terms, registration_only_free
+    from .financial_normalization import registration_only_free
     if status == "qualified" and registration_only_free(candidate):
         status_en, status_cn = "Free registration", "免费注册"
     if status == "high-quality" and financial_terms(candidate).fee_status == "provisional":
         status_en, status_cn = "Self-funded · fee provisional", "自费 · 价格待确认"
-    funding = candidate.financial_access_status
+    funding = "competitive" if status == "competitive" else candidate.financial_access_status
     topics = "|".join(topic.lower() for topic in candidate.topic_keywords)
     searchable = " ".join(
         [
@@ -631,7 +566,7 @@ def _curated_row_attrs(item: dict[str, Any]) -> dict[str, str]:
     topics = [topic.lower() for topic in _list_value(item.get("topics"))]
     fee_eur = item.get("fee_eur")
     if funding.get("available") is True:
-        funding_value = "funded"
+        funding_value = "competitive" if funding.get("competitive") is True else "funded"
     elif fee_eur is not None and float(fee_eur) <= 400:
         funding_value = "low-fee"
     elif funding.get("available") is False and fee_eur is not None:

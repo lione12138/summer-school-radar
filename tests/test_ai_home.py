@@ -251,7 +251,7 @@ def test_write_site_renders_ai_result_in_existing_tables(tmp_path) -> None:
     write_site([], [], tmp_path, ai_items=[_item("https://example.org/new-school")], profile=PROFILE)
 
     html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
-    assert "Funded and Accessible Recommendations" in html
+    assert "Low-Fee and Free Programmes" in html
     assert "AI Research Summer School" in html
     assert "2027-04-15" in html
     assert "ai-review.html" not in html

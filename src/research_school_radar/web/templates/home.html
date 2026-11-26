@@ -35,10 +35,7 @@
       <div class="opportunity-browser">
         {{ filters|safe }}
         <div class="opportunity-results">
-          {{ curated_section|safe }}
-          {{ qualified_section|safe }}
-          {{ near_block|safe }}
-          {{ regular_section|safe }}
+          {{ opportunity_sections|safe }}
           {{ pagination|safe }}
         </div>
       </div>

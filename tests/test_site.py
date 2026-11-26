@@ -298,7 +298,7 @@ def test_site_generation_writes_html_and_json(tmp_path) -> None:
     assert 'aria-label="切换到中文"' in html and 'id="theme-toggle"' in html
     assert "Example Hydrology Winter School" in html
     assert "filter-topic" in html
-    assert 'data-status="qualified"' in html
+    assert 'data-status="funded"' in html
     # The curated section was removed; the page no longer mentions it.
     assert 'class="opportunity-table curated-table"' not in html
     assert "Add to calendar" in html
@@ -496,7 +496,7 @@ def test_site_renders_curated_opportunities_and_keeps_unresolved_items_internal(
     html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     review_json = (tmp_path / "review_queue.json").read_text(encoding="utf-8")
 
-    assert "Curated Opportunities" in html
+    assert "Low-Fee and Free Programmes" in html
     assert "Reviewed Social Science School" in html
     assert "Listed Opportunities" not in html
     assert "Unreviewed Law Summer School" not in html
@@ -719,7 +719,7 @@ def test_status_line_uses_correct_singular_and_plural(tmp_path) -> None:
     candidate = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
     ranked = rank_candidates([candidate])
     html = write_site(ranked, [], tmp_path).read_text(encoding="utf-8")
-    assert "1 funded or low-fee recommendation in the latest scan" in html
+    assert "Browse 1 opportunity." in html
     assert "opportunityies" not in html
 
 
@@ -760,7 +760,7 @@ def test_empty_state_stays_informative(tmp_path) -> None:
     html = (tmp_path / "en" / "index.html").read_text(encoding="utf-8")
     # A coverage stat and a positive, seasonal empty-state instead of a blank page.
     assert "Trusted sources" in html
-    assert "across 2 trusted sources" in html  # manual sources are not counted as scanned
+    assert "tracks 2 trusted sources" in html  # manual sources are not counted as scanned
     assert "the radar is watching" in html
     assert "See what we track" in html
     chinese = (tmp_path / "zh" / "index.html").read_text(encoding="utf-8")
@@ -1109,3 +1109,31 @@ def test_about_qualification_is_discipline_agnostic(tmp_path) -> None:
     assert "On-domain in the topics above." not in index
     assert "On-domain in the topics above." not in i18n
     assert "是真正的学术研究训练项目，不限制学科。" in i18n
+
+
+def test_home_orders_funding_tiers_for_scanned_and_reviewed_programmes():
+    funded = apply_hard_filters(sample_candidate(PROFILE), PROFILE)
+    funded.title = "Funded Research School"
+    competitive = replace(
+        funded, title="Competitive Research School", funding_available=True,
+        funding_evidence="Competitive travel grants are available.",
+        funding_scope="Competitive travel grants.", fee="", fee_eur=None,
+    )
+    apply_hard_filters(competitive, PROFILE)
+    expensive = replace(competitive, title="Over Budget Research School", fee="EUR 2000", fee_eur=2000)
+    apply_hard_filters(expensive, PROFILE)
+    reviewed = {
+        "title": "Reviewed Self-Funded School", "url": "https://example.org/self-funded",
+        "fee_eur": 1282.5, "funding": {"available": False},
+        "application_deadline": (date.today() + timedelta(days=10)).isoformat(),
+    }
+
+    soup = BeautifulSoup(render_site([competitive, expensive, funded], [], curated=[reviewed]), "html.parser")
+    sections = soup.select(".opportunity-tier")
+    assert [section.h2["data-i18n"] for section in sections] == [
+        "tier.funded", "tier.competitive", "tier.high",
+    ]
+    assert "Funded Research School" in sections[0].get_text()
+    assert sections[1].select_one('tr[data-funding="competitive"]')
+    assert sections[2].select_one('tr[data-funding="self-funded"]')
+    assert "Over Budget Research School" not in soup.get_text()

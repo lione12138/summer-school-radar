@@ -1,0 +1,19 @@
+  <div class="table-wrap opportunity-table-wrap">
+    <table class="opportunity-table {{ table_class }}">
+      <thead>
+        <tr>
+          {% if qualified %}<th>#</th>{% endif %}
+          <th data-i18n="table.title">Title</th>
+          <th data-i18n="table.organizer">Organizer</th>
+          <th data-i18n="table.location">Location</th>
+          <th data-i18n="table.duration">Duration</th>
+          <th data-i18n="table.deadline">Deadline</th>
+          <th data-i18n="table.funding">Funding / Fee</th>
+          <th data-i18n="table.topic">Topic</th>
+          {% if curated %}<th data-i18n="table.notes">Notes</th>{% endif %}
+          <th data-i18n="table.actions">Actions</th>
+        </tr>
+      </thead>
+      <tbody>{{ rows|safe }}</tbody>
+    </table>
+  </div>

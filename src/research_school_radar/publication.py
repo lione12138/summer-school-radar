@@ -5,7 +5,7 @@ from datetime import date
 from urllib.parse import urlsplit
 
 from .models import Candidate
-from .financial_normalization import recommendation_funding
+from .financial_normalization import financial_terms, recommendation_funding
 from .urls import safe_external_url
 from .utils import DISPLAY_MIN_DURATION_DAYS, is_too_short
 from .discovery_filter import _AGGREGATOR_HOSTS, _host_matches
@@ -130,11 +130,20 @@ def is_found_opportunity(candidate: Candidate) -> bool:
     return candidate.financial_access_status == "unresolved" and candidate.fee_eur is None
 
 
+def is_competitive_funding_candidate(candidate: Candidate) -> bool:
+    if not is_public_candidate(candidate) or financial_terms(candidate).support_status != "conditional":
+        return False
+    return candidate.fee_eur is None or (
+        candidate.fee_eur <= DIRECTORY_MAX_TOTAL_FEE_EUR
+        and fee_per_day(candidate) <= DIRECTORY_MAX_FEE_EUR_PER_DAY
+    )
+
+
 def is_display_candidate(candidate: Candidate) -> bool:
     """Whether a current candidate receives a public card/detail page."""
     return (
         candidate.fully_qualified and is_public_candidate(candidate)
-    ) or is_verified_self_funded(candidate) or is_found_opportunity(candidate)
+    ) or is_competitive_funding_candidate(candidate) or is_verified_self_funded(candidate) or is_found_opportunity(candidate)
 
 
 def is_archive_candidate(candidate: Candidate) -> bool:

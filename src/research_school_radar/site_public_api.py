@@ -8,6 +8,7 @@ from .financial_normalization import financial_terms
 from .programme_catalog import edition_identity, programme_path
 from .publication import (
     is_archive_candidate,
+    is_competitive_funding_candidate,
     is_upcoming_candidate,
     is_found_opportunity,
     is_verified_self_funded,
@@ -57,6 +58,8 @@ def _public_record(candidate: Candidate, programme: dict[str, Any] | None) -> di
     archived = is_archive_candidate(candidate)
     if archived:
         tier = "programme-library"
+    elif is_competitive_funding_candidate(candidate):
+        tier = "competitive-funding"
     elif candidate.fully_qualified:
         tier = "funded-or-low-fee"
     elif is_verified_self_funded(candidate):
