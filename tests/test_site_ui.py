@@ -37,7 +37,7 @@ def ui_site(tmp_path_factory):
 
 def test_localized_cards_keep_readable_status_and_separate_library(ui_site):
     output, _ = ui_site
-    for lang, expected in (("en", "Funded / low fee"), ("zh", "资助或低费用")):
+    for lang, expected in (("en", "Funding offered"), ("zh", "提供资助")):
         soup = BeautifulSoup((output / lang / "index.html").read_text(encoding="utf-8"), "html.parser")
         assert soup.select_one(".card-status").get_text(strip=True) == expected
         library = soup.select_one("#programme-library")
