@@ -958,14 +958,6 @@
         "mathematical physics",
         "engineering"
       ],
-      "primary_topics": [
-        "AI",
-        "data science",
-        "physics",
-        "mathematics",
-        "mathematical physics",
-        "engineering"
-      ],
       "editions": [
         {
           "id": "amsi-winter-school:2026",
@@ -1046,7 +1038,15 @@
         "summary": "Home - Winter School 2026 A FLAGSHIP EVENT OF About Timetable Public Lecture Venue Grants Apply About Timetable Public Lecture Venue Grants Apply Develop your mathematical science skills and national networks AMSI Winter School is an annual two-week event designed for postgraduat",
         "summary_zh": "主页 - Winter School 2026，一项旗舰活动。关于、日程、公开讲座、场地、资助、申请。关于、日程、公开讲座、场地、资助、申请。提升你的数学科学技能并建立全国网络。AMSI Winter School 是一项为期两周的年度活动，面向研究生",
         "sessions": []
-      }
+      },
+      "primary_topics": [
+        "AI",
+        "data science",
+        "physics",
+        "mathematics",
+        "mathematical physics",
+        "engineering"
+      ]
     },
     {
       "id": "ansto-hzb-aonsa-neutron-school",
