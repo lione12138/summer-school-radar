@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25",
+  "generated": "2026-11-27",
   "review_queue": [
     {
       "title": "8th Summer School on Theory, Mechanisms and Hierarchical Modelling of Climate Dynamics: Global Waves, Local Extremes",
@@ -178,7 +178,7 @@
         "validation_warnings": [
           "index_or_listing_page"
         ],
-        "chinese_summary": "该页面为Tinbergen Institute的截止日期页面，其中提到EEA学生2026年12月1日为第一轮录取申请截止日期。",
+        "chinese_summary": "该页面为Tinbergen Institute的截止日期索引页；其中提到EEA学生第一轮录取截止日期为2026年12月1日。",
         "extracted_deadline": "2026-12-01",
         "extracted_fee": "",
         "extracted_funding": "",
@@ -190,8 +190,8 @@
       }
     },
     {
-      "title": "Scholarships & Travel Grants",
-      "url": "https://www.archaeological.org/grant/waldbaum-scholarship/",
+      "title": "Grants & Awards",
+      "url": "https://www.archaeological.org/programs/professionals/grants-awards/",
       "organizer": "Archaeological Institute of America",
       "source_layer": "discovery",
       "location": "global",
@@ -200,27 +200,16 @@
         "end": null,
         "duration_days": null
       },
-      "deadline": "2027-03-01",
+      "deadline": "2027-06-30",
       "deadline_status": "open",
       "financial_access_status": "funded",
       "fee": "",
       "fee_eur": null,
       "topics": [
-        "remote sensing",
-        "GIS",
-        "ecology",
         "artificial intelligence",
-        "mathematics",
-        "applied mathematics",
-        "public health",
-        "cognitive science",
-        "marine biology",
-        "geography",
-        "anthropology",
+        "architecture",
         "history",
-        "philosophy",
-        "archaeology",
-        "literature"
+        "archaeology"
       ],
       "needs_review": [
         "duration is uncertain"
@@ -236,41 +225,85 @@
         "support_scope": "",
         "accommodation": "unknown",
         "meals": "unknown",
-        "travel_support": "offered",
+        "travel_support": "unknown",
         "cost_status": "unknown",
         "fee_options": []
       },
-      "benefit_facts": [
-        {
-          "benefit": "travel",
-          "status": "covered",
-          "evidence": "Archaeological Field School Scholarships - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Scholarships & Travel Grants Archaeological Field School Scholarships Archaeological Institute of America Deadline: March 1, 2027 Announced: In April Amount: $2,000 per winner Purpose: These scholarships support students participating in archaeological fieldwork for the first time.",
-          "source_url": "https://www.archaeological.org/grant/waldbaum-scholarship/"
-        }
-      ],
+      "benefit_facts": [],
       "topic_evidence": {
-        "remote sensing": "lleley is a junior at Boston University studying Archaeology and Remote Sensing. She will attend the Belize Valley Archeological Reconnaissance Project. Read about Elisha Valleley",
-        "GIS": "dents are trained in a variety of excavation techniques, such as GIS mapping and materials processing. Skye is especially excited to document a set of Etruscan tombs lo",
-        "ecology": "dkey (Purdue University West Lafayette; Zooarchaeology and Field Ecology Program Eagle Lake, CA), Mahmoud Samori (Columbia University, Stabiae Field School), Ann Vassar (Ce",
         "artificial intelligence": "erved, including rights for text and data mining and training of artificial intelligence or similar technologies. | Privacy Policy | Website by Yelling Mule , ongoing development by Castle",
-        "mathematics": "June. At Brown, she studied Biological Anthropology and Applied Mathematics-Biology. She’s especially excited to be working in the Caribbean: her home region. Read about Madel",
-        "applied mathematics": "ool this June. At Brown, she studied Biological Anthropology and Applied Mathematics-Biology. She’s especially excited to be working in the Caribbean: her home region. Read about Madel",
-        "public health": "er is a junior at Boston University, studying Health Science and Public Health, with a minor in Anthropology. She plans to attend the Apollonia Project in Bulgaria (deferred to 2",
-        "cognitive science": "ccalaueate at the University of California, Santa Cruz, studying Cognitive Science and Anthropology. She plans to attend the Roca dels Bous Project in Spain. Read about Lindsay Alaha",
-        "marine biology": "Obolensky Field School Scholarship Audrey Urbach is a third-year marine biology major with a minor in cultural anthropology at Northeastern University. This May, she will be parti",
-        "geography": "a Senior at Texas State University, majoring in Anthropology and Geography. She plans to attend the Aditu Arkeologia Field School in Spain. Read about Veronica Flores-Guillen",
-        "anthropology": "cum laude from Colorado College, earning a Bachelor’s degree in Anthropology and Classics. She is joining the Astypalaia Bioarchaeology field school which studies the human rem",
+        "architecture": ". Kress Grants for Research and Publication in Classical Art and Architecture - On Hiatus Deadline: December 15, 2025 These grants fund publication preparation, or research lead",
         "history": "ct Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Care",
-        "philosophy": "versity of Houston studying Anthropology, Classical Studies, and Philosophy. She is eager to broaden her global perspective through the Antiochia ad Cragum Archaeological Rese",
-        "archaeology": "al Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public Internat",
-        "literature": "is a junior at Davidson College studying Classical Languages and Literature, and this summer he will be attending the Cosa Excavations in Ansedonia, Italy. He is excited to le"
+        "archaeology": "al Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public Internat"
       },
       "evidence": {
-        "deadline": "Deadline: March 1, 2027",
+        "deadline": "Deadline: June 30, 2027 (other dates listed: 2023-11-01, 2025-12-15, 2026-09-15)",
         "duration": "",
         "fee": "",
-        "funding": "Archaeological Field School Scholarships - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Scholarships & Travel Grants Archaeological Field School Scholarships Archaeological Institute of America Deadline: March 1, 2027 Announced: In April Amount: $2,000 per winner Purpose: These scholarships support students participating in archaeological fieldwork for the first time.",
-        "mode": "Field School Scholarships - Archaeological Institute of Americ"
+        "funding": "Fellowships, Grants, Scholarships, and Awards - Archaeological Institute of America Login or Register Contact Donate Archaeological Institute of America Who We Are Mission History Governance Policies Programs & Services Professionals Annual Meeting Fieldwork Grants & Awards Careers American Journal of Archaeology AIA Societies Find a Society Society Grants & Awards Resources Society News For the Public International Archaeology Day Interactive Digs National Lecture Program Events Calendar Site Preservation Archaeology Magazine AIA Tours Media Education Intro to Archaeology Lesson Plans Archaeologists in Classrooms Unearth a Story Summer Reading Resources Multimedia Fairs Join Become a Member Member Benefits Archaeology Archive Member Login/Renew Give Dollars at Work Why I Give Ways to Give Grants & Awards Professionals Annual Meeting Fieldwork Grants & Awards AIA Fellowship Guidelines Application: AIA Fellowships Nomination Form: Pomerance Award Awards Ceremony Sitting Down with our Award Winners Follow-Ups for Fellowship, Grant, & Scholarship Winners Research Grant Final Report Form AIA Fellowships Report Form AIA Awards Citation Form Non-AIA Grants Careers American Journal of Archaeology Research Opportunities Network (RON) Beta Tester Sign Up The AIA’s mission includes supporting and promoting archaeological research and its dissemination.",
+        "mode": "in-person) Contact Donate Cart Account Archaeological Insti"
+      },
+      "ai_advisory": {
+        "available": false
+      }
+    },
+    {
+      "title": "Una Europa Summer School 2026 for doctoral researchers: Sustainability for All",
+      "url": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-sustainability-for-all",
+      "organizer": "Una Europa",
+      "source_layer": "discovery",
+      "location": "global",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": "2027-01-28",
+      "deadline_status": "open",
+      "financial_access_status": "low-fee",
+      "fee": "no tuition fee",
+      "fee_eur": 0.0,
+      "topics": [
+        "sustainability",
+        "climate",
+        "climate change",
+        "artificial intelligence",
+        "data science",
+        "design"
+      ],
+      "needs_review": [
+        "duration is uncertain"
+      ],
+      "confidence": 0.75,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.75,
+      "financial_terms": {
+        "participation_fee": "no tuition fee",
+        "fee_eur": 0.0,
+        "fee_status": "stated",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "free",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "climate": "rrying out research on topics related to sustainability, such as climate change, poverty, food systems, and clean energy access. Don’t miss this opportunity to dive deep in",
+        "climate change": "rrying out research on topics related to sustainability, such as climate change, poverty, food systems, and clean energy access. Don’t miss this opportunity to dive deep into sust",
+        "sustainability": "ew on Google Maps Contact Aifric O’Sullivan Associate Professor, Sustainability Summer School coordinator aifric.osullivan@ucd.ie Participation Interested? Submit your application",
+        "artificial intelligence": "e same week: in One Health, Sustainability, and Data Science and Artificial Intelligence. If selected as a participant for one of these Summer Schools, you will have a unique opportunity t",
+        "data science": "mer Schools in the same week: in One Health, Sustainability, and Data Science and Artificial Intelligence. If selected as a participant for one of these Summer Schools, you will",
+        "design": "f robust data to assess real-world sustainability challenges and design actionable impact pathways. Participants will engage in case studies on scaling sustainability rese"
+      },
+      "evidence": {
+        "deadline": "Deadline 28 Jan 2027 (other dates listed: 2026-12-17)",
+        "duration": "",
+        "fee": "no tuition fee",
+        "funding": "",
+        "mode": "in-person programme, there will be a compulsory online part"
       },
       "ai_advisory": {
         "available": false
@@ -442,59 +475,6 @@
       }
     },
     {
-      "title": "Join us at IBRO 2027 World Congress",
-      "url": "https://ibro.org/",
-      "organizer": "IBRO",
-      "source_layer": "2",
-      "location": "global",
-      "dates": {
-        "start": "2027-09-13",
-        "end": "2027-09-16",
-        "duration_days": 4
-      },
-      "deadline": "2027-01-25",
-      "deadline_status": "open",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "neuroscience"
-      ],
-      "needs_review": [
-        "in-person status is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.5,
-      "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "neuroscience": "Home - IBRO Grants Browse our neuroscience-focused funding opportunities: benefit from IBRO’s support for career development and knowledge exc"
-      },
-      "evidence": {
-        "deadline": "Application deadline: 25 January 2027 (other dates listed: 2027-01-15)",
-        "duration": "13 Sep 2027 - 16 Sep 2027",
-        "fee": "",
-        "funding": "",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
       "title": "Advanced lipidomics technologies to study lipid biology",
       "url": "https://advancedlipidomics2027.febsevents.org/",
       "organizer": "FEBS Advanced Courses",
@@ -650,13 +630,13 @@
         "available": true,
         "validated_confidence": "low",
         "validation_warnings": [],
-        "chinese_summary": "NCAS气候建模暑期学校，面向英国及国际博士后研究人员和博士生，申请现已开放。课程涵盖气候模型科学原理、气候科学各领域联系、使用Julia模型运行和分析大气动力学模拟的实践经验，以及气候模型的设计、实现和运行。申请者需具备Python编程（含matplotlib和NumPy）及数学基础，熟悉Julia为加分项但非必需。",
+        "chinese_summary": "NCAS气候建模暑期学校，面向英国及国际博士后研究人员和博士生，申请现已开放。课程涵盖气候模型科学原理、气候科学各领域联系、使用Julia模型运行和分析大气动力学模拟，以及气候模型的设计与实现。申请者需具备Python编程（含matplotlib和NumPy）及数学基础。",
         "extracted_deadline": "",
-        "extracted_fee": "",
+        "extracted_fee": "£50 administration fee (non-refundable); full course fee amount not stated",
         "extracted_funding": "",
         "evidence_fields": {
           "deadline": "",
-          "fee": "",
+          "fee": "In the event that a place can be filled by another student then the full fee (less the £50 administration fee) will be refunded once the replacement student has paid in full. | The remaining balance of the course fee will be refunded. | No refund is payable for a cancellation made within six weeks (twelve weeks for the Summer Training in Observations, Research and Modelling) immediately prior to the training course – in this event the full course fee will remain payable.",
           "funding": ""
         }
       }
@@ -829,85 +809,6 @@
       }
     },
     {
-      "title": "2027 Winter School on Smoothed Particle Hydrodynamics Numerical Methods",
-      "url": "https://www.hylab.unipr.it/en/2026/08/25/2027-winter-school-on-smoothed-particle-hydrodynamics-numerical-methods/",
-      "organizer": "HyLab",
-      "source_layer": "discovery",
-      "location": "person only",
-      "dates": {
-        "start": "2027-01-18",
-        "end": "2027-01-22",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "low-fee",
-      "fee": "free of charge",
-      "fee_eur": 0.0,
-      "topics": [
-        "hydrology",
-        "physics",
-        "mathematics",
-        "engineering",
-        "mechanics",
-        "fluid dynamics",
-        "architecture",
-        "water resources",
-        "geoscience"
-      ],
-      "needs_review": [
-        "application deadline is uncertain"
-      ],
-      "confidence": 0.75,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.75,
-      "financial_terms": {
-        "participation_fee": "free of charge",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "hydrology": "nato Vacondio is Associate Professor of Hydraulic Structures and Hydrology at the Department of Engineering and Architecture of the University of Parma. His research focuses",
-        "physics": "eal. His work focuses using meshless methods to simulate complex physics such as free-surface flow, flow through porous media and turbulence models as well as the implement",
-        "mathematics": "articularly suitable for: MSc graduates in Engineering, Physics, Mathematics, Computer Science or related disciplines; PhD students; postdoctoral and academic researchers; rese",
-        "engineering": "essor of Hydraulic Structures and Hydrology at the Department of Engineering and Architecture of the University of Parma. His research focuses on hydraulic and hydrological mod",
-        "mechanics": "nd now widely used for the simulation of complex fluid and solid mechanics problems. Its meshless nature makes SPH particularly attractive for problems involving large deform",
-        "fluid dynamics": "ster. His research focuses on meshless methods and computational fluid dynamics, including Lagrangian and Eulerian-Lagrangian SPH formulations, multiphase and non-Newtonian flows,",
-        "architecture": "ic Structures and Hydrology at the Department of Engineering and Architecture of the University of Parma. His research focuses on hydraulic and hydrological modelling and on the",
-        "water resources": "nato Vacondio is Associate Professor of Hydraulic Structures and Hydrology at the Department of Engineering and Architecture of the University of Parma. His research focuses",
-        "geoscience": "nato Vacondio is Associate Professor of Hydraulic Structures and Hydrology at the Department of Engineering and Architecture of the University of Parma. His research focuses"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "18–22 January 2027",
-        "fee": "free of charge",
-        "funding": "",
-        "mode": "In person only We are pleased to announce the 2027 Winter S"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [],
-        "chinese_summary": "2027年光滑粒子流体动力学（SPH）数值方法冬季学校，2027年1月18日至22日在意大利帕尔马大学工程与建筑系线下举办，对应5个ECTS学分。主题涵盖SPH插值基础、精度与一致性、控制方程离散、可压缩/弱可压缩/不可压缩SPH、流固耦合、多相与非牛顿流动、边界条件及高性能计算等。费用为博士生500欧元、其他参与者800欧元，帕尔马大学在读博士生免费；人数限50人。",
-        "extracted_deadline": "",
-        "extracted_fee": "PhD Students €500; Other Participants €800; free of charge for PhD students enrolled at the University of Parma",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "HTML “` Registration PhD Students €500 Other Participants €800 The course is free of charge for PhD students enrolled at the University of Parma.",
-          "funding": ""
-        }
-      }
-    },
-    {
       "title": "Perimeter Undergraduate Summer School",
       "url": "https://perimeterinstitute.ca/training/undergraduate-summer-programs/undergraduate-summer-school",
       "organizer": "Perimeter Institute",
@@ -966,76 +867,21 @@
       "ai_advisory": {
         "available": true,
         "validated_confidence": "low",
-        "validation_warnings": [],
-        "chinese_summary": "Perimeter Institute 将于2027年6月14日至25日举办为期两周的本科暑期学校，申请现已开放，截止日期为2027年1月17日。参与者将通过课程、研究人员报告和小组讨论学习现代理论物理前沿主题，并参与小组协作解题等主动学习活动。",
+        "validation_warnings": [
+          "location_context_weak",
+          "eligibility_context_weak",
+          "fee_unknown",
+          "funding_unknown"
+        ],
+        "chinese_summary": "Perimeter Institute 将于2027年6月14日至25日举办为期两周的本科生暑期学校，内容包括现代理论物理前沿课程、研究人员报告、小组讨论及协作解题等主动学习活动。申请已开放，截止日期为2027年1月17日。",
         "extracted_deadline": "2027-01-17",
         "extracted_fee": "",
         "extracted_funding": "",
         "evidence_fields": {
-          "deadline": "t in many-body systems Perimeter Circle - Alumni Listings Perimeter Circle - Stay Connected Perimeter Circle Awards Perimeter Circle Awards Academic Leadership Excellence Award Industry Trailblazer Award Pathfinder Award Nominate Perimeter Circle Award Event Perimeter Circle: Alumni Stories Applications are now OPEN Deadline: Jan 17, 2027 Apply today!",
+          "deadline": "ling the structure of quantum entanglement in many-body systems Perimeter Circle - Alumni Listings Perimeter Circle - Stay Connected Perimeter Circle Awards Perimeter Circle Awards Academic Leadership Excellence Award Industry Trailblazer Award Pathfinder Award Nominate Perimeter Circle Award Event Perimeter Circle: Alumni Stories Applications are now OPEN Deadline: Jan 17, 2027 Apply today!",
           "fee": "",
           "funding": ""
         }
-      }
-    },
-    {
-      "title": "Mila's Community of Practice: Agentic AI",
-      "url": "https://mila.quebec/en",
-      "organizer": "Mila",
-      "source_layer": "2",
-      "location": "North America",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": "2026-12-01",
-      "deadline_status": "open",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "AI",
-        "artificial intelligence",
-        "machine learning",
-        "architecture"
-      ],
-      "needs_review": [
-        "duration is uncertain",
-        "in-person status is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.25,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.25,
-      "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "AI": "lligence for the benefit of all Located in the heart of Quebec’s AI ecosystem, Mila is a community of more than 1,400 researchers specializing in machine learning and",
-        "artificial intelligence": "Mila - Quebec Artificial Intelligence Institute We use cookies to analyze the browsing and usage of our website and to personalize your e",
-        "machine learning": "la is a community of more than 1,400 researchers specializing in machine learning and dedicated to scientific excellence and innovation. About Featured Prospective Students Supervis",
-        "architecture": "tinuous ones and require careful tuning of factors such as model architecture, data size, learning rate, and capacity. Semantic tokens generally outperform acoustic tokens, but"
-      },
-      "evidence": {
-        "deadline": "Deadline : December 1, 2026",
-        "duration": "",
-        "fee": "",
-        "funding": "",
-        "mode": ""
-      },
-      "ai_advisory": {
-        "available": false
       }
     },
     {
@@ -1630,119 +1476,6 @@
       }
     },
     {
-      "title": "15 University Research Programs for High School Students",
-      "url": "https://www.immerse.education/knowledge-base/15-university-research-programs-for-high-school-students",
-      "organizer": "Discovery: 15 University Research Programs for High School Students | Immerse Education",
-      "source_layer": "discovery",
-      "location": "Stanford, California (University-based research program)",
-      "dates": {
-        "start": null,
-        "end": null,
-        "duration_days": null
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "funded",
-      "fee": "No tuition fee",
-      "fee_eur": 0.0,
-      "topics": [
-        "climate",
-        "environmental science",
-        "remote sensing",
-        "ecology",
-        "AI",
-        "artificial intelligence",
-        "data science",
-        "linguistics",
-        "data analysis",
-        "physics",
-        "astronomy",
-        "mathematics",
-        "chemistry",
-        "materials science",
-        "engineering",
-        "law",
-        "architecture",
-        "design",
-        "neuroscience",
-        "social science",
-        "economics",
-        "psychology",
-        "philosophy",
-        "literature"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "duration is uncertain"
-      ],
-      "confidence": 0.5,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.5,
-      "financial_terms": {
-        "participation_fee": "No tuition fee",
-        "fee_eur": 0.0,
-        "fee_status": "stated",
-        "support_status": "offered",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "free",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "climate": "cer biology, artificial intelligence, public policy, psychology, climate science, economics, or another specialised field while learning how researchers approach complex qu",
-        "environmental science": "p working in fields such as biology, neuroscience, biochemistry, environmental science, and related disciplines. Throughout the summer, you’ll contribute to ongoing research while learni",
-        "remote sensing": "tion stands out for connecting data analysis with Earth science, remote sensing, environmental monitoring, and planetary research. Team meetings focus on analyzing data, developin",
-        "ecology": "e investigating a topic in fields such as biology, neuroscience, ecology, marine science, biochemistry, or environmental science. Alongside your project, you’ll learn how t",
-        "AI": "ridge. You can explore over 20 subjects, including Architecture, AI, Business Management, Computer Science, Economics, Medicine, Philosophy, and more. The courses are",
-        "artificial intelligence": "r on a topic that interests you. You might study cancer biology, artificial intelligence, public policy, psychology, climate science, economics, or another specialised field while learning",
-        "data science": "cago Data & Computing Summer Lab Location: University of Chicago Data Science Institute Cost: Paid program; participants receive a stipend of approximately $5,600 Acceptance rat",
-        "linguistics": "n combine areas such as neuroscience, data science, engineering, linguistics, computing, and social science. Most projects focus on computational research rather than laborator",
-        "data analysis": "for high school students, this option stands out for connecting data analysis with Earth science, remote sensing, environmental monitoring, and planetary research. Team meetings",
-        "physics": "he following subjects: English, Chemistry, Mathematics/Calculus, Physics, and Biology. International students may apply The Garcia Summer Research Program places you in a r",
-        "astronomy": "diverse array of fields, spanning everything from observational astronomy to digital research ethics. Join the Immerse Education 2027 Essay Competition Follow the instructio",
-        "mathematics": "in at least three of the following subjects: English, Chemistry, Mathematics/Calculus, Physics, and Biology. International students may apply The Garcia Summer Research Program",
-        "chemistry": "coursework in at least three of the following subjects: English, Chemistry, Mathematics/Calculus, Physics, and Biology. International students may apply The Garcia Summer Res",
-        "materials science": "you in a research team working on questions in polymer science, materials science, engineering, and related fields. You’ll help investigate a scientific problem alongside faculty me",
-        "engineering": "f conducting dissections in medicine, designing a robotic arm in engineering, participating in a moot court for law, or building creative writing portfolios and business case s",
-        "law": "a robotic arm in engineering, participating in a moot court for law, or building creative writing portfolios and business case studies. By the end of the program, you’",
-        "architecture": "xford and Cambridge. You can explore over 20 subjects, including Architecture, AI, Business Management, Computer Science, Economics, Medicine, Philosophy, and more. The courses",
-        "design": "rum. Throughout the programme, you’ll develop skills in research design, technical communication, and data analysis. The internship ends with a final paper, presentation,",
-        "neuroscience": "group for eight weeks. You’ll work on projects in areas such as neuroscience, cancer biology, stem cell research, genetics, bioengineering, immunology, and cardiovascular scien",
-        "social science": "oscience, data science, engineering, linguistics, computing, and social science. Most projects focus on computational research rather than laboratory experiments, so you’ll spend",
-        "economics": "ficial intelligence, public policy, psychology, climate science, economics, or another specialised field while learning how researchers approach complex questions. These expe",
-        "psychology": "ht study cancer biology, artificial intelligence, public policy, psychology, climate science, economics, or another specialised field while learning how researchers approach c",
-        "philosophy": "AI, Business Management, Computer Science, Economics, Medicine, Philosophy, and more. The courses are experiential and hands-on — you may find yourself conducting dissections",
-        "literature": ". Depending on your lab, you may analyze data, review scientific literature, assist with experiments, or contribute to ongoing investigations. Alongside research, you’ll atten"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "",
-        "fee": "No tuition fee",
-        "funding": "Immerse Education’s Pre-University Summer School Location: Cambridge, London, Oxford, Singapore, Sydney, Tokyo, and Toronto Cost: Varies; summer school scholarship available through our bursary programme Application Deadline: Multiple summer cohorts; rolling admissions Program Dates: 2 weeks during the summer Eligibility: Students aged 13-18 currently enrolled in middle or high school; open to international students The Academic Insights Program lets high school students experience university life firsthand.",
-        "mode": "In-person Career Insights Gain industry exposure and profes"
-      },
-      "ai_advisory": {
-        "available": true,
-        "validated_confidence": "low",
-        "validation_warnings": [
-          "index_or_listing_page",
-          "multiple_distinct_programs_in_evidence"
-        ],
-        "chinese_summary": "",
-        "extracted_deadline": "",
-        "extracted_fee": "",
-        "extracted_funding": "",
-        "evidence_fields": {
-          "deadline": "",
-          "fee": "",
-          "funding": ""
-        }
-      }
-    },
-    {
       "title": "Digital Humanities Summer Institute",
       "url": "https://dhsi.org/scholarships/",
       "organizer": "Digital Humanities Summer Institute",
@@ -1986,63 +1719,6 @@
       }
     },
     {
-      "title": "Methods for infectious disease modelling using genomics",
-      "url": "https://www.ebi.ac.uk/training/events/methods-infectious-disease-modelling-using-genomics-2027/",
-      "organizer": "EMBL-EBI Training",
-      "source_layer": "1",
-      "location": "United Kingdom",
-      "dates": {
-        "start": "2027-10-11",
-        "end": "2027-10-15",
-        "duration_days": 5
-      },
-      "deadline": null,
-      "deadline_status": "uncertain",
-      "financial_access_status": "unresolved",
-      "fee": "",
-      "fee_eur": null,
-      "topics": [
-        "bioinformatics",
-        "public health",
-        "biostatistics"
-      ],
-      "needs_review": [
-        "application deadline is uncertain",
-        "funding is not explicit and fee is uncertain"
-      ],
-      "confidence": 0.5,
-      "confidence_kind": "heuristic_not_calibrated_probability",
-      "field_completeness": 0.5,
-      "financial_terms": {
-        "participation_fee": "",
-        "fee_eur": null,
-        "fee_status": "unknown",
-        "support_status": "unknown",
-        "support_scope": "",
-        "accommodation": "unknown",
-        "meals": "unknown",
-        "travel_support": "unknown",
-        "cost_status": "unknown",
-        "fee_options": []
-      },
-      "benefit_facts": [],
-      "topic_evidence": {
-        "bioinformatics": "st Applications open 30 March 2027 11 – 15 October 2027 European Bioinformatics Institute United Kingdom £975.00 (academia) / £1,275.00 (industry) Contact Charlotte Courtney Open",
-        "public health": "carry out this type of research in policy making, charities, or public health settings. Basic knowledge of R, the command line, and biostatistics will be essential. We recommend",
-        "biostatistics": "lic health settings. Basic knowledge of R, the command line, and biostatistics will be essential. We recommend following these or other similar free tutorials prior to the course"
-      },
-      "evidence": {
-        "deadline": "",
-        "duration": "11 – 15 October 2027",
-        "fee": "",
-        "funding": "",
-        "mode": "onsite or virtually. Please read our dedicated support p"
-      },
-      "ai_advisory": {
-        "available": false
-      }
-    },
-    {
       "title": "Summer school: Mathematical applications to climate change",
       "url": "https://www.crmath.ca/en/activities/#/type/activity/id/4137",
       "organizer": "CRM Schools",
@@ -2098,6 +1774,156 @@
       },
       "ai_advisory": {
         "available": false
+      }
+    },
+    {
+      "title": "Summer Student Programme 2027",
+      "url": "https://summerstudents.desy.de/",
+      "organizer": "DESY Summer Student",
+      "source_layer": "2",
+      "location": "Europe",
+      "dates": {
+        "start": "2027-01-26",
+        "end": "2027-01-31",
+        "duration_days": 6
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "unresolved",
+      "fee": "",
+      "fee_eur": null,
+      "topics": [
+        "data analysis",
+        "physics",
+        "particle physics",
+        "engineering"
+      ],
+      "needs_review": [
+        "application deadline is uncertain",
+        "in-person status is uncertain",
+        "funding is not explicit and fee is uncertain"
+      ],
+      "confidence": 0.25,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.25,
+      "financial_terms": {
+        "participation_fee": "",
+        "fee_eur": null,
+        "fee_status": "unknown",
+        "support_status": "unknown",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "unknown",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "data analysis": "tical work on detectors or other experimental equipment, physics data analysis, software development, theory, and scientific computing. More details on the available activities c",
+        "physics": "January 2027. Each summer DESY offers undergraduate students in physics or related disciplines (such as scientific computing and engineering) the opportunity to obtain fir",
+        "particle physics": "s fields pursued at DESY: Photon science Accelerators Elementary particle physics Astroparticle physics Selected candidates will join in the day-to-day work of research groups at th",
+        "engineering": "physics or related disciplines (such as scientific computing and engineering) the opportunity to obtain first-hand research experience at a large international laboratory. Stud"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "26 until 31st January 2027",
+        "fee": "",
+        "funding": "",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [],
+        "chinese_summary": "DESY 2027年暑期学生项目，学生将在科研团队中参与独立研究、项目工作和讲座，每周工作39小时，并参观DESY校园内外的科研设施。项目提供每天28.50欧元的薪酬、至少部分差旅费报销以及项目期间免费住宿。",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "Students receive a salary of 28.50 Euro per day and at least partial reimbursement of travel costs; DESY Hostel accommodation is provided free-of-cost during the full programme period.",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": "The students will receive a salary of 28,50 Euro per day and at least partial reimbursement of travel costs. | They will get DESY Hostel accommodation provided free-of-cost during the full programme period."
+        }
+      }
+    },
+    {
+      "title": "Undergraduate Summer Research Program",
+      "url": "https://www.marquette.edu/biology/undergraduate-summer-research-program.php",
+      "organizer": "Discovery: Undergraduate Summer Research Program // Biological Sciences // Marquette University",
+      "source_layer": "discovery",
+      "location": "Department of Biological Sciences",
+      "dates": {
+        "start": null,
+        "end": null,
+        "duration_days": null
+      },
+      "deadline": null,
+      "deadline_status": "uncertain",
+      "financial_access_status": "self-funded",
+      "fee": "$4500",
+      "fee_eur": 4275.0,
+      "topics": [
+        "drought",
+        "ecology",
+        "chemistry",
+        "design",
+        "history",
+        "literature"
+      ],
+      "needs_review": [
+        "conditional support needs coverage and eligibility review",
+        "application deadline is uncertain",
+        "duration is uncertain",
+        "fee exceeds EUR 400 without explicit funding"
+      ],
+      "confidence": 0.5,
+      "confidence_kind": "heuristic_not_calibrated_probability",
+      "field_completeness": 0.5,
+      "financial_terms": {
+        "participation_fee": "$4500",
+        "fee_eur": 4275.0,
+        "fee_status": "stated",
+        "support_status": "conditional",
+        "support_scope": "",
+        "accommodation": "unknown",
+        "meals": "unknown",
+        "travel_support": "unknown",
+        "cost_status": "paid",
+        "fee_options": []
+      },
+      "benefit_facts": [],
+      "topic_evidence": {
+        "drought": "ly, Marquette University. Mentor: Anita Manogaran Herbivores and Drought Influence Microbial Communities in Soil. Claire Kraft, Marquette University. Mentor: Nate Lemoine B",
+        "ecology": "genetics, neurobiology, invertebrate/vertebrate physiology, and ecology. Students in the SRP.... Develop essential written and verbal communication skills Participate in g",
+        "chemistry": "ments: Two semesters of biology courses Two semesters of general chemistry with laboratories One semester of calculus, one semester of organic chemistry, and additional advan",
+        "design": "ally read scientific literature, to formulate hypotheses, and to design and carry out experiments to test the validity of your hypotheses. In short, you will experience fi",
+        "history": "ble Moth & Butterfly Field Guides: Engaging Community in Natural History. Maggie Kemp, Marquette University. Mentor: Nate Lemoine Cloning of the MRPL-35 Gene under the cont",
+        "literature": "ng a research team, you will learn to critically read scientific literature, to formulate hypotheses, and to design and carry out experiments to test the validity of your hypo"
+      },
+      "evidence": {
+        "deadline": "",
+        "duration": "",
+        "fee": "$4500",
+        "funding": "In addition the MU Department of Biological Sciences offers competitive summer fellowships to undergraduate students pursuing majors in biological sciences, biochemistry and molecular biology, or environmental sciences.",
+        "mode": ""
+      },
+      "ai_advisory": {
+        "available": true,
+        "validated_confidence": "low",
+        "validation_warnings": [
+          "location_context_weak",
+          "funding_context_weak"
+        ],
+        "chinese_summary": "马凯特大学生物科学系本科生暑期研究项目，学生加入教师实验室开展科研项目，参与文献讨论、假设提出与实验设计，并在暑期结束时进行海报展示和研讨会汇报。",
+        "extracted_deadline": "",
+        "extracted_fee": "",
+        "extracted_funding": "Fellowships available to undergraduate students pursuing majors in biological sciences, biochemistry and molecular biology, or environmental sciences; students must first identify a faculty mentor who agrees to supervise their summer research project.",
+        "evidence_fields": {
+          "deadline": "",
+          "fee": "",
+          "funding": "ships to undergraduate students pursuing majors in biological sciences, biochemistry and molecular biology, or environmental sciences. | To be eligible for these fellowships, students must first identify a faculty mentor who agrees to supervise their summer research project."
+        }
       }
     },
     {
