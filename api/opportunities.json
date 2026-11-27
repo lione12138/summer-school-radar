@@ -3,7 +3,7 @@
   "_license_url": "https://creativecommons.org/licenses/by/4.0/",
   "_attribution": "Summa",
   "_canonical": "https://lione12138.github.io/summer-school-radar/",
-  "generated": "2026-11-26",
+  "generated": "2026-11-27",
   "upcoming_calls": [
     {
       "title": "Aalto International Summer Research Programme 2027",
@@ -508,6 +508,87 @@
       "summary_zh": "CNDS/EGU暑期学校 - CNDS Svenska 菜单 CNDS研究 CNDS/EGU暑期学校 关于我们 研究 CNDS/EGU暑期学校 CNDS自然灾害与灾难论坛 进行中的研究项目 已完成的研究项目 CNDS研究框架 研究简介 出版物 继续",
       "eligibility": "PhD students in Earth-, Engineering- and Social sciences for an introduction to the dynamics and impacts of natural hazards (e",
       "eligibility_zh": "面向地球科学、工程科学和社会科学博士生，介绍自然灾害的动态与影响（e",
+      "sessions": []
+    },
+    {
+      "id": "amsi-winter-school:2026",
+      "edition_id": "amsi-winter-school:2026",
+      "programme_id": "amsi-winter-school",
+      "programme_url": "https://lione12138.github.io/summer-school-radar/programmes/amsi-winter-school-d04a312e.html",
+      "programme_language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/programmes/amsi-winter-school-d04a312e.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/programmes/amsi-winter-school-d04a312e.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/programmes/amsi-winter-school-d04a312e.html"
+      },
+      "url": "https://lione12138.github.io/summer-school-radar/opportunities/amsi-winter-school-2026-b25255f0.html",
+      "language_urls": {
+        "x-default": "https://lione12138.github.io/summer-school-radar/opportunities/amsi-winter-school-2026-b25255f0.html",
+        "en": "https://lione12138.github.io/summer-school-radar/en/opportunities/amsi-winter-school-2026-b25255f0.html",
+        "zh-Hans": "https://lione12138.github.io/summer-school-radar/zh/opportunities/amsi-winter-school-2026-b25255f0.html"
+      },
+      "official_url": "https://ws.amsi.org.au/apply/",
+      "title": "AMSI Winter School 2026",
+      "title_zh": "AMSI Winter School 2026",
+      "type": "summer school",
+      "organizer": "Winter School 2026",
+      "organizer_zh": "Winter School 2026",
+      "location": "The University of Queensland",
+      "location_zh": "The University of Queensland",
+      "mode": "hybrid",
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-17",
+      "duration_days": 12,
+      "flexible_research_dates": false,
+      "application_deadline": "2026-05-25",
+      "application_status": "closed",
+      "directory_tier": "programme-library",
+      "financial_summary": "AUD 1200.00 (non-member general rate; conditional student/member discounts available) · Conditional travel and accommodation grants; eligibility restrictions apply",
+      "fee": "AUD 1200.00 (non-member general rate; conditional student/member discounts available)",
+      "fee_eur": 744.0,
+      "funding_available": true,
+      "funding_type": [
+        "travel grant"
+      ],
+      "funding_scope": "Conditional travel and accommodation grants; eligibility restrictions apply",
+      "financial_terms": {
+        "participation_fee": "AUD 1200.00 (non-member general rate; conditional student/member discounts available)",
+        "fee_eur": 744.0,
+        "fee_status": "stated",
+        "support_status": "offered",
+        "support_scope": "Conditional travel and accommodation grants; eligibility restrictions apply",
+        "accommodation": "covered",
+        "meals": "unknown",
+        "travel_support": "offered",
+        "cost_status": "paid",
+        "fee_options": [
+          {
+            "amount": 1200.0,
+            "currency": "AUD",
+            "conditions": "(non-member general rate; conditional student/member discounts available)"
+          }
+        ]
+      },
+      "topics": [
+        "AI",
+        "data science",
+        "physics",
+        "mathematics",
+        "mathematical physics",
+        "engineering"
+      ],
+      "primary_topics": [
+        "AI",
+        "data science",
+        "physics",
+        "mathematics",
+        "mathematical physics",
+        "engineering"
+      ],
+      "secondary_topics": [],
+      "summary": "Home - Winter School 2026 A FLAGSHIP EVENT OF About Timetable Public Lecture Venue Grants Apply About Timetable Public Lecture Venue Grants Apply Develop your mathematical science skills and national networks AMSI Winter School is an annual two-week event designed for postgraduat",
+      "summary_zh": "主页 - Winter School 2026，一项旗舰活动。关于、日程、公开讲座、场地、资助、申请。关于、日程、公开讲座、场地、资助、申请。提升你的数学科学技能并建立全国网络。AMSI Winter School 是一项为期两周的年度活动，面向研究生",
+      "eligibility": "early-career researchers (PhD completion in 2023 or later) from South East Asia and the Pacific Islands These grants help offset travel and accommodation costs for in-perso",
+      "eligibility_zh": "来自东南亚和太平洋岛屿的早期职业研究人员（2023年或之后完成博士学位）。这些资助帮助抵消线下参加的差旅和住宿费用",
       "sessions": []
     },
     {

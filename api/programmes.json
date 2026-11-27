@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated": "2026-11-26",
+  "generated": "2026-11-27",
   "programmes": [
     {
       "id": "programme:1e2301271be1d280",
@@ -940,6 +940,113 @@
       "primary_topics": [
         "natural language processing"
       ]
+    },
+    {
+      "id": "amsi-winter-school",
+      "slug": "amsi-winter-school-d04a312e",
+      "title": "AMSI Winter School",
+      "title_zh": "AMSI Winter School",
+      "organizer": "Winter School 2026",
+      "organizer_zh": "Winter School 2026",
+      "summary": "Home - Winter School 2026 A FLAGSHIP EVENT OF About Timetable Public Lecture Venue Grants Apply About Timetable Public Lecture Venue Grants Apply Develop your mathematical science skills and national networks AMSI Winter School is an annual two-week event designed for postgraduat",
+      "summary_zh": "主页 - Winter School 2026，一项旗舰活动。关于、日程、公开讲座、场地、资助、申请。关于、日程、公开讲座、场地、资助、申请。提升你的数学科学技能并建立全国网络。AMSI Winter School 是一项为期两周的年度活动，面向研究生",
+      "topics": [
+        "AI",
+        "data science",
+        "physics",
+        "mathematics",
+        "mathematical physics",
+        "engineering"
+      ],
+      "primary_topics": [
+        "AI",
+        "data science",
+        "physics",
+        "mathematics",
+        "mathematical physics",
+        "engineering"
+      ],
+      "editions": [
+        {
+          "id": "amsi-winter-school:2026",
+          "title": "AMSI Winter School 2026",
+          "title_zh": "AMSI Winter School 2026",
+          "detail_path": "opportunities/amsi-winter-school-2026-b25255f0.html",
+          "official_url": "https://ws.amsi.org.au/apply/",
+          "location": "The University of Queensland",
+          "location_zh": "The University of Queensland",
+          "start_date": "2026-07-06",
+          "end_date": "2026-07-17",
+          "deadline": "2026-05-25",
+          "deadline_status": "closed",
+          "duration_days": 12,
+          "mode": "hybrid",
+          "financial_summary": "AUD 1200.00 (non-member general rate; conditional student/member discounts available) · Conditional travel and accommodation grants; eligibility restrictions apply",
+          "financial_summary_zh": "费用：AUD 1200.00 (非会员 general rate; conditional 学生/会员 discounts available) · 差旅资助",
+          "funding_available": true,
+          "fee_eur": 744.0,
+          "topics": [
+            "AI",
+            "data science",
+            "physics",
+            "mathematics",
+            "mathematical physics",
+            "engineering"
+          ],
+          "primary_topics": [
+            "AI",
+            "data science",
+            "physics",
+            "mathematics",
+            "mathematical physics",
+            "engineering"
+          ],
+          "secondary_topics": [],
+          "summary": "Home - Winter School 2026 A FLAGSHIP EVENT OF About Timetable Public Lecture Venue Grants Apply About Timetable Public Lecture Venue Grants Apply Develop your mathematical science skills and national networks AMSI Winter School is an annual two-week event designed for postgraduat",
+          "summary_zh": "主页 - Winter School 2026，一项旗舰活动。关于、日程、公开讲座、场地、资助、申请。关于、日程、公开讲座、场地、资助、申请。提升你的数学科学技能并建立全国网络。AMSI Winter School 是一项为期两周的年度活动，面向研究生",
+          "sessions": []
+        }
+      ],
+      "edition_count": 1,
+      "latest_edition": {
+        "id": "amsi-winter-school:2026",
+        "title": "AMSI Winter School 2026",
+        "title_zh": "AMSI Winter School 2026",
+        "detail_path": "opportunities/amsi-winter-school-2026-b25255f0.html",
+        "official_url": "https://ws.amsi.org.au/apply/",
+        "location": "The University of Queensland",
+        "location_zh": "The University of Queensland",
+        "start_date": "2026-07-06",
+        "end_date": "2026-07-17",
+        "deadline": "2026-05-25",
+        "deadline_status": "closed",
+        "duration_days": 12,
+        "mode": "hybrid",
+        "financial_summary": "AUD 1200.00 (non-member general rate; conditional student/member discounts available) · Conditional travel and accommodation grants; eligibility restrictions apply",
+        "financial_summary_zh": "费用：AUD 1200.00 (非会员 general rate; conditional 学生/会员 discounts available) · 差旅资助",
+        "funding_available": true,
+        "fee_eur": 744.0,
+        "topics": [
+          "AI",
+          "data science",
+          "physics",
+          "mathematics",
+          "mathematical physics",
+          "engineering"
+        ],
+        "primary_topics": [
+          "AI",
+          "data science",
+          "physics",
+          "mathematics",
+          "mathematical physics",
+          "engineering"
+        ],
+        "secondary_topics": [],
+        "summary": "Home - Winter School 2026 A FLAGSHIP EVENT OF About Timetable Public Lecture Venue Grants Apply About Timetable Public Lecture Venue Grants Apply Develop your mathematical science skills and national networks AMSI Winter School is an annual two-week event designed for postgraduat",
+        "summary_zh": "主页 - Winter School 2026，一项旗舰活动。关于、日程、公开讲座、场地、资助、申请。关于、日程、公开讲座、场地、资助、申请。提升你的数学科学技能并建立全国网络。AMSI Winter School 是一项为期两周的年度活动，面向研究生",
+        "sessions": []
+      }
     },
     {
       "id": "ansto-hzb-aonsa-neutron-school",
@@ -4441,79 +4548,6 @@
       "primary_topics": [
         "machine learning",
         "physics"
-      ]
-    },
-    {
-      "id": "programme:acd61ae55cc48f50",
-      "slug": "una-europa-summer-school-for-doctoral-researchers-artifici-70cb61fb",
-      "title": "Una Europa Summer School for doctoral researchers: Artificial Intelligence and Creativity",
-      "title_zh": "Una Europa 博士研究员暑期学校：人工智能与创造力",
-      "organizer": "Una Europa",
-      "organizer_zh": "Una Europa",
-      "summary": "A doctoral summer school on artificial intelligence and creativity, held at University College Dublin with a compulsory online component before the in-person programme.",
-      "summary_zh": "面向博士研究人员的人工智能与创造力暑期学校，在爱尔兰都柏林大学举行，并包含线下课程前的必修线上环节。",
-      "topics": [
-        "artificial intelligence",
-        "creativity"
-      ],
-      "editions": [
-        {
-          "id": "edition:c8b5befbe2a53c6d",
-          "title": "Una Europa Summer School 2026 for doctoral researchers: Artificial Intelligence and Creativity",
-          "title_zh": "Una Europa 2026年博士研究员暑期学校：人工智能与创造力",
-          "detail_path": "opportunities/una-europa-summer-school-2026-for-doctoral-researchers-artificial-inte-6279da03.html",
-          "official_url": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity",
-          "location": "University College Dublin, Dublin, Ireland",
-          "location_zh": "爱尔兰都柏林大学",
-          "start_date": "2026-06-15",
-          "end_date": "2026-06-19",
-          "deadline": "2026-03-13",
-          "deadline_status": "closed",
-          "duration_days": 5,
-          "mode": "hybrid",
-          "financial_summary": "Fee EUR 0",
-          "financial_summary_zh": "费用 EUR 0",
-          "funding_available": null,
-          "fee_eur": 0.0,
-          "topics": [
-            "artificial intelligence",
-            "creativity"
-          ],
-          "summary": "A doctoral summer school on artificial intelligence and creativity, held at University College Dublin with a compulsory online component before the in-person programme.",
-          "summary_zh": "面向博士研究人员的人工智能与创造力暑期学校，在爱尔兰都柏林大学举行，并包含线下课程前的必修线上环节。",
-          "sessions": []
-        }
-      ],
-      "edition_count": 1,
-      "latest_edition": {
-        "id": "edition:c8b5befbe2a53c6d",
-        "title": "Una Europa Summer School 2026 for doctoral researchers: Artificial Intelligence and Creativity",
-        "title_zh": "Una Europa 2026年博士研究员暑期学校：人工智能与创造力",
-        "detail_path": "opportunities/una-europa-summer-school-2026-for-doctoral-researchers-artificial-inte-6279da03.html",
-        "official_url": "https://www.una-europa.eu/calendar/una-europa-summer-school-2026-artificial-intelligence-and-creativity",
-        "location": "University College Dublin, Dublin, Ireland",
-        "location_zh": "爱尔兰都柏林大学",
-        "start_date": "2026-06-15",
-        "end_date": "2026-06-19",
-        "deadline": "2026-03-13",
-        "deadline_status": "closed",
-        "duration_days": 5,
-        "mode": "hybrid",
-        "financial_summary": "Fee EUR 0",
-        "financial_summary_zh": "费用 EUR 0",
-        "funding_available": null,
-        "fee_eur": 0.0,
-        "topics": [
-          "artificial intelligence",
-          "creativity"
-        ],
-        "summary": "A doctoral summer school on artificial intelligence and creativity, held at University College Dublin with a compulsory online component before the in-person programme.",
-        "summary_zh": "面向博士研究人员的人工智能与创造力暑期学校，在爱尔兰都柏林大学举行，并包含线下课程前的必修线上环节。",
-        "sessions": []
-      },
-      "primary_topics": [
-        "artificial intelligence",
-        "creativity"
       ]
     },
     {
